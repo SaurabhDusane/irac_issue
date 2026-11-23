@@ -15,6 +15,9 @@ MODELS = {
     # served by the ASU AIML API (OpenAI-compatible /v1/embeddings); no prompt
     "gemini-001": dict(name="gcp-deepmind/gemini-embedding-001", prompt=None, api=True),
     "gemini-2":   dict(name="gcp-deepmind/gemini-embedding-2", prompt=None, api=True),
+    # Voyage AI API; needs VOYAGE_API_KEY (or a proxy that injects it)
+    "voyage-law-2": dict(name="voyage-law-2", prompt=None, api=True,
+                         url="https://api.voyageai.com/v1/embeddings", batch=64),
     "qwen3-4b":   dict(name="Qwen/Qwen3-Embedding-4B",
                        prompt="Instruct: Given a legal issue decided by a court, retrieve other issues that raise the same legal question\nQuery: "),
 }
@@ -28,15 +31,17 @@ texts = (df.legal_issue + "\n\n" + df.legal_principle).tolist() if with_lp else 
 t = time.time()
 
 
-def api_embed(texts, model, batch=100, workers=4):
+def api_embed(texts, model, batch=100, workers=4,
+              url="https://api-main.aiml.asu.edu/v1/embeddings"):   # ASU auth injected by proxy
     import requests
     from concurrent.futures import ThreadPoolExecutor
-    url = "https://api-main.aiml.asu.edu/v1/embeddings"   # auth injected by proxy
+    headers = {"Authorization": f"Bearer {os.environ['VOYAGE_API_KEY']}"} \
+        if "voyageai" in url and os.environ.get("VOYAGE_API_KEY") else {}
 
     def call(chunk):
         for attempt in range(6):
             try:
-                r = requests.post(url, json=dict(model=model, input=chunk), timeout=300)
+                r = requests.post(url, json=dict(model=model, input=chunk), headers=headers, timeout=300)
                 d = r.json()["data"]
                 return [x["embedding"] for x in sorted(d, key=lambda x: x["index"])]
             except Exception:
@@ -49,7 +54,7 @@ def api_embed(texts, model, batch=100, workers=4):
 
 
 if cfg.get("api"):
-    E = api_embed(texts, cfg["name"])
+    E = api_embed(texts, cfg["name"], **{k: cfg[k] for k in ("url", "batch") if k in cfg})
 else:
     import torch
     from sentence_transformers import SentenceTransformer
