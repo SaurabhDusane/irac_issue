@@ -20,5 +20,15 @@ def load_train():
             ))
     return pd.DataFrame(rows)
 
+def load_test():
+    rows = []
+    for f in sorted(glob.glob(os.path.join(DATA, "test", "*.json"))):
+        d = json.load(open(f))
+        for k, iss in enumerate(d.get("issues") or [], start=1):
+            rows.append(dict(node_id=f"{d['doc_id']}_{k}", doc_id=d["doc_id"], issue_no=k,
+                             legal_issue=iss["legal_issue"], legal_principle=""))
+    return pd.DataFrame(rows)
+
+
 if __name__ == "__main__":
     df = load_train(); print(len(df), df.doc_id.nunique())

@@ -1,9 +1,9 @@
 """Embed the legal_issue text of every train issue with one model.
-usage: python embed.py <model_key>[+lp]
+usage: python embed.py <model_key>[+lp] [train|test]
 A "+lp" suffix embeds "legal_issue\n\nlegal_principle" instead of the issue alone."""
 import os, sys, time
 import numpy as np
-from load_data import load_train
+from load_data import load_test, load_train
 
 MODELS = {
     "bge-base":   dict(name="BAAI/bge-base-en-v1.5",   prompt=None),
@@ -25,8 +25,10 @@ MODELS = {
 key = sys.argv[1]; with_lp = key.endswith("+lp")
 cfg = MODELS[key.removesuffix("+lp")]
 os.makedirs("out", exist_ok=True)
-df = load_train()
-df[["node_id", "doc_id", "issue_no"]].to_csv("out/nodes.csv", index=False)
+split = sys.argv[2] if len(sys.argv) > 2 else "train"
+df = load_train() if split == "train" else load_test()
+suffix = "" if split == "train" else "_test"
+df[["node_id", "doc_id", "issue_no"]].to_csv(f"out/nodes{suffix}.csv", index=False)
 texts = (df.legal_issue + "\n\n" + df.legal_principle).tolist() if with_lp else df.legal_issue.tolist()
 t = time.time()
 
@@ -62,5 +64,5 @@ else:
     m = SentenceTransformer(cfg["name"], device="cpu")
     E = m.encode(texts, batch_size=32, prompt=cfg["prompt"],
                  normalize_embeddings=True, show_progress_bar=False, convert_to_numpy=True)
-np.save(f"out/emb_{key}.npy", E.astype(np.float32))
-print(f"{key}: {E.shape} in {(time.time()-t)/60:.1f} min", flush=True)
+np.save(f"out/emb_{key}{suffix}.npy", E.astype(np.float32))
+print(f"{key}{suffix}: {E.shape} in {(time.time()-t)/60:.1f} min", flush=True)
