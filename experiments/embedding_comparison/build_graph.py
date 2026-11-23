@@ -65,6 +65,7 @@ def main(key, thr, sub_min=30, resolution=1.0):
             for v in np.nonzero(sub == s)[0]:
                 iss = raw[df.doc_id[v]][df.issue_no[v] - 1]
                 members.append(dict(node_id=df.node_id[v], legal_issue=iss["legal_issue"],
+                                    material_facts=iss.get("material_facts"),
                                     legal_principle=iss.get("legal_principle"), conclusion=iss.get("conclusion"),
                                     rule=iss.get("rule"), predicates=iss.get("predicates")))
             f.write(json.dumps(dict(subcommunity=s, community=int(s.split(".")[0]), size=n, members=members)) + "\n")
