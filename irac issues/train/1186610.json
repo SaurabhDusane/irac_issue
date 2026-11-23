@@ -1,0 +1,61 @@
+{
+  "doc_id": "1186610",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35428,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1579,
+    "prompt_tokens": 9717,
+    "total_tokens": 11296,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Land occupied by a building constructed, or under construction, by the appointed day, together with qualifying appurtenant land, is excluded from the calculation of vacant land and cannot be added back as other land.",
+      "material_facts": [
+        "The owner held an urban property containing a dwelling building constructed before the Act commenced and a separate vacant property.",
+        "The appointed day preceded the Act’s commencement, creating a gap period.",
+        "The authorities added the entire built-up property to the separate vacant property when calculating the owner’s landholding.",
+        "The Court considered the statutory definitions of vacant land and land appurtenant, and the provisions for counting other land bearing a dwelling building."
+      ],
+      "conclusion": "A qualifying building completed or under construction by the appointed day, and its qualifying appurtenant land, cannot be counted as vacant land or added back as other land under the calculation provision. A building whose construction began after the appointed day may be counted as other land.",
+      "legal_principle": "Under Sections 2(g) and 2(q)(ii)–(iii), land occupied by a qualifying building constructed or under construction by the appointed day, and land appurtenant to it, is excluded from vacant land. Sections 4(9) and 4(11), read in context with Section 2(q), do not permit that excluded land to be counted again as other land; Section 5 supports the treatment of events in the gap period. The Act’s primary objective is to impose a ceiling on vacant land as held on the appointed day and at commencement. The Court referred to Union of India v. V.B. Chaudhary and Maharao Sahib Shri Bhim Singhji v. Union of India on the Act’s purpose, and held State of U.P. v. L.J. Johnson inapplicable because it concerned a different exclusion.",
+      "rule": {
+        "if": "urban_land_ceiling_proceeding and qualifying_building_on_land and building_completed_or_under_construction_by_cutoff",
+        "then": "qualifying_built_land_excluded_from_vacant_land_calculation"
+      },
+      "predicates": {
+        "urban_land_ceiling_proceeding": "An authority is determining whether a person holds urban land beyond a statutory ceiling.",
+        "qualifying_building_on_land": "The land is occupied by a building that meets the applicable building-regulation requirements, where such requirements exist, and the building has a dwelling unit.",
+        "building_completed_or_under_construction_by_cutoff": "The building was completed, or its construction was in progress, by the legally relevant cutoff point."
+      },
+      "definition": "When a ceiling proceeding concerns land occupied by a qualifying dwelling building completed or under construction by the cutoff point, that built land is excluded from the vacant-land calculation."
+    },
+    {
+      "legal_issue": "A ceiling determination is invalid when excluding a pre-cutoff built property leaves the person’s countable landholding within the applicable ceiling.",
+      "material_facts": [
+        "The owner held a built-up property of 414.56 square metres, including a building covering 321 square metres, constructed before the Act commenced.",
+        "The owner also held a separate vacant property of 339.65 square metres.",
+        "The authorities added the two properties and treated 254.21 square metres as excess over the 500-square-metre ceiling.",
+        "Even without allowing any appurtenant land for the building, the remaining 93.56 square metres of the built-up property together with the vacant property totalled less than 500 square metres.",
+        "The purchaser obtained a conveyance and possession of the vacant property, and the excess-land proceedings were challenged."
+      ],
+      "conclusion": "The vacant property was within the permissible ceiling once the qualifying built-up property was excluded. The excess-land determination and related proceedings were quashed, and the appeal was allowed.",
+      "legal_principle": "Sections 3 and 4 establish the restriction on holding vacant land beyond the applicable ceiling. In applying that restriction, land excluded from vacant land under Section 2(q)(ii) or (iii) cannot be added back under Section 4(9), as clarified by Section 4(11). The Court interpreted these provisions in light of the appointed day and the gap period, and referred to Section 5 as supporting that interpretation. It relied on the Act’s purpose described in Union of India v. V.B. Chaudhary and Maharao Sahib Shri Bhim Singhji v. Union of India; State of U.P. v. L.J. Johnson was distinguished as addressing a different statutory category.",
+      "rule": {
+        "if": "urban_land_ceiling_proceeding and qualifying_built_land_excluded and remaining_countable_land_within_ceiling",
+        "then": "excess_land_determination_invalid"
+      },
+      "predicates": {
+        "urban_land_ceiling_proceeding": "An authority has determined that a person holds urban land beyond the applicable ceiling.",
+        "qualifying_built_land_excluded": "A qualifying built property is omitted from the countable vacant land because its building was completed or under construction by the cutoff point.",
+        "remaining_countable_land_within_ceiling": "After that exclusion, the person’s remaining countable land does not exceed the applicable ceiling."
+      },
+      "definition": "An excess-land determination is invalid when, in a ceiling proceeding, excluding qualifying built land leaves the person’s countable land within the ceiling."
+    }
+  ],
+  "seconds": 10.9
+}

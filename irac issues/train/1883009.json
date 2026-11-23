@@ -1,0 +1,193 @@
+{
+  "doc_id": "1883009",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 112527,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4916,
+    "prompt_tokens": 27106,
+    "total_tokens": 32022,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Rateable value under rent-control legislation is based on the rent reasonably expected from a hypothetical tenant, subject to standard rent as an upper limit, and may be lower than that limit.",
+      "material_facts": [
+        "The properties were assessed to property tax under municipal legislation defining rateable value by reference to the annual rent at which the property might reasonably be expected to be let.",
+        "The properties were subject to rent-control legislation, and the assessments raised the question whether rateable value must equal standard rent or could be lower.",
+        "Some actual or contractual rents, or the standard rent calculated under the rent-control legislation, could exceed the rent reasonably obtainable in light of the property’s circumstances."
+      ],
+      "conclusion": "The assessing authority must determine the rent the owner could reasonably expect from a hypothetical tenant; that figure cannot exceed the standard rent determined under the rent-control legislation, but it may be lower.",
+      "legal_principle": "Under section 116(1) of the Delhi Municipal Corporation Act, 1957, and the materially similar provisions of the Punjab Municipal Act, 1911, rateable value is measured by the annual rent reasonably expected from year to year. Where rent control applies, the standard rent is the ceiling on that expectation, not an automatic rateable value. The Court explained Dewan Daulat Ram v. New Delhi Municipal Committee, which held that rateable value cannot exceed standard rent but did not require it to equal standard rent.",
+      "rule": {
+        "if": "municipal_property_tax_assessment and rent_control_applies",
+        "then": "rateable_value_is_reasonably_expected_rent_capped_by_standard_rent"
+      },
+      "predicates": {
+        "municipal_property_tax_assessment": "A municipal authority assesses land or a building to property tax by reference to its rental value.",
+        "rent_control_applies": "Rent-control law limits the rent that may lawfully be recovered for the property."
+      },
+      "definition": "When a municipal property-tax assessment concerns rent-controlled property, the output is a rateable value based on reasonably expected rent that does not exceed standard rent."
+    },
+    {
+      "legal_issue": "Standard rent is determined by the substantive formulas for standard rent and lawful increases, while the provision for fixation of standard rent supplies procedure and limited discretion rather than an independent power to choose any reasonable figure.",
+      "material_facts": [
+        "The rent-control statute defined standard rent by reference to the rent described in its substantive standard-rent provision and any increase permitted by its increase provision.",
+        "The statute separately authorized a controller to fix standard rent on application and directed the controller to have regard to the substantive formulas and the circumstances of the case.",
+        "The municipal authorities argued that the figure fixed by a controller or derived by the assessing authority was invariably the measure of rateable value."
+      ],
+      "conclusion": "Standard rent means the rent determined under the substantive standard-rent provisions, including any lawful increase; the fixation provision is procedural and permits only limited adjustment consistent with those provisions.",
+      "legal_principle": "Sections 2(k), 6, 7 and 9(1)–(2) of the Delhi Rent Control Act, 1958, govern the definition and fixation of standard rent. Section 2(k) is exhaustive: it refers to standard rent under section 6 or increased standard rent under section 7. Section 9 does not create a separate definition or unfettered discretion; its discretion permits adjustments consistent with the statutory formula and relevant circumstances.",
+      "rule": {
+        "if": "rent_controlled_standard_rent_determination and substantive_rent_formula_applies",
+        "then": "standard_rent_follows_substantive_formula_with_only_limited_adjustment"
+      },
+      "predicates": {
+        "rent_controlled_standard_rent_determination": "A decision-maker determines the standard rent of premises governed by rent-control law.",
+        "substantive_rent_formula_applies": "The rent-control law provides a substantive formula applicable to the premises."
+      },
+      "definition": "When standard rent is being determined and a substantive formula applies, the output is standard rent following that formula with only limited adjustment."
+    },
+    {
+      "legal_issue": "The residual power to fix reasonable rent is available only when standard rent cannot be determined by the substantive formulas, not merely when an owner fails to provide satisfactory evidence.",
+      "material_facts": [
+        "The municipal authorities declined to apply the statutory standard-rent formula in some assessments because owners had not provided satisfactory documentary evidence of construction cost or land value.",
+        "The authorities instead relied on the residual power to fix reasonable rent by reference to the premises and comparable premises.",
+        "The Court considered whether evidentiary shortcomings made it impossible to determine standard rent under the ordinary formula."
+      ],
+      "conclusion": "An authority may use the residual procedure only if it is genuinely not possible to determine standard rent under the substantive formula; lack of satisfactory evidence does not by itself establish that condition, and the authority must make its own estimate from available material.",
+      "legal_principle": "Section 9(4) of the Delhi Rent Control Act, 1958, applies only when standard rent cannot be determined on the principles in section 6. Even under the residual procedure, comparable standard rents and the situation, locality, condition and amenities of the premises guide the determination. The ordinary formula cannot be displaced merely because the owner’s evidence is unsatisfactory.",
+      "rule": {
+        "if": "rent_controlled_standard_rent_determination and substantive_rent_formula_applies and owner_evidence_is_unsatisfactory",
+        "then": "residual_rent_fixation_is_unavailable_on_evidence_failure_alone"
+      },
+      "predicates": {
+        "rent_controlled_standard_rent_determination": "A decision-maker determines the standard rent of premises governed by rent-control law.",
+        "substantive_rent_formula_applies": "The rent-control law provides a substantive formula applicable to the premises.",
+        "owner_evidence_is_unsatisfactory": "The owner does not provide satisfactory evidence of a fact needed to apply the substantive formula."
+      },
+      "definition": "When the substantive formula applies, unsatisfactory owner evidence alone does not produce the output that residual rent fixation is available."
+    },
+    {
+      "legal_issue": "For self-occupied premises that have never been let, standard rent is determined using the applicable construction-cost and land-value formula rather than a formula premised on a first actual letting.",
+      "material_facts": [
+        "Some premises were occupied by their owners and had never been let to a tenant.",
+        "The municipal authorities contended that the rent agreed upon on a hypothetical letting could determine standard rent under the provision applicable to premises first let after a specified construction date.",
+        "The relevant provision tied that agreed rent to the date of first letting and to a period running from that actual letting."
+      ],
+      "conclusion": "Where premises have never been actually let, the first-letting provision does not apply; standard rent is determined under the applicable formula based on reasonable construction cost and the market price of the land, and that standard rent is the upper limit of rateable value.",
+      "legal_principle": "Sections 6(1)(A)(2)(b) and 6(2)(b) of the Delhi Rent Control Act, 1958, distinguish the construction-cost and land-value formula from the provision that deems rent agreed at first letting to be standard rent for a defined period. Section 6(2)(b) presupposes an actual first letting. The rateable-value principles in Dewan Daulat Ram apply to owner-occupied as well as tenanted buildings.",
+      "rule": {
+        "if": "municipal_property_tax_assessment and premises_are_self_occupied and premises_have_never_been_actually_let",
+        "then": "standard_rent_uses_applicable_construction_and_land_value_formula"
+      },
+      "predicates": {
+        "municipal_property_tax_assessment": "A municipal authority assesses land or a building to property tax by reference to its rental value.",
+        "premises_are_self_occupied": "The owner occupies the premises rather than letting them to a tenant.",
+        "premises_have_never_been_actually_let": "No actual tenancy of the premises has occurred."
+      },
+      "definition": "For a property-tax assessment of premises occupied by the owner and never actually let, the output is standard rent determined by the applicable construction-and-land-value formula."
+    },
+    {
+      "legal_issue": "Where a building contains distinct units of occupation, rateable value is assessed for the building as a whole by adding the reasonable expected rent of each unit, with each unit’s standard rent limiting its expected rent.",
+      "material_facts": [
+        "Some properties comprised distinct parts intended to be occupied as separate units, with some units owner-occupied and others tenanted.",
+        "Municipal tax was assessed on the premises as a whole rather than treating every part as an independently assessable property.",
+        "Applying the construction-cost and land-value formula to an individual unit alone would not sensibly allocate the land value to that unit."
+      ],
+      "conclusion": "The authority must determine standard rent for the building and apportion it among distinct units, ordinarily by floor area while accounting for differences in situation, condition and amenities; it must then determine reasonable expected rent for each unit within that unit’s standard-rent limit and total those rents to obtain the building’s rateable value.",
+      "legal_principle": "Sections 6(1)(A)(2)(b) and 6(1)(B)(2)(b) of the Delhi Rent Control Act, 1958, supply the relevant standard-rent formulas. The Court held that the formula should be applied to the building and the resulting standard rent apportioned among units, rather than adding the land value separately for each unit. Under section 116(1) of the Delhi Municipal Corporation Act, 1957, expected rent remains the measure of rateable value and cannot exceed the applicable standard rent. Section 120(3) supports assessment of the building as a whole where it is separately owned in parts, flats or rooms.",
+      "rule": {
+        "if": "municipal_property_tax_assessment and building_contains_distinct_occupation_units",
+        "then": "building_rateable_value_is_sum_of_unit_rents_each_capped_by_unit_standard_rent"
+      },
+      "predicates": {
+        "municipal_property_tax_assessment": "A municipal authority assesses land or a building to property tax by reference to its rental value.",
+        "building_contains_distinct_occupation_units": "A building contains separate parts intended to be occupied as distinct units."
+      },
+      "definition": "When a building has distinct occupation units in a municipal property-tax assessment, the output is a building rateable value formed by summing each unit’s reasonably expected rent subject to its standard-rent limit."
+    },
+    {
+      "legal_issue": "A restricted leasehold interest can have an ascertainable market price for determining standard rent, and the restrictions affecting transfer must be reflected in that price.",
+      "material_facts": [
+        "Some premises stood on leasehold land that could be transferred only to an eligible member of a cooperative housing society and only with the lessor’s prior consent.",
+        "The lessor could refuse consent, claim a share of the unearned increase, and exercise a pre-emptive purchase right.",
+        "The municipal authorities treated the land’s market price as unascertainable and resorted to the residual rent-fixation provision."
+      ],
+      "conclusion": "The market price is ascertainable by hypothesizing that the required consent is given and valuing the interest subject to its transfer restrictions and financial burdens; those restrictions depress the price, but do not make it unascertainable. The ordinary standard-rent formula therefore applies rather than the residual procedure.",
+      "legal_principle": "Sections 6(1)(A)(2)(b) and 6(1)(B)(2)(b) of the Delhi Rent Control Act, 1958, require account to be taken of market price of the land. Section 9(4) is unavailable where that price can be ascertained. The Court relied on Commissioner of Wealth Tax v. P.N. Sikand, which recognizes that burdens running with a leasehold interest must be accounted for in valuing it.",
+      "rule": {
+        "if": "rent_controlled_standard_rent_determination and leasehold_transfer_is_restricted and transfer_remains_possible_with_consent",
+        "then": "restricted_leasehold_market_price_is_ascertainable_with_restrictions_reflected"
+      },
+      "predicates": {
+        "rent_controlled_standard_rent_determination": "A decision-maker determines the standard rent of premises governed by rent-control law.",
+        "leasehold_transfer_is_restricted": "The interest in the land is subject to limits on who may receive it or on the consent required for transfer.",
+        "transfer_remains_possible_with_consent": "A transfer of the land interest is possible if the required consent is obtained."
+      },
+      "definition": "When standard rent is being determined for premises on restricted but transferable leasehold land, the output is an ascertainable market price that reflects the restrictions."
+    },
+    {
+      "legal_issue": "When premises are extended or added to in stages, standard rent and rateable value must be determined for the premises as a whole or for a distinct added unit, without counting the land value more than once.",
+      "material_facts": [
+        "Some properties had been constructed in stages, with additions made after an original structure was built.",
+        "An addition could extend a self-occupied property, become part of an existing tenancy, or constitute a separate unit of occupation.",
+        "Applying the construction-cost and land-value formula separately to an addition would count the same land value again."
+      ],
+      "conclusion": "A non-distinct extension to self-occupied premises is assessed with the original premises as one unit; an addition forming part of an existing tenancy is assessed with the premises as a whole, with any lawful increase in standard rent; and a distinct added unit is assessed using the principles for separate occupation units. The land value is not added again for an addition.",
+      "legal_principle": "Sections 6(1)(A)(2)(b) and 6(1)(B)(2)(b) of the Delhi Rent Control Act, 1958, provide the standard-rent formulas, while section 7 provides for a lawful increase when qualifying improvement or alteration costs are incurred. Section 116(1) of the Delhi Municipal Corporation Act, 1957, governs rateable value. The Court applied its principles for self-occupied and multi-unit premises to staged construction and held that the formula applies to the premises as a whole after an addition, not to the addition as though it alone stood on the land.",
+      "rule": {
+        "if": "municipal_property_tax_assessment and premises_were_added_to_in_stages",
+        "then": "staged_property_is_assessed_as_a_whole_or_by_distinct_unit_without_recounting_land_value"
+      },
+      "predicates": {
+        "municipal_property_tax_assessment": "A municipal authority assesses land or a building to property tax by reference to its rental value.",
+        "premises_were_added_to_in_stages": "A building was constructed in stages or later additions were made to an existing building."
+      },
+      "definition": "When premises are assessed after staged construction or later additions, the output is an assessment of the whole premises or a distinct added unit without counting land value again."
+    },
+    {
+      "legal_issue": "For general municipal taxation, a building separately owned in parts, flats or rooms is assessed as a whole, with the several owners jointly and severally liable, except where the statute treats a portion as a separate property.",
+      "material_facts": [
+        "The municipal legislation generally levied tax on land and buildings as a whole rather than on each independently owned part.",
+        "The statute provided joint and several liability for owners of buildings separately owned in parts, flats or rooms.",
+        "The statute also treated certain portions as separate properties when they were subject to a higher tax rate or an applicable exemption."
+      ],
+      "conclusion": "The building is assessed as a whole and its several owners are jointly and severally liable for the tax, except for portions that the statute expressly treats as separate properties.",
+      "legal_principle": "Sections 114 and 115 of the Delhi Municipal Corporation Act, 1957, provide for taxation of land and buildings as a whole and specify circumstances in which a portion is treated as a separate property. Section 120(3) makes the liability of several owners of a building separately owned in parts, flats or rooms joint and several.",
+      "rule": {
+        "if": "municipal_general_property_tax_assessment and building_is_separately_owned_in_parts and no_portion_is_statutorily_separate",
+        "then": "whole_building_is_assessed_and_owners_are_jointly_and_severally_liable"
+      },
+      "predicates": {
+        "municipal_general_property_tax_assessment": "A municipal authority assesses a building to general property tax.",
+        "building_is_separately_owned_in_parts": "Different owners separately own parts, flats or rooms within one building.",
+        "no_portion_is_statutorily_separate": "No portion qualifies for statutory treatment as a separate property."
+      },
+      "definition": "When a building is separately owned in parts and no portion is statutorily separate, the output is assessment of the whole building with joint and several owner liability."
+    },
+    {
+      "legal_issue": "A direct constitutional petition that alleges no violation of a fundamental right is not maintainable, although the Court may decide the merits when the parties agree that it should do so on an assumed basis of maintainability.",
+      "material_facts": [
+        "Some petitions had been filed directly in the Court under the constitutional provision for enforcement of fundamental rights.",
+        "Those petitions did not complain of a violation of any fundamental right.",
+        "The parties agreed that the Court should decide the common merits questions on the assumption that the petitions were maintainable."
+      ],
+      "conclusion": "The direct petitions were not maintainable, but the Court proceeded to dispose of them on the merits by agreement and on the assumption that they were maintainable.",
+      "legal_principle": "Article 32 of the Constitution provides a remedy for enforcement of fundamental rights. The Court held that petitions filed directly under Article 32 without a complaint of fundamental-rights violation were not maintainable, but proceeded on the merits by agreement because the same legal issues would be decided in the appeals and transferred petitions.",
+      "rule": {
+        "if": "direct_fundamental_rights_petition and no_fundamental_right_violation_is_alleged",
+        "then": "petition_is_not_maintainable"
+      },
+      "predicates": {
+        "direct_fundamental_rights_petition": "A proceeding is filed directly in the constitutional court seeking enforcement of fundamental rights.",
+        "no_fundamental_right_violation_is_alleged": "The petition does not allege that a fundamental right has been violated."
+      },
+      "definition": "When a proceeding is filed directly to enforce fundamental rights but alleges no fundamental-rights violation, the output is that the petition is not maintainable."
+    }
+  ],
+  "seconds": 27.1
+}

@@ -1,0 +1,63 @@
+{
+  "doc_id": "1555819",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38662,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1883,
+    "prompt_tokens": 10181,
+    "total_tokens": 12064,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A substituted rent-arrears provision that has been held prospective does not govern an eviction suit already pending when it was enacted.",
+      "material_facts": [
+        "The eviction suit was pending when the provision governing protection from eviction for rent arrears was substituted.",
+        "The tenant relied on the substituted provision for protection, but accepted that an earlier Supreme Court decision had held it prospective."
+      ],
+      "conclusion": "The substituted provision did not apply retrospectively, and the case was governed by the earlier version of the rent-arrears provision.",
+      "legal_principle": "Following Arjun Khiamal Makhijani v. Jamnadas C. Tuliani, [1989] 4 SCC 612, the substituted provision is prospective because its text does not support retrospective operation.",
+      "rule": {
+        "if": "eviction_suit_for_rent_arrears and (substituted_provision_enacted_during_pending_suit and substituted_provision_is_prospective)",
+        "then": "earlier_rent_arrears_provision_governs"
+      },
+      "predicates": {
+        "eviction_suit_for_rent_arrears": "A landlord brought a suit seeking eviction on the ground of rent arrears.",
+        "substituted_provision_enacted_during_pending_suit": "A replacement provision governing protection from eviction for rent arrears was enacted while the eviction suit was pending.",
+        "substituted_provision_is_prospective": "The replacement provision has been held to operate prospectively rather than retrospectively."
+      },
+      "definition": "When an eviction suit for rent arrears is pending as a prospective replacement provision is enacted, the earlier rent-arrears provision governs."
+    },
+    {
+      "legal_issue": "A mutually agreed fixed monthly payment toward education cess and other taxes, capped at the owner’s actual tax liability, forms part of rent payable monthly for applying the mandatory arrears-based eviction rule.",
+      "material_facts": [
+        "The tenancy agreement provided for monthly rent, payable regularly in advance, and described the tenancy as monthly.",
+        "In addition to standard rent, the tenant agreed to pay a fixed monthly amount for education cess and other taxes.",
+        "The agreed monthly tax amount did not exceed the amount actually payable by the owner.",
+        "The tenant was in arrears for more than six months, there was no dispute about standard rent or permitted increases, and the tenant did not pay the arrears within one month after receiving the demand notice.",
+        "The tenant did not apply to have standard rent or permitted increases fixed."
+      ],
+      "conclusion": "The agreed monthly tax payment formed part of rent payable by the month, so the case fell under section 12(3)(a) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947; because the tenant failed to satisfy that provision’s requirements, the eviction order was justified.",
+      "legal_principle": "Under sections 12(1), 12(2), and 12(3)(a) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, eviction for arrears is mandatory when rent is payable monthly, there is no dispute about standard rent or permitted increases, arrears have continued for at least six months, and the tenant fails to pay within one month after notice. Sections 4(a), 8, 13, and 15 of the Maharashtra Education (Cess) Act establish the owner’s liability for cess and right to recover it from the occupant; recovery is treated as rent and falls within permitted increases under sections 5(7) and 7 of the Rent Act. Although education cess is ordinarily payable yearly and may therefore take a case outside section 12(3)(a), parties may agree to a fixed monthly reimbursement not exceeding the owner’s actual tax liability, in which case that amount is rent payable monthly. The Court relied on Panchal Mohanlal Ishwardas v. Maheshwari Mills Ltd., [1962] 3 G.L.J. 574; Prakash Surya v. Rasiklal Ishverlal Mehta, [1978] 1 R.C.R. 10; Vanlila Vadilal Shah v. Mahendrakumar J. Shah, A.I.R. 1975 Guj. 163; Muktabai Gangadas Kadam v. Muktabai Laxman Palwankar, [1969] 71 B.L.R. 752; and Bombay Municipal Corporation v. Life Insurance Corporation of India, Bombay, [1971] 1 S.C.R. 335. It disapproved the contrary view in Vishwambar Hemandas v. Narendra Jethalal Gajjar, A.I.R. 1986 Guj. 153.",
+      "rule": {
+        "if": "eviction_suit_for_rent_arrears and monthly_tenancy and agreed_fixed_monthly_tax_payment and tax_payment_within_owner_actual_liability and arrears_at_least_six_months and no_dispute_about_rent_or_increases and not paid_within_month_after_demand_notice",
+        "then": "tenant_is_liable_to_eviction_under_monthly_arrears_rule"
+      },
+      "predicates": {
+        "eviction_suit_for_rent_arrears": "A landlord brought a suit seeking eviction because the tenant had not paid rent and permitted increases.",
+        "monthly_tenancy": "The tenancy terms made the rent payable by the month.",
+        "agreed_fixed_monthly_tax_payment": "The landlord and tenant agreed that the tenant would pay a fixed amount each month toward taxes or cess chargeable in respect of the premises.",
+        "tax_payment_within_owner_actual_liability": "The agreed tax reimbursement did not exceed the amount actually payable by the owner.",
+        "arrears_at_least_six_months": "The tenant’s rent and permitted increases were in arrears for at least six months.",
+        "no_dispute_about_rent_or_increases": "There was no dispute about the amount of standard rent or permitted increases.",
+        "paid_within_month_after_demand_notice": "The tenant paid the arrears within one month after receiving the landlord’s demand notice."
+      },
+      "definition": "In an eviction suit for rent arrears, a monthly tenancy with an agreed fixed monthly tax reimbursement within the owner’s actual liability is subject to the monthly-arrears rule when the tenant has at least six months of arrears, no dispute about rent or increases, and does not pay within a month after demand; the output is liability to eviction."
+    }
+  ],
+  "seconds": 11.9
+}

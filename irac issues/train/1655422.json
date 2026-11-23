@@ -1,0 +1,122 @@
+{
+  "doc_id": "1655422",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 40381,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3259,
+    "prompt_tokens": 9708,
+    "total_tokens": 12967,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A natural guardian’s status does not by itself determine who should have interim custody of a child.",
+      "material_facts": [
+        "The father was the children’s natural guardian and had not been found unfit.",
+        "The pending proceeding concerned guardianship, while the immediate question was where the children should stay during that proceeding.",
+        "The maternal relatives had interim custody, and the Court considered the children’s welfare in deciding whether to change it."
+      ],
+      "conclusion": "Guardianship and custody are distinct questions; interim custody may be placed with a relative if the children’s welfare is better served there, even though their father remains their natural guardian.",
+      "legal_principle": "Section 12 of the Guardians and Wards Act, 1890 empowers the court to make a proper order for temporary custody and protection. Section 19 limits appointment of another guardian when the father is alive and fit, but that restriction does not determine the separate question of custody. The Court relied on Rosy Jacob v. Jacob A. Chakramakkal, which distinguishes the right to guardianship from the right to custody, and Mt. Siddiqunnisa Bibi v. Nizamuddin Khan, which recognizes a distinct right to custody under Mohammedan law.",
+      "rule": {
+        "if": "interim_custody_proceeding and father_is_natural_guardian and father_not_found_unfit",
+        "then": "custody_decided_by_child_welfare_not_guardian_status"
+      },
+      "predicates": {
+        "interim_custody_proceeding": "The proceeding asks the court to decide where a child should stay temporarily while a guardianship matter remains pending.",
+        "father_is_natural_guardian": "The child’s father is the natural guardian.",
+        "father_not_found_unfit": "The court has not found the father unfit to care for the child."
+      },
+      "definition": "When a temporary-custody proceeding involves a father who is the natural guardian and has not been found unfit, the child’s welfare, rather than the father’s guardian status alone, determines custody."
+    },
+    {
+      "legal_issue": "Interim custody should not be changed from lawful, settled care when the children’s welfare does not require an immediate change.",
+      "material_facts": [
+        "The children were in the maternal relatives’ lawful custody under an interim court order.",
+        "The children appeared to be receiving affection and care from the relatives, and the older child was reluctant to live with her father.",
+        "The children were closely bonded to each other, and separating them was considered undesirable.",
+        "The father had recently remarried, and the children had spent little time with their stepmother.",
+        "The Court was deciding interim custody only, not the final guardianship application."
+      ],
+      "conclusion": "The children’s interim custody was to remain with the maternal relatives until the guardianship proceeding was decided, with the father retaining visitation rights.",
+      "legal_principle": "Under Section 12 of the Guardians and Wards Act, 1890, temporary custody must be determined by the children’s welfare. The Court relied on R.V. Srinath Prasad v. Nandamuri Jayakrishna for the need for sufficient and compelling reasons before immediately changing custody, Mausami Moitra Ganguli v. Jayant Ganguli for the importance of stability and continuity, and Gaurav Nagpal v. Sumedha Nagpal to distinguish lawful custody from custody retained by disobeying court orders. The Court also considered the children’s welfare under Section 17 and the personal-law preference discussed in Rafiq v. Bashiran.",
+      "rule": {
+        "if": "interim_custody_proceeding and current_custody_is_lawful and children_are_settled_with_current_caregivers and (child_resists_change or siblings_should_remain_together) and no_compelling_reason_for_immediate_change",
+        "then": "interim_custody_remains_with_current_caregivers"
+      },
+      "predicates": {
+        "interim_custody_proceeding": "The court is deciding temporary custody while a guardianship or custody proceeding remains pending.",
+        "current_custody_is_lawful": "The children are living with their current caregivers under an order authorizing that arrangement.",
+        "children_are_settled_with_current_caregivers": "The children have an established routine and are receiving care from their current caregivers.",
+        "child_resists_change": "A child has expressed reluctance to leave the current caregivers.",
+        "siblings_should_remain_together": "The children have a bond or circumstances that favor keeping them together.",
+        "no_compelling_reason_for_immediate_change": "The evidence does not establish a sufficient reason to change the children’s living arrangement immediately."
+      },
+      "definition": "In an interim-custody proceeding, lawful and settled care is maintained when the children resist a change or should remain together and no compelling reason requires an immediate change."
+    },
+    {
+      "legal_issue": "A personal-law preference for a child’s maternal relatives may be considered in interim custody without displacing the paramount consideration of the child’s welfare.",
+      "material_facts": [
+        "The dispute concerned interim custody of children whose mother had died.",
+        "The maternal relatives sought custody, and the father remained the natural guardian.",
+        "The Court found a prima facie preference for the maternal relatives under the children’s personal law and found no conflict between that course and the children’s welfare."
+      ],
+      "conclusion": "The personal-law preference for maternal relatives, particularly the maternal aunt, could be applied to interim custody, subject to the children’s welfare.",
+      "legal_principle": "Section 19 of the Guardians and Wards Act, 1890 concerns appointment of a guardian and does not bar the court from placing custody with a relative. Section 12 permits temporary-custody orders, while Section 17 makes welfare central to decisions concerning a minor. The Court relied on Rafiq v. Bashiran for the distinction between appointment of a guardian and custody, and on Mt. Siddiqunnisa Bibi v. Nizamuddin Khan concerning custody rights under Mohammedan law. It also considered the preference described in Section 353 of Mohammedan Law and the welfare principle in Hassan Bhatt v. Ghulam Mohamad Bhat.",
+      "rule": {
+        "if": "interim_custody_proceeding and personal_law_prefers_maternal_relative and personal_law_course_is_consistent_with_child_welfare",
+        "then": "maternal_relative_preference_applies_subject_to_child_welfare"
+      },
+      "predicates": {
+        "interim_custody_proceeding": "The court is deciding temporary custody while a guardianship or custody proceeding remains pending.",
+        "personal_law_prefers_maternal_relative": "The personal law applicable to the child gives a maternal relative a preference for custody.",
+        "personal_law_course_is_consistent_with_child_welfare": "The arrangement favored by the personal-law preference is consistent with the child’s welfare on the facts before the court."
+      },
+      "definition": "In an interim-custody proceeding, a preference for a maternal relative is applied when that arrangement is consistent with the child’s welfare."
+    },
+    {
+      "legal_issue": "A sufficiently mature child’s stated custody preference may be given weight in an interim-custody decision without being treated as conclusive.",
+      "material_facts": [
+        "The older child expressed reluctance to live with her father and a preference to remain with the maternal relatives.",
+        "The younger child was too young to form an intelligent opinion about who should care for him.",
+        "The court was deciding interim custody rather than final guardianship."
+      ],
+      "conclusion": "The older child’s preference should not be overlooked and may be given weight, but it is not conclusive; the younger child’s preference could not be treated as an intelligent choice.",
+      "legal_principle": "The paramount consideration in custody is the child’s welfare. The Court distinguished the assessment of a child’s preference in interim custody from the final guardianship determination and considered Bal Krishna Pandey v. Sanjeev Bajpayee in relation to the limited conclusiveness of a child’s preference at a tender age.",
+      "rule": {
+        "if": "interim_custody_proceeding and older_child_expresses_preference and older_child_can_form_intelligent_preference",
+        "then": "older_child_preference_given_weight_but_not_conclusive"
+      },
+      "predicates": {
+        "interim_custody_proceeding": "The court is deciding temporary custody while a guardianship or custody proceeding remains pending.",
+        "older_child_expresses_preference": "An older child has stated which caregiver the child wishes to live with.",
+        "older_child_can_form_intelligent_preference": "The older child is capable of expressing a considered preference about care and residence."
+      },
+      "definition": "In an interim-custody proceeding, a considered preference expressed by an older child is weighed but does not determine custody by itself."
+    },
+    {
+      "legal_issue": "Strict requirements governing interim injunctions do not fully govern decisions about the custody of children.",
+      "material_facts": [
+        "The maternal relatives sought interim protection of the children in a pending guardianship proceeding.",
+        "The father disputed the relatives’ allegations and alleged that they had concealed material facts.",
+        "The Court could not conclusively resolve those disputed allegations at the interim stage and focused on the children’s welfare."
+      ],
+      "conclusion": "The strict parameters governing interim injunctions do not have full application in child-custody matters, which must be decided with the child’s welfare as the primary consideration.",
+      "legal_principle": "Section 12 of the Guardians and Wards Act, 1890 authorizes temporary-custody and protection orders. The Court relied on Nil Ratan Kundu v. Abhijit Kundu, which states that custody courts are not bound by strict rules of evidence or procedure and that the child’s welfare is paramount; strict interim-injunction parameters therefore do not have full play in custody matters.",
+      "rule": {
+        "if": "child_custody_proceeding and interim_injunction_standards_invoked",
+        "then": "strict_injunction_parameters_not_fully_applicable"
+      },
+      "predicates": {
+        "child_custody_proceeding": "The proceeding asks a court to decide the care or custody of a child.",
+        "interim_injunction_standards_invoked": "A party asks the court to assess temporary custody by applying the usual requirements for an interim injunction."
+      },
+      "definition": "When a party invokes ordinary interim-injunction requirements in a child-custody proceeding, those requirements do not fully govern the decision."
+    }
+  ],
+  "seconds": 19.6
+}

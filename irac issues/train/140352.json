@@ -1,0 +1,82 @@
+{
+  "doc_id": "140352",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25042,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2687,
+    "prompt_tokens": 7175,
+    "total_tokens": 9862,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The conclusiveness of an order in a claim proceeding is limited to the attachment and sale under the particular decree that gave rise to that proceeding.",
+      "material_facts": [
+        "A decree-holder attached land in execution of a money decree, and the claimants’ objections were allowed.",
+        "The decree-holder did not bring a suit to challenge the orders in the claim proceedings.",
+        "The later dispute concerned the right to sell the land in execution of a mortgage decree, rather than the money decree that had led to the claim proceedings."
+      ],
+      "conclusion": "The decree-holder was precluded from asserting that the land was liable to attachment and sale under the money decree, but the claim orders did not preclude him from asserting that it was liable to sale under the mortgage decree.",
+      "legal_principle": "Under Order XXI, rules 58 to 63 of the Code of Civil Procedure, a claim proceeding is a summary investigation, and its order does not operate as res judicata by itself. Rule 63 makes the order conclusive, absent a timely suit, only on whether the property was liable to attachment and sale in execution of the particular decree from which the claim proceeding arose. The Court approved Kandadai Narasimhachariar v. Raghava Pedayachi and rejected the broader approach suggested by Subbier v. Moideen Pitchai and Sarju Prasad Missir v. Maksudan Choudhuri.",
+      "rule": {
+        "if": "claim_proceeding_over_attachment and no_challenge_suit and later_dispute_involves_different_decree",
+        "then": "claim_order_bar_limited_to_original_execution"
+      },
+      "predicates": {
+        "claim_proceeding_over_attachment": "A party objected to an attachment in an execution proceeding, and the court decided the claim.",
+        "no_challenge_suit": "The party against whom the claim order was made did not bring a suit to challenge it.",
+        "later_dispute_involves_different_decree": "A later proceeding concerns attachment or sale under a decree different from the decree that gave rise to the claim proceeding."
+      },
+      "definition": "When an attachment claim was decided without a later challenge suit, the order bars relitigation only about execution under the decree that produced the claim proceeding, not about execution under a different decree."
+    },
+    {
+      "legal_issue": "A lease granted by a mortgagor outside the ordinary course of management does not bind the mortgagee or an auction-purchaser who acquires the mortgagee’s interest.",
+      "material_facts": [
+        "The relevant mortgages predated the statutory provision conferring a power on a mortgagor in possession to lease mortgaged property.",
+        "The mortgagor granted leases that purported to be permanent, some for premiums, after the property had been advertised for sale in execution of the mortgage decree.",
+        "The leases were found to have been created in bad faith and outside the ordinary course of management.",
+        "The property was purchased at an execution sale by the mortgagee."
+      ],
+      "conclusion": "The later-enacted leasing provision did not govern the leases; under the applicable earlier law, the leases were not in the ordinary course of management and were not binding on the mortgagee or the auction-purchaser.",
+      "legal_principle": "Section 65A of the Transfer of Property Act was inserted by the Transfer of Property (Amendment) Act, 1929, and the saving provision preserved the incidents of mortgages made before that amendment. Under the earlier law, a mortgagor in possession could make leases binding on the mortgagee only in the ordinary course of management, acting as the mortgagee’s agent or bailiff. The Court relied on Madan Mohan Singh v. Raj Kishori Kumari, Raja Kamakshya Narayan Singh Bahadur v. Chohan Ram, and Gobinda Chandra Saha v. Sasadhar Mandal. An auction-purchaser at a mortgage execution sale acquires both the mortgagor’s and the mortgagee’s interests; a lease that does not bind the mortgagee does not bind that purchaser.",
+      "rule": {
+        "if": "mortgage_enforcement_case and lease_under_preexisting_mortgage_regime and lease_outside_ordinary_management and property_acquired_at_mortgage_sale",
+        "then": "lease_not_binding_on_mortgagee_or_auction_purchaser"
+      },
+      "predicates": {
+        "mortgage_enforcement_case": "The dispute concerns enforcement of a mortgage over property in the mortgagor’s possession.",
+        "lease_under_preexisting_mortgage_regime": "The lease was made under a mortgage whose legal incidents were governed by the law before a later statutory leasing power took effect.",
+        "lease_outside_ordinary_management": "The mortgagor granted a lease on terms or in circumstances outside the ordinary management of the property as the mortgagee’s agent or bailiff.",
+        "property_acquired_at_mortgage_sale": "The property was purchased at a sale held to enforce the mortgage."
+      },
+      "definition": "If a mortgagor grants an out-of-course lease under an earlier mortgage regime and the property is sold to enforce the mortgage, the lease does not bind the mortgagee or the purchaser who acquires the mortgagee’s interest."
+    },
+    {
+      "legal_issue": "A lessee who allows mortgaged property to be sold in execution of a mortgage decree loses the right to redeem and cannot resist the auction-purchaser’s claim for possession.",
+      "material_facts": [
+        "The lessees held interests under leases of mortgaged land, although those leases did not bind the mortgagee.",
+        "The land was sold in execution of the mortgage decree.",
+        "The lessees did not obtain joinder in the mortgage litigation or seek an opportunity to redeem before allowing the sale to proceed.",
+        "The auction-purchaser sought possession of the land."
+      ],
+      "conclusion": "The lessees lost their right of redemption by allowing the land to be sold in execution of the mortgage decree and could not resist the auction-purchaser’s claim for possession.",
+      "legal_principle": "A lease outside the ordinary course of management remains binding between mortgagor and lessee, and the lessee may acquire an interest in the right of redemption. Under Order XXXIV, rule 1 of the Code of Civil Procedure, a qualifying lessee whose lease predates the mortgage suit must be joined or may retain a right of redemption. Under section 52 of the Transfer of Property Act, a lessee whose interest is created during the pendency of the mortgage suit is bound by the litigation’s result. A lessee may seek joinder and an opportunity to redeem, but if the property is allowed to be sold under the mortgage decree, the lessee cannot thereafter resist the purchaser’s claim for possession. The Court followed Raja Kamakshya Narayan Singh Bahadur v. Chohan Ram.",
+      "rule": {
+        "if": "mortgage_execution_case and lessee_has_redemption_interest and property_sold_under_mortgage_decree and lessee_allowed_sale_without_seeking_redemption",
+        "then": "lessee_cannot_redeem_or_resist_purchaser_possession"
+      },
+      "predicates": {
+        "mortgage_execution_case": "The proceeding concerns a sale of mortgaged property to enforce a mortgage decree.",
+        "lessee_has_redemption_interest": "A lessee has an interest in the mortgagor’s right to redeem the property.",
+        "property_sold_under_mortgage_decree": "The mortgaged property was sold in execution of the mortgage decree.",
+        "lessee_allowed_sale_without_seeking_redemption": "The lessee did not obtain an opportunity to redeem before allowing the sale to proceed."
+      },
+      "definition": "When a lessee with an interest in redemption allows a mortgage-decree sale to proceed without seeking redemption, the lessee cannot later redeem or resist the purchaser’s claim for possession."
+    }
+  ],
+  "seconds": 15.7
+}

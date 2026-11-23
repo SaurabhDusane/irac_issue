@@ -1,0 +1,60 @@
+{
+  "doc_id": "832651",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30015,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2812,
+    "prompt_tokens": 7528,
+    "total_tokens": 10340,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The assessing authority’s fallback power to determine annual value does not extend to the first assessment of a newly constructed building.",
+      "material_facts": [
+        "The building was newly constructed and was subject to building tax.",
+        "When the original assessment was made, the local authority had not fixed the building’s annual value.",
+        "The assessing authority initially assessed the building using an assumed rental basis."
+      ],
+      "conclusion": "The assessing authority could not use its fallback power to assess a newly constructed building for the first time; the initial assessment was without jurisdiction.",
+      "legal_principle": "Under Sections 5(2)–(4) and 6(3) of the Kerala Building Tax Act, 1975, the assessing authority’s power to determine annual value when the local authority has not done so is confined to cases involving a building already in existence that is subsequently repaired, improved, constructed upon, added to, or combined. It does not extend to a building newly constructed for the first time and assessable under Section 6(1). The court rejected an interpretation that would rewrite Section 6(3) and make the local authority’s role under Section 6(1) nugatory.",
+      "rule": {
+        "if": "building_tax_assessment_case and newly_constructed_building and assessing_authority_used_fallback_assessment",
+        "then": "fallback_assessment_is_without_jurisdiction"
+      },
+      "predicates": {
+        "building_tax_assessment_case": "The proceeding concerns an assessment of tax on a building.",
+        "newly_constructed_building": "The building was constructed for the first time, rather than being an existing building later repaired, improved, extended, or combined with another structure.",
+        "assessing_authority_used_fallback_assessment": "The assessing authority determined the building’s annual value itself because the local authority had not fixed it."
+      },
+      "definition": "When a building-tax assessment concerns a newly constructed building and the assessing authority uses its fallback method to assess it, that assessment is without jurisdiction."
+    },
+    {
+      "legal_issue": "A manifest error in an assessment may be rectified when the original assessment was made without jurisdiction, provided the affected taxpayer is given a hearing where the correction would enhance the assessment.",
+      "material_facts": [
+        "The original assessment of the newly constructed building was made by the assessing authority on an assumed rental basis, although the assessing authority lacked power to make that first assessment.",
+        "The local authority later fixed the building’s annual value, and the assessing authority used that determination as the basis for correcting the original assessment.",
+        "The correction increased the tax payable, and the taxpayer was given an opportunity to be heard before the rectification order was made.",
+        "The correction addressed the jurisdictional defect in the original assessment rather than reopening the assessment on a different basis or reassessing it through a different method."
+      ],
+      "conclusion": "The original assessment contained a mistake apparent from the record, and the assessing authority lawfully rectified it after giving the taxpayer an opportunity to be heard.",
+      "legal_principle": "Section 15(1) of the Kerala Building Tax Act, 1975 permits rectification of a mistake apparent from the record; its proviso requires a reasonable opportunity to be heard where rectification would enhance the assessment or reduce a refund. An apparent error is patent, manifest, or self-evident and cannot depend on an elaborate process of reasoning or a reargument on the merits. A mistake of law may be rectified when it is glaring and obvious. Rectification cannot be used to reopen an assessment or substitute a fresh assessment on a different basis. The court applied Hari Vishnu Kamath v. Ahmad Ishaque, Syed Yakoob v. Radha Krishnan, M.K. Venkatachalam, I.T.O. v. Bombay Dyeing and Manufacturing Co. Ltd., Master Construction Co. (P) Ltd. v. State of Orissa, and T.S. Balaram v. Volkart Brothers; it also considered Aradhana Lodge v. Tahsildar, Yousef v. State of Kerala, Kurian George v. Tehsildar, and Karunakaran Nair v. Tehsildar.",
+      "rule": {
+        "if": "building_tax_rectification_case and original_assessment_used_fallback_for_new_building and local_authority_later_fixed_annual_value and taxpayer_received_hearing",
+        "then": "rectification_of_initial_assessment_is_valid"
+      },
+      "predicates": {
+        "building_tax_rectification_case": "The proceeding challenges a tax authority’s correction of an earlier building-tax assessment.",
+        "original_assessment_used_fallback_for_new_building": "The initial assessment was made by the assessing authority using its own valuation method for a newly constructed building.",
+        "local_authority_later_fixed_annual_value": "After the initial assessment, the local authority fixed the building’s annual value.",
+        "taxpayer_received_hearing": "The taxpayer was given an opportunity to be heard before the correction was made."
+      },
+      "definition": "In a building-tax rectification proceeding, correction is valid when the initial assessment used the assessing authority’s own valuation method for a newly constructed building, the local authority later fixed the annual value, and the taxpayer received a hearing."
+    }
+  ],
+  "seconds": 21.0
+}

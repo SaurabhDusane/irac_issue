@@ -1,0 +1,75 @@
+{
+  "doc_id": "166486",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19341,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2524,
+    "prompt_tokens": 4880,
+    "total_tokens": 7404,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tribunal assigned authority over agricultural tenancy questions has exclusive jurisdiction to decide rival claims as to who held the tenancy, including whether the tenancy belonged to an individual or a joint family.",
+      "material_facts": [
+        "A civil suit for injunction was based on an alleged tenancy, and the parties disputed whether the tenancy was held by the plaintiff individually or by the joint family.",
+        "The civil court referred the tenancy question to the tribunal, which found that the tenancy was in favour of the joint family.",
+        "The tribunal separately considered rival claims to registration, and the civil courts treated the tribunal's determination as controlling."
+      ],
+      "conclusion": "The tribunal alone had jurisdiction to decide the rival tenancy claims; the civil court could decide other issues in the suit but could not decide the tenancy question.",
+      "legal_principle": "Sections 48A(5), 112(B)(b) and (bbb), and 133 empower the tribunal to determine rival claims to registration and questions of tenancy, and make its decision final; Section 133 prevents a civil court from deciding the referred tenancy question, while allowing it to proceed on other matters. The statutory scheme impliedly excludes civil-court jurisdiction under Section 9 of the Code of Civil Procedure. The Court approved the view in Guruvappa v. Manjappu Hengsu and found it consistent with Noor Mohd. Khan Ghouse Khan Soudagar v. Fakirappa Bharmappa Machenaballi; it held Appi Belchadthi v. Sheshi Belchadthi not to be good law.",
+      "rule": {
+        "if": "civil_suit_involves_tenancy_question and tribunal_received_rival_tenancy_claims",
+        "then": "tribunal_alone_decides_tenancy_question"
+      },
+      "predicates": {
+        "civil_suit_involves_tenancy_question": "A civil suit concerning land includes a dispute about whether a person was its tenant.",
+        "tribunal_received_rival_tenancy_claims": "Rival claims about the tenancy were presented to the tribunal empowered to decide tenancy matters."
+      },
+      "definition": "When a civil suit includes a tenancy dispute and rival tenancy claims are before the empowered tribunal, the tribunal alone decides the tenancy question."
+    },
+    {
+      "legal_issue": "Cultivation of land by any member of a joint family is treated as personal cultivation by the joint family for determining tenancy status.",
+      "material_facts": [
+        "The dispute concerned whether the alleged tenancy belonged to an individual or to a joint family.",
+        "The case involved cultivation by a member of the family, and the family asserted a tenancy claim."
+      ],
+      "conclusion": "For the statutory tenancy inquiry, land cultivated by any member of a joint family is deemed to be cultivated personally by the joint family.",
+      "legal_principle": "Section 2(11), Explanation II, provides that land is deemed to be cultivated personally by a joint family if cultivated by any member of that family; Section 2(17) defines a joint family. Read with Sections 45 and 48A, these provisions make the joint family the relevant cultivating tenant for the registration inquiry when a family member cultivates the land.",
+      "rule": {
+        "if": "agricultural_tenancy_registration_dispute and joint_family_member_cultivated_land",
+        "then": "joint_family_is_personal_cultivator"
+      },
+      "predicates": {
+        "agricultural_tenancy_registration_dispute": "A proceeding concerns the determination of tenant status or registration as an occupant of agricultural land.",
+        "joint_family_member_cultivated_land": "A member of a joint family cultivated the land."
+      },
+      "definition": "In an agricultural tenancy-registration dispute, cultivation of the land by a joint-family member means that the joint family is treated as the personal cultivator."
+    },
+    {
+      "legal_issue": "A tenancy determination that has been upheld in a concluded challenge and has become final bars reopening the same tenancy dispute in the civil appeal.",
+      "material_facts": [
+        "The tribunal independently considered the rival tenancy claims and reached the same determination as in the earlier inquiry.",
+        "A challenge to the tribunal's determination was later disposed of upholding it, and that determination became final before the appeal was decided.",
+        "The appeal concerned the same underlying tenancy dispute."
+      ],
+      "conclusion": "The final tribunal determination operated as res judicata, providing an additional reason to dismiss the appeal without interference.",
+      "legal_principle": "A determination of the same tenancy dispute that has been upheld in a concluded challenge and has become final operates as res judicata; the Court relied on that finality as an independent ground for dismissing the appeal. No earlier case or statutory provision is cited for this ground.",
+      "rule": {
+        "if": "appeal_from_civil_injunction_suit and tribunal_decided_same_tenancy_dispute and challenge_to_tribunal_decision_became_final",
+        "then": "same_tenancy_dispute_is_barred_by_res_judicata"
+      },
+      "predicates": {
+        "appeal_from_civil_injunction_suit": "An appeal arises from a civil suit seeking an injunction concerning land.",
+        "tribunal_decided_same_tenancy_dispute": "The tribunal determined the tenancy dispute that is also raised in the appeal.",
+        "challenge_to_tribunal_decision_became_final": "A challenge to the tribunal's determination was concluded, upheld the determination, and became final."
+      },
+      "definition": "When an appeal from a civil injunction suit raises a tenancy dispute already determined by the tribunal and the challenge to that determination has become final, the same dispute is barred by res judicata."
+    }
+  ],
+  "seconds": 16.3
+}

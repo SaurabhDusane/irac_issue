@@ -1,0 +1,156 @@
+{
+  "doc_id": "727486",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9007,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3755,
+    "prompt_tokens": 2641,
+    "total_tokens": 6396,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A mixed question of fact and law that was not argued before the High Court cannot be raised for the first time in an appeal.",
+      "material_facts": [
+        "The appellants argued that delay in making the award caused the acquisition proceedings to lapse.",
+        "The High Court's order did not address that contention, and the Supreme Court treated it as not having been argued there."
+      ],
+      "conclusion": "The Supreme Court would not permit the appellants to raise the contention for the first time in the appeal.",
+      "legal_principle": "The Court considers matters dealt with or stated in the High Court's order and will not permit a party to raise a mixed question of fact and law or a disputed question for the first time in an appeal. The Court also stated that it could not look to affidavits filed before it to establish that the issue had been raised below.",
+      "rule": {
+        "if": "appeal_proceeding and issue_not_decided_below and mixed_or_disputed_issue",
+        "then": "court_does_not_consider_new_issue"
+      },
+      "predicates": {
+        "appeal_proceeding": "The matter is an appeal from a lower court's decision.",
+        "issue_not_decided_below": "The lower court's order does not deal with the issue.",
+        "mixed_or_disputed_issue": "The issue depends on mixed facts and law or on disputed facts."
+      },
+      "definition": "When an appeal raises a mixed or disputed issue that the lower court's order did not decide, the court does not consider that new issue."
+    },
+    {
+      "legal_issue": "Restitutive compensation is not the measure for determining compensation for compulsorily acquired land.",
+      "material_facts": [
+        "The appellants argued that the compensation offered was inadequate because they could not acquire alternative flats with it.",
+        "The Supreme Court stated that the theory of restitutive compensation does not apply to compensation determination under the land acquisition law."
+      ],
+      "conclusion": "The Supreme Court rejected restitutive compensation as the applicable measure for determining compensation.",
+      "legal_principle": "Section 23(1) of the Land Acquisition Act, 1894 governs the determination of compensation. The Court held that the theory of restitutive compensation is not applicable to that determination.",
+      "rule": {
+        "if": "compulsory_land_acquisition and claimant_seeks_replacement_cost_as_compensation",
+        "then": "restitutive_compensation_is_not_the_measure"
+      },
+      "predicates": {
+        "compulsory_land_acquisition": "The State compulsorily acquires land for a public purpose.",
+        "claimant_seeks_replacement_cost_as_compensation": "The claimant seeks compensation by relying on the cost or difficulty of obtaining replacement housing or property."
+      },
+      "definition": "If land is compulsorily acquired and the claimant relies on replacement cost, restitutive compensation is not the measure for determining compensation."
+    },
+    {
+      "legal_issue": "The Supreme Court will leave the adequacy of an acquisition compensation award to a pending compensation reference.",
+      "material_facts": [
+        "The land acquisition officer determined compensation for the building.",
+        "The owner sought a reference for determination of compensation, and that reference was pending in the High Court.",
+        "The appellants also relied on an alleged admission that the compensation should be higher."
+      ],
+      "conclusion": "The Supreme Court declined to determine whether the compensation awarded was adequate because the compensation reference was pending.",
+      "legal_principle": "Under sections 18 and 23(1) of the Land Acquisition Act, 1894, a claimant dissatisfied with the collector's determination may seek a reference, and the court determines proper compensation on evidence. The claimant bears the burden of proving that the offered compensation is inadequate.",
+      "rule": {
+        "if": "land_acquisition_appeal and compensation_reference_pending and claimant_challenges_compensation_adequacy",
+        "then": "supreme_court_leaves_compensation_adequacy_to_reference_court"
+      },
+      "predicates": {
+        "land_acquisition_appeal": "The matter is an appeal concerning compensation for compulsorily acquired land.",
+        "compensation_reference_pending": "A reference for determination of compensation remains pending before a court.",
+        "claimant_challenges_compensation_adequacy": "The claimant contends that the compensation offered for the acquired property is inadequate."
+      },
+      "definition": "When a land acquisition appeal challenges compensation adequacy while a compensation reference is pending, the Supreme Court leaves that determination to the reference court."
+    },
+    {
+      "legal_issue": "A request to prevent possession or eviction until a compensation reference is final cannot be granted after an award and payment or deposit of compensation entitle the acquiring authority to take possession.",
+      "material_facts": [
+        "An award had been made for the acquired property.",
+        "The appellants sought a direction that they not be ejected until the compensation reference was finally decided.",
+        "The Court stated that, once compensation has been deposited or paid, the acquiring authority may take possession and possession taken vests in the State free from encumbrances."
+      ],
+      "conclusion": "The Supreme Court refused to direct that the appellants not be ejected until the reference proceedings became final.",
+      "legal_principle": "Under sections 31 and 16 of the Land Acquisition Act, 1894, when an award has been made and compensation has been paid or deposited, the acquiring authority may take possession; possession so taken vests in the State free from encumbrances.",
+      "rule": {
+        "if": "land_acquisition_appeal and award_made and compensation_paid_or_deposited and claimant_seeks_to_delay_possession_until_reference_final",
+        "then": "court_does_not_bar_possession_until_reference_final"
+      },
+      "predicates": {
+        "land_acquisition_appeal": "The matter is an appeal concerning a compulsory land acquisition.",
+        "award_made": "An award determining compensation for the acquired land has been made.",
+        "compensation_paid_or_deposited": "The compensation has been paid to the claimant or deposited for payment.",
+        "claimant_seeks_to_delay_possession_until_reference_final": "The claimant asks the court to prevent possession or eviction until the compensation reference is finally determined."
+      },
+      "definition": "When an award has been made and compensation paid or deposited, a request to delay possession until a compensation reference is final does not prevent possession."
+    },
+    {
+      "legal_issue": "Compulsory acquisition for a public purpose does not violate the right to life merely because it deprives an owner of shelter or livelihood.",
+      "material_facts": [
+        "The owner held a flat in a building notified for acquisition for a public purpose.",
+        "The owner argued that acquisition would deprive him of shelter and violate his dignity and rights to life and livelihood.",
+        "The Court found that the property was being deprived according to law and that the acquisition was for a public purpose."
+      ],
+      "conclusion": "The acquisition did not violate the constitutional right to life, livelihood, shelter, or personal dignity merely because the owner could be rendered shelterless.",
+      "legal_principle": "Article 21 of the Constitution does not circumscribe the State's power of eminent domain when property is acquired according to law for a public purpose. The Land Acquisition Act, 1894 provides for determination of compensation under section 23, including solatium for compulsory acquisition under section 23(2); a claimant who disputes the amount may pursue a reference under sections 18 and 23(1). The Court distinguished prior decisions concerning alternative sites, noting that they did not decide the validity of acquisition on Article 21 grounds.",
+      "rule": {
+        "if": "lawful_public_purpose_acquisition and owner_deprived_of_shelter",
+        "then": "acquisition_does_not_violate_right_to_life_merely_due_to_shelter_loss"
+      },
+      "predicates": {
+        "lawful_public_purpose_acquisition": "The State acquires the owner's property according to law for a public purpose.",
+        "owner_deprived_of_shelter": "The acquisition deprives the owner of a home or may leave the owner without shelter."
+      },
+      "definition": "If property is acquired according to law for a public purpose, the owner's resulting loss of shelter alone does not make the acquisition a violation of the right to life."
+    },
+    {
+      "legal_issue": "The State is not generally required to provide an alternative site or flat as a condition of acquiring land for a public purpose.",
+      "material_facts": [
+        "The owner sought protection against the loss of his flat and relied on the right to shelter.",
+        "The Court stated that courts may give effect to a State proposal to provide alternative sites, but that such a proposal does not create a condition applicable to every acquisition.",
+        "The statutory exception concerning an alternative site did not apply to the petitioner."
+      ],
+      "conclusion": "The owner was not entitled to require an alternative site or flat as a general condition of the acquisition.",
+      "legal_principle": "The Land Acquisition Act, 1894 does not generally require alternative accommodation as a condition of acquisition. A court may give effect to a State proposal to provide alternative sites, and the Court noted the exception in section 31(3), which did not apply in this case.",
+      "rule": {
+        "if": "compulsory_land_acquisition and not state_alternative_site_proposal and not statutory_alternative_site_exception",
+        "then": "state_not_generally_required_to_provide_alternative_site"
+      },
+      "predicates": {
+        "compulsory_land_acquisition": "The State compulsorily acquires land for a public purpose.",
+        "state_alternative_site_proposal": "The State has proposed to provide the affected owner an alternative site or flat.",
+        "statutory_alternative_site_exception": "A statutory exception requiring provision of an alternative site applies to the affected owner."
+      },
+      "definition": "When land is compulsorily acquired and neither a State proposal nor an applicable statutory exception provides for an alternative site, the State is not generally required to provide one."
+    },
+    {
+      "legal_issue": "A title dispute or earlier requisition history does not establish mala fides where the challenged acquisition covers the properties for a public purpose.",
+      "material_facts": [
+        "The owner alleged that the acquisition was mala fide.",
+        "There had been earlier requisition of the flats for a public purpose and litigation concerning that history.",
+        "There was also a dispute between the owner and his predecessor in title.",
+        "The acquisition covered all the flats, including the owner's flat, for a public purpose."
+      ],
+      "conclusion": "The Supreme Court found no substance in the allegation of mala fides.",
+      "legal_principle": "The Court held that the title dispute was not a ground for finding mala fides and that the acquisition of all the flats for a public purpose left no basis for the allegation in this case.",
+      "rule": {
+        "if": "mala_fides_challenge and acquisition_covers_all_affected_units_for_public_purpose and challenge_relies_on_title_dispute_or_prior_requisition_history",
+        "then": "mala_fides_not_established"
+      },
+      "predicates": {
+        "mala_fides_challenge": "The owner alleges that the acquisition was undertaken in bad faith.",
+        "acquisition_covers_all_affected_units_for_public_purpose": "The acquisition covers the affected units for a stated public purpose.",
+        "challenge_relies_on_title_dispute_or_prior_requisition_history": "The owner relies on a title dispute or the history of an earlier requisition to support the allegation."
+      },
+      "definition": "Where an acquisition covers the affected units for a public purpose, a mala fides allegation based on a title dispute or earlier requisition history is not established."
+    }
+  ],
+  "seconds": 23.1
+}

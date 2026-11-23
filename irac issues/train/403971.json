@@ -1,0 +1,99 @@
+{
+  "doc_id": "403971",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38692,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2586,
+    "prompt_tokens": 10430,
+    "total_tokens": 13016,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Confirmation of an execution sale vests title in the auction purchaser from the date of sale, while issuance of the sale certificate is a ministerial act.",
+      "material_facts": [
+        "A property was sold in execution of a decree, and the executing court confirmed the sale in favour of the auction purchaser.",
+        "The sale certificate was issued later, following an application stating that the auction purchaser had bid on behalf of an institution.",
+        "The judgment-debtor had unsuccessfully sought to set aside the sale."
+      ],
+      "conclusion": "On confirmation, title vested in the auction purchaser and related back to the date of sale; the subsequent issue of the certificate was mandatory but ministerial, not judicial.",
+      "legal_principle": "Under Section 65 and Order XXI Rules 92 and 94 of the Code of Civil Procedure, 1908, confirmation of an execution sale vests title in the auction purchaser as of the sale date. The sale certificate is mandatory, but its grant is a ministerial act. The judgment cites no earlier cases for this principle.",
+      "rule": {
+        "if": "execution_sale and sale_confirmed and auction_purchaser_identified",
+        "then": "auction_purchaser_acquires_title_from_sale_date"
+      },
+      "predicates": {
+        "execution_sale": "A property was sold through a court-supervised execution proceeding.",
+        "sale_confirmed": "The executing court confirmed the sale.",
+        "auction_purchaser_identified": "The executing court identified the purchaser in whose favour the sale was confirmed."
+      },
+      "definition": "When a court-supervised sale is confirmed and its purchaser is identified, the purchaser acquires title from the date of sale."
+    },
+    {
+      "legal_issue": "An executing court’s order directing a sale certificate to issue to an institution claiming to be the real purchaser is not void for lack of jurisdiction merely because an individual made the bid.",
+      "material_facts": [
+        "An institution applied for a sale certificate, asserting that its member had bid for it and that it was the real purchaser.",
+        "The executing court accepted the application and ordered that the certificate issue in the institution’s name.",
+        "The judgment-debtor did not object to the certificate’s issuance at the time and later challenged the order in a suit."
+      ],
+      "conclusion": "The executing court had jurisdiction to allow or reject the application, so its order was not void for lack of jurisdiction.",
+      "legal_principle": "Order XXI Rule 94 of the Code of Civil Procedure, 1908, provides for a sale certificate specifying the property sold and the person declared to be its purchaser. The court held that the executing court had jurisdiction to decide the application and that its order could not be treated as void for want of jurisdiction. No earlier cases are cited for this ruling.",
+      "rule": {
+        "if": "execution_sale and institution_claimed_as_real_purchaser and executing_court_ordered_certificate_to_institution",
+        "then": "certificate_order_not_void_for_lack_of_jurisdiction"
+      },
+      "predicates": {
+        "execution_sale": "A property was sold through a court-supervised execution proceeding.",
+        "institution_claimed_as_real_purchaser": "An institution asserted that an individual who made the bid had purchased the property on its behalf.",
+        "executing_court_ordered_certificate_to_institution": "The executing court ordered that the sale certificate issue to the institution."
+      },
+      "definition": "When an institution claims to be the real purchaser at an execution sale and the executing court orders the certificate to issue to it, that order is not void for lack of jurisdiction."
+    },
+    {
+      "legal_issue": "A suit challenging an executing court’s order concerning a sale certificate must be brought within the applicable limitation period.",
+      "material_facts": [
+        "The executing court ordered the sale certificate to issue to the institution after considering its application.",
+        "The judgment-debtor did not challenge that order then, and the suit challenging it was filed many years later.",
+        "The Court held that even the residuary limitation provision applied a six-year period to the challenge."
+      ],
+      "conclusion": "The challenge was out of time and the suit was barred by limitation.",
+      "legal_principle": "The Court held that an order made by a competent executing court had to be challenged in the proper forum within limitation. It applied the residuary Article 120 of the Limitation Act, 1908, and held that the challenge was brought after the applicable six-year period. No earlier cases are cited for this ruling.",
+      "rule": {
+        "if": "suit_challenging_execution_court_order and order_made_by_competent_court and challenge_outside_limitation_period",
+        "then": "challenge_suit_time_barred"
+      },
+      "predicates": {
+        "suit_challenging_execution_court_order": "A party brought a suit to challenge an order made by an executing court.",
+        "order_made_by_competent_court": "The executing court had jurisdiction to make the challenged order.",
+        "challenge_outside_limitation_period": "The party brought the challenge after the period allowed for bringing it had expired."
+      },
+      "definition": "A suit challenging an order made by a competent executing court is barred when the challenge is brought after the applicable limitation period."
+    },
+    {
+      "legal_issue": "A judgment-debtor cannot obtain possession on the basis that an execution sale was void when the sale was validly confirmed and the claim that it was void fails.",
+      "material_facts": [
+        "The judgment-debtor sought a declaration and possession on the ground that the execution proceedings and sale were null and void.",
+        "The sale had been confirmed, and the judgment-debtor’s earlier attempts to set it aside had failed.",
+        "The Court found that the sale was valid and that title had passed to the auction purchaser upon confirmation."
+      ],
+      "conclusion": "The judgment-debtor and his legal representatives were not entitled to a decree for possession; the institution could not be treated as a trespasser on the asserted basis that the sale was void.",
+      "legal_principle": "Under Section 65 and Order XXI Rule 92 of the Code of Civil Procedure, 1908, confirmation of a valid execution sale vests title in the auction purchaser, leaving no title in the judgment-debtor. A claimant who relies on the sale being void must establish that claim to obtain relief on that basis. No earlier cases are cited for this ruling.",
+      "rule": {
+        "if": "suit_for_possession_by_judgment_debtor and execution_sale_confirmed and plaintiff_claimed_sale_was_void and plaintiff_failed_to_establish_sale_was_void",
+        "then": "plaintiff_not_entitled_to_possession"
+      },
+      "predicates": {
+        "suit_for_possession_by_judgment_debtor": "A judgment-debtor brought a suit seeking possession of property sold in execution.",
+        "execution_sale_confirmed": "The executing court confirmed the execution sale.",
+        "plaintiff_claimed_sale_was_void": "The plaintiff relied on the claim that the execution sale was void.",
+        "plaintiff_failed_to_establish_sale_was_void": "The plaintiff did not establish that the execution sale was void."
+      },
+      "definition": "A judgment-debtor who seeks possession on the basis that a confirmed execution sale was void is not entitled to possession if that claim is not established."
+    }
+  ],
+  "seconds": 16.2
+}

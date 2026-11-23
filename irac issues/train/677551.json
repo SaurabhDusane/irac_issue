@@ -1,0 +1,136 @@
+{
+  "doc_id": "677551",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 82793,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3590,
+    "prompt_tokens": 20076,
+    "total_tokens": 23666,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Adjudication of bank and financial-institution debt claims and execution of recovery certificates fall within the exclusive jurisdiction of the specialized tribunal and its recovery officer.",
+      "material_facts": [
+        "A bank obtained a money decree from the Debt Recovery Tribunal against a company and initiated recovery proceedings before the Recovery Officer.",
+        "Another bank’s claim against the same company remained pending before the Tribunal."
+      ],
+      "conclusion": "The Tribunal has exclusive jurisdiction to adjudicate the debt, and the Recovery Officer has exclusive jurisdiction to execute the recovery certificate; other courts cannot decide those matters.",
+      "legal_principle": "Sections 17, 18, 25 to 30, 31 and 34 of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993 establish exclusive adjudicatory and recovery functions. The Act’s overriding effect and the special recovery procedure preclude parallel adjudication or execution elsewhere. The Tiwari Committee recommendations supported assigning execution to the specialized forum.",
+      "rule": {
+        "if": "bank_debt_recovery_proceeding and (specialized_tribunal_assigned_adjudication or specialized_recovery_officer_assigned_execution)",
+        "then": "specialized_forum_has_exclusive_adjudication_or_execution_jurisdiction"
+      },
+      "predicates": {
+        "bank_debt_recovery_proceeding": "A bank or financial institution seeks to recover a debt from a debtor through a statutory debt-recovery proceeding.",
+        "specialized_tribunal_assigned_adjudication": "The governing statutory scheme assigns adjudication of the bank’s debt claim to a specialized tribunal.",
+        "specialized_recovery_officer_assigned_execution": "The governing statutory scheme assigns execution of the tribunal’s recovery decision to a specialized recovery officer."
+      },
+      "definition": "When a bank debt-recovery proceeding assigns adjudication or execution to specialized statutory decision-makers, those decision-makers alone perform the assigned function."
+    },
+    {
+      "legal_issue": "The company court cannot require leave for, stay, or transfer proceedings assigned exclusively to the specialized debt-recovery forum, even when winding-up proceedings are pending or a winding-up order has been made.",
+      "material_facts": [
+        "A winding-up petition against the debtor company was pending, but no winding-up order or provisional-liquidator appointment had been made when the company court stayed recovery sales.",
+        "The bank was pursuing a claim and execution under the specialized debt-recovery regime."
+      ],
+      "conclusion": "No company-court leave is required to initiate or continue the debt-recovery proceedings, and the company court cannot stay or transfer those proceedings under the cited Companies Act provisions.",
+      "legal_principle": "Sections 442, 446 and 537 of the Companies Act, 1956 do not override the exclusive jurisdiction and overriding effect of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993, including sections 17, 18 and 34. The Court applied Damji Valji Shah v. Life Insurance Corporation of India, where proceedings assigned to an exclusive statutory tribunal could not be stayed or transferred by the company court. It also relied on the purposive interpretation discussed in Sudarshan Chits (India) Ltd. v. O. Sukumaran Pillai, while holding that the specialized debt-recovery regime’s purpose prevailed in this context; it distinguished Governor General in Council v. Shrimani Sugar Mills Ltd. and Ram Narain v. Simla Banking & Industrial Co. Ltd.",
+      "rule": {
+        "if": "specialized_bank_debt_proceeding and exclusive_statutory_forum and company_court_seeks_control",
+        "then": "company_court_cannot_require_leave_stay_or_transfer_proceeding"
+      },
+      "predicates": {
+        "specialized_bank_debt_proceeding": "A bank or financial institution pursues adjudication or recovery of a debt through a specialized statutory proceeding.",
+        "exclusive_statutory_forum": "The governing statutory scheme gives the specialized tribunal or recovery officer exclusive authority over the proceeding’s relevant stage.",
+        "company_court_seeks_control": "A company court seeks to require leave for, stay, or transfer the specialized proceeding because the debtor company is subject to winding-up proceedings or an order."
+      },
+      "definition": "If an exclusive statutory forum handles a bank debt proceeding and a company court seeks to control it, the company court cannot require leave, stay it, or transfer it."
+    },
+    {
+      "legal_issue": "When recovery proceeds are distributed in a company winding-up context, a secured creditor’s priority under the debt-recovery regime is limited to the priority recognized for workmen-related claims, and is available to an outside secured creditor only to the extent that workmen’s dues have been taken from its security.",
+      "material_facts": [
+        "The Recovery Officer realized proceeds from the debtor company’s property at the instance of a bank.",
+        "The competing bank asserted secured-creditor status but had not shown that it had stood outside the winding up, realized its security, or lost any part of its realization to workmen’s dues.",
+        "The Court considered the statutory priority of workmen and secured creditors in distributing proceeds realized under the debt-recovery regime."
+      ],
+      "conclusion": "The competing bank could not claim a share or priority merely because it asserted a security interest; the relevant priority is confined to the category and extent recognized for workmen-related claims.",
+      "legal_principle": "Section 19(19) of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993 directs distribution in accordance with section 529A of the Companies Act, 1956. Sections 529(1) and 529(3)(c) and section 529A(1)(b) limit an outside secured creditor’s priority to the relevant workmen’s portion, including the amount of its debt not realized because the liquidator enforced the workmen’s charge, or the workmen’s portion of its security, whichever is less. The Court rejected the proposition that sections 529(1) and (2) independently give every secured creditor priority over proceeds realized by the Recovery Officer.",
+      "rule": {
+        "if": "winding_up_context and proceeds_realized_in_specialized_recovery and creditor_is_secured and creditor_stood_outside_winding_up and workmen_charge_reduced_security_realization",
+        "then": "secured_creditor_has_only_limited_workmen_related_priority"
+      },
+      "predicates": {
+        "winding_up_context": "The debtor company is involved in winding-up proceedings or has been ordered wound up.",
+        "proceeds_realized_in_specialized_recovery": "Sale proceeds from the company’s property were realized through a specialized statutory debt-recovery proceeding.",
+        "creditor_is_secured": "The creditor claims a debt secured by property of the debtor company.",
+        "creditor_stood_outside_winding_up": "The secured creditor chose to realize its security outside the winding-up process.",
+        "workmen_charge_reduced_security_realization": "Enforcement of workmen’s dues took from the outside secured creditor an amount that would otherwise have been realized from its security."
+      },
+      "definition": "In a winding-up context, an outside secured creditor whose realization was reduced to meet workmen’s claims has only the limited priority associated with that reduction."
+    },
+    {
+      "legal_issue": "A creditor seeking to share proceeds where the debtor company has not been ordered wound up must satisfy the conditions underlying the statutory rule for rateable distribution, including obtaining an adjudication of its debt.",
+      "material_facts": [
+        "No winding-up order had been made against the debtor company.",
+        "One bank had obtained a Tribunal decree and realized property-sale proceeds, while the other bank’s debt claim remained pending and had not been adjudicated.",
+        "The competing bank had not satisfied the other conditions for sharing under the principles underlying rateable distribution."
+      ],
+      "conclusion": "The competing bank could not share the sale proceeds because it had no decree or debt adjudication and had not met the other applicable conditions.",
+      "legal_principle": "Where a company has not been ordered wound up, the Tribunal may decide competing priorities under section 22 of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993, guided by the principles underlying section 73 of the Code of Civil Procedure, 1908 and the principles of natural justice. Sharing under those principles requires a decree or Tribunal adjudication of the claimant’s debt and compliance with the other conditions for rateable distribution. The Court relied on Industrial Credit and Investment Corporation of India Ltd. v. Grapco Industries Ltd. and Allahabad Bank, Calcutta v. Radha Krishna Maity for the Tribunal’s broad procedural powers.",
+      "rule": {
+        "if": "company_not_ordered_wound_up and competing_claim_to_recovery_proceeds and claimant_lacks_debt_adjudication",
+        "then": "claimant_cannot_share_recovery_proceeds"
+      },
+      "predicates": {
+        "company_not_ordered_wound_up": "No court has ordered the debtor company to be wound up.",
+        "competing_claim_to_recovery_proceeds": "A creditor seeks to share money realized through another creditor’s recovery proceeding.",
+        "claimant_lacks_debt_adjudication": "The creditor seeking a share has not obtained a decree or an adjudication establishing its debt."
+      },
+      "definition": "If a company has not been ordered wound up and a competing creditor seeks recovery proceeds without an adjudicated debt, that creditor cannot share those proceeds."
+    },
+    {
+      "legal_issue": "A bank cannot be impleaded in the original debt-recovery application after the Tribunal has already made its final adjudication order.",
+      "material_facts": [
+        "The Tribunal had already made its final adjudication order on the first bank’s debt claim.",
+        "The second bank sought impleadment in that application after the adjudication order had been made."
+      ],
+      "conclusion": "Impleadment in the original application was unavailable after the final adjudication order.",
+      "legal_principle": "Section 19(2) of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993 permits another bank or financial institution to be impleaded only at a stage before the final order in the original debt application. The final order for this purpose is the adjudication of whether the debt is due.",
+      "rule": {
+        "if": "bank_seeks_impleadment_in_debt_application and final_debt_adjudication_already_made",
+        "then": "impleadment_in_original_application_is_unavailable"
+      },
+      "predicates": {
+        "bank_seeks_impleadment_in_debt_application": "A bank or financial institution seeks to join another bank’s debt-recovery application as a party.",
+        "final_debt_adjudication_already_made": "The tribunal has already made its final decision on whether the debt in the original application is due."
+      },
+      "definition": "When a bank seeks to join another bank’s debt application after the tribunal has finally adjudicated the debt, it cannot be impleaded in that application."
+    },
+    {
+      "legal_issue": "Sale proceeds realized from company property cannot be released to a creditor ahead of workmen’s dues that have not been shown to have been paid.",
+      "material_facts": [
+        "The bank holding the Tribunal decree was an unsecured creditor seeking release of the sale proceeds.",
+        "The record did not establish that the debtor company’s workmen’s dues had all been paid.",
+        "Some sale proceeds were held by the Court and other proceeds were held by the Recovery Officer."
+      ],
+      "conclusion": "The proceeds must first be applied to any workmen’s dues, and only the balance may be released to the bank in accordance with law.",
+      "legal_principle": "Section 529A(1)(a) of the Companies Act, 1956 gives workmen’s dues priority over other creditors. The Court relied on National Textile Workers’ Union v. P.R. Ramakrishnan for the obligation to ensure that creditors, including banks and financial institutions, are not paid before workmen’s dues.",
+      "rule": {
+        "if": "company_property_sale_proceeds_available and creditor_seeks_payment_from_proceeds and workmen_dues_not_shown_paid",
+        "then": "workmen_dues_must_be_paid_before_creditor"
+      },
+      "predicates": {
+        "company_property_sale_proceeds_available": "Money has been realized from the sale of a company’s property and remains available for distribution.",
+        "creditor_seeks_payment_from_proceeds": "A creditor asks to receive payment from the available sale proceeds.",
+        "workmen_dues_not_shown_paid": "The evidence does not establish that all workmen’s dues of the company have been paid."
+      },
+      "definition": "When sale proceeds are available, a creditor seeks payment, and payment of workmen’s dues is unproven, the workmen’s dues must be paid first."
+    }
+  ],
+  "seconds": 21.5
+}

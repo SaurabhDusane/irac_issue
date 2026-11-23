@@ -1,0 +1,62 @@
+{
+  "doc_id": "1143021",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32422,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3057,
+    "prompt_tokens": 8862,
+    "total_tokens": 11919,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "For a tenant eviction suit, the first hearing is the date fixed for the court to consider the dispute, rather than the date fixed for filing a written statement or the date on which the court actually takes up the hearing.",
+      "material_facts": [
+        "The eviction suit was heard by a Court of Small Causes, whose summons were for final disposal of the suit.",
+        "The governing explanation defined the first hearing by reference to the first date for a step or proceeding mentioned in the summons.",
+        "The dispute concerned whether the relevant date was the date fixed for hearing or the date on which the court actually applied its mind or settled issues."
+      ],
+      "conclusion": "The first hearing is the date fixed for the purpose of the court considering the points in controversy and, if necessary, framing issues. The date fixed for filing a written statement is not the first hearing, and the relevant date is not postponed merely because the court does not actually hear the matter on that date.",
+      "legal_principle": "Section 20(4) of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, read with Explanation (a) added by the 1976 amendment, makes the first hearing the first date for a step or proceeding mentioned in the summons. In light of Order 5, Rules 5 and 8 of the Code of Civil Procedure, summons in a Small Causes Court suit are for final disposal. Siraj Ahmad Siddiqui v. Prem Nath Kapoor held that the date is when the court proposes to apply its mind to the points in controversy and frame issues if necessary, not the date for filing a written statement. Advaita Anand v. Judge Small Causes Court followed that interpretation and overruled Srinath Aggarwal to the extent it treated the written-statement date as the relevant step. The earlier decisions in Ved Prakash Wadhwa v. Vishwa Mohan and Sham Lal v. Atme Nand Jain Sabha were also discussed; the pre-amendment interpretation in Ved Prakash Wadhwa did not displace the post-amendment decisions.",
+      "rule": {
+        "if": "tenant_eviction_suit and small_causes_summons_for_final_disposal",
+        "then": "first_hearing_is_the_date_fixed_for_the_court_to_consider_the_dispute"
+      },
+      "predicates": {
+        "tenant_eviction_suit": "The proceeding is a suit seeking eviction of a tenant and the tenant's opportunity to avoid eviction by making the required payment.",
+        "small_causes_summons_for_final_disposal": "The summons in the tenant eviction suit fixes a date for final disposal of the suit."
+      },
+      "definition": "When an eviction suit is set for final disposal by summons, the date fixed for the court to consider the dispute is the first hearing."
+    },
+    {
+      "legal_issue": "When the original hearing date is displaced after the tenant seeks the missing pleading, the revised hearing date controls the payment deadline, and a later death of the tenant does not erase a failure to pay by that date.",
+      "material_facts": [
+        "The tenant was served by substituted service, and the summons were not accompanied by a copy of the plaint.",
+        "The tenant applied for a copy of the plaint, after which the court fixed a fresh date for final hearing.",
+        "The rent arrears were not deposited by the fresh hearing date, although the presiding officer was unavailable on that date.",
+        "The tenant died after that date, and the legal representatives later argued that events before the death should be disregarded.",
+        "The arrears were deposited only after the fresh hearing date."
+      ],
+      "conclusion": "The fresh date fixed for final hearing, rather than the date initially stated in the summons or the date on which the hearing actually occurred, was the controlling date. The failure to deposit the arrears by that date was not cured by the tenant's later death or by the subsequent deposit, so the eviction decree was upheld.",
+      "legal_principle": "Under Section 20(4) and Explanation (a) of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, compliance is judged by the date fixed for the first hearing. Siraj Ahmad Siddiqui v. Prem Nath Kapoor and Advaita Anand v. Judge Small Causes Court establish that a revised date fixed for the proposed hearing controls when an earlier date is displaced. The court also held that proceedings and non-compliance before the tenant's death could not be ignored, and that the presiding officer's absence did not prevent a deposit from being made.",
+      "rule": {
+        "if": "tenant_eviction_suit and substituted_service_omitted_pleading_copy and tenant_requested_pleading_copy and court_fixed_revised_hearing_date and arrears_not_deposited_by_revised_hearing_date and tenant_died_after_revised_hearing_date",
+        "then": "tenant_default_by_the_revised_hearing_date_remains_effective_after_death"
+      },
+      "predicates": {
+        "tenant_eviction_suit": "The proceeding is a suit seeking eviction of a tenant.",
+        "substituted_service_omitted_pleading_copy": "The tenant was served by substituted service without receiving a copy of the pleading.",
+        "tenant_requested_pleading_copy": "The tenant applied to the court for a copy of the pleading.",
+        "court_fixed_revised_hearing_date": "After the application, the court fixed a new date for the hearing of the suit.",
+        "arrears_not_deposited_by_revised_hearing_date": "The tenant did not deposit the arrears by the newly fixed hearing date.",
+        "tenant_died_after_revised_hearing_date": "The tenant died after the newly fixed hearing date, and the legal representatives continued the proceeding."
+      },
+      "definition": "If a tenant in an eviction suit obtains a revised hearing date after receiving substituted service without the pleading, failure to pay by that date remains effective when the tenant later dies."
+    }
+  ],
+  "seconds": 20.3
+}

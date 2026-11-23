@@ -1,0 +1,109 @@
+{
+  "doc_id": "470596",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 54866,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3279,
+    "prompt_tokens": 14159,
+    "total_tokens": 17438,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil suit may challenge court decrees obtained through fraud even when the underlying arbitration award could otherwise be challenged only through the procedure prescribed by arbitration law.",
+      "material_facts": [
+        "The landowners sought declarations that the court orders and decrees making the awards rules of court were void because they had been obtained by fraud and misrepresentation, along with consequential relief concerning the land.",
+        "The challenge to the arbitration agreements and awards was incidental to the challenge to the court proceedings and decrees.",
+        "The lower appellate courts treated the suits as challenges only to the awards and held them barred."
+      ],
+      "conclusion": "The suits were maintainable because they challenged court decrees and proceedings alleged to have been procured by fraud, rather than seeking only a declaration about the awards.",
+      "legal_principle": "Sections 32 and 33 of the Arbitration Act, 1940, bar suits seeking a decision on the existence, effect, or validity of an award where the challenge is one that must be brought under that Act. They do not bar a suit whose target is a court decree and the proceedings leading to it, where the claim is that fraud and misrepresentation procured the decree; a challenge to the award may be incidental to that claim.",
+      "rule": {
+        "if": "civil_suit_challenging_court_decree and fraud_claim_targets_decree",
+        "then": "suit_is_maintainable"
+      },
+      "predicates": {
+        "civil_suit_challenging_court_decree": "The claimant brought a civil suit seeking relief against a decree made by a court in proceedings concerning an arbitration award.",
+        "fraud_claim_targets_decree": "The claimant alleged that fraud or misrepresentation procured the court decree, rather than seeking only a decision on the award's validity.",
+        "suit_is_maintainable": "The civil suit may proceed."
+      },
+      "definition": "When a civil suit challenges a court decree on the ground that fraud procured it, the suit may proceed."
+    },
+    {
+      "legal_issue": "Court decrees procured through a sham arbitration and misrepresentation are vitiated by fraud.",
+      "material_facts": [
+        "The landowners testified that they signed papers believing they concerned temporary cultivation of their land, while the documents were used in proceedings that transferred ownership.",
+        "The respondents' pleadings, witnesses' accounts, and documentary evidence gave materially inconsistent explanations of the transaction and arbitration.",
+        "The arbitrator acted as counsel for the landowners in the court proceedings, signed their written statements, and represented that they consented to decrees in terms of the awards.",
+        "The respondents did not testify, and the documents showed that the landowners had not signed the written statements admitting the claims.",
+        "The evidence showed that the arbitration and court proceedings were arranged to obtain decrees declaring ownership without executing registered conveyances and paying the related charges.",
+        "The lower courts failed to draw proper inferences from material evidence concerning the alleged fraud."
+      ],
+      "conclusion": "The decrees were obtained by fraud and misrepresentation; the Supreme Court set aside the contrary appellate judgments and restored the trial court's decrees.",
+      "legal_principle": "Section 17 of the Indian Contract Act, 1872, includes false suggestions of fact, active concealment, promises made without intent to perform, and other acts fitted to deceive when done with intent to deceive or induce another to act. Under section 114, illustration (g), of the Indian Evidence Act, 1872, an adverse inference may be drawn when a party does not testify. Evidence contrary to the pleadings cannot be relied upon. The Supreme Court may interfere with a factual finding on fraud when material evidence has been ignored and the proper inferences have not been drawn.",
+      "rule": {
+        "if": "appeal_reviewing_fraud_finding and (deceptive_documents_used or materially_inconsistent_accounts) and (material_evidence_ignored or party_withheld_testimony)",
+        "then": "court_decree_procured_by_fraud"
+      },
+      "predicates": {
+        "appeal_reviewing_fraud_finding": "A higher court reviewed a finding about whether a decree had been procured by fraud.",
+        "deceptive_documents_used": "A party used documents or proceedings to obtain a decree on terms materially different from what the other party was led to believe.",
+        "materially_inconsistent_accounts": "The parties' pleadings, testimony, and documents gave materially inconsistent accounts of how the decree was obtained.",
+        "material_evidence_ignored": "The lower court failed to consider material evidence or draw proper inferences from it.",
+        "party_withheld_testimony": "A party with direct knowledge of the transaction did not testify in that party's own behalf.",
+        "court_decree_procured_by_fraud": "The court decree was procured by fraud."
+      },
+      "definition": "When a higher court reviewing a fraud finding sees deceptive use of documents or inconsistent accounts together with ignored material evidence or a party's failure to testify, the decree was procured by fraud."
+    },
+    {
+      "legal_issue": "An unregistered arbitration award that creates or declares rights in immovable property outside the subject matter of the arbitration cannot be relied on to support a decree.",
+      "material_facts": [
+        "The arbitration references concerned alleged unpaid loans, not a dispute about the land or its transfer.",
+        "The awards declared that the respondents had become owners of the land, creating or declaring rights in immovable property that was not the subject matter of the arbitration.",
+        "The awards were not registered."
+      ],
+      "conclusion": "The awards were compulsorily registrable; because they were unregistered, they could not be acted upon or admitted as a basis for passing decrees in their terms.",
+      "legal_principle": "Sections 17(1)(b) and 17(2)(vi) of the Registration Act, 1908, require registration of non-testamentary instruments creating or declaring rights in immovable property, while providing an exception for court decrees subject to the stated compromise-decree qualification. Arbitration awards are not included in that decree exception. Section 49 limits the effect of an unregistered document that was compulsorily registrable. In Ratan Lal Sharma v. Purshottam Harit, AIR 1974 SC 1066, and Lachhman Dass v. Ram Lal, (1989) 3 SCC 99, the Court held that an award creating rights in immovable property requiring registration cannot be relied on for a decree when unregistered.",
+      "rule": {
+        "if": "arbitration_award_proceeding and award_creates_property_rights and property_outside_arbitration_subject and award_unregistered",
+        "then": "award_cannot_support_decree"
+      },
+      "predicates": {
+        "arbitration_award_proceeding": "The proceeding concerns an arbitration award.",
+        "award_creates_property_rights": "The award creates or declares rights in immovable property.",
+        "property_outside_arbitration_subject": "The immovable property was not the subject matter of the dispute referred to arbitration.",
+        "award_unregistered": "The award was not registered despite requiring registration.",
+        "award_cannot_support_decree": "The award cannot be relied on as a basis for a court decree."
+      },
+      "definition": "An unregistered arbitration award cannot support a decree when it creates or declares rights in immovable property that was outside the arbitration's subject matter."
+    },
+    {
+      "legal_issue": "A court cannot make a sham or collusive arbitration award the rule of the court when the proceedings conceal that there was no genuine dispute and mislead the court.",
+      "material_facts": [
+        "The evidence showed that the parties had already settled the transaction before the arbitration references were made.",
+        "The asserted arbitration references concerned alleged loans, while the awards declared the respondents owners of land that was not the subject matter of those references.",
+        "The arbitrator was not asked to adjudicate a genuine dispute, and the proceedings were arranged to obtain decrees declaring ownership without registered conveyances and related charges.",
+        "Material circumstances concerning the nature and purpose of the proceedings were suppressed or misrepresented to the court before it made decrees in terms of the awards."
+      ],
+      "conclusion": "The proceedings and awards were sham and fraudulent, and the decrees made in terms of the awards were invalid.",
+      "legal_principle": "A valid arbitration requires a dispute, an agreement to refer that dispute, a reference, and an adjudication or decision by the arbitrator after hearing the parties. If the parties have already settled their dispute and use an arbitration award as a device to avoid the requirements for a conveyance, the arbitration and award are sham. Suppressing or misrepresenting material facts to induce a court to make a decree in terms of such an award constitutes fraud on the court. Sections 14 and 17 of the Arbitration Act, 1940, do not authorize a court to make a sham award the rule of the court.",
+      "rule": {
+        "if": "court_proceeding_to_make_award_a_decree and no_genuine_dispute and sham_arbitration_used and material_facts_withheld_from_court",
+        "then": "decree_made_on_sham_award_is_invalid"
+      },
+      "predicates": {
+        "court_proceeding_to_make_award_a_decree": "A party asked a court to make an arbitration award the rule of the court and enter a decree accordingly.",
+        "no_genuine_dispute": "The parties had already settled the matter or there was otherwise no genuine dispute for an arbitrator to decide.",
+        "sham_arbitration_used": "The parties used an ostensible arbitration process to achieve an outcome without genuine adjudication of a dispute.",
+        "material_facts_withheld_from_court": "A party suppressed or misrepresented material facts about the dispute or arbitration proceedings when seeking the decree.",
+        "decree_made_on_sham_award_is_invalid": "A decree made on the sham award is invalid."
+      },
+      "definition": "A decree is invalid when it makes a sham award the rule of the court despite there being no genuine dispute and material facts about the proceedings having been withheld."
+    }
+  ],
+  "seconds": 19.5
+}

@@ -1,0 +1,97 @@
+{
+  "doc_id": "21112725",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 37420,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3025,
+    "prompt_tokens": 9568,
+    "total_tokens": 12593,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A corporate debtor may contest a debt claim by relying on alternative defences that the debt has been paid and that any remaining claim is barred by limitation.",
+      "material_facts": [
+        "The company disputed that any amount remained payable and produced bank records of payments to the claimants and their predecessor.",
+        "The company also argued that, even if a debt remained, the claim was barred by limitation."
+      ],
+      "conclusion": "The company was entitled to raise both defences; relying on limitation did not prevent it from also asserting that the debt had been paid.",
+      "legal_principle": "Alternative defences are permissible when contesting a claim. The Court treated the company’s positions as consistent alternatives rather than as mutually exclusive admissions.",
+      "rule": {
+        "if": "corporate_insolvency_application and debtor_disputes_claim and debtor_raises_payment_and_limitation_as_alternative_defences",
+        "then": "alternative_defences_permissible"
+      },
+      "predicates": {
+        "corporate_insolvency_application": "A creditor seeks to initiate a corporate insolvency resolution process against a company.",
+        "debtor_disputes_claim": "The company disputes that the claimed debt is due or payable.",
+        "debtor_raises_payment_and_limitation_as_alternative_defences": "The company argues both that the debt has been paid and, alternatively, that any remaining claim is time-barred."
+      },
+      "definition": "When a company disputes a debt claim in an insolvency application and raises payment and limitation as alternative defences, both defences may be advanced."
+    },
+    {
+      "legal_issue": "An application to initiate insolvency proceedings on a financial debt is barred when the right to apply arose more than three years before filing and no basis for extending or saving limitation is shown.",
+      "material_facts": [
+        "The claim was based on loans advanced to a proprietorship business in 2002 to 2005, and the company relied on records showing payments through 2006.",
+        "The claimants had initiated winding-up proceedings in 2013 and filed the insolvency application in 2018.",
+        "The application did not establish a basis for showing that the claim remained within limitation or that delay could be condoned."
+      ],
+      "conclusion": "The application was barred by limitation, and the appellate tribunal erred in reversing its dismissal.",
+      "legal_principle": "The Limitation Act, 1963 applies to applications under Sections 7 and 9 of the Insolvency and Bankruptcy Code from the Code’s inception. Under Article 137, the right to apply accrues when default occurs, and an application filed more than three years after default is barred unless Section 5 can be applied to condone the delay. B.K. Educational Services Pvt. Ltd. v. Parag Gupta and Associates; Vashdeo R. Bhojwani v. Abhyudaya Co-operative Bank Ltd. Innoventive Industries Ltd. explains the default-based operation of the Code but does not require admission of a claim that is ex facie time-barred.",
+      "rule": {
+        "if": "financial_creditor_insolvency_application and default_occurred_more_than_three_years_before_filing and no_limitation_saving_basis_shown",
+        "then": "application_barred_by_limitation"
+      },
+      "predicates": {
+        "financial_creditor_insolvency_application": "A person claiming to be a financial creditor applies to initiate insolvency proceedings against a company.",
+        "default_occurred_more_than_three_years_before_filing": "The claimed default occurred more than three years before the insolvency application was filed.",
+        "no_limitation_saving_basis_shown": "The applicant does not show an applicable basis for extending, saving, or condoning the limitation period."
+      },
+      "definition": "A financial-creditor insolvency application is barred when the default preceded filing by more than three years and no basis for avoiding the time bar is shown."
+    },
+    {
+      "legal_issue": "Insolvency proceedings cannot be initiated against a company on a financial debt that it does not owe, including an amount applied to shares issued at the payee’s request or an amount that became a personal loan to a promoter.",
+      "material_facts": [
+        "The claimants advanced money to a proprietorship whose business and liabilities were later taken over by the company, and the company produced records of payments made to the claimants.",
+        "The claimants confirmed in letters to the tax authorities that an amount from the loan was to be applied for shares in the company and that the shares were later to be issued to a promoter, with the amount treated as a personal loan to him.",
+        "The company said that shares were issued to the promoter against the share application amount."
+      ],
+      "conclusion": "No financial debt was shown to be owed by the company, and the application was not maintainable on that basis.",
+      "legal_principle": "Under Sections 3(8), 3(11), 3(12), 5(7), 5(8), and 7 of the Insolvency and Bankruptcy Code, a financial creditor must establish a financial debt owed by the corporate debtor and a default. Section 5(8) concerns debt disbursed against consideration for the time value of money. An amount received for shares issued to a third party at the payee’s request is not a debt, and a personal loan to a promoter or director cannot trigger the company’s insolvency resolution process.",
+      "rule": {
+        "if": "financial_creditor_insolvency_application and (company_debt_discharged or share_amount_applied_to_shares_issued_to_third_party or remaining_obligation_is_personal_loan)",
+        "then": "no_financial_debt_owed_by_company"
+      },
+      "predicates": {
+        "financial_creditor_insolvency_application": "A person claiming to be a financial creditor applies to initiate insolvency proceedings against a company.",
+        "company_debt_discharged": "The company or its predecessor paid the claimed company obligation, as shown by the records relied on by the court.",
+        "share_amount_applied_to_shares_issued_to_third_party": "An amount claimed as company debt was applied for shares issued to a person other than the payee at the payee’s request.",
+        "remaining_obligation_is_personal_loan": "The parties treated the remaining obligation as a personal loan from the payee to a promoter or director rather than as an obligation of the company."
+      },
+      "definition": "Where the company debt was discharged, the claimed amount was applied to shares issued to another person, or the remaining obligation was personal to a promoter or director, the company does not owe the claimed financial debt."
+    },
+    {
+      "legal_issue": "Allegations that signatures were forged or records fabricated are to be determined through evidence in a regular suit, not in proceedings to initiate corporate insolvency resolution.",
+      "material_facts": [
+        "The claimants disputed signatures on documents and alleged forgery and fabrication.",
+        "Resolving those allegations would require the evaluation of evidence, including potentially forensic evidence."
+      ],
+      "conclusion": "The forgery and fabrication disputes could not be adjudicated in the insolvency application and could instead be determined in a regular suit on evidence.",
+      "legal_principle": "Disputes involving allegations of fraud or forgery that require evidentiary adjudication, including forensic examination, are not determined in proceedings under Section 7 of the Insolvency and Bankruptcy Code; they may be adjudicated in a regular suit.",
+      "rule": {
+        "if": "corporate_insolvency_application and material_forgery_or_fabrication_dispute and dispute_requires_evidentiary_adjudication",
+        "then": "forgery_dispute_requires_regular_suit"
+      },
+      "predicates": {
+        "corporate_insolvency_application": "A creditor seeks to initiate a corporate insolvency resolution process against a company.",
+        "material_forgery_or_fabrication_dispute": "A party alleges that signatures or records material to the debt claim were forged or fabricated.",
+        "dispute_requires_evidentiary_adjudication": "Resolving the allegation requires assessment of evidence, potentially including forensic evidence."
+      },
+      "definition": "When a material forgery or fabrication dispute in an insolvency application requires evidentiary adjudication, it is to be determined in a regular suit rather than in that insolvency proceeding."
+    }
+  ],
+  "seconds": 80.1
+}

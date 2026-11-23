@@ -1,0 +1,116 @@
+{
+  "doc_id": "421372",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 67549,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3506,
+    "prompt_tokens": 17482,
+    "total_tokens": 20988,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A widow’s power to adopt to her deceased husband is her own power, subject to the limits imposed by her husband’s authority and the required assent of sapindas.",
+      "material_facts": [
+        "The adoption was made by a widow to her deceased husband, who had died many years earlier.",
+        "The case concerned an adoption in a divided family, and no specific authorization by the husband limiting the widow’s choice was identified."
+      ],
+      "conclusion": "When the husband has not limited the widow’s discretion by specific authorization, her power to adopt is coextensive with his, subject to the assent of sapindas; her discretion whether to adopt is otherwise absolute and she cannot be compelled to adopt.",
+      "legal_principle": "Applying Balusu Gurulingaswami v. Balusu Ramalakshmamma (1899) I.L.R. 22 Mad. 398, the Court treated the widow as exercising a power of her own as her husband’s representative. Specific authority from the husband limits her discretion according to its terms; absent such authority, her power is coextensive with his, subject to the required sapinda assent.",
+      "rule": {
+        "if": "widow_adoption_case and no_restrictive_husband_authority",
+        "then": "widow_has_discretion_to_adopt_subject_to_sapinda_assent"
+      },
+      "predicates": {
+        "widow_adoption_case": "A widow seeks to adopt a child to her deceased husband.",
+        "no_restrictive_husband_authority": "The husband did not give an authorization that specifically limits the widow’s choice or power to adopt."
+      },
+      "definition": "When a widow seeks to adopt to her deceased husband and his authorization does not limit her power, she has discretion to adopt, subject to sapinda assent."
+    },
+    {
+      "legal_issue": "The validity and purpose of an adoption are assessed primarily by spiritual considerations, with the devolution of property being secondary.",
+      "material_facts": [
+        "The widow sought to adopt a son to her deceased husband to secure religious duties and continue his lineage.",
+        "The adoption would also affect succession to the deceased husband’s property."
+      ],
+      "conclusion": "The validity of an adoption is to be judged by spiritual rather than temporal considerations, and the devolution of property is only of secondary importance.",
+      "legal_principle": "The Court relied on The Collector of Madura v. Moottoo Ramalinga Sathupathy (1868) 12 M.I.A. 397; Sri Raghunadha v. Sri Brozo Kishore (1876) L.R. 3 I.A. 154; Raja Vellanki Venkata Krishna Row v. Venkata Rama Lakshmi Narsayya (1876) L.R. 4 I.A. 1; Veera Basavaraju v. Balasurya Prasada Rao (1918) L.R. 45 I.A. 265; Amarendra Mansingh v. Sanatan Singh (1933) L.R. 60 I.A. 242; and Ghanta China Ramasubbayya v. Moparthi Chenchuramayya (1947) L.R. 74 I.A. 162. It applied the principle that adoption serves the religious purposes of performing funeral rites and preserving lineage, while property succession is a consequence rather than its primary purpose.",
+      "rule": {
+        "if": "hindu_adoption_case",
+        "then": "adoption_validity_is_judged_primarily_by_spiritual_considerations"
+      },
+      "predicates": {
+        "hindu_adoption_case": "A proceeding concerns the validity of an adoption under Hindu law."
+      },
+      "definition": "In a proceeding about a Hindu adoption, spiritual considerations are the primary basis for judging validity."
+    },
+    {
+      "legal_issue": "A sapinda’s assent to a widow’s adoption is a fiduciary power that must be exercised objectively for the widow’s branch of the family, not to protect the sapinda’s own inheritance or enforce a preference for a sapinda as the person adopted.",
+      "material_facts": [
+        "The deceased husband was a divided member of his family.",
+        "The widow proposed a young, healthy, educated and religious-minded boy who was devoted to her and had been brought up in her household.",
+        "The nearer sapindas refused assent mainly because the proposed boy was not an agnate and because they offered their own sons or descendants for adoption.",
+        "The courts below found the other stated objections, including the alleged custom against adopting a non-agnate and the boy’s alleged ineligibility, untenable.",
+        "The evidence showed that the nearer sapindas were concerned with protecting reversionary interests and acted together to prevent the adoption."
+      ],
+      "conclusion": "The nearer sapindas’ refusal was improper. Their fiduciary power did not permit them to withhold assent to protect their own interests or to require the widow to choose a sapinda in preference to a qualified non-sapinda; the widow could disregard that refusal and adopt with the assent of a remoter sapinda.",
+      "legal_principle": "The Court applied the fiduciary character of sapinda assent described in The Collector of Madura v. Moottoo Ramalinga Sathupathy (1868) 12 M.I.A. 397, Raja Vellanki Venkata Krishna Row v. Venkata Rama Lakshmi Narsayya (1876) L.R. 4 I.A. 1, Venkamma v. Subramaniam (1906) L.R. 34 I.A. 22, Veera Basavaraju v. Balasurya Prasada Rao (1918) L.R. 45 I.A. 265, Sri Krishnayya Rao v. Surya Rao Bahadur Garu (1935) 69 M.L.J. 388, and Ghanta China Ramasubbayya v. Moparthi Chenchuramayya (1947) L.R. 74 I.A. 162. Sapindas act as guardians, protectors and advisers and must assess the adoption impartially by reference to the widow’s branch, the religious purposes of adoption, and the boy’s qualifications. The preference for adopting a sapinda was treated as recommendatory, not a legal qualification or disqualification. The Court treated the contrary observation in Subrahmanyam v. Venkamma (1903) I.L.R. 25 Mad. 127 as obiter and did not approve it; it also referred to Sundara Rama Rao v. Satyanarayanamurti I.L.R. 1950 Mad. 461, Srimati Uma Devi v. Gokoolanund Das Mahabata (1876) L.R. 5 I.A. 40, and Venkatayudu v. Seshamma A.I.R. 1949 Mad. 745.",
+      "rule": {
+        "if": "widow_adoption_case and divided_family_case and (sapinda_acts_for_self_interest or refusal_based_on_non_sapinda_status) and proposed_boy_is_qualified",
+        "then": "sapinda_refusal_is_improper"
+      },
+      "predicates": {
+        "widow_adoption_case": "A widow seeks assent from her deceased husband’s sapindas for an adoption to him.",
+        "divided_family_case": "The deceased husband was a divided member of his family.",
+        "sapinda_acts_for_self_interest": "A sapinda’s objection or condition is aimed at protecting the sapinda’s or the sapinda’s family’s inheritance rather than assessing the adoption for the widow’s branch.",
+        "refusal_based_on_non_sapinda_status": "A sapinda refuses assent because the proposed child is not a sapinda, or insists that a sapinda be chosen instead.",
+        "proposed_boy_is_qualified": "The proposed child has no relevant legal disqualification and is suitable for adoption."
+      },
+      "definition": "In a widow’s adoption proceeding involving a divided family, a sapinda’s refusal is improper when it rests on self-interest or the proposed child’s non-sapinda status, if the child is qualified."
+    },
+    {
+      "legal_issue": "A sapinda’s lack of belief in Hindu rituals or some religious doctrines does not by itself disqualify that person from giving assent to a widow’s adoption.",
+      "material_facts": [
+        "The remoter sapinda who assented was born a Hindu and continued to be a Hindu.",
+        "He said that he believed in God but did not believe in certain rituals, doctrines or the religious efficacy of adoption.",
+        "He considered the proposed boy’s qualifications, including his character, physical condition, education and ability to manage the estate, before giving assent."
+      ],
+      "conclusion": "The remoter sapinda was competent to give assent. His non-belief in rituals or some religious doctrines did not remove him from the Hindu community or impair his capacity, and his assent was sufficient to validate the adoption in the circumstances.",
+      "legal_principle": "The Court held that assent is an act of a guardian or protector advising the widow, not itself a religious act. Non-belief in rituals or some doctrines does not by itself remove a person from Hinduism or establish incapacity. The relevant inquiry is whether the sapinda can understand and impartially assess the proposed adoption. The Court also applied the fiduciary principles stated in Sri Krishnayya Rao v. Surya Rao Bahadur Garu (1935) 69 M.L.J. 388 and the other authorities governing sapinda assent.",
+      "rule": {
+        "if": "widow_adoption_case and consenting_person_is_hindu and consenting_person_can_assess_adoption",
+        "then": "consent_is_not_invalidated_by_nonbelief_in_rituals"
+      },
+      "predicates": {
+        "widow_adoption_case": "A widow seeks assent for an adoption to her deceased husband.",
+        "consenting_person_is_hindu": "The person giving assent is a Hindu and has not left the Hindu community for another religion.",
+        "consenting_person_can_assess_adoption": "The person giving assent is able to understand the question and assess the proposed child and adoption."
+      },
+      "definition": "In a widow’s adoption proceeding, a Hindu who can assess the proposed adoption is not disqualified from giving assent merely by not believing in rituals."
+    },
+    {
+      "legal_issue": "A certificate under Article 133 does not empower a High Court to confine the Supreme Court appeal to specified grounds.",
+      "material_facts": [
+        "The High Court granted a certificate under Article 133(1)(c).",
+        "The respondents argued that the appeal was limited to the question identified in the certificate and that a challenge to the consenting sapinda’s competence was therefore unavailable.",
+        "That challenge had not been argued before the High Court, although counsel had stated that the relevant contention was not abandoned."
+      ],
+      "conclusion": "The Supreme Court held that the certificate did not limit the appeal to a particular point and that the entire appeal was before it. It nevertheless addressed the additional contention because it had not been abandoned before the High Court.",
+      "legal_principle": "The Court considered Order XVI rule 4 and Order XVIII rule 3(2) of the Supreme Court Rules and Article 133 of the Constitution. It held that the Rules do not themselves confer power on a High Court to limit a certificate under Article 133; once such a certificate is granted and the appeal is properly presented, the entire appeal is before the Supreme Court.",
+      "rule": {
+        "if": "civil_appeal_to_supreme_court and high_court_granted_article_133_certificate",
+        "then": "entire_appeal_is_before_supreme_court"
+      },
+      "predicates": {
+        "civil_appeal_to_supreme_court": "A civil appeal is brought from a High Court to the Supreme Court.",
+        "high_court_granted_article_133_certificate": "The High Court granted a certificate for the appeal under the constitutional provision governing civil appeals."
+      },
+      "definition": "When a civil appeal proceeds on a High Court certificate, the entire appeal is before the Supreme Court rather than only the point stated in the certificate."
+    }
+  ],
+  "seconds": 21.3
+}

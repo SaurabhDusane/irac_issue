@@ -1,0 +1,79 @@
+{
+  "doc_id": "625438",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 53384,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2160,
+    "prompt_tokens": 13109,
+    "total_tokens": 15269,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A revenue officer cannot combine an order allowing a cultivating tenant time to pay rent arrears with a conditional order of eviction that takes effect upon a future failure to pay.",
+      "material_facts": [
+        "The tenants were cultivating tenants and their landlords sought eviction for rent arrears.",
+        "The revenue officer determined the arrears, allowed the tenants time to pay, and in the same orders directed that they would be evicted if they did not pay within that time."
+      ],
+      "conclusion": "The conditional eviction orders were contrary to the statutory procedure and without jurisdiction; an eviction order could be made only after the tenants failed to pay as directed.",
+      "legal_principle": "Under sections 3(1) and 3(4)(a) and (b) of the Madras Cultivating Tenants Protection Act, 1955, the officer must determine the arrears, consider the parties’ relevant circumstances and fix time for payment before proceeding further. The scheme requires separate stages and does not authorize eviction before a future default occurs. A conditional order cannot disable the officer from considering an extension of time where the law does not exclude that power. The Court relied on the principle concerning conditional orders in Mahant Ram Das v. Ganga Das and referred by analogy to section 148 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "cultivating_tenant_eviction_case and rent_arrears_determined and payment_time_granted and eviction_conditioned_on_future_default",
+        "then": "conditional_eviction_order_is_without_jurisdiction"
+      },
+      "predicates": {
+        "cultivating_tenant_eviction_case": "A landlord sought to evict a tenant who cultivates the land.",
+        "rent_arrears_determined": "The decision-maker determined that rent was in arrears and identified the amount due.",
+        "payment_time_granted": "The decision-maker allowed the tenant time to pay the arrears.",
+        "eviction_conditioned_on_future_default": "The decision-maker ordered eviction in the same order to take effect if the tenant later failed to pay within the allowed time."
+      },
+      "definition": "When a cultivating-tenant eviction case involves determined arrears, time to pay, and eviction conditional on a future default, the conditional eviction order is without jurisdiction."
+    },
+    {
+      "legal_issue": "A revenue officer has discretion, rather than an obligation, to give a cultivating tenant time to pay rent arrears during a landlord’s eviction proceeding when the tenant has not used the separate deposit procedure.",
+      "material_facts": [
+        "The landlords sought eviction on the ground of rent arrears.",
+        "The tenants had not availed themselves of the statutory procedure for depositing rent before the eviction applications were brought.",
+        "The revenue officer did allow the tenants time to pay in these cases."
+      ],
+      "conclusion": "The majority held that the revenue officer may grant or refuse time in such circumstances; the tenant is not entitled to time as of right. Desai J. took the contrary view that granting time was obligatory.",
+      "legal_principle": "The majority, applying the distinction in the language between section 3(3)(b), which says the court shall allow time when a tenant has used that procedure and further rent is due, and section 3(4)(b), which says the revenue officer may allow time in the eviction proceeding, held that the latter confers discretion. Koshal and Misra JJ. formed the majority on this point; Desai J. dissented.",
+      "rule": {
+        "if": "cultivating_tenant_eviction_case and rent_default_is_ground and prior_rent_deposit_procedure_not_used",
+        "then": "revenue_officer_may_grant_or_refuse_payment_time"
+      },
+      "predicates": {
+        "cultivating_tenant_eviction_case": "A landlord sought to evict a tenant who cultivates the land.",
+        "rent_default_is_ground": "The landlord relied on the tenant’s failure to pay rent as a ground for eviction.",
+        "prior_rent_deposit_procedure_not_used": "Before the eviction application, the tenant had not used the separate procedure for depositing rent and seeking a determination of any further sum due."
+      },
+      "definition": "When a cultivating-tenant eviction case is based on rent default and the tenant has not used the earlier rent-deposit procedure, the revenue officer may grant or refuse time to pay."
+    },
+    {
+      "legal_issue": "A remand is unnecessary where the rent arrears have been paid under an appellate court’s direction and the passage of time makes further proceedings an idle formality.",
+      "material_facts": [
+        "The tenants complied with the High Court’s directions to deposit the rent found to be in arrears.",
+        "The deposits had been made many years before the Supreme Court decided the appeals.",
+        "The eviction directions were invalid because they had been made conditionally before any future failure to pay."
+      ],
+      "conclusion": "The Court set aside the eviction orders, declared the tenants qualified for the Act’s protection against eviction, and did not remit the cases for further proceedings.",
+      "legal_principle": "Having found the conditional eviction orders without jurisdiction, the Court applied the ends of justice to the circumstances, including the completed deposits and the long passage of time. It considered remand an idle formality and left open the separate question whether the High Court could prescribe its own time for payment.",
+      "rule": {
+        "if": "appeal_from_tenant_eviction_order and eviction_order_invalid and rent_paid_under_appellate_direction and substantial_time_has_passed",
+        "then": "tenant_qualifies_for_eviction_protection_without_remand"
+      },
+      "predicates": {
+        "appeal_from_tenant_eviction_order": "A tenant appealed an order directing eviction from cultivated land.",
+        "eviction_order_invalid": "The eviction order was made without jurisdiction because it was conditional on a future failure to pay.",
+        "rent_paid_under_appellate_direction": "The tenant paid the rent arrears in compliance with a direction made during appellate proceedings.",
+        "substantial_time_has_passed": "A substantial period elapsed after the payment and the initial proceedings."
+      },
+      "definition": "When an appeal concerns an invalid tenant-eviction order, the rent has been paid under an appellate direction, and substantial time has passed, the tenant qualifies for eviction protection without remand."
+    }
+  ],
+  "seconds": 13.8
+}

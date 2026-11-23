@@ -1,0 +1,80 @@
+{
+  "doc_id": "535683",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15402,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2532,
+    "prompt_tokens": 4148,
+    "total_tokens": 6680,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A conviction based on the testimony of a sole eyewitness who is neither wholly reliable nor wholly unreliable requires corroboration in material particulars.",
+      "material_facts": [
+        "The prosecution relied on one eyewitness, who was the deceased’s brother and was hostile toward the accused.",
+        "His trial testimony substantially expanded on the initial report, attributing assaults and acts to accused persons not described in that report.",
+        "The medical evidence did not corroborate the full account of the assault, and the witness’s evidence was not reliably corroborated in material particulars."
+      ],
+      "conclusion": "The eyewitness’s testimony could not safely support conviction without reliable corroboration in material particulars, and the Court would not rely on it to convict the accused.",
+      "legal_principle": "Under the law of evidence, no particular number of witnesses is required to prove a fact. As explained in Vadivelu Thevan etc. v. State of Madras, AIR 1957 SC 614, a sole witness may be wholly reliable, wholly unreliable, or neither; where the witness falls into the third category, the court must be circumspect and seek reliable direct or circumstantial corroboration in material particulars before acting on the testimony.",
+      "rule": {
+        "if": "criminal_conviction_appeal and sole_witness_neither_wholly_reliable_nor_wholly_unreliable and (material_improvements_in_testimony or inadequate_material_corroboration)",
+        "then": "sole_witness_testimony_cannot_safely_support_conviction"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "A court is considering an appeal from a criminal conviction based on a sole eyewitness’s testimony.",
+        "sole_witness_neither_wholly_reliable_nor_wholly_unreliable": "The sole eyewitness’s testimony has features that prevent the court from treating it as wholly reliable or wholly unreliable.",
+        "material_improvements_in_testimony": "The eyewitness gives a materially expanded account at trial compared with the earlier account of the incident.",
+        "inadequate_material_corroboration": "Reliable evidence does not corroborate the eyewitness’s account in material particulars."
+      },
+      "definition": "When a criminal conviction appeal turns on a sole eyewitness whose testimony is neither wholly reliable nor wholly unreliable, material improvements or inadequate corroboration mean that the testimony cannot safely support conviction."
+    },
+    {
+      "legal_issue": "A criminal court may not rely on incriminating circumstances to convict an accused unless the accused has been given an adequate opportunity to explain them in the examination conducted for that purpose.",
+      "material_facts": [
+        "The trial court compressed the prosecution case, which contained many details, into only five questions to each accused.",
+        "The Supreme Court found that the accused had not been adequately enabled to explain the incriminating circumstances appearing in the evidence."
+      ],
+      "conclusion": "Incriminating evidence about circumstances not put to the accused for explanation could not be relied on to record a conviction.",
+      "legal_principle": "Section 313 of the Code of Criminal Procedure obliges the trial court to examine the accused so the accused can personally explain circumstances appearing in evidence against them. If that opportunity is not afforded, the incriminating evidence cannot be relied on to convict.",
+      "rule": {
+        "if": "criminal_trial and incriminating_circumstances_not_adequately_put_to_accused",
+        "then": "those_circumstances_cannot_be_relied_on_to_convict"
+      },
+      "predicates": {
+        "criminal_trial": "A court is conducting a criminal trial of an accused person.",
+        "incriminating_circumstances_not_adequately_put_to_accused": "The trial court does not adequately put incriminating circumstances in the evidence to the accused for a personal explanation."
+      },
+      "definition": "In a criminal trial, incriminating circumstances not adequately put to the accused cannot be relied on to convict."
+    },
+    {
+      "legal_issue": "A conviction cannot stand where the prosecution evidence, considered as a whole, does not reliably establish guilt because material eyewitness improvements, inadequate corroboration, and unresolved investigative gaps leave the central circumstances uncertain.",
+      "material_facts": [
+        "The sole eyewitness’s trial account substantially departed from the first report and was not fully corroborated by the medical evidence.",
+        "The investigation did not include a site plan, chemical examination of bloodstained earth, recovery of alleged weapons, or questioning of potential nearby witnesses.",
+        "The investigation did not establish who possessed the disputed land before the incident, leaving the root cause of the confrontation unresolved.",
+        "The Supreme Court found the evidence insufficient to sustain the convictions."
+      ],
+      "conclusion": "The appeal was allowed, the judgments of the trial and High Courts were set aside, and the accused appellants were acquitted.",
+      "legal_principle": "The court assessed the prosecution evidence and investigation cumulatively. Where material improvements and a lack of reliable corroboration accompany investigative failures that leave the genesis of the incident and a crucial factual issue unresolved, the available evidence may be insufficient to sustain a conviction. No earlier case was cited for this cumulative application.",
+      "rule": {
+        "if": "criminal_conviction_appeal and (material_improvements_in_eyewitness_account and inadequate_reliable_corroboration) and (central_circumstances_left_unresolved or important_investigative_steps_omitted)",
+        "then": "conviction_set_aside_and_accused_acquitted"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "A court is considering an appeal from a criminal conviction.",
+        "material_improvements_in_eyewitness_account": "An eyewitness’s account at trial materially departs from the earlier account given during the investigation.",
+        "inadequate_reliable_corroboration": "The prosecution evidence does not reliably corroborate the eyewitness account in material particulars.",
+        "central_circumstances_left_unresolved": "The evidence and investigation leave a central circumstance concerning the incident unresolved.",
+        "important_investigative_steps_omitted": "Investigators fail to pursue important available steps for collecting evidence relevant to the incident."
+      },
+      "definition": "In a criminal conviction appeal, material improvements combined with inadequate corroboration and unresolved central circumstances or omitted important investigative steps result in the conviction being set aside and the accused being acquitted."
+    }
+  ],
+  "seconds": 16.8
+}

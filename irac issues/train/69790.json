@@ -1,0 +1,60 @@
+{
+  "doc_id": "69790",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11951,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2707,
+    "prompt_tokens": 3565,
+    "total_tokens": 6272,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A family settlement does not defeat a co-owner’s partition claim when the settlement did not include every co-owner or its required payment, which would trigger relinquishment of rights, was not made.",
+      "material_facts": [
+        "The parties were co-owners of the property, and a partition suit was brought claiming a share in it.",
+        "A purported family settlement contemplated that rights would be released only after a specified payment was made.",
+        "One co-owner did not join the settlement, and the required payment was found not to have been made.",
+        "The trial court found that the payment had not been made, and the High Court affirmed that finding."
+      ],
+      "conclusion": "The settlement had not been given its full effect and did not establish a partition by metes and bounds or extinguish the plaintiffs’ rights. The partition suit was properly decreed.",
+      "legal_principle": "A co-owner may express an unequivocal intention to sever joint status, including by filing a partition suit, but joint possession may continue until partition by metes and bounds. A partition claim cannot be rejected unless such a partition is established. The settlement here was contingent on payment, and the court found the required payment had not been made. For purposes of the case, the Court proceeded on the assumption that the settlement was not compulsorily registrable under Section 17 of the Registration Act because the relinquishment was to take effect in the future. No earlier cases were relied on.",
+      "rule": {
+        "if": "partition_proceeding and (some_coshareholder_excluded_from_settlement or (settlement_made_relinquishment_conditional_on_payment and required_payment_not_made))",
+        "then": "partition_claim_not_barred_by_settlement"
+      },
+      "predicates": {
+        "partition_proceeding": "A party brought a proceeding seeking partition of jointly owned property.",
+        "some_coshareholder_excluded_from_settlement": "At least one co-owner did not join the purported settlement.",
+        "settlement_made_relinquishment_conditional_on_payment": "The settlement provided that a co-owner would relinquish rights only after a specified payment.",
+        "required_payment_not_made": "The party required to make the specified payment did not make it."
+      },
+      "definition": "When a partition proceeding is brought and a co-owner was excluded from the settlement or a required payment triggering relinquishment was not made, the settlement does not bar the partition claim."
+    },
+    {
+      "legal_issue": "A material factual allegation in a civil pleading that is not specifically denied may be treated as admitted and need not be proved.",
+      "material_facts": [
+        "The plaintiffs alleged that the required settlement payment had not been made.",
+        "That allegation was not denied or disputed in the opposing pleading.",
+        "The trial court also found that the payment had not been made, and the High Court affirmed that finding."
+      ],
+      "conclusion": "The undenied allegation could be treated as admitted; independently, the courts’ finding that the payment had not been made supported the conclusion that the settlement had not taken full effect.",
+      "legal_principle": "Order VIII Rules 3 and 5 of the Code of Civil Procedure require specific treatment of factual allegations and provide that an allegation not specifically denied, denied by necessary implication, or stated not to be admitted may be taken as admitted. The court may require an admitted fact to be proved otherwise. Under Section 58 of the Evidence Act, a fact admitted need not be proved.",
+      "rule": {
+        "if": "civil_pleading_proceeding and material_fact_alleged and opposing_pleading_lacks_specific_denial",
+        "then": "material_fact_treated_as_admitted"
+      },
+      "predicates": {
+        "civil_pleading_proceeding": "The dispute is being decided in a civil proceeding in which the parties have filed pleadings.",
+        "material_fact_alleged": "A party alleged a fact material to the dispute in its pleading.",
+        "opposing_pleading_lacks_specific_denial": "The opposing party did not specifically deny the alleged fact, deny it by necessary implication, or state that it was not admitted."
+      },
+      "definition": "When a material fact is alleged in a civil pleading and the opposing pleading lacks a specific denial, the fact is treated as admitted."
+    }
+  ],
+  "seconds": 17.5
+}

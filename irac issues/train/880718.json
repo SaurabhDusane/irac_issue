@@ -1,0 +1,99 @@
+{
+  "doc_id": "880718",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19468,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2974,
+    "prompt_tokens": 5387,
+    "total_tokens": 8361,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The limitation period for redeeming a valid oral mortgage begins when the mortgage is created, rather than after a later period of possession or registration.",
+      "material_facts": [
+        "The land was mortgaged orally with possession in 1893 for a sum below Rs. 100.",
+        "At the time and in the area concerned, an oral mortgage of this kind was legally permissible and enforceable.",
+        "The mortgage imposed no restriction postponing the mortgagors’ right to redeem.",
+        "The redemption suit was filed in 1980, more than 60 years after the mortgage was made."
+      ],
+      "conclusion": "The mortgage was valid from its creation, so the 60-year limitation period began in 1893 and had expired before the suit was filed; the suit was time-barred.",
+      "legal_principle": "The Court approved the Full Bench ruling in Sri Chand v. Nathi and rejected the contrary approach in Inder Singh v. Mst. Kishno, which had wrongly relied on Purushottam Dass v. S.M. Dedouza, concerning an invalid unregistered mortgage made when the Transfer of Property Act applied. Before the relevant provisions of the Transfer of Property Act were extended to the area, a mortgage for less than Rs. 100 could be made orally by delivery of possession, and its lack of registration did not make it invalid or defer limitation. Under Article 148 of the Limitation Act, the applicable period was 60 years from when the right to redeem accrued.",
+      "rule": {
+        "if": "redemption_suit and valid_oral_mortgage and no_redemption_restriction and limitation_period_expired",
+        "then": "redemption_suit_is_time_barred"
+      },
+      "predicates": {
+        "redemption_suit": "A party filed a suit seeking redemption of a mortgage and recovery of the mortgaged property.",
+        "valid_oral_mortgage": "The mortgagor created an enforceable mortgage orally, including by delivering possession where that was legally sufficient.",
+        "no_redemption_restriction": "The mortgage did not provide a valid restriction postponing the mortgagor’s right to redeem.",
+        "limitation_period_expired": "The applicable limitation period had elapsed before the redemption suit was filed."
+      },
+      "definition": "When a redemption suit concerns a valid oral mortgage without a restriction on redemption, and the applicable limitation period has elapsed, the suit is time-barred."
+    },
+    {
+      "legal_issue": "An acknowledgment made after the limitation period for a redemption suit has expired does not restart or revive that period.",
+      "material_facts": [
+        "The mortgage was created in 1893, and the applicable 60-year period expired in 1953.",
+        "In 1960, the original mortgagees transferred their mortgagee rights by a registered deed that acknowledged the mortgage.",
+        "The mortgagors filed their redemption suit in 1980."
+      ],
+      "conclusion": "The 1960 acknowledgment could not revive the limitation period because it was made after the period had expired.",
+      "legal_principle": "Section 18(1) of the Limitation Act applies only where an acknowledgment of liability is made before the prescribed limitation period expires. An acknowledgment after expiry cannot revive the right to sue or begin a fresh period.",
+      "rule": {
+        "if": "redemption_suit and acknowledgment_after_limitation_expired",
+        "then": "acknowledgment_does_not_revive_limitation"
+      },
+      "predicates": {
+        "redemption_suit": "A party filed a suit seeking redemption of a mortgage and recovery of the mortgaged property.",
+        "acknowledgment_after_limitation_expired": "A person made an acknowledgment of the mortgage liability only after the limitation period for bringing the suit had expired."
+      },
+      "definition": "For a redemption suit, an acknowledgment made only after the limitation period expires does not revive that period."
+    },
+    {
+      "legal_issue": "The right to redeem a valid mortgage accrues from its creation unless the mortgage imposes a valid restriction, and it does not await tender of payment, communication that the mortgage has been satisfied, or the enactment of a later summary redemption procedure.",
+      "material_facts": [
+        "The mortgage was validly created in 1893 and contained no restriction postponing redemption.",
+        "The mortgagors had not tendered the mortgage amount, and the mortgagees had not communicated that the mortgage had been satisfied.",
+        "The mortgagors relied on the Redemption of Mortgages (Punjab) Act, 1913 to argue that the right to redeem had not accrued earlier."
+      ],
+      "conclusion": "The right to redeem accrued when the valid mortgage was created; neither the absence of tender or communication nor the 1913 Act postponed the start of limitation.",
+      "legal_principle": "Under Section 61(a) of Part V of the Schedule to the Limitation Act, the period runs from when the right to redeem or recover possession accrues. The right accrues when a valid mortgage is made unless restricted by law or by a valid term of the mortgage. C. Beepathumma v. V.S. Kadambolithaya involved a specific restriction and did not support postponing accrual here. The Redemption of Mortgages (Punjab) Act, 1913 provided powers and a summary procedure for redemption; it did not alter the limitation period. The Court also noted that, even if time were counted from that Act, the limitation period had expired before the suit.",
+      "rule": {
+        "if": "redemption_suit and valid_mortgage and no_redemption_restriction",
+        "then": "limitation_begins_when_mortgage_is_created"
+      },
+      "predicates": {
+        "redemption_suit": "A party filed a suit seeking redemption of a mortgage and recovery of the mortgaged property.",
+        "valid_mortgage": "The parties created a legally enforceable mortgage.",
+        "no_redemption_restriction": "The mortgage did not provide a valid restriction postponing the mortgagor’s right to redeem."
+      },
+      "definition": "In a redemption suit, when the mortgage is valid and contains no restriction on redemption, limitation begins when the mortgage is created."
+    },
+    {
+      "legal_issue": "The doctrine that a person who accepts a benefit under an instrument must accept its obligations does not determine limitation in a redemption suit where the mortgage was oral and no breach of a mortgage obligation was alleged.",
+      "material_facts": [
+        "The mortgagors argued that the mortgagees, having continued in possession under the mortgage, could not deny their obligations under it.",
+        "The mortgage was oral, and there was no mortgage deed or other mortgage instrument under which the mortgagees had accepted a benefit.",
+        "The mortgagors had not repaid the mortgage money, and the dispute before the Court concerned whether the redemption suit was within time."
+      ],
+      "conclusion": "The doctrine of approbation and reprobation did not assist the mortgagors because the case involved no benefit accepted under an instrument and no alleged unperformed obligation that affected the limitation question.",
+      "legal_principle": "C. Beepathumma v. V.S. Kadambolithaya states the doctrine that a person who accepts a benefit under a deed, will, or other instrument must adopt its contents and cannot renounce inconsistent obligations. The Court held that the doctrine did not apply to an oral mortgage without an instrument conferring a benefit, and it did not answer the separate question whether the redemption suit was timely.",
+      "rule": {
+        "if": "redemption_suit and oral_mortgage_without_instrument and no_repayment_of_mortgage_money",
+        "then": "approbation_reprobation_doctrine_does_not_determine_limitation"
+      },
+      "predicates": {
+        "redemption_suit": "A party filed a suit seeking redemption of a mortgage and recovery of the mortgaged property.",
+        "oral_mortgage_without_instrument": "The mortgage was made orally and no deed or other instrument recording the mortgage existed.",
+        "no_repayment_of_mortgage_money": "The mortgagor had not repaid the mortgage money."
+      },
+      "definition": "In a redemption suit involving an oral mortgage without an instrument and no repayment, the doctrine of approbation and reprobation does not determine limitation."
+    }
+  ],
+  "seconds": 18.2
+}

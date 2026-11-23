@@ -1,0 +1,80 @@
+{
+  "doc_id": "1230342",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22401,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2531,
+    "prompt_tokens": 5897,
+    "total_tokens": 8428,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A will grants a life estate rather than an absolute estate when its provisions, read as a whole, show that the testator intended successive enjoyment by the beneficiary’s heirs and restricted alienation as a central feature of the disposition.",
+      "material_facts": [
+        "The will described the initial beneficiary as an absolute owner but prohibited him and his heirs from transferring the properties.",
+        "It stated that the beneficiary’s heirs and successors were to enjoy the properties generation after generation and that the properties would return to the larger estate if that line became extinct.",
+        "The will was intended to provide for the beneficiary and his heirs and to prevent disputes between them."
+      ],
+      "conclusion": "The initial beneficiary received only a life interest, not an absolute estate.",
+      "legal_principle": "The testator’s intention must be gathered from the will as a whole, without treating isolated expressions as decisive or disregarding provisions as redundant. Expressions such as “malik kamil” and “naslan bad naslan” ordinarily indicate full proprietary rights, but restrictions that are central to and consistent with the will may displace that implication. A restraint on alienation is repugnant where an absolute estate was intended, but may help show that only a limited estate was intended. The Court applied these principles to the will and referred to no earlier case on this issue.",
+      "rule": {
+        "if": "will_construction_dispute and absolute_owner_language and heirs_generation_benefit and (transfer_restriction or reversion_on_line_extinction)",
+        "then": "beneficiary_receives_life_estate"
+      },
+      "predicates": {
+        "will_construction_dispute": "The dispute requires the court to determine the nature of an interest created by a will.",
+        "absolute_owner_language": "The will uses language describing the beneficiary as an absolute owner.",
+        "heirs_generation_benefit": "The will shows that the testator intended successive generations of the beneficiary’s heirs to benefit.",
+        "transfer_restriction": "The will restricts the beneficiary’s ability to transfer the property.",
+        "reversion_on_line_extinction": "The will provides for the property to return to another estate if the beneficiary’s line becomes extinct."
+      },
+      "definition": "When a will dispute involves absolute-owner language but also shows an intention to benefit successive heirs and imposes a central restriction or reversion, the beneficiary receives a life estate."
+    },
+    {
+      "legal_issue": "The special statutory rules of succession do not govern property after the death of a qualifying family legatee who received only a life interest under a will.",
+      "material_facts": [
+        "The disputed properties included property governed by special statutory rules of succession.",
+        "The legatee was a younger son within the class of persons referred to in the statutory scheme.",
+        "Under the will, the legatee received only a life interest, followed by interests intended for others."
+      ],
+      "conclusion": "The special statutory rules of succession did not apply on the legatee’s death; succession to the property followed the interests created by the will, and the next person entitled under it could take.",
+      "legal_principle": "Sections 11, 13, 13-A and 14 of the Oudh Estates Act, 1869, permit a taluqdar to dispose of property and prescribe special succession consequences for qualifying transfers or bequests. Section 14 applies where the qualifying legatee becomes entitled to the property as an absolute owner; it does not displace a will that gives the legatee only a life interest followed by later interests. Section 12’s application of the rule against perpetuities indicates that future estates and limitations are not prohibited if they do not transgress that rule. The Court also considered section 22(5) in rejecting the claimant’s asserted statutory entitlement.",
+      "rule": {
+        "if": "taluqdari_property_succession_dispute and qualifying_family_legatee and will_grants_only_life_interest",
+        "then": "succession_follows_later_interest_created_by_will"
+      },
+      "predicates": {
+        "taluqdari_property_succession_dispute": "The proceeding concerns succession to property subject to a special statutory succession scheme.",
+        "qualifying_family_legatee": "The person who received the property under the will belongs to a family class covered by the special succession scheme.",
+        "will_grants_only_life_interest": "The will gives the legatee only a life interest and creates a later interest in another person."
+      },
+      "definition": "When a succession dispute concerns specially regulated property and a qualifying family legatee received only a life interest under the will, succession follows the later interest created by that will."
+    },
+    {
+      "legal_issue": "A successive gift to a class or series of beneficiaries is effective for beneficiaries who were in existence when the testator died, even if it is ineffective for beneficiaries who were then unborn.",
+      "material_facts": [
+        "The will created successive interests for the initial beneficiary’s heirs.",
+        "The beneficiary’s widow, who was the next heir entitled under the will, was alive when the testator died.",
+        "The will also contemplated interests for future heirs who might not have been born when the testator died."
+      ],
+      "conclusion": "The interest created for the widow was valid for her lifetime; the gift did not fail entirely merely because later beneficiaries might be unborn.",
+      "legal_principle": "Under Tagore v. Tagore (18 W.R. 359), an interest cannot be created in favour of an unborn person. But where a gift is made to a class or series containing both persons in existence at the testator’s death and persons not then in existence, it remains valid for those then in existence and is invalid as to the rest. Sections 11 and 12 of the Oudh Estates Act support the creation of future estates subject to the rule against perpetuities.",
+      "rule": {
+        "if": "successive_gift_dispute and gift_to_series_includes_unborn_beneficiaries and next_beneficiary_alive_at_testator_death",
+        "then": "gift_valid_for_existing_beneficiary_only"
+      },
+      "predicates": {
+        "successive_gift_dispute": "The proceeding concerns successive interests created by a will.",
+        "gift_to_series_includes_unborn_beneficiaries": "The will creates interests for a series of beneficiaries that includes persons who were unborn when the testator died.",
+        "next_beneficiary_alive_at_testator_death": "The next beneficiary entitled under the will was alive when the testator died."
+      },
+      "definition": "When a will creates successive interests for a series that includes unborn beneficiaries but the next beneficiary was alive at the testator’s death, the gift is valid for the existing beneficiary only."
+    }
+  ],
+  "seconds": 77.5
+}

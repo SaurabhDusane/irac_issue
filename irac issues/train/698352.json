@@ -1,0 +1,81 @@
+{
+  "doc_id": "698352",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 34836,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2346,
+    "prompt_tokens": 8746,
+    "total_tokens": 11092,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Land is agricultural land for the wealth-tax exclusion only when its actual condition or intended use connects it with an agricultural purpose, rather than merely because it is capable of agricultural use.",
+      "material_facts": [
+        "The land was vacant, had not been ploughed or tilled, and had never been used for agriculture.",
+        "The land was capable of agricultural use, was adjacent to a tank, contained wells, and had been assessed as agricultural land for revenue purposes.",
+        "The taxing authorities found that the land had neither been used nor intended to be used for agriculture; the High Court relied on its potentialities and revenue classification."
+      ],
+      "conclusion": "Mere capability of agricultural use and absence of non-agricultural use do not establish that land is agricultural land. The relevant inquiry is whether it is actually or ordinarily used, or has been set apart or prepared for agricultural use in a way that shows the owner's or occupier's intention; the factual question was remanded for reconsideration.",
+      "legal_principle": "Under section 2(e)(i) of the Wealth Tax Act, 1957, the term must be interpreted in the context and purpose of the Act, rather than given its widest possible meaning. Following Commissioner of Income Tax, West Bengal v. Raja Benoy Kumar Sahas Roy, the Court required a connection with agricultural purpose and user, including human activity applied to land to obtain a product. It rejected the capability-only approach in Sarojini Devi v. Raja Sri Krishno, which it overruled. The claimant must establish the conditions for the exemption.",
+      "rule": {
+        "if": "wealth_tax_exemption_claim and (land_actually_or_ordinarily_used_for_agriculture or land_set_apart_or_prepared_for_agriculture_with_intent)",
+        "then": "land_qualifies_as_agricultural_land"
+      },
+      "predicates": {
+        "wealth_tax_exemption_claim": "A person claims that land is excluded from taxable wealth because it is agricultural land.",
+        "land_actually_or_ordinarily_used_for_agriculture": "The land is actually or ordinarily used for an agricultural purpose.",
+        "land_set_apart_or_prepared_for_agriculture_with_intent": "The land has been set apart or prepared for agricultural use in circumstances indicating the owner's or occupier's intention to use it for that purpose.",
+        "land_qualifies_as_agricultural_land": "The land qualifies as agricultural land for the claimed exclusion."
+      },
+      "definition": "When a person claims the wealth-tax exclusion, land qualifies as agricultural land if it is actually or ordinarily used for agriculture or has been set apart or prepared for agricultural use with the owner's or occupier's intention to use it that way."
+    },
+    {
+      "legal_issue": "An official revenue classification of land as agricultural is prima facie evidence of its agricultural character, but that evidence is rebuttable.",
+      "material_facts": [
+        "The land was recorded and assessed as agricultural land under the applicable revenue law.",
+        "The taxing authorities found that the land was not used and was not intended to be used for agriculture.",
+        "The High Court relied in part on the revenue entries when finding that the land was agricultural."
+      ],
+      "conclusion": "Revenue entries are good prima facie evidence of agricultural character but raise only a rebuttable presumption. If that evidence is sufficient for the claimant to establish the exemption, the Department must produce evidence to rebut it.",
+      "legal_principle": "The Court treated the revenue entries made under section 50 of the Hyderabad Land Revenue Act, then called the Andhra Pradesh Land Revenue Act, as prima facie evidence because classification involved an inquiry into the purposes for which land was appropriated. The entries do not conclusively determine the character of the land; the claimant bears the burden of establishing the exemption, and the Department may rebut the presumption with evidence.",
+      "rule": {
+        "if": "wealth_tax_exemption_claim and land_officially_classified_as_agricultural",
+        "then": "rebuttable_prima_facie_evidence_of_agricultural_character"
+      },
+      "predicates": {
+        "wealth_tax_exemption_claim": "A person claims that land is excluded from taxable wealth because it is agricultural land.",
+        "land_officially_classified_as_agricultural": "A public revenue record classifies or assesses the land as agricultural.",
+        "rebuttable_prima_facie_evidence_of_agricultural_character": "The official classification is initial evidence of agricultural character that may be displaced by contrary evidence."
+      },
+      "definition": "When a person claims the wealth-tax exclusion and public revenue records classify the land as agricultural, those records provide initial but rebuttable evidence of agricultural character."
+    },
+    {
+      "legal_issue": "A factual determination about agricultural character must be reconsidered when the reviewing court relies on land-use potentialities without addressing the taxing authorities' finding on intended use or explaining why that finding lacks evidentiary support.",
+      "material_facts": [
+        "The taxing authorities and Tribunal found that the land had never been used and was not intended to be used for agriculture.",
+        "The High Court relied on the land's agricultural potentialities and its revenue classification.",
+        "The High Court did not find that the taxing authorities' finding on intended use rested on no evidence and gave no reasons for rejecting that finding."
+      ],
+      "conclusion": "The High Court's judgment was set aside and the matter remanded to the Tribunal for a fresh factual determination under the correct legal test, with both sides given an opportunity to adduce further evidence.",
+      "legal_principle": "The character of land is a question of fact to be determined from all relevant evidence under the correct test: agricultural connection and user, not mere potentiality. A reviewing court cannot resolve that question by relying on inconclusive potentialities while leaving an adverse factual finding unaddressed. The Tribunal must reconsider the evidence consistently with section 2(e)(i) of the Wealth Tax Act and the principle in Commissioner of Income Tax, West Bengal v. Raja Benoy Kumar Sahas Roy.",
+      "rule": {
+        "if": "appeal_from_high_court_factual_determination and taxing_authority_found_no_agricultural_use_or_intent and high_court_relied_on_potentiality and high_court_did_not_explain_rejection_of_authority_finding",
+        "then": "set_aside_and_remand_for_fresh_factual_determination"
+      },
+      "predicates": {
+        "appeal_from_high_court_factual_determination": "The matter is an appeal challenging a High Court's resolution of a factual question about land's agricultural character.",
+        "taxing_authority_found_no_agricultural_use_or_intent": "The taxing authorities found that the land was neither used nor intended to be used for agriculture.",
+        "high_court_relied_on_potentiality": "The High Court relied on the land's capability or potential for agricultural use.",
+        "high_court_did_not_explain_rejection_of_authority_finding": "The High Court neither found that the taxing authorities' finding lacked evidentiary support nor explained why it rejected that finding.",
+        "set_aside_and_remand_for_fresh_factual_determination": "The High Court's decision is set aside and the factual question is remitted for a fresh determination."
+      },
+      "definition": "When an appeal challenges a High Court's factual determination, the taxing authorities found no agricultural use or intent, and the High Court relied on potentiality without explaining its rejection of that finding, the decision is set aside and the factual question is remanded."
+    }
+  ],
+  "seconds": 15.3
+}

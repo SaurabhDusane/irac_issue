@@ -1,0 +1,99 @@
+{
+  "doc_id": "53801355",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14727,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2958,
+    "prompt_tokens": 4251,
+    "total_tokens": 7209,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A criminal breach of trust charge requires an allegation that the property was entrusted to the accused.",
+      "material_facts": [
+        "The complaint alleged that the society had purchased the land and that the accused facilitated its sale through resolutions and sale deeds.",
+        "The complaint did not allege that the land had been entrusted to the society for the benefit of others."
+      ],
+      "conclusion": "The complaint did not disclose the essential ingredient of entrustment, so the offence of criminal breach of trust was not made out.",
+      "legal_principle": "Section 406 of the Indian Penal Code requires entrustment of property. As explained in Ram Narayan Popli v. Central Bureau of Investigation, (2003) 3 SCC 641, entrustment generally imports handing over possession for a purpose, without necessarily conferring a proprietary right. A mere transaction of sale does not amount to entrustment: State of Gujarat v. Jaswantlal Nathalal, AIR 1968 SC 700.",
+      "rule": {
+        "if": "criminal_complaint_challenged and property_not_alleged_entrusted",
+        "then": "criminal_breach_of_trust_not_made_out"
+      },
+      "predicates": {
+        "criminal_complaint_challenged": "The accused challenged a criminal complaint alleging breach of trust.",
+        "property_not_alleged_entrusted": "The complaint described a property transaction but did not allege that the property had been handed over to the accused for a purpose."
+      },
+      "definition": "When a challenged criminal complaint describes a property transaction but does not allege that the property was handed over for a purpose, criminal breach of trust is not made out."
+    },
+    {
+      "legal_issue": "Criminal breach of trust by a person in a specified capacity requires both entrustment and action in one of the capacities specified for that offence.",
+      "material_facts": [
+        "The complaint did not allege that the land was entrusted to the accused.",
+        "The complaint did not allege that the accused acted as public servants, bankers, merchants, factors, brokers, attorneys, or agents."
+      ],
+      "conclusion": "The complaint did not make out the offence of criminal breach of trust by a person in a specified capacity.",
+      "legal_principle": "Section 409 of the Indian Penal Code requires entrustment and that the accused acted in one of the specified capacities, including as a public servant, banker, merchant, factor, broker, attorney, or agent.",
+      "rule": {
+        "if": "criminal_complaint_challenged and property_not_alleged_entrusted and specified_capacity_not_alleged",
+        "then": "specified_capacity_breach_of_trust_not_made_out"
+      },
+      "predicates": {
+        "criminal_complaint_challenged": "The accused challenged a criminal complaint alleging breach of trust by a person in a specified capacity.",
+        "property_not_alleged_entrusted": "The complaint described a property transaction but did not allege that the property had been handed over to the accused for a purpose.",
+        "specified_capacity_not_alleged": "The complaint did not allege that the accused acted in a capacity that attracts the specified-capacity form of breach of trust."
+      },
+      "definition": "When a challenged criminal complaint alleges neither entrustment nor action in a specified capacity, the specified-capacity form of breach of trust is not made out."
+    },
+    {
+      "legal_issue": "Cheating requires deception that induces delivery or retention of property, or induces an act or omission causing or likely to cause harm.",
+      "material_facts": [
+        "The complaint described resolutions and sale deeds concerning the society's land.",
+        "The complaint did not state that the complainant or anyone else was deceived or induced by deception to deliver property, consent to its retention, or act or omit to act."
+      ],
+      "conclusion": "The complaint did not disclose the essential ingredients of cheating, and the offence punishable as cheating was not made out.",
+      "legal_principle": "Sections 415 and 420 of the Indian Penal Code require deception and the resulting inducement described in Section 415. Dishonest concealment of facts is included as deception under that section.",
+      "rule": {
+        "if": "criminal_complaint_challenged and deception_or_inducement_not_alleged",
+        "then": "cheating_offence_not_made_out"
+      },
+      "predicates": {
+        "criminal_complaint_challenged": "The accused challenged a criminal complaint alleging cheating.",
+        "deception_or_inducement_not_alleged": "The complaint did not allege that deception induced anyone to deliver or retain property, or to act or omit to act."
+      },
+      "definition": "When a challenged criminal complaint does not allege deception and resulting inducement, the cheating offence is not made out."
+    },
+    {
+      "legal_issue": "Criminal proceedings may be quashed when the complaint does not prima facie disclose the charged offences and continuation would be an abuse of the court's process.",
+      "material_facts": [
+        "The accused sought quashing of the criminal complaint and the summons issued on it.",
+        "The complainant was not a member of the society or a party to the registered sale deeds.",
+        "The registered sale deeds had been executed more than twelve years before the complaint, and no court had declared them void.",
+        "An earlier complaint to the district authority had been investigated, and the police concluded that no offence was disclosed because the dispute was civil in nature.",
+        "The complaint did not allege the ingredients of entrustment, action in a specified capacity, or deception and inducement."
+      ],
+      "conclusion": "The prosecution was an abuse of process; the appeal was allowed and the complaint and orders summoning the accused were quashed.",
+      "legal_principle": "Under Section 482 of the Code of Criminal Procedure, a court considering quashing at the initial stage asks whether the uncontroverted allegations prima facie establish an offence and may also consider special features, including whether continuing the prosecution would serve a useful purpose or abuse the process. Mathavrao Jiwajirao Scindia v. Sambhajirao Chandrojirao Angre, (1988) 1 SCC 692, states that proceedings may be quashed where the prospect of conviction is bleak and continuation serves no useful purpose. Inder Mohan Goswami v. State of Uttaranchal, (2007) 12 SCC 1, holds that the power is to be exercised sparingly and carefully to prevent harassment, private vendetta, or ulterior pressure. Suresh v. Mahadevappa Shivappa Danannava, (2005) 3 SCC 670, quashed a cheating prosecution in light of a ten-year delay.",
+      "rule": {
+        "if": "criminal_quashing_proceeding and entrustment_not_alleged and specified_capacity_not_alleged and deception_or_inducement_not_alleged and complainant_unconnected_to_transaction and long_delay_after_registered_sales and prior_inquiry_found_civil_dispute",
+        "then": "criminal_complaint_quashed"
+      },
+      "predicates": {
+        "criminal_quashing_proceeding": "The accused asked a court to quash a criminal complaint and the process issued on it.",
+        "entrustment_not_alleged": "The complaint did not allege that the property was handed over to the accused for a purpose.",
+        "specified_capacity_not_alleged": "The complaint did not allege that the accused acted in a capacity attracting the specified-capacity form of breach of trust.",
+        "deception_or_inducement_not_alleged": "The complaint did not allege deception inducing delivery or retention of property, or an act or omission.",
+        "complainant_unconnected_to_transaction": "The complainant was neither a member of the organization involved nor a party to the transactions at issue.",
+        "long_delay_after_registered_sales": "The complaint was made many years after registered sale documents were executed, and those documents had not been declared void by a court.",
+        "prior_inquiry_found_civil_dispute": "An earlier official investigation into the same dispute concluded that no offence was disclosed and that the dispute was civil in nature."
+      },
+      "definition": "When an accused seeks to quash a complaint that lacks the alleged offences' essential factual ingredients and the complainant is unconnected to the transactions, the complaint follows a long delay after registered sales, and an earlier inquiry treated the dispute as civil, the criminal complaint is quashed."
+    }
+  ],
+  "seconds": 83.4
+}

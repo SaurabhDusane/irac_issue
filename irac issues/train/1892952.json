@@ -1,0 +1,61 @@
+{
+  "doc_id": "1892952",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38556,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2751,
+    "prompt_tokens": 10125,
+    "total_tokens": 12876,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A Hindu widow’s right to maintenance from her deceased husband’s property is a pre-existing right under Hindu law, even where statutes recognizing that right were not in force.",
+      "material_facts": [
+        "The widow’s husband died leaving property, and she remained in possession of the property after his death.",
+        "The governing statutory enactments recognizing Hindu widows’ maintenance rights were not in force in the territory when the husband died.",
+        "The defendants relied on the widow’s maintenance right to explain her possession of the property."
+      ],
+      "conclusion": "The widow’s right to maintenance from her husband’s property arose under Shastric Hindu law and existed independently of the later statutes that recognized it.",
+      "legal_principle": "Under Shastric Hindu law, marriage gives rise to a husband’s personal obligation to maintain his wife; if he dies possessed of property, his widow has a pre-existing right to be maintained from that property. The court relied on V. Tulasamma v. Sesha Reddy, which describes the right as a right against property and explains that the 1937 and 1946 Acts recognized, rather than created, it; it also referred to Ram Kali v. Choudhri Ajit Shankar and Bhoomireddy Chenna Reddy v. Bhoospalli Pedda Verrapa.",
+      "rule": {
+        "if": "hindu_widow_maintenance_dispute and deceased_husband_left_property",
+        "then": "widow_has_preexisting_maintenance_right_against_husband_property"
+      },
+      "predicates": {
+        "hindu_widow_maintenance_dispute": "The proceeding concerns a Hindu widow’s claimed right to maintenance from her deceased husband’s property.",
+        "deceased_husband_left_property": "The husband died leaving property from which maintenance could be provided."
+      },
+      "definition": "When a Hindu widow’s maintenance dispute concerns property left by her deceased husband, the output is that her maintenance right against that property is pre-existing."
+    },
+    {
+      "legal_issue": "A widow’s restricted interest in property she possesses under a recognized existing right is enlarged into absolute ownership when the property is held under that right, rather than acquired under an instrument creating a new and independent title.",
+      "material_facts": [
+        "The widow remained in rightful possession of the disputed property after her husband’s death and continued to possess it after the Hindu Succession Act came into force.",
+        "The will provided that the husband and his wife would retain ownership, control, and rights over the property during their lives, with the property passing to the named legatee after both had died.",
+        "A compromise decree recognized the widow’s ownership and possession under the will; it did not create a new title in her for the first time.",
+        "The widow executed sale deeds concerning the property, and the plaintiffs later sued as reversioners for possession, arguing that she had only a restricted interest.",
+        "The appeal challenged a decree granting the plaintiffs possession of part of the property."
+      ],
+      "conclusion": "The widow’s interest was governed by Section 14(1), not Section 14(2), and any limited interest she had became absolute ownership. She was competent to transfer the property, so the plaintiffs could not recover it on the basis asserted.",
+      "legal_principle": "Section 14(1) of the Hindu Succession Act, 1956, including its Explanation, enlarges property possessed by a female Hindu under a claim, right, or title into full ownership. Under Section 14(2), a restricted estate may remain where an instrument, decree, gift, or other disposition creates an independent and new title for the first time; that exception does not apply where the instrument recognizes or confirms a pre-existing right, including a right to maintenance. The court applied V. Tulasamma v. Sesha Reddy and also referred to Ram Kali v. Choudhri Ajit Shankar and Bhoomireddy Chenna Reddy v. Bhoospalli Pedda Verrapa. It construed the will and compromise decree as recognizing the widow’s ownership and possession, and held that her pre-existing maintenance right also supported the result even if her interest were assumed to be limited.",
+      "rule": {
+        "if": "appeal_from_reversioners_possession_decree and widow_possessed_property_under_claim_of_right and widow_held_property_when_ownership_law_commenced and (instrument_recognized_existing_right or property_given_in_lieu_of_maintenance)",
+        "then": "widow_limited_interest_enlarged_to_absolute_ownership"
+      },
+      "predicates": {
+        "appeal_from_reversioners_possession_decree": "The proceeding is an appeal from a decree granting possession to persons claiming through a deceased owner as reversioners.",
+        "widow_possessed_property_under_claim_of_right": "The widow possessed the property under a claim, right, or title rather than as a trespasser without any right.",
+        "widow_held_property_when_ownership_law_commenced": "The widow held the property when the law providing for enlargement of her interest came into force.",
+        "instrument_recognized_existing_right": "A will, decree, or other instrument recognized or confirmed an existing right of the widow rather than creating an independent new title for her.",
+        "property_given_in_lieu_of_maintenance": "The widow held or received the property in lieu of her right to maintenance."
+      },
+      "definition": "When a reversioners’ possession appeal concerns property held by a widow under a right at the time the ownership law commenced, and an instrument recognizes an existing right or the property is held in lieu of maintenance, the output is that her limited interest becomes absolute ownership."
+    }
+  ],
+  "seconds": 18.0
+}

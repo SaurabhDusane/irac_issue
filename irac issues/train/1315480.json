@@ -1,0 +1,98 @@
+{
+  "doc_id": "1315480",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21969,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2655,
+    "prompt_tokens": 5979,
+    "total_tokens": 8634,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Procedural amendments governing recovery of sums payable to a custodian apply to recovery proceedings initiated after the amendments take effect, even when the underlying claim arose earlier.",
+      "material_facts": [
+        "A fresh recovery notice was issued after the amended recovery procedure had come into force.",
+        "The claim related to money deposited before the amendment."
+      ],
+      "conclusion": "The recovery initiated by the later notice could be dealt with under the amended procedural provisions, notwithstanding that the claim arose earlier.",
+      "legal_principle": "Procedural amendments apply, absent anything to the contrary, to actions taken after they come into force even if the action began earlier or the claim is anterior. The Court treated sub-sections (1) and (2) of section 48 of the Administration of Evacuee Property Act, 1950, as amended, as procedural.",
+      "rule": {
+        "if": "evacuee_property_recovery_case and procedural_change_applies_to_recovery and recovery_initiated_after_change",
+        "then": "later_recovery_proceeding_governed_by_new_procedure"
+      },
+      "predicates": {
+        "evacuee_property_recovery_case": "A custodian seeks recovery of a sum connected with property of a person treated as an evacuee.",
+        "procedural_change_applies_to_recovery": "The change alters the procedure for investigating or recovering the sum rather than the underlying substantive right.",
+        "recovery_initiated_after_change": "The recovery proceeding at issue was initiated after the procedural change took effect."
+      },
+      "definition": "When a custodian's recovery case is governed by a procedural change and the proceeding is initiated after that change, the new procedure governs that proceeding."
+    },
+    {
+      "legal_issue": "A custodian may use the procedure for recovering sums payable in respect of evacuee property to enforce an evacuee's right to recover money deposited with another person, because that right is an actionable claim rather than specific money capable of physical seizure.",
+      "material_facts": [
+        "Money had been deposited with the person from whom recovery was sought.",
+        "When the depositor became an evacuee, the property that vested in the Custodian was the depositor's right to recover the deposit, not the specific currency held by the recipient.",
+        "The Custodian sought recovery of the amount as a sum payable in respect of that right."
+      ],
+      "conclusion": "The Custodian could proceed under section 48(1) and (2) of the amended Act to recover the sum in respect of the actionable claim; section 9, which concerns taking possession of specific property, did not apply to the money as such.",
+      "legal_principle": "Under section 48(1) and (2) of the Administration of Evacuee Property Act, 1950, as amended, sums payable in respect of evacuee property may be recovered through the specified recovery procedure. The Court read that procedure with section 10(2)(i) as applicable to incorporeal property such as an actionable claim. Section 9 concerns possession of immovable or specific movable property that can be physically seized, not an actionable claim.",
+      "rule": {
+        "if": "evacuee_property_recovery_case and money_deposited_with_another_person and vested_property_is_right_to_recover and vested_property_is_not_specific_seizable_money",
+        "then": "actionable_claim_recoverable_through_sum_recovery_procedure"
+      },
+      "predicates": {
+        "evacuee_property_recovery_case": "A custodian seeks to recover an amount connected with property that vested in the custodian when its owner became an evacuee.",
+        "money_deposited_with_another_person": "The evacuee had deposited money with another person and retained a right to seek its return.",
+        "vested_property_is_right_to_recover": "The property that vested in the custodian was the evacuee's claim against the recipient for repayment.",
+        "vested_property_is_not_specific_seizable_money": "The property vested in the custodian was not identifiable currency or other specific movable property capable of physical seizure."
+      },
+      "definition": "If a custodian's recovery case concerns a deposit and the vested property is the depositor's claim for repayment rather than specific seizable money, that claim can be enforced through the procedure for recovering sums."
+    },
+    {
+      "legal_issue": "For a deposit, limitation begins no earlier than a demand for repayment, so an un-demanded deposit claim remains alive when it vests in the custodian.",
+      "material_facts": [
+        "The amount was found to be a deposit rather than a loan.",
+        "There was no evidence that the depositor demanded repayment before migrating and becoming an evacuee.",
+        "The right to recover the amount vested in the Custodian when the depositor became an evacuee."
+      ],
+      "conclusion": "Assuming Article 60 of the Limitation Act, 1908, applied, limitation had not begun to run when the depositor became an evacuee; the right to recover the deposit therefore vested in the Custodian without being time-barred at that point.",
+      "legal_principle": "Under Article 60 of the Limitation Act, 1908, as applied by the Court to a deposit, limitation runs at the earliest from the date of demand. In the absence of evidence of a pre-migration demand, the recovery period had not begun before the claim vested in the Custodian.",
+      "rule": {
+        "if": "evacuee_property_recovery_case and transaction_is_a_deposit and no_repayment_demand_before_vesting",
+        "then": "deposit_claim_not_time_barred_when_vested"
+      },
+      "predicates": {
+        "evacuee_property_recovery_case": "A custodian seeks to enforce a claim that vested when its owner became an evacuee.",
+        "transaction_is_a_deposit": "The money was held as a deposit rather than as a loan.",
+        "no_repayment_demand_before_vesting": "The depositor made no demand for repayment before the claim vested in the custodian."
+      },
+      "definition": "When a deposit claim vests in a custodian without a prior repayment demand, the claim is not time-barred at vesting."
+    },
+    {
+      "legal_issue": "An appellant may not raise for the first time on appeal a limitation contention that depends on factual matters not investigated below.",
+      "material_facts": [
+        "Before the authorities below, the appellant contended that the transaction was a loan and that recovery was time-barred on that basis.",
+        "The appellant did not contend before those authorities that recovery was time-barred even if the transaction was a deposit.",
+        "Resolving the newly raised contention could depend on evidence about the terms of the deposit and acknowledgments of liability, which had not been investigated."
+      ],
+      "conclusion": "The Court refused to allow the appellant to raise for the first time the contention that recovery was barred even if the amount was a deposit, and did not decide the effect of section 48(3) on that contention.",
+      "legal_principle": "The Court declined to consider a new appellate contention where it had not been raised before the authorities and its resolution could require factual evidence that had not been investigated. The Court consequently did not decide whether section 48(3) of the Administration of Evacuee Property Act, 1950, applied where limitation had expired before the amendment.",
+      "rule": {
+        "if": "appellate_review_case and limitation_argument_not_raised_below and argument_depends_on_uninvestigated_facts",
+        "then": "new_factual_limitation_argument_not_considered"
+      },
+      "predicates": {
+        "appellate_review_case": "The court is reviewing a decision on appeal.",
+        "limitation_argument_not_raised_below": "The party did not advance the limitation contention before the authorities whose decisions are under review.",
+        "argument_depends_on_uninvestigated_facts": "Deciding the contention could require evidence about facts that were not investigated below."
+      },
+      "definition": "On appeal, a limitation contention not raised below is not considered when deciding it could require factual investigation that did not occur."
+    }
+  ],
+  "seconds": 19.5
+}

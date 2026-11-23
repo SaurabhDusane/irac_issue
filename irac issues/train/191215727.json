@@ -1,0 +1,121 @@
+{
+  "doc_id": "191215727",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 154348,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3686,
+    "prompt_tokens": 36080,
+    "total_tokens": 39766,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A subsisting judicial order must be obeyed unless and until it is set aside, even when a party considers it void or without jurisdiction.",
+      "material_facts": [
+        "A company court granted a creditor permission to pursue debt-recovery proceedings subject to conditions, including that no coercive steps be taken against the company’s assets during or after those proceedings.",
+        "The order remained in force and had not been varied or set aside when the recovery officer proceeded with the sale and confirmed it.",
+        "The sale and confirmation were treated as contrary to the court’s order."
+      ],
+      "conclusion": "The order remained binding while it subsisted, and actions taken in violation of it were liable to be set aside.",
+      "legal_principle": "A party or third party cannot decide for itself that a court order is void and disregard it; the party must obtain a declaration or an order setting it aside from a competent court. Until then, the order must be obeyed. The Court relied on Krishnadevi Malchand Kamathia v. Bombay Environmental Action Group, Jehal Tanti v. Nageshwar Singh, and Official Liquidator, Uttar Pradesh and Uttarakhand v. Allahabad Bank.",
+      "rule": {
+        "if": "court_order_is_in_force and (party_or_third_party_considers_order_invalid and order_has_not_been_set_aside)",
+        "then": "order_must_be_obeyed_until_set_aside"
+      },
+      "predicates": {
+        "court_order_is_in_force": "A court has made an order that remains in force.",
+        "party_or_third_party_considers_order_invalid": "A party or a third party considers the court’s order invalid or without jurisdiction.",
+        "order_has_not_been_set_aside": "No competent court has set aside the order."
+      },
+      "definition": "When a party or third party considers an order invalid but it remains in force and has not been set aside, the order must be obeyed until set aside."
+    },
+    {
+      "legal_issue": "A recovery sale of assets in a winding-up proceeding cannot proceed contrary to a subsisting company-court order restricting coercive steps against those assets.",
+      "material_facts": [
+        "A company in liquidation had its assets in the Official Liquidator’s possession.",
+        "The company court allowed a creditor to continue recovery proceedings, subject to a condition that no coercive steps be taken against the company’s assets during or after those proceedings.",
+        "The recovery officer accepted a bid for the assets and later confirmed the sale while that condition remained in force.",
+        "The Official Liquidator and the workers’ union had objected to the recovery proceedings."
+      ],
+      "conclusion": "The sale and its confirmation were impermissible and were set aside.",
+      "legal_principle": "The RDB Act gives the Tribunal and Recovery Officer authority over recovery and execution, as discussed in Allahabad Bank v. Canara Bank and under Sections 17, 18, 19 and 34 of that Act. That authority does not permit the Recovery Officer to act contrary to a binding company-court order. The Court relied on M.V. Janardhan Reddy v. Vijaya Bank and Official Liquidator, Uttar Pradesh and Uttarakhand v. Allahabad Bank, which held that a Recovery Officer must comply with a company-court condition restricting sale or confirmation.",
+      "rule": {
+        "if": "winding_up_debt_recovery_proceeding and company_court_order_restricts_coercive_steps_against_assets and company_court_order_is_in_force and recovery_sale_or_confirmation_contravenes_order",
+        "then": "recovery_sale_and_confirmation_must_be_set_aside"
+      },
+      "predicates": {
+        "winding_up_debt_recovery_proceeding": "A creditor pursues recovery against a company whose assets are in a winding-up proceeding.",
+        "company_court_order_restricts_coercive_steps_against_assets": "The company court makes an order restricting coercive steps against the company’s assets during or after recovery proceedings.",
+        "company_court_order_is_in_force": "The company-court order remains in force when the recovery officer acts.",
+        "recovery_sale_or_confirmation_contravenes_order": "The recovery officer conducts or confirms a sale contrary to the company-court order."
+      },
+      "definition": "When a recovery sale in a winding-up proceeding contravenes an in-force company-court restriction on coercive steps against the assets, the sale and its confirmation must be set aside."
+    },
+    {
+      "legal_issue": "A company court has jurisdiction to entertain a creditor’s request in a pending winding-up proceeding and to make an order governing the creditor’s recovery proceedings.",
+      "material_facts": [
+        "A winding-up proceeding was pending when a creditor applied to the company court for permission to pursue recovery proceedings before the debt-recovery tribunal.",
+        "The company court granted permission subject to conditions concerning the Official Liquidator and the company’s assets.",
+        "The order was made in the winding-up proceeding and was not set aside."
+      ],
+      "conclusion": "The company court had jurisdiction to make the order, and the order was not invalid or void for want of jurisdiction.",
+      "legal_principle": "Section 446(1) and (2) of the Companies Act, 1956, gives the company court authority in relation to proceedings and claims involving a company in winding up. A creditor may approach that court by filing a winding-up petition or by intervening in a pending winding-up proceeding. The Court rejected the contention that the RDB Act deprived the company court of jurisdiction to make the order in this case.",
+      "rule": {
+        "if": "winding_up_proceeding_is_pending and creditor_seeks_permission_or_directions_from_company_court",
+        "then": "company_court_has_jurisdiction_to_make_order_on_request"
+      },
+      "predicates": {
+        "winding_up_proceeding_is_pending": "A winding-up proceeding concerning a company is pending before the company court.",
+        "creditor_seeks_permission_or_directions_from_company_court": "A creditor asks the company court for permission or directions concerning recovery from the company."
+      },
+      "definition": "When a winding-up proceeding is pending and a creditor seeks permission or directions from the company court, that court has jurisdiction to make an order on the request."
+    },
+    {
+      "legal_issue": "A party may approach the company court to enforce its own subsisting order when a recovery sale is alleged to violate that order, notwithstanding an available statutory appeal against the recovery officer’s action.",
+      "material_facts": [
+        "The parties challenging the recovery sale relied on a company-court order that imposed conditions on the recovery proceedings.",
+        "They alleged that the recovery officer’s sale and confirmation violated that order.",
+        "A statutory appeal against the recovery officer’s action was available under the RDB Act."
+      ],
+      "conclusion": "The parties were justified in approaching the company court to seek enforcement of its own order, and the availability of a statutory appeal did not defeat that course in these circumstances.",
+      "legal_principle": "Section 30 of the RDB Act provides an appeal to the Tribunal against an order of the Recovery Officer. The Court nevertheless held that parties seeking enforcement of the company court’s own subsisting order were justified in approaching that court. This was distinguished from the general rule in Official Liquidator, Uttar Pradesh and Uttarakhand v. Allahabad Bank that a challenge to a Recovery Officer’s sale should ordinarily be pursued through the statutory appeal process.",
+      "rule": {
+        "if": "recovery_sale_is_challenged_as_violating_company_court_order and challenge_seeks_enforcement_of_that_order",
+        "then": "party_may_seek_enforcement_in_company_court"
+      },
+      "predicates": {
+        "recovery_sale_is_challenged_as_violating_company_court_order": "A party alleges that a recovery sale violates an order made by the company court.",
+        "challenge_seeks_enforcement_of_that_order": "The party approaches the company court to enforce its own order."
+      },
+      "definition": "When a party alleges that a recovery sale violates a company-court order and seeks to enforce that order, the party may seek enforcement in the company court."
+    },
+    {
+      "legal_issue": "Payment by an auction purchaser and the passage of time do not by themselves protect a sale where objections were raised and the auction lacked effective competition.",
+      "material_facts": [
+        "The Official Liquidator and the workers’ union objected to the recovery proceedings at an early stage.",
+        "Only two bids were received, and the second bidder was a sister company of the successful bidder, leaving in substance only one bidder.",
+        "A former director also challenged the reserve price as too low.",
+        "The purchaser paid the bid amount and relied on the time that had passed after confirmation of the sale."
+      ],
+      "conclusion": "The purchaser could not rely on payment and delay to establish an equitable basis for preserving the sale.",
+      "legal_principle": "The Court distinguished the circumstances from those in Sadashiv Prasad Singh v. Harendar Singh, where a bona fide purchaser at a duly publicised auction had acquired third-party rights and the challenge was delayed. It also relied on the auction principles in Navalkha and Sons v. Sri Ramanya Das and Radhy Shyam v. Shyam Behari Singh concerning public participation, adequate price, and prejudice from irregularity.",
+      "rule": {
+        "if": "public_auction_sale_is_challenged and timely_objections_were_made and (effective_competition_was_lacking or credible_concern_existed_about_auction_fairness) and purchaser_relies_only_on_payment_or_delay",
+        "then": "equity_does_not_require_sale_to_be_preserved"
+      },
+      "predicates": {
+        "public_auction_sale_is_challenged": "A party challenges a sale conducted by public auction.",
+        "timely_objections_were_made": "Interested parties raised objections to the sale process before or during the proceedings that led to confirmation.",
+        "effective_competition_was_lacking": "The auction did not attract genuinely independent competing bids.",
+        "credible_concern_existed_about_auction_fairness": "Facts raised a substantial concern that the auction process was not fair or did not secure an adequate price.",
+        "purchaser_relies_only_on_payment_or_delay": "The purchaser relies on having paid the price or on the passage of time as the basis for preserving the sale."
+      },
+      "definition": "When a challenged public auction had timely objections and lacked effective competition or raised a substantial fairness concern, payment or delay alone does not require the sale to be preserved."
+    }
+  ],
+  "seconds": 23.1
+}

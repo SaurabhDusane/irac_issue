@@ -1,0 +1,83 @@
+{
+  "doc_id": "1326994",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23103,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2976,
+    "prompt_tokens": 6491,
+    "total_tokens": 9467,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil eviction suit is barred when the premises are governed by rent-protection legislation and the suit is not founded on a statutory ground permitting eviction.",
+      "material_facts": [
+        "The trial court found that the premises were governed by the Act.",
+        "The suit sought possession on the basis that the tenancy had ended by efflux of time and alleged rent arrears.",
+        "The plaint did not allege arrears for the statutory minimum period followed by failure to pay within the prescribed time after a demand notice, and the suit was not based on another ground specified in Section 20(2)."
+      ],
+      "conclusion": "The trial court should ordinarily have dismissed the suit for want of jurisdiction under Section 20(1), because the suit was not based on a ground specified in Section 20(2).",
+      "legal_principle": "Under Sections 20(1) and 20(2) of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, an eviction suit concerning a covered building cannot be instituted except on the statutory grounds specified in Section 20(2). The arrears ground in Section 20(2)(a) requires the prescribed period of arrears and failure to pay within the prescribed time after service of a demand notice.",
+      "rule": {
+        "if": "civil_eviction_suit and premises_covered_by_rent_law and not permitted_eviction_ground_pleaded",
+        "then": "eviction_suit_barred_by_rent_law"
+      },
+      "predicates": {
+        "civil_eviction_suit": "A landlord brought a civil suit seeking to evict a tenant.",
+        "premises_covered_by_rent_law": "The premises were found to be governed by rent-protection legislation.",
+        "permitted_eviction_ground_pleaded": "The landlord based the eviction suit on a ground that the rent-protection law permits as a basis for eviction."
+      },
+      "definition": "When a civil eviction suit concerns premises governed by rent-protection legislation and pleads no permitted ground for eviction, the suit is barred."
+    },
+    {
+      "legal_issue": "A tenant's deposit of the full rent claimed by the landlord, with interest and costs, is not conditional merely because the tenant disputes the amount of rent.",
+      "material_facts": [
+        "The tenant disputed the landlord's claimed monthly rent and asserted a lower rent in the written statement.",
+        "By the first hearing, the tenant had deposited the rent at the rate claimed by the landlord, together with interest and costs.",
+        "The trial court found that the required amount had been deposited within the time specified by the Act, and the tenant's assertion of a lower rent was not proved.",
+        "The deposit was not made subject to a condition that it could not be paid to the landlord until the suit was decided."
+      ],
+      "conclusion": "The deposit was unconditional despite the tenant's unsuccessful dispute about the quantum of rent.",
+      "legal_principle": "Section 20(4) of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, requires the tenant to pay or deposit the amount due, interest and costs within the specified time. Under Section 20(6), an amount deposited under Section 20(4) is paid to the landlord without prejudice to the parties' pleadings. A dispute in the written statement about the rent quantum does not, by itself, make the deposit conditional. Mangal Sen v. Kanchhid Mal was distinguished because there it was unclear whether the correct amount had been deposited on time, and the tenant had raised a defense denying any arrears.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and tenant_deposited_rent_at_landlord_claimed_rate and tenant_deposited_interest_and_costs and deposit_made_by_first_hearing and tenant_disputed_rent_quantum",
+        "then": "deposit_is_unconditional"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "A landlord brought proceedings seeking to evict a tenant under rent-protection legislation.",
+        "tenant_deposited_rent_at_landlord_claimed_rate": "The tenant deposited rent calculated at the rate claimed by the landlord.",
+        "tenant_deposited_interest_and_costs": "The tenant included interest and costs in the deposit.",
+        "deposit_made_by_first_hearing": "The tenant made the deposit within the time required for deposit by the first hearing.",
+        "tenant_disputed_rent_quantum": "The tenant pleaded that the rent was lower than the amount claimed by the landlord."
+      },
+      "definition": "In a tenant eviction proceeding, a timely deposit of rent at the landlord's claimed rate together with interest and costs remains unconditional despite the tenant's dispute over the rent quantum."
+    },
+    {
+      "legal_issue": "A tenant's failure to prove a lower rent does not alone justify denying discretionary relief when the tenant timely deposits the rent claimed by the landlord with interest and costs.",
+      "material_facts": [
+        "The tenant asserted that the rent was lower than the landlord claimed but failed to prove that assertion.",
+        "The tenant deposited the full rent calculated at the landlord's claimed rate, together with interest and costs, within the time specified by the Act.",
+        "The lower courts treated the failure to prove the asserted lower rent as a reason to deny the tenant relief against eviction."
+      ],
+      "conclusion": "Discretionary relief could not be denied merely because the tenant failed to prove the asserted lower rent after making the timely deposit required by the Act.",
+      "legal_principle": "Section 20(4) of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, provides for discretionary relief against eviction when its deposit requirements are met. The Court held that the Act is social legislation favoring tenants and rejected a general rule that relief must be denied whenever a tenant fails to prove a defense about the quantum of rent. Mangal Sen v. Kanchhid Mal did not establish such a rule because the record there did not establish a timely deposit of the correct amount.",
+      "rule": {
+        "if": "tenant_rent_protection_proceeding and tenant_failed_to_prove_lower_rent and tenant_deposited_rent_at_landlord_claimed_rate and tenant_deposited_interest_and_costs and deposit_made_within_required_time",
+        "then": "relief_not_denied_for_failure_to_prove_lower_rent_alone"
+      },
+      "predicates": {
+        "tenant_rent_protection_proceeding": "A tenant sought protection against eviction in proceedings governed by rent-protection legislation.",
+        "tenant_failed_to_prove_lower_rent": "The tenant asserted that the rent was lower than the landlord claimed but did not prove that assertion.",
+        "tenant_deposited_rent_at_landlord_claimed_rate": "The tenant deposited rent calculated at the rate claimed by the landlord.",
+        "tenant_deposited_interest_and_costs": "The tenant included interest and costs in the deposit.",
+        "deposit_made_within_required_time": "The tenant made the required deposit within the time set for it."
+      },
+      "definition": "When a tenant fails to prove a lower rent but timely deposits the landlord's claimed rent with interest and costs, that failure alone does not justify denying relief against eviction."
+    }
+  ],
+  "seconds": 20.2
+}

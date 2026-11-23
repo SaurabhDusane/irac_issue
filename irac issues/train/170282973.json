@@ -1,0 +1,84 @@
+{
+  "doc_id": "170282973",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28642,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2902,
+    "prompt_tokens": 6940,
+    "total_tokens": 9842,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A conviction based on circumstantial evidence cannot stand when the evidence does not form a complete chain pointing to guilt beyond reasonable doubt.",
+      "material_facts": [
+        "The prosecution relied on a disbelieved extra-judicial confession, kerosene residues on a child’s clothing, a kerosene can whose recovery was disbelieved, the appellant’s lack of burn injuries, and alleged motive.",
+        "The evidence did not connect the appellant to the kerosene on the clothing; kerosene was also used in the household, and the deceased did not accuse or suspect anyone in her declaration.",
+        "Other occupants of the house were also uninjured, and circumstances in the record left room for an explanation consistent with innocence.",
+        "The lower courts convicted the appellant, but the Supreme Court found the circumstantial chain incomplete and gave the appellant the benefit of doubt."
+      ],
+      "conclusion": "The conviction and sentence could not be sustained; the appeal was allowed, the conviction was set aside, and the appellant was acquitted on the benefit of doubt.",
+      "legal_principle": "Under Sharad Birdhichand Sarda v. State of Maharashtra, the circumstances relied on must be fully established, consistent only with guilt, conclusive, exclude every reasonable hypothesis except guilt, and form a complete chain. The distinction between what may be true and what must be true is explained in Shivaji Sahabrao Bobade v. State of Maharashtra. Devilal v. State of Rajasthan, relying also on Sujit Biswas v. State of Assam and Raja v. State of Haryana, reiterates that suspicion cannot substitute for proof and that a reasonable view consistent with innocence entitles the accused to the benefit of doubt. A false defence cannot replace proof of the facts the prosecution must establish, as stated in Shankarlal. Motive, suspicion, and circumstances that do not connect the accused to the act do not establish guilt beyond reasonable doubt.",
+      "rule": {
+        "if": "criminal_appeal_from_conviction and circumstantial_case and (prosecution_links_incomplete or reasonable_innocent_hypothesis_remains)",
+        "then": "conviction_unsustainable_and_acquittal_on_benefit_of_doubt"
+      },
+      "predicates": {
+        "criminal_appeal_from_conviction": "The proceeding is an appeal challenging a criminal conviction.",
+        "circumstantial_case": "The prosecution seeks to establish guilt through circumstances rather than direct evidence of the act.",
+        "prosecution_links_incomplete": "The prosecution evidence does not establish a complete chain connecting the accused to the crime.",
+        "reasonable_innocent_hypothesis_remains": "The established circumstances permit a reasonable explanation consistent with the accused’s innocence."
+      },
+      "definition": "When a criminal conviction in a circumstantial case is appealed and the evidence leaves the chain incomplete or a reasonable innocent explanation open, the conviction is unsustainable and the accused receives the benefit of doubt."
+    },
+    {
+      "legal_issue": "An accused’s failure to explain a circumstance within their special knowledge cannot complete a circumstantial-evidence case when the prosecution has not established the other links in the chain.",
+      "material_facts": [
+        "The prosecution argued that the appellant had a duty to explain how the fire began because she was in the house with the deceased and children.",
+        "The appellant gave no explanation for the eruption of the fire.",
+        "The other circumstances relied on by the prosecution had not been satisfactorily established or connected to the appellant."
+      ],
+      "conclusion": "The appellant’s failure to explain the cause of the fire could not be used against her as an additional link because the other circumstances in the chain were not established.",
+      "legal_principle": "Section 106 of the Evidence Act does not relieve the prosecution of its burden to prove its case. Under Sharad Birdhichand Sarda v. State of Maharashtra, a false or absent explanation may be considered only as an additional link after the prosecution has satisfactorily proved the other links, the circumstances point with reasonable definiteness to guilt, and the circumstance is proximate in time and situation. Shankarlal confirms that a false plea cannot take the place of proof of facts the prosecution must establish.",
+      "rule": {
+        "if": "circumstantial_case and fact_within_accused_special_knowledge and accused_gave_no_explanation and prosecution_links_not_established",
+        "then": "failure_to_explain_cannot_complete_the_chain"
+      },
+      "predicates": {
+        "circumstantial_case": "The prosecution seeks to establish guilt through circumstances rather than direct evidence of the act.",
+        "fact_within_accused_special_knowledge": "The prosecution relies on a circumstance whose explanation is especially within the accused’s knowledge.",
+        "accused_gave_no_explanation": "The accused did not explain the circumstance relied on by the prosecution.",
+        "prosecution_links_not_established": "The prosecution has not satisfactorily established the other links needed to connect the accused to the crime."
+      },
+      "definition": "When an accused gives no explanation for a matter especially within their knowledge in a circumstantial case, that omission cannot complete the chain if the prosecution has not established the other links."
+    },
+    {
+      "legal_issue": "An accused’s lack of injuries or failure to rescue others from a fire does not by itself establish guilt of causing the fire.",
+      "material_facts": [
+        "The appellant escaped the fire without injury, and the lower courts treated her lack of injuries as evidence that she had left before the fire spread.",
+        "The appellant was faulted for not alerting or rescuing the deceased and children.",
+        "Other occupants of the house were also uninjured despite the fire destroying the house and adjoining structures.",
+        "The deceased, who survived for a day after the fire, did not accuse or suspect the appellant."
+      ],
+      "conclusion": "The appellant’s lack of injuries and failure to rescue the other occupants could not establish guilt without other circumstances in the chain pointing irresistibly to her guilt.",
+      "legal_principle": "The court applied the requirement that circumstantial evidence must establish guilt beyond reasonable doubt and exclude reasonable hypotheses consistent with innocence, as set out in Sharad Birdhichand Sarda v. State of Maharashtra. It observed that a natural response to a fire may be to escape, and that failure to return to rescue another person may be morally wrong but is not proof of a serious crime unless the other circumstances form a complete chain pointing to guilt.",
+      "rule": {
+        "if": "fire_related_criminal_case and accused_uninjured and (accused_did_not_rescue_others or accused_did_not_raise_alarm) and no_other_complete_guilt_chain",
+        "then": "lack_of_injury_or_rescue_failure_alone_does_not_prove_guilt"
+      },
+      "predicates": {
+        "fire_related_criminal_case": "The proceeding concerns an allegation that the accused caused a fire resulting in death or injury.",
+        "accused_uninjured": "The accused escaped the fire without physical injury.",
+        "accused_did_not_rescue_others": "The accused did not bring other occupants out of the fire or return to rescue them.",
+        "accused_did_not_raise_alarm": "The accused did not alert other occupants before they were caught in the fire.",
+        "no_other_complete_guilt_chain": "The remaining circumstances do not form a complete chain establishing the accused’s guilt."
+      },
+      "definition": "In a criminal case arising from a fatal fire, an accused’s lack of injury or failure to alert or rescue others does not prove guilt by itself when the other circumstances do not form a complete chain."
+    }
+  ],
+  "seconds": 77.4
+}

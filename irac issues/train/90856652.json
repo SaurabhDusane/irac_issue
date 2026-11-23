@@ -1,0 +1,97 @@
+{
+  "doc_id": "90856652",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17456,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2890,
+    "prompt_tokens": 4462,
+    "total_tokens": 7352,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An agent’s authority to sell immovable property cannot be inferred from a power of attorney that grants other powers but does not expressly authorize a sale.",
+      "material_facts": [
+        "The property was jointly inherited by two sisters, and one sister gave the other a power of attorney.",
+        "The document expressly authorized leasing, borrowing and executing or registering related documents, but did not authorize the agent to sell the property.",
+        "The agent nevertheless executed transfers, and the purchasers later transferred the property to another purchaser."
+      ],
+      "conclusion": "The agent had no authority to sell the property; the sale conveyed no valid title to the subsequent purchaser.",
+      "legal_principle": "A power of attorney is ordinarily construed strictly, and authority to sell must be expressly granted rather than inferred from powers to lease property or execute documents for borrowing or registration. The Court relied on Church of Christ Charitable Trust and Educational Charitable Society v. Ponniamman Educational Trust, which requires express authority to execute a sale deed, present it for registration and admit its execution; it also considered Delhi Development Authority v. Durga Chand Kaushish and Syed Abdul Khader v. Rami Reddy. Under the principle nemo dat quod non habet, a transferor cannot convey a title that the transferor does not possess.",
+      "rule": {
+        "if": "agent_executed_property_sale and power_document_omitted_express_sale_authority",
+        "then": "unauthorized_sale_conveys_no_valid_title"
+      },
+      "predicates": {
+        "agent_executed_property_sale": "An agent executed a sale of immovable property on behalf of a principal.",
+        "power_document_omitted_express_sale_authority": "The document appointing the agent granted other powers but did not expressly authorize the agent to sell the property."
+      },
+      "definition": "When an agent sells property under a document that does not expressly authorize a sale, the sale conveys no valid title."
+    },
+    {
+      "legal_issue": "A purchaser cannot rely on the protection for a transfer by an ostensible owner when reasonable care would have disclosed that the transferor lacked authority to sell.",
+      "material_facts": [
+        "The purchaser relied on transfers made through an agent whose power of attorney contained no express power of sale.",
+        "The document expressly authorized other property-related acts, making the absence of sale authority apparent on examination.",
+        "The Court agreed that reasonable care would have disclosed the lack of authority."
+      ],
+      "conclusion": "The purchaser could not claim protection under the rule for transfers by ostensible owners.",
+      "legal_principle": "Section 41 of the Transfer of Property Act, 1882 protects a transfer by an ostensible owner only where the statutory requirements are met, including that the transferee takes reasonable care to ascertain the transferor’s power and acts in good faith. A purchaser who could readily discover from the authority document that the agent had no power of sale has not satisfied the reasonable-care requirement.",
+      "rule": {
+        "if": "ostensible_owner_transfer and authority_document_lacked_sale_power and purchaser_failed_reasonable_inquiry",
+        "then": "ostensible_owner_protection_unavailable"
+      },
+      "predicates": {
+        "ostensible_owner_transfer": "A person appearing to own immovable property transferred it for consideration.",
+        "authority_document_lacked_sale_power": "The document relied on as authority for the transfer did not authorize a sale.",
+        "purchaser_failed_reasonable_inquiry": "The purchaser did not take reasonable care to check the transferor’s authority, although the lack of authority could readily have been discovered."
+      },
+      "definition": "A purchaser is not protected for an ostensible-owner transfer when the authority document lacked sale power and the purchaser failed to make a reasonable inquiry."
+    },
+    {
+      "legal_issue": "A principal is not deemed to have constructive notice of an agent’s unauthorized sale merely because the agent made the sale or because the principal was said to be out of possession.",
+      "material_facts": [
+        "The principal had appointed an agent under a power of attorney, but the agent’s document did not authorize a sale.",
+        "The High Court attributed constructive notice of the agent’s transfers to the principal and treated the principal as out of possession.",
+        "The Court held that possession by an agent under a power of attorney is also possession by the principal, and an unauthorized sale does not itself amount to the principal parting with possession."
+      ],
+      "conclusion": "The High Court erred in attributing constructive notice of the unauthorized sale to the principal and in treating the principal as having parted with possession.",
+      "legal_principle": "Section 3 of the Transfer of Property Act, 1882 defines notice by reference to actual knowledge, wilful abstention from an inquiry that ought to have been made, or gross negligence. Its registration and possession explanations concern a person acquiring immovable property; they do not establish that a principal has notice of an agent’s unauthorized sale. Possession held by an agent under a power of attorney is the principal’s possession.",
+      "rule": {
+        "if": "principal_agent_property_dispute and agent_made_unauthorized_sale and agent_possession_was_for_principal",
+        "then": "agent_sale_alone_does_not_establish_principal_notice_or_loss_of_possession"
+      },
+      "predicates": {
+        "principal_agent_property_dispute": "The dispute concerns a principal’s rights in property handled by an agent under a power of attorney.",
+        "agent_made_unauthorized_sale": "The agent transferred the property without authority from the principal to make that sale.",
+        "agent_possession_was_for_principal": "The agent held possession of the property on behalf of the principal."
+      },
+      "definition": "In a principal-agent property dispute, an unauthorized sale by an agent who possesses the property for the principal does not by itself establish the principal’s notice or loss of possession."
+    },
+    {
+      "legal_issue": "A plaintiff seeking partition need not necessarily seek cancellation of alienations affecting the property before obtaining partition.",
+      "material_facts": [
+        "The suit sought partition and separate possession of a co-owner’s share.",
+        "The agent’s unauthorized transfers were relied on to resist the suit, and the High Court treated the failure to seek cancellation of those transfers as fatal.",
+        "The Court observed that an alienee may be entitled to sustain a transfer to the extent of the transferor’s share, and that the transferred property may be allotted to that share during final-decree proceedings to work out the equities."
+      ],
+      "conclusion": "The plaintiff’s failure to seek cancellation of the alienations did not bar the partition claim.",
+      "legal_principle": "In a partition suit, cancellation of alienations is not invariably necessary. An alienee may sustain an alienation to the extent of the transferor co-sharer’s share, and equitable adjustments, including allotment of the transferred property to that share, may be made in final-decree proceedings.",
+      "rule": {
+        "if": "partition_suit and alienation_affects_property_to_be_partitioned and equitable_adjustment_can_be_made_in_partition",
+        "then": "cancellation_of_alienation_not_a_necessary_condition_for_partition"
+      },
+      "predicates": {
+        "partition_suit": "The proceeding seeks partition of property among co-owners.",
+        "alienation_affects_property_to_be_partitioned": "A transfer has been made that affects property included in the partition claim.",
+        "equitable_adjustment_can_be_made_in_partition": "The parties’ interests can be adjusted by recognizing the transfer to the extent of the transferor’s share or by allotting the transferred property to that share."
+      },
+      "definition": "In a partition suit, a plaintiff need not seek cancellation of an alienation where the parties’ interests can be adjusted in the partition."
+    }
+  ],
+  "seconds": 18.0
+}

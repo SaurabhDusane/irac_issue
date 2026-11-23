@@ -1,0 +1,101 @@
+{
+  "doc_id": "437793",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 40013,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2937,
+    "prompt_tokens": 10315,
+    "total_tokens": 13252,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An executing court may consider an objection that a subsequent change in law has made a decree unenforceable without impermissibly going behind the decree.",
+      "material_facts": [
+        "A decree for possession was based on the decree-holder’s proprietary right, and the opposing party objected during execution after a law divested the decree-holder of that right.",
+        "The objection challenged the effect of the later law on the right to execute, rather than the validity or correctness of the decree."
+      ],
+      "conclusion": "The executing court could consider the objection and refuse execution if the later law had made the decree inexecutable.",
+      "legal_principle": "Section 47 of the Code of Civil Procedure governs questions arising between the parties relating to execution. Although an executing court ordinarily cannot go behind a decree, that principle does not bar consideration of an objection based on a later change in law that removes the decree-holder’s substantive right to enforce it.",
+      "rule": {
+        "if": "execution_proceeding and decree_based_on_proprietary_right and later_law_affects_enforcement_right and objection_challenges_enforceability_not_validity",
+        "then": "executing_court_may_consider_objection_to_execution"
+      },
+      "predicates": {
+        "execution_proceeding": "The parties are before a court to enforce a decree.",
+        "decree_based_on_proprietary_right": "The decree-holder obtained the decree on the basis of a proprietary right.",
+        "later_law_affects_enforcement_right": "A law taking effect after the decree alters or removes the right on which enforcement depends.",
+        "objection_challenges_enforceability_not_validity": "The objecting party relies on the later law’s effect on enforcement rather than alleging that the decree was invalid or wrong."
+      },
+      "definition": "When a decree based on a proprietary right is being enforced and a later law affects that right, an objection to enforceability rather than validity may be considered by the executing court."
+    },
+    {
+      "legal_issue": "Land qualifies as a proprietor’s protected home-farm land only if it meets the specified record-based or surrender-based criteria.",
+      "material_facts": [
+        "The land was not recorded as the proprietor’s sir or khudkasht in the annual papers for the relevant year.",
+        "The proprietor had not acquired the land by surrender from tenants during the specified later period.",
+        "The land was recorded as occupancy land, and the claim that it should have been recorded differently rested on the proprietor’s decree for possession."
+      ],
+      "conclusion": "The land was not the proprietor’s home-farm land, and the decree could not make it qualify despite the absence of the required record entry.",
+      "legal_principle": "Section 2(g) of the Madhya Pradesh Abolition of Proprietary Rights (Estates, Mahals, Alienated Lands) Act, 1950, defines the relevant home-farm land by reference to land actually recorded as sir or khudkasht in the annual papers for 1948–49, or land acquired by surrender from tenants in the specified period. Section 83 presumes relevant record entries correct for compensation purposes. The Court disapproved Rahmatullah Khan v. Mahabirsingh, which treated land that ought to have been recorded as qualifying, and distinguished Chhote Khan v. Mohammad Obedullakhan.",
+      "rule": {
+        "if": "proprietary_vesting_dispute and not annual_record_identifies_proprietor_cultivation and not acquired_by_surrender_from_tenant",
+        "then": "land_does_not_qualify_as_protected_home_farm"
+      },
+      "predicates": {
+        "proprietary_vesting_dispute": "The dispute concerns whether land is protected from the consequences of the vesting of proprietary rights.",
+        "annual_record_identifies_proprietor_cultivation": "The required annual land record identifies the land as the proprietor’s sir or khudkasht.",
+        "acquired_by_surrender_from_tenant": "The proprietor acquired the land by a tenant’s surrender during the period allowed by the governing rule."
+      },
+      "definition": "In a dispute about vesting, land that is neither identified as the proprietor’s cultivation in the required annual record nor acquired by surrender from a tenant does not qualify as protected home-farm land."
+    },
+    {
+      "legal_issue": "A decree-holder loses the right to execute a possession decree founded on proprietary rights when those rights vest in the State and no applicable provision preserves a right to recover possession.",
+      "material_facts": [
+        "The decree-holder’s claim to possession rested on proprietary rights in the land.",
+        "The land was not protected home-farm land, and the governing law vested the proprietor’s rights in the State.",
+        "The law preserved the proprietor’s possession of qualifying home-farm land and recovery of sums already due, but did not preserve recovery of possession under a decree.",
+        "The decree was treated as a document affected by the statutory consequences of vesting."
+      ],
+      "conclusion": "The decree-holder’s proprietary right and consequent right to obtain possession ceased, so the possession decree became inexecutable.",
+      "legal_principle": "Sections 3 and 4(1)(a) of the Madhya Pradesh Abolition of Proprietary Rights (Estates, Mahals, Alienated Lands) Act, 1950, vest proprietary rights in the State and provide that the consequences apply notwithstanding a contract, grant, document, or other law. A court decree affecting proprietary rights is a document for this purpose. Sections 4(2) and 4(3) preserve specified rights but do not provide for recovery of possession under a decree; section 7 addresses the State taking charge of land. The statutory scheme therefore removes a proprietor’s decree-based right to possession when that right is not saved.",
+      "rule": {
+        "if": "execution_proceeding and possession_decree_based_on_proprietary_right and proprietary_rights_vest_in_state and not land_is_protected_home_farm and no_preserved_right_to_recover_possession",
+        "then": "possession_decree_is_inexecutable"
+      },
+      "predicates": {
+        "execution_proceeding": "The parties are before a court to enforce a decree.",
+        "possession_decree_based_on_proprietary_right": "The decree awards possession because the decree-holder had proprietary rights in the land.",
+        "proprietary_rights_vest_in_state": "A law transfers the proprietor’s rights in the land to the State.",
+        "land_is_protected_home_farm": "The land falls within a category for which the proprietor’s possession is preserved after vesting.",
+        "no_preserved_right_to_recover_possession": "The governing law does not preserve a right to recover possession under the decree after vesting."
+      },
+      "definition": "A possession decree based on proprietary rights is inexecutable when those rights vest in the State, the land is not protected home-farm land, and no right to recover possession is preserved."
+    },
+    {
+      "legal_issue": "A judgment debtor’s post-vesting statutory right to occupy land may be relied on to resist execution when that right was not adjudicated by the possession decree.",
+      "material_facts": [
+        "After vesting, the State declared the judgment debtor to be malik makbuza of the land on the basis of the village record.",
+        "The earlier decree had found the judgment debtor to be a trespasser but had not adjudicated the right obtained under the later statutory declaration.",
+        "The judgment debtor relied on that declaration in objecting to execution."
+      ],
+      "conclusion": "The judgment debtor could rely on the statutory declaration as a right to possess the land and could object to execution on that basis.",
+      "legal_principle": "Sections 41, 45, and 46 of the Madhya Pradesh Abolition of Proprietary Rights (Estates, Mahals, Alienated Lands) Act, 1950, provide for declarations of malik makbuza status and the rights associated with that status, and address the continuation of occupancy rights after vesting. Section 83 presumes specified land-record entries correct for compensation purposes. A right arising under the State’s post-vesting declaration was not determined by the earlier decree and could be raised in execution.",
+      "rule": {
+        "if": "execution_proceeding and post_vesting_state_declaration_grants_occupancy_status and decree_did_not_adjudicate_post_vesting_right",
+        "then": "judgment_debtor_may_rely_on_later_occupancy_right_to_resist_execution"
+      },
+      "predicates": {
+        "execution_proceeding": "The parties are before a court to enforce a decree.",
+        "post_vesting_state_declaration_grants_occupancy_status": "After the land vests, the State declares the judgment debtor to have a statutory right to occupy it.",
+        "decree_did_not_adjudicate_post_vesting_right": "The decree did not determine the right created by the later State declaration."
+      },
+      "definition": "In execution proceedings, a judgment debtor may rely on a later statutory occupancy right granted by the State when the decree did not decide that right."
+    }
+  ],
+  "seconds": 17.9
+}

@@ -1,0 +1,61 @@
+{
+  "doc_id": "227302",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13181,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2071,
+    "prompt_tokens": 3749,
+    "total_tokens": 5820,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A judgment-debtor’s deposit under a money decree, without served notice or an indication that it is being paid toward principal, is not automatically appropriated to principal.",
+      "material_facts": [
+        "The judgment-debtor deposited money while an interim order stayed collection of part of the compensation award.",
+        "The judgment-debtor did not serve the decree-holder with notice of the deposit or indicate that it was to be appropriated toward principal.",
+        "The decree-holder did not admit that the deposit was to be applied toward principal."
+      ],
+      "conclusion": "The deposit was not automatically applied toward principal merely because it was made during the court proceedings. In the absence of the required notice and an indication of appropriation, the decree-holder could apply it to interest and costs before principal.",
+      "legal_principle": "Order XXI Rule 1(1), (2) and (4) of the Code of Civil Procedure, as amended in 1976, requires written notice to the decree-holder of a payment made through court, and interest ceases to run only from service of that notice. The reasoning in Meghraj v. Mst. Bayabal continues to apply, with greater force under the amended rule. The ordinary rule, explained in Meka Venkatadri Appa Rao Bahadur Zamindar Garu v. Raja Parthsarathy Appa Rao Bahadur Zamindar Garu, is that an unapplied payment goes first to interest and then to capital. Section 60 of the Contract Act and Rai Bahadur Seth Nemichand v. Seth Radha Kishan recognize the creditor’s discretion to appropriate an unallocated payment to a lawful debt.",
+      "rule": {
+        "if": "money_decree_execution and judgment_debtor_deposited_payment and not decree_holder_received_written_notice and not principal_allocation_indicated and not decree_holder_accepted_principal_allocation",
+        "then": "deposit_applied_to_interest_and_cost_before_principal"
+      },
+      "predicates": {
+        "money_decree_execution": "The proceeding concerns execution of a decree requiring payment of money.",
+        "judgment_debtor_deposited_payment": "The judgment-debtor deposited a payment toward the decree.",
+        "decree_holder_received_written_notice": "The decree-holder received written notice of the payment.",
+        "principal_allocation_indicated": "The judgment-debtor indicated that the payment was to be applied toward principal.",
+        "decree_holder_accepted_principal_allocation": "The decree-holder accepted that the payment was to be applied toward principal."
+      },
+      "definition": "When a judgment-debtor deposits payment in execution of a money decree without giving the decree-holder written notice or indicating that the payment is for principal, and the decree-holder has not accepted that allocation, the payment is applied to interest and costs before principal."
+    },
+    {
+      "legal_issue": "An interim stay of collection of an enhanced part of a compensation award does not, after the appeal is determined, make a deposit during the stay payment of the underlying principal or prevent interest and solatium from being calculated on that principal.",
+      "material_facts": [
+        "An interim order stayed collection of the enhanced portion of a compensation award, while the underlying award remained payable.",
+        "The judgment-debtor deposited money during the interim proceedings.",
+        "The appeal was later determined without setting aside the underlying award, and the judgment-debtor argued that the principal had been paid by the deposit."
+      ],
+      "conclusion": "Once the appeal was determined, the parties were restored to the position they occupied when the interim order was made. The deposit did not establish that the principal had been paid, and interest and solatium remained calculable on the principal amount.",
+      "legal_principle": "The court applied the principle that, after the appeal is determined, the parties return to the position existing when the interim order was made, subject to the final decision. A temporary stay of collection of an enhancement does not convert a deposit into payment of the underlying principal or eliminate the consequences attached to that principal.",
+      "rule": {
+        "if": "appeal_from_compensation_decree and interim_stay_limited_to_enhancement and appeal_finally_determined_without_invalidating_underlying_award and judgment_debtor_claimed_deposit_paid_principal",
+        "then": "principal_not_treated_as_paid_by_interim_deposit_and_interest_and_solatium_remain_calculable_on_principal"
+      },
+      "predicates": {
+        "appeal_from_compensation_decree": "The proceeding is an appeal from a decree awarding compensation.",
+        "interim_stay_limited_to_enhancement": "An interim order stayed collection only of an enhanced part of the award, leaving the underlying award payable.",
+        "appeal_finally_determined_without_invalidating_underlying_award": "The appeal was finally determined without invalidating the underlying award.",
+        "judgment_debtor_claimed_deposit_paid_principal": "The judgment-debtor argued that a deposit made during the interim proceedings had paid the principal."
+      },
+      "definition": "When an appeal from a compensation decree ends without invalidating the underlying award after an interim stay limited to an enhancement, a deposit made during the stay does not count as payment of principal, and interest and solatium remain calculable on principal."
+    }
+  ],
+  "seconds": 12.9
+}

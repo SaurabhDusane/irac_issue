@@ -1,0 +1,135 @@
+{
+  "doc_id": "431465",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21983,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3336,
+    "prompt_tokens": 5973,
+    "total_tokens": 9309,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Waste land that can be brought under cultivation is cultivable land for determining whether it is ryoti land, absent a legal provision requiring it to be treated otherwise.",
+      "material_facts": [
+        "The lands were waste, covered with shrubs and jungle, and had not been cultivated for a long time.",
+        "The lands were brought under cultivation in connection with a government food-production campaign.",
+        "There was no evidence that reclamation was financially unprofitable or required undue expenditure."
+      ],
+      "conclusion": "The lands were cultivable and therefore were ryoti lands.",
+      "legal_principle": "Section 3(16) of the Madras Estates Land Act, 1908 defines ryoti land as cultivable land in an estate, subject to specified exclusions. Land that can be brought under cultivation is cultivable unless a legal provision requires it to be treated otherwise in particular circumstances. No earlier cases were relied on.",
+      "rule": {
+        "if": "ryoti_land_classification_dispute and land_can_be_brought_under_cultivation and not applicable_legal_exception",
+        "then": "land_is_ryoti_land"
+      },
+      "predicates": {
+        "ryoti_land_classification_dispute": "The proceeding requires the court to decide whether land qualifies as ryoti land.",
+        "land_can_be_brought_under_cultivation": "The land is capable of being brought under cultivation.",
+        "applicable_legal_exception": "A legal provision requires the land to be treated as non-ryoti in the circumstances."
+      },
+      "definition": "When a ryoti-land classification dispute concerns land capable of cultivation and no applicable legal exception is present, the land is treated as ryoti land."
+    },
+    {
+      "legal_issue": "A new factual contention about the character of land is not entertained on appeal when it was not raised in the pleadings or at trial.",
+      "material_facts": [
+        "The claim that some of the land consisted of tank beds was not made in the pleadings or at any stage in the trial court.",
+        "Some records described land as “puramboke,” but the contention depended on a factual issue raised for the first time on appeal."
+      ],
+      "conclusion": "The Court declined to entertain the new factual contention that some of the land consisted of tank beds.",
+      "legal_principle": "The Court considered it unfair to permit a fresh contention concerning a question of fact to be raised at that stage. No provision or earlier case was relied on for this ruling.",
+      "rule": {
+        "if": "appeal_involving_land_classification and factual_contention_not_raised_in_pleadings_or_trial",
+        "then": "new_factual_contention_not_entertained"
+      },
+      "predicates": {
+        "appeal_involving_land_classification": "The appeal involves classification of land.",
+        "factual_contention_not_raised_in_pleadings_or_trial": "A party raises a factual contention on appeal that was not raised in the pleadings or at trial."
+      },
+      "definition": "In an appeal involving land classification, a factual contention not raised in the pleadings or at trial is not entertained."
+    },
+    {
+      "legal_issue": "A person admitted to ryoti land for agricultural holding is a ryot when the holding is subject to liability to pay rent, even if the amount or rate of rent is disputed.",
+      "material_facts": [
+        "The respondent held the land for cultivation after being admitted into possession by the previous trustee.",
+        "The respondent disputed the rate of rent and at times resisted payment, but did not disown liability to pay rent altogether.",
+        "The order granting the respondent a patta required payment of cash rent at rates to be determined by the trustee."
+      ],
+      "conclusion": "The respondent was a ryot within the meaning of the Madras Estates Land Act, 1908.",
+      "legal_principle": "Section 3(15) of the Madras Estates Land Act, 1908 defines a ryot as a person holding ryoti land in an estate for agriculture on the condition of paying the rent legally due. Disagreement over the rate or payment of rent does not by itself negate that condition where liability to pay rent is not disowned. No earlier cases were relied on.",
+      "rule": {
+        "if": "ryot_status_dispute and person_holds_ryoti_land_for_agriculture and holding_subject_to_rent_liability",
+        "then": "person_is_a_ryot"
+      },
+      "predicates": {
+        "ryot_status_dispute": "The proceeding requires a determination of whether a landholder is a ryot.",
+        "person_holds_ryoti_land_for_agriculture": "The person holds ryoti land for the purpose of agriculture.",
+        "holding_subject_to_rent_liability": "The holding is subject to liability to pay rent, even if the amount or rate is disputed."
+      },
+      "definition": "A person holding ryoti land for agriculture in a holding subject to rent liability is a ryot when that status is in dispute."
+    },
+    {
+      "legal_issue": "Statutory permanent occupancy rights arising upon admission to ryoti land do not by themselves make the letting a lease for a term exceeding five years that requires prior sanction.",
+      "material_facts": [
+        "The previous trustee admitted the respondent to possession of ryoti land and granted a patta without fixing a period for the letting.",
+        "The respondent acquired permanent occupancy rights by operation of the Estates Land Act upon admission to the ryoti land.",
+        "The required Board sanction had not been obtained."
+      ],
+      "conclusion": "The letting was not a lease for a term exceeding five years merely because permanent occupancy rights arose by statute, and no Board sanction was required for the letting.",
+      "legal_principle": "Section 76(1) of the Madras Hindu Religious Endowments Act, 1927 requires sanction for a lease exceeding five years of temple property. Section 6 of the Madras Estates Land Act, 1908 confers permanent occupancy rights upon admission to ryoti land. The statutory creation of those rights does not make the letting equivalent to a lease for a term exceeding five years. No earlier cases were relied on.",
+      "rule": {
+        "if": "temple_land_letting_sanction_dispute and admitted_to_ryoti_land and permanent_occupancy_arises_by_law and not letting_expressly_for_over_five_years",
+        "then": "prior_board_sanction_not_required"
+      },
+      "predicates": {
+        "temple_land_letting_sanction_dispute": "The proceeding concerns whether a letting of temple land required prior sanction.",
+        "admitted_to_ryoti_land": "The landholder admitted the person to possession of ryoti land.",
+        "permanent_occupancy_arises_by_law": "Permanent occupancy rights arose by operation of law from the admission to possession.",
+        "letting_expressly_for_over_five_years": "The letting was expressly made for a term exceeding five years."
+      },
+      "definition": "When a temple-land letting involves admission to ryoti land and permanent occupancy arises by law, but the letting is not expressly for a term exceeding five years, prior sanction is not required."
+    },
+    {
+      "legal_issue": "A civil court cannot hear a landholder’s suit to recover rent or obtain ejectment against a ryot where the relevant statutory scheme assigns that suit to a revenue court.",
+      "material_facts": [
+        "The landholder sued to recover money claimed as damages for use and occupation of the lands and sought ejectment.",
+        "The respondent was a ryot under the Madras Estates Land Act, 1908.",
+        "The Act assigned suits to recover rent and to eject a ryot to the revenue court."
+      ],
+      "conclusion": "The suit was cognizable only by the revenue court, and the civil court lacked jurisdiction; the plaint was properly ordered returned for presentation to the proper court.",
+      "legal_principle": "Section 189(1) of the Madras Estates Land Act, 1908 bars a civil court exercising original jurisdiction from taking cognizance of a dispute for which a suit or application may be brought before the revenue court. The Schedule assigns suits by a landholder to recover rent and to eject a ryot to the Collector. No earlier cases were relied on.",
+      "rule": {
+        "if": "landholder_sues_ryot_for_rent_or_ejectment and claim_is_assigned_to_revenue_court",
+        "then": "civil_court_lacks_jurisdiction"
+      },
+      "predicates": {
+        "landholder_sues_ryot_for_rent_or_ejectment": "A landholder brings a suit against a ryot to recover rent or obtain ejectment.",
+        "claim_is_assigned_to_revenue_court": "The governing scheme assigns the kind of claim brought to a revenue court."
+      },
+      "definition": "When a landholder sues a ryot for rent or ejectment and the claim is assigned to a revenue court, the civil court lacks jurisdiction."
+    },
+    {
+      "legal_issue": "A court that determines it lacks jurisdiction over the subject matter cannot decide a cross-objection on the merits.",
+      "material_facts": [
+        "The High Court concluded that the civil court lacked jurisdiction over the suit.",
+        "Despite that conclusion, the High Court dismissed a cross-objection concerning the crediting of a payment against rent or damages.",
+        "The cross-objection raised a question on the merits."
+      ],
+      "conclusion": "The High Court could not decide the cross-objection on the merits, and the order dismissing it was set aside.",
+      "legal_principle": "A court lacking jurisdiction over the subject matter may decide the jurisdictional question but cannot decide a question on the merits. No provision or earlier case was relied on for this ruling.",
+      "rule": {
+        "if": "appeal_with_merits_cross_objection and court_lacks_subject_matter_jurisdiction",
+        "then": "court_must_not_determine_merits_cross_objection"
+      },
+      "predicates": {
+        "appeal_with_merits_cross_objection": "The appeal includes a cross-objection raising a question on the merits.",
+        "court_lacks_subject_matter_jurisdiction": "The court determines that it lacks jurisdiction over the subject matter of the proceeding."
+      },
+      "definition": "When an appeal includes a merits cross-objection and the court lacks subject-matter jurisdiction, the court must not determine that cross-objection on the merits."
+    }
+  ],
+  "seconds": 19.8
+}

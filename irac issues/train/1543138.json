@@ -1,0 +1,60 @@
+{
+  "doc_id": "1543138",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 46394,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2302,
+    "prompt_tokens": 11465,
+    "total_tokens": 13767,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A reference identifying the management of a factory owned by a company in liquidation, rather than the company itself, is not a proceeding against the company for purposes of the leave requirement.",
+      "material_facts": [
+        "The company that owned the factory was in liquidation, and the factory was being operated under leases granted by its liquidator with the court’s sanction.",
+        "The government’s reference identified the management of specified factories as a party and used the company’s name to identify the factory; it did not name the company itself as a party.",
+        "The liquidator was not managing the factory when the reference was made."
+      ],
+      "conclusion": "Properly construed, the reference was against the factory’s management, not the company in liquidation. The question whether the reference was a legal proceeding requiring leave under section 171 therefore did not arise, and the Court expressed no opinion on it.",
+      "legal_principle": "Section 171 of the Indian Companies Act, 1913, requires leave for a suit or other legal proceeding commenced or continued against a company in liquidation. Whether that requirement is engaged depends first on whether the proceeding is against the company. Section 10(1) of the Industrial Disputes Act, 1947, authorized the government to refer disputes for adjudication. The Court construed the terms of this reference as identifying the factory’s management, rather than the company, as the relevant party; it did not decide whether a reference under section 10(1) is a legal proceeding within section 171.",
+      "rule": {
+        "if": "industrial_dispute_reference and company_in_liquidation and reference_targeted_management",
+        "then": "company_was_not_party_to_reference"
+      },
+      "predicates": {
+        "industrial_dispute_reference": "A government referred an industrial dispute concerning a factory and its workmen to a tribunal.",
+        "company_in_liquidation": "The company that owned the factory was in liquidation when the government made the reference.",
+        "reference_targeted_management": "The reference identified the factory’s management as the relevant party, using the company’s name to identify the factory rather than naming the company itself as a party."
+      },
+      "definition": "When an industrial dispute is referred concerning a factory owned by a company in liquidation and the reference targets the factory’s management rather than the company, the company is not a party to the reference."
+    },
+    {
+      "legal_issue": "The employer subject to restrictions on changing workmen’s service conditions or discharging or punishing them during a pending industrial dispute must be the employer involved in that dispute, or an employer shown to be its nominee, benamidar, heir, successor, or assign.",
+      "material_facts": [
+        "The industrial reference was made before the appellant took possession of the factory under a lease from the liquidator.",
+        "The appellant operated the factory on its own account and was responsible for its profits and losses; it did not take on the company’s or outgoing lessees’ liabilities, except as specified in the lease.",
+        "The appellant was not shown to be a nominee or benamidar of the earlier employer, or its heir, successor, or assign, and the tribunal had not given it notice of the reference.",
+        "Workmen complained that the appellant discharged some of them and changed the conditions of service of others while the earlier reference was pending."
+      ],
+      "conclusion": "The appellant was not an employer within the meaning of sections 33 and 33A in relation to the pending dispute, was not required to obtain the tribunal’s permission before taking the alleged actions, and could not be proceeded against on the workmen’s section 33A complaints. The proceedings against it were without jurisdiction and had to be quashed.",
+      "legal_principle": "Sections 33 and 33A of the Industrial Disputes Act, 1947, concern action taken by the employer involved in the pending industrial dispute. Section 2(k) defines an industrial dispute by reference to disputes between employers and workmen, among others. The employer must be identical to the employer involved when the proceedings began, unless the later employer is shown to be a nominee or benamidar of the former employer or falls within the description of heirs, successors, or assigns in section 18(3)(c). The Court relied on Automobile Products of India Ltd. v. Rukmaji Bala for the purpose of sections 33 and 33A, and Atherton West & Co., Ltd. v. Suti Mill Mazdoor Union for the nature of the inquiry into proposed action under section 33. It also noted the procedural provisions in rules 10, 11, 19, and 24 of the Industrial Disputes (Central) Rules, 1947, concerning notice, attendance, and participation before the tribunal.",
+      "rule": {
+        "if": "pending_industrial_reference and later_employer_took_action_against_workmen and different_from_employer_in_reference and not nominee_or_successor_relationship",
+        "then": "permission_not_required_and_complaint_unmaintainable"
+      },
+      "predicates": {
+        "pending_industrial_reference": "An industrial dispute involving workmen and an employer was pending before a tribunal when the challenged conduct occurred.",
+        "later_employer_took_action_against_workmen": "An employer acted against workmen by discharging or punishing them or changing their conditions of service while the reference was pending.",
+        "different_from_employer_in_reference": "The employer that took the challenged action was not the employer involved in the dispute when the tribunal proceedings began.",
+        "nominee_or_successor_relationship": "The employer that took the challenged action was shown to be a nominee or benamidar of the earlier employer, or its heir, successor, or assign."
+      },
+      "definition": "When an employer takes challenged action against workmen during a pending industrial reference but is different from the employer in that reference and has no nominee or successor relationship to it, permission is not required and the complaint is unmaintainable."
+    }
+  ],
+  "seconds": 14.6
+}

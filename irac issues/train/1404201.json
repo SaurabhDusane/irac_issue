@@ -1,0 +1,81 @@
+{
+  "doc_id": "1404201",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11499,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2220,
+    "prompt_tokens": 3305,
+    "total_tokens": 5525,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A change in the named landlord and rent, without a change in the tenant’s possession or other incompatibility between the old and new arrangements, does not by itself imply surrender of the existing lease.",
+      "material_facts": [
+        "The tenant remained in possession of the same building in the same manner after the new lease agreement was made.",
+        "The new agreement named the transferee as lessor and increased the rent; the earlier agreement named the transferee’s father as lessor.",
+        "No other difference between the lease arrangements was identified."
+      ],
+      "conclusion": "The new agreement did not imply surrender of the earlier lease.",
+      "legal_principle": "Under Section 111(f) of the Transfer of Property Act, an implied surrender may arise when a new relationship concerning the same subject matter is inconsistent or incompatible with the old one, so that the new relationship can operate only after termination of the old. Mere variation of the terms, including an increase or reduction in rent, does not by itself establish surrender. The Court relied on Halsbury’s Laws of England, Hill and Redman’s Law of Landlord and Tenant, N.M. Ponniah Nadar v. Smt. Kalakshmi Ammal, and Krishna Kumar Khema v. Grindlays Bank.",
+      "rule": {
+        "if": "tenant_remains_in_same_possession and only_landlord_or_rent_changes and not relationships_are_incompatible",
+        "then": "old_lease_is_not_impliedly_surrendered"
+      },
+      "predicates": {
+        "tenant_remains_in_same_possession": "The tenant continues occupying the same premises in the same manner.",
+        "only_landlord_or_rent_changes": "The new arrangement changes the identity of the lessor, the rent, or both, without another material change to the tenancy.",
+        "relationships_are_incompatible": "The old and new arrangements cannot operate together, such that the new arrangement requires termination of the old one."
+      },
+      "definition": "When a tenant remains in the same possession and only the landlord or rent changes, the old lease is not impliedly surrendered unless the old and new relationships are incompatible."
+    },
+    {
+      "legal_issue": "A landlord who acquires the right to recover possession through an inter vivos transfer cannot apply for eviction during the one-year period following that transfer; treating a later lease agreement as the source of the right does not avoid the restriction if that agreement is itself an inter vivos transfer.",
+      "material_facts": [
+        "The landlord acquired the building by gift from her father on 2 August 1980.",
+        "She filed an eviction petition on 1 July 1981, before one year had expired from the gift.",
+        "She relied on a lease agreement made after the gift as a new source of her right to recover possession.",
+        "The Court held that the new agreement did not imply surrender of the former lease and observed that, even if it created a new lease, the restriction would still apply because the right would then arise under that inter vivos instrument."
+      ],
+      "conclusion": "The eviction petition was premature and had to be dismissed because it was filed within one year of the transfer from which the right to recover possession arose; the same restriction would apply if the right arose under the later lease agreement.",
+      "legal_principle": "The third proviso to Section 11(3) of the Kerala Buildings (Lease and Rent Control) Act, 1965, prevents a landlord whose right to recover possession arises under an instrument of transfer inter vivos from applying for possession until one year has expired from the instrument. A transfer between living persons is an inter vivos transfer. If the later lease were treated as creating the right, it too would be an inter vivos transfer and would not remove the restriction.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and ((right_arose_from_inter_vivos_transfer and filed_within_one_year_of_transfer) or (later_lease_created_right and filed_within_one_year_of_later_lease))",
+        "then": "eviction_application_is_premature"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord applies to a rent-control court to recover premises from a tenant.",
+        "right_arose_from_inter_vivos_transfer": "The landlord’s right to recover the premises arose from a transfer made between living persons.",
+        "filed_within_one_year_of_transfer": "The landlord applied for eviction before one year had elapsed from the transfer that gave rise to the right.",
+        "later_lease_created_right": "The landlord relies on a later lease agreement as creating the right to recover the premises.",
+        "filed_within_one_year_of_later_lease": "The landlord applied for eviction before one year had elapsed from the later lease agreement."
+      },
+      "definition": "An eviction application is premature when, in a rent-control proceeding, the landlord relies on a right arising from an inter vivos transfer and applies within one year of that transfer, including when the relied-on right arises under a later lease and the application is made within one year of it."
+    },
+    {
+      "legal_issue": "When an eviction application is barred at the time it is filed, a court must not decide the merits of the eviction claim, and any merits findings made in that proceeding have no effect on a later application.",
+      "material_facts": [
+        "The eviction petition was filed before the applicable one-year period had expired.",
+        "The Rent Control Court, the Appellate Authority, and the High Court considered the merits of the landlord’s asserted need for the building despite the threshold issue of maintainability.",
+        "The Court directed that observations on the merits in the proceedings based on the premature petition stand erased from judicial notice and that a later petition be considered without being influenced by them."
+      ],
+      "conclusion": "The merits findings made in the proceeding based on the premature petition were to be treated as having no effect, and any later eviction petition had to be considered independently.",
+      "legal_principle": "The Court held that when the statutory restriction makes an eviction petition non-maintainable, the court should first decide maintainability and should not enter into the merits; findings on the merits of such a petition are without jurisdiction. Any later application, filed after the restriction has expired, must be considered without influence from those findings.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and application_barred_when_filed and court_decides_eviction_merits",
+        "then": "merits_findings_have_no_effect"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord applies to a rent-control court to recover premises from a tenant.",
+        "application_barred_when_filed": "The landlord files the application while a restriction prevents the landlord from applying for possession.",
+        "court_decides_eviction_merits": "A court evaluates whether the landlord has established the substantive grounds for eviction in that application."
+      },
+      "definition": "When a court decides the merits of a rent-control eviction application that was barred when filed, those merits findings have no effect."
+    }
+  ],
+  "seconds": 13.8
+}

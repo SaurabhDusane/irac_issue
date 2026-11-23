@@ -1,0 +1,104 @@
+{
+  "doc_id": "338744",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17401,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2844,
+    "prompt_tokens": 4625,
+    "total_tokens": 7469,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A forest officer empowered to assess compensation for damage is not thereby empowered to decide a disputed question of whether the contractor caused the damage or breached the contract.",
+      "material_facts": [
+        "The contract required disputes about performance or breach to be referred to the designated senior forest officer for a final decision.",
+        "The contractor disputed the allegation that he had cut trees contrary to the contract.",
+        "The Divisional Forest Officer found the contractor responsible for damage and assessed compensation without first referring the disputed breach for determination."
+      ],
+      "conclusion": "The Divisional Forest Officer could assess the amount of compensation after liability was determined, but could not determine the disputed liability himself; the compensation order could not stand.",
+      "legal_principle": "Rule 15(1) of the Forest Contract Rules makes a contractor liable for damage in a reserved forest and authorizes the Divisional Forest Officer to assess compensation. It does not authorize that officer to decide whether the contractor, servants, or agents caused the damage or breached the contract. Under clause 9 of the contract, a dispute about performance or breach must be referred to the designated Chief Conservator of Forests. Clauses 6 and 9 and Rule 15(1) are consistent: liability is determined by referral, and compensation may then be assessed under Rule 15(1).",
+      "rule": {
+        "if": "forest_contract_dispute and damage_attributed_to_contractor_is_disputed and contract_requires_referral_of_performance_disputes",
+        "then": "disputed_damage_liability_must_be_determined_by_the_designated_officer_before_compensation_is_assessed"
+      },
+      "predicates": {
+        "forest_contract_dispute": "The proceeding concerns a dispute arising from a contract for forest produce.",
+        "damage_attributed_to_contractor_is_disputed": "The contractor disputes the allegation that the contractor, the contractor’s servants, or the contractor’s agents caused damage.",
+        "contract_requires_referral_of_performance_disputes": "The contract requires disputes about its performance or breach to be referred to a designated officer.",
+        "disputed_damage_liability_must_be_determined_by_the_designated_officer_before_compensation_is_assessed": "The designated officer must determine disputed responsibility for the damage before the amount of compensation is assessed."
+      },
+      "definition": "When a forest-contract proceeding involves disputed responsibility for damage and the contract requires performance disputes to be referred, the designated officer must determine responsibility before compensation is assessed."
+    },
+    {
+      "legal_issue": "A review or appellate confirmation of a forest officer’s finding does not satisfy a contractual requirement to refer a disputed breach for determination by the designated officer.",
+      "material_facts": [
+        "The Divisional Forest Officer found the contractor liable and assessed compensation.",
+        "The Conservator of Forests upheld that order on appeal, and the Chief Conservator of Forests upheld it in revision.",
+        "The Chief Conservator acted in a supervisory or revisional capacity, did not purport to act as an arbitrator, and recorded no evidence; he held that referral was unnecessary."
+      ],
+      "conclusion": "The Chief Conservator’s revisional confirmation did not satisfy the contractual referral requirement or constitute an adjudication of the dispute under that requirement.",
+      "legal_principle": "Clause 9 of the contract required the disputed question of performance or breach to be referred to the designated officer for adjudication. A later decision in supervisory or revisional proceedings, which does not purport to decide the dispute in that capacity, is not the required determination. The Court applied clause 9 together with its interpretation of Rule 15(1) of the Forest Contract Rules.",
+      "rule": {
+        "if": "forest_contract_dispute and disputed_breach_was_not_referred and senior_officer_only_reviewed_the_subordinate_order",
+        "then": "supervisory_review_does_not_satisfy_the_required_contractual_determination"
+      },
+      "predicates": {
+        "forest_contract_dispute": "The proceeding concerns a dispute arising from a forest contract.",
+        "disputed_breach_was_not_referred": "The disputed allegation of breach was not referred to the designated officer for determination under the contract.",
+        "senior_officer_only_reviewed_the_subordinate_order": "The senior officer acted only in review of the subordinate officer’s order rather than purporting to adjudicate the dispute under the contractual referral process.",
+        "supervisory_review_does_not_satisfy_the_required_contractual_determination": "A supervisory review does not constitute the determination required by the contract."
+      },
+      "definition": "When a disputed breach in a forest-contract proceeding is not referred and a senior officer only reviews the subordinate order, that review does not satisfy the required contractual determination."
+    },
+    {
+      "legal_issue": "A penalty for breach of a forest contract cannot be imposed by the Divisional Forest Officer while the existence of the disputed breach remains undetermined under the contract’s referral procedure.",
+      "material_facts": [
+        "The Divisional Forest Officer imposed a penalty under Rule 30(1) after finding that the contractor had breached the contract.",
+        "The contractor disputed the alleged breach.",
+        "The contract required disputes about performance or breach to be referred to the designated Chief Conservator of Forests, but that determination had not occurred."
+      ],
+      "conclusion": "The penalty order had the same defect as the compensation order and had to be set aside because the disputed breach had not been determined as required by the contract.",
+      "legal_principle": "Rule 30(1) authorizes the Divisional Forest Officer to impose a penalty only where the contractor commits a breach of a contract condition. Where the existence of breach is disputed, clause 9 requires that dispute to be determined by the designated Chief Conservator of Forests. The Court applied Rule 30(1) and clause 9 of the contract.",
+      "rule": {
+        "if": "forest_contract_penalty_proceeding and contractor_disputes_the_alleged_breach and contract_requires_referral_of_performance_disputes and breach_has_not_been_determined_by_the_designated_officer",
+        "then": "penalty_cannot_be_imposed_for_the_undetermined_disputed_breach"
+      },
+      "predicates": {
+        "forest_contract_penalty_proceeding": "The proceeding concerns a penalty imposed for an alleged breach of a forest contract.",
+        "contractor_disputes_the_alleged_breach": "The contractor denies or disputes the alleged breach of the contract.",
+        "contract_requires_referral_of_performance_disputes": "The contract requires disputes about its performance or breach to be referred to a designated officer.",
+        "breach_has_not_been_determined_by_the_designated_officer": "The designated officer has not determined whether the contractor committed the disputed breach.",
+        "penalty_cannot_be_imposed_for_the_undetermined_disputed_breach": "A penalty cannot be imposed for a disputed breach before the designated officer determines that breach."
+      },
+      "definition": "In a forest-contract penalty proceeding, a disputed breach that the contract requires to be referred cannot support a penalty until the designated officer has determined it."
+    },
+    {
+      "legal_issue": "A court cannot sustain relief on an unsupported ground that was not pleaded or evidenced by the parties.",
+      "material_facts": [
+        "The High Court assumed that the coupe was not within a reserved forest and relied on that assumption in concluding that compensation was not authorized.",
+        "The contractor had not raised that ground in the petition, the objections to the Divisional Forest Officer, the appeal, or the revision proceedings.",
+        "There was no evidence supporting the assumption, and the appellants produced a notification declaring the relevant forests to be reserved forests."
+      ],
+      "conclusion": "The High Court was in error in setting up the unpleaded and unsupported ground that the compensation order was unauthorized because the coupe was not in a reserved forest, although the appeal still failed on other grounds.",
+      "legal_principle": "The Court held that relief should not be granted on a factual ground that was neither pleaded nor supported by evidence, particularly where the opposing party had no opportunity to meet it. The Court considered the notification under section 20 of the Indian Forest Act, 1927, as applied to the Central Provinces, but its conclusion was that the High Court’s assumption lacked a proper basis in the pleadings or evidence.",
+      "rule": {
+        "if": "appeal_from_writ_judgment and lower_court_relied_on_a_factual_ground and ground_was_not_pleaded and ground_was_not_supported_by_evidence",
+        "then": "relief_cannot_be_sustained_on_the_unpleaded_unsupported_ground"
+      },
+      "predicates": {
+        "appeal_from_writ_judgment": "The proceeding is an appeal from a judgment granting relief in a writ petition.",
+        "lower_court_relied_on_a_factual_ground": "The lower court relied on a factual proposition as a basis for granting relief.",
+        "ground_was_not_pleaded": "The party seeking relief did not raise that factual ground in the pleadings or the prior proceedings described by the court.",
+        "ground_was_not_supported_by_evidence": "The record contained no evidence supporting that factual ground.",
+        "relief_cannot_be_sustained_on_the_unpleaded_unsupported_ground": "Relief cannot be sustained on a factual ground that was neither pleaded nor supported by evidence."
+      },
+      "definition": "In an appeal from a writ judgment, relief cannot rest on a factual ground relied on by the lower court when that ground was neither pleaded nor supported by evidence."
+    }
+  ],
+  "seconds": 17.2
+}

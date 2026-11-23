@@ -1,0 +1,99 @@
+{
+  "doc_id": "1386184",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19255,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2725,
+    "prompt_tokens": 5360,
+    "total_tokens": 8085,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court hearing an appeal from a later decision may examine an earlier unappealed decision when the later decision depends on it and the earlier decision’s correctness was expressly put in issue.",
+      "material_facts": [
+        "The appeal before the Supreme Court challenged a High Court decision that had dismissed a second appeal in limine.",
+        "The first appellate court’s decree under review had followed the High Court’s direction in an earlier second appeal between the same parties.",
+        "The Supreme Court’s notice expressly put the correctness of the earlier High Court finding in issue."
+      ],
+      "conclusion": "The Supreme Court was justified in examining the earlier High Court decision despite the absence of a separate appeal against it.",
+      "legal_principle": "The Court relied on the circumstances of this appeal: the later decision under challenge rested on the earlier decision, the parties were the same, and the notice had expressly raised the earlier finding’s correctness. No earlier case was cited for this conclusion.",
+      "rule": {
+        "if": "supreme_court_appeal and later_decision_depends_on_prior_decision and prior_decision_challenged_in_notice",
+        "then": "court_may_examine_prior_decision"
+      },
+      "predicates": {
+        "supreme_court_appeal": "A party brought an appeal before the Supreme Court challenging a later decision.",
+        "later_decision_depends_on_prior_decision": "The decision under appeal rested on an earlier decision in the same dispute.",
+        "prior_decision_challenged_in_notice": "The notice in the Supreme Court appeal expressly raised the correctness of the earlier decision."
+      },
+      "definition": "When an appeal challenges a later decision resting on an earlier decision, and the notice raises the earlier decision’s correctness, the court may examine that earlier decision."
+    },
+    {
+      "legal_issue": "A High Court deciding a second appeal cannot set aside concurrent factual findings without formulating a substantial question of law and deciding the appeal within the limits governing second appeals.",
+      "material_facts": [
+        "The two courts below had dismissed the partition claim on the evidence before them.",
+        "In a second appeal, the High Court relied on a document produced at its direction and concluded that the property was family property capable of partition.",
+        "The High Court set aside the lower courts’ decisions without formulating a substantial question of law."
+      ],
+      "conclusion": "The High Court’s decision allowing the earlier second appeal was unlawful and liable to be set aside.",
+      "legal_principle": "Section 100 CPC, as amended, requires the High Court to be satisfied that the case involves a substantial question of law, formulate that question, and hear the appeal on it. A second appeal cannot be allowed without meeting that mandate, and interference with factual findings is impermissible in the circumstances identified by the Court. The Court relied on Gian Dass v. Gram Panchayat, Village Sunner Kalan (2006) 6 SCC 271; Joseph Severance v. Benny Mathew (2005) 7 SCC 667; Sasikumar v. Kunnath Chellappan Nair (2005) 12 SCC 588; Chadat Singh v. Bahadur Ram (2004) 6 SCC 359; Kanhaiyalal v. Anupkumar (2003) 1 SCC 430; Town Planning Municipal Council v. Rajappa (decided 8 January 2007); and P. Chandrasekharan v. S. Kanakarajan (2007) 5 SCC 669.",
+      "rule": {
+        "if": "second_appeal and no_substantial_question_formulated and concurrent_factual_findings_reversed",
+        "then": "high_court_interference_is_unlawful"
+      },
+      "predicates": {
+        "second_appeal": "A High Court heard an appeal from an appellate decree.",
+        "no_substantial_question_formulated": "The High Court did not formulate a substantial question of law before deciding the appeal.",
+        "concurrent_factual_findings_reversed": "The High Court displaced factual findings reached by both courts below."
+      },
+      "definition": "If a High Court decides a second appeal without formulating a substantial question of law and reverses concurrent factual findings, its interference is unlawful."
+    },
+    {
+      "legal_issue": "An appellate court cannot rely on additional evidence unless the governing conditions for admitting it are met and the reasons for its admission are recorded.",
+      "material_facts": [
+        "During the hearing of the second appeal, the High Court directed a party to produce a grant document and relied on it.",
+        "The document had not been admitted as additional evidence through the prescribed procedure.",
+        "The High Court neither applied the conditions governing additional evidence nor recorded reasons for admitting it.",
+        "The finding that the property was family property and partible rested on the document and the resulting conclusion."
+      ],
+      "conclusion": "The High Court’s reliance on the document and its resulting finding that the property was partible family property could not be sustained.",
+      "legal_principle": "Order XLI Rule 27 CPC does not permit parties to produce additional evidence in an appellate court as a matter of course. Additional evidence may be allowed on the stated grounds, and Rule 27(2) requires the court to record reasons for its admission. The Court also held that a conclusion treating property as family property and partible cannot be reached without acceptable material considered through lawful procedure. No earlier case was cited for this issue.",
+      "rule": {
+        "if": "appellate_proceeding and additional_evidence_relied_on and (admission_conditions_not_met or admission_reasons_not_recorded)",
+        "then": "reliance_on_additional_evidence_is_unlawful"
+      },
+      "predicates": {
+        "appellate_proceeding": "A court was deciding an appeal from a lower court’s decision.",
+        "additional_evidence_relied_on": "The appellate court relied on evidence that had not been part of the record before the lower court.",
+        "admission_conditions_not_met": "The party or court did not satisfy the grounds required for admitting the additional evidence.",
+        "admission_reasons_not_recorded": "The appellate court did not record reasons for admitting the additional evidence."
+      },
+      "definition": "If an appellate court relies on additional evidence without satisfying an admission ground or recording reasons for admission, that reliance is unlawful."
+    },
+    {
+      "legal_issue": "A decree made in reliance on an invalid appellate direction cannot stand and must be reconsidered without being influenced by that direction.",
+      "material_facts": [
+        "After remand, the first appellate court allowed the partition appeal and granted a preliminary decree based on the High Court’s earlier finding and positive direction.",
+        "The Supreme Court set aside that finding and direction, as well as the subsequent first appellate decree and the later High Court order dismissing the second appeal.",
+        "The Supreme Court directed the first appellate court to restore the appeal and decide it afresh, without expressing a view on the merits of either party’s claim."
+      ],
+      "conclusion": "The dependent decrees and order were set aside, and the first appellate court was directed to rehear the appeal afresh without being influenced by the Supreme Court’s observations.",
+      "legal_principle": "Where a lower appellate decision was made in reliance on an invalid direction in a second appeal, the dependent decision cannot stand. The appeal must be decided afresh according to law; the Court did not determine the merits of the underlying partition claim.",
+      "rule": {
+        "if": "appeal_from_dependent_appellate_decree and decree_based_on_invalid_appellate_direction",
+        "then": "dependent_decree_must_be_set_aside_and_matter_reheard"
+      },
+      "predicates": {
+        "appeal_from_dependent_appellate_decree": "A party appealed from an appellate decree made after an earlier appellate remand.",
+        "decree_based_on_invalid_appellate_direction": "The lower appellate court made its decree by following a direction that was later found invalid."
+      },
+      "definition": "When an appellate decree under review rests on an invalid appellate direction, the decree must be set aside and the matter reheard."
+    }
+  ],
+  "seconds": 16.7
+}

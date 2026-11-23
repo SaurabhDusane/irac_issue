@@ -1,0 +1,59 @@
+{
+  "doc_id": "1119230",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10183,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1303,
+    "prompt_tokens": 3045,
+    "total_tokens": 4348,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "In a criminal-case transfer proceeding decided on affidavits, serious factual allegations that are not specifically denied remain uncontroverted for the court's consideration.",
+      "material_facts": [
+        "The petitioner made serious allegations on affidavit about the conduct of state officials and circumstances affecting his cases.",
+        "The State did not specifically deny those allegations by affidavit, although the court noted that some could have been checked against records."
+      ],
+      "conclusion": "Because there was no specific denial by affidavit, the Court proceeded on the petitioner's affidavit; in this kind of proceeding, the Court ordinarily decides factual disputes on affidavits rather than examining witnesses.",
+      "legal_principle": "In proceedings under section 527 of the Code of Criminal Procedure, 1898, the Court ordinarily acts on the affidavits filed by either side and does not examine witnesses on factual allegations. If the opposing side omits a reply affidavit, the petitioner's affidavit remains uncontroverted. No earlier case is identified by name for this principle.",
+      "rule": {
+        "if": "criminal_case_transfer_petition and petitioner_made_sworn_factual_allegations and respondent_made_no_specific_affidavit_denial",
+        "then": "allegations_remain_uncontroverted"
+      },
+      "predicates": {
+        "criminal_case_transfer_petition": "A party asked the court to transfer a pending criminal case.",
+        "petitioner_made_sworn_factual_allegations": "The petitioner set out factual allegations in an affidavit.",
+        "respondent_made_no_specific_affidavit_denial": "The opposing side did not specifically deny the petitioner's factual allegations by affidavit."
+      },
+      "definition": "When a criminal-case transfer petition rests on sworn factual allegations and the opposing side makes no specific affidavit denial, those allegations remain uncontroverted."
+    },
+    {
+      "legal_issue": "A criminal case should be transferred when the petitioner's established circumstances reasonably support an apprehension that justice will not be obtained in the state where the case is pending.",
+      "material_facts": [
+        "The petitioner was a political opponent of the Chief Minister's supported candidates and had a dispute concerning land with persons related to the Chief Minister and a senior police official.",
+        "The petitioner alleged that those persons had used official influence against him, and the allegations were not specifically denied by affidavit.",
+        "The petitioner was in custody, and a complaint he had brought was dismissed for non-appearance while he was unable to attend from jail.",
+        "The Court found sufficient circumstances to support a reasonable apprehension that the petitioner would not receive justice in the pending cases."
+      ],
+      "conclusion": "The Court allowed the transfer petition and directed that the cases be tried outside the state where they were pending, because the interests of justice required transfer.",
+      "legal_principle": "Under section 527 of the Code of Criminal Procedure, 1898, transfer is warranted where the circumstances establish a reasonable apprehension that the applicant will not receive justice. Justice must not only be done but be seen to be done. The court need not determine whether officials would actually influence a magistrate or whether a magistrate could withstand pressure; the question is whether the apprehension is reasonable. The judgment refers to an earlier transfer in similar circumstances but does not identify that case by name.",
+      "rule": {
+        "if": "criminal_case_transfer_petition and (strong_interested_parties_opposed_applicant or other_circumstances_support_apprehension) and reasonable_apprehension_of_unfair_trial",
+        "then": "case_transferred_in_interests_of_justice"
+      },
+      "predicates": {
+        "criminal_case_transfer_petition": "A party asked the court to transfer a pending criminal case.",
+        "strong_interested_parties_opposed_applicant": "The applicant's circumstances showed that influential parties with an interest opposed the applicant.",
+        "other_circumstances_support_apprehension": "Other established circumstances supported concern about the fairness of the pending trial.",
+        "reasonable_apprehension_of_unfair_trial": "The circumstances gave the applicant a reasonable apprehension that a fair trial would not be obtained where the case was pending."
+      },
+      "definition": "A criminal case is transferred in the interests of justice when influential opposition or other established circumstances support a reasonable apprehension of an unfair trial."
+    }
+  ],
+  "seconds": 9.3
+}

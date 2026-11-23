@@ -1,0 +1,61 @@
+{
+  "doc_id": "143217691",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14969,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2314,
+    "prompt_tokens": 4133,
+    "total_tokens": 6447,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A conviction cannot be sustained where the prosecution’s eyewitness account, dependent on closely connected witnesses, is materially inconsistent and unsupported by independent evidence.",
+      "material_facts": [
+        "The principal eyewitnesses were related to one another and to the deceased, and the two groups had a longstanding property dispute.",
+        "The witness who said he arrived first initially told police that he saw the accused fleeing, but testified at trial that he had witnessed the assault; the other witnesses said they arrived later and saw the assault in progress.",
+        "No independent villager who had gone to the scene was examined as an eyewitness."
+      ],
+      "conclusion": "The eyewitness testimony was not sufficiently credible to establish guilt beyond reasonable doubt, and the courts below erred by failing to scrutinize it with due care and caution.",
+      "legal_principle": "The prosecution must prove guilt beyond reasonable doubt. Evidence from related witnesses is not thereby inadmissible, but where the circumstances warrant it, their testimony must be scrutinized with due care; material inconsistencies and the absence of independent support may leave the prosecution case unproved. No earlier case or specific provision is relied on for this conclusion.",
+      "rule": {
+        "if": "criminal_appeal_from_conviction and (key_eyewitnesses_are_close_relatives or witnesses_have_prior_family_hostility) and eyewitness_accounts_materially_conflict and no_independent_eyewitness_supports_account",
+        "then": "eyewitness_evidence_does_not_prove_guilt_beyond_reasonable_doubt"
+      },
+      "predicates": {
+        "criminal_appeal_from_conviction": "The proceeding is an appeal challenging a criminal conviction.",
+        "key_eyewitnesses_are_close_relatives": "The principal eyewitnesses who support the prosecution account are closely related to one another or to the person harmed.",
+        "witnesses_have_prior_family_hostility": "The witnesses and the accused group had a longstanding dispute that could bear on the reliability of the account.",
+        "eyewitness_accounts_materially_conflict": "The witnesses give materially inconsistent accounts about what they saw or when they arrived.",
+        "no_independent_eyewitness_supports_account": "No independent person who was present at or went to the scene supports the prosecution’s eyewitness account."
+      },
+      "definition": "When a criminal appeal involves materially conflicting testimony from closely connected or hostile witnesses without independent eyewitness support, that testimony does not establish guilt beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "Medical evidence that is inconsistent with the eyewitness account may be used to discredit that account, and unverified recovery evidence may fail to resolve the resulting doubt.",
+      "material_facts": [
+        "The eyewitnesses described the deceased being struck with lathis, while the postmortem evidence identified a punctured neck wound caused by a sharp piercing object.",
+        "The recovered lathi was not recorded as having a sharp or iron-coated edge and was not examined by the doctor to determine whether it could have caused the fatal injury.",
+        "The officer who conducted the seizure was not examined, and blood on a seized cap did not match the deceased’s blood."
+      ],
+      "conclusion": "The medical findings did not corroborate the eyewitness account, and the injury, recovery, and related deficiencies contributed to serious doubt about the prosecution case.",
+      "legal_principle": "Medical evidence is ordinarily corroborative: it may show that injuries could have been caused in the manner alleged, but the defence may use it to show that they could not have been caused in that manner and thereby discredit eyewitnesses. The Court relied on Solanki Chimanbhai Ukabhai v. State of Gujarat, AIR 1983 SC. No specific statutory provision is relied on for this principle.",
+      "rule": {
+        "if": "criminal_appeal_from_conviction and medical_findings_conflict_with_eyewitness_account and alleged_weapon_not_verified_as_capable_of_causing_injury and recovery_evidence_has_material_deficiencies",
+        "then": "medical_and_recovery_evidence_leave_serious_doubt_about_prosecution_case"
+      },
+      "predicates": {
+        "criminal_appeal_from_conviction": "The proceeding is an appeal challenging a criminal conviction.",
+        "medical_findings_conflict_with_eyewitness_account": "The medical findings describe an injury mechanism materially different from the mechanism stated by eyewitnesses.",
+        "alleged_weapon_not_verified_as_capable_of_causing_injury": "The alleged weapon was not shown or examined to establish that it could have caused the injury identified by the medical evidence.",
+        "recovery_evidence_has_material_deficiencies": "Material shortcomings affect the reliability or verification of the claimed recovery evidence."
+      },
+      "definition": "In a criminal appeal, when medical findings conflict with the eyewitness account and the alleged weapon and its recovery are not reliably verified, the medical and recovery evidence leave serious doubt about the prosecution case."
+    }
+  ],
+  "seconds": 16.7
+}

@@ -1,0 +1,76 @@
+{
+  "doc_id": "718040",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12062,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2340,
+    "prompt_tokens": 3380,
+    "total_tokens": 5720,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Publication of the substance of a land acquisition notification in the locality is a mandatory requirement.",
+      "material_facts": [
+        "The substance of the acquisition notification was published in the locality by public announcement.",
+        "The court considered that owners, particularly in rural areas, might not learn of a proposed acquisition from publication in the Gazette or newspapers and needed notice to exercise their right to object."
+      ],
+      "conclusion": "Local publication of the substance of the acquisition notification is mandatory.",
+      "legal_principle": "Whether a statutory requirement is mandatory or directory depends on the statute’s purpose, the nature of the requirement, legislative intent, and the consequences of each construction. Applying that approach, the court held the local-publication requirement in Section 4(1) of the Land Acquisition Act, 1894, mandatory because it serves to inform landowners of their opportunity to object under Section 5-A. The court relied on Raza Buland Sugar Co. Ltd. v. Municipal Board.",
+      "rule": {
+        "if": "land_acquisition_validity_challenge and section4_locality_notice_omitted",
+        "then": "section4_notification_invalid"
+      },
+      "predicates": {
+        "land_acquisition_validity_challenge": "A party challenges the validity of a land acquisition proceeding.",
+        "section4_locality_notice_omitted": "The authority did not publish the substance of the acquisition notification in the locality."
+      },
+      "definition": "When a party challenges a land acquisition proceeding and the authority omitted local publication of the substance of the acquisition notification, the notification is invalid."
+    },
+    {
+      "legal_issue": "A delay between publication of an acquisition notification in the Gazette or newspapers and publication of its substance in the locality does not, by itself, invalidate the notification.",
+      "material_facts": [
+        "The acquisition notification was published in the Gazette and newspapers before its substance was published in the locality.",
+        "The interval between those publications was more than six months.",
+        "The respondent argued that the interval invalidated the notification."
+      ],
+      "conclusion": "Local publication need not occur simultaneously with publication in the Gazette or newspapers, and the delay alone did not invalidate the notification.",
+      "legal_principle": "The requirement of local publication under Section 4(1) of the Land Acquisition Act, 1894, is mandatory, but the statute does not require simultaneous publication through the different modes. The court applied the contextual approach to mandatory and directory provisions discussed in Raza Buland Sugar Co. Ltd. v. Municipal Board.",
+      "rule": {
+        "if": "land_acquisition_validity_challenge and section4_locality_notice_published_after_other_publication",
+        "then": "publication_delay_alone_does_not_invalidate_section4_notification"
+      },
+      "predicates": {
+        "land_acquisition_validity_challenge": "A party challenges the validity of a land acquisition proceeding.",
+        "section4_locality_notice_published_after_other_publication": "The authority published the substance of the acquisition notification in the locality after publishing the notification in the Gazette or newspapers."
+      },
+      "definition": "In a land acquisition validity challenge, later local publication does not, by itself, make the acquisition notification invalid."
+    },
+    {
+      "legal_issue": "Omission to publish the substance of a land acquisition declaration in the locality does not invalidate the declaration unless the omission causes grave prejudice.",
+      "material_facts": [
+        "The record did not show publication in the locality of the substance of the declaration that the land was needed for a public purpose.",
+        "The respondent had received notice of the opportunity to object to the acquisition but did not object.",
+        "The respondent later participated in the compensation enquiry, and an award was made; a reference concerning apportionment was also made and the compensation was deposited in court.",
+        "The respondent did not establish grave prejudice from the omission."
+      ],
+      "conclusion": "Local publication of the substance of the declaration is directory, and its omission did not invalidate the declaration in the absence of grave prejudice.",
+      "legal_principle": "The character of a statutory requirement depends on its purpose and the consequences of treating it as mandatory or directory. Under Sections 6(1), 6(2), and 6(3) of the Land Acquisition Act, 1894, the declaration establishes conclusively the land needed for the stated purpose. Because an opportunity to object is provided through the Section 5-A enquiry, omission of local publication of the declaration does not invalidate it unless grave prejudice is shown. The court applied the principles in Raza Buland Sugar Co. Ltd. v. Municipal Board.",
+      "rule": {
+        "if": "land_acquisition_validity_challenge and section6_locality_notice_omitted and no_grave_prejudice",
+        "then": "section6_declaration_not_invalidated_by_omission"
+      },
+      "predicates": {
+        "land_acquisition_validity_challenge": "A party challenges the validity of a land acquisition proceeding.",
+        "section6_locality_notice_omitted": "The authority did not publish the substance of the declaration in the locality.",
+        "no_grave_prejudice": "The person affected did not establish that the omission caused grave prejudice."
+      },
+      "definition": "When a party challenges a land acquisition proceeding, local publication of the declaration was omitted, and grave prejudice was not established, the omission does not invalidate the declaration."
+    }
+  ],
+  "seconds": 16.0
+}

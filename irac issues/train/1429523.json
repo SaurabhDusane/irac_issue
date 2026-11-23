@@ -1,0 +1,79 @@
+{
+  "doc_id": "1429523",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21749,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2047,
+    "prompt_tokens": 5791,
+    "total_tokens": 7838,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A subsequent judicial decision determining rights that affect taxable income can constitute definite information for reopening an assessment.",
+      "material_facts": [
+        "The taxpayer's ownership of the mill and entitlement to its income were subject to litigation when the original returns were filed.",
+        "The taxpayer did not disclose the compromise under which he became entitled to the mill's income.",
+        "A later Privy Council decision determined that the vendor had been the absolute owner of the mill and that the vendor's sons had no interest in it.",
+        "The tax officer relied on that decision to initiate reassessment proceedings for income received from the mill."
+      ],
+      "conclusion": "The later judicial decision was definite information, and the reassessment proceedings were validly initiated.",
+      "legal_principle": "Under Section 34(1)(b) of the Indian Income-tax Act, 1922, information includes information about the true state of the law and relevant judicial decisions. The principle in Maharaj Kumar Kamal Singh v. Commissioner of Income-tax also establishes that income may have escaped assessment even where a return was filed, if assessable income was erroneously left untaxed.",
+      "rule": {
+        "if": "reassessment_proceeding and later_judicial_decision_determines_tax_relevant_rights and decision_reveals_income_liable_to_assessment",
+        "then": "reassessment_proceeding_valid"
+      },
+      "predicates": {
+        "reassessment_proceeding": "A tax authority initiated proceedings to reassess income for a prior assessment period.",
+        "later_judicial_decision_determines_tax_relevant_rights": "A later judicial decision determined rights that bear on who owned an income-producing asset or was entitled to its income.",
+        "decision_reveals_income_liable_to_assessment": "The judicial decision supplied information showing that income was liable to assessment but had not been assessed."
+      },
+      "definition": "When reassessment proceedings follow a judicial decision that determines tax-relevant rights and reveals unassessed taxable income, the proceedings are valid."
+    },
+    {
+      "legal_issue": "Once reassessment is validly reopened for income that escaped assessment, the reassessment is not limited to the portion that initially justified reopening.",
+      "material_facts": [
+        "The tax authority reopened the assessment after a judicial decision supplied information concerning income from the mill.",
+        "The taxpayer argued that any reassessment should be confined to the portion of the income that had escaped assessment under the earlier understanding of the parties' rights."
+      ],
+      "conclusion": "The tax authority could reassess the whole assessment and had a duty to tax the entire income that had escaped assessment for the year.",
+      "legal_principle": "Under Section 34 of the Indian Income-tax Act, 1922, once a valid notice reopens an assessment, the previous under-assessment is set aside and the assessment proceedings begin afresh; the tax authority's jurisdiction is not confined to the part of the income that initially supported reopening.",
+      "rule": {
+        "if": "reassessment_proceeding and valid_reopening and income_escaped_assessment",
+        "then": "reassessment_may_cover_all_escaped_income_for_the_year"
+      },
+      "predicates": {
+        "reassessment_proceeding": "A tax authority initiated proceedings to reassess income for a prior assessment period.",
+        "valid_reopening": "The reassessment was validly reopened on information that justified reassessment.",
+        "income_escaped_assessment": "Some income liable to assessment for the year had not been assessed."
+      },
+      "definition": "If a reassessment is validly reopened and income escaped assessment, the reassessment may cover all income that escaped assessment for that year."
+    },
+    {
+      "legal_issue": "A lump-sum payment to perfect title to an income-producing asset is capital expenditure in full when claims to profits are merely ancillary to the claim to the asset.",
+      "material_facts": [
+        "The taxpayer paid a lump sum to the vendor's sons to obtain a release of any claims they had to the mill.",
+        "The compromise considered both the sons' possible interest in the mill and their claim to profits from it.",
+        "The court found that the payment was made to perfect the taxpayer's title to the mill, a capital asset, and that the profit claim was ancillary to the claim to the asset."
+      ],
+      "conclusion": "The entire payment was capital expenditure, no part could be apportioned as a revenue payment, and no portion could be set off against the income being assessed.",
+      "legal_principle": "Expenditure to acquire or perfect title to a capital asset or an enduring source of income is capital, rather than revenue, expenditure. The Court relied on Atherton v. British Insulated and Helsby Cables Ltd. and Commissioner of Taxes v. Nchanga Consolidated Copper Mines Ltd., and held that considering a related profit claim when fixing the settlement did not make any part of the lump sum revenue expenditure.",
+      "rule": {
+        "if": "income_tax_deduction_dispute and lump_sum_release_payment and payment_perfects_title_to_income_producing_asset and profit_claim_is_ancillary",
+        "then": "entire_payment_is_capital_and_not_deductible_from_income"
+      },
+      "predicates": {
+        "income_tax_deduction_dispute": "A dispute in an income-tax assessment concerns whether a payment may be deducted or set off against assessed income.",
+        "lump_sum_release_payment": "The taxpayer made one lump-sum payment to obtain a release of claims relating to an asset.",
+        "payment_perfects_title_to_income_producing_asset": "The payment was made to perfect title to an asset that produces income.",
+        "profit_claim_is_ancillary": "Any claim to profits was incidental to the claim to the asset rather than a separate basis for the payment."
+      },
+      "definition": "A lump-sum release payment made to perfect title to an income-producing asset is wholly capital and not deductible when any profit claim is only ancillary."
+    }
+  ],
+  "seconds": 13.4
+}

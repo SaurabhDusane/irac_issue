@@ -1,0 +1,90 @@
+{
+  "doc_id": "86762634",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 52725,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2448,
+    "prompt_tokens": 12607,
+    "total_tokens": 15055,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court sale of a company’s assets cannot be reopened solely because a higher offer is made later or a subsequent event increases the asset’s value, where the accepted sale was not challenged for fraud, irregularity, or inadequacy when it was approved.",
+      "material_facts": [
+        "The highest bid for the land was accepted after the stakeholders had been heard, and no stakeholder objected at that time that the sale was fraudulent or irregular or that the price was inadequate.",
+        "The successful bidder paid the full sale consideration, and the official liquidator arranged for possession to be handed over.",
+        "After the sale was accepted, a regulatory change increased the development potential and value of the land, and the unsuccessful bidder offered substantially more than the accepted bid.",
+        "The unsuccessful bidder did not initially challenge the sale on grounds of fraud, irregularity, or inadequacy."
+      ],
+      "conclusion": "The later increase in the land’s value and the unsuccessful bidder’s higher offer did not justify recalling the accepted sale; the High Court was not justified in setting it aside.",
+      "legal_principle": "Under Navalkha & Sons v. Sri Ramanya Das, the company court must satisfy itself that the price is adequate when considering confirmation, but once it has concluded that the price is adequate, a subsequent higher offer is not a valid ground for refusing confirmation. Valji Khimji & Company v. Official Liquidator of Hindustan Nitro Product (Gujarat) Limited reinforces that objections after confirmation are ordinarily limited to grounds such as fraud. Divya Manufacturing Company departed from Navalkha to the extent it permitted reopening on a higher offer alone; FCS Software Solutions involved material irregularities in the sale, while Shradhha Aromatics turned on peculiar facts and Manoj I. Naik involved rejection of the highest offer by the company court itself. Those decisions do not establish a general rule permitting reopening whenever a higher offer is later received.",
+      "rule": {
+        "if": "company_liquidation_sale and accepted_highest_bid and stakeholders_heard and no_initial_objection_to_price_or_sale and (later_higher_offer or post_sale_value_increase) and not sale_fraud and not sale_irregularity",
+        "then": "sale_recall_unjustified"
+      },
+      "predicates": {
+        "company_liquidation_sale": "A court is reviewing a sale of assets conducted in the course of a company’s liquidation.",
+        "accepted_highest_bid": "The court accepted the highest bid for the asset.",
+        "stakeholders_heard": "The stakeholders entitled to an interest in the sale proceeds were heard before the bid was accepted.",
+        "no_initial_objection_to_price_or_sale": "No objection was made when the bid was accepted that the price was inadequate or that the sale was fraudulent or irregular.",
+        "later_higher_offer": "A higher offer was made after the court accepted the bid.",
+        "post_sale_value_increase": "An event after the bid was accepted increased the asset’s value or development potential.",
+        "sale_fraud": "Fraud affected the conduct or approval of the sale.",
+        "sale_irregularity": "An irregularity affected the conduct or approval of the sale.",
+        "sale_recall_unjustified": "The accepted sale should not be recalled on the stated grounds."
+      },
+      "definition": "When a liquidation sale has been approved after the stakeholders were heard without an initial objection to its price or conduct, a later higher offer or increase in value does not justify recalling it absent fraud or irregularity."
+    },
+    {
+      "legal_issue": "An order accepting the highest bid may confirm a court sale even if it does not expressly use the words that the sale is confirmed.",
+      "material_facts": [
+        "The court’s order accepted the highest bid as being in accordance with the tender conditions.",
+        "The official liquidator’s letter described the sale as confirmed and called for payment under the court’s order.",
+        "The successful bidder paid the first instalment, which was accepted, and later paid the full consideration.",
+        "The unsuccessful bidder withdrew its earnest money deposit without objecting that the price was inadequate."
+      ],
+      "conclusion": "Considering the order’s terms and the surrounding circumstances, the sale was confirmed; the absence of an express statement of confirmation was not determinative.",
+      "legal_principle": "Navalkha & Sons v. Sri Ramanya Das establishes that the company court must exercise judicial discretion to ensure an adequate price, and that a later higher offer is not a valid ground to refuse confirmation once adequacy has been found. There is no required verbal formula for confirmation: the court determines whether confirmation occurred from the order and the totality of the circumstances.",
+      "rule": {
+        "if": "company_liquidation_sale and order_accepts_highest_bid and official_liquidator_treats_sale_as_confirmed and accepted_sale_payment and unsuccessful_bidder_withdraws_deposit_without_price_objection",
+        "then": "sale_confirmed_by_order"
+      },
+      "predicates": {
+        "company_liquidation_sale": "A court is reviewing a sale of assets conducted in the course of a company’s liquidation.",
+        "order_accepts_highest_bid": "The court’s order accepts the highest bid for the asset.",
+        "official_liquidator_treats_sale_as_confirmed": "The official liquidator acts on the understanding that the court’s order confirmed the sale.",
+        "accepted_sale_payment": "The official liquidator or court accepts payment toward the accepted sale price.",
+        "unsuccessful_bidder_withdraws_deposit_without_price_objection": "An unsuccessful bidder withdraws its deposit without objecting that the accepted price is inadequate.",
+        "sale_confirmed_by_order": "The court’s order is treated as confirming the sale."
+      },
+      "definition": "An order accepting the highest bid, together with the official liquidator’s treatment of the sale, acceptance of payment, and the unsuccessful bidder’s conduct, can establish confirmation without express words of confirmation."
+    },
+    {
+      "legal_issue": "A challenge to a court sale cannot be sustained on a ground that was not raised in the initial application to recall the sale and was added only at a later stage.",
+      "material_facts": [
+        "The unsuccessful bidder initially sought recall of the accepted sale on grounds concerning the increased development potential and value of the land.",
+        "It later relied on a change in the successful bidder’s shareholding as an alleged breach of the tender condition against nomination.",
+        "The shareholding ground was not the basis on which the initial recall application had been made."
+      ],
+      "conclusion": "The later-added shareholding ground did not warrant consideration as a basis for recalling the sale.",
+      "legal_principle": "The Court rejected the successive addition of new grounds to attack an accepted court sale, reasoning that permitting such an attempt would undermine the sanctity of court sales. It did not decide the substantive merits of the alleged shareholding breach.",
+      "rule": {
+        "if": "company_liquidation_sale_recall_challenge and ground_not_in_initial_recall_application and ground_added_later",
+        "then": "late_raised_ground_not_considered"
+      },
+      "predicates": {
+        "company_liquidation_sale_recall_challenge": "A party challenges an order accepting a sale of assets in a company liquidation by seeking recall of that order.",
+        "ground_not_in_initial_recall_application": "The asserted ground was absent from the party’s initial application to recall the sale.",
+        "ground_added_later": "The party relies on that ground for the first time at a later stage of the challenge.",
+        "late_raised_ground_not_considered": "The later-added ground is not considered as a basis for recalling the sale."
+      },
+      "definition": "When a party adds a ground for challenging a liquidation sale only after its initial recall application, that later-added ground is not considered as a basis for recall."
+    }
+  ],
+  "seconds": 14.8
+}

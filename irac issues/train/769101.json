@@ -1,0 +1,59 @@
+{
+  "doc_id": "769101",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15928,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1965,
+    "prompt_tokens": 4631,
+    "total_tokens": 6596,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord cannot obtain eviction solely on the basis of repeated late rent payments when all arrears have been paid and accepted before the eviction proceeding, leaving no arrears at filing.",
+      "material_facts": [
+        "The tenant repeatedly paid rent after its due date.",
+        "The landlord accepted the rent paid for the relevant years before filing the eviction application.",
+        "No rent arrears remained when the eviction application was filed."
+      ],
+      "conclusion": "The landlord was not entitled to eviction under section 25(2) on the basis of the earlier late payments, and the refusal to interfere with the dismissal of the eviction application was justified.",
+      "legal_principle": "Under section 25(1) of the Bombay Tenancy and Agricultural Lands Act, 1948, the remedial procedure presupposes arrears that the tenant can be directed to pay. Section 25(2), which excludes that procedure in cases of persistent default, likewise presupposes that arrears remain when the eviction application is filed; it does not authorize eviction merely because rent had previously been paid late where the landlord accepted the arrears before filing and none remained. Section 14 supplies the relevant rent-payment period, and section 30 preserves tenant rights arising under other law or otherwise. Raja Ram Mahadev Paranjipe v. Aba Maruti Mali was distinguished because it concerned a tenant who remained in arrears when eviction was sought; its discussion of the unavailability of relief against statutory forfeiture, including under section 114 of the Transfer of Property Act, did not decide the case where arrears had already been accepted before filing.",
+      "rule": {
+        "if": "eviction_proceeding_for_rent_default and repeated_late_rent_payments and arrears_paid_and_accepted_before_filing and no_arrears_at_filing",
+        "then": "no_eviction_entitlement_based_on_past_late_payments"
+      },
+      "predicates": {
+        "eviction_proceeding_for_rent_default": "The landlord brought a proceeding seeking eviction of the tenant for failure to pay rent.",
+        "repeated_late_rent_payments": "The tenant paid rent after its due date on repeated occasions.",
+        "arrears_paid_and_accepted_before_filing": "Before the eviction proceeding was filed, the tenant paid outstanding rent and the landlord accepted it.",
+        "no_arrears_at_filing": "No rent remained unpaid when the eviction proceeding was filed."
+      },
+      "definition": "When a landlord seeks eviction for rent default, the tenant repeatedly paid late, the landlord accepted the arrears before filing, and no arrears remained at filing, the landlord cannot obtain eviction solely for those past late payments."
+    },
+    {
+      "legal_issue": "A landlord's acceptance of rent arrears before filing an eviction proceeding can waive the termination of the tenancy for non-payment.",
+      "material_facts": [
+        "The landlord had served notice terminating the tenancy for non-payment of rent.",
+        "The tenant paid the outstanding rent before the landlord filed the eviction application, and the landlord accepted those payments.",
+        "There were no arrears at the time the application was filed."
+      ],
+      "conclusion": "The Act did not preclude the landlord's acceptance of arrears before suit from waiving the termination of the tenancy; the landlord's acceptance removed the basis for the eviction claim.",
+      "legal_principle": "The court construed section 25 alongside section 30 of the Bombay Tenancy and Agricultural Lands Act, 1948. The Act did not rule out payment of arrears by the tenant and acceptance by the landlord before an eviction proceeding, with that acceptance resulting in waiver of the landlord's termination of the tenancy. The court distinguished Raja Ram Mahadev Paranjipe v. Aba Maruti Mali, which addressed persistent defaults where arrears remained when eviction was sought, not prior acceptance of all arrears.",
+      "rule": {
+        "if": "eviction_proceeding_for_rent_default and termination_notice_served and arrears_paid_and_accepted_before_filing",
+        "then": "termination_waived_by_acceptance"
+      },
+      "predicates": {
+        "eviction_proceeding_for_rent_default": "The landlord brought a proceeding seeking eviction of the tenant for failure to pay rent.",
+        "termination_notice_served": "The landlord notified the tenant that the tenancy was terminated for non-payment of rent.",
+        "arrears_paid_and_accepted_before_filing": "Before the eviction proceeding was filed, the tenant paid outstanding rent and the landlord accepted it."
+      },
+      "definition": "When a landlord seeks eviction for rent default after notifying the tenant of termination, acceptance of the arrears before filing means the termination is waived."
+    }
+  ],
+  "seconds": 12.4
+}

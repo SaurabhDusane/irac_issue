@@ -1,0 +1,80 @@
+{
+  "doc_id": "69305",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13367,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2184,
+    "prompt_tokens": 3962,
+    "total_tokens": 6146,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant creates a sublease by putting an independent dealer in possession of the premises for its own enjoyment in return for fixed rent.",
+      "material_facts": [
+        "The tenant put its dealer in possession of the premises.",
+        "The dealer was a separate legal entity and was not a licensee or in possession on the tenant’s behalf.",
+        "The dealer paid the tenant a fixed sum as rent, unrelated to vehicle sales; the dealer’s commission did not include a right of enjoyment of the premises."
+      ],
+      "conclusion": "The tenant created a sublease and parted with possession within the meaning of Section 14(1), proviso (b), of the Delhi Rent Control Act, 1958.",
+      "legal_principle": "Under Section 14(1), proviso (b), the relevant question is whether the tenant parted with possession by subletting. The court found a sublease where a separate entity occupied the premises in its own right, rather than as a licensee or on the tenant’s behalf; the fact that the occupant was the tenant’s dealer did not change that result.",
+      "rule": {
+        "if": "eviction_for_subletting and tenant_put_occupant_in_possession and occupant_is_independent_entity and occupant_paid_fixed_rent",
+        "then": "sublease_created"
+      },
+      "predicates": {
+        "eviction_for_subletting": "The landlord sought eviction on the ground that the tenant had sublet the premises without consent.",
+        "tenant_put_occupant_in_possession": "The tenant placed another entity in possession of the premises.",
+        "occupant_is_independent_entity": "The occupant was a separate entity and did not occupy the premises as the tenant’s licensee or on the tenant’s behalf.",
+        "occupant_paid_fixed_rent": "The occupant paid the tenant fixed rent that was not dependent on its sales or other business activity."
+      },
+      "definition": "When eviction is sought for subletting and the tenant places an independent entity in possession that pays fixed rent, the rule treats a sublease as created."
+    },
+    {
+      "legal_issue": "A term permitting subletting that forms part of an unregistered lease cannot be relied on when the lease is inadmissible for non-registration.",
+      "material_facts": [
+        "The lease deed was unregistered.",
+        "The tenant relied on a clause in that deed permitting it to part with possession to associate concerns without the landlord’s consent.",
+        "The court treated the permission clause as a term of the lease transaction, not as a separate collateral matter."
+      ],
+      "conclusion": "The tenant could not rely on the permission clause because all terms of a lease document inadmissible for non-registration are also inadmissible, including a term concerning permission to sublet.",
+      "legal_principle": "The court applied the rule that where a lease document is inadmissible for want of registration, its terms cannot be admitted separately, including a term concerning the landlord’s permission to sublet. It referred to Sachindra Mohan Ghose v. Ramesh Agarwalla, AIR 1932 Patna 97. Although the tenant invoked Section 49 of the Registration Act, the court rejected the argument that the clause could be used for a collateral purpose because it was a term of the lease transaction.",
+      "rule": {
+        "if": "eviction_proceeding and lease_document_unregistered and permission_clause_is_lease_term",
+        "then": "permission_clause_is_inadmissible"
+      },
+      "predicates": {
+        "eviction_proceeding": "The dispute arose in a proceeding seeking eviction of a tenant.",
+        "lease_document_unregistered": "The document recording the lease was not registered.",
+        "permission_clause_is_lease_term": "The permission to sublet was expressed as a term of the lease document."
+      },
+      "definition": "In an eviction proceeding, an unregistered lease document makes a permission clause inadmissible when that clause is a term of the lease."
+    },
+    {
+      "legal_issue": "General permission to sublet does not constitute consent to a later specific subletting.",
+      "material_facts": [
+        "The lease clause gave general permission to part with possession to associate concerns without consent.",
+        "The occupant was inducted as a subtenant later, and the landlord’s consent was not obtained specifically for that subletting.",
+        "The court considered this ground even on the assumption that the clause was admissible and the occupant was an associate concern."
+      ],
+      "conclusion": "The general permission did not satisfy the requirement of consent to the specific subletting and could not protect the tenant from eviction.",
+      "legal_principle": "Section 14(1), proviso (b), read with Sections 16(2) and 16(3) of the Delhi Rent Control Act, 1958, requires the landlord’s written consent to the specific subletting. The court relied on M/s Shalimar Tar Products v. S.C. Sharma, [1988] 1 SCC 70, and held that treating general permission as sufficient would defeat the statutory object.",
+      "rule": {
+        "if": "eviction_for_subletting and general_permission_given and specific_subletting_occurred and landlord_did_not_consent_specifically",
+        "then": "general_permission_is_insufficient"
+      },
+      "predicates": {
+        "eviction_for_subletting": "The landlord sought eviction on the ground that the tenant had sublet the premises.",
+        "general_permission_given": "The landlord had given permission in general terms for the tenant to part with possession to a category of occupants.",
+        "specific_subletting_occurred": "The tenant later placed a particular occupant in possession as a subtenant.",
+        "landlord_did_not_consent_specifically": "The landlord did not consent specifically to the subletting in favour of that occupant."
+      },
+      "definition": "When a tenant facing eviction for subletting relies on general permission but the landlord did not consent to the particular subletting, that permission is insufficient."
+    }
+  ],
+  "seconds": 13.8
+}

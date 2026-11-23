@@ -1,0 +1,79 @@
+{
+  "doc_id": "1312879",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33775,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2267,
+    "prompt_tokens": 9151,
+    "total_tokens": 11418,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The special acquisition procedure for land acquired by a development board does not apply when the government itself acquires land under the general acquisition law, even if the acquisition serves a purpose of the board.",
+      "material_facts": [
+        "The acquisition was initiated by the government under the Land Acquisition Act for public purposes that included housing and improvement connected with a board scheme.",
+        "The board did not acquire the land by exercising its own statutory acquisition power."
+      ],
+      "conclusion": "The Kanpur Act and its modifications to the Land Acquisition Act did not govern the acquisition; the government could proceed under the Land Acquisition Act alone.",
+      "legal_principle": "Under sections 71 and 114 of the Kanpur Urban Area Development Act, the modified acquisition procedure applies when the board acquires land under its own power in section 71. The fact that a government acquisition serves a purpose of the board does not make it an acquisition by the board. No earlier cases were relied on.",
+      "rule": {
+        "if": "government_acquisition_case and government_acquired_under_general_law and not board_exercised_own_acquisition_power",
+        "then": "special_board_acquisition_procedure_does_not_apply"
+      },
+      "predicates": {
+        "government_acquisition_case": "The proceeding concerns the acquisition of land by public authority for a public purpose.",
+        "government_acquired_under_general_law": "The government initiated the acquisition under the general land-acquisition procedure.",
+        "board_exercised_own_acquisition_power": "The development board acquired the land by exercising its own statutory acquisition power."
+      },
+      "definition": "When the government acquires land under the general procedure and the board did not exercise its own acquisition power, the board-specific acquisition procedure does not apply."
+    },
+    {
+      "legal_issue": "Urgency provisions allowing earlier possession of non-waste or non-arable land do not permit the government to dispense with the landowner's objection procedure unless the statutory condition for dispensing with that procedure applies.",
+      "material_facts": [
+        "The land was occupied largely by a mill and godowns, with the remainder open and paved; no part was waste or arable.",
+        "The government invoked urgency provisions, including the provision permitting earlier possession of other-than-waste-or-arable land for planned development.",
+        "The government directed that objections not be heard and issued a declaration without taking action under the objection procedure.",
+        "The landowners had filed objections after receiving possession notices, but no procedure under section 5-A had been followed."
+      ],
+      "conclusion": "The direction dispensing with objections was beyond the government's powers, and the declaration issued without following section 5-A was invalid.",
+      "legal_principle": "Sections 5-A and 6 of the Land Acquisition Act require the objection procedure before a declaration, unless section 17(4) validly disapplies it. Sections 17(1) and 17(4) are independent: an order permitting earlier possession under section 17(1) does not itself dispense with section 5-A. Section 17(4), as then framed, applied to land covered by section 17(1), namely waste or arable land. The U.P. amendment adding section 17(1-A) permitted earlier possession of other-than-waste-or-arable land in specified circumstances but did not extend section 17(4) to that land. The right to object under section 5-A is substantial and cannot be removed by implication. No earlier cases were relied on.",
+      "rule": {
+        "if": "land_acquisition_case and land_not_waste_or_arable and urgency_possession_authorized and declaration_issued_without_objection_procedure",
+        "then": "declaration_invalid"
+      },
+      "predicates": {
+        "land_acquisition_case": "The proceeding concerns a government acquisition of land under the general land-acquisition law.",
+        "land_not_waste_or_arable": "The land is neither waste nor arable, and buildings stand on at least part of it.",
+        "urgency_possession_authorized": "The government invoked a provision permitting possession before an award because of urgency or planned development.",
+        "declaration_issued_without_objection_procedure": "The government issued an acquisition declaration without giving the landowner the statutory opportunity to object."
+      },
+      "definition": "If a government acquisition concerns non-waste or non-arable land, the government invokes an urgency possession power, and it issues a declaration without the objection procedure, the declaration is invalid."
+    },
+    {
+      "legal_issue": "A landowner must be given an opportunity to object when the objection period has elapsed because the government wrongly treated later objections as sufficient compliance with the statutory objection procedure.",
+      "material_facts": [
+        "The government had not followed the statutory objection procedure before issuing the acquisition declaration.",
+        "The landowners objected after receiving notices concerning possession, but the government had treated those objections as though they satisfied the earlier objection procedure.",
+        "The time ordinarily available to file objections had expired by the time the court considered the matter."
+      ],
+      "conclusion": "The landowners were to be given an opportunity to make objections under section 5-A, notwithstanding the expiry of the ordinary period.",
+      "legal_principle": "Section 5-A provides a substantial right to object before the acquisition declaration. Where that procedure was omitted because of the government's misunderstanding of the law, the court may preserve the right by allowing the affected owners an opportunity to object despite expiry of the ordinary period. No earlier cases were relied on.",
+      "rule": {
+        "if": "land_acquisition_case and objection_procedure_omitted and deadline_expired_due_to_government_misunderstanding",
+        "then": "landowner_gets_opportunity_to_object"
+      },
+      "predicates": {
+        "land_acquisition_case": "The proceeding concerns the compulsory acquisition of a person's land.",
+        "objection_procedure_omitted": "The government did not provide or complete the required opportunity for the landowner to object before the acquisition declaration.",
+        "deadline_expired_due_to_government_misunderstanding": "The ordinary objection period elapsed because the government misunderstood the legal effect of objections made later in the process."
+      },
+      "definition": "When the required objection procedure was omitted and the ordinary deadline elapsed because of the government's misunderstanding, the landowner gets an opportunity to object."
+    }
+  ],
+  "seconds": 16.6
+}

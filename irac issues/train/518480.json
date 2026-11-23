@@ -1,0 +1,80 @@
+{
+  "doc_id": "518480",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28689,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2666,
+    "prompt_tokens": 7004,
+    "total_tokens": 9670,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A cinema licence renewal requires the applicant to establish lawful possession even when the renewal provision does not separately repeat that requirement.",
+      "material_facts": [
+        "The applicant sought renewal of a cinema licence after the term of his lease had expired.",
+        "The renewal rules required the licensing authority to be satisfied that the rules had been fulfilled.",
+        "The initial-licence rules expressly required lawful possession of the site, building and equipment."
+      ],
+      "conclusion": "Lawful possession is required for renewal because the renewal rules require compliance with all applicable rules, including the lawful-possession requirement.",
+      "legal_principle": "Rule 11(B)(2) expressly requires lawful possession for an initial licence. Rule 12(B)(1), including its second proviso, requires satisfaction of all the rules for renewal, so the omission of a separate reference to lawful possession does not remove that requirement. The Court approved the Full Bench's interpretation in Smt. Y. Anasuya v. Government of A.P. and rejected the contrary view in M. Kameswara Somayajulu v. State of A.P.",
+      "rule": {
+        "if": "cinema_licence_renewal_proceeding and renewal_requires_compliance_with_all_rules and initial_licence_requires_lawful_possession",
+        "then": "renewal_applicant_must_establish_lawful_possession"
+      },
+      "predicates": {
+        "cinema_licence_renewal_proceeding": "The applicant asked the licensing authority to renew a licence to operate a cinema.",
+        "renewal_requires_compliance_with_all_rules": "The governing renewal requirements made renewal conditional on compliance with all applicable rules.",
+        "initial_licence_requires_lawful_possession": "The governing requirements for an initial licence required the applicant to possess the relevant property lawfully."
+      },
+      "definition": "When a cinema operator seeks renewal and renewal requires compliance with all rules, a rule requiring lawful possession for an initial licence also means the renewal applicant must establish lawful possession."
+    },
+    {
+      "legal_issue": "A lessee whose lease has expired and whose lessor has neither assented to continued possession nor accepted rent is not in lawful possession for a licence renewal merely because the law protects the lessee from forcible eviction.",
+      "material_facts": [
+        "The lease expired by efflux of time.",
+        "The lessor did not accept rent or otherwise assent to the lessee remaining in possession after the lease expired.",
+        "The lease required the lessee to surrender the premises at the end of the term and to assist in transferring the licences back to the lessor.",
+        "The lessor sought the lessee's eviction through a court proceeding."
+      ],
+      "conclusion": "The lessee was a tenant at sufferance and was not in lawful possession for renewal of the licence, although he could remain in possession until lawfully evicted.",
+      "legal_principle": "Sections 105 and 111 of the Transfer of Property Act describe a lease and its determination, and section 116 provides for holding over when the lessor accepts rent or otherwise assents to continued possession. Without that assent, continued possession after expiry is a tenancy at sufferance, not lawful possession for licensing purposes. M.C. Chockalingam v. V. Manickavasagam distinguishes lawful possession from possession that is merely protected against wrongful dispossession. Krishna Kishore Firm v. Government of A.P. explains that lawful possession may include possession that is not strictly legal but is not forbidden by law; the Court distinguished its facts, which involved co-owners' agreements and a fresh lease. Lalu Yeshwant Singh v. Rao Jagdish Singh and East India Hotels Ltd. v. Syndicate Bank establish protection against forcible dispossession, not a right to claim lawful possession for licence renewal.",
+      "rule": {
+        "if": "cinema_licence_renewal_proceeding and lease_term_expired and lessor_did_not_assent_to_continued_possession and lease_required_surrender_after_expiry",
+        "then": "lessee_is_not_in_lawful_possession_for_licence_renewal"
+      },
+      "predicates": {
+        "cinema_licence_renewal_proceeding": "The occupant sought renewal of a licence to operate a cinema from the leased premises.",
+        "lease_term_expired": "The term of the occupant's lease ended.",
+        "lessor_did_not_assent_to_continued_possession": "The lessor neither accepted rent nor otherwise agreed to the occupant's continued possession after the lease ended.",
+        "lease_required_surrender_after_expiry": "The lease required the occupant to surrender the premises when the lease term ended."
+      },
+      "definition": "When a cinema operator seeks renewal after a lease ends, the lessor has not assented to continued possession, and the lease requires surrender, the operator is not in lawful possession for renewal."
+    },
+    {
+      "legal_issue": "A person in possession cannot be forcibly dispossessed without due process, even if that person's possession is unlawful and does not qualify as lawful possession for licensing purposes.",
+      "material_facts": [
+        "The lessee remained in possession after the lease expired.",
+        "The lessor sought eviction through a court proceeding rather than having already evicted the lessee through lawful process.",
+        "The lessee's continued possession did not qualify as lawful possession for renewal of the cinema licence."
+      ],
+      "conclusion": "The lessee could remain in possession until evicted in due course of law, but that protection did not make his possession lawful for renewal of the licence.",
+      "legal_principle": "Section 6 of the Specific Relief Act, 1963 protects possession against dispossession otherwise than in due course of law. Lalu Yeshwant Singh v. Rao Jagdish Singh and East India Hotels Ltd. v. Syndicate Bank affirm that a person in possession may not be removed by self-help, even where the person's title or right to remain is deficient. This protection against forcible dispossession is distinct from lawful possession for the purpose of obtaining or renewing a licence.",
+      "rule": {
+        "if": "possession_recovery_or_eviction_dispute and person_is_in_actual_possession and person_has_not_been_ejected_through_due_process",
+        "then": "person_may_not_be_forcibly_dispossessed"
+      },
+      "predicates": {
+        "possession_recovery_or_eviction_dispute": "The dispute concerns recovering premises from an occupant or evicting that occupant.",
+        "person_is_in_actual_possession": "The person whose removal is sought is in actual possession of the premises.",
+        "person_has_not_been_ejected_through_due_process": "The person has not been removed from possession through lawful process."
+      },
+      "definition": "In a dispute over recovery of premises, a person who remains in actual possession and has not been removed through due process may not be forcibly dispossessed."
+    }
+  ],
+  "seconds": 17.6
+}

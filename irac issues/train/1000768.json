@@ -1,0 +1,79 @@
+{
+  "doc_id": "1000768",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18082,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1955,
+    "prompt_tokens": 5125,
+    "total_tokens": 7080,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may extend the time for payment or deposit of monthly rent falling due after an eviction suit is filed.",
+      "material_facts": [
+        "The landlord brought an eviction suit that included a claim based on non-payment of rent.",
+        "While the suit and the landlord’s appeal were pending, the tenant sometimes deposited monthly rent one to three days after the prescribed date.",
+        "The tenant applied for condonation of the delays, and the court received the deposits and the landlord withdrew them without protest.",
+        "The High Court held that the court had no power to extend the time and decreed eviction."
+      ],
+      "conclusion": "The court has jurisdiction to extend the time for payment or deposit of monthly rent falling due after the suit is filed.",
+      "legal_principle": "Under sections 13(1) and 13(6) of the Madhya Pradesh Accommodation Control Act, 1961, the court’s discretion not to strike out a tenant’s defence for default necessarily implies discretion to condone the default and extend the time to pay or deposit rent. This construction gives effect to the Act’s purpose of protecting tenants. The court disapproved Jagdish Kapoor v. New Education Society and referred to B. C. Kame v. Nem Chand Jain.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and post_filing_monthly_rent_due and tenant_defaulted_on_monthly_deposit and court_has_discretion_over_striking_defence",
+        "then": "court_may_extend_time_for_rent_deposit"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "A landlord brought a proceeding seeking eviction of a tenant.",
+        "post_filing_monthly_rent_due": "Monthly rent became payable after the eviction proceeding was filed.",
+        "tenant_defaulted_on_monthly_deposit": "The tenant failed to deposit or pay a monthly rent instalment by the prescribed time.",
+        "court_has_discretion_over_striking_defence": "The governing rule gives the court discretion whether to strike out the tenant’s defence after a rent-payment default."
+      },
+      "definition": "When an eviction proceeding involves rent instalments that fall due after filing, the tenant defaults on an instalment, and the court has discretion over striking the defence, the court may extend the time for depositing rent."
+    },
+    {
+      "legal_issue": "A tenant’s failure to pay or deposit a post-filing monthly rent instalment by the prescribed date does not automatically entitle the landlord to an eviction decree.",
+      "material_facts": [
+        "The tenant sometimes deposited monthly rent due after the eviction suit was filed a few days after the prescribed date.",
+        "The landlord argued that non-compliance with the monthly deposit requirement entitled him to an eviction decree.",
+        "The applicable provision prescribed that the court could order the tenant’s defence against eviction to be struck out."
+      ],
+      "conclusion": "A payment or deposit default does not itself require an eviction decree; the court has discretion whether to strike out the tenant’s defence.",
+      "legal_principle": "Sections 13(5) and 13(6) of the Madhya Pradesh Accommodation Control Act, 1961 prescribe the consequences of payment, deposit, or default. Section 13(6) gives the court discretion to strike out the defence; it does not give the landlord an automatic right to an eviction decree. That discretion also supports the court’s power to condone default and extend time.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and tenant_defaulted_on_monthly_deposit",
+        "then": "rent_default_does_not_automatically_entitle_landlord_to_eviction"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "A landlord brought a proceeding seeking eviction of a tenant.",
+        "tenant_defaulted_on_monthly_deposit": "The tenant failed to deposit or pay a monthly rent instalment by the prescribed time."
+      },
+      "definition": "In a tenant eviction proceeding, a default on a monthly rent deposit does not by itself entitle the landlord to eviction."
+    },
+    {
+      "legal_issue": "A tenant who pays or deposits rent within a court-extended period may claim protection against eviction on the ground of rent arrears.",
+      "material_facts": [
+        "The eviction suit included a claim based on arrears of rent despite service of a demand notice.",
+        "The tenant deposited the arrears within the time allowed by the trial court and also sought condonation of delays in depositing later monthly rent.",
+        "The court concluded that it could extend time for those later deposits."
+      ],
+      "conclusion": "Payment or deposit within the extended time entitles the tenant to claim the protection against eviction provided for rent-arrears claims.",
+      "legal_principle": "Section 12(3) of the Madhya Pradesh Accommodation Control Act, 1961 bars eviction on the rent-arrears ground when the tenant makes payment or deposit as required by section 13. Since section 13 gives the court power to extend time for payment or deposit, compliance within the extended time qualifies for section 12(3) protection.",
+      "rule": {
+        "if": "tenant_eviction_proceeding_on_rent_arrears and court_extended_payment_or_deposit_time and tenant_paid_or_deposited_within_extended_time",
+        "then": "tenant_is_protected_from_eviction_on_rent_arrears_ground"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding_on_rent_arrears": "A landlord sought eviction of a tenant on the ground of rent arrears.",
+        "court_extended_payment_or_deposit_time": "The court allowed additional time for the tenant to pay or deposit rent.",
+        "tenant_paid_or_deposited_within_extended_time": "The tenant paid or deposited the required rent within the additional time allowed by the court."
+      },
+      "definition": "When a rent-arrears eviction proceeding is subject to an extension of payment or deposit time and the tenant complies within that time, the tenant is protected from eviction on that ground."
+    }
+  ],
+  "seconds": 12.6
+}

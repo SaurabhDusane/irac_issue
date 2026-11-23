@@ -1,0 +1,62 @@
+{
+  "doc_id": "1252577",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 40952,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1992,
+    "prompt_tokens": 10503,
+    "total_tokens": 12495,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The extended rent-control provisions applied to a pending eviction proceeding when the reviewing authority decided the revision after the provisions had been extended to the area.",
+      "material_facts": [
+        "The landlord filed the eviction application before the relevant provisions had been extended to the cantonment area.",
+        "The reviewing authority decided the revision after a later notification extended the Act to cantonments in the state."
+      ],
+      "conclusion": "The provisions applied when the revision was decided, and the objection that the proceeding could not continue because the application predated the extension was rejected.",
+      "legal_principle": "Under the Cantonments (Extension of Rent Control Laws) Act, 1957, section 3, the Government could extend the rent-control law to cantonments. Applying Jai Singh Jairam Tyagi v. Mamanchand Ratilal Agarwal, the Court held that the provisions of Chapter IV-A applied when the revisional order was made. It declined to interfere on this ground because dismissing the application would have been futile in light of the subsequent extension.",
+      "rule": {
+        "if": "rent_control_revision_proceeding and initial_application_preceded_extension and revision_decided_after_extension",
+        "then": "extended_rent_rules_apply_to_revision"
+      },
+      "predicates": {
+        "rent_control_revision_proceeding": "The matter is a revision in a rent-control eviction proceeding.",
+        "initial_application_preceded_extension": "The eviction application was filed before the relevant rent-control rules were extended to the area.",
+        "revision_decided_after_extension": "The reviewing authority decided the revision after those rules had been extended to the area.",
+        "extended_rent_rules_apply_to_revision": "The extended rent-control rules govern the revision."
+      },
+      "definition": "When an eviction application predates an extension but its revision is decided after the extension, the extended rent-control rules govern the revision."
+    },
+    {
+      "legal_issue": "A landlord required to leave government accommodation cannot use the summary eviction procedure when the landlord already occupies another part of the same building that can be separately enjoyed as a dwelling.",
+      "material_facts": [
+        "The landlord, a government servant, was required to vacate government accommodation and sought summary eviction of the tenant from the first floor of his house.",
+        "The landlord occupied the ground floor of that house.",
+        "The first and ground floors had common facilities and a common passage, but the first floor had a staircase providing access without going through the ground floor.",
+        "The landlord’s mother had previously occupied the ground-floor portion separately, and after her death that portion had been let to a tenant who occupied it separately.",
+        "The Court found that the occupied portion could be separately enjoyed for dwelling purposes, even though it could not be independently locked up."
+      ],
+      "conclusion": "The landlord was not entitled to use the summary urgency procedure because the portion he occupied was a separate dwelling capable of being separately enjoyed. The appeal was dismissed, without preventing the landlord from seeking eviction through other available legal proceedings or arranging to separate the units.",
+      "legal_principle": "Sections 24A, 24B and 24C of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972 provide an urgency procedure for a landlord required to leave government accommodation. Section 24B(1) and its proviso must be read in light of that purpose. A dwelling house is a building used, constructed or adapted principally for human habitation and may include a separately occupied part of a house. Whether parts form one dwelling or separate dwellings depends on their cumulative circumstances, including situation, entrance, municipal number, construction, intercommunication, completeness and independence; no single factor is decisive. The portion must be capable of separate enjoyment, but independent locking is not essential. The Court relied on Busching Schmitz Private Ltd. v. P.T. Menghani, Jai Singh Jairam Tyagi v. Mamanchand Ratilal Agarwal, and the workable factors discussed in S.S. Makhijani v. V.K. Jotwani; it distinguished Sarwan Singh v. Kasturi Lal and referred to Narain Khamman v. Parduman Kumar Jain.",
+      "rule": {
+        "if": "summary_urgency_eviction_proceeding and landlord_required_to_leave_government_housing and landlord_occupies_another_part_of_same_building and occupied_part_separately_enjoyable_as_dwelling",
+        "then": "summary_urgency_eviction_unavailable"
+      },
+      "predicates": {
+        "summary_urgency_eviction_proceeding": "The landlord seeks eviction through a special summary procedure based on an urgent need for residential accommodation.",
+        "landlord_required_to_leave_government_housing": "The landlord was required to vacate government-provided housing.",
+        "landlord_occupies_another_part_of_same_building": "The landlord occupies a portion of the same building from which the tenant is sought to be evicted.",
+        "occupied_part_separately_enjoyable_as_dwelling": "The portion occupied by the landlord can be used and enjoyed separately as a dwelling, assessed from the relevant circumstances together.",
+        "summary_urgency_eviction_unavailable": "The landlord cannot obtain eviction through the special summary urgency procedure."
+      },
+      "definition": "If a landlord seeking summary eviction because government housing must be vacated already occupies a separately enjoyable dwelling in the same building, the summary urgency procedure is unavailable."
+    }
+  ],
+  "seconds": 13.7
+}

@@ -1,0 +1,105 @@
+{
+  "doc_id": "174586244",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38419,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3948,
+    "prompt_tokens": 9645,
+    "total_tokens": 13593,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A prohibition against payment of a debt that is due does not attach rent that has not yet accrued.",
+      "material_facts": [
+        "A tax-recovery order prohibited payment or receipt of a debt then alleged to be due from the tenant to the landlord.",
+        "The tenancy required monthly rent, and rent for future months had not accrued when the order was issued."
+      ],
+      "conclusion": "The order covered rent that had become due, including rent payable at a later date, but did not cover rent for an unexpired future period that had not yet become due.",
+      "legal_principle": "Under Section 222(1)(a) of the Income Tax Act and Rule 26(1)(a) of its Second Schedule, an attachment of a debt prohibits the creditor from recovering it and the debtor from paying it. The Court construed ‘debt’ in the sense used in Section 60 of the Code of Civil Procedure: it may be due and payable or due but payable later, but rent for a future, unexpired period is not yet a debt. The Court relied on Lachman v. Jarbandhan, which held that rent for a period still in existence is not a debt because the obligation is not complete.",
+      "rule": {
+        "if": "rental_debt_attachment_dispute and (rent_has_not_accrued or rent_is_for_an_unexpired_period)",
+        "then": "future_rent_is_not_attached"
+      },
+      "predicates": {
+        "rental_debt_attachment_dispute": "A dispute concerns whether an order attaching a debt reaches rent payable under a tenancy.",
+        "rent_has_not_accrued": "The tenant’s obligation to pay the rent had not yet accrued when the attachment order was issued.",
+        "rent_is_for_an_unexpired_period": "The rent relates to a period of the tenancy that had not yet elapsed when the order was issued."
+      },
+      "definition": "When an attachment dispute concerns rent that has not accrued or relates to an unexpired period, the rule treats that future rent as outside the attachment."
+    },
+    {
+      "legal_issue": "Non-payment of rent to the landlord is not wilful default when the tenant reasonably refrains from payment under an attachment order or is directed to pay rent to a tax authority by an effective garnishment notice.",
+      "material_facts": [
+        "After receiving an earlier prohibitory order, the tenant believed he could not pay rent to the landlord, kept the rent in bank deposits, and the landlord did not demand it during that period.",
+        "A later notice required the tenant to pay amounts then or subsequently due to the landlord to the tax authority, and the tenant paid rent to that authority.",
+        "The later notice remained effective, the landlord had not paid the tax arrears specified in it, and there was no evidence that the authority had withdrawn the notice.",
+        "The eviction proceeding alleged wilful default in payment of rent."
+      ],
+      "conclusion": "The tenant’s non-payment to the landlord during the period covered by the earlier order was not wilful because his belief that payment was prohibited had a reasonable basis. While the later garnishment notice remained effective and the tax arrears remained unpaid, non-payment to the landlord did not establish wilful default or give the landlord a cause of action for eviction on that ground.",
+      "legal_principle": "Section 10(2)(i) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, and its proviso distinguish a simple default from wilful default; wilfulness involves intentional or conscious violation, or conduct showing supine indifference, callousness, or recalcitrance. Default arising from ignorance, accident, compulsion, or circumstances beyond the tenant’s control is not wilful, depending on the facts. The Court relied on Section 226(3) of the Income Tax Act, including its provision discharging the payer’s liability to the assessee to the extent paid, and treated that provision as analogous to Order 21 Rule 46 of the Code of Civil Procedure. It also relied on V.N. Vasudeva v. Kiroi Mal Luhariwala, which held that a garnishee notice prevents the person served from paying the landlord while the notice stands.",
+      "rule": {
+        "if": "rent_control_eviction_for_rent_default and ((ambiguous_attachment_order_served and tenant_reasonably_understood_payment_barred and landlord_made_no_demand) or (garnishment_notice_served and notice_directed_future_payments and notice_remained_effective and tax_arrears_unpaid))",
+        "then": "nonpayment_to_landlord_does_not_establish_wilful_default"
+      },
+      "predicates": {
+        "rent_control_eviction_for_rent_default": "A landlord seeks eviction in a rent-control proceeding on the ground that the tenant failed to pay rent.",
+        "ambiguous_attachment_order_served": "The tenant received an attachment order whose terms could reasonably be understood to prohibit payment of rent to the landlord.",
+        "tenant_reasonably_understood_payment_barred": "The tenant believed that the attachment order prevented payment of rent to the landlord.",
+        "landlord_made_no_demand": "The landlord did not demand rent from the tenant during the period in question.",
+        "garnishment_notice_served": "The tenant received a notice requiring payment of money owed to the landlord to a tax authority.",
+        "notice_directed_future_payments": "The notice expressly required payment of amounts that would subsequently become due to the landlord.",
+        "notice_remained_effective": "The tax authority had not withdrawn the notice and the relevant tax arrears had not been cleared.",
+        "tax_arrears_unpaid": "The landlord had not paid the tax arrears for which the tenant’s payments were being required."
+      },
+      "definition": "In a rent-control eviction proceeding based on non-payment, a reasonable belief that payment is barred or an effective direction to pay the tax authority means that non-payment to the landlord does not establish wilful default."
+    },
+    {
+      "legal_issue": "Permission to raise an additional ground in revision does not permit a party to make a new case that is outside the existing pleadings without amending them.",
+      "material_facts": [
+        "The landlord’s original eviction claim included a ground of personal requirement under one statutory clause, which had been rejected.",
+        "In revision, the landlord sought permission to raise a different ground for additional accommodation under another clause.",
+        "The landlord obtained permission to raise the additional ground but did not apply to amend the eviction pleadings."
+      ],
+      "conclusion": "The High Court could allow the landlord to raise additional grounds, but that permission had no effect where the proposed ground constituted a new case and the pleadings had not been amended. The landlord could not obtain eviction on that basis.",
+      "legal_principle": "A party may raise an additional ground based on pleadings and material already on record without amending the pleadings. A new plea not borne out by the pleadings requires an amendment; the opposing party must then have a reasonable opportunity to plead further and present relevant evidence. A court or rent authority may permit such steps when the circumstances justify them, including where a plea rests on subsequent events.",
+      "rule": {
+        "if": "rent_control_eviction_revision and proposed_ground_is_new_case and pleadings_not_amended",
+        "then": "additional_ground_permission_alone_cannot_support_eviction"
+      },
+      "predicates": {
+        "rent_control_eviction_revision": "A party seeks to rely on an eviction ground in revision of a rent-control proceeding.",
+        "proposed_ground_is_new_case": "The proposed ground depends on a case not supported by the existing pleadings and material on record.",
+        "pleadings_not_amended": "The party did not amend the eviction pleadings to include the proposed new case."
+      },
+      "definition": "In a rent-control eviction revision, permission to raise a ground that constitutes a new case cannot support eviction if the pleadings were not amended."
+    },
+    {
+      "legal_issue": "An order for eviction for additional accommodation must address the statutory requirements of occupation of part of the building and comparative hardship, and the parties must be allowed to present relevant pleadings and evidence when those matters are newly raised.",
+      "material_facts": [
+        "The landlord’s original personal-requirement ground had failed, and the landlord later sought eviction for additional accommodation under a different statutory clause.",
+        "The landlord sought to raise that ground in revision without amending the eviction pleadings.",
+        "The record did not provide the necessary pleadings and evidence about the requirements of the additional-accommodation ground, and the High Court did not make the required comparative-hardship finding.",
+        "The tenant opposed the landlord’s request to raise the new ground."
+      ],
+      "conclusion": "The High Court’s eviction order under the additional-accommodation clause was unsustainable because the required comparative-hardship finding was not made and the necessary pleadings and evidence had not been developed. The case was not remanded because the landlord had not amended the eviction pleadings; the landlord remained free to seek relief under that clause if otherwise permitted by law.",
+      "legal_principle": "Under Section 10(3)(c) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, the landlord must occupy only part of a building, the tenant must occupy the whole or part of the remainder, and the landlord must require additional accommodation for the relevant purpose. The Controller must reject the application if hardship to the tenant would outweigh the advantage to the landlord, and must consider reasonable time for the tenant to put the landlord in possession if eviction is ordered. These requirements differ from those under Section 10(3)(a); the relevant facts must be on record. Where an eviction petition is amended to add this ground, the appropriate course is to give the opposite party an opportunity to plead and adduce relevant evidence. The Court relied on B. Kandasamy Reddiar v. O. Gomathi Ammal for the principle that an order made without considering the comparative-hardship proviso is unsustainable.",
+      "rule": {
+        "if": "additional_accommodation_eviction_proceeding and landlord_occupies_only_part and tenant_occupies_remainder and comparative_hardship_not_assessed",
+        "then": "additional_accommodation_eviction_order_is_unsustainable"
+      },
+      "predicates": {
+        "additional_accommodation_eviction_proceeding": "A landlord seeks eviction so that the landlord can obtain additional accommodation in a building partly occupied by the landlord and partly occupied by the tenant.",
+        "landlord_occupies_only_part": "The landlord occupies only part of the building for which additional accommodation is sought.",
+        "tenant_occupies_remainder": "The tenant occupies the whole or a portion of the remaining part of that building.",
+        "comparative_hardship_not_assessed": "The decision-maker has not assessed whether hardship to the tenant would outweigh the advantage to the landlord."
+      },
+      "definition": "When a landlord occupying part of a building seeks additional accommodation from a tenant occupying the remainder, an eviction order is unsustainable if comparative hardship has not been assessed."
+    }
+  ],
+  "seconds": 22.4
+}

@@ -1,0 +1,96 @@
+{
+  "doc_id": "1847057",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36458,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2521,
+    "prompt_tokens": 8935,
+    "total_tokens": 11456,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court deciding an application for interim protection in an arbitration dispute must apply the ordinary principles governing interim injunctions.",
+      "material_facts": [
+        "A party sought interim relief under Section 9 of the Arbitration and Conciliation Act, 1996, pending arbitration.",
+        "The Act specified no special procedure or conditions for granting the requested injunction."
+      ],
+      "conclusion": "The power under Section 9 is not independent of the ordinary principles governing interim injunctions; the court must consider matters such as a prima facie case, balance of convenience, irreparable injury, and whether the measure is just and convenient.",
+      "legal_principle": "Section 9 of the Arbitration and Conciliation Act, 1996, including its reference to measures that are just and convenient and to the court's powers in other proceedings, does not displace ordinary procedural and substantive rules. The court applied the principles governing injunctions under the Specific Relief Act, 1963, and the Code of Civil Procedure, including Order XXXIX Rule 2. It relied on The Siskina, Fourie v. Le Roux, and Channel Tunnel Group Ltd. v. Balfour Beatty Construction Ltd.; it rejected the contrary approach in Nepa Limited v. Manoj Kumar Agrawal.",
+      "rule": {
+        "if": "arbitration_interim_protection_application and no_special_interim_procedure_specified",
+        "then": "ordinary_injunction_principles_apply"
+      },
+      "predicates": {
+        "arbitration_interim_protection_application": "A party asks a court for interim protection in connection with a dispute submitted or to be submitted to arbitration.",
+        "no_special_interim_procedure_specified": "The governing framework provides no special procedure or separate conditions for deciding the request for interim protection."
+      },
+      "definition": "When a party seeks interim protection connected to arbitration and no special procedure is specified, ordinary injunction principles govern the court's decision."
+    },
+    {
+      "legal_issue": "An interim injunction requiring continuation of a terminated contract is not justified where the alleged loss can be assessed and compensated in money.",
+      "material_facts": [
+        "A contractor sought an interim order allowing it to continue mining work under an agreement after the other party issued a notice terminating that agreement.",
+        "The contractor claimed that it had incurred expenditure and losses.",
+        "The court considered that the loss could be assessed in money if the contractor ultimately succeeded in arbitration."
+      ],
+      "conclusion": "The court declined to restrain the termination or require continuation of the contractor's work under the agreement.",
+      "legal_principle": "Interim injunctions are governed by the ordinary principles reflected in the Specific Relief Act, 1963, including Sections 14 and 41, and the principles governing injunctions under Order XXXIX of the Code of Civil Procedure. The court applied the rule that interim mandatory relief substantially requiring continued performance should be approached with caution, particularly where compensation can remedy the loss. It relied on Channel Tunnel Group Ltd. v. Balfour Beatty Construction Ltd.",
+      "rule": {
+        "if": "arbitration_interim_contract_continuation_request and termination_notice_issued and loss_assessable_in_money",
+        "then": "contract_continuation_injunction_refused"
+      },
+      "predicates": {
+        "arbitration_interim_contract_continuation_request": "A party asks for interim protection in an arbitration dispute that would require continued performance of a contract.",
+        "termination_notice_issued": "The other contracting party has issued a notice purporting to terminate the contract.",
+        "loss_assessable_in_money": "The alleged loss from termination can be assessed and compensated in money if the claimant later succeeds."
+      },
+      "definition": "When a party seeks interim protection in arbitration to continue a contract after a termination notice and the resulting loss can be compensated in money, the court refuses an injunction requiring continued performance."
+    },
+    {
+      "legal_issue": "A party that terminates a contract on the ground that a type of transaction is legally impermissible may be restrained from entering into the same type of transaction with another party pending arbitration.",
+      "material_facts": [
+        "The terminating party said it ended the agreement because the arrangement was allegedly prohibited.",
+        "That party's stated ground for termination would also apply to a similar arrangement with another entity.",
+        "The dispute over the agreement's legal effect remained for the arbitrator."
+      ],
+      "conclusion": "The court restrained the terminating party from entering into a similar transaction for mining and lifting minerals with another entity until the arbitration concluded.",
+      "legal_principle": "Section 9 of the Arbitration and Conciliation Act, 1996 permits interim measures of protection, subject to ordinary injunction principles and the requirement that the measure be just and convenient. The court considered it just and proper to prevent a party from entering into a comparable transaction when its own stated reason for ending the existing transaction would equally apply to that new transaction. The court left the underlying question of the alleged legal prohibition open for the arbitrator.",
+      "rule": {
+        "if": "arbitration_interim_protection_application and party_relies_on_general_transaction_prohibition and comparable_transaction_would_face_same_prohibition",
+        "then": "comparable_third_party_transaction_restrained_pending_arbitration"
+      },
+      "predicates": {
+        "arbitration_interim_protection_application": "A party asks for interim protection in connection with a dispute submitted or to be submitted to arbitration.",
+        "party_relies_on_general_transaction_prohibition": "A party relies on an asserted general legal prohibition as its reason for ending an existing transaction.",
+        "comparable_transaction_would_face_same_prohibition": "The party's stated ground for ending the existing transaction would apply equally to a comparable transaction with another entity."
+      },
+      "definition": "If a party seeks interim protection in arbitration and relies on a general prohibition that would also apply to a comparable transaction with another entity, the court may restrain that comparable transaction pending arbitration."
+    },
+    {
+      "legal_issue": "An interim order protecting a contractor's claim does not require barring a lessee from carrying out mining operations itself where compensation remains available if the contractor succeeds.",
+      "material_facts": [
+        "The party holding the mining lease sought to continue mining operations itself after terminating the contractor's agreement.",
+        "The contractor could receive compensation for termination if it ultimately succeeded in arbitration.",
+        "The court considered that the lessee's own operations would not prejudice the contractor's entitlement to that compensation."
+      ],
+      "conclusion": "The court did not restrain the lessee from carrying on mining operations itself under its lease.",
+      "legal_principle": "A Section 9 interim measure must be just and convenient and must comply with the ordinary principles governing injunctions. Where the party holding the relevant right may exercise it itself and the opposing party can be compensated if successful in arbitration, an injunction stopping that activity is not justified.",
+      "rule": {
+        "if": "arbitration_interim_protection_application and right_holder_can_perform_activity_itself and claimant_can_be_compensated_if_successful",
+        "then": "right_holder_not_restrained_from_own_activity"
+      },
+      "predicates": {
+        "arbitration_interim_protection_application": "A party asks for interim protection in connection with a dispute submitted or to be submitted to arbitration.",
+        "right_holder_can_perform_activity_itself": "The party holding the underlying right is able to carry out the disputed activity itself.",
+        "claimant_can_be_compensated_if_successful": "The claimant can receive compensation for the alleged loss if it succeeds in arbitration."
+      },
+      "definition": "When a party seeks interim protection in arbitration, the right-holder can perform the activity itself, and the claimant can be compensated if successful, the court does not restrain the right-holder from that activity."
+    }
+  ],
+  "seconds": 15.8
+}

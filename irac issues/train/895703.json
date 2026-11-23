@@ -1,0 +1,160 @@
+{
+  "doc_id": "895703",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35608,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4256,
+    "prompt_tokens": 9809,
+    "total_tokens": 14065,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A certificate for an appeal is competent when the applicable valuation requirements are satisfied by the suit and the subject matter in dispute, including where the decree indirectly concerns property above the required value.",
+      "material_facts": [
+        "The suit was valued by reference to the amount required to redeem the mortgage, not the market value of the property.",
+        "The claim sought possession of the property after redemption, and the High Court found the property’s value to exceed the relevant threshold at the material times."
+      ],
+      "conclusion": "The certificate was properly granted because the claim indirectly concerned property whose value exceeded the required threshold, notwithstanding the redemption-based valuation in the plaint.",
+      "legal_principle": "Under Article 133 of the Constitution, an appeal must satisfy the applicable valuation requirements both in the court of first instance and in the subject matter in dispute on appeal. Where the plaint is not required to use the property’s real or market value, the real value of a claim indirectly concerning property may be considered independently of the plaint valuation.",
+      "rule": {
+        "if": "certificate_appeal and suit_and_appeal_values_exceed_required_level or certificate_appeal and indirect_property_claim_exceeds_required_level and plaint_not_required_to_use_market_value",
+        "then": "certificate_is_competent"
+      },
+      "predicates": {
+        "certificate_appeal": "The proceeding is an appeal for which a certificate of appealability is required.",
+        "suit_and_appeal_values_exceed_required_level": "The subject matter’s value in the court of first instance and the value in dispute on appeal both exceed the applicable level.",
+        "indirect_property_claim_exceeds_required_level": "The decree directly or indirectly concerns a claim or question respecting property whose value exceeds the applicable level.",
+        "plaint_not_required_to_use_market_value": "The plaintiff was not required to value the claim by the property’s real or market value."
+      },
+      "definition": "A certificate is competent when an appeal satisfies the required valuations directly, or when an indirectly involved property claim exceeds the required level and the plaint was not required to use market value."
+    },
+    {
+      "legal_issue": "An objection to the trial court’s jurisdiction based on a different valuation cannot be raised for the first time at the final appellate stage when the suit was properly instituted according to its valuation.",
+      "material_facts": [
+        "The suit was valued by reference to the redemption amount and was properly instituted on that valuation.",
+        "The respondent alternatively argued that a higher valuation would have deprived the trial court of jurisdiction, but the objection was raised at the final appellate stage."
+      ],
+      "conclusion": "The objection to the trial court’s jurisdiction was rejected; in any event, it could not be entertained for the first time at that stage.",
+      "legal_principle": "The Court held that the suit was properly laid according to its valuation and that an objection to the trial court’s jurisdiction could not in any event be entertained for the first time in the Supreme Court.",
+      "rule": {
+        "if": "final_appeal and jurisdiction_objection_raised_for_first_time",
+        "then": "late_jurisdiction_objection_is_not_entertained"
+      },
+      "predicates": {
+        "final_appeal": "The proceeding is at the final appellate stage.",
+        "jurisdiction_objection_raised_for_first_time": "A party raises an objection to the trial court’s jurisdiction for the first time at that appellate stage."
+      },
+      "definition": "When a jurisdiction objection is first raised at the final appellate stage, it is not entertained."
+    },
+    {
+      "legal_issue": "A statutory rule making a class of property divisible equally unless a contrary intention is expressed permits an instrument to allocate the property exclusively, rather than requiring that contrary intention to mean only an intention to make the property indivisible.",
+      "material_facts": [
+        "The property was gifted as Makkathayam property.",
+        "The instrument gave certain properties to the wife and other properties to the grandson, and the Court found that it showed an intention that each take exclusively."
+      ],
+      "conclusion": "The instrument expressed a contrary intention under section 32, so the property was not to be divided equally among the wife and children under that section.",
+      "legal_principle": "Section 32 of the Travancore Ezhava Act, 1100, provides for equal division of Makkathayam property among the wife and children unless the instrument expresses a contrary intention. The Court rejected the argument that a contrary intention could mean only an intention to make the property impartible; the instrument’s exclusive allocation of property could express the requisite contrary intention. The Court considered the submission based on Narayanen Narayanen v. Parwathi Nangali, 5 S.T.L.R. 116, but did not accept the proposed reading of section 32.",
+      "rule": {
+        "if": "makkathayam_property and partition_or_property_rights_dispute and instrument_allocates_property_exclusively",
+        "then": "equal_division_under_default_rule_does_not_apply"
+      },
+      "predicates": {
+        "makkathayam_property": "The property is property of the kind obtained by a wife or child from a husband or father by gift, inheritance, or bequest.",
+        "partition_or_property_rights_dispute": "The proceeding concerns the division or ownership rights in the property.",
+        "instrument_allocates_property_exclusively": "The instrument shows that separate property was allocated to recipients to be taken by each exclusively."
+      },
+      "definition": "The default equal-division rule does not apply when Makkathayam property is disputed and the instrument shows an exclusive allocation."
+    },
+    {
+      "legal_issue": "A descendant within the statutory expression encompassing issue how-low-so-ever can inherit an interest in a female intestate’s separate property when the statutory succession rules apply.",
+      "material_facts": [
+        "The property had been gifted to a female and was argued to be her separate property.",
+        "The female had a son and a grandson, and the evidence included an admission that the son was dead by the time of a later transaction.",
+        "The grandson was the son’s issue, and the Court held that he would succeed to at least a fractional interest whether his father had survived the female or died before her."
+      ],
+      "conclusion": "If the statutory succession provisions applied to the female, the grandson succeeded as her issue how-low-so-ever to at least a fractional interest in the property.",
+      "legal_principle": "Sections 18 and 19 of the Travancore Ezhava Act, 1100, govern devolution of a female’s separate property in the circumstances they specify. Explanation II to Part IV provides that the relevant expression for an intestate female includes her issue how-low-so-ever. Read together, these provisions entitled the grandson to at least a fractional interest, regardless of whether his father survived the female.",
+      "rule": {
+        "if": "female_intestate_succession_dispute and statutory_succession_rules_apply and female_dies_leaving_separate_property and claimant_is_issue_of_female",
+        "then": "claimant_inherits_an_interest"
+      },
+      "predicates": {
+        "female_intestate_succession_dispute": "The proceeding concerns succession to the property of a female who died without disposing of it.",
+        "statutory_succession_rules_apply": "The statutory succession rules govern the female’s succession.",
+        "female_dies_leaving_separate_property": "The female dies leaving separate property undisposed of.",
+        "claimant_is_issue_of_female": "The claimant is an issue of the female, including through an intervening descendant."
+      },
+      "definition": "A claimant who is an issue of a female intestate inherits an interest in her undisposed separate property when the statutory succession rules apply."
+    },
+    {
+      "legal_issue": "The absence of a formally pleaded exemption issue does not vitiate a trial when the parties understood that exemption was disputed and evidence on it was received without objection.",
+      "material_facts": [
+        "The pleadings did not expressly raise the female’s exemption from Part IV of the Act, and no issue was framed on exemption.",
+        "The plaintiff’s replication asserted that the property was obtained under the Act.",
+        "The plaintiff was questioned about the female’s address, the defendant led evidence of an exemption notification, and the plaintiff neither objected to that evidence nor sought permission to rebut it.",
+        "The parties litigated whether the Act’s succession rules applied to the female."
+      ],
+      "conclusion": "The exemption question was properly raised and considered, and the absence of a separately framed issue did not vitiate the trial.",
+      "legal_principle": "The Court held that a trial is not vitiated merely because no formal issue was framed when the parties understood the central disputed fact, evidence was received without objection, and the opposing party had an opportunity to seek to rebut it. The plaintiff’s replication also made the Act’s application to the property part of the dispute.",
+      "rule": {
+        "if": "succession_applicability_dispute and no_formal_exemption_issue and parties_understood_exemption_dispute and exemption_evidence_received_without_objection",
+        "then": "absence_of_formal_issue_does_not_vitiate_trial"
+      },
+      "predicates": {
+        "succession_applicability_dispute": "The proceeding disputes whether statutory succession rules govern the property.",
+        "no_formal_exemption_issue": "The pleadings or framed issues do not expressly identify exemption as an issue for trial.",
+        "parties_understood_exemption_dispute": "The parties’ conduct and claims show that they understood exemption to be part of the dispute.",
+        "exemption_evidence_received_without_objection": "Evidence about exemption was received and the opposing party neither objected to it nor sought an opportunity to rebut it."
+      },
+      "definition": "The absence of a formal exemption issue does not vitiate a trial when the parties understood that exemption was disputed and exemption evidence was received without objection."
+    },
+    {
+      "legal_issue": "An exemption notification establishes that a person was exempted from the statutory succession rules when the evidence identifies that person as the individual named in the notification.",
+      "material_facts": [
+        "A government notification listed a person with the same name as the female, associated her with the same family branch and tarwad, and also listed persons identified as her sister and niece.",
+        "Evidence connected the listed address with the family’s residences, and a witness identified the listed persons as the female, her sister, and her niece.",
+        "The plaintiff acknowledged facts about the family’s residences and did not lead contrary evidence."
+      ],
+      "conclusion": "The identity of the female named in the notification was established, and the exemption from Part IV was proved.",
+      "legal_principle": "Section 33(1)(i) of the Travancore Ezhava Act, 1100, authorized exemption from Part IV by government notification. The Court assessed identity by considering the name, family branch, tarwad, relatives, addresses, witness testimony, and the absence of contrary evidence, and concluded that the notification referred to the relevant female.",
+      "rule": {
+        "if": "exemption_dispute and official_exemption_notification and identifying_evidence_links_person_to_notification",
+        "then": "person_is_established_as_exempt"
+      },
+      "predicates": {
+        "exemption_dispute": "The proceeding disputes whether a person was exempted from statutory succession rules.",
+        "official_exemption_notification": "An official notification records an exemption from the relevant rules.",
+        "identifying_evidence_links_person_to_notification": "Evidence concerning the person’s name, family connections, residence, or other identifying facts links that person to the individual named in the notification."
+      },
+      "definition": "A person is established as exempt when an official exemption notification is linked to that person by identifying evidence."
+    },
+    {
+      "legal_issue": "A claimant who did not acquire the property rights required for redemption cannot redeem the mortgage when the property holder was governed by matrilineal succession and the claimant was not an heir.",
+      "material_facts": [
+        "The female property holder had been exempted from Part IV of the Act, so her succession was governed by the ordinary Marumakkathayam law.",
+        "The Court held that the daughter-in-law and grandson were not heirs under that law; the female’s sister and niece were her heirs.",
+        "The appellant claimed through the daughter-in-law and grandson and had never enjoyed the jenmom rights.",
+        "The niece joined in a later document in favour of the respondent, who claimed through the mortgagee’s successors."
+      ],
+      "conclusion": "The appellant had no valid title to the equity of redemption and was not entitled to redeem the mortgage; the appeal was dismissed.",
+      "legal_principle": "Because the female was exempt from Part IV, succession was governed by ordinary Marumakkathayam law, under which the daughter-in-law and grandson were not her heirs. A claimant who did not acquire the jenmom rights could not redeem the mortgage. Sections 18, 19, and 33 of the Travancore Ezhava Act, 1100, informed the Court’s analysis of whether statutory succession applied; the Court relied on the established exemption in concluding that ordinary Marumakkathayam succession governed.",
+      "rule": {
+        "if": "redemption_proceeding and claimant_derives_title_through_person_not_heir and matrilineal_succession_governs_property and claimant_lacks_property_rights_needed_for_redemption",
+        "then": "claimant_cannot_redeem"
+      },
+      "predicates": {
+        "redemption_proceeding": "The proceeding seeks redemption of a mortgage and recovery of the property.",
+        "claimant_derives_title_through_person_not_heir": "The claimant’s asserted title comes through a person who did not inherit the property under the governing succession law.",
+        "matrilineal_succession_governs_property": "The property holder’s succession is governed by a system tracing inheritance through the female line.",
+        "claimant_lacks_property_rights_needed_for_redemption": "The claimant did not acquire the ownership interest or other property rights required to redeem the mortgage."
+      },
+      "definition": "A claimant cannot redeem when the claim arises in a redemption proceeding, the asserted chain runs through a non-heir, matrilineal succession governs, and the claimant lacks the property rights required for redemption."
+    }
+  ],
+  "seconds": 28.7
+}

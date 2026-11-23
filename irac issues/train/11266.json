@@ -1,0 +1,81 @@
+{
+  "doc_id": "11266",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41531,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2926,
+    "prompt_tokens": 10469,
+    "total_tokens": 13395,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A deserted wife who remains in the matrimonial home held under her husband’s tenancy may participate in eviction proceedings when the tenant has abandoned or failed to defend the case to her prejudice, but may raise no defence unavailable to the tenant.",
+      "material_facts": [
+        "The husband was the named tenant of the residential premises, which had been the matrimonial home.",
+        "After deserting his wife, the husband left the premises and did not seriously contest the landlord’s eviction proceedings.",
+        "The wife continued to occupy the premises, and eviction would have deprived her of her home.",
+        "When permitted to join the proceedings, the wife deposited rent toward the arrears claimed by the landlord."
+      ],
+      "conclusion": "A deserted wife whose status as wife has not ended may be joined and may defend eviction proceedings where the tenant has given up the contest or is not interested in defending and that conduct prejudices her. Her defences and obligations are no greater than the tenant’s.",
+      "legal_principle": "A tenant’s protection under rent-control legislation also protects family members who reside, or are entitled to reside, with the tenant. The wife’s right to residence is part of her right to maintenance, which arises from the marital relationship and is recognized by Section 18 and the definition of maintenance in Section 3(b) of the Hindu Adoption and Maintenance Act, 1956. The Court relied on Kirtikant D. Vadodaria v. State of Gujarat, (1996) 4 SCC 479, and Indian decisions including Sri Raja Bommadevara Raja Lakshmi Devi Amma Garu v. Sri Raja B. Naganna Naidu Bahadur Zamindar Garu, AIR 1925 Madras 757, and Bai Appibai v. Khimji Cooverji, AIR 1936 Bombay 138. It also applied the reasoning in Brown v. Draper, Old Gate Estates Ltd. v. Alexander, and Middleton v. Baldock. Under the Karnataka Rent Control Act, 1961, the tenant’s eviction protection and obligations arise under Sections 21 and 29, while Section 30 addresses the effect of an eviction order on persons in occupation.",
+      "rule": {
+        "if": "eviction_case and spouse_occupies_matrimonial_home and marriage_continues and tenant_abandons_or_fails_to_defend and that_failure_prejudices_spouse",
+        "then": "deserted_spouse_may_defend_with_tenant_available_defenses"
+      },
+      "predicates": {
+        "eviction_case": "A landlord brings proceedings seeking eviction of the tenant from residential premises.",
+        "spouse_occupies_matrimonial_home": "The tenant’s spouse continues to occupy premises that served as the couple’s matrimonial home.",
+        "marriage_continues": "The marital relationship has not ended by divorce or annulment.",
+        "tenant_abandons_or_fails_to_defend": "The tenant gives up the eviction contest or does not meaningfully defend it.",
+        "that_failure_prejudices_spouse": "The tenant’s failure to defend exposes the occupying spouse to eviction and loss of the home."
+      },
+      "definition": "When eviction proceedings concern an occupied matrimonial home, the marriage continues, and the tenant’s failure to defend prejudices the spouse, the spouse may defend using only the defences available to the tenant."
+    },
+    {
+      "legal_issue": "A divorced wife may defend the tenancy-based right to occupy the former matrimonial home only if provision has been made for her residence there, and her rights cannot exceed the tenant’s rights.",
+      "material_facts": [
+        "The marriage was dissolved by a decree of divorce while the eviction dispute was pending.",
+        "The terms of the divorce settlement were not brought before the Court.",
+        "The wife did not claim that her former husband had undertaken, as part of maintenance, to provide her residence in the tenanted premises."
+      ],
+      "conclusion": "A divorced wife’s right to defend depends on the terms of the divorce decree and any provision for maintenance, including residence. If residence in the tenanted premises has been provided for, she may defend the tenancy rights on no greater footing than the tenant; she is liable to eviction on the same basis as the tenant.",
+      "legal_principle": "Divorce terminates the status of wife, so a former wife’s right to reside in the matrimonial home depends on the terms of the divorce and any maintenance provision. Section 25 of the Hindu Marriage Act, 1955, permits provision for alimony and maintenance, and Section 27 permits provision concerning property belonging to a spouse or both spouses. Section 15 concerns when divorced persons may remarry. The Court referred to National Provincial Bank Ltd. v. Ainsworth, [1965] AC 1175, Robson v. Headland, [1948] 64 TLR 596, and Waughn v. Waughn, [1953] 1 QB 762, in considering the effect of termination of the marriage on residence rights.",
+      "rule": {
+        "if": "eviction_case and marriage_ended_by_divorce and residence_in_tenanted_home_provided_for",
+        "then": "divorced_spouse_may_defend_only_tenant_equivalent_occupancy_rights"
+      },
+      "predicates": {
+        "eviction_case": "A landlord brings proceedings seeking eviction of the tenant from residential premises.",
+        "marriage_ended_by_divorce": "The marriage between the tenant and the occupying spouse has been terminated by divorce.",
+        "residence_in_tenanted_home_provided_for": "The divorce terms or a maintenance arrangement provide the former spouse a right to reside in the tenanted home."
+      },
+      "definition": "If eviction proceedings concern a home in which a divorced spouse has been provided a right of residence, that spouse may defend occupancy only to the extent the tenant could."
+    },
+    {
+      "legal_issue": "A former wife who neither establishes nor claims a continuing right to reside in the tenanted premises cannot continue an appeal against the eviction claim after divorce.",
+      "material_facts": [
+        "The wife’s marriage to the tenant was dissolved by mutual-consent divorce while the matter was pending.",
+        "She did not place the divorce terms before the Court and did not claim that they gave her a right to reside in the tenanted premises as maintenance.",
+        "She sought to continue the appeal against the landlord’s eviction claim."
+      ],
+      "conclusion": "Because the former wife did not establish or claim a right to residence in the premises under the divorce settlement or a maintenance obligation, she could not prosecute the appeal or defend against the eviction claim. The appeal was dismissed.",
+      "legal_principle": "The right of an occupying spouse to defend tenancy rights as part of a residence-based maintenance right ends when the marriage ends, unless the divorce terms or a maintenance provision preserve a right to reside in the tenanted premises. The Court applied its construction of Section 18 and Section 3(b) of the Hindu Adoption and Maintenance Act, 1956, and Sections 25 and 27 of the Hindu Marriage Act, 1955, together with the principle that a divorced wife’s position depends on the provision made for her residence.",
+      "rule": {
+        "if": "eviction_appeal and marriage_ended_by_divorce and not residence_right_claimed_or_established",
+        "then": "former_spouse_cannot_continue_eviction_appeal"
+      },
+      "predicates": {
+        "eviction_appeal": "A person seeks to continue an appeal challenging an eviction claim against the tenant of residential premises.",
+        "marriage_ended_by_divorce": "The marriage between the appellant and the tenant has been terminated by divorce.",
+        "residence_right_claimed_or_established": "The former spouse claims or establishes that the divorce terms or a maintenance arrangement provide a right to reside in the tenanted premises."
+      },
+      "definition": "When an eviction appeal is brought by a former spouse whose marriage has ended and who does not claim or establish a right to reside in the premises, the former spouse cannot continue the appeal."
+    }
+  ],
+  "seconds": 18.9
+}

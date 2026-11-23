@@ -1,0 +1,157 @@
+{
+  "doc_id": "440324",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 109465,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4001,
+    "prompt_tokens": 25629,
+    "total_tokens": 29630,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The constitutional bar on adjudicating disputes arising from pre-constitutional instruments applies to suits transferred from the former Federal Court.",
+      "material_facts": [
+        "The suits were pending in the Federal Court when the Constitution commenced and were transferred to the Supreme Court.",
+        "The plaintiffs sought declarations enforcing rights said to arise under Instruments of Accession executed by rulers before the Constitution commenced and continuing in operation afterward.",
+        "The challenges to the legislation and orders administering or merging the States were founded on the claimed limits of authority under those Instruments."
+      ],
+      "conclusion": "The majority held that the Supreme Court had no jurisdiction to hear the suits because the disputes arose out of the Instruments of Accession, and that the transfer provision did not displace the constitutional bar.",
+      "legal_principle": "Under Article 363(1), notwithstanding other constitutional provisions, courts lack jurisdiction over disputes arising out of qualifying pre-constitutional instruments, whether the dispute arose before or after the Constitution commenced. Article 374(2) transfers pending Federal Court matters and gives the Supreme Court jurisdiction to hear them subject to the Constitution, including Article 363(1). Article 131 and its proviso inform the constitutional allocation of jurisdiction. The majority did not rely on an earlier case for this holding.",
+      "rule": {
+        "if": "transferred_federal_court_suit and claim_arises_from_ruler_instrument and instrument_continued_after_constitution",
+        "then": "supreme_court_lacks_jurisdiction"
+      },
+      "predicates": {
+        "transferred_federal_court_suit": "A suit was pending in the former Federal Court when the new constitutional court system began and was transferred to the Supreme Court.",
+        "claim_arises_from_ruler_instrument": "A party seeks relief on the basis of rights or authority said to arise from an instrument executed by a ruler.",
+        "instrument_continued_after_constitution": "The ruler's instrument was executed before the new constitution began and continued in operation afterward."
+      },
+      "definition": "When a transferred suit seeks relief arising from a ruler's pre-constitutional instrument that continued afterward, the Supreme Court lacks jurisdiction."
+    },
+    {
+      "legal_issue": "The constitutional bar on disputes arising from pre-constitutional instruments does not remove jurisdiction over suits already pending in the former Federal Court.",
+      "material_facts": [
+        "The suits were filed in the Federal Court before the Constitution commenced and remained pending when it commenced.",
+        "The Federal Court had jurisdiction under the former Government of India Act over qualifying disputes between the Dominion and acceding States.",
+        "The claims concerned the authority of the Dominion and the validity of measures affecting the States."
+      ],
+      "conclusion": "Mahajan J., dissenting on this issue, held that Article 363 operated prospectively and did not prevent the Supreme Court from hearing suits transferred under Article 374(2).",
+      "legal_principle": "Article 374(2) authorizes the Supreme Court to hear and determine suits that were pending in the Federal Court, while Article 363 applies prospectively to suits brought or disputes arising after the Constitution commenced. The Constitution is not retrospective: Keshavan Madhava Menon v. The State of Bombay. Mahajan J. also relied on Moon v. Burden, Beadling v. Coil, Henshall v. Porter, and The United Provinces v. Mst. Atiqa Begum for the rule against applying a new jurisdictional bar to existing proceedings or accrued causes of action.",
+      "rule": {
+        "if": "suit_pending_in_former_federal_court and former_court_had_jurisdiction and suit_transferred_to_supreme_court",
+        "then": "supreme_court_may_hear_suit"
+      },
+      "predicates": {
+        "suit_pending_in_former_federal_court": "A suit was already pending in the former Federal Court when the new constitution began.",
+        "former_court_had_jurisdiction": "The former Federal Court was competent under the law then in force to hear the suit.",
+        "suit_transferred_to_supreme_court": "The pending suit was transferred to the Supreme Court under a constitutional transition provision."
+      },
+      "definition": "A suit already pending in a court with jurisdiction and transferred to its successor may be heard by the successor court."
+    },
+    {
+      "legal_issue": "States omitted from the new Constitution's list of States could not continue transferred suits as acceding States.",
+      "material_facts": [
+        "Immediately before the Constitution commenced, the plaintiff territories were being administered as if they formed part of neighboring Provinces under a merger order.",
+        "The Constitution included those territories within the territories of the Provinces and did not identify the plaintiff entities as States in its schedules.",
+        "The suits had been filed by entities claiming to be acceding States."
+      ],
+      "conclusion": "Das J. held that the plaintiff States had no legal existence as States under the Constitution and that the suits had abated.",
+      "legal_principle": "Article 1, read with the First Schedule, determines the States and territories recognized under the Constitution. A court is bound by the Constitution and cannot question the validity of its provisions. Because the plaintiff entities were not recognized as States under the Constitution, they could not continue suits in that capacity.",
+      "rule": {
+        "if": "transferred_state_suit and territory_administered_as_part_of_province_before_constitution and claimant_not_recognized_as_state_under_constitution",
+        "then": "suit_abates"
+      },
+      "predicates": {
+        "transferred_state_suit": "A suit filed by an entity claiming to be an acceding State was transferred to the Supreme Court.",
+        "territory_administered_as_part_of_province_before_constitution": "Immediately before the new constitution began, the entity's territory was being administered as if it formed part of a Province.",
+        "claimant_not_recognized_as_state_under_constitution": "The new constitution did not recognize the claimant as a State."
+      },
+      "definition": "A transferred suit abates when its claimant was a State claimant, its territory was administered as part of a Province before the new constitution, and the constitution does not recognize it as a State."
+    },
+    {
+      "legal_issue": "The former Federal Court had jurisdiction over a State's suit alleging that governmental measures exceeded authority under the governing Acts and its Instrument of Accession.",
+      "material_facts": [
+        "The plaintiffs alleged that measures concerning administration and merger exceeded the authority granted by the Instruments of Accession and violated the governing Acts.",
+        "The plaintiffs sought declarations concerning the interpretation of those Acts and the extent of the Dominion's authority.",
+        "The suits were brought under the former Federal Court's original jurisdiction by States against the Dominion and Provinces."
+      ],
+      "conclusion": "Mahajan J. held that the Federal Court had jurisdiction under section 204 of the Government of India Act, 1935, on the allegations in the plaints.",
+      "legal_principle": "Section 204 of the Government of India Act, 1935, conferred original jurisdiction over qualifying disputes between the Dominion, Provinces, and acceding States when a legal right depended on a question of law or fact, including disputes concerning the interpretation of the Act or the extent of authority under an Instrument of Accession. Jurisdiction was assessed on the allegations in the plaint, without deciding whether those allegations would ultimately be proved.",
+      "rule": {
+        "if": "former_federal_state_dominion_suit and plaint_alleges_interpretation_of_governing_law and claimed_legal_right_depends_on_that_interpretation",
+        "then": "former_federal_court_had_jurisdiction"
+      },
+      "predicates": {
+        "former_federal_state_dominion_suit": "A suit was brought in the former Federal Court between a State and the Dominion or a Province.",
+        "plaint_alleges_interpretation_of_governing_law": "The plaint alleges that deciding the dispute requires interpreting governing legislation or the scope of authority conferred by an accession instrument.",
+        "claimed_legal_right_depends_on_that_interpretation": "The existence or extent of a claimed legal right depends on resolving that interpretive issue."
+      },
+      "definition": "The former Federal Court had jurisdiction where a State-Dominion suit alleged a legal right dependent on interpreting governing law or accession authority."
+    },
+    {
+      "legal_issue": "The notice requirement for suits against government did not bar suits brought in the former Federal Court under its special original jurisdiction.",
+      "material_facts": [
+        "The suits were brought in the Federal Court under its special original jurisdiction between States and government defendants.",
+        "The Federal Court's procedural rules provided that the general Code of Civil Procedure did not apply unless incorporated into those rules.",
+        "The notice requirement in section 80 of the Code was not incorporated into the Federal Court's rules."
+      ],
+      "conclusion": "Mahajan J. held that the absence of notice under section 80 did not make the suits unmaintainable.",
+      "legal_principle": "Section 214 of the Government of India Act, 1935, authorized the Federal Court to regulate its practice and procedure. Rule 5 of the Federal Court Rules excluded application of the Code of Civil Procedure unless a provision was specifically incorporated; section 80 was not incorporated. Mahajan J. treated section 80 as procedural and distinguished Bhagchand Dagadusa v. Secretary of State for India, which addressed its mandatory operation in proceedings to which it applied.",
+      "rule": {
+        "if": "former_federal_court_suit and court_rules_exclude_general_civil_procedure and notice_requirement_not_incorporated",
+        "then": "lack_of_notice_does_not_bar_suit"
+      },
+      "predicates": {
+        "former_federal_court_suit": "A suit was brought in the former Federal Court under its special original jurisdiction.",
+        "court_rules_exclude_general_civil_procedure": "The court's rules provide that the general civil procedure code does not apply unless a provision is expressly adopted.",
+        "notice_requirement_not_incorporated": "The court's rules do not adopt the general notice requirement for suits against government."
+      },
+      "definition": "A suit in the former Federal Court is not barred for lack of notice when its rules exclude the general civil procedure code and do not adopt that notice requirement."
+    },
+    {
+      "legal_issue": "A State that was a plaintiff when a suit was filed did not automatically lose capacity to continue it merely because its status was disputed under the new Constitution.",
+      "material_facts": [
+        "The States filed their suits before the Constitution commenced, claiming that they retained their legal identity and territorial integrity.",
+        "The plaintiffs disputed the validity of the merger measures and alleged that the Instruments of Accession preserved their status.",
+        "The defendants relied on the merger and the constitutional treatment of the territories to contest the plaintiffs' capacity."
+      ],
+      "conclusion": "Mahajan J. held that the capacity issue depended on whether the merger was valid and that the suits did not abate merely because the Constitution did not name the plaintiffs as States.",
+      "legal_principle": "Article 374(2) continued pending suits in the Supreme Court. Where the suit itself alleges that the measures eliminating the claimant's status were invalid, the claimant's capacity cannot be rejected without deciding that disputed issue. The Constitution must be accepted, but deciding the transferred suit on its pleaded controversy does not require going behind it.",
+      "rule": {
+        "if": "suit_filed_by_state_before_constitution and claimant_status_depends_on_disputed_merger and merger_validity_not_yet_decided",
+        "then": "claimant_may_continue_suit"
+      },
+      "predicates": {
+        "suit_filed_by_state_before_constitution": "An entity claiming to be a State filed the suit before the new constitution began.",
+        "claimant_status_depends_on_disputed_merger": "Whether the claimant retained legal status depends on the validity of measures said to have merged it into another territory.",
+        "merger_validity_not_yet_decided": "The validity of those merger measures has not yet been determined."
+      },
+      "definition": "A State claimant may continue a pre-constitutional suit when its status turns on the still-undecided validity of the disputed merger."
+    },
+    {
+      "legal_issue": "The validity of legislation enacted by the Constituent Assembly in its sovereign capacity could not be examined by the Court.",
+      "material_facts": [
+        "The plaintiff challenged the provision added to the Government of India Act to authorize administration of acceding States as part of Provinces.",
+        "The provision had been enacted by the Constituent Assembly and assented to by its President.",
+        "The challenge asserted that the Governor-General's assent was also required."
+      ],
+      "conclusion": "Mahajan J. rejected the challenge, holding that the provision was valid and that the Court had no jurisdiction to examine legislation enacted by the sovereign Constituent Assembly.",
+      "legal_principle": "Sections 6 and 8 of the Indian Independence Act authorized the Constituent Assembly to amend or alter the Government of India Act pending adoption of a permanent Constitution. Mahajan J. held that no further assent of the Governor-General was required and that the Court could not examine legislation enacted by a sovereign body.",
+      "rule": {
+        "if": "challenged_law_enacted_by_constituent_assembly_in_sovereign_capacity and required_assembly_assent_given",
+        "then": "court_cannot_review_law_validity"
+      },
+      "predicates": {
+        "challenged_law_enacted_by_constituent_assembly_in_sovereign_capacity": "The challenged law was enacted by the Constituent Assembly acting in its sovereign capacity.",
+        "required_assembly_assent_given": "The law received the assent required for enactment by that Assembly."
+      },
+      "definition": "When a challenged law was enacted by the sovereign Constituent Assembly with the required assent, the Court cannot review its validity."
+    }
+  ],
+  "seconds": 23.8
+}

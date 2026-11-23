@@ -1,0 +1,78 @@
+{
+  "doc_id": "104873780",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18410,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2372,
+    "prompt_tokens": 4772,
+    "total_tokens": 7144,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A pre-constitutional law continued in force after the Constitution cannot, by itself, authorize a local tax on Union property contrary to the constitutional exemption.",
+      "material_facts": [
+        "The municipality sought taxes on railway property owned by the Union.",
+        "The asserted liability arose under a pre-constitutional law and a notification issued under that law.",
+        "Parliament had not enacted a post-constitutional law authorizing the tax."
+      ],
+      "conclusion": "The pre-constitutional law did not take the Union property outside the exemption from local taxes.",
+      "legal_principle": "Article 285(1) exempts Union property from taxes imposed by a State or an authority within a State unless Parliament provides otherwise by law. Under Article 372(1), existing laws continue only subject to the other provisions of the Constitution; the pre-constitutional Railways (Local Authorities Taxation) Act could not prevail over Article 285(1).",
+      "rule": {
+        "if": "local_tax_claim_on_union_property and preconstitutional_law_is_only_authority",
+        "then": "union_property_exempt_from_local_tax"
+      },
+      "predicates": {
+        "local_tax_claim_on_union_property": "A local authority sought to impose or collect a tax on property owned by the Union.",
+        "preconstitutional_law_is_only_authority": "The asserted authority for the tax was a law in force before the Constitution, and Parliament had not afterward enacted a law authorizing the tax."
+      },
+      "definition": "When a local authority claims a tax on Union property and relies only on pre-constitutional law, the property is exempt from that local tax."
+    },
+    {
+      "legal_issue": "A change in the amount of a tax or in the local law under which it is claimed does not necessarily make it a different tax for the purpose of continuing a pre-constitutional tax on Union property.",
+      "material_facts": [
+        "The railway property had been liable to municipal taxes before the Constitution under the law then applicable.",
+        "After the area became part of a different State, the municipality claimed taxes under that State's municipal law.",
+        "The amount of tax had varied, but the claimed tax remained of the same nature and type and concerned the same property."
+      ],
+      "conclusion": "The variation in tax amounts and the change in the municipal law under which the tax was claimed did not, by themselves, make it a different tax.",
+      "legal_principle": "Article 285(2) concerns continuation of the same tax on Union property. The Court relied on Governor General of India in Council v. Corporation of Calcutta and Union of India through General Manager E.I. Railway v. Municipal Board, Lucknow, and distinguished The Town Municipal Committee, Amravati v. Ramchandra Vasudev Chimote, which concerned the imposition of new taxes. A change in amounts or a changed statutory reference does not make the tax different when its nature, type, and subject property remain the same.",
+      "rule": {
+        "if": "continuation_claim_for_union_property and same_tax_type_and_property_before_and_after and (tax_amount_changed or governing_local_law_changed)",
+        "then": "tax_is_same_for_continuation_purpose"
+      },
+      "predicates": {
+        "continuation_claim_for_union_property": "A local authority sought to continue a tax on property owned by the Union that had been liable to tax before the Constitution.",
+        "same_tax_type_and_property_before_and_after": "The pre- and post-constitutional claims concerned the same type of tax and the same property.",
+        "tax_amount_changed": "The amount claimed after the Constitution differed from the amount previously charged.",
+        "governing_local_law_changed": "The local law relied on for the later claim differed from the law applicable to the earlier claim."
+      },
+      "definition": "When a local authority seeks to continue a tax on Union property and the tax remains the same in type and subject property, a change in its amount or governing local law does not by itself make it a different tax."
+    },
+    {
+      "legal_issue": "A local authority may rely on the continuation of a pre-constitutional tax on Union property only if it remains a local authority in the same State in which it was located immediately before the Constitution commenced.",
+      "material_facts": [
+        "Before the Constitution, the municipality was located in the State of Madras.",
+        "The area was later transferred to the State of Mysore, and the municipality claimed taxes after becoming part of that State.",
+        "The Union property had been liable to the claimed tax before the Constitution."
+      ],
+      "conclusion": "The municipality could not rely on the continuation exception because it was no longer a local authority in the same State in which it had been located before the Constitution.",
+      "legal_principle": "Article 285(2) permits continuation of a pre-constitutional tax only while it continues to be levied in “that State.” The Court construed this to mean the State in which the local authority was located immediately before the Constitution commenced. Parliament retains power to alter the position by law.",
+      "rule": {
+        "if": "continuation_claim_for_union_property and local_authority_state_changed_since_constitution",
+        "then": "continuation_exception_unavailable"
+      },
+      "predicates": {
+        "continuation_claim_for_union_property": "A local authority sought to continue a tax on Union property that had been liable to tax before the Constitution.",
+        "local_authority_state_changed_since_constitution": "The local authority was located in one State immediately before the Constitution, but the area later became part of a different State.",
+        "continuation_exception_unavailable": "The local authority cannot rely on the constitutional continuation exception for the tax."
+      },
+      "definition": "If a local authority seeks to continue a pre-constitutional tax on Union property after its area has become part of a different State, the continuation exception is unavailable."
+    }
+  ],
+  "seconds": 15.1
+}

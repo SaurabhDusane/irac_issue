@@ -1,0 +1,63 @@
+{
+  "doc_id": "800476",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21447,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1732,
+    "prompt_tokens": 5852,
+    "total_tokens": 7584,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Post-order interest in a secured recovery proceeding under the State Financial Corporations Act is governed by the parties’ contract rather than section 34 of the Code of Civil Procedure.",
+      "material_facts": [
+        "The borrowers obtained a loan secured by hypothecation and an equitable mortgage, with interest payable at the contractual rate of 8.5 per cent per annum.",
+        "After the borrowers defaulted, the Corporation applied under section 31 of the State Financial Corporations Act, and an order was passed on a compromise requiring monthly payments but saying nothing expressly about future interest.",
+        "The borrowers defaulted on that order, and the Corporation sought sale of the secured property under section 32(8).",
+        "The borrowers argued that the silent order precluded post-order interest under section 34 of the Code of Civil Procedure; the contractual rate claimed by the Corporation was not disputed."
+      ],
+      "conclusion": "Section 34 of the Code of Civil Procedure does not apply to the recovery proceeding. Interest remains payable on the principal amount at the contractual rate until the amount due under the order is paid.",
+      "legal_principle": "Under sections 31 and 32 of the State Financial Corporations Act, the proceeding is akin to an application for attachment or sale in execution at a stage after a decree, not a suit in which a decree is being passed. Section 34 of the Code of Civil Procedure applies at the decree stage and therefore does not govern this proceeding. In mortgage suits, interest is governed by Order 34 rule 11, while section 34 may apply to personal decrees under Order 34 rule 6. Gujarat State Financial Corporation v. M/s Natson Manufacturing Co. (P) Ltd. established the execution-like nature of the proceeding; the contrary approach in Karnataka State Financial Corporation v. Sri Nithyananda Bhavan was not correctly decided.",
+      "rule": {
+        "if": "special_statutory_secured_recovery_proceeding and proceeding_is_post_decree_execution_like and debt_has_contractual_interest_terms and debt_remains_unpaid",
+        "then": "contractual_interest_payable_until_full_payment"
+      },
+      "predicates": {
+        "special_statutory_secured_recovery_proceeding": "A creditor seeks recovery of a secured debt through a special statutory proceeding.",
+        "proceeding_is_post_decree_execution_like": "The proceeding operates like attachment or sale in execution after the stage at which a decree would be passed.",
+        "debt_has_contractual_interest_terms": "The parties agreed that interest would be payable on the debt at a specified rate.",
+        "debt_remains_unpaid": "The debtor has not paid the full amount due.",
+        "contractual_interest_payable_until_full_payment": "Interest continues to be payable according to the parties’ contract until the full amount due is paid."
+      },
+      "definition": "When a secured debt is pursued in a special statutory proceeding that operates like post-decree execution, and the contract provides for interest while the debt remains unpaid, interest continues under that contract until full payment."
+    },
+    {
+      "legal_issue": "A contested recovery amount must be recalculated under the parties’ contract before the secured property is sold when the available material does not permit the amount due to be determined.",
+      "material_facts": [
+        "The borrowers challenged the amount calculated as due to the Corporation.",
+        "The Supreme Court did not have all the material needed to determine the actual amount due, and a substantial time had passed since the lower court’s calculation.",
+        "The proceeding to recover the debt by sale of the secured property was still pending."
+      ],
+      "conclusion": "The matter was remanded to the Joint Judge to redetermine the amount due under the contract before directing sale of the properties.",
+      "legal_principle": "Where the record does not enable the reviewing court to determine the amount due, and the amount must be calculated under the parties’ contract, the court conducting the recovery proceeding should redetermine it before ordering sale.",
+      "rule": {
+        "if": "secured_recovery_proceeding and amount_due_contested and record_insufficient_to_calculate_amount and property_sale_pending",
+        "then": "amount_due_remitted_for_contract_based_redetermination_before_sale"
+      },
+      "predicates": {
+        "secured_recovery_proceeding": "A creditor is pursuing recovery of a secured debt through a proceeding that may result in sale of the secured property.",
+        "amount_due_contested": "The debtor disputes the amount claimed to be due.",
+        "record_insufficient_to_calculate_amount": "The reviewing court lacks sufficient material to determine the actual amount due.",
+        "property_sale_pending": "The secured property has not yet been sold and sale remains part of the pending recovery process.",
+        "amount_due_remitted_for_contract_based_redetermination_before_sale": "The amount due is sent back for recalculation under the parties’ contract before sale is directed."
+      },
+      "definition": "When the amount due is contested in a secured recovery proceeding, the reviewing court lacks enough material to calculate it, and sale is pending, the amount is sent back for contract-based recalculation before sale."
+    }
+  ],
+  "seconds": 11.0
+}

@@ -1,0 +1,81 @@
+{
+  "doc_id": "236625",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20198,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2073,
+    "prompt_tokens": 5225,
+    "total_tokens": 7298,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A party ordinarily cannot advance a factual case in argument that departs from its pleadings unless the pleadings are formally amended or an exceptional circumstance justifies the departure.",
+      "material_facts": [
+        "The petition challenging the government order did not deny that the local government had transferred the land and proceeded on the basis that it had done so.",
+        "During argument, the petitioner advanced the contrary position that the central government had transferred the land.",
+        "The petitioner had not formally amended its pleadings, and the departure led the opposing counsel to make concessions without being prepared to address the new argument."
+      ],
+      "conclusion": "The petitioner should not have been permitted to advance the unpleaded factual case; parties are ordinarily held strictly to their pleadings, and any needed change should be made by formal amendment.",
+      "legal_principle": "Parties are ordinarily confined to their pleadings, particularly as to facts, to maintain orderly proceedings and avoid surprise and resulting injustice. Save in exceptional cases, a party seeking to add to or modify its factual allegations should formally amend its pleading so the other side can meet the case. No earlier case is relied on.",
+      "rule": {
+        "if": "writ_proceeding and (argument_dep_parts_from_pleaded_facts) and not (formal_amendment or exceptional_circumstance)",
+        "then": "party_barred_from_advancing_unpleaded_factual_case"
+      },
+      "predicates": {
+        "writ_proceeding": "The dispute is being decided in a proceeding seeking judicial review of a government action.",
+        "argument_dep_parts_from_pleaded_facts": "A party advances in argument a factual position that differs from or goes beyond the factual case in its pleading.",
+        "formal_amendment": "The party formally amends its pleading to include the changed or additional factual position.",
+        "exceptional_circumstance": "An exceptional circumstance justifies allowing the party to depart from its pleaded factual case."
+      },
+      "definition": "When a party in a judicial-review proceeding advances a factual position outside its pleading without a formal amendment or an exceptional justification, the party cannot advance that unpleaded case."
+    },
+    {
+      "legal_issue": "A successor government may resume property under its statutory resumption power when the predecessor government transferred the property to the predecessor local body, the property passed to its successor, and the resumption is for a public purpose.",
+      "material_facts": [
+        "The transfer document stated that the local government transferred the land to the municipal body; the central government's prior approval was administrative approval, not a transfer by the central government.",
+        "The land passed from the former municipal body to its successor corporation.",
+        "The government notified that a strip of the land was divested from the corporation to provide a public road.",
+        "The applicable resumption provision covered property transferred to the corporation by the government or a local authority when required for a public purpose."
+      ],
+      "conclusion": "The notification was valid because the land had been transferred by the predecessor of the resuming government, had passed to the corporation, and was resumed for a public purpose.",
+      "legal_principle": "Section 81 of the City of Jabalpur Corporation Act authorized the government to resume immovable property transferred to the corporation by itself or a local authority when required for a public purpose. The communication transferring the land identified the local government as transferor; the central government's prior sanction did not make the central government the transferor. Section 71 provided for the property of the former municipal body to vest in the corporation. The Court did not decide the alternative reliance on the saving in section 3(1) of the Corporation Act or on section 38 of the repealed Municipalities Act.",
+      "rule": {
+        "if": "appeal_from_writ_order and transfer_instrument_identifies_local_government_as_transferor and property_passed_to_successor_body and resumption_is_for_public_purpose",
+        "then": "government_resumption_order_is_valid"
+      },
+      "predicates": {
+        "appeal_from_writ_order": "The case is an appeal from a decision on a petition challenging a government order.",
+        "transfer_instrument_identifies_local_government_as_transferor": "The instrument transferring the property identifies the local government as the body that made the transfer.",
+        "property_passed_to_successor_body": "The property vested in a successor body when that body replaced the original recipient.",
+        "resumption_is_for_public_purpose": "The government resumed the property to use it for a public purpose."
+      },
+      "definition": "In an appeal from a challenge to a government order, when the transfer instrument identifies the local government as transferor, the property passed to its successor, and the resumption is for a public purpose, the resumption order is valid."
+    },
+    {
+      "legal_issue": "A recipient that accepted a property grant from a government and continued to possess the property under that grant cannot deny that government's identity or authority as grantor.",
+      "material_facts": [
+        "The municipal body accepted the land under a grant made by the local government and continued to possess it under that grant.",
+        "The body disputed that the local government had made the grant and challenged the authority to resume the land."
+      ],
+      "conclusion": "The recipient was estopped from contending that the land had not been granted by the local government or that the government lacked authority to make the grant.",
+      "legal_principle": "A party that accepts a grant from a government and remains in possession under it cannot deny the identity or authority of that grantor in the circumstances of this case. No statutory provision or earlier case is cited for this application of estoppel.",
+      "rule": {
+        "if": "proceeding_challenges_government_action and recipient_accepted_government_grant and recipient_possesses_property_under_grant and recipient_denies_grantor_identity_or_authority",
+        "then": "recipient_estopped_from_denial"
+      },
+      "predicates": {
+        "proceeding_challenges_government_action": "The proceeding challenges government action concerning property received under a grant.",
+        "recipient_accepted_government_grant": "The recipient accepted the property under a grant made by the government.",
+        "recipient_possesses_property_under_grant": "The recipient continues to possess the property under the grant.",
+        "recipient_denies_grantor_identity_or_authority": "The recipient contends that the government did not make the grant or lacked authority to make it."
+      },
+      "definition": "When a recipient challenges government action after accepting and possessing property under the government's grant, the recipient is estopped from denying the grantor's identity or authority."
+    }
+  ],
+  "seconds": 13.2
+}

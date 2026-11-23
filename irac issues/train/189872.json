@@ -1,0 +1,81 @@
+{
+  "doc_id": "189872",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19922,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2256,
+    "prompt_tokens": 5435,
+    "total_tokens": 7691,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A compromise decree for eviction in a rent-controlled proceeding is valid and executable when the compromise, read with the pleadings and other materials, establishes that the tenant agreed expressly or by necessary implication to eviction on a ground available under the governing law.",
+      "material_facts": [
+        "The landlord sought eviction for a bona fide need to start a grocery business and alleged that there was no other reasonably suitable non-residential accommodation available to him.",
+        "The tenant denied those allegations in the written statement.",
+        "The parties compromised after evidence had begun; the compromise stated that the premises were needed for the landlord’s business and that a decree for ejectment could be granted.",
+        "Read against the pleadings, the compromise admission necessarily covered both the landlord’s need and the absence of suitable alternative accommodation.",
+        "The trial court found the compromise legal and passed a decree in accordance with it; the tenant later resisted execution."
+      ],
+      "conclusion": "The compromise decree was valid and executable because the compromise, read in the context of the pleadings, established the statutory ground for eviction; the appeal was dismissed.",
+      "legal_principle": "Under Section 12(1)(f) of the Madhya Pradesh Accommodation Control Act, 1961, a non-residential tenant may be evicted on the specified ground of the landlord’s bona fide business need and lack of other reasonably suitable accommodation. A decree based on consent is not necessarily void: the court must have material showing, expressly or by implication, that a statutory ground exists. The Court applied K. K. Chari v. R. M. Seshadri and Nagindas Ramdas v. Dalpatram Inchharam, distinguishing Bahadur Singh v. Muni Subrat Dass, Kaushalya Devi v. K. L. Bansal and Ferozi Lal Jain v. Man Mal, where the decrees were found to violate the governing rent-control law.",
+      "rule": {
+        "if": "rent_control_eviction_case and compromise_resolves_eviction and landlord_has_bona_fide_business_need and no_suitable_alternative_accommodation and tenant_admits_entitlement_to_eviction",
+        "then": "compromise_eviction_decree_is_valid_and_executable"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction of a tenant whose tenancy is governed by rent-control law.",
+        "compromise_resolves_eviction": "The landlord and tenant agree to resolve the eviction proceeding by a compromise providing for eviction.",
+        "landlord_has_bona_fide_business_need": "The landlord needs the premises bona fide to start or continue a business.",
+        "no_suitable_alternative_accommodation": "The landlord has no other reasonably suitable accommodation for that business in the relevant locality.",
+        "tenant_admits_entitlement_to_eviction": "The tenant expressly or by necessary implication accepts that the circumstances entitle the landlord to eviction."
+      },
+      "definition": "When a rent-controlled eviction proceeding is resolved by compromise and the tenant accepts eviction on the basis of the landlord’s bona fide business need and lack of suitable alternative accommodation, the compromise eviction decree is valid and executable."
+    },
+    {
+      "legal_issue": "Order 23 Rule 3 of the Code of Civil Procedure applies to eviction suits governed by special rent-control laws, and a court must record and decree a compromise that it finds lawful.",
+      "material_facts": [
+        "The parties filed a compromise in the eviction suit.",
+        "The trial court examined the compromise, found it legal and within the scope of the plaint, and passed a decree in accordance with its terms.",
+        "The compromise, read with the pleadings, disclosed a lawful basis for eviction under the governing rent-control law."
+      ],
+      "conclusion": "The court was required to record the lawful compromise and pass a decree in accordance with it; the compromise decree satisfied that requirement.",
+      "legal_principle": "Order 23 Rule 3 of the Code of Civil Procedure applies to eviction suits governed by special rent-control statutes. A compromise that violates the applicable rent-control law is not lawful and must not be recorded; if the court finds the agreement lawful from its terms and, where needed, the pleadings and other materials, it must record it and pass a decree accordingly.",
+      "rule": {
+        "if": "rent_control_eviction_case and compromise_adjusts_suit and court_finds_compromise_lawful",
+        "then": "court_must_record_compromise_and_pass_decree_in_accordance_with_it"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction of a tenant whose tenancy is governed by rent-control law.",
+        "compromise_adjusts_suit": "The parties agree on terms that resolve the suit or a matter in it.",
+        "court_finds_compromise_lawful": "The court finds from the compromise and, where necessary, the case materials that the agreement does not violate the applicable law."
+      },
+      "definition": "If a compromise resolves a rent-controlled eviction suit and the court finds it lawful, the court must record the compromise and pass a decree in accordance with it."
+    },
+    {
+      "legal_issue": "A rent-control provision restricting the grounds for filing an eviction suit also restricts the grounds on which a court may grant an eviction decree.",
+      "material_facts": [
+        "The governing provision stated that no suit for eviction could be filed except on specified grounds.",
+        "The Act also imposed conditions on when an eviction order could be passed for some of those grounds.",
+        "The suit sought eviction on a specified statutory ground, and the court considered whether the compromise established that ground."
+      ],
+      "conclusion": "The statutory restriction governs the grant of an eviction decree, not merely the filing of the suit; an eviction decree cannot be granted without a ground permitted by the Act.",
+      "legal_principle": "Reading Section 12(1) together with its related subsections and the protective purpose of the Madhya Pradesh Accommodation Control Act, 1961, the restriction on filing an eviction suit also limits the court’s power to grant an eviction decree. The Court relied on the public-policy reasoning approved in Nagindas Ramdas v. Dalpatram Inchharam and Shah Rasiklal Chunilal v. Sindhi Shyamlal Mulchand.",
+      "rule": {
+        "if": "rent_control_eviction_case and no_permitted_eviction_ground_is_established",
+        "then": "eviction_decree_must_not_be_granted"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction of a tenant whose tenancy is governed by rent-control law.",
+        "no_permitted_eviction_ground_is_established": "Neither evidence nor an express or implied admission establishes a ground on which the governing law permits eviction."
+      },
+      "definition": "If a rent-controlled eviction proceeding has no established ground permitted by the governing law, an eviction decree must not be granted."
+    }
+  ],
+  "seconds": 14.9
+}

@@ -1,0 +1,143 @@
+{
+  "doc_id": "25681951",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 131596,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 5174,
+    "prompt_tokens": 50128,
+    "total_tokens": 55302,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Land in a qualifying holding that was not under the landowner’s personal cultivation vested automatically in the State, independently of payment of compensation.",
+      "material_facts": [
+        "The landowner’s holding exceeded the statutory annual land-revenue threshold.",
+        "The evidence and prior proceedings established that only a limited area was under the landowner’s personal cultivation; the disputed land was not personally cultivated.",
+        "The disputed land included land described as barren or pasture land, and compensation had been determined and paid for some land under the abolition scheme."
+      ],
+      "conclusion": "The land within the statutory definition of land, other than the area under personal cultivation, vested automatically in the State. Payment of compensation was not a condition precedent to vesting.",
+      "legal_principle": "Sections 2(5) and 27(1)–(3) of the Himachal Pradesh Abolition of Big Landed Estates and Land Reforms Act, 1953 provide for vesting of a qualifying landowner’s landholding, subject to the personal-cultivation exception in section 27(2), and for compensation after acquisition of the rights. The meaning of landowner, estate and holding is informed by sections 3(1)–(3) of the Punjab Land Revenue Act, 1887, as applied by the Abolition Act. The Court relied on its earlier order in the same landowner’s proceedings, which held that vesting under section 27 was automatic and not dependent on compensation, and on Jadab Singh v. Himachal Pradesh Administration, AIR 1960 SC 1008, concerning the agrarian-reform purpose of the Act.",
+      "rule": {
+        "if": "qualifying_landholding and land_not_personally_cultivated and abolition_vesting_proceeding",
+        "then": "land_vests_automatically_in_state"
+      },
+      "predicates": {
+        "qualifying_landholding": "The landowner held a landholding meeting the applicable statutory condition for vesting.",
+        "land_not_personally_cultivated": "The disputed land was not cultivated personally by the landowner.",
+        "abolition_vesting_proceeding": "The dispute concerns vesting under a land-abolition scheme."
+      },
+      "definition": "When a qualifying holding is considered in an abolition-vesting proceeding and the disputed land was not personally cultivated by the landowner, the land vests automatically in the State."
+    },
+    {
+      "legal_issue": "Land already declared surplus and compensated for under a ceiling scheme cannot generate a further compensation entitlement in a later land-acquisition proceeding.",
+      "material_facts": [
+        "Before the land-acquisition proceedings began, the competent authority had declared the disputed land surplus under the ceiling scheme.",
+        "The surplus declaration and subsequent proceedings became final, and compensation for surplus land was recorded as paid.",
+        "A later acquisition proceeding concerned the same land."
+      ],
+      "conclusion": "The landowner and successors were not entitled to receive compensation again for land already declared surplus and compensated for under the ceiling proceedings.",
+      "legal_principle": "Section 11 of the Himachal Pradesh Ceiling on Land Holdings Act, 1972 provides for surplus land to vest in the State when possession is taken and for the rights in that area to be extinguished. The Court relied on the final surplus orders and payment records in this case, and distinguished Ujjagar Singh v. Collector, Bhatinda, (1996) 5 SCC 14, and State of H.P. v. Harnama, (2004) 13 SCC 534, on their different facts.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and prior_final_surplus_declaration and prior_surplus_compensation_received",
+        "then": "repeat_compensation_for_same_land_is_not_payable"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "A claimant seeks compensation for land in a proceeding arising from its acquisition.",
+        "prior_final_surplus_declaration": "Before the acquisition proceeding, a competent authority had finally declared the same land surplus under a land-ceiling scheme.",
+        "prior_surplus_compensation_received": "The claimant had already received compensation for that land under the surplus-land proceeding."
+      },
+      "definition": "A claimant seeking compensation for acquired land cannot receive it again when the same land had already been finally declared surplus and compensated for."
+    },
+    {
+      "legal_issue": "A claimant who abandoned personal cultivation and withdrew a suit on the basis that the land had been declared surplus and compensated for cannot later take an inconsistent position to claim acquisition compensation.",
+      "material_facts": [
+        "A prior suit concerning the disputed land was dismissed on its merits, including findings that the land was not personally cultivated and had vested in the State.",
+        "In the appeal, the claimant sought withdrawal of the suit after stating that the land had been declared surplus and compensation had been received under the ceiling scheme.",
+        "The claimant had not relied on personal cultivation as the ground for withdrawal, and the relevant surplus orders had attained finality.",
+        "The claimant or successors later asserted that the land had been personally cultivated and sought acquisition compensation."
+      ],
+      "conclusion": "The claimant and successors were estopped by their conduct and abandonment of the personal-cultivation plea from taking the inconsistent position; withdrawal of the suit did not revive a right to claim compensation.",
+      "legal_principle": "The Court applied estoppel by conduct and abandonment of a plea, treated the final prior findings and the basis stated for withdrawal as material, and observed that withdrawal does not stop the running of limitation under Order 23 Rule 2 of the Code of Civil Procedure. Permission to bring a fresh suit did not permit the claimant to maintain an inconsistent claim on these facts.",
+      "rule": {
+        "if": "later_land_acquisition_compensation_claim and prior_suit_dismissed_on_merits and personal_cultivation_plea_abandoned and withdrawal_based_on_surplus_and_compensation and prior_orders_final",
+        "then": "inconsistent_compensation_claim_is_estopped"
+      },
+      "predicates": {
+        "later_land_acquisition_compensation_claim": "A claimant later seeks compensation for the disputed land in an acquisition proceeding.",
+        "prior_suit_dismissed_on_merits": "A prior suit concerning the same land was dismissed after findings were made against the claimant.",
+        "personal_cultivation_plea_abandoned": "The claimant did not pursue, or expressly abandoned, the contention that the land was personally cultivated.",
+        "withdrawal_based_on_surplus_and_compensation": "The claimant sought withdrawal of the prior suit on the stated basis that the land had been declared surplus and compensation had been received.",
+        "prior_orders_final": "The relevant earlier orders concerning the land had become final."
+      },
+      "definition": "A claimant is estopped from seeking acquisition compensation on an inconsistent basis after abandoning personal cultivation and withdrawing an earlier suit on the stated basis that the land was surplus and compensated for, where the relevant orders are final."
+    },
+    {
+      "legal_issue": "A court considering an acquisition-compensation reference may examine prior vesting and compensation proceedings, and fraud cannot shield a repeated claim to compensation for land in which the claimant has no subsisting right.",
+      "material_facts": [
+        "The disputed land had been held to have vested in the State under the land-abolition scheme, and had also been declared surplus in later ceiling proceedings before the acquisition proceedings began.",
+        "Compensation had been paid under the earlier proceedings, yet the claimant or successors pursued compensation for the same land in the acquisition proceedings.",
+        "The litigation involved successive and inconsistent positions, including an abandoned personal-cultivation claim and attempts to rely on continuing revenue entries despite prior proceedings.",
+        "The acquisition authority had noted the ceiling proceedings when directing that compensation not be paid."
+      ],
+      "conclusion": "The prior vesting and ceiling proceedings and the conduct alleged to be fraudulent had to be considered; the claimants had no subsisting right to obtain acquisition compensation for the land. Fraud could be raised even in collateral proceedings, and the ordinary limits on determining pre-existing title in a reference did not protect the repeated claim on these facts.",
+      "legal_principle": "Sections 18 and 30 of the Land Acquisition Act, 1894 generally concern compensation, apportionment and the persons to whom compensation is payable, and a State asserting a pre-existing title is ordinarily not a person interested entitled to invoke those provisions to have that title determined. The Court considered Sharda Devi v. State of Bihar, (2003) 3 SCC 128; Meher Rusi Dalal v. Union of India, (2004) 7 SCC 362; and Ahad Brothers v. State of M.P., (2005) 1 SCC 545, but distinguished the present case as one concerning entitlement in light of prior proceedings and fraud, not simply adjudication of title. It applied the principle that fraud vitiates judicial proceedings and may be raised collaterally, relying on Ram Chandra Singh v. Savitri Devi, (2003) 8 SCC 319; State of A.P. v. T. Suryachandra Rao, (2005) 6 SCC 149; A.V. Papayya Sastry v. Government of A.P., (2007) 4 SCC 221; S.P. Chengalvaraya Naidu v. Jagannath, (1994) 1 SCC 1; and K.K. Modi v. K.N. Modi, (1998) 3 SCC 573.",
+      "rule": {
+        "if": "land_acquisition_compensation_reference and prior_state_vesting_or_surplus_proceeding and prior_compensation_received and repeated_inconsistent_claim_conduct",
+        "then": "repeat_compensation_claim_is_rejected"
+      },
+      "predicates": {
+        "land_acquisition_compensation_reference": "The dispute arises in a reference concerning compensation for acquired land.",
+        "prior_state_vesting_or_surplus_proceeding": "An earlier proceeding established that the land had vested in the State or had been declared surplus before the acquisition claim.",
+        "prior_compensation_received": "The claimant had already received compensation in an earlier proceeding concerning the same land.",
+        "repeated_inconsistent_claim_conduct": "The claimant pursued repeated claims using inconsistent positions or conduct that the court found fraudulent."
+      },
+      "definition": "In an acquisition-compensation reference, a repeated claim is rejected when earlier proceedings established State vesting or surplus status, compensation was already received, and the claimant pursued inconsistent conduct found fraudulent."
+    },
+    {
+      "legal_issue": "The entitlement of alleged bona fide transferees to compensation must be determined in the pending appeals concerning their claims, and compensation already paid to them is not recoverable while those appeals remain undecided.",
+      "material_facts": [
+        "Some claimants asserted that they had received transfers from the former landowner in good faith and sought compensation, including redetermination of compensation.",
+        "Appeals concerning compensation claims by alleged transferees were pending before the High Court.",
+        "The Supreme Court did not finally determine whether the transferees were bona fide or entitled to compensation."
+      ],
+      "conclusion": "The High Court was to decide the transferees’ status and entitlement in the pending appeals. Any compensation already paid to transferees was not to be recovered until a pending appeal was decided; where no matter remained pending and the appeal had been decided in favour of the landowners, compensation was payable in accordance with that decision.",
+      "legal_principle": "The Court left the factual issue of bona fide transfer and compensation entitlement to be resolved in the pending regular first appeals. The ultimate compensation outcome was to follow the final determination in those proceedings, with recovery of amounts already paid to transferees deferred while an appeal remained pending.",
+      "rule": {
+        "if": "transferee_compensation_claim and pending_appeal_concerning_transferee_entitlement and compensation_already_paid_to_transferee",
+        "then": "paid_transferee_compensation_is_not_recovered_before_appeal_decision"
+      },
+      "predicates": {
+        "transferee_compensation_claim": "A person claiming through a transfer seeks compensation for acquired land.",
+        "pending_appeal_concerning_transferee_entitlement": "An appeal concerning the transferee’s entitlement to compensation remains undecided.",
+        "compensation_already_paid_to_transferee": "The transferee has already received compensation for the land."
+      },
+      "definition": "When a transferee has received compensation and an appeal concerning that transferee’s entitlement remains pending, the payment is not recovered before the appeal is decided."
+    },
+    {
+      "legal_issue": "Compensation withdrawn without entitlement for land already vested in the State or compensated for in earlier proceedings must be returned.",
+      "material_facts": [
+        "The former landowner or successors withdrew compensation in the acquisition proceedings, including compensation obtained through a redetermination claim.",
+        "The disputed land had already vested in the State or had been dealt with as surplus, and earlier compensation had been received for the land.",
+        "The Court concluded that the recipients had no right to obtain the acquisition compensation."
+      ],
+      "conclusion": "The compensation withdrawn by the former landowner or successors in the acquisition proceedings, including through redetermination, had to be refunded to the appellants or the State, as applicable, with interest.",
+      "legal_principle": "The Court directed restitution of compensation obtained without entitlement, applying the conclusion that prior vesting, prior compensation and fraudulent or inconsistent claims could not justify retaining a second payment. The direction covered compensation withdrawn in original acquisition proceedings and under section 28A of the Land Acquisition Act, 1894.",
+      "rule": {
+        "if": "acquisition_compensation_received and prior_proceedings_extinguished_or_satisfied_claimant_right and no_entitlement_to_acquisition_compensation",
+        "then": "unentitled_compensation_must_be_refunded"
+      },
+      "predicates": {
+        "acquisition_compensation_received": "A claimant withdrew compensation in an acquisition proceeding or a related redetermination proceeding.",
+        "prior_proceedings_extinguished_or_satisfied_claimant_right": "Earlier proceedings had vested the land in the State or had already compensated the claimant for the same land.",
+        "no_entitlement_to_acquisition_compensation": "The claimant had no subsisting right to receive the acquisition compensation."
+      },
+      "definition": "A recipient must refund acquisition compensation when earlier proceedings had already extinguished or satisfied the relevant right and the recipient had no entitlement to the later payment."
+    }
+  ],
+  "seconds": 30.9
+}

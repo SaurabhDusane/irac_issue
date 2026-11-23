@@ -1,0 +1,62 @@
+{
+  "doc_id": "475581",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9477,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1319,
+    "prompt_tokens": 2947,
+    "total_tokens": 4266,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord may not recover possession from a tenant by force, even when the landlord claims a right to possession, and a person forcibly dispossessed may obtain restoration through a summary possessory proceeding.",
+      "material_facts": [
+        "The occupant had carried on business in the premises as a tenant for many years and paid rent to the landlord.",
+        "The landlord had filed a pending suit to evict the tenant but, while that suit was pending, its workers forcibly took possession of the premises with police present.",
+        "The tenant promptly complained to the police and other authorities and filed a suit for restoration within six months of the dispossession.",
+        "The record contained no document showing that the tenant had voluntarily surrendered possession."
+      ],
+      "conclusion": "The forcible dispossession was unlawful, and the tenant was entitled to restoration of possession.",
+      "legal_principle": "Section 6 of the Specific Relief Act, 1963 provides a summary remedy to restore possession to a person dispossessed otherwise than in due course of law, preventing self-help and discouraging forcible dispossession. In State of U.P. v. Maharaja Dharmander Prasad Singh (1989) 2 SCC 505, the Court held that even a lessor with the best title cannot resume possession extra-judicially by force; possession must be recovered in a manner recognized by law. The Court also emphasized that legal and constitutional rights cannot be overridden by powerful persons taking the law into their own hands.",
+      "rule": {
+        "if": "summary_possession_restoration_suit and tenant_possession and landlord_forcibly_repossessed and not voluntary_surrender_evidence",
+        "then": "restore_possession_to_dispossessed_occupant"
+      },
+      "predicates": {
+        "summary_possession_restoration_suit": "A person brought a summary proceeding seeking restoration after being dispossessed of property.",
+        "tenant_possession": "The claimant occupied the premises as a tenant before the other party took possession.",
+        "landlord_forcibly_repossessed": "The landlord took possession from the tenant by force rather than through a lawful process.",
+        "voluntary_surrender_evidence": "The record contains evidence that the tenant willingly surrendered possession."
+      },
+      "definition": "When a tenant seeks summary restoration after a landlord takes possession by force and the record does not show a voluntary surrender, the tenant's possession is restored."
+    },
+    {
+      "legal_issue": "A court should not remand a summary possessory proceeding for reconsideration when the established facts sufficiently resolve the claim and remand would frustrate the proceeding's purpose.",
+      "material_facts": [
+        "The summary suit sought restoration after the tenant was forcibly dispossessed.",
+        "The tenant's immediate complaints, subsequent representations, and request for an investigation supported the account of forcible dispossession.",
+        "The record contained no evidence that the tenant had voluntarily handed over possession, and the circumstances required no further evidence or reassessment.",
+        "The High Court remanded the matter after a lengthy period, although the available record was sufficient to decide the possession claim."
+      ],
+      "conclusion": "The remand was set aside, and the possession claim was decided and decreed on the available record.",
+      "legal_principle": "Section 6 of the Specific Relief Act, 1963 establishes a summary procedure whose purpose is to promptly restore possession and prevent self-help. Where the material facts are established and no further evidence or reappraisal is needed, a remand that defeats that purpose is unwarranted.",
+      "rule": {
+        "if": "summary_possession_restoration_suit and record_establishes_forcible_dispossession and record_complete and remand_would_frustrate_summary_purpose",
+        "then": "decide_possession_claim_without_remand"
+      },
+      "predicates": {
+        "summary_possession_restoration_suit": "A person brought a summary proceeding seeking restoration after being dispossessed of property.",
+        "record_establishes_forcible_dispossession": "The evidence in the record establishes that the claimant was forcibly deprived of possession.",
+        "record_complete": "The material facts are sufficiently established without further evidence or reassessment.",
+        "remand_would_frustrate_summary_purpose": "Sending the matter back for reconsideration would defeat the purpose of promptly resolving the summary possession claim."
+      },
+      "definition": "When a summary possession claim is established by a complete record and remand would frustrate its purpose, the claim is decided without remand."
+    }
+  ],
+  "seconds": 9.4
+}

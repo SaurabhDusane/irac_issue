@@ -1,0 +1,77 @@
+{
+  "doc_id": "1384455",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21551,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2491,
+    "prompt_tokens": 5829,
+    "total_tokens": 8320,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A stay restraining further steps in a land-acquisition proceeding may extend the time for a declaration for landowners who did not personally obtain the stay when the restraint inhibited the authority from proceeding with a common acquisition.",
+      "material_facts": [
+        "A common acquisition notice covered land in multiple villages and belonging to multiple owners.",
+        "Some landowners obtained court orders restraining further acquisition steps, including publication of the declaration.",
+        "The declaration was published beyond the ordinary statutory period, and the appellants had not personally obtained a stay."
+      ],
+      "conclusion": "The period during which the related stay orders inhibited further proceedings was excluded for the appellants as well; the declaration concerning their land was not time-barred.",
+      "legal_principle": "Under the proviso to Section 6(1) and Explanation II to the Land Acquisition Act, 1894, time during which action or proceedings are stayed is excluded when computing the period for publication of a declaration. The Court applied the broad meaning of an inhibitive stay discussed in Yusufbhai Noormohmed Nendoliya v. State of Gujarat, Hansraj Jain v. State of Maharashtra, Sangappa Gurulingappa Sajjan v. State of Karnataka, Gandhi Grah Nirman Sahkari Samiti Ltd. v. State of Rajasthan, G. Narayanaswamy Reddy v. Government of Karnataka, and Roshnara Begum v. Union of India, and upheld the Full Bench’s approach in Balak Ram Gupta v. Union of India.",
+      "rule": {
+        "if": "land_acquisition_case and common_acquisition_notice and related_court_order_barred_further_steps",
+        "then": "stay_period_excluded_for_covered_acquisition"
+      },
+      "predicates": {
+        "land_acquisition_case": "The proceeding concerns the acquisition of land by a public authority.",
+        "common_acquisition_notice": "One acquisition notice covers land belonging to multiple owners or situated in multiple areas.",
+        "related_court_order_barred_further_steps": "A court order in a related challenge restrained the authority from taking further steps in the acquisition."
+      },
+      "definition": "When a land-acquisition proceeding concerns land covered by a common notice and a related court order barred further steps, the period of that restraint is excluded for the covered acquisition."
+    },
+    {
+      "legal_issue": "The benefit of an order quashing a declaration is confined to the claimants covered by that order when its operative terms expressly limit its scope to them.",
+      "material_facts": [
+        "A Division Bench quashed the declaration and related proceedings only in respect of the writ petitioners before it.",
+        "The appellants’ own challenge had already been dismissed, and they were not claimants covered by the later quashing order.",
+        "The order did not quash the declaration in its entirety."
+      ],
+      "conclusion": "The quashing order did not extend its benefit to the appellants, and the declaration concerning them remained in force.",
+      "legal_principle": "The scope of relief depends on the operative terms of the judgment. The Court distinguished Delhi Development Authority v. Sudan Singh because its operative order had not been brought to the Court’s attention, and explained that a quashing confined to particular writ petitioners does not invalidate the declaration for others. Although a declaration quashed in toto may have broader effect, that was not the order made here; the Court also distinguished the reliance on Yusufbhai Noormohmed Nendoliya in light of the limited operative order.",
+      "rule": {
+        "if": "acquisition_challenge_case and earlier_quashing_order_expressly_limited_to_its_claimants and present_claimants_not_covered_by_that_order",
+        "then": "quashing_benefit_confined_to_claimants_covered_by_order"
+      },
+      "predicates": {
+        "acquisition_challenge_case": "The proceeding challenges a declaration made in a land-acquisition process.",
+        "earlier_quashing_order_expressly_limited_to_its_claimants": "A court order quashing the declaration expressly confines that relief to the claimants before that court.",
+        "present_claimants_not_covered_by_that_order": "The claimants seeking the benefit were not included in the group covered by the quashing order."
+      },
+      "definition": "When an acquisition challenge involves a quashing order expressly limited to its claimants, claimants outside that group do not receive the order’s benefit."
+    },
+    {
+      "legal_issue": "An acquisition declaration is not invalid for failure to consider objections that the affected landowners did not file.",
+      "material_facts": [
+        "The appellants had filed no objections to the proposed acquisition for consideration in an inquiry.",
+        "They challenged the declaration in part on the basis that objections had not been properly considered."
+      ],
+      "conclusion": "There was no need to consider objections that the appellants had not filed, and the declaration was not vitiated on that ground.",
+      "legal_principle": "Section 5-A of the Land Acquisition Act, 1894 concerns the consideration of objections filed for inquiry. The Court stated that absent objections from the appellants, there was no need to consider their objections. It referred to Delhi Development Authority v. Sudan Singh in discussing this point but held that the case did not apply to the appellants’ circumstances.",
+      "rule": {
+        "if": "land_acquisition_challenge and affected_claimants_filed_no_objections and declaration_challenged_for_nonconsideration",
+        "then": "declaration_not_invalid_for_unfiled_objections"
+      },
+      "predicates": {
+        "land_acquisition_challenge": "The proceeding challenges a declaration made in a land-acquisition process.",
+        "affected_claimants_filed_no_objections": "The claimants whose land is affected did not submit objections for consideration.",
+        "declaration_challenged_for_nonconsideration": "The claimants allege that the declaration is invalid because their objections were not considered."
+      },
+      "definition": "When affected claimants filed no objections but challenge an acquisition declaration for nonconsideration, the declaration is not invalid for failure to consider those unfiled objections."
+    }
+  ],
+  "seconds": 76.4
+}

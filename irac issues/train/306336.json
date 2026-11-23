@@ -1,0 +1,120 @@
+{
+  "doc_id": "306336",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 76551,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3514,
+    "prompt_tokens": 18425,
+    "total_tokens": 21939,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The death of one respondent and failure to substitute that respondent’s legal representatives does not automatically dismiss an appeal against the surviving respondents.",
+      "material_facts": [
+        "One of three land claimants died while the government’s appeal against the compensation award was pending.",
+        "The deceased claimant’s legal representatives were not substituted in the government appeal within the prescribed time.",
+        "The government appeal challenged a decree concerning compensation for the same acquired land and was heard together with the claimants’ appeal."
+      ],
+      "conclusion": "The government appeal abated against the deceased respondent, but it did not automatically stand dismissed against the surviving respondents. Whether the right to sue survived against them alone required the appellate court to consider the nature of the decree and the possibility of contradictory decrees.",
+      "legal_principle": "Order XXII Rules 4(1) and 4(3) of the Code of Civil Procedure provide for substitution of a deceased defendant’s legal representatives when the right to sue does not survive against the surviving defendants alone, and for abatement against the deceased defendant if substitution is not sought within the prescribed time. Order XXII Rule 11 applies the relevant provisions to appeals. The question whether an appeal can proceed against surviving parties is for the appellate court to decide after considering whether the decree is joint and whether inconsistent decrees could result. The Court considered State of Punjab v. Nathu Ram, Rameshwar Prasad v. M/s Shyam Beharilal Jagannath, Ramagya Prasad Gupta v. Murli Prasad, and Harihar Prasad Singh v. Balmiki Prasad Singh.",
+      "rule": {
+        "if": "appeal_proceeding and deceased_respondent_not_substituted_within_time",
+        "then": "appeal_not_automatically_dismissed_against_surviving_parties"
+      },
+      "predicates": {
+        "appeal_proceeding": "A party has brought an appeal in which a respondent dies while the appeal is pending.",
+        "deceased_respondent_not_substituted_within_time": "The deceased respondent’s legal representatives were not brought on record within the legally prescribed time."
+      },
+      "definition": "When an appeal is pending and a deceased respondent’s legal representatives are not substituted in time, the appeal is not automatically dismissed against the surviving parties."
+    },
+    {
+      "legal_issue": "A decree made after a respondent’s death is not necessarily a nullity for every purpose, and the deceased respondent’s legal representatives may elect to abide by it or challenge it through an available procedure.",
+      "material_facts": [
+        "The deceased claimant’s legal representatives were not brought on record in the government appeal before the High Court decided it.",
+        "The High Court heard the appeals and made a decree affecting the compensation for the acquired land.",
+        "The legal representatives had an opportunity to raise the abatement objection during the High Court proceedings."
+      ],
+      "conclusion": "A decree against a deceased respondent is treated as a nullity insofar as it would operate against legal representatives who were not heard, but the legal representatives may choose to abide by the decree instead of relying on that objection. The appellate court is not deprived of jurisdiction merely because no substitution application was made and no objection was raised.",
+      "legal_principle": "Order XXII Rules 3 and 4 of the Code of Civil Procedure protect the right of a party or the party’s legal representatives to be heard before a decision affecting their interests is made. A decree is treated as a nullity against legal representatives who were not given that opportunity, but they may elect to accept it. The appellate court may, on an appropriate application, bring legal representatives on record, consider an application to condone delay, or remand the matter. The Court rejected the contention that the decree was necessarily a nullity for all purposes or that the appellate court had lost jurisdiction.",
+      "rule": {
+        "if": "appeal_proceeding and deceased_respondent_not_heard_through_representatives and representatives_elect_to_abide",
+        "then": "decree_binds_representatives_by_election"
+      },
+      "predicates": {
+        "appeal_proceeding": "A court is hearing an appeal in which a respondent died while the appeal was pending.",
+        "deceased_respondent_not_heard_through_representatives": "The deceased respondent’s legal representatives were not brought on record and heard before the decree was made.",
+        "representatives_elect_to_abide": "The legal representatives choose to accept the decree rather than invoke the objection that it is ineffective against them."
+      },
+      "definition": "If legal representatives who were not heard in an appeal choose to accept the resulting decree, they may be bound by it through that choice."
+    },
+    {
+      "legal_issue": "Legal representatives substituted in one of two cross-appeals from the same decree need not also be formally substituted in the other cross-appeal when they are before the same court and have a full opportunity to present their case.",
+      "material_facts": [
+        "The deceased claimant was an appellant in the claimants’ appeal and a respondent in the government’s cross-appeal.",
+        "The deceased claimant’s legal representatives were substituted in the claimants’ appeal but not formally substituted in the government’s appeal.",
+        "Both appeals arose from the same compensation award, were heard together, and the legal representatives’ counsel argued their case in both."
+      ],
+      "conclusion": "The government appeal did not abate on the ground that the legal representatives had not been formally substituted in it; they were before the court and had the opportunity to present their case. This was the concurring reasoning of Desai J.",
+      "legal_principle": "Order XXII Rules 3 and 4, read with Rule 11, of the Code of Civil Procedure implement the natural-justice requirement that persons whose interests may be affected must have an opportunity to be heard. Where legal representatives are already before the same court in the connected cross-appeal and have a full opportunity to present their case, formal substitution in the other cross-appeal is not essential. Order XLI Rule 22 recognizes that cross-objections and cross-appeals provide remedies concerning the same decree. Desai J. relied on Brij Inder Singh v. Lala Kanshi Ram, Rangubai Kom Shanker Jagtap v. Sunderabai Bhratar Sakharam Jedhe, and Mahabir Prasad v. Jage Ram, and disapproved the contrary approach in Sankaranaraina Saralaya v. Laxmi Hengsu and State of Rajasthan v. Raghuraj Singh.",
+      "rule": {
+        "if": "cross_appeals_from_same_decree and representatives_substituted_in_one_appeal and representatives_heard_in_both",
+        "then": "other_cross_appeal_not_abated_for_lack_of_formal_substitution"
+      },
+      "predicates": {
+        "cross_appeals_from_same_decree": "Both parties have appealed from the same decree, and the appeals are heard by the same court.",
+        "representatives_substituted_in_one_appeal": "The legal representatives of a deceased party have been brought on record in one of the cross-appeals.",
+        "representatives_heard_in_both": "The legal representatives are before the court during the hearing and have a full opportunity to present their position in both appeals."
+      },
+      "definition": "In cross-appeals from the same decree, legal representatives already substituted in one appeal and fully heard in both are not required to be formally substituted in the other to prevent abatement."
+    },
+    {
+      "legal_issue": "A party may not raise in a further appeal an abatement objection that the party or its legal representatives knowingly and wilfully abandoned at the relevant stage of the earlier proceedings.",
+      "material_facts": [
+        "The deceased claimant’s legal representatives knew of the death and knew they had been brought on record in the claimants’ appeal but not in the government appeal.",
+        "For about five years they did not seek dismissal of the government appeal on abatement grounds.",
+        "When the High Court heard both appeals, their counsel argued the merits without raising abatement.",
+        "After the High Court ruled against them, they raised abatement in seeking a certificate to appeal but did not seek review of the High Court’s judgment on that ground."
+      ],
+      "conclusion": "The legal representatives wilfully abandoned the abatement objection in the High Court and could not revive it as a later, afterthought defence in the further appeal.",
+      "legal_principle": "A plea of abatement is a defence that a legal representative may choose to raise or abandon. Abandonment cannot be inferred without clear, sufficient, and satisfactory evidence that the legal representative knew of the plea and wilfully abandoned it. A point of defence wilfully abandoned at the stage when it was material cannot later be revived at the party’s will. The Court distinguished Gaekwar Baroda State Railway v. Hafiz Habib-ul-Haq, Thakore Saheb Khanji Kashari Khanji v. Gulam Rosul Chandbhai, Punjab State v. Sardar Atma Singh, and State of Rajasthan v. Raghuraj Singh, which did not involve the same circumstances of wilful abandonment.",
+      "rule": {
+        "if": "further_appeal and abatement_objection_available and representatives_knew_of_objection and representatives_wilfully_abandoned_objection",
+        "then": "abated_appeal_objection_cannot_be_raised_later"
+      },
+      "predicates": {
+        "further_appeal": "A party seeks to raise an objection in an appeal following the proceeding in which the objection was available.",
+        "abatement_objection_available": "The death of a party and failure to substitute that party’s legal representatives supplied a possible ground to seek dismissal for abatement.",
+        "representatives_knew_of_objection": "The legal representatives knew the relevant circumstances and were aware, or were shown to be aware, that the abatement objection could be raised.",
+        "representatives_wilfully_abandoned_objection": "The legal representatives deliberately proceeded on the merits without raising the objection at the relevant stage."
+      },
+      "definition": "A party cannot revive an available abatement objection in a further appeal after knowingly and deliberately abandoning it in the earlier proceeding."
+    },
+    {
+      "legal_issue": "A supported finding of market value based on the evidence does not warrant appellate interference merely because the claimants seek a higher valuation.",
+      "material_facts": [
+        "The claimants had purchased the land about eight months before the acquisition at a price that worked out to two rupees per square yard.",
+        "They made no improvements to the land after purchase.",
+        "The previous owner was not shown to have sold for a compelling reason.",
+        "The High Court considered the land’s location and development potential, as well as the purchase price and the evidence concerning other sales, and fixed compensation at four rupees per square yard."
+      ],
+      "conclusion": "No error warranting interference was shown in the High Court’s valuation, and the appeal was dismissed.",
+      "legal_principle": "In assessing compensation for acquired land, the market value on the date of the relevant notification is determined from the evidence and relevant circumstances. The High Court considered the claimants’ recent purchase, lack of improvements, circumstances of the previous sale, the land’s characteristics, and the evidence of other transactions. The Supreme Court found no basis to interfere with that factual assessment; it referred to the notification under section 4 of the Land Acquisition Act.",
+      "rule": {
+        "if": "appeal_challenging_land_compensation and valuation_finding_considers_relevant_evidence and no_material_error_shown",
+        "then": "appellate_court_does_not_interfere_with_valuation"
+      },
+      "predicates": {
+        "appeal_challenging_land_compensation": "A party appeals a court’s determination of compensation for acquired land.",
+        "valuation_finding_considers_relevant_evidence": "The valuation court considers the land’s characteristics, available sale evidence, and the circumstances bearing on value.",
+        "no_material_error_shown": "The challenger does not establish that the valuation finding contains an error requiring appellate correction."
+      },
+      "definition": "An appellate court does not disturb a land-compensation valuation when the finding considers the relevant evidence and no material error is established."
+    }
+  ],
+  "seconds": 20.7
+}

@@ -1,0 +1,125 @@
+{
+  "doc_id": "1333014",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 48046,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3417,
+    "prompt_tokens": 11867,
+    "total_tokens": 15284,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An injunction restraining the issue of a notification covers a notification that itself effects the prohibited change, even if possession is not immediately disturbed.",
+      "material_facts": [
+        "A temporary injunction restrained the State from issuing a notification concerning the estate and from interfering with the plaintiff’s possession.",
+        "While its application to vacate the injunction was pending, the State issued a notification declaring that the estate had vested in it.",
+        "The notification was the relevant means by which the statute effected the transfer of title; separate executive action would have been required to take possession."
+      ],
+      "conclusion": "The notification breached the injunction; the fact that the State had not separately disturbed possession did not avoid the breach.",
+      "legal_principle": "An injunction must be read in its context, including the pleadings and the application on which it was made. Where the relevant statutory scheme contemplates a notification as the act that effects the prohibited change, the injunction against issuing that notification is breached by its issue even if a separate step would be required to interfere with possession.",
+      "rule": {
+        "if": "temporary_injunction_enforcement and injunction_bars_notification and notification_itself_effects_prohibited_change",
+        "then": "injunction_was_breached"
+      },
+      "predicates": {
+        "temporary_injunction_enforcement": "A party sought enforcement of an order granting temporary injunctive relief.",
+        "injunction_bars_notification": "The order, read in context, restrained the party from issuing the relevant notification.",
+        "notification_itself_effects_prohibited_change": "The notification itself effects the change that the injunction was intended to prevent.",
+        "injunction_was_breached": "The party's issue of the notification breached the injunction."
+      },
+      "definition": "When a party seeks enforcement of a temporary injunction, an order barring a notification is breached if the party issues a notification that itself effects the prohibited change."
+    },
+    {
+      "legal_issue": "A party cannot avoid enforcement for disobedience by relying on a possible alternative interpretation of an injunction unless the order was reasonably ambiguous and the party actually acted on that interpretation.",
+      "material_facts": [
+        "The State sought to vacate the injunction before issuing the notification, indicating that it understood the order to restrain the proposed action.",
+        "The State did not claim in its response to the enforcement application that it had understood the injunction to permit the notification.",
+        "The State persisted in defending the notification rather than establishing that it had acted under a bona fide alternative understanding of the order.",
+        "The Court concluded that the order, read with the pleadings and application, had only one reasonable construction."
+      ],
+      "conclusion": "The State’s argument that the order was ambiguous and that it acted on a permissible interpretation did not excuse the disobedience.",
+      "legal_principle": "A defence based on construing an injunction in one of multiple possible ways requires both that the order be reasonably capable of more than one interpretation and that the party actually understood and acted on it in the asserted way. A court cannot infer that bona fide understanding merely because counsel can suggest an alternative reading.",
+      "rule": {
+        "if": "temporary_injunction_enforcement and (order_unambiguous or no_proven_bona_fide_alternative_understanding)",
+        "then": "ambiguity_defence_unavailable"
+      },
+      "predicates": {
+        "temporary_injunction_enforcement": "A party sought enforcement of an order granting temporary injunctive relief.",
+        "order_unambiguous": "The order, read in context, had only one reasonable interpretation.",
+        "no_proven_bona_fide_alternative_understanding": "The party did not establish that it actually understood and acted on a reasonable alternative interpretation of the order.",
+        "ambiguity_defence_unavailable": "The party cannot rely on ambiguity to excuse its disobedience."
+      },
+      "definition": "In enforcement of a temporary injunction, an ambiguity defence is unavailable if the order is unambiguous or the party has not proved that it actually acted on a bona fide alternative understanding."
+    },
+    {
+      "legal_issue": "The State may be proceeded against under the procedure for enforcing a temporary injunction, and that procedure is not barred by the State’s immunity from tort claims or by the punitive aspect of the remedy.",
+      "material_facts": [
+        "The State was the defendant against which the court had jurisdiction to issue a temporary injunction.",
+        "The State issued the notification while that injunction remained in force.",
+        "The applicable procedure permitted attachment of property and detention for disobedience, and the lower court ordered attachment of State property.",
+        "The State accepted that the underlying suit and the temporary injunction were properly brought and issued against it."
+      ],
+      "conclusion": "The enforcement procedure was available against the State, although detention in civil prison could not apply to it.",
+      "legal_principle": "Order 39, rule 2(3) of the Code of Civil Procedure is remedial and is essentially a means of enforcing or executing an injunction, as reflected in the corresponding procedure for enforcing a decree for injunction under Order 21, rule 32. Article 300 does not preclude that enforcement, and the rule against suits against the State in tort does not apply. The Court distinguished District Board of Bhagalpur v. Province of Bihar and Tarafatullah v. S. N. Maitra; it also found Director of Rationing & Distribution v. Corporation of Calcutta inapplicable.",
+      "rule": {
+        "if": "temporary_injunction_enforcement and state_is_defendant and binding_injunction_disobeyed",
+        "then": "state_may_be_proceeded_against"
+      },
+      "predicates": {
+        "temporary_injunction_enforcement": "A party sought enforcement of an order granting temporary injunctive relief.",
+        "state_is_defendant": "The State was a defendant against which the court had jurisdiction to issue the injunction.",
+        "binding_injunction_disobeyed": "The State disobeyed an injunction that remained binding.",
+        "state_may_be_proceeded_against": "The State may be subjected to the procedure for enforcing the injunction."
+      },
+      "definition": "The State may be subjected to enforcement proceedings when it is a defendant and disobeys a binding temporary injunction."
+    },
+    {
+      "legal_issue": "The word describing a person liable for disobedience includes the defendant against whom the injunction was issued, including the State, as well as that defendant’s agents and servants.",
+      "material_facts": [
+        "The injunction was directed against the State as defendant.",
+        "The State argued that the enforcement provision used a general term for the person guilty of disobedience and did not expressly name the State.",
+        "The Code permitted injunctions against defendants and contemplated enforcement against their agents, servants and workmen who had notice of the order."
+      ],
+      "conclusion": "The State was within the persons covered by the enforcement provision and was not excluded because it was not separately named there.",
+      "legal_principle": "Order 39, rules 2(1) and 2(3) must be read together. The general term in rule 2(3) designates the defendant against whom the injunction was issued and the defendant’s agents, servants and workmen; it does not exclude a State defendant. The enforcement mechanism must extend to those against whom the court is empowered to issue the injunction, or that power would be ineffective.",
+      "rule": {
+        "if": "temporary_injunction_enforcement and injunction_issued_against_state and state_disobeyed_order",
+        "then": "state_is_within_persons_covered"
+      },
+      "predicates": {
+        "temporary_injunction_enforcement": "A party sought enforcement of an order granting temporary injunctive relief.",
+        "injunction_issued_against_state": "The court issued the injunction against the State as a defendant.",
+        "state_disobeyed_order": "The State disobeyed the injunction.",
+        "state_is_within_persons_covered": "The State is among the persons against whom the enforcement procedure may be used."
+      },
+      "definition": "The State is covered by the enforcement procedure when an injunction is issued against it as defendant and it disobeys that order."
+    },
+    {
+      "legal_issue": "An authenticated executive notification issued by a subordinate officer in the Governor’s name may be treated as an act of the State for purposes of determining responsibility for disobedience.",
+      "material_facts": [
+        "The notification was made in the Governor’s name and authenticated by an Additional Secretary to the Government.",
+        "The statute conferred the relevant notification power on the State Government.",
+        "The State did not dispute the notification’s validity as a government order but argued that the respondent had not proved that the Governor personally authorised it."
+      ],
+      "conclusion": "The notification was attributable to the State; the State could not avoid responsibility on the ground that the Governor had not personally issued it.",
+      "legal_principle": "Articles 154(1) and 166(1)–(2) distinguish the exercise of executive power through subordinate officers from the manner in which an order is expressed and authenticated. An authenticated order made in the Governor’s name cannot be challenged on the ground that it was not made or executed by the Governor, and the Governor remains responsible for subordinate action taken in his name. The Court relied on King Emperor v. Sibnath Banerji.",
+      "rule": {
+        "if": "temporary_injunction_enforcement and official_act_taken_under_state_authority and act_authenticated_in_governor_name",
+        "then": "official_act_attributable_to_state"
+      },
+      "predicates": {
+        "temporary_injunction_enforcement": "A party sought enforcement of an order granting temporary injunctive relief.",
+        "official_act_taken_under_state_authority": "An official acted under authority vested in the State Government.",
+        "act_authenticated_in_governor_name": "The official act was expressed in the Governor’s name and authenticated in the prescribed manner.",
+        "official_act_attributable_to_state": "The official act is attributable to the State for purposes of responsibility for disobedience."
+      },
+      "definition": "An official act taken under State authority and authenticated in the Governor’s name is attributable to the State in enforcement proceedings."
+    }
+  ],
+  "seconds": 21.8
+}

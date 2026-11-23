@@ -1,0 +1,79 @@
+{
+  "doc_id": "1984005",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20484,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2018,
+    "prompt_tokens": 5608,
+    "total_tokens": 7626,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The required immediate deposit and timely payment of the purchase price at an execution sale of immovable property are mandatory, and failure to comply leaves no sale or right in the property for the defaulting purchaser.",
+      "material_facts": [
+        "In an execution sale, mortgagees purchased three lots of immovable property.",
+        "The purchasers had no decree on their mortgage, and their mortgage claim had not been adjudicated.",
+        "The purchasers did not make the required immediate deposit or pay the balance within the prescribed period; instead, they obtained an unauthorized set-off based on their mortgage claim.",
+        "The property was later deposited for only after the prescribed period had expired."
+      ],
+      "conclusion": "The payment requirements were mandatory; because they were not met, there was no sale in law and the purchasers acquired no rights in the property.",
+      "legal_principle": "Order XXI, rules 84 and 85, require the immediate deposit and timely payment of the purchase price; rule 86 requires resale on default and provides that the defaulting purchaser forfeits any claim to the property. The Court relied on Munshi Md. Ali Meah v. Kibria Khatun, Sm. Annapurna Dasi v. Bazley Karim Fazley Moula, Nawal Kishore v. Buttu Mal, Haji Inam Ullah v. Mohammad Idris, and A. R. Davar v. Jhinda Ram. It rejected the contrary directory-rule observation in Nathu Mal v. Malawa Mal and distinguished Bhim Singh v. Sarwan Singh.",
+      "rule": {
+        "if": "execution_auction_case and immovable_property_sold and purchaser_failed_required_payments",
+        "then": "defaulting_purchaser_acquires_no_rights"
+      },
+      "predicates": {
+        "execution_auction_case": "The property was sold in proceedings to enforce a decree.",
+        "immovable_property_sold": "The property sold at the execution auction was immovable property.",
+        "purchaser_failed_required_payments": "The purchaser did not make the required immediate deposit and timely payment of the purchase price."
+      },
+      "definition": "When immovable property is sold at an execution auction and the purchaser fails to make the required payments, the purchaser acquires no rights in the property."
+    },
+    {
+      "legal_issue": "A decree-holder's purchase of property at an execution sale without the court's express permission is not automatically void, although the court may set it aside on an affected person's application.",
+      "material_facts": [
+        "The Court considered the construction of the rule governing a decree-holder's purchase at an execution sale.",
+        "The purchasers in this case were mortgagees, not decree-holders, and had no decree on their mortgage."
+      ],
+      "conclusion": "The restriction on a decree-holder purchasing without permission is directory; if the decree-holder purchases without permission, the court may set aside the sale on an application by the judgment-debtor or another person whose interests are affected.",
+      "legal_principle": "Order XXI, rule 72, prohibits a decree-holder from bidding for or purchasing property in execution of that decree without express court permission. It permits a set-off when the decree-holder purchases with permission, and gives the court discretion to set aside a purchase made without permission on an affected person's application. The Court relied on Rai Radha Krishna v. Bisheshar Sahai in treating the provision as directory.",
+      "rule": {
+        "if": "execution_auction_case and decree_holder_bought_execution_property and not express_permission_obtained and affected_person_applied",
+        "then": "court_may_set_aside_sale"
+      },
+      "predicates": {
+        "execution_auction_case": "The property was sold in proceedings to enforce a decree.",
+        "decree_holder_bought_execution_property": "The holder of the decree being enforced purchased the property at the execution sale.",
+        "express_permission_obtained": "The decree-holder obtained the court's express permission to bid for or purchase the property.",
+        "affected_person_applied": "The judgment-debtor or another person whose interests were affected applied to set aside the sale."
+      },
+      "definition": "If a decree-holder buys property at an execution auction without express permission and an affected person applies, the court may set aside the sale."
+    },
+    {
+      "legal_issue": "The court's inherent powers cannot be used to excuse a purchaser's failure to meet mandatory payment requirements at an execution sale.",
+      "material_facts": [
+        "The purchasers sought to rely on a set-off for a mortgage claim that had not been adjudicated and for which they had no decree.",
+        "The execution court allowed the set-off, although the purchasers had not made the required deposit or paid the balance within the prescribed period.",
+        "The purchasers argued that the court could allow the set-off through its inherent powers."
+      ],
+      "conclusion": "The court's inherent powers could not be invoked to circumvent the mandatory payment requirements or relieve the purchasers of their obligation to pay.",
+      "legal_principle": "Order XXI, rules 84 and 85, impose mandatory payment requirements, and rule 86 provides for resale when the purchaser defaults. Inherent powers cannot be used to circumvent those requirements or let a purchaser benefit from an unauthorized set-off; the Court also observed that the purchasers could not take advantage of a mistake to which they had contributed.",
+      "rule": {
+        "if": "execution_auction_case and purchaser_failed_required_payments and court_allowed_unearned_setoff",
+        "then": "inherent_powers_cannot_excuse_payment_default"
+      },
+      "predicates": {
+        "execution_auction_case": "The property was sold in proceedings to enforce a decree.",
+        "purchaser_failed_required_payments": "The purchaser did not make the required immediate deposit and timely payment of the purchase price.",
+        "court_allowed_unearned_setoff": "The court allowed the purchaser to reduce the purchase price by a claim that did not qualify for set-off."
+      },
+      "definition": "If an execution-auction purchaser fails to make the required payments and the court allows an unearned set-off, inherent powers cannot excuse the payment default."
+    }
+  ],
+  "seconds": 13.3
+}

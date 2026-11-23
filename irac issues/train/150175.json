@@ -1,0 +1,59 @@
+{
+  "doc_id": "150175",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33191,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1928,
+    "prompt_tokens": 8777,
+    "total_tokens": 10705,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord cannot lawfully increase rent except in the manner prescribed by the rent-control statute.",
+      "material_facts": [
+        "The courts found that the lawful rent was Rs.55 per month, but the tenant paid Rs.65 per month after the landlord increased the rent without following the statutory procedure.",
+        "The tenant paid the increased rent under threat of eviction."
+      ],
+      "conclusion": "The increase from the lawful rent was unlawful, and the landlord was entitled to recover no more than the lawful rent.",
+      "legal_principle": "Section 4 of the Bihar Building (Lease, Rent and Eviction) Control Act, beginning with a non-obstante clause, absolutely prohibits an increase or claim to increase rent except in accordance with the Act; the parties cannot contract out of that prohibition.",
+      "rule": {
+        "if": "rent_control_dispute and landlord_increased_rent_without_required_procedure",
+        "then": "unauthorized_rent_increase_is_unlawful"
+      },
+      "predicates": {
+        "rent_control_dispute": "The proceeding concerns rent payable for a tenancy governed by rent-control law.",
+        "landlord_increased_rent_without_required_procedure": "The landlord increased or claimed an increase in rent without following the procedure required by law."
+      },
+      "definition": "When a rent-control dispute involves a landlord increasing rent without following the required procedure, that increase is unlawful."
+    },
+    {
+      "legal_issue": "Excess rent paid after an unlawful rent increase does not automatically offset later rent arrears so as to defeat eviction for default.",
+      "material_facts": [
+        "The tenant had paid rent exceeding the lawful rent after an unlawful increase.",
+        "The tenant later defaulted on rent, and the courts found him in arrears.",
+        "The tenant did not claim adjustment of the excess payment in response to the notice to quit, in the written statement, or through another writing, and there was no agreement to adjust it against later rent.",
+        "The proceeding sought eviction on the ground of rent default."
+      ],
+      "conclusion": "The tenant could not automatically adjust the excess rent against later arrears or avoid eviction on that basis; the appeal was dismissed. A tenant may seek adjustment by specifically claiming it, including by way of set-off in accordance with the applicable procedure.",
+      "legal_principle": "The Bihar Building (Lease, Rent and Eviction) Control Act contains no provision for automatic adjustment of excess rent, and automatic adjustment is not countenanced under the general law. The Court approved Gulab Chand Prasad v. Budhwanti and Nune Panduranga Rao v. Divvala Gopala Rao, and distinguished Mohd. Salimuddin v. Misri Lal and M/s Sarwan Kumar Onkar Nath v. Subhas Kumar Agarwalla because those cases involved an agreement for adjustment or a claim invoking such an agreement. Budhwanti v. Gulab Chand Prasad had approved the Full Bench decision in Gulab Chand Prasad.",
+      "rule": {
+        "if": "rent_default_eviction_proceeding and excess_rent_paid_after_illegal_enhancement and rent_default_established and no_adjustment_agreement and no_specific_setoff_claim",
+        "then": "tenant_cannot_avoid_eviction_by_automatic_offset"
+      },
+      "predicates": {
+        "rent_default_eviction_proceeding": "The proceeding seeks eviction of a tenant on the ground of default in paying rent.",
+        "excess_rent_paid_after_illegal_enhancement": "The tenant paid rent exceeding the lawful rent after an unlawful increase.",
+        "rent_default_established": "The tenant was found to have failed to pay rent that had fallen due.",
+        "no_adjustment_agreement": "The landlord and tenant did not agree that the excess payment would be applied to later rent.",
+        "no_specific_setoff_claim": "The tenant did not specifically seek adjustment of the excess payment against arrears through a claim made at a relevant stage of the proceeding."
+      },
+      "definition": "When a tenant in a rent-default eviction proceeding has paid excess rent after an unlawful increase, is in default, and neither has an adjustment agreement nor specifically claims a set-off, the tenant cannot avoid eviction by relying on an automatic offset."
+    }
+  ],
+  "seconds": 12.7
+}

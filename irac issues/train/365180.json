@@ -1,0 +1,57 @@
+{
+  "doc_id": "365180",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 4538,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1157,
+    "prompt_tokens": 1570,
+    "total_tokens": 2727,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An amount of agricultural income-tax may be deducted in determining compensation only when it has been finally assessed, not while the assessment remains under appeal.",
+      "material_facts": [
+        "Compensation was being assessed under a statutory scheme that allowed deduction for agricultural income-tax paid or payable for the previous agricultural year.",
+        "The recipients appealed the tax assessment, and the appellate authority set it aside and remanded the matter for a fresh assessment.",
+        "The State argued that the amount assessed by the first authority had to be used despite the pending appeal."
+      ],
+      "conclusion": "The tax amount to be taken into account is the amount finally assessed, not an amount that remains under appeal; the compensation assessment was to be redetermined in light of the eventual tax assessment.",
+      "legal_principle": "Section 44(b) of the U.P. Zamindari Abolition and Land Reforms Act, 1950, read with Rules 37(A) and 38, contemplates deduction of agricultural income-tax that has been finally assessed. Rule 38's requirement to report tax assessed does not make an assessment under appeal conclusive for compensation purposes.",
+      "rule": {
+        "if": "compensation_assessment_case and agricultural_tax_assessment_under_appeal",
+        "then": "only_finally_assessed_tax_is_counted"
+      },
+      "predicates": {
+        "compensation_assessment_case": "A compensation assessment is being made under a scheme that permits a deduction for agricultural income-tax paid or payable for a previous year.",
+        "agricultural_tax_assessment_under_appeal": "The relevant agricultural income-tax assessment remains under appeal rather than being final."
+      },
+      "definition": "When compensation is being assessed and the relevant agricultural tax assessment remains under appeal, only tax that has been finally assessed is counted."
+    },
+    {
+      "legal_issue": "Accepting compensation under protest and without prejudice does not make the compensation determination final or estop a recipient from challenging it.",
+      "material_facts": [
+        "The recipients did not file objections to the compensation assessed and accepted the compensation paid under protest and without prejudice.",
+        "Government circulars directed compensation officers to await the outcome of references and appeals against the agricultural tax assessments before finalising compensation.",
+        "The State argued that the lack of objections and acceptance of payment made the compensation final and barred a challenge."
+      ],
+      "conclusion": "The compensation had not become final, and its acceptance under protest and without prejudice did not estop the recipients from challenging it.",
+      "legal_principle": "A payment accepted under protest and without prejudice is not an unconditional acceptance that bars a challenge. Where government circulars direct officers to await related tax proceedings, the compensation is not final while those proceedings remain unresolved.",
+      "rule": {
+        "if": "compensation_assessment_case and government_directed_wait_for_tax_appeals and compensation_accepted_under_protest",
+        "then": "conditional_acceptance_does_not_finalize_compensation_or_estop_challenge"
+      },
+      "predicates": {
+        "compensation_assessment_case": "A compensation assessment is being made while a related agricultural tax assessment may affect the amount.",
+        "government_directed_wait_for_tax_appeals": "The government directed compensation officers to wait for the outcome of related tax references or appeals before finalising compensation.",
+        "compensation_accepted_under_protest": "The recipient accepted the compensation payment expressly under protest and without prejudice."
+      },
+      "definition": "If compensation is being assessed, the government directed officers to await related tax appeals, and the recipient accepted payment conditionally, that acceptance does not make the compensation final or bar a challenge."
+    }
+  ],
+  "seconds": 8.6
+}

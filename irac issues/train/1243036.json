@@ -1,0 +1,83 @@
+{
+  "doc_id": "1243036",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20154,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1948,
+    "prompt_tokens": 5690,
+    "total_tokens": 7638,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "When a testamentary fund is directed to serve two purposes without allocating amounts, fulfilment of one purpose leaves an equal share of the fund to fall into the residue.",
+      "material_facts": [
+        "The will directed the sale of property and use of its proceeds for a marriage and for construction of a religious building, without allocating any part of the proceeds to either purpose.",
+        "The marriage had been celebrated during the testator’s lifetime, and the testator had paid its expenses, so no part of the fund was needed for that purpose.",
+        "The will gave the residue to the testator’s wife, who died before the testator."
+      ],
+      "conclusion": "The purposes were to be funded in equal shares. The share for the already-fulfilled purpose fell into the residue; because the residuary legatee died before the testator, that share passed on intestacy to the testator’s nearest heirs.",
+      "legal_principle": "Applying the rule against importing the technical English doctrine of joint tenancy into the construction of a Hindu will, as discussed in Jogeshwar Narain Deo v. Ram Chund Dutt, an unallocated fund for two purposes is presumed to be divided equally. A share for a purpose that has already been fulfilled falls into the residue. Under section 105 of the Indian Succession Act, 1925, a legacy to a person who does not survive the testator lapses unless the will indicates that it should go to another person; a lapsed residuary gift leaves that property to pass on intestacy.",
+      "rule": {
+        "if": "will_dispute and testamentary_fund_for_two_purposes and no_allocation_between_purposes and one_purpose_fulfilled_before_testator_death and residuary_recipient_predeceased_testator",
+        "then": "failed_purpose_share_passes_to_intestate_heirs"
+      },
+      "predicates": {
+        "will_dispute": "The proceeding concerns the distribution of property under a will.",
+        "testamentary_fund_for_two_purposes": "The testator directed that a fund be used for two distinct purposes.",
+        "no_allocation_between_purposes": "The will did not specify how the fund was to be divided between the purposes.",
+        "one_purpose_fulfilled_before_testator_death": "One purpose was completed before the testator died, leaving no expense to be paid for it from the fund.",
+        "residuary_recipient_predeceased_testator": "The person designated to receive the residue died before the testator."
+      },
+      "definition": "When a will directs an unallocated fund to two purposes, one purpose is fulfilled before the testator dies, and the residuary recipient has predeceased the testator, the share for the fulfilled purpose passes to the intestate heirs."
+    },
+    {
+      "legal_issue": "A testamentary charitable direction remains effective when the person appointed to carry it out dies before the testator.",
+      "material_facts": [
+        "The will directed that part of the proceeds from a property sale be used to construct a religious building.",
+        "The testator’s wife was directed to sell the property and apply the proceeds but had no beneficial interest in that property.",
+        "The wife died before the testator."
+      ],
+      "conclusion": "The wife’s death did not extinguish the charitable trust. The share of the fund allocated to construction of the religious building remained subject to the direction and had to be applied to that purpose.",
+      "legal_principle": "A person appointed merely to sell property and apply its proceeds to a specified purpose does not thereby acquire a beneficial interest in the property. The charitable trust created for construction of the religious building was not extinguished by that person’s death. The Court also relied on the principle in Jogeshwar Narain Deo v. Ram Chund Dutt that technical English joint-tenancy rules should not be imported into the construction of a Hindu will.",
+      "rule": {
+        "if": "will_dispute and testamentary_charitable_direction and appointed_person_has_no_beneficial_interest and appointed_person_predeceased_testator",
+        "then": "charitable_direction_remains_enforceable"
+      },
+      "predicates": {
+        "will_dispute": "The proceeding concerns the distribution or application of property under a will.",
+        "testamentary_charitable_direction": "The will directs property or funds to be applied to a charitable purpose.",
+        "appointed_person_has_no_beneficial_interest": "The person assigned to deal with the property is directed only to apply it to the specified purpose and is not given a beneficial interest in it.",
+        "appointed_person_predeceased_testator": "The person assigned to carry out the direction died before the testator."
+      },
+      "definition": "A charitable direction remains enforceable when the person assigned to apply the property has no beneficial interest and dies before the testator."
+    },
+    {
+      "legal_issue": "A remainder gift following an absolute gift to a legatee who predeceases the testator may take effect by acceleration without an express direction addressing that contingency.",
+      "material_facts": [
+        "The will gave the testator’s wife an absolute interest in property, including powers of disposition, and directed that whatever remained after her death should pass to other named beneficiaries or their descendants.",
+        "The wife died during the testator’s lifetime.",
+        "The will did not expressly address what should happen to the later gift if the wife died before the testator."
+      ],
+      "conclusion": "The gift of the property remaining after the wife’s death to the subsequent beneficiaries was accelerated. The testator’s nearest heirs were not entitled to a share of that property.",
+      "legal_principle": "Section 105(1) of the Indian Succession Act, 1925, provides for lapse if a legatee does not survive the testator, unless the will indicates that the legacy should go to another person. The necessary intention need not be expressed in an express direction addressing the contingency of predeceasing the testator. Where there are successive limitations, failure of the earlier gift may accelerate the later gift, as illustrated by Lowman Devenish v. Pester and In re Dunstan, Dunstan v. Dunstan. Browne v. Hope was considered but did not establish that exclusion of lapse must be express.",
+      "rule": {
+        "if": "will_dispute and successive_testamentary_gifts and first_gift_is_absolute and first_gift_recipient_predeceased_testator and will_identifies_later_gift_recipient",
+        "then": "later_gift_is_accelerated"
+      },
+      "predicates": {
+        "will_dispute": "The proceeding concerns the distribution of property under a will.",
+        "successive_testamentary_gifts": "The will provides for a gift to one person followed by a gift of what remains to another person.",
+        "first_gift_is_absolute": "The first recipient is given an absolute interest with powers of disposition.",
+        "first_gift_recipient_predeceased_testator": "The first recipient died before the testator.",
+        "will_identifies_later_gift_recipient": "The will identifies a subsequent recipient of property remaining after the first recipient’s interest."
+      },
+      "definition": "When a will makes successive gifts, the first gift is absolute, its recipient dies before the testator, and the will identifies a later recipient, the later gift takes effect earlier than it otherwise would."
+    }
+  ],
+  "seconds": 12.7
+}

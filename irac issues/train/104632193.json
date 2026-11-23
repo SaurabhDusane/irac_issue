@@ -1,0 +1,60 @@
+{
+  "doc_id": "104632193",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11854,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2567,
+    "prompt_tokens": 3391,
+    "total_tokens": 5958,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory presumption in a dowry-death prosecution is unavailable unless the prosecution establishes every essential element of the offence, including an abnormal death and cruelty or harassment for dowry soon before death.",
+      "material_facts": [
+        "The deceased died within seven years of marriage, but the forensic examination of her bones and ashes detected no poison, and the court found no other evidence establishing an unnatural death.",
+        "The only evidence of a dowry demand concerned money sought about a year before the death; evidence indicated that money used to buy a plot had been withdrawn from the husband’s bank account.",
+        "The court found that the evidence did not establish a dowry demand or related cruelty soon before the death."
+      ],
+      "conclusion": "The prosecution had not established the essential elements required for the statutory presumption, and the evidence failed the proximity test; the presumption was therefore unavailable.",
+      "legal_principle": "Section 304B of the Indian Penal Code requires a death by burns or bodily injury, or otherwise than under normal circumstances, within seven years of marriage, and proof that the woman was subjected to cruelty or harassment by her husband or his relatives for dowry soon before death. Under Section 113B of the Evidence Act, the presumption is unavailable if any essential ingredient is not established. As explained in Suresh Kumar Singh v. State of Uttar Pradesh (2009) 17 SCC 243, whether conduct occurred “soon before” death depends on the facts; the demand must not be too late or stale and must satisfy the proximity test.",
+      "rule": {
+        "if": "dowry_death_conviction_appeal and (not abnormal_death_proved or not marriage_within_seven_years or not dowry_cruelty_soon_before_death_proved)",
+        "then": "statutory_dowry_death_presumption_unavailable"
+      },
+      "predicates": {
+        "dowry_death_conviction_appeal": "The case is an appeal from a conviction for a dowry-related death offence.",
+        "abnormal_death_proved": "The prosecution established that the woman died by burns or bodily injury, or otherwise than under normal circumstances.",
+        "marriage_within_seven_years": "The woman died within seven years of her marriage.",
+        "dowry_cruelty_soon_before_death_proved": "The prosecution established that the woman was subjected to dowry-related cruelty or harassment shortly before her death."
+      },
+      "definition": "In an appeal from a dowry-death conviction, if any essential circumstance of the death, timing of the marriage, or proximate dowry-related cruelty is unproved, the statutory presumption is unavailable."
+    },
+    {
+      "legal_issue": "A conviction cannot stand where the evidence against the accused is materially undermined by contradictions in key witnesses’ accounts and does not establish the prosecution’s essential case.",
+      "material_facts": [
+        "The prosecution witnesses who were the deceased’s brother and father said in court that they had received no information about the death and had not made the police statements attributed to them.",
+        "A police officer testified that he had recorded those statements, in which the witnesses had said they were present at the cremation.",
+        "The court considered that, even if no police statements had been recorded, the witnesses’ accounts first given in court had limited evidentiary value.",
+        "The evidence against the appellant was almost identical to that against relatives who had been acquitted, and the court found the essential elements of the prosecution case unproved."
+      ],
+      "conclusion": "On the cumulative evidence, the appellant’s conviction was set aside and he was acquitted.",
+      "legal_principle": "The court assessed the evidence cumulatively. It treated the police officer’s evidence as contradicting the witnesses’ denial of their statements under Section 161 of the Code of Criminal Procedure, and observed that, if their accounts had first been given in court, they would have had much reduced evidentiary value. The court also considered the similarity between the evidence against the appellant and the evidence against relatives acquitted of the same charge.",
+      "rule": {
+        "if": "criminal_appeal_from_dowry_death_conviction and key_witness_accounts_contradicted_by_police_evidence and essential_prosecution_elements_unproved",
+        "then": "conviction_set_aside_and_acquittal"
+      },
+      "predicates": {
+        "criminal_appeal_from_dowry_death_conviction": "The case is a criminal appeal from a conviction for a dowry-related death offence.",
+        "key_witness_accounts_contradicted_by_police_evidence": "Key witnesses gave accounts in court that conflicted with police statements, and a police officer testified about recording those statements.",
+        "essential_prosecution_elements_unproved": "The evidence did not establish essential elements of the prosecution’s case."
+      },
+      "definition": "When an appeal from a dowry-death conviction involves key witness accounts contradicted by police evidence and the essential prosecution elements remain unproved, the conviction is set aside and the accused is acquitted."
+    }
+  ],
+  "seconds": 17.2
+}

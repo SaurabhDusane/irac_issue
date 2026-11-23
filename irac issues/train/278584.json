@@ -1,0 +1,84 @@
+{
+  "doc_id": "278584",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21915,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2150,
+    "prompt_tokens": 6147,
+    "total_tokens": 8297,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Without a registered instrument, a lease for a term exceeding one year cannot be extended for another fixed term, and continued possession accepted by the lessor creates a month-to-month tenancy.",
+      "material_facts": [
+        "The original lease was for ten years and included an option to renew for a further five years.",
+        "After the ten-year term expired, no fresh registered instrument was executed, but the lessee and sublessee remained in possession and rent was accepted from month to month.",
+        "The property was not leased for agricultural purposes."
+      ],
+      "conclusion": "The original tenancy ended when its ten-year term expired. In the absence of a registered instrument extending it for a fixed term, the parties’ subsequent relationship was a month-to-month tenancy by holding over.",
+      "legal_principle": "Under sections 107 and 116 of the Transfer of Property Act, 1882, a lease for a term exceeding one year can be made only by a registered instrument; where the lessee remains in possession and the lessor accepts rent after the lease ends, the resulting tenancy is renewed according to section 106. Reading sections 107 and 116 together, the absence of a registered instrument means the tenancy here was from month to month, not an extension for the optional fixed term.",
+      "rule": {
+        "if": "lease_duration_status_dispute and original_lease_required_registration and no_registered_extension and possession_continued_with_rent_acceptance and non_agricultural_use",
+        "then": "tenancy_is_month_to_month_after_expiry"
+      },
+      "predicates": {
+        "lease_duration_status_dispute": "The case concerns the duration of a tenancy after an original lease term has ended.",
+        "original_lease_required_registration": "The original lease was for a term exceeding one year.",
+        "no_registered_extension": "The parties did not execute a registered instrument extending the lease for a further fixed term.",
+        "possession_continued_with_rent_acceptance": "The tenant remained in possession after the original term ended, and the landlord accepted rent.",
+        "non_agricultural_use": "The property was used for a purpose other than agriculture."
+      },
+      "definition": "When a dispute concerns the tenancy after a lease requiring registration has ended, no registered extension was made, possession continued with rent accepted, and the property was used for a non-agricultural purpose, the resulting tenancy is month to month."
+    },
+    {
+      "legal_issue": "A notice terminating a month-to-month tenancy is construed as a whole and in the context of the facts and the parties to whom it is addressed.",
+      "material_facts": [
+        "After the fixed lease term expired, the tenancy continued from month to month.",
+        "The landlord sent the termination notice to the lessee, not separately to the sublessee.",
+        "Different paragraphs of the notice referred to surrender on the expiry of one day and delivery of possession on the following day, while also requiring removal of structures and other property.",
+        "Read together, the paragraphs directed the lessee to hand over the property on the stated termination date."
+      ],
+      "conclusion": "Read as a whole and in context, the notice validly terminated the tenancy.",
+      "legal_principle": "Section 106 of the Transfer of Property Act, 1882 governs termination of the tenancy by notice. Under Harihar Banerji v. Ramasashi Roy, a notice is construed in light of the facts and circumstances known to the tenant and with a view to making it effective rather than finding defects. Mangilal v. Suganchand Rathi applied the requirement that a section 106 notice comply with the applicable notice period; the Court distinguished that case because the notice there did not provide the required clear notice period. The Court also referred to Subadini v. Durga Charan Law and Gobinda Chandra Saha v. Dwarka Nath Patita on calculating the notice period.",
+      "rule": {
+        "if": "notice_validity_dispute and month_to_month_tenancy and notice_sent_to_tenant and notice_paragraphs_read_together_identify_surrender_date",
+        "then": "termination_notice_is_effective"
+      },
+      "predicates": {
+        "notice_validity_dispute": "The case concerns whether a notice terminated a tenancy.",
+        "month_to_month_tenancy": "The tenancy continued from month to month after the fixed lease term ended.",
+        "notice_sent_to_tenant": "The landlord sent the termination notice to the tenant.",
+        "notice_paragraphs_read_together_identify_surrender_date": "The notice contained directions in multiple paragraphs which, read together, identified when the tenant was to surrender the property."
+      },
+      "definition": "If a termination notice is disputed in a case involving a month-to-month tenancy, was sent to the tenant, and its paragraphs read together identify when the property is to be surrendered, the notice is effective."
+    },
+    {
+      "legal_issue": "A sublessee need not be joined to a possession suit against the lessee when the lease has been validly terminated by notice served on the lessee, and the resulting decree may bind the sublessee.",
+      "material_facts": [
+        "The landlord brought a suit for possession against the lessee after serving the lessee with a notice that validly terminated the tenancy.",
+        "The sublessee was not separately served with a termination notice and was not joined as a party to the suit.",
+        "The lessee did not contest the suit, and no collusion between the lessee and the landlord was alleged."
+      ],
+      "conclusion": "The sublessee did not need to be joined as a party, and the decree for possession would bind the sublessee.",
+      "legal_principle": "Under Roop Chand Gupta v. Raghuvanshi (Pvt.) Ltd., where a landlord sues the lessee for possession on the basis of a valid notice to quit served on the lessee, the law does not require the sublessee to be joined; the resulting decree may bind the sublessee. The Court applied that principle to the circumstances of this case.",
+      "rule": {
+        "if": "subtenant_binding_dispute and possession_suit_against_tenant and valid_notice_served_on_tenant and subtenant_not_joined and no_collusion_alleged",
+        "then": "possession_decree_binds_nonjoined_subtenant"
+      },
+      "predicates": {
+        "subtenant_binding_dispute": "The case concerns whether a possession decree affects a subtenant who was not joined in the suit.",
+        "possession_suit_against_tenant": "The landlord brought a suit for possession against the tenant.",
+        "valid_notice_served_on_tenant": "The landlord served the tenant with a notice terminating the tenancy.",
+        "subtenant_not_joined": "The subtenant was not made a party to the possession suit.",
+        "no_collusion_alleged": "No collusion between the landlord and tenant was alleged."
+      },
+      "definition": "When a landlord sues a tenant for possession after serving a valid termination notice, and the subtenant is not joined and no collusion is alleged, the possession decree binds the nonjoined subtenant."
+    }
+  ],
+  "seconds": 12.9
+}

@@ -1,0 +1,84 @@
+{
+  "doc_id": "131693",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16922,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2798,
+    "prompt_tokens": 4827,
+    "total_tokens": 7625,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A reviewing court should not disturb supported factual findings on a landlord’s bona fide need and comparative hardship absent sufficient grounds for interference.",
+      "material_facts": [
+        "The first appellate court found that the landlord reasonably and bona fide required the premises for personal occupation and that eviction would not cause hardship to the tenant.",
+        "The High Court affirmed those findings in revision.",
+        "The Supreme Court considered that the record permitted competing views but found no sufficient ground to upset the findings."
+      ],
+      "conclusion": "The Supreme Court rejected the challenge to the findings on bona fide requirement and comparative hardship and left them undisturbed.",
+      "legal_principle": "The revisional power under section 50 of the Mysore Rent Control Act, 1961 is wider than the power under section 115 of the Code of Civil Procedure, but does not make the High Court a second court of first appeal. Supported findings of fact are not to be disturbed without sufficient grounds for interference.",
+      "rule": {
+        "if": "eviction_appeal and first_appellate_court_made_factual_findings and high_court_affirmed_findings and record_permitted_competing_views and no_sufficient_ground_to_interfere",
+        "then": "factual_findings_left_undisturbed"
+      },
+      "predicates": {
+        "eviction_appeal": "The matter is an appeal in an eviction proceeding.",
+        "first_appellate_court_made_factual_findings": "The first appellate court made findings about the landlord’s need for the premises and the comparative hardship of eviction.",
+        "high_court_affirmed_findings": "The High Court affirmed the first appellate court’s findings in revision.",
+        "record_permitted_competing_views": "The evidence in the record permitted more than one view on the disputed factual matters.",
+        "no_sufficient_ground_to_interfere": "The record disclosed no sufficient ground for a further court to disturb the affirmed factual findings."
+      },
+      "definition": "When an eviction appeal concerns affirmed factual findings, the record permits competing views, and there is no sufficient ground to interfere, those findings remain undisturbed."
+    },
+    {
+      "legal_issue": "A notice terminating a month-to-month tenancy created by holding over must expire at the end of the correctly calculated tenancy month.",
+      "material_facts": [
+        "The lease was for one year and commenced on April 9, 1945; the lease document stated that possession was to be delivered on April 9, 1946.",
+        "The lease was not for a manufacturing purpose, and the tenant held over after the one-year term, creating a month-to-month tenancy.",
+        "The rent receipts and the fair-rent order supported tenancy months running from the tenth day of one month through the ninth day of the following month.",
+        "The landlord’s notice provided the required notice period but purported to terminate the tenancy on the eighth day, rather than at the end of the tenancy month."
+      ],
+      "conclusion": "The notice did not validly terminate the contractual tenancy because it did not expire at the end of the tenancy month.",
+      "legal_principle": "Under section 110 of the Transfer of Property Act, 1882, the date on which a lease term commences is excluded when computing its duration. The one-year term therefore ended on the corresponding date the following year, and the monthly tenancy created by holding over ran from the following day through the corresponding day of the next month. For a non-manufacturing lease held over under section 116, the resulting month-to-month tenancy is terminable under section 106 by fifteen days’ notice expiring with the tenancy month. Benoy Krishna Das v. Salsiccioni was applied in support of the calculation of the tenancy period.",
+      "rule": {
+        "if": "eviction_proceeding and nonmanufacturing_lease and tenant_held_over_after_fixed_term and monthly_tenancy_cycle_followed_term and notice_expired_before_tenancy_month_end",
+        "then": "notice_did_not_validly_terminate_tenancy"
+      },
+      "predicates": {
+        "eviction_proceeding": "The dispute concerns a landlord’s attempt to obtain eviction of a tenant.",
+        "nonmanufacturing_lease": "The lease was not granted for a manufacturing purpose.",
+        "tenant_held_over_after_fixed_term": "The tenant remained in possession after the fixed lease term ended.",
+        "monthly_tenancy_cycle_followed_term": "After the fixed term, the tenancy months ran from the day after the term ended through the corresponding day of the following month.",
+        "notice_expired_before_tenancy_month_end": "The landlord’s notice purported to end the tenancy before the correctly calculated end of a tenancy month."
+      },
+      "definition": "In an eviction proceeding, when a tenant holds over under a non-manufacturing lease and the notice expires before the end of the resulting monthly tenancy period, the notice does not validly terminate the tenancy."
+    },
+    {
+      "legal_issue": "A contractual tenant cannot be treated as a statutory tenant for eviction unless the contractual tenancy has first been terminated by a valid notice or another legally effective mode of termination.",
+      "material_facts": [
+        "The tenant remained in possession under a contractual tenancy after the original fixed term and thereafter held over as a monthly tenant.",
+        "The landlord relied on a notice that did not validly terminate the tenancy and argued that the tenant was a statutory tenant for whose eviction no notice was required.",
+        "The Supreme Court held that the tenant would become a statutory tenant only if the tenant continued in possession after termination of the contractual tenancy."
+      ],
+      "conclusion": "The landlord could not treat the tenant as a statutory tenant or seek eviction on that basis without first terminating the contractual tenancy validly.",
+      "legal_principle": "Under section 111 of the Transfer of Property Act, 1882, a contractual tenancy must be terminated by a valid notice or another mode of termination specified in that section before the tenant can be treated as a statutory tenant on the basis of continued possession after termination. A notice is not required where the lease determines by efflux of the time limited by it. Ganga Dutt Murarka v. Kartik Chandra Das and Pooran Chand v. Motilal were considered but did not support the landlord’s argument; Ganga Dutt Murarka quoted with approval the relevant passage from Kai Khushroo Bezonee Capadia v. Bai Jerbai Hirjibhoy Warden.",
+      "rule": {
+        "if": "eviction_proceeding and tenant_remains_under_contractual_tenancy and landlord_claims_statutory_tenant_status and contractual_tenancy_not_validly_terminated",
+        "then": "statutory_tenant_status_unavailable"
+      },
+      "predicates": {
+        "eviction_proceeding": "The landlord is seeking eviction of a tenant.",
+        "tenant_remains_under_contractual_tenancy": "The tenant remains in possession under a contractual tenancy that has not yet ended.",
+        "landlord_claims_statutory_tenant_status": "The landlord seeks to treat the tenant as a statutory tenant for the purpose of eviction.",
+        "contractual_tenancy_not_validly_terminated": "The contractual tenancy has not been terminated by a valid notice or another legally effective mode of termination."
+      },
+      "definition": "When a landlord seeks eviction by treating a tenant as a statutory tenant, but the contractual tenancy has not been validly terminated, that status is unavailable as a basis for eviction."
+    }
+  ],
+  "seconds": 17.4
+}

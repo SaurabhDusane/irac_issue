@@ -1,0 +1,99 @@
+{
+  "doc_id": "71246029",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43903,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2427,
+    "prompt_tokens": 10849,
+    "total_tokens": 13276,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "One-sided apartment terms that impose a minimal remedy for substantial delay in possession constitute an unfair trade practice and do not prevent a consumer from seeking a refund instead of accepting late possession.",
+      "material_facts": [
+        "The agreement set a possession deadline of 42 months from the specified trigger date, with an additional 180-day grace period.",
+        "For delay beyond that period, the agreement provided only a small monthly payment per square foot, described as full and final settlement, and barred other claims.",
+        "The occupancy certificate and possession notice came substantially after the contractual deadline, and the consumer sought a refund rather than possession.",
+        "The Commission found the agreement terms one-sided and directed a refund."
+      ],
+      "conclusion": "The agreement's one-sided terms were unfair, the consumer was not bound to accept late possession, and the consumer could seek a refund with interest.",
+      "legal_principle": "Under Section 2(r) of the Consumer Protection Act, 1986, one-sided and unreasonable standard-form terms imposed on purchasers with no meaningful choice may constitute an unfair trade practice. The consumer forum may grant just and reasonable compensation for deficient service without being confined to the agreement's delay-compensation rate. The Court applied Pioneer Urban Land and Infrastructure Ltd. v. Govindan Raghvan, and relied on Arifur Rahman Khan v. DLF Southern Homes Pvt. Ltd., NBCC (India) Ltd. v. Shri Ram Trivedi, DLF Home Developers Ltd. v. Capital Greens Flat Buyers Association, and IREO Grace Realtech (P) Ltd. v. Abhishek Khanna.",
+      "rule": {
+        "if": "consumer_service_dispute and one_sided_standard_form_terms and substantial_possession_delay and consumer_elects_refund",
+        "then": "consumer_may_reject_unfair_terms_and_obtain_refund"
+      },
+      "predicates": {
+        "consumer_service_dispute": "A purchaser brings a consumer-service dispute about a developer's performance of an apartment agreement.",
+        "one_sided_standard_form_terms": "The developer's agreement imposes materially unequal terms on purchasers who have no meaningful choice but to accept them.",
+        "substantial_possession_delay": "The developer fails to make possession available within the agreed period, including any applicable grace period.",
+        "consumer_elects_refund": "The consumer chooses a refund rather than accepting possession offered after the agreed time."
+      },
+      "definition": "When a purchaser brings a consumer-service dispute, faces one-sided standard-form terms and substantial possession delay, and elects a refund, the consumer may reject those terms and obtain a refund."
+    },
+    {
+      "legal_issue": "The consumer forum may order a refund with interest under the Consumer Protection Act even when real-estate remedies are also available under the Real Estate (Regulation and Development) Act.",
+      "material_facts": [
+        "The consumer brought the complaint before the consumer forum and sought only a refund with interest.",
+        "The developer argued that choosing the consumer forum meant the real-estate statute's remedies did not apply.",
+        "The consumer forum ordered the developer to return the money with interest for its failure to deliver possession as agreed."
+      ],
+      "conclusion": "The consumer forum had jurisdiction to order a refund with interest, and the remedies under the two statutes operate concurrently rather than excluding or contradicting one another.",
+      "legal_principle": "Section 14 of the Consumer Protection Act, 1986 authorizes an order returning the price or charges paid when a complaint about services is proved; Section 2(g) includes contractual shortcomings in the definition of deficiency. Section 18 of the Real Estate (Regulation and Development) Act, 2016 makes its remedies available without prejudice to other remedies, and Sections 79 and 88 do not bar a consumer-forum complaint. The Court applied Imperia Structures Ltd. v. Anil Patni and IREO Grace Realtech (P) Ltd. v. Abhishek Khanna, and relied on Pioneer Urban Land Infrastructure Ltd. v. Union of India for the concurrent-remedies principle.",
+      "rule": {
+        "if": "consumer_forum_proceeding and consumer_chooses_refund and developer_fails_to_deliver_as_agreed",
+        "then": "consumer_forum_may_order_refund_with_interest"
+      },
+      "predicates": {
+        "consumer_forum_proceeding": "The consumer brings a complaint before a consumer forum about a developer's service.",
+        "consumer_chooses_refund": "The consumer seeks return of the money paid rather than, or as an alternative to, possession.",
+        "developer_fails_to_deliver_as_agreed": "The developer does not deliver the apartment in accordance with the agreed terms."
+      },
+      "definition": "When a consumer brings a consumer-forum proceeding, chooses a refund, and the developer fails to deliver as agreed, the forum may order a refund with interest."
+    },
+    {
+      "legal_issue": "Interest on a refund must run from the dates the consumer paid the deposits when it is intended to provide restitution and compensation.",
+      "material_facts": [
+        "The consumer had paid the purchase price through multiple deposits made on different dates.",
+        "The consumer sought interest from the payment dates, while the Commission had ordered interest from the last deposit or the relevant possession date.",
+        "The Court found that interest from the later date would not provide restitution and modified the order."
+      ],
+      "conclusion": "Interest on the refund was payable from the date of each deposit.",
+      "legal_principle": "Interest intended to be both restitutionary and compensatory must account for the period during which each payment was held. The Court followed DLF Homes Panchkula Pvt. Ltd. v. DS Dhanda and modified the Commission's direction accordingly.",
+      "rule": {
+        "if": "consumer_refund_appeal and refund_ordered and multiple_deposits_made",
+        "then": "refund_interest_runs_from_each_deposit"
+      },
+      "predicates": {
+        "consumer_refund_appeal": "A consumer appeals the terms of a refund order in a consumer dispute.",
+        "refund_ordered": "The decision requires the developer to return money paid by the consumer.",
+        "multiple_deposits_made": "The consumer paid the money being refunded in deposits made on different dates."
+      },
+      "definition": "When a refund is ordered in a consumer-refund appeal and the consumer made multiple deposits, interest runs from each deposit."
+    },
+    {
+      "legal_issue": "A consumer forum's existing interest rate should not be enhanced when the rate awarded is fair and just on the facts of the case.",
+      "material_facts": [
+        "The Commission awarded interest at 9% per annum on the refund.",
+        "The consumer appealed seeking a higher rate of 24% per annum, and the developer also challenged the interest award.",
+        "The Court found the rate awarded fair and just and saw no reason to interfere with it."
+      ],
+      "conclusion": "The 9% interest rate was upheld, and the consumer's request for enhancement was rejected.",
+      "legal_principle": "The Court assessed the rate granted in light of whether it was fair and just in the circumstances and concluded there was no reason to interfere; no separate statutory rate was applied to enhance it.",
+      "rule": {
+        "if": "consumer_appeals_interest_rate and existing_interest_rate_is_fair_and_just",
+        "then": "existing_interest_rate_is_upheld"
+      },
+      "predicates": {
+        "consumer_appeals_interest_rate": "A consumer appeals a refund order seeking a change to the interest rate.",
+        "existing_interest_rate_is_fair_and_just": "The court finds the rate already awarded fair and just in the circumstances."
+      },
+      "definition": "When a consumer appeals the interest rate and the existing rate is fair and just, the existing rate is upheld."
+    }
+  ],
+  "seconds": 77.5
+}

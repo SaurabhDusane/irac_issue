@@ -1,0 +1,77 @@
+{
+  "doc_id": "195406685",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14931,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1540,
+    "prompt_tokens": 4309,
+    "total_tokens": 5849,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A sale transaction occurring after publication of the acquisition notification cannot be used to determine the market value of the acquired land.",
+      "material_facts": [
+        "The land was acquired under a notification published on 12 February 1988.",
+        "The claimants relied on a sale deed dated 27 December 1988 as a comparable transaction.",
+        "The High Court excluded the sale deed because it post-dated the acquisition notification."
+      ],
+      "conclusion": "The post-notification sale deed could not be considered in determining compensation for the acquired land.",
+      "legal_principle": "Under Section 23(1) of the Land Acquisition Act, 1894, market value is determined as of the date of publication of the Section 4(1) notification. Applying Kolkata Metropolitan Development Authority v. Gobinda Chandra Makal (2011) 9 SCC 207, a rise in market value after publication of the notification is not taken into account.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and sale_transaction_after_acquisition_notification",
+        "then": "exclude_post_notification_sale_from_market_value_assessment"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired through a compulsory acquisition process.",
+        "sale_transaction_after_acquisition_notification": "A party relies on a sale transaction that occurred after publication of the notification for the land acquisition."
+      },
+      "definition": "When compensation is being determined for acquired land and a relied-on sale occurred after the acquisition notification, the sale is excluded from the market-value assessment."
+    },
+    {
+      "legal_issue": "The deduction for development costs must reflect the circumstances of the acquired land and the comparable transaction, and a deduction of one-third was appropriate on these facts.",
+      "material_facts": [
+        "The High Court valued the acquired land by relying on a sale of a small plot of 9 marlas that had occurred about 56 months before the acquisition notification.",
+        "The High Court applied an annual escalation of 10% to that sale price and then deducted 67.5% for development.",
+        "The acquired land required development for construction of a warehouse.",
+        "The Supreme Court considered the 67.5% deduction too high in these circumstances and applied a one-third deduction."
+      ],
+      "conclusion": "The 67.5% deduction was reduced to one-third, resulting in compensation of Rs.4,43,258 per acre, with statutory benefits.",
+      "legal_principle": "Deductions from the price of a small developed plot to value undeveloped or underdeveloped land depend on the land’s nature and location, the area needed for roads and other facilities, and development expenses. Lal Chand v. Union of India (2009) 15 SCC 769 and Haryana State Agricultural Market Board v. Krishan Kumar (2011) 15 SCC 297 address those factors. Major General Kapil Mehra v. Union of India (2015) 2 SCC 262 discusses the usual one-third deduction and the circumstances that can justify a different deduction; Subh Ram v. State of Haryana (2010) 1 SCC 444 held that a 67% deduction was not improper on its facts. The Court applied a one-third deduction to this case.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and small_plot_sale_used_as_comparable and acquired_land_requires_development",
+        "then": "apply_one_third_development_deduction"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired through a compulsory acquisition process.",
+        "small_plot_sale_used_as_comparable": "The valuation relies on a sale of a small plot as a comparable transaction.",
+        "acquired_land_requires_development": "The acquired land requires development for the purpose for which it was acquired."
+      },
+      "definition": "When compensation is being determined using a small-plot sale and the acquired land requires development, the rule applied here uses a one-third development deduction."
+    },
+    {
+      "legal_issue": "Interest is not payable for the period of delay in preferring appeals after the review proceedings.",
+      "material_facts": [
+        "The claimants pursued review after withdrawing an earlier special leave petition with liberty to seek review.",
+        "They later filed the appeals that resulted in the Supreme Court modifying the compensation award.",
+        "The Court excluded interest for the period of delay in preferring those appeals."
+      ],
+      "conclusion": "The claimants were not entitled to interest for the period of delay in preferring the appeals from the review proceedings.",
+      "legal_principle": "The Court expressly excluded interest for the delay in preferring the appeals from review; the judgment does not cite a statutory provision or earlier case for this direction.",
+      "rule": {
+        "if": "appeal_from_review_proceeding and delay_in_preferring_appeal",
+        "then": "exclude_interest_for_appeal_delay"
+      },
+      "predicates": {
+        "appeal_from_review_proceeding": "A party brings an appeal after pursuing review of an earlier decision.",
+        "delay_in_preferring_appeal": "There is a period of delay in bringing the appeal after the review proceeding."
+      },
+      "definition": "When a party appeals after review and there was delay in bringing the appeal, interest is excluded for that delay."
+    }
+  ],
+  "seconds": 9.7
+}

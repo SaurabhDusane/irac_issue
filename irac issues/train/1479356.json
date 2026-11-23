@@ -1,0 +1,116 @@
+{
+  "doc_id": "1479356",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 69085,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4244,
+    "prompt_tokens": 17328,
+    "total_tokens": 21572,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person served only as a garnishee cannot be penalized for failing to comply with a garnishee notice unless that person is independently an assessee or an accountable person in default.",
+      "material_facts": [
+        "The appellant was a tenant who owed rent to the lessors and received a notice requiring payment of rent to the revenue authority toward estate duty owed by accountable persons.",
+        "After initially paying rent to the revenue authority, the appellant paid later rent to the lessors, and the Assistant Controller imposed a penalty for that conduct.",
+        "The appellant was not directly liable for the estate duty, and the applicable legislation did not deem a defaulting garnishee to be an assessee or an accountable person."
+      ],
+      "conclusion": "The penalty was outside the Assistant Controller’s power and was quashed.",
+      "legal_principle": "Under section 46(1) of the Income Tax Act, 1922, a penalty requires that the person penalized be an assessee and that the assessee be in default within the meaning of section 45. A garnishee’s payment under section 46(5A) discharges a debt owed to the taxpayer; it is not a sum made payable by the garnishee under the Act. Sections 73(5), 2(12A), 53 and 54 of the Estate Duty Act, 1953, do not deem a defaulting garnishee to be an accountable person in default. Unlike section 226(3)(x) of the Income Tax Act, 1961, the 1922 Act contains no such deeming provision.",
+      "rule": {
+        "if": "garnishee_penalty_proceeding and recipient_only_owes_money_to_accountable_person and recipient_is_not_directly_taxable_or_accountable",
+        "then": "penalty_cannot_be_imposed_on_garnishee"
+      },
+      "predicates": {
+        "garnishee_penalty_proceeding": "The proceeding sought to penalize a person for not following a notice to pay money held for or owed to another person toward that other person’s tax debt.",
+        "recipient_only_owes_money_to_accountable_person": "The person who received the notice owed the relevant money to an accountable person or held it on that person’s behalf.",
+        "recipient_is_not_directly_taxable_or_accountable": "The recipient had no direct obligation for the tax debt and did not otherwise fall within the class of persons liable for it."
+      },
+      "definition": "When a penalty proceeding concerns a recipient who only owes money to an accountable person and is not independently liable for the tax debt, the recipient cannot be penalized merely for failing to comply with the garnishee notice."
+    },
+    {
+      "legal_issue": "A person accountable for estate duty because of an interest in, possession of, or intermeddling with property passing on death is accountable for duty on the entire estate, subject to the limit of assets received or that person could have received but for their own neglect or default.",
+      "material_facts": [
+        "The lessors took possession of and intermeddled with premises that formed part of the deceased’s estate.",
+        "The lessors claimed the premises through their asserted inheritance, and the assessment of estate duty had not been set aside at their instance.",
+        "The premises were an asset of the deceased’s estate received by the lessors."
+      ],
+      "conclusion": "The lessors were accountable for estate duty on the entire property passing on death, but their liability was limited to the relevant assets of the deceased that they received or could have received but for their own neglect or default.",
+      "legal_principle": "Section 53(1) of the Estate Duty Act, 1953, makes the persons described in its clauses accountable for the whole of the estate duty on the property passing on death, while limiting their liability to the deceased’s assets they actually received or might have received but for their own neglect or default. The Court relied on the wording of section 53(1), the joint and several liability in section 53(5), and the indemnity contemplated by section 76. The Court also applied the definitions of legal representative and accountable person in section 2(12) and section 2(12A).",
+      "rule": {
+        "if": "estate_duty_accountability_dispute and person_has_interest_in_or_intermeddles_with_passing_property",
+        "then": "person_is_accountable_for_whole_estate_duty_subject_to_received_assets_limit"
+      },
+      "predicates": {
+        "estate_duty_accountability_dispute": "The dispute concerns who is accountable for estate duty on property passing on a person’s death.",
+        "person_has_interest_in_or_intermeddles_with_passing_property": "The person has an interest in, takes possession of, or intermeddles with property that formed part of the deceased’s estate."
+      },
+      "definition": "In an estate-duty accountability dispute, a person who has an interest in or intermeddles with property passing on death is accountable for duty on the whole estate, but only up to the value of assets received or that could have been received but for that person’s neglect or default."
+    },
+    {
+      "legal_issue": "A garnishee notice may require payment of rent owed to accountable persons toward an estate-duty debt even if the notice describes the money as due to the estate and does not name the actual creditors.",
+      "material_facts": [
+        "The appellant owed rent under a lease of premises forming part of the deceased’s estate.",
+        "The lessors were accountable persons liable for estate duty, and the rent was payable to them.",
+        "The notice stated that estate duty was due from other accountable persons and required payment of money due or to become due to, or held for, the deceased’s estate.",
+        "The appellant paid some rent to the revenue authority under the notice, then paid later rent to the lessors."
+      ],
+      "conclusion": "The notice was valid, and the appellant was bound to pay to the Assistant Controller the rent due or becoming due under the lease to the extent required by the notice.",
+      "legal_principle": "Sections 73(5) of the Estate Duty Act, 1953, and 46(5A) of the Income Tax Act, 1922, permit a garnishee notice to reach money due or to become due to an accountable person. Because the lessors were accountable persons and the rent was an asset connected with the deceased’s estate, the rent could be described in substance as money due to the estate. Failure to name the lessors as the actual recipients of the rent did not invalidate the notice.",
+      "rule": {
+        "if": "estate_duty_garnishee_proceeding and recipient_is_accountable_person and garnishee_owes_rent_for_estate_property and notice_covers_money_due_to_estate",
+        "then": "garnishee_notice_is_valid_and_rent_must_be_paid_under_it"
+      },
+      "predicates": {
+        "estate_duty_garnishee_proceeding": "The proceeding seeks to collect an estate-duty debt by directing a third party to pay money held for or owed to an accountable person.",
+        "recipient_is_accountable_person": "The person to whom the garnishee owes money is accountable for estate duty.",
+        "garnishee_owes_rent_for_estate_property": "The garnishee owes rent to the accountable person for property that formed part of the deceased’s estate.",
+        "notice_covers_money_due_to_estate": "The notice requires payment of money due or to become due to, or held for, the deceased’s estate, even though it does not name the actual creditor."
+      },
+      "definition": "When a garnishee owes rent for estate property to an accountable person and a collection notice covers money due to the estate, the notice is valid and the rent must be paid under it."
+    },
+    {
+      "legal_issue": "A factual contention not raised in the writ proceeding or before the High Court cannot be raised for the first time on appeal.",
+      "material_facts": [
+        "The appellant contended on appeal that no notice of demand had been served on the lessors before the garnishee notice was issued.",
+        "That factual contention had not been raised in the writ petition or argued before the High Court."
+      ],
+      "conclusion": "The appellant could not raise the factual contention for the first time in the Supreme Court.",
+      "legal_principle": "A question of fact that was not raised in the writ petition or argued before the High Court cannot be agitated for the first time on appeal.",
+      "rule": {
+        "if": "appeal_from_writ_proceeding and factual_ground_not_raised_below",
+        "then": "new_factual_ground_cannot_be_considered_on_appeal"
+      },
+      "predicates": {
+        "appeal_from_writ_proceeding": "The matter is an appeal following a writ proceeding in a lower court.",
+        "factual_ground_not_raised_below": "The party first raises a factual contention on appeal that was not pleaded in the writ proceeding or argued in the lower court."
+      },
+      "definition": "In an appeal following a writ proceeding, a factual contention omitted below cannot be considered when first raised on appeal."
+    },
+    {
+      "legal_issue": "Garnishee proceedings to collect estate duty need not be preceded by a notice of demand to the accountable person.",
+      "material_facts": [
+        "The appellant argued that the garnishee notice was invalid because no notice of demand had been issued to the lessors.",
+        "The Court held that the issue did not require the accountable persons to be in default before garnishee proceedings could be taken.",
+        "The Court treated Third Income-Tax Officer, Mangalore v. M. Damodar Bhat, 71 ITR 806, as binding, while expressing the view that its reasoning was not correct."
+      ],
+      "conclusion": "A prior notice of demand to the accountable person was not a prerequisite to the garnishee proceeding.",
+      "legal_principle": "Applying sections 73(5) of the Estate Duty Act, 1953, and 46(5A) of the Income Tax Act, 1922, the Court followed Third Income-Tax Officer, Mangalore v. M. Damodar Bhat, 71 ITR 806. That decision, concerning the corresponding garnishee provision in section 226(3) of the Income Tax Act, 1961, held that the taxpayer need not be in default for garnishee action to be taken. The Court followed that decision as binding despite stating that it considered the view incorrect.",
+      "rule": {
+        "if": "garnishee_collection_proceeding and objection_is_absence_of_prior_demand",
+        "then": "prior_demand_is_not_required_for_garnishee_proceeding"
+      },
+      "predicates": {
+        "garnishee_collection_proceeding": "The proceeding seeks to collect a tax or estate-duty debt by requiring a third party to pay money held for or owed to the debtor.",
+        "objection_is_absence_of_prior_demand": "The challenged garnishee proceeding is said to be invalid because the debtor was not first served with a demand for payment."
+      },
+      "definition": "A garnishee collection proceeding is not invalid merely because the debtor was not first served with a demand for payment."
+    }
+  ],
+  "seconds": 25.6
+}

@@ -1,0 +1,97 @@
+{
+  "doc_id": "442398",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43480,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2757,
+    "prompt_tokens": 10542,
+    "total_tokens": 13299,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The prohibition on benami recovery claims does not extinguish a suit instituted before the prohibition took effect, even if that suit remains pending when the prohibition takes effect.",
+      "material_facts": [
+        "The proceedings included suits brought before the relevant prohibition took effect by persons claiming to be the real owners of property held in another person's name.",
+        "Some of those suits remained pending at different stages of appeal or revision when the prohibition took effect.",
+        "Before the statutory changes, the law recognized a real owner's right to seek recovery of property held benami, including under Section 82 of the Indian Trusts Act, 1882."
+      ],
+      "conclusion": "The prohibition does not apply to suits instituted before it took effect; those pending proceedings may continue, and the earlier contrary ruling in Mithilesh Kumari v. Prem Behari Khare was incorrect on this point.",
+      "legal_principle": "Sections 4(1) and 7 of the Benami Transactions (Prohibition) Act, 1988 do not expressly terminate pending suits, and the words “no suit ... shall lie” bar suits filed after the provision takes effect rather than suits already instituted. Section 7 repealed Section 82 of the Indian Trusts Act, 1882, but Section 6(b), (c) and (e) of the General Clauses Act, 1897 preserves accrued rights and permits pending proceedings and remedies to continue unless a different intention appears. A provision affecting substantive rights is not retrospective absent clear language or necessary implication. The Court relied on Garikapati v. N. Sibbiah Choudhary and the interpretive rule stated in Maxwell on the Interpretation of Statutes, and rejected the contrary view in Mithilesh Kumari.",
+      "rule": {
+        "if": "benami_recovery_suit and filed_before_recovery_bar and pending_when_bar_began",
+        "then": "pending_recovery_suit_may_continue"
+      },
+      "predicates": {
+        "benami_recovery_suit": "A person claiming to be the real owner brought a suit to enforce a right in property held in another person's name.",
+        "filed_before_recovery_bar": "The claimant instituted the suit before the statutory bar on bringing such recovery claims took effect.",
+        "pending_when_bar_began": "The suit had not been finally disposed of when the statutory bar took effect."
+      },
+      "definition": "When a real-owner recovery suit was instituted before the bar took effect and remained pending at that point, the suit may continue."
+    },
+    {
+      "legal_issue": "The prohibition on benami recovery claims applies to a suit brought after the prohibition takes effect even when the asserted benami transaction occurred earlier.",
+      "material_facts": [
+        "The Act addressed property held benami without limiting its reach to transactions made after the Act took effect.",
+        "The Court considered the example of a real owner bringing a suit after the prohibition took effect to recover property bought benami before that time."
+      ],
+      "conclusion": "A suit brought after the prohibition takes effect to enforce a right arising from a past benami transaction is barred.",
+      "legal_principle": "Section 4(1) of the Benami Transactions (Prohibition) Act, 1988 prohibits a real owner from bringing a suit, claim or action to enforce a right in property held benami. Although the Act is not retrospective as to suits already instituted, Section 4(1) reaches past benami transactions when a suit to enforce the asserted right is brought after the provision takes effect. The words “no suit ... shall lie” prevent such a later suit from being filed or entertained.",
+      "rule": {
+        "if": "benami_recovery_suit and transaction_predates_recovery_bar and filed_after_recovery_bar",
+        "then": "later_recovery_claim_is_barred"
+      },
+      "predicates": {
+        "benami_recovery_suit": "A person claiming to be the real owner brought a suit to enforce a right in property held in another person's name.",
+        "transaction_predates_recovery_bar": "The alleged benami transaction occurred before the statutory bar on bringing recovery claims took effect.",
+        "filed_after_recovery_bar": "The claimant instituted the suit after the statutory bar took effect."
+      },
+      "definition": "A real-owner recovery suit based on an earlier benami transaction is barred when the suit is instituted after the prohibition takes effect."
+    },
+    {
+      "legal_issue": "A benami defence not yet permitted in a pending suit cannot be raised after the prohibition on such defences takes effect.",
+      "material_facts": [
+        "Section 4(2) addresses a defence based on a right in property held benami in a suit, claim or action by or on behalf of a person claiming to be the real owner.",
+        "The Court considered pending proceedings in which the stage for raising or permitting the real owner's defence had not been reached when the prohibition took effect."
+      ],
+      "conclusion": "In a pending suit, a benami defence that had not already been allowed cannot be allowed after the prohibition takes effect.",
+      "legal_principle": "Section 4(2) of the Benami Transactions (Prohibition) Act, 1988 provides that no such defence shall be allowed. The provision applies when the defence is sought to be allowed after it takes effect; it does not state that a defence already allowed in a pending proceeding is to be withdrawn. The Court rejected the view in Mithilesh Kumari that the provision nullifies every benami defence at any later stage of a pending suit.",
+      "rule": {
+        "if": "pending_title_suit and real_owner_seeks_benami_defence and defence_not_previously_allowed and prohibition_in_effect",
+        "then": "later_benami_defence_cannot_be_allowed"
+      },
+      "predicates": {
+        "pending_title_suit": "A suit concerning title to property was pending when the statutory prohibition on benami defences took effect.",
+        "real_owner_seeks_benami_defence": "A person claiming to be the real owner sought to defend the suit on the basis that the property was held benami.",
+        "defence_not_previously_allowed": "The court had not permitted the person to raise that benami defence before the prohibition took effect.",
+        "prohibition_in_effect": "The statutory prohibition on allowing a benami defence had taken effect when permission to raise it was sought."
+      },
+      "definition": "In a pending title suit, a real owner cannot obtain permission to raise a benami defence after the prohibition takes effect if the defence had not already been allowed."
+    },
+    {
+      "legal_issue": "The prohibition on benami defences does not undo a defence already allowed in a pending suit before the prohibition took effect.",
+      "material_facts": [
+        "The Court considered pending suits in which a real owner's benami defence had already been allowed before the prohibition took effect, so that an issue had arisen from that defence.",
+        "The statutory text barred a defence from being allowed but did not state that an already allowed defence could no longer be continued."
+      ],
+      "conclusion": "A benami defence already allowed before the prohibition took effect remains for the court to decide under the law applicable when the defence was allowed.",
+      "legal_principle": "Section 4(2) of the Benami Transactions (Prohibition) Act, 1988 bars the allowance of a benami defence after it takes effect; it does not direct that a defence already allowed be withdrawn or that an issue already arising from it be extinguished. The Court also relied on the principle that, absent a contrary legislative intention, repeal does not affect accrued rights or pending proceedings, as reflected in Section 6 of the General Clauses Act, 1897.",
+      "rule": {
+        "if": "pending_title_suit and real_owner_benami_defence and defence_previously_allowed and prohibition_began_later",
+        "then": "previously_allowed_defence_remains_for_decision"
+      },
+      "predicates": {
+        "pending_title_suit": "A suit concerning title to property was pending when the statutory prohibition on benami defences took effect.",
+        "real_owner_benami_defence": "A person claiming to be the real owner relied on a benami transaction as a defence in the suit.",
+        "defence_previously_allowed": "The court had permitted the person to raise that defence before the statutory prohibition took effect.",
+        "prohibition_began_later": "The statutory prohibition took effect after the defence had been allowed."
+      },
+      "definition": "When a benami defence was already allowed in a pending title suit before the prohibition took effect, that defence remains to be decided."
+    }
+  ],
+  "seconds": 16.8
+}

@@ -1,0 +1,125 @@
+{
+  "doc_id": "265322",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32692,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 5058,
+    "prompt_tokens": 8339,
+    "total_tokens": 13397,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A recognized educational institution whose building income is wholly devoted to its purposes may rely on the statutory exemption and sue tenants as landlord for eviction.",
+      "material_facts": [
+        "The school was recognized under the education law.",
+        "The property and its tenant-occupied structures were purchased in the school's name.",
+        "Rent was collected from the tenants and the entire rental income was used to run the school.",
+        "The school brought eviction suits after the tenants did not surrender possession following termination notices."
+      ],
+      "conclusion": "The school had legal status as a recognized institution and, as landlord, was entitled to bring eviction suits through its manager.",
+      "legal_principle": "Section 2(1)(b) of the U.P. Urban Building Regulation of Letting, Rent and Eviction Act, 1972 exempts a building belonging to or vested in a recognized institution where all income from it is used for that institution. Recognition under the U.P. Basic Education Act, 1972 gives the institution legal status. A landlord-tenant relationship formed through ownership and collection of rent permits the landlord to seek possession and arrears.",
+      "rule": {
+        "if": "eviction_suit_by_educational_institution and institution_formally_recognized and property_held_in_institution_name and tenants_occupy_property_as_tenants and rental_income_used_for_institution",
+        "then": "institution_entitled_to_seek_tenant_eviction"
+      },
+      "predicates": {
+        "eviction_suit_by_educational_institution": "An educational institution brought a suit seeking eviction of its tenants.",
+        "institution_formally_recognized": "The institution had been formally recognized as an educational institution.",
+        "property_held_in_institution_name": "The property occupied by the tenants was held in the institution's name.",
+        "tenants_occupy_property_as_tenants": "The occupants held the property as tenants of the institution.",
+        "rental_income_used_for_institution": "All rental income from the property was used for the institution's purposes."
+      },
+      "definition": "When a recognized educational institution brings an eviction suit concerning property held in its name, occupied by its tenants, and producing income used wholly for the institution, it may seek the tenants' eviction."
+    },
+    {
+      "legal_issue": "A later challenge to an institution's recognition does not alter its status when an eviction suit was filed while that recognition remained in force.",
+      "material_facts": [
+        "The school was recognized when it filed the eviction suits.",
+        "Proceedings challenging the school's recognition were initiated after the suits were filed.",
+        "No material showed that the recognition had subsequently been withdrawn."
+      ],
+      "conclusion": "The later proceedings challenging recognition could not affect the school's status at the time it filed the suits.",
+      "legal_principle": "The institution's status for deciding its capacity at filing is assessed at the time the suit was filed; a subsequent proceeding to impugn recognition does not retrospectively alter that status.",
+      "rule": {
+        "if": "eviction_suit and institution_recognized_when_suit_filed and recognition_challenge_started_after_filing",
+        "then": "later_challenge_does_not_alter_status_at_filing"
+      },
+      "predicates": {
+        "eviction_suit": "A suit seeking eviction of tenants was brought.",
+        "institution_recognized_when_suit_filed": "The institution was recognized when it brought the suit.",
+        "recognition_challenge_started_after_filing": "A proceeding challenging the institution's recognition began after the suit was filed."
+      },
+      "definition": "If an institution was recognized when it brought an eviction suit, a challenge to recognition begun afterward does not alter its status at filing."
+    },
+    {
+      "legal_issue": "A suit brought by a person who is both the institution's manager and the society's secretary is competent for the society where its rules authorize the secretary to conduct legal proceedings.",
+      "material_facts": [
+        "The person who filed the suits was the school's manager and also the secretary of the society that ran and managed it.",
+        "The society's rules authorized the manager or secretary to conduct legal proceedings for the society.",
+        "The suits were filed in the school's name through that person."
+      ],
+      "conclusion": "Even if the suits were not instituted in the society's name, they were competent actions because the person who filed them was authorized to sue on the society's behalf.",
+      "legal_principle": "Under the society's governing provision, legal proceedings could be conducted by its manager, secretary, or an authorized person. The court held that the same person filing as school manager remained competent to act as society secretary.",
+      "rule": {
+        "if": "eviction_suit and filer_is_institution_manager_and_society_secretary and society_rules_authorize_secretary_to_conduct_legal_proceedings",
+        "then": "suit_filing_is_authorized_for_society"
+      },
+      "predicates": {
+        "eviction_suit": "A suit seeking eviction of tenants was brought.",
+        "filer_is_institution_manager_and_society_secretary": "The person who filed the suit was both the institution's manager and the managing society's secretary.",
+        "society_rules_authorize_secretary_to_conduct_legal_proceedings": "The society's rules authorized its secretary to conduct its legal proceedings."
+      },
+      "definition": "When the person who files an eviction suit is both the institution's manager and the society's secretary, and the society's rules authorize its secretary to conduct legal proceedings, the filing is authorized for the society."
+    },
+    {
+      "legal_issue": "A court may cure a bona fide mistake in naming the plaintiff by adding or substituting the proper plaintiff when doing so is necessary to determine the real dispute.",
+      "material_facts": [
+        "The suits were filed in the school's name, while the school sought to have the registered society named as plaintiff as well.",
+        "The school applied to correct the plaintiff description under Order I Rule 10 of the Code of Civil Procedure.",
+        "The person who had filed the suits was also the society's secretary, and adding the society would clarify that he represented both the school and the society.",
+        "The High Court set aside the decrees and remitted the suits for consideration of the correction application; the Supreme Court directed that the society be added as a plaintiff."
+      ],
+      "conclusion": "The High Court should have allowed the correction rather than quashing the decrees and remitting the suits for that purpose; the society was to be added as a plaintiff.",
+      "legal_principle": "Order I Rule 10 of the Code of Civil Procedure permits addition or substitution of a proper plaintiff where the court is satisfied that the suit was filed in the wrong person's name through a bona fide mistake and correction is necessary to determine the real dispute. The Court relied on Hughes v. The Pump House Hotel Company Limited (No. 2), Krishna Bai v. The Collector and Government Agent, Tanjore, Sitla Bux Singh v. Mahabir Prasad, Dinanath Kumar v. Nishi Kanta Kumar, Laxmikumar Srinivas Das v. Krishnaram Baldev Bank, Karri Somalu v. Thimmalapalli Venkataswamy, Udit Narain Singh Malpaharia v. Additional Member Board of Revenue, Bihar, and Murari Mohan Deb v. Secretary to Government of India.",
+      "rule": {
+        "if": "civil_suit and plaintiff_named_is_not_proper_party and naming_error_was_bona_fide and proper_party_needed_to_resolve_dispute and correction_requested",
+        "then": "court_should_add_or_substitute_proper_plaintiff"
+      },
+      "predicates": {
+        "civil_suit": "A civil suit was brought.",
+        "plaintiff_named_is_not_proper_party": "The person or entity named as plaintiff was not the proper plaintiff for the claim.",
+        "naming_error_was_bona_fide": "The plaintiff was named incorrectly because of an honest mistake.",
+        "proper_party_needed_to_resolve_dispute": "Adding or substituting the proper plaintiff was necessary to determine the real dispute.",
+        "correction_requested": "A party asked the court to correct the plaintiff by addition or substitution."
+      },
+      "definition": "When a civil suit names the wrong plaintiff through an honest mistake, the proper plaintiff is needed to resolve the dispute, and correction is requested, the court should add or substitute that plaintiff."
+    },
+    {
+      "legal_issue": "A belated technical objection to the plaintiff's competence should not defeat an action where the filer was authorized to represent the relevant entity or the plaintiff description can be corrected.",
+      "material_facts": [
+        "The tenants did not challenge the school's competence to sue at trial or in revision, but raised the objection for the first time in the High Court.",
+        "The filer was both the school's manager and the society's secretary, and the society's rules authorized its secretary to conduct legal proceedings.",
+        "The lower courts had decreed the eviction suits, and the school had applied to add the society as plaintiff."
+      ],
+      "conclusion": "The High Court erred in sustaining the belated objection, quashing the decrees, and remitting the suits; the objection did not justify defeating the actions on that technical ground.",
+      "legal_principle": "Courts should not allow a delayed technical objection about party description or competence to obstruct justice where the action was brought by a person authorized to represent the relevant entity and the defect can be corrected. The Court relied particularly on Murari Mohan Deb v. Secretary to Government of India, [1985] 3 SCC 120, and also referred to Udit Narain Singh Malpaharia v. Additional Member Board of Revenue, Bihar, AIR 1963 SC 786.",
+      "rule": {
+        "if": "eviction_suit and competence_objection_raised_only_after_trial_and_revision and filer_authorized_to_represent_relevant_entity and plaintiff_description_can_be_corrected",
+        "then": "belated_technical_objection_does_not_defeat_suit"
+      },
+      "predicates": {
+        "eviction_suit": "A suit seeking eviction of tenants was brought.",
+        "competence_objection_raised_only_after_trial_and_revision": "The objection to the plaintiff's competence was raised only after the trial and revision proceedings had concluded.",
+        "filer_authorized_to_represent_relevant_entity": "The person who filed the suit was authorized to act for the relevant institution or society.",
+        "plaintiff_description_can_be_corrected": "The plaintiff's description could be corrected by adding or substituting the proper party."
+      },
+      "definition": "A delayed objection does not defeat an eviction suit when the filer was authorized to represent the relevant entity and the plaintiff description can be corrected."
+    }
+  ],
+  "seconds": 91.1
+}

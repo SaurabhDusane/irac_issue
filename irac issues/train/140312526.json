@@ -1,0 +1,77 @@
+{
+  "doc_id": "140312526",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 69473,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2670,
+    "prompt_tokens": 17896,
+    "total_tokens": 20566,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A compromise award made by a Lok Adalat cannot serve as the court award required for redetermination of compensation for another landholder.",
+      "material_facts": [
+        "The landholders seeking redetermination had not sought enhancement through a reference of their own under the land acquisition law.",
+        "A different landholder's compensation reference was referred to a Lok Adalat, where the parties agreed to a settlement fixing enhanced compensation.",
+        "The Lok Adalat recorded the compromise as its award; the reference court did not independently adjudicate the compensation claim or make an award under Part III of the land acquisition law."
+      ],
+      "conclusion": "An application for redetermination of compensation cannot be maintained on the basis of an award passed by a Lok Adalat under the Legal Services Authorities Act.",
+      "legal_principle": "Section 28A of the Land Acquisition Act, 1894 requires an award under Part III resulting from adjudication by the Court defined in that Act. Sections 18, 23 and 26 reflect the reference, assessment and reasoned award contemplated by that scheme. Under Sections 19 and 20 of the Legal Services Authorities Act, 1987, a Lok Adalat facilitates compromise or settlement and has no adjudicatory role: State of Punjab v. Jalour Singh and Union of India v. Ananto. The Court approved Umadevi Rajkumar Jeure and the relevant view in Vasudave. The beneficial purpose of Section 28A does not permit extending its text beyond the award it specifies; Union of India v. Hansoli Devi explains the interpretation of that provision.",
+      "rule": {
+        "if": "compensation_redetermination_claim and lok_adalat_award_is_compromise_based and award_not_independently_adjudicated_by_court",
+        "then": "lok_adalat_award_cannot_support_redetermination"
+      },
+      "predicates": {
+        "compensation_redetermination_claim": "A person seeks redetermination of compensation by relying on another person's compensation award.",
+        "lok_adalat_award_is_compromise_based": "The award relied on was made by a Lok Adalat after the parties agreed to a compromise or settlement.",
+        "award_not_independently_adjudicated_by_court": "The court with authority to adjudicate the compensation claim did not independently determine it and issue its own award."
+      },
+      "definition": "When a compensation redetermination claim relies on a compromise-based Lok Adalat award that was not independently adjudicated by a court, that award cannot support the redetermination."
+    },
+    {
+      "legal_issue": "The statutory treatment of a Lok Adalat award as a decree does not convert it into an adjudicated court award for a third party's compensation redetermination claim.",
+      "material_facts": [
+        "The award relied on was the Lok Adalat's own award recording a compromise, rather than an award independently made by the referring court.",
+        "A person who was not a party to that compromise sought to use the award to support redetermination of compensation."
+      ],
+      "conclusion": "The decree fiction attached to a Lok Adalat award serves to make the award enforceable and does not make it an award of a court under Part III of the land acquisition law for purposes of third-party redetermination.",
+      "legal_principle": "Section 21 of the Legal Services Authorities Act, 1987 deems a Lok Adalat award to be a decree of a civil court or, as the case may be, an order of another court. The fiction must be given effect for its statutory purpose but cannot be extended beyond that purpose or enlarged by importing another fiction. The Court relied on K.N. Govindan Kutty Menon v. C.D. Shaji for the award's enforceability, and on the principles of statutory fiction discussed in State of Karnataka v. State of Tamil Nadu, including State of W.B. v. Sadan K. Bormal. Section 28A of the Land Acquisition Act requires an adjudicated award under Part III, not merely an enforceable Lok Adalat award.",
+      "rule": {
+        "if": "third_party_redetermination_claim and lok_adalat_award_is_compromise_based and claimant_not_party_to_award",
+        "then": "deemed_decree_effect_is_limited_to_enforcement"
+      },
+      "predicates": {
+        "third_party_redetermination_claim": "A person seeks a compensation benefit based on an award made in a dispute to which that person was not a party.",
+        "lok_adalat_award_is_compromise_based": "The award relied on was made by a Lok Adalat after the disputing parties agreed to a compromise or settlement.",
+        "claimant_not_party_to_award": "The person seeking the benefit was not a party to the compromise recorded in the award."
+      },
+      "definition": "When a non-party relies on a compromise-based Lok Adalat award for compensation redetermination, the award's deemed-decree effect is limited to enforcement."
+    },
+    {
+      "legal_issue": "Consent to a compromise award does not estop a party from opposing a third party's claim to redetermine compensation on the basis of that award.",
+      "material_facts": [
+        "The authority had authorized its representative to enter into the compromise recorded by the Lok Adalat.",
+        "The landholders seeking redetermination were not parties to the compromise.",
+        "The landholders relied on the authority's consent to argue that it could not oppose their claim based on the compromise award."
+      ],
+      "conclusion": "Any estoppel arising from the consent award operates between its parties and cannot provide a basis for a non-party's compensation redetermination claim.",
+      "legal_principle": "A consent judgment or decree may estop its parties from resiling from its terms, as recognized in P.T. Thomas v. Thomas Job and the authorities discussed there, including Sailendra Narayan Bhanja Deo v. State of Orissa. That inter partes effect does not turn a compromise into an adjudication binding third parties or satisfy the requirement for a court award under Section 28A of the Land Acquisition Act, 1894.",
+      "rule": {
+        "if": "third_party_compensation_redetermination_claim and consent_award_exists and claimant_not_party_to_award",
+        "then": "consent_estoppel_does_not_support_third_party_redetermination"
+      },
+      "predicates": {
+        "third_party_compensation_redetermination_claim": "A person seeks redetermination of compensation by relying on an award made in a dispute involving other persons.",
+        "consent_award_exists": "The award relied on records an agreement or compromise to which the opposing party consented.",
+        "claimant_not_party_to_award": "The person seeking redetermination was not a party to the agreement recorded in the award."
+      },
+      "definition": "When a non-party seeks compensation redetermination based on an award consented to by the opposing party, that consent does not support the non-party's claim."
+    }
+  ],
+  "seconds": 16.8
+}

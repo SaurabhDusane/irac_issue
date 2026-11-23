@@ -1,0 +1,61 @@
+{
+  "doc_id": "616051",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14949,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1548,
+    "prompt_tokens": 4182,
+    "total_tokens": 5730,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A criminal appeal must be decided on evidence recorded in that case, not evidence recorded in a separate cross-case.",
+      "material_facts": [
+        "The High Court decided the appeal by reading the evidence in the appellants’ case together with evidence recorded in the separate cross-case.",
+        "The appellants had not consented to treating the cross-case evidence as evidence in their case."
+      ],
+      "conclusion": "The High Court erred by relying on evidence from the separate cross-case, and its judgment had to be set aside.",
+      "legal_principle": "Each case must be decided on the evidence recorded in it; evidence recorded in another case cannot be taken into account. The Court noted that even in civil cases evidence from another case cannot be used unless the parties agree, and that its use in a criminal case is doubtful even with the accused’s consent. No earlier cases or statutory provisions were relied on for this principle.",
+      "rule": {
+        "if": "criminal_appeal_against_conviction and appellate_court_considered_separate_case_evidence and accused_did_not_consent_to_its_use",
+        "then": "appellate_decision_set_aside"
+      },
+      "predicates": {
+        "criminal_appeal_against_conviction": "The proceeding is an appeal from a criminal conviction.",
+        "appellate_court_considered_separate_case_evidence": "The appellate court relied on evidence recorded in a different case when deciding the appeal.",
+        "accused_did_not_consent_to_its_use": "The accused did not agree to treating the evidence from the different case as evidence in the present case."
+      },
+      "definition": "When a criminal appeal concerns a conviction and the appellate court relies on evidence from another case without the accused’s consent, the appellate decision is set aside."
+    },
+    {
+      "legal_issue": "A conviction cannot be sustained when the prosecution evidence is unreliable and fails to establish the charged offences.",
+      "material_facts": [
+        "Two prosecution eyewitnesses were not named in the initial report, and their presence close enough to witness the incident was not established; the two persons identified as expected witnesses were not called.",
+        "The principal witnesses gave materially conflicting accounts, contradicted earlier statements, and could not explain the contradictions.",
+        "The complainants had only a small number of comparatively minor injuries, while seven persons on the accused’s side had injuries, including stab and incised wounds, some on vital parts of the body.",
+        "The prosecution witnesses did not explain how the injuries on the accused’s side were caused.",
+        "The trial court convicted the appellants, and the High Court affirmed those convictions."
+      ],
+      "conclusion": "The prosecution failed to establish the offences charged; the convictions were unsustainable, and the appellants were acquitted.",
+      "legal_principle": "A conviction must rest on reliable evidence recorded in the case. The Court assessed the credibility and consistency of the eyewitness accounts, the medical evidence, and the unexplained injuries on the accused’s side, and concluded that the prosecution evidence did not establish the charges. No statutory provisions or earlier cases were relied on for this conclusion.",
+      "rule": {
+        "if": "criminal_appeal_against_conviction and prosecution_witnesses_unreliable and material_witness_accounts_contradict_each_other and accused_side_injuries_unexplained and accused_side_injuries_more_serious_or_numerous",
+        "then": "accused_acquitted"
+      },
+      "predicates": {
+        "criminal_appeal_against_conviction": "The proceeding is an appeal from a criminal conviction.",
+        "prosecution_witnesses_unreliable": "The prosecution witnesses’ accounts are not credible because of significant inconsistencies, contradictions, or other reliability problems.",
+        "material_witness_accounts_contradict_each_other": "The accounts of material prosecution witnesses differ on significant features of the incident.",
+        "accused_side_injuries_unexplained": "The prosecution witnesses do not explain how the injuries suffered by persons on the accused’s side were caused.",
+        "accused_side_injuries_more_serious_or_numerous": "The injuries suffered by persons on the accused’s side are more numerous or more serious than those suffered by the complainant side."
+      },
+      "definition": "When a criminal conviction is appealed and unreliable, conflicting prosecution accounts accompany more numerous or serious unexplained injuries on the accused’s side, the accused are acquitted."
+    }
+  ],
+  "seconds": 11.0
+}

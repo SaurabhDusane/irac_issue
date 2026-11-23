@@ -1,0 +1,81 @@
+{
+  "doc_id": "1015491",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41699,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2642,
+    "prompt_tokens": 11106,
+    "total_tokens": 13748,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may determine whether an arbitrator exceeded the authority conferred by the parties by considering material outside the award when the scope of the submission is unclear from the award.",
+      "material_facts": [
+        "The arbitrator made an award whose brief reasoning did not clearly resolve whether certain claims were within the scope of the contract and the submission.",
+        "The parties had filed pleadings and documents, and the contract was available to determine the disputes submitted to the arbitrator.",
+        "The contractor argued that the award was non-speaking and could not be examined by the court."
+      ],
+      "conclusion": "The court may consider the parties’ pleadings, affidavits, and agreement to determine the arbitrator’s jurisdiction; a jurisdictional error may be established by evidence extrinsic to the award.",
+      "legal_principle": "A dispute about an arbitrator’s jurisdiction is determined outside the award. If the dispute submitted is not clear from the award, the court may consult outside sources, including the pleadings and agreement. This approach is supported by Bunge & Co. v. Dewar & Webb, M/s. Alopi Parshad & Sons Ltd. v. Union of India, Union of India v. Kishori Lal, Renusagar Power Co. Ltd. v. General Electric Company, Jivarajbhai v. Chintamanrao, Gobardhan Das v. Lachhmi Ram, and Thawardas v. Union of India.",
+      "rule": {
+        "if": "arbitration_award_review and (submission_scope_unclear_from_award or award_ambiguous_on_jurisdiction)",
+        "then": "court_may_consider_extrinsic_material"
+      },
+      "predicates": {
+        "arbitration_award_review": "A court is reviewing an award made in an arbitration proceeding.",
+        "submission_scope_unclear_from_award": "The award does not make clear what dispute the parties submitted to the arbitrator.",
+        "award_ambiguous_on_jurisdiction": "The award is ambiguous about whether the arbitrator had authority to decide the matter."
+      },
+      "definition": "When a court reviewing an arbitration award cannot determine the scope of the submission from the award, or the award is ambiguous about jurisdiction, it may consider material outside the award."
+    },
+    {
+      "legal_issue": "An arbitrator exceeds jurisdiction by awarding a claim contrary to the contract or by departing from a contractual formula that governs the claim.",
+      "material_facts": [
+        "The contract set a fixed price for the slabs and did not permit escalation for them; it also excluded price adjustments not provided for in the contract.",
+        "The contract required the contractor to arrange its own water supply and contained no provision for payment for additional water lead.",
+        "The contract placed responsibility for maintaining haul roads on the contractor and did not provide for the additional payment awarded for canal-slope work.",
+        "For labour escalation, the contract prescribed a specific calculation formula, but the arbitrator used a different formula.",
+        "The High Court set aside the awards for slab escalation, extra water lead, and canal-slope work, but upheld the labour-escalation award; the Supreme Court upheld the former decisions and set aside the labour-escalation award."
+      ],
+      "conclusion": "The awards for slab escalation, additional water lead, canal-slope work, and labour escalation calculated by a different formula were beyond the arbitrator’s jurisdiction and could not stand.",
+      "legal_principle": "An arbitrator derives authority from the parties’ contract and must decide within its bounds. An error in construing the contract is ordinarily within jurisdiction, but deciding a matter not allotted by the contract, or disregarding a contractually prescribed formula, is jurisdictional error. Manifest disregard of the contract vitiates the award. The court relied on Jivarajbhai v. Chintamanrao and discussed the Arbitration Act, 1940, as governing the arbitrator’s authority; it also referred to Anisminic Ltd. v. Foreign Compensation Commission, Pearlman v. Keepers and Governors of Harrow School, Lee v. Showmen’s Guild of Great Britain, M.L. Sethi v. R.P. Kapur, The Managing Director, J. and K. Handicrafts v. Good Luck Carpets, and State of Andhra Pradesh v. R.V. Rayanim.",
+      "rule": {
+        "if": "arbitration_award_review and contract_excludes_claim_or_prescribes_method and arbitrator_awarded_contrary_to_contract",
+        "then": "claim_award_set_aside_for_excess_of_jurisdiction"
+      },
+      "predicates": {
+        "arbitration_award_review": "A court is reviewing an award made in an arbitration proceeding.",
+        "contract_excludes_claim_or_prescribes_method": "The parties’ contract excludes the claimed payment or specifies the method by which it must be calculated.",
+        "arbitrator_awarded_contrary_to_contract": "The arbitrator granted the claim despite the exclusion or used a method different from the one specified by the contract."
+      },
+      "definition": "In review of an arbitration award, when the contract excludes a claim or prescribes how it must be calculated and the arbitrator awards contrary to that contract, the claim award is set aside for excess of jurisdiction."
+    },
+    {
+      "legal_issue": "An arbitration award may be upheld when the arbitrator’s decision is supported by the contract or gives effect to the parties’ stated tender terms.",
+      "material_facts": [
+        "The Government supplied machinery, and the contractor claimed excess hire charges and losses resulting from the machinery’s poor performance; the court found that the contract required compensation in those circumstances.",
+        "For sand conveyance, the original tender stated a diesel-oil requirement of 0.35 litres for the relevant item, rather than 0.035 litres, and the arbitrator applied the tender figure.",
+        "The High Court had upheld both awards, and the Supreme Court rejected the Government’s challenge to them."
+      ],
+      "conclusion": "The awards for excess machinery hire charges and related losses, and for sand conveyance based on the original tender figure, were properly upheld.",
+      "legal_principle": "An arbitrator does not exceed jurisdiction by giving effect to an entitlement provided by the contract or by applying the amount or input stated in the original tender. An award made within the contractual parameters is not to be disturbed merely because a party disputes the arbitrator’s decision.",
+      "rule": {
+        "if": "arbitration_award_review and ((employer_supplied_machinery_performed_poorly and contract_requires_compensation) or tender_specified_input_and_award_applied_it)",
+        "then": "claim_award_upheld"
+      },
+      "predicates": {
+        "arbitration_award_review": "A court is reviewing an award made in an arbitration proceeding.",
+        "employer_supplied_machinery_performed_poorly": "The employer supplied machinery that performed poorly and caused the contractor excess charges or losses.",
+        "contract_requires_compensation": "The contract requires the employer to compensate the contractor for those excess charges or losses.",
+        "tender_specified_input_and_award_applied_it": "The original tender stated an input for the work, and the arbitrator applied that stated input in calculating the award."
+      },
+      "definition": "In review of an arbitration award, a claim award is upheld when poor performance by employer-supplied machinery triggers contractual compensation or when the arbitrator applies an input stated in the tender."
+    }
+  ],
+  "seconds": 18.0
+}

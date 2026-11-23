@@ -1,0 +1,97 @@
+{
+  "doc_id": "428197",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20685,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3209,
+    "prompt_tokens": 5718,
+    "total_tokens": 8927,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A plaint may be rejected as time-barred only when its own statements, accepted as true, show without addition or subtraction that the suit is barred.",
+      "material_facts": [
+        "The suit sought declaration of title and an injunction, with recovery of possession as an alternative if the plaintiff was out of possession.",
+        "The plaintiff alleged that he learned of an error in the property boundaries at a particular time; the defendant contended that the plaintiff knew of the issue earlier, including from prior proceedings.",
+        "The trial court treated the timing of the plaintiff’s knowledge as a factual matter for trial, but the High Court rejected the plaint as barred by limitation."
+      ],
+      "conclusion": "The High Court erred in rejecting the plaint because the plaint did not itself establish that the suit was barred; the limitation-related disputes could not be decided on the application to reject the plaint.",
+      "legal_principle": "Under Order VII Rule 11(d) of the Code of Civil Procedure, the court considers only the plaint’s averments, taken at face value and as a whole; the plaint must show on its own that the suit is barred by law. A limitation question that depends on disputed facts cannot be resolved at this stage. The Court relied on Popat and Kotecha Property v. State Bank of India Staff Association and Balasaria Construction (P) Ltd. v. Hanuman Seva Trust.",
+      "rule": {
+        "if": "plaint_rejection_application and (plaint_seeks_alternative_possession or limitation_depends_on_disputed_facts) and not plaint_itself_shows_bar",
+        "then": "plaint_rejection_unwarranted"
+      },
+      "predicates": {
+        "plaint_rejection_application": "A defendant applied for rejection of the plaint on the ground that the suit was barred by law.",
+        "plaint_seeks_alternative_possession": "The plaintiff sought recovery of possession as an alternative to other relief concerning the property.",
+        "limitation_depends_on_disputed_facts": "The parties disputed facts relevant to when the plaintiff learned of the alleged problem or when the right was threatened.",
+        "plaint_itself_shows_bar": "The plaint’s own statements, accepted as true and read without adding or subtracting anything, show that the suit is barred."
+      },
+      "definition": "When a plaint-rejection application depends on alternative possession relief or disputed limitation facts, and the plaint itself does not show a bar, the plaint cannot be rejected on that ground."
+    },
+    {
+      "legal_issue": "A title-based suit seeking possession as a consequence of a declaration of title is governed by the limitation rule for possession claims, not the rule for declaratory relief alone.",
+      "material_facts": [
+        "The plaintiff sought a declaration of title and an injunction, and alternatively sought vacant possession if found to be out of possession.",
+        "The claim for possession was framed as consequential to the plaintiff’s asserted title to the property.",
+        "The High Court treated the suit principally as one for declaration and applied the limitation rule for declaratory relief."
+      ],
+      "conclusion": "The limitation rule for declaratory relief alone did not govern the suit where possession was sought as a consequence of the declaration of title.",
+      "legal_principle": "The Court distinguished Article 58 of the Limitation Act, 1963, which concerns declaratory suits, from Article 65, which concerns possession of immovable property based on title. Where possession is sought as a consequence of declaration of title, Article 58 does not apply to that possession claim.",
+      "rule": {
+        "if": "title_based_property_suit and possession_sought_as_consequence_of_title",
+        "then": "possession_claim_governed_by_possession_limitation"
+      },
+      "predicates": {
+        "title_based_property_suit": "The plaintiff brought a suit asserting title to immovable property.",
+        "possession_sought_as_consequence_of_title": "The plaintiff sought possession of the property as relief consequent on the asserted title."
+      },
+      "definition": "When a suit asserts title to property and seeks possession as a consequence of that title, the possession claim is governed by the limitation rule for possession claims."
+    },
+    {
+      "legal_issue": "Whether limitation has begun to run on a property claim cannot be determined without resolving disputed facts about possession, identification of the property, and whether the claimant faced a clear and unequivocal threat to the claimed right.",
+      "material_facts": [
+        "The defendant disputed that the plaintiff was in possession and relied on the identification of the land in relation to the title documents.",
+        "The parties disputed whether the plaintiff had earlier knowledge of an error in the property boundaries.",
+        "The Court held that an issue concerning possession and identification had to be framed and that the relevant questions should be examined at trial."
+      ],
+      "conclusion": "The limitation question required consideration at trial, and the rejection application was not maintainable on the disputed matters presented.",
+      "legal_principle": "Limitation does not commence unless there has been a clear and unequivocal threat to the right claimed. Where the relevant circumstances, including possession or identification of the property, are disputed, the question must be gone into at the appropriate stage rather than resolved on an application to reject the plaint.",
+      "rule": {
+        "if": "property_right_suit and possession_or_property_identity_disputed and threat_to_claimed_right_not_clear_from_pleadings",
+        "then": "limitation_question_requires_trial"
+      },
+      "predicates": {
+        "property_right_suit": "A claimant sued to establish or enforce a right in property.",
+        "possession_or_property_identity_disputed": "The opposing party disputed the claimant’s possession or the identification of the property claimed.",
+        "threat_to_claimed_right_not_clear_from_pleadings": "The pleadings did not establish clearly and unequivocally when the claimant’s asserted right was threatened."
+      },
+      "definition": "If a property-right suit involves disputed possession or property identification and the pleadings do not clearly establish a threat to the right, the limitation question requires trial."
+    },
+    {
+      "legal_issue": "In a title-based possession suit under the later limitation framework, the defendant bears the burden of proving that title was acquired by adverse possession.",
+      "material_facts": [
+        "The plaintiff sought possession based on asserted title to the property.",
+        "The Court explained that the applicable limitation framework had changed from the earlier framework, under which a plaintiff had to plead and prove possession within the relevant period.",
+        "The Court stated that under the later framework the plaintiff succeeds by proving title, while the defendant must prove adverse possession to defeat that claim."
+      ],
+      "conclusion": "For a title-based possession claim under the later framework, the defendant bears the burden of proving acquisition of title by adverse possession.",
+      "legal_principle": "Articles 64 and 65 of the Limitation Act, 1963 place the burden on the defendant to prove adverse possession when seeking to defeat a plaintiff’s title-based possession claim; this differs from Articles 142 and 144 of the Limitation Act, 1908. The Court relied on Md. Mohammad Ali v. Jagdish Kalita and also referred to P.T. Munichikkanna Reddy v. Revamma, Binapani Paul v. Pratima Ghosh, Kamakshi Builders v. Ambedkar Educational Society, and Bakhtiyar Hussai v. Hafiz Khan.",
+      "rule": {
+        "if": "title_based_possession_suit_under_later_limitation_framework and defendant_seeks_to_defeat_claim_by_adverse_possession",
+        "then": "defendant_must_prove_adverse_possession"
+      },
+      "predicates": {
+        "title_based_possession_suit_under_later_limitation_framework": "The plaintiff brought a suit for possession of property based on title under the later limitation framework.",
+        "defendant_seeks_to_defeat_claim_by_adverse_possession": "The defendant relied on alleged adverse possession to defeat the plaintiff’s title-based claim."
+      },
+      "definition": "When a plaintiff seeks possession based on title under the later limitation framework and the defendant relies on adverse possession, the defendant must prove adverse possession."
+    }
+  ],
+  "seconds": 20.7
+}

@@ -1,0 +1,59 @@
+{
+  "doc_id": "91819",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25027,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2779,
+    "prompt_tokens": 6346,
+    "total_tokens": 9125,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Use of agricultural land for a non-agricultural purpose without the required conversion permission does not change its legal character as agricultural land.",
+      "material_facts": [
+        "The company held disputed land that had not been converted from agricultural to non-agricultural use under the applicable revenue law.",
+        "The company declared that the disputed land was agricultural land.",
+        "The company relied on non-agricultural use of the land, but the Court held that such use, even if established, did not convert the land without the required permission."
+      ],
+      "conclusion": "The disputed land remained agricultural land for the purposes of both the revenue law and the land reforms law, and the appellate tribunal's direction to take action under the land reforms law could not be set aside on the ground that the land had ceased to be agricultural. The Court overruled Mysore Feeds Ltd. on this point.",
+      "legal_principle": "Section 95(2) of the Karnataka Land Revenue Act requires an occupant to obtain permission before diverting land assessed or held for agriculture to another purpose. The provision is mandatory and is intended to regulate conversion; allowing use alone to change the land's character would defeat that provision and the scheme of the Karnataka Land Reforms Act, including the definition of land in Section 2(18) and the restrictions in Section 79-B. The Court disapproved and expressly overruled Mysore Feeds Ltd. v. State of Karnataka, (1988) 1 Kar LJ 310.",
+      "rule": {
+        "if": "land_classification_proceeding and agricultural_land_status and no_conversion_permission and non_agricultural_use",
+        "then": "land_remains_agricultural"
+      },
+      "predicates": {
+        "land_classification_proceeding": "The dispute concerns whether land is legally agricultural or non-agricultural.",
+        "agricultural_land_status": "The land was held or treated as agricultural land before the disputed use.",
+        "no_conversion_permission": "The holder did not obtain the required permission to divert the land to a non-agricultural purpose.",
+        "non_agricultural_use": "The land was used, or was alleged to have been used, for a non-agricultural purpose."
+      },
+      "definition": "When a land-classification proceeding concerns land held as agricultural, no required conversion permission was obtained, and non-agricultural use occurred or was alleged, the land remains agricultural."
+    },
+    {
+      "legal_issue": "Land held by a statutorily disqualified holder vests in the State from the commencement of the statutory prohibition, rather than from a later notification.",
+      "material_facts": [
+        "The company held agricultural land when the relevant restrictions on holding agricultural land came into operation.",
+        "The company filed a declaration identifying the disputed land as agricultural land held by it.",
+        "The statutory process required subsequent inquiry and administrative steps, including a notification declaring vesting, but the date of that notification was disputed."
+      ],
+      "conclusion": "Vesting took effect on 1 March 1974, when the relevant provisions came into operation, and not on the later date of a notification. The Court set aside the High Court's decision, restored the appellate tribunal's decision, and overruled Mysore Feeds Ltd. on this point.",
+      "legal_principle": "Sections 79-B(1) and 79-B(3) of the Karnataka Land Reforms Act prohibit specified persons and entities from holding agricultural land and provide for a declaration, inquiry, and notification concerning vesting. Read with Section 79-C, the scheme makes the date of vesting the date the provisions came into operation; otherwise, vesting would vary with delays or defaults by holders and officials. Section 79-B(3) does not authorize the Deputy Commissioner to select a different vesting date in the notification. The Court contrasted provisions that expressly specify a date, including Sections 15(6), 44, and 79-A(5), and expressly overruled Mysore Feeds Ltd. v. State of Karnataka, (1988) 1 Kar LJ 310.",
+      "rule": {
+        "if": "vesting_date_dispute and prohibited_holder_holds_agricultural_land and administrative_vesting_steps_follow_commencement",
+        "then": "land_vests_from_commencement"
+      },
+      "predicates": {
+        "vesting_date_dispute": "The proceeding concerns whether vesting occurred at the start of a statutory restriction or only after later administrative action.",
+        "prohibited_holder_holds_agricultural_land": "A holder within the prohibited class held agricultural land when the restriction began.",
+        "administrative_vesting_steps_follow_commencement": "The statutory process contemplated administrative steps after the restriction began, including a later vesting notification."
+      },
+      "definition": "When a vesting-date dispute concerns agricultural land held by a prohibited holder and the administrative vesting steps follow commencement of the restriction, the land vests from commencement."
+    }
+  ],
+  "seconds": 21.7
+}

@@ -1,0 +1,67 @@
+{
+  "doc_id": "912991",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12407,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2575,
+    "prompt_tokens": 3377,
+    "total_tokens": 5952,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A probate grant that remains in force is conclusive as to the validity of the will and cannot be challenged collaterally by a person who was cited but did not contest the probate proceeding.",
+      "material_facts": [
+        "The probate court granted probate of the will.",
+        "The appellants were cited in the probate proceeding but did not appear or contest the grant.",
+        "The appellants later challenged the will’s validity in execution proceedings and in a separate civil suit; the grant had not been revoked."
+      ],
+      "conclusion": "The grant was conclusive as to the will’s execution and validity while it remained in force. The appellants could not contest the will’s validity in other proceedings unless the grant was revoked.",
+      "legal_principle": "Under Section 41 of the Indian Evidence Act, 1872, a final judgment or order of a competent court exercising probate jurisdiction is conclusive proof of what it decides, including the genuineness of the will. A probate grant operates as a judgment in rem and can be impeached only in proceedings to revoke it. In Surinder Kumar v. Gian Chand, 1958 SCR 548, the Court held that admission of a will to probate operates as a judgment in rem and removes an asserted infirmity concerning attestation under Section 63(1)(c) of the Indian Succession Act, 1925.",
+      "rule": {
+        "if": "probate_grant_exists and granting_court_is_competent and probate_grant_remains_in_force and citation_served_on_challenger and challenger_did_not_contest_probate and collateral_proceeding_challenges_will_validity",
+        "then": "will_validity_cannot_be_contested_outside_revocation_proceeding"
+      },
+      "predicates": {
+        "probate_grant_exists": "A court exercising probate jurisdiction granted probate of the will.",
+        "granting_court_is_competent": "The court that granted probate was competent to exercise probate jurisdiction.",
+        "probate_grant_remains_in_force": "The probate grant has not been revoked.",
+        "citation_served_on_challenger": "The person later challenging the will was cited in the probate proceeding.",
+        "challenger_did_not_contest_probate": "The cited person did not appear or contest the probate proceeding.",
+        "collateral_proceeding_challenges_will_validity": "The person seeks to challenge the will’s validity in a proceeding other than one to revoke the probate grant."
+      },
+      "definition": "When a competent court has granted probate that remains in force, a cited person who did not contest the probate proceeding cannot challenge the will’s validity in a different proceeding."
+    },
+    {
+      "legal_issue": "A fact-dependent objection to a probate court’s authority based on the value of property in another state cannot be raised collaterally after the objector, though cited, failed to contest the probate proceeding.",
+      "material_facts": [
+        "The deceased had a fixed place of abode within the territorial jurisdiction of the court that granted probate.",
+        "The grant affected property situated in another state, and the appellants later asserted that its value exceeded the statutory threshold for the grant’s effect beyond the granting state.",
+        "The appellants had been cited in the probate proceeding but did not appear to contest the grant or the disputed value.",
+        "The probate court granted probate without opposition, having been satisfied that the value of the affected property outside the state did not exceed the threshold.",
+        "The appellants raised the value-based jurisdiction objection in later execution proceedings."
+      ],
+      "conclusion": "The court had jurisdiction to entertain the probate petition because the deceased had a fixed place of abode within its jurisdiction. The appellants could not re-agitate the disputed value-based objection in the later proceedings, and the grant had effect beyond the granting state on the condition the probate court had found satisfied.",
+      "legal_principle": "Section 270 of the Indian Succession Act, 1925, permits a District Judge to grant probate where the deceased had a fixed place of abode or property within the court’s jurisdiction. Under Section 273, a grant has effect throughout the granting state and may have effect in other states subject to the conditions in its proviso, including the applicable value limit. Where jurisdiction depends on a disputed fact such as the value of property in another state, an interested person must contest that issue in the probate proceeding; after an unopposed grant, the person cannot raise it collaterally.",
+      "rule": {
+        "if": "probate_grant_challenged_in_later_execution_proceeding and deceased_had_fixed_abode_within_granting_court_area and out_of_state_property_affected_by_grant and jurisdiction_objection_depends_on_disputed_property_value and citation_served_on_objector and objector_did_not_contest_probate and probate_court_found_value_within_limit",
+        "then": "value_based_jurisdiction_objection_cannot_be_reagitated_collaterally"
+      },
+      "predicates": {
+        "probate_grant_challenged_in_later_execution_proceeding": "A party challenges a probate grant in a later execution proceeding.",
+        "deceased_had_fixed_abode_within_granting_court_area": "The deceased had a fixed place of abode within the territorial area of the court that granted probate.",
+        "out_of_state_property_affected_by_grant": "The probate grant affects property situated outside the state of the granting court.",
+        "jurisdiction_objection_depends_on_disputed_property_value": "The asserted limit on the grant’s reach depends on a disputed fact about the value of property outside the granting state.",
+        "citation_served_on_objector": "The person making the later objection was cited in the probate proceeding.",
+        "objector_did_not_contest_probate": "The person making the later objection did not appear or contest the probate proceeding.",
+        "probate_court_found_value_within_limit": "The probate court granted probate after finding that the value of the affected out-of-state property was within the applicable limit."
+      },
+      "definition": "When a probate grant is later challenged in execution proceedings, the deceased had a fixed abode within the granting court’s area, and a cited objector did not contest a value-dependent jurisdiction issue that the probate court resolved within the applicable limit, that objection cannot be raised again collaterally."
+    }
+  ],
+  "seconds": 17.5
+}

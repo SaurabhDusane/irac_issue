@@ -1,0 +1,115 @@
+{
+  "doc_id": "1650828",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14980,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3853,
+    "prompt_tokens": 4045,
+    "total_tokens": 7898,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil appellate court cannot decide a claim or defence on a factual ground that was not pleaded.",
+      "material_facts": [
+        "Both defendants pleaded that a partition had occurred and disputed which brother received the properties; neither pleaded that the properties remained joint family property because no partition had occurred.",
+        "The second defendant denied executing the agreement and pleaded forgery, but did not plead misrepresentation; the first appellate court nevertheless found that the agreement had been obtained by misrepresentation."
+      ],
+      "conclusion": "The first appellate court could not find that the properties remained joint family property or invalidate the agreement for misrepresentation when those grounds were not pleaded. The High Court was justified in reversing the first finding.",
+      "legal_principle": "A case not pleaded cannot be made out by evidence, and a court cannot decide the validity of a document on an unpleaded defence. No statutory provision or earlier case was cited for this principle.",
+      "rule": {
+        "if": "civil_appeal and (joint_family_case_absent_from_pleadings or misrepresentation_defence_absent_from_pleadings)",
+        "then": "court_must_not_decide_unpleaded_factual_ground"
+      },
+      "predicates": {
+        "civil_appeal": "The matter is a civil appeal involving findings made by a lower appellate court.",
+        "joint_family_case_absent_from_pleadings": "The parties pleaded a partition and disputed the allocation of property, but no party pleaded that the property remained jointly owned because there had been no partition.",
+        "misrepresentation_defence_absent_from_pleadings": "The party denying a document's execution pleaded forgery but did not plead that the document was obtained by misrepresentation."
+      },
+      "definition": "If a civil appeal involves a ground that was not pleaded, the court must not decide the case on that unpleaded factual ground."
+    },
+    {
+      "legal_issue": "When forgery is the only pleaded challenge to execution of a document, the party proving execution need not separately prove that the signer knew the document's contents.",
+      "material_facts": [
+        "The second defendant denied executing the agreement and pleaded that it was forged.",
+        "The trial court and first appellate court rejected the forgery plea, and the second defendant had not pleaded that he signed without knowing the agreement's contents."
+      ],
+      "conclusion": "Because forgery was the only relevant plea, the party relying on the agreement did not need to adduce separate evidence that the second defendant knew its contents when he signed it.",
+      "legal_principle": "What must be proved to establish execution depends on the pleas raised. Ordinarily, a person is not expected to sign a document without knowing its contents; if lack of knowledge is pleaded, it may in some circumstances be necessary to provide material showing knowledge. No statutory provision or earlier case was cited.",
+      "rule": {
+        "if": "civil_document_proof_dispute and forgery_is_the_only_execution_challenge and signer_knowledge_not_put_in_issue",
+        "then": "separate_proof_of_signer_knowledge_is_not_required"
+      },
+      "predicates": {
+        "civil_document_proof_dispute": "The case requires the court to determine whether a document was executed.",
+        "forgery_is_the_only_execution_challenge": "The person said to have signed the document denies execution on the ground that the document is forged and raises no other challenge to execution.",
+        "signer_knowledge_not_put_in_issue": "The person said to have signed the document does not plead that they signed without knowing its contents."
+      },
+      "definition": "When a document's execution is disputed only as forgery and the signer's knowledge of its contents is not put in issue, separate proof of that knowledge is not required."
+    },
+    {
+      "legal_issue": "Credible secondary evidence may satisfactorily establish a registered sale deed when the original and relevant registration records were destroyed and the evidence identifies the transaction and property.",
+      "material_facts": [
+        "The plaintiffs relied on a registered sale deed, but the original had been produced in an earlier civil case and that court's records were later destroyed.",
+        "A witness who had produced the deed in the earlier case testified to that history, and a registration-office employee testified that the relevant register book had been destroyed; his account was not challenged in cross-examination.",
+        "An extract from the registration records identified the document as a sale deed, named the vendor and purchasers, and described properties matching the suit properties. The vendor admitted that the transaction was a sale."
+      ],
+      "conclusion": "The extract and supporting testimony were satisfactory secondary evidence of the sale deed, and the first appellate court erred in rejecting them as insufficient.",
+      "legal_principle": "The Court treated the testimony about the loss and destruction of the original records, together with the registration extract identifying the transaction and properties, as satisfactory secondary evidence. No statutory provision or earlier case was cited for this conclusion.",
+      "rule": {
+        "if": "title_suit_relies_on_registered_sale_deed and original_and_registration_records_unavailable_due_to_destruction and credible_evidence_supports_loss_and_identifies_transaction",
+        "then": "secondary_evidence_satisfactorily_proves_sale_deed"
+      },
+      "predicates": {
+        "title_suit_relies_on_registered_sale_deed": "The claimant in a title suit relies on a registered sale deed to establish a transfer.",
+        "original_and_registration_records_unavailable_due_to_destruction": "The original deed and relevant registration records are unavailable because they were destroyed.",
+        "credible_evidence_supports_loss_and_identifies_transaction": "Credible testimony supports the destruction of the records, and documentary or other evidence identifies the transaction and the property conveyed."
+      },
+      "definition": "When a title claim based on a registered sale deed is supported by credible evidence of destruction and evidence identifying the transaction, the secondary evidence satisfactorily proves the deed."
+    },
+    {
+      "legal_issue": "A written admission may be relied on as evidence of another person's title and a transfer without treating the admission as an estoppel that creates title.",
+      "material_facts": [
+        "The second defendant executed an agreement stating that his brother exclusively owned the properties, had sold them to the plaintiffs, and that the second defendant had no right in them.",
+        "The second defendant's claim that he had not executed the agreement was rejected.",
+        "He did not claim that the admissions were mistaken or had been obtained by misrepresentation; the plaintiffs relied on the agreement as an admission, not as an estoppel."
+      ],
+      "conclusion": "The agreement provided satisfactory evidence that the first defendant owned the properties and sold them to the plaintiffs. It was relied on as an admission, not as an estoppel creating title.",
+      "legal_principle": "An admission is an important piece of evidence, and its maker may seek to prove that it is untrue. An admission is distinct from estoppel: an admission is evidence, whereas estoppel creates title. No statutory provision or earlier case was cited.",
+      "rule": {
+        "if": "civil_title_dispute and executed_written_admission_identifies_title_and_transfer and execution_denial_rejected and admission_not_claimed_mistaken_or_induced",
+        "then": "admission_is_evidence_of_title_and_transfer_not_estoppel"
+      },
+      "predicates": {
+        "civil_title_dispute": "The case concerns a dispute over title to property and an alleged transfer.",
+        "executed_written_admission_identifies_title_and_transfer": "A party executed a written statement acknowledging another person's ownership and the transfer of the property.",
+        "execution_denial_rejected": "The court rejects the party's denial that they executed the written statement.",
+        "admission_not_claimed_mistaken_or_induced": "The party does not claim that the admission was mistaken or obtained through misrepresentation or another inducement."
+      },
+      "definition": "In a civil title dispute, an executed and unrebutted written admission acknowledging ownership and transfer is evidence of title and transfer, rather than an estoppel that creates title."
+    },
+    {
+      "legal_issue": "A new challenge to the validity of a transaction was not entertained on appeal when it had not been raised before the High Court.",
+      "material_facts": [
+        "The appellant sought to challenge the sale on the ground that the required sanction had not been obtained for the purchaser's acquisition from a person alleged to belong to a protected group.",
+        "The challenge had not been pursued before the High Court, which had not considered it; the Supreme Court did not permit the appellant to raise it there."
+      ],
+      "conclusion": "The Supreme Court did not permit the appellant to raise the challenge, and it did not decide the challenge's merits.",
+      "legal_principle": "The Court declined to entertain the point because it had not been agitated before the High Court. It did not cite a statutory provision or earlier case or decide the substantive validity of the sale on that ground.",
+      "rule": {
+        "if": "appeal_to_supreme_court and legal_ground_not_agitated_before_high_court",
+        "then": "new_legal_ground_not_entertained"
+      },
+      "predicates": {
+        "appeal_to_supreme_court": "The matter is an appeal before the Supreme Court.",
+        "legal_ground_not_agitated_before_high_court": "A party did not raise a legal ground before the High Court, and that court did not consider it."
+      },
+      "definition": "When a party raises a legal ground in a Supreme Court appeal that was not agitated before the High Court, the new ground is not entertained."
+    }
+  ],
+  "seconds": 22.5
+}

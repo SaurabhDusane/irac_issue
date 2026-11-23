@@ -1,0 +1,150 @@
+{
+  "doc_id": "516830",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42266,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3962,
+    "prompt_tokens": 10596,
+    "total_tokens": 14558,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A coparcener cannot make an effective testamentary disposition of ancestral joint family property.",
+      "material_facts": [
+        "The properties were ancestral joint family properties, and the family had expanded its business and acquired further property using the ancestral nucleus.",
+        "The father’s document described itself as a will, made bequests to take effect after his death, appointed executors, and asserted that the family properties were his self-acquisitions.",
+        "The father had no power under Hindu law to dispose of the joint family property by will."
+      ],
+      "conclusion": "The document was inoperative as a will insofar as it disposed of the joint family properties.",
+      "legal_principle": "A coparcener cannot devise joint family property by will because, when the will takes effect on the testator’s death, his interest passes by survivorship to the other coparceners. The Court relied on Vittla Bulten v. Yamenamma, Lakshman Dada Naik v. Ramachandra Dada Naik, Paryatibai v. Bhagwant, and Subbarami Reddi v. Ramamma. It distinguished Brijraj Singh v. Sheodan Singh and Lakshmi Chand v. Anandi, in which documents described as wills were given effect as family arrangements that had been acted upon.",
+      "rule": {
+        "if": "joint_family_partition_case and property_is_ancestral_joint_family_property and coparcener_attempted_testamentary_disposition",
+        "then": "testamentary_disposition_is_ineffective_as_to_joint_family_property"
+      },
+      "predicates": {
+        "joint_family_partition_case": "The proceeding concerns claims to divide property of a joint family.",
+        "property_is_ancestral_joint_family_property": "The property was ancestral property held as joint family property rather than the individual property of the person making the disposition.",
+        "coparcener_attempted_testamentary_disposition": "A coparcener attempted to dispose of the property by a testamentary document intended to take effect after death."
+      },
+      "definition": "When a partition case concerns ancestral joint family property that a coparcener attempted to dispose of by will, the disposition is ineffective as to that property."
+    },
+    {
+      "legal_issue": "A testamentary document and the coparceners’ assent to it do not constitute a binding family arrangement without a bona fide family purpose, mutual agreement, and valid assent by all necessary participants.",
+      "material_facts": [
+        "The document urged the sons to remain joint and undivided and described the proposed shares as suggestions for a possible future partition.",
+        "The family was described as harmonious, and the Court found no evidence of existing disputes, competing claims, or reasonably anticipated disharmony that occasioned an arrangement.",
+        "The father did not propose a present partition, and the proposed shares would have been unequal.",
+        "One son was a minor when he signed, and a later agreement relied on to show his assent was signed on his behalf by a mother whose interests conflicted with his.",
+        "The original of another document said to show the minor’s later ratification was not produced, and its loss was not properly accounted for.",
+        "The Court found no consideration or binding mutual agreement, and found that the document had not been acted upon."
+      ],
+      "conclusion": "The document was ineffective as a family arrangement, even assuming that the sons had assented to the father’s suggestions.",
+      "legal_principle": "A family arrangement must be a bona fide agreement intended for the general benefit of the family, ordinarily to resolve doubtful or disputed rights, preserve family property, or maintain peace and security; genuine possible disputes may suffice. The agreement must have mutuality and consideration, including the expectation of amity and goodwill, and must be fairly made in the circumstances. The Court relied on Maturi Pullaiah v. Maturi Narasimham, Ram Charan Das v. Giris Nandini Devi, Ram Gopal v. Nand Lal, Subbarami Reddi v. Ramamma, and Mohammed Amin v. Vakil Chand. Where a coparcener has not validly assented, the asserted arrangement among the coparceners fails.",
+      "rule": {
+        "if": "joint_family_partition_case and document_claimed_as_family_arrangement and no_bona_fide_family_dispute_or_purpose and no_binding_mutual_agreement and not_valid_assent_of_all_coparceners",
+        "then": "document_is_ineffective_as_a_family_arrangement"
+      },
+      "predicates": {
+        "joint_family_partition_case": "The proceeding concerns a claim that a document arranged rights in joint family property.",
+        "document_claimed_as_family_arrangement": "A party relies on a document as an agreement among family members to settle or prevent disputes about family property.",
+        "no_bona_fide_family_dispute_or_purpose": "The family members were harmonious and the evidence disclosed no bona fide dispute, threatened disharmony, or other family purpose for making an arrangement.",
+        "no_binding_mutual_agreement": "The document expressed recommendations or future suggestions rather than a binding agreement supported by mutuality and consideration.",
+        "not_valid_assent_of_all_coparceners": "At least one necessary coparcener did not validly assent, including because an alleged assent was given during minority without valid representation."
+      },
+      "definition": "Where a document is relied on as a family arrangement but there was no bona fide family purpose or binding mutual agreement and a necessary coparcener did not validly assent, the document is ineffective as an arrangement."
+    },
+    {
+      "legal_issue": "Heirs of a deceased coparcener are entitled to the share their predecessor had at the relevant partition, and not to a share in the mother’s partition share where he predeceased her.",
+      "material_facts": [
+        "The family’s joint status was severed when the members referred their disputes to arbitration.",
+        "The predecessor had died before his mother.",
+        "The applicable local Hindu law entitled the mother to a share on partition, but the predecessor’s heirs could not share alongside his surviving brothers in the mother’s share because he had predeceased her.",
+        "The High Court determined the heirs’ share as two-nineteenths, and that calculation was not challenged in argument before the Supreme Court."
+      ],
+      "conclusion": "The Court affirmed the finding that the heirs were entitled to a two-nineteenths share in the joint family properties and liabilities.",
+      "legal_principle": "The applicable Mysore Hindu Law Women’s Rights Act governed the mother’s share on partition. Because the predecessor had predeceased his mother, his heirs could claim only what he could have claimed at the relevant partition and could not claim alongside his uncles in the mother’s share. The Supreme Court affirmed the High Court’s unchallenged calculation.",
+      "rule": {
+        "if": "joint_family_partition_case and joint_status_was_severed and predecessor_predeceased_mother and applicable_law_grants_mother_partition_share",
+        "then": "heirs_are_limited_to_predecessors_partition_entitlement"
+      },
+      "predicates": {
+        "joint_family_partition_case": "The proceeding seeks division of joint family property among family members or their heirs.",
+        "joint_status_was_severed": "The family members’ joint status ended before the relevant partition entitlement was determined.",
+        "predecessor_predeceased_mother": "The family member through whom the heirs claim died before his mother.",
+        "applicable_law_grants_mother_partition_share": "The law applicable to the partition entitles the mother to a share in the family property."
+      },
+      "definition": "When joint status has been severed, a predecessor died before a mother entitled to a partition share, and the applicable law grants her that share, the heirs take only the predecessor’s own partition entitlement."
+    },
+    {
+      "legal_issue": "After severance of joint status, a member’s separate business profits and acquisitions are not shared with other former coparceners merely because the business uses a family name or one member possesses family assets.",
+      "material_facts": [
+        "The family’s joint status had ended before the parties made arrangements for the business.",
+        "The arbitrators’ directions, agreed to by the parties, treated the business from that point forward as the defendants’ own, with the defendants entitled to its profits and liable for its losses.",
+        "The old family business ended, and the defendants’ later business was a new business despite continuing to use the former family business names.",
+        "The parties opened fresh books for the later businesses, and both sides carried on their own businesses.",
+        "The Court held that the same rule applied to the plaintiff’s separate business."
+      ],
+      "conclusion": "The parties were not accountable to one another for profits or acquisitions made in their separate businesses after severance.",
+      "legal_principle": "After severance, family members become tenants in common of the family property. There is no presumption that property acquired by a member after severance is acquired for the family, even if that member remains in possession of family property. The member is accountable for rents and profits received from family assets but does not hold funds in trust for the others merely by possessing them; acquisitions made with those funds are not thereby shared. The Court relied on Gulabrao Fakirrao v. Baburao Fakirrao and John Kennedy v. Mery Annette De Trafford.",
+      "rule": {
+        "if": "joint_family_partition_case and joint_status_was_severed and parties_carried_on_separate_businesses and post_severance_business_was_not_continuation_of_family_business",
+        "then": "parties_are_not_accountable_for_each_others_separate_business_profits_or_acquisitions"
+      },
+      "predicates": {
+        "joint_family_partition_case": "The proceeding concerns division of family property after a joint family relationship has ended.",
+        "joint_status_was_severed": "The family members’ joint status ended before the business activity at issue.",
+        "parties_carried_on_separate_businesses": "Former coparceners conducted business separately from one another.",
+        "post_severance_business_was_not_continuation_of_family_business": "The business conducted after severance was a new or separate business rather than a continuation of the former joint family business."
+      },
+      "definition": "When former coparceners conduct separate businesses after severance and the later business is not a continuation of the family business, they do not account to one another for its profits or acquisitions."
+    },
+    {
+      "legal_issue": "A former coparcener in possession of joint family property must account to the other co-owners for income received from that property pending partition.",
+      "material_facts": [
+        "The joint family assets included movable and immovable properties, stocks, shares, and securities in the parties’ possession or control when the joint status was severed.",
+        "The parties continued to possess family assets after severance and received rents, income, profits, or dividends from those assets before final partition.",
+        "The Court directed that the family assets and liabilities be accounted for and that each party account for income received from joint family property in that party’s possession."
+      ],
+      "conclusion": "The parties had to account for rents, income, profits, and dividends received from joint family property in their possession after severance and before final partition.",
+      "legal_principle": "Following severance, the family members hold the family property as tenants in common. A member possessing family property must account for its rents and profits received, although the funds in that member’s hands are not thereby impressed with a trust and separate acquisitions are not automatically family property. The Court relied on Gulabrao Fakirrao v. Baburao Fakirrao and John Kennedy v. Mery Annette De Trafford.",
+      "rule": {
+        "if": "joint_family_partition_case and joint_status_was_severed and co_owner_received_income_from_joint_property_before_partition",
+        "then": "co_owner_must_account_for_income_from_joint_property"
+      },
+      "predicates": {
+        "joint_family_partition_case": "The proceeding concerns partition of property formerly held by a joint family.",
+        "joint_status_was_severed": "The family members’ joint status ended before final partition.",
+        "co_owner_received_income_from_joint_property_before_partition": "A co-owner received rents, profits, dividends, or other income from family property in that co-owner’s possession after severance and before partition."
+      },
+      "definition": "When a co-owner receives income from joint family property after severance but before partition, that co-owner must account for the income to the other co-owners."
+    },
+    {
+      "legal_issue": "A copy of a document is inadmissible where the original is not produced and its loss is not properly accounted for.",
+      "material_facts": [
+        "A party relied on a photographic copy of a document said to contain a deceased family member’s later ratification of an arrangement.",
+        "The original, which would ordinarily have been in the possession of the party relying on the document, was not produced.",
+        "The loss of the original was not properly accounted for.",
+        "Both lower courts rejected the copy as inadmissible, and the Supreme Court agreed."
+      ],
+      "conclusion": "The photographic copy was rightly refused admission in evidence.",
+      "legal_principle": "The Court upheld the exclusion of the copy because the original was not produced and its loss was not properly accounted for; it cited no statutory provision or earlier case for this evidentiary ruling.",
+      "rule": {
+        "if": "civil_partition_case and party_offered_document_copy and original_not_produced and loss_of_original_not_properly_accounted_for",
+        "then": "document_copy_is_inadmissible"
+      },
+      "predicates": {
+        "civil_partition_case": "The proceeding is a civil dispute concerning division of family property.",
+        "party_offered_document_copy": "A party offered a copy of a document as evidence.",
+        "original_not_produced": "The original document was not produced in evidence.",
+        "loss_of_original_not_properly_accounted_for": "The party relying on the copy did not properly account for the loss of the original."
+      },
+      "definition": "In a civil partition case, a copy offered without producing the original is inadmissible when the loss of the original has not been properly accounted for."
+    }
+  ],
+  "seconds": 24.5
+}

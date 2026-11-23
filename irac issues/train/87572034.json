@@ -1,0 +1,104 @@
+{
+  "doc_id": "87572034",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23262,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3603,
+    "prompt_tokens": 5847,
+    "total_tokens": 9450,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An increase in tax dues following an appeal or other proceeding does not invalidate recovery proceedings already commenced for the original dues.",
+      "material_facts": [
+        "A recovery certificate had been issued for the original tax demand and recovery proceedings had begun.",
+        "The tax dues were later increased by a rectification order.",
+        "The recovery officer continued the existing proceedings for the original amount and declined to add the increased amount to the certificate without a separate certificate."
+      ],
+      "conclusion": "The existing recovery proceedings could continue for the original dues. A further demand notice was required only for the amount of the increase; the department could pursue that amount separately or cancel the existing proceedings and begin new proceedings for the full amount.",
+      "legal_principle": "Section 3(1)(a) of the Taxation Laws (Continuation and Validation of Recovery Proceedings) Act, 1964 permits proceedings already commenced to continue from their existing stage for the dues covered by the earlier demand, while requiring another demand notice for the increase. The court construed Section 35(4) of the Income-tax Act, 1922 harmoniously with that provision: the demand for an increase is for the additional amount, not the whole enhanced amount. The reasoning also explains the statutory response to Income-tax Officer v. Seghu Buchiah Setty, which had required a fresh demand notice after a reduction in tax.",
+      "rule": {
+        "if": "certificate_recovery_proceeding and original_demand_notice_served and recovery_started and dues_increased_in_appeal_or_other_proceeding and original_proceeding_not_cancelled",
+        "then": "original_recovery_continues_for_original_dues"
+      },
+      "predicates": {
+        "certificate_recovery_proceeding": "A proceeding was brought to recover government dues through a recovery certificate.",
+        "original_demand_notice_served": "The taxpayer was served with a demand notice for the dues before they were increased.",
+        "recovery_started": "Recovery steps had begun under the original demand.",
+        "dues_increased_in_appeal_or_other_proceeding": "An appeal or other proceeding resulted in an increase in the dues.",
+        "original_proceeding_not_cancelled": "The authority did not cancel the existing recovery proceeding and replace it with a new proceeding for the full increased amount."
+      },
+      "definition": "When a certificate-based recovery proceeding has started on a served demand and the dues are later increased without cancellation of that proceeding, the proceeding continues for the original dues."
+    },
+    {
+      "legal_issue": "A reduction in tax dues does not require a fresh demand notice for existing recovery proceedings to continue, and the required information about the reduction may be established by the taxpayer's demonstrated knowledge and the authority's communication to the recovery officer.",
+      "material_facts": [
+        "The tax demand was reduced on appeal after recovery proceedings had begun.",
+        "The taxpayer's review application told the recovery officer that the demand had been reduced and referred to payments made.",
+        "After inquiry by the recovery officer, the tax authority supplied the reduced amount, and the recovery certificate was amended accordingly."
+      ],
+      "conclusion": "The statutory requirement to communicate the reduction was fulfilled on these facts. No fresh demand notice was necessary, and the existing proceedings could continue for the reduced amount.",
+      "legal_principle": "Section 3(1)(b)(i)–(iii) of the Taxation Laws (Continuation and Validation of Recovery Proceedings) Act, 1964 provides that a fresh demand notice is unnecessary after a reduction, that the taxpayer and recovery officer are to be informed of it, and that proceedings may continue for the reduced dues. The court held that the purpose of informing the taxpayer was met because the taxpayer had himself disclosed the reduction to the recovery officer; the tax authority then informed that officer of the reduced amount. The court rejected the High Court's view that formal intimation by the tax authority to both recipients was mandatory in those circumstances. The provision responds to the rule in Income-tax Officer v. Seghu Buchiah Setty, under which recovery after a reduction required a fresh demand notice.",
+      "rule": {
+        "if": "certificate_recovery_proceeding and original_demand_notice_served and recovery_started and dues_reduced_in_appeal_or_other_proceeding and taxpayer_knew_of_reduction and recovery_officer_informed_of_reduced_amount",
+        "then": "recovery_continues_for_reduced_dues_without_fresh_demand_notice"
+      },
+      "predicates": {
+        "certificate_recovery_proceeding": "A proceeding was brought to recover government dues through a recovery certificate.",
+        "original_demand_notice_served": "The taxpayer was served with a demand notice before the dues were reduced.",
+        "recovery_started": "Recovery steps had begun under the original demand.",
+        "dues_reduced_in_appeal_or_other_proceeding": "An appeal or other proceeding resulted in a reduction of the dues.",
+        "taxpayer_knew_of_reduction": "The taxpayer demonstrated knowledge of the reduction, including by informing the recovery officer of it.",
+        "recovery_officer_informed_of_reduced_amount": "The tax authority communicated the reduced amount to the officer handling recovery."
+      },
+      "definition": "When certificate-based recovery has started, the dues are reduced, the taxpayer knows of the reduction, and the recovery officer is informed of the reduced amount, recovery may continue for the reduced dues without a fresh demand notice."
+    },
+    {
+      "legal_issue": "A third party claiming an interest in property subject to certificate-sale proceedings may lodge a claim asserting that the property is not liable to sale.",
+      "material_facts": [
+        "The company had purchased the property from the certificate-debtors before it received notice that the property was to be sold.",
+        "The company objected to the proposed sale on the ground that it owned the property and it was not liable to sale as the debtors' property.",
+        "The objection arose in proceedings for sale under the Bengal Public Demands Recovery Act, 1913."
+      ],
+      "conclusion": "The company had standing to make a claim objecting to the sale and to seek to establish its interest in the property at the relevant time.",
+      "legal_principle": "Rule 39 in Schedule II to the Bengal Public Demands Recovery Act, 1913, which has the effect of an enacted provision under Section 38, is similar to Order 21 Rule 58 of the Code of Civil Procedure, 1908. Rule 40 allowed the company to show that it had an interest in the property at the date of service of the recovery notice. Section 22 also provided a route to seek to set aside a sale on making the specified deposit.",
+      "rule": {
+        "if": "certificate_property_sale_proceeding and third_party_claims_interest_in_property and third_party_objects_that_property_is_not_liable_to_sale",
+        "then": "third_party_may_lodge_property_claim"
+      },
+      "predicates": {
+        "certificate_property_sale_proceeding": "A proceeding was brought to sell property to recover dues under a certificate.",
+        "third_party_claims_interest_in_property": "A person other than the certificate-debtor asserted an interest in the property proposed for sale.",
+        "third_party_objects_that_property_is_not_liable_to_sale": "That person objected to the sale on the basis that the property was not liable to be sold for the certificate-debtor's dues."
+      },
+      "definition": "In a certificate-based property sale proceeding, a third party asserting an interest in the property may lodge a claim that the property is not liable to sale."
+    },
+    {
+      "legal_issue": "A transfer of property made after service of the recovery notice is void against the recovery claim when the recovery proceedings remain valid despite a later change in the amount due.",
+      "material_facts": [
+        "Recovery notices were served on the two certificate-debtors before they transferred their shares in the property to the company.",
+        "The transfers occurred after service of those notices.",
+        "The dues were later reduced in one recovery proceeding and increased in the other, but neither change invalidated the existing recovery proceedings under the Validation Act."
+      ],
+      "conclusion": "The company's transfers were void against the certificate claims, and the property could be proceeded against for recovery of the dues, subject to the applicable amount of the certificate debt.",
+      "legal_principle": "Section 8(a) of the Bengal Public Demands Recovery Act, 1913 makes a private transfer of the debtor's immovable property void against claims enforceable in execution of a certificate from the time notice is served under Section 7. Sections 3(1)(a)–(c) of the Taxation Laws (Continuation and Validation of Recovery Proceedings) Act, 1964 preserve proceedings despite an increase or reduction in dues, subject to the provisions governing the relevant amount and intimation. The court distinguished Ram Swamp Gupta v. Behari Lal Baldeo Prasad, where property had been sold for the original amount even after the demand was reduced; the property here could not be sold for an amount greater than the properly reduced certificate debt.",
+      "rule": {
+        "if": "certificate_recovery_proceeding and recovery_notice_served_on_debtor and property_transferred_after_notice and dues_later_adjusted_in_appeal_or_other_proceeding",
+        "then": "transfer_void_against_enforceable_certificate_claim"
+      },
+      "predicates": {
+        "certificate_recovery_proceeding": "A proceeding was brought to recover government dues through a recovery certificate.",
+        "recovery_notice_served_on_debtor": "The certificate-debtor was served with a notice of the recovery certificate.",
+        "property_transferred_after_notice": "The debtor privately transferred an interest in immovable property after receiving the recovery notice.",
+        "dues_later_adjusted_in_appeal_or_other_proceeding": "An appeal or other proceeding later increased or reduced the amount of the dues."
+      },
+      "definition": "When a debtor transfers property after service of a recovery notice, a later adjustment of the dues does not prevent the transfer from being void against an enforceable certificate claim."
+    }
+  ],
+  "seconds": 28.5
+}

@@ -1,0 +1,77 @@
+{
+  "doc_id": "757648",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10425,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2149,
+    "prompt_tokens": 3051,
+    "total_tokens": 5200,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The validity and genuineness of a disputed will affecting ownership of land must be determined by a competent civil court.",
+      "material_facts": [
+        "The revenue entry was made on the basis of a will said to have been executed by the deceased landholder.",
+        "A civil suit challenging the will had been dismissed, and an appeal from that dismissal was pending."
+      ],
+      "conclusion": "The validity and genuineness of the will were for the competent civil court to decide; the Supreme Court expressed no opinion on them.",
+      "legal_principle": "The validity and genuineness of a will, and the resulting title dispute, are matters for determination by a competent civil court. Because the dispute was pending in civil proceedings, the Court refrained from deciding its merits.",
+      "rule": {
+        "if": "proceeding_challenges_revenue_mutation and will_validity_disputed and civil_case_pending",
+        "then": "will_validity_requires_civil_court_determination"
+      },
+      "predicates": {
+        "proceeding_challenges_revenue_mutation": "The proceeding challenges a revenue entry made on the basis of a will.",
+        "will_validity_disputed": "A party disputes the validity or genuineness of the will underlying the entry.",
+        "civil_case_pending": "A civil proceeding concerning the will's validity or genuineness remains pending."
+      },
+      "definition": "When a proceeding challenges a revenue entry based on a disputed will and a civil case about the will remains pending, the will's validity requires determination by a competent civil court."
+    },
+    {
+      "legal_issue": "A mutation made on an application supported by an alleged will was not held unlawful merely because the claimed heirs received no notice before the entry was made.",
+      "material_facts": [
+        "The beneficiary named in the alleged will applied for mutation of the deceased landholder's share.",
+        "The revenue officer entered the applicant's name on the basis of the alleged will without giving notice to the appellants.",
+        "The appellate revenue authorities and the High Court confirmed the mutation."
+      ],
+      "conclusion": "The absence of notice did not lead the Court to find the mutation unlawful, and it found no infirmity in the confirmed revenue orders on that ground.",
+      "legal_principle": "The Court considered the mutation to have been made on the basis of the alleged will and noted that it had been confirmed by the revenue appellate authorities and the High Court. It identified no specific statutory provision or earlier case as establishing a separate rule that notice was unnecessary; the mutation had been made under the Delhi Land Revenue Act, 1954.",
+      "rule": {
+        "if": "proceeding_challenges_revenue_mutation and mutation_based_on_alleged_will and no_notice_to_claimed_heirs and revenue_orders_confirmed",
+        "then": "mutation_not_invalidated_for_lack_of_notice"
+      },
+      "predicates": {
+        "proceeding_challenges_revenue_mutation": "The proceeding challenges a revenue mutation entry.",
+        "mutation_based_on_alleged_will": "A revenue officer made the mutation on an applicant's request supported by an alleged will.",
+        "no_notice_to_claimed_heirs": "The claimed heirs were not given notice before the mutation was made.",
+        "revenue_orders_confirmed": "The revenue appellate authorities and the reviewing court confirmed the mutation."
+      },
+      "definition": "When a challenge to a revenue mutation concerns an entry made on an alleged will without notice to claimed heirs, and the revenue orders are confirmed, the entry is not invalidated merely for lack of notice."
+    },
+    {
+      "legal_issue": "An entry in revenue records serves a fiscal purpose and does not establish ownership or determine title to property.",
+      "material_facts": [
+        "The disputed name was entered in the revenue records through a mutation based on an alleged will.",
+        "The parties disputed who owned the deceased landholder's share, and proceedings concerning the will were pending before a civil court."
+      ],
+      "conclusion": "The revenue entry did not confer title, and title could be decided only by a competent civil court; the Court found no reason under Article 136 of the Constitution to interfere with the order concerning the entry.",
+      "legal_principle": "Revenue record or Jamabandi entries serve the fiscal purpose of land-revenue payment and do not confer ownership. Title is determined by a competent civil court. The Court relied on Jattu Ram v. Hakam Singh, AIR 1994 SC 1653, and applied this principle in declining interference under Article 136 of the Constitution.",
+      "rule": {
+        "if": "proceeding_challenges_revenue_mutation and revenue_entry_exists and property_title_disputed",
+        "then": "revenue_entry_does_not_confer_title"
+      },
+      "predicates": {
+        "proceeding_challenges_revenue_mutation": "The proceeding challenges a mutation or other entry in revenue records.",
+        "revenue_entry_exists": "A person's name appears in the revenue records following an entry or mutation.",
+        "property_title_disputed": "The parties dispute ownership or title to the property represented by the entry."
+      },
+      "definition": "When a revenue entry is challenged in a proceeding involving disputed property title, the entry does not itself confer title."
+    }
+  ],
+  "seconds": 14.9
+}

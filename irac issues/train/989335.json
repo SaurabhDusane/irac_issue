@@ -1,0 +1,82 @@
+{
+  "doc_id": "989335",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 91658,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3041,
+    "prompt_tokens": 21333,
+    "total_tokens": 24374,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A death sentence should not be imposed when the court is not satisfied that the alternative of life imprisonment is unquestionably foreclosed.",
+      "material_facts": [
+        "The appeal concerned a death sentence imposed for a planned, cold-blooded murder motivated by the desire to obtain the victim’s wealth.",
+        "The victim was apparently unaware of the betrayal and the manner of killing was not shown to have caused her mental or physical pain.",
+        "The offender had partially confessed, and the Court considered the irreversibility of execution and inconsistency in the administration of death sentences.",
+        "The Court regarded the crime as grave and its motive as highly depraved, but remained hesitant to affirm the death sentence."
+      ],
+      "conclusion": "The Court commuted the death sentence rather than affirming it.",
+      "legal_principle": "Under Section 354(3) of the Code of Criminal Procedure and the principles in Bachan Singh v. State of Punjab, death is an exceptional punishment for the rarest of rare cases, and may be imposed only when the alternative option is unquestionably foreclosed. Machhi Singh v. State of Punjab provides useful but flexible guidelines and does not create inflexible categories. The Court also stressed that the gravity of the crime must be assessed alongside the circumstances of the offender, and that a court must be especially cautious because an executed death sentence cannot be undone.",
+      "rule": {
+        "if": "death_sentence_appeal and planned_grave_murder and (victim_unaware_of_betrayal or killing_caused_no_shown_pain) and court_hesitant_to_affirm_execution",
+        "then": "death_sentence_commuted"
+      },
+      "predicates": {
+        "death_sentence_appeal": "The proceeding is an appeal concerning a death sentence imposed by a lower court and affirmed on review.",
+        "planned_grave_murder": "The offender deliberately planned and carried out a grave murder for a depraved motive.",
+        "victim_unaware_of_betrayal": "The victim apparently did not know before death that a trusted person had betrayed her.",
+        "killing_caused_no_shown_pain": "The evidence did not show that the manner of killing caused the victim mental or physical pain.",
+        "court_hesitant_to_affirm_execution": "The court was reluctant to affirm execution after considering the case circumstances and the irreversible nature of death."
+      },
+      "definition": "When a death-sentence appeal concerns a planned grave murder, but the victim was apparently unaware of the betrayal or no pain was shown and the court is hesitant to affirm execution, the death sentence is commuted."
+    },
+    {
+      "legal_issue": "A court may use a sentence between ordinary life imprisonment and death when death is unwarranted but ordinary life imprisonment would be inadequate for the crime.",
+      "material_facts": [
+        "The Court concluded that the crime was too grave for a life sentence likely, through ordinary remission practices, to result in release after about fourteen years.",
+        "The Court was nevertheless hesitant to affirm the death sentence because of its irreversibility and the circumstances of the crime.",
+        "The Court identified a gap between ordinary life imprisonment and death and considered a sentence lasting for the remainder of the offender’s life a just and proportionate alternative."
+      ],
+      "conclusion": "The Court recognized that it may substitute a sentence of imprisonment for life, directed to last for the rest of the offender’s life, for a death sentence.",
+      "legal_principle": "The Court relied on the sentencing discretion recognized under Sections 235(2) and 354(3) of the Code of Criminal Procedure and the rarest-of-rare principle in Bachan Singh v. State of Punjab. It treated Dalbir Singh v. State of Punjab as an earlier suggestion for life imprisonment lasting as long as life, and relied on decisions including Subhash Chander v. Krishan Lal, Shri Bhagwan v. State of Rajasthan, Prakash Dhawal Khairnar (Patil) v. State of Maharashtra, Ram Anup Singh v. State of Bihar, Jayawant Dattatraya Suryarao v. State of Maharashtra, and Nazir Khan v. State of Delhi as precedents for sentences restricting release. The intermediate option avoids choosing death merely because ordinary life imprisonment would be disproportionately inadequate.",
+      "rule": {
+        "if": "death_sentence_appeal and death_sentence_not_justified and ordinary_life_sentence_inadequate_for_crime",
+        "then": "court_may_impose_rest_of_life_sentence"
+      },
+      "predicates": {
+        "death_sentence_appeal": "The proceeding is an appeal concerning a death sentence imposed by a lower court and affirmed on review.",
+        "death_sentence_not_justified": "The court concludes that the case does not justify affirming the death sentence.",
+        "ordinary_life_sentence_inadequate_for_crime": "The court concludes that ordinary life imprisonment, as likely to operate in practice, would be grossly inadequate for the gravity of the crime."
+      },
+      "definition": "In a death-sentence appeal, when death is not justified but ordinary life imprisonment is inadequate for the crime, the court may impose a sentence lasting for the offender’s remaining life."
+    },
+    {
+      "legal_issue": "A court may direct that a life sentence imposed instead of death last for the offender’s natural life, and ordinary remission does not entitle the offender to release contrary to that direction.",
+      "material_facts": [
+        "The Court substituted life imprisonment for death and expressly directed that the offender not be released from prison for the rest of his life.",
+        "The Court explained that life imprisonment ordinarily means imprisonment for the remainder of the offender’s natural life and that remission does not by itself convert that sentence into a fixed term or create an automatic right to release.",
+        "The Court noted that State prison practices could treat life imprisonment as a fixed term for remission purposes, but found no sound legal basis for automatic release on that account.",
+        "The Court confined its discussion to statutory and prison-rule remission arrangements and expressly did not decide the sovereign powers under Articles 72 and 161 of the Constitution."
+      ],
+      "conclusion": "The Court directed that the substituted life sentence last for the offender’s natural life and that he not be released through ordinary remission arrangements, without deciding the constitutional clemency powers.",
+      "legal_principle": "Sections 45 and 53 of the Indian Penal Code establish the meaning of life and the punishment of imprisonment for life; Section 57 concerns calculation of fractions and does not limit life imprisonment to twenty years. Sections 54 and 55 of the Code concern executive commutation, while Sections 432, 433 and 433A of the Code of Criminal Procedure govern suspension, remission, commutation and relevant restrictions. Articles 72 and 161 of the Constitution concern sovereign clemency powers, which the Court left untouched. The Court relied on Gopal Vinayak Godse v. State of Maharashtra, Dalbir Singh v. State of Punjab, Maru Ram v. Union of India, State of M.P. v. Ratan Singh, Shri Bhagwan v. State of Rajasthan, and other cited decisions for the principles that life imprisonment means imprisonment for the whole of the natural life unless lawfully remitted, and that a prisoner has no automatic right to release through remission. It distinguished State (Government of NCT of Delhi) v. Prem Raj, which concerned a court directing executive remission rather than specifying the judicial sentence.",
+      "rule": {
+        "if": "life_sentence_substitutes_for_death and court_directs_natural_life and remission_does_not_create_automatic_release_right",
+        "then": "offender_not_released_under_ordinary_remission"
+      },
+      "predicates": {
+        "life_sentence_substitutes_for_death": "The court imposes life imprisonment instead of a death sentence in a capital case.",
+        "court_directs_natural_life": "The court expressly directs that the life sentence last for the offender’s remaining natural life.",
+        "remission_does_not_create_automatic_release_right": "The applicable remission arrangements do not themselves give the offender an automatic right to release contrary to the sentence."
+      },
+      "definition": "When life imprisonment substitutes for death, the court directs that it last for the offender’s natural life, and remission creates no automatic release right, the offender is not released under ordinary remission arrangements."
+    }
+  ],
+  "seconds": 19.0
+}

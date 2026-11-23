@@ -1,0 +1,59 @@
+{
+  "doc_id": "806314",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15920,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1349,
+    "prompt_tokens": 4532,
+    "total_tokens": 5881,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A demand notice supporting an eviction suit for rent default must demand legally recoverable arrears for the accommodation actually let to the tenant and sought to be recovered.",
+      "material_facts": [
+        "The landlord's notice demanded arrears for a portion of a shop and a verandah.",
+        "The tenant had been let the entire shop, the verandah, and a room behind the shop, as the subordinate courts found.",
+        "The difference between the accommodation described in the notice and the accommodation actually let was substantial, and the parties seriously disputed the extent of the tenancy.",
+        "The landlord brought an eviction suit based on alleged non-payment of rent after service of the notice."
+      ],
+      "conclusion": "The notice was invalid because it did not relate to the accommodation actually let to the tenant, so the eviction suit was not maintainable on the rent-default ground.",
+      "legal_principle": "Section 12(1)(a) of the Madhya Pradesh Accommodation Control Act, 1961 requires a notice demanding legally recoverable rent arrears for the accommodation let to the tenant and from which eviction is sought. A valid demand is a condition of maintaining a suit on that ground. The fact that notice under section 106 of the Transfer of Property Act is unnecessary to terminate a tenancy under the rent-control law, as discussed in V. Dhanapal Chettiar v. Yeshodai Ammal, does not dispense with the distinct demand required by section 12(1)(a).",
+      "rule": {
+        "if": "rent_default_eviction_suit and notice_describes_different_accommodation and discrepancy_is_substantial",
+        "then": "rent_default_eviction_suit_not_maintainable"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "The landlord brought an eviction suit relying on the tenant's alleged failure to pay rent arrears.",
+        "notice_describes_different_accommodation": "The demand notice identified accommodation that was not the accommodation actually let to the tenant.",
+        "discrepancy_is_substantial": "The difference between the accommodation in the notice and the accommodation let was substantial rather than a minor misdescription."
+      },
+      "definition": "When an eviction suit rests on rent default and the notice substantially identifies accommodation different from what was let, the suit is not maintainable on that ground."
+    },
+    {
+      "legal_issue": "Amending a plaint to describe the accommodation actually let does not cure an earlier invalid demand notice.",
+      "material_facts": [
+        "During the second appeal, the landlord obtained permission to amend the plaint so that it included the entire accommodation claimed by the tenant.",
+        "The demand notice had been issued before the suit and described materially different accommodation from that actually let.",
+        "The notice and the plaint were separate acts serving different purposes, and the notice was a prior condition for maintaining the suit."
+      ],
+      "conclusion": "The amendment to the plaint did not cure the invalid notice, and the suit remained not maintainable.",
+      "legal_principle": "A notice demanding arrears under section 12(1)(a) of the Madhya Pradesh Accommodation Control Act, 1961 is independent of the institution of the suit. Although a plaint amendment may relate back to the filing of the suit, it cannot retrospectively amend or validate the prior notice. The court distinguished the notice requirement from the notice to terminate a tenancy under section 106 of the Transfer of Property Act discussed in V. Dhanapal Chettiar v. Yeshodai Ammal.",
+      "rule": {
+        "if": "rent_default_eviction_suit and demand_notice_is_invalid and plaint_is_amended_after_filing",
+        "then": "plaint_amendment_does_not_cure_notice"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "The landlord brought an eviction suit relying on the tenant's alleged failure to pay rent arrears.",
+        "demand_notice_is_invalid": "The demand notice failed to make a valid demand for arrears relating to the accommodation actually let to the tenant.",
+        "plaint_is_amended_after_filing": "The landlord amended the plaint after filing the suit to describe the accommodation actually let."
+      },
+      "definition": "In a rent-default eviction suit, amending the plaint after filing does not cure an invalid prior demand notice."
+    }
+  ],
+  "seconds": 8.8
+}

@@ -1,0 +1,122 @@
+{
+  "doc_id": "1258228",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 85024,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4097,
+    "prompt_tokens": 21707,
+    "total_tokens": 25804,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "For purposes of authorizing parliamentary legislation by state resolution, the term “legislature” refers to the House or Houses and does not require the Governor to participate.",
+      "material_facts": [
+        "The Houses of multiple state legislatures passed resolutions authorizing parliamentary legislation on urban immovable property.",
+        "The Governor did not participate in the passage of those resolutions.",
+        "The High Court invalidated the law as applied in one state on the ground that the Governor had not participated."
+      ],
+      "conclusion": "The resolutions were effective without the Governor’s participation, and the law was validly authorized in the state whose resolution was challenged.",
+      "legal_principle": "Article 252(1) uses “legislature” in context to mean the House or Houses of the legislature, not the Governor. A resolution is distinct from an Act of the legislature, and the Governor does not vote on resolutions. The Court relied on State of Bihar v. Maharajadhiraja Sir Kameshwar Singh of Darbhanga and approved the reasoning in Jatin Chakravarty v. Shri H. K. Bose concerning legislative resolutions and ratification.",
+      "rule": {
+        "if": "state_lawmaking_authorization_case and state_houses_passed_authorizing_resolution",
+        "then": "state_resolution_effective_without_governor"
+      },
+      "predicates": {
+        "state_lawmaking_authorization_case": "The proceeding challenges whether a central law on a state subject was validly authorized by state legislative resolutions.",
+        "state_houses_passed_authorizing_resolution": "The House or Houses of the relevant state legislature passed a resolution authorizing parliamentary regulation of the subject."
+      },
+      "definition": "When a challenge concerns authorization by state legislative resolution and the relevant House or Houses passed that resolution, the resolution is effective without the Governor’s participation."
+    },
+    {
+      "legal_issue": "Parliament may legislate on urban vacant land under an authorization concerning urban immovable property without regulating every kind of immovable property.",
+      "material_facts": [
+        "State legislatures authorized Parliament to regulate a ceiling on urban immovable property and matters connected with it.",
+        "The challenged law imposed a ceiling on vacant land in urban agglomerations rather than imposing a ceiling on every form of immovable property.",
+        "The proposal and materials concerning the legislation had been considered by the states before they passed their resolutions."
+      ],
+      "conclusion": "The law regulating ceilings on urban vacant land fell within the subject authorized by the state resolutions and was within Parliament’s legislative competence.",
+      "legal_principle": "Article 252(1) makes Parliament competent to legislate on the subject surrendered by state resolutions. The extent of the surrender depends on the language of the resolutions, and the resolutions are not to be read as imposing unstated restrictions. Entry 18 of List II includes land, including vacant land; the Court also relied on M/s. R.M.D.C. (Mysore) Private Ltd. v. The State of Mysore concerning the scope of a resolution under Article 252.",
+      "rule": {
+        "if": "state_lawmaking_authorization_case and state_resolution_covers_immovable_property and proposed_law_regulates_urban_land",
+        "then": "parliamentary_law_within_authorized_subject"
+      },
+      "predicates": {
+        "state_lawmaking_authorization_case": "The proceeding challenges Parliament’s competence to enact a law on a subject ordinarily within state legislative authority.",
+        "state_resolution_covers_immovable_property": "State legislatures authorized parliamentary regulation of urban immovable property and connected matters.",
+        "proposed_law_regulates_urban_land": "The parliamentary law regulates vacant land in urban areas, which is part of the broader subject authorized."
+      },
+      "definition": "When state legislatures authorize regulation of immovable property and the parliamentary law regulates urban land within that subject, the law is within the authorized subject."
+    },
+    {
+      "legal_issue": "The applicability of the urban land ceiling law to a covered urban agglomeration does not invariably depend on the existence of a master plan.",
+      "material_facts": [
+        "The law identified the urban agglomeration at issue in its schedule.",
+        "The law defined urban land by reference to land identified in a master plan where one existed, and provided a local-authority-limits alternative where no master plan existed or it did not identify land as urban.",
+        "The High Court held that the law could not apply to the urban agglomeration because of a claimed deficiency concerning its master plan."
+      ],
+      "conclusion": "A master plan is not a prerequisite to the law’s applicability; where no master plan exists or it does not identify land as urban, the statutory alternative can apply to land within local-authority limits.",
+      "legal_principle": "Sections 2(o) and 2(n) of the Urban Land (Ceiling and Regulation) Act, 1976 provide the relevant definitions of urban land and urban agglomeration. Under section 2(o), the definition has a master-plan route and an alternative route for cases where there is no master plan or it does not identify land as urban. The Act’s application to a covered urban agglomeration therefore does not require a master plan in every case.",
+      "rule": {
+        "if": "urban_ceiling_applicability_case and covered_urban_agglomeration and ((master_plan_identifies_land_as_urban) or (master_plan_absent_or_silent and land_within_local_authority_limits))",
+        "then": "urban_ceiling_law_applies_to_qualifying_land"
+      },
+      "predicates": {
+        "urban_ceiling_applicability_case": "The proceeding challenges the application of an urban land ceiling law to land in an urban agglomeration.",
+        "covered_urban_agglomeration": "The relevant urban agglomeration is within the area covered by the law.",
+        "master_plan_identifies_land_as_urban": "An applicable master plan identifies the land as urban land.",
+        "master_plan_absent_or_silent": "There is no master plan, or the plan does not identify the land as urban land.",
+        "land_within_local_authority_limits": "The land is within the local limits of a municipality or another specified local authority."
+      },
+      "definition": "For land in a covered urban agglomeration, the law applies if an applicable master plan identifies the land as urban or, when no plan does so, the land is within local-authority limits."
+    },
+    {
+      "legal_issue": "A master plan is not invalid for the purpose of applying the urban land ceiling law merely because it does not designate land for compulsory acquisition.",
+      "material_facts": [
+        "A master plan had been prepared and sanctioned under the applicable municipal law.",
+        "The objection was that the plan did not designate land subject to compulsory acquisition as required by a provision describing the plan’s contents.",
+        "The municipality had statutory power to acquire land needed to implement the plan."
+      ],
+      "conclusion": "The requirement to designate land for compulsory acquisition was directory, and the alleged omission did not deprive the plan of its status as a master plan prepared under the applicable law.",
+      "legal_principle": "Section 244(1)(c)(iii) of the Andhra Pradesh (Telengana Area) District Municipalities Act, 1956, read in context, did not make designation of land for compulsory acquisition indispensable to a valid master plan. The Court noted the municipality’s acquisition power under section 250 of that Act and the meaning of a master plan under section 2(h) of the Urban Land (Ceiling and Regulation) Act, 1976.",
+      "rule": {
+        "if": "master_plan_applicability_challenge and municipal_master_plan_prepared and acquisition_designation_omitted and municipality_can_acquire_implementation_land",
+        "then": "master_plan_remains_valid_for_applicability"
+      },
+      "predicates": {
+        "master_plan_applicability_challenge": "The proceeding challenges application of a land ceiling law on the ground that a municipal master plan is deficient.",
+        "municipal_master_plan_prepared": "A master plan was prepared under the applicable municipal planning law.",
+        "acquisition_designation_omitted": "The plan did not designate land for compulsory acquisition.",
+        "municipality_can_acquire_implementation_land": "The municipality has power to acquire land needed to implement the plan."
+      },
+      "definition": "When a municipal master plan was prepared, an omitted acquisition designation does not invalidate it for applicability if the municipality can acquire land needed to implement it."
+    },
+    {
+      "legal_issue": "A parliamentary law enacted after state resolutions may be structured to extend to a non-sponsoring state upon that state’s later adoption, and its scheduled identification of that state and its urban areas is within Parliament’s competence.",
+      "material_facts": [
+        "Multiple states passed resolutions authorizing Parliament to legislate on the subject, but the state later challenged had not sponsored the law when it was enacted.",
+        "The law’s schedule identified that state and categorized urban agglomerations within it.",
+        "The state legislature later passed a resolution adopting the law.",
+        "The law was enacted in reliance on the state resolutions, not as legislation under emergency legislative power."
+      ],
+      "conclusion": "The scheduled inclusion and categorization were within Parliament’s competence; the law applied in the later-adopting state from the date of its adoption resolution.",
+      "legal_principle": "Article 252(1) permits Parliament to enact a law that applies to sponsoring states and is capable of adoption by other states; Article 252(2) provides for parliamentary amendment or repeal of such a law. A law applies to an adopting state from the date of its adoption resolution. Parliament’s competence under Entry 18 of List II includes specifying the states and urban agglomerations to which the law may extend. The Court rejected reliance on Article 250 because the legislation was enacted under Article 252, not under emergency legislative power.",
+      "rule": {
+        "if": "state_adoption_applicability_case and sponsoring_states_authorized_parliamentary_law and law_identifies_adopting_state_and_urban_areas and adopting_state_passed_adoption_resolution",
+        "then": "law_applies_to_adopting_state_from_adoption"
+      },
+      "predicates": {
+        "state_adoption_applicability_case": "The proceeding challenges whether a parliamentary law may apply in a state that did not initially sponsor its enactment.",
+        "sponsoring_states_authorized_parliamentary_law": "Two or more state legislatures authorized Parliament to legislate on the subject.",
+        "law_identifies_adopting_state_and_urban_areas": "The law identifies the later-adopting state and relevant urban areas in its scope.",
+        "adopting_state_passed_adoption_resolution": "The later-adopting state’s legislature passed a resolution adopting the law."
+      },
+      "definition": "When sponsoring states authorize a law, the law identifies a non-sponsoring state and its urban areas, and that state later adopts it, the law applies there from adoption."
+    }
+  ],
+  "seconds": 26.6
+}

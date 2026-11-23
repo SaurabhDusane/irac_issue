@@ -1,0 +1,103 @@
+{
+  "doc_id": "616577",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19571,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2777,
+    "prompt_tokens": 5591,
+    "total_tokens": 8368,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Income arising from a minor child’s admission to a partnership cannot be included under the applicable income-attribution provision in income assessed as that of a Hindu undivided family.",
+      "material_facts": [
+        "After a partition, the income for the relevant period was assessed in the status of a Hindu undivided family comprising the taxpayer, his wife and, after his birth, their minor son.",
+        "The assessment included income of the minor children arising from their admission to a partnership, relying on a provision that applies to computing the total income of an individual."
+      ],
+      "conclusion": "The provision did not apply to income assessed as that of a Hindu undivided family, so the minor children’s income had to be deleted from the assessment.",
+      "legal_principle": "Section 16(3)(a)(ii) of the Income-tax Act, 1922, applies to the total income of an individual, not to income assessed as that of a Hindu undivided family. A Hindu undivided family need not consist of two or more male members; the Court relied on Gowli Buddanna v. Commissioner of Income-tax, Mysore and N. V. Narendra Nath v. Commissioner of Wealth Tax.",
+      "rule": {
+        "if": "tax_assessment_proceeding and assessed_entity_is_hindu_undivided_family and income_arises_from_minor_child_partnership",
+        "then": "minor_child_income_not_includable_in_family_assessment"
+      },
+      "predicates": {
+        "tax_assessment_proceeding": "The proceeding concerns assessment of income to tax.",
+        "assessed_entity_is_hindu_undivided_family": "The income is assessed as income of a Hindu undivided family rather than as the income of an individual.",
+        "income_arises_from_minor_child_partnership": "Income included in the assessment arises from a minor child’s admission to a partnership.",
+        "minor_child_income_not_includable_in_family_assessment": "The minor child’s partnership income is not included in the Hindu undivided family’s assessment."
+      },
+      "definition": "When a tax assessment treats the entity as a Hindu undivided family and the income at issue arises from a minor child’s partnership, that income is not included in the family assessment."
+    },
+    {
+      "legal_issue": "A public officer must exercise a statutory rectification power when an interested person with a right to seek correction establishes the conditions for its exercise.",
+      "material_facts": [
+        "The taxpayer applied to rectify an assessment, asserting that an apparent error had resulted in minor children’s income being included in the assessment of a Hindu undivided family.",
+        "The tax officer accepted that the income-attribution provision did not apply to a Hindu undivided family but declined to grant relief.",
+        "The High Court treated rectification as discretionary even if the conditions for rectification existed."
+      ],
+      "conclusion": "The rectification power was not discretionary in the sense that the officer could refuse to exercise it after the conditions for its exercise were shown; the officer had to correct the apparent error.",
+      "legal_principle": "Section 35 of the Income-tax Act, 1922, empowered rectification of a mistake apparent from the record. Where such a power is conferred to aid enforcement of a person’s right, the power carries a duty to act when that person applies and the required circumstances are established. The Court relied on Julius v. Bishop of Oxford.",
+      "rule": {
+        "if": "tax_rectification_proceeding and interested_applicant_has_right_to_correction and apparent_error_established",
+        "then": "officer_must_rectify_apparent_error"
+      },
+      "predicates": {
+        "tax_rectification_proceeding": "The proceeding is an application to a tax officer to rectify an assessment.",
+        "interested_applicant_has_right_to_correction": "A person interested in the assessment applies for correction of an error affecting a right of that person.",
+        "apparent_error_established": "The record establishes an apparent error that satisfies the conditions for rectification.",
+        "officer_must_rectify_apparent_error": "The officer is required to correct the established apparent error."
+      },
+      "definition": "In a tax rectification proceeding, when an interested applicant with a right to correction establishes an apparent error, the officer must correct it."
+    },
+    {
+      "legal_issue": "An officer cannot deny rectification by changing the status on which the original assessment was made without giving the taxpayer notice and an opportunity to establish the relevant facts.",
+      "material_facts": [
+        "The original assessment treated the taxpayer’s income as income of a Hindu undivided family.",
+        "In rejecting rectification, the officer asserted that the taxpayer should instead have been assessed as an individual for the relevant period.",
+        "The officer made that change without investigating, after due notice, whether the original assessment’s status involved a factual mistake."
+      ],
+      "conclusion": "The taxpayer’s right to rectification could not be defeated by changing the assessment status without due notice and an investigation of the relevant facts.",
+      "legal_principle": "A rectification application cannot be rejected by substituting a different assessment status without giving the taxpayer an opportunity, after due notice, to establish whether the original status was correct. Section 35 of the Income-tax Act, 1922, provided the rectification power at issue.",
+      "rule": {
+        "if": "tax_rectification_proceeding and relief_claimed_under_original_assessment_status and officer_changes_status_to_deny_relief and no_notice_or_factual_inquiry",
+        "then": "status_change_cannot_defeat_rectification_claim"
+      },
+      "predicates": {
+        "tax_rectification_proceeding": "The proceeding is an application to rectify a tax assessment.",
+        "relief_claimed_under_original_assessment_status": "The applicant seeks relief on the basis of the status used in the original assessment.",
+        "officer_changes_status_to_deny_relief": "The officer relies on a different assessment status as the reason for refusing relief.",
+        "no_notice_or_factual_inquiry": "The officer does not give due notice and investigate whether the original status was factually correct.",
+        "status_change_cannot_defeat_rectification_claim": "The officer cannot defeat the rectification claim by changing the assessment status in those circumstances."
+      },
+      "definition": "When relief is claimed on the basis of the original assessment status, an officer cannot deny it by substituting another status without notice and factual inquiry."
+    },
+    {
+      "legal_issue": "A writ petition entertained and heard on its merits cannot be dismissed as not maintainable solely because the applicant did not pursue an available statutory revision.",
+      "material_facts": [
+        "The taxpayer filed a writ petition challenging the order refusing rectification.",
+        "A statutory revision could have been sought, but the taxpayer did not pursue it.",
+        "The High Court entertained the writ petition and heard it on the merits, then dismissed it in part on the ground that revision had not been sought."
+      ],
+      "conclusion": "The High Court was not justified in dismissing the writ petition as not maintainable because the taxpayer had not pursued the available revision.",
+      "legal_principle": "The availability of a statutory revision did not justify dismissing as not maintainable a writ petition that had been entertained and heard on its merits. The Court noted that revision remained available if the High Court had not entertained the petition and the prescribed period had not expired.",
+      "rule": {
+        "if": "constitutional_writ_proceeding and alternative_statutory_revision_available and revision_not_pursued and writ_entertained_and_heard_on_merits",
+        "then": "writ_not_dismissible_as_nonmaintainable_solely_for_unpursued_revision"
+      },
+      "predicates": {
+        "constitutional_writ_proceeding": "The proceeding is a writ petition challenging an administrative or quasi-judicial order.",
+        "alternative_statutory_revision_available": "A statutory revision procedure is available to challenge the order.",
+        "revision_not_pursued": "The applicant did not seek relief through the available revision procedure.",
+        "writ_entertained_and_heard_on_merits": "The court entertained the writ petition and heard it on the merits.",
+        "writ_not_dismissible_as_nonmaintainable_solely_for_unpursued_revision": "The writ petition cannot be dismissed as not maintainable solely because the applicant did not pursue the available revision."
+      },
+      "definition": "If a court has entertained and heard a writ petition on its merits, the applicant’s failure to pursue an available statutory revision alone does not make the petition nonmaintainable."
+    }
+  ],
+  "seconds": 17.7
+}

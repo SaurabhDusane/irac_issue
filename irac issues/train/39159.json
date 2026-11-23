@@ -1,0 +1,62 @@
+{
+  "doc_id": "39159",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 73033,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2129,
+    "prompt_tokens": 18238,
+    "total_tokens": 20367,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A claimed partition of property belonging to a Hindu undivided family is not recognized for income-tax purposes merely because the family’s status has been severed under Hindu law; the property must be divided in the manner its physical characteristics permit.",
+      "material_facts": [
+        "The family had previously been assessed as an undivided family and claimed a partial partition of eighteen immovable properties among its members.",
+        "The family said the properties could not be physically divided and claimed that the members instead held defined shares and separately divided the income.",
+        "The Tribunal and the High Court found that the properties could be apportioned among the members, with monetary adjustments to equalize their shares, without impairing their utility.",
+        "No actual physical division or apportionment of the properties had been attempted."
+      ],
+      "conclusion": "The claimed partial partition did not satisfy the requirements for recognition under section 171, so the properties could not be treated as partitioned for income-tax purposes.",
+      "legal_principle": "Section 171(1) and the Explanation, particularly clauses (a)(i), (a)(ii) and (b), require an Income-tax Officer to record a finding of partition before a previously assessed Hindu undivided family is treated as divided for tax purposes. Where property admits of physical division, the property must be physically divided; where it does not, the division it admits of must take place. Division of income alone and mere severance of status under Hindu law are insufficient. Hindu law does not invariably require division by metes and bounds, as explained in Appovier v. Rama Subba Aiyan, but section 171 imposes additional conditions. The Court distinguished Charandas Haridas v. Commissioner of Income-tax, where the family had taken the fullest measure possible to divide an indivisible interest.",
+      "rule": {
+        "if": "income_tax_assessment_with_partition_claim and previously_assessed_undivided_family and partial_partition_claimed and ((property_admits_physical_division and not physical_property_division) or (not property_admits_physical_division and not division_as_property_admits))",
+        "then": "partition_not_recognized_for_tax_purposes"
+      },
+      "predicates": {
+        "income_tax_assessment_with_partition_claim": "An income-tax assessment proceeding involved a claim that family property had been partitioned.",
+        "previously_assessed_undivided_family": "The family had previously been assessed as an undivided family.",
+        "partial_partition_claimed": "A family member claimed that a partition had taken place in respect of some family members or property, or both.",
+        "property_admits_physical_division": "The property could be physically divided or apportioned among those entitled to shares.",
+        "physical_property_division": "The property was physically divided or apportioned among those entitled to shares.",
+        "division_as_property_admits": "Where the property could not be physically divided, the parties carried out the form of division that its nature permitted."
+      },
+      "definition": "When a previously assessed undivided family claims a partial partition in an income-tax assessment, the claim is not recognized if the property was capable of physical division but was not divided, or if indivisible property was not divided in the manner it permitted."
+    },
+    {
+      "legal_issue": "Income from property claimed to have been partially partitioned remains included in the total income of a previously assessed Hindu undivided family until an income-tax finding recognizes the partition.",
+      "material_facts": [
+        "The family claimed that the eighteen properties had been partially partitioned under Hindu law and that their income thereafter belonged to the individual members.",
+        "The claim did not result in a finding recognizing the partial partition under section 171.",
+        "The family had previously been assessed as an undivided family."
+      ],
+      "conclusion": "The income from the properties had to be included in the family’s total income because no finding recognizing the partial partition had been recorded.",
+      "legal_principle": "Under section 171(1), a Hindu family previously assessed as undivided is deemed to continue as such for the purposes of the Act except to the extent that a finding of partition is recorded under that section. The provision applies to partial partitions as well as total partitions, as reflected in section 171 and its Explanation. Until such a finding is recorded, the family is deemed to own the property and receive its income, even if a partition has occurred under Hindu law. The Court rejected reliance on decisions under section 25A of the 1922 Act, which had been construed as not applying to partial partitions, and distinguished A. Kannan Chetty v. Commissioner of Income-tax, which concerned an alienation that removed property and income from the family’s hands.",
+      "rule": {
+        "if": "income_tax_assessment_of_previously_undivided_family and property_claimed_as_partially_partitioned and not official_partition_finding",
+        "then": "income_from_claimed_partition_property_included_in_family_total_income"
+      },
+      "predicates": {
+        "income_tax_assessment_of_previously_undivided_family": "An income-tax assessment concerned a family that had previously been assessed as undivided.",
+        "property_claimed_as_partially_partitioned": "A family member claimed that particular family property had been partially partitioned.",
+        "official_partition_finding": "The tax authority recorded a finding recognizing the claimed partition for tax purposes."
+      },
+      "definition": "If a previously assessed undivided family claims that property was partially partitioned but no tax finding recognizes that partition, the property's income remains included in the family’s total income."
+    }
+  ],
+  "seconds": 13.9
+}

@@ -1,0 +1,78 @@
+{
+  "doc_id": "60804618",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18186,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2327,
+    "prompt_tokens": 4806,
+    "total_tokens": 7133,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court cannot refer a private complaint for investigation into alleged corruption offences by a public servant without the required prior sanction, even at the pre-cognizance stage.",
+      "material_facts": [
+        "A private complaint alleged that a public servant had acted in concert with other officers in issuing an order concerning valuable land and asserted offences under corruption and general criminal laws.",
+        "The complainants sought investigation by police under Section 156(3) Cr.P.C.",
+        "No valid sanction under Section 19 of the Prevention of Corruption Act had been produced."
+      ],
+      "conclusion": "The required prior sanction is mandatory, and the court could not refer the complaint for investigation without it; the High Court's decision quashing the referral and complaint was upheld.",
+      "legal_principle": "Section 19(1) of the Prevention of Corruption Act bars a court from taking cognizance of the specified offences against a public servant without previous sanction. That bar applies to a referral for investigation under Section 156(3) Cr.P.C. as well as at a later stage. Section 19(3), which limits reversal of a finding, sentence or order for a sanction defect absent a failure of justice, does not make prior sanction directory. The Court relied on State of Uttar Pradesh v. Paras Nath Singh, Subramanium Swamy v. Manmohan Singh, and General Officer, Commanding v. CBI.",
+      "rule": {
+        "if": "private_complaint_proceeding and public_servant_accused and corruption_offence_alleged and official_duty_alleged and prior_sanction_absent and pre_cognizance_investigation_sought",
+        "then": "investigation_referral_barred"
+      },
+      "predicates": {
+        "private_complaint_proceeding": "A complainant brings a private criminal complaint before a court.",
+        "public_servant_accused": "The complaint accuses a person who holds public office.",
+        "corruption_offence_alleged": "The complaint alleges an offence of the kind for which prior governmental authorization is required before prosecution.",
+        "official_duty_alleged": "The alleged conduct is said to have occurred in the discharge of the accused person's official duties.",
+        "prior_sanction_absent": "No valid prior authorization to proceed against the accused person has been produced.",
+        "pre_cognizance_investigation_sought": "The complainant asks the court to refer the matter for police investigation before the court takes cognizance."
+      },
+      "definition": "When a private complaint alleges a covered corruption offence by a public servant in the discharge of official duties and seeks investigation before cognizance without prior authorization, the investigation referral is barred."
+    },
+    {
+      "legal_issue": "A court referring a complaint for police investigation must apply its mind, and its order must disclose what considerations led it to direct the investigation.",
+      "material_facts": [
+        "The court stated that it had gone through the complaint and documents and heard the complainant.",
+        "Its order did not explain what in the complaint or materials led it to refer the matter for investigation."
+      ],
+      "conclusion": "The order stated no reasons for directing investigation; merely reciting that the complaint and documents were considered and the complainant was heard was insufficient.",
+      "legal_principle": "Under Maksud Saiyed v. State of Gujarat, a Magistrate exercising jurisdiction on a complaint must apply his mind, and that application of mind must be reflected in the order. The order need not give a detailed expression of views, but must disclose what weighed with the court in directing investigation under Section 156(3) Cr.P.C.",
+      "rule": {
+        "if": "private_complaint_proceeding and magistrate_referral_sought and order_contains_only_formulaic_review",
+        "then": "investigation_referral_order_inadequately_reasoned"
+      },
+      "predicates": {
+        "private_complaint_proceeding": "A complainant brings a private criminal complaint before a court.",
+        "magistrate_referral_sought": "The complainant asks the court to refer the matter for police investigation.",
+        "order_contains_only_formulaic_review": "The court's order says only that it reviewed the complaint or materials and heard the complainant, without identifying what led it to direct investigation."
+      },
+      "definition": "When a private complaint leads to a requested investigation referral and the order gives only a formulaic account of review without disclosing what prompted the referral, the order is inadequately reasoned."
+    },
+    {
+      "legal_issue": "A court's direction to investigate a private complaint under Section 156(3) Cr.P.C. is made before cognizance is taken.",
+      "material_facts": [
+        "A private complaint was presented to the court.",
+        "The court referred the complaint to police for investigation under Section 156(3) Cr.P.C. rather than taking cognizance and proceeding with an inquiry under Sections 200 and 202 Cr.P.C."
+      ],
+      "conclusion": "The referral for investigation under Section 156(3) Cr.P.C. was at the pre-cognizance stage and was not itself the taking of cognizance.",
+      "legal_principle": "The Court distinguished a referral for investigation under Section 156(3) Cr.P.C. from taking cognizance on a complaint under Section 190 Cr.P.C. It relied on State of Uttar Pradesh v. Paras Nath Singh, State of West Bengal v. Mohd. Khalid, and Subramanium Swamy v. Manmohan Singh, and noted that a Special Judge is deemed to be a Magistrate under Section 5(4) of the Prevention of Corruption Act.",
+      "rule": {
+        "if": "criminal_complaint_case and court_directs_police_investigation",
+        "then": "investigation_referral_is_pre_cognizance"
+      },
+      "predicates": {
+        "criminal_complaint_case": "A criminal complaint is brought before a court.",
+        "court_directs_police_investigation": "The court directs police to investigate the complaint instead of proceeding with an inquiry after taking cognizance."
+      },
+      "definition": "When a court directs police to investigate a criminal complaint rather than proceeding after taking cognizance, the referral is pre-cognizance."
+    }
+  ],
+  "seconds": 74.2
+}

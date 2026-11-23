@@ -1,0 +1,75 @@
+{
+  "doc_id": "723412",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22038,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2397,
+    "prompt_tokens": 5987,
+    "total_tokens": 8384,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A village inam does not include subsoil mineral rights unless the grant's language or other evidence establishes that those rights were granted.",
+      "material_facts": [
+        "The original grant was unavailable.",
+        "The inam fair register described the grant as being for the holder's personal advantage but did not show that it included subsoil rights."
+      ],
+      "conclusion": "The grant of subsoil rights to the inamdars was not established, so the grant conveyed no such rights.",
+      "legal_principle": "Applying Secretary of State for India in Council v. Srinivasa Chariar (1920) L.R. 48 I.A. 56, the Court held that an inam grant's contents depend on its language and the circumstances; the mere fact of an inam grant does not establish that subsoil rights passed. Without words or evidence from which those rights can properly be inferred, the grant conveys only surface rights.",
+      "rule": {
+        "if": "inam_grant_dispute and not grant_evidence_establishes_subsoil_rights",
+        "then": "subsoil_rights_not_included"
+      },
+      "predicates": {
+        "inam_grant_dispute": "The dispute concerns whether an inam grant conveyed rights beneath the surface.",
+        "grant_evidence_establishes_subsoil_rights": "The language or other evidence of the grant establishes that subsoil rights were conveyed."
+      },
+      "definition": "In an inam grant dispute, if the grant evidence does not establish that subsoil rights were conveyed, those rights are not included in the grant."
+    },
+    {
+      "legal_issue": "The inclusion of unculturable land in an inam grant does not, by itself, establish that the grant included subsoil mineral rights.",
+      "material_facts": [
+        "The inam fair register showed that the grant included poramboke, meaning unculturable land.",
+        "The original grant was unavailable, and the register did not show that mineral rights were granted."
+      ],
+      "conclusion": "The inclusion of poramboke did not establish that subsoil rights were included in the grant.",
+      "legal_principle": "The Court distinguished Secretary of State v. Krishna Rao (1945) L.R. 72 I.A. 211, which concerned irrigation cess and whether the grant included more than the revenue interest. Inclusion of poramboke could indicate that surface proprietary rights, rather than merely melvaram, were granted, but it did not establish subsoil rights. Under Secretary of State for India in Council v. Srinivasa Chariar (1920) L.R. 48 I.A. 56, subsoil rights must be conferred by the grant or be inferable from it.",
+      "rule": {
+        "if": "inam_grant_dispute and poramboke_included",
+        "then": "poramboke_alone_does_not_establish_subsoil_rights"
+      },
+      "predicates": {
+        "inam_grant_dispute": "The dispute concerns whether an inam grant conveyed rights beneath the surface.",
+        "poramboke_included": "The grant evidence shows that unculturable land was included in the inam."
+      },
+      "definition": "In an inam grant dispute, inclusion of unculturable land alone does not establish that subsoil rights were conveyed."
+    },
+    {
+      "legal_issue": "A lease of minerals granted by holders who lack mineral rights does not entitle the lessee to compel the government to grant mining permission.",
+      "material_facts": [
+        "The holders of the inam granted the respondents mica-mining leases with a term permitting renewal.",
+        "The grant did not establish that the inam holders had subsoil mineral rights.",
+        "After the estate was taken over, the respondents sought a writ compelling permission to mine on the basis of their leases.",
+        "The respondents relied on the Mineral Concession Rules, 1949, in seeking permission."
+      ],
+      "conclusion": "The leases had no legal effect as conveyances of mineral rights and gave the respondents no right to require the government to grant them a mining lease or permission. The State's appeal was allowed and the respondents' appeal was dismissed.",
+      "legal_principle": "A lessor cannot convey mineral rights that the lessor does not possess. Because the inam holders had no established subsoil rights, their leases conveyed no rights in the minerals and could not support a claim to mining permission as of right under the Mineral Concession Rules, 1949. The practical difficulty of working mines where surface and subsoil rights are held separately does not make the surface holders co-sharers in the mineral rights. The Court applied Secretary of State for India in Council v. Srinivasa Chariar (1920) L.R. 48 I.A. 56; it did not treat Secretary of State v. Krishna Rao (1945) L.R. 72 I.A. 211 as establishing a different rule about subsoil rights.",
+      "rule": {
+        "if": "mining_permission_writ and lessor_lacked_mineral_rights and claim_based_on_lease",
+        "then": "lease_does_not_create_right_to_compel_mining_permission"
+      },
+      "predicates": {
+        "mining_permission_writ": "The proceeding seeks to compel the government by writ to permit mining under a claimed lease.",
+        "lessor_lacked_mineral_rights": "The person who granted the mining lease did not possess the mineral rights.",
+        "claim_based_on_lease": "The claimant relies on the lease as the basis for seeking mining permission."
+      },
+      "definition": "Where a claimant seeks mining permission by writ on the basis of a lease from a person lacking mineral rights, the lease does not create a right to compel permission."
+    }
+  ],
+  "seconds": 14.7
+}

@@ -1,0 +1,119 @@
+{
+  "doc_id": "1143655",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 39654,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3747,
+    "prompt_tokens": 10487,
+    "total_tokens": 14234,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The amount a tenant must pay after an eviction order to avoid eviction includes unpaid rent that accrued during the eviction proceeding up to the date of the order.",
+      "material_facts": [
+        "The tenant was in arrears when the eviction application was filed and did not pay the rent that accrued during the proceeding.",
+        "The eviction order gave the tenant an opportunity to avoid eviction by paying the amount due within the statutory period.",
+        "The tenant's deposit was found to be deficient, and the landlords also sought eviction for rent that had remained unpaid during the earlier proceeding."
+      ],
+      "conclusion": "“Amount due” includes the original arrears and any rent that accrued during the eviction proceeding and remained unpaid up to the date of the eviction order. The Controller should specify that amount when making the eviction order.",
+      "legal_principle": "Under Section 14(2)(i), third proviso, of the Himachal Pradesh Urban Rent Control Act, 1987, the post-order opportunity to pay must be construed to account for rent accrued during the proceeding, not merely the arrears that prompted the application. This construction balances tenant protection with the landlord’s right to rent. The Court rejected the narrower interpretation adopted by the High Court in Om Parkash v. Sarla Kumari, 1991 (1) Sim. L.C. 45.",
+      "rule": {
+        "if": "rent_control_eviction_case and tenant_seeks_post_order_relief and unpaid_rent_accrued_during_case",
+        "then": "amount_due_includes_unpaid_rent_through_eviction_order"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction under rent-control legislation on the ground of rent default.",
+        "tenant_seeks_post_order_relief": "The tenant seeks to avoid eviction by paying after an eviction order has been made.",
+        "unpaid_rent_accrued_during_case": "Rent accrued during the eviction proceeding and remained unpaid when the eviction order was made."
+      },
+      "definition": "When a tenant seeks post-order relief in a rent-control eviction case and rent accrued during the proceeding remains unpaid, the amount due includes that rent through the eviction order."
+    },
+    {
+      "legal_issue": "When the Controller is satisfied that a statutory ground for eviction exists, the word “may” does not give the Controller discretion to refuse eviction.",
+      "material_facts": [
+        "The eviction application was allowed on the ground of non-payment of rent.",
+        "The tenant argued that the Controller could choose not to order eviction even after finding a ground under the Act."
+      ],
+      "conclusion": "Once the Controller is satisfied that a specified ground for eviction exists, the Controller must order eviction; the Controller has no discretion to reject the application on that basis.",
+      "legal_principle": "The Court construed Section 14(2) of the Himachal Pradesh Urban Rent Control Act, 1987, in context: the provision directs rejection when the Controller is not satisfied of a ground, so “may” means “shall” when a ground is established. The Court also applied the principle that, where possible, legislation should be interpreted to avoid a construction that would make it unconstitutional under Article 14 of the Constitution.",
+      "rule": {
+        "if": "rent_control_eviction_case and controller_satisfied_eviction_ground",
+        "then": "controller_must_order_eviction"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction under rent-control legislation.",
+        "controller_satisfied_eviction_ground": "The Controller finds that a statutory ground for eviction has been established."
+      },
+      "definition": "When the Controller finds a ground for eviction established in a rent-control eviction case, the Controller must order eviction."
+    },
+    {
+      "legal_issue": "An eviction order made after a finding of rent default is final, even though the tenant has a subsequent opportunity to avoid eviction by paying the amount due.",
+      "material_facts": [
+        "The Controller found rent default and made an eviction order.",
+        "The order allowed the tenant to avoid eviction by paying the amount due within the period provided by law.",
+        "The tenant contended that the eviction order was only interim and would become final after the payment period expired."
+      ],
+      "conclusion": "The eviction order is final, not interim; if the tenant complies with the post-order payment opportunity, the order becomes inexecutable and the tenant avoids eviction.",
+      "legal_principle": "Section 14(2)(i), third proviso, of the Himachal Pradesh Urban Rent Control Act, 1987, creates a second opportunity to avoid eviction after the eviction order. That opportunity affects whether the order can be executed; it does not make the order interim or postpone its finality.",
+      "rule": {
+        "if": "rent_control_eviction_case and eviction_order_follows_default_finding and post_order_payment_opportunity",
+        "then": "eviction_order_is_final_subject_to_becoming_inexecutable_on_compliance"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction under rent-control legislation.",
+        "eviction_order_follows_default_finding": "The Controller makes an eviction order after finding rent default.",
+        "post_order_payment_opportunity": "The governing procedure gives the tenant an opportunity to avoid eviction by paying after the order."
+      },
+      "definition": "An eviction order following a default finding is final when a post-order payment opportunity exists, although compliance makes the order inexecutable."
+    },
+    {
+      "legal_issue": "An executing court cannot extend a statutory period for payment or go behind an unchallenged eviction order when enforcing it.",
+      "material_facts": [
+        "The eviction order specified the payment required to avoid eviction and the statutory payment period.",
+        "Neither party challenged the eviction order.",
+        "In execution, the Controller found that the tenant's deposit was short but gave additional time to make up the deficiency.",
+        "The High Court reconsidered the meaning of the amount due while reviewing the execution decision."
+      ],
+      "conclusion": "The executing court had no jurisdiction to extend the statutory payment period or go behind the unchallenged eviction order, and the High Court could not reconsider the order’s efficacy at that stage.",
+      "legal_principle": "The third proviso to Section 14(2)(i) of the Himachal Pradesh Urban Rent Control Act, 1987, fixes the payment period by statute, leaving no power to enlarge it. Shri Krishnan Kumar v. Shri Gurbux Singh, 1977 (2) R.C.R. 62, was approved. Shyamcharan Sharma v. Dharamdas, (1980) 2 SCC 151; Miss Santosh Mehta v. Om Prakash, (1980) 3 SCC 610; Ram Murti v. Bhola Nath, (1984) 3 SCC 111; and Ganesh Prasad Sah Kesari v. Lakshmi Narayan Gupta, (1985) 3 SCC 53, were distinguished because the statutes in those cases provided for continuing rent payments and gave courts discretion over the consequences of default.",
+      "rule": {
+        "if": "rent_control_eviction_execution and unchallenged_eviction_order and statute_fixes_payment_period and tenant_made_short_deposit",
+        "then": "executing_court_must_enforce_order_without_extending_period_or_reopening_it"
+      },
+      "predicates": {
+        "rent_control_eviction_execution": "The proceeding is execution of an eviction order made under rent-control legislation.",
+        "unchallenged_eviction_order": "The parties did not challenge the eviction order before execution began.",
+        "statute_fixes_payment_period": "The governing law itself sets the period for payment after the eviction order.",
+        "tenant_made_short_deposit": "The tenant deposited less than the amount required by the eviction order."
+      },
+      "definition": "In execution of an unchallenged rent-control eviction order, a short deposit does not permit the executing court to extend a period fixed by law or reopen the order."
+    },
+    {
+      "legal_issue": "Tenant-protection purposes do not permit an executing court to refuse enforcement of an eviction order where the statutory ground has been established and the governing law gives no discretion to consider comparative hardship.",
+      "material_facts": [
+        "The Controller had ordered eviction after finding rent default.",
+        "The tenant had continued to leave rent unpaid, and the landlords had to pursue further proceedings to recover rent.",
+        "The matter was before the courts at the execution stage, and the governing provision did not confer a comparative-hardship discretion."
+      ],
+      "conclusion": "Once the eviction ground is established and an eviction order is made under a law without a hardship-based discretion, the executing court must enforce the order; equity or hardship is not a basis to refuse execution.",
+      "legal_principle": "The Court recognized rent-control legislation as social legislation protecting tenants, but held that its protection is bounded by the statutory conditions. Where the applicable law provides no discretion to refuse eviction on comparative-hardship grounds, the executing court must execute the order. The Court agreed with Shri Krishnan Kumar v. Shri Gurbux Singh, 1977 (2) R.C.R. 62.",
+      "rule": {
+        "if": "rent_control_eviction_case and eviction_ground_established and execution_stage_reached and no_hardship_discretion",
+        "then": "equitable_hardship_does_not_prevent_execution"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction under rent-control legislation.",
+        "eviction_ground_established": "The decision-maker finds a statutory ground for eviction established.",
+        "execution_stage_reached": "An eviction order has been made and enforcement is being sought.",
+        "no_hardship_discretion": "The governing law does not authorize refusal of eviction based on comparative hardship."
+      },
+      "definition": "When an established eviction ground has led to an order under a law without hardship discretion, reaching the execution stage means hardship does not prevent enforcement."
+    }
+  ],
+  "seconds": 22.6
+}

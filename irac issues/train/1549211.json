@@ -1,0 +1,78 @@
+{
+  "doc_id": "1549211",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10175,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2023,
+    "prompt_tokens": 2944,
+    "total_tokens": 4967,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landowner who enters a binding written agreement for a consent compensation award and accepts payment under it is not entitled to seek a reference for enhanced compensation.",
+      "material_facts": [
+        "The landowners agreed in writing to accept the compensation determined by the Land Acquisition Officer together with an additional amount and expressly agreed not to seek a reference.",
+        "The Land Acquisition Officer made the award in accordance with the agreement, and the landowners received the agreed payment without protest.",
+        "The landowners later sought a reference and the reference court enhanced the compensation."
+      ],
+      "conclusion": "The landowners were not entitled to seek a reference for enhanced compensation because the consent award under the agreement foreclosed that right.",
+      "legal_principle": "Under Section 11(2) of the Land Acquisition Act, 1894, the Collector may make an award in accordance with the written agreement of the interested persons. Section 18 permits a reference at the request of an interested person who has not accepted the award; Sections 31(2) and 18 make acceptance without protest inconsistent with that entitlement. A consent award under Section 11(2) obviates a reference under Section 18. The judgment relies on no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_case and written_consent_terms and express_reference_waiver and payment_accepted_without_protest",
+        "then": "no_entitlement_to_seek_reference"
+      },
+      "predicates": {
+        "land_acquisition_case": "The proceeding concerns compensation for land acquired by the State.",
+        "written_consent_terms": "The landowner and the acquiring authority agreed in writing on the compensation terms to be included in the award.",
+        "express_reference_waiver": "The landowner expressly agreed not to seek a court reference for increased compensation.",
+        "payment_accepted_without_protest": "The landowner accepted payment under the agreed award without protesting its amount."
+      },
+      "definition": "When an acquisition proceeding involves written agreed award terms, an express waiver of reference, and payment accepted without protest, the landowner has no entitlement to seek a reference."
+    },
+    {
+      "legal_issue": "A written agreement made for a consent compensation award does not require registration to bind the parties.",
+      "material_facts": [
+        "The landowners and the Land Acquisition Officer entered into written agreements specifying the compensation terms and the landowners' agreement not to seek a reference.",
+        "The Land Acquisition Officer made the award in accordance with those agreements.",
+        "The reference court rejected the agreements on the ground that they were not registered."
+      ],
+      "conclusion": "The agreements did not require registration and bound the parties.",
+      "legal_principle": "Section 11(4) of the Land Acquisition Act, 1894, provides that an agreement made under Section 11(2) is not liable to registration under the Registration Act, 1908. The judgment relies on no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_case and written_consent_award_agreement",
+        "then": "agreement_binds_without_registration"
+      },
+      "predicates": {
+        "land_acquisition_case": "The proceeding concerns compensation for land acquired by the State.",
+        "written_consent_award_agreement": "The interested persons and the acquiring authority made a written agreement for the terms of a consent compensation award."
+      },
+      "definition": "In an acquisition proceeding, a written agreement for a consent award binds the parties without registration."
+    },
+    {
+      "legal_issue": "A civil court may not determine whether compensation should be enhanced or award statutory benefits when no valid reference is available.",
+      "material_facts": [
+        "The landowners had entered into binding agreements for a consent award and accepted payment under those agreements without protest.",
+        "Despite those agreements, the landowners sought a reference and the civil court enhanced the compensation.",
+        "The civil court's authority to consider higher compensation and related statutory benefits depended on a valid reference."
+      ],
+      "conclusion": "The civil court lacked jurisdiction to assess the adequacy of compensation, determine higher compensation, or award statutory benefits.",
+      "legal_principle": "A valid reference under Section 18 of the Land Acquisition Act, 1894, gives the civil court jurisdiction to consider whether the compensation is just and fair. Under Sections 23(1) and 23(2), the court may determine market value and award solatium; under Section 28, it may award interest where the Collector ought to have awarded more compensation. Those powers arise only in a valid reference. The judgment relies on no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_reference_case and binding_consent_award and no_valid_reference",
+        "then": "civil_court_lacks_jurisdiction_to_enhance_compensation_or_award_statutory_benefits"
+      },
+      "predicates": {
+        "land_acquisition_reference_case": "The proceeding asks a civil court to determine compensation for acquired land on reference.",
+        "binding_consent_award": "The interested persons made a binding agreement for a consent award and accepted payment under it without protest.",
+        "no_valid_reference": "The civil court received no valid reference authorizing it to determine the compensation dispute."
+      },
+      "definition": "When a compensation reference proceeding rests on a binding consent award and no valid reference exists, the civil court lacks jurisdiction to enhance compensation or award statutory benefits."
+    }
+  ],
+  "seconds": 12.8
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "1756713",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 4267,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1804,
+    "prompt_tokens": 1629,
+    "total_tokens": 3433,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An eviction decree obtained against some joint tenants cannot remain in force when another equally entitled joint tenant was not impleaded in the eviction suit.",
+      "material_facts": [
+        "The claimant lived in the premises with his father and was found to be a tenant alongside his mother and brother.",
+        "The landlord brought an eviction suit against the claimant’s mother and brother but did not implead the claimant.",
+        "An ex parte eviction decree was entered and the landlord recovered possession."
+      ],
+      "conclusion": "The decree could not merely be declared non-binding on the omitted tenant while remaining in force against the others. It was set aside, the omitted tenant was directed to be impleaded, and the eviction suit was to proceed on its merits.",
+      "legal_principle": "Where the omitted person is found to be as much a tenant as those impleaded, an eviction decree obtained without joining that person must be set aside; it cannot be left in force against the other tenants while the omitted tenant is treated as entitled to the premises. Kanji Manji v. The Trustees of the Port of Bombay and H. C. Pandey v. G. C. Paul concerned the validity of notice to one joint tenant and were held inapplicable to this situation.",
+      "rule": {
+        "if": "eviction_proceeding and omitted_person_is_joint_tenant",
+        "then": "eviction_decree_set_aside_and_omitted_tenant_joined"
+      },
+      "predicates": {
+        "eviction_proceeding": "A landlord brought a proceeding seeking eviction of tenants.",
+        "omitted_person_is_joint_tenant": "A person who was not joined in the eviction proceeding was found to be a tenant alongside the tenants who were joined."
+      },
+      "definition": "When a person found to be a joint tenant is omitted from an eviction proceeding, the eviction decree is set aside and that person is joined in the proceeding."
+    },
+    {
+      "legal_issue": "A joint tenant cannot be given exclusive possession when other joint tenants are equally entitled to the premises.",
+      "material_facts": [
+        "The claimant and his mother and brother were found to be tenants of the premises.",
+        "The eviction decree was set aside, and the landlord had recovered possession under that decree."
+      ],
+      "conclusion": "Possession was to be restored to the claimant, his mother, and his brother, rather than given exclusively to the claimant.",
+      "legal_principle": "Because the other tenants were equally entitled to the premises, the omitted tenant could not be placed in exclusive possession. The Court directed restoration of possession to the tenants together.",
+      "rule": {
+        "if": "eviction_decree_set_aside and claimant_is_joint_tenant and other_joint_tenants_equally_entitled",
+        "then": "possession_restored_to_joint_tenants_together"
+      },
+      "predicates": {
+        "eviction_decree_set_aside": "The eviction decree was set aside.",
+        "claimant_is_joint_tenant": "The person seeking possession was found to be a tenant together with other occupants.",
+        "other_joint_tenants_equally_entitled": "The other joint tenants were found to be equally entitled to the premises."
+      },
+      "definition": "If an eviction decree is set aside and the claimant and other joint tenants are equally entitled to the premises, possession is restored to them together."
+    }
+  ],
+  "seconds": 12.0
+}

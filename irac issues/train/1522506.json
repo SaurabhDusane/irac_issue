@@ -1,0 +1,78 @@
+{
+  "doc_id": "1522506",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9734,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1858,
+    "prompt_tokens": 3118,
+    "total_tokens": 4976,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court reference to arbitration remains valid when the order of reference omits a deadline for the award but the court fixes the deadline elsewhere in the proceedings.",
+      "material_facts": [
+        "The court referred the dispute to arbitration without stating a deadline in the order of reference.",
+        "The court’s diary entry, read together with the order of reference, indicated that the arbitrator was to file the award by the date to which the suit was adjourned."
+      ],
+      "conclusion": "The time for making the award had been fixed in the proceedings, so the reference complied with the statutory requirement and was not invalid merely because the deadline was omitted from the order of reference.",
+      "legal_principle": "Section 23(1) of the Arbitration Act, 1940 requires the time for making an award to be fixed, but it need not be specified in the order of reference itself if it is fixed elsewhere in the proceedings. The Court relied on Raja Har Narain Singh v. Chaudhrain Bhagawant Kuar (1891), which treated the corresponding provision as mandatory while recognizing that fixing a hearing date could be sufficient.",
+      "rule": {
+        "if": "court_referred_dispute_to_arbitration and order_omitted_award_deadline and proceedings_fixed_award_deadline",
+        "then": "arbitration_reference_is_not_invalid_for_omitting_deadline_from_order"
+      },
+      "predicates": {
+        "court_referred_dispute_to_arbitration": "A court referred a dispute to an arbitrator.",
+        "order_omitted_award_deadline": "The court’s order of reference did not state when the award was to be made.",
+        "proceedings_fixed_award_deadline": "Other entries or orders in the proceedings fixed a date by which the award was to be made."
+      },
+      "definition": "When a court refers a dispute to arbitration, omitting the award deadline from the reference order does not invalidate the reference if the proceedings otherwise fix that deadline."
+    },
+    {
+      "legal_issue": "An award is not invalid because it is filed after an earlier deadline when the court has extended the time and the award was made before an application to supersede the arbitration.",
+      "material_facts": [
+        "The court made successive entries extending the time for filing the award.",
+        "The award was ready before it was filed in court.",
+        "An application to supersede the arbitration was made after the award had been made but before it was filed."
+      ],
+      "conclusion": "The extensions shown in the court record meant the award was not invalid for being filed after the initial deadline, and the application to supersede the arbitration was belated because the award had already been made.",
+      "legal_principle": "Under section 30 of the Arbitration Act, 1940, an award may be set aside on the grounds specified there, including where it is made after the court has superseded the arbitration. A mere application to supersede does not affect the reference, and an application made after the award has been made is too late to prevent its filing.",
+      "rule": {
+        "if": "challenge_to_court_referred_arbitration_award and court_extended_award_filing_time and award_made_before_supersession_application",
+        "then": "award_is_not_invalid_merely_because_supersession_application_preceded_filing"
+      },
+      "predicates": {
+        "challenge_to_court_referred_arbitration_award": "A party challenged an award made in an arbitration referred by a court.",
+        "court_extended_award_filing_time": "The court extended the time for filing the award.",
+        "award_made_before_supersession_application": "The arbitrator had made the award before a party applied to supersede the arbitration."
+      },
+      "definition": "In a challenge to a court-referred arbitration award, a supersession application made after the award is made does not invalidate the award merely because it was filed afterward."
+    },
+    {
+      "legal_issue": "An arbitrator’s allotment of less than the share claimed does not make an award invalid without evidence of an actual shortfall or dishonest conduct.",
+      "material_facts": [
+        "The arbitrator allotted the appellant land whose area was less than half the total area in dispute.",
+        "The record did not establish that the value of the allotted land was less than half the value of the property in dispute.",
+        "There was no suggestion that the arbitrator had acted dishonestly."
+      ],
+      "conclusion": "The award could not be set aside merely because the allotment was smaller in area than the share claimed; the record did not establish an actual shortfall, and there was no indication of dishonesty.",
+      "legal_principle": "Section 30 of the Arbitration Act, 1940 permits an award to be set aside only on the grounds it specifies, including misconduct, improper procurement, or other invalidity. An arbitrator must decide the dispute to the best of his judgment and act honestly; a court cannot interfere with that judgment merely because a party considers the allotment inadequate, absent dishonesty or another statutory ground.",
+      "rule": {
+        "if": "challenge_to_arbitration_award and allotment_area_below_claimed_share and not evidence_of_actual_value_shortfall and not evidence_of_arbitrator_dishonesty",
+        "then": "award_cannot_be_set_aside_merely_for_disagreement_with_allotment"
+      },
+      "predicates": {
+        "challenge_to_arbitration_award": "A party asked a court to set aside an arbitration award.",
+        "allotment_area_below_claimed_share": "The arbitrator allotted land whose area was less than the share the challenging party claimed.",
+        "evidence_of_actual_value_shortfall": "The record showed that the value of the allotted property was less than the party’s due share.",
+        "evidence_of_arbitrator_dishonesty": "The record indicated that the arbitrator acted dishonestly."
+      },
+      "definition": "When a party challenges an arbitration award because the area allotted was below the share claimed, the award cannot be set aside on that basis alone if the record does not show an actual value shortfall or dishonesty."
+    }
+  ],
+  "seconds": 12.9
+}

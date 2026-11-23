@@ -1,0 +1,81 @@
+{
+  "doc_id": "157386110",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 51653,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2873,
+    "prompt_tokens": 12928,
+    "total_tokens": 15801,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court exercising inherent criminal jurisdiction cannot prevent the police from submitting an unfiled investigation report to the competent Magistrate and then rely on a draft report to quash criminal proceedings.",
+      "material_facts": [
+        "The court allowed the police investigation to continue but directed that the final report could not be submitted to the Magistrate without its permission, without giving reasons for that restriction.",
+        "The police later placed a draft charge-sheet before the court to seek permission to submit it to the competent court.",
+        "The court considered the draft charge-sheet while deciding the petitions to quash the FIR and consequential proceedings."
+      ],
+      "conclusion": "The court exceeded the limits of its inherent jurisdiction by restricting submission of the report to the Magistrate and relying on the draft charge-sheet to quash proceedings.",
+      "legal_principle": "Sections 154 and 156 of the Code of Criminal Procedure recognise the police’s statutory authority to investigate cognizable offences, and Section 173(2)(i) requires the completed report to be forwarded to the Magistrate empowered to take cognizance. Under Section 482, inherent powers must be exercised sparingly and cannot be used to sidestep statutory procedure. Jugesh Sehgal v. Shamsher Singh Gogi states that inherent powers do not confer arbitrary jurisdiction; Simrikhia v. Dolley Mukherjee holds that inherent powers cannot override express statutory provisions; and Pratibha v. Rameshwari Devi holds that a High Court cannot direct the investigating agency to submit its report to it or rely on an unsubmitted report to quash proceedings. A distinct rule applies where the charge-sheet has already been filed before the Magistrate: under Kaptan Singh v. State of Uttar Pradesh, the High Court must then consider the material collected during investigation.",
+      "rule": {
+        "if": "fir_quashing_proceeding and police_report_not_filed_before_magistrate and high_court_restricted_report_submission and high_court_relied_on_draft_report",
+        "then": "high_court_exceeded_inherent_jurisdiction"
+      },
+      "predicates": {
+        "fir_quashing_proceeding": "A person asked a High Court to quash an FIR and related criminal proceedings using its inherent criminal jurisdiction.",
+        "police_report_not_filed_before_magistrate": "The investigating agency had not submitted its completed report to the Magistrate empowered to take cognizance.",
+        "high_court_restricted_report_submission": "The High Court prevented the investigating agency from submitting its report to the competent Magistrate without the High Court’s permission.",
+        "high_court_relied_on_draft_report": "The High Court relied on a draft investigation report that had not been submitted to the competent Magistrate."
+      },
+      "definition": "When an FIR-quashing proceeding concerns an investigation report not yet filed with the competent Magistrate, restricting its submission and relying on a draft of it results in the High Court exceeding its inherent jurisdiction."
+    },
+    {
+      "legal_issue": "An FIR should not be quashed where its allegations, taken at face value, attribute a specific role in an alleged conspiracy connected to extortion and prima facie disclose the alleged offence.",
+      "material_facts": [
+        "The FIR alleged that certain persons entered into agreements with the property claimants to finance litigation concerning the disputed land and were involved in a conspiracy to obtain money from the complainant.",
+        "The FIR attributed specific conduct to two of those persons, including executing powers of attorney and memoranda of understanding connected with the disputed land.",
+        "The High Court found that the allegations disclosed extortion by two other accused but did not adequately examine whether the other accused were alleged to be privy to that extortion through a conspiracy."
+      ],
+      "conclusion": "The High Court could not quash the FIR against persons to whom the allegations attributed a specific role in the alleged conspiracy and extortion; its quashing order was set aside as to the relevant appeals.",
+      "legal_principle": "Under Section 482 of the Code of Criminal Procedure, the test for quashing an FIR is whether the allegations in the complaint, taken as they stand and without adding to or detracting from them, prima facie establish the ingredients of the alleged offence. The High Court cannot test the allegations’ veracity or proceed as if conducting a trial. Mahendra KC v. State of Karnataka states this test. Where a charge-sheet has been filed before the Magistrate, Kaptan Singh v. State of Uttar Pradesh requires the High Court to consider the material collected during investigation. The allegations here included conspiracy under Section 120B and extortion under Section 385 of the Indian Penal Code.",
+      "rule": {
+        "if": "fir_quashing_proceeding and allegations_taken_at_face_value and specific_role_in_alleged_conspiracy and alleged_conspiracy_connected_to_extortion",
+        "then": "quashing_fir_is_unwarranted"
+      },
+      "predicates": {
+        "fir_quashing_proceeding": "A person asked a High Court to quash an FIR using its inherent criminal jurisdiction.",
+        "allegations_taken_at_face_value": "The allegations in the FIR are considered as stated, without deciding whether they are true.",
+        "specific_role_in_alleged_conspiracy": "The FIR attributes particular conduct to the accused as part of an alleged agreement or plan involving other accused.",
+        "alleged_conspiracy_connected_to_extortion": "The alleged plan is said to involve obtaining money from the complainant through extortion."
+      },
+      "definition": "If an FIR-quashing proceeding involves allegations that, taken at face value, attribute a specific role in a conspiracy connected to extortion, the FIR should not be quashed on that basis."
+    },
+    {
+      "legal_issue": "A petition to quash an FIR is premature when it is brought by a person not named in the FIR before the investigation report is filed, on the basis of that person’s name appearing in a draft charge-sheet.",
+      "material_facts": [
+        "Two persons were not named as accused in the FIR but appeared in the draft charge-sheet.",
+        "Those persons filed petitions to quash before the draft charge-sheet was submitted to the High Court for permission to file it before the competent court.",
+        "The High Court entertained their petitions and quashed the FIR and proceedings against them at that stage."
+      ],
+      "conclusion": "The High Court’s interference in the investigation against those persons was premature and unwarranted.",
+      "legal_principle": "Section 482 of the Code of Criminal Procedure does not justify quashing proceedings at the instance of persons not named in the FIR merely because their names appear in a draft charge-sheet not yet filed before the competent court. Section 207 provides for supplying the accused with the police report and specified investigation materials after proceedings are instituted on that report. The High Court should not use an unfiled draft report as the basis for prematurely intervening in the investigation.",
+      "rule": {
+        "if": "fir_quashing_proceeding and applicant_not_named_in_fir and police_report_not_filed_before_magistrate and application_based_on_draft_charge_sheet",
+        "then": "quashing_interference_is_premature"
+      },
+      "predicates": {
+        "fir_quashing_proceeding": "A person asked a High Court to quash an FIR using its inherent criminal jurisdiction.",
+        "applicant_not_named_in_fir": "The person seeking to quash the FIR was not identified as an accused in that FIR.",
+        "police_report_not_filed_before_magistrate": "The investigating agency had not submitted its completed report to the Magistrate empowered to take cognizance.",
+        "application_based_on_draft_charge_sheet": "The person’s request to quash depended on the person’s name appearing in a draft charge-sheet rather than a report filed before the competent court."
+      },
+      "definition": "When a person not named in an FIR seeks its quashing based on a draft charge-sheet before the investigation report is filed with the competent Magistrate, quashing interference is premature."
+    }
+  ],
+  "seconds": 18.7
+}

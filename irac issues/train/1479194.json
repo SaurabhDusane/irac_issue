@@ -1,0 +1,78 @@
+{
+  "doc_id": "1479194",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11287,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1616,
+    "prompt_tokens": 3403,
+    "total_tokens": 5019,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An allotment order may be made before accommodation actually becomes vacant when it is about to become vacant.",
+      "material_facts": [
+        "The tenant had an ejectment decree against him and stated that he intended to vacate the accommodation shortly.",
+        "The landlords also informed the rent officer that the accommodation was about to be vacated.",
+        "The allotment order was made while the tenant remained in occupation."
+      ],
+      "conclusion": "The rent officer had power to make the allotment order because the accommodation was about to fall vacant.",
+      "legal_principle": "Section 7(2) of the U.P. (Temporary) Control of Rent and Eviction Act, 1947 authorizes an order concerning accommodation that is vacant, has fallen vacant, or is about to fall vacant; actual vacancy is not required if the accommodation is about to become vacant.",
+      "rule": {
+        "if": "is_allotment_proceeding and accommodation_about_to_become_vacant",
+        "then": "allotment_order_may_be_made_before_actual_vacancy"
+      },
+      "predicates": {
+        "is_allotment_proceeding": "The proceeding concerns an order assigning accommodation to a proposed occupant.",
+        "accommodation_about_to_become_vacant": "The tenant and landlords indicated that the tenant was about to leave, and an ejectment decree supported that expectation."
+      },
+      "definition": "When an allotment proceeding concerns accommodation that is about to become vacant, an allotment order may be made before the accommodation is actually vacant."
+    },
+    {
+      "legal_issue": "An allotment order directing a landlord to let accommodation to an allottee takes effect when made, rather than only when the accommodation becomes vacant.",
+      "material_facts": [
+        "The accommodation was about to become vacant when the rent officer made the allotment order.",
+        "The order directed the landlords to let the accommodation to the allottee.",
+        "The landlords and tenant later agreed that the tenant would continue occupying the accommodation at an increased rent."
+      ],
+      "conclusion": "The allotment order took effect immediately and did not await actual vacancy.",
+      "legal_principle": "Under section 7(2) of the U.P. (Temporary) Control of Rent and Eviction Act, 1947, the rent officer could direct the landlords to let the accommodation to the allottee; the Court held that such an order took effect immediately.",
+      "rule": {
+        "if": "is_allotment_proceeding and order_directs_landlord_to_let_to_allottee",
+        "then": "allotment_order_effective_when_made"
+      },
+      "predicates": {
+        "is_allotment_proceeding": "The proceeding concerns an order assigning accommodation to a proposed occupant.",
+        "order_directs_landlord_to_let_to_allottee": "The order requires the landlord to let the accommodation to the person selected to occupy it."
+      },
+      "definition": "If an allotment proceeding produces an order directing the landlord to let the accommodation to the allottee, the order is effective when made."
+    },
+    {
+      "legal_issue": "A landlord's post-allotment agreement to let accommodation to an existing occupant, followed by that occupant's continued occupation under the agreement, can constitute occupation in contravention of the allotment order and support eviction proceedings.",
+      "material_facts": [
+        "The tenant occupied the accommodation before the allotment order was made.",
+        "After the allotment order directed the landlords to let the accommodation to another person, the landlords agreed to accept the tenant as a tenant at an increased rent.",
+        "The tenant continued occupying the accommodation under that later agreement.",
+        "The rent officer initiated proceedings and ordered the tenant to vacate and the allottee to be put in possession."
+      ],
+      "conclusion": "The later letting and the tenant's continued occupation under it directly breached the allotment order, giving the rent officer jurisdiction to initiate proceedings and make the resulting eviction orders.",
+      "legal_principle": "Section 7A(1) of the U.P. (Temporary) Control of Rent and Eviction Act, 1947 permits action where a duly made order under section 7(2) exists and the District Magistrate believes or has reason to believe that a person occupied accommodation in contravention of that order. Whether an occupant already present when the order was made later occupies in contravention is a question of fact; the Court rejected the broad statement in Ram Lal v. Shiv Mani Singh that continued occupation begun before the order can never contravene it, and referred to A. K. Khandelwal v. Moti Lal Chawla. The post-order letting and occupation in this case constituted a breach and conferred jurisdiction to proceed under section 7A(1) and make orders under sections 7A(2) and (3).",
+      "rule": {
+        "if": "is_statutory_eviction_proceeding and valid_allotment_order_exists and landlord_makes_post_order_letting_to_existing_occupant and occupant_continues_under_post_order_letting",
+        "then": "post_order_letting_and_occupation_can_contravene_allotment_order_and_support_eviction_proceedings"
+      },
+      "predicates": {
+        "is_statutory_eviction_proceeding": "The proceeding seeks to remove an occupant for allegedly occupying accommodation contrary to an administrative allotment order.",
+        "valid_allotment_order_exists": "An authorized official made a valid order directing that the accommodation be let to an allottee.",
+        "landlord_makes_post_order_letting_to_existing_occupant": "After the allotment order, the landlord agrees to let the accommodation to a person who was already occupying it.",
+        "occupant_continues_under_post_order_letting": "The existing occupant remains in possession pursuant to the landlord's post-order letting agreement."
+      },
+      "definition": "In a statutory eviction proceeding, if a valid allotment order exists and the landlord makes a later letting to an existing occupant who continues occupying under it, that later letting and occupation can contravene the order and support eviction proceedings."
+    }
+  ],
+  "seconds": 9.9
+}

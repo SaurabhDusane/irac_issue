@@ -1,0 +1,77 @@
+{
+  "doc_id": "969224",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 221504,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4462,
+    "prompt_tokens": 52267,
+    "total_tokens": 56729,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Wilful default in a rent-arrears eviction proceeding is assessed differently depending on whether the landlord gave the tenant a two-month notice demanding the arrears.",
+      "material_facts": [
+        "Tenants failed to pay rent by the applicable due dates, and landlords sought eviction on the ground of wilful default.",
+        "Some landlords issued a two-month demand notice; some tenants remained in arrears after receiving notice, while others paid or tendered the arrears within the notice period.",
+        "In other cases, landlords filed eviction petitions without giving the notice, and the courts had to assess the tenants’ conduct and explanations."
+      ],
+      "conclusion": "Without the notice, the Controller must independently decide whether the default was wilful and may allow a tenant whose default was not wilful a reasonable period, not exceeding fifteen days, to pay the rent. If the landlord gives the notice and the tenant remains in default after it, the default is presumed wilful unless the tenant proves sufficient cause or circumstances beyond the tenant’s control prevented payment.",
+      "legal_principle": "Under section 10(2)(i) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, read with its proviso and Explanation, wilful default means an intentional, deliberate, conscious default made with knowledge of its consequences. The Explanation clarifies the proviso; it does not eliminate the Controller’s duty to determine wilfulness. Where the specified notice has been given and the tenant remains in default after it, the conduct supports a presumption of wilfulness, subject to proof of sufficient cause or circumstances beyond the tenant’s control. Without such notice, wilfulness must be assessed on the facts, including whether the default was deliberate and without lawful or reasonable cause; if it was not wilful, the proviso permits an opportunity to pay within the statutory period. The Court relied on N. Ramaswami Reddiar v. S.N. Periamuthu Nadar, 1980 Law Weekly 577, and Khivraj Chordia v. C. Maniklal Bhattad, AIR 1966 Madras 67, and referred to Rajeswari v. Vasumal Lalchand, AIR 1983 Madras 97. Its construction of provisos drew on Local Government Board v. South Stoneham Union [1909] AC 57; Ishverlal Thakorelal Almala v. Motibhai Nagjibhai [1966] 1 SCR 367; Madras and Southern Maharatta Railway Co. Ltd. v. Bezwada Municipality, AIR 1944 PC 71; West Derby v. Metropolitan Life Assurance Co. [1897] AC 647; Rhodda Urban District Council v. Taff Vale Railway Co. [1909] AC 253; Jennings v. Kelly [1940] AC 206; Commissioner of Income Tax v. Indo Mercantile Bank Ltd. [1959] 2 SCR 256; Shah Bhojraj Kuverji Oil Mills v. Subhash Chandra Yograj Sinha [1962] 2 SCR 159; State of Rajasthan v. Leela Jain [1965] 1 SCR 276; Sales Tax Officer v. Hanuman Prasad [1967] 1 SCR 831; Commissioner of Commercial Taxes v. R.S. Jhaver [1968] 1 SCR 148; Dwarka Prasad v. Dwarka Das Saraf [1976] 1 SCC 128; and Hiralal Rattanlal v. State of U.P. [1973] 1 SCC 216. On the function of an Explanation, it relied on Burmah Shell Oil Storage and Distributing Co. v. Commercial Tax Officer [1961] 1 SCR 902; Bihta Cooperative Development Cane Marketing Union Ltd. v. Bank of Bihar [1967] 1 SCR 848; and Dattatraya Govind Mahajan v. State of Maharashtra [1977] 2 SCR 790. The Court also noted the analogous provisions concerning wilful default in the Andhra Pradesh, Orissa and Pondicherry rent-control enactments.",
+      "rule": {
+        "if": "rent_control_eviction_for_rent_arrears and rent_default_occurred and (no_two_month_demand_notice or (two_month_demand_notice_given and arrears_unpaid_after_notice))",
+        "then": "wilfulness_is_independently_assessed_without_notice_and_presumed_after_unremedied_notice_unless_sufficient_cause_is_proved"
+      },
+      "predicates": {
+        "rent_control_eviction_for_rent_arrears": "A landlord brought a rent-control proceeding seeking eviction because the tenant had not paid rent.",
+        "rent_default_occurred": "The tenant did not pay or tender rent by the applicable due date.",
+        "no_two_month_demand_notice": "The landlord did not give the tenant a two-month notice demanding the arrears.",
+        "two_month_demand_notice_given": "The landlord gave the tenant a two-month notice demanding the arrears.",
+        "arrears_unpaid_after_notice": "The tenant remained in arrears after the two-month notice period ended."
+      },
+      "definition": "When rent default is the basis for a rent-control eviction proceeding, the absence of a two-month demand notice requires an independent assessment of wilfulness, while an unremedied notice supports a presumption of wilfulness that sufficient cause can rebut."
+    },
+    {
+      "legal_issue": "A tenant who pays or tenders the demanded arrears within the two-month notice period is not a wilful defaulter on the basis of those arrears.",
+      "material_facts": [
+        "Tenants who had fallen into arrears paid or tendered the demanded rent within the period allowed by the landlords’ notices.",
+        "In one instance, the landlord did not encash a bank draft tendered for the arrears and returned it after filing the eviction petition."
+      ],
+      "conclusion": "Payment or tender of the arrears within the notice period prevents the default from being treated as wilful under the Explanation; a landlord’s failure to accept or encash a timely tender does not make the tenant a wilful defaulter.",
+      "legal_principle": "Section 10(2)(i) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, read with the proviso and Explanation, treats continued default after the two-month demand notice as wilful. Where the tenant pays or tenders the arrears within that period, the required continued default is absent. The Court applied this interpretation in allowing appeals where arrears were paid or a bank draft was tendered within the notice period.",
+      "rule": {
+        "if": "rent_control_eviction_for_rent_arrears and full_arrears_paid_or_tendered_within_notice_period",
+        "then": "wilful_default_is_not_established_on_the_basis_of_those_arrears"
+      },
+      "predicates": {
+        "rent_control_eviction_for_rent_arrears": "A landlord brought a rent-control proceeding seeking eviction because the tenant had not paid rent.",
+        "full_arrears_paid_or_tendered_within_notice_period": "The tenant paid or tendered all the demanded arrears within the period allowed by the landlord’s notice."
+      },
+      "definition": "If a tenant pays or tenders all demanded arrears within the notice period in a rent-arrears eviction proceeding, those arrears do not establish wilful default."
+    },
+    {
+      "legal_issue": "A landlord cannot maintain an eviction proceeding based solely on past rent default when the tenant has paid all arrears before the proceeding is filed.",
+      "material_facts": [
+        "A tenant had accumulated rent arrears and received a demand notice.",
+        "The tenant paid the full arrears before the landlord filed the eviction proceeding.",
+        "The landlord nevertheless sought eviction based on the tenant’s past default."
+      ],
+      "conclusion": "Once the full arrears have been paid before the eviction proceeding is filed, no present cause of action for eviction on the ground of those arrears remains; the proceeding cannot be used to penalise the tenant for past default.",
+      "legal_principle": "Section 10(2)(i) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960 concerns eviction for non-payment of rent. Applying that provision, the Court held that payment of the entire arrears before filing removes the basis for an eviction proceeding founded on those arrears.",
+      "rule": {
+        "if": "rent_control_eviction_for_rent_arrears and all_arrears_paid_before_eviction_filing",
+        "then": "no_current_cause_of_action_for_eviction_on_those_arrears"
+      },
+      "predicates": {
+        "rent_control_eviction_for_rent_arrears": "A landlord brought a rent-control proceeding seeking eviction because the tenant had not paid rent.",
+        "all_arrears_paid_before_eviction_filing": "The tenant paid all outstanding rent before the landlord filed the eviction proceeding."
+      },
+      "definition": "When all arrears are paid before an eviction proceeding based on those arrears is filed, the proceeding has no current cause of action on that ground."
+    }
+  ],
+  "seconds": 26.6
+}

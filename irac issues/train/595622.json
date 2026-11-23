@@ -1,0 +1,79 @@
+{
+  "doc_id": "595622",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22635,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2234,
+    "prompt_tokens": 6227,
+    "total_tokens": 8461,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A consent decree does not operate as res judicata on a matter that the court did not adjudicate.",
+      "material_facts": [
+        "An earlier suit sought recognition of a right to exhibit films under an agreement.",
+        "The earlier suit ended in a compromise decree recording the parties’ agreement; the court did not adjudicate whether the agreement created a lease.",
+        "A later suit raised the nature of the rights created by the agreement."
+      ],
+      "conclusion": "The consent decree did not operate as res judicata on whether the agreement created a lease.",
+      "legal_principle": "Under section 11 of the Code of Civil Procedure, a matter operates as res judicata only if it has been adjudicated by the court. A consent decree is a record of a contract between the parties to which the court’s seal is added, not an adjudication of the matter in contest.",
+      "rule": {
+        "if": "later_civil_suit_contests_prior_matter and earlier_suit_ended_by_consent_decree and prior_matter_not_adjudicated_by_court",
+        "then": "consent_decree_does_not_bar_relitigation"
+      },
+      "predicates": {
+        "later_civil_suit_contests_prior_matter": "A party brings a later civil suit that contests a matter raised in an earlier suit.",
+        "earlier_suit_ended_by_consent_decree": "The earlier suit ended in a decree recording the parties’ compromise.",
+        "prior_matter_not_adjudicated_by_court": "The court did not adjudicate the matter in contest in the earlier suit."
+      },
+      "definition": "When a later civil suit contests a matter from an earlier suit that ended in a consent decree without court adjudication of that matter, the decree does not bar the later contest."
+    },
+    {
+      "legal_issue": "An order permitting a question to be put to a witness is not a case decided for the purpose of revisional jurisdiction when it adjudicates no right or obligation in controversy.",
+      "material_facts": [
+        "During a civil suit, a party objected to a question in cross-examination about the nature of an agreement.",
+        "The trial court overruled the objection and permitted the question to be put to the witness.",
+        "The trial court did not decide any issue or adjudicate a right or obligation of the parties by that order."
+      ],
+      "conclusion": "The order permitting the question was not a case decided within the meaning of section 115 of the Code of Civil Procedure, so it did not support revisional jurisdiction on that basis.",
+      "legal_principle": "Section 115 of the Code of Civil Procedure permits revision only when the subordinate court has decided a case and one of the specified jurisdictional errors has occurred. In Major S. S. Khanna v. Brig. F. J. Dillon, the Court held that a case may include part of a proceeding, but not every order in a suit is a case decided; the court must adjudicate a right or obligation of the parties in controversy.",
+      "rule": {
+        "if": "civil_suit_pending and revision_challenges_trial_order_on_question_to_witness and trial_order_only_permits_question and trial_order_does_not_adjudicate_right_or_obligation",
+        "then": "revision_not_available_against_that_order"
+      },
+      "predicates": {
+        "civil_suit_pending": "The parties are engaged in a civil suit.",
+        "revision_challenges_trial_order_on_question_to_witness": "A party seeks revision of a trial-court order made in response to an objection to a question put to a witness.",
+        "trial_order_only_permits_question": "The trial court’s order permits the question to be put to the witness.",
+        "trial_order_does_not_adjudicate_right_or_obligation": "The trial court does not decide a right or obligation of the parties in controversy."
+      },
+      "definition": "In a pending civil suit, a revisional challenge to an order that only permits a question to a witness and adjudicates no right or obligation is unavailable against that order."
+    },
+    {
+      "legal_issue": "A High Court exercising revisional jurisdiction cannot decide an issue that the trial court has not decided and that the parties have not had an opportunity to address through evidence.",
+      "material_facts": [
+        "The trial court’s order concerned only whether a question could be asked of a witness and did not decide the res judicata issue.",
+        "The parties had not yet had an opportunity to lead evidence on that issue.",
+        "In revision of the evidentiary ruling, the High Court held that the earlier consent decree barred reconsideration of whether the agreement created a lease."
+      ],
+      "conclusion": "The High Court had no jurisdiction in that revision to decide the res judicata issue or to record that the agreement created a lease.",
+      "legal_principle": "Section 115 of the Code of Civil Procedure limits revisional jurisdiction to a case decided by a subordinate court and the specified jurisdictional errors. A revisional court cannot decide an issue not decided by the trial court, particularly before the parties have had an opportunity to lead evidence on it. Major S. S. Khanna v. Brig. F. J. Dillon explains that a case need not be the entirety of a proceeding, but the order under review must still amount to a decision of a case.",
+      "rule": {
+        "if": "revision_proceeding and trial_court_has_not_decided_issue and parties_have_not_had_opportunity_to_lead_evidence_on_issue",
+        "then": "high_court_cannot_decide_unresolved_issue"
+      },
+      "predicates": {
+        "revision_proceeding": "A party invokes revisional jurisdiction to challenge an order of a subordinate court.",
+        "trial_court_has_not_decided_issue": "The subordinate court has not decided the issue that the revisional court proceeds to determine.",
+        "parties_have_not_had_opportunity_to_lead_evidence_on_issue": "The parties have not had an opportunity to present evidence relevant to that issue."
+      },
+      "definition": "In a revision, when the subordinate court has not decided an issue and the parties have not had an opportunity to lead evidence on it, the High Court cannot decide that issue."
+    }
+  ],
+  "seconds": 13.4
+}

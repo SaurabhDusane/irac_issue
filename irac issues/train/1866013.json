@@ -1,0 +1,61 @@
+{
+  "doc_id": "1866013",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19802,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1760,
+    "prompt_tokens": 5339,
+    "total_tokens": 7099,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Amended rules governing the term of a mineral lease apply when they come into force while an appeal against refusal of the lease remains pending.",
+      "material_facts": [
+        "The tender for a sand quarry was rejected before the rules were amended.",
+        "The applicant appealed the rejection, and that appeal remained pending when the amendment took effect.",
+        "The amendment provided that the lease period would commence on execution of the lease deed.",
+        "The appellate authority disposed of the appeal after the amendment took effect, but limited the lease to the period stated in the original advertisement.",
+        "The original advertisement was issued to implement the governing rules."
+      ],
+      "conclusion": "The amended rules applied to the pending appeal, and the three-year lease period had to run from execution of the lease deed; the advertisement could not be read in isolation from the rules.",
+      "legal_principle": "Under Rule 8(8)(a) of the Tamil Nadu Minor Mineral Concession Rules, 1959, as amended, the lease period begins on execution of the lease deed. State of Tamil Nadu v. Hind Stone establishes that an application must be decided under the rules in force at the time of disposal, and that an appeal is a continuation of the proceeding begun by the application. Accordingly, an amendment taking effect during a pending appeal applies when that appeal is decided; administrative instructions or inconsistent advertisement terms cannot displace the governing rules.",
+      "rule": {
+        "if": "mineral_lease_appeal and appeal_pending_when_rules_amended",
+        "then": "amended_rules_govern_appeal_disposition"
+      },
+      "predicates": {
+        "mineral_lease_appeal": "An applicant appealed the refusal of an application for a mineral lease.",
+        "appeal_pending_when_rules_amended": "The appeal remained undecided when the rules governing the lease were amended."
+      },
+      "definition": "When an appeal against refusal of a mineral lease is still pending at the time the governing rules are amended, the amended rules govern the appeal's disposition."
+    },
+    {
+      "legal_issue": "A lease granted after applying amended rules must reflect the applicable lease consideration and additional extraction charges.",
+      "material_facts": [
+        "The applicant had offered an annual lease amount, and the tender was rejected as below the estimated upset price.",
+        "The earlier rules provided for annual increases in the lease amount, and that provision was removed by the amendment.",
+        "The applicant accepted the court's proposed adjustment reflecting the earlier annual increases.",
+        "The amended rules required payment of seigniorage in addition to the lease amount."
+      ],
+      "conclusion": "The lease amount was increased by 40% from the original offer, the lease was to run for three years from execution, and seigniorage was payable in addition to the lease amount.",
+      "legal_principle": "Rule 8(8)(a), as it stood before amendment, provided for increases in the lease amount for subsequent financial years; the amendment replaced that provision. The amended rule required seigniorage in addition to the lease amount. In the circumstances, and with the applicant's agreement, the Court applied a 40% increase reflecting the earlier escalation provision and directed payment of seigniorage under the amended rule.",
+      "rule": {
+        "if": "mineral_lease_appeal and amended_rules_apply and earlier_rules_provided_annual_lease_increases and applicant_accepted_adjustment",
+        "then": "lease_amount_adjusted_and_additional_extraction_charges_payable"
+      },
+      "predicates": {
+        "mineral_lease_appeal": "An applicant appealed the refusal of an application for a mineral lease.",
+        "amended_rules_apply": "The amended rules govern the disposition of the lease appeal.",
+        "earlier_rules_provided_annual_lease_increases": "The rules in force before amendment provided for increases in the lease amount over later financial years.",
+        "applicant_accepted_adjustment": "The applicant agreed to an adjustment reflecting the earlier increases."
+      },
+      "definition": "If amended rules govern a mineral-lease appeal, the earlier rules provided for annual lease increases, and the applicant accepted an adjustment, the lease amount is adjusted and additional extraction charges are payable."
+    }
+  ],
+  "seconds": 11.9
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "296856",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16319,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1903,
+    "prompt_tokens": 4717,
+    "total_tokens": 6620,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A Small Cause Court should return a tenancy plaint for determination by a court competent to decide title when the disputed title could affect the existence of the landlord-tenant relationship and deciding the dispute is necessary to do complete justice.",
+      "material_facts": [
+        "The landlord executed a deed granting the tenant-facing benefits arising from the rented properties to family members and informed the tenants to pay rent to their guardian.",
+        "The tenants paid rent to the guardian, after which the landlord executed a deed purporting unilaterally to cancel the earlier deed and informed the tenants.",
+        "The tenants disputed the landlord’s entitlement to collect rent and eviction, contending that the earlier deed could not be unilaterally cancelled.",
+        "If the tenants’ contention were accepted, it could affect the landlord’s entitlement to rent and sever the landlord-tenant relationship, rather than raise only an incidental title question in a straightforward tenancy suit."
+      ],
+      "conclusion": "The Small Cause Court should have returned the plaints for presentation to a court having jurisdiction to determine title; the judgments and decrees below were set aside.",
+      "legal_principle": "Section 23 of the Provincial Small Cause Courts Act gives the Small Cause Court discretion to return a plaint when the plaintiff’s right and relief depend on proof or disproof of a title the court cannot finally determine. A title question may sometimes be decided incidentally in a suit based on a tenancy contract, and that finding is not res judicata in a title suit; however, the discretion should be exercised where necessary to do complete justice, including where resolving title may affect whether the parties have a landlord-tenant relationship at all. No earlier cases are relied on.",
+      "rule": {
+        "if": "small_cause_tenancy_suit and disputed_entitlement_to_rent and (claimed_property_benefit_transfer or claimed_unilateral_cancellation) and title_resolution_may_end_tenancy",
+        "then": "plaint_returned_for_title_determination"
+      },
+      "predicates": {
+        "small_cause_tenancy_suit": "A landlord has brought a rent or eviction suit against a tenant in a court with limited jurisdiction over small causes.",
+        "disputed_entitlement_to_rent": "The tenant disputes the landlord’s entitlement to collect rent, rather than merely raising a title question incidental to an otherwise straightforward tenancy claim.",
+        "claimed_property_benefit_transfer": "A party claims that benefits arising from the rented property were granted to another person.",
+        "claimed_unilateral_cancellation": "A party claims that the grant of property-related benefits was later cancelled unilaterally.",
+        "title_resolution_may_end_tenancy": "Accepting the title contention could affect the claimant’s entitlement to rent or bring the landlord-tenant relationship to an end."
+      },
+      "definition": "When a rent or eviction suit in a limited-jurisdiction court involves a disputed entitlement that may turn on a property-benefit transfer or its unilateral cancellation, and resolving title could end the tenancy, the plaint is returned for title determination."
+    },
+    {
+      "legal_issue": "Rent deposited in the lower courts while the parties dispute entitlement to it should be held for disbursement after the title dispute is resolved or settled.",
+      "material_facts": [
+        "The tenants had deposited rent in one or more of the courts below during the rent and eviction proceedings.",
+        "The parties’ dispute over who was entitled to receive the rent was to be determined by the court competent to decide title, or could be resolved by agreement."
+      ],
+      "conclusion": "The deposited rent was not to be refunded to the tenants and was to be disbursed in accordance with the decision of the appropriate civil court or an amicable settlement of the title dispute.",
+      "legal_principle": "The Court directed that the deposited rent be retained and disbursed according to the eventual decision on title or an amicable settlement. No statutory provision or earlier case was cited for this direction.",
+      "rule": {
+        "if": "appeal_from_tenant_rent_or_eviction_suit and rent_deposited_in_lower_court and entitlement_to_deposited_rent_unresolved",
+        "then": "deposited_rent_disbursed_after_title_resolution_or_settlement"
+      },
+      "predicates": {
+        "appeal_from_tenant_rent_or_eviction_suit": "An appeal concerns a landlord’s rent or eviction suit against a tenant.",
+        "rent_deposited_in_lower_court": "The tenant has deposited rent in a court below during the proceedings.",
+        "entitlement_to_deposited_rent_unresolved": "The parties’ dispute over who is entitled to the rent remains unresolved."
+      },
+      "definition": "When rent has been deposited in lower-court proceedings and entitlement to it remains unresolved, it is disbursed after the title dispute is decided or settled."
+    },
+    {
+      "legal_issue": "Tenants should continue depositing rent while the dispute over title and entitlement to rent remains unresolved.",
+      "material_facts": [
+        "The tenants remained in the rented premises while the title dispute was pending determination or settlement.",
+        "The Court directed the tenants to deposit rent regularly during that period."
+      ],
+      "conclusion": "The tenant-appellants were directed to continue depositing rent regularly until the title dispute was decided or settled, as contemplated by the applicable rent law.",
+      "legal_principle": "The Court directed continuing rent deposits pending resolution of title, applying sub-section (2) of Section 30 of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1977. No earlier case was cited.",
+      "rule": {
+        "if": "appeal_from_tenant_rent_or_eviction_suit and tenants_remain_in_rented_property and title_dispute_unresolved",
+        "then": "tenants_continue_depositing_rent"
+      },
+      "predicates": {
+        "appeal_from_tenant_rent_or_eviction_suit": "An appeal concerns a landlord’s rent or eviction suit against tenants.",
+        "tenants_remain_in_rented_property": "The tenants continue to occupy the rented property while the dispute is pending.",
+        "title_dispute_unresolved": "The dispute about title or entitlement to rent has not yet been decided or settled."
+      },
+      "definition": "When tenants remain in the property during an appeal and the title dispute remains unresolved, they continue depositing rent."
+    }
+  ],
+  "seconds": 15.5
+}

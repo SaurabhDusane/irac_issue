@@ -1,0 +1,98 @@
+{
+  "doc_id": "521535",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20596,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2709,
+    "prompt_tokens": 5491,
+    "total_tokens": 8200,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Taxpayers are not given an adequate opportunity to object when the published assessment list is based on a rate system that is later withdrawn without publication of a list reflecting the operative rate.",
+      "material_facts": [
+        "A provisional assessment list was published on the basis of a slab system, and taxpayers filed objections to that list.",
+        "The council later withdrew the slab system and restored the former rate, but did not publish a revised list reflecting the operative rate before the objections were considered.",
+        "The taxpayers’ objections therefore addressed the published list, not the liabilities that would follow under the restored rate."
+      ],
+      "conclusion": "The statutory opportunity to object was not given, and the assessment list was not prepared according to law.",
+      "legal_principle": "Article 265 of the Constitution requires strict compliance with the procedure for imposing tax liability. Sections 134, 136 and 137 of the Madhya Pradesh Municipalities Act, 1961 require the published list to state the applicable rate and assessed tax and provide taxpayers an opportunity to object to the relevant particulars.",
+      "rule": {
+        "if": "municipal_tax_assessment and provisional_list_published_on_withdrawn_rate_basis and objections_limited_to_published_basis",
+        "then": "adequate_opportunity_to_object_not_given"
+      },
+      "predicates": {
+        "municipal_tax_assessment": "A public body was determining liability for municipal taxes on properties.",
+        "provisional_list_published_on_withdrawn_rate_basis": "The public body published a provisional assessment list using a rate system that it later withdrew.",
+        "objections_limited_to_published_basis": "Taxpayers submitted objections to the published list, which did not reflect the rate system ultimately applied."
+      },
+      "definition": "When a municipal tax assessment uses a published list based on a withdrawn rate system and taxpayers’ objections address only that list, an adequate opportunity to object has not been given."
+    },
+    {
+      "legal_issue": "The power to hear and decide objections to a municipal assessment list cannot be delegated to a subcommittee where the governing delegation authority permits delegation only to specified individual officeholders or officers.",
+      "material_facts": [
+        "The council appointed a subcommittee of its vice-president and two members to hear and decide objections to the assessment list.",
+        "The subcommittee considered the objections and revised the list.",
+        "The vice-president was a member of the subcommittee, but the delegation was to the subcommittee as a whole."
+      ],
+      "conclusion": "The delegation to the subcommittee was not authorized, and the list revised through that process was not prepared according to law.",
+      "legal_principle": "Section 78 of the Madhya Pradesh Municipalities Act, 1961 permits delegation to specified individual officeholders or officers, but not to a subcommittee. A delegation to a group is not a delegation to its individual member, even if that member is independently eligible to receive a delegation.",
+      "rule": {
+        "if": "municipal_tax_assessment and objections_delegated_to_subcommittee",
+        "then": "subcommittee_delegation_invalid"
+      },
+      "predicates": {
+        "municipal_tax_assessment": "A public body was determining liability for municipal taxes on properties.",
+        "objections_delegated_to_subcommittee": "The council assigned the hearing and decision of assessment objections to a subcommittee as a group."
+      },
+      "definition": "When a council assigns assessment objections to a subcommittee as a group, that delegation is invalid."
+    },
+    {
+      "legal_issue": "The power to amend an assessment list is unavailable when the list was not lawfully prepared in the first place.",
+      "material_facts": [
+        "The council sought to amend the assessment list after the list had been authenticated.",
+        "The published list used a rate system later withdrawn, and taxpayers were not given an opportunity to object to a list reflecting the operative rate.",
+        "The objections had been heard by a subcommittee to which the council could not delegate that function."
+      ],
+      "conclusion": "Because the authenticated assessment list was not prepared according to law, the council could not rely on the statutory power to amend it.",
+      "legal_principle": "Section 141 of the Madhya Pradesh Municipalities Act, 1961 was unavailable to amend the list because the list had not been lawfully prepared; authentication did not cure the defects. Article 265 requires strict compliance with the legal procedure for imposing tax liability.",
+      "rule": {
+        "if": "municipal_tax_assessment and (published_list_used_withdrawn_rate or objections_heard_by_subcommittee)",
+        "then": "amendment_power_unavailable"
+      },
+      "predicates": {
+        "municipal_tax_assessment": "A public body was determining liability for municipal taxes on properties.",
+        "published_list_used_withdrawn_rate": "The published assessment list used a rate system that the public body later withdrew.",
+        "objections_heard_by_subcommittee": "A subcommittee heard and decided objections to the assessment list."
+      },
+      "definition": "When a municipal tax assessment list uses a withdrawn rate system or its objections are heard by a subcommittee, the power to amend that list is unavailable."
+    },
+    {
+      "legal_issue": "The availability of an alternative statutory appeal does not prevent a writ court from granting relief in an appropriate case, and that discretionary relief is not disturbed absent arbitrary or unreasonable exercise of discretion.",
+      "material_facts": [
+        "The taxpayers had an alternative statutory appeal available and also sought relief through a writ petition.",
+        "The High Court exercised its discretion to grant writ relief.",
+        "No basis was shown for finding that the High Court acted arbitrarily or unreasonably."
+      ],
+      "conclusion": "The availability of the alternative appeal did not bar the High Court from granting relief, and the Supreme Court would not interfere with that exercise of discretion.",
+      "legal_principle": "Although a High Court would not ordinarily entertain a writ petition when an alternative remedy is available, it has jurisdiction to grant relief in an appropriate case under Article 226 of the Constitution. An appellate court should not interfere with that discretionary decision unless it was arbitrary or unreasonable.",
+      "rule": {
+        "if": "writ_challenge_to_tax_assessment and statutory_appeal_available and high_court_granted_writ_relief and no_arbitrary_or_unreasonable_exercise_shown",
+        "then": "writ_relief_not_disturbed_on_appeal"
+      },
+      "predicates": {
+        "writ_challenge_to_tax_assessment": "A taxpayer challenged a municipal tax assessment by seeking relief through a writ petition.",
+        "statutory_appeal_available": "The taxpayer had an alternative appeal available under the applicable law.",
+        "high_court_granted_writ_relief": "The High Court exercised its discretion to grant relief on the writ petition.",
+        "no_arbitrary_or_unreasonable_exercise_shown": "No circumstance was shown establishing that the High Court acted arbitrarily or unreasonably."
+      },
+      "definition": "When a taxpayer brings a writ challenge despite an available appeal, the High Court grants relief, and no arbitrary or unreasonable exercise of discretion is shown, the writ relief is not disturbed on appeal."
+    }
+  ],
+  "seconds": 17.1
+}

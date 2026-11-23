@@ -1,0 +1,85 @@
+{
+  "doc_id": "1743111",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20416,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2435,
+    "prompt_tokens": 5728,
+    "total_tokens": 8163,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant is in arrears for purposes of eviction for rent default only when rent remains unpaid to the person entitled to receive it, taking account of payments and court-authorised deposits made amid a bona fide dispute over entitlement to rent.",
+      "material_facts": [
+        "The premises were allocated to another partner under a partnership dissolution deed, and the claimant admitted that the premises formed part of that partner’s share.",
+        "The tenants had paid rent to the claimant and to the other partner at different times, including a period of double payment.",
+        "Because the two claimants made conflicting demands for rent, a court found a bona fide dispute over title and permitted the tenants to deposit rent in court.",
+        "The tenants deposited substantial rent in court and produced bank records supporting further payments to the claimant."
+      ],
+      "conclusion": "The tenants were not in arrears of rent to the claimant, and the claimant had no right to recover rent or obtain eviction on that basis.",
+      "legal_principle": "Under Section 20(2)(a) of the U.P. Urban Buildings (Regulation of Letting, Rent & Eviction) Act, 1972, arrears means rent in arrears to the landlord. The Court considered the court-authorised deposits under Section 30(2) of that Act, made in the context of a bona fide dispute over entitlement to rent, together with the other payments. No earlier cases were relied on.",
+      "rule": {
+        "if": "rent_default_eviction_proceeding and bona_fide_dispute_over_rent_recipient and (rent_paid_to_claimant_or_competing_claimant or rent_deposited_in_court) and claimant_not_entitled_to_rent",
+        "then": "tenant_is_not_in_arrears_to_claimant"
+      },
+      "predicates": {
+        "rent_default_eviction_proceeding": "A landlord brings a proceeding seeking eviction on the ground that rent was not paid.",
+        "bona_fide_dispute_over_rent_recipient": "The tenant faces genuine competing claims from different persons to receive rent.",
+        "rent_paid_to_claimant_or_competing_claimant": "The tenant paid rent to the claimant or to another person asserting entitlement to it.",
+        "rent_deposited_in_court": "The tenant deposited rent in court after being permitted to do so in the dispute over who was entitled to receive it.",
+        "claimant_not_entitled_to_rent": "The person seeking eviction was not entitled to receive rent for the premises.",
+        "tenant_is_not_in_arrears_to_claimant": "The tenant does not owe rent in arrears to the person seeking eviction."
+      },
+      "definition": "When a rent-default eviction proceeding involves genuine competing claims to rent, payment to a claimant or competing claimant, or a permitted court deposit, and the eviction claimant is not entitled to rent, the tenant is not in arrears to that claimant."
+    },
+    {
+      "legal_issue": "Eviction for rent default requires both qualifying arrears and failure to pay them to the landlord within the prescribed period after a compliant demand notice.",
+      "material_facts": [
+        "The eviction claimant alleged rent default and served a notice under Section 106 of the Transfer of Property Act, 1882.",
+        "That notice asserted that rent was due but did not satisfy the demand-notice requirements of Section 20(2)(a) of the U.P. Urban Buildings (Regulation of Letting, Rent & Eviction) Act, 1972.",
+        "The tenants had made payments and court deposits, and the Court found that they were not in arrears to the claimant."
+      ],
+      "conclusion": "The eviction suit could not succeed because the tenants were not in qualifying arrears and, independently, the notice served was not a demand notice satisfying Section 20(2)(a).",
+      "legal_principle": "Section 20(2)(a) of the U.P. Urban Buildings (Regulation of Letting, Rent & Eviction) Act, 1972 requires proof that the tenant is in arrears for at least four months and has failed to pay the arrears to the landlord within one month after service of a notice of demand. A notice under Section 106 of the Transfer of Property Act, 1882 that merely asserts rent is due does not meet that requirement. No earlier cases were relied on.",
+      "rule": {
+        "if": "rent_default_eviction_proceeding and (not qualifying_rent_arrears or not compliant_demand_notice)",
+        "then": "eviction_for_rent_default_fails"
+      },
+      "predicates": {
+        "rent_default_eviction_proceeding": "A landlord brings a proceeding seeking eviction on the ground that rent was not paid.",
+        "qualifying_rent_arrears": "The tenant owes the landlord at least the required period of unpaid rent.",
+        "compliant_demand_notice": "The landlord served a notice demanding the rent and giving the tenant the required opportunity to pay it.",
+        "eviction_for_rent_default_fails": "The landlord cannot obtain eviction on the ground of rent default."
+      },
+      "definition": "A rent-default eviction proceeding fails if the tenant lacks qualifying arrears or the landlord did not serve a compliant demand notice."
+    },
+    {
+      "legal_issue": "A tenant’s estoppel against denying the landlord’s title at the commencement of the tenancy does not bar the tenant from asserting that the landlord’s title subsequently ended.",
+      "material_facts": [
+        "The claimant had inducted the tenants into the premises.",
+        "A partnership dissolution deed allocated the premises to another partner, and the claimant admitted that the premises formed part of that partner’s share.",
+        "The tenants later accepted the other partner as landlord and executed a rent note in her favour.",
+        "The lower courts relied on tenant estoppel to prevent the tenants from challenging the claimant’s status as landlord."
+      ],
+      "conclusion": "The estoppel rule did not justify the eviction decree; the claimant had no right to recover rent or bring the eviction suit on the facts established.",
+      "legal_principle": "Section 116 of the Evidence Act, 1872 restricts a tenant from denying the landlord’s title at the commencement of the tenancy. By implication, it does not estop the tenant from contending that the lessor’s title has since come to an end. No earlier cases were relied on.",
+      "rule": {
+        "if": "tenant_landlord_dispute and tenancy_began_with_claimant_as_lessor and claimant_title_subsequently_ended",
+        "then": "tenant_estoppel_does_not_bar_later_title_challenge"
+      },
+      "predicates": {
+        "tenant_landlord_dispute": "A dispute concerns a tenant’s obligation to recognise a person as landlord.",
+        "tenancy_began_with_claimant_as_lessor": "The claimant inducted the tenant into the premises as lessor at the beginning of the tenancy.",
+        "claimant_title_subsequently_ended": "The claimant’s title to the premises ended after the tenancy began.",
+        "tenant_estoppel_does_not_bar_later_title_challenge": "The tenant is not barred by estoppel from asserting that the claimant’s title ended after the tenancy began."
+      },
+      "definition": "In a tenant-landlord dispute, when the tenancy began with the claimant as lessor but the claimant’s title later ended, estoppel does not bar the tenant from raising that later title change."
+    }
+  ],
+  "seconds": 15.1
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "56200562",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25743,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2537,
+    "prompt_tokens": 6747,
+    "total_tokens": 9284,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A complete waiver of a statutory pre-deposit is unavailable when a debtor appeals a recovery determination and a debt remains due.",
+      "material_facts": [
+        "Personal guarantors appealed a recovery determination to the appellate tribunal and sought to proceed without depositing any amount.",
+        "The recovery tribunal had credited compensation received by the bank against the decretal amount, but a balance remained due.",
+        "The appellate tribunal ordered a deposit, while the High Court allowed the appeal to proceed without one."
+      ],
+      "conclusion": "The High Court could not waive the pre-deposit in its entirety; the statutory scheme requires a deposit and permits reduction only to the specified minimum.",
+      "legal_principle": "Section 21 of the Recovery of Debts and Bankruptcy Act, 1993 requires a person from whom a debt is due to deposit fifty per cent of the debt determined by the tribunal before the appeal can be entertained. The appellate tribunal may, for recorded reasons, reduce the deposit but not below twenty-five per cent. The Court relied on Narayan Chandra Ghosh v. UCO Bank, which applied the analogous mandatory pre-deposit framework in Section 18 of the SARFAESI Act, 2002 and held that complete waiver is beyond the statutory scheme.",
+      "rule": {
+        "if": "debtor_appeal_from_recovery_determination and statutory_deposit_has_nonwaivable_minimum and debt_remains_due",
+        "then": "complete_predeposit_waiver_is_unavailable"
+      },
+      "predicates": {
+        "debtor_appeal_from_recovery_determination": "A person from whom a debt is claimed appeals an order determining recovery of that debt.",
+        "statutory_deposit_has_nonwaivable_minimum": "The governing appeal framework requires a deposit and permits reduction only to a specified minimum.",
+        "debt_remains_due": "After crediting payments or recoveries, an amount remains payable under the recovery determination."
+      },
+      "definition": "When a debtor appeals a recovery determination, a remaining debt and a deposit framework with a nonwaivable minimum mean that the appeal cannot proceed on a complete pre-deposit waiver."
+    },
+    {
+      "legal_issue": "The required pre-deposit may be reduced to the statutory minimum for recorded reasons in light of the circumstances bearing on the debt and available security.",
+      "material_facts": [
+        "The debt remaining after crediting compensation was substantially less than the original claim.",
+        "The remaining property of the principal debtor continued to be mortgaged, and the appellants were personal guarantors.",
+        "The appellate tribunal had directed a deposit of fifty per cent of the balance, and the Court considered the payment already made and the continuing mortgage security."
+      ],
+      "conclusion": "The Court permitted the appellants to deposit twenty-five per cent of the balance identified by the appellate tribunal to prosecute their appeal, subject to making the deposit within the specified time.",
+      "legal_principle": "Section 21 of the Recovery of Debts and Bankruptcy Act, 1993 allows the appellate tribunal, for reasons recorded in writing, to reduce the required deposit to no less than twenty-five per cent of the debt due. The Court applied that discretion to the stated circumstances while holding that complete waiver was impermissible.",
+      "rule": {
+        "if": "debtor_appeal_from_recovery_determination and statutory_reduction_to_minimum_is_available and substantial_payment_has_been_credited and security_for_remaining_debt_remains",
+        "then": "predeposit_may_be_reduced_to_the_statutory_minimum"
+      },
+      "predicates": {
+        "debtor_appeal_from_recovery_determination": "A person from whom a debt is claimed appeals an order determining recovery of that debt.",
+        "statutory_reduction_to_minimum_is_available": "The governing appeal framework permits a reasoned reduction of the deposit to a prescribed minimum.",
+        "substantial_payment_has_been_credited": "A substantial payment or recovery has been credited against the debt claimed.",
+        "security_for_remaining_debt_remains": "Property or another form of security remains available in relation to the unpaid balance."
+      },
+      "definition": "In a debtor's appeal, where the framework allows reduction to a minimum, a substantial credit has been made, and security remains for the balance, the pre-deposit may be reduced to that minimum."
+    },
+    {
+      "legal_issue": "The amount used to determine a pre-deposit does not finally determine the debt amount that remains disputed in the appeal or execution proceedings.",
+      "material_facts": [
+        "The parties disputed the actual amount still due.",
+        "The Court used the balance stated in the appellate tribunal's order to determine the pre-deposit without resolving the disputed final debt amount.",
+        "The Court left the parties' other contentions about the actual debt amount open for the pending appeals and any execution proceedings."
+      ],
+      "conclusion": "The amount identified by the Court was limited to the pre-deposit question, and the actual amount due remained open for determination in the pending proceedings.",
+      "legal_principle": "Section 21 of the Recovery of Debts and Bankruptcy Act, 1993 requires a deposit calculated by reference to the debt due as determined by the tribunal. The Court confined its consideration to the appeal's pre-deposit requirement and did not decide the merits of the disputed debt calculation.",
+      "rule": {
+        "if": "debtor_appeal_from_recovery_determination and actual_debt_amount_is_disputed and court_uses_provisional_balance_for_predeposit",
+        "then": "predeposit_figure_does_not_finally_determine_actual_debt"
+      },
+      "predicates": {
+        "debtor_appeal_from_recovery_determination": "A person from whom a debt is claimed appeals an order determining recovery of that debt.",
+        "actual_debt_amount_is_disputed": "The parties contest the amount that remains payable on the underlying debt.",
+        "court_uses_provisional_balance_for_predeposit": "The court uses a stated balance to resolve the deposit requirement without deciding the underlying debt dispute."
+      },
+      "definition": "In a debtor's appeal, when the actual debt is disputed and a balance is used only to address the deposit requirement, that balance does not finally determine the actual debt."
+    },
+    {
+      "legal_issue": "A contempt petition alleging failure to comply with an interim deposit direction need not proceed when the final order in the underlying appeal makes that interim direction irrelevant.",
+      "material_facts": [
+        "An interim order directed the appellants to deposit money and stayed further proceedings in the appellate tribunal pending deposit or a further hearing.",
+        "The appellants did not make that deposit, and the bank sought contempt action.",
+        "The Court subsequently issued its final order resolving the pre-deposit issue in the underlying appeal."
+      ],
+      "conclusion": "The Court closed the contempt petition as unnecessary because the final order made the interim direction irrelevant.",
+      "legal_principle": "The Court treated the later final disposition of the underlying appeal as removing the need for further proceedings on the alleged non-compliance with the interim deposit direction.",
+      "rule": {
+        "if": "contempt_proceeding_concerns_noncompliance_with_interim_deposit_direction and final_order_makes_interim_direction_irrelevant",
+        "then": "contempt_petition_is_closed_as_unnecessary"
+      },
+      "predicates": {
+        "contempt_proceeding_concerns_noncompliance_with_interim_deposit_direction": "A party seeks contempt action because another party did not comply with an interim order requiring a deposit.",
+        "final_order_makes_interim_direction_irrelevant": "A later final order in the underlying proceeding makes further enforcement of the interim direction unnecessary."
+      },
+      "definition": "When a contempt proceeding concerns non-compliance with an interim deposit direction and a later final order makes that direction irrelevant, the contempt petition is closed as unnecessary."
+    }
+  ],
+  "seconds": 14.8
+}

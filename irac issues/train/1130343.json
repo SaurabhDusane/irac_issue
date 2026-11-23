@@ -1,0 +1,99 @@
+{
+  "doc_id": "1130343",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16299,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2638,
+    "prompt_tokens": 4449,
+    "total_tokens": 7087,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant who has only applied to purchase land has no vested right that prevents subsequent changes in the landholder’s status from being considered.",
+      "material_facts": [
+        "The tenant applied to purchase the land, but the original landholder was not impleaded in the application.",
+        "The original landholder died while the proceedings were pending, and the land passed by inheritance to heirs who were later declared small landholders.",
+        "The tenant had not acquired the vested purchase rights that arise after an order in the tenant’s favour and payment of the required first instalment.",
+        "The heirs’ rights to the land were also recognized in a civil suit, which declared the alleged transferees to be benamidars and granted the heirs possession."
+      ],
+      "conclusion": "The later change in landholder status had to be considered. The tenant’s application alone created no vested right to purchase, and the appeal was dismissed.",
+      "legal_principle": "Under Sections 18(1) and 18(4)(a)–(b) of the Punjab Security of Land Tenures Act, 1953, a tenant who has only applied to purchase has a mere expectation or liberty to apply, not an accrued right; the court must consider subsequent events and mould relief accordingly. In Rameshwar v. Jot Ram, the tenant had already obtained an order and deposited the first instalment, thereby acquiring a vested right under the legal fiction in Section 18(4)(b), so that decision did not govern this case. The Court applied the principle from Abbot v. Minister for Lands that a mere right to take advantage of an Act’s provisions is not an accrued right.",
+      "rule": {
+        "if": "tenant_purchase_proceeding and application_was_only_a_request and no_vested_purchase_right_before_status_change and landholder_status_changed_during_proceeding",
+        "then": "subsequent_landholder_status_must_be_considered"
+      },
+      "predicates": {
+        "tenant_purchase_proceeding": "A tenant brought a proceeding seeking to purchase land under a statutory tenant-purchase scheme.",
+        "application_was_only_a_request": "The tenant had applied to purchase but had not yet completed the steps that would vest ownership or a vested purchase right.",
+        "no_vested_purchase_right_before_status_change": "No purchase order followed by the required first payment had given the tenant a vested right before the landholder’s status changed.",
+        "landholder_status_changed_during_proceeding": "The landholder died during the proceeding, and inheritance changed the status of those who held the land."
+      },
+      "definition": "When a tenant in a purchase proceeding has only applied and has no vested purchase right, a change in the landholder’s status during the proceeding must be considered."
+    },
+    {
+      "legal_issue": "An administrative purchase order does not bind a landholder or heirs who were not parties to the proceeding.",
+      "material_facts": [
+        "The tenant did not implead the original landholder in the purchase application.",
+        "After the landholder died, the heirs applied to join the proceeding and were initially added.",
+        "The authority later removed the heirs from the proceeding as unnecessary parties and then allowed the tenant’s purchase application."
+      ],
+      "conclusion": "Neither the original landholder nor the heirs were bound by the purchase order.",
+      "legal_principle": "The Court held on these facts that an order made in a proceeding did not bind the original landholder, who had not been impleaded, or the heirs, whose names had been removed from the proceeding before the order was made.",
+      "rule": {
+        "if": "statutory_purchase_proceeding and original_landholder_not_joined and heirs_removed_before_order",
+        "then": "purchase_order_does_not_bind_landholder_or_heirs"
+      },
+      "predicates": {
+        "statutory_purchase_proceeding": "A tenant brought a statutory proceeding seeking to purchase land.",
+        "original_landholder_not_joined": "The tenant did not make the original landholder a party to the purchase proceeding.",
+        "heirs_removed_before_order": "After the landholder died, the heirs were removed from the proceeding before the purchase order was made."
+      },
+      "definition": "A purchase order does not bind the original landholder or heirs when the landholder was not joined and the heirs were removed before the order."
+    },
+    {
+      "legal_issue": "An oral sale of land does not transfer title when the applicable law requires a registered instrument for the sale.",
+      "material_facts": [
+        "The landholder purported to sell the land orally to two transferees.",
+        "The statutory requirement for a registered instrument had been extended to the relevant territory before the purported sales.",
+        "The transferees’ names were later entered in mutation records, but the courts found that the purported sales conveyed no title."
+      ],
+      "conclusion": "The alleged oral sales did not pass title to the transferees.",
+      "legal_principle": "Section 54 of the Transfer of Property Act, 1882, as extended to the relevant territory with effect from April 1, 1955, required a registered instrument for the sales at issue; oral sales could not transfer title.",
+      "rule": {
+        "if": "land_title_dispute and purported_sale_was_oral and applicable_transfer_law_required_registered_instrument",
+        "then": "oral_sale_conveys_no_title"
+      },
+      "predicates": {
+        "land_title_dispute": "The proceeding concerned whether a purported transfer conveyed title to land.",
+        "purported_sale_was_oral": "The parties relied on an oral transaction as the sale of the land.",
+        "applicable_transfer_law_required_registered_instrument": "The law applicable to the transaction required a registered instrument to transfer the land by sale."
+      },
+      "definition": "In a land-title dispute, an oral purported sale conveys no title when the applicable law requires a registered instrument."
+    },
+    {
+      "legal_issue": "An appeal following a judgment that has become final after the dismissal of a challenge to the connected judgment is no longer tenable.",
+      "material_facts": [
+        "The judgment under appeal followed the High Court’s main judgment in connected appeals.",
+        "Special leave petitions challenging that main judgment were dismissed in limine.",
+        "The High Court had disposed of the appeal at issue in accordance with the main judgment."
+      ],
+      "conclusion": "The appeal was no longer tenable because the connected main judgment had attained finality.",
+      "legal_principle": "The Court held that dismissal of the special leave petitions challenging the connected main judgment left that judgment final and not open to disturbance through an appeal against a judgment that merely followed it.",
+      "rule": {
+        "if": "appeal_against_judgment_following_connected_decision and special_leave_challenge_to_connected_decision_dismissed",
+        "then": "appeal_is_no_longer_tenable"
+      },
+      "predicates": {
+        "appeal_against_judgment_following_connected_decision": "A party appealed from a judgment that followed the result in a connected proceeding.",
+        "special_leave_challenge_to_connected_decision_dismissed": "A challenge by special leave to the connected decision had been dismissed."
+      },
+      "definition": "An appeal from a judgment following a connected decision is no longer tenable when a special-leave challenge to that connected decision has been dismissed."
+    }
+  ],
+  "seconds": 17.4
+}

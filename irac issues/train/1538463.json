@@ -1,0 +1,102 @@
+{
+  "doc_id": "1538463",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 52614,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2495,
+    "prompt_tokens": 12764,
+    "total_tokens": 15259,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A cinematograph exhibition licence is granted to a person in respect of a place and does not constitute an interest in the premises that automatically belongs to their owner or business partners.",
+      "material_facts": [
+        "The licence was issued in one person's individual name, and the firm and its partners were not named as licensees.",
+        "The licensing authority rejected applications to add partners to the licence and to renew it in the firm's name; those decisions were upheld and became final.",
+        "The partnership deeds stated that the firm had rights in the permission or licence, but the licence itself remained in the individual licensee's name."
+      ],
+      "conclusion": "The licence was a grant to the named individual, not an interest attached to the theatre premises, and the firm acquired no interest in it merely because it owned or operated the premises or equipment.",
+      "legal_principle": "The Act and Rules contemplate a licence granted to a person in respect of a place where cinematographic apparatus is installed; the grantee is answerable for compliance with the licence and the law. Section 6-F, which permits revocation following specified convictions of the licence holder or other persons connected with the cinematograph, indicates that the holder may differ from its owner, manager, or partner. The licence is not analogous to a licence in real property law.",
+      "rule": {
+        "if": "cinematograph_licensing_case and licence_names_individual and business_partners_not_named",
+        "then": "licence_is_personal_not_premises_interest"
+      },
+      "predicates": {
+        "cinematograph_licensing_case": "The proceeding concerns a licence to exhibit cinematographic films at a place.",
+        "licence_names_individual": "The licensing authority issued the licence in the name of an individual rather than the business or its partners.",
+        "business_partners_not_named": "The business and its partners were not named as licensees."
+      },
+      "definition": "When a cinematograph licence names an individual and not the business or its partners, the licence is personal to that named licensee rather than an interest in the premises."
+    },
+    {
+      "legal_issue": "A business whose members are not the licensees cannot exhibit films under another person's licence without the licensing authority's permission.",
+      "material_facts": [
+        "The licence named one individual as the sole licensee, and previous proceedings had upheld the refusal to add the partners or the firm as licensees.",
+        "The licence conditions and the applicable Rule prohibited transfer of the licence or allowing another person to exhibit films without the authority's permission.",
+        "Despite the named licensee's lack of control over the theatre, other partners exhibited films there without a licence or permission."
+      ],
+      "conclusion": "The firm and its partners had no right to exhibit films at the theatre without obtaining a licence or the required permission.",
+      "legal_principle": "Rule 88(v) and condition 11 of the licence prohibited assignment, transfer, or allowing another person to exhibit films without the licensing authority's permission. The prior final determination that the individual was the sole licensee bound the firm and its partners.",
+      "rule": {
+        "if": "cinematograph_licensing_case and licence_names_one_person and other_exhibitors_lack_authorization and transfer_or_delegation_requires_permission",
+        "then": "unauthorized_party_cannot_exhibit_films"
+      },
+      "predicates": {
+        "cinematograph_licensing_case": "The proceeding concerns the exhibition of cinematographic films under a licensing regime.",
+        "licence_names_one_person": "The licence identifies one person as the licensee.",
+        "other_exhibitors_lack_authorization": "People other than the named licensee exhibited films without a licence or permission from the authority.",
+        "transfer_or_delegation_requires_permission": "The licence terms or governing rules require the authority's permission to transfer the licence or allow another person to exhibit films."
+      },
+      "definition": "If a cinematograph licence names one person, others exhibit without authorization, and transfer or delegation requires permission, those others cannot exhibit films under that licence."
+    },
+    {
+      "legal_issue": "A licensing authority need not provide a hearing to persons who are not licensees before stopping their unauthorized exhibition of films, where the order does not suspend the licence.",
+      "material_facts": [
+        "The persons seeking a hearing were partners, not the named licensee, and had no licence or permission to exhibit films.",
+        "A court order had left the named licensee without control of the theatre, and the police reported that other persons were exhibiting films there.",
+        "The authority ordered the exhibition of films to stop; it did not suspend the licence held by the named individual."
+      ],
+      "conclusion": "The authority was not required to give the firm or its partners notice or a hearing before stopping the unauthorized exhibitions; the order did not violate natural justice.",
+      "legal_principle": "Natural justice does not require a hearing for persons who have neither a legal right nor a legitimate expectation to carry on the activity prohibited by law. The Court distinguished an order stopping unlicensed exhibition from even a temporary suspension of a licence without notice to its holder, where the position would be different. Rule 88(v) and condition 11 restricted exhibition by persons other than the licensee without permission.",
+      "rule": {
+        "if": "challenge_to_licensing_enforcement_order and affected_persons_are_not_licensees and affected_persons_lack_authority_to_exhibit and order_stops_unlicensed_exhibition and order_does_not_suspend_licence",
+        "then": "hearing_not_required_before_stopping_unlicensed_exhibition"
+      },
+      "predicates": {
+        "challenge_to_licensing_enforcement_order": "The proceeding challenges an authority's order enforcing rules governing licensed public exhibitions.",
+        "affected_persons_are_not_licensees": "The persons seeking a hearing are not the people named as licensees.",
+        "affected_persons_lack_authority_to_exhibit": "The persons seeking a hearing lack a licence or permission to exhibit films.",
+        "order_stops_unlicensed_exhibition": "The authority's order stops exhibitions by persons who are not authorized to conduct them.",
+        "order_does_not_suspend_licence": "The authority's order leaves the existing licence in place rather than suspending it."
+      },
+      "definition": "Where non-licensees without authority challenge an enforcement order that stops their unauthorized exhibitions but leaves the licence in place, no hearing is required before the order is made."
+    },
+    {
+      "legal_issue": "A licensing authority's power to administer and enforce a cinematograph licensing regime includes the incidental power to stop exhibitions conducted by unauthorized persons.",
+      "material_facts": [
+        "The authority was responsible for administering the licensing regime and enforcing its requirements.",
+        "The named licensee had lost control of the theatre, and other persons were exhibiting films there without authorization.",
+        "The authority ordered exhibitions by those persons to stop rather than suspending the licence itself."
+      ],
+      "conclusion": "The licensing authority had power to order the exhibition of films by persons other than the licensee to stop.",
+      "legal_principle": "The power to control exhibitions by granting licences, and to administer and enforce the Act and Rules, carries the implied power to take steps necessary to ensure compliance with the statute, Rules, and licence conditions. The order was a measure against unauthorized exhibitions, not a suspension of the licence under Section 6-F.",
+      "rule": {
+        "if": "cinematograph_licensing_enforcement_case and authority_must_enforce_licensing_requirements and films_exhibited_by_unauthorized_persons and order_stops_unlicensed_exhibition",
+        "then": "authority_has_implied_power_to_stop_unlicensed_exhibition"
+      },
+      "predicates": {
+        "cinematograph_licensing_enforcement_case": "The proceeding concerns enforcement of requirements governing licensed cinematograph exhibitions.",
+        "authority_must_enforce_licensing_requirements": "The authority is responsible for administering and enforcing the licensing requirements.",
+        "films_exhibited_by_unauthorized_persons": "People without the required licence or permission are exhibiting films.",
+        "order_stops_unlicensed_exhibition": "The authority's order stops exhibitions by people who are not authorized to conduct them."
+      },
+      "definition": "An authority responsible for enforcing cinematograph licensing requirements may stop exhibitions conducted by unauthorized persons as a necessary enforcement measure."
+    }
+  ],
+  "seconds": 16.4
+}

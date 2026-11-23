@@ -1,0 +1,122 @@
+{
+  "doc_id": "1861446",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22324,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3581,
+    "prompt_tokens": 6438,
+    "total_tokens": 10019,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Sale transactions and mutation entries must be adequately proved before they can be relied on to determine compensation for acquired land.",
+      "material_facts": [
+        "The claimants relied on sale deeds, but no witness was examined to prove them in one group of appeals.",
+        "In another group, witnesses were said to have been examined, but their evidence was not in the record and the lower courts had not discussed it.",
+        "The State relied on mutation entries, without the underlying sale deeds or testimony from anyone connected with the transactions."
+      ],
+      "conclusion": "The transactions could not be relied on to determine market value because the evidence did not establish that they were bona fide dealings between willing parties, that the stated consideration had passed, or that the lands were comparable.",
+      "legal_principle": "Under Section 23(1) of the Land Acquisition Act, market value is assessed by reference to the hypothetical bargain between a willing vendor and a willing purchaser in normal market conditions at or near the relevant date. Whether a transaction was bona fide, whether consideration passed, and whether the land was comparable must be established by examining a vendor or purchaser, or, if neither is available, an attesting witness with personal knowledge. The Court relied on Periyar & Pareekanni Rubbers Ltd. v. State of Kerala, [1991] 4 SCC 195.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and (sale_transaction_or_mutation_entry_relied_on) and not transaction_proof_and_comparability_established",
+        "then": "unproved_transaction_not_relied_on_for_market_value"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired for a public purpose.",
+        "sale_transaction_or_mutation_entry_relied_on": "A party relies on a sale transaction or a mutation entry as evidence of market value.",
+        "transaction_proof_and_comparability_established": "Evidence from a party to the transaction or a knowledgeable attesting witness establishes the bona fides, payment of consideration, and relevant comparability of the land."
+      },
+      "definition": "When a party relies on a transaction in a land-acquisition compensation case but its bona fides, consideration, and comparability are not established, the transaction is not relied on to determine market value."
+    },
+    {
+      "legal_issue": "The highest price in an individual sale does not automatically determine compensation for a large acquired tract, and small-plot retail prices require appropriate comparison and adjustment.",
+      "material_facts": [
+        "The acquisition covered a large block of approximately 90 acres.",
+        "The claimants relied on a sale of 15 Biswas that produced the highest asserted price per Biswa, but there was no evidence about the circumstances of that sale, the land's distance from the acquired land, its purpose, or its comparable features.",
+        "Most of the other sale deeds concerned small extents, and the transactions had not been adequately proved.",
+        "The claimants argued that the highest sale price should be adopted."
+      ],
+      "conclusion": "The Court rejected the claim that the highest sale price should be adopted. It held that the relevant, proximate and comparable transactions must first be selected, that an average price may then be worked out, and that a reasonable margin must be allowed when converting retail prices into a wholesale value for a large tract.",
+      "legal_principle": "Under Section 23(1) of the Land Acquisition Act, market value is based on relevant and comparable sales reflecting normal market conditions. Small-extent sales ordinarily reflect retail prices and are not a direct comparable basis for valuing a large block; a reasonable margin is required when a genuine transaction concerning the acquired land is used to assess wholesale value. The Court relied on Collector of Lakhimpur v. Bhuban Chandra Dutta, AIR 1971 SC 2015; Mirza Nausherwoan Khan v. Collector (Land Acquisition), [1975] 2 SCR 184; Ram Rattan v. State of Uttar Pradesh, [1977] 2 SCR 184; Smt. Kaushalya Devi Bogra v. Land Acquisition Officer, [1984] 2 SCR 900; Administrator General of West Bengal v. Collector, Varanasi, AIR 1988 SC 943; Special Tehsildar, Land Acquisition v. A. Mangal Gowri, [1991] 4 SCC 218; and State of Madras v. A.M. Ranjan, [1976] 3 SCR 356.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and large_tract_acquired and highest_price_claimed_from_individual_sale and (small_plot_retail_price or sale_comparability_unproved)",
+        "then": "highest_transaction_price_not_automatically_adopted"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired for a public purpose.",
+        "large_tract_acquired": "The acquisition concerns a large block of land rather than an individual plot.",
+        "highest_price_claimed_from_individual_sale": "A party asks the court to base compensation on the highest price from an individual sale.",
+        "small_plot_retail_price": "The sale relied on concerns a small plot whose price may reflect a retail rather than wholesale value.",
+        "sale_comparability_unproved": "The evidence does not establish that the sale is sufficiently comparable to the acquired land."
+      },
+      "definition": "If a party relies on the highest price from an individual sale to value a large acquired tract, and the sale is a small-plot retail transaction or its comparability is unproved, that price is not automatically adopted."
+    },
+    {
+      "legal_issue": "Belting may be used to reflect differences in location within acquired land, but it is unjustified when the site's access and layout do not support different values for frontage and interior land.",
+      "material_facts": [
+        "The acquired land had potential for building use and was being acquired for a township.",
+        "The land was bounded by roads and inhabited areas on several sides, and a road crossed the acquired land, providing access to interior land.",
+        "The lower court divided the land into frontage and interior belts and assigned different rates.",
+        "The Supreme Court found that the access and layout did not justify the division."
+      ],
+      "conclusion": "Although belting is legally permissible where the evidence shows that land adjoining a main road would fetch a higher price than interior land, it was not justified on these facts; a uniform pre-deduction market rate was appropriate.",
+      "legal_principle": "The principle of belting is legally permissible where factual material supports a difference in market value based on a specified depth from a road. The Court applied this principle under the market-value assessment required by Section 23(1) of the Land Acquisition Act.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and acquired_land_has_frontage_and_interior and interior_access_and_site_layout_do_not_support_value_difference",
+        "then": "belting_not_justified"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired for a public purpose.",
+        "acquired_land_has_frontage_and_interior": "The acquired land includes land adjoining a road as well as land farther from the road.",
+        "interior_access_and_site_layout_do_not_support_value_difference": "The road access and layout do not establish that interior land would fetch a lower market value than frontage land."
+      },
+      "definition": "When acquired land has frontage and interior portions but access and layout do not support a difference in value between them, the land is not divided into belts for valuation."
+    },
+    {
+      "legal_issue": "The value of undeveloped acquired land must be reduced to account for the cost of providing development and civic amenities.",
+      "material_facts": [
+        "The acquired area was undeveloped and required roads, parks, drainage, lighting, and other civic amenities.",
+        "The Supreme Court distinguished a prior case in which the acquired land was in a fully developed area.",
+        "The lower court had deducted one-third for development, and the Supreme Court upheld the need for that deduction."
+      ],
+      "conclusion": "A deduction of at least one-third for development charges was necessary for the undeveloped land, and the Court applied that deduction to the market value.",
+      "legal_principle": "Where acquired land is undeveloped and requires development, at least one-third must be deducted toward development charges. The Court relied on Brig. Sahib Singh Kalha v. Amritsar Improvement Trust, [1982] 1 SCC 419; Administrator General of West Bengal v. Collector, Varanasi, AIR 1988 SC 943; Special Tehsildar, Land Acquisition v. A. Mangal Gowri, [1991] 4 SCC 218; and Bhagwathula Samanna v. Special Tehsildar, Land Acquisition, [1991] 4 SCC 506, distinguishing the latter because the land there was fully developed.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and acquired_land_is_undeveloped and development_and_civic_amenities_are_required",
+        "then": "development_cost_deduction_required"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired for a public purpose.",
+        "acquired_land_is_undeveloped": "The acquired land has not been developed for its intended use.",
+        "development_and_civic_amenities_are_required": "The land requires development work and civic amenities before it can be used as intended."
+      },
+      "definition": "When acquired land is undeveloped and requires development and civic amenities, its market value is reduced by a deduction for those costs."
+    },
+    {
+      "legal_issue": "An award for frontage land that has become final cannot be corrected or disturbed in the claimants' appeal when the acquiring authority did not challenge it.",
+      "material_facts": [
+        "The lower court fixed a rate for land adjoining the road and a different rate for interior land.",
+        "The Supreme Court identified an apparent mistake in the stated frontage rate but noted that the acquiring authority had not appealed or otherwise sought correction of that rate.",
+        "The claimants' appeals sought increased compensation."
+      ],
+      "conclusion": "The Court left the frontage rate undisturbed because it had become final and could not be corrected in the claimants' appeals.",
+      "legal_principle": "The Court applied the finality of an unchallenged part of the lower court's award: it could not correct or interfere with that part in an appeal brought by claimants when the acquiring authority had taken no action to challenge it.",
+      "rule": {
+        "if": "claimant_appeal_from_compensation_award and frontage_award_not_challenged_by_acquiring_authority and frontage_award_has_become_final",
+        "then": "frontage_award_left_undisturbed"
+      },
+      "predicates": {
+        "claimant_appeal_from_compensation_award": "The proceeding is an appeal by claimants seeking higher compensation for acquired land.",
+        "frontage_award_not_challenged_by_acquiring_authority": "The acquiring authority has not appealed or otherwise sought correction of the award for frontage land.",
+        "frontage_award_has_become_final": "The award for frontage land has become final in the proceedings."
+      },
+      "definition": "In a claimants' appeal for higher compensation, an unchallenged frontage award that has become final is left undisturbed."
+    }
+  ],
+  "seconds": 21.4
+}

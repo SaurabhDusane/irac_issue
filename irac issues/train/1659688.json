@@ -1,0 +1,119 @@
+{
+  "doc_id": "1659688",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38401,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3660,
+    "prompt_tokens": 9350,
+    "total_tokens": 13010,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Land subject to a permanent legal restriction limiting its use to agriculture must be valued as agricultural land rather than for its potential non-agricultural development.",
+      "material_facts": [
+        "The acquired land had vested in a tenant under the agricultural tenancy law and was subject to a permanent restriction against non-agricultural use.",
+        "The land had not been converted to non-agricultural use.",
+        "The unrestricted adjoining land had development potential and a higher market value."
+      ],
+      "conclusion": "The acquired land had to be valued only as agricultural land, without reference to sales of nearby land with residential, commercial, or industrial development potential. The Court considered a deduction of at least 50% from the value of unrestricted land with development potential appropriate in the circumstances.",
+      "legal_principle": "Under section 2 of the Goa Land Use (Regulation) Act, land vested in a tenant could not be used or allowed to be used for a non-agricultural purpose. Section 24, eighthly, of the Land Acquisition Act, 1894 excludes increases in value arising from a use forbidden by law. Market value is assessed as the price a willing buyer would pay a willing seller, having regard to comparable sales and relevant advantages and disadvantages: Administrator General of West Bengal v. Collector, Varanasi and Chimanlal Hargovinddas v. Special Land Acquisition Officer, Poona. The owner is compensated for what was lost, and the class, situation, and access of the land are relevant: Subh Ram v. State of Haryana.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and land_use_is_permanently_restricted_to_agriculture and not land_converted_to_non_agricultural_use",
+        "then": "land_is_valued_only_for_agricultural_use"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired through a statutory acquisition process.",
+        "land_use_is_permanently_restricted_to_agriculture": "A legal restriction attached to the land bars its owner and successors from using it for purposes other than agriculture.",
+        "land_converted_to_non_agricultural_use": "The land has been legally converted from agricultural use to another use."
+      },
+      "definition": "When compensation is being determined for acquired land that is permanently restricted to agricultural use and has not been converted, the land is valued only for agricultural use."
+    },
+    {
+      "legal_issue": "An exemption allowing acquired land to be used for a public purpose does not entitle the former owner to compensation based on non-agricultural development potential.",
+      "material_facts": [
+        "The land was subject to a restriction against non-agricultural use before it was acquired for a public purpose.",
+        "The landowner argued that the statutory exemption for public-purpose acquisition removed the restriction for valuation purposes."
+      ],
+      "conclusion": "The exemption allowed the State or the beneficiary of the acquisition to use the land for a non-agricultural purpose after acquisition; it did not permit the former owner to claim compensation as if the land had been unrestricted and developable before acquisition.",
+      "legal_principle": "Sections 2 and 3 of the Goa Land Use (Regulation) Act, 1991, read together, prohibit non-agricultural use while the land remains with the tenant-owner but exempt public-purpose acquisition so that the State or acquisition beneficiary may use the land otherwise after it is acquired. The exemption does not change the use for which the former owner could have sold the land in the open market, which is the relevant basis for compensation.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and acquisition_is_for_public_purpose and land_was_restricted_before_acquisition and owner_claims_unrestricted_value",
+        "then": "acquisition_exemption_does_not_raise_owner_valuation"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired through a statutory acquisition process.",
+        "acquisition_is_for_public_purpose": "The land was acquired by the State for a public purpose.",
+        "land_was_restricted_before_acquisition": "A legal restriction limiting the land's use was in force before the acquisition.",
+        "owner_claims_unrestricted_value": "The former owner seeks compensation on the basis that the land could have been used without the pre-acquisition restriction."
+      },
+      "definition": "A public-purpose acquisition of previously restricted land does not increase the former owner's valuation merely because the acquiring authority may use the land without that restriction."
+    },
+    {
+      "legal_issue": "A planning designation for industrial use does not by itself convert agricultural land to non-agricultural land.",
+      "material_facts": [
+        "A regional plan designated the land for industrial use.",
+        "The land had not been converted to non-agricultural use through the required land-conversion process.",
+        "The tenant-purchaser's purchase certificate was issued after the land-use restriction had come into force."
+      ],
+      "conclusion": "The land remained agricultural land. Its designation in a regional plan did not displace the restriction against non-agricultural use, and the restriction applied to the land when it was acquired.",
+      "legal_principle": "Publication of a regional plan under section 15 of the Goa, Daman and Diu Town and Country Planning Act, 1974, requires development activity to conform to the plan but does not itself change agricultural land into industrial land. Sections 30 and 32 of the Goa Land Revenue Code, 1968, provide for conversion of land use, and the land had not been converted under those provisions. The Court also considered sections 18A, 18E, 18H, 18J, and 18K of the Goa, Daman and Diu Agricultural Tenancy Act, 1964, including the fact that the purchase certificate was issued after the land-use restriction came into force.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and planning_document_designates_non_agricultural_use and not formal_land_conversion",
+        "then": "planning_designation_alone_does_not_reclassify_land"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired through a statutory acquisition process.",
+        "planning_document_designates_non_agricultural_use": "A planning document designates agricultural land for a non-agricultural purpose.",
+        "formal_land_conversion": "The land has been converted to non-agricultural use through the required legal process."
+      },
+      "definition": "A planning designation for a non-agricultural purpose does not reclassify land when the required legal conversion has not occurred."
+    },
+    {
+      "legal_issue": "Adjacent lands acquired under the same notification need not receive identical compensation when a material legal restriction makes their uses and market values different.",
+      "material_facts": [
+        "The disputed land and adjoining land were acquired under the same notification.",
+        "The disputed land was restricted to agricultural use, while the adjoining land was not subject to that restriction and had development potential.",
+        "The landowner relied on the principle of uniform compensation for similarly situated lands."
+      ],
+      "conclusion": "The lands were not comparable for valuation purposes because the restriction on the disputed land materially affected its use and market value; the same compensation was therefore not required for both.",
+      "legal_principle": "Similarly situated lands with the same advantages and potentialities may warrant the same compensation: K. Periasami v. Sub-Tehsildar (Land Acquisition) and Delhi Development Authority v. Bali Ram Sharma. But land subject to a material restriction on use is not comparable in value to unrestricted adjoining land. Subh Ram v. State of Haryana explains that the quality, situation, and access of land are relevant, and that acquisition for the same purpose does not eliminate differences in the lands themselves.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and lands_acquired_under_same_notification and land_uses_are_subject_to_different_material_restrictions",
+        "then": "restricted_and_unrestricted_lands_may_receive_different_compensation"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired through a statutory acquisition process.",
+        "lands_acquired_under_same_notification": "Two or more parcels were acquired under the same acquisition notification.",
+        "land_uses_are_subject_to_different_material_restrictions": "The parcels are subject to materially different legal restrictions on how they may be used."
+      },
+      "definition": "Lands acquired under one notification may receive different compensation when their legal restrictions on use materially differ."
+    },
+    {
+      "legal_issue": "The compensation for restricted land must reflect the relevant valuation date and the difference between that land and unrestricted land with development potential.",
+      "material_facts": [
+        "For the acquisition under the later notification, the Court relied on its valuation of adjoining unrestricted land at Rs.110 per square metre as of the relevant valuation date and applied a 50% deduction for the agricultural-use restriction, resulting in Rs.55 per square metre.",
+        "For the acquisition under the earlier notification, the Court derived a value of Rs.90 per square metre for unrestricted land with development potential as of the relevant valuation date and applied a 50% deduction, resulting in Rs.45 per square metre.",
+        "The Court allowed the Board's appeal on compensation in the first two matters and rejected the landowner's appeal for an increase; it partly allowed the appeal concerning the other acquired portion. Statutory benefits were preserved."
+      ],
+      "conclusion": "The compensation was reduced to Rs.55 per square metre for the land acquired under the later notification and to Rs.45 per square metre for the land acquired under the earlier notification, with the statutory benefits specified by the Court.",
+      "legal_principle": "Market value is assessed as of the relevant valuation date, using comparable land values and accounting for differences in use and development potential. The Court applied its valuation of adjoining unrestricted land, adjusted the value for the relevant valuation date where necessary, and deducted 50% to account for the restriction limiting the acquired land to agricultural use. The statutory benefits under sections 23(1A), 23(2), and 28 of the Land Acquisition Act, 1894, were preserved as applicable.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and restricted_agricultural_land and unrestricted_comparable_value_is_available and comparable_value_is_adjusted_to_relevant_valuation_date",
+        "then": "compensation_reflects_restricted_use_and_relevant_valuation_date"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired through a statutory acquisition process.",
+        "restricted_agricultural_land": "The acquired land is legally limited to agricultural use.",
+        "unrestricted_comparable_value_is_available": "A market value is available for comparable land that is not subject to the same use restriction.",
+        "comparable_value_is_adjusted_to_relevant_valuation_date": "The value of the comparable land is adjusted to reflect the date relevant to assessing the acquired land's market value."
+      },
+      "definition": "When a comparable unrestricted value is available for acquired agricultural land, compensation reflects the land's use restriction and the value applicable on the relevant valuation date."
+    }
+  ],
+  "seconds": 22.8
+}

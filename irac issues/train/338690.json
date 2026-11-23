@@ -1,0 +1,59 @@
+{
+  "doc_id": "338690",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19378,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2306,
+    "prompt_tokens": 5581,
+    "total_tokens": 7887,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A suit remains pending while an appeal from its judgment is being considered, where the appeal concerns rights or claims that remain open to appellate review.",
+      "material_facts": [
+        "A mortgage suit resulted in a preliminary decree allowing interest at the contractual rate.",
+        "An appeal challenging the interest awarded was pending when the relevant indebtedness legislation was extended to the territory.",
+        "The appeal was still considering the trial court’s judgment when the appellate court applied the amended interest provisions."
+      ],
+      "conclusion": "The suit was pending during the appeal, so the amended interest provisions applied to it.",
+      "legal_principle": "Section 6 of the Punjab Relief of Indebtedness Act gave retrospective effect to the amendments made by section 5 to section 3 of the Usurious Loans Act. For this purpose, a pending suit includes an appeal in which the judgment in the suit is under consideration; an appeal reviews proceedings in a cause already constituted and is part of that cause. The principle that an appeal may be a continuation of a suit is supported by Attorney General v. Sillem. The Court also relied on Quilter v. Mapleson, Stovin v. Fairbrass, and Mukerjee (K.C.) v. Mst. Ramratan in considering the effect of legislation on pending matters. A suit is excluded only when nothing remains to be done concerning the litigated rights or claims because an executable decree that cannot be reopened is already in existence.",
+      "rule": {
+        "if": "appeal_from_suit_judgment and first_instance_judgment_under_appellate_review and litigated_rights_remain_open",
+        "then": "suit_is_pending"
+      },
+      "predicates": {
+        "appeal_from_suit_judgment": "The proceeding is an appeal arising from a suit.",
+        "first_instance_judgment_under_appellate_review": "The appellate court is considering the judgment given by the court of first instance.",
+        "litigated_rights_remain_open": "The rights or claims litigated in the suit remain open to consideration in the appeal."
+      },
+      "definition": "When an appeal from a suit judgment is considering that judgment and the litigated rights remain open, the suit is treated as pending."
+    },
+    {
+      "legal_issue": "A later law that clearly applies to pending matters may be applied in an appeal even when it affects substantive rights obtained under the judgment being appealed.",
+      "material_facts": [
+        "The trial court entered a judgment before the relevant legislation was extended to the territory.",
+        "The legislation expressly applied to suits pending when it commenced.",
+        "An appeal concerning the interest awarded by the trial court remained pending when the legislation became applicable.",
+        "The appellate court applied the amended interest provisions to reduce the interest awarded."
+      ],
+      "conclusion": "The appellate court could apply the later law because its clear retrospective language covered the pending suit, notwithstanding that it affected rights obtained under the trial court’s judgment.",
+      "legal_principle": "Ordinarily, appellate rights are determined under the law in force at the date of the suit, and procedural laws are generally retrospective. But there is no absolute rule that substantive rights are inviolable: where a later law expressly or by clear intendment covers pending matters, both the trial court and the appellate court must give effect to it, even after the first-instance judgment. The Court relied on sections 5 and 6 of the Punjab Relief of Indebtedness Act and section 3 of the Usurious Loans Act as amended, and referred to Quilter v. Mapleson, Stovin v. Fairbrass, and Mukerjee (K.C.) v. Mst. Ramratan.",
+      "rule": {
+        "if": "appeal_from_trial_judgment_pending and later_law_clearly_covers_pending_matters and later_law_changes_substantive_entitlement",
+        "then": "later_law_applies_in_appeal"
+      },
+      "predicates": {
+        "appeal_from_trial_judgment_pending": "An appeal from a trial judgment remains pending when the later law becomes applicable.",
+        "later_law_clearly_covers_pending_matters": "The later law expressly or by clear intendment applies to matters that are pending when it takes effect.",
+        "later_law_changes_substantive_entitlement": "Applying the later law would alter a substantive entitlement obtained under the judgment being appealed."
+      },
+      "definition": "When an appeal remains pending, the later law clearly covers pending matters, and it changes an entitlement obtained under the judgment, the later law applies in the appeal."
+    }
+  ],
+  "seconds": 14.5
+}

@@ -1,0 +1,116 @@
+{
+  "doc_id": "437299",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25961,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4039,
+    "prompt_tokens": 6845,
+    "total_tokens": 10884,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The exclusion for execution stayed by injunction applies to limitation prescribed by a general procedural statute as well as limitation prescribed by the Limitation Act.",
+      "material_facts": [
+        "A decree-holder applied to execute a decree, and execution was stayed by orders of a court.",
+        "The applicable procedural code imposed a maximum period for execution but did not prescribe the period within which each execution application had to be filed; the time for each application was prescribed by the Limitation Act."
+      ],
+      "conclusion": "The word “prescribed” in the exclusion provision covers limitation under general statutes such as the procedural code. An execution application must first satisfy the time limit for applications under the Limitation Act, after which the procedural code’s maximum period may operate as a further bar.",
+      "legal_principle": "Section 15 of the Limitation Act, 1908 excludes the time during which an injunction stays execution when computing a prescribed limitation period. As held in Kandaswami Pillai v. Kannappa Chetty (1951) 2 M.L.J. 668, “prescribed” is not confined to limitation in the First Schedule to the Limitation Act and includes limitation prescribed by general statutes. Section 48 of the Code of Civil Procedure, as then in force, imposed a maximum period but did not prescribe the time for each execution application; Article 182 of the Limitation Act prescribed that application period.",
+      "rule": {
+        "if": "decree_execution_application and limitation_prescribed_by_general_statute and execution_stayed_by_injunction",
+        "then": "injunction_stay_time_excluded_from_limitation_computation"
+      },
+      "predicates": {
+        "decree_execution_application": "A party applied to a court to execute a decree.",
+        "limitation_prescribed_by_general_statute": "A general procedural statute prescribed a limitation period or maximum period relevant to execution.",
+        "execution_stayed_by_injunction": "An injunction prevented execution from proceeding for a period."
+      },
+      "definition": "When an execution application is governed by a limitation rule in a general statute and an injunction stays execution, the stay period is excluded from the limitation computation."
+    },
+    {
+      "legal_issue": "The stay of execution was unqualified and was not limited to execution against a single property.",
+      "material_facts": [
+        "The executing court recorded that proceedings had stopped because of an injunction issued by another court and that further steps would await permission.",
+        "Receivers remained in place after the partition decree, and the parties and executing court proceeded on the understanding that execution was stayed.",
+        "There was no evidence that the judgment-debtors had other properties in the place where execution had been commenced."
+      ],
+      "conclusion": "The injunction stayed execution in unqualified terms; the circumstances did not establish a partial stay. The decree-holder could claim exclusion of the period during which execution was stayed and was not required to pursue simultaneous execution elsewhere.",
+      "legal_principle": "Section 15 of the Limitation Act, 1908 excludes the time an injunction stays execution. Although simultaneous execution in more than one place is possible, it is used sparingly and in exceptional cases, with appropriate terms to avoid hardship. The recorded stoppage of proceedings, the continuing receivership, and the absence of evidence of other local assets supported the conclusion that the stay was absolute rather than partial.",
+      "rule": {
+        "if": "decree_execution_proceeding and court_recorded_execution_stopped_by_injunction and parties_treated_execution_as_stayed and no_evidence_of_other_local_assets",
+        "then": "execution_stay_applies_to_entire_execution_process"
+      },
+      "predicates": {
+        "decree_execution_proceeding": "The matter concerns a proceeding to execute a decree.",
+        "court_recorded_execution_stopped_by_injunction": "The executing court recorded that execution had stopped because of an injunction.",
+        "parties_treated_execution_as_stayed": "The parties proceeded on the understanding that execution could not continue without permission.",
+        "no_evidence_of_other_local_assets": "The record contained no evidence that the judgment-debtors had other assets in the place where execution was underway."
+      },
+      "definition": "Where an execution proceeding was recorded as stopped by an injunction, the parties treated it as stayed, and no other local assets were shown, the stay applies to the execution process as a whole."
+    },
+    {
+      "legal_issue": "A judgment-debtor who did not raise limitation when challenging steps taken after revival of execution cannot later challenge the revival order on limitation grounds.",
+      "material_facts": [
+        "Execution was revived, property was attached and sold, and the judgment-debtors sought to set aside the sale on the ground that a statutory protection barred the sale.",
+        "The judgment-debtors did not argue before the executing court that revival, attachment, or sale was barred by limitation."
+      ],
+      "conclusion": "The judgment-debtors were barred by res judicata from challenging directly or indirectly the earlier order reviving execution on limitation grounds.",
+      "legal_principle": "The principle of res judicata applies to execution proceedings. A party that does not raise a limitation objection in proceedings concerning the revival and subsequent steps in execution cannot later use a separate execution application to contest the unchallenged revival order on that ground.",
+      "rule": {
+        "if": "decree_execution_proceeding and prior_execution_order_accepted_or_left_unchallenged and party_omitted_limitation_objection_when_contesting_execution_steps",
+        "then": "later_limitation_challenge_barred_by_res_judicata"
+      },
+      "predicates": {
+        "decree_execution_proceeding": "The matter concerns proceedings to execute a decree.",
+        "prior_execution_order_accepted_or_left_unchallenged": "An earlier order allowing execution to proceed was not challenged by the affected party.",
+        "party_omitted_limitation_objection_when_contesting_execution_steps": "The party contested later execution steps without raising a limitation objection."
+      },
+      "definition": "If a party leaves an order allowing execution unchallenged and omits a limitation objection while contesting later execution steps, that party cannot later reopen the limitation issue."
+    },
+    {
+      "legal_issue": "Time spent prosecuting an earlier execution proceeding may be excluded when the proceeding was pursued in good faith and with due diligence but failed because of a statutory obstacle.",
+      "material_facts": [
+        "The decree-holder pursued an earlier execution proceeding against property and sought its sale.",
+        "The sale was set aside because a statutory protection prevented the property from being sold.",
+        "The lower court found that the decree-holder had prosecuted the earlier proceeding in good faith and with due diligence, and the Supreme Court considered that finding correct."
+      ],
+      "conclusion": "The decree-holder was entitled to the benefit of excluding the time spent prosecuting the earlier execution proceeding under section 14 of the Limitation Act, 1908.",
+      "legal_principle": "Section 14 of the Limitation Act, 1908 provides for exclusion of time spent prosecuting a prior proceeding in good faith and with due diligence where that proceeding cannot be pursued successfully because of an impediment of the kind contemplated by the section. The Court upheld the finding that the earlier execution proceeding was prosecuted in good faith and with due diligence and failed because the sale was barred by statute.",
+      "rule": {
+        "if": "decree_execution_limitation_dispute and prior_execution_proceeding_pursued_in_good_faith and prior_execution_proceeding_pursued_with_due_diligence and prior_execution_failed_due_to_statutory_obstacle",
+        "then": "prior_execution_time_excluded_from_limitation"
+      },
+      "predicates": {
+        "decree_execution_limitation_dispute": "The dispute concerns the limitation period for an application to execute a decree.",
+        "prior_execution_proceeding_pursued_in_good_faith": "The decree-holder pursued an earlier execution proceeding honestly.",
+        "prior_execution_proceeding_pursued_with_due_diligence": "The decree-holder pursued the earlier execution proceeding with due diligence.",
+        "prior_execution_failed_due_to_statutory_obstacle": "The earlier execution proceeding failed because a statutory restriction prevented the intended execution step."
+      },
+      "definition": "When an earlier execution proceeding was pursued honestly and diligently but failed because of a statutory obstacle, the time spent pursuing it is excluded from limitation."
+    },
+    {
+      "legal_issue": "A party cannot raise in the Supreme Court a good-faith challenge that it abandoned before the intermediate appellate court.",
+      "material_facts": [
+        "The judgment-debtors challenged the decree-holder’s good faith before a single judge.",
+        "They did not advance that challenge before the division bench, but raised it again in the Supreme Court."
+      ],
+      "conclusion": "The good-faith challenge was not open to the judgment-debtors in the Supreme Court because they had abandoned it before the division bench; the Court also considered the single judge’s finding of good faith and due diligence correct.",
+      "legal_principle": "A party may not raise before the Supreme Court a contention that it abandoned before the intermediate appellate court. The Court also agreed with the lower court’s finding that the decree-holder prosecuted the earlier execution proceeding in good faith and with due diligence.",
+      "rule": {
+        "if": "supreme_court_appeal and good_faith_challenge_omitted_before_intermediate_appellate_court",
+        "then": "abandoned_good_faith_challenge_not_entertained"
+      },
+      "predicates": {
+        "supreme_court_appeal": "The matter is an appeal before the Supreme Court.",
+        "good_faith_challenge_omitted_before_intermediate_appellate_court": "A party raised a good-faith challenge at an earlier stage but did not pursue it before the intermediate appellate court."
+      },
+      "definition": "In a Supreme Court appeal, a party cannot obtain consideration of a good-faith challenge that it did not pursue before the intermediate appellate court."
+    }
+  ],
+  "seconds": 24.5
+}

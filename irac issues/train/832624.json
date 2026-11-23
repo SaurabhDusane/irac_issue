@@ -1,0 +1,79 @@
+{
+  "doc_id": "832624",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17304,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2283,
+    "prompt_tokens": 5178,
+    "total_tokens": 7461,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Mortgage money already paid before a conveyance is not added to the stamp-duty consideration as unpaid mortgage money.",
+      "material_facts": [
+        "Before the conveyance was executed, the purchasers had paid a substantial part of the mortgage debt to the bank.",
+        "The amount in dispute had been paid by the date of the conveyance."
+      ],
+      "conclusion": "The amount paid before the conveyance was not includible under the mortgage-money explanation to section 24.",
+      "legal_principle": "Section 24’s Explanation deems unpaid mortgage money to be part of the sale consideration where the sale is subject to the mortgage; it does not add mortgage money already paid by the date of conveyance. The phrase “subject to a mortgage or other encumbrance” qualifies the sale, not the property. The Court relied on U.K. Janardhan Rao v. Secretary of State and Waman Martand Bhalerao v. The Commissioner, Central Division, and noted that the Stamp Act, as a taxing statute, is to be construed strictly.",
+      "rule": {
+        "if": "conveyance_stamp_duty_case and mortgage_money_paid_before_conveyance",
+        "then": "prior_paid_mortgage_money_excluded_from_unpaid_mortgage_addition"
+      },
+      "predicates": {
+        "conveyance_stamp_duty_case": "A dispute concerns the stamp duty payable on a conveyance.",
+        "mortgage_money_paid_before_conveyance": "The mortgage money at issue was paid before the conveyance was executed."
+      },
+      "definition": "When a conveyance is assessed for stamp duty and the mortgage money was paid before execution, that money is excluded from the amount added as unpaid mortgage money."
+    },
+    {
+      "legal_issue": "A purchaser’s pre-conveyance payment is included in the stamp-duty consideration only if it was consideration for the immovable property conveyed.",
+      "material_facts": [
+        "The purchasers paid money to the bank before the conveyance was executed.",
+        "The conveyance and the agreed allocation showed that the payment was for items other than the immovable property conveyed.",
+        "The conveyance stated a separate amount as consideration for the buildings and leasehold rights."
+      ],
+      "conclusion": "The pre-conveyance payment was not includible because it was not shown to be consideration for the immovable property conveyed.",
+      "legal_principle": "Article 23 charges duty by reference to the consideration for the conveyance. A payment to a mortgagee made before the sale may form part of that consideration if it is made as consideration for the immovable property; the mortgage-money Explanation to section 24 does not itself add a sum already paid. The Court also applied the strict construction of taxing statutes.",
+      "rule": {
+        "if": "conveyance_stamp_duty_case and purchaser_payment_not_consideration_for_immovable_property",
+        "then": "purchaser_payment_excluded_from_conveyance_duty_base"
+      },
+      "predicates": {
+        "conveyance_stamp_duty_case": "A dispute concerns the stamp duty payable on a conveyance.",
+        "purchaser_payment_not_consideration_for_immovable_property": "The purchaser paid money, but that payment was not consideration for the immovable property conveyed."
+      },
+      "definition": "If a conveyance is assessed for stamp duty and the purchaser’s payment was not consideration for the immovable property conveyed, the payment is excluded from the duty base."
+    },
+    {
+      "legal_issue": "An unpaid mortgage amount is not added to stamp-duty consideration where the purchaser is not liable for it, the vendors undertake to pay it, and the property is conveyed free of that charge.",
+      "material_facts": [
+        "A balance of the mortgage debt remained unpaid when the conveyance was executed.",
+        "The vendors undertook to pay that balance, and the purchasers did not assume liability for it.",
+        "The conveyance provided that the property was sold free from the charge.",
+        "The balance formed part of the price allocated to items other than the immovable property conveyed."
+      ],
+      "conclusion": "The unpaid balance was not includible in the stamp-duty consideration for the immovable property conveyed.",
+      "legal_principle": "Under section 24’s Explanation, unpaid mortgage money is deemed part of the consideration where the sale is subject to the mortgage. Article 23 applies to consideration for the conveyance. Because the purchasers were not liable for the balance, the conveyance was free of the charge, and the amount related to other items, it was not added to the consideration for the immovable property. The Court applied the strict construction of taxing statutes.",
+      "rule": {
+        "if": "conveyance_stamp_duty_case and mortgage_debt_unpaid_at_conveyance and vendors_undertook_debt and purchaser_not_liable_for_debt and property_conveyed_free_of_charge and debt_related_to_other_items",
+        "then": "unpaid_debt_excluded_from_conveyance_duty_base"
+      },
+      "predicates": {
+        "conveyance_stamp_duty_case": "A dispute concerns the stamp duty payable on a conveyance.",
+        "mortgage_debt_unpaid_at_conveyance": "Some mortgage debt remained unpaid when the conveyance was executed.",
+        "vendors_undertook_debt": "The vendors, rather than the purchasers, undertook to pay the unpaid debt.",
+        "purchaser_not_liable_for_debt": "The purchasers did not assume liability for the unpaid debt.",
+        "property_conveyed_free_of_charge": "The property was conveyed free of the charge securing the debt.",
+        "debt_related_to_other_items": "The unpaid amount related to items other than the immovable property conveyed."
+      },
+      "definition": "Where a conveyance is assessed for stamp duty, an unpaid debt undertaken by the vendors and not by the purchasers is excluded if the property is conveyed free of its charge and the debt relates to other items."
+    }
+  ],
+  "seconds": 16.3
+}

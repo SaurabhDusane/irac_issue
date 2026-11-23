@@ -1,0 +1,107 @@
+{
+  "doc_id": "8587992",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28857,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3007,
+    "prompt_tokens": 7122,
+    "total_tokens": 10129,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "At the pre-charge stage of a sessions trial, the judge must independently assess whether the prosecution materials provide sufficient ground to proceed, without conducting a full trial of the evidence.",
+      "material_facts": [
+        "The prosecution filed a charge-sheet alleging that the accused had conspired to obtain compensation through the acquisition of land.",
+        "The Special Judge considered the charge-sheet, police statements and other documents before discharging the accused.",
+        "The proceedings before the Special Judge followed sessions-trial procedure."
+      ],
+      "conclusion": "The judge is not required to frame a charge at the prosecution’s request. The judge may sift and weigh the materials for the limited purpose of deciding whether a prima facie case exists; the judge must discharge the accused if there is no sufficient ground for proceeding and record reasons.",
+      "legal_principle": "Section 227 of the Code of Criminal Procedure, 1973 requires the judge to consider the record, accompanying documents and submissions, and to discharge the accused if there is not sufficient ground to proceed. Under State of Bihar v. Ramesh Singh, strong suspicion may justify framing a charge but does not replace proof at trial; if the prosecution evidence, even accepted as it stands, cannot show commission of the offence, there is no sufficient ground to proceed. K.P. Raghavan v. M.H. Abbas and Almohan Das v. State of West Bengal support the principle that the judge is not a mere recording machine and may assess whether a prima facie case exists, without deciding whether the evidence is sufficient for conviction.",
+      "rule": {
+        "if": "sessions_procedure_precharge and (no_prima_facie_evidence or (two_views_equally_possible and suspicion_not_grave))",
+        "then": "accused_is_discharged"
+      },
+      "predicates": {
+        "sessions_procedure_precharge": "The matter is before the judge responsible for a sessions trial, or a proceeding that applies sessions procedure, before charges are framed.",
+        "no_prima_facie_evidence": "The materials, even if accepted as presented, do not disclose a prima facie case that the accused committed an offence.",
+        "two_views_equally_possible": "The materials permit two views that are equally possible at the pre-charge stage.",
+        "suspicion_not_grave": "The materials give rise to suspicion against the accused, but not grave suspicion."
+      },
+      "definition": "When a sessions-procedure case is at the pre-charge stage, the accused is discharged if the materials disclose no prima facie case or leave equally possible views that create no more than non-grave suspicion."
+    },
+    {
+      "legal_issue": "The prosecution materials in this case did not provide sufficient ground to try the accused for the alleged conspiracy to obtain compensation by concealing the government’s interest in the land.",
+      "material_facts": [
+        "The accused who held the lease wrote that the land was government land and did not represent it as private property.",
+        "Government records and witnesses indicated that the land was government land and that the accused held a lessee’s interest.",
+        "The land acquisition officer’s report identified the government’s interest and the accused’s status in relation to the land.",
+        "The compensation estimate was submitted to and sanctioned by the government before the accused referred to the amount in a letter.",
+        "The acquisition concerned the lessee’s interest, and the amount was accepted as representing the market value of that interest.",
+        "The record contained no legal evidence of a meeting of minds between the accused.",
+        "The rapid completion of the acquisition proceedings was explained by the acquiring agency’s urgency and the steps taken to obtain prior approval."
+      ],
+      "conclusion": "The Court agreed that there was no sufficient ground to try the accused and affirmed the discharge.",
+      "legal_principle": "Applying Section 227 of the Code of Criminal Procedure, 1973 and the principles stated in State of Bihar v. Ramesh Singh, the judge may consider the broad probabilities, total effect of the materials and basic infirmities, but must not conduct a roving inquiry or weigh evidence as at trial. Materials that leave only suspicion, rather than grave and unexplained suspicion, may support discharge where two views are equally possible.",
+      "rule": {
+        "if": "criminal_case_challenging_discharge and alleged_conspiracy_to_obtain_compensation and government_interest_not_concealed and compensation_estimate_previously_sanctioned and compensation_reflected_lessee_interest and no_evidence_of_meeting_of_minds and rapid_proceedings_explained",
+        "then": "discharge_is_upheld"
+      },
+      "predicates": {
+        "criminal_case_challenging_discharge": "The proceeding is a criminal case in which the prosecution challenges an order discharging the accused before trial.",
+        "alleged_conspiracy_to_obtain_compensation": "The prosecution alleges that the accused conspired to obtain compensation through a land acquisition.",
+        "government_interest_not_concealed": "The accused disclosed the government’s interest in the land, and records or witnesses also identified that interest.",
+        "compensation_estimate_previously_sanctioned": "The compensation estimate had been submitted to and approved by the government before the accused referred to the amount.",
+        "compensation_reflected_lessee_interest": "The compensation was calculated for the accused’s leasehold or other outstanding private interest, rather than the government’s proprietary interest.",
+        "no_evidence_of_meeting_of_minds": "The prosecution materials contain no legal evidence that the accused reached an agreement to carry out the alleged conspiracy.",
+        "rapid_proceedings_explained": "The speed of the proceedings is explained by the acquiring agency’s urgency and the administrative steps taken before the award."
+      },
+      "definition": "In a criminal case challenging discharge, discharge is upheld where an alleged compensation conspiracy is undermined by disclosure of the government’s interest, prior approval of the estimate, valuation of only the private interest, absence of evidence of an agreement, and an explanation for the speed of proceedings."
+    },
+    {
+      "legal_issue": "When the government already owns an interest in land being acquired, that interest is outside the acquisition, and only the outstanding interests need to be acquired.",
+      "material_facts": [
+        "The land was government land subject to a lease, and the accused held the lessee’s interest.",
+        "The acquisition and compensation estimate concerned the lessee’s interest, while the government retained the proprietary interest."
+      ],
+      "conclusion": "The government’s proprietary interest did not itself have to be acquired or compensated; the acquisition could concern only the outstanding lessee’s interest.",
+      "legal_principle": "In Collector of Bombay v. Nusserwanji Rattanji Mistri, the Court held that a government interest in land is outside the acquisition because the government cannot acquire what it already owns, although the interest’s nature and value may be relevant to determining compensation for the interests outstanding in claimants. The Special Land Acquisition Officer, Hosanagar v. K.S. Ramachandra Rao likewise recognizes that the acquisition officer values the rights of the claimants in the acquired land. These principles apply to acquisition proceedings under the Land Acquisition Act.",
+      "rule": {
+        "if": "land_acquisition_proceeding and government_already_owns_an_interest and only_outstanding_private_interest_is_sought",
+        "then": "government_interest_is_outside_acquisition"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The proceeding concerns the acquisition of land for public use.",
+        "government_already_owns_an_interest": "The government already holds an interest in the land being acquired.",
+        "only_outstanding_private_interest_is_sought": "The acquisition seeks to obtain the interest in the land that remains outstanding in a private claimant."
+      },
+      "definition": "In a land acquisition proceeding, the government’s existing interest is outside the acquisition when the proceeding seeks only the outstanding private interest."
+    },
+    {
+      "legal_issue": "A reviewing court should not normally disturb a reasoned discharge order made by the trial judge when the higher courts have reached concurrent conclusions, absent special circumstances.",
+      "material_facts": [
+        "The Special Judge gave reasons for discharging the accused.",
+        "The High Court upheld the discharge in revision.",
+        "The Supreme Court found no special circumstances justifying interference with the concurrent conclusions."
+      ],
+      "conclusion": "The Court affirmed the High Court’s judgment and dismissed the appeal.",
+      "legal_principle": "The Court observed that the discharge decision is entrusted to a senior and experienced trial judge and that the judge’s reasoned exercise of discretion should not normally be disturbed by a higher court. It was particularly reluctant to interfere with concurrent findings in the absence of special circumstances.",
+      "rule": {
+        "if": "appeal_against_discharge and reasoned_trial_judge_discharge and concurrent_courts_upheld_discharge and no_special_circumstances",
+        "then": "concurrent_discharge_is_left_undisturbed"
+      },
+      "predicates": {
+        "appeal_against_discharge": "The proceeding is an appeal challenging an order discharging an accused before trial.",
+        "reasoned_trial_judge_discharge": "The trial judge discharged the accused and recorded reasons for doing so.",
+        "concurrent_courts_upheld_discharge": "The trial court and the reviewing court both concluded that the accused should remain discharged.",
+        "no_special_circumstances": "No special circumstance is shown that warrants disturbing the concurrent conclusions."
+      },
+      "definition": "An appeal against discharge leaves the concurrent discharge undisturbed when the trial judge gave reasons, the reviewing court agreed, and no special circumstance warrants interference."
+    }
+  ],
+  "seconds": 79.1
+}

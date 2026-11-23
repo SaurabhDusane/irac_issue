@@ -1,0 +1,64 @@
+{
+  "doc_id": "272906",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22515,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2569,
+    "prompt_tokens": 6247,
+    "total_tokens": 8816,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A suit brought by a person seeking permission to sue without paying court fees is instituted when the required application is presented.",
+      "material_facts": [
+        "The plaintiff presented an application seeking permission to sue without paying court fees, containing the particulars required for a plaint.",
+        "The application was presented before the last date for filing the suit."
+      ],
+      "conclusion": "The suit was instituted on the date the application was presented and was therefore in time.",
+      "legal_principle": "Under Section 26 of the Code of Civil Procedure, a suit may be instituted by presentation of a plaint or in another prescribed manner. Order 33 Rules 1, 2 and 3 prescribe the manner for a person claiming to be a pauper to institute a suit. Vijay Pratap Singh v. Dukh Haran Nath Singh holds that such a suit commences when the application for permission to sue in forma pauperis is presented.",
+      "rule": {
+        "if": "pauper_suit and application_presented_in_required_form",
+        "then": "suit_instituted_on_application_presentation"
+      },
+      "predicates": {
+        "pauper_suit": "The proceeding is a suit initiated by a person seeking permission to sue without paying court fees.",
+        "application_presented_in_required_form": "The applicant presented an application containing the particulars required for a plaint and complying with the prescribed presentation requirements."
+      },
+      "definition": "When a person initiates a suit by a properly presented application to sue without paying court fees, the suit is treated as instituted upon that application's presentation."
+    },
+    {
+      "legal_issue": "When a court agrees to treat an application to sue without paying court fees as a plaint and extends time to pay the fee, a later order rejecting only the request to sue without fees does not itself reject the plaint, and accepted fee payment may take effect from the application's original presentation.",
+      "material_facts": [
+        "Before the question of the plaintiff's eligibility to sue without paying court fees was decided, the plaintiff offered to pay the fee and asked the court to treat the application as a plaint.",
+        "The court agreed to treat the application as a plaint and extended time for payment.",
+        "The plaintiff did not pay by the extended deadline, and the court subsequently ordered that the application to sue without paying court fees be dismissed.",
+        "The plaintiff later paid the fee and the defendants' costs, and the court restored the proceeding after setting aside the dismissal order.",
+        "The court had not rejected the plaint; it had rejected only the request to sue without paying court fees.",
+        "The application had originally been presented within the limitation period."
+      ],
+      "conclusion": "The dismissal of the request to sue without paying court fees did not terminate the suit because the plaint had not been rejected. Under Section 149 of the Code of Civil Procedure, the accepted fee payment had the same effect as payment on the date of original presentation, so the suit was within limitation.",
+      "legal_principle": "Order 33 Rule 8 treats an allowed application to sue as a pauper as the plaint. Where, before formal disposal of the application, the applicant offers to pay the fee and the court agrees to treat the application as a plaint and enlarges time, the application is regarded as a plaint instituted on its presentation. Section 149 of the Code of Civil Procedure permits enlargement of time for payment of court fees, and accepted payment has the same force and effect as payment in the first instance. If the plaint is not rejected under Order 7 Rule 11(c), an order rejecting only the withdrawn request to sue as a pauper does not end the suit. The court relied on Stuart Skinner v. William Orde and Devender Kumar Bharti v. Mahanta Raghuraj Bharti in approving the relation-back principle.",
+      "rule": {
+        "if": "pauper_suit and original_application_was_timely and pauper_request_withdrawn_before_decision and court_agreed_to_treat_application_as_plaint and court_extended_fee_time and proceeding_restored and fee_paid_and_accepted and plaint_not_rejected",
+        "then": "suit_instituted_on_original_presentation"
+      },
+      "predicates": {
+        "pauper_suit": "The proceeding is a suit initiated by a person seeking permission to sue without paying court fees.",
+        "original_application_was_timely": "The applicant presented the original application within the applicable limitation period.",
+        "pauper_request_withdrawn_before_decision": "The applicant withdrew the request to proceed without paying court fees before the court decided that request.",
+        "court_agreed_to_treat_application_as_plaint": "The court agreed to proceed on the basis that the application would serve as the plaint.",
+        "court_extended_fee_time": "The court allowed additional time for payment of the court fee.",
+        "proceeding_restored": "After the proceeding was dismissed, the court set aside that dismissal and restored the proceeding.",
+        "fee_paid_and_accepted": "The applicant later paid the court fee and the court accepted it.",
+        "plaint_not_rejected": "The court did not reject the plaint itself."
+      },
+      "definition": "When a timely suit initiated without court-fee payment is converted to proceed on a plaint, the court extends the time to pay, the proceeding is restored, the fee is accepted, and the plaint is not rejected, the suit is treated as instituted when the original application was presented."
+    }
+  ],
+  "seconds": 76.5
+}

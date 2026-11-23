@@ -1,0 +1,40 @@
+{
+  "doc_id": "907049",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14261,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 895,
+    "prompt_tokens": 4080,
+    "total_tokens": 4975,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant must strictly follow the prescribed sequence for depositing rent before relying on a court deposit to avoid eviction for rent default.",
+      "material_facts": [
+        "The tenant had not paid rent for a period that included at least several months before the eviction proceeding.",
+        "The tenant sought permission to deposit rent in court without first completing the prescribed preliminary steps for rent payment when a landlord refuses rent.",
+        "The tenant accepted that the required preliminary steps had not been followed.",
+        "The eviction authority ordered eviction on the ground of rent default."
+      ],
+      "conclusion": "The court deposit did not excuse the tenant’s failure to follow the prescribed procedure, and the eviction order for rent default was upheld.",
+      "legal_principle": "Under Section 8(2)–(5) of the Tamil Nadu Building (Lease & Rent Control) Act, 1960, a tenant must follow the prescribed steps in sequence: require the landlord to identify a bank, deposit rent in that bank if one is identified, remit rent by money order if no bank is identified, and apply to the Controller to deposit rent only if the money order is refused. Strict compliance is required, and a tenant cannot skip earlier steps and proceed directly to a court deposit; equitable considerations do not replace compliance with the statute. The court relied on Kuldeep Singh v. Ganpat Lal, (1996) 1 SCC 243, and M. Bhaskar v. J. Venkatarama Naidu, (1996) 6 SCC 228.",
+      "rule": {
+        "if": "rent_default_eviction_appeal and tenant_sought_court_deposit and tenant_skipped_required_prior_steps and eviction_based_on_rent_default",
+        "then": "eviction_for_rent_default_upheld"
+      },
+      "predicates": {
+        "rent_default_eviction_appeal": "The proceeding is an appeal concerning an eviction order based on rent default.",
+        "tenant_sought_court_deposit": "The tenant sought to deposit rent in court to address the alleged rent default.",
+        "tenant_skipped_required_prior_steps": "The tenant did not complete the prescribed preliminary steps for paying rent before seeking a court deposit.",
+        "eviction_based_on_rent_default": "The eviction order rested on the tenant’s failure to pay rent."
+      },
+      "definition": "When a rent-default eviction appeal involves a tenant who sought a court deposit after skipping the required prior steps, and the eviction order was based on rent default, the eviction for rent default is upheld."
+    }
+  ],
+  "seconds": 8.2
+}

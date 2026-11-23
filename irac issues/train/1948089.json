@@ -1,0 +1,79 @@
+{
+  "doc_id": "1948089",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21531,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2662,
+    "prompt_tokens": 6180,
+    "total_tokens": 8842,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "For a creditor’s insolvency petition based on a transfer of immovable property that requires registration, the three-month period runs from registration rather than execution.",
+      "material_facts": [
+        "A partner executed a deed of gift of immovable property in October 1957 and the deed was registered in March 1958.",
+        "The creditor insolvency petitions were presented within three months of registration but more than three months after execution."
+      ],
+      "conclusion": "The transfer could constitute an act of insolvency only when the deed was registered, so the three-month period ran from the date of registration.",
+      "legal_principle": "Under sections 123 of the Transfer of Property Act and 49 of the Registration Act, a gift of immovable property requiring registration does not transfer the property by execution alone. Section 47 of the Registration Act makes a registered document operate from the time it otherwise would have operated, but does not make an unregistered document effective before registration. The Court approved Lakhmi Chand v. Kesho Ram, Sarvathada Iswarayya v. Kuruba Subbanna, and District Board, Bijnor v. Mohammad Abdul Salam, and disapproved U On Maung v. Maung Shwe Hpaung.",
+      "rule": {
+        "if": "creditor_insolvency_petition and transfer_requires_registration and transfer_document_registered",
+        "then": "limitation_period_starts_on_registration"
+      },
+      "predicates": {
+        "creditor_insolvency_petition": "A creditor presented an insolvency petition based on an alleged act of insolvency by a debtor.",
+        "transfer_requires_registration": "The debtor made a transfer of property for which a legally effective transfer required a registered instrument.",
+        "transfer_document_registered": "The instrument completing the transfer was registered."
+      },
+      "definition": "When a creditor’s insolvency petition relies on a transfer that requires registration and the instrument was registered, the applicable period runs from registration."
+    },
+    {
+      "legal_issue": "An adjudication of insolvency may be made against a firm in the firm’s name.",
+      "material_facts": [
+        "The insolvency petitions sought adjudication against a registered firm as well as its partners.",
+        "The applicable insolvency law provided for High Court rules governing procedure when the debtor was a firm, and rules had been made providing for an adjudication order against a firm."
+      ],
+      "conclusion": "An order of adjudication may be made against a firm in its name if the proper conditions are satisfied.",
+      "legal_principle": "Section 79(2)(c) of the Provincial Insolvency Act provides for rules concerning procedure when the debtor is a firm, thereby assuming that adjudication against a firm in its name is possible. The Court referred to Rule 26 made under that provision and distinguished the English position discussed in Ex parte Blain.",
+      "rule": {
+        "if": "firm_insolvency_proceeding and applicable_firm_procedure_exists",
+        "then": "firm_adjudication_in_its_name_is_legally_permissible"
+      },
+      "predicates": {
+        "firm_insolvency_proceeding": "A proceeding seeks an insolvency adjudication against a firm.",
+        "applicable_firm_procedure_exists": "Rules governing insolvency procedure when the debtor is a firm are available."
+      },
+      "definition": "If an insolvency proceeding seeks adjudication against a firm and applicable firm procedure exists, adjudication in the firm’s name is legally permissible."
+    },
+    {
+      "legal_issue": "A firm cannot be adjudicated insolvent solely because one partner committed an act of insolvency affecting that partner’s personal property, absent a basis for treating the act as the act of the firm or all partners.",
+      "material_facts": [
+        "One partner made a gift of his personal house property, which was not partnership property.",
+        "No collective act of insolvency by all partners was alleged.",
+        "The other partner was not found to have committed an act of insolvency, and the act was not shown to be one by a firm agent that must be imputed to the firm.",
+        "The adjudication against the firm was set aside, while the adjudication against the partner who made the gift remained in force."
+      ],
+      "conclusion": "The adjudication against the firm could not stand because the act of one partner concerning personal property was not shown to be an act of all the partners or otherwise imputable to the firm; the adjudication against the partner who made the gift remained in force.",
+      "legal_principle": "To support adjudication against a firm, there must be proof that each partner committed an act of insolvency, or that a relied-on joint act was the act of all partners. Adjudication may also follow from an act of a firm agent that must necessarily be imputed to the firm. The explanation to section 6 of the Provincial Insolvency Act permits an agent’s act to be treated as the principal’s act; it does not require automatic attribution. Section 2(a) of the Partnership Act defines an act of a firm to include an act or omission by all partners, or by a partner or agent giving rise to a right enforceable by or against the firm. The Court referred to Re Mahomed Hasham & Co. and Gopal Naidu v. Mohanlal Kanyalal.",
+      "rule": {
+        "if": "firm_insolvency_proceeding and one_partner_committed_personal_act and property_not_partnership_property and not all_partners_committed_insolvency_acts and not joint_act_by_all_partners and not firm_agent_act_necessarily_imputable",
+        "then": "firm_adjudication_must_be_set_aside"
+      },
+      "predicates": {
+        "firm_insolvency_proceeding": "A proceeding seeks an insolvency adjudication against a firm.",
+        "one_partner_committed_personal_act": "One partner committed an alleged act of insolvency in an individual capacity.",
+        "property_not_partnership_property": "The property involved in that act belonged to the partner personally and was not partnership property.",
+        "all_partners_committed_insolvency_acts": "Each partner committed an act of insolvency.",
+        "joint_act_by_all_partners": "The alleged joint act of insolvency was committed by all partners.",
+        "firm_agent_act_necessarily_imputable": "An act of a firm agent was established that must necessarily be imputed to the firm."
+      },
+      "definition": "A firm adjudication must be set aside when the proceeding rests on one partner’s personal act involving non-partnership property and there is no act by all partners or necessarily imputable firm-agent act to support it."
+    }
+  ],
+  "seconds": 16.4
+}

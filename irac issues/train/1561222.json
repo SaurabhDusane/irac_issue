@@ -1,0 +1,88 @@
+{
+  "doc_id": "1561222",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35129,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2741,
+    "prompt_tokens": 9090,
+    "total_tokens": 11831,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Granting review supersedes the original decree, and an appeal cannot be maintained against the superseded decree in its entirety.",
+      "material_facts": [
+        "The suit for specific performance was dismissed in its entirety.",
+        "The trial court later granted review because the original judgment had not decided whether the earnest money should be refunded or forfeited, and restored the suit for that limited purpose.",
+        "The respondents appealed against the original dismissal decree in its entirety after the review had been granted.",
+        "The original decree did not survive the order granting review."
+      ],
+      "conclusion": "The High Court was not correct in holding that the appeal against the original decree in its entirety was maintainable.",
+      "legal_principle": "Under Order XLVII Rules 1, 4 and 8 of the Code of Civil Procedure, granting review displaces the original decree and permits the court to rehear the case or make directions for rehearing. An appeal under Section 96 must be maintainable when filed; it cannot be filed in anticipation of a decree that may later become appealable. The Court relied on Sushil Kumar Sen v. State of Bihar, Garikapatti Veeraya v. N. Subbaiah Choudhury, and Gour Krishna Sarkar v. Nilmadhab Saha. It distinguished Hameed Joharan v. Abdul Salem and Ratansingh v. Vijaysingh, and held that the appeal could concern only the part of the decree not reopened by review.",
+      "rule": {
+        "if": "civil_decree_appeal and review_granted and original_decree_superseded and appeal_challenges_entire_original_decree",
+        "then": "appeal_not_maintainable"
+      },
+      "predicates": {
+        "civil_decree_appeal": "A party brought an appeal from a civil decree.",
+        "review_granted": "The court granted review of the decree and reopened some part of the case.",
+        "original_decree_superseded": "The grant of review displaced the original decree.",
+        "appeal_challenges_entire_original_decree": "The appellant challenged the original decree in its entirety, including matters reopened by review.",
+        "appeal_not_maintainable": "The appeal against the superseded decree in its entirety cannot be maintained."
+      },
+      "definition": "When a civil decree is reviewed and the original decree is superseded, an appeal challenging that original decree in its entirety is not maintainable."
+    },
+    {
+      "legal_issue": "A court allowing withdrawal of a review application at the appellate stage must assess proper grounds, particularly where withdrawal may affect an interest acquired by another party.",
+      "material_facts": [
+        "The review order had reopened the suit for the limited purpose of deciding the fate of the earnest money.",
+        "The respondents did not file an application seeking withdrawal of the review petition.",
+        "An interest of a third party had arisen in the meantime.",
+        "The High Court permitted withdrawal of the review petition without an application on which it could assess the grounds for withdrawal."
+      ],
+      "conclusion": "The High Court could not permit withdrawal of the review petition in those circumstances without an application and judicial consideration of the grounds for withdrawal.",
+      "legal_principle": "Although Order XXIII Rule 1 of the Code of Civil Procedure does not directly govern withdrawal of a review petition, its principles apply by analogy. Withdrawal at the appellate stage is discretionary and requires the court to consider whether the conditions for permission are met, including the effect on rights vested in a defendant or third party. The Court relied on K.S. Bhoopathy v. Kokila.",
+      "rule": {
+        "if": "appellate_proceeding and review_withdrawal_allowed and no_withdrawal_application and vested_third_party_interest and withdrawal_grounds_not_assessed",
+        "then": "withdrawal_not_permissible_without_judicial_assessment"
+      },
+      "predicates": {
+        "appellate_proceeding": "A party sought or obtained withdrawal of a review application while an appeal was before the court.",
+        "review_withdrawal_allowed": "The court allowed the review application to be withdrawn.",
+        "no_withdrawal_application": "The party seeking withdrawal had not filed an application asking the court for permission to withdraw.",
+        "vested_third_party_interest": "An interest of a third party had arisen that could be affected by withdrawal.",
+        "withdrawal_grounds_not_assessed": "The court allowed withdrawal without assessing grounds for permitting it.",
+        "withdrawal_not_permissible_without_judicial_assessment": "Withdrawal cannot be allowed without the court considering whether there are proper grounds for it."
+      },
+      "definition": "When review withdrawal is allowed during an appeal without an application or assessment of grounds, and a third party's vested interest may be affected, withdrawal cannot be permitted without judicial assessment."
+    },
+    {
+      "legal_issue": "An undertaking to refrain from executing an eviction decree until a specific-performance suit is decided does not revive after the undertaking has ended upon that suit's decision.",
+      "material_facts": [
+        "An undertaking was given not to execute an eviction decree until the specific-performance suit was decided.",
+        "The substantive claim for specific performance had been dismissed, and the remaining matter concerned only whether earnest money should be refunded or forfeited.",
+        "The claim to remain in possession under part performance had been rejected.",
+        "The respondents argued that the undertaking revived when the High Court later allowed their appeal concerning the specific-performance suit."
+      ],
+      "conclusion": "The undertaking did not revive, and the eviction decree had become enforceable.",
+      "legal_principle": "The undertaking was analogous to an interlocutory injunction and was limited to the period before the specific-performance suit was decided; it could not be revived after the party giving it had been released from it. The Court relied on its earlier decision in the same litigation, reported at (2004) 1 SCC 483, and Cutler v. Wandsworth Stadium Ltd.",
+      "rule": {
+        "if": "eviction_decree_execution and undertaking_limited_to_suit_decision and specific_performance_claim_decided and possession_claim_rejected",
+        "then": "undertaking_not_revived_after_suit_decision"
+      },
+      "predicates": {
+        "eviction_decree_execution": "A party sought to execute an eviction decree.",
+        "undertaking_limited_to_suit_decision": "The party holding the decree had undertaken not to execute it until a specific-performance suit was decided.",
+        "specific_performance_claim_decided": "The substantive claim for specific performance had been decided, even if a limited issue remained concerning money paid.",
+        "possession_claim_rejected": "The party resisting eviction had been denied the claimed right to remain in possession under part performance.",
+        "undertaking_not_revived_after_suit_decision": "The undertaking does not revive after the specific-performance suit has been decided."
+      },
+      "definition": "When an undertaking against execution lasts only until a specific-performance claim is decided, and the possession claim has been rejected, the undertaking does not revive after that decision."
+    }
+  ],
+  "seconds": 20.2
+}

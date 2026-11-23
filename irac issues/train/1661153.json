@@ -1,0 +1,105 @@
+{
+  "doc_id": "1661153",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18027,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2773,
+    "prompt_tokens": 4985,
+    "total_tokens": 7758,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A first appellate court hearing a conviction appeal must independently reassess the evidence, and when it has failed to do so the Supreme Court may itself review the record rather than remit an aged case.",
+      "material_facts": [
+        "The High Court referred to the evidence but did not record independent findings after reappraising it.",
+        "The Supreme Court had the assistance of counsel and analysed the evidence itself.",
+        "The case concerned an occurrence from 1983, and remitting it would cause further harassment and expense."
+      ],
+      "conclusion": "The High Court's treatment left much to be desired, but the Supreme Court itself reappraised the evidence instead of remitting the case.",
+      "legal_principle": "A first appellate court must reach independent findings on reappraisal of the evidence. Although the Supreme Court generally does not reappraise evidence considered by courts below, it did so in the particular circumstances to avoid an unnecessary remand.",
+      "rule": {
+        "if": "conviction_appeal and first_appellate_court_did_not_independently_reassess and (aged_proceeding and supreme_court_has_record_and_assistance)",
+        "then": "supreme_court_reappraises_record_without_remand"
+      },
+      "predicates": {
+        "conviction_appeal": "The proceeding is an appeal against a criminal conviction.",
+        "first_appellate_court_did_not_independently_reassess": "The first appellate court referred to the evidence but did not record independent findings after reassessing it.",
+        "aged_proceeding": "The case had remained pending for a lengthy period before the Supreme Court considered it.",
+        "supreme_court_has_record_and_assistance": "The Supreme Court had the evidentiary record and the assistance of counsel to examine it."
+      },
+      "definition": "When a conviction appeal involves an unreassessed record and an aged proceeding that the Supreme Court can examine with assistance, the Supreme Court may review the record itself rather than remit the case."
+    },
+    {
+      "legal_issue": "A witness's relationship to the deceased does not by itself make the witness unreliable when the witness was naturally present, was injured in the incident, and is corroborated by other eyewitnesses.",
+      "material_facts": [
+        "The deceased's wife testified that she saw the accused assault him near their home after she heard her daughter shout.",
+        "She had injuries from the same occurrence, which were supported by medical evidence.",
+        "Two other witnesses whose presence was found natural supported her account on material particulars.",
+        "The Court found no cogent reason for the witnesses to falsely implicate the accused while leaving the real culprits unnamed."
+      ],
+      "conclusion": "The Court accepted the wife's testimony and found the account of the three eyewitnesses reliable.",
+      "legal_principle": "A witness is not to be rejected merely because the witness is related to the deceased or may be interested. Natural presence, injury corroboration, support from other witnesses, and the absence of a reason to falsely implicate the accused may support reliance on the testimony. No earlier case was cited for this assessment in the judgment.",
+      "rule": {
+        "if": "criminal_conviction_appeal and related_witness_naturally_present and witness_injured_in_occurrence and corroborated_by_other_eyewitnesses and no_cogent_reason_for_false_implication",
+        "then": "eyewitness_account_is_reliable"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The proceeding is an appeal against a criminal conviction.",
+        "related_witness_naturally_present": "A witness related to the deceased was at a nearby home and came to the scene after hearing a commotion.",
+        "witness_injured_in_occurrence": "The witness sustained injuries in the same incident, supported by medical evidence.",
+        "corroborated_by_other_eyewitnesses": "Other eyewitnesses supported the witness's account on material details.",
+        "no_cogent_reason_for_false_implication": "The evidence disclosed no cogent reason for the witnesses to implicate the accused falsely instead of the real culprits."
+      },
+      "definition": "When a related witness was naturally present, was injured, is corroborated by other eyewitnesses, and there is no cogent reason for false implication, the eyewitness account is reliable."
+    },
+    {
+      "legal_issue": "A conviction based on common intention is not invalid merely because the charge omitted that basis of liability when no prejudice from the omission is shown and common intention is established.",
+      "material_facts": [
+        "The accused were charged with the substantive murder offence without a charge specifying common intention.",
+        "The High Court relied on common intention in affirming the conviction.",
+        "The appellants argued that the omission impaired their defence, but could not show that either appellant was prejudiced."
+      ],
+      "conclusion": "The absence of a charge specifying common intention did not prevent the conviction from being maintained.",
+      "legal_principle": "Section 34 of the Indian Penal Code may support a conviction despite its omission from the charge if the necessary finding of common intention is made and the accused have not suffered prejudice. The Court relied on the Constitution Bench decision in Wille Slaney v. State of M.P., AIR 1956 SC 116, and on Dhanna v. State of Madhya Pradesh, AIR 1996 SC 2478, which referred to Amar Singh v. State of Haryana, AIR 1973 SC 221, and Bhoor Singh v. State of Punjab, AIR 1974 SC 1256.",
+      "rule": {
+        "if": "criminal_conviction_appeal and charge_omitted_common_intention_basis and common_intention_established and not accused_prejudiced_by_omission",
+        "then": "conviction_not_invalid_for_omitted_charge"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The proceeding is an appeal against a criminal conviction.",
+        "charge_omitted_common_intention_basis": "The accused were charged with the substantive offence but the charge did not specify common intention as the basis of liability.",
+        "common_intention_established": "The evidence supports a finding that the accused shared a common intention in committing the offence.",
+        "accused_prejudiced_by_omission": "The omission from the charge impaired the accused's ability to defend the case."
+      },
+      "definition": "When a criminal conviction appeal concerns an omitted common-intention charge, the common intention is established, and the omission did not prejudice the accused, the conviction is not invalid for that omission."
+    },
+    {
+      "legal_issue": "Common intention to kill may be inferred from the circumstances and course of an assault even without direct evidence of a prior meeting of minds or attribution of the fatal injuries to particular assailants.",
+      "material_facts": [
+        "The accused arrived together and assaulted the deceased with weapons.",
+        "They continued assaulting him when his wife intervened and tried to protect him, and they also injured her.",
+        "When the deceased asked for water, the assailants refused and threatened to kill him.",
+        "The fatal injuries were not attributed to any particular accused, and there was no direct evidence of a prior meeting of minds."
+      ],
+      "conclusion": "The circumstances and sequence of events established the accused's common intention to kill the deceased, and the convictions were upheld.",
+      "legal_principle": "Under Section 34 of the Indian Penal Code, common intention may form at the scene and may be inferred from the circumstances and manner in which the assault is carried out; direct evidence of prior concert is not essential. The Court treated continued assault despite intervention and the refusal to give water coupled with the threat to kill as evidence of the shared intention.",
+      "rule": {
+        "if": "criminal_conviction_appeal and accused_acted_together_in_assault and assault_continued_despite_intervention and threat_or_refusal_when_victim_requested_help",
+        "then": "common_intention_to_kill_is_inferable"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The proceeding is an appeal against a criminal conviction.",
+        "accused_acted_together_in_assault": "The accused participated together in assaulting the victim.",
+        "assault_continued_despite_intervention": "The accused continued the assault despite an intervention to protect the victim.",
+        "threat_or_refusal_when_victim_requested_help": "The accused threatened the victim or refused assistance when the victim asked for help."
+      },
+      "definition": "When accused act together in an assault, continue despite intervention, and threaten the victim or refuse requested help, common intention to kill is inferable."
+    }
+  ],
+  "seconds": 17.4
+}

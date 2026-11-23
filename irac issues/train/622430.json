@@ -1,0 +1,106 @@
+{
+  "doc_id": "622430",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24966,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2634,
+    "prompt_tokens": 6586,
+    "total_tokens": 9220,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Failure to pay the balance of an auction premium by the extended deadline cancels the conditional allotment, and an unregistered long-term lease does not confer title.",
+      "material_facts": [
+        "The auction purchaser paid only part of the premium and did not pay the balance within the additional three months allowed.",
+        "The extension expressly provided that the allotment would be cancelled if the balance was not paid within that period.",
+        "No registered lease deed was executed, and the purchaser did not pay rent or obtain possession."
+      ],
+      "conclusion": "The allotment stood cancelled when the balance remained unpaid, and neither the auction purchaser nor his successors acquired title to the land.",
+      "legal_principle": "Under Section 79 of the Bombay Provincial Municipal Corporations Act, 1949, the statutory requirements for disposal of municipal property had to be fulfilled; under Section 17 of the Registration Act, a lease for a term exceeding one year required a registered instrument. The Court relied on The Bihar Eastern Gangetic Fishermen Co-operative Society Ltd. v. Sipahi Singh and Others, which explains that failure to meet mandatory formal requirements prevents an enforceable grant, and noted that estoppel cannot cure such failure.",
+      "rule": {
+        "if": "auction_lease_dispute and conditional_payment_deadline_missed and required_registered_lease_not_executed",
+        "then": "allotment_cancelled_and_leasehold_title_not_acquired"
+      },
+      "predicates": {
+        "auction_lease_dispute": "The proceeding concerns whether an auction purchaser acquired a long-term leasehold interest in property.",
+        "conditional_payment_deadline_missed": "The purchaser failed to pay the required balance within a deadline that made the allotment conditional on timely payment.",
+        "required_registered_lease_not_executed": "No registered instrument required to create the long-term lease was executed."
+      },
+      "definition": "When an auction lease dispute involves a missed conditional payment deadline and no required registered lease, the allotment is cancelled and leasehold title is not acquired."
+    },
+    {
+      "legal_issue": "A public authority cannot revive a rejected request and grant public property through an irregular process that fails statutory disposal requirements and disregards the property's current value.",
+      "material_facts": [
+        "The municipal authority and the chair of its standing committee had rejected the request to enter the applicant's name in the lease register.",
+        "The applicant made no fresh application and supplied no new material before the matter was again placed before the standing committee, despite the absence of authority to review the earlier decisions.",
+        "The proposal was not on the meeting agenda, and the purported resolution followed a direction from a state minister and was considered in undue haste.",
+        "The later order proceeded on an unsupported assertion that possession had been delivered, although no record documented delivery of possession.",
+        "The authority directed a lease without properly meeting the statutory requirements for disposal of municipal property, including the requirement that the consideration for a transfer not be below current market value."
+      ],
+      "conclusion": "The purported resolution and the order granting the lease were illegal and were rightly quashed.",
+      "legal_principle": "Section 79 of the Bombay Provincial Municipal Corporations Act, 1949, governed disposal of the Corporation's property, required the prescribed sanction for a qualifying lease, and prohibited consideration below current market value. A file noting or unsupported assertion does not itself confer a right, as explained in Bachhittar Singh v. State of Punjab. A statutory decision made at the behest of someone without a statutory role is ultra vires under Commissioner of Police, Bombay v. Gordhandas Bhanji and Mohinder Singh Gill v. Chief Election Commissioner. The Court also relied on Dr. S.P. Kapoor v. State of Himachal Pradesh regarding haste as evidence from which mala fides may be presumed, and Bangalore Medical Trust v. B.S. Muddappa regarding fair, rational and non-arbitrary exercise of discretion over public property.",
+      "rule": {
+        "if": "public_property_disposal_case and prior_request_rejected and (no_review_authority or (no_fresh_application and no_new_material)) and (required_disposal_approval_missing or consideration_below_current_market_value) and (decision_taken_off_agenda or decision_made_at_external_direction)",
+        "then": "public_property_grant_invalid"
+      },
+      "predicates": {
+        "public_property_disposal_case": "The proceeding concerns a public authority's decision to dispose of property held for public purposes.",
+        "prior_request_rejected": "The public authority had already rejected the request to obtain an interest in the property.",
+        "no_review_authority": "The official or body that reconsidered the rejected request had no authority to review the earlier decision.",
+        "no_fresh_application": "The applicant did not submit a fresh application before the later decision.",
+        "no_new_material": "The applicant supplied no new material supporting reconsideration of the rejected request.",
+        "required_disposal_approval_missing": "The decision did not obtain the approval required for the public authority's disposal of the property.",
+        "consideration_below_current_market_value": "The proposed transfer did not provide consideration at least equal to the property's current market value.",
+        "decision_taken_off_agenda": "The proposal was considered despite not appearing on the meeting's agenda.",
+        "decision_made_at_external_direction": "The decision was made following a direction from a person who had no statutory role in deciding the matter."
+      },
+      "definition": "When a public authority disposes of property after a rejected request without authority or a proper renewed basis, fails disposal requirements, and acts through an irregular or externally directed process, the grant is invalid."
+    },
+    {
+      "legal_issue": "A public interest petitioner has standing to challenge an improper disposition of public property.",
+      "material_facts": [
+        "The petition challenged the municipal authority's decision to grant public property to an applicant whose predecessor had not acquired title through the auction.",
+        "The petition alleged that the authority's decision was improper and contrary to the Corporation's interests.",
+        "The High Court found that the authority had acted against the public interest in disposing of valuable public property."
+      ],
+      "conclusion": "The public interest petition was properly entertained, and the petitioners had standing to maintain it.",
+      "legal_principle": "The Court accepted public interest standing where petitioners challenged an allegedly improper disposition of public property and the decision implicated the public interest. It relied on Bangalore Medical Trust v. B.S. Muddappa for the principle that public authorities must exercise discretion over public property objectively, rationally, fairly and without arbitrariness.",
+      "rule": {
+        "if": "public_interest_challenge and alleged_improper_disposal_of_public_property",
+        "then": "public_interest_petitioners_have_standing"
+      },
+      "predicates": {
+        "public_interest_challenge": "The proceeding is a public interest petition challenging a public authority's decision.",
+        "alleged_improper_disposal_of_public_property": "The petition alleges that a public authority improperly disposed of property held for public purposes."
+      },
+      "definition": "Public interest petitioners have standing when a public interest petition challenges an allegedly improper disposition of public property."
+    },
+    {
+      "legal_issue": "An appellant who had notice of a public interest proceeding but chose not to appear before the High Court cannot obtain reversal solely on the ground that the appellant was not heard there when the Supreme Court hears the appellant and substantial justice has been done.",
+      "material_facts": [
+        "The appellant claimed that the High Court decided the public interest petition without hearing the appellant.",
+        "The appellant had notice of the petition and knew that it was pending but chose not to appear before the High Court.",
+        "The Supreme Court heard the appellant's counsel at length, and the respondent whose decision was directly challenged was also before the High Court."
+      ],
+      "conclusion": "The claimed lack of a hearing did not justify interference, and the Court dismissed the appeal without exercising its discretionary jurisdiction.",
+      "legal_principle": "The Court found no basis to interfere under Article 136 of the Constitution where the appellant had notice but chose not to appear and had an opportunity to present the case before the Supreme Court; it concluded that substantial justice had been done.",
+      "rule": {
+        "if": "appeal_from_public_interest_judgment and appellant_had_notice and appellant_chose_not_to_appear_below and supreme_court_heard_appellant",
+        "then": "no_discretionary_interference_warranted"
+      },
+      "predicates": {
+        "appeal_from_public_interest_judgment": "The proceeding is an appeal from a judgment in a public interest case.",
+        "appellant_had_notice": "The appellant had notice of the proceeding before the lower court.",
+        "appellant_chose_not_to_appear_below": "Despite knowing of the proceeding, the appellant chose not to appear before the lower court.",
+        "supreme_court_heard_appellant": "The Supreme Court heard the appellant's submissions in the appeal."
+      },
+      "definition": "In an appeal from a public interest judgment, a notified appellant who chose not to appear below does not obtain discretionary interference on a hearing complaint when the Supreme Court hears the appellant."
+    }
+  ],
+  "seconds": 15.8
+}

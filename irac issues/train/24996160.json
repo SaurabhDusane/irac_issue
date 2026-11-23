@@ -1,0 +1,164 @@
+{
+  "doc_id": "24996160",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 56229,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3896,
+    "prompt_tokens": 14779,
+    "total_tokens": 18675,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A transfer of high-value immovable property is effected when the conveyance is registered, rather than when it is executed or consideration is paid.",
+      "material_facts": [
+        "A sale document was executed and consideration was paid before the restraint order, but registration was completed after the order.",
+        "The property was immovable property of a value requiring transfer by registered instrument."
+      ],
+      "conclusion": "The transfer took effect upon registration, after the restraint order, and therefore violated the order.",
+      "legal_principle": "Section 54 of the Transfer of Property Act, 1882 requires a registered instrument to transfer immovable property of the relevant value. An agreement or unregistered conveyance does not itself transfer title or create an interest, as explained in Suraj Lamp & Industries Pvt. Ltd. v. State of Haryana. Section 47 of the Registration Act does not change the date on which the transfer is effected for this purpose.",
+      "rule": {
+        "if": "contempt_proceeding_about_restraint and (property_requires_registered_conveyance and registration_after_restraint)",
+        "then": "transfer_effected_after_restraint"
+      },
+      "predicates": {
+        "contempt_proceeding_about_restraint": "A contempt proceeding concerns an alleged transfer made contrary to a court order restraining disposal of property.",
+        "property_requires_registered_conveyance": "The property is immovable property for which the law requires a registered conveyance to transfer title.",
+        "registration_after_restraint": "The conveyance was registered after the court imposed the restraint, even if it had been executed or paid for earlier."
+      },
+      "definition": "When a contempt proceeding concerns restrained property that requires a registered conveyance, registration after the restraint means the transfer was effected after the restraint."
+    },
+    {
+      "legal_issue": "A company and responsible directors or agents commit contempt when, with knowledge of a restraint on disposal, they deliberately complete a property transfer in defiance of that restraint.",
+      "material_facts": [
+        "The company appeared in the proceedings and knew of the order restraining disposal of its capital assets without permission.",
+        "The transfer was completed by registration after the order.",
+        "The purported authority for the sale predated the asserted change in the company’s status and was not shown to have been renewed through a proper later decision.",
+        "The person who registered the conveyance had resigned as a director, but the company and its responsible directors or agents did not take steps to prevent registration or inform the Court of the earlier document.",
+        "The Court found the conduct to be a deliberate device to complete the transfer despite the restraint."
+      ],
+      "conclusion": "The company and the responsible directors or agents were found guilty of violating the order and were fined.",
+      "legal_principle": "A party with knowledge of a court order must obey it; deliberate disobedience of the restraint may be punished as contempt. The Court found that the company and the identified directors or agents knowingly participated in completing the transfer after the order.",
+      "rule": {
+        "if": "contempt_proceeding_for_disobeying_asset_restraint and company_knew_of_restraint and transfer_registered_after_restraint and responsible_company_actors_deliberately_enabled_transfer",
+        "then": "company_and_responsible_actors_found_in_contempt"
+      },
+      "predicates": {
+        "contempt_proceeding_for_disobeying_asset_restraint": "The proceeding alleges disobedience of a court order restraining disposal of a company’s assets.",
+        "company_knew_of_restraint": "The company was a party to the relevant proceedings or otherwise had knowledge of the restraint.",
+        "transfer_registered_after_restraint": "The property transfer was completed by registration after the restraint was made.",
+        "responsible_company_actors_deliberately_enabled_transfer": "Directors or agents responsible for the company’s conduct enabled the post-restraint registration and did not take steps to prevent it despite the company’s knowledge."
+      },
+      "definition": "In an asset-restraint contempt proceeding, a company’s knowledge combined with a post-restraint registration deliberately enabled by its responsible actors results in a finding of contempt against them."
+    },
+    {
+      "legal_issue": "Registration officials who register a conveyance despite notice of a restraint are not punished for contempt where the Court finds insufficient grounds to establish contempt after considering their reliance on legal advice.",
+      "material_facts": [
+        "Registration officials received notice of the restraint before registering the conveyance.",
+        "An official sought legal advice, and a government lawyer advised that the document could be registered.",
+        "The officials proceeded with registration after that advice.",
+        "The Court considered the circumstances suspicious but gave the officials the benefit of the doubt and found insufficient grounds to punish them."
+      ],
+      "conclusion": "The officials were cautioned but were not punished for contempt.",
+      "legal_principle": "The Court treated the officials’ conduct as serious and emphasized that a court order must not be disregarded, but concluded that the available material did not provide sufficient grounds to invoke contempt jurisdiction against them.",
+      "rule": {
+        "if": "contempt_proceeding_for_disobeying_court_order and registration_officials_received_notice and officials_registered_document_after_seeking_and_receiving_legal_advice and proof_insufficient_for_contempt",
+        "then": "registration_officials_not_punished_for_contempt"
+      },
+      "predicates": {
+        "contempt_proceeding_for_disobeying_court_order": "The proceeding alleges that officials disobeyed a court order by registering a document.",
+        "registration_officials_received_notice": "The officials received notice of the court order before registering the document.",
+        "officials_registered_document_after_seeking_and_receiving_legal_advice": "The officials registered the document after seeking and receiving legal advice that it could be registered.",
+        "proof_insufficient_for_contempt": "The material, considered as a whole, does not sufficiently establish that the officials should be punished for contempt."
+      },
+      "definition": "Officials who receive notice, register after obtaining legal advice, and are not shown by sufficient proof to have committed contempt are not punished for contempt."
+    },
+    {
+      "legal_issue": "A transferee and its directors or agents are not guilty of contempt where they were not parties to the restraint proceedings, were not shown to have received notice of the order, and their knowing violation is not proved.",
+      "material_facts": [
+        "The transferee and several of its directors or agents were not parties to the proceedings in which the restraint was made.",
+        "The Court found no material showing that the order had been served on or brought to the attention of those persons.",
+        "The transferee had paid the consideration before the restraint order.",
+        "The Court found no sufficient proof that these persons violated the order."
+      ],
+      "conclusion": "The transferee and its directors or agents were not found guilty of violating the order.",
+      "legal_principle": "A finding of contempt requires proof of violation attributable to the alleged contemnor. The Court found that the transferee-side persons had not been shown to have notice of the order or to have knowingly violated it.",
+      "rule": {
+        "if": "contempt_proceeding_for_disobeying_court_order and transferee_side_not_party_to_proceedings and order_not_shown_brought_to_their_attention and knowing_violation_not_proved",
+        "then": "transferee_side_not_found_in_contempt"
+      },
+      "predicates": {
+        "contempt_proceeding_for_disobeying_court_order": "The proceeding alleges disobedience of a court order.",
+        "transferee_side_not_party_to_proceedings": "The transferee and the relevant directors or agents were not parties to the proceedings in which the order was made.",
+        "order_not_shown_brought_to_their_attention": "The evidence does not show that the order was served on or brought to the attention of the transferee-side persons.",
+        "knowing_violation_not_proved": "The evidence does not sufficiently establish that the transferee-side persons knowingly participated in violating the order."
+      },
+      "definition": "A transferee-side person who was outside the order proceedings, was not shown to know of the order, and is not proved to have knowingly violated it is not found in contempt."
+    },
+    {
+      "legal_issue": "A co-contemnor’s assertion and inconclusive collateral material do not establish another person’s contempt when they fail to prove that person’s involvement in the prohibited transfer.",
+      "material_facts": [
+        "Two alleged actors were neither directors nor shareholders of the company, and their stake or interest in the transferee was not shown.",
+        "Another alleged actor stated that the registration had occurred on their directions.",
+        "The Court found that the statement and collateral documents were not conclusive proof of their involvement."
+      ],
+      "conclusion": "The proceedings were closed against those alleged actors because their guilt was not established.",
+      "legal_principle": "The Court required sufficiently conclusive material to find a person guilty of contempt and held that suspicion or an uncorroborated statement by a co-contemnor was insufficient in the circumstances.",
+      "rule": {
+        "if": "contempt_proceeding_against_alleged_participants and alleged_participation_supported_by_suspicion_or_inconclusive_material and conclusive_proof_of_involvement_absent",
+        "then": "proceedings_closed_without_finding_contempt"
+      },
+      "predicates": {
+        "contempt_proceeding_against_alleged_participants": "The proceeding alleges that particular persons participated in disobeying a court order.",
+        "alleged_participation_supported_by_suspicion_or_inconclusive_material": "The allegation rests on suspicion, a statement by a co-alleged contemnor, or material that does not conclusively establish involvement.",
+        "conclusive_proof_of_involvement_absent": "The evidence does not conclusively establish that the alleged participants took part in the prohibited conduct."
+      },
+      "definition": "When allegations of participation rest on suspicion or inconclusive material and conclusive proof is absent, the contempt proceeding ends without a finding of guilt."
+    },
+    {
+      "legal_issue": "A transfer completed in violation of an injunction may be undone, but invalidation is not warranted where the transferee was not shown to have violated the order, had paid the consideration before the restraint, and the matter has been referred for assessment in separate proceedings.",
+      "material_facts": [
+        "The company and its responsible directors or agents violated the restraint by completing the transfer after it was made.",
+        "The transferee and its directors or agents were not found to have violated the order and were not shown to have received it.",
+        "The transferee had paid the full consideration before the restraint order.",
+        "An earlier judgment had referred the transfer to the relevant body for assessment after notice to the transferee, including assessment of the sale’s necessity and adequacy of value."
+      ],
+      "conclusion": "The Court declined to invalidate the registration or make further orders undoing the transfer, leaving its assessment to the earlier referred process.",
+      "legal_principle": "D.D.A. v. Skipper Construction Co. (P) Ltd., relying on Clarke v. Chadbur, Century Flour Mills Ltd. v. S. Suppiah, and Sujit Pal v. Prabir Kumar Sun, recognizes that a court may undo the legal consequences of acts done in breach of an injunction and restore the parties to their prior position. The Court referred to Articles 129 and 142 of the Constitution in explaining its power to ensure justice. It declined to exercise that power here in light of the transferee’s non-violation, prior payment, and the earlier direction for assessment after notice to the transferee.",
+      "rule": {
+        "if": "contempt_proceeding_concerns_transfer_in_violation_of_injunction and transferee_not_found_to_have_violated_order and consideration_paid_before_restraint and transfer_already_referred_for_assessment_with_transferee_hearing",
+        "then": "registration_not_invalidated_in_contempt_proceeding"
+      },
+      "predicates": {
+        "contempt_proceeding_concerns_transfer_in_violation_of_injunction": "The contempt proceeding concerns a transfer completed in breach of a court order restraining the transaction.",
+        "transferee_not_found_to_have_violated_order": "The transferee was not found to have disobeyed the order or to have knowingly participated in its violation.",
+        "consideration_paid_before_restraint": "The transferee paid the consideration before the court imposed the restraint.",
+        "transfer_already_referred_for_assessment_with_transferee_hearing": "An earlier court direction leaves assessment of the transfer to another process that will give the transferee an opportunity to be heard."
+      },
+      "definition": "A transfer in breach of an injunction is not invalidated in the contempt proceeding when the transferee was not found to have violated the order, paid beforehand, and will receive a hearing in an existing assessment process."
+    },
+    {
+      "legal_issue": "Contempt jurisdiction is not invoked where the alleged obstruction of a judgment consists of initiating legal proceedings.",
+      "material_facts": [
+        "The contempt petitions alleged obstruction of the implementation of an earlier judgment.",
+        "The acts relied on as obstruction were legal proceedings initiated by the alleged contemnors."
+      ],
+      "conclusion": "The Court declined to invoke contempt jurisdiction and dismissed those petitions.",
+      "legal_principle": "The Court found no reason to invoke its contempt jurisdiction where the alleged obstructive acts consisted of legal proceedings initiated by the alleged contemnors.",
+      "rule": {
+        "if": "contempt_proceeding_alleges_obstruction_of_judgment and alleged_obstruction_consists_of_initiating_legal_proceedings",
+        "then": "contempt_petition_dismissed_without_invoking_contempt_jurisdiction"
+      },
+      "predicates": {
+        "contempt_proceeding_alleges_obstruction_of_judgment": "A contempt proceeding alleges that a judgment’s implementation has been obstructed.",
+        "alleged_obstruction_consists_of_initiating_legal_proceedings": "The conduct said to constitute obstruction consists of legal proceedings initiated by the alleged contemnors."
+      },
+      "definition": "When an alleged obstruction of a judgment consists of initiating legal proceedings, the contempt petition is dismissed without invoking contempt jurisdiction."
+    }
+  ],
+  "seconds": 22.3
+}

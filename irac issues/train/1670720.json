@@ -1,0 +1,99 @@
+{
+  "doc_id": "1670720",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 37524,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3147,
+    "prompt_tokens": 9689,
+    "total_tokens": 12836,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A challenge to the testator’s intention to make a will is barred after a final decision granting administration with the will annexed.",
+      "material_facts": [
+        "A prior proceeding resulted in letters of administration with the will annexed being granted to the remainder beneficiaries, and that grant was restored on appeal.",
+        "The later suit alleged that the instrument was a will in form only and that the testator lacked an intention to make a testamentary disposition."
+      ],
+      "conclusion": "The challenge to the testator’s intention to make a will was barred by res judicata.",
+      "legal_principle": "A final decision granting letters of administration with the will annexed conclusively determines the instrument’s testamentary character, due execution, and the representative title of the person receiving administration. The Privy Council’s decision in the prior administration proceeding therefore barred renewed litigation of animus testandi.",
+      "rule": {
+        "if": "later_suit_challenging_testament and prior_final_administration_decision",
+        "then": "animus_challenge_barred_by_res_judicata"
+      },
+      "predicates": {
+        "later_suit_challenging_testament": "A party brought a later suit challenging whether an instrument was intended to operate as a will.",
+        "prior_final_administration_decision": "A court previously granted administration with the instrument annexed, and that grant was affirmed in a final appeal."
+      },
+      "definition": "When a later suit challenges testamentary intention after a final administration decision, the challenge is barred."
+    },
+    {
+      "legal_issue": "A claim that non-payment under a related agreement made the entire will inoperative is barred after a final grant of administration and, in any event, cannot invalidate provisions benefiting persons who did not default.",
+      "material_facts": [
+        "The prior administration proceeding resulted in a final grant of letters of administration with the will annexed.",
+        "The will provided benefits to a life tenant and other relatives as well as a remainder to the person who had agreed to make monthly payments.",
+        "The later suit claimed that failure to make the payments made the entire will inoperative."
+      ],
+      "conclusion": "The claim that the entire will became inoperative was barred by res judicata; independently, the will could not be treated as wholly inoperative because the other beneficiaries were not responsible for the missed payments.",
+      "legal_principle": "A final grant of administration with the will annexed is inconsistent with a later claim that the whole instrument had ceased to operate. In addition, failure by one beneficiary to perform an agreement cannot render the entire will inoperative as to other beneficiaries whose interests do not depend on that performance.",
+      "rule": {
+        "if": "later_suit_claiming_entire_will_inoperative and prior_final_administration_decision",
+        "then": "whole_will_inoperativeness_claim_barred"
+      },
+      "predicates": {
+        "later_suit_claiming_entire_will_inoperative": "A party brought a later suit claiming that a failure to perform an obligation made the entire testamentary instrument inoperative.",
+        "prior_final_administration_decision": "A court previously granted administration with the instrument annexed, and that grant was affirmed in a final appeal."
+      },
+      "definition": "A claim that an entire will became inoperative is barred when it is brought after a final administration decision."
+    },
+    {
+      "legal_issue": "Failure to make payments promised in consideration of a will does not prevent a remainder from vesting when the agreement treats payment as an enforceable contractual obligation rather than a condition of the gift.",
+      "material_facts": [
+        "The agreement and will formed parts of one transaction, with each serving as consideration for the other.",
+        "The agreement provided that the promisee could enforce the payment obligation through court if payments were not made and specified repayment consequences if consent to the will was refused or the will was revoked.",
+        "The will itself did not make the remainder conditional on payment.",
+        "The promisor failed to make the agreed payments, but the testator did not revoke the will."
+      ],
+      "conclusion": "The payments were consideration for the will, not a condition precedent to vesting of the remainder. The beneficiary’s default gave the testator a contractual remedy to enforce the agreement, but did not prevent the legacy from vesting.",
+      "legal_principle": "Whether a stipulation is a condition precedent depends on the instrument’s language and the parties’ intention. Acherley v. Vernon, 125 English Reports 1106, recognizes that the same words may create a condition precedent or subsequent depending on the nature of the transaction and the parties’ intent. Here, the agreement’s provision for court enforcement, its express treatment of refusal or revocation, and the will’s silence about payment as a condition showed that payment was an independent contractual obligation. The agreement and will together formed one transaction, but breach of the agreement left the parties to their contractual rights and remedies.",
+      "rule": {
+        "if": "legacy_entitlement_dispute and promisor_missed_payments and agreement_authorized_court_enforcement and agreement_set_refund_for_rejection_or_revocation and will_omitted_payment_condition",
+        "then": "payment_default_does_not_prevent_legacy_vesting"
+      },
+      "predicates": {
+        "legacy_entitlement_dispute": "A party brought a dispute about entitlement to a testamentary legacy after the promised payments were not made.",
+        "promisor_missed_payments": "The person who promised recurring payments failed to make them.",
+        "agreement_authorized_court_enforcement": "The agreement gave the promisee the right to seek court enforcement if the promised payments were not made.",
+        "agreement_set_refund_for_rejection_or_revocation": "The agreement specified repayment consequences if approval of the will was refused or the will was revoked.",
+        "will_omitted_payment_condition": "The will did not state that the legacy depended on the promised payments being made."
+      },
+      "definition": "In a legacy entitlement dispute, missed payments do not prevent vesting when the agreement provides for enforcement and separately addresses rejection or revocation, while the will does not make payment a condition of the gift."
+    },
+    {
+      "legal_issue": "A vested remainder does not lapse merely because its beneficiary dies before the life tenant, and the beneficiary’s heirs take the remainder rather than the property falling into residue or a resulting trust.",
+      "material_facts": [
+        "The will gave the widow a life interest and then gave the remainder to the testator’s cousin, with a further gift to the cousin’s sons after the cousin’s death.",
+        "The cousin died before the widow.",
+        "The will did not make the cousin’s legacy conditional on payment or provide that it would lapse if he died before the widow."
+      ],
+      "conclusion": "The cousin’s vested remainder passed to his heirs, who were entitled to the estate under the will; there was no lapse, resulting trust, or intestacy as to the remainder.",
+      "legal_principle": "A remainder may vest before the prior life interest ends, with possession postponed until that interest expires. A vested interest devolves on the beneficiary’s heirs upon the beneficiary’s death unless the gift is conditional or lapses under the instrument. Section 81 of the Indian Trusts Act did not support a trust for the testator’s heirs because the testator’s intention, assessed when the will was executed, was to make a testamentary disposition of the beneficial remainder. The succession to the testator’s property was governed by the Indian Succession Act, but no specific provision of that Act was applied to this issue.",
+      "rule": {
+        "if": "testamentary_remainder_dispute and remainder_possession_deferred and remainder_beneficiary_predeceased_life_tenant and will_made_no_applicable_condition_or_lapse",
+        "then": "vested_remainder_passes_to_beneficiary_heirs"
+      },
+      "predicates": {
+        "testamentary_remainder_dispute": "A party disputed entitlement to property left as a remainder under a will.",
+        "remainder_possession_deferred": "The will gave another person a prior life interest and postponed possession of the remainder until that interest ended.",
+        "remainder_beneficiary_predeceased_life_tenant": "The named remainder beneficiary died before the life tenant.",
+        "will_made_no_applicable_condition_or_lapse": "The will did not make the remainder conditional on a separate obligation or provide that it would lapse upon the beneficiary’s death before the life tenant."
+      },
+      "definition": "When a will postpones possession of a remainder until a life interest ends, the remainder passes to the beneficiary’s heirs if the beneficiary dies first and the will imposes no applicable condition or lapse."
+    }
+  ],
+  "seconds": 19.4
+}

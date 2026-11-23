@@ -1,0 +1,83 @@
+{
+  "doc_id": "906698",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42328,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3011,
+    "prompt_tokens": 10011,
+    "total_tokens": 13022,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A writ court should not use the right to livelihood to grant relief on a claim founded only on contractual rights when no special circumstance justifies exercising extraordinary jurisdiction.",
+      "material_facts": [
+        "The claim for additional payments arose from the sale of forest produce and the claimant relied on decisions said to govern the payment arrangements.",
+        "The High Court treated non-payment of the claimed amounts as a violation of the right to livelihood, but identified no special circumstance warranting writ relief.",
+        "The Supreme Court held that the High Court had wrongly assumed jurisdiction, but did not dismiss the claim solely on that ground because the passage of time had made the alternative remedies ineffective; it therefore considered the claim on its merits."
+      ],
+      "conclusion": "The High Court was not justified in exercising writ jurisdiction to grant relief on the contractual claim by relying on the right to livelihood. The Supreme Court nevertheless declined to dismiss the petition on that procedural ground and decided the merits.",
+      "legal_principle": "Writ jurisdiction is discretionary and may be used to enforce fundamental or legal rights, but ordinarily not mere contractual rights, particularly where an efficacious alternative remedy exists. A court may grant relief despite an alternative remedy in special circumstances, which must be identified. The right to livelihood does not extend to every legal or contractual claim. The judgment refers generally to prior pronouncements on writ jurisdiction but identifies no earlier case as authority for this particular proposition.",
+      "rule": {
+        "if": "contractual_writ_claim and no_special_circumstances_found and livelihood_claim_used_as_basis",
+        "then": "writ_court_lacks_basis_to_grant_contractual_relief"
+      },
+      "predicates": {
+        "contractual_writ_claim": "A person seeks writ relief on a claim arising from a contractual arrangement.",
+        "no_special_circumstances_found": "The writ court identifies no special circumstance justifying relief despite the contractual nature of the claim or the availability of another remedy.",
+        "livelihood_claim_used_as_basis": "The writ court relies on an asserted effect on livelihood to justify granting relief on the contractual claim."
+      },
+      "definition": "When a person seeks writ relief on a contractual claim, no special circumstance is identified, and livelihood is used as the basis for relief, the output is that the writ court lacks a basis to grant that contractual relief."
+    },
+    {
+      "legal_issue": "A committee formed to settle supply terms between the government and a corporation does not create judicially enforceable rights for a third party when it has no statutory basis or duty to act judicially.",
+      "material_facts": [
+        "The committee was formed to determine the terms and conditions for forest produce supplied by the Forest Department to the State Forest Corporation.",
+        "The committee was constituted under a provision of the corporation's memorandum and articles of association, and no statutory provision requiring its constitution was identified.",
+        "The committee was intended to address matters between the government and the corporation, not to adjudicate claims by third parties.",
+        "The claimant was not a party to the arrangement governing the committee."
+      ],
+      "conclusion": "The committee was neither a statutory nor a quasi-judicial tribunal, and its decisions did not bind the claimant or create a right enforceable by writ.",
+      "legal_principle": "A quasi-judicial function requires legal authority to determine questions affecting rights and a duty to act judicially. The court applied the tests in Rex v. Electricity Commissioners, Province of Bombay v. Khusaldas S. Advani, and Radheshyam v. State of M.P. It also held that directions under the corporation's memorandum and articles regulated the government and the corporation, not third parties.",
+      "rule": {
+        "if": "third_party_writ_claim and committee_created_for_two_party_supply_arrangement and committee_lacks_statutory_judicial_duty",
+        "then": "committee_decision_not_binding_on_third_party"
+      },
+      "predicates": {
+        "third_party_writ_claim": "A person outside the arrangement between the committee's two intended parties seeks to enforce the committee's decision through a writ claim.",
+        "committee_created_for_two_party_supply_arrangement": "The committee was formed to set or settle terms between a government body and a corporation.",
+        "committee_lacks_statutory_judicial_duty": "The committee has no statutory source of authority and no duty to adjudicate affected parties' rights judicially."
+      },
+      "definition": "When an outsider seeks writ enforcement of a committee decision, the committee was formed for a two-party arrangement, and it lacks statutory judicial duties, the decision is not binding on that outsider."
+    },
+    {
+      "legal_issue": "A person entitled to a share of forest royalty is not thereby entitled to share in additional charges arising from the state's sovereign powers unless specifically authorised by law or contract.",
+      "material_facts": [
+        "The claimant received a share of the royalty from forest produce, and that share had already been paid on the basis of rates fixed for the produce.",
+        "The claimant had accepted appointment as a forest superintendent, and the court held that the state was the dominant owner of the forest and its produce.",
+        "The additional claims concerned interest on delayed payments, interest on interest, damages for illicit or out-shaped felling, and extension fees.",
+        "The court found that these additional charges arose from the state's sovereign rights and were not included in the royalty arrangement.",
+        "No statutory or contractual basis authorising the claimant to receive a share of those additional charges was established."
+      ],
+      "conclusion": "The claimant was entitled only to the agreed share of royalty and could not claim a share of the additional sovereign charges; no enforceable statutory right existed to support a writ of mandamus for those amounts.",
+      "legal_principle": "The scope of royalty depends on the context and does not include, merely by implication, extension fees, interest, interest on interest, or damages. Such payments require a contractual or statutory basis, and claims arising from sovereign rights belong to the state unless a person is specially authorised by law. The court relied on State of Orissa v. Titaghur Paper Mills Co. Ltd., Raja Bhadur Kamakshya Narain Singh v. Commissioner of Income Tax, Bihar and Orissa, and Inderjeet Singh Sial v. Karamchand Thapar. It also relied on the claimant's position as a forest officer appointed under section 2(2) of the Indian Forests Act, 1878, and the terms governing his share of forest income.",
+      "rule": {
+        "if": "writ_mandamus_claim and forest_royalty_share_arrangement and claimant_accepted_state_forest_officer_role and charges_arise_from_sovereign_powers and no_specific_authority_to_share_charges",
+        "then": "no_mandamus_for_share_of_sovereign_charges"
+      },
+      "predicates": {
+        "writ_mandamus_claim": "A person seeks a writ commanding payment of disputed charges.",
+        "forest_royalty_share_arrangement": "The person has an arrangement entitling them to a defined share of royalty from forest produce.",
+        "claimant_accepted_state_forest_officer_role": "The person accepted appointment as an officer managing or supervising a state forest.",
+        "charges_arise_from_sovereign_powers": "The disputed charges arise from the state's exercise of sovereign powers rather than from the sale price or royalty for forest produce.",
+        "no_specific_authority_to_share_charges": "No law or contract specifically authorises the person to receive a share of the disputed charges."
+      },
+      "definition": "When a person seeks writ payment of charges beyond an agreed forest royalty share, accepted an officer role in a state forest, the charges arise from sovereign powers, and no specific authority to share them exists, the output is that no writ may command payment of a share of those charges."
+    }
+  ],
+  "seconds": 17.9
+}

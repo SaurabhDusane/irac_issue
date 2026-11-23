@@ -1,0 +1,98 @@
+{
+  "doc_id": "144317829",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32241,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2268,
+    "prompt_tokens": 7994,
+    "total_tokens": 10262,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The civil court's jurisdiction over a property suit is not excluded when the statutory procedure provides no route for the tribunal to decide the issue that would trigger the statutory stay.",
+      "material_facts": [
+        "The suit sought a declaration that the disputed properties were private property and not a Sikh Gurdwara.",
+        "A notification had been published concerning the alleged Gurdwara, but it had not been declared a Sikh Gurdwara under the statutory process.",
+        "No property claim under Section 10 had been referred to the tribunal, and the statutory proceedings supplied no applicable route for the tribunal to decide whether the alleged Gurdwara was a Sikh Gurdwara."
+      ],
+      "conclusion": "The civil court had jurisdiction to entertain and decide the suit; the statutory provisions did not bar its jurisdiction on these facts.",
+      "legal_principle": "Section 29(2) of the Sikh Gurdwaras Act, 1925, operates as a limited stay until the issue identified in Section 16 is decided by the tribunal; it does not exclude jurisdiction where the Act provides no applicable procedure for that decision. Sections 14 and 32 identify relevant routes by which the tribunal may receive proceedings, but neither applied here. Section 29(1) and Sections 30 and 31 did not apply because the alleged Gurdwara was not a notified Sikh Gurdwara. The exclusion of ordinary civil jurisdiction requires clear and unambiguous language or necessary implication. The Court left undecided whether the claim could properly have been made under Section 10.",
+      "rule": {
+        "if": "civil_property_suit and (alleged_gurdwara_not_notified or no_applicable_tribunal_proceeding)",
+        "then": "civil_court_may_entertain_suit"
+      },
+      "predicates": {
+        "civil_property_suit": "A party brought a civil suit seeking a determination of rights in property associated with an alleged religious institution.",
+        "alleged_gurdwara_not_notified": "The alleged religious institution had not been declared a notified institution under the statutory process.",
+        "no_applicable_tribunal_proceeding": "No proceeding was before the tribunal, and no applicable statutory procedure allowed it to decide the issue that would end the statutory stay."
+      },
+      "definition": "When a civil property suit concerns an alleged institution that is not notified or when no applicable tribunal proceeding can decide the relevant issue, the civil court may entertain the suit."
+    },
+    {
+      "legal_issue": "A High Court order returning a suit for further proceedings can be a final order for appellate purposes when its determinations effectively decide the parties' rights.",
+      "material_facts": [
+        "The High Court formally returned the suit to the trial court for further proceedings.",
+        "The High Court also made determinations that it regarded as finally resolving the parties' rights in the property.",
+        "After remand, the trial court treated those determinations as conclusive and entered a decree accordingly."
+      ],
+      "conclusion": "The High Court's judgment amounted to a final order, and the appeal was competent on the certificate granted by the High Court.",
+      "legal_principle": "Article 133 of the Constitution, read with Sections 109 and 110 and Order 45, Rule 2 of the Civil Procedure Code, governs the certificate for appeal. Whether an order is final depends on its effect, not merely its description as a remand; an order that in substance finally determines rights may be a final order.",
+      "rule": {
+        "if": "appeal_from_high_court_order and order_formally_remands_case and order_effectively_determines_rights",
+        "then": "appeal_is_competent"
+      },
+      "predicates": {
+        "appeal_from_high_court_order": "A party sought to appeal a High Court order under a certificate for appeal.",
+        "order_formally_remands_case": "The High Court directed the lower court to continue proceedings in the case.",
+        "order_effectively_determines_rights": "The High Court's determinations effectively resolved the parties' rights, and the lower court treated them as controlling when entering its decree."
+      },
+      "definition": "An appeal from a High Court order that formally remands a case is competent as an appeal from a final order when the order effectively determines the parties' rights."
+    },
+    {
+      "legal_issue": "A decree entered after an application for leave to appeal, but before leave is granted, may remain subject to the outcome of the appeal.",
+      "material_facts": [
+        "The application for leave to appeal was filed before the trial court entered its decree after remand.",
+        "Leave to appeal was granted after that decree was entered.",
+        "No appeal had been filed against the trial court's decree."
+      ],
+      "conclusion": "The decree was subject to the result of the appeal and did not prevent the Supreme Court from dealing with the appeal.",
+      "legal_principle": "The Court applied the principle recognized in Shama Purshad v. Hurro Purshad, 10 Moo. Ind. App. 203 (P.C.), and distinguished Nanganna Naidu v. Venkatapayya, AIR 1923 PC 167.",
+      "rule": {
+        "if": "appeal_from_remand_order and leave_application_precedes_lower_court_decree and leave_granted_after_decree",
+        "then": "lower_court_decree_is_subject_to_appeal_result"
+      },
+      "predicates": {
+        "appeal_from_remand_order": "A party pursued an appeal from an order that returned the case to a lower court for further proceedings.",
+        "leave_application_precedes_lower_court_decree": "The application for leave to appeal was filed before the lower court entered its decree after remand.",
+        "leave_granted_after_decree": "The appellate court granted leave after the lower court had entered that decree."
+      },
+      "definition": "When an application for leave to appeal from a remand order precedes the lower court's decree and leave is granted afterward, that decree remains subject to the appeal's outcome."
+    },
+    {
+      "legal_issue": "An appellate court should not conclusively decide a material issue on the merits while remanding a suit when factual issues on the merits remain unresolved.",
+      "material_facts": [
+        "The High Court returned the suit to the trial court, where material issues on the merits remained to be determined.",
+        "The High Court nevertheless found that the disputed property was private property and neither a Gurdwara nor a Sikh Gurdwara.",
+        "The Supreme Court held that the High Court should not have effectively concluded the suit through that finding."
+      ],
+      "conclusion": "The High Court's finding on the property's status was vacated and left open for further consideration.",
+      "legal_principle": "Where a case is remanded and issues of fact on the merits remain for determination, the appellate court should not make a finding that virtually concludes the suit; the unresolved issue must remain open for further consideration.",
+      "rule": {
+        "if": "appeal_from_remand_order and merits_factual_issues_unresolved and appellate_court_makes_conclusive_merits_finding",
+        "then": "conclusive_merits_finding_is_vacated"
+      },
+      "predicates": {
+        "appeal_from_remand_order": "A party appealed an order returning the case to a lower court for further proceedings.",
+        "merits_factual_issues_unresolved": "Material factual issues on the merits remained to be determined after the remand.",
+        "appellate_court_makes_conclusive_merits_finding": "The appellate court made a finding that effectively concluded the unresolved merits issue."
+      },
+      "definition": "In an appeal concerning a remand, a conclusive merits finding is vacated when material factual issues remain unresolved and the finding effectively decides one of them."
+    }
+  ],
+  "seconds": 13.8
+}

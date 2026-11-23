@@ -1,0 +1,63 @@
+{
+  "doc_id": "1982777",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10242,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2270,
+    "prompt_tokens": 3116,
+    "total_tokens": 5386,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An executing court may not treat a decree as a nullity for want of jurisdiction unless the court’s lack of inherent jurisdiction is apparent from the record.",
+      "material_facts": [
+        "The decree was made by a court whose jurisdiction to decide the eviction suit was not disputed.",
+        "The judgment debtors did not claim that the eviction ground was unavailable under either the earlier or successor rent-control law.",
+        "The asserted jurisdictional defect depended on the court’s failure to provide an opportunity to deposit rent, rather than an absence of jurisdiction apparent from the decree or record."
+      ],
+      "conclusion": "The asserted defect did not establish that the decree was without jurisdiction or a nullity. The executing court could not go behind the decree on that basis, and the decree remained enforceable.",
+      "legal_principle": "Under the rule in Vasudev Dhanjibhai Modi v. Rajabhai Abdul Rehman, an objection to a decree for inherent lack of jurisdiction may be raised in execution when the defect appears on the face of the record; if deciding the objection requires examining matters raised or that could have been raised at trial, the executing court cannot entertain it. A decree involving illegality or procedural irregularity is distinct from a decree passed without jurisdiction and must be challenged in appropriate proceedings. The terms “void” and “nullity” are relative to the remedy and proceedings in which relief is sought; a decree of a competent court cannot be defeated by collateral attack.",
+      "rule": {
+        "if": "execution_proceeding and decree_exists and not patent_inherent_jurisdictional_defect",
+        "then": "executing_court_must_enforce_decree"
+      },
+      "predicates": {
+        "execution_proceeding": "A party is asking a court to enforce an existing decree.",
+        "decree_exists": "A court has issued a decree in the case.",
+        "patent_inherent_jurisdictional_defect": "The record itself shows that the court which issued the decree lacked inherent jurisdiction to do so.",
+        "executing_court_must_enforce_decree": "The executing court must enforce the decree rather than invalidate it on a collateral challenge."
+      },
+      "definition": "When enforcement of an existing decree is sought and the record does not itself show that the issuing court lacked inherent jurisdiction, the executing court must enforce the decree."
+    },
+    {
+      "legal_issue": "A court’s failure to provide a tenant an opportunity to deposit rent during the suit does not make an otherwise competent eviction decree a nullity where the tenant did not seek that opportunity.",
+      "material_facts": [
+        "The eviction suit was based on default in payment of rent, a ground for eviction under the rent-control law applicable to the suit.",
+        "During the suit, a successor rent-control law provided that a tenant could avoid an eviction decree for default by depositing arrears, interest, and costs as directed by the court.",
+        "The tenants did not apply to the court for an opportunity to make the deposit.",
+        "The court did not provide that opportunity before making the eviction decree, and the tenants first relied on the omission as a ground to resist execution."
+      ],
+      "conclusion": "The tenants could not rely on the omitted opportunity to make the decree a nullity in execution. At most, the omission was a procedural irregularity or illegality that should have been raised in an appeal or other appropriate proceeding; the decree remained executable.",
+      "legal_principle": "Section 13(1)(a) of the Delhi and Ajmer Rent Control Act, 1952, and section 13(1)(a) of the Rajasthan Premises (Control of Rent and Eviction) Act, 1950, addressed eviction for rent default; the latter also allowed a tenant to avoid an eviction decree by depositing arrears, interest, and costs during the suit. The tenant had to apply to invoke that opportunity. Failure to provide it, without an application by the tenant, did not remove the court’s jurisdiction or turn the decree into a nullity. A procedural error must be challenged through an appropriate proceeding, not collaterally in execution.",
+      "rule": {
+        "if": "execution_proceeding and eviction_decree_by_competent_court and eviction_ground_legally_available and tenant_did_not_apply_for_deposit and court_omitted_deposit_opportunity",
+        "then": "eviction_decree_is_not_nullity_and_remains_executable"
+      },
+      "predicates": {
+        "execution_proceeding": "A party is resisting enforcement of an eviction decree in execution proceedings.",
+        "eviction_decree_by_competent_court": "A court with jurisdiction to decide the eviction suit issued the eviction decree.",
+        "eviction_ground_legally_available": "The law applicable to the suit recognized the asserted ground as a basis for eviction.",
+        "tenant_did_not_apply_for_deposit": "The tenant did not ask the court for an opportunity to deposit rent during the suit.",
+        "court_omitted_deposit_opportunity": "The court did not provide the tenant an opportunity to make that deposit before issuing the decree.",
+        "eviction_decree_is_not_nullity_and_remains_executable": "The eviction decree is not void for that omission and may be enforced."
+      },
+      "definition": "When a competent court issues an eviction decree on a legally available ground, the tenant does not seek an available deposit opportunity, and the court omits it, the decree is not a nullity and remains executable."
+    }
+  ],
+  "seconds": 15.4
+}

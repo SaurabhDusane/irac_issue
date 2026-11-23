@@ -1,0 +1,100 @@
+{
+  "doc_id": "923657",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20352,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2868,
+    "prompt_tokens": 5264,
+    "total_tokens": 8132,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A declaration of public purpose in a land acquisition is conclusive unless the challenger establishes mala fides or a colourable exercise of power.",
+      "material_facts": [
+        "The Government issued a declaration stating that the land was needed for industrial development at public expense.",
+        "The landowners alleged that the stated public purpose was a pretext for benefiting a company.",
+        "The High Court found that mala fides or colourable exercise of power had not been established."
+      ],
+      "conclusion": "The declaration had to be accepted at face value as to the public purpose because the landowners did not establish the exception for mala fides or colourable exercise of power.",
+      "legal_principle": "Section 6(3) of the Land Acquisition Act makes a declaration conclusive evidence that land is needed for a public purpose, subject to the exception that the declaration may be challenged for mala fides or colourable exercise of power. The Court relied on Somawanti v. State of Punjab.",
+      "rule": {
+        "if": "land_acquisition_case and public_purpose_declaration and not challenger_proved_bad_faith",
+        "then": "declared_public_purpose_is_conclusive"
+      },
+      "predicates": {
+        "land_acquisition_case": "The proceeding concerns the acquisition of land.",
+        "public_purpose_declaration": "The acquiring authority made a formal declaration that the land was needed for a public purpose.",
+        "challenger_proved_bad_faith": "The person challenging the acquisition established that the declaration was made in bad faith or through a colourable exercise of power."
+      },
+      "definition": "When a land acquisition includes a formal public-purpose declaration and the challenger has not proved bad faith, the declared public purpose is treated as conclusive."
+    },
+    {
+      "legal_issue": "The challenger bears the burden of proving that a public-purpose declaration is a pretext, and the authority’s failure to produce supporting documents does not by itself discharge that burden.",
+      "material_facts": [
+        "The landowners alleged that the real purpose was to benefit a company rather than to serve a public purpose.",
+        "The State did not produce documentary evidence about the purpose of the acquisition.",
+        "The landowners did not produce material establishing that the stated purpose was a pretext."
+      ],
+      "conclusion": "The State’s failure to produce documentary evidence did not establish mala fides or colourable exercise of power, and the landowners’ burden remained undischarged.",
+      "legal_principle": "Under section 6(3) of the Land Acquisition Act, the conclusive presumption as to the stated public purpose would be defeated if the State had to prove that purpose afresh. The burden of proving the exception rests on the party claiming it; a mere allegation, or the State’s non-production of documents, is insufficient. The Court relied on Somawanti v. State of Punjab.",
+      "rule": {
+        "if": "land_acquisition_case and public_purpose_declaration and challenger_alleged_pretext and authority_did_not_produce_documents and not challenger_produced_supporting_material",
+        "then": "challenger_burden_remains_undischarged"
+      },
+      "predicates": {
+        "land_acquisition_case": "The proceeding concerns the acquisition of land.",
+        "public_purpose_declaration": "The acquiring authority made a formal declaration that the land was needed for a public purpose.",
+        "challenger_alleged_pretext": "The person challenging the acquisition alleged that the stated public purpose concealed a private purpose.",
+        "authority_did_not_produce_documents": "The acquiring authority did not produce documents supporting the stated purpose.",
+        "challenger_produced_supporting_material": "The challenger produced material supporting the claim that the stated public purpose was a pretext."
+      },
+      "definition": "When a challenger alleges a pretext but produces no supporting material, the authority’s failure to produce documents does not mean the challenger has proved the allegation."
+    },
+    {
+      "legal_issue": "A claim that an acquisition is a pretext is not established where the challenger offers no evidence that the land is unsuitable for the stated use and leaves uncontroverted evidence of relevant industrial activity.",
+      "material_facts": [
+        "The landowners produced no material showing that the acquired land was unsuitable for industry or that there was no industrial activity in the surrounding area apart from the company’s activity.",
+        "The State provided an affidavit stating that the area was industrially developed and contained numerous industrial concerns.",
+        "The landowners did not controvert that affidavit."
+      ],
+      "conclusion": "The factual record did not establish that the public-purpose declaration was false or that the acquisition involved mala fides or a colourable exercise of power.",
+      "legal_principle": "The party invoking the exception to the conclusiveness of a declaration under section 6(3) of the Land Acquisition Act must prove mala fides or colourable exercise of power. The Court applied the principle in Somawanti v. State of Punjab and held that the unrebutted evidence of industrial activity, together with the absence of evidence of unsuitability, defeated the claim on these facts.",
+      "rule": {
+        "if": "land_acquisition_case and challenger_claimed_private_pretext and not challenger_showed_land_unsuitable and state_evidence_of_industrial_activity_uncontroverted",
+        "then": "bad_faith_or_colourable_exercise_not_established"
+      },
+      "predicates": {
+        "land_acquisition_case": "The proceeding concerns the acquisition of land.",
+        "challenger_claimed_private_pretext": "The challenger claimed that a stated public purpose concealed an acquisition for private benefit.",
+        "challenger_showed_land_unsuitable": "The challenger produced evidence that the acquired land was unsuitable for the stated industrial use.",
+        "state_evidence_of_industrial_activity_uncontroverted": "The authority presented evidence of industrial activity in the area, and the challenger did not controvert it."
+      },
+      "definition": "When a challenger alleging a private pretext does not show that the land is unsuitable and leaves evidence of local industrial activity uncontroverted, bad faith or colourable exercise is not established."
+    },
+    {
+      "legal_issue": "An objection to the sequence of acquisition notifications will not be entertained on appeal when it was not raised before the High Court.",
+      "material_facts": [
+        "In the Supreme Court, the landowners argued that a later notification was void because it had been issued while an earlier notification remained in force.",
+        "The landowners had not raised that objection before the High Court."
+      ],
+      "conclusion": "The Court declined to entertain the objection because it had not been raised before the High Court.",
+      "legal_principle": "The Court applied the procedural principle that it need not entertain an objection raised for the first time on appeal when it was not raised at an earlier stage.",
+      "rule": {
+        "if": "appellate_case and party_raises_notification_sequence_objection and objection_not_raised_below",
+        "then": "new_objection_not_entertained"
+      },
+      "predicates": {
+        "appellate_case": "The matter is being considered in an appeal.",
+        "party_raises_notification_sequence_objection": "A party argues that the sequence in which acquisition notifications were issued made a notification invalid.",
+        "objection_not_raised_below": "The party did not raise that objection before the court below."
+      },
+      "definition": "In an appeal, an objection about the sequence of notifications is not entertained when the party did not raise it before the court below."
+    }
+  ],
+  "seconds": 17.6
+}

@@ -1,0 +1,113 @@
+{
+  "doc_id": "1839895",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16391,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3042,
+    "prompt_tokens": 4687,
+    "total_tokens": 7729,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A witness's testimony cannot be rejected solely because the witness was declared hostile.",
+      "material_facts": [
+        "Two prosecution witnesses were declared hostile and permitted to be cross-examined by the prosecution.",
+        "The trial court treated their testimony as part of the prosecution's version, while the reviewing court considered the evidence of a hostile witness together with corroborating testimony."
+      ],
+      "conclusion": "Declaring a witness hostile does not by itself justify rejecting that witness's evidence.",
+      "legal_principle": "A hostile witness's evidence is not to be rejected on that ground alone; the court must assess it on its merits. The judgment relies on no earlier case for this proposition.",
+      "rule": {
+        "if": "criminal_trial and witness_declared_hostile",
+        "then": "hostile_witness_testimony_not_rejected_solely_for_hostility"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial.",
+        "witness_declared_hostile": "A witness who testified for the prosecution was declared hostile."
+      },
+      "definition": "When a witness is declared hostile in a criminal trial, the testimony is not rejected solely for that reason."
+    },
+    {
+      "legal_issue": "A trial court cannot treat the version of a prosecution witness declared hostile as the prosecution's own version.",
+      "material_facts": [
+        "The prosecution declared two of its witnesses hostile, and the court permitted it to cross-examine them.",
+        "The trial court relied on those witnesses' accounts as spokesmen for the prosecution case when finding that the prosecution had presented contradictory versions."
+      ],
+      "conclusion": "The trial court was not justified in treating the hostile witnesses' version as the prosecution's version.",
+      "legal_principle": "Declaring a prosecution witness hostile exhibits the prosecution's intention not to rely on that witness's evidence as its case, although the evidence is not thereby automatically rejected.",
+      "rule": {
+        "if": "criminal_trial and prosecution_witness_declared_hostile and prosecution_cross_examined_witness",
+        "then": "court_must_not_treat_hostile_witness_version_as_prosecution_case"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial.",
+        "prosecution_witness_declared_hostile": "A witness called by the prosecution was declared hostile.",
+        "prosecution_cross_examined_witness": "The prosecution was permitted to cross-examine the witness."
+      },
+      "definition": "If the prosecution declares its witness hostile and cross-examines that witness in a criminal trial, the witness's version is not treated as the prosecution's own case."
+    },
+    {
+      "legal_issue": "A court must assess the credible parts of a prosecution case rather than reject the whole case because some parts are false or unreliable.",
+      "material_facts": [
+        "The trial court acquitted the accused after finding that the prosecution had presented contradictory accounts of the occurrence.",
+        "The reviewing court accepted some eyewitness evidence and considered the accused's admission that he had assaulted the deceased, while not accepting every eyewitness account in full."
+      ],
+      "conclusion": "The principle that a false account in one part makes the whole account false does not apply in criminal trials; the court must sift truth from falsehood rather than reject the entire case because of some infirmities.",
+      "legal_principle": "The maxim falsus unus, falsus omnibus does not apply to criminal trials. The court must disengage truth from falsehood and sift the grain from the chaff.",
+      "rule": {
+        "if": "criminal_trial and evidence_contains_both_reliable_and_unreliable_parts",
+        "then": "court_must_assess_reliable_parts_without_rejecting_entire_case"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial.",
+        "evidence_contains_both_reliable_and_unreliable_parts": "The evidence includes parts the court can accept as reliable and other parts it cannot accept."
+      },
+      "definition": "When criminal-trial evidence contains both reliable and unreliable parts, the court assesses the reliable parts instead of rejecting the entire case."
+    },
+    {
+      "legal_issue": "A court may accept the inculpatory part of an admission and reject its exculpatory part when the parts are separable and the inculpatory part is supported by the evidence.",
+      "material_facts": [
+        "The accused admitted assaulting the deceased with a sharp cutting weapon and causing him to fall, but claimed the assault was in self-defence.",
+        "The court found the admission of the assault consistent with other evidence and rejected the accused's explanation after assessing the circumstances of the occurrence."
+      ],
+      "conclusion": "The inculpatory part of a separable admission could be accepted and the exculpatory part rejected.",
+      "legal_principle": "A separable confession or admission may be considered in part: the part that appears true may be accepted and the false part rejected. The court relied on Nishi Kant Jha v. State of Bihar, [1969] 2 SCR 1033.",
+      "rule": {
+        "if": "criminal_trial and admission_has_separable_parts and inculpatory_part_supported_by_evidence",
+        "then": "court_may_accept_inculpatory_part_and_reject_exculpatory_part"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial.",
+        "admission_has_separable_parts": "The accused's admission contains an inculpatory part and a distinct exculpatory part that can be assessed separately.",
+        "inculpatory_part_supported_by_evidence": "Other evidence supports the inculpatory part of the admission."
+      },
+      "definition": "In a criminal trial, if an admission has separable parts and evidence supports its inculpatory part, the court may accept that part and reject the exculpatory part."
+    },
+    {
+      "legal_issue": "A person who causes a death while acting in private defence but exceeds that right may be convicted of culpable homicide rather than murder.",
+      "material_facts": [
+        "The evidence accepted by the court indicated that the deceased had first assaulted the accused's brother and that the accused then fatally assaulted the deceased in the family land.",
+        "Neither the accused nor his brother received injuries.",
+        "The accused relied on private defence, and the court found that he had exceeded that right."
+      ],
+      "conclusion": "The accused exceeded the right of private defence, so the murder conviction was altered to a conviction for culpable homicide not amounting to murder under section 304 Part II of the Penal Code.",
+      "legal_principle": "Under section 99 of the Indian Penal Code, the right of private defence is subject to limits. Applying that principle, the court held that the fatal assault exceeded the right of private defence and altered the conviction under section 302 to one under section 304 Part II. The judgment cites no earlier case for this issue.",
+      "rule": {
+        "if": "criminal_homicide_case and accused_acted_in_private_defence and accused_exceeded_private_defence and accused_side_suffered_no_injuries",
+        "then": "fatal_offence_is_culpable_homicide_not_murder"
+      },
+      "predicates": {
+        "criminal_homicide_case": "The proceeding concerns an accused charged with causing a death.",
+        "accused_acted_in_private_defence": "The accused caused the fatal injury while purporting to defend a person or property.",
+        "accused_exceeded_private_defence": "The force used by the accused went beyond the right of private defence.",
+        "accused_side_suffered_no_injuries": "Neither the accused nor the person the accused sought to defend suffered injuries."
+      },
+      "definition": "If an accused causes a death while acting in private defence but exceeds that right, and the accused's side suffered no injuries, the fatal offence is treated as culpable homicide not amounting to murder."
+    }
+  ],
+  "seconds": 18.7
+}

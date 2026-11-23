@@ -1,0 +1,78 @@
+{
+  "doc_id": "1651002",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 8457,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2249,
+    "prompt_tokens": 2821,
+    "total_tokens": 5070,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court staying execution of an eviction decree may require the occupant to pay compensation for post-decree use and occupation above the contractual rent.",
+      "material_facts": [
+        "An eviction decree had been passed and its execution was stayed while an appeal was pending.",
+        "The occupants continued to possess the premises after the decree and argued that they should pay no more than the standard rent.",
+        "The premises had been let at a low contractual rent, and the landlords sought compensation for the delay in recovering possession."
+      ],
+      "conclusion": "The occupants could be required to pay reasonable compensation for post-decree use and occupation; the contractual rent did not cap that amount.",
+      "legal_principle": "Under Atma Ram Properties (P) Ltd. v. Federal Motors (P) Ltd., a court staying execution of an eviction decree may impose reasonable terms to compensate the decree-holder for delay if the appeal fails. From the date of the eviction decree, compensation may reflect the rate at which the landlord could have let the premises after they were vacated; the prior contractual rent is not controlling.",
+      "rule": {
+        "if": "eviction_appeal_stay and eviction_decree_passed and continued_occupation_delays_possession",
+        "then": "post_decree_compensation_may_exceed_contractual_rent"
+      },
+      "predicates": {
+        "eviction_appeal_stay": "An appeal against an eviction decree is pending and execution of the decree has been stayed.",
+        "eviction_decree_passed": "A court has passed a decree for eviction against the occupant.",
+        "continued_occupation_delays_possession": "The occupant continues to use the premises, delaying the decree-holder's recovery of possession."
+      },
+      "definition": "When an eviction decree is stayed during an appeal and continued occupation delays recovery of possession, compensation for post-decree occupation may exceed the contractual rent."
+    },
+    {
+      "legal_issue": "Interim compensation during a stay of an eviction decree may be fixed tentatively using available evidence of prevailing rental value and the area occupied.",
+      "material_facts": [
+        "The premises were in a prime commercial locality, and the parties provided material about rents paid for other premises in the locality and building.",
+        "The parties disputed the area occupied, and the court used the area stated by the occupants.",
+        "The landlords sought monthly compensation during the appeal, and the court treated its assessment as tentative and subject to determination by a competent forum."
+      ],
+      "conclusion": "The occupants were directed to pay or deposit interim compensation calculated by reference to the area they acknowledged occupying and the rental evidence, subject to final determination of the amount.",
+      "legal_principle": "Applying Atma Ram Properties (P) Ltd. v. Federal Motors (P) Ltd., the court assessed reasonable interim compensation by considering the available evidence of rents in the locality rather than the former contractual rent. The assessment was tentative and did not determine the amount recoverable in properly constituted proceedings.",
+      "rule": {
+        "if": "eviction_appeal_stay and prevailing_rent_evidence_available and occupied_area_is_disputed",
+        "then": "interim_compensation_is_tentatively_set_from_rental_evidence_and_the_occupants_stated_area"
+      },
+      "predicates": {
+        "eviction_appeal_stay": "An appeal against an eviction decree is pending and execution of the decree has been stayed.",
+        "prevailing_rent_evidence_available": "The parties provide evidence of rents paid for comparable premises in the locality or building.",
+        "occupied_area_is_disputed": "The parties disagree about the area occupied, and the occupant states the area it acknowledges possessing."
+      },
+      "definition": "Where a stay is in force, rental evidence and the occupant's stated area may be used to set tentative interim compensation when the occupied area is disputed."
+    },
+    {
+      "legal_issue": "A stay of an eviction decree may be made conditional on payment safeguards for both the occupant and the decree-holder.",
+      "material_facts": [
+        "The occupants were directed to pay or deposit compensation on a continuing basis, and non-compliance with specified payment or procedural terms would end the stay and permit execution.",
+        "The landlords were required to undertake to refund or make the recovered amounts available for adjustment as directed after the appeal.",
+        "If the landlords did not provide that undertaking, amounts payable by the occupants were to be deposited in court and invested."
+      ],
+      "conclusion": "The stay would be vacated if the occupants failed to comply with the specified terms; if the landlords failed to provide the undertaking, they would not receive the payments, which would instead be deposited in court and invested.",
+      "legal_principle": "The court imposed reciprocal conditions to protect the decree-holder against delay and the occupants against amounts ultimately found not to be payable. It also permitted the landlords to seek determination and recovery of mesne profits under Order XX Rule 12 of the Code of Civil Procedure or other available legal remedies.",
+      "rule": {
+        "if": "eviction_appeal_stay and (occupant_fails_required_terms or landlord_fails_refund_undertaking)",
+        "then": "stay_is_vacated_on_occupant_default_and_funds_are_court_deposited_on_landlord_default"
+      },
+      "predicates": {
+        "eviction_appeal_stay": "An appeal against an eviction decree is pending and execution of the decree has been stayed.",
+        "occupant_fails_required_terms": "The occupant fails to meet the payment or other specified conditions attached to the stay.",
+        "landlord_fails_refund_undertaking": "The decree-holder fails to undertake to refund or make available for adjustment amounts received as later directed."
+      },
+      "definition": "During a stayed eviction appeal, failure by the occupant to meet the specified conditions results in loss of the stay, while failure by the decree-holder to give the refund undertaking results in court-controlled deposit of the funds."
+    }
+  ],
+  "seconds": 20.6
+}

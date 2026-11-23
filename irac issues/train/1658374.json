@@ -1,0 +1,60 @@
+{
+  "doc_id": "1658374",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19932,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2192,
+    "prompt_tokens": 5620,
+    "total_tokens": 7812,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The amendment restricting a purchaser’s right to annul tenures applied retrospectively to ejectment litigation that was pending when the amendment commenced.",
+      "material_facts": [
+        "The purchaser brought an ejectment suit after acquiring an estate at a revenue sale and annulling interests under the law then in force.",
+        "When the amendment commenced, the suit was pending in an appeal from the decree for possession.",
+        "The disputed property was a tenure that existed when the sale notification was issued, bringing it within an exception to the purchaser’s annulment rights under the amended law."
+      ],
+      "conclusion": "Although the provision substituting the amended rule was prima facie prospective, it applied to pending litigation because the amendment’s transitional provision gave it retrospective effect to that extent.",
+      "legal_principle": "The substituted provision governing annulment rights was prima facie prospective, but section 7 made the amended law applicable to specified pending suits, proceedings, appeals, reviews, and revisions. Read together, sections 4 and 7 applied the amended protection to tenures within the new exceptions even where the revenue sale predated the amendment. The Court cited no earlier case by name on this point.",
+      "rule": {
+        "if": "pending_ejectment_case and protected_tenure and suit_barred_under_amended_rule",
+        "then": "amended_rule_applies_to_pending_case"
+      },
+      "predicates": {
+        "pending_ejectment_case": "An ejectment suit or a proceeding continuing from that suit was pending when the new law took effect.",
+        "protected_tenure": "The disputed property was a tenure within an exception to the purchaser’s annulment rights under the amended rule.",
+        "suit_barred_under_amended_rule": "Under the amended rule, the purchaser could not validly have brought the ejectment suit."
+      },
+      "definition": "When an ejectment case was pending, concerned a protected tenure, and could not validly have been brought under the amended rule, the amended rule applied to that case."
+    },
+    {
+      "legal_issue": "An ejectment suit pending on appeal from a decree for the successful plaintiff abated when the amended law made the suit invalid, even if possession had been delivered during the appeal.",
+      "material_facts": [
+        "The trial court decreed possession for the plaintiff, and the defendant appealed; that appeal remained pending when the amendment commenced.",
+        "The decree had not become final because the appeal was pending.",
+        "Possession was delivered to the plaintiff during the appeal before the amendment commenced.",
+        "Under the amended law, the tenure was protected from annulment, so the suit could not validly have been instituted under that law."
+      ],
+      "conclusion": "The suit abated under section 7(1)(a) when the amendment commenced. It was unnecessary to decide the effect of the delivery of possession during the pending appeal.",
+      "legal_principle": "An appeal is a continuation of the original suit, so the pending case fell within section 7(1)(a), not section 7(1)(b), which concerned an appeal or other application by an unsuccessful plaintiff or applicant. Section 7(2) concerned decrees or orders that had become final; its proviso protected possession delivered in execution before commencement in respect of such a decree or order. Because the decree here was not final, the suit abated under section 7(1)(a). The Court relied on the settled principle that an appeal is a continuation of the suit and cited no earlier case by name.",
+      "rule": {
+        "if": "pending_ejectment_suit_on_appeal and defendant_appeal_pending and decree_not_final and suit_barred_under_amended_rule",
+        "then": "suit_abates"
+      },
+      "predicates": {
+        "pending_ejectment_suit_on_appeal": "An ejectment suit remained pending because an appeal from its decree was undecided.",
+        "defendant_appeal_pending": "The pending appeal was brought by the defendant against the decree for ejectment.",
+        "decree_not_final": "The ejectment decree had not become final when the new law took effect.",
+        "suit_barred_under_amended_rule": "Under the amended rule, the purchaser could not validly have brought the ejectment suit."
+      },
+      "definition": "When an ejectment suit remained pending in the defendant’s appeal, its decree was not final, and the suit was barred under the amended rule, the suit abated."
+    }
+  ],
+  "seconds": 14.8
+}

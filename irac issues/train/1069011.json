@@ -1,0 +1,83 @@
+{
+  "doc_id": "1069011",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15517,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3242,
+    "prompt_tokens": 4449,
+    "total_tokens": 7691,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A pure question of law arising from admitted facts may be considered in supervisory review even if it was not pleaded or made the subject of an issue below.",
+      "material_facts": [
+        "The respondent raised the point that arrears predating the transfer of the property were a debt rather than recoverable rent, although the point had not been pleaded and no issue had been framed on it.",
+        "The point arose on admitted facts and was a question of law."
+      ],
+      "conclusion": "The High Court could consider the point in supervisory review because it was a pure question of law arising from admitted facts.",
+      "legal_principle": "The Court distinguished the limits on supervisory interference with factual findings described in India Pipe Fitting Co. v. Fakruddin M.A. Baker, holding that those limits did not prevent consideration of a pure question of law arising on admitted facts under Article 227 of the Constitution.",
+      "rule": {
+        "if": "supervisory_review_case and unpleaded_point_is_pure_law and point_arises_on_admitted_facts",
+        "then": "pure_legal_point_may_be_considered"
+      },
+      "predicates": {
+        "supervisory_review_case": "The matter involves supervisory review of decisions made by lower courts.",
+        "unpleaded_point_is_pure_law": "A party raises a point that was not pleaded or made the subject of an issue, and the point is one of law rather than fact.",
+        "point_arises_on_admitted_facts": "The legal point can be decided on facts accepted by the parties."
+      },
+      "definition": "When a matter involves supervisory review and an unpleaded point is purely legal and arises on admitted facts, the point may be considered."
+    },
+    {
+      "legal_issue": "A transferee of leased property is not entitled, without an assignment, to recover as rent arrears that accrued before the transfer.",
+      "material_facts": [
+        "Rent had accrued before the transfer of the property to the appellant.",
+        "The transfer document released the other owners’ interests in the property but did not assign the earlier rent arrears to the appellant.",
+        "The appellant sought to recover those earlier arrears as rent."
+      ],
+      "conclusion": "The appellant was not entitled to the pre-transfer arrears as rent; they were a debt or actionable claim rather than rent recoverable by the transferee under the transfer.",
+      "legal_principle": "Under Section 109 of the Transfer of Property Act, 1882, a transferee obtains the lessor’s rights concerning the transferred property, but the proviso excludes arrears of rent due before the transfer. The Court treated those arrears as a debt or actionable claim where they had not been assigned.",
+      "rule": {
+        "if": "landlord_tenant_transfer_dispute and rent_accrued_before_transfer and transferee_received_no_assignment_of_past_rent",
+        "then": "pretransfer_arrears_not_recoverable_as_rent_by_transferee"
+      },
+      "predicates": {
+        "landlord_tenant_transfer_dispute": "The dispute concerns a transfer of property that is subject to a tenancy.",
+        "rent_accrued_before_transfer": "The rent sought was due before the property was transferred.",
+        "transferee_received_no_assignment_of_past_rent": "The transfer did not assign the earlier rent arrears to the transferee."
+      },
+      "definition": "If a tenancy-related property transfer occurs after rent has accrued and the transferee receives no assignment of those arrears, the transferee cannot recover them as rent."
+    },
+    {
+      "legal_issue": "An eviction suit based on a rent demand is not maintainable when the demand includes amounts not legally recoverable as rent and the tenant has paid the interim rent fixed by the court.",
+      "material_facts": [
+        "The eviction suit was brought under rent-control provisions requiring a written demand before suit.",
+        "The tenant disputed the standard rent, and a court fixed interim rent at a rate lower than the rate demanded in the notice.",
+        "The tenant deposited the interim rent, which covered the arrears due at that rate.",
+        "The demand included arrears from before the transfer of the property, which had not been assigned to the appellant.",
+        "The Court found no outstanding arrears for six months or more and no neglect by the tenant to pay the rent due."
+      ],
+      "conclusion": "The notice did not satisfy the statutory requirements for eviction, and the appellant could not rely on the alternative rent-payment provision to maintain the suit; the dismissal of the eviction suit was upheld.",
+      "legal_principle": "Sections 12(2), 12(3)(a), and 12(3)(b) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, governed the demand and eviction claim. Section 12(3)(a) required, among other things, no dispute about standard rent, at least six months of arrears, and neglect to pay after notice. Section 12(3)(b) applied in other cases subject to payment or tender of rent as directed. A valid demand had to concern rent legally recoverable from the tenant; the Court applied Chimanlal v. Mishrilal for that principle and held that the alternative provision could not cure the defective demand.",
+      "rule": {
+        "if": "rent_control_eviction_case and written_rent_demand_required and standard_rent_disputed and demanded_rent_exceeded_interim_rent and tenant_deposited_interim_rent and demand_included_unassigned_pretransfer_arrears and no_six_month_arrears_outstanding",
+        "then": "eviction_suit_based_on_demand_not_maintainable"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction for non-payment of rent under a rent-control regime.",
+        "written_rent_demand_required": "The governing rent-recovery process requires a written demand before an eviction suit may be brought for non-payment.",
+        "standard_rent_disputed": "The tenant disputed the amount of standard rent.",
+        "demanded_rent_exceeded_interim_rent": "The written demand claimed rent at a rate higher than the interim rate fixed by a court.",
+        "tenant_deposited_interim_rent": "The tenant deposited the rent due at the interim rate fixed by the court.",
+        "demand_included_unassigned_pretransfer_arrears": "The demand included rent that accrued before the claimant acquired the property and had not been assigned to the claimant.",
+        "no_six_month_arrears_outstanding": "There were no unpaid arrears for six months or more at the legally applicable rent rate."
+      },
+      "definition": "In a rent-control eviction case requiring a written rent demand, where the tenant disputed standard rent, paid the court-fixed interim rent, and the demand included unassigned pre-transfer arrears without six months of outstanding arrears, the eviction suit based on that demand is not maintainable."
+    }
+  ],
+  "seconds": 21.5
+}

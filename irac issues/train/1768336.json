@@ -1,0 +1,159 @@
+{
+  "doc_id": "1768336",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 99975,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4709,
+    "prompt_tokens": 24017,
+    "total_tokens": 28726,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A Special Court has jurisdiction over a proceeding alleging land grabbing or seeking determination of title or lawful possession, even when the dispute involves a bona fide contest over title.",
+      "material_facts": [
+        "The State sought a determination that the occupied land was government land and that the occupant had grabbed it.",
+        "The State invoked the Special Court under the land-grabbing legislation, and the parties contested title and possession at a full trial.",
+        "The occupant objected to the Special Court taking cognizance but did not object to its jurisdiction in response to the notice."
+      ],
+      "conclusion": "The Special Court had jurisdiction to determine the alleged land grabbing and the competing claims to title and possession.",
+      "legal_principle": "Under Sections 7(1) and 8(1) and (2) of the Andhra Pradesh Land Grabbing (Prohibition) Act, 1982, an allegation of land grabbing is sufficient to invoke the Special Court’s jurisdiction, which extends to determining title and lawful possession. Sections 8(6), 8(8), 9 and 15 support the Special Court’s exclusive jurisdiction and the transfer of qualifying pending cases. The Court applied the principles in Dhulabhai v. State of Madhya Pradesh and Sanwarmal Kejriwal v. Vishwa Cooperative Housing Society Ltd. to conclude that the ordinary civil court’s jurisdiction is ousted for matters covered by the special legislation.",
+      "rule": {
+        "if": "special_court_proceeding and alleged_land_grabbing_or_title_dispute",
+        "then": "special_court_has_jurisdiction"
+      },
+      "predicates": {
+        "special_court_proceeding": "A proceeding is brought before a specially constituted court to address an alleged land-grabbing matter.",
+        "alleged_land_grabbing_or_title_dispute": "The proceeding alleges land grabbing or seeks a determination of ownership, title, or lawful possession of the land."
+      },
+      "definition": "When a proceeding before a specially constituted court alleges land grabbing or raises a dispute about title or lawful possession, that court has jurisdiction."
+    },
+    {
+      "legal_issue": "A prior proceeding does not bar a later land-grabbing proceeding on constructive res judicata unless the relevant rights were finally adjudicated in the prior proceeding.",
+      "material_facts": [
+        "An earlier writ proceeding concerned the use of summary eviction procedures while title was disputed and left the State liberty to establish its title in a civil court.",
+        "The earlier proceeding did not finally determine the parties’ competing claims to title on the merits.",
+        "The State later pursued a title and possession claim that was transferred to the Special Court and also invoked that court’s jurisdiction under the land-grabbing legislation."
+      ],
+      "conclusion": "The later proceeding was not barred by constructive res judicata.",
+      "legal_principle": "Section 11 of the Code of Civil Procedure, including Explanation IV, requires a final adjudication between the parties before res judicata or constructive res judicata can apply. The Court relied on Sha Shivraj Gopalji v. Edappakath Ayissa Bi and Kewal Singh v. Lajwanti, which support the requirement of a final determination. Because the earlier writ proceeding did not determine title on the merits, the State was not barred from pursuing its later claim.",
+      "rule": {
+        "if": "later_special_court_proceeding and prior_proceeding_without_final_merits_adjudication",
+        "then": "prior_proceeding_does_not_bar_later_claim"
+      },
+      "predicates": {
+        "later_special_court_proceeding": "A party pursues a later claim before a specially constituted court after an earlier proceeding between the parties.",
+        "prior_proceeding_without_final_merits_adjudication": "The earlier proceeding did not finally decide the substantive rights now in dispute."
+      },
+      "definition": "A later claim is not barred when it follows an earlier proceeding that did not finally adjudicate the substantive rights in dispute."
+    },
+    {
+      "legal_issue": "A claimant does not acquire lawful entitlement to land through a lease from a grant-holder who had no title to the land, where the land remained government property and no occupancy right was obtained.",
+      "material_facts": [
+        "The claimant traced his interest to an unregistered lease agreement and a later registered lease from an alleged successor of an Inamdar.",
+        "The land in dispute had been excluded from the relevant regrant, remained part of the former ruler’s private estate, and merged into the State’s estate.",
+        "Even if the land had formed part of the Inam, it vested in the State under the applicable abolition legislation; neither the alleged Inamdar nor the claimant obtained an occupancy certificate for it.",
+        "The Court found the State’s title established independently of the claimant’s defective title documents."
+      ],
+      "conclusion": "The claimant had no lawful entitlement or title to the land, and the State’s title was upheld.",
+      "legal_principle": "The claimant’s asserted title depended on proving that the lessor had title to the land. The Court found on the documentary and oral evidence that the land had been excluded from the regrant and had become State property; alternatively, under Section 3 of the Andhra Pradesh (Telangana Area) Abolition of Inams Act, 1955, it vested in the State. The absence of an occupancy certificate under the Inams legislation further undermined the asserted title. The State’s title was upheld on its own strength, not merely because the claimant’s title was defective.",
+      "rule": {
+        "if": "title_dispute_proceeding and claimant_claims_through_grantor_without_title and land_belongs_to_state_and_no_occupancy_right_obtained",
+        "then": "claimant_lacks_lawful_entitlement"
+      },
+      "predicates": {
+        "title_dispute_proceeding": "A proceeding requires the court to determine competing claims to ownership or title to land.",
+        "claimant_claims_through_grantor_without_title": "The claimant relies on a transfer or lease from a grantor who had no title to the land.",
+        "land_belongs_to_state": "The evidence establishes that the land remained State property or vested in the State.",
+        "no_occupancy_right_obtained": "Neither the claimant nor the person through whom the claimant claims obtained an occupancy right to the land."
+      },
+      "definition": "A claimant relying on a grantor without title lacks lawful entitlement when the land belongs to the State and no occupancy right was obtained."
+    },
+    {
+      "legal_issue": "A person is a land grabber only when the proved conduct satisfies both the unauthorized-taking and intended-purpose requirements of the statutory definition, or another specified category of land-grabber conduct.",
+      "material_facts": [
+        "The State alleged that the claimant occupied government land without lawful entitlement and sought a declaration that he was a land grabber.",
+        "The claimant relied on a lease from a person who had no title, occupied the land, and constructed a building on it.",
+        "The evidence supported the finding that the claimant knew of the defects in his lessor’s title and occupied the land under the guise of that lease.",
+        "The parties understood the allegation of land grabbing, litigated it, and presented evidence on the issue; the claimant did not cross-examine the State’s witness on the statement that he was a land grabber."
+      ],
+      "conclusion": "The claimant’s proved conduct met the requirements for treating him as a land grabber.",
+      "legal_principle": "Sections 2(d) and 2(e) of the Andhra Pradesh Land Grabbing (Prohibition) Act, 1982 must be construed strictly because land grabbing is both a civil wrong and an offence. For the primary category of land grabbing, the State must prove an activity of taking possession of land without lawful entitlement, by forcible, violent, unscrupulous, unfair, or greedy means, together with the intention to take possession illegally or to pursue another purpose specified in Section 2(e). The requisite intention may be inferred from the pleadings and evidence. Allegations alone suffice to invoke jurisdiction, but the ingredients must be proved to establish that a person is a land grabber. Section 10 provides a presumption when its conditions are met, but the Special Court did not invoke it here. Under Nedunuri Kameswaramma v. Sampati Subba Rao, Kali Prasad v. Bharat Coking Coal Ltd., and Sardul Singh v. Pritam Singh, an omission to plead an ingredient specifically need not defeat a claim where the parties understood and litigated the issue.",
+      "rule": {
+        "if": "land_grabbing_proceeding and unauthorized_possession_without_lawful_entitlement and statutory_purpose_intended",
+        "then": "person_is_a_land_grabber"
+      },
+      "predicates": {
+        "land_grabbing_proceeding": "The proceeding seeks a finding that a person committed land grabbing.",
+        "unauthorized_possession_without_lawful_entitlement": "The person took possession of another’s land without lawful entitlement by conduct that was forcible, violent, unscrupulous, unfair, or greedy.",
+        "statutory_purpose_intended": "The person intended to take possession illegally or to pursue another purpose included in the statutory definition of land grabbing."
+      },
+      "definition": "In a land-grabbing proceeding, a person is a land grabber when the person took possession without lawful entitlement through the specified kind of conduct and intended a purpose covered by the definition."
+    },
+    {
+      "legal_issue": "Long possession does not establish title by adverse possession without possession that is sufficiently continuous, open, and extensive and an intention to possess adversely for the required period.",
+      "material_facts": [
+        "The claimant asserted that his possession began under a lease and that he could add his predecessor’s possession to his own.",
+        "The lease agreement relied on for the earlier start date was altered, and the later registered lease was a separate document; the claimant did not establish possession for the required period before the State’s suit.",
+        "The claimant claimed under a lease rather than asserting hostile title, and he pleaded adverse possession only in the later suit.",
+        "He applied for occupancy rights and paid an assessment, conduct inconsistent with an intention to hold the land against the State’s title.",
+        "The Special Court and High Court found that the claimant had not established the required period of possession or the necessary intention."
+      ],
+      "conclusion": "The claimant did not acquire title by adverse possession.",
+      "legal_principle": "A person claiming title by adverse possession must establish possession that is adequate in continuity, publicity, and extent, together with animus possidendi against the true owner for the required statutory period. The Court relied on S.M. Karim v. Mst. Bibi Sakina and Balkrishan v. Satyaprakash. Where the claimant initially possesses under a lease, the period of adverse possession starts only when both actual possession and an assertion of hostile title are established. Applying Section 47 of the Registration Act, 1908, the later registered lease related back only to its own execution, not to the earlier unregistered agreement; the Court distinguished Thakur Kishan Singh v. Arvind Kumar. An application for occupancy rights did not interrupt physical possession, but it contradicted the required hostile intention. Possession under a continuing lease could not be tacked as adverse possession against the State or the lessor.",
+      "rule": {
+        "if": "adverse_possession_claim and (possession_period_insufficient or hostile_intention_not_continuous)",
+        "then": "adverse_title_not_acquired"
+      },
+      "predicates": {
+        "adverse_possession_claim": "A party claims ownership of land on the basis of adverse possession.",
+        "possession_period_insufficient": "The party fails to prove possession for the required statutory period, including by a valid basis for adding a predecessor’s possession.",
+        "hostile_intention_not_continuous": "The party fails to prove a continuous intention to possess the land against the true owner, including because the party claims under a lease or seeks recognition of an occupancy right."
+      },
+      "definition": "A claim of adverse possession fails when the claimant does not prove either the required period of possession or a continuous hostile intention."
+    },
+    {
+      "legal_issue": "Permission to construct a building does not, by itself, make the occupant’s possession of the land permissive or prevent acquisition of title by adverse possession.",
+      "material_facts": [
+        "The claimant obtained a court’s permission to construct a building while another person’s title suit was pending.",
+        "The claimant undertook to vacate the building without compensation if the plaintiff in that suit succeeded.",
+        "The State relied on that undertaking to characterize the claimant’s possession as permissive."
+      ],
+      "conclusion": "The permission to construct the building did not make the claimant’s possession of the land permissive; it did not defeat an adverse-possession claim if its other requirements were satisfied.",
+      "legal_principle": "A permission limited to constructing a building does not establish permission to possess the underlying land. The nature of possession must be assessed independently, and the construction permission does not itself prevent adverse possession if the required possession and hostile intention are otherwise proved.",
+      "rule": {
+        "if": "possession_dispute and court_permission_limited_to_construction",
+        "then": "land_possession_not_permissive_on_that_basis"
+      },
+      "predicates": {
+        "possession_dispute": "A proceeding disputes whether an occupant’s possession of land is permissive or adverse.",
+        "court_permission_limited_to_construction": "A court permitted the occupant to construct a building, without granting permission to possess the underlying land."
+      },
+      "definition": "When a court permits construction but not possession of the land, that construction permission alone does not make the land possession permissive."
+    },
+    {
+      "legal_issue": "The presumption of a lost grant is unavailable when the claimant’s possession is explained by a known lease rather than immemorial, open, exclusive, and uninterrupted use under an unexplained assertion of title.",
+      "material_facts": [
+        "The claimant traced his possession to a lease from an alleged Inamdar beginning in the 1950s.",
+        "The claimant relied on that explained source of possession when asserting title.",
+        "The record did not establish the kind of immemorial, unexplained possession required for a presumed lost grant."
+      ],
+      "conclusion": "The claimant could not rely on the presumption of a lost grant.",
+      "legal_principle": "A lost grant may be presumed to account for ancient and continued possession exercised openly and exclusively under an assertion of title, where that possession cannot otherwise reasonably be explained. It is not an irrebuttable presumption and should not be made when the evidence is inconsistent with a grant or the possession has an explained source. The Court applied the principle explained by the Constitution Bench in Monohar Das Mohanta v. Charu Chandra Pal.",
+      "rule": {
+        "if": "lost_grant_claim and possession_has_explained_source",
+        "then": "lost_grant_not_presumed"
+      },
+      "predicates": {
+        "lost_grant_claim": "A party asks the court to presume that a grant existed but was lost.",
+        "possession_has_explained_source": "The party’s possession is explained by a known lease or another identified source rather than ancient, unexplained use."
+      },
+      "definition": "A lost grant is not presumed when the claimant’s possession has an identified and explained source."
+    }
+  ],
+  "seconds": 27.7
+}

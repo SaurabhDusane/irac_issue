@@ -1,0 +1,101 @@
+{
+  "doc_id": "1890128",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24821,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3173,
+    "prompt_tokens": 6582,
+    "total_tokens": 9755,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A declaration proceeding is not invalid merely because a fresh notice was not served on an evacuee already declared as such after notice, or because notice was not served on persons who did not assert an interest.",
+      "material_facts": [
+        "The daughter who had migrated was declared an evacuee and her properties were declared evacuee property under the former state regulation after notice to her.",
+        "In the later proceeding, notices were served on the widow and the family firm; the sons, who were the firm’s other partners, appeared and submitted to the Custodian’s jurisdiction.",
+        "No fresh notice was served on the daughter in the later proceeding, and another daughter and the deceased’s brother did not appear to assert rights or challenge the proceeding."
+      ],
+      "conclusion": "The omissions did not invalidate the Custodian’s jurisdiction or the declaration proceeding.",
+      "legal_principle": "Section 7 of the Administration of Evacuee Property Act, 1950 provides an opportunity for the alleged evacuee to contest that status and for other interested persons to show that the property does not belong to an evacuee or that the evacuee has no interest in it. Once an evacuee has been declared after due notice, a further Section 7 notice to that person serves no purpose because the earlier declaration is conclusive on the question of migration. Under Sections 5(1) and 5(3) of the Hyderabad Administration of Evacuee Property Regulation, an interested person was to receive notice before declaration and declared properties were to be notified; under Section 6(1), declared property vested in the Custodian. The Court also considered Section 8(1) and Section 7-A of the 1950 Act, and observed that an objection based on non-service could properly be raised by the person not served, rather than by third parties.",
+      "rule": {
+        "if": "evacuee_property_declaration_proceeding and (previously_notified_person_was_already_declared_evacuee or omitted_interested_person_did_not_assert_rights) and other_appearing_interested_persons_received_notice",
+        "then": "notice_omission_does_not_invalidate_proceeding"
+      },
+      "predicates": {
+        "evacuee_property_declaration_proceeding": "The proceeding was to determine whether property was evacuee property and should vest in the Custodian.",
+        "previously_notified_person_was_already_declared_evacuee": "The person whose interest in the property was at issue had previously received notice and been declared an evacuee.",
+        "omitted_interested_person_did_not_assert_rights": "A person who did not receive notice did not appear to assert an interest in the property or challenge the proceeding.",
+        "other_appearing_interested_persons_received_notice": "Other interested persons who appeared in the proceeding had received notice."
+      },
+      "definition": "When a property-declaration proceeding concerns someone already declared an evacuee after notice, or an omitted interested person does not assert rights, and appearing interested persons received notice, the omission does not invalidate the proceeding."
+    },
+    {
+      "legal_issue": "Property cannot be declared evacuee property on the basis of a description that does not sufficiently identify it.",
+      "material_facts": [
+        "The notice described some properties specifically but also referred broadly to any other property left by the deceased.",
+        "The Deputy Custodian General found that the deceased owned certain properties claimed by the widow, and the Court declined to disturb those factual findings.",
+        "The assets of one company were referred to neither in the notification nor in the deceased’s will.",
+        "The Court held that the description of the family firm’s assets was sufficient to identify them, but the broad reference to any other property was too vague unless a particular property fell within a specified item or was identified in the will as belonging exclusively to the deceased."
+      ],
+      "conclusion": "The broad catch-all description could not support vesting of unidentified property, and no part of the unreferenced company’s assets vested in the Custodian.",
+      "legal_principle": "The Court held that the statutory scheme did not require the grounds for a notification to be specified, but the property had to be described sufficiently to be readily identified. A vague description of other property left by the deceased was inadequate. The Court applied this requirement to the notification under the Administration of Evacuee Property Act, 1950.",
+      "rule": {
+        "if": "evacuee_property_declaration_proceeding and property_is_not_sufficiently_identified_in_notification_or_referenced_document",
+        "then": "unidentified_property_is_excluded_from_vesting"
+      },
+      "predicates": {
+        "evacuee_property_declaration_proceeding": "The proceeding was to determine whether property was evacuee property and should vest in the Custodian.",
+        "property_is_not_sufficiently_identified_in_notification_or_referenced_document": "The property was covered only by a vague general description and was not otherwise sufficiently identified in the notification or a document it referenced."
+      },
+      "definition": "In a property-declaration proceeding, property that is not sufficiently identified in the notification or a referenced document is excluded from vesting."
+    },
+    {
+      "legal_issue": "A claimed customary rule of succession contrary to Muslim law cannot support a will when its application to the relevant community in the jurisdiction is not established and binding local law rejects proof of such a custom.",
+      "material_facts": [
+        "The deceased belonged to the Khoja community and lived in the former State of Hyderabad.",
+        "The appellants relied on a will, arguing that Khojas were governed by Hindu law in matters of succession and could therefore dispose of property by will.",
+        "The evidence did not establish that the claimed custom applied to Khojas living outside the former Bombay State or that it applied to Khojas in Hyderabad.",
+        "The Court found that the law laid down by the former Hyderabad Judicial Committee precluded proof of a custom in direct conflict with Muslim law unless an enactment permitted it."
+      ],
+      "conclusion": "The deceased was not competent to make the will on the asserted basis, and his property devolved as if he had died intestate.",
+      "legal_principle": "The Court relied on Jahandarunnissa Begum v. Mohd. Moinuddin, AIR 1953 Hyd 117, which applied the former Hyderabad Judicial Committee’s ruling in Munwar Begum v. Najib Mirza, 7 Nazair Osmania 463, that a custom directly contrary to Muslim law could not be proved absent statutory authorization. The Court noted that cases concerning Khoja custom in the former Bombay State did not establish the same custom in Hyderabad, and that the Shariat Act, 1937 had not been extended to Hyderabad.",
+      "rule": {
+        "if": "succession_dispute and deceased_belonged_to_khoja_community and deceased_was_subject_to_hyderabad_customary_law and claimed_contrary_custom_was_not_established",
+        "then": "will_is_invalid_on_claimed_customary_basis"
+      },
+      "predicates": {
+        "succession_dispute": "The case concerned how a deceased person’s estate devolved among successors.",
+        "deceased_belonged_to_khoja_community": "The deceased belonged to the Khoja community.",
+        "deceased_was_subject_to_hyderabad_customary_law": "The deceased’s succession was governed by the applicable law of the former Hyderabad jurisdiction.",
+        "claimed_contrary_custom_was_not_established": "The evidence did not establish that the asserted custom contrary to Muslim law applied to the deceased."
+      },
+      "definition": "In a succession dispute, where a Khoja was subject to the relevant Hyderabad law and the asserted contrary custom was not established, a will based on that custom is invalid."
+    },
+    {
+      "legal_issue": "A factual finding about ownership is not reopened in a special-leave appeal merely because a party disputes the finding.",
+      "material_facts": [
+        "The appellants disputed findings that certain properties standing in the widow’s name were held for the deceased and that another property belonged to the deceased rather than the widow.",
+        "The Deputy Custodian General had considered the evidence and made findings on those ownership questions.",
+        "The Court stated that it could not allow those factual findings to be challenged in an appeal under Article 136.",
+        "The Court also upheld the finding that an alleged charitable dedication had not been proved, noting the absence of evidence of its objects or beneficiaries."
+      ],
+      "conclusion": "The Court did not disturb the challenged factual findings on ownership or the finding that the alleged dedication had not been proved.",
+      "legal_principle": "The Court applied the limited scope of review in an appeal under Article 136, declining to permit factual findings to be challenged in that appeal.",
+      "rule": {
+        "if": "special_leave_appeal and challenged_conclusion_is_a_factual_finding_based_on_evidence",
+        "then": "factual_finding_is_not_reopened"
+      },
+      "predicates": {
+        "special_leave_appeal": "The proceeding was an appeal brought by special leave.",
+        "challenged_conclusion_is_a_factual_finding_based_on_evidence": "The challenged conclusion concerns a factual matter that the lower authority decided after considering evidence."
+      },
+      "definition": "In a special-leave appeal, a challenged factual finding based on evidence is not reopened."
+    }
+  ],
+  "seconds": 19.7
+}

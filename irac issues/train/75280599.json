@@ -1,0 +1,100 @@
+{
+  "doc_id": "75280599",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 49890,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3203,
+    "prompt_tokens": 11675,
+    "total_tokens": 14878,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "When a challenge to an arbitral award may be brought before either a High Court exercising ordinary original civil jurisdiction or a district principal civil court, the High Court is the appropriate forum under the arbitration legislation.",
+      "material_facts": [
+        "Both parties challenged the same arbitral award in separate proceedings, one before a district principal civil court and the other before the High Court exercising ordinary original civil jurisdiction.",
+        "The arbitral seat and execution of the contract were in the High Court’s territorial jurisdiction, while the works and toll collection were located in the district whose principal civil court was also said to have jurisdiction.",
+        "The parties acknowledged that both courts fell within the statutory definition of “Court.”"
+      ],
+      "conclusion": "Where the choice is between a High Court exercising ordinary original civil jurisdiction and a district principal civil court, the arbitration legislation makes the choice in favour of the High Court. The lowest-grade-court rule does not alter that choice.",
+      "legal_principle": "Under Section 2(1)(e) of the Arbitration and Conciliation Act, 1996, “Court” includes both the district principal civil court and a High Court exercising ordinary original civil jurisdiction. The High Court’s inclusion must be given effect, and where the choice is between those two forums the statutory choice favours the High Court. Section 15 of the Code of Civil Procedure, 1908, does not govern that choice. The Court relied on Bharat Aluminium Company v. Kaiser Aluminium Technical Services Inc. (2012) 9 SCC 559 concerning the jurisdictional role of the arbitration seat and party autonomy under Section 20 of the Arbitration Act.",
+      "rule": {
+        "if": "arbitration_award_challenge and high_court_original_jurisdiction and district_principal_court_jurisdiction",
+        "then": "high_court_is_the_proper_forum"
+      },
+      "predicates": {
+        "arbitration_award_challenge": "A party brought a proceeding to challenge an arbitral award.",
+        "high_court_original_jurisdiction": "The High Court had ordinary original civil jurisdiction over the dispute.",
+        "district_principal_court_jurisdiction": "The district’s principal civil court also had jurisdiction over the dispute."
+      },
+      "definition": "If an arbitral award is challenged and both the High Court exercising ordinary original civil jurisdiction and the district principal civil court have jurisdiction, the High Court is the proper forum."
+    },
+    {
+      "legal_issue": "The location of works on immovable property does not make the special territorial rule for claims concerning immovable property applicable to a contractual payment dispute that asserts no right to or interest in that property.",
+      "material_facts": [
+        "The dispute concerned payments and other relief arising from a construction contract and supplementary agreement.",
+        "Neither party sought recovery of immovable property, partition, mortgage relief, determination of a right to or interest in immovable property, compensation for wrong to immovable property, or recovery of attached movable property.",
+        "The works and toll collection site were located in the district, but the claims did not assert a proprietary right in the site."
+      ],
+      "conclusion": "The special territorial rule concerning specified claims involving property did not apply, so the location of the works did not oust the High Court’s jurisdiction.",
+      "legal_principle": "Section 16 of the Code of Civil Procedure, 1908, applies to the categories of proceedings it specifies, including proceedings to determine a right to or interest in immovable property. A contractual claim for payments, without a claim to an interest in immovable property or another specified form of relief, does not fall within those categories.",
+      "rule": {
+        "if": "arbitration_award_challenge and contractual_payment_dispute and not claim_to_immovable_property_right",
+        "then": "property_location_does_not_control_forum"
+      },
+      "predicates": {
+        "arbitration_award_challenge": "A party brought a proceeding to challenge an arbitral award.",
+        "contractual_payment_dispute": "The dispute concerned payment or other contractual relief arising from an agreement.",
+        "claim_to_immovable_property_right": "A party sought to establish or enforce a right to or interest in immovable property."
+      },
+      "definition": "If an arbitral award challenge concerns contractual payment and no party claims a right to or interest in immovable property, the location of the property does not control the forum."
+    },
+    {
+      "legal_issue": "Challenges arising from the same arbitration agreement, proceedings, or award should be adjudicated by one court even when the parties file in different courts on the same day, and where the competing forums are a High Court exercising ordinary original civil jurisdiction and a district principal civil court, the High Court should hear them.",
+      "material_facts": [
+        "The parties filed challenges to the same arbitral award in different courts on the same day.",
+        "Each court was asserted to have jurisdiction over a challenge to the award.",
+        "Because the filings were simultaneous, the first-application mechanism in Section 42 did not determine which court should hear the disputes.",
+        "Having considered the statutory choice between the two courts, the Court directed the district proceedings to be transferred to the High Court for hearing with the other challenge."
+      ],
+      "conclusion": "All proceedings challenging the same award were to be heard and disposed of by the High Court, and the district proceedings were to be transferred there.",
+      "legal_principle": "Section 42 of the Arbitration and Conciliation Act, 1996, ordinarily gives exclusive jurisdiction to the court in which the first application concerning an arbitration agreement is made. It did not resolve which court should proceed where applications were filed simultaneously. Its legislative intent—that disputes arising from the same arbitration agreement, arbitral proceedings, or award be heard by one court—nevertheless supported a single forum. The choice between the High Court exercising ordinary original civil jurisdiction and the district principal civil court is governed by Section 2(1)(e), which favours the High Court.",
+      "rule": {
+        "if": "arbitration_award_challenge and parallel_challenges_to_same_award and filed_simultaneously and high_court_original_jurisdiction and district_principal_court_jurisdiction",
+        "then": "all_challenges_are_heard_by_the_high_court"
+      },
+      "predicates": {
+        "arbitration_award_challenge": "A party brought a proceeding to challenge an arbitral award.",
+        "parallel_challenges_to_same_award": "Different parties brought challenges arising from the same arbitral award.",
+        "filed_simultaneously": "The competing challenges were filed at the same time, so neither preceded the other.",
+        "high_court_original_jurisdiction": "The High Court had ordinary original civil jurisdiction over the dispute.",
+        "district_principal_court_jurisdiction": "The district’s principal civil court also had jurisdiction over the dispute."
+      },
+      "definition": "If simultaneous challenges to the same award are filed in two courts that both have jurisdiction, including a High Court with ordinary original civil jurisdiction and a district principal civil court, all challenges are heard by the High Court."
+    },
+    {
+      "legal_issue": "A party that expressly acknowledged that both competing courts had jurisdiction could not later contend that the High Court lacked jurisdiction over the same dispute.",
+      "material_facts": [
+        "In a written response to the transfer application, the State acknowledged that both the High Court and the district court had jurisdiction under the statutory definition of “Court.”",
+        "The High Court recorded that the parties had admitted that both courts had jurisdiction over the subject matter.",
+        "The State later challenged the High Court’s jurisdiction before the Supreme Court."
+      ],
+      "conclusion": "The State could not raise before the Supreme Court the contention that the High Court lacked jurisdiction, having acknowledged that both courts had jurisdiction.",
+      "legal_principle": "The Court treated the party’s written acknowledgment and the High Court’s record of the parties’ admission as preventing that party from advancing the contrary jurisdictional contention on appeal. The Court also independently considered the jurisdictional issue on its merits under Section 2(1)(e) of the Arbitration and Conciliation Act, 1996.",
+      "rule": {
+        "if": "appeal_concerning_forum and party_admitted_both_courts_had_jurisdiction",
+        "then": "party_cannot_contest_admitted_high_court_jurisdiction"
+      },
+      "predicates": {
+        "appeal_concerning_forum": "A party appealed a decision about which court should hear a dispute.",
+        "party_admitted_both_courts_had_jurisdiction": "The party expressly acknowledged in the proceedings that both competing courts had jurisdiction over the dispute."
+      },
+      "definition": "If a party appeals a forum decision after acknowledging that both courts had jurisdiction, that party cannot contest the High Court’s admitted jurisdiction on appeal."
+    }
+  ],
+  "seconds": 18.7
+}

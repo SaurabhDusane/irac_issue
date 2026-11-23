@@ -1,0 +1,99 @@
+{
+  "doc_id": "156545202",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30733,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2859,
+    "prompt_tokens": 8023,
+    "total_tokens": 10882,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Rectification of an instrument is available only when fraud or mutual mistake caused it not to express the parties’ real intention, the relief is specifically claimed, and the claimant is a party to the instrument.",
+      "material_facts": [
+        "The original settlement deeds were executed by the father, who transferred the two properties to his children.",
+        "The children’s agreement described a mistake in the father’s settlement deeds and contemplated rectifying them, rather than exchanging the properties.",
+        "The father was alive when the suits were filed but was not examined, and the children did not establish that he had made a mistake or that fraud had caused the deeds not to express the parties’ intention."
+      ],
+      "conclusion": "The children could not obtain rectification of the father’s settlement deeds; that relief was available only to a party to those deeds, and the requirements for rectification were not established.",
+      "legal_principle": "Section 26 of the Specific Relief Act, 1963, applies only where fraud or mutual mistake is pleaded and proved to have prevented an instrument from expressing the parties’ real intention, and the relief is specifically claimed. As held in Subhadra v. Thankam and State of Karnataka v. K. K. Mohandas, the provision has limited application. Rectification may be sought only by parties to the instrument.",
+      "rule": {
+        "if": "rectification_claim and (claimant_not_party_to_instrument or not fraud_or_mutual_mistake_proved or not relief_specifically_claimed)",
+        "then": "rectification_relief_unavailable"
+      },
+      "predicates": {
+        "rectification_claim": "A claimant asks a court to correct a written instrument because it allegedly fails to express the parties’ real intention.",
+        "claimant_not_party_to_instrument": "The person seeking correction was not a party to the instrument that is to be corrected.",
+        "fraud_or_mutual_mistake_proved": "The claimant proves that fraud or a mutual mistake caused the instrument not to express the parties’ real intention.",
+        "relief_specifically_claimed": "The claimant specifically asks the court for rectification."
+      },
+      "definition": "When rectification is sought, it is unavailable if the claimant was not a party to the instrument, fraud or mutual mistake is not proved, or rectification was not specifically claimed."
+    },
+    {
+      "legal_issue": "A transaction is induced by undue influence when a party in a position to dominate another’s will uses that position to obtain an unfair advantage, with the burden shifting to the benefiting party if the transaction is unconscionable.",
+      "material_facts": [
+        "The daughter was unmarried and dependent on her father and brother for support and for settling her marriage when she signed the disputed document.",
+        "The document would have transferred the larger property to the brother and the smaller property to the sister.",
+        "The document had suspicious and unexplained circumstances, including that its attesting witnesses and scribe were not examined.",
+        "The brother did not establish that the sister had signed the document freely and voluntarily."
+      ],
+      "conclusion": "The High Court correctly treated the transaction as unconscionable and concluded that the document had been obtained through undue influence.",
+      "legal_principle": "Section 16 of the Contract Act, 1872, requires proof that one party was in a position to dominate the will of another and used that position to obtain an unfair advantage. If the benefiting party occupied that position and the transaction was unconscionable, the burden shifts to that party to show that the transaction was not induced by undue influence. The Court relied on Bishundeo Narain v. Seogeni Rai, Poosathurai v. Kannappa Chettiar, Ladli Prashad Jaiswal v. Karnal Distillery Co., Subhash Chandra Das Mushib v. Ganga Prasad Das Mushib, Afsar Shaikh v. Soleman Bibi, and Raghunath Prasad v. Sarju Prasad. Mere relationship or old age alone does not establish undue influence.",
+      "rule": {
+        "if": "challenged_transaction_case and beneficiary_dominated_other_party and transaction_unconscionable and not beneficiary_proved_free_consent",
+        "then": "challenged_transaction_is_ineffective_for_undue_influence"
+      },
+      "predicates": {
+        "challenged_transaction_case": "A party asks a court to uphold or set aside a transaction alleged to have been procured through undue influence.",
+        "beneficiary_dominated_other_party": "The party benefiting from the transaction was in a position to dominate the other party’s will and used that position to obtain an advantage.",
+        "transaction_unconscionable": "The transaction was unconscionable in the circumstances.",
+        "beneficiary_proved_free_consent": "The benefiting party proved that the transaction was not induced by undue influence."
+      },
+      "definition": "In a challenged-transaction case, an unconscionable transaction is ineffective for undue influence when the beneficiary dominated the other party’s will and did not prove free consent."
+    },
+    {
+      "legal_issue": "A document’s admissibility does not establish the truth of its contents, which must still be proved.",
+      "material_facts": [
+        "The High Court held that the disputed agreement could not be relied on because it was unregistered.",
+        "The Supreme Court considered that view potentially incorrect, but the party relying on the agreement did not examine its attesting witnesses or prove its contents."
+      ],
+      "conclusion": "The High Court’s view that the document could not be relied on merely because it was unregistered might not be legally correct, but the document’s admissibility did not establish its contents, which remained unproved.",
+      "legal_principle": "Admissibility and probative value are distinct: an admissible document may have little or no probative value, and its contents must be proved. The Court relied on State of Bihar v. Radha Krishna Singh, Madan Mohan Singh v. Rajni Kant, H. Siddiqui v. A. Ramalingam, and Laxmibai v. Bhagwantbuva.",
+      "rule": {
+        "if": "civil_case_relying_on_document and document_admissible and not document_contents_proved",
+        "then": "admissibility_alone_does_not_establish_document_contents"
+      },
+      "predicates": {
+        "civil_case_relying_on_document": "A party in a civil case relies on a document to establish a claim or defence.",
+        "document_admissible": "The court permits the document to be received in evidence.",
+        "document_contents_proved": "The party relying on the document establishes the truth of its contents."
+      },
+      "definition": "In a civil case relying on a document, admissibility alone does not establish its contents when those contents have not been proved."
+    },
+    {
+      "legal_issue": "The party who relies on a disputed document must prove its execution; the opposing party need not prove that it was forged.",
+      "material_facts": [
+        "The brother relied on the disputed agreement to support his claim.",
+        "The sister denied the agreement and alleged that it was forged or that she had signed blank stamp papers under undue influence.",
+        "The brother did not examine the agreement’s attesting witnesses or its scribe to prove its execution."
+      ],
+      "conclusion": "The burden rested on the brother, as the party relying on the agreement, to prove its execution; the trial court had wrongly shifted that burden to the sister.",
+      "legal_principle": "The party who propounds a disputed document must prove its execution, rather than requiring the party denying it to prove forgery. The Court relied on Thiruvengada Pillai v. Navaneethammal. Where fraud, misrepresentation, or undue influence is alleged, the burden generally rests on the alleging party, subject to the shift where a fiduciary or dominant party is required to establish good faith and fair dealing, as described in Krishna Mohan Kul v. Pratima Maity.",
+      "rule": {
+        "if": "civil_case_relying_on_disputed_document and execution_denied",
+        "then": "relying_party_must_prove_execution"
+      },
+      "predicates": {
+        "civil_case_relying_on_disputed_document": "A party in a civil case relies on a document whose execution is disputed.",
+        "execution_denied": "The opposing party denies having executed the document."
+      },
+      "definition": "When execution of a document relied on in a civil case is denied, the party relying on it must prove its execution."
+    }
+  ],
+  "seconds": 17.8
+}

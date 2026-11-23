@@ -1,0 +1,114 @@
+{
+  "doc_id": "608068",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24247,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2806,
+    "prompt_tokens": 6450,
+    "total_tokens": 9256,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A conditional restoration order that provides for loss of the restoration benefit upon failure to make the required initial payment is final rather than interlocutory.",
+      "material_facts": [
+        "The restoration order granted restoration subject to payment of compensation in instalments and expressly stated that failure to pay the first instalment within the specified time would cause the applicant to lose the benefit of the order.",
+        "The applicant did not make the first payment within the specified time."
+      ],
+      "conclusion": "The conditional order was a final order; no further order was needed to dispose of the restoration application after the payment default.",
+      "legal_principle": "Under sections 7 and 13 of the Kosi Area (Restoration of Lands to Raiyats) Act, 1951, the Collector determines restoration and payment terms, and the Collector’s order is final subject to appeal under section 16. A conditional order is not necessarily interlocutory; its express provision that the benefit would be lost on default gave it finality.",
+      "rule": {
+        "if": "restoration_proceeding and conditional_restoration_grant and payment_default_ends_benefit",
+        "then": "conditional_restoration_order_is_final"
+      },
+      "predicates": {
+        "restoration_proceeding": "An applicant sought restoration of land through an administrative restoration proceeding.",
+        "conditional_restoration_grant": "The decision-maker granted restoration on the condition that the applicant make a required payment.",
+        "payment_default_ends_benefit": "The order stated that the applicant would lose the restoration benefit if the required payment was not made on time."
+      },
+      "definition": "When a restoration proceeding results in a conditional grant whose terms make payment default end the benefit, the order is final."
+    },
+    {
+      "legal_issue": "A party cannot claim as of right that time spent pursuing other remedies must be excluded when assessing compliance with a payment deadline.",
+      "material_facts": [
+        "After the restoration order, the applicant pursued an appeal, a revision that was not provided for by the Act, and a further appeal.",
+        "The applicant later relied on the time spent pursuing those remedies to seek more time to make the payment required by the original order."
+      ],
+      "conclusion": "The time spent pursuing those remedies could not be excluded as a matter of right.",
+      "legal_principle": "The principle that a court’s action should not prejudice a party did not apply in this context. Remedies pursued after the order were steps taken by the applicant at the applicant’s own risk, and there was no right to exclude the time spent on those proceedings.",
+      "rule": {
+        "if": "restoration_payment_proceeding and applicant_pursued_other_remedies_after_order",
+        "then": "time_spent_on_other_remedies_not_excluded_as_of_right"
+      },
+      "predicates": {
+        "restoration_payment_proceeding": "A party sought relief concerning payment required by an order in a land-restoration proceeding.",
+        "applicant_pursued_other_remedies_after_order": "After the payment order, the applicant pursued other legal proceedings or remedies."
+      },
+      "definition": "When a party seeks relief concerning payment under a restoration order after pursuing other remedies, the time spent pursuing those remedies is not excluded as of right."
+    },
+    {
+      "legal_issue": "The statutory power to condone delay in an appeal or application does not apply to an application made to a non-court authority where no time limit is prescribed for that application.",
+      "material_facts": [
+        "The applicant asked an officer exercising Collector functions to extend the time for payment fixed by an earlier order.",
+        "The officer was not a court, and no time limit was prescribed for the type of application made."
+      ],
+      "conclusion": "Section 5 of the Limitation Act, 1963, could not be invoked to condone delay on that application.",
+      "legal_principle": "Section 5 of the Limitation Act, 1963, permits an appeal or application to be admitted after the prescribed period if sufficient cause is shown. It did not apply because the decision-maker was not a court and the application had no prescribed time limit capable of extension.",
+      "rule": {
+        "if": "delay_condonation_application and recipient_is_not_a_court and no_prescribed_time_limit_for_application",
+        "then": "statutory_delay_condonation_unavailable"
+      },
+      "predicates": {
+        "delay_condonation_application": "A party asked for more time to comply with an earlier order.",
+        "recipient_is_not_a_court": "The application was made to an administrative officer rather than a court.",
+        "no_prescribed_time_limit_for_application": "No time limit was prescribed for making that type of application."
+      },
+      "definition": "When a party seeks more time from a non-court authority under a procedure with no prescribed filing limit, statutory delay condonation is unavailable."
+    },
+    {
+      "legal_issue": "A fresh application for the same restoration subject matter cannot be made successively after a final order has disposed of the earlier application.",
+      "material_facts": [
+        "The original restoration order specified the payment terms and stated that failure to make the first payment would result in loss of the restoration benefit.",
+        "After failing to make that payment, the applicant pursued other remedies and later applied to pay the entire amount in a lump sum.",
+        "The later application sought a different payment arrangement for the same restoration subject matter, rather than merely an extension of time to pay instalments.",
+        "The Collector’s order was subject to appeal, and the Act provided for finality of orders after the appeal process."
+      ],
+      "conclusion": "The later application was a fresh application concerning the same subject matter, and successive applications were not permitted; the appellate authority was right to dismiss it.",
+      "legal_principle": "Sections 3, 13 and 16 of the Kosi Area (Restoration of Lands to Raiyats) Act, 1951, provide for restoration proceedings and finality of the Collector’s orders subject to appeal. Permitting successive applications under section 3 would undermine that finality and cause uncertainty and confusion. The general principles that litigation should reach finality and that a person should not be vexed twice for the same cause were supported by Daryao v. State of U.P. and Burn & Co. v. Their Employees.",
+      "rule": {
+        "if": "restoration_application_proceeding and earlier_application_disposed_by_final_order and later_application_same_subject_matter",
+        "then": "successive_restoration_application_not_maintainable"
+      },
+      "predicates": {
+        "restoration_application_proceeding": "A party sought restoration of land through an administrative restoration proceeding.",
+        "earlier_application_disposed_by_final_order": "An earlier application concerning the restoration had been disposed of by a final order, subject to any available appeal.",
+        "later_application_same_subject_matter": "The party later made another application seeking relief concerning the same land-restoration subject matter."
+      },
+      "definition": "When a final order has disposed of a restoration application, a later application concerning the same subject matter is not maintainable as a successive application."
+    },
+    {
+      "legal_issue": "A subordinate administrative officer must give effect to a binding appellate order staying further proceedings.",
+      "material_facts": [
+        "An appellate authority admitted an appeal and stayed further proceedings, including restoration of possession.",
+        "The subordinate officer’s office received the stay order, but the officer later directed steps to deliver possession and did not recall or stay that direction after noting the appellate order."
+      ],
+      "conclusion": "The appellate stay was binding on the subordinate officer, who should have given effect to it; the officer’s conduct in disregarding it was condemned.",
+      "legal_principle": "An appellate authority’s binding order must be given effect by the subordinate officer subject to its authority. The Court stated that the officer had no authority to dismiss the stay order as having been obtained on an untrue representation.",
+      "rule": {
+        "if": "restoration_appeal_proceeding and appellate_authority_issued_stay and subordinate_officer_received_stay",
+        "then": "subordinate_officer_must_honor_binding_stay"
+      },
+      "predicates": {
+        "restoration_appeal_proceeding": "An appeal was pending in a land-restoration matter before an appellate authority.",
+        "appellate_authority_issued_stay": "The appellate authority ordered that further proceedings be stayed.",
+        "subordinate_officer_received_stay": "The subordinate officer received the appellate authority’s stay order."
+      },
+      "definition": "When a stay is issued in a restoration appeal and received by a subordinate officer, the officer must honor the binding stay."
+    }
+  ],
+  "seconds": 17.6
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "112030488",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32085,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2527,
+    "prompt_tokens": 8835,
+    "total_tokens": 11362,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A plaint may be rejected at the threshold when a meaningful reading of its averments shows that it discloses no right to sue or that the suit is barred by law.",
+      "material_facts": [
+        "The defendants applied during the suit for rejection of the plaint.",
+        "The plaintiff alleged that the disputed property was Wakf property and sought cancellation of a sale deed.",
+        "The courts below found that the property was not included in the published list of Wakf properties, and the Supreme Court assessed the plaint on that basis."
+      ],
+      "conclusion": "The plaint was liable to be rejected because its averments disclosed no cause of action and the suit was barred by law.",
+      "legal_principle": "Under Order VII Rule 11 of the Code of Civil Procedure, the court must read the plaint as a whole and consider its averments alone; the written statement and the defendant’s contentions are immaterial. Even if the plaint’s allegations are accepted as true, rejection is proper if they disclose no cause of action or show that the suit is barred by law. Because rejection terminates a civil action at the threshold, the statutory conditions must be strictly applied; clever drafting cannot create an illusion of a cause of action.",
+      "rule": {
+        "if": "plaint_rejection_application and (plaint_allegations_disclose_no_suable_right or plaint_allegations_show_legal_bar)",
+        "then": "plaint_rejected_at_threshold"
+      },
+      "predicates": {
+        "plaint_rejection_application": "A defendant applied to have the plaint rejected during the civil suit.",
+        "plaint_allegations_disclose_no_suable_right": "The plaint’s allegations, read as a whole and taken at face value, disclose no right to sue.",
+        "plaint_allegations_show_legal_bar": "The plaint’s allegations, read as a whole and taken at face value, show that the suit is barred by law."
+      },
+      "definition": "When a defendant seeks rejection of a plaint and its allegations disclose no suable right or show a legal bar, the plaint is rejected at the threshold."
+    },
+    {
+      "legal_issue": "A survey report cannot sustain a claim that property is Wakf property when the property was omitted from the published list, and a challenge to that omission cannot be raised after the applicable challenge period has passed.",
+      "material_facts": [
+        "The plaintiff relied on a published list that did not include the disputed property, although the plaintiff alleged that the survey report identified it as Wakf property.",
+        "The Tribunal and the High Court found that the property was not included in the published list.",
+        "The plaintiff’s suit challenged the non-inclusion many years after publication of the list.",
+        "The Wakf Board had not used its power to investigate and decide whether the omitted property was Wakf property."
+      ],
+      "conclusion": "The survey report could not reopen the published list, and the late challenge to the property’s non-inclusion did not disclose a cause of action; the suit was also barred by law.",
+      "legal_principle": "Under Sections 4 and 5 of the Wakf Act, 1954, and the corresponding provisions of the Waqf Act, 1995, the survey report precedes examination and publication of the list in the Official Gazette; the survey report merges into the published notification. Under Sections 6 and 7 of the 1995 Act and the corresponding provisions of the 1954 Act, a dispute about a property specified in the list must be raised in the prescribed forum within the applicable period, after which the list is final and conclusive unless modified through that process. Sections 27 of the 1954 Act and 40 of the 1995 Act provide a means for the Board to investigate a property omitted from the list. The Court relied on T.N. Wakf Board v. Hathija Ammal, (2001) 8 SCC 528, for the Board’s role in acting where property has been omitted.",
+      "rule": {
+        "if": "wakf_property_suit and property_absent_from_published_list and omission_challenged_after_applicable_period and board_did_not_investigate_omission",
+        "then": "late_omission_challenge_does_not_disclose_cause_and_suit_is_barred"
+      },
+      "predicates": {
+        "wakf_property_suit": "A plaintiff brought a suit asserting that disputed property was Wakf property.",
+        "property_absent_from_published_list": "The disputed property was not included in the official published list of Wakf properties.",
+        "omission_challenged_after_applicable_period": "The plaintiff challenged the property’s non-inclusion after the period for challenging the published list had passed.",
+        "board_did_not_investigate_omission": "The Board did not investigate and decide whether the omitted property was Wakf property."
+      },
+      "definition": "In a suit asserting that property is Wakf property, if the property is absent from the published list, the challenge to that omission is late, and the Board did not investigate it, the late challenge discloses no cause of action and the suit is barred."
+    },
+    {
+      "legal_issue": "A later statutory requirement for completing a survey does not apply to cure an omission where the relevant survey had already been completed before that requirement took effect.",
+      "material_facts": [
+        "The survey of Wakf properties had been conducted before the later statutory requirement for completing a survey took effect.",
+        "The list based on that survey had been published, and the plaintiff relied on the later requirement to support reconsideration of the omission."
+      ],
+      "conclusion": "The later survey requirement did not assist the plaintiff because a survey had already been conducted before it took effect.",
+      "legal_principle": "Section 4(1A) of the Waqf Act, 1995, inserted by the Wakf (Amendment) Act, 2013, requires a survey to be completed where such a survey had not been done before the amendment commenced; it does not apply where the survey was already completed.",
+      "rule": {
+        "if": "wakf_property_suit and later_survey_requirement_invoked and relevant_survey_completed_before_requirement_started",
+        "then": "later_survey_requirement_does_not_apply"
+      },
+      "predicates": {
+        "wakf_property_suit": "A plaintiff brought a suit asserting that disputed property was Wakf property.",
+        "later_survey_requirement_invoked": "A party relied on a later requirement to complete a survey to seek reconsideration of the property’s status or omission.",
+        "relevant_survey_completed_before_requirement_started": "The survey relevant to the property had been completed before the later survey requirement took effect."
+      },
+      "definition": "In a suit asserting that property is Wakf property, reliance on a later survey requirement does not help where the relevant survey was already completed before that requirement took effect."
+    }
+  ],
+  "seconds": 16.9
+}

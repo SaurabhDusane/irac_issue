@@ -1,0 +1,103 @@
+{
+  "doc_id": "329158",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 49479,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3245,
+    "prompt_tokens": 12969,
+    "total_tokens": 16214,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A claim to recover a housing-society flat from an occupant whose asserted status is that of a licensee, rather than a tenant, is not excluded from the cooperative forum merely because rent legislation gives certain courts exclusive jurisdiction over landlord–tenant disputes.",
+      "material_facts": [
+        "The flat was held by a member of a tenant co-partnership housing society, which retained ownership and let flats to its members.",
+        "The member permitted the occupant to use the flat under a leave-and-licence agreement, and the society accepted the occupant as a nominal member.",
+        "The member alleged that the parties were licensor and licensee, and the agreement supported that characterization.",
+        "The licence was terminated and the occupant remained in possession.",
+        "In an earlier suit, the occupant’s claim to be a tenant was rejected, and that determination was not open to relitigation."
+      ],
+      "conclusion": "The rent legislation did not bar the proceedings before the cooperative forum; because the parties did not stand in the relationship of landlord and tenant, the dispute was governed by the cooperative-society legislation.",
+      "legal_principle": "The exclusive jurisdiction conferred by section 28 of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 concerns claims arising between parties who have or had a landlord–tenant relationship; it does not confer exclusive jurisdiction over title or possession disputes involving a licensee or trespasser. The two enactments operate in distinct fields and should be harmonised by applying rent legislation to matters it covers. Jurisdiction is assessed on the claimant’s pleaded allegations, taken as true when the objection is in the nature of a demurrer, and the occupant bears the burden of establishing tenant status under section 5(11). The Court applied section 91(1) of the Maharashtra Cooperative Societies Act, 1960 and distinguished Deccan Merchants Cooperative Bank Ltd. v. M/s. Dalichand Jugraj Jain & Ors.; the earlier determination of the occupant’s status was also treated as res judicata under section 11 of the Code of Civil Procedure, 1908.",
+      "rule": {
+        "if": "cooperative_ejectment_proceeding and claimant_pleads_license_relationship and occupant_fails_to_establish_tenant_status",
+        "then": "cooperative_forum_has_jurisdiction"
+      },
+      "predicates": {
+        "cooperative_ejectment_proceeding": "A housing society or its member brings a proceeding to recover a flat from an occupant.",
+        "claimant_pleads_license_relationship": "The claimant alleges that the occupant entered under a licence rather than as a tenant.",
+        "occupant_fails_to_establish_tenant_status": "The occupant does not establish a landlord–tenant relationship that brings the dispute within rent legislation."
+      },
+      "definition": "When a housing-society ejectment proceeding concerns an occupant alleged to be a licensee who fails to establish tenant status, the cooperative forum has jurisdiction."
+    },
+    {
+      "legal_issue": "A licensee whose licence was no longer subsisting at the statutory qualifying date did not acquire deemed tenancy or rent-law protection under the statutory provisions for qualifying licensees.",
+      "material_facts": [
+        "The occupant’s leave-and-licence agreement had been terminated years before the statutory qualifying date.",
+        "The occupant was not in occupation under a subsisting licence on that qualifying date.",
+        "The occupant’s earlier suit asserting tenant status had been dismissed, and the finding that the occupant was a licensee operated as res judicata."
+      ],
+      "conclusion": "The occupant did not acquire deemed-tenant status under section 15A and was not protected by the Rent Act.",
+      "legal_principle": "Sections 5(4A) and 15A of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 require that a licensee be in occupation under a subsisting licence on the statutory qualifying date for the legal fiction of tenancy to apply. A qualifying licensee in premises of a cooperative housing society is deemed to be a tenant and may invoke the Act, including the forum provisions in section 28; a person whose licence was already terminated does not qualify. The Court also relied on section 11 of the Code of Civil Procedure, 1908 for the binding effect of the earlier determination that the occupant was a licensee, not a tenant.",
+      "rule": {
+        "if": "licensee_protection_proceeding and licence_ended_before_qualifying_date and no_subsisting_licence_at_qualifying_date",
+        "then": "no_deemed_tenancy_or_rent_law_protection"
+      },
+      "predicates": {
+        "licensee_protection_proceeding": "An occupant claims statutory protection on the basis of having occupied premises as a licensee.",
+        "licence_ended_before_qualifying_date": "The occupant’s licence had ended before the date on which the statute requires qualifying occupation.",
+        "no_subsisting_licence_at_qualifying_date": "The occupant was not in occupation under a continuing licence on the statutory qualifying date."
+      },
+      "definition": "If an occupant seeking licensee protection had no subsisting licence on the qualifying date because the licence had already ended, the occupant does not obtain deemed tenancy or rent-law protection."
+    },
+    {
+      "legal_issue": "A housing society’s claim, joined with that of its member, to recover a flat from a former licensee whose permission to occupy has ended is a dispute touching the society’s business when providing member housing is its business and the society retains the relevant housing interest.",
+      "material_facts": [
+        "The society was a tenant co-partnership housing society formed to provide residential accommodation to its members and retained ownership of the flat.",
+        "The member held the flat as a tenant-member under the society’s governing arrangements and could permit temporary occupation only in accordance with the society’s rules.",
+        "The occupant was admitted as a nominal member for the purpose of occupying the flat under a licence.",
+        "After the licence ended, the occupant remained in the flat without authorization, and the society joined the member’s claim for possession."
+      ],
+      "conclusion": "The joint claim for ejectment was a dispute touching the business of the society within section 91(1) of the Maharashtra Cooperative Societies Act, 1960.",
+      "legal_principle": "The expression “business of a society” in section 91(1) refers to the society’s actual trading, commercial, or similar activity authorized by its governing framework, as explained in Deccan Merchants Cooperative Bank Ltd. v. M/s. Dalichand Jugraj Jain & Ors. The society’s business must be identified by its objects and ordinary activities. For a tenant co-partnership housing society formed to provide homes to members, ensuring that a society-owned flat remains occupied in accordance with the society’s rules, including removing an unauthorized occupant after a licence ends, touches that business. Deccan Merchants was distinguishable because it concerned a cooperative bank and a dispute not between the society and a member or a person claiming through a member. Sabharwal Brothers v. Smt. Guna Amrit Thandani was also distinguished because the society there had sold the flat rather than letting it to the member under the applicable housing arrangements. Where a landlord–tenant relationship brings the matter within rent legislation, that legislation governs instead.",
+      "rule": {
+        "if": "cooperative_dispute_proceeding and housing_society_business_is_member_accommodation and society_retains_interest_in_flat and occupant_entered_as_nominal_member_under_licence and licence_ended_and_occupant_remained",
+        "then": "ejectment_dispute_touches_society_business"
+      },
+      "predicates": {
+        "cooperative_dispute_proceeding": "A claim is brought through the cooperative dispute-resolution process for possession of a housing unit.",
+        "housing_society_business_is_member_accommodation": "The society’s object and ordinary activity include providing housing accommodation to its members.",
+        "society_retains_interest_in_flat": "The society retains ownership or a comparable housing interest in the flat rather than having sold it outright.",
+        "occupant_entered_as_nominal_member_under_licence": "The society admitted the occupant as a nominal member so the occupant could use the member’s flat under a licence.",
+        "licence_ended_and_occupant_remained": "The permission to occupy ended, but the occupant continued to remain in the flat."
+      },
+      "definition": "When a housing society whose business is member accommodation retains an interest in a flat occupied by a nominal member under a licence, and the occupant remains after the licence ends, the ejectment dispute touches the society’s business."
+    },
+    {
+      "legal_issue": "A housing society with a direct interest in preventing unauthorized occupation of a society-owned flat may be joined as a co-disputant in the possession proceeding, and an order allowing that joinder cannot be reopened after it has become final.",
+      "material_facts": [
+        "The society retained an interest in the flat and was concerned that a stranger should not remain in unauthorized occupation after the licence ended.",
+        "The society was permitted by the cooperative tribunal to be transposed as a co-disputant.",
+        "The occupant challenged that order unsuccessfully, and the High Court’s decision was not further challenged, leaving the transposition order final."
+      ],
+      "conclusion": "The society was properly joined as a co-disputant, and the occupant could not reopen the final order permitting its transposition.",
+      "legal_principle": "The society’s direct interest in ensuring that its housing stock is occupied in accordance with its rules supported its participation as a co-disputant in the proceeding. The Court treated the order permitting transposition, after it had been unsuccessfully challenged and left unappealed, as final; it also considered the joinder a proper course for doing complete justice between the parties.",
+      "rule": {
+        "if": "cooperative_possession_proceeding and society_has_direct_interest_in_authorized_occupation and joinder_order_upheld_and_left_unchallenged",
+        "then": "society_may_remain_co_disputant_and_joinder_cannot_be_reopened"
+      },
+      "predicates": {
+        "cooperative_possession_proceeding": "A proceeding is brought through the cooperative process to recover possession of a housing unit.",
+        "society_has_direct_interest_in_authorized_occupation": "The society has a direct interest in ensuring that its housing unit is occupied in accordance with its governing rules.",
+        "joinder_order_upheld_and_left_unchallenged": "An order joining the society as a co-disputant was upheld and was not further challenged."
+      },
+      "definition": "When a society has a direct interest in authorized occupation and its joinder order has been upheld and left unchallenged, the society may remain a co-disputant and the joinder cannot be reopened."
+    }
+  ],
+  "seconds": 19.1
+}

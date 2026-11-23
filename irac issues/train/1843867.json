@@ -1,0 +1,97 @@
+{
+  "doc_id": "1843867",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22255,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2300,
+    "prompt_tokens": 5891,
+    "total_tokens": 8191,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appeal challenging orders admitting a claim may include an earlier order admitting the claim even when the appeal identifies a later order and does not state the earlier order’s date.",
+      "material_facts": [
+        "The forest authority’s appeal identified a later order that recorded that the claim had already been admitted.",
+        "The appeal sought to set aside the Forest Settlement Officer’s “orders” admitting the claim, although the later order did not itself admit the claim.",
+        "The date of the earlier order admitting the claim was not specified in the appeal."
+      ],
+      "conclusion": "The appeal was directed against both orders, including the earlier order admitting the claim.",
+      "legal_principle": "The scope of an appeal is determined from the appeal petition as a whole, including the relief sought. Here, the plural reference to orders admitting the claim showed that the appeal also challenged the earlier order under Section 11 of the Indian Forest Act, 1927; the later order was not itself an appealable order under Section 17.",
+      "rule": {
+        "if": "forest_claim_appeal and appeal_prayer_challenges_orders_admitting_claim and later_order_did_not_admit_claim",
+        "then": "appeal_includes_earlier_admission_order"
+      },
+      "predicates": {
+        "forest_claim_appeal": "A party brought an appeal from an adjudication of a claim concerning rights in forest land.",
+        "appeal_prayer_challenges_orders_admitting_claim": "The appeal sought relief against orders described as admitting a claim.",
+        "later_order_did_not_admit_claim": "A later order mentioned in the appeal recorded or acted on an admission made earlier rather than itself admitting the claim."
+      },
+      "definition": "When an appeal from a forest claim adjudication seeks relief against orders admitting a claim and the later-mentioned order did not itself admit it, the appeal includes the earlier admission order."
+    },
+    {
+      "legal_issue": "When an order affecting a party’s rights is made without notice to that party, the time for appealing runs from actual or constructive communication of the order to that party.",
+      "material_facts": [
+        "The Forest Settlement Officer recorded an order admitting the claimant’s claim when the forest authority was absent and had not been given notice of the order.",
+        "The forest authority learned of the order on a later date and appealed within three months of learning of it.",
+        "The appeal was filed well after three months from the date the order had originally been recorded."
+      ],
+      "conclusion": "For the forest authority, the order was deemed to have been passed when it learned of it, and the appeal was timely on that basis.",
+      "legal_principle": "Section 17 of the Indian Forest Act, 1927 provides an appeal within three months from the date of the order. Where an order affecting rights is made without notice, fair play requires that limitation run from its actual or constructive communication, rather than mechanically from the date it was recorded. The principle of notice is embodied in Order XX, Rule 1 of the Code of Civil Procedure and applies to tribunals exercising judicial or quasi-judicial functions. The Court relied on Raja Harish Chandra Raj Singh v. The Deputy Land Acquisition Officer, which construed “the date of the award” by reference to actual or constructive knowledge. Municipal Board, Pushkar v. State Transport Authority, Rajasthan was distinguished because it did not support the contrary argument in these circumstances.",
+      "rule": {
+        "if": "forest_claim_appeal and rights_affecting_order_made_without_notice and affected_party_learned_of_order_later and appeal_filed_within_limit_after_communication",
+        "then": "appeal_is_timely_from_communication"
+      },
+      "predicates": {
+        "forest_claim_appeal": "A party brought an appeal from an adjudication of a claim concerning rights in forest land.",
+        "rights_affecting_order_made_without_notice": "A tribunal made an order affecting a party’s rights without notifying that party or having that party present.",
+        "affected_party_learned_of_order_later": "The affected party actually or constructively learned of the order after it was made.",
+        "appeal_filed_within_limit_after_communication": "The affected party filed the appeal within the prescribed period after learning of the order."
+      },
+      "definition": "If a forest claim appeal concerns an order made without notice, the affected party learned of it later, and the appeal was filed within the prescribed period after that communication, the appeal is timely from communication."
+    },
+    {
+      "legal_issue": "A party may not use a further appeal to challenge factual findings that the court has declined to reopen.",
+      "material_facts": [
+        "The claimant sought to dispute the appellate tribunal’s factual finding that the claim to rights over the land had no basis.",
+        "The Supreme Court declined to permit that challenge in the appeal before it."
+      ],
+      "conclusion": "The claimant could not question the factual findings in that appeal.",
+      "legal_principle": "The Court declined to reopen the factual findings made by the appellate tribunal in the appeal before it.",
+      "rule": {
+        "if": "further_appeal and party_challenges_lower_appellate_factual_findings",
+        "then": "factual_findings_not_reopened"
+      },
+      "predicates": {
+        "further_appeal": "A party brought a further appeal from a decision made by an appellate tribunal.",
+        "party_challenges_lower_appellate_factual_findings": "The party sought to dispute factual findings made by the lower appellate tribunal."
+      },
+      "definition": "When a party in a further appeal challenges factual findings made by a lower appellate tribunal, those findings are not reopened."
+    },
+    {
+      "legal_issue": "A party may not challenge in a further appeal the validity of a separate revisional order that was not challenged before the High Court.",
+      "material_facts": [
+        "The claimant referred in the writ petition to the State Government’s order rejecting the revision application.",
+        "The writ petition contained no prayer to quash or set aside that revisional order.",
+        "The claimant sought to question the validity of that order in the Supreme Court."
+      ],
+      "conclusion": "The claimant could not raise the validity of the revisional order at that stage.",
+      "legal_principle": "The Court held that the validity of an order not challenged before the High Court could not be questioned for the first time in the further appeal.",
+      "rule": {
+        "if": "further_appeal and separate_order_not_challenged_before_high_court and party_challenges_that_order_for_first_time",
+        "then": "new_challenge_not_entertained"
+      },
+      "predicates": {
+        "further_appeal": "A party brought a further appeal from a decision of the High Court.",
+        "separate_order_not_challenged_before_high_court": "A separate order was mentioned in the proceedings below but no relief was sought to set it aside.",
+        "party_challenges_that_order_for_first_time": "The party sought in the further appeal to contest the validity of that separate order for the first time."
+      },
+      "definition": "If a party first challenges a separate order in a further appeal after seeking no relief against it before the High Court, the new challenge is not entertained."
+    }
+  ],
+  "seconds": 14.7
+}

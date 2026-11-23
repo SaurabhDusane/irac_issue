@@ -1,0 +1,61 @@
+{
+  "doc_id": "973429",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11073,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2182,
+    "prompt_tokens": 3090,
+    "total_tokens": 5272,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may extend the time for a tenant to pay or deposit rent after an eviction suit is instituted, but a late payment does not protect the tenant from eviction unless the court grants an extension.",
+      "material_facts": [
+        "The eviction suits were based on the tenant’s failure to pay rent.",
+        "The tenant deposited the arrears after the statutory initial period had expired, without applying for an extension.",
+        "The tenant did not thereafter pay rent regularly as it fell due.",
+        "The tenant later applied for an extension, and the court rejected the application because the circumstances did not justify extending time."
+      ],
+      "conclusion": "The court had jurisdiction to extend the time on an application, but no basis was shown to exercise that discretion in the tenant’s favour; the decrees for eviction were therefore restored.",
+      "legal_principle": "Under Sections 12(1)(a) and 12(3) of the Madhya Pradesh Accommodation Control Act, 1961, payment within the prescribed demand-notice period prevents an eviction suit on the rent-default ground. Under Section 13(1), after a suit is instituted the tenant must pay or deposit the arrears within one month of service of summons and continue paying rent as it falls due, unless the court allows further time on application. Sections 13(5) and 13(6) provide that compliance prevents a possession decree on the rent-default ground, while failure to pay as required may result in the defence being struck out. A payment made after the initial period assists the tenant only if the court extends the time; extension is discretionary, not automatic. No earlier cases are relied on in deciding this issue.",
+      "rule": {
+        "if": "eviction_for_rent_default and late_initial_payment and not court_extended_deadline",
+        "then": "late_payment_does_not_bar_eviction"
+      },
+      "predicates": {
+        "eviction_for_rent_default": "The proceeding seeks eviction on the ground that the tenant failed to pay rent.",
+        "late_initial_payment": "The tenant paid or deposited the required arrears after the initial payment period had expired.",
+        "court_extended_deadline": "The court granted the tenant additional time to make the required payment or deposit."
+      },
+      "definition": "When an eviction proceeding rests on rent default and the tenant pays late without obtaining additional time from the court, the late payment does not prevent eviction on that ground."
+    },
+    {
+      "legal_issue": "Consolidating separate eviction suits for trial does not justify setting aside decrees on claims unaffected by the error that warrants a new trial on other claims.",
+      "material_facts": [
+        "The landlord had brought separate suits concerning five tenancies.",
+        "The suits were consolidated for trial.",
+        "The appellate court found that further evidence should be allowed concerning two tenancies, but found default and no basis for extending time concerning the other three.",
+        "The appellate court nevertheless set aside the decrees in all five suits and remanded them together."
+      ],
+      "conclusion": "Setting aside the decrees concerning the three tenancies unaffected by the evidentiary issue was erroneous; the High Court correctly restored those decrees.",
+      "legal_principle": "The court treated the claims concerning the separate tenancies as distinct despite their consolidation for trial. An error affecting the decision on some claims did not warrant setting aside decrees on separate claims where that error did not arise. No statutory provision or earlier case is relied on for this conclusion.",
+      "rule": {
+        "if": "consolidated_eviction_suits and distinct_tenancy_claims and error_affects_only_some_claims and appellate_court_sets_aside_unaffected_decrees",
+        "then": "decrees_on_unaffected_claims_must_be_restored"
+      },
+      "predicates": {
+        "consolidated_eviction_suits": "Separate eviction suits were combined for trial and decided together.",
+        "distinct_tenancy_claims": "The suits concerned separate tenancies and distinct claims for possession.",
+        "error_affects_only_some_claims": "The error identified on appeal concerned only some of the tenancy claims.",
+        "appellate_court_sets_aside_unaffected_decrees": "The appellate court set aside decrees on claims that were not affected by the identified error."
+      },
+      "definition": "When separate tenancy claims are tried together but an error affects only some of them, decrees on unaffected claims must be restored if they were set aside on account of that error."
+    }
+  ],
+  "seconds": 75.0
+}

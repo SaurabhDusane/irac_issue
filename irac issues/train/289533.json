@@ -1,0 +1,80 @@
+{
+  "doc_id": "289533",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30386,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2197,
+    "prompt_tokens": 8172,
+    "total_tokens": 10369,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Amendments expressly given retroactive effect must be applied from the date from which they are deemed to operate.",
+      "material_facts": [
+        "The 1965 amending legislation stated that the changes to the tenancy provisions were deemed effective from the commencement of the 1956 amending legislation.",
+        "The dispute concerned whether land was exempt from the tenancy legislation."
+      ],
+      "conclusion": "The amended provisions must be read as having been in force from the commencement of the 1956 amending legislation.",
+      "legal_principle": "The language of sections 7 and 18 of the Gujarat Amendment Act, 1965, gave the amendments to sections 43C and 88(1)(b), including its proviso, retroactive effect from the date the 1956 Amendment Act came into force.",
+      "rule": {
+        "if": "tenancy_exemption_dispute and amendment_declares_earlier_effective_start",
+        "then": "amended_rules_apply_from_original_commencement"
+      },
+      "predicates": {
+        "tenancy_exemption_dispute": "The proceeding concerns whether land is exempt from tenancy legislation.",
+        "amendment_declares_earlier_effective_start": "The amending legislation states that its changes are deemed effective from an earlier commencement date."
+      },
+      "definition": "When an exemption dispute involves an amendment declared effective from an earlier start, the amended rules apply from that original commencement."
+    },
+    {
+      "legal_issue": "A reservation notification does not exempt land added later to a municipal area when the land was outside the relevant area at the statutory cutoff and no fresh notification covers the added land.",
+      "material_facts": [
+        "A reservation notification covered areas within a municipal corporation for non-agricultural or industrial development.",
+        "The disputed agricultural land was outside the municipal corporation when the amended provisions took effect and when the notification was issued.",
+        "The land was later included in the municipal corporation when its limits were enlarged.",
+        "No fresh notification was issued for the subsequently added area."
+      ],
+      "conclusion": "The land in the subsequently added area was not exempt from the tenancy legislation under the existing notification.",
+      "legal_principle": "Under sections 43C and 88(1)(b), as amended by the Gujarat Amendment Act, 1965, and the proviso to section 88(1)(b), the exemption applies to land within the municipal area at the relevant statutory cutoff; later-added land is not covered merely because the municipal limits are enlarged. The Court held Mohanlal Chunilal Kothari v. Tribhovan Haribhai Tamboli and Sidram Narasappa Kamble v. Sholapur Borough Municipality inapplicable because they construed the law before the substantive amendment.",
+      "rule": {
+        "if": "tenancy_exemption_dispute and reservation_notice_exists and land_outside_municipal_area_at_cutoff and land_later_added_to_municipal_area and no_fresh_notice_for_added_land",
+        "then": "existing_notice_does_not_exempt_added_land"
+      },
+      "predicates": {
+        "tenancy_exemption_dispute": "The proceeding concerns whether land is exempt from tenancy legislation.",
+        "reservation_notice_exists": "The government issued a notice reserving a defined area for non-agricultural or industrial development.",
+        "land_outside_municipal_area_at_cutoff": "The land was outside the municipal area at the statutory cutoff relevant to the exemption.",
+        "land_later_added_to_municipal_area": "The land became part of the municipal area only after that cutoff through an enlargement of its limits.",
+        "no_fresh_notice_for_added_land": "The government issued no fresh notice covering the land after it was added to the municipal area."
+      },
+      "definition": "If an existing reservation notice concerns a tenancy exemption dispute but the land was outside the municipal area at the cutoff, was added later, and received no fresh notice, the existing notice does not exempt that land."
+    },
+    {
+      "legal_issue": "A tenant of agricultural land governed by the tenancy legislation on the statutory vesting day becomes its deemed purchaser by operation of law, and the purchase-price inquiry proceeds unless the purchase is rendered ineffective under the legislation.",
+      "material_facts": [
+        "The land was agricultural land governed by the tenancy legislation and was not exempt under the existing reservation notification.",
+        "The tenant held the land on the statutory vesting day.",
+        "An inquiry to determine the purchase price was pending."
+      ],
+      "conclusion": "The tenant became the deemed purchaser and the tribunal must proceed with the inquiry to determine the price.",
+      "legal_principle": "Section 32 of the Bombay Tenancy and Agricultural Lands Act, as amended, provided for transfer of ownership to the tenant by operation of law on the tillers' day. Sri Ram Ram Narain Medhi v. State of Bombay explained that the purchase is effective unless it is rendered ineffective in the circumstances specified by the legislation. Section 32G provides for determination of the purchase price.",
+      "rule": {
+        "if": "tenancy_purchase_inquiry and agricultural_land_governed_by_tenancy_law and tenant_held_land_on_vesting_day and purchase_not_rendered_ineffective",
+        "then": "tenant_is_deemed_purchaser_and_price_inquiry_proceeds"
+      },
+      "predicates": {
+        "tenancy_purchase_inquiry": "The proceeding is an inquiry to determine the purchase price of land under a statutory tenant-purchase scheme.",
+        "agricultural_land_governed_by_tenancy_law": "The land is agricultural land governed by the tenancy legislation and is not exempt from it.",
+        "tenant_held_land_on_vesting_day": "A tenant held the land on the day ownership was statutorily transferred to tenants.",
+        "purchase_not_rendered_ineffective": "The tenant did not decline the purchase or commit a default that rendered it ineffective under the legislation."
+      },
+      "definition": "When a price inquiry concerns agricultural land governed by the tenancy law, a tenant held it on the vesting day, and the purchase has not been rendered ineffective, the tenant is the deemed purchaser and the inquiry proceeds."
+    }
+  ],
+  "seconds": 13.7
+}

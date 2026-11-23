@@ -1,0 +1,345 @@
+{
+  "doc_id": "177188375",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 187584,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 7282,
+    "prompt_tokens": 45685,
+    "total_tokens": 52967,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Findings essential to judgment in an earlier injunction suit based on title may preclude the parties from relitigating those findings in later partition proceedings.",
+      "material_facts": [
+        "The purchasers’ predecessors brought an injunction suit relying on the 1959 sale deed and claiming rights over the entire disputed property.",
+        "The courts in that suit found that the sale was affected by lis pendens, that the purchaser could claim only the vendor’s share, and that adverse possession had not been established.",
+        "The injunction suit’s findings were affirmed in the appellate proceedings and were not open to challenge in the later final-decree proceedings."
+      ],
+      "conclusion": "The findings that the purchase was made during the pending partition suit and that the purchaser could claim only the vendor’s share were final and operated as res judicata in the later proceedings; the court nevertheless examined the relevant matters afresh on their merits.",
+      "legal_principle": "Under the res judicata principles explained in Sajjadanashin Sayed Md. B.E. Edr. v. Musa Dadabhai Ummer and Commissioner of Endowments v. Vittal Rao, a matter is directly and substantially in issue when its determination was necessary and material to the earlier judgment and formed its substantive basis. Whether a title finding in an injunction suit has that effect depends on the pleadings, issues, judgment, and whether title was essential to the relief, consistently with Anathula Sudhakar v. P. Buchi Reddy.",
+      "rule": {
+        "if": "injunction_suit_based_on_title and (title_or_transfer_finding_essential or purchase_during_pending_partition_found) and earlier_finding_final",
+        "then": "essential_earlier_finding_bars_relitigation"
+      },
+      "predicates": {
+        "injunction_suit_based_on_title": "A claimant brought an injunction proceeding relying on a claimed interest in the disputed property.",
+        "title_or_transfer_finding_essential": "The court had to determine title or the legal effect of a transfer to decide the requested injunction.",
+        "purchase_during_pending_partition_found": "The earlier court determined that the property had been purchased while a partition proceeding was pending.",
+        "earlier_finding_final": "The finding was affirmed or otherwise became final and was not set aside."
+      },
+      "definition": "When an essential finding about title or a transfer was made final in an earlier injunction proceeding, that finding bars its relitigation in a later proceeding."
+    },
+    {
+      "legal_issue": "The rule governing transfers during pending litigation applies to Muslim parties when no contrary rule of Muslim law governing such transfers is established.",
+      "material_facts": [
+        "The respondents argued that the transfer-pendency rule did not apply to Mohammedans because the Transfer of Property Act preserves rules of Mohammedan law.",
+        "No rule of Mohammedan law governing transfers during pending litigation was shown to the court."
+      ],
+      "conclusion": "The objection to applying the transfer-pendency rule was rejected, and the statutory rule applied.",
+      "legal_principle": "Section 2(d) of the Transfer of Property Act preserves rules of Mohammedan law from the relevant provisions of Chapter II. The court held that this exclusion depends on an applicable rule of Mohammedan law on the subject; in its absence, section 52 applies.",
+      "rule": {
+        "if": "property_transfer_dispute and muslim_parties and no_contrary_personal_law_rule_established",
+        "then": "general_pending_litigation_transfer_rule_applies"
+      },
+      "predicates": {
+        "property_transfer_dispute": "The court considered the legal effect of a transfer of property between parties governed by Muslim law.",
+        "muslim_parties": "The parties’ relevant property rights were governed by Muslim law.",
+        "no_contrary_personal_law_rule_established": "No applicable personal-law rule governing transfers during pending litigation was established."
+      },
+      "definition": "When a property-transfer dispute involves Muslim parties and no contrary personal-law rule is established, the general rule governing transfers during pending litigation applies."
+    },
+    {
+      "legal_issue": "A suit remains pending for purposes of the transfer-pendency rule when an order merely adjourns it for later revival and a subsequent purported dismissal is without jurisdiction.",
+      "material_facts": [
+        "The partition suit had been filed in 1935 and was not before the court when it made an order in 1955 closing the case until the file was received and the plaintiff applied for its revival.",
+        "A later order imposed costs as a condition of restoring the suit, and the plaintiff did not pay within the stated time.",
+        "The High Court held that the suit had not been dismissed by the earlier order, that the costs order was without jurisdiction, and that the latter order was set aside.",
+        "The disputed sale was executed in 1959, before the partition suit was finally decided."
+      ],
+      "conclusion": "The partition suit had remained pending when the sale was executed, so the sale occurred during the litigation.",
+      "legal_principle": "Section 52 of the Transfer of Property Act and its Explanation treat pendency as continuing from institution until final disposal and satisfaction or discharge of the decree, or its becoming unenforceable. Jagan Singh v. Dhanwanti and Krishanaji Pandharinath v. Anusayabai support the continuation of the litigation through intervening dismissal or restoration circumstances; an order that is legally ineffective cannot create a fictional period in which no suit is pending.",
+      "rule": {
+        "if": "partition_proceeding_instituted and purported_closure_only_adjourned_case and later_dismissal_order_without_jurisdiction and transfer_before_final_disposal",
+        "then": "transfer_occurred_during_pending_litigation"
+      },
+      "predicates": {
+        "partition_proceeding_instituted": "A party filed a partition proceeding concerning the property.",
+        "purported_closure_only_adjourned_case": "The court directed that the case be taken up later when a missing file was received rather than finally disposing of it.",
+        "later_dismissal_order_without_jurisdiction": "A later order treated the case as dismissed despite lacking jurisdiction to do so, and that order was set aside.",
+        "transfer_before_final_disposal": "A party transferred the disputed property before the partition proceeding was finally disposed of."
+      },
+      "definition": "A transfer made before final disposal is treated as occurring during pending litigation when the apparent closure only postponed the case and a later purported dismissal was legally ineffective."
+    },
+    {
+      "legal_issue": "A transfer made during pending litigation is not void merely because it was made while the proceeding was pending, but remains subject to the rights determined in that proceeding.",
+      "material_facts": [
+        "A party to the partition suit sold the disputed property while the suit was pending and without court authority.",
+        "The seller held only a 14/104 share in the property, while the sale purported to cover the whole property.",
+        "The preliminary and final decrees determined the parties’ shares and recognized the transfer only to the extent of the seller’s share."
+      ],
+      "conclusion": "The sale was not void as a whole under the transfer-pendency rule; it remained valid only to the extent of the seller’s 14/104 share and was subject to the outcome of the suit.",
+      "legal_principle": "Section 52 of the Transfer of Property Act makes a pendente lite transfer subservient to the rights determined in the litigation rather than void. Thomson Press (India) Ltd. v. Nanak Builders and Investors, A. Nawab John v. V.N. Subramaniyam, Vinod Seth v. Devinder Bajaj, and Sanjay Verma v. Manik Roy apply that principle. The transferee takes the rights and obligations ultimately determined for the transferor.",
+      "rule": {
+        "if": "property_transfer_dispute and transfer_during_pending_litigation and transferor_had_limited_share",
+        "then": "transfer_remains_subject_to_decree_and_transferor_share"
+      },
+      "predicates": {
+        "property_transfer_dispute": "The court considered the effect of a property transfer in litigation concerning that property.",
+        "transfer_during_pending_litigation": "A party transferred the property before the litigation was finally disposed of.",
+        "transferor_had_limited_share": "The transferor owned only a defined share of the property."
+      },
+      "definition": "A transfer during pending litigation remains subject to the eventual decree and gives the transferee no greater interest than the transferor held."
+    },
+    {
+      "legal_issue": "A preliminary partition decree that determines shares is conclusive on those matters when it is not appealed.",
+      "material_facts": [
+        "The preliminary decree determined each heir’s share in the disputed property, including the seller’s 14/104 share.",
+        "The decree was challenged in appellate proceedings, which were dismissed, and it attained finality.",
+        "Neither the seller nor the purchasers appealed the preliminary decree determining those shares."
+      ],
+      "conclusion": "The share determination in the preliminary decree was binding and could not be reopened in the appeal from the final decree.",
+      "legal_principle": "Section 97 of the Code of Civil Procedure precludes a party who did not appeal a preliminary decree from disputing its correctness in an appeal from the final decree. Venkata Reddy v. Pethi Reddy holds that a preliminary decree is conclusive as to the matters it determines, even though a further decree is needed to complete the partition.",
+      "rule": {
+        "if": "partition_proceeding and preliminary_decree_determined_shares and no_successful_appeal_from_share_determination",
+        "then": "determined_shares_are_final_and_binding"
+      },
+      "predicates": {
+        "partition_proceeding": "The proceeding sought division of property among co-owners or heirs.",
+        "preliminary_decree_determined_shares": "The court issued a preliminary decree specifying the parties’ shares in the property.",
+        "no_successful_appeal_from_share_determination": "No appeal successfully altered the preliminary decree’s determination of shares."
+      },
+      "definition": "In a partition proceeding, shares specified in an unaltered preliminary decree are final and binding in later proceedings to complete the partition."
+    },
+    {
+      "legal_issue": "A purchaser whose rights are subject to a pending partition suit need not bring a separate suit to cancel the transfer before being bound by the partition decree.",
+      "material_facts": [
+        "The sale occurred during the pending partition suit and was subject to the suit’s outcome.",
+        "The seller lacked authority to transfer the other co-heirs’ shares.",
+        "The preliminary decree later determined the seller’s share, and the purchasers’ rights were addressed in the final-decree proceedings."
+      ],
+      "conclusion": "A separate suit to cancel the sale deed was not necessary; the purchasers were bound by the partition decree, and the deed operated only within the seller’s share.",
+      "legal_principle": "Section 52 of the Transfer of Property Act binds a pendente lite transferee to the result of the litigation and avoids multiplicity of proceedings. K.N. Aswathnarayana Setty v. State of Karnataka supports the principle that the transferee is bound by the decree as if a party and cannot use the transfer to defeat the court’s jurisdiction.",
+      "rule": {
+        "if": "transfer_during_pending_litigation and transferor_lacked_authority_over_other_shares and partition_decree_determined_rights",
+        "then": "separate_cancellation_suit_not_required"
+      },
+      "predicates": {
+        "transfer_during_pending_litigation": "A party transferred the disputed property before the partition proceeding was finally disposed of.",
+        "transferor_lacked_authority_over_other_shares": "The transferor had no authority to convey the interests of the other co-owners.",
+        "partition_decree_determined_rights": "The partition court determined the rights in the property by decree."
+      },
+      "definition": "When a transfer occurs during a partition proceeding and the decree determines the parties’ rights, the transferee is bound by that result without a separate cancellation suit."
+    },
+    {
+      "legal_issue": "A transferee who claims the property under a transfer made during pending litigation cannot perfect title by adverse possession without a properly pleaded and proved hostile possession, and the transfer-pendency rule prevents such a claim from defeating the pending suit.",
+      "material_facts": [
+        "The purchasers claimed through the sale made during the partition suit and relied on their possession to assert adverse possession.",
+        "The earlier injunction suit rejected their adverse-possession claim.",
+        "They did not plead when possession became hostile or establish the required facts showing open, peaceful, and continuous hostile possession.",
+        "Their possession remained subject to the outcome of the partition suit."
+      ],
+      "conclusion": "The purchasers had not perfected title by adverse possession; the claim was unavailable in view of the pending litigation and was also unsupported by adequate pleading and proof.",
+      "legal_principle": "Section 52 of the Transfer of Property Act makes the transferee’s possession subject to the litigation. Karnataka Board of Wakf v. Government of India, S.M. Karim v. Bibi Sakina, Parsinni v. Sukhi, and D.N. Venkatarayappa v. State of Karnataka require adverse possession to be clearly pleaded and proved as peaceful, open, continuous, and hostile, with the date and nature of possession and repudiation of the true owner’s title established.",
+      "rule": {
+        "if": "claim_based_on_transfer_during_pending_litigation and adverse_possession_claimed and (hostile_possession_not_properly_pleaded or hostile_possession_not_proved)",
+        "then": "adverse_possession_does_not_defeat_true_owners_title"
+      },
+      "predicates": {
+        "claim_based_on_transfer_during_pending_litigation": "The claimant relied on possession obtained through a transfer made while litigation over the property was pending.",
+        "adverse_possession_claimed": "The claimant asserted that possession had matured into title against the true owner.",
+        "hostile_possession_not_properly_pleaded": "The claimant did not identify when possession became hostile or plead the facts showing repudiation of the true owner’s title.",
+        "hostile_possession_not_proved": "The claimant did not prove peaceful, open, continuous, and hostile possession for the legally required period."
+      },
+      "definition": "A claimant relying on a transfer made during pending litigation cannot defeat the true owner’s title by adverse possession when hostile possession is not adequately pleaded or proved."
+    },
+    {
+      "legal_issue": "A Muslim co-heir who inherits as a tenant in common may transfer only that co-heir’s own share and cannot convey the shares of the other heirs.",
+      "material_facts": [
+        "The property belonged to a person who died intestate, and the heirs succeeded to defined shares as tenants in common.",
+        "One heir sold a specific property while claiming to own it exclusively, although the preliminary decree determined that he held only a 14/104 share.",
+        "The sale deed did not state that the seller acted as an authorized representative of the other co-heirs or for their benefit."
+      ],
+      "conclusion": "The seller could transfer his own share but had no authority to sell the other co-heirs’ interests; the sale beyond his share was void.",
+      "legal_principle": "Under Muslim law, heirs succeed to specific shares as tenants in common, not as joint tenants, and one heir has no authority to deal with the shares of other heirs. Syed Shah Ghulam Ghouse Mohiuddin v. Syed Shah Ahmed Mohiuddin Kamisul Quadri and Kasambhai Sheikh v. Abdulla Kasambhai Sheikh recognize defined co-heir shares; Abdul Majeeth Khan Sahib v. C. Krishnamachariar states that one heir cannot bind the others. Mohammad Afzal Khan v. Abdul Rahman holds that a co-sharer can bind only that co-sharer’s interest. The court also relied on the settled preliminary decree fixing the seller’s share.",
+      "rule": {
+        "if": "muslim_intestate_succession and heirs_hold_defined_shares_as_tenants_in_common and one_heir_transfers_specific_property_beyond_own_share",
+        "then": "transfer_of_other_heirs_shares_is_void"
+      },
+      "predicates": {
+        "muslim_intestate_succession": "A person governed by Muslim law died intestate and the dispute concerns distribution of that person’s estate.",
+        "heirs_hold_defined_shares_as_tenants_in_common": "The heirs succeeded to separately defined interests in the estate rather than a joint interest with a right of survivorship.",
+        "one_heir_transfers_specific_property_beyond_own_share": "One heir purported to transfer a specific property or interests exceeding that heir’s own share."
+      },
+      "definition": "Where Muslim heirs hold defined shares as tenants in common, an heir’s transfer of a specific property cannot convey the other heirs’ shares."
+    },
+    {
+      "legal_issue": "A purchaser from a co-heir may obtain only legally permissible equitable adjustment in partition and cannot claim the whole property or an alternative allotment without the necessary claim and supporting material.",
+      "material_facts": [
+        "The purchasers sought to retain the specific property, although the seller owned only 14/104 of it.",
+        "The preliminary decree fixed the seller’s share, and the final decree allotted that share to the purchasers.",
+        "The purchasers did not plead or support a request for an alternative allotment from other properties awarded to the seller.",
+        "The court noted that the sale concerned a specific property and that the record lacked the facts needed to work out any broader equitable adjustment."
+      ],
+      "conclusion": "The purchasers could not claim the whole disputed property. Their rights were limited to the seller’s share already recognized in the decree, and no alternative equitable allotment could be worked out on the pleadings and evidence presented.",
+      "legal_principle": "A pendente lite purchaser may work out available equities in final-decree proceedings only within lawful limits. Dhanlakshmi v. P. Mohan and Khemchand Shankar Chaudhari v. Vishnu Hari Patil recognize a transferee’s ability to participate and seek permissible equitable partition; K. Adivi Naidu v. E. Duruvasulu Naidu permits a limited accommodation consistent with the decree. T.G. Ashok Kumar v. Govindammal limits the purchaser’s title to the extent of the transferor’s title. Marirudraiah v. B. Sarojamma cautions against encouraging pendente lite transactions at co-sharers’ expense. Equity cannot override governing law, as stated in Nova Ads v. Metropolitan Transport Corporation and Raghunath Rai Bareja v. Punjab National Bank.",
+      "rule": {
+        "if": "partition_final_decree_proceeding and purchaser_claims_through_coheir and purchaser_claim_exceeds_transferor_share and (no_alternative_equity_pleaded or no_evidence_supports_equitable_adjustment)",
+        "then": "purchaser_limited_to_transferor_share"
+      },
+      "predicates": {
+        "partition_final_decree_proceeding": "The court was completing the division of property after a preliminary partition decree.",
+        "purchaser_claims_through_coheir": "A purchaser derived the claimed interest from one of the co-heirs.",
+        "purchaser_claim_exceeds_transferor_share": "The purchaser sought more property than the share held by the transferring co-heir.",
+        "no_alternative_equity_pleaded": "The purchaser did not plead a request to receive other property allotted to the transferring co-heir instead of the specific property purchased.",
+        "no_evidence_supports_equitable_adjustment": "The record did not establish the facts needed to make an alternative equitable allocation."
+      },
+      "definition": "In a final partition proceeding, a purchaser claiming more than the transferor’s share is limited to that share when no supported alternative equitable adjustment is presented."
+    },
+    {
+      "legal_issue": "A claim that a co-heir’s transfer bound all heirs for legal necessity must be supported by evidence and by the terms of the transfer.",
+      "material_facts": [
+        "The purchasers asserted that the sale was made to pay land revenue for the benefit of the estate.",
+        "The sale deed stated that the seller transferred the property for personal necessity and claimed exclusive ownership.",
+        "No evidence supported the assertion that the sale proceeds were used to pay land revenue or otherwise benefited the estate."
+      ],
+      "conclusion": "The sale was not shown to have been made for legal necessity or for the benefit of the estate, and the contention that it bound the other co-heirs was rejected.",
+      "legal_principle": "The court assessed the claim against the sale deed’s recitals and the absence of supporting evidence. It also applied the Muslim-law rule that one co-heir cannot act in a fiduciary capacity for other co-heirs or bind their shares without authority.",
+      "rule": {
+        "if": "coheir_transfer_challenged_as_binding_for_necessity and deed_recites_personal_purpose and estate_benefit_not_proved",
+        "then": "transfer_not_binding_on_other_heirs_for_necessity"
+      },
+      "predicates": {
+        "coheir_transfer_challenged_as_binding_for_necessity": "A purchaser or transferor asserted that one co-heir’s transfer bound the interests of the other heirs because it served a necessary estate purpose.",
+        "deed_recites_personal_purpose": "The transfer document states that the transferor acted for a personal purpose rather than for the estate or the other heirs.",
+        "estate_benefit_not_proved": "The party asserting necessity did not prove that the transfer served the estate or benefited the other heirs."
+      },
+      "definition": "A co-heir’s transfer is not binding on other heirs for asserted necessity when the deed identifies a personal purpose and the claimed estate benefit is unproved."
+    },
+    {
+      "legal_issue": "A decision on protected-tenancy status does not determine ownership or the validity and scope of a separate sale when those matters were not in issue.",
+      "material_facts": [
+        "A relative of the purchaser sought protected-tenancy and ownership-certificate relief under agricultural-tenancy legislation.",
+        "The proceedings were dismissed because the claimed protected-tenancy status did not continue to the relevant date; the dismissal was affirmed through the appellate process.",
+        "The earlier tenancy proceedings mentioned the sale and the purchaser’s recorded landholder status but did not adjudicate the sale’s validity, the seller’s authority over co-heirs’ shares, or the effect of the pending partition suit.",
+        "The property was part of the deceased owner’s estate, and the seller’s name in revenue records was relied on as evidence of ownership."
+      ],
+      "conclusion": "The tenancy decision did not determine the disputed title questions or validate a transfer beyond the seller’s share. The revenue entry and tenancy-related transactions did not displace the pending partition decree or the effect of lis pendens.",
+      "legal_principle": "A judgment is authority only for matters actually considered and decided. The court distinguished the limited tenancy issue resolved in Boddam Narsimha v. Hasan Ali Khan from the title and transfer questions in the partition suit. It also applied the principle that mutation or revenue entries are for fiscal purposes and do not themselves establish title, and that transactions during pending litigation remain subject to section 52 of the Transfer of Property Act.",
+      "rule": {
+        "if": "earlier_tenancy_proceeding_decided_tenancy_status_only and title_or_transfer_validity_not_adjudicated and current_dispute_concerns_title_or_transfer",
+        "then": "tenancy_decision_does_not_determine_title_dispute"
+      },
+      "predicates": {
+        "earlier_tenancy_proceeding_decided_tenancy_status_only": "A prior proceeding considered whether a claimant qualified for protected-tenancy or related statutory relief.",
+        "title_or_transfer_validity_not_adjudicated": "The prior proceeding did not decide ownership or the legal validity and scope of the relevant transfer.",
+        "current_dispute_concerns_title_or_transfer": "The later proceeding requires determination of ownership or the legal effect of a transfer."
+      },
+      "definition": "A prior decision limited to tenancy status does not determine title or transfer validity when those questions were not adjudicated."
+    },
+    {
+      "legal_issue": "A prior decision in related partition proceedings may support the governing legal principle when it affirmed the same rule on a materially relevant point.",
+      "material_facts": [
+        "A purchaser of another item of the same partition estate objected to the final-decree proceedings.",
+        "The High Court held that one Muslim co-sharer could not sell the entire estate so as to bind the other co-sharers.",
+        "The Supreme Court dismissed the challenge by a reasoned order after considering the decree and the legal submissions."
+      ],
+      "conclusion": "The earlier decision in the related partition matter had relevance on the point of law and supported the conclusion that one co-heir could not bind the shares of others by such a sale.",
+      "legal_principle": "The court treated the reasoned dismissal in the related proceeding as relevant support for the rule that, under Muslim law, one co-heir cannot sell or bind the interests of other co-heirs without authority. It did not treat that proceeding as deciding every factual or title issue in the present dispute.",
+      "rule": {
+        "if": "related_partition_proceeding and reasoned_appellate_decision_affirmed_same_legal_rule",
+        "then": "prior_decision_supports_same_legal_rule"
+      },
+      "predicates": {
+        "related_partition_proceeding": "A prior proceeding concerned the division of another item of property from the same estate.",
+        "reasoned_appellate_decision_affirmed_same_legal_rule": "An appellate court gave reasons for affirming the same legal rule relevant to the present issue."
+      },
+      "definition": "A reasoned decision in a related partition proceeding supports the same legal rule when it affirmed that rule on a relevant point."
+    },
+    {
+      "legal_issue": "A party does not waive a property right or act inconsistently merely because another person asserted a different status in separate proceedings.",
+      "material_facts": [
+        "The respondents argued that the appellants had waived their rights or taken inconsistent positions because a relative of the purchasers pursued protected-tenancy relief.",
+        "The appellants’ own position in the partition dispute remained that the property belonged to the deceased owner’s estate and that the transfer was subject to the pending suit.",
+        "The protected-tenancy proceedings were brought by a different person and were dismissed."
+      ],
+      "conclusion": "The appellants had not waived their rights or approbated and reprobated; the argument was rejected.",
+      "legal_principle": "The doctrines of waiver and approbation and reprobation prevent a party from asserting inconsistent positions to obtain an advantage. C. Beepathuma v. Velasari Shankaranarayana Kadambolithaya and Mumbai International Airport v. Golden Chariot Airport were cited, but the court found no inconsistent position by the appellants on the facts.",
+      "rule": {
+        "if": "waiver_or_inconsistent_position_alleged and alleged_inconsistent_act_was_by_different_person and party_maintained_consistent_claim",
+        "then": "no_waiver_or_approbation_reprobation"
+      },
+      "predicates": {
+        "waiver_or_inconsistent_position_alleged": "An opposing party alleged that a litigant had surrendered a right or taken inconsistent positions.",
+        "alleged_inconsistent_act_was_by_different_person": "The conduct said to be inconsistent was undertaken by someone other than the litigant against whom waiver was alleged.",
+        "party_maintained_consistent_claim": "The litigant continued to assert the same legal position concerning the property in the relevant proceedings."
+      },
+      "definition": "An allegation of waiver or inconsistent conduct fails when the supposedly inconsistent act was another person’s and the litigant maintained a consistent claim."
+    },
+    {
+      "legal_issue": "A party is not barred by delay from challenging a final decree when the relevant proceedings were timely and the opposing party’s objection itself was raised belatedly.",
+      "material_facts": [
+        "The preliminary decree became final after appellate proceedings.",
+        "The final-decree proceedings were initiated in 1984, and the purchasers’ predecessors took steps in 1993 and thereafter in related proceedings.",
+        "The purchasers filed their objection in the final-decree proceedings in 2004 after pursuing and losing other proceedings, without explaining why they had not objected earlier.",
+        "The appellants had not delayed in a way that defeated their rights."
+      ],
+      "conclusion": "The appellants were not guilty of delay or laches; the objection was rejected, and the court observed that the purchasers were responsible for delaying the final-decree proceedings.",
+      "legal_principle": "The court considered the procedural history and the explanation, or lack of explanation, for the timing of each party’s steps. Municipal Council, Ahmednagar v. Shah Hyder Beig was cited for the effect of delay, but the court found no delay by the appellants that defeated their rights.",
+      "rule": {
+        "if": "partition_final_decree_dispute and claimant_steps_timely and opposing_party_raises_objection_late_without_explanation",
+        "then": "claimant_not_barred_by_delay"
+      },
+      "predicates": {
+        "partition_final_decree_dispute": "The dispute concerns completion of a partition after a preliminary decree.",
+        "claimant_steps_timely": "The party asserting its rights took the relevant procedural steps within a reasonable or legally permitted time.",
+        "opposing_party_raises_objection_late_without_explanation": "The opposing party waited to raise its objection and offered no adequate explanation for the delay."
+      },
+      "definition": "A party’s claim is not defeated by delay when that party acted timely and the opponent raised its objection late without explanation."
+    },
+    {
+      "legal_issue": "A compromise dividing disputed property cannot be recorded in the proposed form when it would effect a transfer of property that the court is not prepared to recognize through that filing.",
+      "material_facts": [
+        "The parties submitted a compromise concerning a portion of the property and proposed a division between certain appellants and newly added respondents.",
+        "An heir objected to the proposed compromise.",
+        "The court considered that the proposed arrangement would involve a transfer of property."
+      ],
+      "conclusion": "The compromise was not recordable in the form submitted, and the parties were left to pursue an appropriate remedy.",
+      "legal_principle": "The court concluded, on the nature of the proposed arrangement and the objection, that the compromise could not be recorded as the filed transaction; it did not determine what alternative remedy the parties might pursue.",
+      "rule": {
+        "if": "property_partition_compromise_submitted and proposed_compromise_involves_transfer and objection_prevents_recording_as_filed",
+        "then": "compromise_not_recorded_in_submitted_form"
+      },
+      "predicates": {
+        "property_partition_compromise_submitted": "Parties submitted a compromise proposing how disputed property should be divided.",
+        "proposed_compromise_involves_transfer": "The proposed arrangement would effect a transfer of property between the parties.",
+        "objection_prevents_recording_as_filed": "A party objected to the proposed arrangement and the court declined to record it in the submitted form."
+      },
+      "definition": "A proposed property-division compromise involving a transfer is not recorded in its submitted form when an objection leads the court to decline that filing."
+    },
+    {
+      "legal_issue": "A claim based on urban land ceiling proceedings cannot be determined when the relevant orders and necessary supporting material are absent from the record.",
+      "material_facts": [
+        "The respondents relied on proceedings under urban land ceiling legislation and asserted that the land had not been shown as belonging to the deceased owner’s heirs.",
+        "The orders from those proceedings were not placed before the Supreme Court.",
+        "The respondents stated that the proceedings had lapsed following repeal of the legislation."
+      ],
+      "conclusion": "The court declined to examine the urban land ceiling issue and left it open for the State Government to examine.",
+      "legal_principle": "The court did not determine the substantive effect of the ceiling proceedings because their orders were not in the record and the relevant factual basis was not established.",
+      "rule": {
+        "if": "urban_land_ceiling_issue_raised and relevant_orders_not_in_record",
+        "then": "ceiling_issue_left_for_competent_authority"
+      },
+      "predicates": {
+        "urban_land_ceiling_issue_raised": "A party relied on prior proceedings concerning a statutory limit on landholding.",
+        "relevant_orders_not_in_record": "The orders needed to determine the effect of those proceedings were not submitted to the court."
+      },
+      "definition": "When an urban land ceiling issue is raised but the relevant orders are absent, the court leaves the issue for examination by the competent authority."
+    }
+  ],
+  "seconds": 39.2
+}

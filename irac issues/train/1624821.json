@@ -1,0 +1,100 @@
+{
+  "doc_id": "1624821",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35720,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2454,
+    "prompt_tokens": 9409,
+    "total_tokens": 11863,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A decree-holder has no vested substantive right to have a decree transferred under a discretionary ground for transfer.",
+      "material_facts": [
+        "A money decree was passed by a Small Causes Court.",
+        "The decree-holder applied to have the decree transferred under the residual ground that allowed the court that passed the decree to transfer it for a reason recorded in writing.",
+        "The decree was transferred to another court for execution."
+      ],
+      "conclusion": "The decree-holder had no vested or substantive right to have the decree transferred; the right to apply for transfer was procedural, and the court could refuse the application in its discretion.",
+      "legal_principle": "Under Section 39(1)(d) of the Code of Civil Procedure, transfer depends on the discretion of the court that passed the decree, which must record its reason for transfer. A procedural right is not a vested substantive right; the presumption that statutes affecting substantive rights operate prospectively does not apply in the same way to procedural enactments such as the Code.",
+      "rule": {
+        "if": "discretionary_decree_transfer_requested and transfer_application_proceeding",
+        "then": "decree_holder_has_no_vested_right_to_transfer"
+      },
+      "predicates": {
+        "discretionary_decree_transfer_requested": "A decree-holder asked the court that passed the decree to transfer it on a ground requiring that court to exercise its discretion.",
+        "transfer_application_proceeding": "The matter concerns an application to transfer a decree for execution.",
+        "decree_holder_has_no_vested_right_to_transfer": "The decree-holder has no vested substantive entitlement to have the decree transferred."
+      },
+      "definition": "When a decree-holder seeks transfer on a discretionary ground, the decree-holder has no vested right to obtain the transfer."
+    },
+    {
+      "legal_issue": "A decree-holder's entitlement to use a particular mode of execution is governed by the procedure in force when execution is sought, not by the procedure in force when the decree was passed.",
+      "material_facts": [
+        "The decree was passed before the relevant procedural amendment came into force.",
+        "The decree was put into execution after the amendment came into force.",
+        "The decree-holder claimed a right to use a mode of execution available under the earlier procedure."
+      ],
+      "conclusion": "The decree-holder had to execute the decree according to the procedure in force when execution was sought and had no vested right to use a mode of execution available when the decree was passed.",
+      "legal_principle": "Section 51 of the Code of Civil Procedure sets out modes of execution subject to prescribed conditions and limitations, and is procedural in character. No person has a vested right in a course of procedure; a decree-holder must follow the procedure in force when execution is sought.",
+      "rule": {
+        "if": "execution_proceeding and decree_execution_sought_after_procedural_change",
+        "then": "execution_follows_procedure_in_force_when_sought"
+      },
+      "predicates": {
+        "execution_proceeding": "The matter concerns the enforcement of a decree.",
+        "decree_execution_sought_after_procedural_change": "The decree-holder sought execution after the law governing the procedure for execution had changed.",
+        "execution_follows_procedure_in_force_when_sought": "The decree must be executed under the procedure in force when execution is sought."
+      },
+      "definition": "When execution is sought after a procedural change, the decree must be enforced under the procedure then in force."
+    },
+    {
+      "legal_issue": "A court receiving a transferred decree cannot use a mode of execution that the court which passed the decree was not empowered to use.",
+      "material_facts": [
+        "A Small Causes Court passed a decree and had no power to execute it by attachment and sale of immovable property.",
+        "The decree was transferred to another court for execution after an amendment made the transferee court's powers co-terminous with those of the court that passed the decree.",
+        "The transferee court ordered the immovable property sold in execution of the transferred decree."
+      ],
+      "conclusion": "The transferee court had no jurisdiction to order the sale of the immovable property, and the sale was wholly without jurisdiction and a nullity.",
+      "legal_principle": "As amended, Section 42 of the Code of Civil Procedure gave the transferee court the same powers in executing a transferred decree as the court that passed it, so a restriction on the transferor court's execution powers also restricted the transferee court. Order 21 Rule 82 prohibited the Small Causes Court from selling immovable property in execution of its decree. The procedural rules governing execution applied because execution was sought after the amendment came into force.",
+      "rule": {
+        "if": "execution_proceeding and transferred_decree and amended_execution_regime_applied and original_court_could_not_sell_immovable_property",
+        "then": "transferee_court_cannot_sell_immovable_property"
+      },
+      "predicates": {
+        "execution_proceeding": "The matter concerns enforcement of a decree.",
+        "transferred_decree": "The decree was sent by the court that passed it to another court for execution.",
+        "amended_execution_regime_applied": "The law in force when execution was sought made the transferee court's execution powers equivalent to those of the court that passed the decree.",
+        "original_court_could_not_sell_immovable_property": "The court that passed the decree was not empowered to execute it by attachment and sale of immovable property.",
+        "transferee_court_cannot_sell_immovable_property": "The court receiving the decree cannot execute it by selling immovable property."
+      },
+      "definition": "If a transferred decree is executed under a regime that limits the transferee court to the powers of a transferor court unable to sell immovable property, the transferee court cannot order that sale."
+    },
+    {
+      "legal_issue": "A sale made wholly without jurisdiction is a nullity that may be challenged collaterally and is not barred by the rule requiring execution disputes to be resolved in execution proceedings.",
+      "material_facts": [
+        "A court ordered an execution sale of immovable property despite lacking jurisdiction to do so.",
+        "The judgment-debtor's successor later brought a suit seeking a declaration concerning the property and alleging that the sale was void.",
+        "The challenge concerned a sale alleged to be wholly without jurisdiction, rather than an irregular or voidable sale."
+      ],
+      "conclusion": "The sale was non-existent in law and did not need to be set aside; its invalidity could be raised in collateral proceedings, and the suit was not barred by Section 47 of the Code of Civil Procedure.",
+      "legal_principle": "Under the principle stated in Kiran Singh v. Chaman Paswan, a decree or order made without jurisdiction is a nullity whose invalidity may be raised whenever it is relied upon, including in execution or collateral proceedings. A wholly jurisdictionless sale is distinct from an irregular or voidable sale, which subsists unless set aside. The Court held that the alternative objection under Section 47 of the Code of Civil Procedure did not survive once the sale was found to be a nullity.",
+      "rule": {
+        "if": "collateral_challenge_to_execution_sale and sale_wholly_without_jurisdiction",
+        "then": "sale_is_nullity_open_to_collateral_challenge"
+      },
+      "predicates": {
+        "collateral_challenge_to_execution_sale": "A person challenged an execution sale in proceedings other than an application to set aside an irregular or voidable sale within the execution process.",
+        "sale_wholly_without_jurisdiction": "The court ordering the sale had no jurisdiction to order it.",
+        "sale_is_nullity_open_to_collateral_challenge": "The sale is a nullity that need not first be set aside and may be challenged collaterally."
+      },
+      "definition": "When a person collaterally challenges an execution sale made wholly without jurisdiction, the sale is a nullity open to that challenge."
+    }
+  ],
+  "seconds": 15.1
+}

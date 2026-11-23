@@ -1,0 +1,97 @@
+{
+  "doc_id": "1580245",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 56650,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3762,
+    "prompt_tokens": 13968,
+    "total_tokens": 17730,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory version governing a gift under the estate-duty provision is the version in force before a non-retrospective amendment when the death occurred before that amendment.",
+      "material_facts": [
+        "The deceased died in 1957, before the 1965 amendment that inserted the second proviso to the provision governing gifts.",
+        "The court relied on its earlier holding that the amendment was not retrospective."
+      ],
+      "conclusion": "The provision had to be construed as it stood before the 1965 amendment.",
+      "legal_principle": "The court applied the principle that a non-retrospective amendment does not govern an estate arising on an earlier death, relying on George Da Costa v. Controller of Estate Duty, Mysore.",
+      "rule": {
+        "if": "estate_duty_appeal and death_preceded_amendment and amendment_is_non_retrospective",
+        "then": "pre_amendment_version_governs"
+      },
+      "predicates": {
+        "estate_duty_appeal": "The proceeding is an appeal concerning whether property is chargeable as part of a deceased person's estate.",
+        "death_preceded_amendment": "The person whose estate is assessed died before the relevant amendment took effect.",
+        "amendment_is_non_retrospective": "The relevant amendment does not operate retrospectively."
+      },
+      "definition": "When an estate-duty appeal concerns a death before a non-retrospective amendment, the earlier version governs."
+    },
+    {
+      "legal_issue": "A gift is chargeable to estate duty if the donee does not both assume immediate bona fide possession and enjoyment and retain them thereafter to the entire exclusion of the donor.",
+      "material_facts": [
+        "The deceased transferred the entire building, without reservation, to his sons, who assumed possession and enjoyment of it.",
+        "After the transfer, the sons leased the building to the deceased, who continued to occupy it and conduct his boarding and lodging business there until his death.",
+        "The rent was recorded through entries in accounts rather than paid in cash."
+      ],
+      "conclusion": "The sons did not retain possession and enjoyment of the building to the entire exclusion of the deceased, so the property was deemed to pass on his death and was chargeable to estate duty.",
+      "legal_principle": "Under section 10 of the Estate Duty Act, 1953, as applicable to this case, the requirements of immediate assumption and subsequent retention of bona fide possession and enjoyment are cumulative. The donor must be excluded both from the property itself and from any benefit to him by contract or otherwise. The words “by contract or otherwise” qualify the benefit limb, not the separate requirement of exclusion from the property; a donor's actual possession defeats that exclusion even if it is not secured by an enforceable arrangement. The court relied on George Da Costa v. Controller of Estate Duty, John Lang v. Thomas Prout Webb and Clifford John Chick v. Commissioner of Stamp Duties, and distinguished Controller of Estate Duty v. C. R. Ramachandra Gounder because the gift there concerned property already subject to a tenancy.",
+      "rule": {
+        "if": "estate_duty_appeal and full_ownership_gift and donee_assumed_immediate_possession and donor_later_possessed_property",
+        "then": "gifted_property_is_chargeable_to_estate_duty"
+      },
+      "predicates": {
+        "estate_duty_appeal": "The proceeding is an appeal concerning whether gifted property is chargeable as part of a deceased person's estate.",
+        "full_ownership_gift": "The donor transferred the full ownership of the property without reserving a right or excluding an existing right from the gift.",
+        "donee_assumed_immediate_possession": "The donee assumed bona fide possession and enjoyment of the gifted property immediately after the gift.",
+        "donor_later_possessed_property": "After the gift, the donor possessed or enjoyed the gifted property."
+      },
+      "definition": "When full ownership is gifted and the donee initially assumes possession but the donor later possesses the property, the gifted property is chargeable to estate duty."
+    },
+    {
+      "legal_issue": "When only a part or fraction of gifted property is not possessed and enjoyed by the donee to the donor's entire exclusion, only that part or fraction of the property is deemed to pass, not merely the value of the donor's right to possession or enjoyment.",
+      "material_facts": [
+        "The gift concerned the entire building and all rights in it, without any prior tenancy or other reserved right.",
+        "The deceased later occupied the building as a lessee, and the High Court treated only the value of his right to possession and enjoyment as passing.",
+        "The Supreme Court held that the deceased's continued occupation meant the entire gifted property was not retained to his exclusion."
+      ],
+      "conclusion": "The words “to the extent” limit liability to the part or fraction of the gifted property that fails the statutory possession-and-enjoyment test; they do not reduce the deemed property to the donor's right to possess or enjoy it. Because the whole building was gifted and the deceased was not excluded from it, its entire value was includible.",
+      "legal_principle": "The court construed the words “to the extent” in section 10 of the Estate Duty Act, 1953, to refer to the part or fraction of the gifted property of which the donee failed to assume and retain possession and enjoyment to the donor's entire exclusion. The property deemed to pass is the relevant part of the gifted property, rather than merely the value of the donor's possession right. The court relied on George Da Costa v. Controller of Estate Duty and referred to Rash Mohan Chatterjee v. Controller of Estate Duty.",
+      "rule": {
+        "if": "estate_duty_appeal and gifted_property_has_an_unexcluded_part",
+        "then": "unexcluded_part_of_gifted_property_is_deemed_to_pass"
+      },
+      "predicates": {
+        "estate_duty_appeal": "The proceeding is an appeal concerning whether gifted property is deemed to pass as part of a deceased person's estate.",
+        "gifted_property_has_an_unexcluded_part": "The donee failed to assume or retain possession and enjoyment, to the donor's entire exclusion, of an identifiable part or fraction of the gifted property."
+      },
+      "definition": "If an identifiable part of gifted property is not possessed and enjoyed by the donee to the donor's entire exclusion, that part of the property is deemed to pass."
+    },
+    {
+      "legal_issue": "A remand is unnecessary when the courts have proceeded on the basis that the transfer was a gift and the record supports the finding that it was not a partition of joint-family property.",
+      "material_facts": [
+        "The High Court proceeded on the basis that the transfer was a gift and did not decide whether it was a partition.",
+        "The Board found that the properties were the deceased's self-acquired properties and that the document showed no intention to treat them as joint-family property or to waive his separate rights.",
+        "The Supreme Court decided the appeal on the gift basis adopted below."
+      ],
+      "conclusion": "The case did not need to be remanded for a finding on whether the document was a partition deed.",
+      "legal_principle": "The court held that a remand was unwarranted where the decision could be made on the basis adopted by the High Court and the findings below did not support the asserted joint-family partition. The ruling rested on the findings recorded by the Board and the basis on which the High Court had decided the reference.",
+      "rule": {
+        "if": "estate_duty_appeal and lower_court_proceeded_on_gift_basis and record_supports_separate_ownership_finding",
+        "then": "remand_for_partition_finding_is_unnecessary"
+      },
+      "predicates": {
+        "estate_duty_appeal": "The proceeding is an appeal concerning the inclusion of property in a deceased person's estate-duty assessment.",
+        "lower_court_proceeded_on_gift_basis": "The lower court decided the matter on the basis that the transfer was a gift.",
+        "record_supports_separate_ownership_finding": "The record includes a finding that the property was separately owned and no evidence establishing an intention to treat it as joint-family property."
+      },
+      "definition": "When the lower court proceeded on a gift basis and the record supports separate ownership rather than joint-family ownership, no remand for a partition finding is necessary."
+    }
+  ],
+  "seconds": 24.0
+}

@@ -1,0 +1,87 @@
+{
+  "doc_id": "803896",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17528,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2682,
+    "prompt_tokens": 4806,
+    "total_tokens": 7488,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An incorrect statement in a plaint about when the cause of action arose does not defeat a suit when the cause of action had accrued by the filing date and the suit was filed within limitation.",
+      "material_facts": [
+        "The plaint stated that the cause of action arose on November 1, 1982, although rent for October could be paid until November 15, 1982.",
+        "The suit was filed on December 20, 1982, when rent for six months had fallen due.",
+        "The plaint also stated that rent for seven months was outstanding, and the suit was within limitation."
+      ],
+      "conclusion": "The incorrect date stated in the plaint did not disentitle the landlords from seeking eviction because the cause of action had accrued by the date the suit was filed and the suit was within limitation.",
+      "legal_principle": "Order VII Rule 1(e) of the Code of Civil Procedure requires the plaint to state the facts constituting the cause of action and when it arose, so the court can determine whether the plaint discloses a cause of action and whether the suit is barred by limitation. An error in the stated date is of little consequence if the cause of action had arisen by filing and the suit is within limitation.",
+      "rule": {
+        "if": "rent_default_eviction_suit and plaint_states_incorrect_cause_date and cause_of_action_accrued_by_filing and suit_within_limitation",
+        "then": "incorrect_cause_date_alone_does_not_defeat_suit"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "The plaintiff brought a suit seeking eviction on the ground of unpaid rent.",
+        "plaint_states_incorrect_cause_date": "The plaint stated a date for accrual of the cause of action that was not correct.",
+        "cause_of_action_accrued_by_filing": "The facts giving rise to the cause of action had occurred by the time the suit was filed.",
+        "suit_within_limitation": "The suit was filed within the applicable limitation period.",
+        "incorrect_cause_date_alone_does_not_defeat_suit": "The error in stating when the cause of action arose does not, by itself, prevent the plaintiff from obtaining relief."
+      },
+      "definition": "When an eviction suit for unpaid rent is filed within limitation after its cause of action has accrued, an incorrect date for that cause of action in the plaint does not by itself defeat the suit."
+    },
+    {
+      "legal_issue": "A tenant’s court deposit of rent counts as payment under the statutory protection only when the statutory conditions for depositing rent in court are satisfied.",
+      "material_facts": [
+        "The tenant had previously received protection from eviction after a rent default.",
+        "For a later period, the tenant claimed to have paid five months of rent in cash, but the court rejected that claim on the evidence.",
+        "The tenant deposited rent for May through October directly in court on October 29, 1982.",
+        "The tenant had not remitted the rent by postal money order that was returned with the specified postal endorsement, had not asked the landlords to specify a bank account, and did not claim a bona fide doubt about who was entitled to the rent.",
+        "The tenant accepted that the conditions for depositing rent in court under Section 19-A(3)(c) were not satisfied.",
+        "The rent for the six-month period remained unpaid by a method recognized under the Act."
+      ],
+      "conclusion": "The direct court deposit was not a deposit under Section 19-A(3)(c), so the tenant could not rely on the deemed-payment protection in Section 19-A(4); the tenant had committed a second six-month default and the eviction decree was rightly passed.",
+      "legal_principle": "Sections 19-A(3) and 19-A(4) of the Rajasthan Premises (Control of Rent & Eviction) Act, 1950 prescribe the methods by which rent may be paid, remitted, or deposited and deem rent paid only when one of those methods is used. A court deposit under Section 19-A(3)(c) is available only when its stated conditions are met. A legal fiction must be confined to the purpose for which it was created and not extended beyond its legitimate field (The Bengal Immunity Company Limited v. The State of Bihar & Ors., 1955 (2) SCR 603 at 646). Duli Chand v. Maman Chand, 1980 (1) SCC 246, and Sheo Narain v. Sher Singh, 1980 (1) SCR 836, concerned a different statutory scheme and did not justify treating this non-compliant deposit as payment.",
+      "rule": {
+        "if": "repeat_default_eviction_proceeding and tenant_previously_received_default_protection and tenant_deposited_rent_directly_in_court and statutory_conditions_for_court_deposit_unsatisfied and rent_unpaid_for_six_months",
+        "then": "tenant_remains_in_default_despite_court_deposit"
+      },
+      "predicates": {
+        "repeat_default_eviction_proceeding": "The proceeding seeks eviction based on a later alleged rent default after an earlier default proceeding.",
+        "tenant_previously_received_default_protection": "The tenant had previously obtained protection from eviction after a rent default.",
+        "tenant_deposited_rent_directly_in_court": "The tenant deposited rent directly with a court rather than using another recognized method of payment or remittance.",
+        "statutory_conditions_for_court_deposit_unsatisfied": "The tenant had not fulfilled the prescribed circumstances that permit rent to be deposited in court.",
+        "rent_unpaid_for_six_months": "Rent for a continuous period of six months remained unpaid by a recognized method.",
+        "tenant_remains_in_default_despite_court_deposit": "The non-compliant court deposit does not prevent the tenant from being treated as in default."
+      },
+      "definition": "When a tenant facing a repeat-default eviction proceeding deposits rent directly in court without satisfying the conditions for that method, the deposit does not prevent a finding of six-month default."
+    },
+    {
+      "legal_issue": "When no contractual payment date applies, rent for a month may be paid by the fifteenth day of the following month, so a six-month default based on that month cannot arise until that payment period has expired.",
+      "material_facts": [
+        "No contract fixed a date for payment of rent.",
+        "The rent for October 1982 could be paid until November 15, 1982.",
+        "The landlords stated that the cause of action for six months of arrears arose on November 1, 1982, but the Court held that it could arise only after the October rent payment deadline had passed."
+      ],
+      "conclusion": "The rent for October was payable through November 15, 1982, and the cause of action for default in payment of rent for May through October could arise only on November 16, 1982.",
+      "legal_principle": "Section 19-A(1) of the Rajasthan Premises (Control of Rent & Eviction) Act, 1950 provides that, absent a contractual payment date, rent is payable by the fifteenth day of the month following the month for which it is due. The Court treated that date as the final time for payment, not merely as a facility that left the rent already due earlier.",
+      "rule": {
+        "if": "rent_default_eviction_suit and no_contractual_payment_date and rent_payable_by_deadline_in_following_month",
+        "then": "six_month_default_cause_arises_only_after_final_payment_deadline"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "The proceeding seeks eviction on the ground of unpaid rent.",
+        "no_contractual_payment_date": "The parties did not agree on a date by which rent had to be paid.",
+        "rent_payable_by_deadline_in_following_month": "The applicable payment arrangement permits each month’s rent to be paid by a deadline in the following month.",
+        "six_month_default_cause_arises_only_after_final_payment_deadline": "A six-month default cause of action arises only after the payment deadline for the final month in that period has passed."
+      },
+      "definition": "In an eviction suit for unpaid rent, when there is no agreed payment date and rent is payable by a deadline in the following month, a six-month default cause of action arises only after the final deadline has passed."
+    }
+  ],
+  "seconds": 18.8
+}

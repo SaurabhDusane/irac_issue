@@ -1,0 +1,61 @@
+{
+  "doc_id": "1252413",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18506,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2161,
+    "prompt_tokens": 5356,
+    "total_tokens": 7517,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The effect of commencing execution against a company in liquidation without prior leave, and of obtaining leave later.",
+      "material_facts": [
+        "A company was ordered to be wound up while an appeal concerning an ejectment decree against it was pending, and its liquidators prosecuted that appeal.",
+        "A decree-holder commenced execution against the company without first obtaining leave from the court supervising the winding up.",
+        "The supervising court later granted leave to execute the decree.",
+        "The Supreme Court proceeded on the assumption that the liquidators had obtained the court's sanction to prosecute the appeal."
+      ],
+      "conclusion": "Execution was not barred or liable to dismissal merely because leave had not been obtained before it began. If the underlying proceeding had been prosecuted with the court's sanction, execution was a continuation of it and did not require fresh leave; in any event, once leave was granted, the execution proceeding was effective from the date of that grant.",
+      "legal_principle": "Section 171 of the Indian Companies Act, 1913 serves to preserve the winding-up court's control and to ensure the equitable and orderly administration of the company's assets for all creditors. Execution is a continuation of the suit. Even where leave under s. 171 is required, the Act does not make prior leave a condition precedent whose absence requires dismissal: a proceeding begun without leave is ineffective until leave is obtained and is then deemed instituted on the date leave is granted. Sanction under s. 179 to prosecute the underlying proceeding supports the conclusion that no fresh sanction is needed for execution. The Court relied on the reasoning in Suresh Chandra v. The Bank of Calcutta and the discussion in Buckley on the Companies Act, and disagreed with Har Narain Misra v. Kanhaiya Lal Lohawalla and Godavari Sugar and Refineries Ltd. v. Kambhampati Gopalakrishnamurthy.",
+      "rule": {
+        "if": "winding_up_execution and (underlying_case_sanctioned or (execution_started_without_leave and leave_later_granted))",
+        "then": "execution_can_proceed"
+      },
+      "predicates": {
+        "winding_up_execution": "A decree-holder seeks to enforce a decree against a company after a court has ordered the company to be wound up.",
+        "underlying_case_sanctioned": "The liquidators prosecuted the underlying proceeding with the winding-up court's sanction.",
+        "execution_started_without_leave": "The decree-holder began execution before obtaining leave from the court supervising the winding up.",
+        "leave_later_granted": "The court supervising the winding up granted leave after execution had begun.",
+        "execution_can_proceed": "The execution proceeding may proceed and is not liable to dismissal solely because prior leave was absent."
+      },
+      "definition": "When a decree-holder seeks execution against a company in winding up, the proceeding may continue if the underlying case was sanctioned or if leave is granted after execution begins."
+    },
+    {
+      "legal_issue": "The refusal to certify an appeal is justified when the only proposed issue has been resolved against the appellant on its merits.",
+      "material_facts": [
+        "The appellant sought a certificate for an appeal to the Supreme Court after the High Court refused certification.",
+        "The only issue proposed for that appeal concerned whether execution could proceed without prior leave against a company in liquidation.",
+        "The Supreme Court concluded that the High Court's view on that issue was correct."
+      ],
+      "conclusion": "The Court would not certify an appeal where its only proposed issue had been decided against the appellant on the merits.",
+      "legal_principle": "Under Article 133(1)(b) and (c) of the Constitution, certification requires the applicable substantial question concerning property or a question of general or public importance, or a case otherwise fit for appeal. The Court held that it would be futile and unjustified to certify a case when the only issue that could be urged was one on which it had expressed an opinion against the appellant.",
+      "rule": {
+        "if": "certificate_appeal and sole_proposed_issue_rejected",
+        "then": "certificate_should_be_refused"
+      },
+      "predicates": {
+        "certificate_appeal": "A party seeks certification of an appeal to the Supreme Court.",
+        "sole_proposed_issue_rejected": "The only issue proposed for the appeal has been resolved on the merits against the party seeking certification.",
+        "certificate_should_be_refused": "The appeal should not be certified."
+      },
+      "definition": "A request to certify an appeal should be refused when the sole proposed issue has been resolved against the requesting party."
+    }
+  ],
+  "seconds": 14.7
+}

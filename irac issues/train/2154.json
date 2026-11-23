@@ -1,0 +1,105 @@
+{
+  "doc_id": "2154",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27238,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3296,
+    "prompt_tokens": 7204,
+    "total_tokens": 10500,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A proceeding seeking review of an earlier proceeding is civil when the earlier proceeding concerns civil rights and is not criminal in nature.",
+      "material_facts": [
+        "A revenue officer purported to determine whether a debt was secured and could order its discharge, directly affecting the parties’ civil rights.",
+        "A revenue authority reversed the discharge order, also affecting those civil rights.",
+        "The application to the High Court sought review of the revenue authority’s decision."
+      ],
+      "conclusion": "The proceedings before the revenue authorities were civil proceedings, and the proceeding in the High Court was also civil in nature.",
+      "legal_principle": "For Article 133, a civil proceeding includes proceedings affecting civil or private rights that are not criminal. A proceeding under Article 226 to bring an earlier proceeding before the High Court is civil if the earlier proceeding concerned civil rights. The Court relied on S. A. L. Narayan Row v. Ishwarlal Bhagwandas, which treated “civil proceeding” broadly as covering proceedings directly affecting civil rights.",
+      "rule": {
+        "if": "high_court_writ_proceeding and underlying_proceeding_affects_private_rights and not underlying_proceeding_is_criminal",
+        "then": "writ_proceeding_is_civil"
+      },
+      "predicates": {
+        "high_court_writ_proceeding": "A party sought review by the High Court through a writ proceeding.",
+        "underlying_proceeding_affects_private_rights": "The proceeding under review determined or affected private rights of the contending parties.",
+        "underlying_proceeding_is_criminal": "The proceeding under review was criminal in nature.",
+        "writ_proceeding_is_civil": "The High Court writ proceeding is civil in nature."
+      },
+      "definition": "When a High Court writ proceeding reviews a proceeding affecting private rights that is not criminal, the writ proceeding is civil."
+    },
+    {
+      "legal_issue": "The civil appellate route to the Supreme Court is not limited to High Court decisions made in appellate or ordinary original civil jurisdiction.",
+      "material_facts": [
+        "The High Court was asked to review, under its extraordinary original jurisdiction, a revenue authority’s decision affecting civil rights.",
+        "The High Court dismissed the review application."
+      ],
+      "conclusion": "A judgment, decree or final order in a civil proceeding may fall within Article 133 even when made in the exercise of extraordinary original civil jurisdiction.",
+      "legal_principle": "Article 133 uses the broad phrase “any judgment, decree or final order in a civil proceeding of a High Court.” The Court held that this language is not confined by the history of appeals under sections 109 and 110 of the Code of Civil Procedure, and that no jurisdictional exception absent from the constitutional text may be implied. It also noted that Article 132 covers civil, criminal and other proceedings where the relevant constitutional question arises.",
+      "rule": {
+        "if": "high_court_civil_proceeding and extraordinary_original_civil_jurisdiction and decision_is_judgment_decree_or_final_order",
+        "then": "decision_falls_within_civil_appellate_route"
+      },
+      "predicates": {
+        "high_court_civil_proceeding": "The matter before the High Court was a civil proceeding affecting civil rights.",
+        "extraordinary_original_civil_jurisdiction": "The High Court acted in its extraordinary original civil jurisdiction rather than in appellate or ordinary original jurisdiction.",
+        "decision_is_judgment_decree_or_final_order": "The High Court made a judgment, decree or final order in the proceeding.",
+        "decision_falls_within_civil_appellate_route": "The decision is within the class of decisions eligible for a civil appeal to the Supreme Court."
+      },
+      "definition": "A judgment, decree or final order in a High Court civil proceeding falls within the civil appellate route even when the High Court acted in extraordinary original civil jurisdiction."
+    },
+    {
+      "legal_issue": "A High Court order is final for appeal purposes when it terminates the independent proceeding before that court, including by resolving a challenge to a tribunal’s jurisdiction.",
+      "material_facts": [
+        "The High Court application was an independent proceeding seeking to set aside the revenue authority’s decision on the ground that the authority lacked jurisdiction.",
+        "The High Court summarily dismissed the application, thereby leaving the revenue authority’s decision in force and reviving the debt.",
+        "The dismissal ended the jurisdictional controversy before the High Court, although the order gave no reasons."
+      ],
+      "conclusion": "The summary dismissal was a final order for the purpose of an appeal to the Supreme Court; its non-speaking form did not change that result.",
+      "legal_principle": "Under Article 133, finality in an extraordinary original proceeding depends on whether the controversy raised before the High Court has been finally disposed of, not whether the underlying controversy is over. A writ proceeding is independent of the original dispute, and an order resolving a jurisdictional challenge by upholding the authority’s jurisdiction is final. The Court distinguished a dismissal based only on failure to exhaust available remedies, which may lack the required finality.",
+      "rule": {
+        "if": "high_court_writ_proceeding and independent_review_proceeding and jurisdictional_challenge_decided and high_court_proceeding_terminated and not dismissal_only_for_unexhausted_remedies",
+        "then": "order_is_final_for_appeal"
+      },
+      "predicates": {
+        "high_court_writ_proceeding": "The matter before the High Court was a writ proceeding.",
+        "independent_review_proceeding": "The High Court proceeding was independent of the original dispute before the tribunal or authority.",
+        "jurisdictional_challenge_decided": "The party challenged the tribunal’s or authority’s jurisdiction, and the High Court resolved that challenge.",
+        "high_court_proceeding_terminated": "The High Court’s order ended the proceeding before it.",
+        "dismissal_only_for_unexhausted_remedies": "The High Court dismissed the proceeding solely because available remedies had not been exhausted.",
+        "order_is_final_for_appeal": "The High Court order is final for the purpose of an appeal."
+      },
+      "definition": "An order is final for appeal when an independent High Court review proceeding ends after a jurisdictional challenge is resolved, unless dismissal rests only on unexhausted remedies."
+    },
+    {
+      "legal_issue": "A certificate for a civil appeal must not be refused when the applicable value requirement and the other requirements for the appeal are satisfied.",
+      "material_facts": [
+        "The dispute before the High Court concerned a debt valued well above the applicable monetary threshold, and the High Court decision also involved a claim respecting property of like value.",
+        "The appellants sought a certificate to appeal the High Court’s order under Article 133(1)(a) or (b).",
+        "The Supreme Court held that the other applicable requirements were satisfied and that the certificate was claimable as of right."
+      ],
+      "conclusion": "The High Court erred in refusing the certificate; its refusal order was set aside and the matter was returned to the High Court for disposal according to law.",
+      "legal_principle": "Article 133(1)(a) provides for a certificate based on the value of the subject matter in dispute, and Article 133(1)(b) provides for a certificate where the decision involves a claim or question respecting property of like value. The Court held that the relevant value requirement was met and that the other requirements were satisfied.",
+      "rule": {
+        "if": "certificate_application_from_high_court_civil_order and order_is_final_for_appeal and (dispute_value_meets_required_threshold or property_claim_meets_required_threshold) and remaining_certificate_requirements_met",
+        "then": "certificate_must_be_granted"
+      },
+      "predicates": {
+        "certificate_application_from_high_court_civil_order": "A party applied to the High Court for a certificate to appeal a civil order to the Supreme Court.",
+        "order_is_final_for_appeal": "The High Court order is final for the purpose of an appeal.",
+        "dispute_value_meets_required_threshold": "The value of the subject matter in dispute meets the required threshold.",
+        "property_claim_meets_required_threshold": "The decision involves a claim or question respecting property that meets the required value threshold.",
+        "remaining_certificate_requirements_met": "The other applicable requirements for the certificate are satisfied.",
+        "certificate_must_be_granted": "The High Court must grant the certificate."
+      },
+      "definition": "A certificate must be granted when a party applies to appeal a final High Court civil order, the dispute or property claim meets the required value threshold, and the other applicable requirements are satisfied."
+    }
+  ],
+  "seconds": 21.5
+}

@@ -1,0 +1,80 @@
+{
+  "doc_id": "1755998",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14718,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1988,
+    "prompt_tokens": 4072,
+    "total_tokens": 6060,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Proceedings pending before a High Court when territory is transferred remain with that court unless they are certified for transfer to the High Court of the successor territory.",
+      "material_facts": [
+        "Appeals concerning compensation for acquired land were pending before the original High Court when the territory containing the land was transferred to another state.",
+        "The Chief Justice did not certify the appeals for transfer to the High Court of the successor state.",
+        "The original High Court heard and dismissed the appeals."
+      ],
+      "conclusion": "The original High Court retained jurisdiction and rightly disposed of the appeals because they had not been certified for transfer.",
+      "legal_principle": "Section 17(2) of the West Bengal (Transfer of Territories) Act, 1956 provides for transfer only of pending proceedings certified by the Chief Justice as appropriate for the receiving High Court. Without certification, the original High Court retains jurisdiction, even if the cause of action arose in the transferred territory.",
+      "rule": {
+        "if": "pending_high_court_proceeding and territorial_transfer and not transfer_certificate",
+        "then": "original_high_court_retains_jurisdiction"
+      },
+      "predicates": {
+        "pending_high_court_proceeding": "A proceeding was pending before a High Court when the relevant territory was transferred.",
+        "territorial_transfer": "The territory connected with the proceeding was transferred to another state.",
+        "transfer_certificate": "The Chief Justice certified the proceeding for transfer to the High Court of the successor state."
+      },
+      "definition": "When a proceeding is pending before a High Court at the time of a territorial transfer and no transfer certificate is given, the original High Court retains jurisdiction."
+    },
+    {
+      "legal_issue": "A state succeeding to transferred property or liabilities is deemed substituted in pending proceedings concerning them and is bound by the resulting orders, even without formal substitution.",
+      "material_facts": [
+        "Land acquired by one state was transferred to another state along with the relevant territory.",
+        "The acquiring state was a party to pending appeals concerning compensation for the land when the territory was transferred.",
+        "The successor state was not formally substituted in the appeals, which the original High Court later dismissed.",
+        "The successor state was not formally substituted in the execution proceedings, and the decree-holder sought to execute the decrees against it."
+      ],
+      "conclusion": "The successor state was deemed substituted for the original state and bound by the decrees; the execution proceedings were to continue against the successor state after substitution in those proceedings.",
+      "legal_principle": "Section 47 of the West Bengal (Transfer of Territories) Act, 1956 deems the successor state substituted for, or added as a party in place of, the original state in proceedings concerning transferred property, rights, or liabilities. The statutory fiction must be carried to its logical end: the original state effectively represents the successor state, which is bound by resulting decrees or orders even if it was not formally brought on record.",
+      "rule": {
+        "if": "proceeding_about_transferred_liability and original_state_was_party and proceeding_pending_at_transfer and successor_state_received_transferred_liability",
+        "then": "successor_state_is_deemed_substituted_and_bound_by_resulting_order"
+      },
+      "predicates": {
+        "proceeding_about_transferred_liability": "A legal proceeding concerned property, rights, or liabilities transferred from one state to another.",
+        "original_state_was_party": "The state transferring the relevant property, rights, or liabilities was a party to the proceeding.",
+        "proceeding_pending_at_transfer": "The proceeding was pending when the relevant territory was transferred.",
+        "successor_state_received_transferred_liability": "The successor state received the relevant property, rights, or liabilities through the territorial transfer."
+      },
+      "definition": "When a proceeding about a transferred liability was pending against the original state at the time of transfer, the successor state that received the liability is deemed substituted and bound by the resulting order."
+    },
+    {
+      "legal_issue": "An executing court cannot exclude an amount included in a decree by reconsidering the decree's entitlement to that amount.",
+      "material_facts": [
+        "The compensation decrees included interest.",
+        "The successor state asked for interest to be disallowed, at least for the period before it received notice of the proceedings.",
+        "The dispute arose in execution proceedings."
+      ],
+      "conclusion": "The executing court could not disallow the interest included in the decrees and was required to enforce the entire decretal amount.",
+      "legal_principle": "An executing court cannot go behind the decree; it must enforce the decree as made. The Court cited no particular statutory provision or earlier case for this principle.",
+      "rule": {
+        "if": "execution_proceeding and decree_includes_interest and judgment_debtor_seeks_to_exclude_interest",
+        "then": "executing_court_must_enforce_decree_without_excluding_interest"
+      },
+      "predicates": {
+        "execution_proceeding": "A party sought to enforce a court decree through execution proceedings.",
+        "decree_includes_interest": "The decree awarded interest as part of the amount payable.",
+        "judgment_debtor_seeks_to_exclude_interest": "The judgment-debtor asked the executing court to disallow interest included in the decree."
+      },
+      "definition": "If a judgment-debtor asks an executing court to exclude interest included in a decree, the court must enforce the decree without excluding that interest."
+    }
+  ],
+  "seconds": 12.6
+}

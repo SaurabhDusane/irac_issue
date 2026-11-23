@@ -1,0 +1,119 @@
+{
+  "doc_id": "1909386",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 60713,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3871,
+    "prompt_tokens": 14405,
+    "total_tokens": 18276,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A land tribunal’s purchase orders do not bind the parties or operate as res judicata when a tenancy claim is taken directly to the tribunal while a civil suit concerning the same land was already pending when the amended land-reform law came into force.",
+      "material_facts": [
+        "A civil suit concerning redemption and partition of the land was pending when the amendment came into force, and a preliminary decree for redemption had already become final.",
+        "While final-decree proceedings remained pending, the defendant directly applied to the land tribunal for recognition as a tenant and obtained orders and a purchase certificate.",
+        "The civil suit had not yet finally determined the defendant’s claim to tenancy under the amended law."
+      ],
+      "conclusion": "The tribunal lacked jurisdiction to grant relief on the direct application in these circumstances; its orders and purchase certificate were nullities and did not operate as res judicata.",
+      "legal_principle": "Section 108(3) of the amending Act requires a claim for a benefit under the amended law in a pending proceeding to be dealt with in that proceeding. The proviso to Section 125(1) of the principal Act preserves the civil court’s jurisdiction over a proceeding pending when the amendment commenced. Read together, these provisions meant that the civil court, not the tribunal acting on a direct application, had to determine the tenancy claim. Section 9 of the Code of Civil Procedure supports the civil court’s jurisdiction absent its removal by law. Chettiam Veettil concerns a valid tribunal determination where no civil suit was pending; Mathevan Padmanabhan concerns a post-amendment suit in which tenancy had not become final. Neither supports treating these tribunal orders as binding here.",
+      "rule": {
+        "if": "pending_civil_suit_at_amendment and unresolved_tenancy_claim and direct_tribunal_application",
+        "then": "tribunal_orders_are_void_and_do_not_operate_as_res_judicata"
+      },
+      "predicates": {
+        "pending_civil_suit_at_amendment": "A civil suit concerning the land was pending when the amended land-reform law came into force.",
+        "unresolved_tenancy_claim": "The claimant’s entitlement to tenancy status under the amended law had not been finally determined in the pending suit.",
+        "direct_tribunal_application": "A party applied directly to the land tribunal for relief based on that tenancy claim while the suit was pending."
+      },
+      "definition": "When a tenancy claim remains unresolved in a civil suit already pending at the relevant change in law and a party instead applies directly to the tribunal, the tribunal’s orders are void and do not bind the parties as res judicata."
+    },
+    {
+      "legal_issue": "A civil court must determine a tenancy claim under amended land-reform law when the claim is raised in a suit that was pending when the amendment came into force.",
+      "material_facts": [
+        "The suit was pending when the amendment came into force and remained pending at the final-decree stage.",
+        "The defendant claimed that the amended law made him a protected cultivating tenant entitled to purchase the land.",
+        "The defendant’s direct proceedings before the tribunal were incompetent, but his tenancy claim in the pending suit had not been decided on its merits."
+      ],
+      "conclusion": "The civil court had to decide the tenancy claim on its merits under the amended law before proceeding with the final decree; the application raising that claim should not have been rejected outright.",
+      "legal_principle": "Section 108(3) of the amending Act directs that a claim for a right or benefit under the amended law in a pending proceeding be disposed of in accordance with that law. The proviso to Section 125(1) of the principal Act means the ordinary bar on civil-court jurisdiction does not apply to proceedings pending when the amendment commenced. The reference procedure under Section 125(3), read with Section 125(6), therefore did not govern this already-pending suit. The civil court had to determine the claim itself, while the claimed statutory benefits depended on proof that the claimant was a cultivating tenant.",
+      "rule": {
+        "if": "civil_suit_pending_at_amendment and tenancy_claim_raised_in_suit",
+        "then": "civil_court_must_determine_tenancy_claim_under_amended_law"
+      },
+      "predicates": {
+        "civil_suit_pending_at_amendment": "A civil suit was pending when the amended land-reform law came into force.",
+        "tenancy_claim_raised_in_suit": "A party asserted in that suit that the amended law entitled them to tenant status and its associated benefits."
+      },
+      "definition": "If a party raises a tenancy claim under amended law in a civil suit already pending when the amendment commenced, the civil court must determine that claim under the amended law."
+    },
+    {
+      "legal_issue": "A claimant who ultimately obtains a final civil-court determination of qualifying tenant status may pursue the consequential purchase process before the competent authority, notwithstanding an earlier incompetent application.",
+      "material_facts": [
+        "The defendant had applied to the competent authority for purchase relief within the prescribed time, but the application was premature because the pending civil suit had not yet resolved his tenancy status.",
+        "The Court directed that the tenancy claim be decided afresh by the civil court and kept open whether the defendant was in fact entitled to the amended law’s protection.",
+        "The Court stated that, if the civil-court determination ultimately established qualifying tenant status and survived the hierarchy of proceedings, the competent authority could fix the purchase price and issue the appropriate certificate; it could also act on its own motion."
+      ],
+      "conclusion": "If the claimant ultimately succeeds in the civil proceedings on tenant status, the earlier timely application may be treated as pending before the competent authority, or the authority may act on its own motion, to complete the statutory purchase process. The Court did not decide that the claimant was entitled to purchase the land.",
+      "legal_principle": "Sections 72B, 72D and 72K and the succeeding provisions provide for the purchase application, fixation of price and certificate. A final civil-court determination of qualifying tenant status is a condition precedent to those consequential steps in this situation. On the particular facts, the timely earlier application could be treated as pending before the competent authority awaiting that final determination; alternatively, the authority could exercise its own-motion powers. The Court left the claimant’s actual entitlement to be decided on evidence in the remanded proceedings.",
+      "rule": {
+        "if": "final_civil_finding_of_qualifying_tenant_status and finding_survives_review and (timely_prior_application or authority_may_act_on_own_motion)",
+        "then": "competent_authority_may_complete_purchase_process"
+      },
+      "predicates": {
+        "final_civil_finding_of_qualifying_tenant_status": "The civil court finally finds that the claimant has the tenant status required for the statutory purchase benefit.",
+        "finding_survives_review": "The finding in the claimant’s favour remains effective through the available hierarchy of proceedings.",
+        "timely_prior_application": "The claimant previously applied for the purchase benefit within the applicable time, although the application was premature pending the civil-court determination.",
+        "authority_may_act_on_own_motion": "The competent authority has power to initiate the consequential purchase process on its own motion."
+      },
+      "definition": "A claimant whose qualifying tenant status is finally established may proceed to the purchase process if a timely earlier application exists or the competent authority may initiate that process on its own motion."
+    },
+    {
+      "legal_issue": "The decisions in Mathevan Padmanabhan and Chettiam Veettil are not in conflict because they concern materially different procedural settings.",
+      "material_facts": [
+        "In the case addressed by Mathevan Padmanabhan, the suit was filed after the amendment, the tenancy issue had been referred to the statutory authority, and the finding on tenancy had not become final.",
+        "In the case addressed by Chettiam Veettil, no civil suit was pending when the tribunal determined tenancy and issued a purchase certificate, and the issue was whether another authority could go behind that certificate.",
+        "Here, the civil suit was already pending when the amendment came into force, and the tenancy claim had not been decided in that suit."
+      ],
+      "conclusion": "There was no conflict between the two earlier decisions; each applied to a different procedural category, and neither controlled the present case in the manner urged by the appellants.",
+      "legal_principle": "Mathevan Padmanabhan held that where a post-amendment suit involved an unresolved tenancy finding referred to the statutory authority, the purchase application could not be finally decided until the tenancy issue became final. Chettiam Veettil concerned a valid purchase certificate obtained when no civil suit was pending, and held that the certificate was conclusive in the later statutory proceedings at issue there. Their distinct factual and procedural settings explain their respective holdings.",
+      "rule": {
+        "if": "one_precedent_involved_post_amendment_suit_with_unresolved_tenancy and another_precedent_involved_valid_certificate_without_pending_suit",
+        "then": "precedents_are_not_in_conflict"
+      },
+      "predicates": {
+        "one_precedent_involved_post_amendment_suit_with_unresolved_tenancy": "One earlier case involved a suit filed after the amendment in which the tenancy issue remained unresolved through the relevant proceedings.",
+        "another_precedent_involved_valid_certificate_without_pending_suit": "Another earlier case involved a tribunal certificate obtained when no civil suit concerning the tenancy was pending."
+      },
+      "definition": "When earlier decisions concern these different procedural settings, their differing outcomes do not create a conflict."
+    },
+    {
+      "legal_issue": "A challenge to limitation cannot be raised in an appeal confined to an interlocutory order before the final decree, when the remand order holding the final-decree application timely was not challenged at that stage.",
+      "material_facts": [
+        "The trial court had initially dismissed the final-decree application as time-barred, but the appellate court reversed that ruling and remanded the matter for further proceedings.",
+        "The High Court upheld the ruling that the final-decree application was not time-barred, and the defendant did not then bring the matter before the Supreme Court.",
+        "The present appeal arose from the dismissal of a later interlocutory application, and no final decree had yet been passed.",
+        "The appellants also relied on non-payment of redemption money as an additional limitation ground."
+      ],
+      "conclusion": "The limitation arguments were premature in this appeal and could not be raised in the remanded proceedings; the Court left them open for appropriate future proceedings if a final decree were ultimately passed against the appellants.",
+      "legal_principle": "Section 105(2) of the Code of Civil Procedure and Satyadhyan Ghosal permit an interlocutory order to be challenged in an appeal from the final decision in the circumstances described by the Court. The limitation issue would arise for consideration only if a final decree were eventually passed against the appellants; the Court expressed no opinion on the merits of either limitation ground.",
+      "rule": {
+        "if": "appeal_from_interlocutory_order and earlier_remand_order_upheld_limitation_finding and no_challenge_to_remand_order_then and no_final_decree_against_appellant",
+        "then": "limitation_challenge_is_premature_and_remains_open_for_future_review"
+      },
+      "predicates": {
+        "appeal_from_interlocutory_order": "The appeal concerns an interlocutory order made before the final decision in the underlying proceeding.",
+        "earlier_remand_order_upheld_limitation_finding": "An earlier remand order, later upheld on review, held that the final-decree application was not time-barred.",
+        "no_challenge_to_remand_order_then": "The affected party did not challenge the remand order when it was made and upheld.",
+        "no_final_decree_against_appellant": "No final decree had yet been passed against the affected party."
+      },
+      "definition": "If an appeal concerns an interlocutory order, the earlier remand ruling on limitation was not challenged then, and no final decree has been passed against the appellant, the limitation challenge is premature and remains open for later review."
+    }
+  ],
+  "seconds": 23.5
+}

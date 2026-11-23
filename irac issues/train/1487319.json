@@ -1,0 +1,78 @@
+{
+  "doc_id": "1487319",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28743,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3372,
+    "prompt_tokens": 7586,
+    "total_tokens": 10958,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent controller has discretion to retain a tenant’s defence and to extend the time for rent payment or deposit after a default, rather than automatically striking the defence or ordering eviction.",
+      "material_facts": [
+        "The proceeding sought eviction for non-payment of rent, and the controller had directed the tenant to deposit rent monthly by a specified day.",
+        "The tenant deposited one month’s rent late.",
+        "The lower rent authorities declined to strike out the tenant’s defence, while the High Court treated the default as requiring that result."
+      ],
+      "conclusion": "The controller’s power under Section 15(7) of the Delhi Rent Control Act, 1958 is discretionary and includes, by necessary implication, power to extend the time for payment or deposit of future rent. A default does not automatically require the defence to be struck out or eviction to follow.",
+      "legal_principle": "Sections 14(2), 15(1) and 15(7) of the Delhi Rent Control Act, 1958 provide the tenant a route to protection through payment or deposit, while making striking out the defence discretionary. The Court relied on Shyamcharan Sharma v. Dharamdas, Ram Murty v. Bhola Nath and Kamla Devi v. Vasdev. It held that the contrary strict approach in Hem Chand v. Delhi Cloth & General Mills Co. Ltd. could not stand with the later larger-bench decisions. The discretion must be exercised on the facts and not mechanically.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and tenant_failed_to_pay_monthly_rent_by_deadline",
+        "then": "rent_controller_may_retain_the_defence_or_extend_payment_time"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord sought recovery of premises from a tenant through a rent-control eviction proceeding.",
+        "tenant_failed_to_pay_monthly_rent_by_deadline": "The tenant did not pay or deposit a required monthly rent amount by the required deadline."
+      },
+      "definition": "When a tenant defaults in a rent-control eviction proceeding, the controller may preserve the defence or allow more time for payment rather than automatically striking the defence."
+    },
+    {
+      "legal_issue": "A reviewing court is not justified in replacing the rent controller’s properly exercised discretion merely because it would assess the tenant’s default differently.",
+      "material_facts": [
+        "The controller and the rent tribunal allowed the tenant to defend the eviction proceeding and treated the single delayed deposit as not wilful.",
+        "The High Court struck out the defence after finding negligence, including that other partners could have arranged the deposit.",
+        "The Supreme Court concluded that the lower authorities had properly exercised their discretion and that the High Court was not justified in substituting its own discretion in the circumstances."
+      ],
+      "conclusion": "The High Court was not justified in interfering with the lower authorities’ discretionary decision to leave the tenant’s defence intact.",
+      "legal_principle": "Section 15(7) of the Delhi Rent Control Act, 1958 confers discretion to strike out a tenant’s defence, and that discretion must be exercised with attention to the circumstances rather than mechanically. Relying on Shyamcharan Sharma v. Dharamdas, Ram Murty v. Bhola Nath and Kamla Devi v. Vasdev, the Court held that the lower authorities had properly exercised that discretion in this case.",
+      "rule": {
+        "if": "tenant_rent_eviction_appeal and lower_authorities_retained_defence_after_assessing_default and reviewing_court_replaced_that_discretion",
+        "then": "reviewing_court_interference_is_unjustified"
+      },
+      "predicates": {
+        "tenant_rent_eviction_appeal": "A tenant appealed in a rent-control proceeding seeking eviction from premises.",
+        "lower_authorities_retained_defence_after_assessing_default": "The initial decision-makers assessed the tenant’s default and allowed the tenant to continue defending the eviction proceeding.",
+        "reviewing_court_replaced_that_discretion": "A reviewing court displaced the initial decision-makers’ discretionary choice and struck out the tenant’s defence."
+      },
+      "definition": "In a tenant’s rent-control eviction appeal, interference is unjustified when the lower authorities assessed the default and retained the defence but the reviewing court simply replaced their discretionary choice."
+    },
+    {
+      "legal_issue": "A remand is unwarranted when the tenant’s explanation for late rent deposit shows negligence and the default could have been avoided by other responsible persons.",
+      "material_facts": [
+        "The tenant attributed the late deposit to the attorney’s illness and a partner forgetting the payment date while occupied with election-related activity.",
+        "Other partners or officials could have arranged the deposit despite those circumstances.",
+        "The Supreme Court considered the tenant negligent and careless, found that a further explanation would be an afterthought, and declined to remand the matter."
+      ],
+      "conclusion": "The Court declined to remand the case for reconsideration of an extension of time and dismissed the appeals. It allowed the tenant three months to vacate upon giving the usual undertaking.",
+      "legal_principle": "Although the controller has discretion to extend time or retain a defence under Section 15(7) of the Delhi Rent Control Act, 1958, that discretion depends on the circumstances of the default. The Court applied the discretionary approach in Shyamcharan Sharma v. Dharamdas, Ram Murty v. Bhola Nath and Kamla Devi v. Vasdev, and concluded that the explanation offered here showed negligence rather than a basis for remand.",
+      "rule": {
+        "if": "tenant_rent_eviction_appeal and rent_deposit_was_late and explanation_showed_negligence and another_responsible_person_could_have_paid",
+        "then": "remand_for_reconsideration_is_unwarranted"
+      },
+      "predicates": {
+        "tenant_rent_eviction_appeal": "A tenant appealed in a rent-control proceeding seeking eviction from premises.",
+        "rent_deposit_was_late": "The tenant deposited a required rent amount after the deadline.",
+        "explanation_showed_negligence": "The tenant attributed the delay to circumstances that the court regarded as carelessness rather than an unavoidable failure.",
+        "another_responsible_person_could_have_paid": "Another person responsible for the tenant’s affairs could have arranged the rent deposit in time."
+      },
+      "definition": "A remand is unwarranted when a tenant appealing an eviction decision deposited rent late, the explanation shows negligence, and another responsible person could have made the payment."
+    }
+  ],
+  "seconds": 21.3
+}

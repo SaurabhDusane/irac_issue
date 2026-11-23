@@ -1,0 +1,142 @@
+{
+  "doc_id": "893566",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25291,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4362,
+    "prompt_tokens": 6759,
+    "total_tokens": 11121,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Temporary workers cannot be granted permanent status when no sanctioned posts are available for their absorption.",
+      "material_facts": [
+        "The workers sought permanent status and benefits associated with permanency.",
+        "Counsel for the workers conceded that there were no sanctioned posts available to absorb all of them.",
+        "An earlier award granting permanency to a separate group of workers had not been challenged and had been implemented; the Court expressly excepted that award from its ruling.",
+        "Many of the workers had died or been retrenched, so the Court considered a scheme to create posts over time of no useful purpose."
+      ],
+      "conclusion": "The Court upheld the refusal to grant permanent status in the absence of sanctioned posts, set aside orders granting such status except for the unchallenged award concerning the separate group, and declined to direct creation of posts through a future scheme.",
+      "legal_principle": "The Court relied on its earlier ruling that the existence of posts is mandatory for absorption as regular employees and that long service, including service exceeding 240 days, does not by itself confer permanent status when no posts exist.",
+      "rule": {
+        "if": "is_permanency_appeal and no_sanctioned_posts_available",
+        "then": "permanent_status_cannot_be_granted"
+      },
+      "predicates": {
+        "is_permanency_appeal": "The proceeding is an appeal concerning whether temporary workers should receive permanent status.",
+        "no_sanctioned_posts_available": "The employer has no sanctioned posts available to absorb the workers seeking permanent status."
+      },
+      "definition": "If an appeal concerns permanent status and no sanctioned posts are available for absorption, the output is that permanent status cannot be granted."
+    },
+    {
+      "legal_issue": "Keeping workers in temporary employment does not constitute the specified unfair labour practice merely because the State has not created posts, where the complaint is against the employer and the absence of posts prevents permanent appointment.",
+      "material_facts": [
+        "Workers complained that they were kept as temporary or casual employees and deprived of the status and privileges of permanent employees.",
+        "The High Court inferred an object to deprive the workers of permanent status from the failure to create posts.",
+        "The complaints were against the universities, while the failure to create posts was attributed to the State Government.",
+        "The High Court had concluded that the workers could not be made permanent because posts were unavailable, but nevertheless awarded wages and benefits applicable to permanent workers on the basis of the unfair-labour-practice finding."
+      ],
+      "conclusion": "The Court rejected the inference that the universities committed the unfair labour practice described in Item 6 of Schedule IV, set aside the High Court's ruling on that basis, and set aside orders granting permanency except for the separate, unchallenged award.",
+      "legal_principle": "Item 6 of Schedule IV of the Maharashtra Recognition of Trade Unions and Prevention of Unfair Labour Practices Act, 1971 concerns employing workers as badlis, casuals or temporaries and continuing them as such for years with the object of depriving them of permanent status and privileges. The Court held that the absence of posts, where post creation was attributable to the State and the complaint was against the universities, did not establish that object on the part of the universities.",
+      "rule": {
+        "if": "is_unfair_labour_practice_complaint and workers_kept_temporary_for_years and no_sanctioned_posts_available and posts_not_created_by_separate_public_authority and complaint_not_against_post_creating_authority",
+        "then": "item_six_unfair_practice_not_established"
+      },
+      "predicates": {
+        "is_unfair_labour_practice_complaint": "The proceeding is a complaint alleging an unfair labour practice based on workers being kept in temporary employment.",
+        "workers_kept_temporary_for_years": "The employer continued workers as casual, temporary or similar workers over a long period.",
+        "no_sanctioned_posts_available": "The employer has no sanctioned posts available to absorb the workers seeking permanent status.",
+        "posts_not_created_by_separate_public_authority": "A separate public authority, rather than the employer complained against, was responsible for not creating the posts.",
+        "complaint_not_against_post_creating_authority": "The complaint was brought against the employer and not against the authority responsible for creating posts."
+      },
+      "definition": "If a complaint concerns workers kept temporary for years, no posts are available, and the complaint is against an employer other than the authority responsible for creating posts, the output is that the specified unfair labour practice is not established on that basis."
+    },
+    {
+      "legal_issue": "An unchallenged award fixing daily wages as a proportion of the current basic starting wages and dearness allowance of comparable permanent workers requires payment using the rates applicable as those wage components change.",
+      "material_facts": [
+        "An unchallenged award required daily wagers to receive daily wages equal to one-thirtieth of the basic starting wages and dearness allowance payable to a confirmed permanent worker of the same or similar grade and category.",
+        "The universities treated the award as a one-time increase and later paid minimum wages when those exceeded the amount they believed the award required.",
+        "The Court found that the award's calculation was based on the basic starting wages and dearness allowance applicable at any given time, and that the universities had not paid on that basis.",
+        "The amount previously calculated in enforcement proceedings represented what was payable at that time; the amount then due had become larger."
+      ],
+      "conclusion": "The Court held that the award required payment based on the changing basic starting wages and dearness allowance, found that failure to pay accordingly constituted an unfair labour practice under Item 9 of Schedule IV, and directed the universities to calculate and pay the wages due under the award.",
+      "legal_principle": "The Court interpreted the unchallenged award as providing a continuing wage formula, not a one-time increase. It applied Item 9 of Schedule IV of the Maharashtra Recognition of Trade Unions and Prevention of Unfair Labour Practices Act, 1971, to the universities' failure to make the payments required by the award. The earlier computation under Section 33-C(2) of the Industrial Disputes Act covered the amount payable as of the date of that computation and did not fix the amount due for later periods.",
+      "rule": {
+        "if": "is_wage_award_computation_dispute and unchallenged_award_uses_current_comparable_wage_components and employer_failed_to_apply_changing_wage_components",
+        "then": "employer_must_recalculate_and_pay_award_wages"
+      },
+      "predicates": {
+        "is_wage_award_computation_dispute": "The proceeding concerns calculation or payment of wages due under an award.",
+        "unchallenged_award_uses_current_comparable_wage_components": "An unchallenged award bases workers' wages on a stated proportion of the wage components payable to comparable permanent workers.",
+        "employer_failed_to_apply_changing_wage_components": "The employer did not update its payments as the comparable wage components changed."
+      },
+      "definition": "If a wage-payment dispute concerns an unchallenged award using comparable wage components and the employer failed to apply changes in those components, the output is that the employer must recalculate and pay the wages due under the award."
+    },
+    {
+      "legal_issue": "Daily-wage workers not covered by an award are entitled to the same payments and benefits as similarly situated daily-wage workers covered by that award when equal work warrants equal pay.",
+      "material_facts": [
+        "Approximately 4,000 daily-wage workers were employed, while the unchallenged award covered approximately 2,000 of them.",
+        "The Court was told that the workers not covered by that award were also daily wagers.",
+        "The parties did not dispute that equal pay for equal work applied among daily wagers.",
+        "A separate group of 127 workers was covered by a different award granting them permanency and other demands."
+      ],
+      "conclusion": "The Court directed that workers not covered by the first award receive its payments and benefits, except for the 127 workers covered by the separate award, and directed the universities to calculate and pay the amounts due.",
+      "legal_principle": "The Court applied the principle of equal pay for equal work among daily wagers and found no justification for denying the remaining workers the payments and benefits given by the award. The separate award covering the 127 workers remained applicable to them.",
+      "rule": {
+        "if": "is_daily_wage_benefits_dispute and workers_not_covered_by_award_perform_equal_work and comparable_daily_wagers_receive_award_benefits",
+        "then": "uncovered_workers_entitled_to_equivalent_award_benefits"
+      },
+      "predicates": {
+        "is_daily_wage_benefits_dispute": "The proceeding concerns payments or benefits for daily-wage workers.",
+        "workers_not_covered_by_award_perform_equal_work": "Workers not covered by an award perform work equal to that of daily-wage workers who are covered by it.",
+        "comparable_daily_wagers_receive_award_benefits": "Daily-wage workers performing comparable work receive payments and benefits under an award."
+      },
+      "definition": "If daily-wage workers not covered by an award perform equal work to comparable workers who receive its benefits, the output is that the uncovered workers are entitled to equivalent benefits."
+    },
+    {
+      "legal_issue": "A public authority responsible for funding an institution cannot avoid the payment of wages due to workers needed for the institution's work by relying on financial burden or lack of resources.",
+      "material_facts": [
+        "The State Government controlled and funded the universities and was responsible for providing their funds.",
+        "The universities argued that they lacked funds to make the required payments and that the State Government would have to provide them.",
+        "The universities required daily-wage workers to maintain agricultural fields and conduct agricultural experiments as part of their educational work."
+      ],
+      "conclusion": "The Court held that there was no justification for the State Government to withhold the required funds and that the universities could not refuse to pay the workers what was due on the ground of financial burden.",
+      "legal_principle": "Relying on Chandigarh Administration v. Rajni Vali, [2000] 2 SCC 42, the Court held that a public administration cannot shirk its responsibility to provide proper education on the plea of lack of resources and must find ways and means to secure the necessary funds.",
+      "rule": {
+        "if": "is_public_institution_wage_payment_dispute and public_authority_controls_and_funds_employer and workers_are_required_for_institutional_work and wages_are_due",
+        "then": "public_authority_must_make_funds_available_for_payment"
+      },
+      "predicates": {
+        "is_public_institution_wage_payment_dispute": "The proceeding concerns unpaid worker wages at a publicly controlled institution.",
+        "public_authority_controls_and_funds_employer": "A public authority controls and is responsible for funding the employer institution.",
+        "workers_are_required_for_institutional_work": "The institution requires the workers to carry out its educational or other institutional work.",
+        "wages_are_due": "The workers have wages due for their work."
+      },
+      "definition": "If a publicly funded institution owes wages to workers required for its work, the output is that the responsible public authority must make funds available for payment."
+    },
+    {
+      "legal_issue": "A contempt petition need not result in action where the Court has issued its judgment in the related appeals, while the petitioner remains free to seek appropriate relief if that judgment is not complied with within a reasonable time.",
+      "material_facts": [
+        "A contempt petition was pending alongside appeals concerning the workers' claims.",
+        "The Court delivered its judgment in the related appeals and clarified that the petitioner could adopt appropriate proceedings if the judgment was not complied with within a reasonable time."
+      ],
+      "conclusion": "The Court took no action on the contempt petition and preserved the petitioner's liberty to adopt appropriate proceedings in the event of non-compliance within a reasonable time.",
+      "legal_principle": "The Court relied on its disposition of the related appeals and expressly left open the petitioner's ability to pursue appropriate proceedings if compliance did not occur within a reasonable time.",
+      "rule": {
+        "if": "is_contempt_petition and related_appeals_decided_with_compliance_directions",
+        "then": "no_contempt_action_now_but_later_proceedings_remain_available"
+      },
+      "predicates": {
+        "is_contempt_petition": "The proceeding is a petition alleging contempt in connection with a court order.",
+        "related_appeals_decided_with_compliance_directions": "The Court has decided related appeals and issued directions whose compliance can be pursued."
+      },
+      "definition": "If a contempt petition accompanies related appeals that have resulted in compliance directions, the output is that no contempt action is taken at that time but later proceedings remain available for non-compliance."
+    }
+  ],
+  "seconds": 25.9
+}

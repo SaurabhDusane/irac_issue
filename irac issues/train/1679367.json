@@ -1,0 +1,80 @@
+{
+  "doc_id": "1679367",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 67777,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2582,
+    "prompt_tokens": 16786,
+    "total_tokens": 19368,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Publication of both the acquisition notification in the official gazette and the substance of that notification in the affected locality is mandatory, and filing objections does not cure the failure to publish locally.",
+      "material_facts": [
+        "A later acquisition notification was published in the official gazette but identified a different plot and area from the land actually intended for acquisition.",
+        "A corrigendum corrected the plot and area, but neither the notification as published nor the corrigendum was followed by publication of its substance in the locality.",
+        "The landowner filed detailed objections after receiving notice of the proposed acquisition."
+      ],
+      "conclusion": "The failure to publish the substance of the operative notification in the locality invalidated the acquisition proceedings; the landowner's filing of objections did not cure that failure.",
+      "legal_principle": "Section 4(1) of the Land Acquisition Act, 1894 requires both gazette publication and local publication of the substance of the notification. Both requirements are mandatory, and the local notice must relate to the notification actually published in the gazette; it cannot precede that notification. The requirement is not reduced to a means of enabling objections under section 5A, nor is its breach cured because objections were in fact filed. The Court relied on Khub Chand v. State of Rajasthan, Babu Barkya Thakur v. State of Bombay (distinguished on its facts), Somavanti v. State of Punjab, State of Mysore v. Abdul Razak Sahib, and Narendra Bahadur Singh v. State of U.P.; it also relied on Mahendra Lal Jaini v. State of Uttar Pradesh regarding the legal effect of gazette publication. The Court did not decide the effect of the later 1974 amendment because it post-dated the notification at issue.",
+      "rule": {
+        "if": "land_acquisition_proceeding and gazette_notification_published and operative_notice_not_published_locally",
+        "then": "acquisition_proceedings_invalid"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The government or an acquiring authority initiated proceedings to acquire land.",
+        "gazette_notification_published": "The acquisition notification was published in the official gazette.",
+        "operative_notice_not_published_locally": "The acquiring authority did not publish the substance of the operative notification in the locality where the land was situated."
+      },
+      "definition": "When acquisition proceedings include gazette publication but no local publication of the operative notification's substance, the acquisition proceedings are invalid."
+    },
+    {
+      "legal_issue": "A land-acquisition power is legally mala fide when it is exercised for an extraneous purpose rather than the public purpose for which the power was conferred, even without personal ill-will.",
+      "material_facts": [
+        "The acquiring beneficiary sought land ostensibly to extend a museum, although it already possessed a substantial area of land that had remained unused for decades and the museum had not been built.",
+        "The beneficiary had opposed construction of a nearby cinema and sought acquisition after failing to prevent the cinema project through the licensing process.",
+        "The beneficiary's communications and the acquiring authority's own assessment indicated that the acquisition was sought to prevent or undo the cinema project, rather than to meet a genuine land need.",
+        "The acquisition authority proceeded despite knowing that the asserted need was not genuine."
+      ],
+      "conclusion": "The acquisition power was exercised for an extraneous and irrelevant purpose, amounting to a colourable exercise of power, and the notification was illegal and invalid.",
+      "legal_principle": "A power conferred to achieve a statutory purpose must be exercised reasonably, in good faith, and for that purpose. Exercise for extraneous, irrelevant, or non-germane considerations is a colourable exercise of power or fraud on power and constitutes legal mala fides; personal ill-will is unnecessary. The Court applied section 4(1) of the Land Acquisition Act, 1894 and relied on Municipal Council of Sydney v. Campbell and State of Punjab v. Gurdial Singh.",
+      "rule": {
+        "if": "land_acquisition_proceeding and beneficiary_lacks_genuine_land_need and acquisition_serves_to_block_nearby_project and authority_knew_actual_purpose",
+        "then": "acquisition_notification_invalid_for_colourable_exercise_of_power"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The government or an acquiring authority initiated proceedings to acquire land for a stated public purpose.",
+        "beneficiary_lacks_genuine_land_need": "The proposed beneficiary had no genuine need for the land, including because it had suitable land available that it had left unused.",
+        "acquisition_serves_to_block_nearby_project": "The proposed beneficiary sought acquisition to prevent or undo a nearby project it opposed.",
+        "authority_knew_actual_purpose": "The acquiring authority knew that the acquisition was being pursued for the ulterior purpose rather than the stated public purpose."
+      },
+      "definition": "When an acquisition proceeding serves to block a nearby project despite the beneficiary's lack of genuine need, and the authority knows the actual purpose, the notification is invalid for colourable exercise of power."
+    },
+    {
+      "legal_issue": "A person directly affected by an allegation of mala fides against them must be joined to the proceeding in which the allegation is made.",
+      "material_facts": [
+        "The challenge to the acquisition alleged that the beneficiary had procured it for an improper purpose.",
+        "The beneficiary was not joined in the original proceeding, and the landowner opposed the beneficiary's request to be joined.",
+        "The beneficiary sought to intervene in the appeal, and the Court allowed the intervention and heard its submissions."
+      ],
+      "conclusion": "The beneficiary was a proper party to the mala-fides challenge and should have been joined; the Court granted its application to intervene in the appeal.",
+      "legal_principle": "When a proceeding alleges mala fides against a person or body directly affected by the allegation, that affected person or body is a proper party and must be impleaded. Applying Order XX rule 3 of the Supreme Court Rules, 1966, the Court granted the beneficiary's intervention application despite its not having appealed the rejection of its application to be joined below.",
+      "rule": {
+        "if": "proceeding_challenges_acquisition_for_mala_fides and beneficiary_is_target_of_allegation and beneficiary_is_not_joined",
+        "then": "affected_beneficiary_must_be_joined"
+      },
+      "predicates": {
+        "proceeding_challenges_acquisition_for_mala_fides": "A proceeding challenges a land acquisition on the ground that it was procured through mala fides.",
+        "beneficiary_is_target_of_allegation": "The alleged improper conduct is attributed to the person or body for whose benefit the land is being acquired.",
+        "beneficiary_is_not_joined": "The person or body targeted by the allegation was not made a party to the proceeding."
+      },
+      "definition": "When an acquisition challenge alleges mala fides by an unjoined beneficiary, that beneficiary must be joined as a party."
+    }
+  ],
+  "seconds": 15.8
+}

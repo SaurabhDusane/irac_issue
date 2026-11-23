@@ -1,0 +1,114 @@
+{
+  "doc_id": "626320",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 75162,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2962,
+    "prompt_tokens": 17529,
+    "total_tokens": 20491,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A later rent-control eviction petition based on a distinct period of non-occupation is not barred by res judicata merely because an earlier petition raised the same statutory ground.",
+      "material_facts": [
+        "The earlier petitions alleged cessation of occupation beginning in an earlier period, while the later petitions alleged cessation beginning in September 2001 and continuing until they were filed.",
+        "In the earlier proceedings, the premises had been kept open and available for operation for a time; in the later proceedings, the tenant produced no adequate evidence of occupation during the later period."
+      ],
+      "conclusion": "The later petitions were based on different causes and were not barred by res judicata.",
+      "legal_principle": "Res judicata did not apply because the later petitions concerned a distinct period of non-occupation and rested on a different cause from the earlier petitions; the evidence relevant to the later period also differed.",
+      "rule": {
+        "if": "rent_control_eviction_petition and earlier_eviction_petition_decided and current_petition_relies_on_later_nonoccupation_period",
+        "then": "current_petition_not_barred_by_res_judicata"
+      },
+      "predicates": {
+        "rent_control_eviction_petition": "A landlord brings a proceeding seeking eviction of a tenant under rent-control law.",
+        "earlier_eviction_petition_decided": "An earlier eviction petition between the same parties has been decided.",
+        "current_petition_relies_on_later_nonoccupation_period": "The current petition relies on non-occupation during a period later than the period alleged in the earlier petition."
+      },
+      "definition": "When an eviction proceeding follows a decided proceeding but alleges non-occupation in a distinct later period, the current proceeding is not barred by res judicata."
+    },
+    {
+      "legal_issue": "For eviction based on cessation of occupation, occupation requires actual use of the premises for the purpose for which they were let, and proof of continuous non-use for the statutory period shifts the burden to the tenant to establish reasonable cause.",
+      "material_facts": [
+        "The premises were leased for use as an office and godown.",
+        "The premises were found closed, with rusted shutters and gates, overgrown grounds, dusty and unusable furniture, and no electricity supply.",
+        "A notice on the premises stated that operations had been suspended from October 2001.",
+        "The tenant did not produce relevant attendance, wage, stock, electricity-payment, or business-transaction records to establish continued use or reasonable cause for non-use."
+      ],
+      "conclusion": "The landlord proved continuous cessation of occupation for more than six months, and the tenant failed to establish occupation or reasonable cause; eviction was therefore warranted.",
+      "legal_principle": "Under Sections 2(1) and 11(4)(v) of the Kerala Buildings (Lease and Rent Control) Act, 1965, occupation means actual possession or use for the purpose for which the premises were let, not merely legal possession or keeping articles under lock and key. The landlord bears the initial burden of producing tangible evidence of continuous non-occupation for six months; the burden then shifts to the tenant to prove reasonable cause. The Court relied on Ram Dass v. Davinder, Mathai Antony v. Abraham, Kurian Thomas v. Sreedharan Menon, Paulina Joseph v. Idukki District Wholesale Co-operative Consumer Stores Ltd., and Simon v. Rappai.",
+      "rule": {
+        "if": "rent_control_eviction_petition and landlord_proved_continuous_nonuse_for_statutory_period and not tenant_proved_occupation_or_reasonable_cause",
+        "then": "eviction_for_cessation_of_occupation_warranted"
+      },
+      "predicates": {
+        "rent_control_eviction_petition": "A landlord brings a proceeding seeking eviction of a tenant under rent-control law on the basis of non-occupation.",
+        "landlord_proved_continuous_nonuse_for_statutory_period": "The landlord produces tangible evidence that the tenant did not actually use the premises for their letting purpose throughout the required continuous period.",
+        "tenant_proved_occupation_or_reasonable_cause": "The tenant produces evidence establishing actual use of the premises or a reasonable cause for not using them."
+      },
+      "definition": "If a landlord proves continuous non-use for the required period and the tenant proves neither actual use nor reasonable cause, eviction for cessation of occupation is warranted."
+    },
+    {
+      "legal_issue": "Financial difficulty and related rehabilitation proceedings do not, without cogent evidence that circumstances beyond the tenant’s control prevented use, establish reasonable cause for ceasing to occupy business premises.",
+      "material_facts": [
+        "The tenant relied on financial difficulties and proceedings concerning its financial rehabilitation to explain its non-use of the premises.",
+        "The tenant did not plead or prove that circumstances beyond its control caused it to stop using the premises, and did not produce records substantiating continued business activity or the claimed constraints."
+      ],
+      "conclusion": "The asserted financial difficulty and pending rehabilitation proceedings did not constitute reasonable cause for the cessation of occupation on the evidence presented.",
+      "legal_principle": "Under Section 11(4)(v) of the Kerala Buildings (Lease and Rent Control) Act, 1965, whether reasonable cause exists depends on the circumstances of the case. For premises let for industrial or commercial use, financial difficulty alone is insufficient unless cogent evidence shows that fiscal circumstances beyond the tenant’s control prevented the relevant activity. The Court relied on Paulina Joseph v. Idukki District Wholesale Co-operative Consumer Stores Ltd. and the principles concerning the burden of proof stated in Ram Dass v. Davinder.",
+      "rule": {
+        "if": "rent_control_eviction_petition and business_premises_unused_for_required_period and tenant_relies_on_financial_difficulty and not cogent_evidence_of_uncontrollable_causes",
+        "then": "financial_difficulty_not_reasonable_cause_for_nonoccupation"
+      },
+      "predicates": {
+        "rent_control_eviction_petition": "A landlord brings a proceeding seeking eviction of a tenant under rent-control law on the basis of non-occupation.",
+        "business_premises_unused_for_required_period": "Premises let for business or industrial use are not used for that purpose throughout the required continuous period.",
+        "tenant_relies_on_financial_difficulty": "The tenant relies on financial difficulty as the explanation for not using the premises.",
+        "cogent_evidence_of_uncontrollable_causes": "The tenant produces cogent evidence that circumstances beyond its control prevented it from using the premises."
+      },
+      "definition": "Where business premises remain unused and the tenant relies on financial difficulty without cogent evidence of uncontrollable causes, that difficulty is not reasonable cause for non-occupation."
+    },
+    {
+      "legal_issue": "The statutory suspension of proceedings concerning a sick industrial company does not bar a landlord’s proceeding to evict the company from leased premises.",
+      "material_facts": [
+        "The tenant was declared a sick industrial company and proceedings concerning its rehabilitation were pending.",
+        "The landlords brought rent-control petitions seeking eviction from the leased premises."
+      ],
+      "conclusion": "The rehabilitation proceedings did not bar the eviction petitions.",
+      "legal_principle": "Section 22(1) of the Sick Industrial Companies (Special Provisions) Act, 1985 suspends specified proceedings, including proceedings for execution, distress, or similar recovery against company property, but does not encompass a landlord’s eviction proceeding. The Court relied on Shree Chamundi Mopeds Ltd. v. Church of South India Trust Association, Gujarat Steel Tube Co. Ltd. v. Virchandbhai B. Shah, and Carona Ltd. v. Parvathy Swaminathan and Sons.",
+      "rule": {
+        "if": "landlord_eviction_proceeding_against_sick_company",
+        "then": "eviction_proceeding_not_barred_by_sick_company_protection"
+      },
+      "predicates": {
+        "landlord_eviction_proceeding_against_sick_company": "A landlord brings a proceeding to evict a tenant company that is subject to proceedings concerning its financial rehabilitation."
+      },
+      "definition": "A landlord’s proceeding to evict a company from leased premises is not barred merely because the company is subject to financial-rehabilitation proceedings."
+    },
+    {
+      "legal_issue": "A tenant’s financial improvement after the eviction petition is filed does not alter whether the tenant had ceased to occupy the premises without reasonable cause when the petition was filed.",
+      "material_facts": [
+        "The eviction petitions concerned continuous non-occupation existing when they were filed.",
+        "The tenant relied on a later improvement in its financial condition to challenge the eviction finding."
+      ],
+      "conclusion": "The later improvement in the tenant’s financial condition did not affect the finding that the tenant had ceased to occupy the premises without reasonable cause when the petitions were filed.",
+      "legal_principle": "Under Section 11(4)(v) of the Kerala Buildings (Lease and Rent Control) Act, 1965, the relevant inquiry is whether the tenant had ceased to occupy the premises continuously for the required period without reasonable cause as of the filing of the petition; a later change in financial condition does not alter that inquiry.",
+      "rule": {
+        "if": "rent_control_eviction_petition and nonoccupation_assessed_as_of_filing and financial_improvement_occurred_after_filing",
+        "then": "later_financial_improvement_does_not_defeat_eviction_finding"
+      },
+      "predicates": {
+        "rent_control_eviction_petition": "A landlord brings a proceeding seeking eviction of a tenant under rent-control law.",
+        "nonoccupation_assessed_as_of_filing": "The alleged continuous non-occupation is assessed as it existed when the eviction petition was filed.",
+        "financial_improvement_occurred_after_filing": "The tenant’s financial condition improved only after the eviction petition was filed."
+      },
+      "definition": "When non-occupation is assessed as of the filing of an eviction petition, a later improvement in the tenant’s financial condition does not defeat the resulting eviction finding."
+    }
+  ],
+  "seconds": 18.0
+}

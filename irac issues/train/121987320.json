@@ -1,0 +1,158 @@
+{
+  "doc_id": "121987320",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 368222,
+  "truncated": true,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 5004,
+    "prompt_tokens": 78776,
+    "total_tokens": 83780,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A dispute is non-arbitrable when its nature or the governing law makes private adjudication unsuitable or impermissible.",
+      "material_facts": [
+        "The reference asked the Court to identify when a dispute is incapable of resolution by arbitration.",
+        "The Court considered the limits of a consensual private forum, including its inability to bind non-parties or perform sovereign functions, and the effect of statutes assigning exclusive adjudication to public forums."
+      ],
+      "conclusion": "The Court formulated a four-fold test: a dispute is non-arbitrable if it concerns an action in rem other than subordinate rights in personam; affects third-party rights, has erga omnes effect, or requires centralized adjudication; concerns inalienable sovereign or public-interest functions; or is expressly or by necessary implication barred from arbitration by mandatory law.",
+      "legal_principle": "Under Sections 2(3) and 34(2)(b)(i) of the Arbitration and Conciliation Act, 1996, certain disputes cannot be submitted to arbitration and an award on such a dispute may be set aside. Applying Booz Allen & Hamilton Inc. v. SBI Home Finance Ltd., the Court distinguished actions in rem from actions in personam while recognizing that subordinate rights in personam arising from rights in rem may be arbitrable. It also relied on Dhulabhai v. State of Madhya Pradesh for assessing implied statutory exclusion, and on Vimal Kishor Shah v. Jayesh Dinesh Shah and A. Ayyasamy v. A. Paramasivam in developing the framework.",
+      "rule": {
+        "if": "arbitration_dispute_case and (in_rem_without_subordinate_personal_rights or affects_nonconsenting_third_parties or requires_collective_adjudication or involves_sovereign_public_function or mandatory_law_requires_exclusive_forum)",
+        "then": "dispute_is_non_arbitrable"
+      },
+      "predicates": {
+        "arbitration_dispute_case": "The dispute is being considered for resolution through arbitration or for review of an arbitral award.",
+        "in_rem_without_subordinate_personal_rights": "The dispute determines a status or right effective against the world, rather than a subordinate personal right between particular parties.",
+        "affects_nonconsenting_third_parties": "Resolving the dispute would affect the rights or liabilities of persons who did not agree to arbitrate.",
+        "requires_collective_adjudication": "The dispute requires centralized or collective resolution for an effective and enforceable outcome.",
+        "involves_sovereign_public_function": "The dispute concerns an inalienable sovereign or public-interest function performed by the State.",
+        "mandatory_law_requires_exclusive_forum": "A mandatory law expressly or by necessary implication reserves adjudication of the dispute to a specified public forum."
+      },
+      "definition": "When an arbitration dispute has one of the stated features, the rule treats it as non-arbitrable."
+    },
+    {
+      "legal_issue": "Landlord-tenant disputes governed by general property law are arbitrable, but disputes assigned exclusively to a rent-control forum are not.",
+      "material_facts": [
+        "The reference challenged the rule in Himangni Enterprises that landlord-tenant disputes governed by the Transfer of Property Act were non-arbitrable.",
+        "The Court distinguished tenancies governed by general property law from tenancies protected by rent-control legislation that gives a specified court or forum exclusive jurisdiction.",
+        "The dispute described in Himangni Enterprises concerned eviction, rent arrears, and an injunction in a tenancy not protected by rent-control legislation."
+      ],
+      "conclusion": "Landlord-tenant disputes governed by the Transfer of Property Act are arbitrable. Disputes governed by rent-control legislation are not arbitrable where that legislation gives a specified court or forum exclusive jurisdiction over the special rights and obligations.",
+      "legal_principle": "Applying the four-fold test and Booz Allen & Hamilton Inc., the Court held that ordinary landlord-tenant claims concern subordinate rights in personam, ordinarily do not affect third parties, and can be enforced like a civil-court decree. The Transfer of Property Act does not expressly or by necessary implication prohibit arbitration, and an arbitrator must apply its tenant-protective provisions. The Court overruled Himangni Enterprises v. Kamaljeet Singh Ahluwalia. It preserved the exception identified in Booz Allen for special-statute tenancies where tenants enjoy statutory protection and only specified courts have jurisdiction; Natraj Studios (P) Ltd. v. Navrang Studios concerned such a statutory tenancy.",
+      "rule": {
+        "if": "landlord_tenant_dispute and governed_by_general_property_law and not rent_control_forum_has_exclusive_jurisdiction",
+        "then": "landlord_tenant_dispute_is_arbitrable"
+      },
+      "predicates": {
+        "landlord_tenant_dispute": "The dispute concerns rights or obligations between a landlord and a tenant.",
+        "governed_by_general_property_law": "The tenancy is governed by general property law rather than a special rent-control regime assigning exclusive jurisdiction.",
+        "rent_control_forum_has_exclusive_jurisdiction": "A rent-control law gives a specified court or forum exclusive authority to decide the tenancy dispute."
+      },
+      "definition": "A landlord-tenant dispute is arbitrable when it is governed by general property law and no rent-control forum has exclusive jurisdiction."
+    },
+    {
+      "legal_issue": "At the referral stage, courts must conduct a limited prima facie review of arbitrability and ordinarily leave arguable or factually disputed questions to the arbitral tribunal.",
+      "material_facts": [
+        "The reference concerned the scope of judicial review under Sections 8 and 11 of the Arbitration and Conciliation Act after amendments intended to reduce court intervention.",
+        "The Court considered the tribunal’s authority under Section 16 to rule on its own jurisdiction and the court’s power under Section 34 to review specified jurisdictional and arbitrability issues after an award.",
+        "The Court noted that some questions, such as whether a dispute is plainly outside an arbitration clause or manifestly non-arbitrable, can be resolved on a preliminary review, while contested or complex questions may require fuller consideration."
+      ],
+      "conclusion": "The scope of review under Sections 8 and 11 is identical, limited, and prima facie. A court may refuse reference when it is manifestly and ex facie certain that no valid arbitration agreement exists or the dispute is non-arbitrable. Otherwise, it should refer the parties and leave the question to the tribunal, particularly where facts are contested, the issue is reasonably arguable, or a summary review would be inconclusive. The tribunal is the preferred first authority, subject to the court’s post-award review under Section 34.",
+      "legal_principle": "Sections 8 and 11, as amended by Act 3 of 2016, must be read with Sections 16 and 34, the doctrines of separability and competence-competence, and the objective of minimizing judicial intervention. The Court held that Patel Engineering Ltd. v. Boghara Polyfab Pvt. Ltd. no longer governs the scope of review after the amendments. It relied on Duro Felguera, S.A. v. Gangavaram Port Ltd. and Mayavati Trading Pvt. Ltd. v. Pradyuat Deb Burman for the limited referral inquiry; on SBP & Co. v. Patel Engineering Ltd. for the complementary nature of Sections 8 and 11; and on Shin-Etsu Chemical Co. Ltd. v. Aksh Optifibre Ltd. for a prima facie approach. The Court described the referral proceeding as preliminary and summary, not a mini-trial, and recognized the post-award review in Section 34.",
+      "rule": {
+        "if": "arbitration_referral_proceeding and not (manifest_no_valid_agreement or manifest_non_arbitrable_dispute)",
+        "then": "refer_parties_to_arbitration"
+      },
+      "predicates": {
+        "arbitration_referral_proceeding": "A court is considering an application to refer a dispute to arbitration or to appoint an arbitrator.",
+        "manifest_no_valid_agreement": "The materials make it manifest and ex facie certain that no valid arbitration agreement exists.",
+        "manifest_non_arbitrable_dispute": "The materials make it manifest and ex facie certain that the dispute is non-arbitrable."
+      },
+      "definition": "In a referral proceeding, the parties are referred to arbitration unless the absence of a valid agreement or the dispute’s non-arbitrability is manifest."
+    },
+    {
+      "legal_issue": "For referral purposes, an arbitration agreement exists only if it is legally valid and enforceable.",
+      "material_facts": [
+        "The reference raised whether the statutory requirement to examine the existence of an arbitration agreement permits a court to consider its validity.",
+        "The Court considered the writing and other requirements for an arbitration agreement and the rules governing enforceability of agreements.",
+        "The Court treated existence and validity as connected, while limiting the referral court to a prima facie assessment."
+      ],
+      "conclusion": "The expression “existence of an arbitration agreement” includes its validity: an agreement that is illegal or fails mandatory legal requirements is not an enforceable arbitration agreement. At referral, however, the court applies only a prima facie test.",
+      "legal_principle": "Section 7 of the Arbitration and Conciliation Act defines the arbitration agreement and requires it to be in writing. The Court read it with Sections 10 and 2(g)–(h) of the Indian Contract Act, 1872, which address enforceable contracts and void agreements. It relied on Garware Wall Ropes Ltd. v. Coastal Marine Constructions and Engineering Ltd. and United India Insurance Co. Ltd. v. Hyundai Engineering and Construction Co. Ltd. on the relationship between existence and legal enforceability, and on Duro Felguera and Mayavati Trading for the limited referral-stage inquiry.",
+      "rule": {
+        "if": "arbitration_referral_proceeding and agreement_manifestly_unenforceable",
+        "then": "no_valid_arbitration_agreement_exists_for_referral"
+      },
+      "predicates": {
+        "arbitration_referral_proceeding": "A court is considering whether to refer a dispute to arbitration or appoint an arbitrator.",
+        "agreement_manifestly_unenforceable": "The agreement is manifestly unenforceable because it is illegal or fails a mandatory legal requirement."
+      },
+      "definition": "At referral, a manifestly unenforceable arbitration agreement is treated as no valid arbitration agreement for referral."
+    },
+    {
+      "legal_issue": "Allegations of fraud in a civil or contractual dispute do not by themselves make the dispute non-arbitrable.",
+      "material_facts": [
+        "The Court considered earlier decisions treating serious fraud allegations as a reason to refuse arbitration.",
+        "It distinguished fraud that invalidates the arbitration agreement itself from fraud allegations concerning the parties’ civil or contractual dealings.",
+        "It also considered claims involving public-law allegations against the State or its instrumentalities."
+      ],
+      "conclusion": "Civil fraud disputes are arbitrable unless the fraud vitiates the arbitration agreement itself or the allegations raise a public-law controversy requiring adjudication by a public court. Seriousness, complexity, or the mere possibility of criminal proceedings does not alone make a civil dispute non-arbitrable. The Court overruled N. Radhakrishnan v. Maestro Engineers on this point.",
+      "legal_principle": "The Court applied Sections 8 and 16 of the Arbitration and Conciliation Act and the principles of separability and competence-competence. It relied on A. Ayyasamy v. A. Paramasivam, Avitel Post Studioz Ltd. v. HSBC PI Holdings (Mauritius) Ltd., and Rashid Raza v. Sadaf Akhthar. The relevant considerations are whether the fraud makes the arbitration agreement itself invalid or whether the allegations concern public-law conduct rather than a civil or contractual dispute.",
+      "rule": {
+        "if": "civil_contract_dispute and fraud_concerns_parties_private_dealings and not (fraud_vitiates_arbitration_agreement or fraud_requires_public_law_adjudication)",
+        "then": "fraud_dispute_is_arbitrable"
+      },
+      "predicates": {
+        "civil_contract_dispute": "The dispute arises from a civil or contractual relationship between the parties.",
+        "fraud_concerns_parties_private_dealings": "The alleged fraud concerns dealings between the parties rather than conduct requiring adjudication in the public-law domain.",
+        "fraud_vitiates_arbitration_agreement": "The alleged fraud makes the arbitration agreement itself invalid or shows that it was never agreed to.",
+        "fraud_requires_public_law_adjudication": "The allegations concern public-law conduct requiring determination by a public court."
+      },
+      "definition": "Fraud allegations in a private civil or contractual dispute do not prevent arbitration unless they invalidate the arbitration agreement or require public-law adjudication."
+    },
+    {
+      "legal_issue": "Claims that a statute assigns to a debt-recovery tribunal with exclusive powers and remedies are non-arbitrable.",
+      "material_facts": [
+        "The Court examined whether claims governed by the debt-recovery legislation could be referred to arbitration.",
+        "That legislation creates a public tribunal and provides specified adjudicatory powers and methods of recovery that an arbitral tribunal cannot exercise.",
+        "The Court considered that permitting arbitration would deprive the statutory institutions of rights and recovery mechanisms granted by the legislation."
+      ],
+      "conclusion": "Claims governed by the debt-recovery legislation are non-arbitrable because the statute necessarily prohibits waiver of the designated tribunal’s jurisdiction. The Court overruled the Delhi High Court Full Bench decision in HDFC Bank Ltd. v. Satpal Singh Bakshi.",
+      "legal_principle": "The Court applied Sections 2(3) and 34(2)(b)(i) of the Arbitration and Conciliation Act and the implied-exclusion principles discussed in Dhulabhai v. State of Madhya Pradesh. It relied on Transcore v. Union of India concerning the statutory recovery scheme and on M.D. Frozen Foods Exports Pvt. Ltd. v. Hero Fincorp Ltd. and Indiabulls Housing Finance Ltd. v. Deccan Chronicle Holdings Ltd. The statutory powers and recovery remedies cannot be exercised through arbitration.",
+      "rule": {
+        "if": "debt_recovery_statutory_claim and statute_assigns_exclusive_adjudication_and_recovery_powers",
+        "then": "claim_is_non_arbitrable"
+      },
+      "predicates": {
+        "debt_recovery_statutory_claim": "The claim falls within a statutory debt-recovery regime administered by a public tribunal.",
+        "statute_assigns_exclusive_adjudication_and_recovery_powers": "The statute assigns adjudication and recovery powers to a designated public tribunal that an arbitral tribunal cannot exercise."
+      },
+      "definition": "A claim within a statutory debt-recovery regime is non-arbitrable when the statute assigns exclusive adjudication and recovery powers to a public tribunal."
+    },
+    {
+      "legal_issue": "When an arbitral tribunal is already hearing the dispute in the matters before the Court, the arbitrability issue may be left to that tribunal, subject to remedies against the award.",
+      "material_facts": [
+        "In the principal appeal and one special-leave petition, the arbitral tribunal was hearing the dispute.",
+        "In another special-leave petition, an award had been made and the tribunal had rejected its jurisdictional objection.",
+        "The Court applied its conclusions on the tribunal’s primary jurisdiction and the court’s post-award review."
+      ],
+      "conclusion": "The Court left arbitrability for the tribunal to decide in the matters where proceedings were ongoing. Where an award had already been made, the objecting party could pursue a challenge under Section 34. The parties remained free to challenge an award in accordance with law.",
+      "legal_principle": "Sections 16 and 34 of the Arbitration and Conciliation Act empower the tribunal to rule on its jurisdiction and preserve the court’s post-award review. The Court applied the principles of competence-competence and limited judicial intervention established in this judgment.",
+      "rule": {
+        "if": "arbitration_dispute_case and tribunal_is_already_hearing_dispute",
+        "then": "leave_arbitrability_to_tribunal_subject_to_post_award_review"
+      },
+      "predicates": {
+        "arbitration_dispute_case": "The court is considering an arbitrability objection in a dispute referred to arbitration.",
+        "tribunal_is_already_hearing_dispute": "The arbitral tribunal has been constituted and is already hearing the dispute."
+      },
+      "definition": "When the tribunal is already hearing the dispute, the arbitrability question is left to it, with post-award court review remaining available."
+    }
+  ],
+  "seconds": 29.2
+}

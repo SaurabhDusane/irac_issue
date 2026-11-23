@@ -1,0 +1,103 @@
+{
+  "doc_id": "1145726",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32214,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2459,
+    "prompt_tokens": 7792,
+    "total_tokens": 10251,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Owners whose property was requisitioned before being acquired under a statutory scheme that omits solatium and interest are not entitled to those payments as additions to statutory compensation.",
+      "material_facts": [
+        "The property had been under requisition before it was acquired for a public purpose, and compensation had been paid during the requisition period.",
+        "The governing statute provided its own method for determining compensation for acquired property, including a market-based measure tied to the date of acquisition.",
+        "The statute did not provide for solatium or interest as components additional to compensation.",
+        "The arbitrator and the High Court awarded solatium and interest on the enhanced compensation."
+      ],
+      "conclusion": "The owners were not entitled to solatium or interest, and the awards of those amounts were set aside.",
+      "legal_principle": "Compensation for compulsory acquisition is determined under the statute governing the acquisition. Equitable interest may ordinarily compensate an owner deprived of possession, but equity yields when the statute occupies the field. The omission of solatium and interest from the statutory compensation scheme was deliberate. The Court followed Union of India v. Hari Kishan Khosla and District Judge, Udhampur, and distinguished Satinder Singh v. Amrao Singh, which concerned a different statutory scheme that expressly incorporated a compensation provision. The Court also noted that the Land Acquisition Act, 1894 expressly provided for solatium under Section 23(2) and interest under Sections 28 and 34.",
+      "rule": {
+        "if": "acquisition_appeal and prior_requisition and statutory_compensation_scheme and no_statutory_additions",
+        "then": "claimants_not_entitled_to_solatium_or_interest"
+      },
+      "predicates": {
+        "acquisition_appeal": "The proceeding challenges an award of compensation for property acquired under a statutory acquisition scheme.",
+        "prior_requisition": "The property was in the acquiring authority's possession under requisition before it was acquired.",
+        "statutory_compensation_scheme": "The governing statute sets out the method for determining compensation for the acquired property.",
+        "no_statutory_additions": "The governing statute does not provide for solatium or interest as additions to the compensation."
+      },
+      "definition": "When an acquisition appeal concerns previously requisitioned property and the governing statute sets the compensation method without providing additional solatium or interest, the claimants are not entitled to those additions."
+    },
+    {
+      "legal_issue": "A prior Supreme Court decision is binding for the legal principle it actually decided when that principle governs the issue before the Court.",
+      "material_facts": [
+        "A three-judge Supreme Court bench had considered whether owners whose property was acquired under a similar statutory scheme could receive solatium and interest.",
+        "That bench considered the relevant statutory provisions and prior authorities and held that solatium and interest were not payable under that scheme.",
+        "A later two-judge decision had applied that holding to the statutory scheme at issue in this appeal.",
+        "The respondents argued that the earlier decision was not a binding precedent and conflicted with another decision concerning a different statutory scheme."
+      ],
+      "conclusion": "The earlier three-judge decision was a binding precedent on the issue it had decided; it was neither per incuriam nor in conflict with the decision relied on by the respondents.",
+      "legal_principle": "Under Article 141 of the Constitution, the binding force of a decision lies in its ratio decidendi: the principle derived from applying law to the material facts and deciding the issue before the court. A judgment must be read in light of its facts and issue, rather than treating every observation as law. The Court held that Hari Kishan Khosla decided the issue of entitlement under the Central Act and that Satinder Singh concerned a materially different statute that expressly incorporated a compensation provision.",
+      "rule": {
+        "if": "acquisition_appeal and prior_supreme_court_decision and same_controlling_issue and prior_decision_deliberately_decided_issue",
+        "then": "prior_decision_binding_on_its_ratio"
+      },
+      "predicates": {
+        "acquisition_appeal": "The proceeding challenges an award of compensation under a statutory acquisition scheme.",
+        "prior_supreme_court_decision": "A prior Supreme Court decision addressed the legal issue relevant to the proceeding.",
+        "same_controlling_issue": "The issue before the Court is materially the same as the issue decided in the prior decision.",
+        "prior_decision_deliberately_decided_issue": "The prior court considered the relevant law and facts and deliberately resolved that issue."
+      },
+      "definition": "When an acquisition appeal presents the same controlling issue that a prior Supreme Court decision deliberately resolved, that decision binds the Court on its ratio."
+    },
+    {
+      "legal_issue": "A statutory omission of solatium and interest from an acquisition compensation scheme does not, on that basis, violate constitutional protections of property or equality.",
+      "material_facts": [
+        "The owners argued that the denial of solatium and interest was discriminatory because owners whose property was acquired under the Land Acquisition Act, 1894 could receive those payments.",
+        "They also argued that the omission was unconstitutional because property rights remained fundamental rights in the relevant constitutional setting.",
+        "The governing acquisition statute contained its own compensation scheme and omitted solatium and interest."
+      ],
+      "conclusion": "The omission did not violate Article 14 or Article 31 as applicable to the relevant constitutional setting.",
+      "legal_principle": "The Court followed the constitutional ruling in Union of India v. Hari Kishan Khosla and held that the statutory omission did not violate Article 14 or Article 31. Different statutory acquisition schemes may prescribe different principles of compensation; the omission of additions provided by another statute does not itself establish unconstitutional discrimination.",
+      "rule": {
+        "if": "acquisition_appeal and different_compensation_schemes and statutory_omission",
+        "then": "statutory_omission_not_unconstitutional"
+      },
+      "predicates": {
+        "acquisition_appeal": "The proceeding challenges compensation awarded for property acquired under a statutory scheme.",
+        "different_compensation_schemes": "The acquisition scheme at issue prescribes compensation differently from another statutory scheme that provides additional payments.",
+        "statutory_omission": "The governing scheme omits additional payments that are available under the other scheme."
+      },
+      "definition": "When an acquisition appeal involves different statutory compensation schemes and the governing scheme omits additions available under another scheme, that omission alone is not unconstitutional."
+    },
+    {
+      "legal_issue": "A legislature's omission of solatium and interest from a statutory acquisition scheme does not unjustly enrich the State when compensation is determined under that scheme and public funds are used for public purposes.",
+      "material_facts": [
+        "The owners argued that withholding solatium and interest unjustly enriched the State at their expense.",
+        "The governing statute prescribed the principles for compensation and omitted solatium and interest.",
+        "The Court noted that public money is credited to public funds and expended for public purposes rather than retained as a private benefit by the State."
+      ],
+      "conclusion": "The non-payment of solatium and interest under the statutory scheme did not constitute unjust enrichment by the State.",
+      "legal_principle": "Unjust enrichment requires a benefit conferred on the defendant, the defendant's knowledge or appreciation of that benefit, and circumstances making retention without payment inequitable. A legislature's omission of additional compensation under a statutory scheme does not satisfy that principle where the State pays compensation according to the scheme and public funds are spent for public purposes.",
+      "rule": {
+        "if": "acquisition_appeal and compensation_paid_under_scheme and statutory_omission and public_funds_used_for_public_purposes",
+        "then": "nonpayment_not_unjust_enrichment"
+      },
+      "predicates": {
+        "acquisition_appeal": "The proceeding challenges compensation for property acquired under a statutory scheme.",
+        "compensation_paid_under_scheme": "The acquiring authority pays compensation determined according to the governing statutory scheme.",
+        "statutory_omission": "The scheme omits the additional payments claimed by the property owner.",
+        "public_funds_used_for_public_purposes": "The funds at issue are held and expended for public purposes rather than retained as a private benefit by the State."
+      },
+      "definition": "When compensation is paid under the governing scheme, the scheme omits the claimed additions, and public funds are used for public purposes, non-payment of those additions is not unjust enrichment."
+    }
+  ],
+  "seconds": 15.1
+}

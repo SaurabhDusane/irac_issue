@@ -1,0 +1,81 @@
+{
+  "doc_id": "1930357",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14725,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2856,
+    "prompt_tokens": 4043,
+    "total_tokens": 6899,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An executing court must determine a disputed claim that a person is the decree-holder’s representative or transferee for purposes of execution.",
+      "material_facts": [
+        "The first respondent sought substitution in the execution proceeding, claiming to have acquired the decree-holder’s interest through a municipal auction.",
+        "The decree-holder disputed that claim.",
+        "The High Court held that the executing court had limited jurisdiction and could not decide the legality of the claimed transfer."
+      ],
+      "conclusion": "The executing court had jurisdiction and was required to decide whether the first respondent was a representative or transferee of the decree-holder.",
+      "legal_principle": "Section 47(1) of the Code of Civil Procedure requires questions relating to execution, discharge, or satisfaction of a decree between parties or their representatives to be determined by the executing court, and Section 47(3) assigns that court the determination of whether a person is a representative. The term “representative” is broad and includes a person claiming a transfer by operation of law; Order 21 Rule 16 addresses transferees by instrument and by operation of law.",
+      "rule": {
+        "if": "execution_proceeding and disputed_representative_claim",
+        "then": "executing_court_must_determine_representative_status"
+      },
+      "predicates": {
+        "execution_proceeding": "A party sought to proceed with enforcement of a decree in the court responsible for its execution.",
+        "disputed_representative_claim": "A person claimed to represent or have acquired the decree-holder’s interest, and that status was disputed."
+      },
+      "definition": "When a disputed claim to represent or succeed to the decree-holder’s interest arises in execution, the executing court must decide that status."
+    },
+    {
+      "legal_issue": "A later dismissal of a suit does not nullify an unmodified interlocutory order governing an auction or actions taken under that order.",
+      "material_facts": [
+        "An interlocutory order permitted the municipal auction to proceed but directed that the sale be cancelled if the plaintiff deposited the required amount within the specified time.",
+        "The plaintiff made the required deposit within that time.",
+        "The plaintiff’s later suit was dismissed for default, and the order was not shown to have been modified or set aside.",
+        "The auction sale was subsequently treated as continuing and a sale certificate was issued."
+      ],
+      "conclusion": "The interlocutory order retained its legal effect despite the later dismissal of the suit; because the required deposit was made, the sale should have remained cancelled.",
+      "legal_principle": "An order made during the pendency of a suit, and actions taken pursuant to it, remain legally effective unless the court disturbs or modifies them. The order was made on an application under Order 39 Rule 1 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "execution_dispute_over_auction_transfer and interlocutory_order_conditioned_sale and required_deposit_made and order_not_modified",
+        "then": "conditional_sale_remains_cancelled"
+      },
+      "predicates": {
+        "execution_dispute_over_auction_transfer": "A dispute about an auction-based transfer arose in proceedings to enforce a decree.",
+        "interlocutory_order_conditioned_sale": "A court made an interim order providing that an auction sale would be cancelled if a specified condition was met.",
+        "required_deposit_made": "The party required to make a deposit under the order made it within the time allowed.",
+        "order_not_modified": "The court did not later set aside or modify the order."
+      },
+      "definition": "If an unmodified interim order made cancellation of a sale conditional on a deposit and the deposit was made, the sale remains cancelled even if the underlying suit is later dismissed."
+    },
+    {
+      "legal_issue": "A purchaser who fails to pay the balance of an auction price within a mandatory deadline does not acquire an interest in the decree-holder’s property through that auction.",
+      "material_facts": [
+        "The first respondent was the highest bidder at an auction of immovable property and paid the required initial portion of the bid.",
+        "The applicable auction rules required the balance to be paid within a fixed period and provided for forfeiture and resale upon default.",
+        "The first respondent paid the balance years after the deadline.",
+        "The municipal officer later accepted the delayed payment and issued a sale certificate, which the first respondent relied on to seek substitution in execution."
+      ],
+      "conclusion": "The payment deadline was mandatory, the sale became void when the balance was not paid in time, and the first respondent did not acquire the decree-holder’s interest by operation of law.",
+      "legal_principle": "Rules 8(2) and 8(3) and Rule 13 of the Maharashtra Municipalities (Sale of Distrained or Attached Movable and Immovable Property) Rules, 1967, require timely payment and do not authorize acceptance of a late payment. The Court applied the analogous requirements in Order 21 Rules 84 and 85 of the Code of Civil Procedure and the rule in Manilal Mohanlal Shah v. Sardar Syed Ahmed Sayed Mohammed that non-compliance with those requirements renders a sale void. Janak Raj v. Gurdial Singh and Sardar Govindrao Mahadid v. Devi Sahai did not assist the purchaser because they concerned a sale validly held.",
+      "rule": {
+        "if": "execution_substitution_claim and immovable_property_auction and sale_rules_fixed_payment_deadline and purchaser_paid_balance_late",
+        "then": "claimant_acquired_no_decree_interest"
+      },
+      "predicates": {
+        "execution_substitution_claim": "A person sought substitution as the successor to a decree-holder’s interest in execution proceedings.",
+        "immovable_property_auction": "The claimed interest arose from an auction of immovable property.",
+        "sale_rules_fixed_payment_deadline": "The rules governing the auction required the balance price to be paid within a fixed period and prescribed consequences for failure to pay in time.",
+        "purchaser_paid_balance_late": "The purchaser paid the balance price only after the required payment period had expired."
+      },
+      "definition": "When a person claims a decree-holder’s interest through an auction of immovable property but pays the balance after a mandatory deadline, that person does not acquire the interest through the auction."
+    }
+  ],
+  "seconds": 18.4
+}

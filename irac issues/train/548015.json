@@ -1,0 +1,104 @@
+{
+  "doc_id": "548015",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24428,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2486,
+    "prompt_tokens": 6067,
+    "total_tokens": 8553,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court must not reverse an acquittal when the trial court’s view of the evidence is reasonably possible.",
+      "material_facts": [
+        "The trial court acquitted the accused because it found serious infirmities in the prosecution evidence and considered the charge unproved beyond reasonable doubt.",
+        "The appellate court reversed the acquittal and convicted the accused.",
+        "The Supreme Court found the trial court’s view to be a highly possible view of the evidence."
+      ],
+      "conclusion": "The appellate court erred in reversing the acquittal; the acquittal was restored.",
+      "legal_principle": "Although an appellate court has the same power as the trial court to assess evidence and decide facts, it should not interfere with an acquittal unless the trial court’s view is unreasonable or perverse. It cannot reverse merely because it prefers another reasonably possible view. The judgment cites no specific statutory provision or earlier case for this principle.",
+      "rule": {
+        "if": "appeal_against_acquittal and trial_view_reasonably_possible",
+        "then": "appellate_court_must_not_reverse_acquittal"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The proceeding is an appeal seeking to overturn an acquittal.",
+        "trial_view_reasonably_possible": "The trial court’s assessment of the evidence and resulting acquittal are reasonably possible."
+      },
+      "definition": "When an appeal seeks to overturn an acquittal and the trial court’s view is reasonably possible, the appellate court must not reverse the acquittal."
+    },
+    {
+      "legal_issue": "Material contradictions and improbabilities can make eyewitness testimony unsafe to rely on to establish criminal guilt.",
+      "material_facts": [
+        "The prosecution relied principally on testimony from a six-year-old child who was said to be the only eyewitness.",
+        "The child said he named one assailant despite admitting that he had never seen that person before the incident.",
+        "His account of the number of blows was inconsistent with the medical evidence of numerous injuries.",
+        "His account about accompanying his father to the scene differed from his earlier account.",
+        "The father’s account of finding the accused beside the body was considered improbable, and his account differed from the first information report about when he shouted.",
+        "The Supreme Court found that the testimony of both witnesses did not inspire confidence."
+      ],
+      "conclusion": "The eyewitness testimony was not reliable enough to form the basis of the conviction.",
+      "legal_principle": "A child witness’s evidence must be approached with great caution. Material contradictions, conflicts with other evidence, and inherent improbabilities may make testimony unsafe to accept. The judgment cites no specific statutory provision or earlier case for these principles.",
+      "rule": {
+        "if": "criminal_prosecution and (child_witness_materially_contradicted or eyewitness_identified_unknown_person or account_conflicted_with_medical_evidence or witness_account_was_improbable)",
+        "then": "eyewitness_testimony_is_unsafe_to_support_conviction"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding concerns whether the accused committed a criminal offence.",
+        "child_witness_materially_contradicted": "A child eyewitness gave materially inconsistent accounts of important events.",
+        "eyewitness_identified_unknown_person": "An eyewitness attributed the offence to a person whom the witness admitted never having seen before the incident.",
+        "account_conflicted_with_medical_evidence": "The witness’s account of the attack materially conflicted with the medical evidence about the injuries.",
+        "witness_account_was_improbable": "A witness’s account of events was considered improbable in light of the circumstances."
+      },
+      "definition": "In a criminal prosecution, materially contradicted or otherwise unreliable eyewitness evidence, including evidence with the stated defects, is unsafe to support a conviction."
+    },
+    {
+      "legal_issue": "Identification-parade evidence is corroborative and cannot repair unreliable testimony when the identifying witness does not testify about the identification.",
+      "material_facts": [
+        "An officer testified that the child witness identified the accused at an identification parade.",
+        "The child witness did not testify that he had identified the accused at the parade.",
+        "The child’s substantive testimony suffered from serious infirmities."
+      ],
+      "conclusion": "The identification-parade evidence could not improve the prosecution case.",
+      "legal_principle": "Ordinarily, the person said to have identified the accused at a parade must give evidence about that identification so the defence can cross-examine the witness about any opportunity to see the accused beforehand. Identification at a parade is corroborative evidence; it cannot cure unreliable substantive testimony. The judgment cites no specific statutory provision or earlier case for these principles.",
+      "rule": {
+        "if": "criminal_prosecution and identification_witness_did_not_testify_about_parade and substantive_identification_testimony_unreliable",
+        "then": "parade_evidence_cannot_corroborate_conviction"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding concerns whether the accused committed a criminal offence.",
+        "identification_witness_did_not_testify_about_parade": "The person said to have identified the accused at a parade did not testify about that identification.",
+        "substantive_identification_testimony_unreliable": "The identifying witness’s substantive testimony about identifying the accused was unreliable."
+      },
+      "definition": "In a criminal prosecution, parade evidence cannot corroborate a conviction when the identifying witness does not testify about the parade and the substantive identification testimony is unreliable."
+    },
+    {
+      "legal_issue": "The circumstances relied on by the prosecution did not provide reliable incriminating support for the conviction.",
+      "material_facts": [
+        "The first accused did not open the door when police came to arrest him around midnight.",
+        "The cloth, cord, and thread recovered from the first accused’s home were ordinary articles without identifying marks linking them to the bag found near the scene.",
+        "The evidence about the second accused’s statement leading to recovery of a weapon conflicted with the recorded statement and the recovery memorandum.",
+        "The witnesses also contradicted each other about where and when the recovery memorandum was written."
+      ],
+      "conclusion": "The arrest conduct and the alleged recoveries could not be relied on as incriminating evidence supporting the conviction.",
+      "legal_principle": "Conduct that is not unnatural in the circumstances and ordinary articles lacking identifying features have little or no probative value as incriminating circumstances. A recovery supported by materially contradictory evidence that does not inspire confidence cannot be relied on. The judgment cites no specific statutory provision or earlier case for these applications.",
+      "rule": {
+        "if": "criminal_prosecution and (refusal_occurred_at_unusual_hour or recovered_items_lacked_identifying_features or recovery_evidence_materially_contradictory)",
+        "then": "circumstances_do_not_reliably_incriminate_accused"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding concerns whether the accused committed a criminal offence.",
+        "refusal_occurred_at_unusual_hour": "The accused’s refusal to open the door occurred when police came at an unusual hour.",
+        "recovered_items_lacked_identifying_features": "Recovered items were ordinary articles without features reliably connecting them to the accused or the offence.",
+        "recovery_evidence_materially_contradictory": "Evidence about a purported recovery materially conflicted on what was said or how the recovery record was prepared."
+      },
+      "definition": "In a criminal prosecution, the stated circumstances do not reliably incriminate the accused when the conduct is explained by the circumstances, the recovered items lack identifying features, or the recovery evidence is materially contradictory."
+    }
+  ],
+  "seconds": 16.6
+}

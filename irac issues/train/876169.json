@@ -1,0 +1,122 @@
+{
+  "doc_id": "876169",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25114,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3866,
+    "prompt_tokens": 6587,
+    "total_tokens": 10453,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An officer responsible for a sub-division may assess agricultural income only when the assessee’s gross agricultural income does not exceed the limit assigned to that officer.",
+      "material_facts": [
+        "The assessee’s gross agricultural income exceeded Rs. 1 lakh.",
+        "The Sub-Divisional Officer made the original assessment."
+      ],
+      "conclusion": "The Collector had authority to assess in all cases, but the Sub-Divisional Officer could assess only where gross agricultural income did not exceed Rs. 1 lakh; the Sub-Divisional Officer therefore lacked authority to assess this income.",
+      "legal_principle": "Under sections 14(1) and 14(2) of the U.P. Agricultural Income-tax Act, 1948, read together, the Collector is the assessing authority throughout the relevant revenue jurisdiction, while the Assistant Collector in charge of a sub-division is the assessing authority only for cases within the specified income limit. The general wording of section 14(1) does not enlarge the Assistant Collector’s authority. The Court relied on no earlier cases for this interpretation.",
+      "rule": {
+        "if": "is_agricultural_income_tax_assessment and income_exceeds_subdivision_officer_limit",
+        "then": "subdivision_officer_lacks_authority_to_assess"
+      },
+      "predicates": {
+        "is_agricultural_income_tax_assessment": "The proceeding is an assessment of agricultural income tax.",
+        "income_exceeds_subdivision_officer_limit": "The assessee’s gross income exceeds the limit within which a sub-division officer is authorized to assess.",
+        "subdivision_officer_lacks_authority_to_assess": "The sub-division officer is not authorized to make the assessment."
+      },
+      "definition": "When an agricultural income tax assessment concerns income above the sub-division officer’s limit, that officer lacks authority to assess it."
+    },
+    {
+      "legal_issue": "An assessing officer may determine the facts on which that officer’s jurisdiction depends, subject to correction by a superior authority.",
+      "material_facts": [
+        "The Sub-Divisional Officer issued a notice and considered the assessee’s return.",
+        "In the assessment proceeding, the Sub-Divisional Officer found that the assessee’s gross agricultural income exceeded the limit for that officer’s jurisdiction."
+      ],
+      "conclusion": "The Sub-Divisional Officer could determine whether the income exceeded the jurisdictional limit, but that determination meant the officer could not continue to exercise assessment powers in the case unless a superior authority set the determination aside.",
+      "legal_principle": "Where a taxing authority is a tribunal of exclusive jurisdiction, it may decide facts on which its jurisdiction depends, subject to correction by a superior authority. The Court applied this principle alongside sections 2(6), 14(1) and 14(2) of the U.P. Agricultural Income-tax Act, 1948. It relied on no earlier cases for this point.",
+      "rule": {
+        "if": "is_tax_assessment_proceeding and officer_is_assessing_tribunal and jurisdiction_depends_on_a_fact",
+        "then": "officer_may_determine_jurisdictional_fact_subject_to_superior_review"
+      },
+      "predicates": {
+        "is_tax_assessment_proceeding": "The proceeding is one to assess tax.",
+        "officer_is_assessing_tribunal": "The officer acts as the tribunal charged with assessing the tax.",
+        "jurisdiction_depends_on_a_fact": "The officer’s authority to assess depends on the determination of a fact.",
+        "officer_may_determine_jurisdictional_fact_subject_to_superior_review": "The officer may decide the fact on which jurisdiction depends, subject to correction by a superior authority."
+      },
+      "definition": "In a tax assessment proceeding, an assessing tribunal may decide a fact that determines its jurisdiction, subject to superior review."
+    },
+    {
+      "legal_issue": "An authority that lacks jurisdiction cannot initiate a valid assessment by notice, and another authority cannot rely on the resulting return after the proceeding is set aside for want of jurisdiction.",
+      "material_facts": [
+        "The Sub-Divisional Officer issued the notice requiring a return and received the assessee’s return in response.",
+        "The Sub-Divisional Officer found that the assessee’s gross agricultural income exceeded the limit for that officer’s jurisdiction.",
+        "The assessment proceeding was set aside as unauthorized, and the governing scheme provided no procedure for transferring the proceeding to the Collector."
+      ],
+      "conclusion": "The Sub-Divisional Officer’s notice was unauthorized and was treated as quashed; the proceeding was vacated, and the Collector could not make an assessment based on the return filed in response to that notice.",
+      "legal_principle": "Under sections 2(6), 14 and 15(3) of the U.P. Agricultural Income-tax Act, 1948, the power to issue the special notice belonged to an assessing authority authorized to assess the income. Where assessment proceedings begun on a return made in response to an invalid notice are set aside for want of jurisdiction, the entire proceeding is vacated, and another authority cannot rely on that return. The Act and Rules provided no procedure for transferring such proceedings from the Sub-Divisional Officer to the Collector. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "is_tax_assessment_proceeding and notice_issued_by_unauthorized_officer and return_filed_in_response_to_that_notice and assessment_set_aside_for_lack_of_jurisdiction",
+        "then": "another_authority_cannot_assess_on_that_return"
+      },
+      "predicates": {
+        "is_tax_assessment_proceeding": "The proceeding is one to assess tax.",
+        "notice_issued_by_unauthorized_officer": "The notice requiring a return was issued by an officer who lacked authority to assess the income concerned.",
+        "return_filed_in_response_to_that_notice": "The assessee filed the return in response to that officer’s notice.",
+        "assessment_set_aside_for_lack_of_jurisdiction": "The assessment proceeding was set aside because the assessing officer lacked jurisdiction.",
+        "another_authority_cannot_assess_on_that_return": "A different authority cannot base an assessment on the return filed in response to the unauthorized notice."
+      },
+      "definition": "If an unauthorized officer’s notice produces a return and the resulting assessment is set aside for lack of jurisdiction, another authority cannot assess on that return."
+    },
+    {
+      "legal_issue": "A general notice to file a return does not permit an authority to begin a fresh assessment using a return filed with another authority in response to an invalid special notice.",
+      "material_facts": [
+        "The Court assumed that a general notice had been issued by the Collector.",
+        "The assessee filed the return in response to a special notice issued by the Sub-Divisional Officer, not to the Collector.",
+        "The special notice and proceeding were unauthorized because the Sub-Divisional Officer lacked jurisdiction."
+      ],
+      "conclusion": "The Collector could not rely on the assumed general notice to begin fresh assessment proceedings on a return that had not been made to the Collector in response to that notice.",
+      "legal_principle": "Sections 15(1) and 15(3) of the U.P. Agricultural Income-tax Act, 1948, provide distinct routes for requiring a return. A general notice does not make a return filed with another authority in response to an unauthorized special notice a return to the Collector; the Collector must issue the required notice before commencing assessment. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "is_fresh_tax_assessment_proceeding and general_return_notice_was_issued and return_was_filed_with_another_authority_under_invalid_special_notice",
+        "then": "general_notice_cannot_support_assessment_on_that_return"
+      },
+      "predicates": {
+        "is_fresh_tax_assessment_proceeding": "The proceeding is a fresh attempt to assess tax.",
+        "general_return_notice_was_issued": "A general notice requiring returns was issued by the authority proposing to assess.",
+        "return_was_filed_with_another_authority_under_invalid_special_notice": "The return was filed with a different authority in response to a special notice that was invalid.",
+        "general_notice_cannot_support_assessment_on_that_return": "The general notice cannot support an assessment based on that return."
+      },
+      "definition": "A general return notice cannot support a fresh assessment using a return filed with another authority under an invalid special notice."
+    },
+    {
+      "legal_issue": "A revisional authority cannot direct a fresh assessment on the basis of an earlier reassessment notice once the proceeding and notice have been set aside and a fresh notice is required after the time for issuing one has expired.",
+      "material_facts": [
+        "The Collector issued a notice to reassess income said to have escaped assessment and made a reassessment.",
+        "The reassessment proceeding was set aside as unauthorized, and the Board directed that a fresh assessment be made after notice.",
+        "The fresh assessment required a new notice, but the applicable statutory period for issuing the required notice had expired."
+      ],
+      "conclusion": "The earlier reassessment notice could not support a fresh assessment, and the Board could not direct a fresh assessment after the period for issuing the required new notice had expired.",
+      "legal_principle": "Section 25 of the U.P. Agricultural Income-tax Act, 1948, limited the time for notice concerning escaped assessment; section 15(3) also limited the time for issuing a special assessment notice. Once the reassessment proceeding was set aside and a fresh proceeding required a fresh notice, the earlier notice was treated as quashed and could not be reused. A direction to make a fresh assessment could not authorize proceedings contrary to those statutory limits. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "is_revisional_direction_for_fresh_tax_assessment and earlier_assessment_proceeding_set_aside and fresh_notice_required and notice_period_expired",
+        "then": "revisional_authority_cannot_direct_fresh_assessment"
+      },
+      "predicates": {
+        "is_revisional_direction_for_fresh_tax_assessment": "A revisional authority directs that a fresh tax assessment be made.",
+        "earlier_assessment_proceeding_set_aside": "The earlier assessment proceeding was set aside as unauthorized.",
+        "fresh_notice_required": "A new notice is required before a fresh assessment can begin.",
+        "notice_period_expired": "The applicable period for issuing that new notice has expired.",
+        "revisional_authority_cannot_direct_fresh_assessment": "The revisional authority cannot direct a fresh assessment that would require a notice no longer permitted by the applicable time limit."
+      },
+      "definition": "A revisional authority cannot direct a fresh assessment when the earlier proceeding is set aside, a new notice is required, and the period for issuing it has expired."
+    }
+  ],
+  "seconds": 22.7
+}

@@ -1,0 +1,57 @@
+{
+  "doc_id": "556242",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27259,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1628,
+    "prompt_tokens": 7396,
+    "total_tokens": 9024,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The annual rental value used for municipal property assessment cannot exceed the applicable standard rent when rent above that amount is unlawful.",
+      "material_facts": [
+        "The local authority assessed the premises using a monthly rental value higher than the standard rent subsequently fixed by the rent controller.",
+        "The standard rent was fixed before the assessment objections were finally determined.",
+        "The rent-control law made rent above the standard rent irrecoverable and penalised a landlord for knowingly receiving it."
+      ],
+      "conclusion": "The annual rental value could not be fixed higher than the standard rent applicable to the premises.",
+      "legal_principle": "Under section 127(a) of the Calcutta Municipal Act, 1923, annual value is based on the gross rent at which property could reasonably be expected to be let, reflecting its value to the owner and the rent realisable by the landlord. Reasonableness is assessed in the circumstances, and the law—including statutory limits and penalties—constrains what rent can reasonably be expected in the open market; hypothetical rent cannot include rent available only through unlawful transactions. The Court approved Corporation of Calcutta v. Ashutosh Deo, Bengal Nagpur Railway Company Ltd. v. Corporation of Calcutta, and Municipal Corporation of the City of Rangoon v. Surati Bara Bazzar Company Ltd.; it distinguished Poplar Assessment Committee v. Roberts on the differences between English rating law and the Indian statutory scheme. It also referred to sections 2(10)(b), 3 and 33(a) of the West Bengal Premises Rent Control (Temporary Provisions) Act, 1950, which defined standard rent, rendered excess rent irrecoverable, and penalised its knowing receipt.",
+      "rule": {
+        "if": "municipal_property_assessment and rent_control_applies and standard_rent_fixed and excess_rent_unlawful",
+        "then": "annual_value_limited_to_standard_rent"
+      },
+      "predicates": {
+        "municipal_property_assessment": "A local authority is determining a property's annual value for municipal assessment.",
+        "rent_control_applies": "A rent-control regime applies to the assessed property.",
+        "standard_rent_fixed": "The legally applicable standard rent for the property has been fixed.",
+        "excess_rent_unlawful": "The landlord cannot lawfully recover rent above the applicable standard rent."
+      },
+      "definition": "When a local authority assesses property subject to rent control, the standard rent has been fixed, and higher rent is unlawful, the annual value is limited to that standard rent."
+    },
+    {
+      "legal_issue": "The period described as the time of municipal assessment includes the interval from making the valuation until the determination of an objection to it.",
+      "material_facts": [
+        "The valuation was made under section 131 of the Calcutta Municipal Act, 1923, and the objection to the assessment was determined under section 140.",
+        "The rent controller fixed the standard rent during that interval and before the assessment objection was finally determined."
+      ],
+      "conclusion": "The assessment period begins with the making of the valuation and ends with the determination of the objection, and an event occurring during that period may be considered in assessing annual value.",
+      "legal_principle": "For section 127(a) of the Calcutta Municipal Act, 1923, “at the time of assessment” covers the assessment process from the valuation under section 131 through determination of an objection under section 140. An event occurring during that process may be relied on in fixing annual value.",
+      "rule": {
+        "if": "municipal_property_assessment and event_occurs_between_valuation_and_objection_determination",
+        "then": "event_may_be_considered_in_assessing_annual_value"
+      },
+      "predicates": {
+        "municipal_property_assessment": "A local authority is determining a property's annual value for municipal assessment.",
+        "event_occurs_between_valuation_and_objection_determination": "An event affecting the assessment occurs after the valuation is made and before an objection to it is determined."
+      },
+      "definition": "In a municipal property assessment, an event occurring between the making of the valuation and the determination of an objection may be considered in assessing annual value."
+    }
+  ],
+  "seconds": 11.3
+}

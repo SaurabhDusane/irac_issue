@@ -1,0 +1,97 @@
+{
+  "doc_id": "408600",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12458,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2965,
+    "prompt_tokens": 3620,
+    "total_tokens": 6585,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court sale of immovable property may be set aside for irregularity or fraud in its publication or conduct only when the applicant proves that the defect caused substantial injury.",
+      "material_facts": [
+        "The sale was conducted by an Advocate Commissioner after notice was sent to the parties through their advocates, notices were affixed to the property, and pamphlets were distributed locally.",
+        "The applicant alleged collusion but gave no sufficient particulars to support that allegation.",
+        "The successful bid exceeded the assessed market value, and the applicant did not establish substantial injury caused by any irregularity or fraud."
+      ],
+      "conclusion": "The sale could not be set aside because no material irregularity or fraud causing substantial injury was established; the High Court erred in setting it aside.",
+      "legal_principle": "Order XXI Rule 90(1) and (2) of the Code of Civil Procedure permits an affected person to challenge a sale for material irregularity or fraud in publishing or conducting it, but requires proof that the defect caused substantial injury. A charge of fraud or material irregularity must be supported by sufficient particulars and established facts; bald allegations are insufficient. The Court relied on Dhirendra Nath Gorai and Suibal Chandra Shaw v. Sudhir Chandra Ghosh, (1964) 6 SCC 101; Jaswantlal Natvarlal Thakkar v. Sushilaben Manilal Dangarwala, (1991) Supp. 2 SCC 691; and Kadiyala Rama Rao v. Gutala Kahna Rao, (2000) 3 SCC 87.",
+      "rule": {
+        "if": "court_sale_challenge and (no_material_defect_proved or no_substantial_injury_caused_by_defect_proved)",
+        "then": "sale_not_set_aside"
+      },
+      "predicates": {
+        "court_sale_challenge": "The proceeding challenges a court-conducted sale of immovable property in execution of a decree.",
+        "no_material_defect_proved": "The applicant has not proved a material irregularity or fraud in publishing or conducting the sale.",
+        "no_substantial_injury_caused_by_defect_proved": "The applicant has not proved substantial injury caused by an irregularity or fraud in publishing or conducting the sale."
+      },
+      "definition": "When a court sale is challenged and either no material defect is proved or no substantial injury caused by that defect is proved, the sale is not set aside."
+    },
+    {
+      "legal_issue": "A direction to give wide publicity to a court sale does not, without a specific direction to advertise in a newspaper, require newspaper publication when the sale notice is otherwise proclaimed and publicized as prescribed.",
+      "material_facts": [
+        "The trial court directed wide publicity but did not specifically direct newspaper publication.",
+        "The Commissioner affixed a sale notice on the property and distributed pamphlets advertising the sale in the locality before the auction."
+      ],
+      "conclusion": "The absence of newspaper publication did not establish a material irregularity because no specific direction to advertise in a newspaper had been made and the prescribed local publication steps were taken.",
+      "legal_principle": "Order XXI Rule 67(1) of the Code of Civil Procedure provides for publication of a sale proclamation in the manner prescribed by Rule 54(2); Rule 54(2) provides for proclamation at or adjacent to the property and affixing copies at specified locations. Newspaper advertisement requires a specific court direction. Proclamation by beat of drum is not mandatory if the notice is proclaimed at or adjacent to the property.",
+      "rule": {
+        "if": "execution_sale and no_specific_newspaper_direction and sale_notice_affixed_and_locally_publicized",
+        "then": "newspaper_publication_not_required"
+      },
+      "predicates": {
+        "execution_sale": "The proceeding concerns a sale of property carried out in execution of a decree.",
+        "no_specific_newspaper_direction": "The court did not specifically direct that the sale be advertised in a newspaper.",
+        "sale_notice_affixed_and_locally_publicized": "The sale notice was affixed on or adjacent to the property and the sale was publicized locally."
+      },
+      "definition": "For an execution sale, when the court has not specifically directed newspaper advertising and the notice is affixed and publicized locally, newspaper publication is not required."
+    },
+    {
+      "legal_issue": "The absence of notice of a proposed purchase under the Partition Act does not invalidate a sale when the complaining co-owner did not intend to purchase the property and complains only that it might have fetched a higher price.",
+      "material_facts": [
+        "The sale followed a determination that the property was not partible.",
+        "The complaining co-owner did not express an intention to purchase the property himself.",
+        "His grievance was that the property could have fetched a higher price."
+      ],
+      "conclusion": "The lack of notice under Sections 2 and 3 of the Partition Act was immaterial in these circumstances and did not justify setting aside the sale.",
+      "legal_principle": "Sections 2 and 3 of the Partition Act, 1893 concern the procedure for sale of property in a partition matter and the opportunity to purchase. On the facts here, the lack of notice was immaterial because the complaining party had not shown that he would have purchased the property; a grievance that a higher price might have been obtained did not establish a basis to invalidate the sale.",
+      "rule": {
+        "if": "partition_sale and complainant_did_not_intend_to_buy and complaint_only_claims_higher_possible_price",
+        "then": "lack_of_purchase_notice_does_not_invalidate_sale"
+      },
+      "predicates": {
+        "partition_sale": "The court ordered a sale in a proceeding to divide property that could not be conveniently or fairly divided.",
+        "complainant_did_not_intend_to_buy": "The person complaining of the sale did not express an intention to purchase the property himself.",
+        "complaint_only_claims_higher_possible_price": "The complaint is that the property might have fetched a higher price, rather than that the complainant was deprived of an actual intended purchase."
+      },
+      "definition": "In a partition sale, lack of purchase notice does not invalidate the sale when the complainant did not intend to buy and complains only that a higher price might have been obtained."
+    },
+    {
+      "legal_issue": "An uncompleted higher-price offer from a proposed purchaser who is not produced despite repeated opportunities does not establish substantial injury from a court sale.",
+      "material_facts": [
+        "The applicant relied on an affidavit from a proposed purchaser who said that he was willing to buy for a higher amount and would make an initial deposit.",
+        "The proposed purchaser did not appear in court despite three opportunities to do so, and the proposed purchase was not completed.",
+        "The successful bidder deposited the full bid amount in court."
+      ],
+      "conclusion": "The trial court was correct to reject the alleged higher offer, which did not establish substantial injury or justify setting aside the sale.",
+      "legal_principle": "Under Order XXI Rule 90(2) of the Code of Civil Procedure, substantial injury caused by an irregularity or fraud must be proved before a sale can be set aside. An unsupported, uncompleted offer does not establish that a sale caused such injury where the proposed purchaser is not produced despite opportunities and the successful bidder pays the bid amount.",
+      "rule": {
+        "if": "court_sale_challenge and proposed_higher_buyer_not_produced_despite_opportunities and proposed_higher_purchase_not_completed",
+        "then": "alleged_higher_offer_does_not_establish_substantial_injury"
+      },
+      "predicates": {
+        "court_sale_challenge": "The proceeding challenges a court-conducted sale of immovable property in execution of a decree.",
+        "proposed_higher_buyer_not_produced_despite_opportunities": "The person relying on a proposed higher bidder does not produce that bidder despite being given opportunities to do so.",
+        "proposed_higher_purchase_not_completed": "The proposed higher-priced purchase is not completed by payment or deposit of the offered price."
+      },
+      "definition": "In a challenge to a court sale, an uncompleted higher offer from a proposed purchaser who is not produced despite opportunities does not establish substantial injury."
+    }
+  ],
+  "seconds": 18.8
+}

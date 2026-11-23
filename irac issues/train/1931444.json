@@ -1,0 +1,100 @@
+{
+  "doc_id": "1931444",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 60049,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3562,
+    "prompt_tokens": 14866,
+    "total_tokens": 18428,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An accused who invokes a general exception bears a burden of establishing the supporting circumstances on a balance of probabilities, without displacing the prosecution’s burden to prove the offence beyond reasonable doubt.",
+      "material_facts": [
+        "The accused relied on private defence after firing the shot that caused the deceased’s death.",
+        "The prosecution’s eyewitnesses established that the accused fired three shots and that one hit and killed the deceased.",
+        "The court considered the accused’s account, the prosecution evidence, and other circumstances in assessing the private-defence plea."
+      ],
+      "conclusion": "The accused had to make the circumstances supporting private defence sufficiently probable, while the prosecution retained the burden of proving every element of culpable homicide beyond reasonable doubt. Evidence insufficient to establish an exception could nevertheless raise a reasonable doubt about an element of the offence.",
+      "legal_principle": "Section 105 of the Evidence Act places on an accused the burden of establishing circumstances bringing the case within a general exception. Under Sections 3 and 5 of that Act, the relevant standard is that of a prudent person and may be met by a balance of probabilities. This does not shift the prosecution’s burden to prove the charge beyond reasonable doubt. The accused may rely on evidence from either side, cross-examination, presumptions, or the accused’s own recorded statement. Even if the exception is not established, the evidence may raise a reasonable doubt about an element of the offence. The court relied on Dahyabhai v. State of Gujarat, State of U.P. v. Ram Swarup, and Pratap v. State of U.P.",
+      "rule": {
+        "if": "criminal_trial and accused_invokes_general_exception",
+        "then": "accused_bears_probability_burden_while_prosecution_retains_beyond_reasonable_doubt_burden"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which the accused faces a charge.",
+        "accused_invokes_general_exception": "The accused relies on circumstances said to bring the conduct within a general exception."
+      },
+      "definition": "When an accused invokes a general exception in a criminal trial, the accused must make its supporting circumstances probable, while the prosecution remains responsible for proving the charge beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "A person who reasonably apprehends physical harm from an unlawful attempt to restrain or overpower them may defend their body, but may not use lethal force unless the circumstances reasonably create an imminent apprehension of death or grievous hurt.",
+      "material_facts": [
+        "After a heated dispute about payment, five men waited by the road for about 45 to 60 minutes and attempted to stop the accused’s vehicle as it travelled toward the town.",
+        "The court found that the group’s purpose was not peaceful persuasion but to restrain or overpower the accused and obtain money by putting him in fear of injury.",
+        "The deceased and his companions were not shown to be armed; stone-throwing was possible but did not establish a reasonable apprehension of death or grievous hurt, and the accused could have driven through the group.",
+        "The accused fired three shots in quick succession, one of which killed the deceased."
+      ],
+      "conclusion": "A right of private defence of the body had accrued, but the circumstances did not justify causing death. The accused exceeded the right, and the plea did not displace the homicide conviction.",
+      "legal_principle": "Sections 99 and 102 of the Penal Code limit private defence to necessary defensive force and provide that the right begins and lasts with a reasonable apprehension of danger. Sections 100 and 101 govern when the right extends to causing death and when it permits lesser harm. The right is defensive, not punitive; it permits no more harm than necessary, though a person acting in good faith need not calculate force with precision. Lethal force requires a reasonable and imminent apprehension of death or grievous hurt, subject to the limits on necessity and proportionality.",
+      "rule": {
+        "if": "criminal_appeal_after_homicide_conviction and accused_faces_imminent_unlawful_group_threat and threat_does_not_reasonably_create_imminent_fear_of_death_or_grievous_hurt and accused_uses_lethal_force",
+        "then": "lethal_force_exceeds_private_defence_and_does_not_displace_homicide_liability"
+      },
+      "predicates": {
+        "criminal_appeal_after_homicide_conviction": "The proceeding is an appeal from a conviction for causing a death.",
+        "accused_faces_imminent_unlawful_group_threat": "A group makes an imminent unlawful attempt to restrain, overpower, or injure the accused, creating a reasonable apprehension of physical harm.",
+        "threat_does_not_reasonably_create_imminent_fear_of_death_or_grievous_hurt": "The circumstances do not reasonably create an imminent apprehension that the accused will suffer death or grievous hurt.",
+        "accused_uses_lethal_force": "The accused uses force that causes a person's death."
+      },
+      "definition": "If a person facing an imminent unlawful group threat uses lethal force when the circumstances do not reasonably create an imminent fear of death or grievous hurt, the force exceeds private defence and does not eliminate homicide liability."
+    },
+    {
+      "legal_issue": "Causing death by firing without an established intention to kill, but with knowledge that the act is likely to cause death, amounts to culpable homicide not amounting to murder in the circumstances of this case.",
+      "material_facts": [
+        "The accused fired three rounds in quick succession, and one struck and killed the deceased.",
+        "The evidence did not establish that the accused deliberately aimed at the deceased or intended to kill a particular person.",
+        "The court accepted that the accused fired out of fear, but found that he had exceeded the available right of private defence."
+      ],
+      "conclusion": "The offence was culpable homicide not amounting to murder, and the conviction under Part II of Section 304 of the Penal Code was upheld.",
+      "legal_principle": "The court applied Sections 299 and 300 of the Penal Code to distinguish culpable homicide from murder, and Section 304, Part II, to the case in which the accused had knowledge that the act was likely to cause death but the circumstances did not establish the requisite intention for murder. It agreed with the High Court’s assessment that the accused had fired out of fear and had not deliberately aimed at a particular person.",
+      "rule": {
+        "if": "criminal_appeal_after_homicide_conviction and accused_causes_death_by_firing and no_intention_to_kill_particular_person_is_established and accused_knows_act_is_likely_to_cause_death",
+        "then": "offence_is_culpable_homicide_not_murder"
+      },
+      "predicates": {
+        "criminal_appeal_after_homicide_conviction": "The proceeding is an appeal from a conviction for causing a death.",
+        "accused_causes_death_by_firing": "The accused fires a weapon and the firing causes a person's death.",
+        "no_intention_to_kill_particular_person_is_established": "The evidence does not establish that the accused intended to kill a particular person.",
+        "accused_knows_act_is_likely_to_cause_death": "The accused acts with knowledge that the act is likely to cause death."
+      },
+      "definition": "When a person causes death by firing, no intention to kill a particular person is established, and the person knows the act is likely to cause death, the offence is culpable homicide rather than murder."
+    },
+    {
+      "legal_issue": "Exceeding the limits of an otherwise accrued right of private defence may be taken into account in mitigation of sentence.",
+      "material_facts": [
+        "The accused faced an unlawful group threat that gave rise to a right of private defence of the body.",
+        "The accused exceeded that right by firing three shots in quick succession, although the circumstances did not justify causing death.",
+        "The High Court had imposed a seven-year term of rigorous imprisonment."
+      ],
+      "conclusion": "The court maintained the conviction but reduced the sentence to six months’ rigorous imprisonment and a fine of Rs. 10,000, with the fine payable as compensation to the deceased’s widow or immediate heirs if she was unavailable.",
+      "legal_principle": "The court applied the limits on private defence in Sections 99 and 101 of the Penal Code and treated the accused’s excess of an accrued right, in circumstances where he acted in fear, as a mitigating circumstance. A person in peril is not expected to measure necessary force with exact precision, and the excess could therefore be considered in sentencing.",
+      "rule": {
+        "if": "criminal_appeal_after_homicide_conviction and private_defence_right_accrued and accused_exceeded_private_defence_in_fear",
+        "then": "sentence_is_reduced"
+      },
+      "predicates": {
+        "criminal_appeal_after_homicide_conviction": "The proceeding is an appeal from a conviction for causing a death.",
+        "private_defence_right_accrued": "The accused faced circumstances giving rise to a right to defend their body.",
+        "accused_exceeded_private_defence_in_fear": "The accused used more force than the circumstances justified while acting in fear."
+      },
+      "definition": "In an appeal from a homicide conviction, if a right of private defence accrued and the accused exceeded it while acting in fear, the excess may result in a reduced sentence."
+    }
+  ],
+  "seconds": 21.6
+}

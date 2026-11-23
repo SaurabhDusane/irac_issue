@@ -1,0 +1,126 @@
+{
+  "doc_id": "1493983",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23291,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3400,
+    "prompt_tokens": 6511,
+    "total_tokens": 9911,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A brief police communication reporting a cognizable offence is the first information report when it prompts the police to begin investigation, and a later statement to the investigating officer is not a second first information report.",
+      "material_facts": [
+        "A relative telephoned the police and reported that one person had been killed and another seriously injured, without naming the assailants.",
+        "The police recorded the communication in the station diary and began investigating on its basis.",
+        "After investigation had begun, the injured victim gave a statement to the investigating officer."
+      ],
+      "conclusion": "The telephone communication recorded in the station diary was the first information report. The injured victim’s later statement to the investigating officer was a statement recorded during investigation under Section 161 of the Code of Criminal Procedure, not the first information report.",
+      "legal_principle": "The first police information that discloses a cognizable offence and sets the investigation in motion is the first information report, even if it is brief and omits the assailants’ names. A later statement recorded during investigation is governed by Section 161 of the Code of Criminal Procedure and cannot be treated as the first information report; Section 162 restricts its use. No earlier cases are relied on for this ruling.",
+      "rule": {
+        "if": "criminal_investigation and police_received_communication_reporting_cognizable_offence and police_started_investigation_on_that_communication",
+        "then": "initial_police_communication_is_first_information_report"
+      },
+      "predicates": {
+        "criminal_investigation": "The matter was a criminal investigation into a reported offence.",
+        "police_received_communication_reporting_cognizable_offence": "A person communicated to the police facts reporting an offence for which the police could investigate.",
+        "police_started_investigation_on_that_communication": "The police began investigating on the basis of that communication."
+      },
+      "definition": "When a criminal investigation begins on the basis of a police communication reporting a cognizable offence, that communication is the first information report."
+    },
+    {
+      "legal_issue": "A seriously injured person’s statement recorded by a magistrate as a dying declaration remains usable as a statement under Section 164 of the Code of Criminal Procedure if the person survives.",
+      "material_facts": [
+        "The injured victim was in critical condition in hospital.",
+        "A magistrate recorded his statement at the earliest available opportunity after it was initially sought as a dying declaration.",
+        "The victim survived, and the statement identified the assailants and described the attack.",
+        "The record contained no material showing that the victim had been tutored."
+      ],
+      "conclusion": "Because the victim survived, the magistrate-recorded statement was to be treated as a statement under Section 164 of the Code of Criminal Procedure. It could be used for corroboration or contradiction, and the Court relied on it as corroboration of the victim’s testimony.",
+      "legal_principle": "A statement recorded by a magistrate as a dying declaration is treated as a statement under Section 164 of the Code of Criminal Procedure when its maker survives, and may be used for corroboration or contradiction. Its prompt recording while the maker is critically injured and the absence of evidence of tutoring supported its use here. No earlier cases are relied on for this ruling.",
+      "rule": {
+        "if": "criminal_case and injured_witness_survived and magistrate_recorded_statement_as_dying_declaration and statement_recorded_promptly and no_evidence_of_tutoring",
+        "then": "magistrate_recorded_statement_is_usable_for_corroboration_or_contradiction"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding concerned a criminal prosecution.",
+        "injured_witness_survived": "The injured person whose statement was recorded remained alive after making it.",
+        "magistrate_recorded_statement_as_dying_declaration": "A magistrate recorded the injured person’s statement when it was being treated as a dying declaration.",
+        "statement_recorded_promptly": "The magistrate recorded the statement at the earliest available opportunity.",
+        "no_evidence_of_tutoring": "The record contained no evidence that the statement resulted from tutoring."
+      },
+      "definition": "In a criminal case, a prompt magistrate-recorded statement of an injured person who survives and was not shown to have been tutored is usable to corroborate or contradict that person’s testimony."
+    },
+    {
+      "legal_issue": "The prosecution’s failure to call other witnesses does not warrant an adverse inference where the evidence does not establish that other people witnessed the crime and were withheld.",
+      "material_facts": [
+        "The assaults occurred when only the two victims were present, according to the evidence accepted by the Court.",
+        "The prosecution did not call labourers or other people who might have been working in nearby fields.",
+        "The defence did not establish that any such people were present and saw the assaults."
+      ],
+      "conclusion": "An adverse inference under Section 114 of the Evidence Act could not be drawn on these facts because the defence had not established that other eyewitnesses existed and were withheld without justification.",
+      "legal_principle": "The Court stated that an adverse inference under Section 114 of the Evidence Act could be drawn only if the defence established that other people were present, saw the incident, and were withheld by the prosecution without justifiable reason. No earlier cases are relied on for this ruling.",
+      "rule": {
+        "if": "criminal_trial and prosecution_did_not_call_possible_witnesses and defence_did_not_establish_they_saw_the_offence",
+        "then": "no_adverse_inference_from_nonexamination"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding was a criminal trial.",
+        "prosecution_did_not_call_possible_witnesses": "The prosecution did not call people who might have been able to give evidence about the incident.",
+        "defence_did_not_establish_they_saw_the_offence": "The defence did not establish that the uncalled people were present and witnessed the offence."
+      },
+      "definition": "In a criminal trial, omission to call possible witnesses does not warrant an adverse inference if the defence has not established that those witnesses saw the offence."
+    },
+    {
+      "legal_issue": "A delay in examining a natural and readily available witness does not by itself make that witness’s testimony unreliable.",
+      "material_facts": [
+        "The victim’s mother reached the scene after learning that one son was dead and the other injured.",
+        "She testified that the injured son told her how the attack occurred and identified the assailants.",
+        "The investigating officer did not examine her until about one and a half months after the incident, although she had been available."
+      ],
+      "conclusion": "The delay in examining the mother did not, by itself, justify disbelieving her testimony; the Court considered her a natural and probable witness who was readily available for examination.",
+      "legal_principle": "Delay by the investigating officer in examining a natural and probable witness does not by itself make that witness’s evidence suspect, particularly where the witness was readily available. No earlier cases are relied on for this ruling.",
+      "rule": {
+        "if": "criminal_case and witness_was_natural_and_readily_available and investigator_delayed_examination and no_independent_reason_to_disbelieve_witness",
+        "then": "delay_alone_does_not_make_testimony_unreliable"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding concerned a criminal prosecution.",
+        "witness_was_natural_and_readily_available": "The witness was a natural and probable witness to events after the incident and was available for examination.",
+        "investigator_delayed_examination": "The investigating officer examined the witness substantially later than the incident.",
+        "no_independent_reason_to_disbelieve_witness": "No reason independent of the delay established that the witness’s testimony was unreliable."
+      },
+      "definition": "In a criminal case, delay in examining a natural, available witness does not alone make the witness’s testimony unreliable when no independent reason to disbelieve the witness is established."
+    },
+    {
+      "legal_issue": "A conviction for a group attack may be upheld after an acquittal is reversed when the injured eyewitness’s credible identification is corroborated and the trial court’s rejection of the evidence is perverse.",
+      "material_facts": [
+        "The appeal challenged a High Court judgment that had set aside the appellants’ acquittal and convicted them.",
+        "The injured victim identified the appellants as the attackers and described the attack.",
+        "The victim made prompt disclosures identifying the assailants to people who arrived after the attack, and his magistrate-recorded statement also named them.",
+        "The medical evidence was consistent with his account, and the Court found only minor, inconsequential contradictions.",
+        "A prior complaint had recorded threats against the victims, and the trial court’s reasons for rejecting the prosecution evidence were found to be perverse."
+      ],
+      "conclusion": "The Supreme Court upheld the High Court’s convictions for rioting, murder with common-object liability, and attempted murder with common-object liability, and dismissed the appeal.",
+      "legal_principle": "In this statutory appeal under Section 379 of the Code of Criminal Procedure, the Court examined the record and held that the trial court’s wholesale rejection of the injured eyewitness’s evidence was perverse. The credible eyewitness account was corroborated by prompt disclosures, the magistrate-recorded statement, and medical evidence. The resulting convictions were under Sections 147, 302/149, and 307/149 of the Indian Penal Code. No earlier cases are relied on for this ruling.",
+      "rule": {
+        "if": "appeal_against_conviction_after_reversal_of_acquittal and injured_eyewitness_identified_accused and eyewitness_account_was_credible and corroborating_evidence_supported_account and trial_court_rejection_was_perverse",
+        "then": "conviction_is_upheld"
+      },
+      "predicates": {
+        "appeal_against_conviction_after_reversal_of_acquittal": "The proceeding was an appeal against a conviction entered after an appellate court reversed an acquittal.",
+        "injured_eyewitness_identified_accused": "A person injured in the offence identified the accused as the assailants.",
+        "eyewitness_account_was_credible": "The court found the injured eyewitness’s account reliable despite only minor, inconsequential contradictions.",
+        "corroborating_evidence_supported_account": "Other evidence, including prompt disclosures and medical evidence, supported the eyewitness’s account.",
+        "trial_court_rejection_was_perverse": "The trial court’s reasons for rejecting the prosecution evidence were contrary to the evidence on the record."
+      },
+      "definition": "A conviction entered after reversal of an acquittal is upheld when a credible injured eyewitness identifies the accused, corroborating evidence supports the account, and the trial court’s rejection of that evidence was perverse."
+    }
+  ],
+  "seconds": 20.9
+}

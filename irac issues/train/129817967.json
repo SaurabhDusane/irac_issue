@@ -1,0 +1,59 @@
+{
+  "doc_id": "129817967",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 6623,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1811,
+    "prompt_tokens": 2173,
+    "total_tokens": 3984,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Acquisition proceedings covered by an earlier award lapse when the required compensation has not been paid or deposited under the applicable statutory conditions.",
+      "material_facts": [
+        "An award for the acquired land had been made in 2005, more than five years before the 2013 Act came into force.",
+        "The acquiring authority admitted that the owners had not been paid compensation and stated that funds remained available with it for owners who came forward to collect them.",
+        "The owners sought relief on the basis that the acquisition proceedings had lapsed."
+      ],
+      "conclusion": "The acquisition proceedings concerning the owners’ land had lapsed because compensation had not been paid to them; the proceedings were set aside as having lapsed.",
+      "legal_principle": "Under Section 24(2) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013, acquisition proceedings covered by an award made under Section 11 of the Land Acquisition Act, 1894 lapse when the statutory conditions are met and compensation has not been paid or deposited as required. The Court relied on Sections 24(2) of the 2013 Act and 11 and 31 of the 1894 Act; it cited no earlier cases. The Court left open whether the manner in which possession was taken satisfied the statutory requirement.",
+      "rule": {
+        "if": "acquisition_lapse_claim and qualifying_prior_award and compensation_unpaid",
+        "then": "acquisition_proceedings_lapse"
+      },
+      "predicates": {
+        "acquisition_lapse_claim": "The landowners sought a ruling that compulsory acquisition proceedings concerning their land had lapsed.",
+        "qualifying_prior_award": "An award covering the land was made sufficiently before the new acquisition regime took effect to bring the proceedings within its lapse provision.",
+        "compensation_unpaid": "The acquiring authority had not paid the required compensation to the landowners."
+      },
+      "definition": "When landowners seek recognition that acquisition proceedings have lapsed, a qualifying earlier award and unpaid compensation result in the proceedings lapsing."
+    },
+    {
+      "legal_issue": "An acquiring authority must pay compensation for compulsorily acquired land without requiring the landowner to come forward to collect it, and must deposit the compensation in court if there is a dispute about who should receive it.",
+      "material_facts": [
+        "The authority said that compensation had been paid to other owners who came forward, while the owners in this case had not been paid.",
+        "The authority maintained that the money was available and that the owners had to approach it to receive payment.",
+        "The Court held that the authority was responsible for making payment and that disputed entitlement required deposit in court."
+      ],
+      "conclusion": "The authority could not make payment conditional on the owners approaching it; it had to pay the compensation, or deposit it in court if there was a dispute about the proper recipient.",
+      "legal_principle": "Under Section 31 of the Land Acquisition Act, 1894, the acquiring authority must pay the compensation due when land is taken by acquisition and deposit it in court if there is a dispute as to the person entitled to receive it. The Court relied on Section 31, including Section 31(2); it cited no earlier cases.",
+      "rule": {
+        "if": "compulsory_acquisition_compensation_due and authority_requires_owner_to_claim and (recipient_entitlement_disputed or compensation_not_paid)",
+        "then": "authority_must_pay_or_deposit_compensation"
+      },
+      "predicates": {
+        "compulsory_acquisition_compensation_due": "Land has been compulsorily acquired and compensation is due to its owner.",
+        "authority_requires_owner_to_claim": "The acquiring authority says the owner must approach it to obtain payment.",
+        "recipient_entitlement_disputed": "There is a dispute about who is entitled to receive the compensation.",
+        "compensation_not_paid": "The acquiring authority has not paid the compensation to the owner."
+      },
+      "definition": "When compensation is due after compulsory acquisition, an authority that requires the owner to claim it must pay it, or deposit it in court if entitlement is disputed."
+    }
+  ],
+  "seconds": 12.2
+}

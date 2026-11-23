@@ -1,0 +1,192 @@
+{
+  "doc_id": "199986312",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 233774,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 5367,
+    "prompt_tokens": 56194,
+    "total_tokens": 61561,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The required separation between nearby buildings cannot be avoided by a developer’s unilateral designation of them as one building block.",
+      "material_facts": [
+        "The challenged revised plan placed a proposed tower 9 metres from an existing tower, although the proposed tower was 73 metres high.",
+        "The developer argued that the towers formed part of a single building block because they were to be connected by a space frame.",
+        "The sanctioned plans did not designate the towers as one block, and the developer had previously represented that the new towers were separate from the existing development."
+      ],
+      "conclusion": "The second revised plan violated the applicable minimum-distance requirement because the separation had to be at least half the height of the tallest building; the 9-metre separation was insufficient.",
+      "legal_principle": "Regulation 33.2.3(i) of the New Okhla Industrial Development Area Building Regulations and Directions 2006 requires adjacent building blocks to be separated by at least half the height of the tallest building. The expression must be construed in light of the regulation’s purpose, including light, ventilation, privacy and fire safety. A developer cannot defeat that purpose by arbitrarily grouping independent towers together, and a space frame or shared access does not consolidate otherwise separate buildings. No earlier case was relied on for this interpretation.",
+      "rule": {
+        "if": "building_plan_challenge and proposed_tall_building_near_existing_building and separation_less_than_half_tallest_building_height and (buildings_independent_in_design or developer_grouping_unsupported_by_sanctioned_plans)",
+        "then": "revised_plan_violates_minimum_separation_requirement"
+      },
+      "predicates": {
+        "building_plan_challenge": "A party challenged approval of a building plan in a court proceeding.",
+        "proposed_tall_building_near_existing_building": "The plan placed a proposed tall building near an existing building.",
+        "separation_less_than_half_tallest_building_height": "The distance between the buildings was less than half the height of the tallest building.",
+        "buildings_independent_in_design": "The buildings were designed or represented as separate buildings rather than as one integrated structure.",
+        "developer_grouping_unsupported_by_sanctioned_plans": "The developer relied on grouping the buildings together, but the sanctioned plans did not support that grouping."
+      },
+      "definition": "When a challenged plan places an independent proposed building too close to an existing building, an unsupported grouping of the buildings does not prevent the plan from violating the minimum-separation requirement."
+    },
+    {
+      "legal_issue": "A later revision of a building plan must comply with the applicable separation rules, and the reduced-spacing exception applies only when both facing sides are dead ends.",
+      "material_facts": [
+        "A later revised plan increased the proposed towers’ height to approximately 121 metres while retaining a separation of 9 metres from an existing tower.",
+        "The later plan was sanctioned after the newer building regulations had come into force.",
+        "The buildings facing each other had windows, balconies, entrances or other openings on the facing sides; the sides were therefore not both dead ends.",
+        "The developer argued that the buildings were part of one block and, alternatively, that their facing sides qualified for the dead-end exception."
+      ],
+      "conclusion": "The later revised plan violated the applicable minimum-distance requirement and did not qualify for the dead-end exception.",
+      "legal_principle": "Regulations 1.6 and 24.2.1(6) of the 2010 building regulations govern revisions involving unstarted construction or new additions and prescribe building separation according to height, up to the specified maximum. The dead-end exception is narrowly construed: a side with an egress is not a dead end, including where the opening serves a non-habitable room; both facing sides must be dead ends for the exception to apply; and the distance is assessed for the buildings as a whole, not selectively at individual points. The Court also referred to the National Building Code 2005 as the source of the separation standard. No earlier case was relied on for this interpretation.",
+      "rule": {
+        "if": "building_plan_challenge and later_plan_revision and proposed_building_taller_than_adjacent_building and separation_below_required_height_based_distance and not both_facing_sides_without_egress",
+        "then": "revised_plan_violates_minimum_separation_requirement"
+      },
+      "predicates": {
+        "building_plan_challenge": "A party challenged approval of a building plan in a court proceeding.",
+        "later_plan_revision": "The challenged approval revised an earlier building plan after construction had not begun on the relevant addition or involved a new addition.",
+        "proposed_building_taller_than_adjacent_building": "The proposed building was taller than a nearby existing building.",
+        "separation_below_required_height_based_distance": "The distance between the buildings was less than the distance required for their height.",
+        "both_facing_sides_without_egress": "Neither of the facing sides had an opening or means of access or exit."
+      },
+      "definition": "A challenged later plan that places a tall building too close to another building violates the separation requirement unless both facing sides are without egress."
+    },
+    {
+      "legal_issue": "The general open-space requirement for tall buildings is not displaced by the tower-like-structure alternative when that alternative’s conditions are unmet.",
+      "material_facts": [
+        "The proposed tower was taller than 55 metres and had a length exceeding 40 metres.",
+        "The separation from the adjacent building was 9 metres, while the general open-space calculation required 20.45 metres.",
+        "The tower-like-structure alternative required upper-level setbacks to make good any deficiency, but the proposed structures did not have the contemplated upper-level setbacks."
+      ],
+      "conclusion": "The second and third revised plans did not comply with the National Building Code 2005 open-space requirements, and the tower-like-structure alternative did not save them.",
+      "legal_principle": "Paragraph 8.2.3.1 and Note 3 of the National Building Code 2005 prescribe side and rear open spaces according to building height and require an added distance where the building’s length or depth exceeds 40 metres. Paragraph 8.2.3.2 provides an alternative for tower-like structures, including a ground-level minimum and the possibility of making up a deficiency through upper-level setbacks that are not accessible from individual rooms or flats. Because the relevant setbacks were absent and the actual separation was insufficient, the alternative did not apply. No earlier case was relied on.",
+      "rule": {
+        "if": "building_plan_challenge and tall_long_building and open_space_below_general_requirement and (not qualifying_upper_level_setbacks or ground_level_space_below_tower_structure_minimum)",
+        "then": "building_plan_violates_open_space_requirements"
+      },
+      "predicates": {
+        "building_plan_challenge": "A party challenged approval of a building plan in a court proceeding.",
+        "tall_long_building": "The proposed building was tall and its length or depth exceeded the threshold at which additional open space is required.",
+        "open_space_below_general_requirement": "The open space around the building was less than the general requirement for a building of its height and length.",
+        "qualifying_upper_level_setbacks": "The building had upper-level setbacks that could make good the open-space deficiency and were not accessible from individual rooms or flats.",
+        "ground_level_space_below_tower_structure_minimum": "The ground-level open space was less than the minimum for the applicable tower-like structure."
+      },
+      "definition": "A tall, long building with inadequate open space violates the open-space requirement when it lacks qualifying upper-level setbacks or also falls below the applicable ground-level minimum."
+    },
+    {
+      "legal_issue": "A fire-safety no-objection certificate conditioned on compliance with building-code requirements ceases to support construction when those requirements are not met.",
+      "material_facts": [
+        "The fire authority issued provisional and temporary no-objection certificates for the proposed towers subject to compliance with the National Building Code 2005.",
+        "The towers were built with only 9 metres of separation from the existing tower, contrary to the applicable open-space requirements.",
+        "The fire authority had identified deficiencies and questioned whether the separation rules had been waived."
+      ],
+      "conclusion": "Because the required National Building Code provisions were not complied with, the conditional fire-safety no-objection certificate stood automatically cancelled.",
+      "legal_principle": "Regulation 76 of the 2006 building regulations required compliance with the applicable fire-safety provisions of the National Building Code. The certificates and related fire-authority documents made compliance with that Code a condition of the approval. Paragraphs 4.6 and 8.2.3.1 of the National Building Code 2005 were considered in determining the required access and open space; the Code’s applicable side and rear open-space requirement had not been satisfied. No earlier case was relied on.",
+      "rule": {
+        "if": "building_plan_challenge and fire_safety_certificate_conditioned_on_code_compliance and required_code_provisions_not_complied_with",
+        "then": "conditional_fire_safety_certificate_stands_cancelled"
+      },
+      "predicates": {
+        "building_plan_challenge": "A party challenged approval of a building plan in a court proceeding.",
+        "fire_safety_certificate_conditioned_on_code_compliance": "The fire authority issued a certificate on the condition that the construction comply with applicable building-code requirements.",
+        "required_code_provisions_not_complied_with": "The construction did not satisfy the building-code requirements made applicable to it."
+      },
+      "definition": "When a fire-safety certificate is conditional on code compliance, failure to meet the required code provisions means the certificate no longer supports the construction."
+    },
+    {
+      "legal_issue": "A developer bound by a land lease incorporating flat-ownership rules must obtain the required consent before altering flat owners’ undivided interests in common areas.",
+      "material_facts": [
+        "The lease between the planning authority and the developer expressly stated that the rules of the flat-ownership legislation applied to the lessee and sub-lessee.",
+        "The additional land was made part of the original plot, and the proposed towers were constructed as part of the same project.",
+        "Adding the new flats reduced the existing flat owners’ proportionate undivided interests in common areas, and their consent was not obtained.",
+        "No statutory declaration had been executed under the flat-ownership legislation."
+      ],
+      "conclusion": "The developer was bound to comply with the flat-ownership legislation through the lease terms, and the construction without the required consent violated the owners’ rights in the common areas.",
+      "legal_principle": "Section 2 of the Uttar Pradesh Ownership of Flats Act 1975 ordinarily provides for submission of property to the Act by a registered declaration. Section 5(2) prohibits alteration of an owner’s percentage of undivided interest in common areas without the consent of all flat owners expressed in an amended declaration. Here, the lease expressly made the Act’s rules applicable to the lessee and sub-lessee, and the developer could not rely on its own failure to make the declaration to avoid that contractual obligation. The Court also considered the related sub-lease terms. No earlier case was relied on for this determination.",
+      "rule": {
+        "if": "building_plan_challenge and lease_binds_developer_to_flat_ownership_rules and construction_reduces_existing_owners_common_area_shares and all_owners_did_not_consent",
+        "then": "construction_violates_common_area_consent_rights"
+      },
+      "predicates": {
+        "building_plan_challenge": "A party challenged approval of a building plan in a court proceeding.",
+        "lease_binds_developer_to_flat_ownership_rules": "The land lease bound the developer to comply with rules protecting flat owners’ interests.",
+        "construction_reduces_existing_owners_common_area_shares": "The construction reduced existing owners’ proportionate interests in common areas.",
+        "all_owners_did_not_consent": "The affected owners did not all give the required consent."
+      },
+      "definition": "When a lease binds a developer to flat-ownership rules, construction that reduces existing owners’ common-area shares without their consent violates their common-area rights."
+    },
+    {
+      "legal_issue": "A promoter cannot materially alter disclosed plans or reduce apartment owners’ undivided common-area interests without the owners’ consent.",
+      "material_facts": [
+        "The promoter disclosed plans showing a garden beside an existing tower, and purchasers bought flats on the basis of the disclosed plans.",
+        "A later revision removed the garden to accommodate new towers and increased the number of flats, reducing existing owners’ undivided interests in common areas.",
+        "The later revision was sanctioned after the apartment-ownership legislation came into force, and the affected owners did not consent.",
+        "The promoter argued that the consent requirement applied only to purchasers in the new towers and that consent from the residents’ association was unavailable."
+      ],
+      "conclusion": "The later revised plan violated the apartment owners’ statutory rights because the required consent was not obtained for the material alteration and reduction of undivided interests. The legislation applied to the later revision, but not retrospectively to the earlier plan.",
+      "legal_principle": "The Uttar Pradesh Apartment (Promotion of Construction, Ownership and Maintenance) Act 2010 applies to buildings with four or more apartments without requiring a declaration. Sections 4(1)(c) and (d) require disclosure of approved plans and common areas; the proviso to Section 4(4) bars alterations without prior consent of intending purchasers, apart from permissible minor changes; and Section 5(3) protects each owner’s undivided interest from alteration without the written consent of all apartment owners and approval of the competent authority. The consent right belongs to individual owners, although an existing association may be used to obtain common consent. The Act does not apply retrospectively to the earlier revision but does apply to the later one. No earlier case was relied on.",
+      "rule": {
+        "if": "building_plan_challenge and plan_disclosed_to_purchasers and later_material_change_to_plan_or_common_areas and existing_owners_common_interests_reduced and affected_owners_did_not_consent",
+        "then": "material_plan_change_violates_apartment_owners_consent_rights"
+      },
+      "predicates": {
+        "building_plan_challenge": "A party challenged approval of a building plan in a court proceeding.",
+        "plan_disclosed_to_purchasers": "The promoter disclosed plans or common-area arrangements to purchasers before they acquired their apartments.",
+        "later_material_change_to_plan_or_common_areas": "The promoter later made a material change to the disclosed plan or common areas.",
+        "existing_owners_common_interests_reduced": "The change reduced existing apartment owners’ undivided interests in common areas.",
+        "affected_owners_did_not_consent": "The affected apartment owners did not give prior consent to the material change."
+      },
+      "definition": "When a promoter materially changes disclosed plans or reduces existing owners’ common interests without their consent, the change violates those owners’ consent rights."
+    },
+    {
+      "legal_issue": "Illegal construction carried out in breach of building regulations with the planning authority’s collusion warrants demolition and the related prosecution directions.",
+      "material_facts": [
+        "The revised plans and construction breached building-distance and fire-safety requirements and violated apartment owners’ statutory rights.",
+        "Construction began before the relevant sanction was granted, and the developer and planning authority failed to disclose sanctioned plans despite disclosure requirements.",
+        "The planning authority did not respond to the fire authority’s concerns or enforce the applicable requirements.",
+        "The developer advanced inconsistent positions, attempted to pass off a disputed plan as sanctioned, and the Court found collusion between the developer and authority officials."
+      ],
+      "conclusion": "The Court affirmed the demolition order and the direction for sanctioning prosecution of the developer’s and planning authority’s officials for the identified statutory violations.",
+      "legal_principle": "Illegal construction must be dealt with strictly, and courts should not use equitable jurisdiction to regularize construction that violates planning requirements. Planning authorities must enforce building regulations, and residents whose rights are infringed may challenge unlawful approvals. The Court relied on K. Ramadas Shenoy v. Chief Officer, Town Municipal Council; Dr G.N. Khajuria v. Delhi Development Authority; Friends Colony Development Committee v. State of Orissa; Priyanka Estates International (P) Ltd. v. State of Assam; Esha Ekta Apartments Coop. Housing Society Ltd. v. Municipal Corpn. of Mumbai; Kerala State Coastal Zone Management Authority v. State of Kerala; Kerala State Coastal Zone Management Authority v. Maradu Municipality; and Bikram Chatterji v. Union of India. It affirmed the prosecution direction under Section 49 of the Uttar Pradesh Urban Development Act 1973, as incorporated by Section 12 of the Uttar Pradesh Industrial Area Development Act 1976.",
+      "rule": {
+        "if": "building_plan_challenge and construction_violates_mandatory_planning_requirements and (planning_authority_colluded_or_failed_to_enforce or developer_obstructed_or_misled_authorities_or_court)",
+        "then": "demolition_and_prosecution_directions_upheld"
+      },
+      "predicates": {
+        "building_plan_challenge": "A party challenged approval or construction of buildings in a court proceeding.",
+        "construction_violates_mandatory_planning_requirements": "The construction breached mandatory planning, building-safety or apartment-owner requirements.",
+        "planning_authority_colluded_or_failed_to_enforce": "The planning authority colluded in the violations or failed to enforce applicable requirements.",
+        "developer_obstructed_or_misled_authorities_or_court": "The developer obstructed disclosure, misled authorities or the court, or advanced materially inconsistent accounts."
+      },
+      "definition": "When challenged construction breaches mandatory requirements and the developer or planning authority compounds those breaches, demolition and prosecution directions are upheld."
+    },
+    {
+      "legal_issue": "Purchasers of apartments in buildings ordered to be demolished are entitled to repayment of their investment with interest.",
+      "material_facts": [
+        "Purchasers had paid amounts for apartments in the towers ordered demolished.",
+        "Some purchasers had already received refunds, while others remained entitled to repayment under the Court’s directions.",
+        "The Court separately addressed purchasers under a loan-payment arrangement and directed closure of the related loans and repayment of their contributions with interest."
+      ],
+      "conclusion": "The developer was directed to refund the remaining purchasers’ invested amounts with interest; for the affected purchasers generally, the Court specified interest at 12 per cent per annum.",
+      "legal_principle": "The Court ordered repayment as consequential relief after affirming demolition of the towers. It addressed outstanding purchaser claims by category, accounting for prior refunds and the special loan-payment arrangement. No separate statutory provision or earlier case was relied on as the basis for this refund direction.",
+      "rule": {
+        "if": "building_plan_challenge and buildings_ordered_demolished and purchasers_paid_for_apartments_in_those_buildings",
+        "then": "purchasers_entitled_to_refund_with_interest"
+      },
+      "predicates": {
+        "building_plan_challenge": "A party challenged approval or construction of buildings in a court proceeding.",
+        "buildings_ordered_demolished": "The court ordered the buildings to be demolished.",
+        "purchasers_paid_for_apartments_in_those_buildings": "Purchasers invested money in apartments in the buildings ordered demolished."
+      },
+      "definition": "When a purchaser paid for an apartment in a building ordered demolished, the purchaser is entitled to repayment with interest."
+    }
+  ],
+  "seconds": 31.0
+}

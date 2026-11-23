@@ -1,0 +1,79 @@
+{
+  "doc_id": "1852004",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19175,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2565,
+    "prompt_tokens": 5432,
+    "total_tokens": 7997,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent deposit made because of a bona fide dispute over who is entitled to receive rent is credited as payment when assessing whether a tenant has paid the arrears required for protection from eviction.",
+      "material_facts": [
+        "The tenant deposited rent in court after the Municipal Board demanded rent following expiry of the landlord’s lease.",
+        "The tenant relied on those deposits, along with the amount deposited at the first hearing, to contend that no rent remained due.",
+        "The trial court found that the tenant had deposited more than the amount claimed in the suit.",
+        "The revisional court excluded the deposits made during the dispute over entitlement to rent, and the High Court upheld that approach."
+      ],
+      "conclusion": "The deposits made during the dispute over entitlement to rent had to be accounted for as payment. The Supreme Court allowed the appeal and restored the trial court’s order.",
+      "legal_principle": "Section 30(6) treats rent deposited under Section 30(2) as paid to the landlord on the date of deposit. Section 20(4), which permits deduction of deposits under Section 30(1), must be read with Section 30(6); the omission of an express reference to Section 30(2) does not negate the statutory effect of those deposits. Related provisions must be read harmoniously and not in isolation. The Court relied on R.S. Raghunath v. State of Karnataka, M. Pentiah v. Muddala Veeramallappa, Canada Sugar Refining Company v. R., Gammon India Ltd. v. Union of India, Mysore State Road Transport Corporation v. Mira Khasivali Ven, Commissioner of Income Tax v. National Taj Traders, Sultana Begum v. Prem Chand Jain, O.P. Singhla v. Union of India, Raj Krushna v. Vinod Kanungo, and Mohd. Sher Khan v. Raja Seth.",
+      "rule": {
+        "if": "rent_default_eviction_suit and tenant_deposited_rent_due_to_entitlement_dispute and deposit_treated_as_payment",
+        "then": "entitlement_dispute_deposit_is_credited_as_rent_paid"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "A landlord brought a suit seeking eviction on the ground that the tenant had defaulted in paying rent.",
+        "tenant_deposited_rent_due_to_entitlement_dispute": "The tenant deposited rent in court because a bona fide doubt or dispute had arisen about who was entitled to receive it.",
+        "deposit_treated_as_payment": "The governing rent-deposit scheme treats the tenant as having paid the landlord when the disputed rent is deposited."
+      },
+      "definition": "When an eviction suit concerns rent default, the tenant deposits rent because of a dispute over who may receive it, and the governing scheme treats that deposit as payment, the deposit is credited as rent paid."
+    },
+    {
+      "legal_issue": "A tenant seeking protection from eviction for rent default must pay all rent due, including rent that has become barred by limitation.",
+      "material_facts": [
+        "The landlords claimed arrears only for a later period, stating that earlier rent had become barred by time.",
+        "The High Court held that the tenant had to clear all dues, including rent barred by time.",
+        "The Supreme Court stated that the High Court’s view on that point could not be faulted."
+      ],
+      "conclusion": "The Supreme Court upheld the view that the tenant had to clear all rent due, including rent barred by time, to obtain the statutory protection from eviction.",
+      "legal_principle": "Section 20(4) requires payment of the entire amount of rent and damages due for the tenant to receive protection from eviction on the ground of rent default. The Court expressly accepted the proposition that this includes arrears barred by limitation.",
+      "rule": {
+        "if": "rent_default_eviction_suit and arrears_include_time_barred_rent",
+        "then": "time_barred_rent_must_be_paid_for_eviction_protection"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "A landlord brought a suit seeking eviction on the ground that the tenant had defaulted in paying rent.",
+        "arrears_include_time_barred_rent": "The rent due from the tenant includes arrears that have become barred by limitation."
+      },
+      "definition": "In an eviction suit for rent default, if the rent due includes arrears barred by limitation, those arrears must be paid for the tenant to obtain protection from eviction."
+    },
+    {
+      "legal_issue": "A revisional court cannot disregard a rent deposit as non-bona fide on an unsupported ground that was not raised or determined at trial.",
+      "material_facts": [
+        "The tenant had deposited rent after the Municipal Board demanded payment from him.",
+        "The trial court had neither framed an issue about whether the deposits were bona fide nor made a finding on that question.",
+        "The revisional court made an observation that the deposits were not bona fide, and the record contained no document showing that the deposit court had rejected them on that basis."
+      ],
+      "conclusion": "The Supreme Court held that the revisional court’s unsupported observation about the bona fides of the deposits was to be ignored.",
+      "legal_principle": "A finding about the bona fides of a deposit cannot be introduced for the first time in revision without a basis in the record, particularly where the issue was not raised or determined at trial. The Court applied this principle in considering deposits made under Section 30(2) of the U.P. Urban Building (Regulation of Letting, Rent and Eviction) Act, 1972.",
+      "rule": {
+        "if": "rent_default_eviction_proceeding and deposit_bona_fides_not_tried and revisional_court_first_questions_bona_fides and no_record_support_for_question",
+        "then": "unsupported_new_bona_fides_observation_is_disregarded"
+      },
+      "predicates": {
+        "rent_default_eviction_proceeding": "A proceeding concerns eviction for default in paying rent.",
+        "deposit_bona_fides_not_tried": "The trial court did not frame or decide an issue about whether the tenant’s rent deposit was bona fide.",
+        "revisional_court_first_questions_bona_fides": "The revisional court first questioned the bona fides of the deposit.",
+        "no_record_support_for_question": "The record contains no evidence supporting the revisional court’s question about the deposit’s bona fides."
+      },
+      "definition": "In a rent-default eviction proceeding, if the deposit’s bona fides were not tried, the revisional court first questions them, and the record provides no support, that new observation is disregarded."
+    }
+  ],
+  "seconds": 15.4
+}

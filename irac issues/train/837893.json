@@ -1,0 +1,116 @@
+{
+  "doc_id": "837893",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 34778,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3334,
+    "prompt_tokens": 9018,
+    "total_tokens": 12352,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant or sub-tenant with a lease-based interest who is in possession when a town-planning scheme is published is a person interested and entitled to notice and an opportunity to be heard.",
+      "material_facts": [
+        "The appellant was a tenant in possession of premises affected by the scheme, and the scheme affected the appellant’s possession and business.",
+        "The Court treated possession on the date the scheme was notified in the official gazette as the relevant point for entitlement to notice and an opportunity to be heard."
+      ],
+      "conclusion": "A tenant or sub-tenant in possession on the date the scheme is published is a person interested and is entitled to the prescribed notice and a reasonable opportunity to respond.",
+      "legal_principle": "Section 105 of the Transfer of Property Act recognises that a lease creates an interest in enjoyment of the property and entitles a tenant to remain in possession until lawful termination and eviction. Read with Rule 21(3) and (4) of the Bombay Town Planning Rules, 1955, this makes a tenant or sub-tenant in possession a person interested for these purposes; entitlement is limited to those in possession when the scheme is notified in the official gazette.",
+      "rule": {
+        "if": "town_planning_scheme_proceeding and lease_based_possession_on_publication_date",
+        "then": "person_entitled_to_notice_and_opportunity"
+      },
+      "predicates": {
+        "town_planning_scheme_proceeding": "A planning officer is preparing or finalising a scheme that may alter plots or affect interests in property.",
+        "lease_based_possession_on_publication_date": "A tenant or sub-tenant holds possession under a lease when the scheme is published."
+      },
+      "definition": "When a planning scheme is being finalised and a tenant or sub-tenant holds possession under a lease at publication, that person is entitled to notice and an opportunity to be heard."
+    },
+    {
+      "legal_issue": "Failure to give an affected person the required special notice and sufficient opportunity to respond invalidates the final town-planning scheme, unless the opportunity was waived.",
+      "material_facts": [
+        "The appellant’s possession and business were injuriously affected by the scheme, which reconstituted the plot and would terminate the appellant’s possession.",
+        "The planning officer did not give the appellant special notice or an opportunity to present views before finalising the scheme.",
+        "No notice had been issued to the appellant, so the appellant had not failed to respond to a notice."
+      ],
+      "conclusion": "The notice and opportunity requirements are mandatory, and non-compliance vitiates the validity of the final scheme; waiver requires that notice was issued and the recipient did not respond.",
+      "legal_principle": "Section 32 of the Bombay Town Planning Act, 1955, read with Rule 21(3) and (4) of the Bombay Town Planning Rules, 1955, requires special notice and sufficient opportunity for affected persons. Those requirements serve natural justice, fair procedure, and the protections associated with Articles 14 and 21. The Court approved Kaushikprasad Chandulal Mahadevia v. Ahmedabad Municipal Corporation and Mohanlal Jesinghbhai v. P.J. Patel, and disapproved the contrary holding in Dungarlal Harichand v. State of Gujarat. A person may waive the opportunity by not responding after notice is issued, but absence of notice is not waiver.",
+      "rule": {
+        "if": "town_planning_scheme_proceeding and affected_property_or_tenancy_interest and (special_notice_not_given or reasonable_opportunity_not_given) and not opportunity_waived",
+        "then": "final_scheme_invalid"
+      },
+      "predicates": {
+        "town_planning_scheme_proceeding": "A planning officer is preparing or finalising a scheme that may alter plots or affect interests in property.",
+        "affected_property_or_tenancy_interest": "The proposed scheme injuriously affects a person’s property or tenancy interest.",
+        "special_notice_not_given": "The planning officer did not serve the affected person with special notice before dealing with the matter affecting that person.",
+        "reasonable_opportunity_not_given": "The planning officer did not give the affected person sufficient opportunity to state views before deciding the matter.",
+        "opportunity_waived": "The affected person received notice and made no representation in response."
+      },
+      "definition": "If a planning scheme injuriously affects a person and the person is denied special notice or a sufficient opportunity to respond, without having waived that opportunity after notice, the final scheme is invalid."
+    },
+    {
+      "legal_issue": "Whether a procedural requirement expressed using the word “shall” is mandatory depends on legislative intent, context, consequences, and purpose rather than on that word alone.",
+      "material_facts": [
+        "The requirements at issue protected owners’ and tenants’ interests from changes and liabilities imposed through a town-planning scheme.",
+        "The absence of notice and an opportunity to be heard could injuriously affect those interests."
+      ],
+      "conclusion": "The requirements are mandatory because their purpose is to protect affected interests through fair procedure, and non-compliance can injuriously affect those interests.",
+      "legal_principle": "The word “shall” is not conclusive of a mandatory requirement. Its meaning is determined from legislative intent, context, consequences, and purpose. Here, Rule 21(3) and (4) of the Bombay Town Planning Rules, 1955, serve natural justice and fair procedure and protect property and tenancy interests; non-compliance may injuriously affect those interests.",
+      "rule": {
+        "if": "town_planning_scheme_proceeding and procedure_protects_affected_interests and noncompliance_can_injure_those_interests",
+        "then": "procedural_requirements_are_mandatory"
+      },
+      "predicates": {
+        "town_planning_scheme_proceeding": "A planning officer is preparing or finalising a scheme that may alter plots or affect interests in property.",
+        "procedure_protects_affected_interests": "The procedure gives affected persons notice and a chance to state their views before decisions affecting them are made.",
+        "noncompliance_can_injure_those_interests": "Failure to follow the procedure can adversely affect a person’s property or tenancy interest."
+      },
+      "definition": "In a planning scheme proceeding, requirements protecting affected interests through a fair procedure are mandatory when non-compliance can injure those interests."
+    },
+    {
+      "legal_issue": "A person waives the opportunity to make representations by failing to respond after receiving notice, but cannot rely on waiver where no notice was issued.",
+      "material_facts": [
+        "The planning officer did not issue the appellant special notice.",
+        "The appellant therefore had no notified opportunity to make representations."
+      ],
+      "conclusion": "A failure to make representations amounts to waiver only when notice has been issued; the appellant had not waived the opportunity because no notice was given.",
+      "legal_principle": "Waiver means relinquishing an advantage or protection by not responding after notice has been issued. A person who received notice and made no representation cannot later complain of the loss of that opportunity; lack of notice does not constitute waiver.",
+      "rule": {
+        "if": "town_planning_scheme_proceeding and notice_served and no_representation_made",
+        "then": "opportunity_waived"
+      },
+      "predicates": {
+        "town_planning_scheme_proceeding": "A planning officer is preparing or finalising a scheme that may alter plots or affect interests in property.",
+        "notice_served": "The planning officer issued notice to the affected person about the matter to be considered.",
+        "no_representation_made": "The affected person made no representation in response to the notice."
+      },
+      "definition": "In a planning scheme proceeding, an affected person who receives notice and makes no representation waives the notified opportunity."
+    },
+    {
+      "legal_issue": "An affected tenant operating a longstanding business may be given alternative business premises while the planning scheme is implemented and until the alternative premises are provided.",
+      "material_facts": [
+        "The appellant had occupied the premises as a tenant for many years and operated a continuing business there.",
+        "The scheme would terminate the appellant’s possession and adversely affect the business.",
+        "The Court declined to interfere with the scheme and directed the respondent to provide a suitable alternative shop, put the appellant in possession, and allow continued occupation of the existing premises until then."
+      ],
+      "conclusion": "The respondent was directed to provide a suitable alternative shop and place the appellant in possession of it, while permitting occupation of the existing premises until that occurred.",
+      "legal_principle": "In granting relief in this appeal, the Court directed alternative premises for the affected tenant and continued occupation of the existing premises pending provision of those premises; it also stated that summary eviction would be open if the appellant did not vacate or obstruct possession.",
+      "rule": {
+        "if": "town_planning_scheme_proceeding and longstanding_business_tenancy_affected and scheme_implementation_continues",
+        "then": "alternative_business_premises_ordered_pending_handover"
+      },
+      "predicates": {
+        "town_planning_scheme_proceeding": "A planning scheme is being implemented in a way that affects an occupant’s premises.",
+        "longstanding_business_tenancy_affected": "A tenant has operated a continuing business from the premises for many years, and the scheme affects the tenant’s possession or business.",
+        "scheme_implementation_continues": "The court leaves the scheme in place and its implementation proceeds."
+      },
+      "definition": "When a continuing planning scheme affects a tenant’s longstanding business, alternative business premises may be ordered, with continued occupation of the existing premises until handover."
+    }
+  ],
+  "seconds": 22.0
+}

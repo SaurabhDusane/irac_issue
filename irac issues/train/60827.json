@@ -1,0 +1,84 @@
+{
+  "doc_id": "60827",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30391,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3125,
+    "prompt_tokens": 7998,
+    "total_tokens": 11123,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A certified appeal is maintainable on the basis of a claim or question respecting property when the judgment concerns property of the required value that is distinct from the subject matter of the dispute.",
+      "material_facts": [
+        "The plaintiffs sought ejectment from school premises and recovery of rent, while the defendants claimed a right to occupy the premises without paying rent.",
+        "The premises were worth more than the applicable threshold.",
+        "The dispute concerned the right to occupy the premises and the liability to pay rent, rather than a dispute over the premises themselves.",
+        "The High Court granted a certificate under the relevant constitutional clauses, and the appellants relied on the property-value route."
+      ],
+      "conclusion": "The appeal was maintainable under the property-value route because the judgment involved a claim or question respecting the premises, which were property of the required value and were not the subject matter of the dispute.",
+      "legal_principle": "Under Article 133(1)(a), the relevant value is that of the subject matter of the dispute at first instance and still in dispute on appeal. Under Article 133(1)(b), the judgment must involve directly or indirectly a claim or question respecting property of the required value; that property must be additional to or other than the subject matter of the dispute. The language of the clauses distinguishes these routes. Chhitarmal v. M/s Shah Pannalal Chandulal was cited on the distinction, Surapati Roy v. Ram Narayan Mukherji was relied on, and Bombay Gas Co. Ltd. v. Jagan Nath Pandurang was held inapplicable because it did not involve a claim respecting property of the required value.",
+      "rule": {
+        "if": "certified_high_court_civil_appeal and judgment_involves_property_claim and property_value_meets_applicable_threshold and property_is_outside_dispute_subject_matter and (appellate_decree_not_affirming or substantial_law_question_certified)",
+        "then": "appeal_is_maintainable_on_property_value_basis"
+      },
+      "predicates": {
+        "certified_high_court_civil_appeal": "A party appeals to the Supreme Court from a civil judgment of a High Court for which the High Court has granted a certificate.",
+        "judgment_involves_property_claim": "The judgment directly or indirectly concerns a claim or question respecting property.",
+        "property_value_meets_applicable_threshold": "The property respecting which the claim or question arises meets the applicable value threshold.",
+        "property_is_outside_dispute_subject_matter": "The property respecting which the claim or question arises is distinct from the subject matter of the dispute.",
+        "appellate_decree_not_affirming": "The appellate decree does not affirm the decision below.",
+        "substantial_law_question_certified": "The High Court certifies that the appeal involves a substantial question of law."
+      },
+      "definition": "A certified civil appeal may proceed on the property-value basis when the judgment concerns sufficiently valuable property distinct from the dispute itself, subject to the applicable condition concerning affirmance."
+    },
+    {
+      "legal_issue": "An appellate decree is not one of affirmance when, considered as a whole against the trial court’s decision as a whole, it varies that decision, even if the variation benefits the prospective appellant.",
+      "material_facts": [
+        "The trial court decreed ejectment and awarded a sum for recovery.",
+        "The High Court set aside the ejectment decree and reduced the amount awarded.",
+        "Those changes benefited the appellants who sought to appeal to the Supreme Court."
+      ],
+      "conclusion": "The High Court’s judgment did not affirm the trial court’s decision, despite the changes being in the appellants’ favour.",
+      "legal_principle": "The character of an appellate decree is determined by comparing the appellate decree in its entirety with the decision below as a whole. Whether a variation favours or disadvantages the intending appellant is irrelevant. The Court followed Tirumalachetti Rajaram v. Tirumalachetti Radhakrishnayya Chetty.",
+      "rule": {
+        "if": "appeal_compares_appellate_and_trial_decrees and appellate_decree_varies_from_trial_decision",
+        "then": "appellate_decree_is_not_affirmance"
+      },
+      "predicates": {
+        "appeal_compares_appellate_and_trial_decrees": "The appeal requires the appellate decree to be characterized by comparison with the decision below.",
+        "appellate_decree_varies_from_trial_decision": "The appellate decree, considered as a whole, changes the decision below in at least one respect."
+      },
+      "definition": "When an appellate decree as a whole changes the decision below, it is not an affirmance, regardless of who benefits from the change."
+    },
+    {
+      "legal_issue": "A school’s managing body may be held liable for rent when its representations and records acknowledge rent as payable for its occupation of the premises.",
+      "material_facts": [
+        "The trust deed transferred the school’s funds and other specified property to trustees but excluded the land and buildings where the school was then located.",
+        "The managing committee submitted statements for government grants showing rent payable for the school premises.",
+        "A committee resolution admitted that rent was payable to the proprietors for the premises, including the portion occupied by the headmaster.",
+        "The school’s audit report also recorded the rent payable.",
+        "The High Court maintained a reduced decree for recovery of rent, and the Supreme Court found no cogent ground to interfere with it."
+      ],
+      "conclusion": "The Court upheld the High Court’s decree for recovery of the reduced amount, finding the evidence sufficient to support the rent liability.",
+      "legal_principle": "The Court relied on the managing committee’s statements used to obtain government grants, its resolution admitting the rent obligation, and the audit report recording rent. In light of those records, the committee could not credibly deny liability for rent, and there was no cogent ground to disturb the recovery decree. No earlier case or statutory provision was relied on for this conclusion.",
+      "rule": {
+        "if": "rent_recovery_appeal and rent_reported_for_public_grants and committee_resolution_admitted_rent and audit_report_recorded_rent",
+        "then": "rent_recovery_decree_is_upheld"
+      },
+      "predicates": {
+        "rent_recovery_appeal": "A civil appeal challenges a decree ordering recovery of rent for occupied premises.",
+        "rent_reported_for_public_grants": "The occupying body represented in statements used to obtain public grants that rent was payable for the premises.",
+        "committee_resolution_admitted_rent": "The occupying body’s committee adopted a resolution acknowledging that rent was payable for the premises.",
+        "audit_report_recorded_rent": "An audit report for the occupying body recorded rent as payable for the premises."
+      },
+      "definition": "When a rent-recovery appeal involves grant statements, a committee admission, and an audit record acknowledging rent, the recovery decree is upheld."
+    }
+  ],
+  "seconds": 19.6
+}

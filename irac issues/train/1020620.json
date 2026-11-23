@@ -1,0 +1,59 @@
+{
+  "doc_id": "1020620",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15882,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1606,
+    "prompt_tokens": 4608,
+    "total_tokens": 6214,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A deadline for exercising an option to renew a land lease is essential to the bargain, and the option lapses if the tenant does not give notice within that deadline.",
+      "material_facts": [
+        "The lease gave the tenant a right to one renewal if it made a written request two calendar months before the existing term expired.",
+        "The tenant made its written request 12 days after the deadline had passed."
+      ],
+      "conclusion": "The time stipulation was of the essence of the bargain. Because the tenant did not exercise the renewal option within the stipulated time, it lost the right to renewal.",
+      "legal_principle": "Under section 55 of the Indian Contract Act, whether time is essential depends on the parties’ intention; the provision does not make time non-essential in every contract concerning land. For an option to renew a lease, however, the option must be exercised strictly within the time limited and the deadline is treated as a condition precedent. The Court relied on Jamshed Khodaram Irani v. Durjorji Dhunjibhai and the common-law and equitable rule described in Halsbury’s Laws of England and Hare v. Nicoll.",
+      "rule": {
+        "if": "lease_renewal_dispute and renewal_deadline_fixed and renewal_notice_late",
+        "then": "renewal_option_lapses"
+      },
+      "predicates": {
+        "lease_renewal_dispute": "The proceeding concerns a tenant’s claim to exercise an option to renew a land lease.",
+        "renewal_deadline_fixed": "The lease specifies a deadline by which the tenant must give notice to exercise the renewal option.",
+        "renewal_notice_late": "The tenant gives the renewal notice after the deadline specified in the lease."
+      },
+      "definition": "When a tenant seeks to renew a land lease under an option with a fixed notice deadline and gives notice late, the option lapses."
+    },
+    {
+      "legal_issue": "Equitable relief from missing a lease-renewal notice deadline is unavailable for avoidable neglect in the absence of special circumstances preventing timely notice.",
+      "material_facts": [
+        "The tenant said the delay resulted from oversight, but the delay was not shown to have resulted from unavoidable accident, excusable ignorance, fraud, or surprise.",
+        "The tenant did not establish that the lessor had acted inequitably so as to preclude refusal of renewal.",
+        "The lessor’s failure to change position to the tenant’s detriment and the tenant’s possession were not special circumstances.",
+        "The tenant had constructed a service station, but its asserted immense public utility was not shown; the construction itself was irrelevant to excusing the late notice."
+      ],
+      "conclusion": "The delay resulted from neglect that could have been avoided with reasonable diligence, and the asserted circumstances did not justify equitable relief. The tenant was not relieved from the consequences of missing the deadline.",
+      "legal_principle": "Equity does not relieve a tenant from failing to give timely notice of renewal except in special circumstances, such as unavoidable accident, fraud, surprise, ignorance that is not wilful, or inequitable conduct by the lessor that precludes refusal of renewal. Mere neglect that reasonable diligence could have avoided is insufficient. The Court relied on Eaton v. Lyon and Reid & Anr. v. Grave & Others, and referred to the equitable rule stated in Halsbury’s Laws of England.",
+      "rule": {
+        "if": "lease_renewal_dispute and renewal_notice_late and avoidable_tenant_neglect and no_equitable_special_circumstance",
+        "then": "equitable_relief_denied"
+      },
+      "predicates": {
+        "lease_renewal_dispute": "The proceeding concerns a tenant’s claim to renew a land lease.",
+        "renewal_notice_late": "The tenant gives the renewal notice after the deadline specified in the lease.",
+        "avoidable_tenant_neglect": "The tenant’s failure to give timely notice results from neglect that reasonable diligence could have avoided.",
+        "no_equitable_special_circumstance": "There is no unavoidable accident, non-wilful ignorance, fraud, surprise, or inequitable conduct by the lessor that prevented timely notice or precludes refusal of renewal."
+      },
+      "definition": "When a tenant in a lease-renewal dispute gives late notice because of avoidable neglect and no qualifying equitable circumstance is present, equitable relief is denied."
+    }
+  ],
+  "seconds": 12.7
+}

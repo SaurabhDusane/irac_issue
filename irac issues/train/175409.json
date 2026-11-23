@@ -1,0 +1,87 @@
+{
+  "doc_id": "175409",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21513,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3038,
+    "prompt_tokens": 5830,
+    "total_tokens": 8868,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An order refusing interim injunction remains final when the appeal against it is withdrawn without the order being set aside.",
+      "material_facts": [
+        "The applicants appealed the refusal of their first injunction application but withdrew that appeal.",
+        "The appellate court permitted withdrawal without deciding the merits or setting aside the refusal order.",
+        "The applicants later sought interim injunction again."
+      ],
+      "conclusion": "The first refusal order attained finality and could not be treated as having been set aside.",
+      "legal_principle": "The principles of res judicata can apply at different stages of the same proceedings. The Court relied on Satyadhyan Ghosal v. Smt. Deorajin Debi, Arjun Singh v. Mohindra Kumar, C.V. Rajendran v. N.M. Muhammed Kunhi, Ishwar Dutt v. Land Acquisition Collector, and Bhanu Kumar Jain v. Archana Kumar. An order that may be erroneous must be set aside through the appropriate appeal; withdrawal of the appeal leaves it in force.",
+      "rule": {
+        "if": "interlocutory_injunction_order and appeal_against_order and appeal_withdrawn and order_not_set_aside",
+        "then": "earlier_order_remains_final"
+      },
+      "predicates": {
+        "interlocutory_injunction_order": "A court made an interlocutory order on an application for injunction.",
+        "appeal_against_order": "A party brought an appeal against that interlocutory order.",
+        "appeal_withdrawn": "The party withdrew the appeal.",
+        "order_not_set_aside": "The appellate court did not set aside the interlocutory order."
+      },
+      "definition": "When an appeal against an interlocutory injunction order is withdrawn without the order being set aside, the original order remains final."
+    },
+    {
+      "legal_issue": "A court permitting withdrawal of an appeal ordinarily cannot grant further relief after the appeal has ended without hearing the merits.",
+      "material_facts": [
+        "The applicants withdrew their appeal against the refusal of interim injunction.",
+        "The appellate court permitted withdrawal without hearing the parties on the merits or giving reasons for further relief.",
+        "The appellate court nevertheless directed the parties to maintain status quo temporarily."
+      ],
+      "conclusion": "The appellate court had no jurisdiction to grant the further status quo relief after permitting withdrawal of the appeal.",
+      "legal_principle": "Ordinarily, a court allowing an appeal to be withdrawn cannot grant a further relief. Once the appeal was withdrawn, the court became functus officio; the Court relied on G.E. Power Controls India v. S. Lakshmipathy.",
+      "rule": {
+        "if": "appeal_from_interlocutory_order and appeal_withdrawn and no_merits_hearing and further_relief_granted",
+        "then": "further_relief_is_without_jurisdiction"
+      },
+      "predicates": {
+        "appeal_from_interlocutory_order": "A party brought an appeal from an interlocutory order.",
+        "appeal_withdrawn": "The appellate court permitted the party to withdraw the appeal.",
+        "no_merits_hearing": "The appellate court did not hear the parties on the merits of the appeal.",
+        "further_relief_granted": "The appellate court granted relief beyond permitting withdrawal of the appeal."
+      },
+      "definition": "If an appeal from an interlocutory order is withdrawn without a merits hearing and the court grants further relief, that further relief is without jurisdiction."
+    },
+    {
+      "legal_issue": "A renewed request for interim injunction is not justified merely because the pleadings have been amended when no new circumstances support the request and the essential issues remain disputed.",
+      "material_facts": [
+        "The applicants' claim rested on their asserted possession and title, while the respondents claimed rights and possession under an alleged agreement for sale.",
+        "The genuineness of the agreement and whether possession had been delivered under it were disputed questions of fact.",
+        "The applicants' earlier injunction application had been refused, and the order had not been set aside.",
+        "The applicants later amended their pleading and sought injunction again, but showed no new circumstances beyond the amendment.",
+        "The applicants did not establish a prima facie case, that the balance of convenience favoured them, or that refusal would cause irreparable injury."
+      ],
+      "conclusion": "The amended pleading alone did not warrant reconsideration or grant of interim injunction, and dismissal of the renewed application was upheld.",
+      "legal_principle": "An applicant for interim injunction must establish a prima facie case, balance of convenience in their favour, and likely irreparable injury if relief is refused. A renewed application requires circumstances warranting fresh consideration; amendment of the pleading and the resulting maintainability of the suit do not by themselves establish a triable issue or a basis for injunction. The Court also applied the principle that res judicata may operate at different stages of the same proceedings, relying on Satyadhyan Ghosal v. Smt. Deorajin Debi, Arjun Singh v. Mohindra Kumar, C.V. Rajendran v. N.M. Muhammed Kunhi, Ishwar Dutt v. Land Acquisition Collector, and Bhanu Kumar Jain v. Archana Kumar. The alleged agreement and delivery of possession remained disputed factual matters, not findings made at the interlocutory stage.",
+      "rule": {
+        "if": "renewed_interim_injunction_request and prior_injunction_refusal and amendment_is_only_changed_circumstance and no_new_circumstances and disputed_title_or_possession and (no_prima_facie_case or no_balance_of_convenience or no_irreparable_injury)",
+        "then": "interim_injunction_not_warranted"
+      },
+      "predicates": {
+        "renewed_interim_injunction_request": "A party renewed a request for interim injunction in the same civil suit.",
+        "prior_injunction_refusal": "A court had previously refused that party's request for interim injunction.",
+        "amendment_is_only_changed_circumstance": "The party relied on an amendment to the pleadings as the change supporting renewed consideration.",
+        "no_new_circumstances": "The party presented no new circumstances beyond the amendment that warranted renewed consideration.",
+        "disputed_title_or_possession": "The opposing parties disputed their respective claims to title or possession, and resolving those claims required determination of facts.",
+        "no_prima_facie_case": "The applicant did not establish a prima facie case for the requested injunction.",
+        "no_balance_of_convenience": "The applicant did not establish that the balance of convenience favoured granting the injunction.",
+        "no_irreparable_injury": "The applicant did not establish that refusing the injunction would cause irreparable injury."
+      },
+      "definition": "When a renewed injunction request follows an earlier refusal, an amendment alone supplies no new circumstances, title or possession remains disputed, and at least one required injunction consideration is not established, interim injunction is not warranted."
+    }
+  ],
+  "seconds": 18.8
+}

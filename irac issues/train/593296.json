@@ -1,0 +1,60 @@
+{
+  "doc_id": "593296",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12616,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2064,
+    "prompt_tokens": 3757,
+    "total_tokens": 5821,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Post-notification land transactions may be used to determine acquired land’s market value only when the required evidence establishes that land prices did not appreciate between the acquisition notification and the transactions.",
+      "material_facts": [
+        "The compensation appeal concerned land acquired by compulsory notification.",
+        "The claimants relied on leases executed after the acquisition notification for land said to be near the acquired land.",
+        "No sale transaction on or about the notification date was available as a guide to market value.",
+        "The claimants did not produce evidence that land prices had not risen between the notification and the dates of the leases."
+      ],
+      "conclusion": "The High Court correctly rejected the post-notification leases because the claimants had not established that land prices had not appreciated in the intervening period.",
+      "legal_principle": "Under Sections 4 and 23 of the Land Acquisition Act, market value is assessed as at the date of the Section 4 notification, and bona fide transactions on or near that date are generally the best evidence. When such transactions are unavailable, comparable transactions may be considered; a post-notification transaction may be relied upon in appropriate circumstances if reliable evidence shows that prices did not appreciate between the notification and the transaction. Administrator General of West Bengal v. Collector, Varanasi, AIR 1988 SC 943, states that subsequent transactions may be used where the market was stable and prices did not fluctuate. State of U.P. v. Major Jitendra Kumar, AIR 1982 SC 876, and Mehta Ravindrarai Ajitrai v. State of Gujarat, AIR 1989 SC 2051, did not resolve the disputed question of who bore the burden of establishing no post-notification price rise and therefore did not assist the claimants.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and no_comparable_transaction_near_notification and post_notification_comparable_sales_relied_on and no_reliable_evidence_of_price_stability",
+        "then": "post_notification_sales_cannot_guide_market_value"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding concerns compensation for land acquired compulsorily.",
+        "no_comparable_transaction_near_notification": "No comparable sale transaction on or near the acquisition notification date is available as a guide to market value.",
+        "post_notification_comparable_sales_relied_on": "A party relies on comparable land sales made after the acquisition notification.",
+        "no_reliable_evidence_of_price_stability": "The party relying on those sales has not produced reliable evidence that prices did not appreciate between the notification and the sales."
+      },
+      "definition": "When a compensation appeal lacks a comparable transaction near the notification date, post-notification comparable sales are relied upon, and reliable evidence of price stability is absent, those sales cannot guide market value."
+    },
+    {
+      "legal_issue": "An award or judgment valuing land acquired under a later notification cannot serve as a basis for determining the market value of land acquired under an earlier notification.",
+      "material_facts": [
+        "The claimants relied on a court award valuing land in another area at a stated rate per square yard.",
+        "The land covered by that award had been acquired under a notification issued after the notification for the land in this case.",
+        "The award was therefore not a previous judgment in relation to the acquisition date relevant to this case."
+      ],
+      "conclusion": "The High Court correctly rejected the later award as a guide for determining the acquired land’s market value.",
+      "legal_principle": "A judgment or award in another land acquisition case may be evidence of market value in appropriate circumstances, but it must be a previous judgment to be used as an instance or basis for deduction. The party relying on it must also adduce evidence showing that, having regard to the attendant facts and circumstances, it can furnish a basis for valuing the acquired land. Pal Singh v. Union Territory of Chandigarh, JT 1992 (5) SC 371, states these requirements.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and court_award_relied_on and award_acquisition_is_later",
+        "then": "later_award_cannot_guide_market_value"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding concerns compensation for land acquired compulsorily.",
+        "court_award_relied_on": "A party relies on a court award valuing land acquired in another proceeding.",
+        "award_acquisition_is_later": "The land covered by the relied-on award was acquired under a notification issued after the notification for the land whose value is being determined."
+      },
+      "definition": "In a compensation appeal, an award relating to land acquired under a later notification cannot guide the market value of land acquired earlier."
+    }
+  ],
+  "seconds": 13.7
+}

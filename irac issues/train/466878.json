@@ -1,0 +1,58 @@
+{
+  "doc_id": "466878",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 1657,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1204,
+    "prompt_tokens": 980,
+    "total_tokens": 2184,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A claimant cannot obtain a decree for possession of property after it has vested in the state under the applicable land reform law.",
+      "material_facts": [
+        "The suit sought possession of properties that had vested in the state before the court decided the appeal.",
+        "The applicable land reform provision governed the effect of that vesting."
+      ],
+      "conclusion": "The claim for a decree for possession could not succeed, and the dismissal of that claim was confirmed.",
+      "legal_principle": "Section 6 of the Bihar Land Reforms Act, 1950, precluded a decree for possession once the suit properties had vested in the State Government.",
+      "rule": {
+        "if": "possession_suit and property_vested_in_state",
+        "then": "possession_decree_unavailable"
+      },
+      "predicates": {
+        "possession_suit": "The proceeding includes a claim seeking possession of property.",
+        "property_vested_in_state": "The property became vested in the state under the applicable land reform law.",
+        "possession_decree_unavailable": "A decree granting possession of the property cannot be obtained."
+      },
+      "definition": "When a proceeding seeks possession of property that has vested in the state, a possession decree is unavailable."
+    },
+    {
+      "legal_issue": "A claimant is entitled to mesne profits for a period during which the opposing party wrongfully possessed the property before it vested in the state.",
+      "material_facts": [
+        "The opposing parties were wrongfully in possession of the properties during the period for which mesne profits were claimed.",
+        "The claimed period ran from the filing of the suit until the properties vested in the state.",
+        "The court directed an inquiry into mesne profits limited to that period."
+      ],
+      "conclusion": "The claimant was entitled to an inquiry and decree for mesne profits for the period of wrongful possession before vesting, but not beyond that period.",
+      "legal_principle": "A person whose property is wrongfully possessed by another is entitled to mesne profits for the period of that wrongful possession; the court limited the award to the period before vesting in accordance with Section 6 of the Bihar Land Reforms Act, 1950. No earlier cases were cited.",
+      "rule": {
+        "if": "mesne_profit_claim_in_property_suit and wrongful_possession_during_claimed_period and claimed_period_before_state_vesting",
+        "then": "mesne_profits_awarded_for_prevesting_period"
+      },
+      "predicates": {
+        "mesne_profit_claim_in_property_suit": "The claimant seeks mesne profits in a proceeding concerning property.",
+        "wrongful_possession_during_claimed_period": "The opposing party wrongfully possessed the property during the period for which mesne profits are sought.",
+        "claimed_period_before_state_vesting": "The period for which mesne profits are sought falls before the property vested in the state.",
+        "mesne_profits_awarded_for_prevesting_period": "Mesne profits are awarded for the period of wrongful possession before the property vested in the state."
+      },
+      "definition": "If a claimant seeks mesne profits in a property proceeding and the opposing party wrongfully possessed the property during the claimed period before state vesting, mesne profits are awarded for that pre-vesting period."
+    }
+  ],
+  "seconds": 8.2
+}

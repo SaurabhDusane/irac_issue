@@ -1,0 +1,64 @@
+{
+  "doc_id": "51816248",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 101428,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2300,
+    "prompt_tokens": 31948,
+    "total_tokens": 34248,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "After an increase in the pecuniary limit for small-cause suits, the court assigned to hear suits within the new lower-value band has exclusive authority to take cognizance of those suits, including suits already pending in another court.",
+      "material_facts": [
+        "A lessor brought a small-causes suit for eviction, rent and damages, initially valued at Rs. 21,175 and later amended to Rs. 27,775.",
+        "The suit was transferred to an Additional District Judge because its value exceeded the then-applicable limit for the Civil Judge hearing small-causes matters.",
+        "While the suit remained pending, an amendment increased the pecuniary limit for small-causes suits of this kind to Rs. 1 lakh.",
+        "The Additional District Judge decided the suit after the amendment took effect."
+      ],
+      "conclusion": "After the amendment took effect, the suit fell within the cognizance of the Small Causes Court presided over by a Civil Judge (Senior Division), and the Additional District Judge was no longer competent to proceed to decide it.",
+      "legal_principle": "Under Section 15(2) of the Provincial Small Cause Courts Act, 1887, as amended for Uttar Pradesh, the expression “cognizable” encompasses institution, hearing and decision. The 2015 amendment raised the pecuniary limit for the relevant lessor-lessee suits to Rs. 1 lakh; its plain statutory language is not confined to suits instituted after the amendment, and the statement of objects and reasons cannot narrow that language. Read with Section 15 of the Code of Civil Procedure, 1908, which requires institution in the lowest-grade competent court, the statutory scheme assigns suits within the lower-value band to the Small Causes Court presided over by a Civil Judge. The Court relied on State of Himachal Pradesh v. M.P. Gupta (2004) 2 SCC 349 on the meaning of “cognizance”; S.S. Bola v. B.D. Sardana (1997) 8 SCC 522, Subha Ram v. State of Maharashtra (2003) 1 SCC 506 and Bhaiji v. Sub-Divisional Officer (2003) 1 SCC 692 on the limited use of statements of objects and reasons; and M.P. Mishra v. Sangam Lal Agarwal, AIR 1975 Allahabad 425, on the statutory scheme. It approved Shobhit Nigam on this point and disapproved the contrary view in Pankaj Hotel.",
+      "rule": {
+        "if": "small_causes_eviction_case and pecuniary_limit_changed_while_case_pending and case_value_within_lower_court_band",
+        "then": "lower_grade_small_causes_court_has_exclusive_cognizance"
+      },
+      "predicates": {
+        "small_causes_eviction_case": "The proceeding is a small-causes suit by a lessor against a lessee concerning eviction or related rent or occupation claims.",
+        "pecuniary_limit_changed_while_case_pending": "The pecuniary limit governing which court may hear the kind of suit changed while the suit was pending.",
+        "case_value_within_lower_court_band": "The value of the suit falls within the band assigned to the lower-grade court after the change.",
+        "lower_grade_small_causes_court_has_exclusive_cognizance": "The lower-grade court assigned to hear small-causes suits within that value band alone has authority to take cognizance of the suit."
+      },
+      "definition": "When a pending small-causes eviction suit falls within the lower-grade court’s value band after the pecuniary limit changes, that court alone has authority to take cognizance of it."
+    },
+    {
+      "legal_issue": "A revisional court cannot allow an objection to a trial court’s pecuniary competence when the objection was not raised at the earliest opportunity and no consequent failure of justice is shown.",
+      "material_facts": [
+        "The Additional District Judge decided the small-causes suit without either party objecting to that court’s competence.",
+        "After the decree, the tenant raised the competence objection in a revision under Section 25 of the Provincial Small Cause Courts Act, 1887.",
+        "The tenant did not establish that deciding the suit in that court had caused a consequent failure of justice.",
+        "The High Court allowed the revision on the competence objection without considering Section 21 of the Code of Civil Procedure, 1908."
+      ],
+      "conclusion": "The High Court should not have allowed the revision on the pecuniary-competence objection; Section 21 barred that objection in the circumstances, so the Additional District Judge’s judgment was not open to interference on that ground.",
+      "legal_principle": "Section 21(2) of the Code of Civil Procedure, 1908 bars an appellate or revisional court from allowing an objection to a court’s competence based on pecuniary limits unless the objection was raised at the earliest possible opportunity and there was a consequent failure of justice. The provision embodies the policy that a judgment reached on the merits should not be reversed on a technical jurisdictional objection absent the required prejudice. The Court relied on Kiran Singh v. Chaman Paswan, AIR 1954 SC 340; Hiralal v. Kali Nath, AIR 1962 SC 199; Bahrain Petroleum Co. v. P.J. Pappu, AIR 1963 SC 634; R.S.D.V. Finance Co. Pvt. Ltd. v. Shree Vallabh Glass Works Ltd. (1993) 2 SCC 130; Harshad Chiman Lal Modi v. DLF Universal Ltd. (2005) 7 SCC 791; and Subhash Mahadevasa Habib v. Nemasa Ambasa Dharmadas (2007) 13 SCC 650.",
+      "rule": {
+        "if": "small_causes_case and revision_from_trial_judgment and pecuniary_competence_objection and (not objection_raised_at_earliest_opportunity or not consequent_failure_of_justice_shown)",
+        "then": "revisional_court_cannot_allow_pecuniary_competence_objection"
+      },
+      "predicates": {
+        "small_causes_case": "The proceeding is a small-causes suit.",
+        "revision_from_trial_judgment": "A party seeks revision of the judgment deciding the suit.",
+        "pecuniary_competence_objection": "The party asks the revisional court to set aside the judgment because the trial court allegedly lacked competence based on pecuniary limits.",
+        "objection_raised_at_earliest_opportunity": "The party raised the competence objection in the trial court at the earliest possible opportunity.",
+        "consequent_failure_of_justice_shown": "The party established that the trial court’s decision caused a consequent failure of justice.",
+        "revisional_court_cannot_allow_pecuniary_competence_objection": "The revisional court cannot allow the objection to the trial court’s competence based on pecuniary limits."
+      },
+      "definition": "When a party raises a pecuniary-competence objection in revision but either did not raise it at the earliest opportunity or cannot show consequent failure of justice, the revisional court cannot allow that objection."
+    }
+  ],
+  "seconds": 79.4
+}

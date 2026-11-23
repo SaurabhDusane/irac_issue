@@ -1,0 +1,80 @@
+{
+  "doc_id": "183313510",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32100,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2757,
+    "prompt_tokens": 8203,
+    "total_tokens": 10960,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court hearing a matter after an open remand may consider contentions beyond the specific issue that prompted the remand.",
+      "material_facts": [
+        "The earlier remand order allowed the parties to raise the issues already raised in the appeal and any other issues raised by either party.",
+        "The earlier proceedings had not determined whether the applicable sale requirements were mandatory, whether they had been breached, or what effect any breach would have."
+      ],
+      "conclusion": "The remand was open, so the High Court could consider the validity of the auction on grounds beyond the rights of a bona fide purchaser.",
+      "legal_principle": "The scope of a remand is determined from the language and effect of the remand order. Where the order expressly permits consideration of other issues and does not finally decide them, those issues remain open for consideration.",
+      "rule": {
+        "if": "post_remand_proceeding and remand_order_permits_other_issues and prior_order_left_issue_undetermined",
+        "then": "court_may_consider_other_issues"
+      },
+      "predicates": {
+        "post_remand_proceeding": "The court is considering a matter sent back for further decision after an earlier order.",
+        "remand_order_permits_other_issues": "The remand order allows the parties to raise issues beyond the specific issue that prompted the remand.",
+        "prior_order_left_issue_undetermined": "The earlier order did not finally determine the issue later considered."
+      },
+      "definition": "When a matter returns after a remand that permits other issues and the earlier order left an issue undecided, the court may consider that issue."
+    },
+    {
+      "legal_issue": "The requirements for payment by a successful purchaser at an immovable-property recovery auction are mandatory where they can practicably be applied, and non-compliance makes the auction sale void.",
+      "material_facts": [
+        "The auction was conducted to recover a debt under the debt-recovery legislation, and the property sold was immovable property.",
+        "The High Court held the auction invalid for non-compliance with the applicable payment requirements.",
+        "The Supreme Court held that the relevant recovery rules could be applied to debt recovery and that the words allowing application “as far as possible” did not give the Recovery Officer discretion to disregard them merely because of the circumstances of a particular case."
+      ],
+      "conclusion": "The payment requirements in Rule 57 of the Second Schedule to the Income-tax Act applied and were mandatory; breach rendered the auction sale non-existent in law.",
+      "legal_principle": "Section 29 of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993 applies the Second and Third Schedules to the Income-tax Act, 1961 and the related rules to debt recovery, with necessary modifications. The phrase “as far as possible” permits non-application only where a rule cannot practicably apply in the statutory context, not discretionary departure in an individual case. Rule 57 of the Second Schedule requires an immediate deposit of part of the purchase price and payment of the balance within the specified period; its mandatory character follows from its text and from the analogous mandatory requirements in Order XXI Rules 84–86 of the Code of Civil Procedure. The Court relied on Osmania University v. V.S. Muthurangam, N.K. Chauhan v. State of Gujarat, Manilal Mohanlal Shah v. Sardar Sayed Ahmed Sayed Mahmed, Sardara Singh v. Sardara Singh, Balram v. Ilam Singh, Rao Mahmood Ahmed Khan v. Ranbir Singh, Gangabai Gopaldas Mohata v. Fulchand, Himadri Coke & Petro Ltd. v. Soneko Developers, and Shilpa Shares and Securities v. National Co-operative Bank. Its discussion of incorporation by reference also relied on Ram Kirpal Bhagat v. State of Bihar, Mahindra and Mahindra Ltd. v. Union of India, Onkarlal Nandlal v. Rajasthan, Mary Roy v. State of Kerala, Nagpur Improvement Trust v. Vasantrao, and Surana Steels Pvt. Ltd. v. Deputy Commissioner of Income Tax.",
+      "rule": {
+        "if": "debt_recovery_auction and immovable_property_sold and recovery_rules_practicable and (immediate_deposit_missing or timely_balance_payment_missing)",
+        "then": "auction_sale_is_void"
+      },
+      "predicates": {
+        "debt_recovery_auction": "The proceeding is to recover a debt through an auction conducted under a debt-recovery process.",
+        "immovable_property_sold": "The auction concerns immovable property.",
+        "recovery_rules_practicable": "The applicable procedural requirements can practicably be followed in the debt-recovery process.",
+        "immediate_deposit_missing": "The successful purchaser fails to make the required immediate deposit after being declared the purchaser.",
+        "timely_balance_payment_missing": "The successful purchaser fails to pay the balance of the purchase price within the required time.",
+        "auction_sale_is_void": "The auction sale is invalid and creates no rights in the property for the purchaser."
+      },
+      "definition": "If an immovable-property auction takes place in a debt-recovery proceeding, the applicable requirements are practicable, and the purchaser misses either required payment, the sale is void."
+    },
+    {
+      "legal_issue": "Whether a bona fide purchaser is protected when the decree underlying an auction is set aside need not be resolved where the auction is independently invalid.",
+      "material_facts": [
+        "The auction purchasers argued that they were bona fide purchasers and that their rights survived the setting aside of the underlying ex-parte decree.",
+        "The Court observed an apparent conflict between earlier decisions on the protection of auction purchasers.",
+        "The Court concluded that the auction was invalid for breach of mandatory payment requirements, making the purchaser-protection question academic in this appeal."
+      ],
+      "conclusion": "The Court did not decide whether a bona fide auction purchaser's rights survive the setting aside of the underlying decree and found no need to refer that question to a larger bench in this case.",
+      "legal_principle": "A court need not resolve an apparent conflict in precedent or decide an issue that is academic to the outcome before it. The Court noted the competing lines of authority, including Janak Raj v. Gurdial Singh, Janatha Textiles v. Tax Recovery Officer, Padanathil Ruqmini Amma v. P.K. Abdulla, and Chinnammal v. P. Arumugham, but declined to resolve their apparent conflict because the auction was invalid on an independent ground.",
+      "rule": {
+        "if": "appeal_involving_bona_fide_purchaser_protection and auction_invalid_on_independent_ground",
+        "then": "purchaser_protection_question_left_undecided"
+      },
+      "predicates": {
+        "appeal_involving_bona_fide_purchaser_protection": "The proceeding raises whether a purchaser at auction is protected despite the setting aside of the decree underlying the sale.",
+        "auction_invalid_on_independent_ground": "The auction is invalid on a ground that does not depend on whether the purchaser is bona fide.",
+        "purchaser_protection_question_left_undecided": "The court does not decide whether the purchaser is protected against the consequences of the underlying decree being set aside."
+      },
+      "definition": "When an appeal raises purchaser protection but the auction is invalid on an independent ground, the court may leave the purchaser-protection question undecided."
+    }
+  ],
+  "seconds": 17.2
+}

@@ -1,0 +1,58 @@
+{
+  "doc_id": "632282",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24374,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1709,
+    "prompt_tokens": 6760,
+    "total_tokens": 8469,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An executing court cannot extend a deposit period fixed by consent of the parties when the parties do not consent to a further extension.",
+      "material_facts": [
+        "The judgment-debtors withdrew their challenge to the sale under an agreement by which they were given time to deposit the amount due by a specified date.",
+        "They did not deposit the amount by that date, and the decree-holder and auction purchaser opposed their request for more time.",
+        "The deposit was not made before the executing court considered confirmation of the sale."
+      ],
+      "conclusion": "The executing court was correct to refuse further time; Section 148 of the Code of Civil Procedure did not permit extension of the period fixed by the parties’ compromise in these circumstances.",
+      "legal_principle": "Order XXXIV, Rule 5(1) recognizes a judgment-debtor’s right in an execution relating to a mortgage decree for sale to deposit the amount due before confirmation, but it does not empower the court to extend time after the final decree or postpone confirmation to accommodate the judgment-debtor. Section 148 did not apply to extend a period granted by consent when the other parties opposed further extension.",
+      "rule": {
+        "if": "mortgage_sale_execution and deposit_deadline_set_by_party_compromise and further_extension_opposed",
+        "then": "court_cannot_extend_deposit_deadline"
+      },
+      "predicates": {
+        "mortgage_sale_execution": "The proceeding is an execution concerning a sale under a mortgage decree.",
+        "deposit_deadline_set_by_party_compromise": "The parties agreed to a deadline for the judgment-debtor to deposit the amount due.",
+        "further_extension_opposed": "The other parties opposed the judgment-debtor’s request for more time."
+      },
+      "definition": "When a mortgage-sale execution has a deposit deadline agreed by the parties and further time is opposed, the court cannot extend that deadline."
+    },
+    {
+      "legal_issue": "A sale must be confirmed when the conditions for confirmation are met unless the judgment-debtor deposits the amount due before confirmation.",
+      "material_facts": [
+        "A property was sold in execution of an order treated as a final mortgage decree.",
+        "The judgment-debtors’ challenge to the sale was withdrawn as part of the compromise granting them time to pay.",
+        "They did not deposit the amount due before the sale was confirmed, although money was deposited later."
+      ],
+      "conclusion": "The sale had to be confirmed, and the later deposit did not prevent confirmation.",
+      "legal_principle": "Order XXI, Rule 92(1) requires confirmation when no application to set aside the sale remains pending and an application made under the relevant rules has been disposed of or disallowed. Read harmoniously with Order XXXIV, Rule 5(1), the judgment-debtor may deposit the amount due before confirmation, but the court has no power under that rule to grant time or postpone confirmation to enable a deposit. The Court relied on Janak Rai v. Gurdial Singh, which held that once the conditions of Order XXI, Rule 92(1) are satisfied, the executing court must confirm the sale.",
+      "rule": {
+        "if": "mortgage_sale_execution and sale_challenge_disposed and not amount_deposited_before_confirmation",
+        "then": "sale_must_be_confirmed"
+      },
+      "predicates": {
+        "mortgage_sale_execution": "The proceeding is an execution concerning a sale under a mortgage decree.",
+        "sale_challenge_disposed": "The judgment-debtor’s challenge to the sale has been withdrawn or otherwise disposed of.",
+        "amount_deposited_before_confirmation": "The judgment-debtor deposited the amount due before the sale was confirmed."
+      },
+      "definition": "When a challenge to a sale in a mortgage-sale execution has been disposed of and the amount due has not been deposited before confirmation, the sale must be confirmed."
+    }
+  ],
+  "seconds": 12.0
+}

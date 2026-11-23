@@ -1,0 +1,139 @@
+{
+  "doc_id": "118013356",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36736,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4240,
+    "prompt_tokens": 8726,
+    "total_tokens": 12966,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A suit for specific performance filed within the applicable limitation period is not barred by limitation.",
+      "material_facts": [
+        "The agreement required completion of the sale within six months.",
+        "Within that period, the purchaser sent notices calling on the seller to complete the transaction; one notice was returned marked refused, and the seller did not respond to the notices.",
+        "The purchaser filed suit within three years of the seller’s refusal, which the Court treated as having occurred when the seller failed to respond to the demands for performance."
+      ],
+      "conclusion": "The suit was filed within the applicable limitation period and could not be dismissed as time-barred.",
+      "legal_principle": "Article 54 of the Limitation Act, 1963 provides a three-year period for a suit for specific performance, running from the date fixed for performance or, where no date is fixed, from when the plaintiff notices that performance is refused. On these facts, refusal was treated as having occurred after the seller did not respond to demands made within the stipulated period. The Court therefore rejected the limitation objection.",
+      "rule": {
+        "if": "specific_performance_suit and filed_within_applicable_limitation_period",
+        "then": "suit_not_barred_by_limitation"
+      },
+      "predicates": {
+        "specific_performance_suit": "The proceeding is a suit seeking specific performance of a contract.",
+        "filed_within_applicable_limitation_period": "The plaintiff filed the suit before the applicable limitation period expired, measured from the legally relevant starting point."
+      },
+      "definition": "When a suit for specific performance is filed within the applicable limitation period, the suit is not barred by limitation."
+    },
+    {
+      "legal_issue": "Delay alone does not justify refusing specific performance when the suit was filed within the statutory limitation period and the plaintiff’s conduct does not supply a separate ground for refusal.",
+      "material_facts": [
+        "The purchaser filed the suit within the applicable limitation period.",
+        "The purchaser had demanded performance from the seller, and the Court found that delay alone, without reference to the purchaser’s conduct, was not a basis to refuse relief."
+      ],
+      "conclusion": "Mere delay in filing the suit was not a ground to refuse specific performance.",
+      "legal_principle": "In India, unlike the equitable approach described for England, the statutory limitation period governs; delay alone does not justify refusing specific performance when the suit is timely. The Court applied Mademsetty Satyanarayana v. G. Yelloji Rao, AIR 1965 SC 1405, and R. Lakshmikantham v. Devaraji, (2019) 8 SCC 62. It also distinguished limitation from delay and laches, which may inform the court’s discretion under Section 20 of the Specific Relief Act, 1963 as it stood before the 2018 amendment.",
+      "rule": {
+        "if": "specific_performance_suit and filed_within_applicable_limitation_period and delay_is_the_only_basis_for_refusal",
+        "then": "delay_alone_does_not_justify_refusal"
+      },
+      "predicates": {
+        "specific_performance_suit": "The proceeding is a suit seeking specific performance of a contract.",
+        "filed_within_applicable_limitation_period": "The plaintiff filed the suit before the applicable limitation period expired.",
+        "delay_is_the_only_basis_for_refusal": "The asserted reason for denying relief is delay itself, rather than a separate ground arising from the plaintiff’s conduct or the circumstances of the case."
+      },
+      "definition": "If a timely specific-performance suit is opposed only on the basis of delay, delay alone does not justify refusing relief."
+    },
+    {
+      "legal_issue": "The pre-amendment specific-relief law governs a contract made before the 2018 amendments came into force.",
+      "material_facts": [
+        "The agreement was made before the 2018 amendments to the Specific Relief Act came into force.",
+        "The Court considered the parties’ claim to specific performance under the legal position applicable to that earlier agreement."
+      ],
+      "conclusion": "The 2018 amendments did not apply to the agreement, and the pre-amendment law governed the dispute.",
+      "legal_principle": "The Court applied Smt. Katta Sujatha Reddy v. Siddamsetty Infra Projects Ltd., Civil Appeal No. 5822 of 2022, which held that Act 18 of 2018 amending the Specific Relief Act is prospective and does not apply to transactions predating its commencement.",
+      "rule": {
+        "if": "specific_performance_dispute and agreement_predates_amendment",
+        "then": "pre_amendment_law_applies"
+      },
+      "predicates": {
+        "specific_performance_dispute": "The proceeding concerns a claim for specific performance of an agreement.",
+        "agreement_predates_amendment": "The agreement was made before the relevant change in the law came into force."
+      },
+      "definition": "In a specific-performance dispute concerning an agreement made before the legal change took effect, the law that applied before the change governs."
+    },
+    {
+      "legal_issue": "A purchaser satisfies the readiness-and-willingness requirement by pleading it in substance and proving it through relevant conduct; actual tender or deposit of the price is not required unless directed by the court.",
+      "material_facts": [
+        "The purchaser pleaded readiness and willingness to pay the balance and complete the transaction.",
+        "The purchaser testified and proved that he had made demands for performance within the contractual period.",
+        "The seller did not respond to those demands or perform the agreement.",
+        "The purchaser had not deposited the balance of the price when filing suit, and the Court noted that no court direction requiring tender or deposit had been made."
+      ],
+      "conclusion": "The purchaser complied with the readiness-and-willingness requirement despite not depositing the balance of the price when filing suit.",
+      "legal_principle": "Section 16(c) of the Specific Relief Act, 1963, before its 2018 amendment, required the plaintiff to aver and prove performance or continuous readiness and willingness to perform the essential terms. Its Explanation stated that a plaintiff need not tender money to the defendant or deposit it in court unless directed to do so. Readiness concerns capacity to perform, including financial capacity, while willingness concerns intention inferred from conduct and surrounding circumstances. The Court relied on Syed Dastagir v. T.R. Gopalakrishna Setty, (1999) 6 SCC 337, for substance over form in the pleading; Sukhbir Singh v. Brij Pal Singh, (1997) 2 SCC 200, A. Kanthamani v. Nasreen Ahmed, (2017) 4 SCC 654, and C.S. Venkatesh v. A.S.C. Murthy, (2020) 3 SCC 280, for the proposition that ready cash or a court deposit is not required; and N.P. Thirugnanam v. Dr. R. Jagan Mohan Rao, (1995) 5 SCC 115, and Ardeshir H. Mama v. Flora Sassoon, AIR 1928 PC 208, on continuous readiness and willingness.",
+      "rule": {
+        "if": "specific_performance_suit and readiness_pleaded_in_substance and readiness_proved_by_conduct and seller_failed_after_demand",
+        "then": "buyer_satisfies_readiness_requirement"
+      },
+      "predicates": {
+        "specific_performance_suit": "The proceeding is a suit seeking specific performance of a contract.",
+        "readiness_pleaded_in_substance": "The purchaser’s pleading, read as a whole, conveys readiness and willingness to perform the purchaser’s contractual obligations.",
+        "readiness_proved_by_conduct": "The purchaser’s evidence and conduct support an ability and intention to perform those obligations.",
+        "seller_failed_after_demand": "The seller did not perform after the purchaser called for performance."
+      },
+      "definition": "Where a purchaser in a specific-performance suit pleads readiness in substance, proves it through conduct, and the seller fails to perform after demand, the purchaser satisfies the readiness-and-willingness requirement."
+    },
+    {
+      "legal_issue": "Specific performance may be granted under the pre-amendment law when the purchaser establishes readiness and willingness and the circumstances do not warrant refusing the discretionary relief.",
+      "material_facts": [
+        "The seller admitted executing the agreement to sell the immovable property.",
+        "The purchaser pleaded and proved readiness and willingness, including by making demands for performance during the contractual period.",
+        "The seller failed to perform despite those demands.",
+        "The trial court had refused specific performance, but the High Court granted it, and the Supreme Court found no illegality or infirmity in that decision."
+      ],
+      "conclusion": "The decree granting specific performance was upheld.",
+      "legal_principle": "Under Sections 10, 16(c), and 20 of the Specific Relief Act, 1963, as they stood before the 2018 amendment, specific performance could be granted for transfer of immovable property where money compensation was inadequate, provided the plaintiff satisfied Section 16(c); the court’s discretion under Section 20 had to be sound, reasonable, and guided by judicial principles. The Court relied on Kamal Kumar v. Premlata Joshi, (2019) 3 SCC 704, for the relevant considerations, including the existence of a concluded contract, performance and readiness, hardship, and the parties’ conduct; and referred to K.S. Vidyanadam v. Vairavan, (1997) 3 SCC 1, and Saeadamani Kandappan v. S. Rajalakshmi, (2011) 12 SCC 18, on relevant considerations in exercising discretion. The Court also applied the readiness-and-willingness principles in Syed Dastagir and the related cases cited above.",
+      "rule": {
+        "if": "specific_performance_suit and valid_contract_for_immovable_property and buyer_satisfies_readiness_requirement and seller_failed_to_perform",
+        "then": "specific_performance_decree_upheld"
+      },
+      "predicates": {
+        "specific_performance_suit": "The proceeding is a suit seeking specific performance of a contract.",
+        "valid_contract_for_immovable_property": "The parties made a valid agreement for the transfer of immovable property.",
+        "buyer_satisfies_readiness_requirement": "The purchaser has pleaded and proved readiness and willingness to perform the purchaser’s essential contractual obligations.",
+        "seller_failed_to_perform": "The seller did not perform the seller’s obligations under the agreement."
+      },
+      "definition": "When a valid agreement for immovable property is the subject of a specific-performance suit, the purchaser satisfies the readiness requirement, and the seller fails to perform, the specific-performance decree is upheld."
+    },
+    {
+      "legal_issue": "A substantial rise in property prices and the seller’s continued possession may justify requiring additional consideration as a condition of enforcing specific performance.",
+      "material_facts": [
+        "The agreement had been made long before the appeal was finally decided.",
+        "The Court noted a steep rise in the price of immovable property.",
+        "The seller had retained possession of the property throughout.",
+        "Mediation did not resolve the dispute."
+      ],
+      "conclusion": "The purchaser was directed to pay additional consideration, after which the seller was required to execute the sale deed.",
+      "legal_principle": "While upholding specific performance, the Court considered the substantial rise in property prices and the seller’s continued possession and directed an additional payment in the interests of justice. The direction was made in the exercise of the court’s discretion under the pre-amendment specific-relief regime, including Section 20 of the Specific Relief Act, 1963, which required discretion to be exercised on sound and reasonable judicial principles.",
+      "rule": {
+        "if": "specific_performance_appeal and substantial_property_price_rise and seller_retained_possession",
+        "then": "purchaser_must_pay_adjusted_consideration"
+      },
+      "predicates": {
+        "specific_performance_appeal": "The proceeding is an appeal concerning a decree for specific performance.",
+        "substantial_property_price_rise": "The value of the property has risen substantially while the dispute has been pending.",
+        "seller_retained_possession": "The seller has continued to retain possession of the property."
+      },
+      "definition": "In a specific-performance appeal, a substantial rise in property value together with the seller’s continued possession may result in the purchaser being required to pay adjusted consideration."
+    }
+  ],
+  "seconds": 25.1
+}

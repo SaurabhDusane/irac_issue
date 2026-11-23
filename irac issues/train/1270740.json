@@ -1,0 +1,78 @@
+{
+  "doc_id": "1270740",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 2944,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1272,
+    "prompt_tokens": 1248,
+    "total_tokens": 2520,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An executing court cannot reopen an amount awarded by an appellate decree when that decree was not challenged in further proceedings.",
+      "material_facts": [
+        "The appellate decree directed payment of an amount calculated under the land-acquisition provision for an additional annual amount.",
+        "The decree was not challenged in further proceedings.",
+        "The landowners sought payment of the decree in execution, where the State challenged that amount."
+      ],
+      "conclusion": "The challenge to the amount awarded by the appellate decree was not open in execution.",
+      "legal_principle": "An executing court cannot permit a challenge to an appellate decree that was not pursued in further proceedings. The Court relied on the finality of the unchallenged decree; it cited no earlier cases or statutory provisions for this point.",
+      "rule": {
+        "if": "execution_proceeding and decree_awards_amount and decree_not_further_challenged",
+        "then": "executing_court_cannot_reopen_awarded_amount"
+      },
+      "predicates": {
+        "execution_proceeding": "A party seeks to enforce a decree through execution proceedings.",
+        "decree_awards_amount": "The decree directs payment of the amount later challenged in execution.",
+        "decree_not_further_challenged": "No further proceeding was brought to challenge the decree."
+      },
+      "definition": "When an amount is awarded by a decree, execution proceedings cannot be used to reopen it if the decree was not further challenged."
+    },
+    {
+      "legal_issue": "An additional annual amount awarded alongside market value is not included in the base for calculating solatium.",
+      "material_facts": [
+        "The compensation calculation included an additional amount calculated annually on the land's market value.",
+        "The applicable law also provided for solatium calculated as a percentage of market value.",
+        "The State disputed including the additional amount in the base used to calculate solatium."
+      ],
+      "conclusion": "The additional annual amount is not part of market value and must be excluded when calculating solatium.",
+      "legal_principle": "Under Sections 23(1A) and 23(2) of the Land Acquisition Act, the additional annual amount is awarded in addition to market value, while solatium is calculated on market value. Reading the provisions together, the additional amount is not part of the solatium base. No earlier cases were relied on.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and additional_amount_separate_from_market_value and solatium_calculated",
+        "then": "additional_amount_excluded_from_solatium_base"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for acquired land.",
+        "additional_amount_separate_from_market_value": "The compensation includes an additional amount awarded separately from the land's market value.",
+        "solatium_calculated": "A percentage-based solatium is being calculated on the land's market value."
+      },
+      "definition": "Where land compensation includes an amount separate from market value, that amount is excluded when solatium is calculated on market value."
+    },
+    {
+      "legal_issue": "Interest on compensation is calculated without adding accrued interest to the compensation base.",
+      "material_facts": [
+        "Interest was payable on compensation awarded for acquired land.",
+        "The calculation at issue concerned interest for a later year of default.",
+        "The disputed calculation would have added interest accrued for an earlier year to the compensation before calculating further interest."
+      ],
+      "conclusion": "Interest is payable on the compensation amount excluding the interest component, so accrued interest is not added to the base for calculating further interest.",
+      "legal_principle": "Section 34 of the Land Acquisition Act provides for interest on the amount awarded as compensation. Interest runs on compensation, excluding the interest component; accrued interest is not added to compensation to calculate further interest. No earlier cases were relied on.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and interest_calculated_on_compensation and prior_interest_accrued",
+        "then": "further_interest_excludes_accrued_interest_from_base"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for acquired land.",
+        "interest_calculated_on_compensation": "Interest is being calculated on an amount awarded as compensation.",
+        "prior_interest_accrued": "Interest has already accrued on the compensation for an earlier period."
+      },
+      "definition": "When interest on land compensation is calculated after interest has accrued for an earlier period, the accrued interest is excluded from the base for further interest."
+    }
+  ],
+  "seconds": 8.7
+}

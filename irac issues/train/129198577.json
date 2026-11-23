@@ -1,0 +1,61 @@
+{
+  "doc_id": "129198577",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28095,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1504,
+    "prompt_tokens": 6768,
+    "total_tokens": 8272,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An amendment that changes a suit’s nature and introduces a distinct cause of action cannot be allowed merely to add a challenge to transactions unrelated to the original dispute.",
+      "material_facts": [
+        "The suits concerned the revocation of licenses for individual shops and sought declarations concerning the licensees’ rights.",
+        "The proposed amendments sought to challenge mortgages over the entire premises, including mortgages created before the plaintiffs became licensees.",
+        "The license agreements acknowledged the licensor’s right to create mortgages over the premises.",
+        "Allowing the amendments would change the nature of the suits and introduce a challenge to mortgages distinct from the dispute over revocation of the licenses."
+      ],
+      "conclusion": "The amendments seeking declarations that the mortgages were void should not have been allowed.",
+      "legal_principle": "Under Order 6 Rule 17 of the Code of Civil Procedure, an amendment should not be allowed where it is likely to change the nature of the suit or result in misjoinder of causes of action. The Court distinguished Kasturi v. Iyyamperumal (2005) 6 SCC 733, which concerned subsequent purchasers of the very property subject to a specific-performance claim, and did not apply that decision to these facts. The High Court had also relied on Revajeetu Builders and Developers v. Narayanaswamy and Sons (2009) 10 SCC 84, but the Supreme Court held that the amendments here were impermissible.",
+      "rule": {
+        "if": "license_revocation_suit and proposed_mortgage_challenge and (amendment_changes_suit_nature or amendment_adds_distinct_cause)",
+        "then": "amendment_must_be_refused"
+      },
+      "predicates": {
+        "license_revocation_suit": "The proceeding concerns whether the revocation of a license to occupy or use premises was lawful.",
+        "proposed_mortgage_challenge": "The proposed pleading seeks to challenge mortgages over property beyond the license dispute.",
+        "amendment_changes_suit_nature": "The proposed amendment would change the essential nature of the dispute being tried.",
+        "amendment_adds_distinct_cause": "The proposed amendment would introduce a cause of action distinct from the one in the original pleading."
+      },
+      "definition": "When a suit concerns revocation of a license and a proposed mortgage challenge would change the suit’s nature or add a distinct cause, the amendment must be refused."
+    },
+    {
+      "legal_issue": "A plaintiff’s control over the choice of parties does not permit joinder of mortgagees who are not necessary or proper parties to a suit about revocation of a license.",
+      "material_facts": [
+        "The suits concerned the revocation of licenses for individual shops, while the proposed defendants held mortgages over the entire premises.",
+        "The plaintiffs’ alleged rights as perpetual license holders had not yet been adjudicated.",
+        "The mortgages were created between the property owner and the lenders, and the plaintiffs’ claims in the suits concerned their licenses.",
+        "The plaintiffs sought to join the mortgagees to protect asserted rights in the premises, relying in part on the principle that a plaintiff is dominus litus."
+      ],
+      "conclusion": "The mortgagee banks and financial institutions should not have been impleaded in the license-revocation suits.",
+      "legal_principle": "Under Order 1 Rule 10 of the Code of Civil Procedure, the principle that a plaintiff is dominus litus applies only where the persons sought to be added are necessary or proper parties; it does not authorize adding parties who have no necessary or proper role in the dispute. Kasturi v. Iyyamperumal (2005) 6 SCC 733 was distinguishable because it concerned subsequent purchasers of the property that was the subject of a specific-performance suit.",
+      "rule": {
+        "if": "license_revocation_suit and mortgagees_not_parties_to_license_dispute and licensee_rights_unadjudicated",
+        "then": "mortgagees_must_not_be_joined"
+      },
+      "predicates": {
+        "license_revocation_suit": "The proceeding concerns whether the revocation of a license to occupy or use premises was lawful.",
+        "mortgagees_not_parties_to_license_dispute": "The mortgagees’ transactions are with the property owner and are not part of the dispute over the license or its revocation.",
+        "licensee_rights_unadjudicated": "The plaintiffs’ claimed rights in the premises have not yet been determined."
+      },
+      "definition": "In a suit about license revocation, mortgagees who are outside the license dispute must not be joined while the plaintiffs’ claimed rights remain undecided."
+    }
+  ],
+  "seconds": 10.1
+}

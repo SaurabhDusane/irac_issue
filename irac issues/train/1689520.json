@@ -1,0 +1,100 @@
+{
+  "doc_id": "1689520",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19541,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2362,
+    "prompt_tokens": 5032,
+    "total_tokens": 7394,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An eviction authority has jurisdiction over premises owned by the central government and managed by a cantonment board even before cantonment boards were separately included in the statutory definition of public premises.",
+      "material_facts": [
+        "The premises belonged to the Union of India and were managed by the cantonment board.",
+        "The occupant’s own earlier pleadings acknowledged the government’s ownership and did not dispute that the premises had been leased to it.",
+        "The eviction proceedings were brought before the statutory definition separately included cantonment boards."
+      ],
+      "conclusion": "The Estate Officer had jurisdiction because the premises were already public premises as property belonging to the Union of India; their management by a cantonment board did not take them outside the Act.",
+      "legal_principle": "Section 2(e)(1) of the Public Premises (Eviction of Unauthorised Occupants) Act, 1971 covers premises belonging to or taken on lease or requisitioned by or on behalf of the Central Government. The later inclusion of cantonment boards under Section 2(e)(2)(viii) does not remove central-government-owned premises already covered by Section 2(e)(1). Section 116A of the Cantonments Act, 1924 authorizes a board to manage property entrusted to it by the Central Government. An objection to inherent subject-matter jurisdiction may be raised at any stage; the Court relied on Balwant N. Viswamitra v. Yadav Sadashiv Mule (2004) 8 SCC 706.",
+      "rule": {
+        "if": "challenge_to_eviction_order and central_government_owned_premises and management_entrusted_to_local_body",
+        "then": "eviction_authority_had_subject_matter_jurisdiction"
+      },
+      "predicates": {
+        "challenge_to_eviction_order": "The proceeding challenges an order made in an eviction proceeding.",
+        "central_government_owned_premises": "The premises belonged to the central government.",
+        "management_entrusted_to_local_body": "The central government entrusted management of the premises to a local body."
+      },
+      "definition": "When an eviction order is challenged and the premises belonged to the central government but were managed by a local body, the eviction authority had subject-matter jurisdiction."
+    },
+    {
+      "legal_issue": "An occupant whose authority to occupy public premises has expired and who remains after receiving the required eviction notice is in unauthorised occupation and may be evicted under the public-premises procedure.",
+      "material_facts": [
+        "The lease expired and was not extended.",
+        "The occupant remained in the premises after the lease expired and did not vacate after agreeing to seek time to do so.",
+        "The Estate Officer issued the required notice and ordered eviction, and the occupant had no acceptable defence to continued occupation."
+      ],
+      "conclusion": "The occupant was in unauthorised occupation after the lease expired, and the eviction order was justified.",
+      "legal_principle": "Section 2(g) of the Public Premises (Eviction of Unauthorised Occupants) Act, 1971 defines unauthorised occupation; Sections 4 and 5 provide for notice and an eviction order. The Court held that the expired lease had not been extended and that the required notice had been given.",
+      "rule": {
+        "if": "appeal_from_public_premises_eviction_order and occupancy_authority_expired and occupant_remained and required_notice_given",
+        "then": "occupant_is_in_unauthorised_occupation_and_may_be_evicted"
+      },
+      "predicates": {
+        "appeal_from_public_premises_eviction_order": "The proceeding is an appeal concerning an eviction order made under a public-premises procedure.",
+        "occupancy_authority_expired": "The occupant’s authority to occupy the premises had expired without extension.",
+        "occupant_remained": "The occupant remained in the premises after that authority expired.",
+        "required_notice_given": "The eviction authority gave the notice required before ordering eviction."
+      },
+      "definition": "If an appeal concerns a public-premises eviction order and the occupant remained after occupancy authority expired despite receiving the required notice, the occupant is in unauthorised occupation and may be evicted."
+    },
+    {
+      "legal_issue": "The general notice requirements for terminating a lease under property-transfer law do not displace the eviction procedure applicable to public premises.",
+      "material_facts": [
+        "The premises belonged to the Union of India and were covered by the public-premises legislation.",
+        "The occupant’s lease had expired and had not been extended.",
+        "The Estate Officer gave notice under the public-premises procedure before ordering eviction."
+      ],
+      "conclusion": "A 15-day notice under the Transfer of Property Act was not necessary; the public-premises legislation governed the eviction procedure.",
+      "legal_principle": "Sections 106 and 107 of the Transfer of Property Act, 1882 did not apply to require a 15-day notice in this case because the special public-premises legislation prevailed over the general enactment.",
+      "rule": {
+        "if": "public_premises_eviction_proceeding and premises_covered_by_special_eviction_regime and occupancy_authority_expired",
+        "then": "general_lease_termination_notice_not_required"
+      },
+      "predicates": {
+        "public_premises_eviction_proceeding": "The proceeding seeks eviction through a statutory procedure for public premises.",
+        "premises_covered_by_special_eviction_regime": "The premises fall within the scope of a special statutory eviction regime.",
+        "occupancy_authority_expired": "The occupant’s authority to occupy the premises had expired without extension."
+      },
+      "definition": "When a public-premises eviction proceeding concerns premises covered by a special eviction regime and the occupancy authority has expired, the general lease-termination notice is not required."
+    },
+    {
+      "legal_issue": "An unsupported ownership assertion is insufficient to defeat eviction proceedings when the record and the occupant’s prior statements acknowledge government ownership and a lease.",
+      "material_facts": [
+        "The occupant did not claim ownership in its objections or writ petition and produced no ownership document.",
+        "The occupant’s pleadings stated that the building had belonged to the East India Company and later to the Government of India.",
+        "The occupant did not dispute that a lease had been executed for its occupation of the premises."
+      ],
+      "conclusion": "The Court rejected the occupant’s assertion that it owned the premises.",
+      "legal_principle": "The Court assessed the ownership assertion against the record, the absence of supporting documents, and the occupant’s prior pleadings acknowledging government ownership and a lease; it identified no separate statutory rule or earlier case for this determination.",
+      "rule": {
+        "if": "challenge_to_eviction_order and ownership_claim_unsupported and prior_statements_acknowledge_another_owner and lease_not_disputed",
+        "then": "ownership_claim_rejected"
+      },
+      "predicates": {
+        "challenge_to_eviction_order": "The proceeding challenges an order made in an eviction proceeding.",
+        "ownership_claim_unsupported": "The occupant asserted ownership but produced no supporting ownership document.",
+        "prior_statements_acknowledge_another_owner": "The occupant’s earlier statements acknowledged that another person or body owned the premises.",
+        "lease_not_disputed": "The occupant did not dispute that it had occupied the premises under a lease."
+      },
+      "definition": "When an occupant challenging an eviction order lacks proof of ownership, previously acknowledged another owner, and did not dispute the lease, the ownership claim is rejected."
+    }
+  ],
+  "seconds": 17.2
+}

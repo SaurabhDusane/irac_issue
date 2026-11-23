@@ -1,0 +1,99 @@
+{
+  "doc_id": "1737932",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 34536,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2050,
+    "prompt_tokens": 8758,
+    "total_tokens": 10808,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A dispute may be referred to arbitration between the parties to the arbitration agreement even when another person interested in the subject matter is not a party, if that person’s share is not in dispute.",
+      "material_facts": [
+        "The arbitration agreement was made by the disputing parties with knowledge that another person held an interest in the forest.",
+        "The person was not a party to the arbitration agreement or the application seeking reference.",
+        "The extent of that person’s share was undisputed, so the arbitrator could determine the dispute between the parties while leaving that share out of the award."
+      ],
+      "conclusion": "The absence of the interested person did not prevent reference of the dispute between the parties to arbitration.",
+      "legal_principle": "Under section 20 of the Arbitration Act, 1940, a court should give effect to the forum chosen by the parties even if an interested non-party cannot participate, where that person’s share is not in dispute and the arbitrator can leave it out of the award. No earlier case was relied on for this conclusion.",
+      "rule": {
+        "if": "arbitration_reference_application and parties_chose_arbitration_with_knowledge_of_nonparty_interest and nonparty_share_undisputed",
+        "then": "dispute_between_parties_referred_to_arbitration"
+      },
+      "predicates": {
+        "arbitration_reference_application": "A party applied to have an arbitration agreement filed and the dispute referred to arbitration.",
+        "parties_chose_arbitration_with_knowledge_of_nonparty_interest": "The disputing parties agreed to arbitration knowing that another person had an interest in the subject matter, but did not include that person in their agreement.",
+        "nonparty_share_undisputed": "The extent of the non-party’s share in the subject matter was not disputed."
+      },
+      "definition": "When a reference application concerns parties who chose arbitration despite knowing of a non-party’s interest, and that person’s share is undisputed, the dispute between the parties is referred to arbitration."
+    },
+    {
+      "legal_issue": "Omitting a supplementary agreement from the express request for reference does not make a reference piecemeal when that agreement confirms the principal agreement and is relevant to deciding the dispute.",
+      "material_facts": [
+        "The application expressly sought reference of disputes connected with the principal agreement but did not specifically request reference of a later agreement.",
+        "The later agreement was supplementary to and confirmed the principal agreement.",
+        "The arbitrator would need to consider the supplementary agreement insofar as it was relevant to deciding the dispute under the principal agreement."
+      ],
+      "conclusion": "The requested reference was not piecemeal and did not split the cause of action.",
+      "legal_principle": "Under section 20 of the Arbitration Act, 1940, a reference is not piecemeal merely because a confirmatory agreement is not separately specified where the dispute under the principal agreement requires the arbitrator to consider it. The Court also observed that pleadings in mufassil courts should not be considered too strictly. No earlier case was relied on for this conclusion.",
+      "rule": {
+        "if": "arbitration_reference_application and omitted_agreement_confirms_principal_agreement and omitted_agreement_relevant_to_dispute",
+        "then": "reference_not_refused_as_piecemeal"
+      },
+      "predicates": {
+        "arbitration_reference_application": "A party applied to have an arbitration agreement filed and the dispute referred to arbitration.",
+        "omitted_agreement_confirms_principal_agreement": "An agreement not expressly included in the request for reference supplements or confirms the principal agreement.",
+        "omitted_agreement_relevant_to_dispute": "The omitted agreement is relevant to deciding the dispute that is expressly sought to be referred."
+      },
+      "definition": "If a reference application concerns a dispute under a principal agreement and an omitted agreement confirms that agreement and is relevant to the dispute, the reference is not refused as piecemeal."
+    },
+    {
+      "legal_issue": "A dispute falls within an arbitration clause when the clause’s broad terms cover disputes arising from the parties’ agreements or their related transactions.",
+      "material_facts": [
+        "The arbitration clause covered disputes connected with the parties’ agreements, forest cutting and export, and other related matters.",
+        "The dispute concerned the accounts and performance of the parties’ arrangements for cutting and dealing with the forest.",
+        "The clause’s introductory wording did not narrow its broad scope."
+      ],
+      "conclusion": "The dispute raised was covered by the arbitration clause.",
+      "legal_principle": "The scope of an arbitration agreement is determined by its language. The broad clause covered disputes arising from the specified agreements and related activities; the introductory wording did not cut down that scope. Section 20 of the Arbitration Act, 1940, governed the application for reference. No earlier case was relied on for this conclusion.",
+      "rule": {
+        "if": "arbitration_reference_application and clause broadly_covers_related_disputes and dispute_arises_from_covered_arrangement",
+        "then": "dispute_within_arbitration_clause"
+      },
+      "predicates": {
+        "arbitration_reference_application": "A party applied to have an arbitration agreement filed and the dispute referred to arbitration.",
+        "clause_broadly_covers_related_disputes": "The parties’ clause extends to disputes connected with their agreements and related activities.",
+        "dispute_arises_from_covered_arrangement": "The dispute arises from the arrangement or activities covered by the arbitration clause."
+      },
+      "definition": "When a reference application concerns a dispute arising from an arrangement covered by a broadly worded arbitration clause, the dispute is within that clause."
+    },
+    {
+      "legal_issue": "Allegations about incomplete or inaccurate accounts do not constitute sufficient cause to refuse arbitration unless they amount to serious allegations of fraud that the charged party wishes to have tried in open court.",
+      "material_facts": [
+        "The respondents alleged that the accounts were not brought up to date, were incomplete or incorrect, omitted stock, and included exaggerated debit items.",
+        "They expressed suspicion of possible future misappropriation and concern about low recorded sale prices, but did not allege an actual secret profit or completed misappropriation.",
+        "The appellant, against whom the allegations were made, sought to resist arbitration on the ground of fraud.",
+        "The dispute arose in an application to have the arbitration agreement filed and a reference made."
+      ],
+      "conclusion": "The allegations were not sufficiently serious allegations of fraud to justify refusing to file the arbitration agreement or refer the dispute.",
+      "legal_principle": "Section 20(4) of the Arbitration Act, 1940, gives the court discretion to refuse filing and reference where sufficient cause is shown, assessed on the facts of the case. Serious allegations of fraud may constitute sufficient cause where the party charged desires a public trial; ordinary allegations of dishonesty, accounting irregularity, or suspicion do not automatically do so. The Court relied on Russel v. Russel, Charles Osenton and Company v. Johnston, Maharajah Sir Manindra Chandra Nandy v. H. V. Low & Co. Ltd., Narsingh Prasad Boobna v. Dhanraj Mills, Union of India v. Firm Vishvadha Ghee Vyopar Mandal, Sudhangsu Bhattacharjee v. Ruplekha Pictures, and Minifie v. The Railway Passengers Assurance Company.",
+      "rule": {
+        "if": "arbitration_reference_application and allegations_concern_account_irregularities and not serious_fraud_allegations_for_open_court_trial",
+        "then": "arbitration_agreement_not_refused_filing_or_reference_on_fraud_ground"
+      },
+      "predicates": {
+        "arbitration_reference_application": "A party applied to have an arbitration agreement filed and the dispute referred to arbitration.",
+        "allegations_concern_account_irregularities": "The allegations concern incomplete or inaccurate accounts, questionable entries, missing stock, or suspected rather than actual misappropriation.",
+        "serious_fraud_allegations_for_open_court_trial": "The allegations are serious charges of fraud and the party charged wants them tried in open court."
+      },
+      "definition": "If a reference application involves allegations about accounting irregularities but not serious fraud charges sought to be tried in open court, the arbitration agreement is not refused filing or reference on the fraud ground."
+    }
+  ],
+  "seconds": 12.7
+}

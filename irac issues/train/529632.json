@@ -1,0 +1,56 @@
+{
+  "doc_id": "529632",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17102,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1894,
+    "prompt_tokens": 4737,
+    "total_tokens": 6631,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The initial notice in a land acquisition proceeding must specify the locality in which land is needed, and omission of that locality invalidates the proceeding despite details in a later notice.",
+      "material_facts": [
+        "The initial notice stated that land described in a schedule was needed for a public purpose, but the schedule gave no locality particulars and only said that a plan could be inspected at the Collector’s office.",
+        "A later notice identified the land more specifically, including its locality and area.",
+        "The acquiring authority gave no valid reason why the particulars in the later notice could not have been included in the initial notice."
+      ],
+      "conclusion": "The initial notice was seriously defective and invalid; the later notice could not cure the defect, so the acquisition proceedings could not stand.",
+      "legal_principle": "Under Section 4(1) of the Land Acquisition Act, 1894, the Government need not identify the precise land ultimately to be acquired, but must specify the locality in which the land is needed. A Section 4(1) notification is a condition precedent to further powers under the Act, must be strictly construed, and a serious defect cannot be cured by particulars in a Section 6(1) notification. The Court relied on Babu Barkya Thakur v. State of Bombay and Smt. Somavanti v. State of Punjab.",
+      "rule": {
+        "if": "land_acquisition_proceeding and initial_notice_omitted_locality",
+        "then": "acquisition_proceedings_invalid"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "An authority initiated a proceeding to acquire land for a public purpose.",
+        "initial_notice_omitted_locality": "The authority’s initial public notice did not identify the locality in which the land was needed."
+      },
+      "definition": "When an authority initiates a land acquisition proceeding and its initial public notice omits the locality where land is needed, the acquisition proceedings are invalid."
+    },
+    {
+      "legal_issue": "Invoking an urgency procedure that dispenses with an objection hearing does not dispense with the requirement to issue an initial notice specifying the locality.",
+      "material_facts": [
+        "The authority treated the acquisition as urgent and directed that the statutory objection process should not apply.",
+        "The initial notice nevertheless failed to specify the locality in which the land was needed.",
+        "The statutory urgency provisions allowed the objection process to be bypassed but did not remove the requirement for the initial notice."
+      ],
+      "conclusion": "The urgency procedure did not excuse the defective initial notice, and the acquisition proceedings could not stand.",
+      "legal_principle": "Sections 4(1) and 17(1), read with Section 17(4) of the Land Acquisition Act, 1894, require a Section 4(1) notification even in urgent cases; Section 17(4) permits the Government to dispense with Section 5A, not Section 4(1). The Court relied on Babu Barkya Thakur v. State of Bombay and Smt. Somavanti v. State of Punjab.",
+      "rule": {
+        "if": "urgent_land_acquisition_proceeding and initial_notice_omitted_locality",
+        "then": "acquisition_proceedings_invalid"
+      },
+      "predicates": {
+        "urgent_land_acquisition_proceeding": "An authority initiated a land acquisition proceeding and treated it as urgent.",
+        "initial_notice_omitted_locality": "The authority’s initial public notice did not identify the locality in which the land was needed."
+      },
+      "definition": "When an authority treats a land acquisition proceeding as urgent but its initial public notice omits the locality where land is needed, the acquisition proceedings are invalid."
+    }
+  ],
+  "seconds": 12.5
+}

@@ -1,0 +1,117 @@
+{
+  "doc_id": "1571104",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22120,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2985,
+    "prompt_tokens": 6266,
+    "total_tokens": 9251,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A mortgage providing for stipulated interest and applying income first to interest and then to principal is anomalous and creates a debt even if the mortgagee can obtain only foreclosure.",
+      "material_facts": [
+        "The mortgage deeds stipulated interest payable by the mortgagor.",
+        "The deeds provided that amounts recovered from the mortgaged property’s income would be applied first to interest and then to principal.",
+        "The mortgagee was entitled to sue to recover interest accruing due."
+      ],
+      "conclusion": "The mortgages were anomalous mortgages, not usufructuary mortgages, and the mortgagor’s liability to pay principal and interest was a debt even if the mortgagee could enforce only a right of foreclosure.",
+      "legal_principle": "The court relied on the mortgage covenants and the definition of debt in section 7 of the Punjab Relief of Indebtedness Act, 1934, which includes a debtor’s liabilities in cash or kind, secured or unsecured. The covenants showed an obligation to pay principal and interest; the court cited no earlier cases.",
+      "rule": {
+        "if": "mortgage_case and stipulated_interest and mortgage_income_applied_to_interest_first",
+        "then": "mortgage_is_anomalous_and_creates_debt"
+      },
+      "predicates": {
+        "mortgage_case": "The transaction is a mortgage in which the mortgagee takes possession of the secured property.",
+        "stipulated_interest": "The mortgage deed requires the mortgagor to pay interest on the secured debt.",
+        "mortgage_income_applied_to_interest_first": "The mortgage terms apply income from the secured property first to interest and then to principal."
+      },
+      "definition": "When a mortgage case includes stipulated interest and directs property income first to interest, the mortgage is anomalous and creates a debt."
+    },
+    {
+      "legal_issue": "A debtor’s legal representatives may invoke the debtor’s statutory debt-relief defence when a debt obligation is enforced against the debtor’s estate.",
+      "material_facts": [
+        "The original mortgagor had died.",
+        "The mortgagor’s legal representatives brought a suit to redeem the mortgaged properties and sought relief concerning the debt.",
+        "The obligation was sought to be enforced against the estate in the legal representatives’ hands."
+      ],
+      "conclusion": "The legal representatives were entitled to seek the benefit of section 30 of the Punjab Relief of Indebtedness Act, 1934.",
+      "legal_principle": "Section 30 restricts the court’s power in a suit in respect of a debt; it does not limit relief to a suit brought by the original debtor. An obligation survives the debtor’s death as an obligation enforceable against the estate, and, absent an express provision or clear contrary intent, legal representatives may raise a defence the debtor could have raised. The court cited no earlier cases.",
+      "rule": {
+        "if": "debt_enforcement_against_estate and applicant_is_legal_representative",
+        "then": "legal_representative_can_raise_debtor_defences"
+      },
+      "predicates": {
+        "debt_enforcement_against_estate": "A proceeding seeks to enforce a debt obligation against property belonging to a deceased debtor’s estate.",
+        "applicant_is_legal_representative": "A person representing the deceased debtor’s estate seeks to raise a defence to that enforcement."
+      },
+      "definition": "When a debt is enforced against an estate and its legal representative raises a defence, the representative may raise defences available to the deceased debtor."
+    },
+    {
+      "legal_issue": "The Usurious Loans Act does not provide relief in a mortgagor’s redemption suit where the security was given before that Act commenced.",
+      "material_facts": [
+        "The representatives sought redemption of mortgages created in 1896 and 1897.",
+        "The Usurious Loans Act, 1918, applied to specified kinds of suits, including redemption of security given after the Act commenced.",
+        "The securities in issue were given before the Act commenced."
+      ],
+      "conclusion": "The legal representatives could not claim the benefit of the Usurious Loans Act in the redemption suit.",
+      "legal_principle": "Under section 2(3) of the Usurious Loans Act, clauses (a) and (b) do not apply to a mortgagor’s suit for redemption, and clause (c) covers redemption only where the security was given after the Act commenced. The court cited no earlier cases.",
+      "rule": {
+        "if": "redemption_proceeding and security_predates_usury_law",
+        "then": "usurious_loan_relief_unavailable"
+      },
+      "predicates": {
+        "redemption_proceeding": "A mortgagor or the mortgagor’s representative brings a proceeding to redeem secured property.",
+        "security_predates_usury_law": "The security being redeemed was created before the relevant usury-law protections commenced."
+      },
+      "definition": "In a redemption proceeding involving security created before the relevant usury-law protections commenced, relief under those protections is unavailable."
+    },
+    {
+      "legal_issue": "The debt limit and excess-interest deduction under the Punjab Relief of Indebtedness Act apply to a qualifying debt suit even when the Usurious Loans Act does not apply to that suit.",
+      "material_facts": [
+        "The representatives brought a suit in respect of a debt advanced before the Punjab Relief of Indebtedness Act commenced.",
+        "The mortgagee had received income from the mortgaged properties, including amounts treated as exceeding the amount due under the applicable interest standard.",
+        "The redemption suit was not within the definition of a suit to which the Usurious Loans Act applied."
+      ],
+      "conclusion": "Section 30 of the Punjab Relief of Indebtedness Act applied independently of whether the suit fell within the Usurious Loans Act; the court had to deduct qualifying excess receipts from the debt limit.",
+      "legal_principle": "Section 30(1) of the Punjab Relief of Indebtedness Act restricts a decree in a suit concerning a pre-commencement debt to twice the sum actually advanced, less amounts received by the creditor in excess of the amount due under section 3(2)(e) of the Usurious Loans Act. Section 30 does not condition that deduction on the suit itself being one to which the Usurious Loans Act applies. The court cited no earlier cases.",
+      "rule": {
+        "if": "debt_suit and proceeding_after_relief_law and loan_predates_relief_law and creditor_received_excess_interest",
+        "then": "debt_award_capped_after_crediting_excess_interest"
+      },
+      "predicates": {
+        "debt_suit": "The proceeding is a suit in respect of a debt.",
+        "proceeding_after_relief_law": "The suit was brought after the relevant debt-relief law commenced.",
+        "loan_predates_relief_law": "The debt arose from money advanced before that law commenced.",
+        "creditor_received_excess_interest": "The creditor received amounts exceeding the amount permitted under the applicable standard for interest."
+      },
+      "definition": "For a qualifying post-commencement debt suit concerning an earlier advance, the award is capped after crediting the creditor with excess-interest receipts, even if the suit is outside the Usurious Loans Act."
+    },
+    {
+      "legal_issue": "An amount previously declared due on a mortgage is not, merely by that declaration, the amount actually advanced for applying the debt-relief limit.",
+      "material_facts": [
+        "An earlier redemption suit resulted in a preliminary decree declaring the amount due under the mortgages.",
+        "That decree declared the mortgage balance due at the time but did not determine that the balance was the amount originally advanced.",
+        "The later proceeding sought application of the statutory limit based on the amount actually advanced."
+      ],
+      "conclusion": "The amount declared due in the earlier decree could not be treated as the amount actually advanced; the court could not award more than the statutory limit calculated from the amount actually advanced, with the required deduction.",
+      "legal_principle": "Section 30 of the Punjab Relief of Indebtedness Act refers to the sum found actually advanced, which differs from the amount found due after accounting on a mortgage. The earlier decree’s declaration of the amount due did not establish the amount advanced, and section 30 barred a decree exceeding its limit. The court cited no earlier cases.",
+      "rule": {
+        "if": "redemption_proceeding and debt_limit_applies and earlier_decree_declared_amount_due",
+        "then": "prior_due_amount_is_not_the_advance_amount_for_the_limit"
+      },
+      "predicates": {
+        "redemption_proceeding": "A mortgagor or the mortgagor’s representative brings a proceeding to redeem secured property.",
+        "debt_limit_applies": "The proceeding is subject to a legal limit calculated by reference to the sum actually advanced.",
+        "earlier_decree_declared_amount_due": "An earlier decree declared the amount due on the debt without determining that this was the amount originally advanced."
+      },
+      "definition": "When a redemption proceeding is subject to an advance-based debt limit, an earlier decree stating the amount due does not make that amount the sum advanced."
+    }
+  ],
+  "seconds": 18.2
+}

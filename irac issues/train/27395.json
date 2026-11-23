@@ -1,0 +1,78 @@
+{
+  "doc_id": "27395",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23452,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2352,
+    "prompt_tokens": 6017,
+    "total_tokens": 8369,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An agreement between the landowner and the acquiring authority fixing compensation is not invalid merely because another person interested in the compensation did not join it, but it does not bind that absent person.",
+      "material_facts": [
+        "The landowner agreed with the Collector on compensation for land to be acquired and agreed not to dispute the compensation fixed under the agreement.",
+        "A bank held an equitable mortgage over the land and therefore had an interest in the compensation, but it was not a party to the agreement.",
+        "The Collector made an award at the agreed rate."
+      ],
+      "conclusion": "The mortgagee’s non-joinder did not render the agreement or the award invalid as between the landowner and the Collector. The agreement and award did not bind the absent mortgagee.",
+      "legal_principle": "Section 16(1) of the Kerala Land Acquisition Act, 1961, read purposively, permits an agreement with one of several persons interested in compensation; the agreement binds only its contracting parties. The phrase “all persons interested” may include the singular where that construction furthers the provision’s purpose of expediting compensation and avoiding litigation. Under Section 73(2) of the Transfer of Property Act, a mortgagee may claim an interest in compensation. A mandatory procedural requirement may be waived by a party: Dhirendra Nath Gorai v. Sudhir Chandra Ghosh. Statutory provisions should be construed to serve their purpose: Maharashtra State Financial Corpn. v. Jaycee Drugs and Pharmaceuticals Pvt. Ltd.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and owner_agreed_with_collector and another_interested_person_absent",
+        "then": "agreement_valid_between_signatories_but_not_binding_on_absent_person"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "The proceeding concerns compensation for land acquired by a public authority.",
+        "owner_agreed_with_collector": "The landowner and the acquiring authority’s collector agreed on the compensation for the land.",
+        "another_interested_person_absent": "Another person with an interest in the compensation did not join the agreement."
+      },
+      "definition": "When compensation in a land acquisition proceeding is agreed between the landowner and the collector, the absence of another interested person does not invalidate the agreement between its signatories, but the agreement does not bind the absent person."
+    },
+    {
+      "legal_issue": "The time limit for making an award under a pre-notification compensation agreement runs from the date of the agreement, and after that limit the collector cannot make an award under the agreement, although the agreement remains valid but unenforceable for that purpose.",
+      "material_facts": [
+        "The compensation agreement was executed before the acquisition notification was published.",
+        "The Collector made the award more than four years after the agreement was executed.",
+        "The High Court directed that the compensation claim be referred to the civil court, and the reference was pending."
+      ],
+      "conclusion": "The four-year period ran from the date of the agreement. After it expired, the Collector lacked power to make an award under the agreement. The agreement did not become void, but became unenforceable as the basis for an award under Section 16(1).",
+      "legal_principle": "The proviso to Section 16(1) of the Kerala Land Acquisition Act, 1961, must be read with Sections 16(1) and 16(2): “such date” means the date of the agreement. This construction harmonizes the proviso with the section’s scheme and avoids arbitrary delay and manifest injustice, consistent with Articles 14 and 21 of the Constitution. A proviso is construed in the context of the main enactment: Tribhovandas Haribhai Tamboli v. Gujarat Revenue Tribunal and A.N. Sehgal v. Raje Ram Sheoran. The Court also relied on the principle that statutory powers must be exercised within a reasonable time: State of Gujarat v. Patil Raghav Natha and Mansaram v. S.P. Pathak; and on the need for expedition in land acquisition proceedings: State of M.P. v. Vishnu Prasad Sharma.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and pre_notification_compensation_agreement and award_made_after_agreement_limit",
+        "then": "collector_cannot_make_award_under_agreement"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "The proceeding concerns compensation for land acquired by a public authority.",
+        "pre_notification_compensation_agreement": "The landowner and the acquiring authority’s collector agreed on compensation before the acquisition notification was published.",
+        "award_made_after_agreement_limit": "The collector made the agreed-compensation award after the statutory time limit measured from the agreement had expired."
+      },
+      "definition": "In a land acquisition compensation proceeding, if a pre-notification agreement is followed by an award after the applicable limit measured from the agreement, the collector cannot make an award under that agreement."
+    },
+    {
+      "legal_issue": "An expired compensation agreement may be considered as evidence of the parties’ assessment of market value, but it does not bind the court determining compensation on reference.",
+      "material_facts": [
+        "The Collector’s agreed-compensation award was made after the time limit for making an award under the agreement had expired.",
+        "A reference to the civil court for determination of market value was pending.",
+        "The agreement recorded the parties’ assessment of the land’s value by reference to the acquisition notification."
+      ],
+      "conclusion": "The civil court may consider the agreement as evidence of the parties’ assessment of market value, and must decide its evidentiary value; the agreement does not bind the court in determining compensation.",
+      "legal_principle": "Under Sections 16 and 18 of the Kerala Land Acquisition Act, 1961, expiry of the period for making an agreed award does not preclude the agreement from being considered as evidence in a reference. Its evidentiary value is for the court determining market value, and it is not binding on that court.",
+      "rule": {
+        "if": "civil_reference_to_determine_market_value and compensation_agreement_exists and agreement_records_assessment_of_market_value",
+        "then": "court_may_consider_agreement_as_evidence_without_being_bound_by_it"
+      },
+      "predicates": {
+        "civil_reference_to_determine_market_value": "A compensation dispute has been referred to a civil court for determination of market value.",
+        "compensation_agreement_exists": "The landowner and the acquiring authority’s collector made an agreement fixing compensation for the land.",
+        "agreement_records_assessment_of_market_value": "The agreement records the parties’ assessment of the land’s market value by reference to the relevant acquisition date."
+      },
+      "definition": "When a civil court determines market value on reference and an agreement records the parties’ assessment, the court may consider it as evidence but is not bound by it."
+    }
+  ],
+  "seconds": 15.6
+}

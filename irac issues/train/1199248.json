@@ -1,0 +1,80 @@
+{
+  "doc_id": "1199248",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12601,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1828,
+    "prompt_tokens": 3581,
+    "total_tokens": 5409,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A writ petition challenging completed land acquisition proceedings must be dismissed when it is filed after an inordinate and unexplained delay.",
+      "material_facts": [
+        "The former owners filed their writ petition about 17 years after the award and after possession had been taken.",
+        "They accepted the awarded compensation and pursued a reference and appeals seeking enhanced compensation without challenging the acquisition notifications.",
+        "They gave no adequate explanation for the delay; the fact that enhanced compensation had not been fully paid was not sufficient.",
+        "The acquisition proceedings had been completed before the writ petition was filed."
+      ],
+      "conclusion": "The High Court should have dismissed the writ petition on the ground of delay and laches; its order granting relief was set aside.",
+      "legal_principle": "Under Article 226 of the Constitution, the court has discretion to quash acquisition notifications, but a challenge brought after an inordinate delay is liable to be dismissed, particularly when the acquisition steps have become final and an award has been made and possession taken. A claimant cannot wait while the State completes the acquisition and later challenge grounds that were available earlier. The Court relied on Larsen & Toubro Ltd. v. State of Gujarat, [1998] 4 SCC 387, and Municipal Corporation of Greater Bombay v. Industrial Development Investment Co. Pvt. Ltd., [1996] 2 SCC 501.",
+      "rule": {
+        "if": "acquisition_challenge_writ and long_unexplained_delay and acquisition_steps_finalized",
+        "then": "late_acquisition_challenge_dismissed"
+      },
+      "predicates": {
+        "acquisition_challenge_writ": "A claimant filed a writ petition challenging land acquisition proceedings.",
+        "long_unexplained_delay": "The claimant waited an inordinate period before filing the challenge and did not adequately explain the delay.",
+        "acquisition_steps_finalized": "The award had been made and possession had been taken before the challenge was filed."
+      },
+      "definition": "When a claimant brings a writ challenge to land acquisition only after an unexplained, inordinate delay and the acquisition has been completed, the challenge is dismissed as late."
+    },
+    {
+      "legal_issue": "A former owner has no right to recover acquired land merely because it was not used for the purpose for which it was acquired after the award and possession vested the land in the State.",
+      "material_facts": [
+        "An award had been made and possession of the acquired land had been taken, vesting the land in the State free from encumbrances.",
+        "Compensation had been paid to the former owners.",
+        "The land was not used for the purpose for which it had been acquired.",
+        "The State had initiated proceedings for resumption of the land."
+      ],
+      "conclusion": "Non-use of the acquired land did not entitle the former owners to restitution or revesting of the land; any action concerning non-use was for the State to take.",
+      "legal_principle": "Under Section 16 of the Land Acquisition Act, after an award is made and possession is taken, the land vests in the Government free from encumbrances. Non-use or a later change in the purpose of use does not give the former owner a right to restitution. The Court relied on Gulam Mustafa v. State of Maharashtra, [1976] 1 SCC 800; Chandraguda Ramgonda Patil v. State of Maharashtra, [1996] 6 SCC 405; and C. Padma v. Dy. Secretary to the Government of T.N., [1997] 2 SCC 627.",
+      "rule": {
+        "if": "land_acquisition_proceeding and award_made_and_possession_taken and acquired_land_unused",
+        "then": "former_owner_has_no_restitution_right"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The dispute concerns land acquired through compulsory acquisition proceedings.",
+        "award_made_and_possession_taken": "An award was made and the acquiring authority took possession, causing the land to vest in the State.",
+        "acquired_land_unused": "The acquired land was not used for the purpose for which it was acquired."
+      },
+      "definition": "When acquired land has vested in the State after an award and taking possession, its non-use does not give the former owner a right to recover it."
+    },
+    {
+      "legal_issue": "A claimant cannot belatedly challenge an acquisition on the ground that a different procedure applied to acquisition for a private company when that ground was not raised within a reasonable time.",
+      "material_facts": [
+        "The acquisition was undertaken for the benefit of a private company.",
+        "The former owners filed their challenge about 17 years after the award and taking of possession.",
+        "They had accepted compensation and pursued enhancement without timely challenging the acquisition on the ground that a different procedure applied."
+      ],
+      "conclusion": "The contention about the procedure applicable to acquisition for a private company did not assist the former owners because it was raised too late.",
+      "legal_principle": "A challenge to acquisition proceedings, including one based on the procedure applicable to acquisition for a private company, must be brought within a reasonable time; Article 226 relief may be refused for delay and laches. The Court relied on Larsen & Toubro Ltd. v. State of Gujarat, [1998] 4 SCC 387, and Municipal Corporation of Greater Bombay v. Industrial Development Investment Co. Pvt. Ltd., [1996] 2 SCC 501.",
+      "rule": {
+        "if": "acquisition_challenge_writ and private_company_acquisition and ground_not_raised_timely",
+        "then": "private_company_procedure_challenge_rejected_as_late"
+      },
+      "predicates": {
+        "acquisition_challenge_writ": "A claimant filed a writ petition challenging land acquisition proceedings.",
+        "private_company_acquisition": "The acquisition was undertaken for the benefit of a private company.",
+        "ground_not_raised_timely": "The claimant did not raise the procedural challenge within a reasonable time after the acquisition proceedings began."
+      },
+      "definition": "When a claimant challenges an acquisition for a private company only after failing to raise the procedural ground within a reasonable time, that challenge is rejected as late."
+    }
+  ],
+  "seconds": 11.8
+}

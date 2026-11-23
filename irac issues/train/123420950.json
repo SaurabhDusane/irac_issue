@@ -1,0 +1,106 @@
+{
+  "doc_id": "123420950",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 85271,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3552,
+    "prompt_tokens": 20300,
+    "total_tokens": 23852,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A delay in filing an insolvency application may be condoned for sufficient cause even without a formal written application seeking condonation.",
+      "material_facts": [
+        "The financial creditor filed an application to initiate insolvency proceedings after more than three years had elapsed from the date its borrower’s account was declared non-performing.",
+        "The creditor had initiated enforcement proceedings within the limitation period, pursued them, and was later prevented from proceeding by an interim court order.",
+        "The creditor had not filed a separate formal application for condonation of delay."
+      ],
+      "conclusion": "A formal written application for condonation is not mandatory; the adjudicating authority may condone delay if sufficient cause is shown by the material before it. Condonation is not available as of right, and the authority may require an application or affidavit explaining the delay.",
+      "legal_principle": "Section 5 of the Limitation Act, 1963 gives the adjudicating authority discretion to admit an application after limitation where sufficient cause is shown, but does not require a formal written condonation application. The Court relied on B.K. Educational Services Private Limited v. Parag Gupta and Associates, Ramlal Motilal and Chhotelal v. Rewa Coalfields Ltd., Krishna v. Chattappan, Shakuntla Devi Jain v. Kuntal Kumar, and State of West Bengal v. Administrator, Howrah Municipality.",
+      "rule": {
+        "if": "insolvency_application_by_financial_creditor and limitation_period_expired and sufficient_cause_material_on_record and not formal_condonation_application_filed",
+        "then": "delay_may_be_condoned_without_formal_application"
+      },
+      "predicates": {
+        "insolvency_application_by_financial_creditor": "A financial creditor filed an application seeking commencement of an insolvency resolution process against a corporate debtor.",
+        "limitation_period_expired": "The application was filed after the prescribed limitation period had elapsed, before accounting for any permissible extension or exclusion.",
+        "sufficient_cause_material_on_record": "The applicant placed material before the adjudicating authority showing a sufficient cause for not filing within time.",
+        "formal_condonation_application_filed": "The applicant filed a separate formal application asking the adjudicating authority to condone the delay."
+      },
+      "definition": "When a financial creditor’s insolvency application is late but the record shows sufficient cause, the delay may be condoned even if no separate formal condonation application was filed."
+    },
+    {
+      "legal_issue": "The exclusion of time for pursuing an earlier proceeding in good faith and with due diligence applies to insolvency applications, and the earlier proceeding may be a civil proceeding before a tribunal or another suitable forum.",
+      "material_facts": [
+        "The financial creditor first pursued enforcement of its security under the applicable security-enforcement legislation against the same borrower and in relation to the same default.",
+        "The creditor began those proceedings within three years of the date on which the account was declared non-performing and pursued enforcement measures, including taking possession of secured assets.",
+        "The borrower challenged those proceedings, and a court later stayed them on a prima facie view that the creditor lacked jurisdiction to use that enforcement process.",
+        "The insolvency application was filed while the challenge and stay remained pending."
+      ],
+      "conclusion": "Section 14 of the Limitation Act applies to applications under the Insolvency and Bankruptcy Code. Its scope includes bona fide, diligent civil proceedings under security-enforcement legislation; the relevant forum need not be an ordinary civil court.",
+      "legal_principle": "Section 238A of the Insolvency and Bankruptcy Code makes the Limitation Act applicable, as far as may be, to proceedings before the NCLT and NCLAT. Section 14 permits exclusion of time spent diligently and in good faith pursuing another civil proceeding against the same party for the same or similar relief in a forum unable to entertain it for want of jurisdiction or a like cause. The Court relied on State of Goa v. Western Builders, Consolidated Engineering Enterprises v. Principal Secretary, Irrigation Department, Commissioner, M.P. Housing Board v. Mohanlal & Co., S.A.L. Narayan Rao v. Ishwarlal Bhagwandas, and United Bank of India v. Satyawati Tandon. It held that the contrary view in Ishrat Ali v. Cosmos Cooperative Bank Limited was unsustainable.",
+      "rule": {
+        "if": "insolvency_application and earlier_civil_enforcement_proceeding and same_party_and_similar_relief and earlier_proceeding_pursued_diligently_and_in_good_faith and earlier_forum_unable_to_entertain",
+        "then": "time_in_earlier_proceeding_may_be_excluded_from_limitation"
+      },
+      "predicates": {
+        "insolvency_application": "A party filed an application seeking insolvency resolution before an insolvency adjudicating authority.",
+        "earlier_civil_enforcement_proceeding": "The applicant pursued an earlier civil proceeding to enforce rights connected with the same underlying default.",
+        "same_party_and_similar_relief": "The earlier proceeding was against the same opposing party and sought the same or similar relief.",
+        "earlier_proceeding_pursued_diligently_and_in_good_faith": "The applicant pursued the earlier proceeding with due diligence and in good faith.",
+        "earlier_forum_unable_to_entertain": "The earlier forum could not entertain the proceeding because of a jurisdictional defect or a cause of a like nature."
+      },
+      "definition": "Time spent in a diligent, good-faith civil enforcement proceeding against the same party for similar relief may be left out when calculating limitation for an insolvency application if the earlier forum could not entertain it."
+    },
+    {
+      "legal_issue": "The exclusion of time for an earlier proceeding may be applied before that proceeding formally ends, but it does not extend beyond the date on which the earlier proceeding ends.",
+      "material_facts": [
+        "The earlier security-enforcement proceedings had not formally ended when the insolvency application was filed.",
+        "A court had stayed those proceedings on a prima facie view that the enforcement forum lacked jurisdiction, and the challenge to the proceedings remained pending.",
+        "Because of the stay, the creditor could not continue the enforcement proceedings.",
+        "The creditor filed the insolvency application while the stay remained in force."
+      ],
+      "conclusion": "The earlier proceeding need not have formally terminated before Section 14 can apply. Where the proceeding remains pending, the qualifying period may be excluded through the filing of the later application; if the earlier proceeding has ended, exclusion cannot extend beyond its end date.",
+      "legal_principle": "Section 14(2) is read together with its Explanation. The Explanation limits the exclusion to the period between institution and termination of the earlier proceeding; it does not make termination a precondition to claiming exclusion while that proceeding is still pending. The Court relied on Bihta Co-operative Development Cane Marketing Union Ltd. v. Bank of Bihar and S. Sundaram Pillai v. V.R. Pattabiraman, holding that an Explanation clarifies the main provision and should not be construed to defeat its operation.",
+      "rule": {
+        "if": "insolvency_application and earlier_proceeding_pending_when_later_application_filed and earlier_proceeding_pursued_diligently_and_in_good_faith and earlier_forum_unable_to_entertain",
+        "then": "exclusion_may_be_allowed_without_formal_termination_but_not_beyond_termination"
+      },
+      "predicates": {
+        "insolvency_application": "A party filed an application seeking insolvency resolution before an insolvency adjudicating authority.",
+        "earlier_proceeding_pending_when_later_application_filed": "The earlier proceeding had not formally ended when the later application was filed.",
+        "earlier_proceeding_pursued_diligently_and_in_good_faith": "The applicant pursued the earlier proceeding with due diligence and in good faith.",
+        "earlier_forum_unable_to_entertain": "The earlier forum could not entertain the proceeding because of a jurisdictional defect or a cause of a like nature."
+      },
+      "definition": "A pending, diligently and bona fide pursued proceeding that the earlier forum could not entertain can support exclusion before formal termination, but the exclusion ends when that proceeding terminates."
+    },
+    {
+      "legal_issue": "The insolvency application was within limitation after excluding the time spent pursuing the stayed security-enforcement proceedings.",
+      "material_facts": [
+        "The borrower’s account was declared non-performing on 31 March 2013, which the Court assumed was the date the right to apply accrued.",
+        "The creditor commenced security-enforcement proceedings on 18 January 2014 and pursued them until a court stayed them on 24 July 2017 on a prima facie jurisdictional ground.",
+        "The stay remained in force, and the challenge to the enforcement proceedings remained pending when the creditor filed its insolvency application on 10 July 2018.",
+        "After excluding the qualifying period spent pursuing the earlier proceedings, the insolvency application fell within the three-year limitation period."
+      ],
+      "conclusion": "The application was within limitation, the NCLT’s admission order did not warrant interference, and the appeal was dismissed.",
+      "legal_principle": "Article 137 of the Limitation Act prescribes three years from accrual of the right to apply for an application for which no other period is specified. Sections 238A of the Insolvency and Bankruptcy Code and 14 of the Limitation Act permit the qualifying earlier-proceeding period to be excluded. The Court relied on B.K. Educational Services Private Limited v. Parag Gupta and Associates, Gaurav Hargovindbhai Dave v. Asset Reconstruction Company (India) Ltd., and its interpretation of Section 14 in this judgment.",
+      "rule": {
+        "if": "insolvency_application_by_financial_creditor and default_triggered_limitation and qualifying_earlier_proceeding_time_excluded and remaining_time_within_limitation",
+        "then": "insolvency_application_is_within_limitation"
+      },
+      "predicates": {
+        "insolvency_application_by_financial_creditor": "A financial creditor filed an application seeking commencement of an insolvency resolution process against a corporate debtor.",
+        "default_triggered_limitation": "A default occurred and the limitation period for the insolvency application began to run.",
+        "qualifying_earlier_proceeding_time_excluded": "Time spent in an earlier proceeding is excluded because that proceeding was pursued diligently and in good faith and its forum could not entertain it for a jurisdictional or like cause.",
+        "remaining_time_within_limitation": "After excluding the qualifying earlier-proceeding period, the time counted against the limitation period does not exceed that period."
+      },
+      "definition": "A financial creditor’s insolvency application is within limitation when the remaining time counted after excluding a qualifying earlier proceeding does not exceed the applicable limitation period."
+    }
+  ],
+  "seconds": 82.6
+}

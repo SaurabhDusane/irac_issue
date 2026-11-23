@@ -1,0 +1,104 @@
+{
+  "doc_id": "156119044",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12317,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3619,
+    "prompt_tokens": 3740,
+    "total_tokens": 7359,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appeal abates automatically when the appellant dies and no timely application is made to substitute the appellant’s legal representatives.",
+      "material_facts": [
+        "The plaintiff died while her second appeal was pending.",
+        "No legal representatives applied to be substituted within the prescribed period, and the appeal proceeded without them."
+      ],
+      "conclusion": "The second appeal abated automatically upon expiry of the substitution period, leaving no appeal pending before the High Court.",
+      "legal_principle": "Order 22 Rules 3(2) and 4(3) of the Code of Civil Procedure provide for abatement when no substitution application is made within the time allowed by law. The Court held that, on expiry of 90 days after the appellant’s death without such an application, the appeal stood dismissed as abated.",
+      "rule": {
+        "if": "appellate_proceeding and appellant_dies and substitution_not_sought_in_time",
+        "then": "appeal_abates_automatically"
+      },
+      "predicates": {
+        "appellate_proceeding": "A party has brought an appeal before a court for decision.",
+        "appellant_dies": "The appellant dies while the appeal is pending.",
+        "substitution_not_sought_in_time": "No one entitled to continue the appeal applies within the applicable time to replace the deceased appellant with the appellant’s legal representatives.",
+        "appeal_abates_automatically": "The appeal ends by abatement without a further order dismissing it."
+      },
+      "definition": "When an appellant dies during an appeal and no timely application is made to substitute the appellant’s legal representatives, the appeal abates automatically."
+    },
+    {
+      "legal_issue": "An appeal that has abated may be revived only through the required applications to substitute the deceased party, set aside abatement, and, where substitution is late, condone delay.",
+      "material_facts": [
+        "The plaintiff and two defendant-respondents died during the second appeal.",
+        "No applications were filed to substitute the deceased parties, set aside abatement, or condone delay in seeking substitution."
+      ],
+      "conclusion": "The second appeal could have been revived only if the required applications had been filed and allowed; no such revival occurred in this case.",
+      "legal_principle": "Under Order 22 Rules 3 and 4 of the Code of Civil Procedure, substitution is required; Order 22 Rule 9 permits an application to set aside abatement on sufficient cause; and Section 5 of the Limitation Act permits an application to condone delay in filing a late substitution application. The Court stated that the appeal could be revived if the required applications were allowed.",
+      "rule": {
+        "if": "appellate_proceeding and appeal_abated and substitution_application_filed and abatement_set_aside_sought_with_sufficient_cause and delay_condonation_sought and restoration_applications_allowed",
+        "then": "appeal_may_be_revived"
+      },
+      "predicates": {
+        "appellate_proceeding": "A party has brought an appeal before a court for decision.",
+        "appeal_abated": "The appeal has ended by abatement following a party’s death and failure to make a timely substitution application.",
+        "substitution_application_filed": "The deceased party’s legal representatives apply to be substituted in the proceeding.",
+        "abatement_set_aside_sought_with_sufficient_cause": "The legal representatives apply to set aside the abatement and show sufficient cause for doing so.",
+        "delay_condonation_sought": "The legal representatives apply to excuse delay in seeking substitution.",
+        "restoration_applications_allowed": "The court allows the applications needed to restore the appeal.",
+        "appeal_may_be_revived": "The appeal may resume and be heard on its merits."
+      },
+      "definition": "An abated appeal may be revived when substitution and abatement-setting-aside applications, any required delay-condonation application, and the court’s approval of those applications are all present."
+    },
+    {
+      "legal_issue": "A judgment or decree made in an appeal after abatement, in favour of or against a deceased party who has not been replaced, is a nullity.",
+      "material_facts": [
+        "The plaintiff-appellant and two defendant-respondents died during the second appeal.",
+        "No legal representatives were brought on record, and the High Court decided the second appeal after it had abated.",
+        "The High Court decreed specific performance in favour of the deceased plaintiff and against the deceased defendants."
+      ],
+      "conclusion": "The High Court’s judgment and decree were a nullity because they were made after the appeal had abated and in favour of and against deceased persons.",
+      "legal_principle": "Order 22 Rules 3(2) and 4(3) of the Code of Civil Procedure resulted in abatement when substitution applications were not made. Under Kiran Singh v. Chaman Paswan, a decree passed without jurisdiction is a nullity. The Court also relied on N. Jayaram Reddy v. Revenue Divisional Officer, Ashok Transport Agency v. Awadhesh Kumar, and Amba Bai v. Gopal for the principle that a decree for or against a dead person is a nullity.",
+      "rule": {
+        "if": "appellate_proceeding and appellant_dies and substitution_not_sought_in_time and court_decides_after_abatement",
+        "then": "decree_is_nullity"
+      },
+      "predicates": {
+        "appellate_proceeding": "A party has brought an appeal before a court for decision.",
+        "appellant_dies": "The appellant dies while the appeal is pending.",
+        "substitution_not_sought_in_time": "No one entitled to continue the appeal applies within the applicable time to replace the deceased appellant with the appellant’s legal representatives.",
+        "court_decides_after_abatement": "The court issues its decision after the proceeding has abated and without the deceased party’s legal representatives being substituted.",
+        "decree_is_nullity": "The resulting judgment or decree has no legal validity."
+      },
+      "definition": "A decision made after an appeal has abated because the appellant died without timely substitution is a nullity."
+    },
+    {
+      "legal_issue": "A person who succeeds to a deceased party’s right to sue may challenge a null decree in an appeal or in proceedings in which the decree is enforced or relied upon.",
+      "material_facts": [
+        "The appellants were legal representatives of two deceased defendants and had succeeded to their right to sue.",
+        "They challenged the High Court’s decree on the ground that it was a nullity because it had been passed after abatement."
+      ],
+      "conclusion": "The legal representatives were entitled to challenge the decree as a nullity, and their objection was upheld.",
+      "legal_principle": "Under Kiran Singh v. Chaman Paswan, the validity of a decree that is a nullity may be questioned whenever and wherever it is sought to be enforced or relied upon, including in execution or collateral proceedings. The Court applied that principle to the deceased defendants’ legal representatives, whose right to sue had devolved upon them.",
+      "rule": {
+        "if": "decree_is_nullity and challenger_succeeded_to_deceased_party_right and (appeal_proceeding or enforcement_or_collateral_proceeding)",
+        "then": "nullity_objection_is_maintainable"
+      },
+      "predicates": {
+        "decree_is_nullity": "The judgment or decree has no legal validity because it was made without jurisdiction.",
+        "challenger_succeeded_to_deceased_party_right": "The person challenging the decree succeeded to the deceased party’s right to sue.",
+        "appeal_proceeding": "The person challenges the decree in an appellate proceeding.",
+        "enforcement_or_collateral_proceeding": "The person challenges the decree in a proceeding where it is sought to be enforced or relied upon, including execution or a collateral proceeding.",
+        "nullity_objection_is_maintainable": "The person may raise the decree’s invalidity in the proceeding."
+      },
+      "definition": "A successor to a deceased party’s right to sue may challenge a null decree in an appeal or in a proceeding where the decree is enforced or relied upon."
+    }
+  ],
+  "seconds": 21.7
+}

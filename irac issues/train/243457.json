@@ -1,0 +1,83 @@
+{
+  "doc_id": "243457",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15596,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2443,
+    "prompt_tokens": 4277,
+    "total_tokens": 6720,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Acceptance of rent from a tenant who remains in possession solely under rent-control protection does not, by itself, create a new contractual tenancy after the original tenancy has ended.",
+      "material_facts": [
+        "The contractual tenancy ended by efflux of time.",
+        "The tenant remained in possession under successive rent-control statutes that protected tenants from eviction in specified circumstances.",
+        "The landlord accepted payments equal to the contractual rent and later the statutory rent.",
+        "The landlord's failure to obtain possession was attributable to the statutory protection, and no separate conduct established agreement to a new tenancy."
+      ],
+      "conclusion": "Acceptance of the payments and failure to take action did not amount to assent to a new tenancy under section 116 of the Transfer of Property Act, 1882; the tenant did not acquire the rights of a tenant holding over.",
+      "legal_principle": "Under section 116 of the Transfer of Property Act, 1882, a new tenancy may arise when a lessor accepts rent from a lessee after determination of the lease or otherwise assents to continued possession. But, following Kai Khushroo v. Bai Jerbai, [1949] F.C.R. 262, acceptance of amounts equivalent to rent from a tenant whose continued possession is protected by rent-control legislation does not by itself establish assent to a new contractual tenancy. A fresh tenancy may be inferred from other conduct or an express agreement, depending on the facts.",
+      "rule": {
+        "if": "rent_control_possession_case and original_tenancy_ended and tenant_remained_under_statutory_protection and landlord_accepted_rent_equivalent and not independent_assent",
+        "then": "no_new_contractual_tenancy_inferred"
+      },
+      "predicates": {
+        "rent_control_possession_case": "The proceeding concerns a tenant's continued possession of premises governed by rent-control protections.",
+        "original_tenancy_ended": "The parties' original contractual tenancy ended.",
+        "tenant_remained_under_statutory_protection": "The tenant continued in possession because a statute protected the tenant from eviction in specified circumstances.",
+        "landlord_accepted_rent_equivalent": "The landlord accepted payments from the tenant equal to rent, whether contractual or statutorily fixed.",
+        "independent_assent": "The landlord's conduct apart from accepting those payments showed assent to a new contractual tenancy."
+      },
+      "definition": "When an original tenancy has ended and a tenant remains under statutory protection, accepting rent-equivalent payments without other conduct showing assent does not produce the stated result of a new contractual tenancy."
+    },
+    {
+      "legal_issue": "A tenant's continued occupation solely under statutory protection after the contractual tenancy has ended does not require termination by a notice under section 106 of the Transfer of Property Act, 1882.",
+      "material_facts": [
+        "The tenancy ended by efflux of time.",
+        "The tenant's continued occupation rested on rent-control statutes rather than an express or implied contract.",
+        "The landlord brought an ejectment suit after the tenant did not vacate."
+      ],
+      "conclusion": "The continued occupation was not required to be determined by a notice under section 106 of the Transfer of Property Act, 1882.",
+      "legal_principle": "Sections 106 and 116 of the Transfer of Property Act, 1882, govern notice for termination of specified tenancies and renewal by holding over. As explained in Kai Khushroo v. Bai Jerbai, [1949] F.C.R. 262, statutory protection of possession after a lease ends does not itself create a contractual tenancy. Where occupation rests only on that statutory protection, it is not occupation under a tenancy that must be determined by a section 106 notice.",
+      "rule": {
+        "if": "ejectment_proceeding and original_tenancy_ended and occupation_based_only_on_statutory_protection and no_new_contractual_tenancy",
+        "then": "section_106_notice_not_required_for_statutory_occupation"
+      },
+      "predicates": {
+        "ejectment_proceeding": "The proceeding seeks recovery of premises from an occupant.",
+        "original_tenancy_ended": "The parties' contractual tenancy ended.",
+        "occupation_based_only_on_statutory_protection": "The occupant remained in possession by virtue of statutory protection rather than a contractual right.",
+        "no_new_contractual_tenancy": "No new contractual tenancy arose after the original tenancy ended."
+      },
+      "definition": "In an ejectment proceeding, when the original tenancy has ended and possession rests only on statutory protection without a new contractual tenancy, the stated result is that a section 106 notice is not required to determine that occupation."
+    },
+    {
+      "legal_issue": "Describing a statutorily protected occupant as a monthly tenant in an eviction notice does not, without more, establish a new contractual tenancy.",
+      "material_facts": [
+        "The contractual tenancy had ended, and the occupant remained in possession under rent-control legislation.",
+        "The landlord's notice described the occupant as a monthly tenant.",
+        "The description was consistent with the meaning of tenant under the rent-control legislation and was not accompanied by conduct showing a new contractual relationship."
+      ],
+      "conclusion": "The description of the occupant as a monthly tenant did not justify inferring that a fresh contractual tenancy had arisen.",
+      "legal_principle": "Section 116 of the Transfer of Property Act, 1882, requires acceptance of rent or other conduct amounting to assent to continued possession for a tenancy by holding over. In the statutory context, the term tenant can include a person whose lease has expired, so the description monthly tenant alone does not establish contractual assent.",
+      "rule": {
+        "if": "contractual_tenancy_ended and occupant_remained_under_rent_control_law and notice_called_occupant_monthly_tenant and not other_assent_conduct",
+        "then": "monthly_tenant_description_alone_does_not_establish_new_tenancy"
+      },
+      "predicates": {
+        "contractual_tenancy_ended": "The parties' contractual tenancy ended.",
+        "occupant_remained_under_rent_control_law": "The occupant remained in possession under rent-control legislation after the tenancy ended.",
+        "notice_called_occupant_monthly_tenant": "The landlord's notice described the occupant as a monthly tenant.",
+        "other_assent_conduct": "The landlord engaged in conduct beyond the description in the notice that showed assent to a new contractual tenancy."
+      },
+      "definition": "When the tenancy has ended and the occupant remains under rent-control law, a notice's monthly-tenant description, without other assent conduct, does not produce the stated result of establishing a new tenancy."
+    }
+  ],
+  "seconds": 16.4
+}

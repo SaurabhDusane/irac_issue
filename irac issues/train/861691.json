@@ -1,0 +1,58 @@
+{
+  "doc_id": "861691",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 57223,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2242,
+    "prompt_tokens": 14504,
+    "total_tokens": 16746,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A licensee in qualifying occupation of premises in a cooperative housing society acquired statutory tenant protection despite the absence of the society’s permission.",
+      "material_facts": [
+        "The occupant was placed in a flat under a leave-and-licence agreement and remained in actual occupation under a subsisting licence on the statutory cutoff date.",
+        "The flat was in a building belonging to a cooperative housing society, and the society had not given express permission for the occupant’s entry.",
+        "The lower courts found that the occupant was a licensee and was in occupation of the flat on the statutory cutoff date."
+      ],
+      "conclusion": "The occupant was a protected tenant under the Rent Act; the lack of the society’s permission did not defeat that protection.",
+      "legal_principle": "Sections 15A, 5(4A), and 5(11)(bb) of the Bombay Rents, Hotels and Lodging House Rates Control Act, 1947 confer deemed tenancy on a qualifying licensee in occupation on the statutory cutoff date. Section 14(2) reinforces the statutory landlord-tenant relationship when the licensor’s interest ends. The overriding language of Section 15A gives effect to the legislative purpose of protecting qualifying licensees, notwithstanding contrary contracts or other laws. Chandavarkar Sita Ratna Rao v. Ashalata S. Guram, [1986] 4 SCC 447, supports the protection of licensees inducted by tenants; Ramesh Himmatlal Shah v. Harsukh Jadhavji Joshi, [1975] 2 SCC 105, recognizes the member’s transferable interest in an allotted flat; and Hindustan Petroleum Corporation Ltd. v. Shyam Cooperative Housing Society, [1988] 4 SCC 747, addresses protection for a qualifying licensee in a cooperative building.",
+      "rule": {
+        "if": "eviction_dispute and qualifying_license_occupation",
+        "then": "occupant_is_protected_tenant"
+      },
+      "predicates": {
+        "eviction_dispute": "A dispute arose over whether an occupant could be evicted from premises.",
+        "qualifying_license_occupation": "The occupant was in actual occupation of premises in a cooperative building under a subsisting licence on the statutory cutoff date."
+      },
+      "definition": "When an eviction dispute concerns an occupant who was in qualifying licensed occupation, the occupant is a protected tenant."
+    },
+    {
+      "legal_issue": "A cooperative society cannot obtain eviction through the cooperative dispute process by alleging trespass when the occupant establishes protected tenant status under the Rent Act.",
+      "material_facts": [
+        "The society brought a claim under the cooperative societies law alleging that the occupant was in wrongful occupation as a trespasser.",
+        "The occupant had been in actual occupation under a subsisting licence on the statutory cutoff date and was therefore protected as a tenant under the Rent Act.",
+        "The society relied on the occupant’s entry without its permission and the absence of a landlord-tenant relationship between the society and the occupant.",
+        "The occupant’s protected status meant the society did not prove the alleged trespass that formed the basis for its claim."
+      ],
+      "conclusion": "The cooperative eviction claim could not succeed and was dismissed because the society failed to prove the jurisdictional fact that the occupant was a trespasser.",
+      "legal_principle": "Section 91(1) of the Maharashtra Co-operative Societies Act, 1960 provides for cooperative-court jurisdiction over specified disputes touching a society’s business, while Section 28 of the Rent Act assigns jurisdiction over matters covered by that Act to the specified rent court. The provisions are harmonized by applying the special Rent Act protection to a qualifying protected tenant. Rights conferred by statute must be determined through the machinery provided by that statute; lack of contractual privity with the society or breach of society rules does not nullify that protection. Jurisdiction is determined from the claim’s allegations, but if the occupant proves protected tenancy, the claimant fails to establish the alleged trespass on which the cooperative claim rests. Deccan Merchants Co-operative Bank Ltd. v. Dalichand Jugraj Jain, [1969] 1 SCR 887, and Co-operative Central Bank Ltd. v. Additional Industrial Tribunal, Andhra Pradesh, [1970] 1 SCR 205, support harmonizing competing statutory jurisdictions; O.N. Bhatnagar v. Rukibai Narsindas, AIR 1982 SC 1097, and Hindustan Petroleum Corporation Ltd. v. Shyam Cooperative Housing Society, [1988] 4 SCC 747, address cooperative-society proceedings and protected licensees.",
+      "rule": {
+        "if": "cooperative_society_eviction_claim and society_alleges_trespass and qualifying_license_occupation",
+        "then": "cooperative_eviction_claim_fails"
+      },
+      "predicates": {
+        "cooperative_society_eviction_claim": "A cooperative society brought an eviction claim against an occupant through the cooperative dispute process.",
+        "society_alleges_trespass": "The society alleged that the occupant had no right to occupy the premises and was a trespasser.",
+        "qualifying_license_occupation": "The occupant was in actual occupation of premises in a cooperative building under a subsisting licence on the statutory cutoff date."
+      },
+      "definition": "When a cooperative society brings an eviction claim alleging trespass against an occupant in qualifying licensed occupation, the cooperative eviction claim fails."
+    }
+  ],
+  "seconds": 74.9
+}

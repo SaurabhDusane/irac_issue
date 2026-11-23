@@ -1,0 +1,60 @@
+{
+  "doc_id": "43662",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15757,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1955,
+    "prompt_tokens": 4566,
+    "total_tokens": 6521,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An application to set aside an ex parte decree of a small causes court is incompetent unless the applicant deposits the amount due or first applies for permission to furnish security.",
+      "material_facts": [
+        "The underlying rent and eviction suit was tried by a small causes court and decreed ex parte.",
+        "The tenants applied to set aside the decree without depositing the amount due under it.",
+        "They had not previously applied for permission to furnish security; their request to furnish security was made only after the omission was raised.",
+        "The trial court rejected the application, but the revisional court allowed it and the High Court declined to interfere."
+      ],
+      "conclusion": "The application to set aside the decree was incompetent and could not be entertained. The revisional and High Court orders were set aside, and the trial court’s rejection of the application was restored.",
+      "legal_principle": "The proviso to Section 17(1) of the Provincial Small Cause Courts Act, 1887, is mandatory: an applicant seeking to set aside an ex parte decree or review a judgment must deposit the amount due when presenting the application, unless the applicant has made a previous application seeking permission to furnish security and the court has directed the security. The 1935 amendment made clear that the request to determine acceptable security must precede the substantive application, while deposit remains an alternative. The Court endorsed the general line of decisions treating the proviso as mandatory, including Mohammad Ramzan Khan v. Khubi Khan, Murari Lal v. Mohammad Yasin, Vembu Amal v. Esakkia Pillai, Khetra Dolai v. Mohan Bissoyi, Dhanna v. Arjun Lal, and the cited Allahabad decisions; it did not accept the contrary view in Surendra Nath Mittal v. Dayanand Swarup and Chigurupalli Suryanarayana v. Amadalavalasa Co-operative Agricultural Industrial Society Ltd. The procedure for small causes court proceedings otherwise follows the Code of Civil Procedure under Section 17(1).",
+      "rule": {
+        "if": "small_cause_post_decree_application and decretal_amount_not_deposited and no_prior_security_request",
+        "then": "application_incompetent"
+      },
+      "predicates": {
+        "small_cause_post_decree_application": "The proceeding is an application to set aside an ex parte decree or review a judgment of a small causes court.",
+        "decretal_amount_not_deposited": "The applicant did not deposit the amount due under the decree or judgment when presenting the application.",
+        "no_prior_security_request": "The applicant did not apply for permission to furnish security before presenting the application.",
+        "application_incompetent": "The application cannot be entertained."
+      },
+      "definition": "When an application concerning an ex parte decree or judgment of a small causes court is presented without the required deposit and without a prior request for permission to furnish security, the application cannot be entertained."
+    },
+    {
+      "legal_issue": "A request for permission to furnish security may be made up to the presentation of the application to set aside an ex parte decree or for review, and delay by the court in deciding that request is not attributable to the applicant.",
+      "material_facts": [
+        "The tenants did not make any request for permission to furnish security before or when they presented their application to set aside the decree.",
+        "The Court considered the statutory timing requirement even though the tenants’ later request did not meet it."
+      ],
+      "conclusion": "A request for permission to furnish security may be made at any time up to presentation of the substantive application, and delay by the court in making the required direction cannot prejudice the applicant. This principle did not assist the tenants because they made no prior request.",
+      "legal_principle": "Under the proviso to Section 17(1) of the Provincial Small Cause Courts Act, 1887, the applicant must make a previous application seeking the court’s direction about security. The Court construed “previous” to permit that request at any time up to presentation of the substantive application. The court should then make a prompt order, and an applicant cannot be made to suffer for delay caused by the court.",
+      "rule": {
+        "if": "small_cause_post_decree_application and security_request_made_by_presentation and court_delayed_security_direction",
+        "then": "court_delay_not_attributable_to_applicant"
+      },
+      "predicates": {
+        "small_cause_post_decree_application": "The proceeding is an application to set aside an ex parte decree or review a judgment of a small causes court.",
+        "security_request_made_by_presentation": "The applicant requested permission to furnish security no later than the presentation of the substantive application.",
+        "court_delayed_security_direction": "The court did not promptly decide the request for permission to furnish security.",
+        "court_delay_not_attributable_to_applicant": "The applicant is not prejudiced by delay caused by the court in deciding the security request."
+      },
+      "definition": "When an applicant timely requests permission to furnish security but the court delays its direction, that court-caused delay is not attributed to the applicant."
+    }
+  ],
+  "seconds": 13.5
+}

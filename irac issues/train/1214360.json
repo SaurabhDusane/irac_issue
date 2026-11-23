@@ -1,0 +1,140 @@
+{
+  "doc_id": "1214360",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24523,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3224,
+    "prompt_tokens": 6527,
+    "total_tokens": 9751,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A second appeal created by a special rent-control statute remains subject to the restrictions governing second appeals under the Code of Civil Procedure.",
+      "material_facts": [
+        "A rent-control court fixed standard rent, and the District Court modified that determination on appeal.",
+        "The tenant brought a further appeal under the rent-control statute, seeking reconsideration of the District Court’s assessment of the evidence.",
+        "The High Court dismissed the appeal summarily, apparently finding no question of law."
+      ],
+      "conclusion": "The second appeal could be entertained only within the limits applicable to a second appeal under the Code of Civil Procedure; the High Court could dismiss it summarily where no question of law arose, and the parties could not demand reappraisal of the evidence.",
+      "legal_principle": "The expression “second appeal” in the Code of Civil Procedure means an appeal to the High Court from a first appellate court’s decision in a civil suit or proceeding. The civil character of proceedings under the rent-control statute, the use of the Code’s procedure except where expressly or clearly otherwise provided, and the nature of a second appeal mean that the statutory right of appeal remains subject to sections 100–103 of the Code and Order 41, rule 11. The Court disapproved Doshibai Khanna v. Sandhi Suleman Gulmamad and Nagardas Harichand v. Modi Mohanlal, and distinguished Union of India v. Mohindra Supply Co.",
+      "rule": {
+        "if": "rent_control_second_appeal and (challenge_seeks_reappraisal_of_evidence or no_question_of_law_arises)",
+        "then": "second_appeal_is_limited_to_questions_of_law"
+      },
+      "predicates": {
+        "rent_control_second_appeal": "A party brings a second appeal from an appellate decision in a rent-control proceeding.",
+        "challenge_seeks_reappraisal_of_evidence": "The appellant asks the High Court to reconsider the first appellate court’s view of the evidence.",
+        "no_question_of_law_arises": "The appeal presents no question of law."
+      },
+      "definition": "When a party brings a second appeal in a rent-control proceeding and seeks reappraisal of evidence or raises no question of law, the appeal is limited to questions of law."
+    },
+    {
+      "legal_issue": "The purchase price of land together with structures on it may be considered in determining the cost relevant to fixing standard rent for a building erected on that property.",
+      "material_facts": [
+        "The landlord bought land with houses on it, demolished the houses, and built a cinema theatre on the land.",
+        "The demolished structures had previously been rented, and their debris was sold for proceeds credited toward the theatre’s cost.",
+        "The tenant argued that the value of the land should be derived by capitalising the earlier rent and deducting the resulting value of the structures from the purchase price."
+      ],
+      "conclusion": "The courts below did not err by taking the whole purchase price of the land and buildings into consideration; the proposed method of valuation was faulty.",
+      "legal_principle": "A building let to a tenant forms a composite unit with the land on which it stands, and rent cannot be attributed wholly to the building because it also reflects the land’s situation and amenities. The Court applied this principle in reviewing the determination of standard rent under section 11 of the Saurashtra Rent Control Act.",
+      "rule": {
+        "if": "standard_rent_valuation and property_purchased_with_existing_structures and new_building_constructed_on_the_land",
+        "then": "land_and_building_value_may_be_considered_together"
+      },
+      "predicates": {
+        "standard_rent_valuation": "A court is determining the standard rent of a building.",
+        "property_purchased_with_existing_structures": "The landlord acquired land together with structures standing on it.",
+        "new_building_constructed_on_the_land": "The existing structures were removed and a new building was erected on the land."
+      },
+      "definition": "When standard rent is being valued for a new building erected on land acquired with existing structures, the land and building value may be considered together."
+    },
+    {
+      "legal_issue": "A fact-based determination of which recorded expenditures properly form part of a building’s construction cost does not warrant appellate interference absent an error of law or a misconstruction of the evidence.",
+      "material_facts": [
+        "The landlord’s accounts recorded total expenditure that included transport, miscellaneous items, distribution of sweets, and worship-related expenditure.",
+        "The trial court disallowed certain items as not properly included in the building’s cost, and the District Court agreed with that treatment.",
+        "The tenant challenged the District Court’s assessment of the construction cost in the second appeal."
+      ],
+      "conclusion": "The courts below committed no error of law or misconstruction of the evidence in disallowing only the items they found could not reasonably enter the construction-cost calculation.",
+      "legal_principle": "In a second appeal, disagreement with the first appellate court’s factual assessment does not itself permit reappraisal of the evidence; intervention must fall within the limits applicable to a second appeal. The Court applied that restriction under section 100 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "second_appeal_in_rent_proceeding and construction_cost_assessed_from_record and no_error_of_law_or_evidence_misconstruction",
+        "then": "construction_cost_assessment_is_not_set_aside"
+      },
+      "predicates": {
+        "second_appeal_in_rent_proceeding": "A party challenges a rent determination in a second appeal.",
+        "construction_cost_assessed_from_record": "The lower courts assessed construction cost using the accounts and other evidence in the record.",
+        "no_error_of_law_or_evidence_misconstruction": "The assessment involved no error of law or misconstruction of the evidence."
+      },
+      "definition": "When a construction-cost assessment in a rent-related second appeal rests on the record and involves no legal or evidentiary error, the assessment is not set aside."
+    },
+    {
+      "legal_issue": "A finding that a gross return is adequate for fixing standard rent is not erroneous in principle merely because a different return might be appropriate in other localities or circumstances.",
+      "material_facts": [
+        "The District Court assessed the property as a cinema theatre in a town where municipal taxes and rates were not charged at the relevant time, though water charges applied.",
+        "The evidence did not establish the amount of the water charges.",
+        "The District Court considered the evidence and found an overall return of seven per cent on the investment adequate.",
+        "The tenant argued that different rates used in other cities should apply."
+      ],
+      "conclusion": "On review of the reasons given, the District Court committed no error of principle in treating a seven per cent gross return on the construction cost as adequate for the property.",
+      "legal_principle": "The reasonable return for determining standard rent depends on relevant circumstances, including the normal yield from immovable property in the locality, returns from alternative investments, municipal and other charges, the property’s use and condition, and the repairs needed to keep it tenantable. The Court applied these considerations under section 11 of the Saurashtra Rent Control Act.",
+      "rule": {
+        "if": "standard_rent_valuation and return_rate_based_on_relevant_local_factors and appellate_reasoning_shows_no_error_of_principle",
+        "then": "return_rate_finding_is_not_set_aside_for_error_of_principle"
+      },
+      "predicates": {
+        "standard_rent_valuation": "A court is determining standard rent for a property.",
+        "return_rate_based_on_relevant_local_factors": "The return rate is assessed in light of relevant conditions such as locality, property use, charges, condition, and alternative yields.",
+        "appellate_reasoning_shows_no_error_of_principle": "The reviewing court finds no error of principle in the lower court’s reasons for selecting the return rate."
+      },
+      "definition": "When a return rate used to determine standard rent reflects relevant local factors and the lower court’s reasoning has no error of principle, the rate finding is not set aside for that reason."
+    },
+    {
+      "legal_issue": "The standard rent attributable to a cellar depends on whether the cellar was included in the tenancy, and rent may be reduced for it if it was not included.",
+      "material_facts": [
+        "The parties agreed that the tenant had not received possession of the cellar.",
+        "The landlord said the cellar was not included in the tenancy, while the tenant said it was included.",
+        "The District Court treated the cellar as outside the tenancy but reduced the rent by less than the trial court had allowed.",
+        "The lease was not available for the Supreme Court to determine whether the cellar was included."
+      ],
+      "conclusion": "The Court did not decide whether the cellar was included in the tenancy. It declared that if the cellar was not included, the standard rent of the premises let would be reduced by the amount attributable to the cellar; it held that the District Court was not right to reduce the deduction made by the trial court.",
+      "legal_principle": "The extent of the premises included in the tenancy determines what premises’ standard rent is being fixed. The Court left the contractual question of inclusion to be determined in the pending proceedings and stated the corresponding rent consequence if the cellar was excluded, applying section 11 of the Saurashtra Rent Control Act.",
+      "rule": {
+        "if": "standard_rent_proceeding and cellar_not_delivered and cellar_excluded_from_tenancy",
+        "then": "standard_rent_excludes_rent_attributable_to_cellar"
+      },
+      "predicates": {
+        "standard_rent_proceeding": "A court is determining the standard rent of premises let to a tenant.",
+        "cellar_not_delivered": "The landlord did not deliver possession of the cellar to the tenant.",
+        "cellar_excluded_from_tenancy": "The terms of the tenancy do not include the cellar."
+      },
+      "definition": "If a cellar was not delivered and was not included in the tenancy, the rent fixed for the let premises excludes the rent attributable to that cellar."
+    },
+    {
+      "legal_issue": "Loss caused by a landlord’s failure to deliver possession of a leased part is not part of determining standard rent.",
+      "material_facts": [
+        "The space intended for use as a restaurant was part of the premises leased.",
+        "The landlord and tenant disputed whether possession of that space had been delivered.",
+        "The tenant sought a reduction in rent on account of the alleged failure to deliver possession."
+      ],
+      "conclusion": "Whether possession of the restaurant space was delivered, and whether the tenant suffered loss from any failure to deliver it, was foreign to the determination of standard rent. The Court declined to decide that dispute and vacated the lower courts’ decision on it.",
+      "legal_principle": "The determination of standard rent does not encompass an inquiry into loss or relief arising from a landlord’s failure to deliver possession of part of the premises covered by the lease. The Court distinguished that inquiry from the fixing of standard rent under section 11 of the Saurashtra Rent Control Act.",
+      "rule": {
+        "if": "standard_rent_proceeding and leased_space_delivery_is_disputed and tenant_seeks_relief_for_non_delivery",
+        "then": "non_delivery_loss_is_not_determined_as_part_of_standard_rent"
+      },
+      "predicates": {
+        "standard_rent_proceeding": "A court is determining the standard rent of premises.",
+        "leased_space_delivery_is_disputed": "The landlord and tenant dispute whether possession of part of the leased premises was delivered.",
+        "tenant_seeks_relief_for_non_delivery": "The tenant seeks relief for loss allegedly caused by the landlord’s failure to deliver that part."
+      },
+      "definition": "When a standard-rent proceeding includes a dispute about delivery of leased space and relief for resulting loss, that loss is not determined as part of fixing standard rent."
+    }
+  ],
+  "seconds": 19.7
+}

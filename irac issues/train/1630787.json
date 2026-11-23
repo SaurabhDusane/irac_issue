@@ -1,0 +1,81 @@
+{
+  "doc_id": "1630787",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22824,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2076,
+    "prompt_tokens": 5886,
+    "total_tokens": 7962,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A litigant must receive a reasonable opportunity to arrange representation and be heard when circumstances make securing counsel of choice unusually difficult.",
+      "material_facts": [
+        "The matter was an appeal in eviction proceedings, and further oral arguments had been allowed.",
+        "The appellant's senior counsel was unavailable because of illness, and a leading member of the local bar who was personally involved in the dispute made it difficult for the appellant to secure local counsel.",
+        "After allowing only three days to arrange alternative representation, the judge refused a further adjournment when the appellant remained unable to secure counsel."
+      ],
+      "conclusion": "The refusal denied the appellant a reasonable opportunity of hearing and vitiated the decision; the appeal had to be reheard after a reasonable opportunity was given to both parties.",
+      "legal_principle": "Procedural fairness requires a reasonable opportunity to be heard, assessed in light of the practical circumstances affecting a litigant's ability to obtain representation. Justice must also appear to have been done. The judgment's heading refers to the Code of Civil Procedure, 1908, Orders XVII and XX, but the Court's reasoning does not apply a particular provision or rely on an earlier case.",
+      "rule": {
+        "if": "appeal_hearing and (counsel_unavailable or local_bar_conflict) and inadequate_time_to_find_replacement",
+        "then": "hearing_opportunity_unreasonable"
+      },
+      "predicates": {
+        "appeal_hearing": "The proceeding is an appeal in which a party is to present arguments.",
+        "counsel_unavailable": "The party's engaged counsel is unable to appear.",
+        "local_bar_conflict": "The opposing litigant's position in the local bar makes it difficult for the party to obtain local representation.",
+        "inadequate_time_to_find_replacement": "The court allows too little time for the party to obtain replacement counsel in the circumstances.",
+        "hearing_opportunity_unreasonable": "The party has not received a reasonable opportunity to be heard."
+      },
+      "definition": "When an appeal hearing is pending, counsel is unavailable or local bar circumstances impede replacement representation, and the time allowed is inadequate, the opportunity to be heard is unreasonable."
+    },
+    {
+      "legal_issue": "Preparing a dispositive judgment before scheduled further arguments have been heard or an adjournment request has been decided undermines the fairness of the hearing.",
+      "material_facts": [
+        "The appeal was scheduled for further oral arguments on the adjourned date.",
+        "Before those arguments were heard and before the adjournment request was refused, the judge had prepared a judgment dismissing the appeal and pronounced it immediately after refusing the request.",
+        "There was no time-related compulsion to pronounce judgment that day."
+      ],
+      "conclusion": "The procedure used to prepare and pronounce the judgment was unfair and vitiated the decision, which had to be set aside for a fresh hearing.",
+      "legal_principle": "A judge should not have a ready-made dispositive judgment prepared before hearing arguments that are still due to be heard. The procedure must be fair and must appear fair. The judgment cites no earlier cases or particular provision as the basis for this principle.",
+      "rule": {
+        "if": "appeal_hearing and further_arguments_pending and judgment_prepared_before_arguments and no_urgent_need_to_pronounce",
+        "then": "appeal_decision_vitiated_by_unfair_procedure"
+      },
+      "predicates": {
+        "appeal_hearing": "The proceeding is an appeal being heard by a court.",
+        "further_arguments_pending": "The court has scheduled further arguments that have not yet been heard.",
+        "judgment_prepared_before_arguments": "The judge has prepared a dispositive judgment before hearing those arguments or deciding whether to adjourn.",
+        "no_urgent_need_to_pronounce": "There is no urgent need to pronounce judgment immediately.",
+        "appeal_decision_vitiated_by_unfair_procedure": "The decision is invalidated by the unfair procedure used to prepare and pronounce it."
+      },
+      "definition": "In an appeal with further arguments pending, preparing a dispositive judgment in advance without an urgent need to pronounce it makes the decision procedurally unfair."
+    },
+    {
+      "legal_issue": "A supervisory petition should not be rejected summarily when the record discloses substantial grounds that the underlying hearing was procedurally unfair.",
+      "material_facts": [
+        "The appellant sought supervisory relief after the appeal had been dismissed following refusal of an adjournment and immediate pronouncement of a judgment prepared in advance.",
+        "The High Court rejected the petition in limine despite the circumstances surrounding the appellant's opportunity to obtain counsel and the preparation of the judgment."
+      ],
+      "conclusion": "The High Court erred in summarily rejecting the petition; its order, as well as the underlying appeal decision, was set aside.",
+      "legal_principle": "The Court held that summary rejection was erroneous in light of the procedural unfairness apparent from the record. The petition was brought under Article 227 of the Constitution; the Court cited no earlier cases for this conclusion.",
+      "rule": {
+        "if": "supervisory_petition and record_shows_substantial_procedural_unfairness",
+        "then": "summary_rejection_unwarranted"
+      },
+      "predicates": {
+        "supervisory_petition": "The proceeding is a petition seeking supervisory review of a lower court's decision.",
+        "record_shows_substantial_procedural_unfairness": "The record discloses substantial grounds to conclude that the lower court's hearing procedure was unfair.",
+        "summary_rejection_unwarranted": "The petition should not be rejected without substantive consideration."
+      },
+      "definition": "When a supervisory petition challenges a decision and the record shows substantial procedural unfairness, summary rejection is unwarranted."
+    }
+  ],
+  "seconds": 13.4
+}

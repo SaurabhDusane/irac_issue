@@ -1,0 +1,63 @@
+{
+  "doc_id": "1642144",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11680,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2584,
+    "prompt_tokens": 3436,
+    "total_tokens": 6020,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant does not terminate a tenancy by unilaterally announcing departure and transferring possession to another person without completing the required termination and surrender to the landlord.",
+      "material_facts": [
+        "A company was the tenant of a shop and informed the landlord that it intended to close its business there and that another person would occupy the shop and pay rent personally.",
+        "The landlord objected to the proposed transfer and stated that the company remained responsible unless it delivered vacant possession.",
+        "The company delivered possession to the other person, not to the landlord, and did not serve the notice required by law or obtain the landlord’s agreement to terminate the tenancy."
+      ],
+      "conclusion": "The company did not cease to be the tenant; its transfer of rights did not terminate the tenancy, and the person placed in possession was an assignee rather than a trespasser.",
+      "legal_principle": "Under section 108(q) of the Transfer of Property Act, 1882, a tenant must put the landlord in possession on determination of the tenancy. Unless possession is delivered to the landlord before expiry of the required notice period, the tenant continues to hold the premises as tenant. An assignment differs from a surrender: an assignment does not itself end the tenant’s obligations, whereas surrender or relinquishment must be to the lessor or a person holding the lessor’s interest and requires mutual agreement. The Court relied on W. H. King v. Republic of India, [1952] S.C.R. 419.",
+      "rule": {
+        "if": "tenancy_termination_dispute and tenant_announced_departure and tenant_transferred_possession_to_another and required_notice_was_not_served and not landlord_received_possession and not landlord_accepted_surrender",
+        "then": "original_tenant_continues_as_tenant"
+      },
+      "predicates": {
+        "tenancy_termination_dispute": "The case concerned whether a tenant’s tenancy had ended after the tenant announced its departure and another person took possession.",
+        "tenant_announced_departure": "The tenant informed the landlord that it intended to stop occupying the premises.",
+        "tenant_transferred_possession_to_another": "The tenant placed another person in possession of the premises as a transferee of its tenancy rights.",
+        "required_notice_was_not_served": "The tenant did not serve the notice required to terminate the tenancy.",
+        "landlord_received_possession": "The landlord received possession of the premises from the tenant before termination.",
+        "landlord_accepted_surrender": "The landlord agreed to accept the tenant’s surrender of the tenancy."
+      },
+      "definition": "When a tenant announces departure and transfers possession but does not complete the required notice and surrender to the landlord, the tenant continues as tenant."
+    },
+    {
+      "legal_issue": "An eviction proceeding before the rent-control authority is maintainable against both a tenant who has not terminated the tenancy and the person to whom the tenant assigned possession without the landlord’s consent.",
+      "material_facts": [
+        "The landlord applied to the Controller under the rent-restriction law for eviction of the company and the person occupying the shop.",
+        "The Controller and the District Court found that the company was the tenant and that it had transferred possession to the occupant without the landlord’s consent.",
+        "The occupant took possession as an assignee of the company’s tenancy rights, and the company had not terminated its tenancy by surrendering possession to the landlord.",
+        "The High Court set aside the eviction order as beyond the Controller’s jurisdiction; the Supreme Court held that the proceeding was maintainable and restored the District Court’s order."
+      ],
+      "conclusion": "The proceeding before the Controller was maintainable against both the company and the assignee, who was not a trespasser and was liable to be sued for an order in ejectment.",
+      "legal_principle": "Section 13 of the East Punjab Urban Rent Restriction Act, 1949, provided for eviction proceedings before the Controller in specified circumstances. Section 2(1) defined a tenant to include a person continuing in possession after termination of a tenancy and excluded a person placed in occupation by a tenant unless the landlord consented. Applying those provisions together with section 108(q) of the Transfer of Property Act, 1882, and the distinction between assignment and surrender stated in W. H. King v. Republic of India, [1952] S.C.R. 419, the Court held that the continuing tenant and the assignee could both be proceeded against before the Controller.",
+      "rule": {
+        "if": "rent_control_eviction_application and original_tenant_continues_as_tenant and occupant_received_possession_as_assignee and not landlord_consented_to_occupation",
+        "then": "controller_proceeding_is_maintainable_against_tenant_and_assignee"
+      },
+      "predicates": {
+        "rent_control_eviction_application": "The landlord brought an eviction application before a rent-control authority.",
+        "original_tenant_continues_as_tenant": "The original tenant had not terminated the tenancy by completing the required notice and surrender to the landlord.",
+        "occupant_received_possession_as_assignee": "The occupant took possession of the premises through an assignment of the original tenant’s tenancy rights.",
+        "landlord_consented_to_occupation": "The landlord consented to the occupant being placed in possession."
+      },
+      "definition": "When a rent-control eviction application concerns a continuing tenant and an assignee placed in possession without the landlord’s consent, the proceeding may be maintained against both."
+    }
+  ],
+  "seconds": 17.0
+}

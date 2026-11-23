@@ -1,0 +1,101 @@
+{
+  "doc_id": "1742737",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21715,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3575,
+    "prompt_tokens": 5420,
+    "total_tokens": 8995,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil appeal filed on the first day after a court vacation is within limitation when the applicable period expires while the court is closed and the required decree copy was sought before that period expired.",
+      "material_facts": [
+        "The judgment copy was supplied while the court was approaching its summer vacation, and the decree copy was requested before the ordinary limitation period expired.",
+        "The limitation period expired during the summer vacation, and the appeal was filed on the day the court reopened.",
+        "The first appellate court rejected the appeal as time-barred without properly accounting for the vacation or the record showing timely filing."
+      ],
+      "conclusion": "The first appellate court was wrong to hold that the appeal was time-barred; the appeal was within limitation.",
+      "legal_principle": "Where the limitation period expires while the court is closed, an appeal filed when the court reopens is within time; time taken to obtain the necessary copies is also relevant to computing limitation.",
+      "rule": {
+        "if": "civil_appeal_from_trial_decree and judgment_copy_requested_within_time and decree_copy_requested_before_limitation_expired and limitation_expired_while_court_closed and appeal_filed_on_reopening_day",
+        "then": "appeal_is_within_limitation"
+      },
+      "predicates": {
+        "civil_appeal_from_trial_decree": "The matter is an appeal from a civil trial court decree.",
+        "judgment_copy_requested_within_time": "The appellant requested a copy of the judgment within the applicable period.",
+        "decree_copy_requested_before_limitation_expired": "The appellant requested a copy of the decree before the ordinary limitation period expired.",
+        "limitation_expired_while_court_closed": "The ordinary limitation period expired while the court was closed.",
+        "appeal_filed_on_reopening_day": "The appellant filed the appeal on the day the court reopened."
+      },
+      "definition": "When an appeal from a civil decree has the stated copy-request and court-closure circumstances, it is within limitation if filed on reopening."
+    },
+    {
+      "legal_issue": "A statutory bar on civil suits concerning matters assigned to a special authority does not oust civil court jurisdiction over a disputed claim of title to immovable property when that authority can only order summary eviction and cannot determine title.",
+      "material_facts": [
+        "The claimant asserted that long possession had given rise to title by adverse possession to land owned by the State.",
+        "The relevant statutory procedure empowered an authority to order summary eviction of persons occupying land without right or title.",
+        "The special procedure did not provide a mechanism for determining competing claims of title to immovable property."
+      ],
+      "conclusion": "The civil court's jurisdiction to determine the disputed title claim was not ousted.",
+      "legal_principle": "A statutory jurisdiction bar does not exclude civil court adjudication of title where the special forum is empowered only to determine matters within its statutory remit and has no machinery to resolve title disputes. The Court relied on Abdul Waheed Khan v. Bhawani, Firm and Illuri Subbayya Chetty & Sons v. State of Andhra Pradesh, State of Tamil Nadu v. Ramalinga Samigal Madam, and Dhulabhai.",
+      "rule": {
+        "if": "civil_suit_seeking_title_determination and title_dispute_concerns_immovable_property and special_proceeding_allows_only_summary_eviction and special_forum_cannot_determine_title",
+        "then": "civil_court_jurisdiction_is_not_ousted"
+      },
+      "predicates": {
+        "civil_suit_seeking_title_determination": "The proceeding is a civil suit seeking determination of title.",
+        "title_dispute_concerns_immovable_property": "The competing claims concern title to immovable property.",
+        "special_proceeding_allows_only_summary_eviction": "The special statutory proceeding provides only a summary process for eviction.",
+        "special_forum_cannot_determine_title": "The special forum has no procedure or authority to decide the competing title claims."
+      },
+      "definition": "A civil court retains jurisdiction over an immovable-property title dispute when the special proceeding is limited to summary eviction and cannot determine title."
+    },
+    {
+      "legal_issue": "A claim to acquire title to public property by adverse possession fails unless the claimant proves open, hostile, continuous possession with the required animus for the required period by clear and reliable evidence.",
+      "material_facts": [
+        "The property was owned by the State, and the claimant relied on adverse possession to establish title against that ownership.",
+        "The claimant's pleaded account of possession did not cover the required period, and the assertion of earlier possession by a predecessor was first raised during trial.",
+        "The claimed construction was supported only by oral assertion, and the electricity and water records were not reliably connected to the property through supporting evidence.",
+        "The evidence did not establish the nature, openness, hostility, continuity, or animus of possession for the required period."
+      ],
+      "conclusion": "The claimant had not proved acquisition of title by adverse possession, and the lower courts' judgments and decree were set aside and the suit dismissed.",
+      "legal_principle": "Possession must be nec vi, nec clam, nec precario: adequate in continuity, publicity, and extent to be adverse to the true owner, and it cannot become adverse before actual possession with the required animus. The claimant bears the burden of proving hostile possession by clear and unequivocal evidence. In a claim against public property, the required ingredients must be established for the required period. The Court relied on P. Lakshmi Reddy v. L. Lakshmi Reddy, Secretary of State for India in Council v. Debendra Lal Khan, and Annasaheb Bapusaheb Patil v. Balwant.",
+      "rule": {
+        "if": "adverse_possession_claim_against_public_property and required_period_of_hostile_possession_not_proved",
+        "then": "adverse_possession_title_claim_fails"
+      },
+      "predicates": {
+        "adverse_possession_claim_against_public_property": "The claimant seeks title by adverse possession against property owned by a public body.",
+        "required_period_of_hostile_possession_not_proved": "The claimant's evidence does not establish open, hostile, continuous possession with the required animus for the required period."
+      },
+      "definition": "A claim to title by adverse possession against public property fails when the required period of hostile possession is not proved."
+    },
+    {
+      "legal_issue": "A second appeal cannot be summarily dismissed when it raises substantial and arguable legal questions and the concurrent findings are perverse or unsupported by legally acceptable evidence.",
+      "material_facts": [
+        "The High Court summarily dismissed a second appeal because the courts below had found the claimant to be the owner.",
+        "The second appeal raised substantial and arguable issues concerning adverse possession of public property and the legality of the findings below.",
+        "The lower courts' findings lacked a critical analysis of the evidence and were unsupported by legally acceptable evidence."
+      ],
+      "conclusion": "The High Court committed a grave error by summarily dismissing the second appeal; the unsupported and perverse findings were not immune from appellate interference.",
+      "legal_principle": "The limitations on second appellate jurisdiction do not shield findings that are perverse, unsupported by legally acceptable evidence, or patently contrary to law. The Court applied the principles governing substantial questions of law under Section 100 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "second_appeal and substantial_arguable_legal_questions_raised and concurrent_findings_are_perverse_or_unsupported",
+        "then": "summary_dismissal_is_improper"
+      },
+      "predicates": {
+        "second_appeal": "The proceeding is a second appeal.",
+        "substantial_arguable_legal_questions_raised": "The appeal raises substantial and arguable legal questions.",
+        "concurrent_findings_are_perverse_or_unsupported": "The concurrent findings are perverse or lack legally acceptable evidentiary support."
+      },
+      "definition": "A second appeal raising substantial arguable legal questions cannot be summarily dismissed when the concurrent findings are perverse or unsupported."
+    }
+  ],
+  "seconds": 22.3
+}

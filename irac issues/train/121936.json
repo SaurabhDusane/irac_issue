@@ -1,0 +1,76 @@
+{
+  "doc_id": "121936",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15542,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2049,
+    "prompt_tokens": 4061,
+    "total_tokens": 6110,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A successor judge cannot discharge accused by reconsidering an earlier order finding a prima facie case on the same materials.",
+      "material_facts": [
+        "An earlier judge considered the police-recorded statements and found sufficient material to summon and implead the accused.",
+        "After a change of presiding judge, the successor considered the same materials and discharged all the accused."
+      ],
+      "conclusion": "The successor judge's discharge order impermissibly reviewed the earlier order and could not stand.",
+      "legal_principle": "A court exercising criminal jurisdiction cannot review its own earlier order where the Criminal Procedure Code gives it no power of review. The Court relied on the earlier prima facie finding on the same materials and Section 239 of the Code of Criminal Procedure, which permits discharge when the charge is groundless; it cited no earlier cases.",
+      "rule": {
+        "if": "criminal_case_pending_before_trial and earlier_order_found_prima_facie_case and successor_reconsidered_same_materials",
+        "then": "successor_discharge_order_is_invalid"
+      },
+      "predicates": {
+        "criminal_case_pending_before_trial": "The case was before a criminal court for consideration of whether the accused should face trial.",
+        "earlier_order_found_prima_facie_case": "An earlier judge found that the available materials made out a prima facie case against the accused.",
+        "successor_reconsidered_same_materials": "A successor judge reconsidered the materials already considered by the earlier judge and reached a contrary conclusion."
+      },
+      "definition": "When a criminal case is pending before trial, an earlier prima facie finding was made, and a successor reconsiders the same materials, the successor's discharge order is invalid."
+    },
+    {
+      "legal_issue": "At the charge stage, a court may not discharge accused by deciding the merits without evidence being tried when the prosecution materials disclose a prima facie case.",
+      "material_facts": [
+        "The prosecution records disclosed alleged wrongful demarcations, cutting of government trees, improper compounding of an offence, and a forged agreement and application.",
+        "The Special Judge assessed the merits, relied on assumptions and surmises, and discharged the accused without recording evidence.",
+        "The court found that the question whether the charges would ultimately be proved could be decided only after evidence was recorded."
+      ],
+      "conclusion": "The discharge order was unsustainable; the case had to be restored for charges to be framed and the trial to proceed.",
+      "legal_principle": "Under Section 239 of the Code of Criminal Procedure, discharge is available when the charge is groundless. At the charge stage, the court asks whether a prima facie case is made out; it must not determine whether the charges will ultimately be proved or decide the case on its merits without evidence. No earlier cases were cited.",
+      "rule": {
+        "if": "case_is_at_charge_stage and prosecution_material_discloses_prima_facie_case and judge_decided_merits_without_trial_evidence",
+        "then": "accused_must_be_sent_for_trial"
+      },
+      "predicates": {
+        "case_is_at_charge_stage": "The court was deciding whether the accused should be charged and tried.",
+        "prosecution_material_discloses_prima_facie_case": "The prosecution materials, if considered at the threshold, disclosed a prima facie case against the accused.",
+        "judge_decided_merits_without_trial_evidence": "The judge resolved the merits of the allegations without first recording evidence at trial."
+      },
+      "definition": "If a case is at the charge stage, the prosecution materials disclose a prima facie case, and the judge decides the merits without trial evidence, the accused must be sent for trial."
+    },
+    {
+      "legal_issue": "A conspirator need not actively participate in every offence committed by other conspirators pursuant to their common agreement.",
+      "material_facts": [
+        "The prosecution alleged a coordinated scheme involving illicit felling of trees, forged applications, wrongful demarcations, permits, and sales of timber.",
+        "The Special Judge divided the alleged scheme into separate sets of acts and treated the absence of each accused's active participation in each act as absolving that accused."
+      ],
+      "conclusion": "The Special Judge's view was wrong: conspirators may be liable for offences committed pursuant to the conspiracy even if some did not actively participate in those offences.",
+      "legal_principle": "Criminal conspiracy consists of a meeting of minds of two or more persons agreeing to do, or cause to be done, an illegal act or an act by illegal means, together with performance of an act in furtherance of the agreement. When offences are committed pursuant to the conspiracy, all conspirators are liable for them even if some did not actively participate in their commission. The Court relied on the conspiracy charge under the Indian Penal Code and cited no earlier cases.",
+      "rule": {
+        "if": "conspiracy_case and participants_agreed_to_common_illegal_scheme and offences_were_committed_pursuant_to_scheme",
+        "then": "participants_need_not_commit_each_pursuant_offense"
+      },
+      "predicates": {
+        "conspiracy_case": "The case alleges that two or more people acted pursuant to a common criminal agreement.",
+        "participants_agreed_to_common_illegal_scheme": "The participants agreed to carry out an illegal act or to use illegal means.",
+        "offences_were_committed_pursuant_to_scheme": "One or more offences were committed in carrying out the agreed scheme."
+      },
+      "definition": "In a conspiracy case, when participants agreed to a common illegal scheme and offences were committed pursuant to it, each participant need not have committed every such offence."
+    }
+  ],
+  "seconds": 15.8
+}

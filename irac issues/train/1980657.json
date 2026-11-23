@@ -1,0 +1,62 @@
+{
+  "doc_id": "1980657",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26560,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1674,
+    "prompt_tokens": 7010,
+    "total_tokens": 8684,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A vendor is a necessary party to a suit seeking specific performance of a sale agreement where the property has subsequently been transferred to another purchaser.",
+      "material_facts": [
+        "The plaintiffs sought specific performance of an agreement against the original vendor and subsequent purchasers.",
+        "The requested conveyance could require the vendor to give effect to terms of the original agreement, while the subsequent purchasers would join to pass their title.",
+        "The plaintiffs also sought, in the alternative, repayment of amounts from the vendor."
+      ],
+      "conclusion": "The vendor was a necessary party because the conveyance required his participation and the alternative monetary relief could not be granted in his absence.",
+      "legal_principle": "A decree for specific performance should put the purchaser in the position they would have occupied had the contracting parties completed the sale; the vendor must therefore join in the conveyance, while a subsequent transferee joins to pass the title vested in them. The Court applied Lala Durga Prasad v. Lala Deep Chand, [1954] S.C.R. 360, and R. C. Chandiok v. Chuni Lal Sabharwal, [1971] 2 S.C.R. 573. It also relied on the need for the vendor's presence to grant alternative relief against the vendor.",
+      "rule": {
+        "if": "specific_performance_case and vendor_is_to_execute_conveyance and alternative_repayment_is_sought_from_vendor",
+        "then": "vendor_is_a_necessary_party"
+      },
+      "predicates": {
+        "specific_performance_case": "The proceeding seeks specific performance of an agreement to sell property that has been transferred to a subsequent purchaser.",
+        "vendor_is_to_execute_conveyance": "The original vendor must participate in executing the conveyance, including to give effect to terms of the original sale agreement.",
+        "alternative_repayment_is_sought_from_vendor": "The claimant seeks repayment of money from the original vendor as alternative relief."
+      },
+      "definition": "When a specific-performance case requires the vendor to execute the conveyance and seeks alternative repayment from that vendor, the vendor is a necessary party."
+    },
+    {
+      "legal_issue": "An appeal cannot proceed as a whole after it abates against a deceased respondent when deciding the remaining appeal would require inconsistent decrees or leave necessary relief unavailable, and the general appellate power to vary a decree for the benefit of parties does not cure that problem.",
+      "material_facts": [
+        "The appeal was brought by subsequent purchasers against a decree for specific performance that required payment jointly to the vendor and the subsequent purchasers.",
+        "The plaintiffs had also sought substantial alternative monetary relief against the vendor.",
+        "The vendor died while the appeal was pending, and the application to substitute the vendor's legal representatives was dismissed.",
+        "Setting aside the specific-performance decree would affect the joint decree, and the alternative monetary relief could not be granted without the vendor or the vendor's legal representatives."
+      ],
+      "conclusion": "The abatement concerning the vendor was fatal to the entire appeal; Order 41, Rule 4 of the Code of Civil Procedure did not allow the appeal to proceed, and the appeal was dismissed.",
+      "legal_principle": "Under Order 22, Rule 3 of the Code of Civil Procedure, an appeal abates as against a deceased party when the required legal representatives are not brought on record. Under State of Punjab v. Nathu Ram, [1962] 2 S.C.R. 636, abatement makes the decree between the appellant and the deceased respondent final and prevents its direct or indirect modification. Rameshwar Prasad v. M/s Shyam Beharilal Jagannath, [1964] 3 S.C.R. 549, and Pandit Siri Chand v. M/s Jagdish Parshad Kishin Chand, [1966] 3 S.C.R. 451, support the rule that an appeal cannot continue where it is not properly constituted or its success would produce inconsistent decrees. Order 41, Rule 4 cannot overcome those problems where reversing the decree would affect a joint decree or required relief against the deceased party cannot be granted.",
+      "rule": {
+        "if": "appeal_case and respondent_dies_during_appeal and legal_representatives_not_substituted_in_time and (relief_would_modify_joint_decree or success_would_create_inconsistent_decrees or necessary_relief_unavailable_without_deceased_party)",
+        "then": "entire_appeal_is_incompetent"
+      },
+      "predicates": {
+        "appeal_case": "The proceeding is an appeal from a decree.",
+        "respondent_dies_during_appeal": "A respondent dies while the appeal is pending.",
+        "legal_representatives_not_substituted_in_time": "The deceased respondent's legal representatives are not brought on record within the required time.",
+        "relief_would_modify_joint_decree": "The relief sought on appeal would require changing a decree made jointly in favour of the deceased party and other parties.",
+        "success_would_create_inconsistent_decrees": "Allowing the appeal while the deceased party's decree remains final would result in inconsistent decrees concerning the same subject matter.",
+        "necessary_relief_unavailable_without_deceased_party": "The court cannot grant relief required to resolve the dispute without the deceased party or their legal representatives."
+      },
+      "definition": "When an appeal concerns a deceased respondent whose legal representatives were not substituted in time, and granting the appeal would modify a joint decree, create inconsistent decrees, or leave necessary relief unavailable, the entire appeal is incompetent."
+    }
+  ],
+  "seconds": 11.4
+}

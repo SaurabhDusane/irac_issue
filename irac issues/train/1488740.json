@@ -1,0 +1,101 @@
+{
+  "doc_id": "1488740",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 40922,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3329,
+    "prompt_tokens": 10281,
+    "total_tokens": 13610,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Land outside private holdings that is not within a protected category vests in the village body, which is entitled to compensation when the land is acquired.",
+      "material_facts": [
+        "The disputed land was recorded as Gair Mumkin Pahar and was not included in the private respondents’ holdings.",
+        "The private respondents claimed compensation as owners or proprietors, but did not claim to be Bhumidhars or Asamis of the land.",
+        "The acquired land did not fall within the property categories whose ownership continued under the statute."
+      ],
+      "conclusion": "The land had vested in the Gaon Sabha, which was entitled to the entire compensation amount; the private respondents were not entitled to compensation.",
+      "legal_principle": "Under Sections 3(11a), 3(12A), 4, 5, 8 and 154 of the Delhi Land Reforms Act, land outside a proprietor’s holding does not remain with that proprietor merely because it is recorded as Gair Mumkin Pahar; land not comprised in a holding or grove vests in the Gaon Sabha, subject to the specified exceptions. A person claiming only as a proprietor cannot claim rights that the Act recognizes for Bhumidhars, Asamis, or owners of the property described in Section 8. The Court applied Hatti v. Sunder Singh, [1970] 2 SCC 841, and Nathu v. Hukam Singh, AIR 1983 Delhi 216.",
+      "rule": {
+        "if": "land_acquisition_compensation_dispute and land_outside_private_holdings and claimants_claimed_only_as_proprietors and land_outside_protected_property_categories",
+        "then": "gaon_sabha_entitled_to_compensation"
+      },
+      "predicates": {
+        "land_acquisition_compensation_dispute": "The proceeding concerned who was entitled to compensation for acquired land.",
+        "land_outside_private_holdings": "The disputed land was not included in the private claimants’ holdings.",
+        "claimants_claimed_only_as_proprietors": "The private claimants relied on ownership or proprietary status and did not claim a recognized tenure-holder status in the land.",
+        "land_outside_protected_property_categories": "The land was not among the specified kinds of property that continued to belong to a proprietor, tenant, or other person.",
+        "gaon_sabha_entitled_to_compensation": "The village body is entitled to the compensation for the acquired land."
+      },
+      "definition": "When a compensation dispute concerns land outside private holdings and protected property categories, and the private claimants rely only on proprietary status, the village body is entitled to compensation."
+    },
+    {
+      "legal_issue": "A civil court cannot determine a claim that in substance seeks recognition of tenure-holder rights over agricultural land, and a decree made without jurisdiction cannot create res judicata.",
+      "material_facts": [
+        "A civil suit sought a declaration that an order vesting the land in the Gaon Sabha was illegal and asserted rights in the land as proprietors or through a claim to tenure-holder status.",
+        "The governing statute assigned claims for declaration of tenure-holder rights to the designated revenue forum and excluded civil-court jurisdiction.",
+        "The decision in the earlier suit set aside the vesting order but directed the Deputy Commissioner to reconsider the matter; the rights of the individual claimants were never finally determined."
+      ],
+      "conclusion": "The civil court lacked jurisdiction, so the decree in the earlier suit was a nullity and did not operate as res judicata.",
+      "legal_principle": "Section 185 and the First Schedule to the Delhi Land Reforms Act assign claims for declaration of Bhumidhari rights to the designated revenue forum and bar civil-court jurisdiction. Hatti v. Sunder Singh, [1970] 2 SCC 841, and Gaon Sabha of Lado Sarai v. Jage Ram, ILR (1973) 1 Delhi 984, establish that a suit challenging vesting is outside civil jurisdiction when its substance is a claim to tenure-holder rights. Under Kiran Singh v. Chaman Paswan, AIR 1954 SC 340, a decree passed without jurisdiction is a nullity and may be challenged whenever relied upon. Because the earlier proceedings remanded the matter for reconsideration and did not finally determine individual rights, there was no res judicata.",
+      "rule": {
+        "if": "civil_suit_challenged_land_vesting and relief_required_recognition_of_tenure_holder_rights and statute_assigned_claim_to_revenue_forum and earlier_proceeding_did_not_finally_determine_rights",
+        "then": "civil_decree_is_nullity_and_does_not_create_res_judicata"
+      },
+      "predicates": {
+        "civil_suit_challenged_land_vesting": "A party brought a civil suit seeking to invalidate an order vesting agricultural land in a village body.",
+        "relief_required_recognition_of_tenure_holder_rights": "The substance of the requested relief was recognition of the claimant’s tenure-holder rights in the land.",
+        "statute_assigned_claim_to_revenue_forum": "The governing legal scheme assigned that kind of rights claim to a designated revenue forum rather than a civil court.",
+        "earlier_proceeding_did_not_finally_determine_rights": "The earlier proceeding directed a fresh determination and left the parties’ individual rights unresolved.",
+        "civil_decree_is_nullity_and_does_not_create_res_judicata": "A civil-court decree made without jurisdiction is a nullity and does not bar later determination of rights as res judicata."
+      },
+      "definition": "When a civil suit challenging land vesting requires recognition of tenure-holder rights assigned to another forum, and the earlier proceeding did not finally determine those rights, the civil decree is a nullity and creates no res judicata."
+    },
+    {
+      "legal_issue": "An order vesting land in the village body may be made where the land is outside the proprietor’s holding, notwithstanding its description as uncultivated or waste land.",
+      "material_facts": [
+        "The disputed land was recorded as Gair Mumkin Pahar.",
+        "The land was not included in the private respondents’ holdings.",
+        "The respondents challenged the authority to make an order vesting the land in the Gaon Sabha on the ground that it was not waste land."
+      ],
+      "conclusion": "The vesting order could validly be issued because the land was not included in the respondents’ holdings.",
+      "legal_principle": "The definition of waste land in the Explanation to Section 7 of the Delhi Land Reforms Act is inclusive; its relevant exception concerns uncultivated land included in the holding of the proprietor. Because the disputed land was outside the respondents’ holdings, its description as Gair Mumkin Pahar did not prevent a vesting notification under Section 7(2).",
+      "rule": {
+        "if": "vesting_order_disputed and land_outside_proprietor_holding",
+        "then": "vesting_order_valid"
+      },
+      "predicates": {
+        "vesting_order_disputed": "A party disputed an order purporting to vest land in a village body.",
+        "land_outside_proprietor_holding": "The land was not included in the relevant proprietor’s holding.",
+        "vesting_order_valid": "The vesting order may validly apply to the land."
+      },
+      "definition": "When a vesting order is disputed and the land is outside the proprietor’s holding, the vesting order may validly apply to it."
+    },
+    {
+      "legal_issue": "A non-speaking dismissal of a special leave petition in another matter does not bar the Supreme Court from examining the merits of a later appeal.",
+      "material_facts": [
+        "The respondents relied on summary dismissals of special leave petitions in similar matters.",
+        "The Court considered the issue on its merits in the appeals before it."
+      ],
+      "conclusion": "The earlier summary dismissals did not constitute res judicata and did not prevent examination of the appeals on their merits.",
+      "legal_principle": "A dismissal of a special leave petition without a speaking order does not constitute res judicata; the Court may examine the merits in a later matter. The judgment also rejected the contention that the involvement of a local Act made the High Court’s view immune from review under Article 136 of the Constitution.",
+      "rule": {
+        "if": "supreme_court_appeal_on_merits and similar_special_leave_petition_dismissed_without_reasoned_order",
+        "then": "prior_dismissal_does_not_bar_merits_review"
+      },
+      "predicates": {
+        "supreme_court_appeal_on_merits": "A matter is before the Supreme Court for consideration on its merits.",
+        "similar_special_leave_petition_dismissed_without_reasoned_order": "A special leave petition in a similar matter was dismissed summarily without a reasoned order.",
+        "prior_dismissal_does_not_bar_merits_review": "The earlier summary dismissal does not prevent the Supreme Court from examining the merits."
+      },
+      "definition": "When the Supreme Court is considering an appeal on its merits and a similar special leave petition was summarily dismissed without reasons, that dismissal does not bar merits review."
+    }
+  ],
+  "seconds": 20.8
+}

@@ -1,0 +1,59 @@
+{
+  "doc_id": "355821",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29338,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2450,
+    "prompt_tokens": 8060,
+    "total_tokens": 10510,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person inducted as a tenant of inam land may acquire occupancy-tenant status even if the tenancy was terminated before the revenue code commenced, provided the person continued to hold the land at commencement.",
+      "material_facts": [
+        "The landholder terminated the tenancy on the ground that he wanted the land for personal cultivation and sued for ejectment.",
+        "The tenant continued to hold the land when the revenue code came into force.",
+        "The tenant claimed occupancy-tenant rights under the code while the ejectment suit was pending."
+      ],
+      "conclusion": "The tenant acquired occupancy-tenant rights under the code notwithstanding the earlier termination of the tenancy.",
+      "legal_principle": "Under section 185(1)(ii)(a) of the Madhya Pradesh Land Revenue Code, the expression “tenant” is read in context and in light of the protective purpose of the Madhya Bharat Muafi and Inam Tenants and Sub-tenants Protection Act, 1954. The definition in section 2(y) does not determine the status of a person at the code’s commencement. Sections 3 and 4 of the 1954 Act protected a person inducted as a tenant who continued to hold the land even after the contractual relationship had ended. The parallel treatment of ryotwari sub-lessees under section 185(1)(ii)(b), read with the Madhya Bharat Ryotwari Sub-Lessee Protection Act, 1955, supports the same construction for inam-land tenants.",
+      "rule": {
+        "if": "occupancy_status_claim and inam_land_tenancy and tenancy_terminated_before_code and continued_to_hold_land",
+        "then": "acquires_occupancy_tenant_status"
+      },
+      "predicates": {
+        "occupancy_status_claim": "The person claimed the statutory status of an occupancy tenant.",
+        "inam_land_tenancy": "The person had been inducted into inam land in a tenant category covered by the statutory protection.",
+        "tenancy_terminated_before_code": "The tenancy relationship had ended before the revenue code commenced.",
+        "continued_to_hold_land": "The person remained in possession of the land when the revenue code commenced."
+      },
+      "definition": "When a person claims occupancy status after an inam-land tenancy has ended but continues to hold the land at commencement, the person acquires occupancy-tenant status."
+    },
+    {
+      "legal_issue": "Occupancy-tenant protections apply to a pending civil ejectment case, and the transitional and repeal provisions do not preserve an ejectment claim so as to defeat occupancy rights conferred by the code.",
+      "material_facts": [
+        "An ejectment suit based on the landholder’s claim to recover the land for personal cultivation was pending when the code came into force.",
+        "The tenant acquired occupancy-tenant status under the code while the suit was pending.",
+        "The claimed right to evict arose under the general law governing landlord and tenant, rather than under a law repealed by the code."
+      ],
+      "conclusion": "The pending suit remained with the civil court for disposal under the applicable prior procedure, but the code’s substantive occupancy protections applied; the tenant could not be evicted for the stated personal-cultivation ground.",
+      "legal_principle": "Sections 261 and 262(2) of the Madhya Pradesh Land Revenue Code do not prevent the application of section 185 to pending ejectment proceedings. Section 261 preserves rights acquired under repealed laws, but the asserted right to evict arose under the general law, not a repealed enactment. Section 262(2) preserves the civil court’s jurisdiction and the applicable procedure for a pending suit; it does not nullify occupancy rights conferred by the code. Under section 193, eviction of an occupancy tenant must be on the grounds specified there, and personal cultivation is not such a ground. The Court also considered the provisions for resuming proceedings after a stay in sections 6 of the 1954 and 1955 protection Acts.",
+      "rule": {
+        "if": "pending_civil_ejectment_case and occupancy_status_conferred and personal_cultivation_ejectment_claim",
+        "then": "tenant_protected_from_ejectment_on_personal_cultivation_ground"
+      },
+      "predicates": {
+        "pending_civil_ejectment_case": "A civil ejectment suit was pending when the new land-revenue regime commenced.",
+        "occupancy_status_conferred": "The tenant acquired statutory occupancy rights while the suit was pending.",
+        "personal_cultivation_ejectment_claim": "The landholder sought ejectment on the ground of needing the land for personal cultivation."
+      },
+      "definition": "In a pending civil ejectment case, a tenant who has acquired occupancy rights is protected from ejectment when the landholder relies on personal cultivation."
+    }
+  ],
+  "seconds": 16.3
+}

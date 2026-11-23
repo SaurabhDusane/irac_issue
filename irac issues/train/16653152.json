@@ -1,0 +1,129 @@
+{
+  "doc_id": "16653152",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 62382,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4137,
+    "prompt_tokens": 15128,
+    "total_tokens": 19265,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The lapse condition for an acquisition under the former land acquisition regime is satisfied if either physical possession was not taken or compensation was not paid, provided the award was made sufficiently long before the replacement regime commenced.",
+      "material_facts": [
+        "The acquisition proceedings were initiated under the former land acquisition law and the award was made more than five years before the replacement legislation commenced.",
+        "Physical possession was taken, but compensation had not been tendered or paid to the landowners and had not been deposited in the reference court.",
+        "The authorities deposited the compensation in court only immediately before the replacement legislation commenced."
+      ],
+      "conclusion": "The conditions for lapse were satisfied because compensation had not been paid as required, even though physical possession had been taken; the acquisition proceedings were deemed to have lapsed.",
+      "legal_principle": "Section 24(2) of the 2013 Act uses “or” in setting out the two alternative conditions—possession not taken or compensation not paid. Its plain meaning does not permit “or” to be read as “and.” Pune Municipal Corporation v. H.M. Solanki, followed in subsequent cases, establishes that either condition is sufficient where the award was made five years or more before the 2013 Act commenced.",
+      "rule": {
+        "if": "legacy_acquisition_case and award_made_well_before_replacement_regime and (physical_possession_not_taken or compensation_not_paid_as_required)",
+        "then": "acquisition_deemed_lapsed"
+      },
+      "predicates": {
+        "legacy_acquisition_case": "The proceeding concerns an acquisition initiated under an earlier land acquisition regime.",
+        "award_made_well_before_replacement_regime": "The acquisition award was made sufficiently long before the replacement regime commenced to meet its applicable time threshold.",
+        "physical_possession_not_taken": "The acquiring authority had not taken physical possession of the land.",
+        "compensation_not_paid_as_required": "The acquiring authority had not paid compensation in the legally prescribed manner.",
+        "acquisition_deemed_lapsed": "The acquisition proceeding is treated as having lapsed."
+      },
+      "definition": "For an acquisition under an earlier regime with an award made sufficiently before the replacement regime, either failure to take possession or failure to pay compensation as required results in the acquisition being treated as lapsed."
+    },
+    {
+      "legal_issue": "Compensation is not treated as paid merely because it was deposited in a treasury; the authority must tender payment and, when a statutory impediment prevents payment, deposit the compensation in the court designated to receive it.",
+      "material_facts": [
+        "The acquiring authority was not ready with the compensation when the award was made and supplied it to the Collector years later.",
+        "The Collector did not tender or pay the compensation to the original landowners.",
+        "The compensation was deposited in a treasury rather than in the court designated for a reference, and the authorities relied on a local standing order permitting treasury deposits in specified circumstances.",
+        "The court found that the standing order treated treasury deposit as a last resort after efforts to secure the payees’ attendance and did not make it a substitute for deposit in the reference court when the statutory contingencies applied."
+      ],
+      "conclusion": "The treasury deposit did not amount to payment of compensation for the purpose of determining lapse; compensation had not been paid as required.",
+      "legal_principle": "Sections 31(1) and 31(2) of the Land Acquisition Act, 1894 require the Collector to tender compensation to persons entitled to it and, when payment is prevented by the specified contingencies, to deposit it in the reference court. Section 34 concerns interest when compensation is not paid or deposited by the time possession is taken. Pune Municipal Corporation v. H.M. Solanki holds that compensation is treated as paid when it is tendered and, where a Section 31(2) contingency prevents payment, deposited in the reference court; a treasury deposit is insufficient. The Court also relied on Nazir Ahmad v. King Emperor for the principle that a prescribed statutory procedure must be followed, and on Agnelo Santimano Fernandes and Prem Nath Kapur for the ineffectiveness of a deposit in the State’s revenue account.",
+      "rule": {
+        "if": "legacy_acquisition_case and (compensation_not_tendered_to_entitled_person or (payment_prevented_by_statutory_contingency and not compensation_deposited_in_reference_court) or compensation_deposited_only_in_treasury)",
+        "then": "compensation_not_paid_as_required"
+      },
+      "predicates": {
+        "legacy_acquisition_case": "The proceeding concerns an acquisition initiated under an earlier land acquisition regime.",
+        "compensation_not_tendered_to_entitled_person": "The acquiring authority did not offer the compensation to the person entitled to receive it.",
+        "payment_prevented_by_statutory_contingency": "A legally recognized impediment prevented the acquiring authority from paying the person entitled to compensation.",
+        "compensation_deposited_in_reference_court": "The acquiring authority deposited the compensation in the court designated to receive it for a compensation reference.",
+        "compensation_deposited_only_in_treasury": "The acquiring authority placed the compensation in a government treasury without making the required payment or court deposit.",
+        "compensation_not_paid_as_required": "Compensation has not been paid in the legally prescribed manner."
+      },
+      "definition": "Compensation is treated as unpaid when it was not tendered to the person entitled to it, or when an impediment to payment was not followed by the required court deposit; a treasury deposit alone does not change that result."
+    },
+    {
+      "legal_issue": "An acquisition may be deemed to have lapsed for non-payment of compensation even after possession has been taken and the land has vested in the State.",
+      "material_facts": [
+        "A possession record showed that possession of the open land had been taken and handed to government representatives.",
+        "Compensation had not been tendered or paid to the landowners in the prescribed manner.",
+        "The acquiring authorities argued that vesting made lapse impossible, relying on the rule concerning lapse under the earlier statute."
+      ],
+      "conclusion": "The deeming provision applies despite prior possession and vesting when compensation has not been paid; the earlier rule concerning lapse under the former statute does not prevent that result.",
+      "legal_principle": "Section 24(2) of the 2013 Act expressly deems qualifying proceedings to have lapsed. Its wording differs from Section 11A of the Land Acquisition Act, 1894, which uses “lapse.” The Court applied the effect of a statutory deeming fiction and distinguished Satendra Prasad Jain v. State of U.P., whose limited ratio was explained in Laxmi Devi v. State of Bihar.",
+      "rule": {
+        "if": "legacy_acquisition_case and award_made_well_before_replacement_regime and possession_taken_and_land_vested and compensation_not_paid_as_required",
+        "then": "acquisition_deemed_lapsed_despite_vesting"
+      },
+      "predicates": {
+        "legacy_acquisition_case": "The proceeding concerns an acquisition initiated under an earlier land acquisition regime.",
+        "award_made_well_before_replacement_regime": "The acquisition award was made sufficiently long before the replacement regime commenced to meet its applicable time threshold.",
+        "possession_taken_and_land_vested": "The acquiring authority took possession and the land consequently vested in the State.",
+        "compensation_not_paid_as_required": "The acquiring authority had not paid compensation in the legally prescribed manner.",
+        "acquisition_deemed_lapsed_despite_vesting": "The acquisition is treated as lapsed even though possession was taken and the land vested in the State."
+      },
+      "definition": "When an old acquisition meets the applicable award-time condition but compensation remains unpaid as required, the acquisition is treated as lapsed even if possession was taken and the land vested."
+    },
+    {
+      "legal_issue": "A dispute arising from a transfer made after the acquisition declaration does not excuse the acquiring authority’s failure to tender or pay compensation to the person entitled to it.",
+      "material_facts": [
+        "The land had been transferred to subsequent purchasers after the acquisition declaration.",
+        "The authorities argued that uncertainty about whether the original owner or subsequent purchasers should receive compensation prevented tender or payment.",
+        "The court found that the authorities were not genuinely in a dilemma and that the court deposit had been made for payment to the original owner."
+      ],
+      "conclusion": "The asserted dispute over the subsequent purchasers did not excuse the failure to tender or pay compensation.",
+      "legal_principle": "Section 4 of the Delhi Lands (Restrictions on Transfer) Act, 1972 renders a transfer made after the relevant acquisition declaration illegal where that provision applies. Relying on Meera Sahni v. Lt. Governor of Delhi, the Court rejected the claimed uncertainty over the proper recipient as a basis for excusing non-payment.",
+      "rule": {
+        "if": "legacy_acquisition_case and transfer_after_acquisition_declaration and authority_withheld_compensation_over_recipient_dispute and original_owner_remained_entitled_to_compensation",
+        "then": "recipient_dispute_does_not_excuse_nonpayment"
+      },
+      "predicates": {
+        "legacy_acquisition_case": "The proceeding concerns an acquisition initiated under an earlier land acquisition regime.",
+        "transfer_after_acquisition_declaration": "The land was transferred after the public acquisition declaration had been made.",
+        "authority_withheld_compensation_over_recipient_dispute": "The acquiring authority relied on uncertainty between competing claimants as its reason for not tendering or paying compensation.",
+        "original_owner_remained_entitled_to_compensation": "The original owner remained the person to whom the acquiring authority was required to tender compensation.",
+        "recipient_dispute_does_not_excuse_nonpayment": "The competing-recipient claim does not excuse the authority’s failure to tender or pay compensation."
+      },
+      "definition": "When land is transferred after an acquisition declaration and the original owner remains entitled to compensation, uncertainty asserted by the authority about the recipient does not excuse non-payment."
+    },
+    {
+      "legal_issue": "A panchnama recording possession is ordinarily sufficient evidence that physical possession was taken where the acquired land is vacant and open.",
+      "material_facts": [
+        "The acquired land was an open piece of land.",
+        "A panchnama recorded that possession had been recovered and handed over to government representatives and was signed by the relevant officers.",
+        "The landowners disputed that possession had been taken in accordance with law."
+      ],
+      "conclusion": "Physical possession had been taken because the land was open and vacant and the panchnama recorded the taking and handover of possession.",
+      "legal_principle": "Raghbir Singh Sehrawat v. State of Haryana, applying the propositions in Banda Development Authority v. Moti Lal Agarwal and the cases reviewed there, holds that for vacant acquired land, the authority’s visit to the site and preparation of a panchnama will ordinarily suffice to establish possession. Different steps may be required where crops or structures are present.",
+      "rule": {
+        "if": "acquisition_possession_assessment and acquired_land_open_and_vacant and possession_panchnama_records_taking",
+        "then": "physical_possession_treated_as_taken"
+      },
+      "predicates": {
+        "acquisition_possession_assessment": "The proceeding requires the court to determine whether possession of acquired land was taken.",
+        "acquired_land_open_and_vacant": "The acquired land was open and vacant, without crops or structures requiring additional possession-taking steps.",
+        "possession_panchnama_records_taking": "The authority prepared a panchnama recording that possession was taken.",
+        "physical_possession_treated_as_taken": "Physical possession is treated as having been taken."
+      },
+      "definition": "In an assessment of possession for acquired land, an official panchnama recording the taking of possession ordinarily establishes possession when the land is open and vacant."
+    }
+  ],
+  "seconds": 24.4
+}

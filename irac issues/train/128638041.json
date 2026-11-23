@@ -1,0 +1,78 @@
+{
+  "doc_id": "128638041",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19734,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2980,
+    "prompt_tokens": 5263,
+    "total_tokens": 8243,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A deceased coparcener’s interest that devolves by intestate succession to Class I heirs is inherited individually by those heirs rather than as joint family property.",
+      "material_facts": [
+        "A coparcener died intestate, leaving a wife and daughters who were Class I heirs.",
+        "A notional partition immediately before his death would have determined his share in the coparcenary property.",
+        "The deceased’s share was claimed by his heirs in a suit for partition."
+      ],
+      "conclusion": "The deceased’s share devolved under the Hindu Succession Act to his heirs individually, who held it as tenants in common; it did not remain joint family property.",
+      "legal_principle": "Under Section 6 of the Hindu Succession Act, 1956, including its proviso and Explanation 1, where a male Hindu leaves a Class I female heir, his coparcenary interest devolves by succession, with that interest determined by a notional partition immediately before death. Sections 8 and 19 provide for succession to heirs per capita as tenants in common, and Section 30 treats a coparcener’s interest as disposable property. Section 4(b) displaces inconsistent prior Hindu law. Gurupad Khandappa Magdum v. Hirabai Khandappa Magdum explains that the consequences of the deemed partition must be worked out; Commissioner of Wealth Tax v. Chander Sen and Appropriate Authority (IT Deptt) v. M. Arifulla establish that property devolving under Section 8 is individual property held by heirs as tenants in common, not HUF property.",
+      "rule": {
+        "if": "partition_claim_over_intestate_coparcenary_property and deceased_left_class_one_female_heirs",
+        "then": "inherited_interest_is_individual_property_held_in_common"
+      },
+      "predicates": {
+        "partition_claim_over_intestate_coparcenary_property": "The proceeding seeks partition of an interest in coparcenary property after its holder died intestate.",
+        "deceased_left_class_one_female_heirs": "The deceased left one or more female heirs who qualify as Class I heirs."
+      },
+      "definition": "When a partition claim concerns an intestate coparcener’s property and the deceased left Class I female heirs, the inherited interest is individual property held in common by the heirs."
+    },
+    {
+      "legal_issue": "A mother may act as the natural guardian of a minor whose share is relinquished in a family settlement, and the resulting disposition is voidable rather than void when the required court permission was not obtained.",
+      "material_facts": [
+        "A mother executed a registered release on behalf of her minor daughter, relinquishing the daughter’s share in favour of other family members.",
+        "The release formed part of an arrangement dissolving or settling the family’s interests in the property.",
+        "The Karta was among the persons in whose favour the minor’s share was relinquished, creating a conflict if the Karta were treated as the minor’s guardian.",
+        "No court permission was obtained for the disposition."
+      ],
+      "conclusion": "The mother, not the Karta, could act as the minor’s natural guardian in the circumstances; the release was not void ab initio but was at most voidable.",
+      "legal_principle": "Sections 6 and 8 of the Hindu Minority and Guardianship Act, 1956 govern natural guardianship and a natural guardian’s powers. Section 6 excludes a minor’s undivided interest in joint family property from its general rule, but a Karta is the manager of the joint family, not the guardian of its minor members. Where a family settlement relinquishes a minor’s share in favour of the Karta, the conflict prevents the Karta from acting for the minor; the mother is the natural guardian. Under Section 8, a disposition of a minor’s immovable property without the required prior court permission is voidable at the minor’s instance, not void.",
+      "rule": {
+        "if": "minor_property_release_dispute and mother_executed_release_for_minor and minor_share_relinquished_in_family_settlement and no_court_permission_was_obtained",
+        "then": "release_is_voidable_not_void"
+      },
+      "predicates": {
+        "minor_property_release_dispute": "The proceeding concerns a disposition of property belonging to a minor.",
+        "mother_executed_release_for_minor": "The minor’s mother executed a release on the minor’s behalf.",
+        "minor_share_relinquished_in_family_settlement": "The minor’s share was relinquished as part of a family settlement in favour of another family member.",
+        "no_court_permission_was_obtained": "The required prior court permission for the disposition was not obtained."
+      },
+      "definition": "When a mother executes a release for a minor as part of a family settlement without the required court permission, the release is voidable rather than void."
+    },
+    {
+      "legal_issue": "A minor’s challenge to a voidable disposition of immovable property is time-barred when it is brought after the applicable limitation period following the minor’s attainment of majority.",
+      "material_facts": [
+        "The plaintiff was a minor when her mother executed the release on her behalf.",
+        "The plaintiff attained majority but did not challenge the release within three years thereafter.",
+        "The partition suit was filed later, seeking to claim the share covered by the release."
+      ],
+      "conclusion": "The release could not be challenged as void after the applicable limitation period had expired; the trial court’s dismissal of the suit was restored.",
+      "legal_principle": "Section 8(3) of the Hindu Minority and Guardianship Act, 1956 makes a disposition in contravention of the applicable requirements voidable at the instance of the minor or a person claiming under the minor. The Court held that the plaintiff should have challenged the release within three years of attaining majority; the trial court’s dismissal on limitation was therefore restored.",
+      "rule": {
+        "if": "partition_suit_challenging_minor_release and minor_did_not_challenge_release_within_applicable_period_after_majority",
+        "then": "late_challenge_cannot_set_aside_release"
+      },
+      "predicates": {
+        "partition_suit_challenging_minor_release": "The proceeding seeks partition based on a claim that a release executed for a minor does not bind the minor.",
+        "minor_did_not_challenge_release_within_applicable_period_after_majority": "The minor attained majority and did not challenge the release within the applicable limitation period thereafter."
+      },
+      "definition": "When a partition suit challenges a release executed for a minor, but the minor did not challenge it within the applicable period after attaining majority, the late challenge cannot set the release aside."
+    }
+  ],
+  "seconds": 79.1
+}

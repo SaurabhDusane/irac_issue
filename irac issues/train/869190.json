@@ -1,0 +1,136 @@
+{
+  "doc_id": "869190",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33575,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3040,
+    "prompt_tokens": 7823,
+    "total_tokens": 10863,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An owner may invoke the statutory abandonment mechanism only when land included in a sanctioned scheme is subsequently found unnecessary for executing that scheme and the other statutory conditions are met.",
+      "material_facts": [
+        "The land had been included in a sanctioned development scheme and approved for acquisition.",
+        "The owners sought abandonment of the acquisition, relying in part on the land being a developed orchard.",
+        "There was no finding that the land had become unnecessary for executing the scheme."
+      ],
+      "conclusion": "Because the land had not been found unnecessary for the scheme, the owners had no standing to invoke the statutory abandonment mechanism; the orchard’s existence did not satisfy that threshold requirement.",
+      "legal_principle": "Section 56 of the Punjab Towns Improvement Act, 1922, applies when land acquired for a sanctioned scheme is subsequently discovered to be unnecessary for the scheme. It also imposes requirements concerning the timing and source of the application. The existence of an orchard is irrelevant if the land remains necessary. No earlier cases are relied on.",
+      "rule": {
+        "if": "acquisition_scheme_challenge and not land_found_unnecessary",
+        "then": "owner_cannot_invoke_abandonment_mechanism"
+      },
+      "predicates": {
+        "acquisition_scheme_challenge": "A landowner challenges acquisition of land included in a sanctioned development scheme.",
+        "land_found_unnecessary": "The land was subsequently found unnecessary for carrying out the scheme."
+      },
+      "definition": "When an owner challenges acquisition under a development scheme and the land has not been found unnecessary for that scheme, the owner cannot invoke the abandonment mechanism."
+    },
+    {
+      "legal_issue": "Equal protection does not entitle an owner to an exemption merely because another owner received one, particularly where the owners have not been shown to be similarly situated in all material respects or the claimant does not meet the governing eligibility requirements.",
+      "material_facts": [
+        "The owners alleged that other orchard lands had been exempted while their orchard land was not.",
+        "The record did not establish that the other landowner’s circumstances were similar in all essential particulars.",
+        "The owners’ land had not been found unnecessary for the scheme, and the asserted exemption of another owner did not establish that they met the statutory conditions."
+      ],
+      "conclusion": "The owners had not established hostile discrimination, and an exemption allegedly granted to another person, even if granted erroneously, did not give them a right to exemption.",
+      "legal_principle": "Article 14 of the Constitution requires equal treatment of persons in substantially the same circumstances, including in the administration of law. It does not require repetition of an erroneous benefit, nor does it assist a claimant who fails to satisfy the applicable requirements of Section 56 of the Punjab Towns Improvement Act, 1922. No earlier cases are relied on.",
+      "rule": {
+        "if": "acquisition_exemption_challenge and (not similarly_situated or claimant_ineligible)",
+        "then": "equal_protection_claim_fails"
+      },
+      "predicates": {
+        "acquisition_exemption_challenge": "A person challenges the administration of an acquisition scheme on the ground that another landowner received an exemption.",
+        "similarly_situated": "The claimant and the person who received an exemption are alike in all material circumstances.",
+        "claimant_ineligible": "The claimant does not satisfy the requirements governing the claimed exemption."
+      },
+      "definition": "In an acquisition-exemption challenge, the equality claim fails if the claimant is not similarly situated to the beneficiary or does not meet the governing eligibility requirements."
+    },
+    {
+      "legal_issue": "A post-sanction government communication expressing a preference for exempting developed orchards does not itself give landowners a right to exemption or to alteration of a sanctioned scheme.",
+      "material_facts": [
+        "The scheme had been finally sanctioned before the government communication concerning developed orchards was issued.",
+        "The communication advised against acquiring developed orchards, but the court found no statutory basis for treating it as a general policy decision that altered the sanctioned scheme or created an enforceable right.",
+        "The statutory process had provided opportunities to object before the scheme was sanctioned."
+      ],
+      "conclusion": "The communication did not give the owners a right to have their orchard land exempted from acquisition.",
+      "legal_principle": "Sections 36, 38, 40 and 41 of the Punjab Towns Improvement Act, 1922, provide a process for notice, objections, consideration and sanction of a scheme. The Act does not provide that a later policy communication changes a finally sanctioned scheme or gives owners a right to exemption. No earlier cases are relied on.",
+      "rule": {
+        "if": "acquisition_scheme_challenge and policy_communication_postdates_final_approval and no_lawful_basis_for_exemption",
+        "then": "policy_communication_creates_no_exemption_right"
+      },
+      "predicates": {
+        "acquisition_scheme_challenge": "A landowner challenges acquisition under a sanctioned development scheme.",
+        "policy_communication_postdates_final_approval": "The government communicated a preference about land treatment after the scheme had received final approval.",
+        "no_lawful_basis_for_exemption": "No applicable legal authority makes the later communication a basis for exempting the land."
+      },
+      "definition": "A later government communication creates no exemption right when it follows final approval of a scheme and has no legal basis for changing the land’s treatment."
+    },
+    {
+      "legal_issue": "The power to alter a sanctioned scheme before execution does not give an owner a right to compel an alteration to exclude the owner's land.",
+      "material_facts": [
+        "The owners sought exclusion of their land from an already sanctioned scheme.",
+        "The Trust considered the land necessary to the scheme, which was treated as an integrated development plan.",
+        "The owners relied on the Trust’s power to alter a scheme between sanction and execution."
+      ],
+      "conclusion": "The owners had no right to compel alteration of the scheme to exclude their land, whether under the alteration power or independently of the statutory mechanisms for abandoning acquisition.",
+      "legal_principle": "Section 43 of the Punjab Towns Improvement Act, 1922, empowers the Trust to alter a scheme between its sanction and execution but does not confer on an owner a right to demand an alteration. Section 43 must be read consistently with Section 56, which provides for abandonment when the land is found unnecessary and its other conditions are met. The Court did not express a considered opinion on the full scope of Section 43. No earlier cases are relied on.",
+      "rule": {
+        "if": "sanctioned_scheme_challenge and scheme_alteration_is_discretionary and land_remains_necessary",
+        "then": "owner_cannot_compel_scheme_alteration"
+      },
+      "predicates": {
+        "sanctioned_scheme_challenge": "A landowner seeks to have land excluded from a scheme that has already been sanctioned.",
+        "scheme_alteration_is_discretionary": "The relevant authority has power, but no duty owed to the owner, to alter the scheme before execution.",
+        "land_remains_necessary": "The authority considers the land necessary to the scheme."
+      },
+      "definition": "An owner challenging a sanctioned scheme cannot compel its alteration when alteration is discretionary and the land remains necessary."
+    },
+    {
+      "legal_issue": "The authority is not required by the governing statute to give reasons explaining why particular land is necessary for a scheme when deciding an application for abandonment.",
+      "material_facts": [
+        "The owners argued that the Trust, acting in a quasi-judicial capacity, had to explain why all of their land was necessary.",
+        "The statute contained no provision imposing that obligation on the Trust when deciding an application for abandonment.",
+        "The Trust stated that the land was necessary for the development scheme."
+      ],
+      "conclusion": "The Trust was not statutorily bound to give reasons explaining why the entire parcel was necessary for executing the scheme.",
+      "legal_principle": "The Court found no provision of the Punjab Towns Improvement Act, 1922, requiring the Trust to give such reasons when deciding under Section 56. No earlier cases are relied on.",
+      "rule": {
+        "if": "abandonment_application_proceeding and no_statutory_reason_giving_duty",
+        "then": "authority_not_required_to_give_land_necessity_reasons"
+      },
+      "predicates": {
+        "abandonment_application_proceeding": "An authority decides an owner’s application seeking abandonment of acquisition for land included in a scheme.",
+        "no_statutory_reason_giving_duty": "The governing law does not impose a duty to explain why the particular land is necessary when deciding the application."
+      },
+      "definition": "When an authority decides an abandonment application and the governing law imposes no duty to explain land necessity, it need not provide those reasons."
+    },
+    {
+      "legal_issue": "An earlier order requiring an authority to hear an exemption claim and decide it on its merits does not bind the parties on substantive issues that the earlier court did not determine.",
+      "material_facts": [
+        "In earlier proceedings, the court directed the Trust to give the owners a full opportunity to be heard and then decide their exemption claim on its merits.",
+        "The earlier court did not decide the disputed substantive questions concerning the owners’ entitlement to exemption.",
+        "The Trust later heard and rejected the owners’ application, and the owners relied on the earlier order in challenging that decision."
+      ],
+      "conclusion": "The earlier order did not determine or bind the parties on the substantive issues raised in the later proceedings.",
+      "legal_principle": "An order directing a hearing and a decision on the merits does not constitute a considered decision on substantive issues that were left open. No earlier cases are relied on.",
+      "rule": {
+        "if": "exemption_challenge_proceeding and prior_order_directed_hearing_only and no_substantive_issue_decided",
+        "then": "prior_order_does_not_bind_substantive_entitlement"
+      },
+      "predicates": {
+        "exemption_challenge_proceeding": "A landowner challenges the rejection of a request for exemption from acquisition.",
+        "prior_order_directed_hearing_only": "An earlier order required the authority to hear the claimant and decide the claim on its merits.",
+        "no_substantive_issue_decided": "The earlier court did not decide the substantive entitlement now disputed."
+      },
+      "definition": "In an exemption challenge, an earlier order requiring a hearing does not bind the parties on entitlement when the earlier court did not decide that issue."
+    }
+  ],
+  "seconds": 18.6
+}

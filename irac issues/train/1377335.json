@@ -1,0 +1,65 @@
+{
+  "doc_id": "1377335",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 69559,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2438,
+    "prompt_tokens": 17337,
+    "total_tokens": 19775,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person remaining in possession after the contractual tenancy has ended cannot sublet the premises so as to give the subtenant a right to become the landlord’s tenant.",
+      "material_facts": [
+        "The contractual lease expired and was not renewed, but the tenant remained in possession under statutory protection.",
+        "While remaining in possession under that protection, the tenant sublet part of the premises.",
+        "The subtenant claimed that, when the tenant’s interest ended, it became a direct tenant of the landlord."
+      ],
+      "conclusion": "The statutory tenant had no right to sublet, and the subtenant acquired no right to become the landlord’s tenant under section 14.",
+      "legal_principle": "Under sections 12, 14 and 15 of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, a statutory tenant has only a personal right to remain in possession and no estate or interest in the premises capable of being sublet. Section 15(1) concerns contractual tenants, and section 15(2) validates certain pre-Ordinance sublettings by contractual tenants; it does not authorize subletting by statutory tenants. Section 14 benefits a subtenant only where the premises were lawfully sublet. The court distinguished Roe v. Russel and Lewis v. Reeves because the English legislation considered in those cases preserved the benefit of the original tenancy terms, unlike section 12(1) of the Bombay Act. It also distinguished Krishna Prasad Bose v. Sm. Sarajubala Dassi, which concerned different statutory provisions, and referred to Solomon v. Orwell concerning the limits of a subtenant’s derivative rights.",
+      "rule": {
+        "if": "statutory_tenancy and lease_expired and no_renewal and tenant_sublet_part and subtenant_claimed_direct_tenancy",
+        "then": "subtenant_acquires_no_direct_tenancy"
+      },
+      "predicates": {
+        "statutory_tenancy": "The tenant remained in occupation after the contractual tenancy ended under statutory protection.",
+        "lease_expired": "The contractual term of the lease ended.",
+        "no_renewal": "The landlord did not renew the lease or grant a fresh tenancy.",
+        "tenant_sublet_part": "The tenant sublet part of the premises while remaining in occupation under statutory protection.",
+        "subtenant_claimed_direct_tenancy": "The subtenant claimed that the end of the tenant’s interest made it a tenant directly under the landlord.",
+        "subtenant_acquires_no_direct_tenancy": "The subtenant does not acquire a direct tenancy under the landlord."
+      },
+      "definition": "When a tenant remains under statutory protection after the lease ends without renewal and sublets part of the premises, the subtenant does not acquire a direct tenancy merely because the tenant’s interest ends."
+    },
+    {
+      "legal_issue": "A decree for possession against a tenant is enforceable against a person claiming through a purported subletting made after the property suit began where the applicable lis pendens rule does not require an unregistered notice.",
+      "material_facts": [
+        "The landlord obtained a possession decree against the tenant.",
+        "The tenant purported to sublet part of the premises after the landlord had filed the possession suit.",
+        "The claimant resisted execution of the decree on the basis that it had acquired rights through the subletting.",
+        "The property was in Ahmedabad, outside Greater Bombay, and no notification extending the Bombay registration amendment to the relevant area was shown."
+      ],
+      "conclusion": "The decree was enforceable against the claimant, and the Bombay registration amendment did not prevent its enforcement.",
+      "legal_principle": "Section 52 of the Transfer of Property Act embodies the rule of lis pendens. The Indian Registration (Bombay Amendment) Act, 1939, as extended through the Transfer of Property (Bombay Provision for Uniformity and Amendment) Act, 1959, made registration of a notice a condition for applying the lis pendens rule only in areas covered by the amendment. The court held that the amendment did not apply to the suit concerning property in Ahmedabad because no notification extending it to that area was shown; the ordinary rule of lis pendens therefore applied. The court also held that the claimant had no tenancy right under section 14 because the purported subletting was not lawful.",
+      "rule": {
+        "if": "decree_execution_dispute and decree_against_tenant and purported_subletting_after_property_suit_started and property_outside_amended_area and no_extension_notification_shown",
+        "then": "decree_enforceable_against_claimant"
+      },
+      "predicates": {
+        "decree_execution_dispute": "A person claiming through a tenant resisted execution of a possession decree against that tenant.",
+        "decree_against_tenant": "The landlord obtained a decree for possession against the tenant.",
+        "purported_subletting_after_property_suit_started": "The tenant purported to sublet the premises after the landlord began the property suit.",
+        "property_outside_amended_area": "The property was outside the area to which the relevant registration amendment applied.",
+        "no_extension_notification_shown": "No notification extending the registration amendment to the property’s area was shown.",
+        "decree_enforceable_against_claimant": "The possession decree against the tenant may be enforced against the person claiming through the purported subletting."
+      },
+      "definition": "When a claimant resists execution of a possession decree through a subletting made after the property suit began, and the property lies outside the amended area with no extension shown, the decree remains enforceable against the claimant."
+    }
+  ],
+  "seconds": 15.1
+}

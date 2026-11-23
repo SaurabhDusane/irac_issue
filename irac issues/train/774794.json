@@ -1,0 +1,105 @@
+{
+  "doc_id": "774794",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16042,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1977,
+    "prompt_tokens": 4710,
+    "total_tokens": 6687,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A conviction based solely on circumstantial evidence cannot stand unless the proved circumstances form a complete chain that excludes every reasonable hypothesis consistent with innocence.",
+      "material_facts": [
+        "There was no eyewitness to the death, and the prosecution case depended on circumstantial evidence.",
+        "The medical evidence did not establish that the injuries were inflicted before death or that the death was homicidal.",
+        "The extra-judicial confession was not relied on, the hotel witnesses could not identify the accused, and the remaining circumstances—including the last-seen evidence, alleged motive and recovery of an article—did not complete the chain.",
+        "The accused appealed convictions for murder and causing disappearance of evidence."
+      ],
+      "conclusion": "The circumstances did not prove guilt beyond reasonable doubt; the convictions and sentences were set aside and the accused was acquitted.",
+      "legal_principle": "For a conviction resting on circumstantial evidence, the prosecution must prove each circumstance, and the cumulative effect of the proved circumstances must exclude every other hypothesis and point unequivocally to guilt. The Court applied this principle in assessing the charges under Sections 302 and 201 IPC and considered the recovery under Section 27 of the Evidence Act.",
+      "rule": {
+        "if": "criminal_conviction_appeal and circumstantial_evidence_case and (circumstantial_chain_incomplete or reasonable_innocent_hypothesis_remains)",
+        "then": "conviction_set_aside_and_acquittal"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The accused appealed a criminal conviction.",
+        "circumstantial_evidence_case": "The prosecution relied on circumstantial evidence rather than an eyewitness to establish guilt.",
+        "circumstantial_chain_incomplete": "The proved circumstances did not form a complete chain pointing unequivocally to the accused's guilt.",
+        "reasonable_innocent_hypothesis_remains": "The evidence left a reasonable hypothesis consistent with the accused's innocence.",
+        "conviction_set_aside_and_acquittal": "The conviction is set aside and the accused is acquitted."
+      },
+      "definition": "When an accused appeals a conviction based on circumstantial evidence, an incomplete chain or a remaining reasonable innocent hypothesis leads to the conviction being set aside and the accused being acquitted."
+    },
+    {
+      "legal_issue": "Homicidal death is not established where the medical evidence cannot determine whether the injuries occurred before or after death and the other evidence does not resolve that uncertainty.",
+      "material_facts": [
+        "The body was found well after the deceased was last allegedly seen with the accused.",
+        "The doctor could not determine whether the injuries were ante-mortem or post-mortem; the opinion was only that a head injury could cause death if it was ante-mortem.",
+        "The High Court nevertheless concluded that the death was homicidal."
+      ],
+      "conclusion": "The evidence did not support the conclusion that the deceased died a homicidal death.",
+      "legal_principle": "The prosecution must establish the facts necessary to prove the alleged homicide; a conditional medical opinion that an injury could cause death if inflicted before death does not establish that the injury was ante-mortem or that the death was homicidal.",
+      "rule": {
+        "if": "criminal_homicide_prosecution and medical_evidence_cannot_date_injuries and other_evidence_does_not_resolve_uncertainty",
+        "then": "homicidal_death_not_established"
+      },
+      "predicates": {
+        "criminal_homicide_prosecution": "The proceeding concerns a prosecution for homicide.",
+        "medical_evidence_cannot_date_injuries": "The medical evidence cannot establish whether the relevant injuries occurred before or after death.",
+        "other_evidence_does_not_resolve_uncertainty": "The other evidence does not resolve the uncertainty about how death occurred.",
+        "homicidal_death_not_established": "The prosecution has not established that the death was homicidal."
+      },
+      "definition": "In a homicide prosecution, when medical evidence cannot date the injuries and other evidence does not resolve the uncertainty, homicidal death is not established."
+    },
+    {
+      "legal_issue": "An alleged extra-judicial confession should not be relied on when its words are not adequately reproduced and the circumstances undermine its voluntariness and truthfulness.",
+      "material_facts": [
+        "A witness attributed a confession to the accused but did not reproduce its exact words or words as nearly as possible.",
+        "The witness said the statement was made after the witness and accused had consumed liquor.",
+        "The trial court and High Court did not rely on the confession."
+      ],
+      "conclusion": "The alleged extra-judicial confession was excluded from consideration as a basis for guilt.",
+      "legal_principle": "The Court treated the alleged confession as unreliable because its words were not adequately stated and the circumstances gave reason to doubt that it was voluntary and truthful.",
+      "rule": {
+        "if": "criminal_trial and alleged_extra_judicial_confession and (confession_words_not_reproduced or circumstances_undermine_voluntariness_or_truthfulness)",
+        "then": "confession_not_relied_on"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial or an appeal from a criminal trial.",
+        "alleged_extra_judicial_confession": "A witness attributes an out-of-court confession to the accused.",
+        "confession_words_not_reproduced": "The witness does not state the confession's exact words or words as nearly as possible.",
+        "circumstances_undermine_voluntariness_or_truthfulness": "The circumstances of the alleged statement give reason to doubt that it was voluntary and truthful.",
+        "confession_not_relied_on": "The alleged confession is not relied on to establish guilt."
+      },
+      "definition": "In a criminal proceeding, an alleged out-of-court confession is not relied on when its words are inadequately stated or its circumstances undermine its voluntariness or truthfulness."
+    },
+    {
+      "legal_issue": "Evidence that unidentified persons stopped at a location cannot incriminate an accused who was not known to the witnesses and was not identified through a test identification parade.",
+      "material_facts": [
+        "Two witnesses said that several people arrived in a vehicle and one woman remained in it while they took tea.",
+        "The witnesses did not know the accused, and no test identification parade had been held."
+      ],
+      "conclusion": "The witnesses' evidence could not be used as incriminating evidence against the accused.",
+      "legal_principle": "Evidence identifying an accused is of no incriminating value in these circumstances when the witnesses did not previously know the accused and there was no test identification parade.",
+      "rule": {
+        "if": "criminal_trial and witness_did_not_know_accused and no_test_identification_parade and identification_evidence_is_uncorroborated",
+        "then": "identification_evidence_not_used_to_incriminate"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial or an appeal from a criminal trial.",
+        "witness_did_not_know_accused": "The witness had no prior acquaintance with the accused.",
+        "no_test_identification_parade": "No identification procedure was held for the witness to identify the accused.",
+        "identification_evidence_is_uncorroborated": "The evidence identifying the accused is not supported by a reliable identification procedure or other corroboration.",
+        "identification_evidence_not_used_to_incriminate": "The identification evidence is not used as incriminating evidence against the accused."
+      },
+      "definition": "In a criminal proceeding, uncorroborated identification evidence is not used to incriminate an accused when the witness did not know the accused and no identification procedure was held."
+    }
+  ],
+  "seconds": 11.6
+}

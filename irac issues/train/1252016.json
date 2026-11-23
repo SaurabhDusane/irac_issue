@@ -1,0 +1,135 @@
+{
+  "doc_id": "1252016",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33094,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3766,
+    "prompt_tokens": 7939,
+    "total_tokens": 11705,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A notification that identifies a company's project and provides for the company to bear the entire compensation is an acquisition for a company, even if it describes the purpose as public.",
+      "material_facts": [
+        "The notification described the acquisition as being for a public purpose but identified staff quarters, hostel buildings and a playground for a society.",
+        "The agreement preceding the notification provided that the society would pay all compensation."
+      ],
+      "conclusion": "The notification, read fairly and together with the preceding agreement, was for acquisition for a company at that company's expense, so compliance with the company-acquisition procedure was necessary.",
+      "legal_principle": "Under Section 6(1) and the proviso to it, a public-purpose acquisition requires compensation to be paid wholly or partly from public revenues or a fund controlled or managed by a local authority, whereas an acquisition for a company may be paid for by the company. As explained in Babu Barkya Thakur v. State of Bombay, Jhandu Lal v. State of Punjab, R.L. Arora v. State of Uttar Pradesh and Smt. Somawanti v. State of Punjab, an acquisition primarily for a company can also be for a public purpose if the statutory public-funding condition is met. The notification must be read fairly to determine which kind of acquisition it declares.",
+      "rule": {
+        "if": "company_acquisition_proceeding and notification_identifies_company_project and company_pays_all_compensation",
+        "then": "acquisition_is_for_a_company"
+      },
+      "predicates": {
+        "company_acquisition_proceeding": "The government undertook a land acquisition proceeding for a project proposed by a company or comparable entity.",
+        "notification_identifies_company_project": "The acquisition notification identifies a project belonging to the company or comparable entity.",
+        "company_pays_all_compensation": "The agreement or other acquisition record provides that the company or comparable entity will pay all compensation."
+      },
+      "definition": "When a company-acquisition proceeding identifies the company's project and requires the company to pay all compensation, the acquisition is treated as one for a company."
+    },
+    {
+      "legal_issue": "A declaration that land is needed for a public purpose does not prevent a court from examining whether the statutory public-funding condition was evaded when no public funds are to contribute to compensation.",
+      "material_facts": [
+        "The notification used public-purpose language, but the agreement and notification showed that the acquiring society would pay all compensation.",
+        "There was no evidence that any part of the compensation would be paid from public revenues or a qualifying public fund."
+      ],
+      "conclusion": "The statutory conclusiveness of the declaration did not bar examination of whether the public-purpose characterization was made in evasion of the public-funding requirement; on the evidence, the acquisition was for a company rather than a public-purpose acquisition funded as required.",
+      "legal_principle": "Section 6(3) makes the declaration conclusive evidence that land is needed for a public purpose or for a company, as the case may be, but does not preclude inquiry into whether a public-purpose declaration was made in fraud of the Act by avoiding the proviso to Section 6(1). The principles concerning the distinction between public-purpose and company acquisitions were drawn from Babu Barkya Thakur v. State of Bombay, Jhandu Lal v. State of Punjab, R.L. Arora v. State of Uttar Pradesh and Smt. Somawanti v. State of Punjab.",
+      "rule": {
+        "if": "company_acquisition_proceeding and declaration_claims_public_purpose and company_pays_all_compensation and no_public_funds_contribute",
+        "then": "court_may_inquire_into_evasion_of_public_funding_requirement"
+      },
+      "predicates": {
+        "company_acquisition_proceeding": "The government undertook a land acquisition proceeding for a project proposed by a company or comparable entity.",
+        "declaration_claims_public_purpose": "The acquisition declaration describes the purpose as a public purpose.",
+        "company_pays_all_compensation": "The agreement or other acquisition record provides that the company or comparable entity will pay all compensation.",
+        "no_public_funds_contribute": "The record shows that no public revenue or qualifying public fund will contribute to compensation."
+      },
+      "definition": "If a company-funded acquisition is declared to be for a public purpose without any public contribution to compensation, a court may examine whether that characterization evades the statutory funding condition."
+    },
+    {
+      "legal_issue": "Government consent to a company acquisition may rest on one or more of the permitted statutory purposes, and the purpose or purposes relied on are determined from the agreement and the notification.",
+      "material_facts": [
+        "The acquisition proceeded under the statutory provisions governing acquisition for a company and required government consent.",
+        "The court considered the agreement and the notification as the means of identifying the statutory purpose or purposes on which consent rested."
+      ],
+      "conclusion": "The government may give consent on the basis of one permitted purpose or more than one; the basis is determined by examining the agreement and the subsequent notification.",
+      "legal_principle": "Sections 39 and 40 require prior government consent for acquisition under Part VII, and Section 41 requires an agreement whose terms vary according to the purpose relied on under Section 40(1)(a), (aa) or (b). The applicable basis of consent is gathered from the agreement and the Section 6 notification; the government need not state expressly which clause it is applying.",
+      "rule": {
+        "if": "company_acquisition_proceeding and government_grants_consent",
+        "then": "consent_may_rely_on_one_or_more_permitted_purposes"
+      },
+      "predicates": {
+        "company_acquisition_proceeding": "The government undertook a land acquisition proceeding for a project proposed by a company or comparable entity.",
+        "government_grants_consent": "The government gives consent for the proposed company acquisition."
+      },
+      "definition": "In a company-acquisition proceeding, government consent may rest on one or several permitted purposes."
+    },
+    {
+      "legal_issue": "Staff quarters for individual employees do not qualify as a work likely to be useful to the public merely because the employees belong to an institution, while hostels and playgrounds for students may be useful to a section of the public.",
+      "material_facts": [
+        "The proposed acquisition included staff quarters, hostel buildings and a playground for an educational institution.",
+        "The staff quarters were intended for individual staff members, while the hostels and playground were intended for students as a body."
+      ],
+      "conclusion": "Staff quarters for individual employees could not be brought within the public-use ground; hostels and a playground for students could be directly useful to a section of the public.",
+      "legal_principle": "Section 40(1)(b) permits consent where the acquisition is needed for a work likely to prove useful to the public. A section of the public must comprise more than an individual, so a facility for individual staff members does not meet that standard merely because it serves an employee. Facilities serving students as a body may meet it.",
+      "rule": {
+        "if": "company_acquisition_proceeding and work_is_staff_quarters_for_individual_employees",
+        "then": "staff_quarters_are_not_a_work_useful_to_a_section_of_the_public"
+      },
+      "predicates": {
+        "company_acquisition_proceeding": "The government undertook a land acquisition proceeding for a project proposed by a company or comparable entity.",
+        "work_is_staff_quarters_for_individual_employees": "The proposed work consists of quarters for individual employees rather than facilities serving a group of the public."
+      },
+      "definition": "When a company acquisition is for quarters serving individual employees, those quarters are not treated as a work useful to a section of the public."
+    },
+    {
+      "legal_issue": "A company acquisition for staff quarters cannot be justified under the industry-or-work ground without material identifying the relevant public-purpose activity and showing that the proposed building or work serves that same public purpose.",
+      "material_facts": [
+        "The institution carried on numerous educational, charitable and other activities, but the acquisition application did not identify the particular work for which staff quarters were needed.",
+        "The agreement did not show that the government considered the staff quarters in relation to a particular public-purpose activity.",
+        "The record did not establish that the staff quarters would serve the same public purpose as any qualifying activity."
+      ],
+      "conclusion": "The acquisition could not be supported on the industry-or-work ground because the necessary material identifying the relevant work and connecting the staff quarters to its public purpose was absent.",
+      "legal_principle": "Section 40(1)(aa) concerns a building or work for a company engaged, or taking steps to engage, in an industry or work for a public purpose. The Court did not decide the full scope of the word “work”; it held that the record had not established the necessary basis for applying the clause. R.L. Arora v. State of Uttar Pradesh requires that the building or work to be constructed itself subserve the same public purpose as the company's qualifying activity.",
+      "rule": {
+        "if": "company_acquisition_proceeding and staff_quarters_are_proposed and record_does_not_identify_relevant_public_purpose_work",
+        "then": "acquisition_is_not_supported_by_the_public_purpose_industry_or_work_ground"
+      },
+      "predicates": {
+        "company_acquisition_proceeding": "The government undertook a land acquisition proceeding for a project proposed by a company or comparable entity.",
+        "staff_quarters_are_proposed": "The proposed acquisition includes staff quarters.",
+        "record_does_not_identify_relevant_public_purpose_work": "The application and acquisition records fail to identify the particular public-purpose activity for which the quarters are needed and how they serve that purpose."
+      },
+      "definition": "If a company acquisition includes staff quarters but its record does not identify the relevant public-purpose activity and connection, the acquisition is not supported on that ground."
+    },
+    {
+      "legal_issue": "A combined acquisition is invalid when the government considered only the public-use ground, part of the proposed project falls outside that ground, and the land attributable to that part cannot be identified or separated.",
+      "material_facts": [
+        "The agreement and notification grouped staff quarters, hostel buildings and a playground together and described the work as likely to be useful to the public.",
+        "The record indicated that the government proceeded on the public-use ground rather than separately considering the dwelling-house or industry-or-work grounds.",
+        "Staff quarters did not qualify as a public-use work, and the record did not establish a basis to sustain them under the other grounds.",
+        "The record did not show what part of the land was required for staff quarters, making it impossible to separate that part from the rest of the acquisition."
+      ],
+      "conclusion": "Because the government had considered only the public-use ground and the extent of land for the staff quarters was unknown, the entire acquisition notification had to be struck down.",
+      "legal_principle": "Sections 40(1)(a), (aa) and (b) provide distinct bases for consent, with corresponding agreement requirements under Section 41. Although consent may rest on more than one basis, the agreement and notification must show the basis actually considered. Where the record shows reliance on Section 40(1)(b), staff quarters cannot be sustained under that clause, and an acquisition for mixed purposes cannot stand as a whole when the portion attributable to the unsupported purpose cannot be identified.",
+      "rule": {
+        "if": "company_acquisition_proceeding and consent_record_shows_only_public_use_ground and project_includes_staff_quarters and land_for_staff_quarters_cannot_be_identified",
+        "then": "entire_acquisition_is_invalid"
+      },
+      "predicates": {
+        "company_acquisition_proceeding": "The government undertook a land acquisition proceeding for a project proposed by a company or comparable entity.",
+        "consent_record_shows_only_public_use_ground": "The agreement and notification show that the government relied on the ground that the work would be useful to the public, without showing consideration of other available grounds.",
+        "project_includes_staff_quarters": "The combined acquisition project includes quarters for employees.",
+        "land_for_staff_quarters_cannot_be_identified": "The acquisition record does not identify or permit separation of the land required for the staff quarters from the other project land."
+      },
+      "definition": "A combined company acquisition is invalid in its entirety when consent rests only on the public-use ground, the project includes staff quarters, and the land for those quarters cannot be separated."
+    }
+  ],
+  "seconds": 21.9
+}

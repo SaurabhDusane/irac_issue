@@ -1,0 +1,118 @@
+{
+  "doc_id": "436329",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43883,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2634,
+    "prompt_tokens": 11360,
+    "total_tokens": 13994,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A second appellate court cannot introduce a new factual theory that was not pleaded or supported by an issue and evidence below.",
+      "material_facts": [
+        "In the second appeal, the High Court treated the sale as having arisen from a new agreement between the receiver and the creditor, and found that the earlier agreement had been breached.",
+        "The breach issue had not been pressed at trial, no issue or evidence supported a new agreement, and the creditor testified that there had been no fresh agreement."
+      ],
+      "conclusion": "The High Court exceeded its jurisdiction in second appeal by making those findings, and the findings were set aside.",
+      "legal_principle": "Section 100 of the Code of Civil Procedure does not permit a new factual case to be made for the first time in second appeal when it was not raised through an issue or supported by evidence. Novation under section 62 of the Contract Act requires a clear plea, issue and evidence.",
+      "rule": {
+        "if": "second_appeal and (issue_not_pressed_below or no_issue_on_new_theory) and no_evidence_for_new_theory",
+        "then": "new_factual_finding_cannot_be_introduced"
+      },
+      "predicates": {
+        "second_appeal": "The matter is before a court exercising second appellate jurisdiction.",
+        "issue_not_pressed_below": "The issue on which the new finding rests was not pressed in the trial court.",
+        "no_issue_on_new_theory": "No issue was framed on the new factual theory.",
+        "no_evidence_for_new_theory": "The record contains no evidence supporting the new factual theory."
+      },
+      "definition": "When a second appeal presents an unpressed or unframed issue and the record does not support the new theory, the court cannot introduce a new factual finding."
+    },
+    {
+      "legal_issue": "Omitting a reconveyance term from a later court order or sale deed does not by itself supersede an earlier reconveyance agreement that led to the sale.",
+      "material_facts": [
+        "The parties' earlier joint application provided for a sale followed by an option to repurchase.",
+        "The later court order and sale deed did not refer to reconveyance.",
+        "The sale followed the earlier arrangement, and there was no detailed plea or evidence that the parties expressly replaced or abandoned the reconveyance term."
+      ],
+      "conclusion": "The omission of a reconveyance reference did not show that the earlier reconveyance agreement had been given up.",
+      "legal_principle": "Under section 62 of the Contract Act, novation requires a replacement agreement; absent a detailed plea and evidence of an express agreement to abandon the prior term, omission from a subsequent order or deed does not establish supersession. A party that obtained the sale under the earlier arrangement cannot accept its benefit while rejecting its reconveyance obligation.",
+      "rule": {
+        "if": "prior_reconveyance_agreement and later_sale_followed_prior_arrangement and no_evidence_of_express_supersession",
+        "then": "prior_reconveyance_obligation_remains"
+      },
+      "predicates": {
+        "prior_reconveyance_agreement": "The parties made an agreement providing for reconveyance after a sale.",
+        "later_sale_followed_prior_arrangement": "The later sale was carried out pursuant to the arrangement that included the reconveyance agreement.",
+        "no_evidence_of_express_supersession": "There is no evidence that the parties expressly replaced or abandoned the reconveyance agreement."
+      },
+      "definition": "If a sale follows an arrangement containing a reconveyance agreement and there is no evidence of its express replacement or abandonment, the reconveyance obligation remains."
+    },
+    {
+      "legal_issue": "An unconditional annulment of insolvency adjudication retrospectively validates acts of the debtor during insolvency where the debtor's rights revert to the debtor and are not vested in another person.",
+      "material_facts": [
+        "The debtor was adjudicated insolvent, and the right to obtain reconveyance vested in the receiver.",
+        "The debtor exercised the repurchase option and filed suit while still an undischarged insolvent.",
+        "The debts had been cleared, the adjudication was annulled unconditionally, and the court did not vest the debtor's rights in another person.",
+        "The notice exercising the option was given within the agreed period, and the suit followed the creditor's refusal to reconvey."
+      ],
+      "conclusion": "The unconditional annulment retrospectively validated the debtor's notice exercising the option and the filing of the suit.",
+      "legal_principle": "Sections 35, 37(1) and 43(1) of the Provincial Insolvency Act, 1920 provide for annulment and the reversion of the debtor's property and rights. Where annulment is unconditional and the property or rights are not vested in another person, reversion operates retrospectively from the filing of the insolvency petition, validating the debtor's intervening acts; sales, dispositions, payments and acts of the court or receiver remain valid. The Court relied on Bailey v. Johnson, Peraya v. Kondayya, Arunachalam v. Narayana Swami, Ratna Navelu Chettiyar v. Franciscu Udayar and Subbaiah Goundan v. Ramaswami Goundan.",
+      "rule": {
+        "if": "insolvency_proceeding and debtor_acts_during_insolvency and adjudication_annulled_unconditionally and rights_not_vested_in_another",
+        "then": "debtor_acts_are_retroactively_validated"
+      },
+      "predicates": {
+        "insolvency_proceeding": "The case concerns a debtor whose property or rights became subject to insolvency proceedings.",
+        "debtor_acts_during_insolvency": "The debtor exercised a right or took legal action while still subject to the insolvency adjudication.",
+        "adjudication_annulled_unconditionally": "The insolvency adjudication was later annulled without conditions.",
+        "rights_not_vested_in_another": "On annulment, the court did not vest the debtor's relevant rights in another person."
+      },
+      "definition": "When a debtor acts during insolvency and the adjudication is later annulled unconditionally without the relevant rights being vested in another person, those acts are retrospectively validated."
+    },
+    {
+      "legal_issue": "The time for exercising an option to reconvey immovable property is essential and the option must be exercised within the period fixed by the agreement.",
+      "material_facts": [
+        "The agreement gave the vendor an option to repurchase the property within a specified period.",
+        "The vendor exercised the option within that period."
+      ],
+      "conclusion": "The option was exercised in time, and the purchaser was bound to reconvey upon receiving the agreed payment.",
+      "legal_principle": "The Court applied Bismillah Begum v. Rahmatullah Khan, holding that time is essential for an option to repurchase and the option must be exercised strictly within the agreed period. The general principle in section 55 of the Contract Act, discussed in A.H. Mama v. Flora Sassoon, that time is not ordinarily of the essence for sales of immovable property does not apply to contracts of reconveyance.",
+      "rule": {
+        "if": "reconveyance_option and fixed_exercise_period and option_exercised_within_period",
+        "then": "option_is_exercised_in_time"
+      },
+      "predicates": {
+        "reconveyance_option": "The agreement gives a party an option to repurchase immovable property.",
+        "fixed_exercise_period": "The agreement fixes a period within which the option must be exercised.",
+        "option_exercised_within_period": "The party exercised the option within the period fixed by the agreement."
+      },
+      "definition": "When an agreement gives an option to repurchase within a fixed period and the option is exercised during that period, the option is exercised in time."
+    },
+    {
+      "legal_issue": "A suit for specific performance is within limitation when it is filed within the limitation period after refusal to perform and the agreement does not specify when the deed must be executed after exercise of the option.",
+      "material_facts": [
+        "The agreement fixed a period for exercising the repurchase option but did not specify a period for executing the reconveyance deed after the option was exercised.",
+        "The purchaser refused to execute the deed, and the suit was filed within three years of that refusal."
+      ],
+      "conclusion": "The suit was within limitation because time began to run from the refusal to perform.",
+      "legal_principle": "Article 54 of the Limitation Act, 1963 provides a three-year limitation period for a suit for specific performance, running from the date fixed for performance or, if no such date is fixed, from when the plaintiff has notice that performance is refused. Because no date was fixed for execution of the reconveyance deed after exercise of the option, the refusal-based part of Article 54 applied.",
+      "rule": {
+        "if": "specific_performance_suit and no_execution_date_fixed and suit_filed_within_limitation_after_refusal",
+        "then": "suit_is_within_limitation"
+      },
+      "predicates": {
+        "specific_performance_suit": "The proceeding is a suit seeking specific performance of an agreement.",
+        "no_execution_date_fixed": "The agreement does not fix a date or period for completing performance after the relevant option is exercised.",
+        "suit_filed_within_limitation_after_refusal": "The suit is filed within the applicable limitation period after the other party refuses to perform."
+      },
+      "definition": "When a specific performance agreement fixes no execution date and the suit is brought within the limitation period after refusal, the suit is within limitation."
+    }
+  ],
+  "seconds": 15.4
+}

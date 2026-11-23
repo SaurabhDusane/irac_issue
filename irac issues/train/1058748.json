@@ -1,0 +1,102 @@
+{
+  "doc_id": "1058748",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38308,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2860,
+    "prompt_tokens": 9535,
+    "total_tokens": 12395,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court may reverse an acquittal where it rests on a material misreading of clear evidence rather than a reasonably available view of the evidence.",
+      "material_facts": [
+        "The trial court acquitted two accused on the ground that the witnesses had not specifically attributed participation in the assault to them.",
+        "Three witnesses had clearly testified that those accused participated in assaulting the deceased.",
+        "The appellate court reversed the acquittals, and the Supreme Court found the trial court's reasoning factually and legally erroneous."
+      ],
+      "conclusion": "The reversal of the acquittals was upheld because the trial court had misread clear evidence of participation; this was not a case in which the appellate court merely preferred another reasonable view.",
+      "legal_principle": "The Court distinguished a permissible choice between two reasonably possible views from correction of an acquittal founded on factual and legal error. It relied on no earlier cases or cited statutory provisions for this point.",
+      "rule": {
+        "if": "appeal_includes_reversal_of_acquittal and (clear_witness_evidence_shows_participation and trial_court_misread_that_evidence)",
+        "then": "reversal_of_acquittal_upheld"
+      },
+      "predicates": {
+        "appeal_includes_reversal_of_acquittal": "The criminal appeal challenges an appellate court's reversal of an acquittal.",
+        "clear_witness_evidence_shows_participation": "Witnesses clearly testified that the acquitted accused participated in the conduct charged.",
+        "trial_court_misread_that_evidence": "The trial court's stated basis for acquittal conflicts with the clear evidence of participation."
+      },
+      "definition": "When an appeal concerns reversal of an acquittal and clear evidence of participation was misread by the trial court, the reversal of the acquittal is upheld."
+    },
+    {
+      "legal_issue": "A person in possession of property who faces a forcible trespass and a reasonable apprehension of harm may defend person and property, but excessive force in that defence may exclude murder liability under the applicable exception to the definition of murder.",
+      "material_facts": [
+        "The purchaser had received physical possession of the land and was cultivating it.",
+        "The deceased and his relatives entered the land seeking to retake possession by force, and members of that group carried sticks.",
+        "The purchaser's group had a reasonable apprehension of harm and was entitled to defend person and property.",
+        "The group inflicted 72 injuries on the deceased, including fractures to vital parts of the body, and the Court found that it grossly exceeded its right of private defence."
+      ],
+      "conclusion": "The group acted in private defence but exceeded that right; the excess took the case out of murder and within Exception 2 to Section 300 of the Indian Penal Code.",
+      "legal_principle": "The Court applied Exception 2 to Section 300 of the Indian Penal Code: where a person entitled to private defence exceeds that right in good faith, without premeditation and without intending to do more harm than necessary for defence, the case falls within the exception to murder. The Court also applied the right to defend person and property. No earlier cases were cited.",
+      "rule": {
+        "if": "criminal_assault_case and accused_in_actual_possession and opposing_group_forcibly_trespassed and opposing_group_threatened_harm and accused_used_grossly_excessive_force",
+        "then": "murder_liability_excluded_by_excessive_private_defence"
+      },
+      "predicates": {
+        "criminal_assault_case": "The proceeding concerns criminal liability for an assault resulting in death or injury.",
+        "accused_in_actual_possession": "The accused were in actual possession of the property when the incident occurred.",
+        "opposing_group_forcibly_trespassed": "The opposing group entered the accused's property to take or retake possession by force.",
+        "opposing_group_threatened_harm": "The opposing group's conduct gave the accused a reasonable apprehension of harm.",
+        "accused_used_grossly_excessive_force": "The accused used force in defence that was grossly beyond what the Court considered justified in the circumstances."
+      },
+      "definition": "In a criminal assault case, actual possession, a forcible trespass threatening harm, and grossly excessive defensive force result in murder liability being excluded on account of excessive private defence."
+    },
+    {
+      "legal_issue": "A group cannot be convicted on the basis of an unlawful assembly's common object where the assault arose as an exercise of private defence, even though the defence was exceeded.",
+      "material_facts": [
+        "The accused were in possession of the land and the complainant's group entered it to retake possession by force.",
+        "The complainant's group was armed, and two members wielded sticks during the mutual fight.",
+        "The Court found that the accused acted to defend their person and property, although they exceeded that right."
+      ],
+      "conclusion": "The common object on which the unlawful-assembly charges rested failed, so the convictions under Sections 147 and 323/149 of the Indian Penal Code could not stand and were set aside.",
+      "legal_principle": "The Court held that, on its finding that the accused had exceeded their right of private defence, the common object charged against them failed. It therefore set aside the convictions under Sections 147 and 323/149 of the Indian Penal Code. No earlier cases were cited.",
+      "rule": {
+        "if": "criminal_group_assault_case and accused_defended_possession_against_forcible_entry and defence_right_was_exceeded",
+        "then": "unlawful_assembly_convictions_unsustainable"
+      },
+      "predicates": {
+        "criminal_group_assault_case": "The proceeding concerns an assault by a group charged as an unlawful assembly.",
+        "accused_defended_possession_against_forcible_entry": "The accused acted to defend their possession after an opposing group entered to take possession by force.",
+        "defence_right_was_exceeded": "The accused exceeded the right they had to defend person or property."
+      },
+      "definition": "In a group-assault prosecution, if the accused defended possession against forcible entry but exceeded that right, the unlawful-assembly convictions are unsustainable."
+    },
+    {
+      "legal_issue": "A joint assault with the common intention to cause bodily injuries likely to result in death supports culpable-homicide liability with common intention when murder liability is excluded for excessive private defence.",
+      "material_facts": [
+        "The accused made a combined assault on the deceased, inflicting numerous injuries, including fractures to vital parts of the body.",
+        "The Court found that the accused shared an intention to cause bodily injuries likely to result in death, and that this intention developed at the scene.",
+        "The Court also found that the accused had exceeded their right of private defence, taking the case out of murder."
+      ],
+      "conclusion": "The murder convictions were altered to convictions for culpable homicide under Part I of Section 304 read with Section 34 of the Indian Penal Code, with a sentence of seven years' rigorous imprisonment.",
+      "legal_principle": "The Court applied Part I of Section 304 and Section 34 of the Indian Penal Code, reasoning that a common intention to inflict bodily injuries likely to result in death developed at the scene during the combined assault. It read that liability alongside its conclusion that the excessive exercise of private defence brought the case within Exception 2 to Section 300. No earlier cases were cited.",
+      "rule": {
+        "if": "criminal_homicide_case and murder_liability_excluded_by_excessive_private_defence and group_made_combined_assault and shared_intention_to_inflict_likely_fatal_injuries",
+        "then": "culpable_homicide_with_common_intention_established"
+      },
+      "predicates": {
+        "criminal_homicide_case": "The proceeding concerns criminal liability for a death caused by an assault.",
+        "murder_liability_excluded_by_excessive_private_defence": "The accused exceeded a right of private defence, excluding liability for murder.",
+        "group_made_combined_assault": "The accused acted together in assaulting the deceased.",
+        "shared_intention_to_inflict_likely_fatal_injuries": "The accused shared an intention to cause bodily injuries likely to result in death, and that intention arose during the incident."
+      },
+      "definition": "When murder liability is excluded by excessive private defence, a combined assault carried out with a shared intention to inflict likely fatal injuries establishes culpable homicide with common intention."
+    }
+  ],
+  "seconds": 17.3
+}

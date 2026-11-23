@@ -1,0 +1,85 @@
+{
+  "doc_id": "1229388",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21550,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3133,
+    "prompt_tokens": 5766,
+    "total_tokens": 8899,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court may, in exceptional circumstances, vary a decree in favour of a party who filed no appeal when that party is before the court and the issue arises from the judgment under appeal.",
+      "material_facts": [
+        "The respondent did not appeal the decree granting redemption to the appellant, but was before the High Court in the appeals.",
+        "The respondent relied on the contention that the security deed created no charge to defend the injunction granted in his favour.",
+        "The appellant’s claimed status as a subsequent mortgagee depended on the deed creating a charge; without that status, leaving the redemption decree in place would produce an anomalous result.",
+        "The High Court reconsidered the deed’s effect and set aside the redemption decree under its appellate power."
+      ],
+      "conclusion": "The High Court was entitled to exercise its discretionary power to set aside the redemption decree despite the respondent not having appealed. The deed’s effect had not become final or res judicata while the matter remained in appeal, and the respondent’s contention to defend the injunction was not an inconsistent position.",
+      "legal_principle": "Order XLI Rule 33 of the Code of Civil Procedure empowers an appellate court to make the decree or order that ought to have been made, including in favour of a party who filed no appeal. The necessary conditions include that the parties are before the court and the question properly arises from the judgment below. The power is discretionary, has no hard-and-fast limits, and should not be refused merely because a party did not appeal; ordinarily a decree is not varied for a non-appealing party, but exceptional cases permit it. The Court relied on AIR 1988 SC 54. A finding that remains open to variation in a pending appeal has not become final so as to operate as res judicata. A respondent may challenge a finding to support a decree in the respondent’s favour where that position is not inconsistent with the respondent’s other stance.",
+      "rule": {
+        "if": "civil_appeal_pending and beneficiary_filed_no_appeal and all_parties_before_appellate_court and issue_arises_from_lower_judgment and finding_remains_open_to_variation and (decree_would_be_anomalous_without_adjustment or respondent_challenges_finding_to_defend_favourable_decree)",
+        "then": "appellate_court_may_adjust_decree_for_nonappealing_party"
+      },
+      "predicates": {
+        "civil_appeal_pending": "A party brought an appeal concerning the lower court’s judgment and the matter remained before the appellate court.",
+        "beneficiary_filed_no_appeal": "The party who would benefit from changing the decree did not file an appeal against that part of it.",
+        "all_parties_before_appellate_court": "The parties to the proceeding were before the appellate court.",
+        "issue_arises_from_lower_judgment": "The question to be decided properly arose from the lower court’s judgment.",
+        "finding_remains_open_to_variation": "The finding at issue remained subject to change in the pending appeal.",
+        "decree_would_be_anomalous_without_adjustment": "Leaving the decree unchanged after resolving the disputed issue would produce an anomalous result.",
+        "respondent_challenges_finding_to_defend_favourable_decree": "A respondent challenged a finding in order to defend a decree already granted in the respondent’s favour."
+      },
+      "definition": "When an appeal is pending, all parties are before the appellate court, the issue arises from the judgment, and the finding remains open to variation, an appellate court may adjust the decree for a non-appealing party in the stated circumstances."
+    },
+    {
+      "legal_issue": "A deed that only undertakes not to alienate property does not create a charge unless it clearly obligates payment of the debt out of that property.",
+      "material_facts": [
+        "The debtor executed a deed of security over identified property to obtain the lifting of an attachment before judgment of money payable to him.",
+        "The deed referred to the amount of the security and an existing prior mortgage, and stated that if a decree were passed the debtor would not alienate the property until the decree was discharged.",
+        "The deed contained no clear recital obligating payment of the decreed amount out of the identified property."
+      ],
+      "conclusion": "The deed created no charge over the property and was only an undertaking not to alienate it.",
+      "legal_principle": "A charge is an obligation to make payment out of specified property. The Court construed the deed according to its substance and held that a promise not to alienate property if a decree were passed did not, without a clear obligation to pay out of that property, create a charge. The Court cited no statutory provision or earlier case as the basis for this conclusion.",
+      "rule": {
+        "if": "security_deed_given_to_lift_prejudgment_attachment and deed_only_promises_nonalienation and no_clear_payment_obligation_from_property",
+        "then": "deed_does_not_create_charge"
+      },
+      "predicates": {
+        "security_deed_given_to_lift_prejudgment_attachment": "A debtor gave a deed concerning property in order to obtain the lifting of an attachment before judgment.",
+        "deed_only_promises_nonalienation": "The deed states that the debtor will not alienate the property until the debt is discharged.",
+        "no_clear_payment_obligation_from_property": "The deed does not clearly require payment of the debt out of the identified property."
+      },
+      "definition": "When a debtor gives a deed to obtain the lifting of a prejudgment attachment and the deed only promises nonalienation without clearly requiring payment from the property, the deed does not create a charge."
+    },
+    {
+      "legal_issue": "A purchaser at an execution sale under a simple money decree does not acquire mortgagee rights through a security deed that created no charge and was not enforced as security in the execution proceedings.",
+      "material_facts": [
+        "The purchaser acquired the property in execution of a simple money decree, not a decree on a mortgage or charge.",
+        "Although the decree-holder initially sought sale of the property on the basis of the security deed, the executing court did not proceed on that basis.",
+        "The decree-holder subsequently sought attachment and sale of the property independently of the alleged charge.",
+        "The security deed did not create a charge."
+      ],
+      "conclusion": "The purchaser acquired no mortgagee rights under the security deed, and the purchaser’s suit was liable to be dismissed.",
+      "legal_principle": "A purchaser at an execution sale acquires no rights as a mortgagee under an alleged security where the deed creates no charge and the decree being executed is a simple money decree. The Court also relied on the execution history: the property was ultimately attached and sold independently of the alleged charge. No statutory provision or earlier case was cited for this conclusion.",
+      "rule": {
+        "if": "purchaser_at_execution_sale and decree_is_simple_money_decree and security_deed_creates_no_charge and property_sold_after_attachment_independent_of_alleged_security",
+        "then": "execution_purchaser_acquires_no_mortgagee_rights_under_security"
+      },
+      "predicates": {
+        "purchaser_at_execution_sale": "A person purchased property through an execution sale.",
+        "decree_is_simple_money_decree": "The decree being executed required payment of money and was not based on a mortgage or charge.",
+        "security_deed_creates_no_charge": "The deed concerning the property did not create an obligation to pay the debt out of that property.",
+        "property_sold_after_attachment_independent_of_alleged_security": "The property was attached and sold in execution independently of the alleged security."
+      },
+      "definition": "When a purchaser acquires property at an execution sale under a simple money decree and the property is sold after attachment independently of an alleged security that created no charge, the purchaser acquires no mortgagee rights under that security."
+    }
+  ],
+  "seconds": 18.6
+}

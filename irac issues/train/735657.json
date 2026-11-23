@@ -1,0 +1,82 @@
+{
+  "doc_id": "735657",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27676,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2167,
+    "prompt_tokens": 7305,
+    "total_tokens": 9472,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A government must give the holder a reasonable opportunity to be heard before prematurely terminating a mining lease under the applicable statutory scheme.",
+      "material_facts": [
+        "The government prematurely terminated the mining leases and granted fresh leases over the same areas to a government company.",
+        "The lease holder was not given notice or an opportunity to be heard before termination.",
+        "The proceeding challenged the premature termination order."
+      ],
+      "conclusion": "The termination order was null and void because it was made without giving the lease holder an opportunity to be heard, contrary to the principles of natural justice.",
+      "legal_principle": "Section 4-A of the Mines and Minerals (Regulation and Development) Act, 1957, as introduced by the 1972 amendment, did not exclude a hearing; it was interpreted to require one consistently with natural justice. State of Haryana v. Ram Kishan, [1988] 3 SCC 416, held that affected lessees must be heard before a decision to terminate their leases prematurely. The later insertion of section 4-A(3) by the 1986 amendment, expressly requiring a reasonable opportunity of hearing, supported the statutory intention to provide a hearing.",
+      "rule": {
+        "if": "proceeding_challenges_premature_lease_termination and government_terminated_lease_early and lease_holder_not_given_hearing",
+        "then": "termination_order_invalid"
+      },
+      "predicates": {
+        "proceeding_challenges_premature_lease_termination": "A proceeding challenges a government decision to end a lease before its ordinary expiry.",
+        "government_terminated_lease_early": "The government ended the lease before its ordinary expiry.",
+        "lease_holder_not_given_hearing": "The government did not give the lease holder an opportunity to be heard before ending the lease."
+      },
+      "definition": "When a proceeding challenges an early government termination of a lease and the holder was not heard beforehand, the termination order is invalid."
+    },
+    {
+      "legal_issue": "When an invalid premature lease termination has been challenged in a long-pending proceeding, compensation may be referred to arbitration rather than requiring the lease holder to begin a separate suit.",
+      "material_facts": [
+        "The proceeding had been pending for about seventeen years.",
+        "The lease holder sought compensation for the premature termination and proposed referring the matter to arbitration.",
+        "The respondents did not seriously resist referring the compensation issue to arbitration.",
+        "A separate suit for compensation might have been barred by limitation."
+      ],
+      "conclusion": "The question of whether the lease holder suffered damages, and the amount of any damages, was referred to arbitration.",
+      "legal_principle": "The Court considered it unfair, after the long pendency of the proceeding, to require the lease holder to bring a separate action that might be barred by limitation. To provide a simple and expeditious means of determining relief and avoiding further litigation, it exercised its remedial discretion to refer the damages issue to arbitration. No earlier case was relied on for this remedial ruling.",
+      "rule": {
+        "if": "proceeding_challenges_premature_lease_termination and termination_order_invalid and proceeding_pending_for_long_period and separate_compensation_action_may_be_time_barred and arbitration_requested_and_not_seriously_opposed",
+        "then": "damages_entitlement_and_amount_referred_to_arbitration"
+      },
+      "predicates": {
+        "proceeding_challenges_premature_lease_termination": "A proceeding challenges a government decision to end a lease before its ordinary expiry.",
+        "termination_order_invalid": "The order ending the lease early is invalid.",
+        "proceeding_pending_for_long_period": "The proceeding has remained pending for a long period.",
+        "separate_compensation_action_may_be_time_barred": "A separate action seeking compensation may be barred by limitation.",
+        "arbitration_requested_and_not_seriously_opposed": "A party asks for the damages issue to be arbitrated, and the opposing party does not seriously resist that course."
+      },
+      "definition": "When an invalid early lease termination is challenged in a long-pending proceeding, a separate compensation action may be time-barred, and arbitration is requested without serious opposition, the entitlement to damages and their amount are referred to arbitration."
+    },
+    {
+      "legal_issue": "Compensation for wrongful premature termination of a lease may be limited to a period shorter than the full unexpired term of the lease.",
+      "material_facts": [
+        "The leases were terminated before their stated expiry dates.",
+        "The lease holder sought compensation for the wrongful termination.",
+        "The leases had specified original expiry dates, and the mines had been operated by the successor lessee for several years."
+      ],
+      "conclusion": "The Court limited compensation to a period shorter than the full unexpired term of the leases, applying the earlier applicable endpoint stated in its order.",
+      "legal_principle": "The Court exercised its remedial discretion, having regard to the circumstances of the case, to restrict the period for which compensation or damages could be claimed rather than allow recovery for the entire unexpired lease term. No earlier case was relied on for this limitation.",
+      "rule": {
+        "if": "proceeding_challenges_premature_lease_termination and termination_order_invalid and compensation_claimed_for_termination and leases_had_original_expiry_dates",
+        "then": "compensation_period_limited_to_less_than_full_unexpired_lease_term"
+      },
+      "predicates": {
+        "proceeding_challenges_premature_lease_termination": "A proceeding challenges a government decision to end a lease before its ordinary expiry.",
+        "termination_order_invalid": "The order ending the lease early is invalid.",
+        "compensation_claimed_for_termination": "The lease holder seeks compensation for the early termination.",
+        "leases_had_original_expiry_dates": "The leases specified dates on which they would ordinarily expire."
+      },
+      "definition": "When compensation is claimed for an invalid early lease termination and the leases had original expiry dates, the compensation period is limited to less than the full unexpired lease term."
+    }
+  ],
+  "seconds": 14.8
+}

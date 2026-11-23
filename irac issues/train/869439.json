@@ -1,0 +1,79 @@
+{
+  "doc_id": "869439",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25776,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2652,
+    "prompt_tokens": 7126,
+    "total_tokens": 9778,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant’s subletting is actionable when the landlord has not given written consent specifically covering that subletting.",
+      "material_facts": [
+        "The tenant let an incorporated company occupy part of the premises, and the courts below found that the company had been given exclusive possession.",
+        "The lease allowed the tenant’s contractors to share the premises with the landlord’s permission, but that permission did not specifically authorize leasing the premises to the incorporated company.",
+        "There was no written consent specifically authorizing that subletting; the landlord objected after learning of it."
+      ],
+      "conclusion": "The subletting was without the required written consent and constituted a breach supporting eviction.",
+      "legal_principle": "Sections 14(1)(b), 16(2) and 16(3) of the Delhi Rent Control Act, 1958 require written landlord consent for subletting; consent must relate to the specific subletting, and mere permission or acquiescence is insufficient. Section 16(3) expressly requires previous written consent for sublettings within its scope, while the distinction between subsections 16(2) and 16(3) means that prior consent is not invariably required under subsection 16(2). The Court relied on South Asia Industries Private Ltd. v. S. Sarup Singh and approved Raja Ram Goyal v. Ashok Kumar, Kartar Singh v. Shri Vijay Kumar, and Delhi Vanaspati Syndicate v. Bhagwan Dass Faquir Chand.",
+      "rule": {
+        "if": "rent_control_eviction_appeal and subletting_found and not written_consent_to_specific_subletting",
+        "then": "eviction_ground_established"
+      },
+      "predicates": {
+        "rent_control_eviction_appeal": "The proceeding is an appeal in a rent-control eviction case.",
+        "subletting_found": "The tenant has sublet the premises or a part of them to another occupant.",
+        "written_consent_to_specific_subletting": "The landlord gave written consent specifically covering the subletting at issue.",
+        "eviction_ground_established": "The subletting establishes a ground for eviction."
+      },
+      "definition": "When an eviction appeal concerns a subletting and the landlord did not give written consent specifically covering it, the subletting establishes a ground for eviction."
+    },
+    {
+      "legal_issue": "A tenant sublets premises by transferring legal possession, including the right to possess and exclude others, rather than merely allowing another person to use the premises.",
+      "material_facts": [
+        "The company occupied the portion of the premises exclusively, and the tenant had transferred to it the right to possess that portion.",
+        "The company’s liquidator took possession on the company’s behalf, supporting the finding that the company held the right to possession.",
+        "The tenant argued that retaining the key showed that there had been only permitted use, but the courts below had found subletting."
+      ],
+      "conclusion": "The tenant had transferred legal possession to the company, so the arrangement was a subletting.",
+      "legal_principle": "Subletting requires parting with legal possession, meaning possession accompanied by the right to include and exclude others; physical possession or use alone is not enough. Whether legal possession has been transferred is a question of fact. The Court relied on Mehta Jagjivan Vanechand v. Doshi Vanechand and referred to Chaplin v. Smith; it also discussed authorities distinguishing a transfer of possession from permission to use premises. The cited discussion of section 105 of the Transfer of Property Act describes a lease as a transfer of the right to enjoy property.",
+      "rule": {
+        "if": "rent_control_eviction_appeal and exclusive_possession_transferred and tenant_transferred_right_to_exclude",
+        "then": "legal_subletting_established"
+      },
+      "predicates": {
+        "rent_control_eviction_appeal": "The proceeding is an appeal in a rent-control eviction case.",
+        "exclusive_possession_transferred": "The tenant gave another occupant exclusive possession of the premises or a part of them.",
+        "tenant_transferred_right_to_exclude": "The tenant transferred to the other occupant the right to exclude others from the premises or the relevant part."
+      },
+      "definition": "In a rent-control eviction appeal, exclusive possession together with transfer of the right to exclude others establishes legal subletting."
+    },
+    {
+      "legal_issue": "A statutory requirement serving a public purpose cannot be waived merely by the parties’ permission or acquiescence, and waiver must in any event be established by facts showing conscious relinquishment.",
+      "material_facts": [
+        "The tenant relied on the landlord’s permission for the contractors to share the premises as a waiver of the written-consent requirement.",
+        "The record did not establish a conscious relinquishment of the statutory requirement, and no court had determined that waiver had occurred.",
+        "The Court held that the written-consent requirement served the public interest in avoiding disputes about whether consent had been given."
+      ],
+      "conclusion": "There was no waiver; the written-consent requirement serving the public interest could not be waived in this case.",
+      "legal_principle": "A person may generally waive a legal advantage made solely for that individual’s protection, but waiver is a question of fact requiring evidence of conscious relinquishment. The Court relied on the statement of principle in Maxwell on the Interpretation of Statutes and referred to Chaplin v. Smith. It held that the written-consent requirement served a public purpose and therefore could not be waived in this landlord–tenant setting.",
+      "rule": {
+        "if": "rent_control_eviction_appeal and (no_conscious_relinquishment or consent_requirement_serves_public_interest)",
+        "then": "waiver_unavailable"
+      },
+      "predicates": {
+        "rent_control_eviction_appeal": "The proceeding is an appeal in a rent-control eviction case.",
+        "no_conscious_relinquishment": "The evidence does not show that the person entitled to the legal protection consciously gave it up.",
+        "consent_requirement_serves_public_interest": "The requirement that consent be recorded in writing serves a public purpose by preventing disputes about whether consent was given."
+      },
+      "definition": "In a rent-control eviction appeal, waiver is unavailable when there was no conscious relinquishment or the consent requirement serves the public interest."
+    }
+  ],
+  "seconds": 16.6
+}

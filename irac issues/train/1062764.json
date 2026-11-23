@@ -1,0 +1,123 @@
+{
+  "doc_id": "1062764",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 53809,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3158,
+    "prompt_tokens": 13115,
+    "total_tokens": 16273,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person seeking eviction for personal occupation must have an ownership-based right to occupy the building in their own right.",
+      "material_facts": [
+        "The landlords sought eviction on the ground that one of them needed the shop for a clinic and office.",
+        "Evidence submitted during the appeal indicated that a partition may have allotted the shop exclusively to a person who was not a party to the eviction proceedings."
+      ],
+      "conclusion": "For eviction based on the claimant’s own personal requirement, the claimant must be an owner with a subsisting right to occupy the building in their own right; a mere rent collector or agent cannot rely on that ground.",
+      "legal_principle": "Under sections 2(d) and 11(1)(c) of the Bihar Buildings (Lease, Rent and Eviction) Control Act, 1947, the inclusive definition of landlord is restricted for a claim based on the landlord’s own occupation. The explanation to section 11(1)(c) excludes an agent, and the provision requires the claimant seeking personal occupation to have the right to occupy as an owner. A person holding the building for another’s benefit may seek occupation for that beneficiary, but not for the claimant’s own use.",
+      "rule": {
+        "if": "personal_requirement_eviction_case and claimant_seeks_own_occupation and not claimant_has_own_right_to_occupy",
+        "then": "claimant_cannot_evict_for_own_occupation"
+      },
+      "predicates": {
+        "personal_requirement_eviction_case": "The proceeding seeks eviction of a tenant on the ground of personal requirement.",
+        "claimant_seeks_own_occupation": "The claimant seeks possession so that the claimant can personally occupy the building.",
+        "claimant_has_own_right_to_occupy": "The claimant owns the building and has a subsisting right to occupy it in their own right.",
+        "claimant_cannot_evict_for_own_occupation": "The claimant is not entitled to evict the tenant for the claimant’s own occupation."
+      },
+      "definition": "When a claimant in a personal-requirement eviction proceeding seeks the building for their own use but lacks an ownership-based right to occupy it, the claimant cannot evict the tenant for that use."
+    },
+    {
+      "legal_issue": "An appellate court may consider a subsequent event that fundamentally affects the claimed right to relief when the event is diligently brought to its attention and procedural fairness is preserved.",
+      "material_facts": [
+        "During the appeal, the tenant applied to submit a partition decree and asserted that the shop had been allotted to a person who was not a party to the eviction proceeding.",
+        "The application was supported by an affidavit and the appellate court considered the contention on its merits.",
+        "The High Court declined to consider the evidence on the technical ground that no proper application for additional evidence was on record, although such an application was on record."
+      ],
+      "conclusion": "The appellate court could not disregard the application and evidence on that technical ground; the subsequent event had to be considered, subject to a fair opportunity for both sides to address it.",
+      "legal_principle": "The Court relied on Pasupuleti Venkateswarlu v. The Motor & General Traders and Lachmeshwar Prasad Shukul v. Keshwar Lal Chaudhri for the principle that an appellate court may take account of subsequent facts that affect the relief, provided fairness is observed. It also applied Order 41, Rule 27 of the Code of Civil Procedure to the application for additional evidence.",
+      "rule": {
+        "if": "appeal_in_pending_eviction_proceeding and subsequent_event_fundamentally_affects_relief and event_diligently_brought_to_court and both_sides_can_address_event",
+        "then": "appellate_court_must_consider_subsequent_event"
+      },
+      "predicates": {
+        "appeal_in_pending_eviction_proceeding": "An appeal is pending in an eviction proceeding.",
+        "subsequent_event_fundamentally_affects_relief": "An event occurring after the proceeding began could fundamentally affect the claimant’s entitlement to relief.",
+        "event_diligently_brought_to_court": "A party brought the subsequent event to the court’s attention with due diligence.",
+        "both_sides_can_address_event": "The parties are given a fair opportunity to address the subsequent event and any related evidence.",
+        "appellate_court_must_consider_subsequent_event": "The appellate court must consider the subsequent event when deciding the relief."
+      },
+      "definition": "If a party diligently brings to an appellate court a later event that fundamentally affects relief, and both sides can address it, the court must consider that event."
+    },
+    {
+      "legal_issue": "A tenant’s evidence of other vacant premises requires the court to assess whether those premises are suitable for the landlord’s claimed occupation.",
+      "material_facts": [
+        "The tenant asserted that the landlords had other houses available to them.",
+        "The appellate court treated the choice of which premises to occupy as a matter solely for the landlords, without requiring them to show that the vacant premises were unsuitable."
+      ],
+      "conclusion": "The landlord’s choice of premises is not unfettered; when the tenant shows that other vacant premises are available, the court should expect the landlord to establish that those premises are unsuitable for the claimed use.",
+      "legal_principle": "The Court applied the purpose and intendment of rent-control legislation, including section 11(1)(c) of the Bihar Buildings (Lease, Rent and Eviction) Control Act, 1947. A claim of personal requirement must be assessed consistently with the statutory limits on a landlord’s right of re-entry. The existence of other vacant premises does not automatically defeat the claim, but their suitability must be addressed.",
+      "rule": {
+        "if": "personal_requirement_eviction_case and tenant_shows_other_vacant_premises and claimant_does_not_establish_they_are_unsuitable",
+        "then": "personal_requirement_not_established"
+      },
+      "predicates": {
+        "personal_requirement_eviction_case": "The proceeding seeks eviction of a tenant on the ground of personal requirement.",
+        "tenant_shows_other_vacant_premises": "The tenant shows that the claimant has other vacant premises available.",
+        "claimant_does_not_establish_they_are_unsuitable": "The claimant does not establish that the other vacant premises are unsuitable for the claimed occupation.",
+        "personal_requirement_not_established": "The claimed personal requirement is not established."
+      },
+      "definition": "When a tenant shows other vacant premises and the claimant does not establish their unsuitability, the claimed personal requirement is not established."
+    },
+    {
+      "legal_issue": "A landlord who loses all interest in the premises during eviction proceedings ordinarily cannot continue a claim for eviction based on that landlord’s own personal requirement.",
+      "material_facts": [
+        "The tenant’s appellate application asserted that a partition had allotted the shop exclusively to a person who was not a party to the eviction proceeding.",
+        "The claim for personal occupation was based on the intended use of one of the original claimants.",
+        "The Court held that the partition decree and its effect on ownership required examination and explained that, if the claimant had no subsisting interest, the personal-requirement claim would ordinarily fail."
+      ],
+      "conclusion": "If the partition decree establishes that the claimant lost all interest in the shop, the claimant cannot seek eviction for their own personal requirement; the decree and its effect had to be determined on remand.",
+      "legal_principle": "Under section 11(1)(c) of the Bihar Buildings (Lease, Rent and Eviction) Control Act, 1947, the claimant seeking possession for their own occupation must have a subsisting right to occupy the building. Relying on Pasupuleti Venkateswarlu v. The Motor & General Traders and the principle that an appeal is a continuation of the suit, the Court held that the relief must be moulded in light of material subsequent events.",
+      "rule": {
+        "if": "personal_requirement_eviction_case and claimant_seeks_own_occupation and claimant_loses_all_interest_before_final_decree",
+        "then": "personal_requirement_claim_ordinarily_fails"
+      },
+      "predicates": {
+        "personal_requirement_eviction_case": "The proceeding seeks eviction of a tenant on the ground of personal requirement.",
+        "claimant_seeks_own_occupation": "The claimant seeks possession so that the claimant can personally occupy the building.",
+        "claimant_loses_all_interest_before_final_decree": "Before the final decree, the claimant loses all interest in the building.",
+        "personal_requirement_claim_ordinarily_fails": "The claimant’s personal-requirement claim ordinarily fails."
+      },
+      "definition": "If a claimant seeking personal occupation loses all interest in the building before the final decree, the personal-requirement claim ordinarily fails."
+    },
+    {
+      "legal_issue": "Whether original landlords may continue an eviction proceeding after a partition or transfer removes their interest, including on a default ground, depends on the effect of the transaction and the rights of the transferee.",
+      "material_facts": [
+        "The tenant asserted that the partition allotted the shop exclusively to a person who was not a party to the proceeding.",
+        "The courts below had found default in payment of rent, but the effect of the partition on the original landlords’ right to continue the claim had not been examined.",
+        "The record did not resolve whether the partition decree reserved continuation of the proceeding, whether the original landlords undertook to continue it for the transferee, or whether the transferee had sought to join the proceeding."
+      ],
+      "conclusion": "The Court did not decide whether the landlords could continue the claim on the ground of default. It remanded the matter for examination of the partition decree, any reservation or undertaking concerning the proceeding, and the transferee’s position.",
+      "legal_principle": "The Court considered sections 11(1)(c), 11(1)(d) and 12 of the Bihar Buildings (Lease, Rent and Eviction) Control Act, 1947, and held that the effect of the transaction on the right to continue the action required examination. It distinguished the established principle permitting consideration of subsequent events from the unresolved question whether a claimant who has lost all interest may continue a default-based claim, which may depend on the agreement with the transferee or the transferee’s participation.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and property_interest_transferred_or_partitioned_during_proceeding and original_claimants_lost_interest and transferee_not_party",
+        "then": "continuation_entitlement_requires_further_examination"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The proceeding seeks eviction under a rent-control regime.",
+        "property_interest_transferred_or_partitioned_during_proceeding": "The property is transferred or allotted by partition while the eviction proceeding is pending.",
+        "original_claimants_lost_interest": "The original claimants lose their interest in the property.",
+        "transferee_not_party": "The transferee or exclusive allottee is not a party to the eviction proceeding.",
+        "continuation_entitlement_requires_further_examination": "The original claimants’ entitlement to continue the proceeding must be examined in light of the transaction and the transferee’s rights."
+      },
+      "definition": "When original claimants lose their interest during a rent-control eviction proceeding and the transferee is not a party, their entitlement to continue must be examined in light of the transaction and the transferee’s rights."
+    }
+  ],
+  "seconds": 22.0
+}

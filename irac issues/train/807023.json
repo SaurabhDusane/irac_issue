@@ -1,0 +1,88 @@
+{
+  "doc_id": "807023",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33981,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3009,
+    "prompt_tokens": 8451,
+    "total_tokens": 11460,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The prosecution’s failure to explain serious injuries sustained by an accused during the occurrence may undermine its account, particularly when its witnesses are interested or inimical and the defence account is plausible.",
+      "material_facts": [
+        "An accused had a grievous fracture and other serious injuries which the court found were sustained during the occurrence.",
+        "The prosecution did not explain those injuries, and some eyewitnesses said they had not seen any injuries on the accused.",
+        "The prosecution witnesses were interested or inimical, and the defence account that the occurrence arose in the accused’s plantain orchard was supported by evidence of damaged plants.",
+        "The evidence also suggested that the accused’s injuries and the circumstances of the occurrence could support either a claim of private defence or reasonable doubt about the prosecution account."
+      ],
+      "conclusion": "In the circumstances, the failure to explain the serious injuries was a major infirmity that made the prosecution version doubtful and the testimony of the witnesses unreliable; the prosecution had not proved its case beyond reasonable doubt.",
+      "legal_principle": "Under Mohar Rai v. State of Bihar, failure to explain injuries sustained by an accused in the occurrence may show that the prosecution witnesses’ account is untrue or not wholly true and may lend probability to the defence. State of Gujarat v. Bai Fatima and Puran Singh v. State of Punjab explain that the effect depends on the facts: it may support a right of private defence, make the prosecution version doubtful, or have no effect. The omission is especially significant where the injuries are serious and the evidence is interested or inimical, or the defence account competes in probability; it may matter less where injuries are minor or the prosecution evidence is exceptionally clear, independent and cogent.",
+      "rule": {
+        "if": "murder_prosecution and serious_occurrence_injuries_to_accused and prosecution_failed_to_explain_injuries and (witnesses_were_inimical or witnesses_denied_injuries or defence_account_was_plausible)",
+        "then": "prosecution_version_is_doubtful"
+      },
+      "predicates": {
+        "murder_prosecution": "The proceeding is a prosecution for murder.",
+        "serious_occurrence_injuries_to_accused": "An accused sustained serious injuries during the occurrence being tried.",
+        "prosecution_failed_to_explain_injuries": "The prosecution did not give a reasonable explanation for those injuries.",
+        "witnesses_were_inimical": "The witnesses supporting the prosecution were interested in or hostile toward the accused.",
+        "witnesses_denied_injuries": "One or more prosecution witnesses said they had not seen injuries on the accused.",
+        "defence_account_was_plausible": "The defence gave an account of the occurrence that was supported by circumstances or evidence."
+      },
+      "definition": "When a murder prosecution leaves serious injuries sustained by an accused during the occurrence unexplained and the surrounding evidence includes one of the stated credibility concerns, the prosecution account is doubtful."
+    },
+    {
+      "legal_issue": "Material conflicts between eyewitness accounts and medical evidence, considered with other significant credibility problems, may make the prosecution case unreliable as a whole rather than permit a court to separate an assertedly true part from a false part.",
+      "material_facts": [
+        "Eyewitnesses said that a deceased person who had only one abdominal injury was also struck with sticks, but the medical examination disclosed no corresponding stick injuries.",
+        "Eyewitnesses described several stick blows to another deceased person, while the medical findings included only one lacerated wound, a swelling and scratches.",
+        "The witnesses were interested or inimical, and no independent witnesses were called despite evidence that villagers were present.",
+        "The court found it inherently improbable that persons without an apparent connection to the family dispute would join the occurrence, and considered the alleged implication of those persons to be false.",
+        "The court found that the truth and falsehood in the prosecution account were so mixed that separating them would require reconstructing the prosecution case."
+      ],
+      "conclusion": "The material inconsistencies and other infirmities rendered the prosecution evidence unreliable as a whole. The prosecution had failed to prove the charges beyond reasonable doubt, so the convictions could not stand and the appellants were acquitted.",
+      "legal_principle": "The court compared the eyewitness account with the medical findings and treated the absence of injuries corresponding to the alleged blows as a material contradiction that the prosecution had not satisfactorily explained. In assessing proof beyond reasonable doubt, where the account is materially unreliable and truth cannot be separated from falsehood without reconstructing the prosecution case, the court cannot base a conviction on a selected portion of that account.",
+      "rule": {
+        "if": "criminal_prosecution and eyewitness_account_conflicted_materially_with_medical_findings and (witnesses_were_inimical or available_independent_witnesses_were_not_called) and alleged_participation_lacked_apparent_motive and evidence_could_not_be_separated_without_reconstruction",
+        "then": "prosecution_case_not_proved_beyond_reasonable_doubt"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution in which the court must decide whether the charges are proved.",
+        "eyewitness_account_conflicted_materially_with_medical_findings": "The eyewitnesses described blows or injuries that were materially inconsistent with the injuries found by medical examination.",
+        "witnesses_were_inimical": "The witnesses supporting the prosecution were interested in or hostile toward the accused.",
+        "available_independent_witnesses_were_not_called": "The prosecution did not call independent witnesses despite evidence that such witnesses were available.",
+        "alleged_participation_lacked_apparent_motive": "The prosecution alleged that persons with no apparent connection to the dispute joined in the assault without an apparent reason to do so.",
+        "evidence_could_not_be_separated_without_reconstruction": "The prosecution account combined assertedly true and false parts that could not be separated without creating a new version of the case."
+      },
+      "definition": "When a criminal prosecution has the stated material contradiction and credibility concerns, including an account that cannot be separated without reconstruction, the charges are not proved beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "The Supreme Court may interfere in an appeal by special leave with concurrent factual findings when the findings are manifestly perverse and fail to address important circumstances that undermine the prosecution case.",
+      "material_facts": [
+        "The Sessions Court and High Court had both found the appellants guilty.",
+        "The High Court largely affirmed the trial court’s findings without adequately analysing important evidence and circumstances.",
+        "The High Court failed properly to consider the serious unexplained injuries to an accused and misapplied the principles governing that omission.",
+        "The Supreme Court found that the overlooked circumstances materially undermined the prosecution case and made the High Court’s judgment manifestly perverse."
+      ],
+      "conclusion": "The exceptional circumstances justified interference with the concurrent findings; the appeals were allowed, the convictions and sentences were set aside, and the appellants were acquitted.",
+      "legal_principle": "Although the Supreme Court does not normally interfere in an appeal by special leave with concurrent findings of fact, it may do so in special circumstances where the judgment under appeal is manifestly perverse, important circumstances have not been considered, or the court below has committed an error of law in appreciating material evidence.",
+      "rule": {
+        "if": "appeal_by_special_leave_against_concurrent_findings and findings_were_manifestly_perverse and important_material_circumstances_were_overlooked",
+        "then": "appellate_interference_is_warranted"
+      },
+      "predicates": {
+        "appeal_by_special_leave_against_concurrent_findings": "The appeal by special leave challenges factual findings made concurrently by the trial court and the appellate court.",
+        "findings_were_manifestly_perverse": "The findings under challenge were manifestly perverse in light of the evidence and circumstances.",
+        "important_material_circumstances_were_overlooked": "The court below failed to consider important circumstances bearing on the reliability of the prosecution case."
+      },
+      "definition": "An appeal by special leave may warrant interference with concurrent findings when those findings are manifestly perverse and important material circumstances were overlooked."
+    }
+  ],
+  "seconds": 18.9
+}

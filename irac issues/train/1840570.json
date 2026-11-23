@@ -1,0 +1,59 @@
+{
+  "doc_id": "1840570",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9049,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1141,
+    "prompt_tokens": 2703,
+    "total_tokens": 3844,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The annual ratable value of a property subject to rent control is measured by the reasonable standard rent, not by the actual rent received.",
+      "material_facts": [
+        "The owners’ house was assessed for municipal tax using the rent they actually received from a bank tenant.",
+        "The applicable valuation definition measured a building by the rent it could reasonably be expected to fetch from year to year, subject to deductions.",
+        "The Court found that the valuation authorities had used actual rent rather than the reasonable standard rent determinable under the relevant rent-control law."
+      ],
+      "conclusion": "The actual rent received was not the proper measure of annual ratable value; the value must be determined by reference to the reasonable standard rent under the relevant Rent Act, and the authorities’ assessment was illegal.",
+      "legal_principle": "Under section 3(1)(b) of the Punjab Municipal Act, 1911, annual value is based on the rent at which a building may reasonably be expected to let. Diwan Daulat Rai Kapur v. New Delhi Municipal Committee and Mrs. Shiela Kaushish v. C.I.T. establish that this expectation cannot exceed the standard rent determinable under the relevant Rent Act, even if the actual contractual rent is higher. New Delhi Municipal Committee v. M.N. Soi rejects actual rent as the measure where it reflects rent received in defiance of rent-control law. Balbir Singh v. M/s M.C.D. holds that standard rent is an upper limit and that the reasonable rent may be lower in light of the circumstances.",
+      "rule": {
+        "if": "municipal_property_valuation and (property_is_tenanted or property_is_self_occupied) and actual_rent_exceeds_reasonable_standard_rent",
+        "then": "annual_value_is_limited_to_reasonable_standard_rent"
+      },
+      "predicates": {
+        "municipal_property_valuation": "The proceeding concerns assessment of a property's annual value for municipal rating.",
+        "property_is_tenanted": "The property is let to a tenant.",
+        "property_is_self_occupied": "The property is occupied by its owner.",
+        "actual_rent_exceeds_reasonable_standard_rent": "The rent actually received or contracted for exceeds the rent reasonably expected under the applicable rent-control principles."
+      },
+      "definition": "When a municipal property valuation concerns a tenanted or owner-occupied property and actual rent exceeds reasonable standard rent, the annual value is limited to reasonable standard rent."
+    },
+    {
+      "legal_issue": "An owner’s admission or willingness to pay tax on the basis of actual rent cannot prevent application of the statutory method for determining annual value.",
+      "material_facts": [
+        "The owners had stated in a letter that they were prepared to pay tax on the basis of the actual rent received from the tenant.",
+        "The authorities relied on that statement to argue that the owners could not challenge assessment on that basis.",
+        "The applicable statute prescribed the method for determining annual value."
+      ],
+      "conclusion": "The owners were not estopped by their admission from claiming the statutory method of valuation; an admission cannot justify denying a benefit prescribed by statute.",
+      "legal_principle": "There is no estoppel against a statute. Where legislation prescribes a particular method for determining annual value, that method must be followed, and an owner’s erroneous admission cannot displace it.",
+      "rule": {
+        "if": "municipal_property_valuation and valuation_method_is_statutorily_prescribed and owner_admitted_actual_rent_as_basis",
+        "then": "admission_does_not_bar_statutory_valuation_method"
+      },
+      "predicates": {
+        "municipal_property_valuation": "The proceeding concerns assessment of a property's annual value for municipal rating.",
+        "valuation_method_is_statutorily_prescribed": "The governing law specifies the method for determining annual value.",
+        "owner_admitted_actual_rent_as_basis": "The property owner stated or accepted that actual rent should be used as the valuation basis."
+      },
+      "definition": "In a municipal property valuation with a prescribed statutory method, an owner's admission accepting actual rent as the basis does not bar use of the statutory method."
+    }
+  ],
+  "seconds": 8.0
+}

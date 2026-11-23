@@ -1,0 +1,78 @@
+{
+  "doc_id": "570142",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27029,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2558,
+    "prompt_tokens": 6685,
+    "total_tokens": 9243,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A will must be proved according to the statutory requirements for testamentary documents, and its age or registration does not dispense with those requirements.",
+      "material_facts": [
+        "The beneficiary relied on a registered will executed many years before the testatrix’s death.",
+        "The testatrix had made a thumb impression, and the beneficiary was a mortgagee and tenant in respect of some of her property.",
+        "The dispute concerned whether the will was validly executed and could establish the beneficiary’s title."
+      ],
+      "conclusion": "The presumption for old documents under Section 90 of the Indian Evidence Act does not apply to prove a will. The will must be proved under Section 63(c) of the Indian Succession Act and Section 68 of the Evidence Act, ordinarily by examining at least one attesting witness who is alive, subject to the court’s process, and capable of giving evidence. If those requirements cannot be met, Sections 69 and 70 may apply. Registration does not excuse compliance.",
+      "legal_principle": "Sections 63(c) of the Indian Succession Act, 1925, and 68, 69, 70 and 90 of the Indian Evidence Act, 1872, govern proof of a will. The Court relied on B. Venkatamuni v. C.J. Ayodhya Ram Singh, (2006) 13 SCC 449, and the principles in H. Venkatachala Iyengar v. B.N. Thimmajamma, AIR 1959 SC 443, and Niranjan Umeshchandra Joshi v. Mrudula Jyoti Rao, (2006) 14 SCALE 186.",
+      "rule": {
+        "if": "will_dispute and will_is_propounded",
+        "then": "will_must_be_proved_under_testamentary_proof_requirements"
+      },
+      "predicates": {
+        "will_dispute": "The parties dispute whether a document is a valid will that establishes a claimed testamentary entitlement.",
+        "will_is_propounded": "A person relies on the document as the testator’s will."
+      },
+      "definition": "When a will is propounded in a will dispute, the propounder must prove it under the requirements for testamentary proof, rather than relying only on its age or registration."
+    },
+    {
+      "legal_issue": "When circumstances surrounding a will raise legitimate suspicion, the propounder must remove that suspicion with cogent evidence, and the circumstances must be assessed in light of the situation when the will was made.",
+      "material_facts": [
+        "The beneficiary was a mortgagee and tenant of the testatrix, and the record did not establish that she was educated; she had made a thumb impression on the will.",
+        "The will excluded the testatrix’s surviving daughters, and the beneficiary was said to have participated in its execution.",
+        "The courts below relied in part on evidence that the daughters learned of their mother’s death several days later, although that event occurred long after the will was executed.",
+        "The Supreme Court considered whether the testatrix could have received independent advice and found that the lower courts had not addressed the relevant suspicious circumstances."
+      ],
+      "conclusion": "The propounder must remove legitimate suspicions surrounding a will with cogent, satisfactory and sufficient evidence. The circumstances are not exhaustive and must be assessed with reasonable explanations in mind, by reference to the facts prevailing when the will was executed. The daughters’ later learning of their mother’s death was of little significance to that assessment. The matter required fresh consideration.",
+      "legal_principle": "Under H. Venkatachala Iyengar v. B.N. Thimmajamma, AIR 1959 SC 443, the propounder must prove the testator’s sound and disposing mind, understanding of the disposition, and free execution, and must dispel legitimate doubts. Niranjan Umeshchandra Joshi v. Mrudula Jyoti Rao, (2006) 14 SCALE 186, identifies circumstances including doubtful mental capacity, unnatural or unfair dispositions, and prominent participation by a beneficiary. Jaswant Kaur v. Amrit Kaur, (1977) 1 SCC 369, requires a cogent and convincing explanation of suspicious circumstances. Anil Kak v. Kumari Sharada Raje, (2008) 7 SCC 695, requires the court to satisfy its conscience; exclusion of a natural heir is a relevant factor but is not, by itself, necessarily suspicious. The listed circumstances are not exhaustive.",
+      "rule": {
+        "if": "will_dispute and will_is_propounded and suspicious_circumstances_present",
+        "then": "propounder_must_remove_legitimate_suspicion"
+      },
+      "predicates": {
+        "will_dispute": "The parties dispute whether a document is a valid will that establishes a claimed testamentary entitlement.",
+        "will_is_propounded": "A person relies on the document as the testator’s will.",
+        "suspicious_circumstances_present": "Facts surrounding the making or contents of the will raise a legitimate doubt about the testator’s capacity, free choice, or due execution."
+      },
+      "definition": "If a propounded will is disputed and its circumstances raise legitimate suspicion, the propounder must remove that suspicion with sufficient evidence."
+    },
+    {
+      "legal_issue": "An appellate decision accepting a will cannot stand where the reviewing courts fail to assess material proof requirements and suspicious circumstances; the matter must be reconsidered under the correct principles.",
+      "material_facts": [
+        "The first appellate court accepted the will and granted the beneficiary relief, and the High Court dismissed the challengers’ second appeal.",
+        "Neither court addressed the statutory requirements for proving the will or adequately considered the relevant suspicious circumstances, including the need to consider the situation at execution and whether independent advice was available.",
+        "The Supreme Court concluded that the judgments of both courts should be set aside and directed the first appellate court to reconsider the matter."
+      ],
+      "conclusion": "The judgments of the first appellate court and the High Court were set aside, and the matter was remitted to the first appellate court for fresh consideration in light of the Court’s observations.",
+      "legal_principle": "The Court applied the statutory proof requirements in Sections 63(c) of the Indian Succession Act, 1925, and 68 of the Indian Evidence Act, 1872, together with the principles on suspicious circumstances in H. Venkatachala Iyengar v. B.N. Thimmajamma, AIR 1959 SC 443, Niranjan Umeshchandra Joshi v. Mrudula Jyoti Rao, (2006) 14 SCALE 186, and Jaswant Kaur v. Amrit Kaur, (1977) 1 SCC 369.",
+      "rule": {
+        "if": "appeal_in_will_dispute and lower_appellate_courts_decided_validity and material_proof_requirements_or_suspicious_circumstances_were_not_assessed",
+        "then": "appellate_decision_must_be_set_aside_and_matter_reconsidered"
+      },
+      "predicates": {
+        "appeal_in_will_dispute": "An appeal concerns a lower court’s decision on the validity or effect of a will.",
+        "lower_appellate_courts_decided_validity": "The lower appellate court or courts accepted or rejected the will’s validity.",
+        "material_proof_requirements_or_suspicious_circumstances_were_not_assessed": "The lower appellate court or courts failed to evaluate material statutory proof requirements or relevant suspicious circumstances."
+      },
+      "definition": "If appellate courts decide a will dispute without assessing material proof requirements or suspicious circumstances, their decision must be set aside and the matter reconsidered."
+    }
+  ],
+  "seconds": 16.4
+}

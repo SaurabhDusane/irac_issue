@@ -1,0 +1,77 @@
+{
+  "doc_id": "612459",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22109,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2294,
+    "prompt_tokens": 6386,
+    "total_tokens": 8680,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant who disputes the amount of rent or permitted increases must take the prescribed steps within the notice period to establish readiness and willingness to pay and cannot obtain general rent protection merely by offering arrears later in the suit.",
+      "material_facts": [
+        "The tenant disputed the standard rent and the claimed arrears in his written statement.",
+        "He made no application to the court to determine the disputed rent within one month after receiving the demand notice.",
+        "He made no payment within that month and deposited only part of the arrears after the suit began."
+      ],
+      "conclusion": "The tenant was not entitled to protection under section 12(1) because, despite disputing the rent, he did not apply to the court as required and could not cure that failure by offering payment when the court was about to decree the suit.",
+      "legal_principle": "Section 12(1) must be read with its Explanation: where the amount of standard rent or permitted increases is disputed, readiness and willingness to pay requires an application under section 11(3) before the month after notice expires, followed by payment or tender of the amount specified by the court. The Court distinguished Shah Bhojraj Kuverji Oil Mills and Ginning Factory v. Subbash Chandra Yograj Sinha, and applied Vora Abbasbhai Alimahomed v. Haji Gulamnabi Haji Safibhai and Mrs. Manorama Masurekar v. Mrs. Dhanlaxmi G. Shah.",
+      "rule": {
+        "if": "rent_arrears_eviction_suit and tenant_disputes_rent_amount and not timely_court_application",
+        "then": "tenant_is_not_protected_by_general_rent_protection"
+      },
+      "predicates": {
+        "rent_arrears_eviction_suit": "A landlord brought a suit seeking possession on the ground that the tenant had not paid rent or permitted increases.",
+        "tenant_disputes_rent_amount": "The tenant disputed the amount of standard rent or permitted increases recoverable.",
+        "timely_court_application": "The tenant applied to the court within the notice period to determine the disputed amount."
+      },
+      "definition": "When a tenant disputes the rent amount in an eviction suit for arrears but does not make a timely court application, the tenant is not protected by the general rent protection."
+    },
+    {
+      "legal_issue": "A tenant obtains the conditional protection against eviction only by paying all rent and permitted increases due by the first hearing and continuing to pay or tender them regularly until the suit is decided.",
+      "material_facts": [
+        "The tenant deposited Rs. 1,000 on the first hearing date, but the total payments and credit fell short of the amounts due by that date.",
+        "After the first hearing, several monthly rent payments fell due and remained unpaid when the suit was decided.",
+        "The tenant did not regularly pay or tender the amounts that fell due during the suit."
+      ],
+      "conclusion": "The tenant did not qualify for protection under section 12(3)(b) because he had not paid all amounts due by the first hearing and did not thereafter pay or tender the amounts falling due regularly.",
+      "legal_principle": "Section 12(3)(b) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 requires payment or tender in court of the standard rent and permitted increases then due by the first hearing or another date fixed by the court, followed by regular payment or tender until final decision, as well as payment of costs as directed.",
+      "rule": {
+        "if": "rent_arrears_eviction_suit and (not all_arrears_paid_by_first_hearing or not regular_payments_after_first_hearing)",
+        "then": "tenant_does_not_receive_conditional_eviction_protection"
+      },
+      "predicates": {
+        "rent_arrears_eviction_suit": "A landlord brought a suit seeking possession on the ground that the tenant had not paid rent or permitted increases.",
+        "all_arrears_paid_by_first_hearing": "The tenant paid or tendered in court all rent and permitted increases due by the first hearing or another date fixed by the court.",
+        "regular_payments_after_first_hearing": "The tenant continued to pay or tender in court regularly the rent and permitted increases falling due until the suit was finally decided."
+      },
+      "definition": "In an eviction suit for rent arrears, a tenant who fails either to pay all amounts due by the first hearing or to make regular payments afterward does not receive conditional eviction protection."
+    },
+    {
+      "legal_issue": "The requirement governing the manner of a demand for rent does not require a tenancy-termination notice to satisfy that demand-notice requirement as an additional condition of validity.",
+      "material_facts": [
+        "The landlord served a notice demanding arrears of rent and permitted increases and terminating the tenancy.",
+        "The tenant argued that the termination notice was invalid because it had to comply with section 12(2)."
+      ],
+      "conclusion": "The tenant's argument was rejected because section 12(2) prescribes the manner for a notice demanding standard rent or permitted increases; it did not support the asserted objection to the termination notice.",
+      "legal_principle": "Section 12(2) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 sets out the manner in which a written demand for standard rent or permitted increases must be served before a suit for possession on the ground of non-payment may be instituted.",
+      "rule": {
+        "if": "rent_arrears_eviction_suit and notice_demands_rent_and_terminates_tenancy and objection_relies_only_on_demand_notice_requirement",
+        "then": "demand_notice_requirement_does_not_invalidate_termination_notice"
+      },
+      "predicates": {
+        "rent_arrears_eviction_suit": "A landlord brought a suit seeking possession on the ground that the tenant had not paid rent or permitted increases.",
+        "notice_demands_rent_and_terminates_tenancy": "The landlord's notice both demanded rent or permitted increases and terminated the tenancy.",
+        "objection_relies_only_on_demand_notice_requirement": "The tenant argued that the termination notice was invalid solely because it had to satisfy the requirements governing a demand for rent."
+      },
+      "definition": "In an eviction suit for rent arrears, a combined demand and termination notice is not invalid on the sole ground that the demand-notice requirement also governs the termination notice."
+    }
+  ],
+  "seconds": 13.8
+}

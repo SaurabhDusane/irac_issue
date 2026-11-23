@@ -1,0 +1,102 @@
+{
+  "doc_id": "1418721",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17251,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2221,
+    "prompt_tokens": 4475,
+    "total_tokens": 6696,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Additional evidence may be admitted in an appeal only when the requirements for doing so are established.",
+      "material_facts": [
+        "The Wakf Board asked the courts to allow it to produce further documents, but had opportunities to produce them before both the trial court and the High Court.",
+        "The Board did not explain what the documents were or show that, despite due diligence, it could not produce them earlier."
+      ],
+      "conclusion": "The Board was not entitled to adduce additional evidence, and the refusal to remand the matter was upheld.",
+      "legal_principle": "Order XLI, Rule 27 of the Code of Civil Procedure bars a party to an appeal from producing additional evidence unless it shows that, despite due diligence, the evidence could not have been produced earlier and that the evidence is required to enable the court to pronounce a proper judgment.",
+      "rule": {
+        "if": "appeal_proceeding and (earlier_opportunity_to_produce_evidence and not_due_diligence_shown) and (evidence_not_described or need_for_proper_judgment_not_shown)",
+        "then": "additional_evidence_not_admitted"
+      },
+      "predicates": {
+        "appeal_proceeding": "The matter is before a court hearing an appeal.",
+        "earlier_opportunity_to_produce_evidence": "The party had an opportunity to produce the evidence in the proceedings before the appeal.",
+        "not_due_diligence_shown": "The party did not show that it could not have produced the evidence earlier despite due diligence.",
+        "evidence_not_described": "The party did not identify the evidence it sought to produce.",
+        "need_for_proper_judgment_not_shown": "The party did not show that the evidence was needed for the court to pronounce a proper judgment."
+      },
+      "definition": "When a party in an appeal had an earlier opportunity to produce evidence, fails to show due diligence, and does not establish the evidence’s identity or necessity, the evidence is not admitted."
+    },
+    {
+      "legal_issue": "A Wakf Board cannot treat property that is not an existing wakf as wakf property merely by issuing a notification, and government records and possession may establish government ownership of the property.",
+      "material_facts": [
+        "The government produced a register of protected monuments naming it as owner and land records showing the property in its name.",
+        "Evidence showed that the government had possessed and maintained the property as a protected monument for about a century.",
+        "The Board relied on its notification and a claim that the property had historically belonged to a saint and his descendants, but the Board did not provide concrete evidence substantiating that ownership claim.",
+        "The manner of the government’s acquisition was not challenged."
+      ],
+      "conclusion": "The property was government property and not wakf property; the Board’s notification declaring it wakf property was null and void.",
+      "legal_principle": "Under section 4 of the Wakf Act, 1954, the Survey Commissioner could survey wakf properties existing when the Act commenced, and the Board could exercise rights only over existing wakf properties. The Court relied on the evidentiary record, including the protected-monuments register, land records, and testimony about government possession, to uphold the government’s title. It rejected unsupported historical claims as insufficient proof in a civil title dispute.",
+      "rule": {
+        "if": "civil_title_proceeding and government_ownership_records and government_possession_as_protected_property and wakf_ownership_claim_unsupported",
+        "then": "property_is_government_property_and_wakf_declaration_is_invalid"
+      },
+      "predicates": {
+        "civil_title_proceeding": "The case is a civil proceeding to determine ownership or title to property.",
+        "government_ownership_records": "Official property records identify the government as owner.",
+        "government_possession_as_protected_property": "The government has possessed or maintained the property as a protected monument.",
+        "wakf_ownership_claim_unsupported": "The claim that the property belongs to a wakf is not substantiated by admissible evidence or records."
+      },
+      "definition": "In a civil title proceeding, where official records and possession support government ownership and the competing wakf claim lacks evidentiary support, the property is government property and the wakf declaration is invalid."
+    },
+    {
+      "legal_issue": "A claimant who relies on title and adverse possession must establish the elements of adverse possession, including possession hostile to the true owner, and cannot rely on the two inconsistent claims without renouncing the title on which possession began.",
+      "material_facts": [
+        "The government’s title was established through acquisition under the ancient-monuments legislation.",
+        "The government’s possession was not shown to have been to the exclusion of the Board with an intention to possess against it.",
+        "The government did not specifically plead and prove the Board’s earlier title or the point when the Board was dispossessed.",
+        "The government advanced both its own title and, alternatively, a claim of adverse possession."
+      ],
+      "conclusion": "The alternative claim of adverse possession was unsustainable, and the High Court should not have granted relief on that ground.",
+      "legal_principle": "Adverse possession must be peaceful, open, continuous, actual, visible, exclusive, and hostile to the true owner, and must be proved with adequate continuity, publicity, and extent. A claimant must plead and establish the nature and commencement of possession, the owner’s knowledge, its duration, and that it was open and undisturbed. Physical exclusive possession and animus possidendi are central. The Court relied on S. M. Karim v. Bibi Sakinal, AIR 1964 SC 1254; Parsinni v. Sukhi, (1993) 4 SCC 375; D. N. Venkatarayappa v. State of Karnataka, (1997) 7 SCC 567; Dr. Mahesh Chand Sharma v. Raj Kumari Sharma, (1996) 8 SCC 128; P. Periasami v. P. Periathambi, (1995) 6 SCC 523; and Mohan Lal v. Mirza Abdul Gaffar, (1996) 1 SCC 639. A claim based on title and a claim of adverse possession are mutually inconsistent unless the claimant disclaims the title under which possession began and proves hostile possession to the true owner’s knowledge.",
+      "rule": {
+        "if": "title_suit and (claimant_relies_on_own_title and adverse_possession_also_claimed) and (hostile_exclusive_possession_not_proved or prior_owner_or_dispossession_not_proved)",
+        "then": "adverse_possession_claim_fails"
+      },
+      "predicates": {
+        "title_suit": "The proceeding seeks a determination of title to property.",
+        "claimant_relies_on_own_title": "The claimant asserts that it owns the property under an independent source of title.",
+        "adverse_possession_also_claimed": "The claimant also asserts that it acquired title through adverse possession.",
+        "hostile_exclusive_possession_not_proved": "The claimant has not proved actual, exclusive possession with an intention to possess against the true owner.",
+        "prior_owner_or_dispossession_not_proved": "The claimant has not established the other party’s prior title or when that party was dispossessed."
+      },
+      "definition": "In a title suit, when a claimant asserts its own title and also claims adverse possession but fails to prove hostile exclusive possession or the prior owner’s title and dispossession, the adverse-possession claim fails."
+    },
+    {
+      "legal_issue": "A finding that the required notice was given may be upheld when it is a factual finding supported by the evidence.",
+      "material_facts": [
+        "The High Court found, on the evidence and facts, that the notice requirement had been complied with.",
+        "The Supreme Court treated that finding as factual and did not disturb it."
+      ],
+      "conclusion": "The High Court’s finding that the notice requirement was complied with was upheld.",
+      "legal_principle": "The Court treated compliance with the notice requirement under section 56 of the Wakf Act, 1954 as a finding of fact based on the evidence and facts of the case.",
+      "rule": {
+        "if": "appeal_proceeding and lower_court_found_notice_compliance_on_evidence",
+        "then": "notice_compliance_finding_upheld"
+      },
+      "predicates": {
+        "appeal_proceeding": "The matter is before a court hearing an appeal.",
+        "lower_court_found_notice_compliance_on_evidence": "The lower court found, based on the evidence, that the required notice had been given."
+      },
+      "definition": "When a lower court finds on the evidence that required notice was given, that factual finding is upheld in the appeal."
+    }
+  ],
+  "seconds": 13.7
+}

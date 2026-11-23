@@ -1,0 +1,59 @@
+{
+  "doc_id": "409520",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 6754,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1235,
+    "prompt_tokens": 2095,
+    "total_tokens": 3330,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Claims that were raised, or ought to have been raised, in time under the consolidation objection procedure cannot be pursued at a later stage of consolidation proceedings.",
+      "material_facts": [
+        "The claimants did not file objections within the prescribed period after publication of the consolidation records.",
+        "They later filed an objection under a different provision and sought to have it treated as a timely objection, but gave no grounds or supporting affidavit explaining the delay.",
+        "The consolidation authority rejected the later objection, and the revisional authority held that the claim was barred from being raised at a subsequent stage."
+      ],
+      "conclusion": "The later objection was barred and was correctly rejected; there was no material on which the delay could be condoned.",
+      "legal_principle": "Under Section 9(2) of the U.P. Consolidation of Holdings Act, 1953, an objection must be filed within the prescribed period. Section 11A bars objections concerning claims to land, partition of joint holdings, and valuation of plots that were raised, or might or ought to have been raised, under Section 9 from being raised or heard at a later stage of consolidation proceedings. The court relied on no earlier cases for this issue.",
+      "rule": {
+        "if": "consolidation_objection_proceeding and claim_within_initial_objection_scope and no_timely_objection and no_cause_shown_for_delay",
+        "then": "later_claim_is_barred"
+      },
+      "predicates": {
+        "consolidation_objection_proceeding": "The matter concerns an objection to claims or matters in consolidation proceedings.",
+        "claim_within_initial_objection_scope": "The claim concerns a matter that could or ought to have been raised in the initial objection process.",
+        "no_timely_objection": "The objector did not file an objection within the prescribed period.",
+        "no_cause_shown_for_delay": "The objector gave no grounds explaining the delay in filing the objection."
+      },
+      "definition": "When a claim in consolidation proceedings belonged in the initial objection process, no timely objection was filed, and no cause for delay was shown, the claim is barred at a later stage."
+    },
+    {
+      "legal_issue": "A constitutional writ court should not interfere with a consolidation revisional order unless the authority exceeded its jurisdiction or made a manifest error of law apparent on the record.",
+      "material_facts": [
+        "The claimants challenged the revisional authority's order by writ petitions.",
+        "The revisional authority acted within its revisional role in restoring the rejection of the late objections.",
+        "The court found no error of law apparent on the record and no excess of jurisdiction."
+      ],
+      "conclusion": "The High Court correctly declined to interfere, and the appeals were dismissed.",
+      "legal_principle": "The court stated that review under Article 226 of the Constitution is available where an authority has acted in excess of jurisdiction or where there is a manifest error of law apparent on the face of the record. It relied on no earlier cases for this proposition.",
+      "rule": {
+        "if": "writ_challenges_revisional_order and no_jurisdictional_excess and no_manifest_error",
+        "then": "writ_interference_is_unwarranted"
+      },
+      "predicates": {
+        "writ_challenges_revisional_order": "The proceeding is a constitutional writ challenge to an administrative revisional order.",
+        "no_jurisdictional_excess": "The authority acted within the jurisdiction assigned to it.",
+        "no_manifest_error": "The record shows no manifest error of law apparent on its face."
+      },
+      "definition": "A writ challenge to a revisional order does not warrant interference when the authority stayed within its jurisdiction and the record contains no manifest legal error."
+    }
+  ],
+  "seconds": 69.1
+}

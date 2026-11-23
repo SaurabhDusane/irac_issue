@@ -1,0 +1,162 @@
+{
+  "doc_id": "1453719",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30884,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3966,
+    "prompt_tokens": 8264,
+    "total_tokens": 12230,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An accused who relies on alibi bears the burden of proving that they were elsewhere when the offence occurred.",
+      "material_facts": [
+        "The accused relied on alibi and said they were elsewhere at the time of the killings.",
+        "The defence called no evidence to establish the alibi.",
+        "Evidence that the accused were produced for arrest at another location days later remained unrebutted."
+      ],
+      "conclusion": "The alibi was not proved and was found to be untrue.",
+      "legal_principle": "Under section 103 of the Indian Evidence Act, 1872, a person who asks the court to believe a particular fact must prove it unless the law places that burden elsewhere. The illustration to section 103 specifically places on an accused the burden of proving that they were elsewhere at the relevant time.",
+      "rule": {
+        "if": "criminal_trial and accused_pleads_alibi and no_evidence_supports_alibi",
+        "then": "alibi_not_established"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial.",
+        "accused_pleads_alibi": "The accused asserts that they were elsewhere when the offence occurred.",
+        "no_evidence_supports_alibi": "The accused produces no evidence supporting the assertion that they were elsewhere."
+      },
+      "definition": "When an accused in a criminal trial asserts an alibi but produces no supporting evidence, the alibi is not established."
+    },
+    {
+      "legal_issue": "The prosecution need not prove motive to establish guilt, although a motive proved by the evidence must be considered for its adequacy.",
+      "material_facts": [
+        "Evidence indicated that a family property partition had taken place shortly before the killings.",
+        "There was a dispute about dividing joint cash, jewellery and other property.",
+        "The court considered this motive apparently inadequate, though possible."
+      ],
+      "conclusion": "The apparently inadequate motive did not prevent the prosecution from proving guilt beyond reasonable doubt.",
+      "legal_principle": "The prosecution is not bound to prove motive in a criminal case because the motive may be known only to the perpetrators. If the prosecution proves a motive, the court must consider whether it is adequate. No earlier case was relied on for this principle.",
+      "rule": {
+        "if": "criminal_case and prosecution_evidence_establishes_guilt_beyond_reasonable_doubt",
+        "then": "guilt_may_be_found_without_proof_of_adequate_motive"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal case.",
+        "prosecution_evidence_establishes_guilt_beyond_reasonable_doubt": "The prosecution evidence, considered as a whole, establishes guilt beyond reasonable doubt."
+      },
+      "definition": "In a criminal case, proof of guilt beyond reasonable doubt can support a finding of guilt even if no adequate motive is proved."
+    },
+    {
+      "legal_issue": "Eyewitness testimony cannot be rejected solely because the witnesses are related to the deceased, and their failure to intervene does not by itself make their evidence unnatural when they were unarmed and threatened.",
+      "material_facts": [
+        "Two eyewitnesses were close relatives of the deceased and were also related to the accused.",
+        "There was no evidence that the witnesses were hostile to the accused or had a reason to falsely implicate them.",
+        "The witnesses were unarmed while the assailants had weapons, and the witnesses were threatened with death if they raised an alarm or intervened.",
+        "One witness was in an advanced stage of pregnancy, and the court found her presence at the scene plausible in the circumstances."
+      ],
+      "conclusion": "The witnesses' relationship to the deceased, the pregnant witness's presence, and the witnesses' failure to intervene did not justify rejecting their evidence.",
+      "legal_principle": "Related witnesses' evidence cannot be rejected solely because of their relationship to the deceased. The court must assess the evidence in its circumstances; a threat and the instinct of self-preservation can explain why unarmed witnesses do not intervene. No earlier case was relied on for these principles.",
+      "rule": {
+        "if": "murder_trial and eyewitnesses_related_to_deceased and no_evidence_of_false_implication and witnesses_unarmed_and_threatened",
+        "then": "eyewitness_testimony_not_rejected_for_relationship_or_nonintervention_alone"
+      },
+      "predicates": {
+        "murder_trial": "The proceeding is a trial for murder.",
+        "eyewitnesses_related_to_deceased": "The eyewitnesses are related to the deceased.",
+        "no_evidence_of_false_implication": "There is no evidence that the eyewitnesses were hostile to the accused or had a reason to falsely implicate them.",
+        "witnesses_unarmed_and_threatened": "The witnesses were unarmed and were threatened if they intervened or raised an alarm."
+      },
+      "definition": "In a murder trial, related eyewitnesses' evidence is not rejected for relationship or nonintervention alone where there is no evidence of false implication and the unarmed witnesses were threatened."
+    },
+    {
+      "legal_issue": "An omission of incidental details from a first information report, including an alleged confession, does not by itself justify disbelieving the report or the related evidence when the omission is not a contradiction.",
+      "material_facts": [
+        "The first information report did not mention that the informant had told villagers about the occurrence before reporting it to police.",
+        "It did not include the alleged extrajudicial confession later described by another witness.",
+        "The informant had witnessed a brutal killing and was in a state in which the court considered it unreasonable to expect her to provide every detail in the report."
+      ],
+      "conclusion": "The omissions were omissions of details, not contradictions, and did not justify discrediting the informant or the evidence of the alleged confession.",
+      "legal_principle": "Section 154 of the Code of Criminal Procedure, 1973, concerns the recording of information relating to the commission of a cognizable offence. A first information report need not contain all details of the occurrence; an omission of details that is not a contradiction does not, by itself, undermine credibility. No earlier case was relied on for this principle.",
+      "rule": {
+        "if": "criminal_case and first_report_omits_incidental_details and omission_is_not_a_contradiction",
+        "then": "evidence_not_discredited_for_omission_alone"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal case.",
+        "first_report_omits_incidental_details": "The first report leaves out details of the occurrence or related events.",
+        "omission_is_not_a_contradiction": "The omitted matter does not contradict the account in the first report."
+      },
+      "definition": "In a criminal case, an omission of incidental details that does not contradict the first report does not alone discredit the evidence."
+    },
+    {
+      "legal_issue": "A delay in police interrogation does not by itself make a recovery false when the incriminating articles are recovered at the accused persons' instance.",
+      "material_facts": [
+        "The investigating officer testified that each accused disclosed where a weapon had been concealed and could be recovered.",
+        "Bloodstained weapons were recovered from the places identified by the accused.",
+        "The High Court considered the gap in police interrogation a reason to doubt the recoveries, but the Supreme Court found that gap insufficient to establish that they were false."
+      ],
+      "conclusion": "The recoveries could not be treated as false solely because the accused had not been interrogated during the intervening period.",
+      "legal_principle": "A gap in police interrogation is not, without more, sufficient reason to hold that a recovery is false when the incriminating articles are recovered at the accused persons' pointing out. No specific statutory provision or earlier case was relied on for this conclusion.",
+      "rule": {
+        "if": "criminal_case and incriminating_articles_recovered_at_accuseds_instance and interrogation_gap_is_the_only_reason_to_doubt_recovery",
+        "then": "recovery_not_treated_as_false_for_interrogation_gap_alone"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal case.",
+        "incriminating_articles_recovered_at_accuseds_instance": "Incriminating articles are recovered from places identified by the accused.",
+        "interrogation_gap_is_the_only_reason_to_doubt_recovery": "The asserted gap in police interrogation is the only reason offered for treating the recovery as false."
+      },
+      "definition": "In a criminal case, recovery of incriminating articles at the accused's instance is not treated as false solely because there was a gap in police interrogation."
+    },
+    {
+      "legal_issue": "An acquittal must be set aside and guilt found proved beyond reasonable doubt when the prosecution evidence, including credible eyewitness testimony and corroborating evidence, establishes guilt and the alibi is unproved.",
+      "material_facts": [
+        "The prosecution presented two eyewitnesses whose evidence the Supreme Court found reliable.",
+        "A witness testified to an extrajudicial confession, and weapons were recovered at the accused persons' instance.",
+        "The accused persons' alibis were unsupported and found untrue.",
+        "The trial court had convicted the accused, but the High Court had acquitted them."
+      ],
+      "conclusion": "The Supreme Court allowed the State's appeal, set aside the acquittal, and convicted the accused of murder committed in furtherance of common intention, finding their guilt proved beyond reasonable doubt.",
+      "legal_principle": "The Court applied the beyond-reasonable-doubt standard to the prosecution evidence and convicted under sections 302 and 34 of the Indian Penal Code, 1860. It found the High Court's rejection of the evidence unjustified. No earlier case was relied on for this conclusion.",
+      "rule": {
+        "if": "appeal_against_acquittal and credible_eyewitness_evidence and corroborating_confession_or_recovery and alibi_unproved",
+        "then": "acquittal_set_aside_and_guilt_found_proved_beyond_reasonable_doubt"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The proceeding is an appeal against an acquittal in a criminal case.",
+        "credible_eyewitness_evidence": "The court finds the eyewitness evidence credible.",
+        "corroborating_confession_or_recovery": "The evidence includes a corroborating confession or recovery of incriminating articles.",
+        "alibi_unproved": "The accused's asserted alibi is not proved."
+      },
+      "definition": "On an appeal against acquittal, credible eyewitness evidence, corroboration by confession or recovery, and an unproved alibi can result in the acquittal being set aside and guilt being found proved beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "A death sentence may be replaced with life imprisonment where substantial time has passed in the proceedings before final consideration of the sentence.",
+      "material_facts": [
+        "The trial court imposed a death sentence for murder.",
+        "The High Court subsequently acquitted the accused, and the Supreme Court later restored the conviction.",
+        "The trial court's conviction and sentence and the High Court's acquittal had both occurred several years before the Supreme Court considered the sentence."
+      ],
+      "conclusion": "The Supreme Court did not impose the death penalty and sentenced all the accused to imprisonment for life.",
+      "legal_principle": "The Court considered the passage of time between the trial court's sentence, the appellate acquittal, and final consideration of the case, and held that the extreme penalty was not called for in the circumstances. No statutory provision or earlier case was relied on for this sentencing decision.",
+      "rule": {
+        "if": "murder_conviction and death_sentence_imposed_at_trial and acquittal_intervened and substantial_delay_before_final_decision",
+        "then": "death_sentence_replaced_with_life_imprisonment"
+      },
+      "predicates": {
+        "murder_conviction": "The accused is convicted of murder.",
+        "death_sentence_imposed_at_trial": "The trial court imposed a death sentence.",
+        "acquittal_intervened": "An appellate court acquitted the accused before final consideration of the case.",
+        "substantial_delay_before_final_decision": "A substantial period passed before final consideration of the sentence."
+      },
+      "definition": "Where a murder conviction follows an intervening acquittal after a substantial delay, a death sentence imposed at trial may be replaced with life imprisonment."
+    }
+  ],
+  "seconds": 27.1
+}

@@ -1,0 +1,63 @@
+{
+  "doc_id": "379060",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20697,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1867,
+    "prompt_tokens": 5415,
+    "total_tokens": 7282,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A purchaser’s failure to pay the balance of the purchase price within the prescribed time renders a revenue auction sale void.",
+      "material_facts": [
+        "Land was sold at a revenue auction to recover an amount treated as arrears of land revenue.",
+        "The auction purchasers paid the required initial deposit on the day of the auction.",
+        "They paid the balance after the prescribed payment period had expired.",
+        "The authorities accepted the late payment, confirmed the sale, and issued a sale certificate."
+      ],
+      "conclusion": "The balance-payment requirement was mandatory, and the late payment rendered the sale void; the subsequent confirmation and sale certificate conferred no title on the purchasers.",
+      "legal_principle": "Sections 85, 86 and 88 of the Punjab Land Revenue Act, 1887 impose mandatory requirements for the initial deposit and payment of the balance within the prescribed period. Applying Manilal Mohanlal Shah v. Sardar Sayed Ahmed Sayed Mahamad, which construed the analogous requirements in Order XXI Rules 84, 85 and 86 of the Code of Civil Procedure, the Court held that non-compliance leaves no sale in law, forfeits the purchaser’s claim to the property, and requires resale. The authorities have no discretion to extend the payment time or validate the sale by accepting late payment or confirming it.",
+      "rule": {
+        "if": "revenue_recovery_auction and initial_deposit_paid and balance_paid_after_deadline",
+        "then": "auction_sale_is_void"
+      },
+      "predicates": {
+        "revenue_recovery_auction": "The property was sold at an auction conducted to recover an amount treated as public revenue arrears.",
+        "initial_deposit_paid": "The purchaser paid the required initial deposit after being declared the successful bidder.",
+        "balance_paid_after_deadline": "The purchaser paid the remaining purchase price after the required payment period had expired.",
+        "auction_sale_is_void": "The auction sale is void."
+      },
+      "definition": "When a revenue-recovery auction purchaser pays the initial deposit but pays the balance after the required period, the sale is void."
+    },
+    {
+      "legal_issue": "A civil court may hear a suit to protect ownership or possession from threatened dispossession under a certificate issued after a void revenue auction sale.",
+      "material_facts": [
+        "The owner sued to prevent the auction purchasers from taking possession under a sale certificate issued after they paid the balance price late.",
+        "The owner challenged the purported sale as void because the balance had not been paid within the prescribed period, rather than seeking to set aside a valid sale for an irregularity.",
+        "The owner was later dispossessed during the appeal and amended the suit to seek possession.",
+        "The authorities had accepted the late payment and confirmed the sale despite the expired payment period."
+      ],
+      "conclusion": "The suit was not barred by Section 158 of the Punjab Land Revenue Act, 1887. Because the sale was void and the suit sought protection against action under a certificate with no legal efficacy, the civil court had jurisdiction.",
+      "legal_principle": "Section 158(2)(xiv) excludes civil court jurisdiction over claims connected with collection of revenue or enforcement of recovery processes, and Section 158(2)(xv) excludes claims to set aside a revenue-recovery sale on grounds other than fraud. Section 91 concerns setting aside a sale for material irregularity. Those provisions did not bar this suit: where mandatory payment requirements were not met, no sale existed in law, so the owner was not seeking to set aside a sale under Section 91 but to protect the property from threatened dispossession under an ineffective certificate. An act taken without jurisdiction does not exclude the civil court’s jurisdiction.",
+      "rule": {
+        "if": "civil_suit_to_protect_property and revenue_recovery_auction and balance_paid_after_deadline and claimant_challenges_sale_as_nonexistent and threatened_dispossession_under_sale_certificate",
+        "then": "civil_court_has_jurisdiction"
+      },
+      "predicates": {
+        "civil_suit_to_protect_property": "The claimant brought a civil suit seeking to protect ownership or possession of property.",
+        "revenue_recovery_auction": "The property was sold at an auction conducted to recover an amount treated as public revenue arrears.",
+        "balance_paid_after_deadline": "The purchaser paid the remaining purchase price after the required payment period had expired.",
+        "claimant_challenges_sale_as_nonexistent": "The claimant alleged that the purported sale did not exist in law because the required balance payment was late.",
+        "threatened_dispossession_under_sale_certificate": "The purchasers threatened, or took, possession of the property relying on a certificate issued after the purported sale."
+      },
+      "definition": "A civil court has jurisdiction when a claimant brings a suit to protect property from dispossession under a certificate arising from a revenue-recovery auction alleged to be nonexistent because the balance price was paid late."
+    }
+  ],
+  "seconds": 12.3
+}

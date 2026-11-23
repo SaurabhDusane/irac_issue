@@ -1,0 +1,80 @@
+{
+  "doc_id": "1328520",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14825,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2490,
+    "prompt_tokens": 4175,
+    "total_tokens": 6665,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A higher court should not interfere with a considered rejection of an objection to the competence of an appeal filed by the acquiring authority.",
+      "material_facts": [
+        "The Collector appealed against the District Judge’s enhanced compensation award, and the landowners argued that the Collector was not competent to appeal because the State had not filed it.",
+        "The High Court considered and rejected the objection, and the Supreme Court declined to interfere with that finding in the interests of justice."
+      ],
+      "conclusion": "The Supreme Court declined to interfere with the High Court’s rejection of the competence objection.",
+      "legal_principle": "The Court stated that the High Court had fully considered the objection and that, in the interests of justice, it was not disposed to interfere with the High Court’s finding; it stated no broader rule on the Collector’s authority to appeal.",
+      "rule": {
+        "if": "land_acquisition_reference_appeal and competence_objection_fully_considered_below",
+        "then": "supreme_court_declines_interference"
+      },
+      "predicates": {
+        "land_acquisition_reference_appeal": "The proceeding is an appeal arising from a court’s determination of compensation on reference in a land acquisition matter.",
+        "competence_objection_fully_considered_below": "A party challenges the competence of the acquiring authority’s appeal, and the court below fully considers and rejects that objection."
+      },
+      "definition": "When a land acquisition reference appeal includes a competence objection that was fully considered and rejected below, the higher court declines to interfere."
+    },
+    {
+      "legal_issue": "A court determining compensation on reference cannot award more than the amount claimed in response to the acquisition notice.",
+      "material_facts": [
+        "In response to the acquisition notice, the landowners claimed compensation at a specified per-acre rate.",
+        "The District Judge awarded compensation at a per-acre rate substantially above the amount claimed.",
+        "The Supreme Court held that the District Judge had acted contrary to the statutory limit, although it separately considered the proper valuation of the land."
+      ],
+      "conclusion": "The District Judge was not permitted to award compensation exceeding the amount claimed in response to the notice.",
+      "legal_principle": "Section 25(1) of the Land Acquisition Act, 1894, provides that the court shall not award an applicant compensation in excess of the amount claimed pursuant to a notice under Section 9.",
+      "rule": {
+        "if": "land_acquisition_compensation_reference and claim_made_after_notice and reference_court_award_exceeds_claim",
+        "then": "reference_court_must_not_award_above_claim"
+      },
+      "predicates": {
+        "land_acquisition_compensation_reference": "The proceeding is a reference for determination of compensation for acquired land.",
+        "claim_made_after_notice": "The claimant states the compensation sought in response to the acquisition notice.",
+        "reference_court_award_exceeds_claim": "The court deciding the reference awards compensation greater than the amount the claimant sought."
+      },
+      "definition": "When compensation is determined on reference, a claim is made in response to the notice, and the reference court awards more than that claim, the award must not exceed the claim."
+    },
+    {
+      "legal_issue": "The market value of acquired land must reflect its building-site potential when the overall evidence shows that the potential could be realised in the reasonably near future.",
+      "material_facts": [
+        "Before the acquisition, the landowners obtained permission to convert adjoining agricultural land, which formed part of the same larger parcel, for construction of houses and voluntarily paid conversion charges for that purpose.",
+        "The acquired land was within municipal limits, on the edge of an inhabited locality, and near existing buildings and a road.",
+        "Evidence also included nearby land sales and negotiations to sell plots as building sites.",
+        "The Supreme Court found that these circumstances established building-site potential and, considering the overall evidence, increased the compensation above the amount awarded by the Collector and High Court."
+      ],
+      "conclusion": "The land had building-site potential that had to be reflected in its market value, and the Court increased the compensation accordingly.",
+      "legal_principle": "Section 23(1) of the Land Acquisition Act, 1894, requires assessment of market value. Applying the guidance in N.B. Jeejabhoy v. The District Collector, Thana, quoted in R.N. Singh v. U.P. Government, the Court treated potential use as relevant when it could be turned to account within a reasonably near future. The listed considerations are broad guidelines, not immutable rules; whether land has building-site potential is primarily a question of fact determined from the overall circumstances.",
+      "rule": {
+        "if": "land_acquisition_compensation_valuation and conversion_charges_paid_for_nearby_land and (land_within_municipal_limits and near_inhabited_locality and nearby_buildings_present) and evidence_supports_near_term_building_use",
+        "then": "compensation_must_reflect_building_site_potential"
+      },
+      "predicates": {
+        "land_acquisition_compensation_valuation": "The proceeding concerns valuation of land acquired by the State for compensation.",
+        "conversion_charges_paid_for_nearby_land": "The owner voluntarily paid charges to obtain permission to convert nearby land for building use.",
+        "land_within_municipal_limits": "The acquired land lies within municipal limits.",
+        "near_inhabited_locality": "The acquired land is on or near the edge of an inhabited locality.",
+        "nearby_buildings_present": "Buildings are located in the immediate vicinity of the acquired land.",
+        "evidence_supports_near_term_building_use": "The evidence, considered as a whole, shows that building use could reasonably be realised in the near future."
+      },
+      "definition": "When acquired land is being valued and the stated circumstances establish reasonably near-term building use, its compensation must reflect its building-site potential."
+    }
+  ],
+  "seconds": 15.8
+}

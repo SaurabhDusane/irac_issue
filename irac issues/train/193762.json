@@ -1,0 +1,99 @@
+{
+  "doc_id": "193762",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 49295,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2652,
+    "prompt_tokens": 12513,
+    "total_tokens": 15165,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A litigant who unsuccessfully challenged an exemption measure cannot later renew the same constitutional challenge on grounds that could have been raised earlier.",
+      "material_facts": [
+        "Some petitioners had previously challenged the validity of the exemption-authorizing provision and the same notification, and the Court had upheld them.",
+        "Those petitioners raised additional grounds in later proceedings that were available when they brought their earlier challenge."
+      ],
+      "conclusion": "The renewed challenges by those petitioners were barred by res judicata and the binding effect of the Court's earlier decision.",
+      "legal_principle": "Finality in litigation and public policy prevent successive challenges to the same measure on grounds that could have been raised earlier. The binding effect of a decision under Article 141 does not depend on whether a particular argument was considered, if the point to which it relates was decided. The Court relied on Smt. Somavanti v. State of Punjab, T. Govindaraja Mudaliar v. State of Tamil Nadu, and Anil Kumar Neotia v. Union of India.",
+      "rule": {
+        "if": "repeat_constitutional_challenge and prior_challenge_decided and omitted_ground_available",
+        "then": "renewed_challenge_is_barred"
+      },
+      "predicates": {
+        "repeat_constitutional_challenge": "The litigant brings a later constitutional proceeding challenging the same measure that was challenged in an earlier proceeding.",
+        "prior_challenge_decided": "The earlier proceeding by that litigant resulted in a decision upholding the challenged measure.",
+        "omitted_ground_available": "The ground raised later could have been raised in the earlier proceeding."
+      },
+      "definition": "When a litigant renews a constitutional challenge after an earlier challenge to the same measure was decided, any ground available in the earlier proceeding cannot be used to reopen the challenge."
+    },
+    {
+      "legal_issue": "A law authorizing the executive to exempt buildings or classes of buildings from rent-control protections is not invalid merely because it does not specify detailed guidelines for exercising that power.",
+      "material_facts": [
+        "The legislature authorized the executive to direct that all or some provisions of the rent-control scheme would not apply to a particular building or class of buildings.",
+        "The executive used that authority to exempt newly constructed buildings from eviction restrictions for a limited period, as an incentive for construction."
+      ],
+      "conclusion": "The exemption-authorizing provision was constitutionally valid and did not suffer from excessive delegation of legislative power.",
+      "legal_principle": "The Court relied on P.J. Irani v. State of Madras, Sadhu Singh v. District Board, Gurdaspur, State of Madhya Pradesh v. Kanhaiyalal, and Punjab Tin Supply Company v. Central Government, which supported the validity of comparable exemption powers. The Court held that the provision was valid in light of the purpose of encouraging new construction and the resulting increase in accommodation.",
+      "rule": {
+        "if": "challenge_to_exemption_authority and executive_exemption_power and exemption_encourages_new_construction",
+        "then": "exemption_authority_is_valid"
+      },
+      "predicates": {
+        "challenge_to_exemption_authority": "A litigant challenges the constitutionality of a law that authorizes executive exemptions from a regulatory scheme.",
+        "executive_exemption_power": "The law gives the executive power to exclude particular buildings or classes of buildings from some or all of the scheme's requirements.",
+        "exemption_encourages_new_construction": "The executive uses the exemption power to provide an incentive for construction intended to increase available accommodation."
+      },
+      "definition": "If a constitutional challenge concerns an executive power to exempt buildings and that power is used to encourage construction that increases accommodation, the exemption-authorizing law is valid."
+    },
+    {
+      "legal_issue": "A landlord who files an eviction suit while a building is exempt from rent-control restrictions may obtain and execute an eviction decree after the exemption period ends.",
+      "material_facts": [
+        "Newly constructed buildings were exempt from eviction restrictions for a fixed period.",
+        "Landlords filed eviction suits while the buildings were within the exemption period.",
+        "The exemption period expired while the suits were pending.",
+        "The notification expressly covered decrees in suits filed during the exemption period, whether passed during that period or afterward."
+      ],
+      "conclusion": "The civil court retained jurisdiction to pass and execute eviction decrees after the exemption expired in suits instituted during the exemption period; the notification did not extend the exemption period indefinitely but preserved the parties' positions as they stood when the suits were filed.",
+      "legal_principle": "Sections 3 and 13 of the East Punjab Urban Rent Restriction Act, 1949, and the notification must be read harmoniously and in light of the exemption's purpose of encouraging new construction. A construction that advances the legislation's purpose should be preferred to one that makes the exemption ineffective. The Court relied on Amarnath Basheshar Dass v. Tek Chand and Punjab Tin Supply Company v. Central Government; it distinguished the different statutory schemes considered in Vineet Kumar v. Mangal Sain Wadhera and Shiv Kumar v. Jawahar Lal Verma, and also referred to Om Prakash Gupta v. Dig Vijendrapal Gupta, Nand Kishore Marwah v. Samundri Devi, and Atma Ram Mittal v. Ishwar Singh Punja.",
+      "rule": {
+        "if": "eviction_suit and suit_filed_during_exemption and exemption_ends_while_suit_pending and notification_covers_later_decrees",
+        "then": "civil_court_retains_eviction_jurisdiction"
+      },
+      "predicates": {
+        "eviction_suit": "A landlord brings a civil-court proceeding seeking eviction of a tenant from a building.",
+        "suit_filed_during_exemption": "The landlord files the eviction suit while the building is exempt from the relevant eviction restrictions.",
+        "exemption_ends_while_suit_pending": "The exemption period ends before the eviction suit is finally decided.",
+        "notification_covers_later_decrees": "The exemption measure expressly covers decrees in suits filed during the exemption period even when those decrees are passed afterward."
+      },
+      "definition": "When an eviction suit is filed during an exemption, the exemption expires before the suit is decided, and the exemption measure covers later decrees, the civil court retains jurisdiction to pass and execute the decree."
+    },
+    {
+      "legal_issue": "Exempting newly constructed buildings from rent-control restrictions for a limited period is not contrary to the protective purpose of rent-control legislation or discriminatory merely because tenants of older buildings receive protection sooner.",
+      "material_facts": [
+        "Rent-control restrictions had discouraged investment in new construction, contributing to a shortage of accommodation.",
+        "The exemption gave newly constructed buildings a limited period outside the restrictions, after which the buildings would be governed by the rent-control scheme, subject to the measure governing suits filed during the exemption.",
+        "The resulting classification distinguished buildings by their completion and exemption status, and the exemption was intended to encourage construction and increase accommodation."
+      ],
+      "conclusion": "The exemption advanced the ultimate purpose of the legislation and the classification of buildings by completion date had an intelligible basis and a rational connection to that purpose; it did not violate equality guarantees.",
+      "legal_principle": "An exemption intended to encourage construction may advance the ultimate purpose of rent-control legislation by increasing accommodation for tenants. A classification based on the date of completion is valid where it rests on an intelligible differentia rationally connected to the legislative objective. The Court relied on Punjab Tin Supply Company v. Central Government and followed Mohinder Kumar v. State of Haryana in applying the equality principle.",
+      "rule": {
+        "if": "rent_control_exemption and new_building_incentive and limited_exemption_period and completion_based_classification",
+        "then": "exemption_classification_is_valid"
+      },
+      "predicates": {
+        "rent_control_exemption": "A proceeding challenges an exemption from restrictions governing rent or eviction of tenants.",
+        "new_building_incentive": "The exemption is intended to encourage construction of new buildings and increase available accommodation.",
+        "limited_exemption_period": "The exemption lasts for a limited period, after which the buildings generally become subject to the rent-control scheme.",
+        "completion_based_classification": "The measure treats buildings differently according to when they were completed."
+      },
+      "definition": "When a limited rent-control exemption encourages new construction and distinguishes buildings by completion date, the classification is valid if it is connected to increasing accommodation."
+    }
+  ],
+  "seconds": 18.2
+}

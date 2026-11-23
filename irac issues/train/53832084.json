@@ -1,0 +1,94 @@
+{
+  "doc_id": "53832084",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 58529,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2890,
+    "prompt_tokens": 13515,
+    "total_tokens": 16405,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Civil courts cannot continue to adjudicate a pending civil suit whose foundation is a substantial question relating to the environment that falls within the jurisdiction of the specialized environmental tribunal.",
+      "material_facts": [
+        "The plaintiffs filed a civil suit seeking a permanent injunction against a proposed solid-waste project, and the basis for the requested relief was the alleged risk of environmental harm and pollution of water sources.",
+        "The suit remained pending in the civil courts after the environmental tribunal was established; the trial court decided it after that establishment, and the subsequent appeals also concerned the environmental dispute."
+      ],
+      "conclusion": "The civil court lacked jurisdiction to continue with the suit after the environmental tribunal was established. The environmental dispute was within the tribunal’s jurisdiction, and the civil-court findings in favour of the plaintiffs were without jurisdiction and stood effaced.",
+      "legal_principle": "Sections 14 and 29 of the National Green Tribunal Act, 2010 place civil cases involving substantial questions relating to the environment within the Tribunal’s jurisdiction and bar civil-court jurisdiction over matters it is empowered to determine. In Bhopal Gas Peedith Mahila Udyog Sangathan v. Union of India, the Court held that environmental matters covered by the Act should be brought before the Tribunal and that pending cases may be transferred there. A suit’s having been filed before the Act came into force does not permit civil-court proceedings to continue after the Tribunal is established.",
+      "rule": {
+        "if": "environmental_civil_suit and suit_pending_after_environmental_tribunal_established",
+        "then": "civil_court_lacks_jurisdiction_to_continue"
+      },
+      "predicates": {
+        "environmental_civil_suit": "A party brought a civil suit whose foundation involved a substantial question relating to environmental protection or an environmental legal right.",
+        "suit_pending_after_environmental_tribunal_established": "The suit remained pending in the civil courts after the specialized environmental tribunal had been established."
+      },
+      "definition": "When a civil suit involving a substantial environmental question remains pending after the specialized environmental tribunal is established, the civil court cannot continue to adjudicate it."
+    },
+    {
+      "legal_issue": "A party seeking to prevent the consequences of an operative decision by a competent authority cannot proceed on a suit for permanent injunction alone without seeking a declaration setting that decision aside or establishing its invalidity.",
+      "material_facts": [
+        "The defendants stated that the land had been allotted and selected for the project after deliberation and consultation with an expert committee and by the competent authorities exercising their powers.",
+        "The plaintiffs did not challenge those decisions or seek declaratory relief concerning them; they sought only a permanent injunction against starting the project."
+      ],
+      "conclusion": "The suit for a permanent injunction simpliciter could not be proceeded with because the plaintiffs had not sought a declaration concerning the competent authorities’ decisions.",
+      "legal_principle": "An operative order or decision remains capable of producing legal consequences unless it is set aside or declared invalid in appropriate proceedings; a party affected by it cannot simply treat it as non-binding. Board of Trustees of Port of Kandla v. Hargovind Jasraj applied that principle, relying on Smith v. East Elloe Rural District Council, Krishnadevi Malchand Kamathia v. Bombay Environmental Action Group, Pune Municipal Corporation v. State of Maharashtra, and other authorities. The Court also referred to Anathula Sudhakar v. P. Buchi Reddy on the need for comprehensive declaratory relief where the dispute cannot appropriately be resolved in a bare injunction suit.",
+      "rule": {
+        "if": "suit_for_injunction_only and operative_authority_decision_not_challenged",
+        "then": "bare_injunction_suit_cannot_proceed"
+      },
+      "predicates": {
+        "suit_for_injunction_only": "A plaintiff brought a suit seeking only an injunction against the consequences of an authority’s decision.",
+        "operative_authority_decision_not_challenged": "The plaintiff did not seek to have the competent authority’s operative decision set aside or declared invalid."
+      },
+      "definition": "A suit seeking only an injunction cannot proceed when it seeks to prevent the consequences of an operative authority decision that the plaintiff has not challenged by seeking a declaration."
+    },
+    {
+      "legal_issue": "A preventive injunction against a future nuisance requires the plaintiff to prove the initial case and show a strong probability that actionable harm is imminent or likely to be irreparable; a mere possibility of harm is insufficient.",
+      "material_facts": [
+        "The project had not yet been implemented, and the defendants stated that they would obtain the required environmental permissions before doing so.",
+        "The plaintiffs’ claims about pollution and health risks were based on their personal understanding, without scientific or expert support; the trial court found that they had not substantiated the alleged pollution or established their legal right had been infringed.",
+        "The first appellate court relied on its assessment of the defendants’ evidence and admissions rather than first determining whether the plaintiffs had discharged their initial burden of proving actionable nuisance."
+      ],
+      "conclusion": "The plaintiffs had not established a basis for a quia timet injunction. The first appellate court erred by relying on perceived weaknesses in the defence when the plaintiffs had not discharged their initial burden; the asserted future harm amounted to a mere possibility rather than a sufficiently established threat.",
+      "legal_principle": "Under Kuldip Singh v. Subhash Chander Jain, a future nuisance is actionable only where the threat is sufficiently certain or imminent, or the likely damage would be irreparable; a strong case of probability that the apprehended mischief will occur must be shown. Fletcher v. Bealey similarly requires proof of imminent danger and substantial apprehended damage where actual damage has not occurred. The plaintiff bears the initial burden of proving actionable nuisance, and weakness in the defence cannot substitute for that proof or shift the burden.",
+      "rule": {
+        "if": "quia_timet_injunction_suit and plaintiffs_failed_initial_burden and future_harm_not_shown_to_be_imminent_or_irreparable",
+        "then": "preventive_injunction_unavailable"
+      },
+      "predicates": {
+        "quia_timet_injunction_suit": "A plaintiff brought a suit seeking an injunction against a threatened harm that had not yet occurred.",
+        "plaintiffs_failed_initial_burden": "The plaintiffs did not produce adequate evidence to substantiate the factual basis for their claimed actionable nuisance.",
+        "future_harm_not_shown_to_be_imminent_or_irreparable": "The plaintiffs did not establish a strong probability that the anticipated harm would occur imminently or cause irreparable damage."
+      },
+      "definition": "A preventive injunction is unavailable in a suit against threatened harm when the plaintiffs fail to prove their initial case and do not establish that the future harm is sufficiently imminent or irreparable."
+    },
+    {
+      "legal_issue": "A civil court must refuse an injunction based on nuisance when it is not reasonably clear that the proposed act will constitute a nuisance, and must also refuse an injunction where equally efficacious relief is available through another usual proceeding.",
+      "material_facts": [
+        "The suit sought to prevent a proposed project before implementation, and the required environmental permissions had not yet been obtained.",
+        "Affected persons could make representations to the competent authority while it considered the project and its permissions, and could challenge an adverse decision before the environmental tribunal or another forum available by law.",
+        "The project’s environmental consequences had not been established as a reasonably clear nuisance at the stage when the injunction was sought."
+      ],
+      "conclusion": "The civil court should not have granted a permanent injunction: the alleged nuisance was not reasonably clear, and the plaintiffs had other efficacious avenues to raise their objections and challenge an adverse decision.",
+      "legal_principle": "Section 41(f) of the Specific Relief Act, 1963 prohibits an injunction to prevent, on the ground of nuisance, an act that is not reasonably clear to be a nuisance. Section 41(h) prohibits an injunction when equally efficacious relief can certainly be obtained through another usual mode of proceeding, except in cases of breach of trust. The Court noted that the 2018 insertion of clause (ha), concerning injunctions that impede infrastructure projects, did not apply to this case.",
+      "rule": {
+        "if": "preventive_nuisance_injunction_suit and nuisance_not_reasonably_clear and equally_efficacious_alternative_remedy_available",
+        "then": "injunction_must_be_refused"
+      },
+      "predicates": {
+        "preventive_nuisance_injunction_suit": "A plaintiff sought an injunction in a civil suit to prevent an act on the ground that it would cause a future nuisance.",
+        "nuisance_not_reasonably_clear": "The evidence did not make it reasonably clear that the proposed act would constitute a nuisance.",
+        "equally_efficacious_alternative_remedy_available": "The affected persons could raise their concerns through another usual proceeding that offered equally efficacious relief."
+      },
+      "definition": "A civil court must refuse a preventive nuisance injunction when the alleged nuisance is not reasonably clear and an equally efficacious alternative remedy is available."
+    }
+  ],
+  "seconds": 23.9
+}

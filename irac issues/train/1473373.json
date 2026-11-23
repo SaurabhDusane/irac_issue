@@ -1,0 +1,117 @@
+{
+  "doc_id": "1473373",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18115,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2708,
+    "prompt_tokens": 4990,
+    "total_tokens": 7698,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The Supreme Court does not interfere with an acquittal unless the appellate court’s appraisal of the evidence is vitiated by a glaring infirmity.",
+      "material_facts": [
+        "The High Court acquitted the accused after finding the prosecution evidence insufficient and unreliable.",
+        "The State appealed against the acquittal, and the Supreme Court found no glaring infirmity in the High Court’s appraisal of the evidence."
+      ],
+      "conclusion": "The Supreme Court declined to interfere with the acquittal and dismissed the appeal.",
+      "legal_principle": "In an appeal against an acquittal, the Court does not interfere with the High Court’s appraisal of evidence unless that appraisal is vitiated by a glaring infirmity. No earlier case or statutory provision is cited for this principle.",
+      "rule": {
+        "if": "appeal_against_acquittal and no_glaring_infirmity_in_evidence_appraisal",
+        "then": "acquittal_left_undisturbed"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The proceeding is an appeal challenging a judgment that acquitted the accused.",
+        "no_glaring_infirmity_in_evidence_appraisal": "The reviewing court finds no glaring infirmity in the acquitting court’s appraisal of the evidence."
+      },
+      "definition": "When an appeal challenges an acquittal and the evidence appraisal has no glaring infirmity, the acquittal is left undisturbed."
+    },
+    {
+      "legal_issue": "The prosecution must establish that recovered bodies are those of the alleged victims and that their deaths were homicidal, and a gap in that proof benefits the accused.",
+      "material_facts": [
+        "Two decomposed bodies were recovered following a statement by one accused, but their features were unrecognizable and there was no evidence establishing that they were the alleged victims.",
+        "The medical examiner found no ligature marks and could not determine the cause of death.",
+        "The medical examiner did not send the bodies to an anatomy expert, but the accused had no responsibility for that omission."
+      ],
+      "conclusion": "The evidence did not establish the identity of the bodies or that the deaths were homicidal; the prosecution could not receive the benefit of the medical examiner’s omission, and the accused were entitled to the benefit of the evidentiary gap.",
+      "legal_principle": "The onus in a criminal trial is on the prosecution to prove guilt. A gap or lacuna in the prosecution evidence benefits the accused, and an omission by a medical examiner cannot be used to give the benefit to the prosecution. No earlier case or statutory provision is cited for these principles.",
+      "rule": {
+        "if": "criminal_trial and (recovered_body_identity_unproved or homicidal_death_unproved) and prosecution_evidence_gap",
+        "then": "accused_entitled_to_benefit_of_doubt"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which the prosecution must prove the accused’s guilt.",
+        "recovered_body_identity_unproved": "The evidence does not establish that a recovered body is the body of the alleged victim.",
+        "homicidal_death_unproved": "The evidence does not establish that the death was caused by a criminal act.",
+        "prosecution_evidence_gap": "The prosecution evidence has a material gap, including one arising from an investigative or medical omission."
+      },
+      "definition": "In a criminal trial, when the identity of a recovered body or the homicidal nature of the death is unproved and the prosecution evidence has a material gap, the accused is entitled to the benefit of doubt."
+    },
+    {
+      "legal_issue": "An extra-judicial confession that lacks plausibility and credibility is insufficient to establish guilt.",
+      "material_facts": [
+        "Three accused were alleged to have confessed to witnesses who had no particular relationship or connection with them.",
+        "The alleged confessions were improbable in light of the secretive manner in which the crimes were said to have been committed and the accused’s alleged choice to confess to those witnesses rather than surrender directly to the police.",
+        "The confession evidence did not inspire confidence."
+      ],
+      "conclusion": "The alleged extra-judicial confessions were improbable, lacked credibility, and could not support a finding of guilt.",
+      "legal_principle": "An extra-judicial confession is, by its nature, a weak piece of evidence; its weight depends on whether the evidence of the confession is plausible and inspires confidence. No earlier case or statutory provision is cited for this principle.",
+      "rule": {
+        "if": "criminal_trial and prosecution_relies_on_extra_judicial_confession and confession_lacks_credibility",
+        "then": "confession_insufficient_to_establish_guilt"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which the prosecution seeks to establish the accused’s guilt.",
+        "prosecution_relies_on_extra_judicial_confession": "The prosecution relies on an alleged confession made by an accused to a person outside a formal judicial proceeding.",
+        "confession_lacks_credibility": "The circumstances of the alleged confession make it implausible or otherwise fail to inspire confidence."
+      },
+      "definition": "When the prosecution relies on an extra-judicial confession in a criminal trial and the confession lacks credibility, the confession is insufficient to establish guilt."
+    },
+    {
+      "legal_issue": "Association evidence has little probative value when a delayed report to the police leaves the timing of the alleged association indeterminate.",
+      "material_facts": [
+        "A witness said that he saw an accused taking a child on a bicycle toward a river.",
+        "The witness reported the observation to the police about fifteen days later, and the date of that report was not in the record, making it impossible to fix the approximate date of the observation."
+      ],
+      "conclusion": "The prosecution could derive little benefit from the association evidence.",
+      "legal_principle": "Where a witness’s delayed statement to the police leaves the date of the alleged association indeterminate, the evidence provides little benefit to the prosecution. No earlier case or statutory provision is cited for this principle.",
+      "rule": {
+        "if": "criminal_trial and prosecution_relies_on_association_testimony and delayed_report_leaves_event_timing_indeterminate",
+        "then": "association_evidence_has_little_proof_value"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which the prosecution relies on evidence to establish guilt.",
+        "prosecution_relies_on_association_testimony": "The prosecution relies on testimony that an accused was seen with an alleged victim or another relevant person.",
+        "delayed_report_leaves_event_timing_indeterminate": "The witness reported the observation to the police after a delay, and the evidence does not permit the approximate date of the observation to be fixed."
+      },
+      "definition": "When a criminal prosecution relies on association testimony but a delayed report leaves the event’s timing indeterminate, the association evidence has little proof value."
+    },
+    {
+      "legal_issue": "Suspicion arising from circumstantial evidence does not establish guilt when proof is lacking or the identity of the perpetrators cannot be fixed.",
+      "material_facts": [
+        "There was no eyewitness, and the prosecution relied on circumstantial evidence that included an alleged motive, the recovery of bodies, alleged confessions, and evidence of an accused’s association with a child.",
+        "The circumstances created suspicion, but the evidence did not establish who committed the alleged crime or whether one or more perpetrators were involved.",
+        "Even if the recovered bodies were those of the alleged victims and their deaths were homicidal, the identity of the perpetrators remained uncertain."
+      ],
+      "conclusion": "Suspicion, however strong, could not substitute for proof, and the evidence did not establish the accused’s guilt.",
+      "legal_principle": "In a criminal case, suspicion alone is not proof and cannot warrant a finding of guilt. Circumstantial evidence must establish guilt; uncertainty about the identity of the perpetrators prevents that conclusion. No earlier case or statutory provision is cited for these principles.",
+      "rule": {
+        "if": "criminal_case and circumstantial_evidence_relied_on and (suspicion_without_proof or perpetrator_identity_unfixed)",
+        "then": "guilt_not_established"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal case in which the prosecution seeks a finding of guilt.",
+        "circumstantial_evidence_relied_on": "The prosecution relies on circumstances rather than direct eyewitness evidence to establish guilt.",
+        "suspicion_without_proof": "The circumstances create suspicion but do not provide proof sufficient to establish guilt.",
+        "perpetrator_identity_unfixed": "The evidence does not establish who committed the alleged crime."
+      },
+      "definition": "When a criminal case rests on circumstantial evidence that creates suspicion without proof or leaves the perpetrators unidentified, guilt is not established."
+    }
+  ],
+  "seconds": 16.5
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "1073085",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24098,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2261,
+    "prompt_tokens": 6257,
+    "total_tokens": 8518,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An FIR alleging a cognizable offence cannot be quashed by assessing the reliability of its allegations or weighing evidence at the investigation stage.",
+      "material_facts": [
+        "A complaint alleged that documents, including a power of attorney, a sale-and-possession receipt, and affidavits, had been forged or fabricated, and an FIR alleging cognizable offences was registered.",
+        "The High Court examined the documents, compared signatures, considered photographs and other material produced by the accused, and concluded that the complaint was false and vexatious.",
+        "The High Court did not find that the allegations, taken at face value, failed to disclose an offence or a cognizable offence."
+      ],
+      "conclusion": "The High Court's order quashing the FIR was unsustainable; it was set aside and the investigation was permitted to proceed.",
+      "legal_principle": "Under Sections 154, 156 and 157 of the Code of Criminal Procedure, information disclosing a cognizable offence must be registered and investigated as provided by law. Under Section 482 and Article 226, quashing is to be exercised sparingly and with circumspection; a court ordinarily may not test the reliability or genuineness of FIR allegations or anticipate whether they will be proved. The illustrative grounds in State of Haryana v. Bhajan Lal permit quashing in specified circumstances, including where allegations taken at face value disclose no offence or cognizable offence, but those circumstances were not established here.",
+      "rule": {
+        "if": "criminal_appeal_from_fir_quashing and fir_alleges_cognizable_offence and quashing_court_assessed_evidence",
+        "then": "fir_quashing_order_set_aside"
+      },
+      "predicates": {
+        "criminal_appeal_from_fir_quashing": "The matter is an appeal from an order quashing an FIR.",
+        "fir_alleges_cognizable_offence": "The FIR alleges conduct that, taken at face value, discloses a cognizable offence.",
+        "quashing_court_assessed_evidence": "The court quashing the FIR assessed the reliability of allegations or weighed documents or other evidence."
+      },
+      "definition": "When an appeal challenges an FIR's quashing, the FIR alleges a cognizable offence, and the quashing court weighed evidence, the quashing order is set aside."
+    },
+    {
+      "legal_issue": "The restriction on a court taking cognizance of certain offences connected with court proceedings does not restrict the police's power to investigate a cognizable offence.",
+      "material_facts": [
+        "The accused argued that the alleged forgery concerned documents connected with court proceedings and that the procedure under Sections 195 and 340 of the Code of Criminal Procedure excluded investigation under Chapter XII.",
+        "The FIR alleged cognizable offences and the matter was at the investigation stage; no question of the court taking cognizance had yet arisen.",
+        "The Court held that, after investigation, the restriction on cognizance could apply, while a court could make a complaint following the procedure under Section 340 on the basis of the FIR and investigation materials."
+      ],
+      "conclusion": "Sections 195 and 340 do not control or circumscribe the police's power to investigate; the investigation could proceed, and the Court did not need to decide whether the restriction would apply to documents allegedly forged before being produced in court.",
+      "legal_principle": "State of Punjab v. Raj Singh holds that Section 195 operates when a court is to take cognizance and does not limit the police's statutory power to investigate under Chapter XII, even where an offence is alleged to have been committed in or in relation to court proceedings. After investigation, the cognizance restriction may apply, and a court may proceed by complaint in accordance with Section 340. The Court agreed with Raj Singh and distinguished Gopalkrishna Menon v. Raja Reddy. The question concerning documents allegedly forged before their production in court arises only at the cognizance stage.",
+      "rule": {
+        "if": "criminal_proceeding_investigation_stage and police_investigating_cognizable_offence and offence_related_to_court_proceeding",
+        "then": "police_investigation_not_barred_by_cognizance_restriction"
+      },
+      "predicates": {
+        "criminal_proceeding_investigation_stage": "The criminal proceeding is at the stage of police investigation, before the court considers taking cognizance.",
+        "police_investigating_cognizable_offence": "The police are investigating an alleged cognizable offence.",
+        "offence_related_to_court_proceeding": "The alleged offence was committed in or in relation to a court proceeding."
+      },
+      "definition": "When police are investigating a cognizable offence related to a court proceeding before the cognizance stage, the cognizance restriction does not bar the investigation."
+    },
+    {
+      "legal_issue": "An allegation of personal animosity or mala fides does not by itself justify quashing an FIR before investigation has tested the allegations.",
+      "material_facts": [
+        "The accused claimed that the complaint was false, frivolous, vexatious, and motivated by personal hostility.",
+        "Those claims were unsubstantiated at the investigation stage, and the High Court had assessed material produced by the accused to reach its conclusion.",
+        "The FIR contained serious allegations, and the investigation had not established whether they were true or malicious."
+      ],
+      "conclusion": "The alleged personal motive did not justify quashing the FIR; the allegations had to be tested after evidence was collected through investigation.",
+      "legal_principle": "State of Haryana v. Bhajan Lal explains that a court should not anticipate the result of an incomplete investigation or decide mala fides on unsubstantiated allegations. As stated in Sheonandan Paswan v. State of Bihar, a criminal prosecution otherwise justified and based on adequate evidence is not vitiated by the informant's mala fides or political motive.",
+      "rule": {
+        "if": "criminal_appeal_from_fir_quashing and investigation_uncompleted and serious_offence_allegations and complainant_personal_grudge_alleged",
+        "then": "personal_motive_alone_does_not_justify_quashing"
+      },
+      "predicates": {
+        "criminal_appeal_from_fir_quashing": "The matter is an appeal from an order quashing an FIR.",
+        "investigation_uncompleted": "The investigation has not yet tested the allegations by collecting evidence.",
+        "serious_offence_allegations": "The FIR contains serious allegations of criminal conduct.",
+        "complainant_personal_grudge_alleged": "The accused alleges that the complainant acted from personal hostility or another improper motive."
+      },
+      "definition": "When an appeal concerns a quashed FIR containing serious allegations and investigation is incomplete, an allegation of personal hostility by itself does not justify quashing."
+    }
+  ],
+  "seconds": 13.7
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "844238",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19368,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3195,
+    "prompt_tokens": 5422,
+    "total_tokens": 8617,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An extension of the period for issuing notice after seizure must be preceded by notice to the person affected.",
+      "material_facts": [
+        "The seized watches were subject to an order extending the initial period for issuing notice.",
+        "The Collector’s order stated that notice of the proposed extension had been given to the petitioner.",
+        "The petitioner did not specifically contest that assertion or raise the point before the lower authorities, and the Court accepted the inference that notice had been given."
+      ],
+      "conclusion": "An extension that deprives a person of the right to return of seized goods requires prior notice, but the extension in this case did not violate natural justice because notice was found to have been given.",
+      "legal_principle": "Under section 110(2) of the Customs Act, 1962, extension of the time for issuing notice defeats the affected person’s right to return of the goods when the initial period expires. As held in Asstt. Collector of Customs v. Charan Das Malhotra, the extension power requires a judicial approach, and an ex parte decision risks being one-sided. Natural justice therefore requires notice. Whether notice was given is a question of fact, and the person asserting that no notice was given bears the onus of establishing it.",
+      "rule": {
+        "if": "customs_seizure_extension_proceeding and affected_person_received_extension_notice",
+        "then": "extension_order_complies_with_notice_requirement"
+      },
+      "predicates": {
+        "customs_seizure_extension_proceeding": "An authority is considering an extension of the period for issuing notice concerning goods seized in a customs proceeding.",
+        "affected_person_received_extension_notice": "The person whose rights are affected was given notice of the proposed extension."
+      },
+      "definition": "When an extension is considered in a customs seizure proceeding and the affected person received notice, the extension order complies with the notice requirement."
+    },
+    {
+      "legal_issue": "A person from whose possession covered goods are seized as reasonably believed to be smuggled bears the burden of proving that the goods are not smuggled.",
+      "material_facts": [
+        "The watches were seized from the petitioner’s possession as suspected smuggled goods.",
+        "The petitioner admitted the relevant seizure facts in a recorded statement but denied knowing how the watches came to be in his house.",
+        "The petitioner did not refute the allegations in the show-cause notice or use the opportunity to contest them at the hearing."
+      ],
+      "conclusion": "The petitioner failed to discharge the burden of proving that the watches were not smuggled goods.",
+      "legal_principle": "Section 123 of the Customs Act, 1962 places the burden of proving that specified goods seized on a reasonable belief that they are smuggled are not smuggled on the person from whose possession they were seized. Watches are among the goods covered by that provision.",
+      "rule": {
+        "if": "customs_confiscation_proceeding and covered_goods_seized_as_suspected_smuggled and goods_seized_from_claimants_possession and claimant_did_not_rebut_smuggling_allegation",
+        "then": "claimant_failed_to_discharge_non_smuggling_burden"
+      },
+      "predicates": {
+        "customs_confiscation_proceeding": "The matter concerns confiscation of goods seized in a customs proceeding.",
+        "covered_goods_seized_as_suspected_smuggled": "Goods covered by the special burden rule were seized on a reasonable belief that they were smuggled.",
+        "goods_seized_from_claimants_possession": "The goods were seized from the possession of the person claiming that they were not smuggled.",
+        "claimant_did_not_rebut_smuggling_allegation": "The claimant did not refute the allegation that the goods were smuggled despite an opportunity to do so."
+      },
+      "definition": "When covered goods are seized as suspected smuggled goods from a claimant’s possession in a customs confiscation proceeding and the claimant does not rebut the allegation, the claimant fails to discharge the burden of proving the goods were not smuggled."
+    },
+    {
+      "legal_issue": "An unrefuted value stated in a show-cause notice may support the value used in assessing a penalty for seized goods.",
+      "material_facts": [
+        "The show-cause notice stated a value for the seized watches.",
+        "The petitioner did not refute that stated value in his reply or otherwise use the opportunities provided to contest the allegations."
+      ],
+      "conclusion": "The stated value of the watches was not shown to be arbitrary, since the petitioner did not dispute it despite having the opportunity to do so.",
+      "legal_principle": "The Court relied on the unrefuted value stated in the show-cause notice and the petitioner’s failure to use the available opportunities to challenge it. It also considered the burden placed on the person from whose possession covered goods are seized by section 123 of the Customs Act, 1962.",
+      "rule": {
+        "if": "customs_penalty_assessment_proceeding and goods_value_stated_in_notice and claimant_had_opportunity_to_challenge_value and claimant_did_not_challenge_value",
+        "then": "stated_goods_value_is_sufficiently_supported"
+      },
+      "predicates": {
+        "customs_penalty_assessment_proceeding": "The matter concerns assessment of a penalty relating to goods seized in a customs proceeding.",
+        "goods_value_stated_in_notice": "The authority stated a value for the goods in the notice given to the claimant.",
+        "claimant_had_opportunity_to_challenge_value": "The claimant had an opportunity to contest the stated value.",
+        "claimant_did_not_challenge_value": "The claimant did not contest the stated value."
+      },
+      "definition": "In a customs penalty assessment, a stated goods value is sufficiently supported when the claimant had an opportunity to challenge it but did not do so."
+    },
+    {
+      "legal_issue": "A penalty for customs wrongdoing must not be arbitrary or excessive, and its amount must be assessed in the circumstances of the case.",
+      "material_facts": [
+        "The penalty imposed was less than the statutory maximum calculated by reference to the value of the smuggled goods.",
+        "The High Court considered the benefit from non-payment of the penalty over a lengthy period, but the Supreme Court cautioned that this factor alone is not always a safe guide.",
+        "Considering the value of the goods and the circumstances, the Supreme Court held that the penalty was not heavy."
+      ],
+      "conclusion": "The penalty was not arbitrary or excessive in the circumstances of this case.",
+      "legal_principle": "The Court relied on the principle stated in Asstt. Collector of Customs v. Charan Das Malhotra that a penalty must not be arbitrary or excessive. The permissible maximum under section 112 of the Customs Act, 1962 was relevant, but the Court assessed the penalty in light of the goods’ value and all the circumstances, and did not treat delayed non-payment alone as decisive.",
+      "rule": {
+        "if": "customs_penalty_appeal and penalty_within_applicable_ceiling and penalty_considered_against_goods_value_and_case_circumstances",
+        "then": "penalty_is_not_arbitrary_or_excessive"
+      },
+      "predicates": {
+        "customs_penalty_appeal": "The proceeding challenges a penalty imposed in a customs matter.",
+        "penalty_within_applicable_ceiling": "The penalty does not exceed the maximum permitted for the relevant customs wrongdoing.",
+        "penalty_considered_against_goods_value_and_case_circumstances": "The penalty was assessed in light of the value of the goods and the circumstances of the case."
+      },
+      "definition": "In a challenge to a customs penalty, a penalty within the applicable ceiling and assessed against the goods’ value and the case circumstances is not arbitrary or excessive."
+    }
+  ],
+  "seconds": 23.4
+}

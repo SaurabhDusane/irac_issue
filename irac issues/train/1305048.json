@@ -1,0 +1,102 @@
+{
+  "doc_id": "1305048",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38574,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3198,
+    "prompt_tokens": 9780,
+    "total_tokens": 12978,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Reversal of a preliminary mortgage decree removes the foundation for a final decree previously passed under it.",
+      "material_facts": [
+        "The Court considered the situation in which a final decree for sale had been passed while an appeal from the preliminary decree was pending and the appellate court later reversed the preliminary decree."
+      ],
+      "conclusion": "The final decree falls with the reversed preliminary decree, and the executing court must refuse to execute it when the reversal is brought to its notice, even if more than three years have passed since the appellate decree.",
+      "legal_principle": "Under Order XXXIV of the Code of Civil Procedure, a final mortgage decree depends on the preliminary decree. The Court relied on the principle in Talebali v. Abdul Aziz that setting aside the preliminary decree removes the basis for the final decree; it distinguished cases where the preliminary decree is affirmed or varied.",
+      "rule": {
+        "if": "mortgage_sale_proceeding and appeal_from_preliminary_decree and final_decree_passed_before_appeal_decided and appellate_court_reversed_preliminary_decree",
+        "then": "execution_of_final_decree_must_be_refused"
+      },
+      "predicates": {
+        "mortgage_sale_proceeding": "The proceeding seeks sale of property mortgaged as security for a debt.",
+        "appeal_from_preliminary_decree": "A party appealed from the preliminary decree in the mortgage proceeding.",
+        "final_decree_passed_before_appeal_decided": "The court passed a final decree while the appeal from the preliminary decree was still pending.",
+        "appellate_court_reversed_preliminary_decree": "The appellate court set aside the preliminary decree."
+      },
+      "definition": "If a final decree was passed in a mortgage sale proceeding while an appeal from the preliminary decree was pending and the appellate court later reversed that decree, execution of the final decree must be refused."
+    },
+    {
+      "legal_issue": "A final mortgage decree passed while an appeal from the preliminary decree is pending does not require formal amendment or replacement when the appellate court affirms or varies the preliminary decree without directing a fresh decree.",
+      "material_facts": [
+        "A preliminary decree for sale of mortgaged property was made final while the decree-holder’s appeal was pending.",
+        "The appellate court later varied the preliminary decree by allowing interest and appeal costs.",
+        "The appellate court gave no direction to prepare a fresh preliminary decree or final decree.",
+        "The judgment-debtors objected that the existing final decree could not be executed without a fresh final decree, and the objection was rejected."
+      ],
+      "conclusion": "The existing final decree remained executable without formal amendment or a fresh final decree, but the executing court had to give effect to the appellate variation when carrying out execution.",
+      "legal_principle": "Under Order XXXIV rules 4 and 5 of the Code of Civil Procedure, and the form of final decree in Form No. 6, the final decree depends on and carries out the preliminary decree. Where an appeal confirms or varies the preliminary decree, the existing final decree operates according to the preliminary decree as confirmed or varied, unless the appellate court specifically directs a fresh preliminary decree or otherwise gives directions requiring a new decree. The Court followed Periakaruppan Chettiar v. Venugopal Pillai, Rukhmabai v. Krishnarao, and Gandavarapu Venkata Subba Rao v. Vavilal Kesavayya, and disapproved Ram Nath v. Deoki Nand Krishna, Abdul Jalil v. Amar Chand Paul, and Mewa Singh v. Tara Singh to the extent inconsistent with this approach.",
+      "rule": {
+        "if": "mortgage_sale_proceeding and appeal_from_preliminary_decree and final_decree_passed_before_appeal_decided and appellate_court_confirmed_or_varied_preliminary_decree and not appellate_court_directed_fresh_decree",
+        "then": "existing_final_decree_executable_as_adjusted_to_appellate_decree"
+      },
+      "predicates": {
+        "mortgage_sale_proceeding": "The proceeding seeks sale of property mortgaged as security for a debt.",
+        "appeal_from_preliminary_decree": "A party appealed from the preliminary decree in the mortgage proceeding.",
+        "final_decree_passed_before_appeal_decided": "The court passed a final decree while the appeal from the preliminary decree was still pending.",
+        "appellate_court_confirmed_or_varied_preliminary_decree": "The appellate court left the preliminary decree in force, either unchanged or with modifications.",
+        "appellate_court_directed_fresh_decree": "The appellate court directed that a fresh preliminary decree or other replacement decree be prepared."
+      },
+      "definition": "If a final decree was passed during an appeal from a preliminary decree, and the appellate court confirmed or varied the preliminary decree without directing a fresh decree, the existing final decree remains executable as adjusted to the appellate decree."
+    },
+    {
+      "legal_issue": "Confirmation of a preliminary mortgage decree does not automatically extend the time fixed for payment when a final decree has already been passed.",
+      "material_facts": [
+        "The Court considered a mortgage sale proceeding in which a final decree had been passed before the appeal from the preliminary decree was decided.",
+        "It considered an appellate decision confirming the preliminary decree without saying that the time fixed for payment should be extended."
+      ],
+      "conclusion": "The time originally fixed for payment remains in force unless the appellate court indicates that it is extended; confirmation alone does not restart the payment period.",
+      "legal_principle": "The Court applied Order XXXIV of the Code of Civil Procedure and distinguished the question of limitation for applying for a final decree from the time fixed for redemption in an already-passed preliminary decree. It considered Fitzholmes v. Bank of Upper India but treated the observation relied on about a fresh payment period as obiter in the circumstances there.",
+      "rule": {
+        "if": "mortgage_sale_proceeding and appeal_from_preliminary_decree and final_decree_passed_before_appeal_decided and appellate_court_confirmed_preliminary_decree and not appellate_court_extended_payment_time",
+        "then": "original_payment_deadline_remains_unextended"
+      },
+      "predicates": {
+        "mortgage_sale_proceeding": "The proceeding seeks sale of property mortgaged as security for a debt.",
+        "appeal_from_preliminary_decree": "A party appealed from the preliminary decree in the mortgage proceeding.",
+        "final_decree_passed_before_appeal_decided": "The court passed a final decree while the appeal from the preliminary decree was still pending.",
+        "appellate_court_confirmed_preliminary_decree": "The appellate court left the preliminary decree in force without changing its terms.",
+        "appellate_court_extended_payment_time": "The appellate court expressly extended the time allowed for payment."
+      },
+      "definition": "If a final decree was passed while an appeal from the preliminary decree was pending and the appellate court confirmed the preliminary decree without extending the payment time, the original payment deadline remains unextended."
+    },
+    {
+      "legal_issue": "When an appellate court reduces the amount required for redemption, it should fix a time for payment but need not do so, and a reduction alone does not replace the original payment deadline.",
+      "material_facts": [
+        "The Court considered the effect of an appellate reduction in the amount payable for redemption in a mortgage sale proceeding.",
+        "It stated that the appellate court should fix some time for payment in the interest of justice, but is not bound to do so.",
+        "It stated that a mortgagor may still deposit the amount before confirmation of the sale."
+      ],
+      "conclusion": "If the appellate court reduces the redemption amount but does not fix a new payment time, the original time fixed in the preliminary decree stands; the mortgagor may nevertheless deposit the amount up to confirmation of the sale.",
+      "legal_principle": "The Court applied Order XXXIV rule 5(1) of the Code of Civil Procedure and relied on Rukhmabai v. Krishnarao. It held that an appellate court should fix a time when reducing the redemption amount, but is not obliged to do so, and that the mortgagor retains the rule-based opportunity to pay before sale confirmation.",
+      "rule": {
+        "if": "mortgage_sale_proceeding and appeal_from_preliminary_decree and appellate_court_reduced_redemption_amount and not appellate_court_fixed_new_payment_time",
+        "then": "original_payment_deadline_stands_but_redemption_remains_possible_until_sale_confirmation"
+      },
+      "predicates": {
+        "mortgage_sale_proceeding": "The proceeding seeks sale of property mortgaged as security for a debt.",
+        "appeal_from_preliminary_decree": "A party appealed from the preliminary decree in the mortgage proceeding.",
+        "appellate_court_reduced_redemption_amount": "The appellate court reduced the amount the mortgagor must pay to redeem the property.",
+        "appellate_court_fixed_new_payment_time": "The appellate court specified a new time for making the redemption payment."
+      },
+      "definition": "If the appellate court reduces the redemption amount but fixes no new payment time, the original deadline stands while redemption remains possible until sale confirmation."
+    }
+  ],
+  "seconds": 18.9
+}

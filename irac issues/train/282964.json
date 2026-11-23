@@ -1,0 +1,122 @@
+{
+  "doc_id": "282964",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31769,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2343,
+    "prompt_tokens": 8357,
+    "total_tokens": 10700,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A later notification restarting consolidation operations does not abate proceedings that are themselves pending under the consolidation law when the closure notification is issued.",
+      "material_facts": [
+        "The proceedings giving rise to the appeals were proceedings under the consolidation law.",
+        "A notification closing consolidation operations had been issued, and later notifications proposed restarting operations in the same area.",
+        "The appellants sought abatement of the appeals and related proceedings under the consequences attached to a notification restarting operations."
+      ],
+      "conclusion": "The later notifications and the abatement provision did not apply to or affect the proceedings, and the applications for abatement were dismissed.",
+      "legal_principle": "Under section 52(2) of the U.P. Consolidation of Holdings Act, 1953, consolidation operations are deemed not to have closed for pending proceedings under that Act. Section 4-A, and consequently sections 4 and 5, do not apply to those proceedings; section 5(2)(a) concerns pending suits or proceedings that are not proceedings under the Consolidation Act. The purpose of section 52(2) is to prevent rights or interests involved in the specified matters from being reconsidered in later consolidation operations.",
+      "rule": {
+        "if": "consolidation_proceeding and proceeding_pending_at_closure and later_restart_notification",
+        "then": "later_restart_does_not_abate_proceeding"
+      },
+      "predicates": {
+        "consolidation_proceeding": "The matter is a proceeding conducted under the consolidation law.",
+        "proceeding_pending_at_closure": "The proceeding was pending when the notification closing consolidation operations was issued.",
+        "later_restart_notification": "A later notification proposed bringing the area under consolidation operations again.",
+        "later_restart_does_not_abate_proceeding": "The later restart notification does not abate or affect the pending consolidation proceeding."
+      },
+      "definition": "When a consolidation proceeding remains pending at closure and operations are later restarted, the proceeding is not abated by the later restart."
+    },
+    {
+      "legal_issue": "An objection to the competence of a statutory arbitration reference cannot be raised for the first time in an appeal against the decision on objections to the award when it was not raised at the reference stage.",
+      "material_facts": [
+        "The parties appeared before the statutory arbitrator after the consolidation officer referred the title dispute.",
+        "The appellants did not object to the competence of the reference before the arbitrator.",
+        "They first challenged the reference because certain persons had not been joined when appealing the decision dismissing their objections to the award."
+      ],
+      "conclusion": "The objection was raised too late and was properly rejected; it should have been raised when the reference was made.",
+      "legal_principle": "The court held that the proper stage for challenging the competence of a reference under section 12 of the U.P. Consolidation of Holdings Act, 1953, is when the reference is made. An appellate court should not entertain that objection when it is raised for the first time later.",
+      "rule": {
+        "if": "award_objection_appeal and reference_competence_challenged and no_objection_at_reference",
+        "then": "late_reference_objection_rejected"
+      },
+      "predicates": {
+        "award_objection_appeal": "The matter is an appeal concerning a decision on objections to a statutory arbitration award.",
+        "reference_competence_challenged": "A party challenges whether the statutory arbitration reference was competent.",
+        "no_objection_at_reference": "The challenging party did not raise that objection when the reference was made.",
+        "late_reference_objection_rejected": "The objection to the reference is rejected as having been raised too late."
+      },
+      "definition": "In an appeal concerning objections to an award, a competence objection not raised when the reference was made is rejected as late."
+    },
+    {
+      "legal_issue": "A transferee who acquired no valid interest in land cannot claim the statutory right to retain it as an intermediary or other qualifying landholder.",
+      "material_facts": [
+        "The appellants relied on a sale deed to claim the former owner's proprietary interest in the disputed land.",
+        "The arbitrator found that the transfer was unsupported by legal necessity and did not bind the owner's sons.",
+        "The appellants therefore had acquired no interest in the land under the sale deed and held no intermediary interest immediately before vesting."
+      ],
+      "conclusion": "The appellants did not qualify for the statutory right to retain the land, and the arbitrator's failure to grant them that right was not an error of law warranting the award being set aside.",
+      "legal_principle": "Section 18 of the U.P. Zamindari Abolition and Land Reforms Act, 1950, confers retention rights on intermediaries and specified cultivators. A person who acquired no interest under an invalid transfer and held no qualifying interest immediately before vesting cannot claim those rights.",
+      "rule": {
+        "if": "award_challenge_for_legal_error and transfer_invalid and no_qualifying_interest_at_vesting",
+        "then": "no_statutory_retention_right"
+      },
+      "predicates": {
+        "award_challenge_for_legal_error": "The matter is a challenge to an award on the ground that it contains an error of law.",
+        "transfer_invalid": "The asserted transfer of the land was found invalid and not binding on the persons claiming rights through the transferor.",
+        "no_qualifying_interest_at_vesting": "The claimant held no qualifying intermediary or other statutory interest immediately before vesting.",
+        "no_statutory_retention_right": "The claimant has no statutory right to retain the land on the asserted basis."
+      },
+      "definition": "When an award challenge concerns an invalid transfer and the claimant held no qualifying interest at vesting, the claimant has no statutory retention right."
+    },
+    {
+      "legal_issue": "A trespasser without a lawful right in land is not in cultivatory possession for purposes of acquiring the statutory status available to qualifying cultivators.",
+      "material_facts": [
+        "The appellants' sale deed was found not to have transferred a valid interest in the disputed land.",
+        "After the transferor's death, the appellants' possession became illegal and adverse to her sons.",
+        "The appellants claimed statutory status based on their asserted cultivatory possession during the relevant agricultural year."
+      ],
+      "conclusion": "The appellants were not in cultivatory possession within the meaning of section 3(1) and were not entitled to the benefit of that provision.",
+      "legal_principle": "Section 3(1) of the Uttar Pradesh Land Reforms (Supplementary) Act, 1952, does not protect a trespasser's possession. Its explanation indicates that a person without a lawful right in the land cannot claim to be in cultivatory possession. The court relied on Ram Krishna v. Bhagwan Baksh Singh, (1961) ALJ 301, and Badri v. Juthan Singh, (1969) ALJ 411, which held that a trespasser is not in cultivatory possession for this purpose.",
+      "rule": {
+        "if": "statutory_cultivatory_status_claim and possession_without_lawful_right",
+        "then": "no_statutory_cultivatory_status"
+      },
+      "predicates": {
+        "statutory_cultivatory_status_claim": "The matter is a claim to statutory status based on cultivatory possession of land during the relevant agricultural year.",
+        "possession_without_lawful_right": "The claimant possessed the land without a lawful right to do so.",
+        "no_statutory_cultivatory_status": "The claimant is not treated as being in cultivatory possession for the purpose of obtaining that statutory status."
+      },
+      "definition": "A claimant seeking statutory cultivatory status who possessed the land without a lawful right is not treated as being in cultivatory possession."
+    },
+    {
+      "legal_issue": "Possession that has not continued for the required limitation period before a timely suit for recovery does not ripen into title by adverse possession.",
+      "material_facts": [
+        "The appellants' possession became illegal and adverse after the transferor died.",
+        "The transferor's sons brought a suit for recovery of possession within six years of that possession becoming adverse.",
+        "The suit was decreed, and the later proceedings arose after further proceedings in the appeals were stayed during consolidation operations."
+      ],
+      "conclusion": "The appellants did not acquire title to the disputed land by adverse possession.",
+      "legal_principle": "Adverse possession does not mature into title before the applicable twelve-year period has elapsed. The court found that the owners sued for recovery within six years of the possession becoming adverse, before the required period could run.",
+      "rule": {
+        "if": "adverse_possession_claim and possession_adverse_to_owner and recovery_suit_filed_before_limitation_period_elapsed",
+        "then": "no_title_by_adverse_possession"
+      },
+      "predicates": {
+        "adverse_possession_claim": "The matter includes a claim that possession has matured into title by adverse possession.",
+        "possession_adverse_to_owner": "The claimant's possession was adverse to the person entitled to the land.",
+        "recovery_suit_filed_before_limitation_period_elapsed": "The person entitled to the land filed a recovery suit before the applicable limitation period elapsed.",
+        "no_title_by_adverse_possession": "The claimant did not acquire title by adverse possession."
+      },
+      "definition": "When adverse possession is claimed but a recovery suit is filed before the applicable limitation period elapses, title does not arise by adverse possession."
+    }
+  ],
+  "seconds": 13.6
+}

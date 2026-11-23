@@ -1,0 +1,61 @@
+{
+  "doc_id": "167519",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33394,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1772,
+    "prompt_tokens": 8857,
+    "total_tokens": 10629,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant’s transfer of its tenancy interest and possession to another company through a tenant-initiated amalgamation sanctioned by a court constitutes an actionable transfer under rent-control law when the landlord has not consented in writing.",
+      "material_facts": [
+        "The original company held the tenancy under a written rental agreement that prohibited subletting without the landlord’s written consent.",
+        "The original company petitioned for an amalgamation with another company, and the court sanctioned a scheme transferring its property and tenancy rights to the other company.",
+        "The original company later ceased to exist, and the transferee company occupied the premises.",
+        "The landlord had not given written consent to the transfer.",
+        "The landlord sought eviction, and the tenant companies appealed the eviction order."
+      ],
+      "conclusion": "The amalgamation resulted in a transfer of the original tenant’s interest in the premises to the transferee company, without the landlord’s written consent, and the transferee was liable to eviction. The court’s sanction of the scheme did not make the transfer involuntary or exempt it from rent-control law.",
+      "legal_principle": "Section 10(ii)(a) of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960 permits eviction where a tenant transfers its right under the lease or sublets without the landlord’s written consent; the Act contains no exception for a transfer under a court-sanctioned amalgamation. Sections 391 and 394 of the Companies Act, 1956 enable a court-sanctioned scheme to transfer a company’s rights and liabilities, but the transfer here followed a petition by the transferor company and was not involuntary. The court relied on Sabhayanidhi Virudhunagar Ltd. v. A.S.R. Subrahamanya Nadar for the effect of a sanctioned scheme, Parasaram Harnand Rao v. Shanti Prasad Narinder Kumar Jain for the breadth of provisions covering transfers of possession, and Venkatarama Iyer v. Renters Ltd.; it held Devarajulu Naidu v. Ethirajavalli Thyaramma inapplicable.",
+      "rule": {
+        "if": "rent_control_eviction_appeal and tenant_initiated_amalgamation and tenancy_interest_transferred and possession_transferred and not landlord_written_consent",
+        "then": "eviction_for_unauthorized_transfer_is_available"
+      },
+      "predicates": {
+        "rent_control_eviction_appeal": "The proceeding is an appeal in an eviction case governed by rent-control law.",
+        "tenant_initiated_amalgamation": "The tenant company initiated a scheme to amalgamate with another company.",
+        "tenancy_interest_transferred": "The scheme transferred the tenant’s interest in the leased premises to the other company.",
+        "possession_transferred": "The other company was placed in possession of the leased premises.",
+        "landlord_written_consent": "The landlord gave written consent to the transfer."
+      },
+      "definition": "When a tenant appeals an eviction order in a rent-control case after initiating an amalgamation that transfers its tenancy interest and possession without the landlord’s written consent, eviction for unauthorized transfer is available."
+    },
+    {
+      "legal_issue": "A person placed in occupation of a rented building by the tenant is not a tenant under the statutory definition of tenant applied by the court.",
+      "material_facts": [
+        "The original tenant transferred its tenancy rights and the premises to another company under the amalgamation scheme.",
+        "The transferee company was placed in occupation by the original tenant.",
+        "The original tenant ceased to exist, and the transferee claimed the status of tenant based on the transferred tenancy rights."
+      ],
+      "conclusion": "The transferee company could not be treated as a tenant under the Act merely because the tenancy rights had vested in it through the court-sanctioned amalgamation.",
+      "legal_principle": "Section 2(ix) of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960 defines a tenant and expressly excludes a person placed in occupation of a building by its tenant. The court applied that exclusion to the transferee company placed in possession by the original tenant.",
+      "rule": {
+        "if": "rent_control_proceeding and person_placed_in_occupation_by_tenant",
+        "then": "occupant_is_not_a_statutory_tenant"
+      },
+      "predicates": {
+        "rent_control_proceeding": "The proceeding concerns rights or status under rent-control law.",
+        "person_placed_in_occupation_by_tenant": "A person other than the tenant was placed in occupation of the rented building by the tenant."
+      },
+      "definition": "In a rent-control proceeding, a person placed in occupation of the building by the tenant is not a statutory tenant."
+    }
+  ],
+  "seconds": 11.0
+}

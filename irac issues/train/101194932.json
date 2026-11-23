@@ -1,0 +1,80 @@
+{
+  "doc_id": "101194932",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20759,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2645,
+    "prompt_tokens": 5264,
+    "total_tokens": 7909,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court should not reappreciate evidence already analyzed by the tribunal unless the appellant shows that the tribunal’s finding is perverse or suffers from an error apparent on the record.",
+      "material_facts": [
+        "The appeal challenged the tribunal’s factual finding about the structure on the land.",
+        "The tribunal had analyzed documentary evidence, including survey reports and property records.",
+        "The Supreme Court reviewed the contemporaneous records and found no basis to take a different view."
+      ],
+      "conclusion": "The tribunal’s factual finding was left undisturbed.",
+      "legal_principle": "In an appeal from a tribunal, the existence of appellate jurisdiction does not by itself require the appellate court to reappreciate all the evidence. Intervention is warranted where the appellant demonstrates an error apparent on the face of the record or perversity. No earlier case or specific statutory provision was relied on for this standard in the judgment.",
+      "rule": {
+        "if": "appeal_from_tribunal_order and tribunal_analyzed_evidence and not demonstrated_perversity_or_apparent_error",
+        "then": "tribunal_factual_finding_left_undisturbed"
+      },
+      "predicates": {
+        "appeal_from_tribunal_order": "A party appealed from an order made by a tribunal.",
+        "tribunal_analyzed_evidence": "The tribunal examined the evidence relevant to the disputed factual finding.",
+        "demonstrated_perversity_or_apparent_error": "The appellant showed that the tribunal’s finding was perverse or contained an error apparent on the record."
+      },
+      "definition": "When a tribunal has analyzed the evidence and an appellant does not show perversity or an apparent error, the factual finding is left undisturbed on appeal."
+    },
+    {
+      "legal_issue": "A materially different structure erected in a coastal no-development zone, where only specified repairs to existing authorized structures are permitted, is unauthorized and liable to demolition.",
+      "material_facts": [
+        "The land was within 100 metres of the High Tide Line in a CRZ-III area.",
+        "Before the coastal restrictions took effect, a small structure at the corner of the land was used as a garage.",
+        "The structure later complained of differed from that earlier structure in shape, size, and location, and stood in the middle of the land.",
+        "The tribunal found that the complained-of structure had been constructed after the coastal restrictions took effect and directed its demolition."
+      ],
+      "conclusion": "The structure was unauthorized and the tribunal’s demolition direction was upheld.",
+      "legal_principle": "Under the CRZ Notification, 1991, clause applicable to CRZ-III land within 200 metres of the High Tide Line is a No Development Zone: construction is prohibited except for repairs of existing authorized structures, within the stated limits, and for permissible activities. The Court relied on the Bombay High Court’s directions in Goa Foundation v. The Panchayat of Condolim & The Panchayat of Calangut, which required action against post-notification structures other than qualifying dwelling units in the circumstances addressed there.",
+      "rule": {
+        "if": "appeal_from_tribunal_order and within_coastal_no_development_zone and preexisting_structure_was_authorized and current_structure_materially_differs_from_preexisting_structure",
+        "then": "unauthorized_structure_must_be_demolished"
+      },
+      "predicates": {
+        "appeal_from_tribunal_order": "A party appealed from a tribunal order concerning a structure in a regulated coastal area.",
+        "within_coastal_no_development_zone": "The structure is located in a coastal area where new construction is prohibited, subject only to specified exceptions.",
+        "preexisting_structure_was_authorized": "An authorized structure existed on the land before the coastal restrictions took effect.",
+        "current_structure_materially_differs_from_preexisting_structure": "The structure at issue differs materially in its form, size, or location from the earlier authorized structure."
+      },
+      "definition": "If an appeal concerns a structure in a coastal no-development zone and the structure differs materially from the authorized structure that previously existed there, the structure must be demolished."
+    },
+    {
+      "legal_issue": "Permission granted by an authority cannot validate construction that conflicts with binding court directions governing the relevant area.",
+      "material_facts": [
+        "Binding directions required the authorities to act against prohibited structures in the relevant coastal zone and restricted permissions pending the directed survey and inquiry.",
+        "An authority granted permission to the appellant in relation to the structure at issue.",
+        "The permission was inconsistent with the binding directions because the structure was not merely a repair or renovation of an existing house."
+      ],
+      "conclusion": "The permission could not validate the structure and was of no legal effect.",
+      "legal_principle": "The directions in Goa Foundation v. The Panchayat of Condolim & The Panchayat of Calangut bound the State and municipal authorities while they remained in force. A permission granted contrary to those directions was a nullity and non-est.",
+      "rule": {
+        "if": "appeal_from_tribunal_order and binding_court_restrictions_apply and authority_permission_conflicts_with_restrictions",
+        "then": "conflicting_permission_has_no_legal_effect"
+      },
+      "predicates": {
+        "appeal_from_tribunal_order": "A party appealed from a tribunal order concerning construction subject to binding court directions.",
+        "binding_court_restrictions_apply": "Court directions remained in force and governed the authority’s ability to permit construction in the area.",
+        "authority_permission_conflicts_with_restrictions": "An authority granted permission for construction that the binding directions did not permit."
+      },
+      "definition": "When binding court restrictions govern an area and an authority grants permission contrary to them, that permission has no legal effect."
+    }
+  ],
+  "seconds": 77.6
+}

@@ -1,0 +1,64 @@
+{
+  "doc_id": "315007",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20590,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1993,
+    "prompt_tokens": 5336,
+    "total_tokens": 7329,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant is discharged from the obligation to return leased premises to the landlord only when eviction by a paramount title holder is established.",
+      "material_facts": [
+        "The premises had been allotted to the landlord by a public authority, and the landlord had inducted the tenant into possession.",
+        "The authority’s order resuming the premises was set aside on appeal, so the landlord’s allotment continued to subsist.",
+        "The authority had not allotted the premises directly to the tenant.",
+        "The tenant relied on the authority’s proceedings to resist the landlord’s eviction decree, but those proceedings had not achieved finality and the landlord could still have a sustainable defence."
+      ],
+      "conclusion": "The tenant did not establish eviction by title paramount and was not relieved of the obligation to deliver possession to the landlord; the eviction decree was not set aside on this ground.",
+      "legal_principle": "Although the Transfer of Property Act did not apply in the state concerned, its principles could guide the parties’ rights under general law. A tenant ordinarily must restore possession to the landlord when the tenancy ends. Under Vashu Deo v. Bal Kishan, eviction by title paramount requires that the paramount title holder have a good and present title, that the tenant quit or directly attorn to that holder against the tenant’s will, and that the landlord consent to the attornment or that a binding legal event or process make consent unnecessary. The party relying on the defence bears the burden of establishing it. The possibility of resumption under Section 17 of the Haryana Urban Development Authority Act, 1977 did not establish those requirements where the resumption order had been set aside and no direct allotment had been made to the tenant.",
+      "rule": {
+        "if": "landlord_tenant_eviction_case and paramount_title_defence and (not paramount_holder_has_good_present_title or not tenant_quits_or_attorns_involuntarily or not landlord_consents_or_binding_process_exists)",
+        "then": "paramount_title_defence_fails"
+      },
+      "predicates": {
+        "landlord_tenant_eviction_case": "The dispute concerns a landlord seeking possession from a tenant whose tenancy has ended.",
+        "paramount_title_defence": "The tenant relies on a third party’s superior title to claim that the tenant need not return the premises to the landlord.",
+        "paramount_holder_has_good_present_title": "The third party has a current title to the premises that is enforceable against the tenant.",
+        "tenant_quits_or_attorns_involuntarily": "The tenant has left the premises or attorned directly to the third party against the tenant’s will.",
+        "landlord_consents_or_binding_process_exists": "The landlord consents to the tenant’s direct attornment, or a binding legal process or event makes the landlord’s consent unnecessary."
+      },
+      "definition": "When a tenant raises a paramount-title defence in an eviction dispute, the defence fails if any required element of the third party’s enforceable title, the tenant’s involuntary departure or attornment, or the landlord’s consent or a binding substitute is absent."
+    },
+    {
+      "legal_issue": "A court may take account of a subsequent event affecting relief only when the event meets the requirements for changing the relief and is presented through fair and proper procedure.",
+      "material_facts": [
+        "The tenant relied on proceedings by a public authority that began after the eviction suit was filed.",
+        "The authority’s resumption order was set aside, and the record did not establish that the proceedings had reached a final outcome preventing the landlord from defending the allotment.",
+        "The tenant mentioned the subsequent factual event in an affidavit but did not seek an amendment to the pleadings or ask the Court to mould or deny relief on that basis.",
+        "The event was not presented in a way that gave the landlord an opportunity to meet the case sought to be raised."
+      ],
+      "conclusion": "The Court would not take notice of the subsequent factual event to impair the eviction judgment, and the appeal was dismissed.",
+      "legal_principle": "Ordinarily, parties’ rights are determined as they stood when the suit was instituted. A court may consider a subsequent event if the original relief has become inappropriate or unavailable, considering the event would shorten litigation and promote complete justice, and the event is promptly brought to the court in accordance with procedural rules without unfair surprise. Pasupuleti Venkateswarlu v. The Motor & General Traders recognises this power subject to caution and fairness. When the event is a disputed fact, it should ordinarily be introduced by amendment under Order 6 Rule 17 of the Code of Civil Procedure. Messrs. Trojan & Co. v. R.M.N.N. Nagappa Chettiar and Sri Mahant Govind Rao v. Sita Ram Kesho support the rule that relief must be founded on the pleadings. Chhote Khan v. Mohammad Obedulla Khan explains the exceptional nature of considering later events, particularly at the appellate stage.",
+      "rule": {
+        "if": "appeal_against_eviction_decree and subsequent_factual_event_relied_on and (not relief_made_inappropriate_or_unavailable or not event_would_shorten_litigation_and_promote_complete_justice or not event_presented_promptly_and_procedurally_fairly)",
+        "then": "court_cannot_modify_relief_based_on_event"
+      },
+      "predicates": {
+        "appeal_against_eviction_decree": "The proceeding is an appeal from a decree granting eviction.",
+        "subsequent_factual_event_relied_on": "A party relies on a factual event that occurred after the suit began as a reason to change the relief.",
+        "relief_made_inappropriate_or_unavailable": "The later event has made the relief originally claimed inappropriate or impossible to grant.",
+        "event_would_shorten_litigation_and_promote_complete_justice": "Considering the later event would shorten the litigation and enable complete justice between the parties.",
+        "event_presented_promptly_and_procedurally_fairly": "The party brought the event promptly through proper procedure and in a manner that gives the opposing party a fair chance to respond."
+      },
+      "definition": "On an appeal from an eviction decree, a later factual event cannot support changing the relief when it has not made the original relief inappropriate or unavailable, would not shorten litigation and promote complete justice, or was not presented promptly and fairly."
+    }
+  ],
+  "seconds": 73.5
+}

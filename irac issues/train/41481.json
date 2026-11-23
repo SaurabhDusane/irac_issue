@@ -1,0 +1,57 @@
+{
+  "doc_id": "41481",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22344,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1790,
+    "prompt_tokens": 6170,
+    "total_tokens": 7960,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Quashing an acquisition declaration does not restart the statutory period for issuing a replacement declaration.",
+      "material_facts": [
+        "A land-acquisition notification was published before the 1984 amendment, so the applicable statutory period was three years from publication of that notification.",
+        "An initial declaration was made within that period but was later quashed.",
+        "A replacement declaration was issued after the applicable period had expired, and the High Court upheld it by applying the view that the period ran from receipt of the court’s order."
+      ],
+      "conclusion": "The replacement declaration was invalid because quashing the initial declaration did not provide a fresh period or otherwise extend the deadline running from the original notification.",
+      "legal_principle": "Under Section 6(1) of the Land Acquisition Act, 1894, including its first proviso and Explanation 1, a declaration must be made within the prescribed period calculated from publication of the Section 4(1) notification, excluding only a period during which the relevant action or proceeding was stayed by a court. The time limit is peremptory; a court cannot add a new period triggered by quashing a declaration or supply a casus omissus where the statutory language is plain. Sections 11 and 23 link valuation and compensation to the date of the Section 4(1) notification, supporting the purpose of the time limit. A.S. Naidu and Oxford English School were affirmed; N. Narasimhaiah and D.C. Nanjudaiah were overruled. The Court distinguished Pooran Mal and relied on principles of statutory construction reflected in R. Venkatchalam, Rishabh Agro Industries, Union of India v. Filip Tiago De Gama, Luke v. I.R.C., and Artemiou v. Procopiou.",
+      "rule": {
+        "if": "land_acquisition_proceeding and prior_declaration_quashed and replacement_declaration_outside_original_deadline",
+        "then": "replacement_declaration_invalid"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The matter concerns a proceeding to acquire land for a public purpose or a company.",
+        "prior_declaration_quashed": "A court quashed an earlier declaration concerning the land.",
+        "replacement_declaration_outside_original_deadline": "The replacement declaration was made after the applicable deadline calculated from the original acquisition notification, with any legally excluded stay period left out."
+      },
+      "definition": "When an acquisition proceeding involves a quashed earlier declaration and a replacement declaration made outside the original deadline, the replacement declaration is invalid."
+    },
+    {
+      "legal_issue": "The new ruling on the deadline does not reopen acquisitions for which awards have been made and compensation has been paid.",
+      "material_facts": [
+        "The Court accepted that applying its ruling could affect acquisitions that had already become final.",
+        "It limited the prospective operation of its judgment for cases in which awards had been made and compensation had been paid."
+      ],
+      "conclusion": "Cases in which an award had been made and compensation paid were not to be reopened by applying the ruling.",
+      "legal_principle": "The Court directed that its judgment operate prospectively to the extent that acquisitions for which awards had been made and compensation paid would not be reopened under the judgment’s ratio.",
+      "rule": {
+        "if": "land_acquisition_proceeding and award_made and compensation_paid",
+        "then": "finalized_acquisition_not_reopened"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The matter concerns a proceeding to acquire land for a public purpose or a company.",
+        "award_made": "An award determining compensation for the acquired land was made.",
+        "compensation_paid": "Compensation for the acquired land was paid."
+      },
+      "definition": "In a land-acquisition proceeding, when an award has been made and compensation paid, the finalized acquisition is not reopened under the new ruling."
+    }
+  ],
+  "seconds": 12.2
+}

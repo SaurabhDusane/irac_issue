@@ -1,0 +1,78 @@
+{
+  "doc_id": "806710",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20653,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2284,
+    "prompt_tokens": 5879,
+    "total_tokens": 8163,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The initial period of non-application of the rent-control law applies to buildings completed before the law came into force.",
+      "material_facts": [
+        "The shop was completed before the rent-control law commenced.",
+        "The eviction proceeding was brought while the shop was still within the initial period following its completion."
+      ],
+      "conclusion": "The law did not apply to the shop during the initial ten-year period, even though it had been completed before the law commenced.",
+      "legal_principle": "Section 2(2) states without ambiguity that the law does not apply to a building during the ten years from completion and does not limit that rule to buildings completed after commencement. The court applied the rule that legislative intent is primarily found in the enacted words and that clear words should not be supplemented by adding words. It rejected the contrary view in Rattan Lal Shinghal v. Smt. Murti Devi and followed the contrary interpretation in Ram Saroop Rai v. Lilavati.",
+      "rule": {
+        "if": "rent_regulation_applicability_dispute and building_within_initial_exemption_period",
+        "then": "rent_regulation_does_not_apply_during_initial_period"
+      },
+      "predicates": {
+        "rent_regulation_applicability_dispute": "A party to a building-related proceeding disputed whether rent regulation applied to the building.",
+        "building_within_initial_exemption_period": "The building had not yet completed the initial period following completion of its construction."
+      },
+      "definition": "When a rent-regulation applicability dispute concerns a building still within its initial exemption period, the rent regulation does not apply during that period."
+    },
+    {
+      "legal_issue": "When a building is subject to assessment, its first assessment date determines its deemed completion date unless an earlier qualifying completion report or record exists.",
+      "material_facts": [
+        "The shop had been occupied by tenants before its first assessment took effect.",
+        "The first assessment took effect on 1 April 1968.",
+        "No earlier completion report or record was identified as determining the deemed completion date."
+      ],
+      "conclusion": "The first assessment date, rather than the earlier date of occupation, was the deemed completion date.",
+      "legal_principle": "Explanation I to section 2(2) provides for the earliest applicable completion report or record and first assessment date; occupation is used only in the absence of such a report, record, or assessment. On the facts, the first assessment date therefore controlled despite earlier occupation.",
+      "rule": {
+        "if": "rent_regulation_applicability_dispute and assessment_exists and no_earlier_completion_report_or_record",
+        "then": "first_assessment_date_controls_deemed_completion_date"
+      },
+      "predicates": {
+        "rent_regulation_applicability_dispute": "A party to a building-related proceeding disputed the date relevant to whether rent regulation applied.",
+        "assessment_exists": "The building was subject to an assessment that had taken effect.",
+        "no_earlier_completion_report_or_record": "No completion report or record existed with a date earlier than the first assessment date.",
+        "first_assessment_date_controls_deemed_completion_date": "The first assessment date is treated as the building's deemed completion date."
+      },
+      "definition": "Where a rent-regulation applicability dispute concerns an assessed building and there is no earlier completion report or record, the first assessment date determines the deemed completion date."
+    },
+    {
+      "legal_issue": "Transitional protection is unavailable when the eviction suit was not pending when the law commenced or when the law did not apply to the building because it remained within the initial period of non-application.",
+      "material_facts": [
+        "The suit was filed after the law commenced and was not pending on its commencement date.",
+        "The shop had not completed the initial period following its deemed completion date when the revision was decided.",
+        "The tenant sought the benefit of the transitional provision."
+      ],
+      "conclusion": "The tenant was not entitled to transitional protection because the suit was not pending when the law commenced and the law did not apply to the shop while it remained within the initial period of non-application.",
+      "legal_principle": "Section 39 requires the suit to have been pending on the date the law commenced. Further, section 2(2) makes the law inapplicable during the initial period after completion, so the transitional provision cannot apply where the law itself does not apply to the building.",
+      "rule": {
+        "if": "transitional_protection_claim and (suit_not_pending_when_law_commenced or building_within_initial_exemption_period)",
+        "then": "transitional_protection_unavailable"
+      },
+      "predicates": {
+        "transitional_protection_claim": "A tenant in an eviction proceeding sought the benefit of a transitional protection provision.",
+        "suit_not_pending_when_law_commenced": "The eviction suit had not been filed, and therefore was not pending, when the law commenced.",
+        "building_within_initial_exemption_period": "The building had not yet completed the initial period following its deemed completion date.",
+        "transitional_protection_unavailable": "The tenant cannot obtain the claimed transitional protection."
+      },
+      "definition": "A claim to transitional protection fails if the eviction suit was not pending when the law commenced or the building remained within its initial exemption period."
+    }
+  ],
+  "seconds": 16.1
+}

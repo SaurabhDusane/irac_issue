@@ -1,0 +1,80 @@
+{
+  "doc_id": "96629552",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14262,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2197,
+    "prompt_tokens": 3939,
+    "total_tokens": 6136,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory procedure for a co-sharer to buy out another co-sharer is unavailable unless a qualifying request is made for public sale of the property and distribution of its proceeds.",
+      "material_facts": [
+        "The dispute arose in a suit for partition of co-owned property that could not conveniently be divided by metes and bounds.",
+        "The plaintiffs offered to buy the defendant’s share, or proposed that the property be sold to them for a reasonable price; they did not request a public sale with distribution of the proceeds among the co-sharers.",
+        "The defendant offered to buy the plaintiffs’ share at a court-fixed valuation, but did not request a public sale with distribution of the proceeds."
+      ],
+      "conclusion": "The pleadings did not contain the qualifying request for public sale and distribution required to invoke the statutory buyout procedure.",
+      "legal_principle": "Sections 2 and 3 of the Partition Act, 1893 are interlinked. A request by a co-sharer or co-sharers holding at least one moiety for public sale and distribution of the proceeds is a condition precedent to the procedure under Section 3; an offer by one party to buy another’s share, or a request to sell the property to a particular party, is not that request. Even when the statutory conditions exist, the court retains discretion whether to direct a sale.",
+      "rule": {
+        "if": "partition_suit and no_co_sharer_requested_public_sale_and_distribution",
+        "then": "statutory_buyout_procedure_unavailable"
+      },
+      "predicates": {
+        "partition_suit": "The parties brought a proceeding seeking partition of co-owned property.",
+        "no_co_sharer_requested_public_sale_and_distribution": "No co-sharer requested that the property be publicly sold and the proceeds distributed among the co-sharers."
+      },
+      "definition": "When a partition proceeding includes no request by a co-sharer for public sale and distribution, the statutory buyout procedure is unavailable."
+    },
+    {
+      "legal_issue": "A court may use an equitable method to partition property that cannot reasonably be divided even when the statutory sale procedure is unavailable.",
+      "material_facts": [
+        "The co-owned property was very small and could not conveniently or reasonably be divided by metes and bounds without destroying its intrinsic worth.",
+        "No party had made a qualifying request for public sale and distribution of the proceeds.",
+        "The property therefore could not be partitioned in kind, and the statutory sale procedure could not be used."
+      ],
+      "conclusion": "The court could devise an equitable method of partition outside the statutory procedure, including allowing one co-sharer to retain the property upon payment of just compensation to the other.",
+      "legal_principle": "Where property cannot be divided in kind and Sections 2 and 3 of the Partition Act do not apply, the court’s power to partition by an equitable method is not affected by the Act. The court may use owelty, separating the parties’ interests by allowing one to retain the property in return for just compensation to the other. The court relied on the principle stated in A.I.R. 1958 Andhra Pradesh 647.",
+      "rule": {
+        "if": "partition_suit and property_not_reasonably_divisible and no_qualifying_public_sale_request",
+        "then": "court_may_partition_by_equitable_adjustment"
+      },
+      "predicates": {
+        "partition_suit": "The parties brought a proceeding seeking partition of co-owned property.",
+        "property_not_reasonably_divisible": "The property could not reasonably be divided in kind without impairing its worth.",
+        "no_qualifying_public_sale_request": "No co-sharer made the kind of request for public sale and distribution needed to use the statutory sale procedure."
+      },
+      "definition": "When property in a partition proceeding cannot reasonably be divided and no qualifying public-sale request was made, the court may separate the co-sharers’ interests through an equitable adjustment."
+    },
+    {
+      "legal_issue": "When indivisible co-owned property is being partitioned equitably, a smaller co-sharer using it as a residence or business may receive the first option to retain it, but must pay compensation based on a fair valuation rather than an outdated purchase price.",
+      "material_facts": [
+        "The defendant held the smaller share and used the property as both a shop and a residence.",
+        "The plaintiffs held the larger share and had greater financial resources, making an auction between the parties liable to produce an unfair result.",
+        "The value fixed by the High Court was based on the plaintiffs’ earlier purchase price and did not reflect a substantial increase in local property values.",
+        "An auction in execution had produced a substantially higher bid, and a local market development had contributed to increased values.",
+        "The Supreme Court directed that the smaller co-sharer receive the first option to retain the property on payment of the larger co-sharers’ share at a valuation that accounted for the subsequent increase in value; if that option was not exercised, the larger co-sharers could retain the property by paying for the smaller share at the determined valuation."
+      ],
+      "conclusion": "The smaller co-sharer was entitled to the first option to retain the property, but the compensation had to reflect a fair current valuation, including the increase in value; if that option was not exercised, the larger co-sharers could retain the property on payment of the smaller share’s fair value.",
+      "legal_principle": "In an equitable partition by owelty, the court should give effect to the equities of the case while ensuring just compensation. A prior purchase price is not a fair measure where it fails to account for a material rise in value. An auction may be unsuitable where unequal financial resources would allow one side to outbid the other. The court should determine a fair valuation by considering evidence of increases in the value of comparable property in the locality.",
+      "rule": {
+        "if": "property_not_reasonably_divisible and smaller_co_sharer_uses_property_as_home_or_business and larger_co_sharer_has_greater_financial_resources and fair_value_exceeds_old_purchase_price",
+        "then": "smaller_co_sharer_gets_first_option_at_fair_compensation"
+      },
+      "predicates": {
+        "property_not_reasonably_divisible": "The co-owned property could not reasonably be divided in kind.",
+        "smaller_co_sharer_uses_property_as_home_or_business": "The co-sharer with the smaller interest used the property as a residence, a business, or both.",
+        "larger_co_sharer_has_greater_financial_resources": "The co-sharer with the larger interest had greater financial resources than the smaller co-sharer.",
+        "fair_value_exceeds_old_purchase_price": "The property’s fair value had risen materially above the price previously paid for an interest in it."
+      },
+      "definition": "When indivisible property is used by the less wealthy smaller co-sharer and its fair value has risen above its old purchase price, that co-sharer receives the first option to retain it by paying fair compensation."
+    }
+  ],
+  "seconds": 16.3
+}

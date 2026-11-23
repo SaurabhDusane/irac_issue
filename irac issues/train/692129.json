@@ -1,0 +1,81 @@
+{
+  "doc_id": "692129",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42702,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2961,
+    "prompt_tokens": 10355,
+    "total_tokens": 13316,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An important tenancy term in an unregistered lease that is required to be registered cannot be admitted as evidence merely by describing it as collateral.",
+      "material_facts": [
+        "The parties’ tenancy memorandum was unregistered.",
+        "The memorandum restricted occupation to a particular employee and his family, and required the landlord’s written consent before another employee could occupy the premises.",
+        "The landlord relied on that restriction to argue that the tenant could not retain or reallot the premises after the named employee left, and sought eviction on that basis."
+      ],
+      "conclusion": "The restriction was an important term of the tenancy, not a collateral matter, and could not be relied on to establish a right to evict.",
+      "legal_principle": "Under Section 107 of the Transfer of Property Act, a lease requiring registration cannot be proved through an unregistered instrument; Section 49 of the Registration Act permits such an instrument to be used for a collateral transaction, but that transaction must be independent of or divisible from the transaction requiring registration and must not itself create, declare, assign, limit, or extinguish an interest in immovable property. An important lease term is not collateral merely because it is invoked for that purpose. The Court relied on Haran Chandra Chakravarti v. Kaliprasanna Sarkar, Ratan Lal v. Harisankar, Bajaj Auto Ltd. v. Behari Lal Kohli, Rai Chand Jain v. Chandra Kanta Khosla, and Rana Vidya Bhushan Singh v. Ratiram. It distinguished Smt. Juthika Mulick v. Dr. Mahendra Yashwant Bal, which concerned a registered lease.",
+      "rule": {
+        "if": "landlord_eviction_proceeding and lease_document_unregistered and lease_requires_registration and relied_on_occupancy_restriction and restriction_is_important_tenancy_term",
+        "then": "occupancy_restriction_not_admissible_as_collateral_evidence"
+      },
+      "predicates": {
+        "landlord_eviction_proceeding": "A landlord brought a proceeding seeking to evict a tenant.",
+        "lease_document_unregistered": "The document recording the lease was not registered.",
+        "lease_requires_registration": "The lease was of a kind for which the law required a registered instrument.",
+        "relied_on_occupancy_restriction": "The landlord relied on a restriction in the lease about who could occupy the premises to support eviction.",
+        "restriction_is_important_tenancy_term": "The restriction formed an important term of the tenancy rather than a matter independent of the lease transaction."
+      },
+      "definition": "When a landlord seeks eviction based on an important occupancy restriction in an unregistered lease that required registration, the restriction cannot be admitted as collateral evidence."
+    },
+    {
+      "legal_issue": "A tenant’s use of residential premises for a different employee’s residence does not amount to a change of user when the purpose of the letting remains residential.",
+      "material_facts": [
+        "The premises were let for residential use by a named employee and his family.",
+        "After that employee left, the tenant proposed that another employee occupy the premises.",
+        "The proposed use remained residential; the asserted difference concerned the identity of the occupant, not the kind of use."
+      ],
+      "conclusion": "Using the premises as the residence of another employee did not constitute a change of user under Section 108(o) of the Transfer of Property Act.",
+      "legal_principle": "Section 108(o) of the Transfer of Property Act prohibits a lessee from using or permitting use of the property for a purpose different from the purpose for which it was leased. The purpose of letting is the type of use, such as residential, non-residential, or a particular business; letting to a particular named person is not itself the purpose of letting. The Court distinguished Dashrath Baburao Sangale v. Kashimath Bhaskar Data and M. Arul Jothi v. Lajja Bal, where premises let for one business were used for a different business.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and premises_leased_for_residential_use and premises_used_for_residential_use and occupant_is_different_employee",
+        "then": "change_of_user_not_established"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "A landlord sought to evict a tenant based on the tenant’s use of the premises.",
+        "premises_leased_for_residential_use": "The premises were let for residential use.",
+        "premises_used_for_residential_use": "The premises continued to be used as a residence.",
+        "occupant_is_different_employee": "The person residing in the premises was an employee other than the person originally named."
+      },
+      "definition": "If a tenant continues to use premises residentially but a different employee resides there, the change in occupant alone does not establish a change of user."
+    },
+    {
+      "legal_issue": "A landlord seeking eviction under rent-control legislation must plead and prove at least one statutory ground for eviction.",
+      "material_facts": [
+        "The landlord sought eviction under the applicable rent-protection law and relied on the tenant’s continued retention and proposed reallotment of the premises after the named employee left.",
+        "The landlord’s asserted change-of-user ground was not established because the proposed use remained residential.",
+        "The Court found no other point supporting an eviction decree in the appeals."
+      ],
+      "conclusion": "The landlord was not entitled to an eviction decree because no statutory ground for eviction was proved.",
+      "legal_principle": "Under Section 13 of the West Bengal Premises Tenancy Act, a landlord must plead and prove one of the grounds specified in that section to obtain a decree for eviction. The landlord relied on Section 13(1)(b) in connection with Section 108(o) of the Transfer of Property Act, but the asserted change of user was not made out. The Court also discussed Smt. Juthika Mulick v. Dr. Mahendra Yashwant Bal, which recognized contractual freedom in the circumstances of a registered lease, but that decision did not assist the landlord in this case.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and landlord_seeks_eviction_under_a_statutory_ground and no_statutory_eviction_ground_proved",
+        "then": "eviction_decree_unavailable"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The proceeding was a landlord’s action to evict a tenant under rent-protection legislation.",
+        "landlord_seeks_eviction_under_a_statutory_ground": "The landlord relied on a ground for eviction specified by the governing law.",
+        "no_statutory_eviction_ground_proved": "The landlord did not establish any ground that would entitle the landlord to eviction under the governing law."
+      },
+      "definition": "In a rent-control eviction proceeding, a landlord who fails to prove a statutory ground cannot obtain an eviction decree."
+    }
+  ],
+  "seconds": 19.1
+}

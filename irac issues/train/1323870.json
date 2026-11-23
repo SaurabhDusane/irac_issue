@@ -1,0 +1,98 @@
+{
+  "doc_id": "1323870",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26423,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3436,
+    "prompt_tokens": 6965,
+    "total_tokens": 10401,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Statutory tenant protection for a licensee requires occupation under a subsisting licence agreement on the qualifying date.",
+      "material_facts": [
+        "The occupant’s last written leave-and-licence agreement expired on 31 March 1966.",
+        "The occupant remained in the premises, but the record showed no renewal or new licence agreement after the expiry.",
+        "The occupant claimed protection under the later rent-law amendment based on being in occupation on 1 February 1973.",
+        "The trial court found there was no subsisting licence agreement on that date."
+      ],
+      "conclusion": "The occupant was not a licensee under a subsisting agreement on the qualifying date and therefore did not acquire statutory tenant status or protection.",
+      "legal_principle": "Under sections 5(4A) and 15A of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, the person must be in occupation as a licensee under a subsisting agreement on the specified date to obtain deemed-tenant status. Under sections 52 and 62(c) of the Indian Easements Act, 1882, a licence granted for a limited period is revoked when that period expires; continued occupation after revocation does not make the occupant a licensee. The judgment relies on no earlier cases for this principle.",
+      "rule": {
+        "if": "claim_for_statutory_licensee_protection and occupant_in_possession_on_qualifying_date and license_term_expired_before_qualifying_date and no_later_license_agreement",
+        "then": "statutory_tenant_status_not_acquired"
+      },
+      "predicates": {
+        "claim_for_statutory_licensee_protection": "The occupant sought statutory protection on the basis of occupying the premises as a licensee.",
+        "occupant_in_possession_on_qualifying_date": "The occupant remained in possession on the date relevant to eligibility for statutory protection.",
+        "license_term_expired_before_qualifying_date": "The agreed licence period ended before the date relevant to eligibility for statutory protection.",
+        "no_later_license_agreement": "The parties did not renew the licence or enter into another licence agreement after the earlier agreement ended."
+      },
+      "definition": "When an occupant seeks statutory licensee protection, remained in possession on the qualifying date, and the earlier licence had expired without a later agreement, the occupant does not acquire statutory tenant status."
+    },
+    {
+      "legal_issue": "Filing a possession-recovery application does not create or revive a licence that has ended.",
+      "material_facts": [
+        "The licence had expired before the licensors filed an application seeking possession.",
+        "The occupant continued in possession after the licence expired.",
+        "The High Court treated the filing of the application as implied permission to remain until an eviction order, but the record disclosed no new agreement or grant of permission."
+      ],
+      "conclusion": "The filing of the possession-recovery application did not revive the expired licence or, by itself, create a fresh licence; a filing may in some circumstances end a subsisting licence.",
+      "legal_principle": "Under sections 52 and 62(c) of the Indian Easements Act, 1882, a licence is a permission that may be revoked and a limited-period licence is deemed revoked on expiry. Section 41 of the Presidency Small Cause Courts Act, 1882 provides a possession remedy after permission or a licence has been withdrawn or revoked. The judgment holds that use of that remedy cannot revive a licence that has already ended. The judgment relies on no earlier cases for this principle.",
+      "rule": {
+        "if": "possession_recovery_application_filed and license_already_ended and no_separate_new_permission",
+        "then": "filing_does_not_create_or_revive_license"
+      },
+      "predicates": {
+        "possession_recovery_application_filed": "The licensor filed an application seeking to recover possession from the occupant.",
+        "license_already_ended": "The licence had expired or been revoked before the application was filed.",
+        "no_separate_new_permission": "The licensor did not separately grant new permission for the occupant to remain."
+      },
+      "definition": "When a licensor files a possession-recovery application after a licence has ended and grants no separate new permission, the filing does not create or revive a licence."
+    },
+    {
+      "legal_issue": "An occupant who remains in premises after revocation of a licence remains liable for compensation for their use and occupation.",
+      "material_facts": [
+        "The occupant continued to use the premises after the limited-period licence expired.",
+        "The licensors were willing to accept money for use and occupation as compensation, without prejudice to their position that the licence had ended."
+      ],
+      "conclusion": "Continued occupation after revocation remains compensable, and payment or acceptance of compensation does not undo the revocation or restore the licence.",
+      "legal_principle": "The judgment applies section 62(c) of the Indian Easements Act, 1882, under which a limited-period licence is deemed revoked when the period expires, and explains that post-revocation occupation may give rise to compensation or damages for use and occupation. The judgment relies on no earlier cases for this principle.",
+      "rule": {
+        "if": "license_revoked and occupant_continued_using_premises",
+        "then": "post_revocation_occupation_remains_compensable_without_reinstating_license"
+      },
+      "predicates": {
+        "license_revoked": "The permission to occupy the premises ended by expiry, withdrawal, or revocation.",
+        "occupant_continued_using_premises": "The occupant continued to use or occupy the premises after the permission ended."
+      },
+      "definition": "When permission to occupy has ended and the occupant continues using the premises, that use remains compensable without reinstating the permission."
+    },
+    {
+      "legal_issue": "A revisional court should not disturb a trial court’s factual finding on whether a licence agreement remained in force without a proper basis to do so.",
+      "material_facts": [
+        "The trial court found that there was no evidence of a renewed or new licence agreement after the earlier agreement expired.",
+        "The High Court, exercising revisional jurisdiction, displaced that finding and inferred continuing or renewed permission from the parties’ conduct and the filing of the possession application.",
+        "The Supreme Court held that the trial court’s finding was essentially factual and that the High Court’s contrary conclusion rested on serious errors of law and fact."
+      ],
+      "conclusion": "The High Court should not have disturbed the trial court’s factual finding on the absence of a subsisting licence; the Supreme Court set aside the High Court’s order and restored the trial court’s order.",
+      "legal_principle": "Section 115 of the Code of Civil Procedure, 1908 governs revisional jurisdiction. The judgment states that the existence of a subsisting licence was essentially a question of fact and that the revisional court could not interfere with the trial court’s finding on that question on the basis presented. The judgment relies on no earlier cases for this principle.",
+      "rule": {
+        "if": "revision_from_possession_order and trial_court_made_factual_finding_on_continuing_license and record_lacked_evidence_of_later_agreement",
+        "then": "revisional_court_should_not_disturb_factual_finding"
+      },
+      "predicates": {
+        "revision_from_possession_order": "A party sought revision of a trial court’s order concerning recovery of possession.",
+        "trial_court_made_factual_finding_on_continuing_license": "The trial court found, based on the evidence, whether a licence remained in force.",
+        "record_lacked_evidence_of_later_agreement": "The record contained no evidence that the parties renewed the earlier licence or made a later agreement."
+      },
+      "definition": "In a revision concerning recovery of possession, when the trial court has made a factual finding on whether a licence continued and the record lacks evidence of a later agreement, the revisional court should not disturb that finding."
+    }
+  ],
+  "seconds": 24.5
+}

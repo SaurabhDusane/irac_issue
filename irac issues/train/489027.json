@@ -1,0 +1,83 @@
+{
+  "doc_id": "489027",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23088,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2182,
+    "prompt_tokens": 5971,
+    "total_tokens": 8153,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The prosecution must call an available witness whose testimony is essential to unfolding its case, even when the witness may give evidence adverse to the prosecution.",
+      "material_facts": [
+        "The first information report and charge-sheet identified a person who was said to have been with the deceased and to have witnessed the attack.",
+        "The prosecution did not call that witness, although the court found that his testimony was important to unfolding the prosecution case.",
+        "The stated reason for withholding him was that he might depart from his statement to the police."
+      ],
+      "conclusion": "The prosecution was not justified in withholding the witness merely because he might give evidence inconsistent with his police statement.",
+      "legal_principle": "As stated in Habeeb Mohammad v. State of Hyderabad, approving Stephen Seneviratne v. The King, AIR 1936 PC 289, the prosecution need not call every available witness regardless of number or reliability, but it must call witnesses essential to unfolding the narrative on which its case is based, whether their testimony helps or harms that case.",
+      "rule": {
+        "if": "criminal_trial and witness_essential_to_prosecution_narrative and prosecution_withheld_witness_because_of_expected_inconsistent_testimony",
+        "then": "prosecution_must_call_essential_witness"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial.",
+        "witness_essential_to_prosecution_narrative": "The witness was identified as having material knowledge needed to unfold the prosecution's account of the events.",
+        "prosecution_withheld_witness_because_of_expected_inconsistent_testimony": "The prosecution did not call the witness because it expected the witness to give testimony inconsistent with an earlier statement."
+      },
+      "definition": "When a criminal trial depends on a witness essential to unfolding the prosecution narrative and the prosecution withholds that witness because of expected inconsistent testimony, the prosecution must call the witness."
+    },
+    {
+      "legal_issue": "A court may not rely on an accused person's prior report to supply motive when the prosecution's own case contradicts the report's account of the relevant incident.",
+      "material_facts": [
+        "A report attributed to one accused described an earlier quarrel with the deceased and said that the accused had been injured in that quarrel.",
+        "The prosecution maintained that the accused was injured during the attack and presented evidence denying that the quarrel described in the report had occurred.",
+        "The prosecution's stated motive for the attack was an earlier dispute, and it offered no evidence of later enmity between the accused and the deceased.",
+        "The lower courts relied on the report to infer an immediate motive for the attack."
+      ],
+      "conclusion": "The lower courts were unjustified in relying on the report to establish motive because its account conflicted with the prosecution's case and was not the prosecution's explanation of the accused's injury.",
+      "legal_principle": "Although Dal Singh v. King Emperor, AIR 1917 PC 25, was cited for the admissibility of statements in the report, the Court distinguished the question of admissibility from reliance in this case: a statement might be relevant if the prosecution relied on it, but the courts could not use an account rejected by the prosecution to invent a motive unsupported by the prosecution evidence.",
+      "rule": {
+        "if": "criminal_case and prosecution_attributes_accused_injury_to_different_event and accused_report_describes_conflicting_event and prosecution_does_not_rely_on_report_as_its_account",
+        "then": "report_cannot_supply_motive"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding concerns a criminal charge.",
+        "prosecution_attributes_accused_injury_to_different_event": "The prosecution says the accused was injured in an event different from the one described in the accused's report.",
+        "accused_report_describes_conflicting_event": "The report attributed to the accused describes an event inconsistent with the prosecution's account.",
+        "prosecution_does_not_rely_on_report_as_its_account": "The prosecution does not adopt the report's account as its explanation of the relevant events."
+      },
+      "definition": "When a criminal case includes a report describing an event that conflicts with the prosecution's account of the accused's injury, and the prosecution does not rely on that report as its account, the report cannot supply motive."
+    },
+    {
+      "legal_issue": "Concurrent findings of guilt may be set aside in a special-leave appeal when serious errors in assessing vital evidence leave the conviction resting on substantially discredited evidence.",
+      "material_facts": [
+        "The appeal challenged convictions affirmed by the High Court after the trial court had also convicted the appellants.",
+        "The trial court found that the principal witnesses had falsely implicated the acquitted accused, and the High Court treated those accused as having received only the benefit of doubt.",
+        "The High Court rejected the evidence of two court witnesses but did not properly consider the effect of that rejection on the credibility of the principal witnesses, whose evidence those court witnesses had corroborated at trial.",
+        "The lower courts relied on a report to infer motive even though the prosecution's account contradicted it.",
+        "The Supreme Court found that the evidence against the appellants was considerably discredited and that the courts had reconstructed a story after substantially disbelieving the prosecution's case."
+      ],
+      "conclusion": "The Supreme Court set aside the convictions and sentences, acquitted the appellants, and allowed the appeal.",
+      "legal_principle": "In an appeal under Article 136 of the Constitution, the Court does not normally reappraise evidence merely because it might take a different view of concurrent findings, but it may intervene where there is a glaring mistake or an omission to consider vital evidence. The Court found serious errors of that kind and concluded that the remaining evidence could not support conviction.",
+      "rule": {
+        "if": "special_leave_appeal_against_conviction and concurrent_findings_of_guilt and vital_evidence_mishandled and prosecution_evidence_substantially_discredited",
+        "then": "conviction_set_aside_and_accused_acquitted"
+      },
+      "predicates": {
+        "special_leave_appeal_against_conviction": "The proceeding is a special-leave appeal challenging a criminal conviction.",
+        "concurrent_findings_of_guilt": "The trial court and the appellate court both found the accused guilty.",
+        "vital_evidence_mishandled": "The lower courts seriously misassessed or failed to consider evidence material to the credibility or completeness of the prosecution case.",
+        "prosecution_evidence_substantially_discredited": "The evidence relied on for conviction is materially weakened by the rejection of its corroboration or by findings that the prosecution's account is false in significant respects."
+      },
+      "definition": "When a special-leave appeal challenges concurrent findings of guilt and vital evidence was mishandled while the prosecution evidence is substantially discredited, the conviction is set aside and the accused acquitted."
+    }
+  ],
+  "seconds": 13.2
+}

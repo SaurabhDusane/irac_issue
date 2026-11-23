@@ -1,0 +1,83 @@
+{
+  "doc_id": "1839804",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33304,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3086,
+    "prompt_tokens": 8779,
+    "total_tokens": 11865,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A suit for fixing rent may correct an erroneous rent determination made by the rent-fixing authority or an order made beyond its authority.",
+      "material_facts": [
+        "The landlord applied to the House Allotment Officer for rent fixation, alleging that new construction had been made to the accommodation.",
+        "The Officer fixed an increased rent, while finding that the accommodation was not newly constructed because the tenant had occupied it since 1938.",
+        "The landlord then brought a suit under the statutory rent-fixation scheme challenging the adequacy of the rent."
+      ],
+      "conclusion": "An erroneous determination by the rent-fixing authority, or an order beyond its powers, may be rectified in a suit for fixing rent.",
+      "legal_principle": "Under sections 3-A and 5(4) of the U.P. Temporary Control of Rent and Eviction Act, 1947, the rent fixed by the District Magistrate is subject to the result of a suit under section 5(4); such a suit can therefore correct an erroneous determination or an order made in excess of the authority’s powers.",
+      "rule": {
+        "if": "rent_fixation_suit and rent_officer_fixed_rent and (officer_decision_erroneous or officer_exceeded_authority)",
+        "then": "suit_can_correct_officer_rent_determination"
+      },
+      "predicates": {
+        "rent_fixation_suit": "A landlord or tenant brought a suit seeking the fixation or review of rent.",
+        "rent_officer_fixed_rent": "A rent-fixing authority determined the rent for the accommodation.",
+        "officer_decision_erroneous": "The rent-fixing authority made a determination that was wrong.",
+        "officer_exceeded_authority": "The rent-fixing authority made an order beyond the powers granted to it."
+      },
+      "definition": "When a rent-fixation suit follows a rent determination that was wrong or beyond the authority’s powers, the suit can correct that determination."
+    },
+    {
+      "legal_issue": "A landlord’s suit challenging the inadequacy of rent is not maintainable when the claimed right to sue depends on post-eligibility-date construction of the tenant’s accommodation and that construction did not occur.",
+      "material_facts": [
+        "The tenant had occupied the accommodation since 1938 at an agreed monthly rent.",
+        "The landlord based the claimed increase on construction allegedly completed in January 1949.",
+        "The trial court treated a portion of the existing building that had been replaced as new accommodation and entertained the landlord’s suit.",
+        "The High Court found that, although construction had occurred on an upper storey, the accommodation occupied by the tenant was not newly constructed."
+      ],
+      "conclusion": "Because the tenant’s accommodation was not newly constructed after the relevant cutoff date, the landlord’s suit was not maintainable and the agreed rent remained payable.",
+      "legal_principle": "Sections 2(f), 3-A and 5(4) of the U.P. Temporary Control of Rent and Eviction Act, 1947, make the landlord’s right to sue for inadequacy of reasonable annual rent depend on the existence of such rent as defined by the Act. Where the landlord relies on post-cutoff construction to establish that basis, the construction of the tenant’s accommodation is a jurisdictional fact; absent it, the landlord cannot use the suit to enhance the agreed rent.",
+      "rule": {
+        "if": "landlord_rent_suit and landlord_challenges_rent_inadequacy and landlord_claims_new_construction_as_basis and not post_cutoff_construction_of_tenant_accommodation",
+        "then": "landlord_suit_not_maintainable"
+      },
+      "predicates": {
+        "landlord_rent_suit": "A landlord brought a suit concerning the rent payable for accommodation occupied by a tenant.",
+        "landlord_challenges_rent_inadequacy": "The landlord claimed that the reasonable rent fixed for the accommodation was inadequate.",
+        "landlord_claims_new_construction_as_basis": "The landlord relied on new construction of the tenant’s accommodation as the basis for the claimed right to sue.",
+        "post_cutoff_construction_of_tenant_accommodation": "The tenant’s accommodation was newly constructed after the applicable eligibility cutoff."
+      },
+      "definition": "When a landlord challenges rent inadequacy on the basis of new construction but the tenant’s accommodation was not constructed after the eligibility cutoff, the landlord’s suit is not maintainable."
+    },
+    {
+      "legal_issue": "The High Court may interfere in revision when a subordinate court wrongly decides a jurisdictional fact and thereby assumes jurisdiction it does not possess.",
+      "material_facts": [
+        "The trial court’s jurisdiction to entertain the landlord’s suit depended on whether the tenant’s accommodation had been newly constructed after the relevant cutoff date.",
+        "The trial court treated the replaced portion of the existing building as new accommodation and entertained the suit.",
+        "The High Court, in revision where no appeal lay, found that the accommodation occupied by the tenant was not newly constructed and dismissed the suit.",
+        "The Supreme Court upheld the High Court’s power to examine whether the jurisdictional fact had been correctly decided."
+      ],
+      "conclusion": "The High Court had power under section 115 of the Code of Civil Procedure to interfere, and it correctly did so after finding that the trial court had wrongly decided the jurisdictional fact and assumed jurisdiction.",
+      "legal_principle": "Section 115 of the Code of Civil Procedure permits revision, where no appeal lies, when an erroneous decision on a jurisdictional fact causes a subordinate court to exercise jurisdiction not vested in it. The Court relied on Joy Chand Lal Babu v. Kamalaksha Chaudhury and considered Venkatagiri Ayyangar v. Hindu Religious Endowment Board, Madras, and Keshardeo Chamria v. Radha Kissen Chamria; it distinguished Rai Brij Raj Krishna v. S. K. Shaw and Bros. The jurisdictional-fact distinction was also explained by reference to Queen v. Commissioner for Special Purposes of the Income Tax.",
+      "rule": {
+        "if": "civil_revision_without_appeal and lower_court_jurisdiction_depends_on_fact and lower_court_wrongly_found_jurisdictional_fact and wrong_finding_created_jurisdiction",
+        "then": "high_court_may_correct_jurisdictional_error_in_revision"
+      },
+      "predicates": {
+        "civil_revision_without_appeal": "A party sought revision of a subordinate court’s decision in a case where no appeal lay.",
+        "lower_court_jurisdiction_depends_on_fact": "The subordinate court’s authority to hear the case depended on whether a particular fact existed.",
+        "lower_court_wrongly_found_jurisdictional_fact": "The subordinate court incorrectly found the fact on which its authority depended.",
+        "wrong_finding_created_jurisdiction": "The incorrect finding led the subordinate court to exercise authority it otherwise did not have."
+      },
+      "definition": "When revision is sought without an available appeal and an incorrect finding on a fact that determines the subordinate court’s authority caused it to assume that authority, the High Court may correct the jurisdictional error."
+    }
+  ],
+  "seconds": 17.4
+}

@@ -1,0 +1,41 @@
+{
+  "doc_id": "280457",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 5742,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1133,
+    "prompt_tokens": 1905,
+    "total_tokens": 3038,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A compromise decree for recovery of possession against a protected tenant is void and unexecutable when the court has not judicially satisfied itself that a statutory ground for eviction is established.",
+      "material_facts": [
+        "A landlord sought eviction of a tenant on the allegation that the tenant had sublet the premises, which the tenant denied.",
+        "During the suit, the landlord and tenant entered into a compromise, and the court passed a decree for ejectment based on that compromise.",
+        "The compromise and the court’s order did not address the alleged subletting, and the court did not determine whether it had occurred or otherwise find that a statutory ground for eviction was established.",
+        "In execution, the decree was challenged as a nullity because it had been passed without the satisfaction required for eviction."
+      ],
+      "conclusion": "The decree was a nullity and could not be executed; the appeal was dismissed.",
+      "legal_principle": "Section 13(1) of the Delhi and Ajmer Rent Control Act, 1952 bars a decree for recovery of possession against a tenant unless the court is satisfied that one or more grounds in the statutory proviso are established; subletting without the landlord’s written consent is one such ground. The court’s jurisdiction to make a possession decree depends on that satisfaction, which cannot be replaced by a compromise alone. The Court relied on Bahadur Singh v. Muni Subrat Dass and Smt. Kaushalya Devi v. K. L. Bansal, in which decrees made contrary to Section 13(1) were held void and incapable of execution.",
+      "rule": {
+        "if": "possession_decree_execution and rent_control_eviction_case and decree_based_only_on_compromise and not court_found_eviction_ground",
+        "then": "decree_is_nullity_and_unexecutable"
+      },
+      "predicates": {
+        "possession_decree_execution": "The proceeding concerns execution of a decree for recovery of possession.",
+        "rent_control_eviction_case": "The possession decree concerns eviction of a tenant protected by rent-control requirements.",
+        "decree_based_only_on_compromise": "The court passed the possession decree solely on the parties’ compromise, without determining an asserted ground for eviction.",
+        "court_found_eviction_ground": "The court judicially found that a statutory ground for eviction was established.",
+        "decree_is_nullity_and_unexecutable": "The possession decree is void and cannot be executed."
+      },
+      "definition": "When execution concerns a possession decree in a rent-control eviction case, and the decree rests only on compromise without a judicial finding of an eviction ground, the decree is void and cannot be executed."
+    }
+  ],
+  "seconds": 8.1
+}

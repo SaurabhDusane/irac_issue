@@ -1,0 +1,59 @@
+{
+  "doc_id": "1141815",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23132,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1680,
+    "prompt_tokens": 6123,
+    "total_tokens": 7803,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory limit on interest for an outstanding mortgage liability does not authorize reopening completed accounts to credit interest already paid, within the contractual rate, against principal.",
+      "material_facts": [
+        "The mortgage bond provided for compound interest at nine per cent per annum.",
+        "Some payments were made before the mortgage suit was filed, including payments of interest at a rate above five per cent simple but within the contractual rate.",
+        "The mortgagee later claimed the remaining liability before the officer dealing with the separation of interests in composite property."
+      ],
+      "conclusion": "The accounts could not be reopened to apply pre-suit interest payments above five per cent simple, but within the contractual rate, toward reducing principal.",
+      "legal_principle": "Section 9(1) of the Evacuee Interest (Separation) Act, 1951 limits the interest chargeable against the mortgaged property on liability still due; it does not authorize reopening past accounts or recharacterizing interest already paid as principal repayment. Section 3 gives the Act overriding effect, but the Court found no provision authorizing the proposed account reopening. No earlier cases are relied on.",
+      "rule": {
+        "if": "mortgage_claim_in_composite_property and prior_interest_payments_made and prior_interest_exceeded_simple_cap and prior_interest_within_contract_rate",
+        "then": "prior_excess_interest_not_credited_to_principal"
+      },
+      "predicates": {
+        "mortgage_claim_in_composite_property": "A mortgagee made a claim for outstanding mortgage liability in a proceeding to separate interests in property that included an evacuee's interest.",
+        "prior_interest_payments_made": "The mortgagor or another liable person made interest payments before the mortgage suit was filed.",
+        "prior_interest_exceeded_simple_cap": "The pre-suit interest payments were at a rate above the applicable simple-interest limit.",
+        "prior_interest_within_contract_rate": "The pre-suit interest payments did not exceed the rate permitted by the mortgage contract."
+      },
+      "definition": "When a mortgagee claims outstanding liability in a proceeding concerning composite property and pre-suit interest was paid above the simple-interest limit but within the contract rate, that excess is not credited against principal."
+    },
+    {
+      "legal_issue": "When an outstanding mortgage liability is governed by a civil decree, interest from the filing of the suit must be calculated at the applicable simple-interest limit, and payments made after suit must be applied first to that interest and then to principal.",
+      "material_facts": [
+        "A civil court had entered a mortgage decree that was binding on the officer, subject to the statutory interest limit.",
+        "The mortgage suit was filed before the relevant account was determined in the proceeding concerning composite property.",
+        "Payments were made after the suit was filed, and the mortgagee also claimed the costs awarded in the suit."
+      ],
+      "conclusion": "The outstanding liability had to be recalculated using simple interest at five per cent per annum on principal from the suit date; post-suit payments had to be applied first to interest and any excess to principal. The awarded costs were recoverable without interest.",
+      "legal_principle": "Under section 8(3), a civil decree is binding on the Competent Officer subject to sections 9 and 10. Section 9(1) therefore requires the officer to apply the simple-interest limit when determining the liability still due, notwithstanding the decree. No earlier cases are relied on.",
+      "rule": {
+        "if": "mortgage_claim_in_composite_property and mortgage_decree_exists and payments_made_after_suit",
+        "then": "post_suit_liability_calculated_at_simple_cap_and_payments_applied_first_to_interest_then_principal"
+      },
+      "predicates": {
+        "mortgage_claim_in_composite_property": "A mortgagee made a claim for outstanding mortgage liability in a proceeding to separate interests in property that included an evacuee's interest.",
+        "mortgage_decree_exists": "A civil court had entered a decree determining liability under the mortgage.",
+        "payments_made_after_suit": "Payments toward the mortgage liability were made after the mortgage suit was filed."
+      },
+      "definition": "When a mortgagee makes a claim in a composite-property proceeding, a civil mortgage decree exists, and payments were made after suit, the post-suit liability is calculated at the simple-interest limit, with those payments applied first to interest and then to principal."
+    }
+  ],
+  "seconds": 12.1
+}

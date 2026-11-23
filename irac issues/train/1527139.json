@@ -1,0 +1,95 @@
+{
+  "doc_id": "1527139",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18816,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2713,
+    "prompt_tokens": 4966,
+    "total_tokens": 7679,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landholder who has accepted a consent award cannot obtain a reference to a civil court to determine compensation.",
+      "material_facts": [
+        "The landholders negotiated the compensation with the acquiring authority and consent awards were made on that basis.",
+        "They received the awarded compensation in full satisfaction of their claims and agreed not to seek enhancement.",
+        "They later applied for references to a civil court, although they had not first challenged the validity of the agreements or awards."
+      ],
+      "conclusion": "The applications for reference were not maintainable because the landholders had accepted the awards; the appeals were allowed and the High Court’s orders were set aside.",
+      "legal_principle": "Section 18 of the Land Acquisition Act, 1894 permits a reference only where the interested person has not accepted the award. Under Section 11(2), an award made according to a written agreement is a consent award. State of Gujarat v. Daya Shamji Bhai and Ishwarlal Premchand Shah v. State of Gujarat hold that an agreed consent award removes the need for a Section 18 reference. An accepted agreement remains binding unless its validity is challenged and set aside in an appropriate proceeding. Assam Railways & Trading Co. Ltd. v. Collector of Lakhimpur was distinguishable because the negotiations there had not resulted in a binding agreement.",
+      "rule": {
+        "if": "land_acquisition_reference_application and award_accepted_without_protest",
+        "then": "reference_unavailable"
+      },
+      "predicates": {
+        "land_acquisition_reference_application": "An interested person in a land acquisition proceeding applied for a reference to a court to determine compensation.",
+        "award_accepted_without_protest": "The interested person accepted the award without protest."
+      },
+      "definition": "When a person applies for a reference in a land acquisition proceeding and accepted the award without protest, a reference is unavailable."
+    },
+    {
+      "legal_issue": "A landholder who has agreed to compensation under a consent award may not claim statutory compensation benefits beyond the terms of that agreement.",
+      "material_facts": [
+        "The agreements specified compensation that included solatium and additional market value.",
+        "The landholders accepted the consent awards and undertook not to seek enhancement.",
+        "The landholders later claimed further statutory benefits, including solatium and interest."
+      ],
+      "conclusion": "The landholders could waive statutory benefits by agreement and could not claim benefits beyond the agreed terms of the consent awards.",
+      "legal_principle": "Sections 23(2), 23(1-A) and 28 of the Land Acquisition Act, 1894 provide for solatium, additional amounts and interest in the circumstances specified in those provisions. Those benefits may be waived by agreement. State of Gujarat v. Daya Shamji Bhai and Ishwarlal Premchand Shah v. State of Gujarat establish that agreed compensation need not include statutory additions unless they form part of the agreement.",
+      "rule": {
+        "if": "consent_award_in_land_acquisition_case and agreed_compensation_terms and claimant_accepted_award",
+        "then": "claimant_cannot_claim_benefits_outside_agreement"
+      },
+      "predicates": {
+        "consent_award_in_land_acquisition_case": "The acquiring authority made an award based on an agreement with the landholder.",
+        "agreed_compensation_terms": "The agreement stated the compensation payable and the benefits included in it.",
+        "claimant_accepted_award": "The landholder accepted the award based on the agreement."
+      },
+      "definition": "If an accepted consent award in a land acquisition case fixes compensation terms, the landholder cannot claim benefits outside those terms."
+    },
+    {
+      "legal_issue": "A consent award in a land acquisition proceeding does not require the parties’ agreement to comply with the formal requirements for government contracts or to follow a prescribed form.",
+      "material_facts": [
+        "The compensation awards were made by consent following agreements between the acquiring authority and the landholders.",
+        "The landholders contended that the agreements did not meet the formal requirements for government contracts and were not in the prescribed form.",
+        "The High Court rejected those contentions."
+      ],
+      "conclusion": "The agreements did not need to comply with the formal requirements for government contracts or strictly follow a prescribed form for consent awards to be made.",
+      "legal_principle": "The Court held that Article 299 of the Constitution does not have to be complied with for the purpose of passing a consent award, and that an agreement between the parties need not strictly conform to a prescribed format.",
+      "rule": {
+        "if": "consent_award_in_land_acquisition_case",
+        "then": "prescribed_contract_form_not_required"
+      },
+      "predicates": {
+        "consent_award_in_land_acquisition_case": "The acquiring authority made an award based on an agreement with the landholder."
+      },
+      "definition": "A consent award in a land acquisition case does not require the agreement to use a prescribed contract form."
+    },
+    {
+      "legal_issue": "A writ court cannot substitute a consent award where the landholder seeks only a reference and has not challenged the validity of the agreement underlying the award.",
+      "material_facts": [
+        "The landholders’ writ petitions sought to quash the refusal of a reference and to direct that their applications be referred to a civil court.",
+        "They did not challenge the validity of the agreements underlying the consent awards.",
+        "The High Court directed the acquiring authority to calculate and pay further amounts rather than limiting its decision to the requested reference."
+      ],
+      "conclusion": "The High Court could not substitute the consent award through its writ jurisdiction, and the writ petitions were not maintainable in the form presented.",
+      "legal_principle": "Under Article 226 of the Constitution, a writ court could not substitute the award when the landholders had not challenged the validity of the agreements and had sought only an order directing a reference.",
+      "rule": {
+        "if": "land_acquisition_writ_petition and writ_sought_reference_only and agreement_validity_not_challenged",
+        "then": "writ_court_cannot_replace_consent_award"
+      },
+      "predicates": {
+        "land_acquisition_writ_petition": "A person brought a writ proceeding concerning an award in a land acquisition case.",
+        "writ_sought_reference_only": "The writ proceeding sought an order directing that a compensation dispute be referred to a court.",
+        "agreement_validity_not_challenged": "The person did not challenge the validity of the agreement underlying the award."
+      },
+      "definition": "When a writ proceeding seeks only a reference and does not challenge the underlying agreement’s validity, the writ court cannot replace the consent award."
+    }
+  ],
+  "seconds": 17.0
+}

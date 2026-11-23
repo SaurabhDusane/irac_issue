@@ -1,0 +1,60 @@
+{
+  "doc_id": "1264696",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9978,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1227,
+    "prompt_tokens": 3150,
+    "total_tokens": 4377,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Dismissal for default of an application seeking to reopen a decree does not constitute a review that starts a fresh limitation period for execution.",
+      "material_facts": [
+        "A judgment-debtor applied to reopen a preliminary mortgage decree, but the application was dismissed for default without the court considering whether the decree should be reopened.",
+        "The application to restore the reopening proceeding was also dismissed.",
+        "The decree-holder later applied to execute the final decree."
+      ],
+      "conclusion": "The dismissal for default was not a review of the decree under Article 182, clause 3, of the Limitation Act, 1908, and did not provide a fresh starting point for limitation; the execution application was time-barred.",
+      "legal_principle": "Under Article 182, clause 3, of the Limitation Act, 1908, a fresh starting point requires that the court undertake to review the relevant decree or order and decide the review. Even assuming an application under section 36 of the Bengal Money-lenders Act could be treated as an application for review, dismissal for default without consideration of the merits is not a review. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "execution_application and reopening_proceeding and reopening_dismissed_for_default and court_did_not_consider_reopening_merits",
+        "then": "execution_limitation_not_restarted_by_review_proceeding"
+      },
+      "predicates": {
+        "execution_application": "A decree-holder applied to execute a decree.",
+        "reopening_proceeding": "A judgment-debtor applied to have a decree reopened.",
+        "reopening_dismissed_for_default": "The court dismissed the application to reopen the decree because of default.",
+        "court_did_not_consider_reopening_merits": "The court did not consider whether the decree should be reopened."
+      },
+      "definition": "When a decree-holder seeks execution and a judgment-debtor's reopening application was dismissed for default without consideration of its merits, the reopening proceeding does not restart the limitation period for execution."
+    },
+    {
+      "legal_issue": "An appeal concerning a collateral proceeding does not start a fresh limitation period for execution of a decree when the appeal is not from the decree or order sought to be executed.",
+      "material_facts": [
+        "A final mortgage decree was passed, and no appeal was taken from that decree.",
+        "The judgment-debtor appealed the dismissal of an application to restore the proceeding seeking to reopen the preliminary decree.",
+        "That appeal was dismissed for non-prosecution.",
+        "The decree-holder applied to execute the final decree more than three years after it was passed."
+      ],
+      "conclusion": "The appeal from the order in the collateral proceeding did not provide a fresh starting point for limitation under Article 182, clause 2, of the Limitation Act, 1908; the execution application was time-barred.",
+      "legal_principle": "Article 182, clause 2, of the Limitation Act, 1908, must be read with the article's description of applications for execution of a decree or order. An appeal starts a fresh limitation period only when it is connected directly or immediately with the decree or order sought to be executed; an appeal from an order in a collateral proceeding does not suffice. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "execution_application and appeal_from_collateral_proceeding and appeal_not_from_decree_sought_to_be_executed",
+        "then": "collateral_appeal_does_not_restart_execution_limitation"
+      },
+      "predicates": {
+        "execution_application": "A decree-holder applied to execute a decree.",
+        "appeal_from_collateral_proceeding": "A party appealed an order made in a proceeding related to, but collateral to, the decree sought to be executed.",
+        "appeal_not_from_decree_sought_to_be_executed": "The appeal was not from the decree or order for which execution was sought."
+      },
+      "definition": "When execution is sought and the appeal was from a collateral proceeding rather than from the decree sought to be executed, the collateral appeal does not restart the execution limitation period."
+    }
+  ],
+  "seconds": 8.7
+}

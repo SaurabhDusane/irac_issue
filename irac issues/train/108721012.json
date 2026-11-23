@@ -1,0 +1,103 @@
+{
+  "doc_id": "108721012",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30175,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2865,
+    "prompt_tokens": 8076,
+    "total_tokens": 10941,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant’s rights do not merge into ownership when the tenant acquires only a partial ownership interest and the landlord’s interest in the whole property does not vest in the same person.",
+      "material_facts": [
+        "The occupants acquired the tenancy rights and ownership interests transferred by only some co-owners; the landlord’s ownership interest was not transferred to them.",
+        "The eviction proceeding proceeded on the basis that the landlord was a co-owner and the occupants had acquired only partial ownership."
+      ],
+      "conclusion": "The tenancy was not determined by merger, so the occupants remained obliged to deliver possession when the tenancy ended.",
+      "legal_principle": "Section 111(d) of the Transfer of Property Act, 1882 requires the lessee’s and lessor’s interests in the whole property to vest at the same time in one person in the same right for merger to determine a lease. The Court relied on Badri Narain Jha v. Rameshwar Dayal Singh, Shaikh Faqir Bakhsh v. Murli Dhar, and Nalakath Sainuddin v. Koorikadan Sulaiman; merger is not established when only partial ownership interests are acquired, and it is presumed against where it would operate to a party’s disadvantage.",
+      "rule": {
+        "if": "eviction_proceeding and tenancy_rights_acquired and partial_ownership_acquired and landlord_interest_not_acquired",
+        "then": "lease_not_terminated_by_merger"
+      },
+      "predicates": {
+        "eviction_proceeding": "The case is a proceeding seeking eviction from premises held under a tenancy.",
+        "tenancy_rights_acquired": "The occupants acquired the tenant’s rights in the premises.",
+        "partial_ownership_acquired": "The occupants acquired ownership interests from only some of the co-owners.",
+        "landlord_interest_not_acquired": "The landlord’s ownership interest in the property did not vest in the occupants."
+      },
+      "definition": "If an eviction proceeding involves occupants who acquired tenancy rights and only partial ownership while the landlord’s interest remained outside their ownership, the lease is not treated as terminated by merger."
+    },
+    {
+      "legal_issue": "Demolishing a building does not terminate a tenancy when the land forming part of the leased property continues to exist, particularly when the demolition is by the tenant or a person claiming under the tenant.",
+      "material_facts": [
+        "The tenancy concerned a building on land, and the case did not proceed on the basis that the land was excluded from the tenancy.",
+        "The occupants demolished the building, but the land beneath it continued to exist.",
+        "The demolition was by the occupants claiming through the tenants, not by the landlord or an act of nature."
+      ],
+      "conclusion": "The tenancy did not end merely because the building was demolished; the land remained part of the subject matter of the lease.",
+      "legal_principle": "Sections 5 and 105 of the Transfer of Property Act, 1882 describe a lease as a transfer of an interest in immovable property and a right to enjoy that property. Relying on Raja Dhruv Dev Chand v. Raja Harmohinder Singh and the cited authorities, the Court held that destruction of a building alone does not end a lease of the building and its site when the land remains; the doctrine of frustration applicable to contracts does not determine such a lease.",
+      "rule": {
+        "if": "eviction_proceeding and leased_property_included_land and land_survived and building_demolished_by_tenant_or_successor",
+        "then": "tenancy_continues_despite_building_destruction"
+      },
+      "predicates": {
+        "eviction_proceeding": "The case is a proceeding seeking eviction from premises held under a tenancy.",
+        "leased_property_included_land": "The tenancy covered a building together with the land on which it stood.",
+        "land_survived": "The land forming part of the leased property continued to exist after the building was destroyed.",
+        "building_demolished_by_tenant_or_successor": "The tenant or a person claiming through the tenant demolished the building."
+      },
+      "definition": "When an eviction proceeding concerns a tenancy that included land which survived demolition by the tenant or a successor, the tenancy continues despite the building’s destruction."
+    },
+    {
+      "legal_issue": "A person who takes possession through a tenant cannot defeat the landlord’s claim to possession merely by acquiring partial interests from other co-owners, and a co-owner cannot use co-ownership to justify exclusive possession or waste against another co-owner.",
+      "material_facts": [
+        "The landlord was a co-owner who dealt with the tenants as landlord and possessed the property through them with the consent, express or implied, of the other co-heirs.",
+        "The occupants acquired partial ownership interests from some co-owners but took possession through the tenants without the landlord’s consent.",
+        "The occupants demolished the tenancy premises and constructed new premises on the land.",
+        "The findings that statutory grounds for eviction existed were not challenged before the High Court and were not open to challenge in the appeal."
+      ],
+      "conclusion": "The occupants’ partial ownership interests did not defeat the landlord’s claim for possession, and the eviction decree was maintained.",
+      "legal_principle": "A co-owner has an interest in every part of common property, limited by the corresponding interests of the other co-owners; a co-owner cannot take exclusive possession or commit waste, ouster, or illegitimate use against another co-owner. The Court relied on Jahuri Sah v. Dwarika Prasad Jhunjhunwala. It also noted that the findings on the grounds for eviction had become final.",
+      "rule": {
+        "if": "eviction_proceeding and landlord_is_coowner_and_recognized_as_landlord and occupants_have_only_partial_coownership and possession_taken_through_tenants_without_landlord_consent and eviction_grounds_are_final",
+        "then": "partial_coownership_does_not_defeat_eviction"
+      },
+      "predicates": {
+        "eviction_proceeding": "The case is a proceeding seeking eviction from premises held under a tenancy.",
+        "landlord_is_coowner_and_recognized_as_landlord": "The landlord was a co-owner whom the tenants had acknowledged and treated as their landlord.",
+        "occupants_have_only_partial_coownership": "The occupants acquired interests from some, but not all, of the co-owners.",
+        "possession_taken_through_tenants_without_landlord_consent": "The occupants obtained possession through the tenants without the landlord’s consent.",
+        "eviction_grounds_are_final": "The findings that grounds for eviction existed were no longer open to challenge in the proceeding."
+      },
+      "definition": "If a recognized landlord who is a co-owner seeks eviction, the occupants have only partial co-ownership, their possession came through tenants without the landlord’s consent, and the eviction grounds are final, partial co-ownership does not defeat eviction."
+    },
+    {
+      "legal_issue": "A tenant and persons claiming through the tenant are estopped from denying the landlord’s title during the tenancy and after it unless possession is restored to the landlord.",
+      "material_facts": [
+        "The tenants acknowledged the landlord’s ownership and landlordship and paid rent to him.",
+        "The tenants and those claiming through them did not surrender possession to the landlord.",
+        "The occupants claimed through the tenants and relied on their acquired ownership interests to resist the landlord’s claim."
+      ],
+      "conclusion": "The tenants and persons claiming through them could not deny the landlord’s title while the tenancy continued or afterward without restoring possession to the landlord.",
+      "legal_principle": "Section 116 of the Evidence Act, 1872 estops a tenant, and persons claiming through the tenant, from denying the landlord’s title during the tenancy. Relying on Vasudeo v. Balkishan, the Court held that the estoppel continues until the tenant openly restores possession to the landlord by surrender.",
+      "rule": {
+        "if": "eviction_proceeding and landlord_title_acknowledged_by_tenant and tenancy_possession_not_surrendered_to_landlord and title_denial_by_tenant_or_successor",
+        "then": "tenant_title_denial_barred"
+      },
+      "predicates": {
+        "eviction_proceeding": "The case is a proceeding seeking eviction from premises held under a tenancy.",
+        "landlord_title_acknowledged_by_tenant": "The tenant acknowledged the landlord’s title or treated the person as landlord.",
+        "tenancy_possession_not_surrendered_to_landlord": "The tenant did not openly restore possession of the premises to the landlord by surrender.",
+        "title_denial_by_tenant_or_successor": "The tenant or a person claiming through the tenant sought to deny the landlord’s title."
+      },
+      "definition": "When a tenant acknowledged the landlord’s title, possession was not surrendered, and the tenant or a successor denies that title in an eviction proceeding, that denial is barred."
+    }
+  ],
+  "seconds": 18.3
+}

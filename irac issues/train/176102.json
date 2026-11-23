@@ -1,0 +1,79 @@
+{
+  "doc_id": "176102",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30125,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2117,
+    "prompt_tokens": 7931,
+    "total_tokens": 10048,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A registrar conducting an inquiry into whether a trust is public must record the inquiry’s result in the register whether the finding is affirmative or negative.",
+      "material_facts": [
+        "An inquiry was held under the former trust statute into whether a trust was public.",
+        "The registrar found that the trust was not public but did not enter that finding in the register."
+      ],
+      "conclusion": "The registrar was required to enter the finding in the register even though it was negative.",
+      "legal_principle": "Under sections 5, 6 and 7 of the Madhya Pradesh Public Trusts Act, the registrar must record findings on whether a trust is public and make register entries in accordance with those findings. The language covers both affirmative and negative findings.",
+      "rule": {
+        "if": "statutory_trust_status_inquiry and registrar_recorded_finding",
+        "then": "registrar_must_enter_finding_in_register"
+      },
+      "predicates": {
+        "statutory_trust_status_inquiry": "An authorized registrar conducted an inquiry into whether a trust was public.",
+        "registrar_recorded_finding": "The registrar recorded a finding at the end of the inquiry."
+      },
+      "definition": "When an authorized registrar records a finding in a statutory inquiry into a trust’s public status, the registrar must enter that finding in the register."
+    },
+    {
+      "legal_issue": "An aggrieved person’s right to challenge a registrar’s finding about a trust’s public status is based on the finding, and does not depend on the registrar first making a register entry.",
+      "material_facts": [
+        "The registrar found that the trust was not public but did not enter that finding in the register.",
+        "Persons claiming an interest in the trust sought to challenge the finding."
+      ],
+      "conclusion": "The finding, rather than the consequential register entry, gives rise to the right to sue; the absence of an entry does not defeat that right.",
+      "legal_principle": "Sections 7 and 8 of the Madhya Pradesh Public Trusts Act require entries to be made and provide for a suit by a person aggrieved by a finding under section 6. The entry is consequential, and the cause of action is the finding; the right to sue cannot be left to depend on whether the registrar makes the entry.",
+      "rule": {
+        "if": "statutory_trust_status_inquiry and registrar_recorded_finding and person_aggrieved_by_finding and register_entry_absent",
+        "then": "absence_of_register_entry_does_not_bar_suit_to_challenge_finding"
+      },
+      "predicates": {
+        "statutory_trust_status_inquiry": "An authorized registrar conducted an inquiry into whether a trust was public.",
+        "registrar_recorded_finding": "The registrar recorded a finding at the end of the inquiry.",
+        "person_aggrieved_by_finding": "A person affected by the finding sought to challenge it.",
+        "register_entry_absent": "The registrar had not entered the finding in the register."
+      },
+      "definition": "If an aggrieved person seeks to challenge a finding from a statutory inquiry and the finding has not been entered in the register, the missing entry does not bar a suit to challenge the finding."
+    },
+    {
+      "legal_issue": "A new inquiry under a successor trust statute cannot be entertained while an inquiry under the repealed statute remains pending because a required register entry has not been made.",
+      "material_facts": [
+        "The former statute required the registrar to enter the finding, but the registrar did not do so after finding that the trust was not public.",
+        "The former statute was repealed when the successor statute was extended to the area.",
+        "The successor statute preserved things duly done under the former statute.",
+        "Before the former inquiry was completed, interested persons applied for a fresh inquiry under the successor statute."
+      ],
+      "conclusion": "The former inquiry and its result remained governed by the former statute and were still pending; a fresh inquiry under the successor statute was not competent.",
+      "legal_principle": "Section 86(3)(a) of the Bombay Public Trusts Act preserved things duly done under the repealed statute, including their legal consequences. Applying Universal Import Agency v. Chief Controller, the Court treated the saving of things duly done as extending to those consequences. Because the registrar still had to make the required entry, the former inquiry was pending and remained governed by the former statute. Clauses (b) and (c) of section 86(3) were not necessary to decide the appeal; Ramalal v. Charity Commissioner was distinguished because it did not consider the effect of such a saving clause or whether the proceeding remained pending.",
+      "rule": {
+        "if": "fresh_trust_status_inquiry_under_successor_law and prior_inquiry_under_repealed_law and prior_inquiry_result_recorded and required_register_entry_unmade and repeal_saves_things_duly_done",
+        "then": "successor_authority_cannot_entertain_fresh_inquiry_while_prior_inquiry_pending"
+      },
+      "predicates": {
+        "fresh_trust_status_inquiry_under_successor_law": "An application was made for a new inquiry into a trust’s public status under a successor statute.",
+        "prior_inquiry_under_repealed_law": "An authorized registrar had begun an inquiry into the trust’s public status under a statute that was later repealed.",
+        "prior_inquiry_result_recorded": "The registrar recorded a result in the prior inquiry.",
+        "required_register_entry_unmade": "A register entry required to complete the prior inquiry had not been made.",
+        "repeal_saves_things_duly_done": "The successor law preserved things duly done under the repealed law."
+      },
+      "definition": "When a new inquiry is sought under a successor law while a saved prior inquiry remains incomplete because a required entry has not been made, the successor authority cannot entertain the new inquiry while the prior inquiry is pending."
+    }
+  ],
+  "seconds": 13.1
+}

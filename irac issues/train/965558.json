@@ -1,0 +1,82 @@
+{
+  "doc_id": "965558",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22005,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3037,
+    "prompt_tokens": 5683,
+    "total_tokens": 8720,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Supervisory jurisdiction over subordinate courts and tribunals is limited to correcting jurisdictional failures and grave abuses that cause injustice, and cannot be used as an ordinary appeal.",
+      "material_facts": [
+        "The High Court used supervisory jurisdiction to set aside concurrent decisions of the rent-control authorities without identifying facts warranting that intervention.",
+        "The challenge concerned the authorities’ treatment of a tenant’s late deposit of rent and the resulting eviction order."
+      ],
+      "conclusion": "The High Court exceeded the limits of supervisory jurisdiction by exercising it routinely and effectively treating it as an extension of statutory appellate or revisional powers.",
+      "legal_principle": "Article 227 confers an extraordinary discretionary power and a duty to keep subordinate courts and tribunals within the limits of their authority; it does not give a litigant a right to appeal. Mere wrong decisions are insufficient grounds for intervention absent grave dereliction of duty or flagrant abuse of power resulting in grave injustice. The power is to be exercised sparingly and not to correct mere errors or substitute an appellate view of the evidence. The Court relied on Waryam Singh v. Amarnath, Nagendra Nath Bose v. Commissioner of Hills Division, Bahutmal Raichand Oswal v. Laxmibai R. Tarta, Chandavarkar Sita Ratna Rao v. Ashalata S. Gurnam, Laxmikant Revchand Bhojwani v. Pratapsing Mohansingh Pardeshi, Koyilerian Janaki v. Rent Controller, and Trimbak Gangadhar Telang.",
+      "rule": {
+        "if": "supervisory_review_of_subordinate_court_or_tribunal and decision_within_authority and ordinary_error_only and no_grave_abuse_causing_injustice",
+        "then": "supervisory_interference_unwarranted"
+      },
+      "predicates": {
+        "supervisory_review_of_subordinate_court_or_tribunal": "A party asks a higher court to supervise a decision made by a subordinate court or tribunal.",
+        "decision_within_authority": "The subordinate court or tribunal acted within the authority given to it.",
+        "ordinary_error_only": "The alleged error is an ordinary error or disagreement about the appreciation of evidence, rather than a jurisdictional failure or a plainly unsupported finding.",
+        "no_grave_abuse_causing_injustice": "The subordinate court or tribunal did not commit a grave dereliction or flagrant abuse of power that caused grave injustice."
+      },
+      "definition": "When a subordinate court or tribunal acted within its authority and the complaint is only an ordinary error without grave abusive conduct causing injustice, supervisory intervention is unwarranted."
+    },
+    {
+      "legal_issue": "A supervisory proceeding or stay against dispossession does not by itself extend a statutory period for complying with an eviction order.",
+      "material_facts": [
+        "The revisional authority gave the tenants two months to deposit the arrears, but they did not deposit them within that period.",
+        "The tenants pursued further proceedings, and their application to the revisional authority for an extension of time was dismissed.",
+        "The tenants deposited the arrears only after the High Court dismissed their supervisory petition.",
+        "The High Court treated dismissal of that petition as giving the tenants a fresh statutory period to deposit the arrears; the record did not show that the High Court had extended the deposit period."
+      ],
+      "conclusion": "The High Court’s supervisory proceedings did not automatically give the tenants a fresh statutory period to deposit the arrears; a stay likewise does not itself extend statutory protection, although a court may extend time in a fit case involving grave injustice.",
+      "legal_principle": "Under Section 11(2)(c) of the Kerala Building (Lease & Rent Control) Act, 1965, the tenant could avoid execution of an eviction order by depositing arrears, interest, and costs within the prescribed period or a further period allowed by the relevant court or authority. Sections 18(5) and 20 provide for finality subject to the statutory revision. Proceedings under Article 227 are not an extension of proceedings under the Act and do not themselves authorize an extension of time. A stay is subject to the final result of the proceeding and the risk of the party obtaining it; dismissal restores the position that existed before the proceeding, and the stay does not automatically extend statutory protection. The Court recognized that extension may be appropriate where grave injustice makes the case fit for extraordinary discretionary relief.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and statutory_compliance_period_expired and (supervisory_review_filed or stay_against_dispossession) and not court_expressly_extended_compliance_period",
+        "then": "statutory_compliance_period_not_automatically_extended"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The proceeding concerns eviction under a rent-control system and a tenant’s opportunity to comply with an eviction order.",
+        "statutory_compliance_period_expired": "The period allowed for the tenant to comply with the eviction order has expired.",
+        "supervisory_review_filed": "The tenant has filed a proceeding asking a higher court to supervise the matter.",
+        "stay_against_dispossession": "A court has stayed the tenant’s dispossession while a proceeding is pending.",
+        "court_expressly_extended_compliance_period": "A court or authority has expressly extended the time for the tenant to comply."
+      },
+      "definition": "When the compliance period has expired in a rent-control eviction proceeding, filing for supervisory review or obtaining a stay does not itself extend that period unless a court or authority expressly does so."
+    },
+    {
+      "legal_issue": "A tenant who fails to deposit rent at each required stage and has no valid extension is not entitled to statutory protection from execution of the eviction order on the ground of arrears.",
+      "material_facts": [
+        "The tenants did not deposit the arrears within the period allowed by the revisional authority.",
+        "Their application for further time to deposit the arrears was dismissed, and they did not challenge that dismissal in appropriate proceedings.",
+        "They neither deposited the arrears within the allowed period nor obtained an extension, but deposited them years later after the supervisory petition was dismissed.",
+        "The rent-control authorities had ordered eviction on the ground of arrears, and the High Court’s order granting the tenants a further opportunity rested on its mistaken view that the supervisory petition extended the statutory period."
+      ],
+      "conclusion": "The tenants were not entitled to discretionary relief under supervisory jurisdiction, and the eviction order remained enforceable; the appeals were allowed and the orders of the appellate and revisional authorities were upheld.",
+      "legal_principle": "Section 11(2)(b) of the Kerala Building (Lease & Rent Control) Act, 1965, permits eviction for rent default subject to the required notice and opportunity to pay or tender the rent with interest and notice costs. Section 11(2)(c) provides a further opportunity to avoid execution by depositing arrears, interest, and costs within the allowed period. The Court explained that the protection is for bona fide tenants who comply with the statutory requirements, and that failure to pay at all three relevant stages does not entitle a tenant to remain in possession. Sections 18(5) and 20 govern the finality of the rent-control decisions, subject to the statutory revision.",
+      "rule": {
+        "if": "rent_control_arrears_eviction_case and tenant_failed_to_pay_at_each_required_stage and not valid_extension_granted",
+        "then": "eviction_order_remains_enforceable"
+      },
+      "predicates": {
+        "rent_control_arrears_eviction_case": "The case concerns an eviction order based on a tenant’s failure to pay rent under a rent-control system.",
+        "tenant_failed_to_pay_at_each_required_stage": "The tenant failed to pay or tender rent when required before the eviction order and failed to make the deposit required to avoid execution afterward.",
+        "valid_extension_granted": "A court or authority granted a valid extension of the time for the required deposit."
+      },
+      "definition": "In a rent-control arrears eviction case, when the tenant fails to pay at each required stage and receives no valid extension, the eviction order remains enforceable."
+    }
+  ],
+  "seconds": 18.3
+}

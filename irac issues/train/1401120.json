@@ -1,0 +1,60 @@
+{
+  "doc_id": "1401120",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26594,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1991,
+    "prompt_tokens": 6900,
+    "total_tokens": 8891,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A petition for certiorari is incompetent when it omits the tribunal whose order is challenged or parties whose rights are directly affected by that order.",
+      "material_facts": [
+        "The challenged orders of the revenue authorities were in favour of two individuals and affected the appellant’s licence, directing a fresh settlement and preferential consideration of one individual.",
+        "The appellant sought certiorari to quash those orders but did not join either successful individual as a party, although the tribunal and authority were joined.",
+        "The individuals had been parties to the proceedings before the revenue authorities, and the appellant had struck them out before filing the petition."
+      ],
+      "conclusion": "The successful individuals whose rights were directly affected were necessary parties; without them, the certiorari petition was incompetent and was rightly rejected.",
+      "legal_principle": "A necessary party is one without whom no effective order can be made; a proper party is one whose presence is needed for a complete and final decision even though an effective order can be made without them. A certiorari proceeding requires the tribunal or authority whose order is challenged to be joined, and also requires parties in whose favour that order was made when their rights are directly affected. An order affecting such parties cannot properly be made behind their backs, consistently with natural justice. The Court relied on the test for judicial acts in The King v. The Electricity Commissioners, [1924] 1 K.B. 171, and The King v. London County Council, [1931] 2 K.B. 215; it also referred to Ahmedalli v. M.D. Lalkaka, A.I.R. 1954 Bom. 33, and Kanglu Baula v. Chief Executive Officer, A.I.R. 1955 Nag. 49. The petition was under Article 226 of the Constitution.",
+      "rule": {
+        "if": "certiorari_proceeding and (not tribunal_joined or (order_beneficiaries_directly_affected and not beneficiary_parties_joined))",
+        "then": "certiorari_petition_incompetent"
+      },
+      "predicates": {
+        "certiorari_proceeding": "The proceeding seeks a writ of certiorari to quash an order of a tribunal or authority.",
+        "tribunal_joined": "The tribunal or authority whose order is challenged has been made a party to the proceeding.",
+        "order_beneficiaries_directly_affected": "The challenged order was made in favour of persons whose rights are directly affected by the requested relief.",
+        "beneficiary_parties_joined": "The persons in whose favour the challenged order was made, and whose rights are directly affected, have been made parties to the proceeding."
+      },
+      "definition": "A certiorari petition is incompetent if it omits the tribunal whose order is challenged or, where the order directly affects its beneficiaries, omits those beneficiaries."
+    },
+    {
+      "legal_issue": "A request to add omitted necessary parties at a very late stage may be refused when those parties were omitted from both the original certiorari petition and the subsequent special leave petition.",
+      "material_facts": [
+        "The appellant had omitted the two individuals who succeeded before the revenue authorities from the High Court certiorari petition and had not applied to add them there.",
+        "The appellant also did not join those individuals in the special leave petition.",
+        "At the hearing of the appeal, the appellant asked the Court to direct that the individuals be added and to remand the matter to the High Court."
+      ],
+      "conclusion": "The Court refused the request to add the omitted parties and remand the matter, holding that the request was belated.",
+      "legal_principle": "The Court may allow proper parties to be added to settle all questions in a proceeding, either on its own initiative or on an application, but it refused the request in these circumstances because it was made at a very late stage. The decision arose in an appeal by special leave from the dismissal of a petition under Article 226 of the Constitution.",
+      "rule": {
+        "if": "appeal_from_dismissal_of_certiorari_petition and omitted_parties_not_joined_in_original_petition and omitted_parties_not_joined_in_special_leave_petition and late_request_to_add_parties",
+        "then": "late_impleadment_request_denied"
+      },
+      "predicates": {
+        "appeal_from_dismissal_of_certiorari_petition": "The proceeding is an appeal from the dismissal of a petition seeking certiorari.",
+        "omitted_parties_not_joined_in_original_petition": "Persons whose interests required their presence were not joined in the original certiorari petition.",
+        "omitted_parties_not_joined_in_special_leave_petition": "Those omitted persons were also not joined in the petition seeking special leave to appeal.",
+        "late_request_to_add_parties": "The request to add the omitted persons was first made at a very late stage of the appeal."
+      },
+      "definition": "When an appeal from dismissal of a certiorari petition follows omission of necessary parties at both earlier stages, a request first made very late to add them may be denied."
+    }
+  ],
+  "seconds": 12.5
+}

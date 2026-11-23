@@ -1,0 +1,95 @@
+{
+  "doc_id": "1355562",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17414,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2424,
+    "prompt_tokens": 4784,
+    "total_tokens": 7208,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court cannot award damages or mesne profits that the plaintiff did not claim in the suit.",
+      "material_facts": [
+        "The plaintiff sued for possession and a permanent injunction but did not seek damages or mesne profits.",
+        "The trial court granted possession and an injunction, and the High Court, in the appeal, additionally directed payment of compensation for non-payment under the parties’ agreement.",
+        "The plaintiff had not paid court fees on any damages claim, and no proceeding to determine the amount of damages had been initiated."
+      ],
+      "conclusion": "The High Court’s direction awarding compensation could not be sustained because the plaintiff had not claimed damages or mesne profits; the Court did not decide whether the plaintiff might otherwise have been entitled to damages or whether a separate suit would be maintainable.",
+      "legal_principle": "Order II Rules 2 and 4 of the Code of Civil Procedure govern the claims and reliefs to be included or joined in a suit. Although Rule 4 permits specified claims, including claims for mesne profits and damages for breach of contract under which property is held, to be joined with a suit for recovery of immovable property without leave, relief must still be claimed and a claim for damages must be brought within limitation. Order XX Rule 12 provides for a preliminary decree and an inquiry where the amount of mesne profits must be determined; court fees are payable on the damages claimed and the amount determined. A plaintiff cannot obtain indirectly relief that was not claimed directly.",
+      "rule": {
+        "if": "civil_first_appeal and damages_not_claimed and appellate_court_awarded_damages",
+        "then": "unclaimed_damages_award_set_aside"
+      },
+      "predicates": {
+        "civil_first_appeal": "The matter is an appeal from a decree in a civil suit.",
+        "damages_not_claimed": "The plaintiff did not seek damages or mesne profits in the suit.",
+        "appellate_court_awarded_damages": "The appellate court added an award of damages or compensation that the plaintiff had not claimed."
+      },
+      "definition": "When an appeal from a civil decree concerns an award of damages that the plaintiff did not claim in the suit, the unclaimed award is set aside."
+    },
+    {
+      "legal_issue": "A court hearing a statutory civil appeal cannot use equitable discretion to grant relief contrary to statutory procedure or beyond the relief claimed.",
+      "material_facts": [
+        "The High Court was deciding an appeal under Section 96 of the Code of Civil Procedure, which continues the original suit.",
+        "The plaintiff had not claimed damages, but the High Court added a compensation direction on equitable grounds.",
+        "The High Court relied on an asserted equitable power to fashion a solution between the parties."
+      ],
+      "conclusion": "The High Court could not rely on equitable jurisdiction to grant the unclaimed compensation in the civil appeal; its direction was unsustainable.",
+      "legal_principle": "A court hearing an appeal under Section 96 of the Code of Civil Procedure must act within the statutory framework, subject to procedural flexibility provided by law. Although Order VII Rule 7 allows a court in an appropriate case to mould relief, that power remains confined by the Code. The High Court’s jurisdiction in a civil appeal is distinct from its wider judicial-review jurisdiction under Articles 226 and 227 of the Constitution. Equity is subject to law and cannot override express statutory provisions. The Court relied on Bay Berry Apartments Pvt. Ltd. v. Shobha and U.P. State Brassware Corpn. Ltd. v. Udai Narain Pandey, and applied the principle in Shamsu Suhara Beevi v. G. Alex that equitable considerations cannot overcome statutory requirements.",
+      "rule": {
+        "if": "civil_first_appeal and relief_exceeds_claimed_relief and equitable_power_used_against_statutory_limits",
+        "then": "equitable_relief_cannot_be_granted"
+      },
+      "predicates": {
+        "civil_first_appeal": "The court is deciding a statutory first appeal from a civil suit.",
+        "relief_exceeds_claimed_relief": "The court grants relief that was not sought by the plaintiff in the suit.",
+        "equitable_power_used_against_statutory_limits": "The court relies on equitable discretion to grant relief contrary to the applicable statutory procedure."
+      },
+      "definition": "In a statutory first appeal, a court cannot use equitable discretion to grant relief beyond the claim when doing so conflicts with statutory limits."
+    },
+    {
+      "legal_issue": "A first appellate court should not frame additional issues that do not arise from the pleadings or submissions and must formulate its points for determination in accordance with the applicable appellate procedure.",
+      "material_facts": [
+        "The High Court framed additional issues concerning compensation that did not arise from the pleadings or the submissions made in the suit and appeal.",
+        "The High Court did not formulate its points for consideration in the manner required for an appeal under the Code of Civil Procedure."
+      ],
+      "conclusion": "The High Court was incorrect to frame the additional issues and should have formulated the points for determination in accordance with Order XLI Rule 31 of the Code of Civil Procedure.",
+      "legal_principle": "Order XLI Rule 31 of the Code of Civil Procedure requires an appellate court to formulate the points for determination. Issues or points considered by the appellate court must arise from the pleadings and the matters presented for decision.",
+      "rule": {
+        "if": "civil_first_appeal and appellate_court_frames_issue_not_arising_from_case",
+        "then": "additional_issue_framing_is_improper"
+      },
+      "predicates": {
+        "civil_first_appeal": "The court is deciding an appeal from a civil suit.",
+        "appellate_court_frames_issue_not_arising_from_case": "The appellate court frames an issue that does not arise from the pleadings or the matters presented for decision."
+      },
+      "definition": "When a civil appellate court frames an issue that does not arise from the case presented, that additional issue framing is improper."
+    },
+    {
+      "legal_issue": "The Supreme Court may impose additional costs in an appeal in the exercise of its discretionary constitutional power, having regard to the conduct of the appellant.",
+      "material_facts": [
+        "The appeal was brought by the party whose conduct the Supreme Court considered relevant to costs.",
+        "The trial court and High Court had already directed payment of costs.",
+        "The Supreme Court exercised its discretionary jurisdiction and directed the appellant to pay additional costs to the respondent."
+      ],
+      "conclusion": "The Supreme Court directed the appellant to pay additional costs to the respondent, in addition to the costs already awarded below.",
+      "legal_principle": "The Court exercised its discretionary jurisdiction under Article 142 of the Constitution and directed costs under Section 35A of the Code of Civil Procedure, having regard to the appellant’s conduct.",
+      "rule": {
+        "if": "supreme_court_appeal and appellant_conduct_warrants_additional_costs",
+        "then": "additional_costs_imposed_on_appellant"
+      },
+      "predicates": {
+        "supreme_court_appeal": "The matter is an appeal before the Supreme Court.",
+        "appellant_conduct_warrants_additional_costs": "The Supreme Court considers the appellant’s conduct a reason to impose additional costs."
+      },
+      "definition": "When the Supreme Court considers an appellant’s conduct in an appeal to warrant additional costs, it may impose those costs on the appellant."
+    }
+  ],
+  "seconds": 16.3
+}

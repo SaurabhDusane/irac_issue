@@ -1,0 +1,79 @@
+{
+  "doc_id": "140505203",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16385,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2044,
+    "prompt_tokens": 4414,
+    "total_tokens": 6458,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A second appeal must be decided within the limits of the substantial questions of law that are formulated, and concurrent factual findings cannot be displaced without a substantial question of law warranting interference.",
+      "material_facts": [
+        "The High Court admitted the second appeal on a question concerning whether the lower courts’ findings were contrary to the pleadings and evidence, particularly the recitals in a sale deed.",
+        "The High Court did not formulate a substantial question of law challenging the lower courts’ findings that the purchaser owned the shop and that the defendant had failed to prove adverse possession.",
+        "The High Court nevertheless set aside the concurrent judgments and dismissed the possession suit."
+      ],
+      "conclusion": "The High Court exceeded the proper scope of the second appeal. The concurrent findings had not been displaced through a substantial question of law, so the High Court’s judgment was set aside and the lower courts’ decrees were restored.",
+      "legal_principle": "Under Section 100(4) and (5) of the Code of Civil Procedure, 1908, a High Court hears a second appeal on the substantial question of law formulated for it; it may formulate another substantial question that arises in the case only by assigning reasons. Concurrent findings of fact remain binding where no substantial question of law challenging them is formulated and established. No earlier cases are cited.",
+      "rule": {
+        "if": "second_appeal and concurrent_factual_findings and no_substantial_question_challenges_those_findings",
+        "then": "concurrent_findings_left_undisturbed"
+      },
+      "predicates": {
+        "second_appeal": "The proceeding is an appeal from a first appellate decision to a higher court with limited review of legal questions.",
+        "concurrent_factual_findings": "The trial court and first appellate court reached the same findings on the material facts.",
+        "no_substantial_question_challenges_those_findings": "No substantial question of law was formulated and considered that called the concurrent factual findings into question."
+      },
+      "definition": "When a second appeal contains concurrent factual findings and no substantial question challenges them, those findings are left undisturbed."
+    },
+    {
+      "legal_issue": "A court cannot decide a dispute on a factual issue that the parties did not raise in their pleadings or on which no issue was framed for trial.",
+      "material_facts": [
+        "The defendant denied the purchaser’s title and claimed ownership by adverse possession in his written statement, but did not claim that he occupied the shop as a tenant.",
+        "Because tenancy was not pleaded, the trial court framed no issue on tenancy and neither lower court made a finding on it.",
+        "The High Court nevertheless held that the defendant was a tenant and that possession had to be pursued through a tenancy claim."
+      ],
+      "conclusion": "The High Court’s tenancy finding was outside the pleadings and was not a proper basis for setting aside the lower courts’ decrees.",
+      "legal_principle": "Parties cannot travel beyond their pleadings, and a court must decide the issues arising from those pleadings. A finding on an issue de hors the pleadings is without jurisdiction. The judgment cites no particular provision or earlier case for this principle.",
+      "rule": {
+        "if": "civil_possession_case and tenancy_not_pleaded and no_tenancy_issue_framed and court_decided_tenancy",
+        "then": "finding_on_unpleaded_tenancy_issue_invalid"
+      },
+      "predicates": {
+        "civil_possession_case": "The proceeding is a civil dispute seeking possession of property.",
+        "tenancy_not_pleaded": "The party said to be a tenant did not plead that a tenancy existed.",
+        "no_tenancy_issue_framed": "The trial court framed no issue for determination about tenancy.",
+        "court_decided_tenancy": "A court decided that the occupant held the property as a tenant."
+      },
+      "definition": "In a civil possession dispute, a court’s tenancy finding is invalid when tenancy was not pleaded and no tenancy issue was framed."
+    },
+    {
+      "legal_issue": "A recital that an occupant is in possession of property does not, without independent evidence, establish that the occupant is a tenant.",
+      "material_facts": [
+        "The sale deed stated that the defendant was in possession of the shop but did not state that he occupied it as a tenant.",
+        "The defendant produced no rent receipts or lease deed and did not examine the alleged landlord to prove that a tenancy had been created.",
+        "The defendant’s pleaded case was adverse possession, not tenancy, but the High Court inferred tenancy from the sale deed’s recital of possession."
+      ],
+      "conclusion": "The sale deed’s recital of possession did not establish tenancy, and the High Court’s finding that the defendant was a tenant was unsupported by evidence.",
+      "legal_principle": "A party claiming tenancy must prove the creation of the tenancy with evidence; a document that merely recites possession does not confer tenant status. The judgment cites no particular provision or earlier case for this evidentiary principle.",
+      "rule": {
+        "if": "civil_possession_case and conveyance_recites_only_occupant_possession and no_independent_tenancy_evidence",
+        "then": "possession_recital_alone_does_not_establish_tenancy"
+      },
+      "predicates": {
+        "civil_possession_case": "The proceeding is a civil dispute seeking possession of property in which the occupant’s status is material.",
+        "conveyance_recites_only_occupant_possession": "A conveyance states that the occupant possesses the property but does not state that the occupant is a tenant.",
+        "no_independent_tenancy_evidence": "The party asserting tenancy presents no independent evidence of its creation, such as rental documents or testimony from the alleged landlord."
+      },
+      "definition": "In a civil possession dispute, a conveyance reciting only an occupant’s possession, without independent evidence of tenancy, does not establish that the occupant is a tenant."
+    }
+  ],
+  "seconds": 13.1
+}

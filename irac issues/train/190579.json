@@ -1,0 +1,60 @@
+{
+  "doc_id": "190579",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23070,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2206,
+    "prompt_tokens": 6111,
+    "total_tokens": 8317,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A stay order directed to a court does not suspend its jurisdiction or make an act taken before the court knows of the order a nullity.",
+      "material_facts": [
+        "A proceeding seeking permission to bring an eviction suit was pending before a magistrate with authority to decide it.",
+        "A superior authority stayed further proceedings on a transfer application, but the stay order was not communicated to the magistrate.",
+        "The magistrate granted permission without knowledge of the stay order.",
+        "The stay order was later withdrawn when the transfer application was dismissed, and no application was made to set aside the permission."
+      ],
+      "conclusion": "The permission granted before the magistrate knew of the stay order was not a nullity, and it could not be challenged as a nullity in the eviction suit. The appeal was dismissed.",
+      "legal_principle": "A stay order directed to a court is prohibitory: it does not remove the court’s jurisdiction, but requires the court to stop proceeding once it has knowledge of the order. Knowledge may come through communication from the issuing court, information supported by an affidavit, or another means. Proceedings taken after knowledge while the stay remains in force are illegal and null. This follows from the distinction in Order XLI Rule 5 of the Code of Civil Procedure between filing an appeal and an order staying execution. The principle applies with greater force to a stay made in a transfer application. The Court approved the approach in Bessesswari Chowdhurany v. Horro Sunder Mozmadar and Kasaribada Venkatachalpati Rao v. Maddipatla Kameshwaramma, and rejected the contrary approach in Hukum Chand Boid v. Kamalanand Singh and L. Parsotam Saran v. B. Barhma Nand. The Court expressed no final opinion on stays addressed to ministerial officers.",
+      "rule": {
+        "if": "court_proceeding_subject_to_stay and court_act_occurred and court_unaware_when_act_taken",
+        "then": "act_before_notice_is_not_a_nullity"
+      },
+      "predicates": {
+        "court_proceeding_subject_to_stay": "A court was conducting a proceeding to which an order staying further action was directed.",
+        "court_act_occurred": "The court took an action in the proceeding while the stay order was in force.",
+        "court_unaware_when_act_taken": "The court had not learned of the stay order when it took the action."
+      },
+      "definition": "When a court takes action in a proceeding subject to a stay before learning of the stay, that action is not a nullity merely because the stay had already been made."
+    },
+    {
+      "legal_issue": "A court may set aside steps taken after a stay is made but before the court learns of it when a party timely asks and setting them aside is necessary in the interests of justice.",
+      "material_facts": [
+        "The magistrate granted permission while unaware of the stay order.",
+        "The party challenging the permission did not apply to the magistrate to set it aside in the interests of justice."
+      ],
+      "conclusion": "The court that took the interim step may set it aside under its inherent powers if the party concerned asks, the court considers this necessary in the interests of justice, and the request is made within a reasonable time; no such relief was sought in this case.",
+      "legal_principle": "Section 151 of the Code of Civil Procedure preserves the court’s inherent power to undo steps taken between the making of a stay order and the court’s knowledge of it, when necessary in the interests of justice and on the request of the affected party. The request must be made within a reasonable time. Without such an order, the interim proceedings are not nullities and remain effective.",
+      "rule": {
+        "if": "court_proceeding_subject_to_stay and act_between_order_and_notice and party_requests_reversal and reversal_needed_for_justice and request_within_reasonable_time",
+        "then": "court_may_set_aside_interim_act"
+      },
+      "predicates": {
+        "court_proceeding_subject_to_stay": "A court was conducting a proceeding to which an order staying further action was directed.",
+        "act_between_order_and_notice": "The court took an interim step after the stay was made but before the court learned of it.",
+        "party_requests_reversal": "A party asks the court to set aside the interim step.",
+        "reversal_needed_for_justice": "The court considers setting aside the interim step necessary in the interests of justice.",
+        "request_within_reasonable_time": "The party makes the request within a reasonable time."
+      },
+      "definition": "When an interim step is taken before a court learns of a stay, the court may set it aside if a party timely requests that result and the court considers it necessary in the interests of justice."
+    }
+  ],
+  "seconds": 13.7
+}

@@ -1,0 +1,77 @@
+{
+  "doc_id": "803866",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18792,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2759,
+    "prompt_tokens": 5502,
+    "total_tokens": 8261,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A party cannot raise on appeal a statutory bar that was not founded in the pleadings or made the subject of an issue at trial.",
+      "material_facts": [
+        "The defendants relied on a statutory bar to the suit based on the effect of consolidation proceedings.",
+        "Their written statement did not lay a foundation for that contention, and no issue on it was raised at trial."
+      ],
+      "conclusion": "The defendants could not raise the statutory-bar contention for the first time on appeal.",
+      "legal_principle": "Pleadings must provide a foundation for a contention, and a party cannot introduce a new contention on appeal when it was neither pleaded nor made an issue at trial. The court considered the contention under Section 49 of the U.P. Consolidation of Holdings Act, 1954, but rejected it for lack of a pleading foundation; the judgment does not identify a specific provision of the Code of Civil Procedure as the basis for this ruling.",
+      "rule": {
+        "if": "civil_appeal and (not_pleaded_in_written_statement and no_trial_issue_on_contention)",
+        "then": "new_contention_cannot_be_raised_on_appeal"
+      },
+      "predicates": {
+        "civil_appeal": "The proceeding is an appeal in a civil suit.",
+        "not_pleaded_in_written_statement": "The party raising the contention did not set it out in its written statement.",
+        "no_trial_issue_on_contention": "The trial court did not frame or decide an issue on the contention."
+      },
+      "definition": "When a party raises a contention in a civil appeal that was neither pleaded nor made a trial issue, the contention cannot be raised on appeal."
+    },
+    {
+      "legal_issue": "A special leave petition challenging a judgment is a pending appeal for the purpose of applying an intervening legal change when leave is granted after that change.",
+      "material_facts": [
+        "The defendants filed a special leave petition challenging the judgment that had dismissed their appeal.",
+        "The special leave petition was pending when the intervening benami legislation came into force; special leave was granted later.",
+        "The defendants had sought permission to rely on the intervening legislation."
+      ],
+      "conclusion": "The challenge was pending when the legislation came into force, even though special leave had not yet been granted, and the appellate court could take account of the intervening legal change.",
+      "legal_principle": "Under Article 136 of the Constitution, the defendants could challenge the judgment by special leave, and the appeal could be heard after leave was granted. The court held that the challenge was pending before it once the judgment had been challenged, and that an appeal is a continuation of the suit. Applying Mithilesh Kumari v. Prem Behari Khare, the expressions “shall lie” and “shall allow” in Section 4 of the Benami Transactions (Prohibition) Act, 1988, apply prospectively to future stages of pending proceedings and to future proceedings; “any property held benami” is not limited by time. A pending appeal therefore permits the appellate court to take account of the later legislative change.",
+      "rule": {
+        "if": "benami_property_recovery_suit and judgment_challenged_by_leave_petition and leave_petition_pending_when_law_changed",
+        "then": "leave_petition_counts_as_pending_appeal"
+      },
+      "predicates": {
+        "benami_property_recovery_suit": "The proceeding is a suit to recover property on the basis that it was held benami.",
+        "judgment_challenged_by_leave_petition": "The party challenging the judgment filed a petition seeking special leave to appeal from it.",
+        "leave_petition_pending_when_law_changed": "The special leave petition remained pending when the intervening legal change took effect."
+      },
+      "definition": "When a benami property recovery suit is challenged by a special leave petition that remains pending when the law changes, that petition counts as a pending appeal."
+    },
+    {
+      "legal_issue": "A claim to recover property on the basis of benami ownership cannot succeed when the statutory prohibition applies to the claim in a pending appeal.",
+      "material_facts": [
+        "The plaintiff sued on the basis that he was the real owner and that the defendants were named in the sale deeds only as benamidars.",
+        "The defendants challenged the decree in a special leave petition that was pending when the benami legislation came into force.",
+        "The legislation prohibited suits, claims, or actions to enforce rights in property held benami by a person claiming to be its real owner."
+      ],
+      "conclusion": "The plaintiff was not entitled to a decree on the benami claim; the appeal was allowed and the suit was dismissed.",
+      "legal_principle": "Section 4(1) and (2) of the Benami Transactions (Prohibition) Act, 1988, prohibits suits, claims, or actions to enforce a right in property held benami by a person claiming to be its real owner, and prohibits a defence based on such a right. Under Mithilesh Kumari v. Prem Behari Khare, the relevant expressions apply prospectively to future stages of pending proceedings as well as to future proceedings. Because an appeal is a continuation of the suit, the prohibition applied while the appeal was pending.",
+      "rule": {
+        "if": "benami_property_recovery_suit and claimant_asserts_real_ownership_through_benami and appeal_pending_when_benami_prohibition_applies",
+        "then": "benami_recovery_claim_barred"
+      },
+      "predicates": {
+        "benami_property_recovery_suit": "The proceeding is a suit seeking recovery of property on the basis that it was held benami.",
+        "claimant_asserts_real_ownership_through_benami": "The claimant seeks to enforce an asserted ownership right on the ground that another person was named as holder only for the claimant.",
+        "appeal_pending_when_benami_prohibition_applies": "An appeal in the suit is pending when the prohibition on enforcing benami ownership claims applies to the pending proceeding."
+      },
+      "definition": "When a claimant seeks to recover benami property as its real owner and an appeal is pending while the prohibition applies, the recovery claim is barred."
+    }
+  ],
+  "seconds": 17.2
+}

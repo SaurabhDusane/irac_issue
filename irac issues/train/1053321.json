@@ -1,0 +1,101 @@
+{
+  "doc_id": "1053321",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 40369,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3366,
+    "prompt_tokens": 10736,
+    "total_tokens": 14102,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent-control revisional court may correct factual findings affected by material errors, but its power does not equal the full appellate power to reassess conflicting oral evidence.",
+      "material_facts": [
+        "The trial court rejected the landlord’s claim of reasonable and bona fide need, and the landlord challenged that decision in revision.",
+        "The trial court relied on the absence of documentary evidence without finding that any material document existed and was withheld by the landlord.",
+        "The trial court considered premises belonging to other family members although the premises in dispute belonged to the landlord entity."
+      ],
+      "conclusion": "The High Court acted within its revisional jurisdiction in correcting those errors and reconsidering the finding on the landlord’s need.",
+      "legal_principle": "Section 50 of the Karnataka Rent Control Act, 1961 empowers the High Court to examine the legality and correctness of the order and correct errors of fact as well as law. That power is wider than the narrow revisional power under Section 115 of the Code of Civil Procedure, but falls short of the appellate power under Section 107(2) of that Code, particularly where a finding depends on the credibility of conflicting oral evidence.",
+      "rule": {
+        "if": "rent_control_revision and (trial_court_used_improper_evidentiary_basis or trial_court_ignored_relevant_ownership_context)",
+        "then": "revisional_court_may_correct_the_factual_finding"
+      },
+      "predicates": {
+        "rent_control_revision": "A party challenged a rent-control trial court’s order in revision.",
+        "trial_court_used_improper_evidentiary_basis": "The trial court relied on missing documentary evidence without finding that a material document existed and was withheld by the party expected to produce it.",
+        "trial_court_ignored_relevant_ownership_context": "The trial court assessed the claimant’s need by considering property belonging to other people rather than distinguishing it from property owned by the claimant."
+      },
+      "definition": "When a rent-control order is challenged in revision and the trial court used an improper evidentiary basis or ignored relevant ownership context, the revisional court may correct the factual finding."
+    },
+    {
+      "legal_issue": "A landlord’s reasonable and bona fide need for premises may be established by considering the landlord’s distinct business, lack of suitable premises, and the circumstances of acquiring the premises for business use.",
+      "material_facts": [
+        "The landlord was a business firm whose partners were distinct from other members of their family.",
+        "The landlord operated from a room in rented premises and had no other premises for its business.",
+        "The landlord acquired commercial premises in a business locality, asserting that it intended to use them for a showroom connected with its business.",
+        "The trial court’s finding against the landlord was affected by its treatment of the absence of documentary evidence and its consideration of property belonging to other family members."
+      ],
+      "conclusion": "The High Court correctly found that the landlord’s reasonable and bona fide requirement for its own occupation had been proved.",
+      "legal_principle": "The ground for eviction under clause (h) of the proviso to Section 21(1) of the Karnataka Rent Control Act, 1961 is established on the evidence and circumstances as a whole. Property belonging to other members of a family cannot be treated as available to a distinct landlord business merely because its owners are related to the landlord’s partners.",
+      "rule": {
+        "if": "landlord_own_business_use_claim and landlord_lacks_suitable_business_premises and landlord_is_distinct_from_related_property_owners and premises_acquired_for_business_use",
+        "then": "bona_fide_business_requirement_is_established"
+      },
+      "predicates": {
+        "landlord_own_business_use_claim": "The landlord stated that it needed the premises for its own business.",
+        "landlord_lacks_suitable_business_premises": "The landlord conducted its business in rented accommodation and had no other suitable premises for that purpose.",
+        "landlord_is_distinct_from_related_property_owners": "The landlord was a distinct business entity, and other property relied on against its need belonged to other people related to its owners.",
+        "premises_acquired_for_business_use": "The landlord acquired commercial premises in circumstances consistent with its stated intention to use them for its business."
+      },
+      "definition": "When a distinct landlord claims its own business use, lacks suitable business premises, and acquired the premises for business use, its bona fide business requirement is established."
+    },
+    {
+      "legal_issue": "Written consent to sublet that was given for the contractual tenancy does not authorize a new subletting after that tenancy expires, although the continued possession of a subtenant lawfully inducted during the consent period is not itself a fresh subletting.",
+      "material_facts": [
+        "The tenancy terms gave the tenant an option to sublet during the specified contractual tenancy period.",
+        "The contractual tenancy period expired before the tenant inducted a new subtenant into a shop.",
+        "The applicable rental law at the time required the landlord’s written consent for subletting.",
+        "The earlier subtenancy in that shop had ended before the new subtenancy began, and no written consent for the new subletting was in force."
+      ],
+      "conclusion": "The new subletting was unlawful and constituted a ground for eviction.",
+      "legal_principle": "Under clause (iii) of Section 9(2) of the Bangalore House Rent and Accommodation Control Act, 1946, written landlord consent was required for subletting. The landlord’s consent is a voluntary act and, when given for the contractual tenancy, does not ordinarily extend beyond the period for which it was given; statutory tenancy does not continue that permission or confer a right to create a new subtenancy. In Mahabir Prasad Verma v. Dr. Surinder Kaur, a subtenancy created with written consent during the contractual term remained lawful after that term ended, and mere continued possession was not a fresh subletting. The Court distinguished that situation from the new post-expiry subletting here. The Court also explained that Damadilal v. Parashram and the related decisions on the heritable nature of statutory tenancy did not establish a right to create a new subtenancy after contractual tenancy expired.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and subletting_created_after_contractual_term_expired and prior_written_consent_limited_to_contractual_term and applicable_rental_law_required_written_consent",
+        "then": "post_expiry_subletting_is_unlawful_and_supports_eviction"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The dispute is an eviction proceeding under rent-control law.",
+        "subletting_created_after_contractual_term_expired": "The tenant created a new subtenancy after the contractual tenancy had ended.",
+        "prior_written_consent_limited_to_contractual_term": "The landlord’s written permission to sublet was given for the contractual term and did not extend beyond it.",
+        "applicable_rental_law_required_written_consent": "The rental law governing the creation of the subtenancy required the landlord’s written consent for subletting."
+      },
+      "definition": "In a rent-control eviction proceeding, a new subtenancy created after the contractual term, where prior written permission was limited to that term and the governing rental law required written consent, is unlawful and supports eviction."
+    },
+    {
+      "legal_issue": "A comparative-hardship inquiry under the rent-control eviction scheme need not be undertaken when eviction is independently upheld on the ground of unlawful subletting as well as the landlord’s bona fide need.",
+      "material_facts": [
+        "The High Court granted eviction on both unlawful subletting and the landlord’s reasonable and bona fide requirement.",
+        "The Supreme Court upheld the finding on each ground."
+      ],
+      "conclusion": "The question of comparative hardship under Section 21(4) did not arise.",
+      "legal_principle": "The Court stated that the comparative-hardship question under Section 21(4) of the Karnataka Rent Control Act, 1961 did not arise once the eviction decree was upheld on the unlawful-subletting ground as well as on the landlord’s bona fide requirement ground.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and eviction_upheld_for_unlawful_subletting and eviction_upheld_for_bona_fide_need",
+        "then": "comparative_hardship_inquiry_is_unnecessary"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The dispute is an eviction proceeding under rent-control law.",
+        "eviction_upheld_for_unlawful_subletting": "The court upheld eviction on the ground that the tenant had unlawfully sublet the premises.",
+        "eviction_upheld_for_bona_fide_need": "The court upheld eviction on the ground that the landlord bona fide required the premises."
+      },
+      "definition": "When eviction in a rent-control proceeding is upheld for unlawful subletting and bona fide need, a comparative-hardship inquiry is unnecessary."
+    }
+  ],
+  "seconds": 20.7
+}

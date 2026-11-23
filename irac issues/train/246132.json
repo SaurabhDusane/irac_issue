@@ -1,0 +1,80 @@
+{
+  "doc_id": "246132",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31821,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2417,
+    "prompt_tokens": 8165,
+    "total_tokens": 10582,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tax recovery officer cannot confirm an auction sale when the underlying tax demand has been reduced to nil before confirmation and the officer is aware of that fact.",
+      "material_facts": [
+        "A property was auctioned to recover tax demands, but a civil court injunction prevented confirmation of the sale for several years.",
+        "Before the recovery officer actually confirmed the sale, appellate and other proceedings had reduced all demands against the assessee to nil.",
+        "The tax department had been informed that the demands had ceased to exist before the officer confirmed the sale.",
+        "No application to set aside the auction sale had been filed."
+      ],
+      "conclusion": "The recovery officer was obliged to cancel the recovery certificate and could not confirm the sale after the demand had been reduced to nil. The sale therefore fell for want of confirmation and was set aside.",
+      "legal_principle": "Under sections 222, 224 and 225(3) of the Income-tax Act, 1961, a reduction of the outstanding demand to nil requires the recovery certificate to be cancelled; under rules 56 and 63 of the Second Schedule, an auction sale is subject to an actual order of confirmation and is not confirmed automatically. The officer must consider relevant events arising between the sale and confirmation. Janak Raj v. Gurdial Singh recognized that exceptional circumstances can justify refusing confirmation; Sardar Govindrao Mahadik v. Devi Sahai and Padanathil Ruqmini Amma v. P.K. Abdulla were distinguished as not displacing the specific statutory scheme governing these tax recovery sales.",
+      "rule": {
+        "if": "tax_recovery_auction and demand_reduced_to_nil_before_confirmation and recovery_authority_aware_of_reduction",
+        "then": "sale_must_not_be_confirmed"
+      },
+      "predicates": {
+        "tax_recovery_auction": "The proceeding is an auction sale conducted to recover a tax demand.",
+        "demand_reduced_to_nil_before_confirmation": "The demand being recovered was reduced to nothing before the recovery authority actually confirmed the sale.",
+        "recovery_authority_aware_of_reduction": "The recovery authority knew, before confirming the sale, that the demand had been reduced to nothing."
+      },
+      "definition": "When a tax recovery auction is awaiting confirmation and the demand has been eliminated before confirmation, an authority aware of that elimination must not confirm the sale."
+    },
+    {
+      "legal_issue": "Service of a notice of demand is a mandatory prerequisite to tax recovery proceedings, and a sale conducted without that service is invalid.",
+      "material_facts": [
+        "The property was attached and sold in recovery proceedings for tax demands.",
+        "The appellate tax authorities had found that the assessee had not been served with a notice of demand.",
+        "The recovery proceedings were nevertheless pursued and the sale was later confirmed."
+      ],
+      "conclusion": "Because the notice of demand had not been served, the assessee could not be treated as in default and the recovery proceedings, including the sale, were invalid and liable to be annulled.",
+      "legal_principle": "Sections 156, 220 and 222 of the Income-tax Act, 1961 make service of a notice of demand a prerequisite to treating an assessee as in default and commencing recovery. Income-tax Officer, Kolar Circle v. Seghu Buchiah Setty described the notice as a vital document and a condition precedent, though the Taxation Laws (Continuation and Validation of Recovery Proceedings) Act, 1964 superseded its requirement for a fresh notice when a demand is subsequently altered. Homely Industries v. Sales Tax Officer, Ram Swarup Gupta v. Behari Lal Baldeo Prasad, Union of India v. Jardine Henderson Ltd. and Sunil Kumar Singh Deo v. Tax Recovery Officer support the rule that failure to serve the required notice invalidates recovery. Surinder Nath Kapoor v. Union of India supports treating a sale resting on a nullity as itself a nullity.",
+      "rule": {
+        "if": "tax_recovery_proceeding and required_demand_notice_not_served",
+        "then": "recovery_proceeding_and_sale_are_invalid"
+      },
+      "predicates": {
+        "tax_recovery_proceeding": "The proceeding seeks to recover a tax demand from an assessee.",
+        "required_demand_notice_not_served": "The required notice stating the amount payable was not served on the assessee before recovery began."
+      },
+      "definition": "A tax recovery proceeding based on an unserved required demand notice, including a sale conducted in that proceeding, is invalid."
+    },
+    {
+      "legal_issue": "When an invalidated recovery sale requires the auction purchaser's money to be refunded, equitable interest may be allocated between the taxpayer and the recovery authority according to when the authority was informed that the demand no longer existed.",
+      "material_facts": [
+        "The auction purchaser paid the purchase money, which remained with the tax authorities after the sale was set aside.",
+        "The demand had ceased to exist, and the taxpayer had informed the recovery authority of that fact.",
+        "The Court directed that the taxpayer bear interest for the period before that notification and that the tax department bear interest thereafter, as equitable relief on the facts of the case.",
+        "The Court expressly stated that this interest award did not lay down a principle to be followed as precedent."
+      ],
+      "conclusion": "The auction purchaser was entitled to a refund with interest; the taxpayer was responsible for interest before the recovery authority was informed that the demand no longer existed, and the tax department was responsible thereafter. The allocation was made on equitable considerations specific to the case and was not declared a precedent.",
+      "legal_principle": "The Court awarded interest on equitable considerations because the purchaser had been deprived of the use of the deposited money. It allocated responsibility to the taxpayer before the recovery authority was informed that the demand had ceased to exist, and to the tax department after that point, when the authority should have cancelled the recovery certificate. The Court expressly disclaimed laying down a precedent or general principle of law.",
+      "rule": {
+        "if": "tax_recovery_auction and purchaser_deposited_purchase_money and sale_invalidated and recovery_authority_notified_demand_no_longer_exists",
+        "then": "refund_interest_liability_is_allocated_between_taxpayer_and_recovery_authority_at_notification"
+      },
+      "predicates": {
+        "tax_recovery_auction": "The proceeding is an auction sale conducted to recover a tax demand.",
+        "purchaser_deposited_purchase_money": "The auction purchaser paid money for the property that remained with the recovery authority.",
+        "sale_invalidated": "The sale was set aside as invalid.",
+        "recovery_authority_notified_demand_no_longer_exists": "The taxpayer informed the recovery authority that the demand being recovered no longer existed."
+      },
+      "definition": "For an invalidated tax recovery auction in which the purchaser's money must be returned, interest liability is divided between the taxpayer and the recovery authority according to when the authority was informed that the demand no longer existed."
+    }
+  ],
+  "seconds": 15.9
+}

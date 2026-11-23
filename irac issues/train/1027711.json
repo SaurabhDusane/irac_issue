@@ -1,0 +1,103 @@
+{
+  "doc_id": "1027711",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32885,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3067,
+    "prompt_tokens": 8883,
+    "total_tokens": 11950,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant is liable to eviction when, on the date the eviction application is made, the tenant has a present right to reside in another residence because the tenant built it, acquired vacant possession of it, or was allotted it.",
+      "material_facts": [
+        "The landlord sought eviction on the ground that the tenants had built or acquired vacant possession of another residence and that one tenant had also been allotted a residential quarter.",
+        "The courts below found that the tenants had built and acquired vacant possession of the other residence, although relatives were living there, and that the quarter had been allotted to the tenant and possession delivered to him.",
+        "The tenants argued that eviction required actual possession of a built or allotted residence and that the other accommodation had to be a suitable substitute."
+      ],
+      "conclusion": "The three statutory circumstances are alternatives, and the tenant need not additionally acquire possession after building a residence or being allotted one. The tenant must have a present right to reside in the other premises on the date of the eviction application; once that condition is fulfilled, the tenant is not entitled to the Act’s protection.",
+      "legal_principle": "Section 14(1)(h) of the Delhi Rent Control Act, 1958 uses the present-perfect expressions “has built,” “has acquired,” and “has been allotted.” Read together, these expressions require a present right to reside in another premises when the eviction application is made, but the alternatives are disjunctive and do not require possession in addition to building or allotment. The Court relied on the construction in Ved Prakash v. Chunilal and referred to Goppulal v. Thakurji Shriji Dwarkadheeshji; it distinguished the suitability requirement discussed under the earlier Delhi and Ajmer Rent Control Act in Naidar Mal v. Ugar Sain Jain.",
+      "rule": {
+        "if": "rent_control_eviction_case and present_right_to_reside_elsewhere and (tenant_built_other_residence or tenant_acquired_vacant_possession or other_residence_allotted_to_tenant)",
+        "then": "tenant_disentitled_to_rent_control_protection"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction of a tenant under rent-control legislation.",
+        "present_right_to_reside_elsewhere": "On the date the eviction application is made, the tenant has a present right to reside in premises other than the tenanted premises.",
+        "tenant_built_other_residence": "The tenant built another residence.",
+        "tenant_acquired_vacant_possession": "The tenant acquired vacant possession of another residence.",
+        "other_residence_allotted_to_tenant": "Another residence was allotted to the tenant.",
+        "tenant_disentitled_to_rent_control_protection": "The tenant is not entitled to rent-control protection against eviction on this ground."
+      },
+      "definition": "In a rent-control eviction case, a tenant with a present right to reside elsewhere because the tenant built or acquired vacant possession of another residence, or was allotted one, is disentitled to rent-control protection."
+    },
+    {
+      "legal_issue": "After the landlord pleads and proves a statutory circumstance concerning another residence, the tenant bears the burden of establishing facts about that residence’s suitability or its availability as alternative accommodation when those facts are especially within the tenant’s knowledge.",
+      "material_facts": [
+        "The landlord pleaded that the tenants had built or acquired vacant possession of another residence and that one tenant had been allotted a quarter.",
+        "The courts below found that the tenants had built and acquired vacant possession of the other residence and that the quarter was allotted to the tenant.",
+        "The tenants argued that the other accommodation was not a suitable or reasonable substitute, including in light of the families’ circumstances and the accommodation’s condition and size."
+      ],
+      "conclusion": "The landlord must plead and positively establish at least one of the alternative circumstances. Once that is done, facts about suitability and whether the premises can serve as alternative accommodation are within the tenant’s special knowledge, and the tenant must prove them.",
+      "legal_principle": "Under Section 14(1)(h) of the Delhi Rent Control Act, 1958, the landlord must plead and prove at least one of the alternative statutory circumstances. The Court applied the principle that a party must prove facts within that party’s special knowledge, and referred to Naidar Mal v. Ugar Sain Jain and the decisions discussing the landlord’s initial burden, including Siri Chand v. Jot Ram.",
+      "rule": {
+        "if": "rent_control_eviction_case and landlord_pleaded_and_proved_an_alternative_residence_ground and suitability_facts_within_tenant_special_knowledge",
+        "then": "tenant_must_prove_suitability_facts"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction of a tenant under rent-control legislation.",
+        "landlord_pleaded_and_proved_an_alternative_residence_ground": "The landlord pleaded and positively established that the tenant built another residence, acquired vacant possession of one, or was allotted one.",
+        "suitability_facts_within_tenant_special_knowledge": "Facts about the other residence’s suitability or its ability to serve as alternative accommodation are especially within the tenant’s knowledge.",
+        "tenant_must_prove_suitability_facts": "The tenant must establish the relevant facts about the other residence’s suitability or its availability as alternative accommodation."
+      },
+      "definition": "When the landlord pleads and proves an alternative-residence ground and suitability facts are especially within the tenant’s knowledge, the tenant must prove those facts."
+    },
+    {
+      "legal_issue": "A landlord’s claim for possession on a rent-control ground based on forfeiture is governed by the limitation rule for possession following forfeiture or breach of condition, with time running from accrual of the cause of action and, on these facts, from knowledge of the relevant circumstance.",
+      "material_facts": [
+        "The landlord purchased the property in 1973, applied for permission to institute eviction proceedings about six months later, obtained permission, and filed the eviction proceedings about four months after permission was granted.",
+        "The relevant knowledge of the tenants’ other residences was in 1973, and the accrual of the landlord’s right was not challenged.",
+        "The tenants raised limitation as an objection to the eviction claim."
+      ],
+      "conclusion": "Article 66 of the Limitation Act, 1963 applied; no determination of the tenancy by notice was necessary, and the claim was not time-barred because the landlord acted within time after acquiring knowledge of the relevant facts.",
+      "legal_principle": "Article 66 of the Limitation Act, 1963 applies to possession where the plaintiff becomes entitled to possession by reason of forfeiture or breach of condition. The Court held that determination by notice under Section 106 of the Transfer of Property Act was unnecessary and relied on Harbans Singh v. Custodian of Evacuee Property and Ujagar Singh v. Likha Singh in addressing knowledge and accrual; it also referred to Somdass v. Rikhu Dev and K.V. Ayyaswami Pathar v. M.R. Ry. Manavikrama Zamorin Rajah on accrual of the right to sue.",
+      "rule": {
+        "if": "possession_claim_based_on_forfeiture_or_breach and claim_filed_within_limitation_from_knowledge",
+        "then": "possession_claim_not_time_barred"
+      },
+      "predicates": {
+        "possession_claim_based_on_forfeiture_or_breach": "The plaintiff seeks possession because a forfeiture or breach of condition has made the plaintiff entitled to possession.",
+        "claim_filed_within_limitation_from_knowledge": "The plaintiff filed the possession claim within the applicable limitation period measured from knowledge of the facts giving rise to the claim.",
+        "possession_claim_not_time_barred": "The possession claim is not barred by limitation."
+      },
+      "definition": "A possession claim based on forfeiture or breach is not time-barred when it is filed within the applicable limitation period measured from knowledge of the facts giving rise to the claim."
+    },
+    {
+      "legal_issue": "A landlord does not waive an eviction ground merely because the landlord or a predecessor knew that the tenant had another residence, particularly where waiver was not pleaded or proved and the landlord acted promptly after the relevant knowledge.",
+      "material_facts": [
+        "The landlord purchased the tenanted property in 1973 and applied for permission to evict the tenants about six months later.",
+        "The landlord filed the eviction proceedings about four months after the competent authority granted permission.",
+        "There was no plea or evidence that the landlord had waived the eviction ground, and the record did not show that the previous landlord knew of the other residence."
+      ],
+      "conclusion": "The tenants’ waiver and laches argument had no substance; the landlord had not waived the eviction ground and had not delayed unreasonably.",
+      "legal_principle": "The Court held that waiver was not established on the record and observed that a landlord must act promptly after the cause of action accrues; if the landlord’s inaction allows the other premises to pass out of the tenant’s hands, the landlord bears responsibility. The Court applied these principles to the facts without citing a separate statutory provision or earlier case for waiver.",
+      "rule": {
+        "if": "rent_control_eviction_case and no_evidence_of_waiver and landlord_acted_promptly_after_knowledge",
+        "then": "eviction_ground_not_waived_by_delay"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks eviction of a tenant under rent-control legislation.",
+        "no_evidence_of_waiver": "There is no evidence that the landlord intentionally relinquished the eviction ground.",
+        "landlord_acted_promptly_after_knowledge": "The landlord took steps to pursue eviction without unreasonable delay after learning the facts giving rise to the ground.",
+        "eviction_ground_not_waived_by_delay": "The eviction ground is not treated as waived because of delay."
+      },
+      "definition": "In a rent-control eviction case, the eviction ground is not treated as waived by delay where there is no evidence of waiver and the landlord acts promptly after learning the relevant facts."
+    }
+  ],
+  "seconds": 18.1
+}

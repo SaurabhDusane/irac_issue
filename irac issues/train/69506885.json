@@ -1,0 +1,82 @@
+{
+  "doc_id": "69506885",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25690,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2457,
+    "prompt_tokens": 6992,
+    "total_tokens": 9449,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Failure to comply with a peremptory specific-performance decree by the prescribed deadline and payment method causes the suit to stand dismissed.",
+      "material_facts": [
+        "The decree required the buyer to deposit the balance consideration within the time it specified and by demand draft, and stated that non-deposit would result in dismissal of the suit.",
+        "The extended deadline fell on a court reopening day, but there was no evidence that the buyer attempted to deposit the money that day.",
+        "The buyer obtained a receipt order and deposited the money the next day, in cash rather than by demand draft."
+      ],
+      "conclusion": "The buyer failed to comply with the decree, so the suit stood dismissed automatically and could not be executed.",
+      "legal_principle": "A peremptory decree that makes dismissal the consequence of non-compliance operates according to its terms when the required payment is not made by the deadline and in the prescribed mode. The Court did not rely on a particular statutory provision or earlier case for this conclusion.",
+      "rule": {
+        "if": "specific_performance_proceeding and peremptory_decree_makes_noncompliance_self_executing and payment_deadline_missed and required_payment_method_not_used",
+        "then": "suit_dismissed_for_noncompliance"
+      },
+      "predicates": {
+        "specific_performance_proceeding": "A claimant brought a suit seeking specific performance of an agreement.",
+        "peremptory_decree_makes_noncompliance_self_executing": "The court issued a decree stating that failure to comply with its payment direction would result in dismissal of the suit.",
+        "payment_deadline_missed": "The claimant did not make the required payment by the deadline, including the applicable court reopening day.",
+        "required_payment_method_not_used": "The claimant made the payment by a method different from the one required by the decree."
+      },
+      "definition": "When a specific-performance decree makes dismissal automatic for non-compliance, missing the payment deadline and using a different payment method results in dismissal for non-compliance."
+    },
+    {
+      "legal_issue": "A court may extend a time limit fixed by its decree, even after expiry, but may refuse an extension when the applicant’s conduct and the circumstances do not justify it.",
+      "material_facts": [
+        "The buyer applied for an extension after the deadline had passed.",
+        "There was no evidence that the buyer attempted to deposit the balance consideration by the deadline.",
+        "The buyer deposited the money late and by a method different from that required by the decree.",
+        "The buyer also filed the application for extension after a delay, and the courts found no sufficient basis to grant relief."
+      ],
+      "conclusion": "The buyer did not establish a case for extension of time or condonation of delay, and the application was rejected on its merits.",
+      "legal_principle": "Section 148 of the Code of Civil Procedure empowers a court to extend time fixed by it, including after the original period has expired. The power is discretionary, and the court may consider the applicant’s conduct. The Court relied on Johri Singh v. Sukh Pal Singh, (1989) 4 SCC 403.",
+      "rule": {
+        "if": "specific_performance_proceeding and application_to_extend_decree_time and no_evidence_of_timely_payment_attempt and late_payment and required_payment_method_not_used",
+        "then": "extension_denied"
+      },
+      "predicates": {
+        "specific_performance_proceeding": "A claimant brought a suit seeking specific performance of an agreement.",
+        "application_to_extend_decree_time": "The claimant applied to the court to extend the time fixed for complying with the decree.",
+        "no_evidence_of_timely_payment_attempt": "The claimant did not establish that they attempted to make the required payment by the deadline.",
+        "late_payment": "The claimant made the required payment after the deadline.",
+        "required_payment_method_not_used": "The claimant made the payment by a method different from the one required by the decree."
+      },
+      "definition": "If a claimant in a specific-performance proceeding seeks more time but shows no timely payment attempt and has paid late using the wrong method, the extension is denied."
+    },
+    {
+      "legal_issue": "A court’s receipt or recording of a late payment does not by itself amount to an extension of the time fixed by a decree.",
+      "material_facts": [
+        "The court’s records showed that the buyer deposited the balance consideration after the deadline.",
+        "The buyer relied on the court’s receipt of the deposit as an implied extension of time.",
+        "The buyer’s application for an extension was dismissed, and no extension had been granted when the deposit was made."
+      ],
+      "conclusion": "The recorded deposit did not amount to an implied extension of time.",
+      "legal_principle": "The Court distinguished Md. Alimuddin v. Waizuddin, (1998) 9 SCC 108, where an application for extension was granted along with the deposit. Here, no extension had been granted, and the later application was dismissed.",
+      "rule": {
+        "if": "specific_performance_proceeding and late_deposit_recorded_by_court and no_extension_granted",
+        "then": "no_implied_extension"
+      },
+      "predicates": {
+        "specific_performance_proceeding": "A claimant brought a suit seeking specific performance of an agreement.",
+        "late_deposit_recorded_by_court": "The court received or recorded a payment made after the deadline fixed by its decree.",
+        "no_extension_granted": "The court had not granted an extension of the payment deadline when the late payment was made."
+      },
+      "definition": "In a specific-performance proceeding, a late payment recorded by the court does not extend the deadline when the court has not granted an extension."
+    }
+  ],
+  "seconds": 16.2
+}

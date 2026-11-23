@@ -1,0 +1,59 @@
+{
+  "doc_id": "132105056",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35792,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2146,
+    "prompt_tokens": 8774,
+    "total_tokens": 10920,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The management-takeover restriction on winding-up proceedings applies only when management of the undertaking has actually been taken over by an authorised person or body.",
+      "material_facts": [
+        "A government notification authorised the Tea Board to take steps to take over management and control of seven tea gardens.",
+        "While the notification was challenged, an interim order allowed the corporate debtor to continue managing and controlling the gardens, which it continued to run.",
+        "An operational creditor initiated an insolvency application against the corporate debtor."
+      ],
+      "conclusion": "Because the corporate debtor retained actual management and control of the tea gardens, the management-takeover restriction was not applicable in this case.",
+      "legal_principle": "Under Section 16G(1) of the Tea Act, 1953, the restriction applies where management has actually been taken over by a person or body authorised by the Central Government; a notification authorising a takeover, without an actual transfer of management, is insufficient.",
+      "rule": {
+        "if": "insolvency_application_case and management_retained_by_company",
+        "then": "management_takeover_consent_restriction_does_not_apply"
+      },
+      "predicates": {
+        "insolvency_application_case": "A creditor initiated an insolvency-resolution proceeding against a corporate debtor.",
+        "management_retained_by_company": "Despite a government-authorised takeover notification, the corporate debtor continued to manage and control the undertaking."
+      },
+      "definition": "When a creditor initiates an insolvency-resolution proceeding and the company has retained actual management and control despite a takeover notification, the management-takeover consent restriction does not apply."
+    },
+    {
+      "legal_issue": "Prior government consent is not required to initiate a corporate insolvency resolution process, because that process is distinct from winding up and the later insolvency code takes precedence over an inconsistent consent requirement.",
+      "material_facts": [
+        "An operational creditor applied to initiate a corporate insolvency resolution process against a corporate debtor that owned tea gardens.",
+        "A government notification concerned the gardens, but an interim order left their management and control with the corporate debtor.",
+        "The corporate debtor opposed the insolvency application because the creditor had not obtained government consent under the earlier tea-industry legislation.",
+        "The insolvency code provides a time-bound process focused primarily on revival, with liquidation as a last resort."
+      ],
+      "conclusion": "The insolvency application was maintainable without prior government consent; the appeal challenging that conclusion was dismissed.",
+      "legal_principle": "Sections 7, 9 and 238 of the Insolvency and Bankruptcy Code, 2016, read with Section 16G(1)(c) of the Tea Act, 1953, establish that the corporate insolvency resolution process is not equivalent to winding-up proceedings and that the Code prevails over inconsistent earlier legislation. The Court relied on Innoventive Industries Ltd. v. ICICI Bank and Swiss Ribbons Pvt. Ltd. v. Union of India for the Code’s objectives and its focus on time-bound revival and continuation of the corporate debtor, with liquidation as a last resort.",
+      "rule": {
+        "if": "insolvency_resolution_application_case and consent_requirement_targets_winding_up and resolution_process_focuses_on_revival and liquidation_is_a_last_resort",
+        "then": "government_consent_not_required_and_application_maintainable"
+      },
+      "predicates": {
+        "insolvency_resolution_application_case": "A creditor sought to initiate a corporate insolvency resolution process against a corporate debtor.",
+        "consent_requirement_targets_winding_up": "An earlier statutory consent requirement concerned winding-up proceedings or appointment of a receiver.",
+        "resolution_process_focuses_on_revival": "The insolvency process is designed primarily to revive and continue the corporate debtor through a time-bound resolution.",
+        "liquidation_is_a_last_resort": "Liquidation follows only if the resolution process does not produce an acceptable resolution."
+      },
+      "definition": "When a creditor seeks corporate insolvency resolution, the relevant consent requirement concerns winding up, and the process is primarily directed to revival with liquidation as a last resort, prior government consent is unnecessary and the application is maintainable."
+    }
+  ],
+  "seconds": 74.8
+}

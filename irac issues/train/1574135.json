@@ -1,0 +1,61 @@
+{
+  "doc_id": "1574135",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23979,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1927,
+    "prompt_tokens": 6300,
+    "total_tokens": 8227,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The acquittal of one accused does not, by itself, prevent the conviction of another accused in the same criminal occurrence.",
+      "material_facts": [
+        "The appellant and other accused were tried for the same killing, and the appellant was convicted while one alleged participant was tried separately and acquitted.",
+        "The acquittal of the separately tried accused became final because the State did not appeal."
+      ],
+      "conclusion": "An acquittal of a co-accused does not automatically bar the conviction of another accused; each accused’s liability must be assessed on the evidence and applicable rules of liability.",
+      "legal_principle": "Criminal liability is generally individual: a person is liable for that person’s own acts, except where vicarious liability is recognized by law and its conditions are proved. Under Sections 34 and 149 of the Indian Penal Code, liability may extend to other participants when the requirements of common intention or unlawful assembly are established. The Court cited no earlier cases for this principle.",
+      "rule": {
+        "if": "multi_accused_criminal_case and co_accused_acquitted and remaining_accused_individually_tried",
+        "then": "co_accused_acquittal_not_automatic_bar"
+      },
+      "predicates": {
+        "multi_accused_criminal_case": "Several people were accused of involvement in the same criminal occurrence.",
+        "co_accused_acquitted": "A person accused of involvement in the occurrence was acquitted.",
+        "remaining_accused_individually_tried": "The liability of another accused was considered separately on the evidence against that accused."
+      },
+      "definition": "When several people are accused in one criminal occurrence, an acquittal of one does not alone determine the liability of another whose case is considered separately."
+    },
+    {
+      "legal_issue": "A murder conviction based on common intention cannot stand when the accused’s proved role was limited to holding the victim’s arms, the principal assailant was acquitted, and the evidence did not establish a shared intention to kill or that the accused facilitated the fatal injuries.",
+      "material_facts": [
+        "The appellant was convicted of murder with the aid of common intention.",
+        "The eyewitnesses said the appellant held the deceased’s arms while another accused sat on the deceased’s chest and attempted to throttle him.",
+        "The appellant released the deceased when a witness pushed the other accused away; the fatal kicks to the deceased’s testicles were attributed to that other accused after the appellant had released the deceased.",
+        "The other accused was later acquitted, and that acquittal became final without a State appeal.",
+        "The Court found no concrete evidence of a common intention to kill or that the appellant’s act facilitated the fatal injuries."
+      ],
+      "conclusion": "The conviction was set aside, and the appellant was exonerated on the benefit of doubt.",
+      "legal_principle": "Section 34 of the Indian Penal Code imposes joint liability only when the criminal act is done in furtherance of the participants’ common intention. Common intention cannot be inferred mechanically merely because people acted as a group; the evidence must establish the required shared intention and the accused’s participation in it. The Court relied on the general principle that liability is individual unless the requirements for vicarious liability are proved. It cited no earlier cases.",
+      "rule": {
+        "if": "appeal_against_joint_murder_conviction and only_restrained_victim and principal_assailant_acquitted and fatal_attacks_occurred_after_release and no_concrete_proof_of_shared_intention",
+        "then": "murder_conviction_set_aside_for_insufficient_proof"
+      },
+      "predicates": {
+        "appeal_against_joint_murder_conviction": "The accused appealed a murder conviction based on alleged joint liability with another participant.",
+        "only_restrained_victim": "The evidence attributed to the accused only the act of holding or restraining the victim.",
+        "principal_assailant_acquitted": "The person identified as carrying out the principal fatal attack was acquitted.",
+        "fatal_attacks_occurred_after_release": "The fatal attacks were inflicted after the accused had released the victim.",
+        "no_concrete_proof_of_shared_intention": "The evidence did not concretely establish that the accused shared an intention to kill or facilitated the fatal attacks."
+      },
+      "definition": "When an accused appeals a joint murder conviction, and the accused only restrained the victim, the principal assailant was acquitted, the fatal attacks came after the restraint ended, and shared intent was not concretely proved, the conviction is set aside for insufficient proof."
+    }
+  ],
+  "seconds": 13.3
+}

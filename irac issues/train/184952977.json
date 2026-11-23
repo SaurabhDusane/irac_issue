@@ -1,0 +1,58 @@
+{
+  "doc_id": "184952977",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15536,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1557,
+    "prompt_tokens": 4378,
+    "total_tokens": 5935,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil court cannot entertain a suit challenging enforcement measures when the governing scheme bars civil-court jurisdiction over matters assigned to the specialist tribunal.",
+      "material_facts": [
+        "A bank lent money secured by a mortgage over immovable property, and the borrower defaulted on repayment.",
+        "The bank initiated secured-creditor enforcement proceedings and issued a demand notice.",
+        "The borrower filed a civil suit challenging those proceedings, and the bank sought rejection of the plaint for lack of civil-court jurisdiction.",
+        "The debt was below the threshold for the tribunal’s original debt-recovery jurisdiction."
+      ],
+      "conclusion": "The civil suit was barred. The bank’s application to reject the plaint should have been granted, and the orders rejecting it were set aside.",
+      "legal_principle": "Section 34 of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 bars civil courts from entertaining suits or proceedings concerning matters that the tribunal or appellate tribunal is empowered to determine, and bars injunctions concerning actions under that Act or the Recovery of Debts Due to Banks and Financial Institutions Act, 1993. Section 17 of the 2002 Act provides an aggrieved person a tribunal remedy against specified enforcement measures. Applying Mardia Chemicals Ltd. v. Union of India, the Court reasoned that an aggrieved debtor should not be left without a remedy, and harmoniously construed the jurisdictional provisions despite the threshold in section 1(4) of the 1993 Act.",
+      "rule": {
+        "if": "civil_suit_challenging_enforcement and statutory_bar_for_assigned_matters",
+        "then": "civil_court_lacks_jurisdiction"
+      },
+      "predicates": {
+        "civil_suit_challenging_enforcement": "A borrower brought a civil suit challenging enforcement measures taken by a secured creditor.",
+        "statutory_bar_for_assigned_matters": "The governing statutory scheme bars civil courts from handling matters assigned to the specialist tribunal."
+      },
+      "definition": "When a borrower challenges a secured creditor’s enforcement measures in a civil suit and the statutory scheme bars civil-court jurisdiction over matters assigned to the tribunal, the civil court lacks jurisdiction."
+    },
+    {
+      "legal_issue": "The specialist tribunal may hear an appeal against secured-creditor enforcement measures even when the debt is below the threshold for its original debt-recovery jurisdiction.",
+      "material_facts": [
+        "The borrower challenged the bank’s enforcement proceedings after default on a secured loan.",
+        "The amount of the debt was below the statutory threshold for the tribunal’s original jurisdiction over debt-recovery claims.",
+        "The statutory scheme separately provided for a tribunal appeal against the relevant enforcement measures."
+      ],
+      "conclusion": "The tribunal had appellate jurisdiction to hear the borrower’s challenge notwithstanding that the debt was below the threshold for its original jurisdiction.",
+      "legal_principle": "Section 17 of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 grants an aggrieved person a right to apply to the tribunal in respect of specified enforcement measures. Section 1(4) of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993 limits the tribunal’s original debt-recovery jurisdiction by reference to the amount of the debt; it does not eliminate the separate appellate jurisdiction conferred by section 17. The Court read the provisions harmoniously, consistent with Mardia Chemicals Ltd. v. Union of India and the principle that an aggrieved debtor should not be left without a remedy.",
+      "rule": {
+        "if": "challenge_to_enforcement_measure and tribunal_has_appeal_authority and debt_below_original_jurisdiction_threshold",
+        "then": "tribunal_can_hear_appeal_regardless_of_debt_threshold"
+      },
+      "predicates": {
+        "challenge_to_enforcement_measure": "A debtor challenged a secured creditor’s enforcement measure.",
+        "tribunal_has_appeal_authority": "The governing statutory scheme gives the tribunal authority to hear appeals against the relevant enforcement measures.",
+        "debt_below_original_jurisdiction_threshold": "The debt is below the threshold applicable to the tribunal’s original debt-recovery jurisdiction."
+      },
+      "definition": "When a debtor challenges an enforcement measure, the tribunal has authority to hear that kind of appeal, and the debt is below the threshold for original debt-recovery claims, the tribunal can still hear the appeal."
+    }
+  ],
+  "seconds": 9.7
+}

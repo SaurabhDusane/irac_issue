@@ -1,0 +1,101 @@
+{
+  "doc_id": "1595943",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19909,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3601,
+    "prompt_tokens": 5659,
+    "total_tokens": 9260,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Court deposits made toward a debt bearing interest are applied first to interest and costs unless the creditor was informed of, and accepted, the condition that the deposits be applied to principal.",
+      "material_facts": [
+        "The mortgagors deposited payments in court under the mortgage decree, and some applications recited that payments were toward principal.",
+        "The mortgagees were not shown to have been informed that the deposits were conditional on application to principal or to have accepted that condition.",
+        "The mortgagees' account applied the deposits first to interest and costs and then to principal."
+      ],
+      "conclusion": "The deposits were properly applied first to interest and costs, with the remaining amounts credited to principal.",
+      "legal_principle": "Under Order XXI Rule 1 of the Code of Civil Procedure, the ordinary rule for unappropriated payments on a debt carrying interest is that they are applied first to interest and then to principal. A debtor relying on a condition attached to a court deposit must plead and prove that the creditor was informed of and accepted it. The Court relied on Venkatadri Appa Row v. Parthasarathi Appa Row, which quoted the same principle from Parr's Barking Co. v. Yates.",
+      "rule": {
+        "if": "mortgage_payment_accounting_proceeding and court_deposits_made and (not creditor_informed_of_principal_condition or not creditor_accepted_principal_condition)",
+        "then": "deposits_apply_first_to_interest_and_costs"
+      },
+      "predicates": {
+        "mortgage_payment_accounting_proceeding": "The court was deciding how payments should be credited in an accounting under a mortgage decree.",
+        "court_deposits_made": "The debtors deposited payments in court toward a debt bearing interest.",
+        "creditor_informed_of_principal_condition": "The creditor was informed that the debtors required the deposits to be applied to principal rather than interest and costs.",
+        "creditor_accepted_principal_condition": "The creditor accepted the deposits on the condition that they be applied to principal rather than interest and costs."
+      },
+      "definition": "When a court is accounting for deposits made toward an interest-bearing mortgage debt, and the creditor was not informed of or did not accept a principal-only condition, the deposits are applied first to interest and costs."
+    },
+    {
+      "legal_issue": "A clarification calculating interest through a specified cutoff does not reduce the interest rate already ordered for the period after that cutoff.",
+      "material_facts": [
+        "The appellate decree directed that interest at the higher rate continue until satisfaction of the mortgage debt.",
+        "A later correction directed how interest was to be calculated only through the date fixed for redemption.",
+        "The debtors had not applied for a reduction of the rate after that date."
+      ],
+      "conclusion": "The correction did not restore the lower trial-court rate for the period after the specified cutoff; the rate originally ordered for that period remained in force.",
+      "legal_principle": "The Court interpreted the correction in the context of the appellate decree: a direction calculating interest through a cutoff did not alter the decree's separate direction governing interest thereafter. No statutory provision or earlier case was cited for this issue.",
+      "rule": {
+        "if": "mortgage_decree_interest_interpretation_proceeding and original_order_sets_rate_until_satisfaction and correction_calculates_interest_only_through_cutoff and no_request_to_reduce_later_rate",
+        "then": "original_post_cutoff_rate_continues"
+      },
+      "predicates": {
+        "mortgage_decree_interest_interpretation_proceeding": "The court was deciding the effect of a correction to an interest direction in a mortgage decree.",
+        "original_order_sets_rate_until_satisfaction": "The original appellate order set an interest rate to continue until the debt was satisfied.",
+        "correction_calculates_interest_only_through_cutoff": "The later correction calculated interest at specified rates only through a stated cutoff.",
+        "no_request_to_reduce_later_rate": "The debtors had not asked the court to reduce the rate for the period after the cutoff."
+      },
+      "definition": "If an original mortgage decree sets a rate until satisfaction and a later correction calculates interest only through a cutoff without a request to reduce the later rate, the original post-cutoff rate continues."
+    },
+    {
+      "legal_issue": "A decree for arrears of interest does not breach the statutory limit when the interest decreed does not exceed the principal of the loan.",
+      "material_facts": [
+        "The loan was made before the relevant money-lending law came into force.",
+        "The decree awarded an amount of interest substantially lower than the principal of the loan.",
+        "The debtors argued that their aggregate payments exceeded the loan amount."
+      ],
+      "conclusion": "The statutory prohibition was not breached because the interest awarded by the decree was less than the principal of the loan.",
+      "legal_principle": "Section 9 of the Madhya Pradesh Money Lenders Act, 1934 prohibited a court from decreeing, on account of arrears of interest on a loan made before the Act came into force, a sum greater than the principal of the loan. The limit concerned the amount of interest decreed, not the aggregate of payments made by the debtors.",
+      "rule": {
+        "if": "loan_interest_limit_proceeding and loan_predates_applicable_interest_limit and decree_awards_arrears_of_interest and decreed_interest_does_not_exceed_principal",
+        "then": "statutory_interest_limit_not_breached"
+      },
+      "predicates": {
+        "loan_interest_limit_proceeding": "The court was deciding whether a decree for interest on a loan exceeded an applicable limit.",
+        "loan_predates_applicable_interest_limit": "The loan was made before the relevant interest limit came into force.",
+        "decree_awards_arrears_of_interest": "The decree awards an amount for arrears of interest on the loan.",
+        "decreed_interest_does_not_exceed_principal": "The amount of interest awarded by the decree is no greater than the principal of the loan."
+      },
+      "definition": "In a proceeding about an applicable limit on decreed interest, the limit is not breached when the decree for arrears of interest does not exceed the loan principal."
+    },
+    {
+      "legal_issue": "A court deciding whether to make a mortgage sale decree absolute need not determine the competing entitlements of the mortgagees to the proceeds when their mortgage interest is represented before the court.",
+      "material_facts": [
+        "The proceeding concerned an application for a decree absolute for sale in a mortgage suit.",
+        "The Custodian of Evacuee Property had been joined in the application, and the mortgagees' interest was represented before the court.",
+        "The dispute concerned whether the Custodian or an individual partner could claim the proceeds, and the earlier order had left their respective rights undecided."
+      ],
+      "conclusion": "The court could proceed to make a decree absolute for sale without deciding whether the Custodian was entitled to the money or what interests the mortgagees had among themselves.",
+      "legal_principle": "At the decree-absolute stage of a mortgage suit, the court is concerned with making the sale decree and need not determine the mortgagees' respective rights among themselves where their interest is represented. The Court relied on the High Court's prior order, which had expressly left those rights undecided; no statutory provision or earlier case was cited for this issue.",
+      "rule": {
+        "if": "mortgage_decree_absolute_proceeding and mortgagees_interest_represented and competing_mortgagee_entitlements_disputed",
+        "then": "sale_decree_may_proceed_without_deciding_internal_entitlements"
+      },
+      "predicates": {
+        "mortgage_decree_absolute_proceeding": "The court was deciding an application to make a sale decree absolute in a mortgage suit.",
+        "mortgagees_interest_represented": "The interests of the mortgagees were represented before the court.",
+        "competing_mortgagee_entitlements_disputed": "The parties disputed which mortgagee or representative was entitled to the proceeds or to a share of them."
+      },
+      "definition": "When mortgagees' interests are represented in a proceeding to make a mortgage sale decree absolute, the court may proceed without deciding their competing entitlements to the proceeds."
+    }
+  ],
+  "seconds": 23.3
+}

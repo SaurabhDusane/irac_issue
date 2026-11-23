@@ -1,0 +1,81 @@
+{
+  "doc_id": "872844",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15427,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2193,
+    "prompt_tokens": 4213,
+    "total_tokens": 6406,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A second appellate court may not reverse a subordinate appellate judgment without formulating and deciding a substantial question of law.",
+      "material_facts": [
+        "The High Court reversed concurrent judgments of the trial court and first appellate court without formulating a substantial question of law."
+      ],
+      "conclusion": "The High Court’s decision was vitiated because it reversed the concurrent judgments without first formulating and deciding a substantial question of law.",
+      "legal_principle": "Under Sections 100 and 101 of the Code of Civil Procedure, 1908, a second appeal is confined to substantial question or questions of law formulated by the High Court; formulation is a condition precedent to hearing and deciding the appeal, and reversal without it is impermissible. The Court relied on Umerkhan v. Bismillabi @ Babulal Shaikh and restated the limits on second appellate jurisdiction.",
+      "rule": {
+        "if": "second_appeal and concurrent_lower_court_decisions and lower_appellate_decision_reversed and no_substantial_question_formulated",
+        "then": "second_appeal_reversal_is_invalid"
+      },
+      "predicates": {
+        "second_appeal": "The proceeding is a second appeal from a decision of a subordinate appellate court.",
+        "concurrent_lower_court_decisions": "The trial court and the first appellate court reached the same result.",
+        "lower_appellate_decision_reversed": "The High Court reversed the decision made by the subordinate appellate court.",
+        "no_substantial_question_formulated": "The High Court did not formulate a substantial question of law before deciding the second appeal."
+      },
+      "definition": "When a second appeal reverses concurrent lower-court decisions without a formulated substantial question of law, the reversal is invalid."
+    },
+    {
+      "legal_issue": "A court should ordinarily observe the limit on adjournments during a suit, and an adjournment beyond that limit requires a compelling and unavoidable justification.",
+      "material_facts": [
+        "The plaintiff was given three effective opportunities to present evidence but presented none on any of them.",
+        "No cogent reason for the plaintiff’s failure to produce evidence was offered on the final opportunity.",
+        "The trial court closed the plaintiff’s evidence and proceeded to decide the suit."
+      ],
+      "conclusion": "The ordinary limit on adjournments should be maintained, and further adjournments are justified only where a compelling necessity makes them unavoidable; the circumstances shown did not justify another opportunity.",
+      "legal_principle": "The proviso to Order XVII Rule 1 of the Code of Civil Procedure, 1908, sets an ordinary cap of three adjournments during the hearing of a suit, though the cap is not mandatory and more may be allowed for justifiable cause. Such cause must be more than sufficient cause and must make another adjournment unavoidable, such as sudden illness, death in the family, a natural calamity, or an accident. The past conduct of the party is relevant, and routine lawyer unavailability, professional commitments elsewhere, a strike, or a change of lawyer ordinarily do not justify exceeding the cap.",
+      "rule": {
+        "if": "civil_suit and additional_adjournment_requested and three_adjournments_already_granted and not compelling_unavoidable_cause",
+        "then": "additional_adjournment_is_not_justified"
+      },
+      "predicates": {
+        "civil_suit": "The proceeding is a civil suit being heard by a court.",
+        "additional_adjournment_requested": "A party asks the court to postpone a hearing to another date.",
+        "three_adjournments_already_granted": "The party has already received three adjournments during the hearing of the suit.",
+        "compelling_unavoidable_cause": "A compelling circumstance, such as sudden illness, death in the family, a natural calamity, or an accident, makes postponement unavoidable."
+      },
+      "definition": "If a party in a civil suit seeks another adjournment after three have been granted and no compelling unavoidable cause exists, the additional adjournment is not justified."
+    },
+    {
+      "legal_issue": "A second appellate court should not reopen the opportunity to present evidence merely out of sympathy when a party has failed to use repeated opportunities and gives no justifiable explanation.",
+      "material_facts": [
+        "The plaintiff bore the burden of proving the issue concerning the legality of the challenged action.",
+        "After issues were framed, the plaintiff received three opportunities to present evidence and presented none.",
+        "The trial court dismissed the suit, and the first appellate court affirmed that dismissal.",
+        "The High Court remanded the suit to allow the plaintiff another opportunity to present evidence, relying on the high stakes of the dispute despite the absence of a justification for the plaintiff’s failure."
+      ],
+      "conclusion": "The High Court had no justification for remanding the suit to give the plaintiff another opportunity to produce evidence, and its decision was set aside.",
+      "legal_principle": "Under Order XVII Rule 3(a) of the Code of Civil Procedure, 1908, a court may proceed to decide a suit when a party fails to produce evidence despite the matter being fixed for that purpose. A party has no right to conduct a trial at its leisure, and high stakes alone do not excuse failure to use repeated opportunities. Appellate or revisional courts should not compound delay through misplaced sympathy; the limits on second appeals in Sections 100 and 101 also constrain interference with concurrent judgments.",
+      "rule": {
+        "if": "second_appeal and concurrent_lower_court_decisions and party_received_repeated_evidence_opportunities and no_evidence_presented and no_justifiable_explanation",
+        "then": "remand_for_another_evidence_opportunity_is_unjustified"
+      },
+      "predicates": {
+        "second_appeal": "The proceeding is a second appeal from a decision of a subordinate appellate court.",
+        "concurrent_lower_court_decisions": "The trial court and the first appellate court reached the same result.",
+        "party_received_repeated_evidence_opportunities": "A party was given multiple opportunities to present evidence at trial.",
+        "no_evidence_presented": "The party presented no evidence despite those opportunities.",
+        "no_justifiable_explanation": "The party gave no adequate explanation for failing to present evidence."
+      },
+      "definition": "When a party in a second appeal has failed to present evidence despite repeated opportunities and gives no justifiable explanation, remanding the case merely to provide another opportunity is unjustified."
+    }
+  ],
+  "seconds": 13.8
+}

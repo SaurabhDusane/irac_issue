@@ -1,0 +1,116 @@
+{
+  "doc_id": "1121915",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43524,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3009,
+    "prompt_tokens": 11390,
+    "total_tokens": 14399,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A lease of immovable property is a transfer of property.",
+      "material_facts": [
+        "A court-appointed receiver let two flats to a new occupant while an injunction restrained transfers of the property.",
+        "The dispute required the court to determine whether creating a lease amounted to a transfer."
+      ],
+      "conclusion": "A lease is within the meaning of “transfer” because it transfers an interest in immovable property.",
+      "legal_principle": "Section 5 of the Transfer of Property Act uses “conveys” in the broad sense of transferring property; the court also referred to Section 205 of that Act and Sections 11 and 88 of the Bengal Tenancy Act. It relied on Hari Mohan alias Hari Charan Pal v. Atal Krishna Bose, which held that a lease is a transfer of an interest in immovable property.",
+      "rule": {
+        "if": "transfer_interpretation_dispute and lease_grants_interest_in_immovable_property",
+        "then": "lease_is_transfer"
+      },
+      "predicates": {
+        "transfer_interpretation_dispute": "The dispute concerns whether creating a lease amounts to a transfer of property.",
+        "lease_grants_interest_in_immovable_property": "A lessor grants a lessee an interest in immovable property."
+      },
+      "definition": "When a dispute concerns the meaning of transfer and a lease grants an interest in immovable property, the lease is treated as a transfer."
+    },
+    {
+      "legal_issue": "Surrendering part of a tenancy does not, without more, surrender the tenancy of the retained premises.",
+      "material_facts": [
+        "The tenant had occupied four flats under a tenancy and surrendered two of them with the receiver's consent.",
+        "The tenant retained the other two flats and continued to occupy them as a tenant.",
+        "The rent was reduced to reflect the retained premises."
+      ],
+      "conclusion": "The surrender of two flats did not amount to an implied surrender of the entire tenancy; the tenancy of the retained flats continued.",
+      "legal_principle": "The court relied on Woodfall's Law of Landlord and Tenant and Konijeti Venkayya v. Thammana Peda Venkata Subbarao for the principle that surrender of part of leased premises does not surrender the remainder. It also relied on N.M. Ponniah Nadar v. Smt. Kamalakshmi Ammal for the principle that a mere change in rent does not necessarily create a new tenancy.",
+      "rule": {
+        "if": "tenancy_dispute and tenant_surrendered_part_of_premises and tenant_retained_remainder",
+        "then": "tenancy_of_remainder_continues"
+      },
+      "predicates": {
+        "tenancy_dispute": "The proceeding concerns whether a tenancy continued over premises after part of it was surrendered.",
+        "tenant_surrendered_part_of_premises": "A tenant gave up part of the premises covered by the tenancy.",
+        "tenant_retained_remainder": "The tenant continued to occupy the remaining premises under the tenancy."
+      },
+      "definition": "If a tenant surrenders part of the premises but retains the remainder, the tenancy of the remainder continues."
+    },
+    {
+      "legal_issue": "A continuing periodic tenancy is not a new lease merely because its character changes, and does not thereby constitute a grant exceeding the receiver's permitted term.",
+      "material_facts": [
+        "After the fixed term expired, the original tenant continued as a tenant and its tenancy became monthly.",
+        "The tenant surrendered two flats but continued as tenant of the other two.",
+        "The receiver acknowledged the continuing tenancy of the retained flats; no new tenancy for those flats was created."
+      ],
+      "conclusion": "The continuing monthly tenancy was an accretion to the old tenancy, not a new tenancy granted by the receiver, and it did not violate the rule limiting leases by a receiver.",
+      "legal_principle": "Under Chapter 21 Rule 5(a) of the Calcutta High Court Original Side Rules, a receiver could not grant a lease exceeding three years without the court's leave. The court relied on Utility Articles Manufacturing Co. v. Raja Bahadur Motilal Bombay Mills Ltd., which described a periodic tenancy as an accretion to the original tenancy rather than a new tenancy each period.",
+      "rule": {
+        "if": "receiver_tenancy_dispute and existing_tenancy_continued_after_fixed_term and tenancy_became_periodic",
+        "then": "periodic_tenancy_is_not_a_new_receiver_grant"
+      },
+      "predicates": {
+        "receiver_tenancy_dispute": "The proceeding concerns whether a receiver's handling of a tenancy exceeded the receiver's authority.",
+        "existing_tenancy_continued_after_fixed_term": "The tenant remained in possession under the existing tenancy after its fixed term ended.",
+        "tenancy_became_periodic": "The continuing tenancy operated periodically rather than for a newly fixed term."
+      },
+      "definition": "When an existing tenancy continues after its fixed term as a periodic tenancy, that continuation is not treated as a new grant by the receiver."
+    },
+    {
+      "legal_issue": "A tenant whose pre-existing tenancy continues over retained premises remains eligible for statutory tenancy protection despite a partial surrender and a change to periodic rent.",
+      "material_facts": [
+        "The tenant had originally taken all four flats and remained in possession of two after surrendering the other two.",
+        "The tenancy of the retained flats continued after the original lease term expired, and the tenant paid rent for those flats.",
+        "The receiver's acknowledgment of the continued tenancy did not create a new tenancy over the retained flats."
+      ],
+      "conclusion": "The tenant remained a tenant within the statutory definition and was entitled to the protection of the West Bengal Premises Tenancy Act; it could not be summarily evicted on the basis that the receiver had created a new tenancy.",
+      "legal_principle": "Section 2(h) of the West Bengal Premises Tenancy Act includes a person continuing in possession after termination of a tenancy. The court relied on Damadilal v. Parashram and Biswabani (P) Ltd. v. Santosh Kumar Dutta in considering the status and protection of a continuing tenant.",
+      "rule": {
+        "if": "tenancy_protection_dispute and tenant_remains_in_possession and pre_existing_tenancy_continues",
+        "then": "continuing_tenant_receives_statutory_protection"
+      },
+      "predicates": {
+        "tenancy_protection_dispute": "The proceeding concerns whether an occupant is entitled to statutory protection as a tenant.",
+        "tenant_remains_in_possession": "The occupant continues to possess the premises as a tenant.",
+        "pre_existing_tenancy_continues": "The occupant's tenancy is a continuation of a tenancy that existed before the relevant change in occupation or rent."
+      },
+      "definition": "An occupant who remains in possession under a continuing pre-existing tenancy receives the statutory protection available to tenants."
+    },
+    {
+      "legal_issue": "A tenancy newly created by a receiver in breach of an injunction cannot confer statutory tenancy protection on the new occupant.",
+      "material_facts": [
+        "The injunction restrained the receiver from transferring the property or creating a new tenancy.",
+        "After the original tenant surrendered two flats, the receiver let those flats to a new occupant.",
+        "The new occupant's tenancy was created in breach of the injunction."
+      ],
+      "conclusion": "The new occupant acquired no right to statutory protection under the West Bengal Premises Tenancy Act and was liable to be evicted.",
+      "legal_principle": "A receiver is an officer of the court, holds no title to the property, and acts subject to the court's directions. The court relied on Order 40 of the Code of Civil Procedure and Kanhaiyalal v. Dr. D.R. Banaji concerning the receiver's role, and on Smt. Ashrafi Devi v. Satyapal Gupta and Arumugha Gounder v. Ardhanari Mudaliar concerning tenancies created contrary to court orders and the limits of statutory protection.",
+      "rule": {
+        "if": "receiver_tenancy_dispute and receiver_created_new_tenancy and court_order_prohibited_new_tenancy",
+        "then": "new_occupant_cannot_claim_tenancy_protection_and_is_evictable"
+      },
+      "predicates": {
+        "receiver_tenancy_dispute": "The proceeding concerns a tenancy created by a receiver appointed by a court.",
+        "receiver_created_new_tenancy": "The receiver created a new tenancy in favour of an occupant.",
+        "court_order_prohibited_new_tenancy": "A court order in force prohibited the receiver from creating a new tenancy over the property."
+      },
+      "definition": "If a receiver creates a new tenancy despite a court order prohibiting it, the new occupant cannot claim tenancy protection and is liable to eviction."
+    }
+  ],
+  "seconds": 18.6
+}

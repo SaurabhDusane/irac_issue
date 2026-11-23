@@ -1,0 +1,80 @@
+{
+  "doc_id": "708684",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20309,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2307,
+    "prompt_tokens": 5782,
+    "total_tokens": 8089,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Long possession of state-owned land without lawful authority does not create a hereditary tenancy or prevent the land from being treated as public land for eviction.",
+      "material_facts": [
+        "The occupant claimed hereditary tenancy based on long possession but did not claim that he had lawfully entered under a grant, settlement, or lease.",
+        "Revenue records showed the land was barren during several of the years relevant to the claimed period of possession and recorded the occupant's possession only later, without settlement or allotment.",
+        "The occupant produced no reliable documentary evidence of a grant, permission, allotment, or payment of rent for the relevant period.",
+        "The land belonged to the State, and the occupant was proceeded against as an unauthorised occupant."
+      ],
+      "conclusion": "The occupant did not acquire hereditary tenancy rights; the land remained public land and his occupation was unauthorised.",
+      "legal_principle": "Sections 2(18), 30, and 180(2) of the U.P. Tenancy Act, 1939 must be read harmoniously with Sections 2(b), 2(e)(i), and 2(h) of the U.P. Land (Eviction and Recovery of Rent and Damages) Act, 1959. Section 30 prevents hereditary rights accruing in land held for a public purpose. A trespasser or person occupying state land without title is not a tenure-holder under the Tenancy Act, and the State's failure to sue for eviction within the prescribed period does not create a landlord-tenant relationship. The record did not establish that rent had been paid or that the occupant held any lawful tenure.",
+      "rule": {
+        "if": "eviction_proceeding and state_owned_land and possession_without_authority and no_recognized_tenure",
+        "then": "occupation_remains_unauthorized"
+      },
+      "predicates": {
+        "eviction_proceeding": "The matter concerns proceedings to evict a person from land said to be publicly owned.",
+        "state_owned_land": "The land belongs to the State.",
+        "possession_without_authority": "The occupant entered or remained on the land without the owner's consent or lawful authorization.",
+        "no_recognized_tenure": "The occupant has no established grant, allotment, lease, or other recognized tenure for the land."
+      },
+      "definition": "When an eviction proceeding concerns state-owned land occupied without authority and no recognized tenure is established, the occupation remains unauthorized."
+    },
+    {
+      "legal_issue": "A public authority must refer an objection that land is not public land to a civil court only when it considers the objection not prima facie baseless or frivolous.",
+      "material_facts": [
+        "The occupant objected that the land was not public land because he claimed tenancy rights.",
+        "The authority found that the occupant had produced no documentary evidence of allotment and that the State's documents showed the land was public and the occupant a trespasser.",
+        "Although the authority did not use the statutory wording, the substance of its decision showed that it regarded the objection as baseless."
+      ],
+      "conclusion": "The authority was not required to refer the dispute to a civil court, and its failure to do so did not invalidate the eviction order.",
+      "legal_principle": "Section 7(1) of the U.P. Land (Eviction and Recovery of Rent and Damages) Act, 1959 makes referral contingent, not automatic: referral is required when an objection that the land is not public land is taken and the authority considers it not prima facie baseless or frivolous. The authority's view may be apparent from the substance of its decision even if it does not use the statute's precise words.",
+      "rule": {
+        "if": "public_land_objection and authority_found_objection_baseless",
+        "then": "civil_court_referral_not_required"
+      },
+      "predicates": {
+        "public_land_objection": "The occupant objects that the disputed land is not public land.",
+        "authority_found_objection_baseless": "The authority's decision, in substance, treats the objection as prima facie baseless or frivolous."
+      },
+      "definition": "When an occupant disputes the land's public status and the authority in substance finds the objection baseless, referral to a civil court is not required."
+    },
+    {
+      "legal_issue": "A challenge to the contents of an eviction notice raised for the first time on appeal cannot be entertained when it is not a pure question of law and the notice is absent from the record.",
+      "material_facts": [
+        "The occupant argued for the first time before the Supreme Court that the notice did not specify the required grounds for eviction.",
+        "The issue had not been raised before the authority or the courts below and depended on the notice's contents rather than on a pure question of law.",
+        "The occupant did not produce a copy of the notice."
+      ],
+      "conclusion": "The Court declined to entertain the challenge and presumed that the notice specified the public purpose for the proposed eviction.",
+      "legal_principle": "Section 3(2) of the U.P. Land (Eviction and Recovery of Rent and Damages) Act, 1959 requires the notice to specify the grounds for proposed eviction. A challenge dependent on the notice's contents, not raised below and not a pure question of law, need not be considered for the first time on appeal where the notice is not in the record. In those circumstances, the maxim omnia praesumuntur rite esse acta applies, and regularity of the notice may be presumed.",
+      "rule": {
+        "if": "appeal_from_eviction_order and notice_challenge_raised_first_on_appeal and challenge_not_pure_question_of_law and notice_copy_absent",
+        "then": "notice_compliance_presumed"
+      },
+      "predicates": {
+        "appeal_from_eviction_order": "The case is an appeal arising from an eviction proceeding.",
+        "notice_challenge_raised_first_on_appeal": "The occupant challenges the notice's contents for the first time on appeal.",
+        "challenge_not_pure_question_of_law": "Deciding the challenge requires examining facts or material beyond a pure question of law.",
+        "notice_copy_absent": "The notice whose contents are challenged is not produced in the record."
+      },
+      "definition": "In an appeal from an eviction proceeding, a first-raised factual challenge to a notice absent from the record is not entertained and compliance is presumed."
+    }
+  ],
+  "seconds": 15.3
+}

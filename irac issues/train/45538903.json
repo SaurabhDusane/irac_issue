@@ -1,0 +1,99 @@
+{
+  "doc_id": "45538903",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32101,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3153,
+    "prompt_tokens": 8307,
+    "total_tokens": 11460,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A company that drew a dishonoured cheque must be arraigned as an accused before a person alleged to have signed for it can be prosecuted on a vicarious-liability basis.",
+      "material_facts": [
+        "The cheque was drawn on the account of a private company, which was not named as an accused in the original complaint.",
+        "The appellant was alleged to have signed the cheque as a director of the company, and his potential liability was asserted on that basis."
+      ],
+      "conclusion": "The company had to be arraigned as an accused to maintain prosecution of the alleged signatory on a vicarious-liability basis.",
+      "legal_principle": "Section 141 of the Negotiable Instruments Act makes the company and persons responsible for its business liable where the company commits an offence under Section 138. Under Aneeta Hada v. Godfather Travels & Tours Private Limited, (2012) 5 SCC 661, arraigning the company is imperative to maintain prosecution under Section 141; other persons are brought within the provision on the basis of vicarious liability.",
+      "rule": {
+        "if": "dishonoured_cheque_prosecution and corporate_account_drawer and alleged_authorised_signatory",
+        "then": "company_must_be_arraigned_for_signatory_prosecution"
+      },
+      "predicates": {
+        "dishonoured_cheque_prosecution": "A payee brings a prosecution after a cheque is returned unpaid.",
+        "corporate_account_drawer": "The cheque was drawn on an account maintained by a company.",
+        "alleged_authorised_signatory": "The person sought to be prosecuted is alleged to have signed the cheque for the company, rather than to have drawn it on a personal account."
+      },
+      "definition": "When a dishonoured-cheque prosecution concerns a cheque drawn on a company account and the proposed individual accused is alleged to have signed for the company, the company must also be arraigned for prosecution of that signatory."
+    },
+    {
+      "legal_issue": "A proceeding to add a company as an accused after the statutory complaint period cannot bypass the time limit for initiating prosecution against the company, although delay may be condoned for sufficient cause.",
+      "material_facts": [
+        "The company was not included in the original complaint, and the complainant later sought to add it during the trial through an application invoking Section 319 of the Code of Criminal Procedure.",
+        "The application was filed years after the cheque was dishonoured and the cause of action arose.",
+        "The complainant had issued the statutory demand notice to the company, and the cheque itself showed that it was drawn on the company's account.",
+        "The courts below did not examine whether there was sufficient cause for the delay; the Supreme Court found the explanation that the complainant learned the identity of the drawer during trial manifestly false."
+      ],
+      "conclusion": "The application was in substance an attempt to initiate prosecution against the company after the prescribed period, and the Court refused to condone the delay for want of sufficient cause.",
+      "legal_principle": "Sections 138 and 142 of the Negotiable Instruments Act require compliance with the statutory steps and time limits for a dishonoured-cheque prosecution. Section 142 permits cognizance after the prescribed period only if the complainant satisfies the court that there was sufficient cause for not filing in time. The cause of action and limitation principles are reflected in D. Vinod Shivappa v. Nanda Belliappa, (2006) 6 SCC 456, and C.C. Alavi Haji v. Palapetty Muhammed, (2007) 6 SCC 555; MSR Leathers v. S. Palaniappan, (2013) 1 SCC 177, explains the conditions precedent under Section 138. An application under Section 319 cannot be used to avoid the complaint and limitation requirements applicable to the company.",
+      "rule": {
+        "if": "dishonoured_cheque_prosecution and company_added_after_complaint_period and no_sufficient_cause_for_delay",
+        "then": "late_company_prosecution_not_permitted"
+      },
+      "predicates": {
+        "dishonoured_cheque_prosecution": "A payee pursues a written prosecution after a cheque is returned unpaid.",
+        "company_added_after_complaint_period": "The company alleged to have drawn the cheque is first sought to be prosecuted after the period for filing the complaint has expired.",
+        "no_sufficient_cause_for_delay": "The complainant does not establish a sufficient reason for failing to initiate prosecution against the company within the prescribed period."
+      },
+      "definition": "If a company is first sought to be prosecuted after the complaint period has expired and the complainant establishes no sufficient reason for the delay, the late prosecution is not permitted."
+    },
+    {
+      "legal_issue": "In a prosecution for a dishonoured cheque, the complaint must identify the person who drew the cheque; taking cognizance of an offence does not eliminate the need to proceed against the particular drawer.",
+      "material_facts": [
+        "The prosecution was initiated by the payee's written complaint, without an investigation process of the kind contemplated by the general criminal procedure scheme.",
+        "The identity of the drawer was apparent from the cheque, and the dispute concerned whether the company or the individual signatory was the drawer.",
+        "The complaint initially proceeded against the individual, although the cheque was drawn on the company's account."
+      ],
+      "conclusion": "The concept that a court takes cognizance of an offence rather than an offender did not justify adding the company without satisfying the requirements for a complaint against that company.",
+      "legal_principle": "Sections 138 and 142 of the Negotiable Instruments Act establish a complaint-based, person-specific prosecution: the complaint must contain the factual allegations constituting the offence, including the identity of the drawer. The Court distinguished the general Code of Criminal Procedure setting underlying Raghubans Dubey v. State of Bihar, AIR 1967 SC 1167, and relied on the specific requirements explained in MSR Leathers v. S. Palaniappan, (2013) 1 SCC 177.",
+      "rule": {
+        "if": "dishonoured_cheque_written_complaint and drawer_identity_is_required and proposed_accused_differs_from_named_drawer",
+        "then": "complaint_must_satisfy_requirements_for_each_drawer"
+      },
+      "predicates": {
+        "dishonoured_cheque_written_complaint": "The prosecution is initiated by the payee's written complaint concerning a cheque returned unpaid.",
+        "drawer_identity_is_required": "The person or entity that drew the cheque is a necessary factual element of the alleged offence.",
+        "proposed_accused_differs_from_named_drawer": "The person or entity later sought to be prosecuted is different from the drawer identified in the existing complaint."
+      },
+      "definition": "In a written prosecution concerning a dishonoured cheque, when the proposed accused differs from the identified drawer, the complaint must satisfy the requirements for prosecuting that drawer."
+    },
+    {
+      "legal_issue": "An alleged signatory whose liability depends on a company's liability may challenge the late summoning of the company even if the company itself has not challenged the summoning order.",
+      "material_facts": [
+        "The appellant was alleged to be liable only because he signed the cheque as a director of the company.",
+        "The company was added as an accused after the complaint period had expired.",
+        "The company did not challenge the order summoning it, and the High Court treated that failure as a reason the appellant's revision was not maintainable."
+      ],
+      "conclusion": "The appellant could challenge the late summoning of the company; the company's failure to challenge the order did not prevent him from raising the limitation issue.",
+      "legal_principle": "Under Section 141 of the Negotiable Instruments Act and Aneeta Hada v. Godfather Travels & Tours Private Limited, (2012) 5 SCC 661, the company's arraignment is imperative where the individual faces only vicarious liability. The company may raise the limitation defence during trial and is not required to challenge the summoning order for the alleged signatory to contest the effect of late prosecution on his own case.",
+      "rule": {
+        "if": "dishonoured_cheque_prosecution and alleged_vicarious_signatory and company_summoned_late and company_did_not_challenge_summoning",
+        "then": "signatory_may_challenge_late_company_summoning"
+      },
+      "predicates": {
+        "dishonoured_cheque_prosecution": "A payee pursues prosecution after a cheque is returned unpaid.",
+        "alleged_vicarious_signatory": "The individual is alleged to be liable because of signing for, or responsibility to, the company that drew the cheque.",
+        "company_summoned_late": "The company is summoned as an accused after the period for initiating its prosecution has expired.",
+        "company_did_not_challenge_summoning": "The company does not itself challenge the order summoning it."
+      },
+      "definition": "When an individual faces alleged vicarious liability and the company is summoned late, the individual's ability to challenge that lateness does not depend on the company also challenging the summoning."
+    }
+  ],
+  "seconds": 18.1
+}

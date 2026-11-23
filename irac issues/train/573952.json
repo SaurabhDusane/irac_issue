@@ -1,0 +1,99 @@
+{
+  "doc_id": "573952",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12336,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3213,
+    "prompt_tokens": 3500,
+    "total_tokens": 6713,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The ceiling on recoverable arrears of interest is calculated by reference to the cash originally advanced, excluding interest later incorporated into the mortgage debt.",
+      "material_facts": [
+        "The mortgage deeds stated aggregate consideration of Rs. 44,000, but that figure included amounts arising from earlier loan transactions and interest.",
+        "The High Court examined the earlier transactions and found the original cash advances totalled Rs. 37,971.50.",
+        "Counsel for both sides accepted those figures if the original cash advances were treated as the principal of the original loans."
+      ],
+      "conclusion": "The High Court correctly used the aggregate original cash advances, rather than the amounts stated as principal in the mortgage deeds, to calculate the maximum arrears of interest recoverable.",
+      "legal_principle": "Section 17 of the Mysore Money Lenders Act, 1939 refers to the principal of the original loan. The court must therefore look behind a later loan or mortgage transaction to identify the actual original cash advance and exclude interest added to it. No earlier cases are relied on.",
+      "rule": {
+        "if": "mortgage_recovery_suit and mortgage_debt_includes_earlier_transactions and original_cash_advances_identifiable",
+        "then": "interest_ceiling_based_on_original_cash_advances"
+      },
+      "predicates": {
+        "mortgage_recovery_suit": "The proceeding seeks recovery of a debt secured by a mortgage.",
+        "mortgage_debt_includes_earlier_transactions": "The amount treated as mortgage principal incorporates amounts from earlier loan transactions.",
+        "original_cash_advances_identifiable": "The actual cash originally advanced can be determined from the earlier transactions."
+      },
+      "definition": "When a mortgage recovery proceeding incorporates earlier loan transactions and the original cash advances can be identified, the interest ceiling is based on those advances."
+    },
+    {
+      "legal_issue": "Arrears of interest subject to a statutory ceiling are calculated up to the date of the decree, not the date of suit or the date fixed for redemption.",
+      "material_facts": [
+        "The trial court passed its decree on 27 March 1952 and awarded the maximum arrears permitted by the governing law.",
+        "The High Court later fixed 19 March 1959 as the date for payment of the redemption money and treated interest up to that date as arrears.",
+        "The Supreme Court held that the appellate decree took effect from the date of the trial court decree."
+      ],
+      "conclusion": "The capped arrears of interest were to be calculated only up to the date of the trial court decree; the High Court erred in extending them to the date fixed for redemption.",
+      "legal_principle": "Section 17 of the Mysore Money Lenders Act, 1939 directs the court to limit arrears of interest when passing a decree, so the relevant cutoff is the decree date. An appellate decree takes effect from the date of the original court decree. No earlier cases are relied on.",
+      "rule": {
+        "if": "mortgage_recovery_suit and arrears_subject_to_statutory_ceiling and decree_passed",
+        "then": "capped_arrears_end_at_decree_date"
+      },
+      "predicates": {
+        "mortgage_recovery_suit": "The proceeding seeks recovery of a debt secured by a mortgage.",
+        "arrears_subject_to_statutory_ceiling": "The governing lending law limits the amount that may be decreed as arrears of interest.",
+        "decree_passed": "The court has passed a decree in the proceeding."
+      },
+      "definition": "If a mortgage recovery proceeding has a decree and its arrears of interest are subject to a statutory ceiling, the capped arrears end at the decree date."
+    },
+    {
+      "legal_issue": "Interest accruing on mortgage principal after the decree and before the date fixed for payment is governed by the mortgage-decree procedure rules and is not barred by the statutory ceiling on arrears.",
+      "material_facts": [
+        "The proceeding was a suit to recover amounts due under mortgages, and the Code of Civil Procedure applied.",
+        "The High Court fixed a date for payment of the redemption money after the trial court had passed its decree.",
+        "The mortgage deeds stipulated interest at one per cent per month, but the court held that fair interest under the applicable lending laws was nine per cent per annum."
+      ],
+      "conclusion": "Interest from the decree date to the date fixed for payment was payable on the principal found due under the mortgages at the fair rate of nine per cent per annum; the statutory ceiling on arrears did not prevent that award.",
+      "legal_principle": "Section 17 of the Mysore Money Lenders Act, 1939 limits arrears only up to the decree and does not govern later interest. Order 34 Rule 11(a)(i) of the Code of Civil Procedure governs interest on mortgage principal from decree to the date fixed for payment. The court applied the Mysore Usurious Loans Act, 1923 in determining the fair rate. No earlier cases are relied on.",
+      "rule": {
+        "if": "mortgage_suit and procedural_code_applies and decree_fixes_redemption_payment_date",
+        "then": "redemption_period_interest_allowed_on_mortgage_principal_at_fair_rate"
+      },
+      "predicates": {
+        "mortgage_suit": "The proceeding seeks recovery under a mortgage.",
+        "procedural_code_applies": "The procedural rules governing mortgage decrees apply to the proceeding.",
+        "decree_fixes_redemption_payment_date": "The decree specifies a date by which payment may be made to redeem the mortgage."
+      },
+      "definition": "When mortgage-decree procedure rules apply and the decree fixes a redemption payment date, interest is allowed on the mortgage principal at a fair rate for the intervening period."
+    },
+    {
+      "legal_issue": "Interest is payable on qualifying decree costs and on the mortgage principal after the date fixed for payment until realization.",
+      "material_facts": [
+        "The appellants had incurred costs, charges, and expenses up to the preliminary decree.",
+        "The decree fixed a date for payment of the redemption money, and the court had to provide for interest if payment was not then made.",
+        "The court held that six per cent per annum was reasonable for the relevant interest on costs and for interest after the payment date."
+      ],
+      "conclusion": "Interest was to be allowed at six per cent per annum on the costs, charges, and expenses incurred up to the preliminary decree, and at six per cent per annum on the aggregate of the principal amounts and those costs from the date fixed for payment until realization or actual payment.",
+      "legal_principle": "Order 34 Rule 11(a)(ii) of the Code of Civil Procedure provides for interest on costs, charges, and expenses incurred up to the preliminary decree. Order 34 Rule 11(b) provides for interest after the date fixed for payment until realization or actual payment; the court considered six per cent per annum reasonable. No earlier cases are relied on.",
+      "rule": {
+        "if": "mortgage_suit and procedural_code_applies and decree_includes_qualifying_costs and payment_deadline_set",
+        "then": "interest_allowed_on_qualifying_costs_and_unpaid_mortgage_balance"
+      },
+      "predicates": {
+        "mortgage_suit": "The proceeding seeks recovery under a mortgage.",
+        "procedural_code_applies": "The procedural rules governing mortgage decrees apply to the proceeding.",
+        "decree_includes_qualifying_costs": "The decree includes costs, charges, or expenses incurred up to the preliminary decree.",
+        "payment_deadline_set": "The decree specifies a date for payment."
+      },
+      "definition": "When mortgage-decree procedure rules apply, the decree includes qualifying costs, and a payment date is set, interest is allowed on those costs and on the unpaid mortgage balance."
+    }
+  ],
+  "seconds": 18.7
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "624956",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19087,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3004,
+    "prompt_tokens": 4834,
+    "total_tokens": 7838,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A fiscal valuation register cannot provide the foundation for determining market value in a compulsory land acquisition.",
+      "material_facts": [
+        "The reference court relied mainly on the municipality’s basic valuation register to determine compensation.",
+        "The register was maintained for collecting stamp duty and registration charges."
+      ],
+      "conclusion": "The register’s stated values could not form the basis for determining compensation, and a valuation founded on the register was legally unsustainable.",
+      "legal_principle": "Under Section 23(1) of the Land Acquisition Act, 1894, market value is assessed by reference to the price a willing seller and willing buyer would agree on in the open market as of the acquisition notification. A register maintained for fiscal purposes under Section 47-A of the Stamp Act is a guide for collecting revenue, not evidence establishing market value for compensation. The Court relied on Jawajee Nagnatham v. Revenue Divisional Officer, (1994) 4 SCC 595.",
+      "rule": {
+        "if": "land_compensation_proceeding and valuation_based_on_fiscal_register",
+        "then": "fiscal_register_value_cannot_found_compensation"
+      },
+      "predicates": {
+        "land_compensation_proceeding": "The dispute concerns compensation for compulsorily acquired land.",
+        "valuation_based_on_fiscal_register": "The compensation decision relied on values entered in a register maintained to collect fiscal charges."
+      },
+      "definition": "When a compensation proceeding relies on a fiscal valuation register, the register’s values cannot found the compensation determination."
+    },
+    {
+      "legal_issue": "Comparable sale evidence must be bona fide, sufficiently proved, and suitable to the scale and characteristics of the acquired land.",
+      "material_facts": [
+        "The acquired areas were extensive, while one relied-on sale concerned only 120 square yards.",
+        "The claimants relied on sales from acquired land made when the proposed acquisition was known, and the Court found that the prices were inflated rather than the result of bona fide bargaining.",
+        "The earlier reference award relied on sales the Court regarded as got up.",
+        "The record did not establish the sales’ bona fides through proof of the circumstances of the transactions."
+      ],
+      "conclusion": "The relied-on sales and reference award did not provide a reliable basis for determining market value; the High Court erred by fixing value solely on the small-plot sale.",
+      "legal_principle": "Bona fide sales of the acquired land, or of nearby land with similar qualities and advantages, may provide a reasonable basis for market value. The transactions must be proved and bona fide; a certified copy alone does not prove the contents or circumstances of a sale, and the circumstances may be established by examining the vendor or vendee. Sales of small plots do not alone furnish a basis for valuing a vast acquisition. Sales made with knowledge of a proposed acquisition or otherwise manipulated do not provide a reliable basis. The Court applied the principles governing market value under Section 23(1) of the Land Acquisition Act, 1894.",
+      "rule": {
+        "if": "land_compensation_proceeding and (sales_not_bona_fide or sale_circumstances_unproved or comparable_plot_too_small)",
+        "then": "unreliable_or_incomparable_sales_cannot_found_market_value"
+      },
+      "predicates": {
+        "land_compensation_proceeding": "The dispute concerns compensation for compulsorily acquired land.",
+        "sales_not_bona_fide": "The relied-on sales were made with knowledge of a proposed acquisition or were otherwise not genuine transactions between willing parties.",
+        "sale_circumstances_unproved": "The evidence did not establish the circumstances in which the relied-on sales were executed.",
+        "comparable_plot_too_small": "The relied-on sale concerned a small plot that was not a satisfactory comparison for the extensive acquired area."
+      },
+      "definition": "In a land-compensation proceeding, sales that are not bona fide, are unproved, or concern an unsuitable small plot cannot found the market-value determination."
+    },
+    {
+      "legal_issue": "Potential value for building use requires evidence of a contemporaneous market and reasonable possibility of that use, not merely municipal location or the purpose of acquisition.",
+      "material_facts": [
+        "The lands were near a municipality and within its master plan, but were found to be interior agricultural lands with no neighbourhood development activity or upward price trend at the relevant time.",
+        "There was no reliable evidence of building activity, demand for building land, or a market for the lands’ immediate use as house sites.",
+        "The acquisition was intended to provide house sites, but that intended use did not establish existing potential value."
+      ],
+      "conclusion": "The lands were properly valued as agricultural land; the record did not establish potential value for building purposes.",
+      "legal_principle": "Potential value must be supported by evidence that, under market conditions prevailing on the notification date, there was demand and a market for the proposed use. Relevant evidence may include construction or development activity, nearby uses, amenities, and prospects of development. The land is not valued as if already developed; only a reasonable possibility of use existing at the relevant time may be considered. The Court distinguished Gulzara Singh v. State of Punjab, (1993) 4 SCC 245, and Inder Singh v. Union of India, (1993) 3 SCC 240, where evidence supported potential value.",
+      "rule": {
+        "if": "land_compensation_proceeding and land_is_agricultural and not contemporaneous_building_demand_evidence",
+        "then": "building_potential_cannot_justify_higher_valuation"
+      },
+      "predicates": {
+        "land_compensation_proceeding": "The dispute concerns compensation for compulsorily acquired land.",
+        "land_is_agricultural": "The land was being used and was found to be agricultural at the relevant time.",
+        "contemporaneous_building_demand_evidence": "Evidence shows contemporaneous demand and a market for building use, such as nearby construction or development activity."
+      },
+      "definition": "When acquired land is agricultural and there is no evidence of contemporaneous demand for building use, that potential use cannot justify a higher valuation."
+    },
+    {
+      "legal_issue": "Compensation and statutory additions must be fixed by reference to the supported market value on the acquisition-notification date and the applicable statutory entitlements.",
+      "material_facts": [
+        "The Court rejected the valuation methods relied on by the lower courts and found no other evidence establishing building potential.",
+        "The lands were treated as agricultural, and the record included the respective acquisition notifications and dates of possession.",
+        "The Court determined separate market values for the two acquisitions and awarded additional compensation, solatium, and interest."
+      ],
+      "conclusion": "The Court set the market value at Rs 65,000 per acre in the first acquisition and Rs 80,000 per acre in the second, awarded the applicable additional compensation, solatium, and interest, and set aside the lower courts’ decrees.",
+      "legal_principle": "Market value is determined as of the date of the Section 4(1) notification, applying Section 23(1) of the Land Acquisition Act, 1894, and excluding considerations barred by Section 24. The Court applied Section 23(1-A) for additional compensation, Section 23(2) for solatium, and Section 28 for interest. The assessment must reflect the evidence of the land’s existing use and any proven potential value as of the notification date.",
+      "rule": {
+        "if": "land_compensation_appeal and market_value_evidence_assessed_as_of_notification and land_character_established",
+        "then": "compensation_fixed_on_supported_notification_date_value_with_applicable_statutory_additions"
+      },
+      "predicates": {
+        "land_compensation_appeal": "The proceeding is an appeal concerning compensation for compulsorily acquired land.",
+        "market_value_evidence_assessed_as_of_notification": "The evidence is assessed to determine the land’s market value as of the acquisition notification.",
+        "land_character_established": "The evidence establishes the land’s existing character and any supported potential use."
+      },
+      "definition": "In a compensation appeal, once the land’s character is established and the evidence is assessed as of the notification date, compensation is fixed on the supported value with applicable statutory additions."
+    }
+  ],
+  "seconds": 19.4
+}

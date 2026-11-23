@@ -1,0 +1,56 @@
+{
+  "doc_id": "1798278",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27208,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1709,
+    "prompt_tokens": 7513,
+    "total_tokens": 9222,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court complies with a remand to determine a specified jurisdictional fact by deciding that fact, even if it also considers additional contentions.",
+      "material_facts": [
+        "On remand, the High Court considered evidence about whether the tanks were on occupied land and whether they were saved from vesting, and made findings on that question.",
+        "The High Court also considered additional objections that the State raised after remand."
+      ],
+      "conclusion": "The High Court complied with the remand directions by deciding whether the tanks were saved under the applicable provision.",
+      "legal_principle": "The earlier decision in State of Madhya Pradesh v. Sardar D. K. Jadhav, [1968] 2 SCR 823, directed the High Court to decide the jurisdictional fact concerning the claim under section 5(c). It explained that section 17 concerned determination of compensation and did not provide for a further inquiry after compensation was determined and paid. Contentions available to the State when the earlier appeal was heard could not be raised anew after remand; in any event, the High Court decided the remanded question.",
+      "rule": {
+        "if": "appeal_after_remand and lower_court_decided_remanded_jurisdictional_fact",
+        "then": "remand_directions_satisfied"
+      },
+      "predicates": {
+        "appeal_after_remand": "The matter is an appeal challenging a lower court's decision made after a remand.",
+        "lower_court_decided_remanded_jurisdictional_fact": "The lower court considered the evidence and decided the specific jurisdictional fact referred to it on remand."
+      },
+      "definition": "When an appeal follows a remand and the lower court decides the jurisdictional fact referred to it, the remand directions are satisfied."
+    },
+    {
+      "legal_issue": "A tank is saved from vesting when its entire area lies on occupied land, even if different parts are held under qualifying tenures or as khud-kasht or homestead, and some parts are occupied by tenure-holders.",
+      "material_facts": [
+        "The tanks were partly on land held by the Jagirdar as khud-kasht and partly on land held by tenants under tenures included in the definition of occupied land.",
+        "The High Court found that the tanks belonged to the Jagirdar at the time of resumption and that their entire area lay on occupied land held by the Jagirdar or other persons.",
+        "The dispute concerned whether the tanks were saved from vesting despite parts of their beds being occupied by tenants."
+      ],
+      "conclusion": "The tanks were saved from vesting in the State, and the High Court's decision was upheld.",
+      "legal_principle": "Under section 2(1)(ix), occupied land includes land held under the specified tenures and land held as khud-kasht or comprised in a homestead. Under section 5(c), tanks in or on occupied land belonging to or held by the Jagirdar or any other person continue to belong to or be held by that person, notwithstanding the general vesting provision in section 4. The tank need not lie exclusively within one category of occupied land; its entire area must be comprised within one or more of those categories. The phrase “any other person” includes persons holding land under the specified tenures.",
+      "rule": {
+        "if": "tank_vesting_dispute and entire_tank_area_on_occupied_land and tank_held_by_jagirdar_or_other_person",
+        "then": "tank_saved_from_state_vesting"
+      },
+      "predicates": {
+        "tank_vesting_dispute": "The proceeding concerns whether a tank vested in the State or was saved from vesting under an abolition of jagirs scheme.",
+        "entire_tank_area_on_occupied_land": "The entire area of the tank lies on land held under qualifying tenures, as khud-kasht, as homestead, or in a combination of those categories.",
+        "tank_held_by_jagirdar_or_other_person": "At the relevant time, the tank belonged to or was held by the Jagirdar or another person."
+      },
+      "definition": "When a tank-vesting dispute concerns a tank held by the Jagirdar or another person and its entire area lies on occupied land, the tank is saved from State vesting."
+    }
+  ],
+  "seconds": 15.5
+}

@@ -1,0 +1,61 @@
+{
+  "doc_id": "179310844",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36283,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2956,
+    "prompt_tokens": 9215,
+    "total_tokens": 12171,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A deduction for a bad debt is unavailable unless the debt is actually written off as irrecoverable and satisfies the statutory conditions for a qualifying debt; a capital advance to acquire property does not qualify as a business bad debt.",
+      "material_facts": [
+        "The taxpayer claimed a deduction for an advance made to a developer, asserting both that it was for booking commercial premises and, alternatively, that it was a loan made in the ordinary course of its business.",
+        "The taxpayer did not substantiate the premises transaction or establish the terms of a loan, including its duration, repayment conditions, or interest.",
+        "The taxpayer did not establish that the debt had been written off as irrecoverable in its accounts in the relevant year.",
+        "The asserted advance for acquiring immovable property was capital in nature."
+      ],
+      "conclusion": "The bad-debt deduction was not allowable because the taxpayer did not establish the required write-off or a qualifying debt, and the advance for acquiring property was capital in nature.",
+      "legal_principle": "Under Sections 36(1)(vii) and 36(2) of the Income Tax Act, 1961, a deduction requires an actual write-off as irrecoverable, not merely a provision, and the debt must have been taken into account in computing income or represent money lent in the ordinary course of a banking or money-lending business. The taxpayer must establish the requirements of both provisions. After the 1989 amendment, it is not necessary to prove that the debt in fact became irrecoverable, but the actual write-off and Section 36(2) requirements remain. Southern Technologies Ltd. v. Joint Commissioner of Income Tax and Catholic Syrian Bank Ltd. v. Commissioner of Income Tax were relied on for these requirements; T.R.F. Ltd. v. Commissioner of Income Tax was distinguished as not addressing Section 36(2). A.V. Thomas and Co. Ltd. v. Commissioner of Income Tax supports the principle that a bad debt must be a business-related debt, not merely money advanced to purchase an asset.",
+      "rule": {
+        "if": "income_tax_bad_debt_claim and (not actual_irrecoverable_writeoff or not qualifying_debt_basis or capital_asset_advance)",
+        "then": "bad_debt_deduction_disallowed"
+      },
+      "predicates": {
+        "income_tax_bad_debt_claim": "A taxpayer claims a deduction for a bad debt when computing business income.",
+        "actual_irrecoverable_writeoff": "The taxpayer actually records the debt as irrecoverable in its accounts for the relevant year, rather than making only a provision.",
+        "qualifying_debt_basis": "The debt was taken into account in computing the taxpayer’s income, or it represents money lent in the ordinary course of a banking or money-lending business carried on by the taxpayer.",
+        "capital_asset_advance": "The taxpayer advanced money to acquire an asset of a capital nature."
+      },
+      "definition": "When a taxpayer claims a bad-debt deduction in computing business income, the deduction is disallowed if the debt was not actually written off, lacks a qualifying debt basis, or is an advance to acquire a capital asset."
+    },
+    {
+      "legal_issue": "A business expense that is specifically addressed by a deduction category but excluded under the rules governing that category cannot be deducted instead as a general business expense; capital expenditure is also ineligible for that general deduction.",
+      "material_facts": [
+        "The taxpayer alternatively claimed that the advance was deductible as expenditure laid out wholly and exclusively for business purposes.",
+        "The advance was asserted to be for acquiring commercial premises and was therefore capital in nature.",
+        "The claim was also presented as a bad-debt claim, a type of expense addressed by the specific deduction provisions, but the statutory requirements for that deduction were not established."
+      ],
+      "conclusion": "The alternative deduction as a general business expense was unavailable on these facts.",
+      "legal_principle": "Section 37(1) permits deduction of expenditure laid out wholly and exclusively for business only if it is not capital expenditure and is not expenditure of the nature described in Sections 30 to 36. As explained in The Commissioner of Income Tax v. The Mysore Sugar Co. Ltd., the general business-expense provision can cover business outgoings not exhaustively dealt with by the specified deduction categories, and a failed claim under another provision does not by itself always bar a claim under Section 37. However, Southern Technologies Ltd. v. Joint Commissioner of Income Tax holds that Section 37 cannot be used to obtain a deduction for an item within Sections 30 to 36 that is expressly excluded by the rule governing that item. Capital expenditure is independently outside Section 37.",
+      "rule": {
+        "if": "general_business_expense_claim and (capital_expenditure or (specific_deduction_category_applies and specific_category_excludes_expense))",
+        "then": "general_business_expense_deduction_unavailable"
+      },
+      "predicates": {
+        "general_business_expense_claim": "A taxpayer claims an expense deduction on the basis that the expense was incurred wholly and exclusively for business.",
+        "capital_expenditure": "The expense was incurred to acquire an asset of a capital nature.",
+        "specific_deduction_category_applies": "The expense is of a kind addressed by a specific statutory deduction category.",
+        "specific_category_excludes_expense": "The rule governing that specific category excludes the claimed expense from deduction."
+      },
+      "definition": "A general business-expense deduction is unavailable when the claimed expense is capital expenditure or when it belongs to a specific deduction category that excludes it."
+    }
+  ],
+  "seconds": 17.9
+}

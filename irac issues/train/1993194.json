@@ -1,0 +1,80 @@
+{
+  "doc_id": "1993194",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17921,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2560,
+    "prompt_tokens": 5054,
+    "total_tokens": 7614,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An executing court must stop selling attached property once the amount stated in the sale proclamation has been recovered.",
+      "material_facts": [
+        "The execution sale was ordered for the amount stated in the sale proclamation.",
+        "The sale of one group of the debtor’s properties yielded more than the proclaimed amount.",
+        "The court nevertheless continued the sale and sold another group of the debtor’s properties.",
+        "Although the decree-holder had another decree, the sale proclamation was not amended to include that debt before the sale."
+      ],
+      "conclusion": "The sale of the further properties was not authorized and was properly set aside.",
+      "legal_principle": "Under Order XXI Rule 64 of the Code of Civil Procedure, an executing court may sell attached property only to the extent necessary to satisfy the decree. Once sale proceeds equal or exceed the amount stated in the sale proclamation, the court must stop further sales. Where a further decree has not been included in an amended proclamation, it does not justify continuing the sale.",
+      "rule": {
+        "if": "execution_sale_proceeding and (not proclamation_amended_for_additional_debt) and sale_proceeds_met_proclaimed_amount and further_property_sold",
+        "then": "further_sale_exceeded_execution_authority"
+      },
+      "predicates": {
+        "execution_sale_proceeding": "A court was conducting a sale of attached property to execute a decree.",
+        "proclamation_amended_for_additional_debt": "The sale proclamation was amended to include an additional debt before the sale.",
+        "sale_proceeds_met_proclaimed_amount": "The proceeds from property already sold equalled or exceeded the amount stated in the sale proclamation.",
+        "further_property_sold": "The court sold additional attached property after that amount had been met."
+      },
+      "definition": "When an execution sale has recovered the proclaimed amount without an amendment covering an additional debt, selling more property exceeds the court’s authority."
+    },
+    {
+      "legal_issue": "A debtor is not barred from challenging a further execution sale on jurisdictional grounds merely because the debtor did not object before the executing court.",
+      "material_facts": [
+        "The executing court continued selling property after proceeds from property already sold had met the amount stated in the sale proclamation.",
+        "The debtor did not raise that ground before the executing court but later challenged the further sale."
+      ],
+      "conclusion": "The debtor’s failure to raise the objection before the executing court did not bar the challenge because the objection concerned the court’s authority to sell the further property.",
+      "legal_principle": "Non-compliance with Order XXI Rule 64 of the Code of Civil Procedure, where it goes to the executing court’s jurisdiction to sell property, is not cured by the debtor’s failure to object before that court.",
+      "rule": {
+        "if": "execution_sale_proceeding and sale_proceeds_met_proclaimed_amount and further_property_sold and objection_not_raised_earlier",
+        "then": "jurisdictional_challenge_remains_available"
+      },
+      "predicates": {
+        "execution_sale_proceeding": "A court was conducting a sale of attached property to execute a decree.",
+        "sale_proceeds_met_proclaimed_amount": "The proceeds from property already sold equalled or exceeded the amount stated in the sale proclamation.",
+        "further_property_sold": "The court sold additional attached property after that amount had been met.",
+        "objection_not_raised_earlier": "The debtor did not raise the objection before the executing court."
+      },
+      "definition": "A debtor’s failure to object earlier does not prevent a later challenge when the court sold further property after the proclaimed amount had been met."
+    },
+    {
+      "legal_issue": "Restitution following the setting aside of an execution sale must account for the purchaser’s possession of the property and any improvements made.",
+      "material_facts": [
+        "The sale of the further properties was set aside.",
+        "The purchaser asserted that he had possessed the properties and made improvements.",
+        "The court directed the executing court to determine possession and the value of any improvements."
+      ],
+      "conclusion": "The executing court must inquire into possession and improvements. If the purchaser was in possession, he must return the property and receive the purchase price and the value of improvements, without interest on the improvement value. If he was not in possession, the debtor must repay the purchase price with interest, and no improvement payment arises.",
+      "legal_principle": "When an execution sale is set aside, the court should adjust restitution according to possession and improvements: a purchaser who possessed the property may recover the purchase price and the value of improvements upon returning it, without interest on the improvement value; if the purchaser was not in possession, the debtor must refund the purchase price with interest.",
+      "rule": {
+        "if": "execution_sale_set_aside and (purchaser_possessed_property or purchaser_did_not_possess_property)",
+        "then": "restitution_tracks_possession_and_improvements"
+      },
+      "predicates": {
+        "execution_sale_set_aside": "The execution sale of the property was set aside.",
+        "purchaser_possessed_property": "The purchaser possessed the property after the sale.",
+        "purchaser_did_not_possess_property": "The purchaser did not possess the property after the sale."
+      },
+      "definition": "When an execution sale is set aside, the form of restitution depends on whether the purchaser possessed the property and made improvements."
+    }
+  ],
+  "seconds": 18.0
+}

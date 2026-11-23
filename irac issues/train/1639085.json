@@ -1,0 +1,114 @@
+{
+  "doc_id": "1639085",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26724,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3203,
+    "prompt_tokens": 6803,
+    "total_tokens": 10006,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An order of the Land Acquisition Collector refusing to refer a compensation claim to a civil court is not appealable under the statutory appeal provision for court awards.",
+      "material_facts": [
+        "The Collector refused the landowners’ applications for reference under section 18.",
+        "The High Court dismissed their writ petition on the ground that an appeal under section 54 was available."
+      ],
+      "conclusion": "No appeal lies under section 54 against the Collector’s refusal to make a reference.",
+      "legal_principle": "Section 54 provides appeals from an award of a court, not from an award or order of the Collector. Under sections 2(c), 3(d) and 26, the Collector and the court are distinct: the Collector’s award is an offer of compensation, while the court’s award on reference is a determination deemed to be a decree. The Collector’s decision whether to make a reference is a statutory act, not an adjudication or an award of the court.",
+      "rule": {
+        "if": "land_acquisition_reference_proceeding and collector_refused_reference",
+        "then": "no_appeal_lies_from_collector_refusal_under_court_award_appeal_route"
+      },
+      "predicates": {
+        "land_acquisition_reference_proceeding": "A person seeking a court’s determination of a land-acquisition compensation claim applied to the Collector for a reference.",
+        "collector_refused_reference": "The Collector refused to send the compensation claim to the court for determination."
+      },
+      "definition": "When a reference proceeding results in the Collector refusing to refer the claim, the refusal is not appealable through the route for appeals from court awards."
+    },
+    {
+      "legal_issue": "The Land Acquisition Collector cannot extend the time for an application seeking a reference, even when the applicant gives a genuine reason for delay.",
+      "material_facts": [
+        "The Collector rejected the landowners’ applications as late.",
+        "The High Court later considered that they could have sought condonation of delay from the Collector."
+      ],
+      "conclusion": "The Collector had no power to condone the delay or extend the time for seeking a reference.",
+      "legal_principle": "In Officer on Special Duty (Land Acquisition) v. Shah Manilal Chandulal, the Court held that section 29(2) of the Limitation Act does not make sections 4 to 24 of that Act available for applications under section 18, and that section 5 cannot be invoked because the Collector is not a court. Steel Authority of India Ltd. v. S.U.T.N.I. Sangam reiterated that conclusion. The Land Acquisition Act provides no power for the Collector to extend the prescribed time, even for genuine and bona fide grounds.",
+      "rule": {
+        "if": "land_acquisition_reference_proceeding and application_outside_prescribed_time",
+        "then": "collector_cannot_extend_time_for_reference_application"
+      },
+      "predicates": {
+        "land_acquisition_reference_proceeding": "A person applied to the Collector to refer a land-acquisition compensation claim to a court.",
+        "application_outside_prescribed_time": "The application was made after the time allowed for seeking the reference had expired."
+      },
+      "definition": "If a reference application is made outside the allowed time, the Collector cannot extend the time for it."
+    },
+    {
+      "legal_issue": "For an absent claimant who received no award notice, the limitation period for seeking a reference runs from actual or constructive knowledge of the essential contents of the award, not mechanically from the date the award was made.",
+      "material_facts": [
+        "The landowners were not present, personally or through representatives, when the award was made.",
+        "They did not receive the notice of the award that would have informed them of its contents.",
+        "The Court accepted that they learned of the award’s contents only shortly before applying for a reference."
+      ],
+      "conclusion": "For an absent claimant who received no notice, the applicable period runs from the date the claimant actually or constructively knew the essential contents of the award.",
+      "legal_principle": "Section 18(2), proviso (b), provides different time limits depending on the claimant’s presence and receipt of notice. Raja Harish Chandra Raj Singh v. Deputy Land Acquisition Officer held that the date of the award means the date it is communicated or actually or constructively known. State of Punjab v. Mst. Qaisar Jehan Begum clarified that knowledge must concern the essential contents of the award. Those principles were followed in Parsottambhai Maganbhai Patel v. State of Gujarat and Steel Authority of India Ltd. v. S.U.T.N.I. Sangam. Reading the date-of-award language literally where the claimant had no knowledge could produce arbitrary results and risk violating Articles 14 and 300A of the Constitution.",
+      "rule": {
+        "if": "land_acquisition_reference_proceeding and claimant_absent_when_award_made and no_award_notice_received",
+        "then": "six_month_limitation_runs_from_actual_or_constructive_knowledge_of_award_contents"
+      },
+      "predicates": {
+        "land_acquisition_reference_proceeding": "A person applied to the Collector to refer a land-acquisition compensation claim to a court.",
+        "claimant_absent_when_award_made": "Neither the claimant nor the claimant’s representative was present when the award was made.",
+        "no_award_notice_received": "The claimant did not receive notice communicating the award."
+      },
+      "definition": "When a claimant was absent and received no notice, the limitation period runs from the claimant’s actual or constructive knowledge of the award’s essential contents."
+    },
+    {
+      "legal_issue": "A claimant who swears that they were absent when the award was made, received no notice, and lacked earlier knowledge discharges the initial evidentiary burden, after which the Collector must establish earlier presence, notice, or knowledge.",
+      "material_facts": [
+        "The landowners asserted on oath that they were absent when the award was made, received no notice, and learned of the award’s contents only shortly before applying.",
+        "The Collector relied on a notice bearing a vague endorsement that farmers had been informed, but it did not identify the persons spoken to or show that notice was specifically tendered to the landowners."
+      ],
+      "conclusion": "The landowners’ sworn assertions discharged their initial burden; the Collector did not establish earlier knowledge, so their claim of later knowledge had to be accepted.",
+      "legal_principle": "A claimant seeking the benefit of the period running from knowledge must initially establish by assertion on oath that they were absent, received no notice, and lacked knowledge of the award’s contents during the relevant period; the claimant need not prove a negative. The Collector must then establish earlier presence, receipt of notice, or actual or constructive knowledge. Such knowledge may be shown by evidence including receipt of compensation, attestation of possession proceedings, a challenge to the award, an acknowledgment of the award, or circumstances supporting constructive knowledge. Without such evidence, the claimant’s account is accepted unless compelling circumstances indicate otherwise.",
+      "rule": {
+        "if": "land_acquisition_reference_proceeding and claimant_swore_absence_no_notice_and_no_earlier_knowledge",
+        "then": "collector_bears_burden_to_establish_earlier_presence_notice_or_award_knowledge"
+      },
+      "predicates": {
+        "land_acquisition_reference_proceeding": "A person applied to the Collector to refer a land-acquisition compensation claim to a court.",
+        "claimant_swore_absence_no_notice_and_no_earlier_knowledge": "The claimant stated on oath that they were absent when the award was made, received no notice, and did not earlier know the award’s contents."
+      },
+      "definition": "When a claimant makes the specified sworn assertions in a reference proceeding, the Collector must establish earlier presence, notice, or knowledge."
+    },
+    {
+      "legal_issue": "A claimant is entitled to a reference when the claim was timely from the date of knowledge and the Collector has not established earlier notice or knowledge.",
+      "material_facts": [
+        "The award was not made in the landowners’ presence, and no notice of it was served on them.",
+        "The Collector’s service report did not identify the persons allegedly informed or show that notice was specifically tendered to the landowners.",
+        "The landowners learned of the award’s contents on the day they applied for a reference, and the application was therefore timely when measured from that knowledge."
+      ],
+      "conclusion": "The appeals were allowed, the High Court’s orders were set aside, and the Collector was directed to make a reference to the civil court.",
+      "legal_principle": "Applying section 18(2), proviso (b), and the principles in Raja Harish Chandra Raj Singh and State of Punjab v. Mst. Qaisar Jehan Begum, the date of the award for an absent claimant who received no notice is the date of actual or constructive knowledge of its essential contents. Under the burden-of-proof rule, a vague service report that does not establish notice or knowledge does not displace the claimant’s sworn account.",
+      "rule": {
+        "if": "appeal_from_writ_dismissal and land_acquisition_reference_proceeding and claimant_absent_when_award_made and no_award_notice_received and application_within_applicable_deadline",
+        "then": "collector_must_refer_compensation_claim_to_court"
+      },
+      "predicates": {
+        "appeal_from_writ_dismissal": "The matter is an appeal from the dismissal of a writ petition challenging the Collector’s refusal to make a reference.",
+        "land_acquisition_reference_proceeding": "A person applied to the Collector to refer a land-acquisition compensation claim to a court.",
+        "claimant_absent_when_award_made": "Neither the claimant nor the claimant’s representative was present when the award was made.",
+        "no_award_notice_received": "The claimant did not receive notice communicating the award.",
+        "application_within_applicable_deadline": "The claimant applied within the applicable time measured from the legally relevant event."
+      },
+      "definition": "On an appeal from dismissal of a challenge to a refused reference, an absent claimant who received no notice and applied within the applicable time must receive a reference."
+    }
+  ],
+  "seconds": 20.5
+}

@@ -1,0 +1,126 @@
+{
+  "doc_id": "799228",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35556,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3402,
+    "prompt_tokens": 9229,
+    "total_tokens": 12631,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A will must be proved through evidence satisfying the statutory requirements for execution and attestation.",
+      "material_facts": [
+        "The original will was not produced, and proof was offered through a certified copy and a purported photocopy.",
+        "The scribe, who was also claimed to be an attesting witness, testified that the testatrix put her thumb impression only after he had signed and that he did not know whether anyone else attested the will.",
+        "The accounts of the other witnesses conflicted about the preparation, execution, and attestation of the will.",
+        "The evidence did not reliably establish that the testatrix understood and acknowledged the will’s contents or that two witnesses attested it in the required manner."
+      ],
+      "conclusion": "The will’s execution and attestation were not proved in accordance with law.",
+      "legal_principle": "Section 63(c) of the Indian Succession Act, 1925 requires at least two attesting witnesses, each of whom has seen the testator sign or affix a mark, or has received the testator’s personal acknowledgment, and each of whom signs in the testator’s presence. Under Section 68 of the Indian Evidence Act, 1872, at least one attesting witness must be examined to prove execution and attestation. The Court relied on Madhukar D. Shende v. Tarabai Aba Shedage, Janki Narayan Bhoir v. Narayan Namdeo Kadam, and Bhagatram v. Suresh.",
+      "rule": {
+        "if": "will_proof_proceeding and (attesting_witness_did_not_prove_required_execution or attestation_accounts_were_contradictory)",
+        "then": "will_execution_not_proved"
+      },
+      "predicates": {
+        "will_proof_proceeding": "A party sought recognition of a will in a proceeding concerning the will.",
+        "attesting_witness_did_not_prove_required_execution": "The witness relied on to attest the will did not establish that the testator signed or acknowledged it and that the required attestation occurred.",
+        "attestation_accounts_were_contradictory": "The witnesses gave conflicting accounts about how the will was prepared, signed, or attested.",
+        "will_execution_not_proved": "The will’s execution is not established by legally sufficient proof."
+      },
+      "definition": "When a will is being proved and the attesting evidence fails to establish the required execution or is materially contradictory, the will’s execution is not established."
+    },
+    {
+      "legal_issue": "The alternative proof permitted when an attesting witness denies or cannot recall execution is unavailable when the witness does neither.",
+      "material_facts": [
+        "The scribe-attesting witness testified that the testatrix put her thumb impression only after he had signed the will.",
+        "He did not deny execution of the will or say that he could not recall it.",
+        "The witness’s account failed to prove the attestation required for execution of the will."
+      ],
+      "conclusion": "Section 71 of the Indian Evidence Act did not apply to permit proof of execution by other evidence on these facts.",
+      "legal_principle": "Section 71 of the Indian Evidence Act, 1872 permits other evidence of execution when an attesting witness denies or does not recollect execution; it is a safeguard to the mandatory proof requirement in Section 68, not a general substitute when a witness fails to prove the required attestation. The Court applied Janki Narayan Bhoir v. Narayan Namdeo Kadam and considered Ittoop Varghese v. Poulose and Others.",
+      "rule": {
+        "if": "will_proof_proceeding and attesting_witness_neither_denied_nor_forgot_execution and witness_failed_to_prove_attestation",
+        "then": "alternative_proof_under_witness_failure_exception_unavailable"
+      },
+      "predicates": {
+        "will_proof_proceeding": "A party sought recognition of a will in a proceeding concerning the will.",
+        "attesting_witness_neither_denied_nor_forgot_execution": "The attesting witness neither denied that the document was executed nor said that the witness could not recall its execution.",
+        "witness_failed_to_prove_attestation": "The attesting witness’s evidence did not establish the legally required attestation.",
+        "alternative_proof_under_witness_failure_exception_unavailable": "The failure to prove attestation cannot be cured by relying on the special alternative proof available for denial or lack of recollection."
+      },
+      "definition": "When a will is being proved, a witness who neither denies nor forgets execution cannot trigger the alternative proof route merely because the witness fails to establish attestation."
+    },
+    {
+      "legal_issue": "Secondary evidence of a will cannot establish its contents unless the loss of the original is satisfactorily proved.",
+      "material_facts": [
+        "The beneficiary had obtained the original registered will and testified that he showed it to the testatrix.",
+        "He could not say where or how the original was lost, and no report of its loss or corroborating evidence was produced.",
+        "The beneficiary relied on a certified copy and a purported photocopy in place of the original."
+      ],
+      "conclusion": "The loss of the original was not satisfactorily proved, so the secondary evidence could not establish the will.",
+      "legal_principle": "Under Section 65(c) of the Indian Evidence Act, 1872, secondary evidence may be given when the original has been destroyed or lost, or cannot be produced for a reason not arising from the offering party’s default or neglect. The party relying on secondary evidence must first prove the loss of the original.",
+      "rule": {
+        "if": "will_proof_proceeding and original_not_produced and loss_of_original_not_satisfactorily_proved",
+        "then": "secondary_evidence_cannot_establish_will"
+      },
+      "predicates": {
+        "will_proof_proceeding": "A party sought recognition of a will in a proceeding concerning the will.",
+        "original_not_produced": "The party relying on the will did not produce its original document.",
+        "loss_of_original_not_satisfactorily_proved": "The party relying on secondary evidence could not give a satisfactory account or supporting proof of the original’s loss.",
+        "secondary_evidence_cannot_establish_will": "The substitute evidence cannot establish the will’s contents or execution."
+      },
+      "definition": "When the original will is not produced and its loss is not satisfactorily proved, secondary evidence cannot establish the will."
+    },
+    {
+      "legal_issue": "A registering officer’s statutory acts do not by themselves make the officer an attesting witness to a will.",
+      "material_facts": [
+        "The registering officer recorded an admission of execution and performed registration duties.",
+        "The officer’s signature was made in the course of those duties, and the evidence did not establish that the officer intended to attest the will.",
+        "The officer did not personally know the testatrix, and the Court found the officer’s evidence insufficient to prove execution or attestation."
+      ],
+      "conclusion": "The registering officer was not an attesting witness, and the registration evidence did not prove due execution or attestation of the will.",
+      "legal_principle": "Sections 52 and 58 of the Registration Act, 1908 set out duties and endorsements involved in registration. A signature made in performance of a statutory duty does not itself constitute attestation under Section 3 of the Transfer of Property Act, 1882 or Section 63 of the Indian Succession Act, 1925; attestation requires an intention to attest (animus attestandi). The Court relied on Dharam Singh v. Aso and referred to M.L. Abdul Jabhar Sahib v. H.V. Venkata Sastri & Sons and Seth Beni Chand v. Kamla Kunwar.",
+      "rule": {
+        "if": "will_proof_proceeding and registering_officer_signed_only_in_official_role and no_intention_to_attest_proved",
+        "then": "registration_does_not_prove_attestation"
+      },
+      "predicates": {
+        "will_proof_proceeding": "A party sought recognition of a will in a proceeding concerning the will.",
+        "registering_officer_signed_only_in_official_role": "The registering officer signed or made an endorsement while carrying out the officer’s statutory registration duties.",
+        "no_intention_to_attest_proved": "The evidence did not establish that the registering officer signed with the intention of witnessing and attesting execution.",
+        "registration_does_not_prove_attestation": "The registration act or endorsement does not, by itself, establish attestation of the will."
+      },
+      "definition": "When a registering officer signs only in an official capacity and no intention to attest is proved, the registration evidence does not establish attestation."
+    },
+    {
+      "legal_issue": "A will’s proponent must dispel material suspicious circumstances surrounding its execution before the will can be accepted as genuine.",
+      "material_facts": [
+        "The beneficiary was a stranger to the testatrix’s family, and the will left valuable property to him without an adequately supported explanation of their relationship or the disposition.",
+        "The testatrix was elderly and ill, and the evidence did not show that she had independent advice about the will.",
+        "The original was not produced, the copies differed, and the witnesses gave inconsistent accounts of execution and attestation.",
+        "The beneficiary’s father took an active role in the process, and no independent witness explained the circumstances that brought the testatrix and beneficiary together.",
+        "The proponent did not provide sufficient evidence to remove the resulting suspicions."
+      ],
+      "conclusion": "The proponent failed to discharge the burden of proving the will’s genuineness and due execution in light of the suspicious circumstances.",
+      "legal_principle": "The burden of proving valid execution and genuineness rests on the will’s proponent, who must remove well-founded suspicious circumstances with sufficient and cogent evidence. Compliance with formal proof requirements alone does not resolve such suspicions; the court must assess the circumstances as a whole. The Court relied on B. Venkatamuni v. C.J. Ayodhya Ram Singh, Niranjan Umeshchandra Joshi v. Mrudula Jyoti Rao, Rabindra Nath Mukherjee v. Panchanan Banerjee, and Joseph Antony Lazarus v. A.J. Francis, and referred to Venkatachala Iyengar.",
+      "rule": {
+        "if": "will_proof_proceeding and material_suspicious_circumstances and proponent_did_not_remove_suspicion",
+        "then": "will_not_accepted_as_genuine"
+      },
+      "predicates": {
+        "will_proof_proceeding": "A party sought recognition of a will in a proceeding concerning the will.",
+        "material_suspicious_circumstances": "The circumstances surrounding the will’s preparation or execution give substantial reason to doubt whether it reflects the testator’s genuine act.",
+        "proponent_did_not_remove_suspicion": "The party relying on the will did not provide sufficient evidence to explain or dispel the substantial doubts.",
+        "will_not_accepted_as_genuine": "The will is not accepted as genuine and duly executed."
+      },
+      "definition": "When a will is offered in a proceeding and substantial doubts about its execution remain unexplained by its proponent, the will is not accepted as genuine."
+    }
+  ],
+  "seconds": 20.1
+}

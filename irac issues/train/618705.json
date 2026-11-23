@@ -1,0 +1,167 @@
+{
+  "doc_id": "618705",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 128813,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4601,
+    "prompt_tokens": 30889,
+    "total_tokens": 35490,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Awards and judgments concerning other land acquisitions are evidentiary material and do not, merely because they were unchallenged or involved similar land, bar reconsideration of compensation or entitlement in a separate acquisition proceeding.",
+      "material_facts": [
+        "The compensation awards relied on by the High Court concerned acquisitions involving other claimants and land in neighbouring villages.",
+        "The High Court treated those decisions as creating res judicata and dismissed the acquiring authorities’ appeals as not maintainable.",
+        "The parties conceded that res judicata and issue estoppel did not apply to the case."
+      ],
+      "conclusion": "The High Court erred in applying res judicata. Decisions concerning other acquisitions may be evidence of market value, but they do not prevent the acquiring authorities from disputing entitlement, statutory limits, or the similarity of the lands. The principle also did not bar the claimants’ cross-objections.",
+      "legal_principle": "Res judicata applies where the same lis between the same parties has reached finality on the issue; it does not apply where the earlier court lacked jurisdiction, the issue is a pure question of law, or the earlier judgment is non-speaking. Awards from other acquisitions may have evidentiary value but are not, by themselves, conclusive. The Court relied on Government of West Bengal v. Tarun K. Roy, State of Maharashtra v. Digambar, State of Bihar v. Ramdeo Yadav, Nathi, Shakuntala Devi, Mathura Prasad Bajoo Jaiswal, and Ramnik Vallabhdas Madhvani.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and (other_acquisition_awards_relied_on or prior_decision_not_between_same_parties)",
+        "then": "other_acquisition_decisions_are_evidence_not_a_bar"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "other_acquisition_awards_relied_on": "A party relies on judgments or awards concerning compensation for other acquired land.",
+        "prior_decision_not_between_same_parties": "The earlier decision did not finally determine the same dispute between the same parties."
+      },
+      "definition": "When a compensation appeal relies on decisions from other acquisitions, and those decisions did not finally determine the same dispute between the same parties, they may inform the evidence but do not bar the appeal or cross-objections."
+    },
+    {
+      "legal_issue": "Compensation for minerals in acquired land cannot be assessed on an assumption that the claimant owned and could commercially exploit them without regard to the claimant’s source and extent of title and statutory restrictions on extraction.",
+      "material_facts": [
+        "The claimants sought additional compensation for China Clay found in the acquired land.",
+        "The record did not contain the original grants and conveyances bearing on the claimed ownership, or the relevant civil and revenue court judgments.",
+        "The village record stated that a mine found in the future would be Government property, but did not show that China Clay mines existed when the relevant rights were recorded.",
+        "The applicable mineral rules restricted extraction for commercial purposes and required permits for permitted extraction.",
+        "The Reference Court and High Court did not assess the effect of the relevant land and mineral laws or the cost of restoring quarried land."
+      ],
+      "conclusion": "The Court did not finally decide who owned the mineral rights. It held that the issue and the resulting compensation had to be reconsidered in light of the source and extent of the claimants’ rights and statutory restrictions; profits from illegal mining were not a safe measure of compensation.",
+      "legal_principle": "Ownership is a bundle of rights, and a tenancy or agricultural holding does not by itself establish ownership of subsoil minerals. The Court considered the Delhi Land Reforms Act, 1954, the Punjab Land Revenue Act, 1887, including sections 41 and 42, the Punjab Minor Mineral Rules, 1934, and the Mines and Minerals (Regulation and Development) Act, 1957, including sections 4, 14 and 15. It relied on Gaon Sabha v. Nathi, State of Punjab v. Vishkarma and Co., F.F. Christian v. Tekaitni Narbada Koeri, Bageswari Charan Singh v. Kumar Kamakhya Narain Singh, Jagat Mohan Nath Sah Deo v. Pratap Udai Nath Sah Deo, and Hingir Rampur Coal Co. Ltd. v. State of Orissa. Mineral compensation must reflect legally available rights, including applicable limits on extraction, rather than profits from unlawful mining.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and mineral_compensation_claimed and (mineral_title_uncertain or commercial_extraction_restricted)",
+        "then": "mineral_compensation_requires_rights_based_assessment"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "mineral_compensation_claimed": "A claimant seeks compensation for minerals associated with acquired land.",
+        "mineral_title_uncertain": "The evidence does not establish the claimant’s source and extent of title to the minerals.",
+        "commercial_extraction_restricted": "Applicable rules limit or condition the commercial extraction of the minerals."
+      },
+      "definition": "If a claimant seeks mineral compensation in a land-acquisition appeal and mineral title is uncertain or commercial extraction is restricted, the compensation assessment must be based on the rights the claimant could legally exercise."
+    },
+    {
+      "legal_issue": "Market value for a large, varied acquisition must be determined from relevant evidence of comparable land and appropriate adjustments, rather than by mechanically applying rates for developed residential plots.",
+      "material_facts": [
+        "The acquisition covered about 5,000 bighas for a university, including land of different categories, hills, and land containing minerals.",
+        "The High Court used rates for developed residential plots and made deductions to arrive at compensation for the acquired land.",
+        "The High Court did not adequately address the size and purpose of the acquisition, differences among the land categories, mineral extraction and restoration, or the claimants’ evidence and the acquiring authorities’ contrary case.",
+        "The High Court relied on administrative circulars fixing rates for residential plots in other areas."
+      ],
+      "conclusion": "The High Court’s valuation approach was unsustainable. Market value had to be reconsidered on the evidence, with attention to comparability, the land’s characteristics and potential, the size and purpose of the acquisition, and appropriate adjustments.",
+      "legal_principle": "Market value ordinarily reflects what a willing purchaser would pay a willing seller. Comparable sales are preferred where genuine, proximate in time and place, similar in nature and potential, and comparable in size; differences require suitable adjustments. Large areas may require deductions for development, and agricultural land generally differs in value from commercially developable land. Administrative valuation registers or circulars do not, without a proper evidentiary basis, establish market value. The Court relied on Land Acquisition Officer v. Nookala Rajamallu, Lila Ghosh v. State of West Bengal, Viluben Jhalejar Contractor v. State of Gujarat, Panna Lal Ghosh v. Land Acquisition Collector, Om Prakash v. Union of India, Shaji Kuriakose v. Indian Oil Corporation, P. Ram Reddy v. Land Acquisition Officer, Jawajee Nagnatham v. Revenue Divisional Officer, and Krishi Utpadan Mandi Samiti v. Bipin Kumar.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and large_or_varied_acquisition and (non_comparable_residential_rates_used or relevant_land_characteristics_not_assessed)",
+        "then": "market_value_must_be_reassessed_on_relevant_comparable_evidence"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "large_or_varied_acquisition": "The acquisition covers a large area or land differing materially in category, condition, or potential.",
+        "non_comparable_residential_rates_used": "The valuation relies on rates for developed residential plots that have not been shown to be comparable to the acquired land.",
+        "relevant_land_characteristics_not_assessed": "The valuation does not adequately assess relevant features such as size, location, potential, acquisition purpose, or required development and restoration."
+      },
+      "definition": "Where a large or varied acquisition is valued using non-comparable residential rates or without assessing relevant land characteristics, the market value must be reassessed on relevant comparable evidence and appropriate adjustments."
+    },
+    {
+      "legal_issue": "A claimant who expressly gives up interest for a period to obtain a stay of proceedings may not claim interest for that period.",
+      "material_facts": [
+        "The claimants sought and obtained a stay of the reference proceedings after representing that they would not claim interest on enhanced compensation for the period of the stay.",
+        "The acquiring authority had no objection to the stay on those stated terms.",
+        "The High Court nevertheless allowed interest for the stay period on the ground that the statutory interest provisions could not be waived."
+      ],
+      "conclusion": "The High Court erred in awarding interest for the period covered by the claimants’ representation. The claimants were not entitled to interest for that period.",
+      "legal_principle": "The right to interest may be waived, including by conduct, where a party expressly represents that it will not claim interest in order to obtain a benefit, and no public interest prevents waiver. A party cannot take advantage of its own representation to obtain the stay and then claim contrary to it. The Court relied on sections 28 and 34 of the Land Acquisition Act, Raghubans Narain Singh v. Uttar Pradesh Government, State of Assam v. Jitendra Kumar Senapati, Krishna Bahadur v. Purna Theatre, Vijay Cotton & Oil Mills Ltd. v. State of Gujarat, Sushil Kumar v. Rakesh Kumar, and Laxminarayan R. Bhattad v. State of Maharashtra.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and claimant_expressly_waived_interest_for_stay and stay_granted_on_that_basis",
+        "then": "interest_unavailable_for_waived_period"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "The proceeding concerns compensation following acquisition of land.",
+        "claimant_expressly_waived_interest_for_stay": "The claimant represented that interest would not be claimed for a specified period in seeking a stay.",
+        "stay_granted_on_that_basis": "The proceedings were stayed on the terms of the claimant’s representation."
+      },
+      "definition": "If a claimant obtains a stay on an express representation that interest will not be claimed for the stay period, interest is unavailable for that period."
+    },
+    {
+      "legal_issue": "Under the applicable earlier version of the compensation-claim limitation, an award cannot exceed the amount claimed where the required notice was served, and an unamended appeal memorandum does not itself amend the original claim pleadings.",
+      "material_facts": [
+        "The compensation proceedings arose before the 1984 amendment to the land-acquisition law, and the earlier version of the claim-limitation provision applied.",
+        "The claimants had stated lower amounts in their claims before the Collector than the amounts later awarded by the High Court.",
+        "The High Court allowed amendments to the appeal and reference materials and awarded compensation above the amounts claimed.",
+        "Whether notice had been served was disputed and had to be determined from the Collector’s records; the Collector’s awards recorded that notices had been issued.",
+        "The Court noted that the amendments had not been carried out within the time required after leave to amend."
+      ],
+      "conclusion": "The earlier version of the claim-limitation provision governed. If its notice-related conditions were met, the compensation could not exceed the amount claimed. Amending a memorandum of appeal did not, by itself, amend the original claim pleadings, and the High Court had to reconsider the notice and amendment issues.",
+      "legal_principle": "The earlier version of section 25 of the Land Acquisition Act is substantive and applies to proceedings governed by it; where its conditions are met, the claimant is restricted by the amount claimed. Section 53 makes civil procedure applicable, but an appeal amendment does not itself alter the original pleadings. Amendment requires judicial consideration of relevant factors, including admissions and delay, and must be carried out as required by the procedural rules. The Court relied on Land Acquisition Officer v. B.V. Reddy and Sons, Krishi Utpadan Mandi Samiti v. Kanhaiya Lal, M/s. Modi Spinning & Weaving Mills v. M/s. Ladha Ram, Heeralal v. Kalyan Mal, Sangramsinh P. Gaekwad v. Shantadevi P. Gaekwad, and Order VI Rules 17 and 18 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "land_acquisition_compensation_reference and earlier_claim_limit_applies and required_notice_served and claimant_claimed_lower_amount",
+        "then": "compensation_cannot_exceed_claimed_amount"
+      },
+      "predicates": {
+        "land_acquisition_compensation_reference": "The proceeding is a reference or appeal determining compensation for acquired land.",
+        "earlier_claim_limit_applies": "The governing law limits an award by reference to the amount claimed by the claimant.",
+        "required_notice_served": "The claimant received the notice required for the claim limitation to apply.",
+        "claimant_claimed_lower_amount": "The claimant sought a specified amount lower than the amount later awarded."
+      },
+      "definition": "If the applicable claim limitation governs, the required notice was served, and the claimant sought a lower amount, the award cannot exceed that claimed amount."
+    },
+    {
+      "legal_issue": "Compensation deposited during a pending dispute over entitlement cannot be ordered paid entirely to one claimant without a proper basis for resolving or protecting the competing interests.",
+      "material_facts": [
+        "Inter se disputes over ownership and entitlement to the compensation were pending in proceedings before the High Court.",
+        "The High Court directed payment of the entire compensation to a family entity through its representative despite those pending disputes and without an application by that entity for the direction.",
+        "The acquiring authority had deposited compensation, and one claimant had already withdrawn amounts awarded earlier."
+      ],
+      "conclusion": "The direction authorizing the family entity to collect the entire compensation was unjustified and was set aside. Any recipient remained liable to pay the compensation to the person ultimately found lawfully entitled to it, with restitution as appropriate.",
+      "legal_principle": "A person who receives compensation remains liable to pay it to the person lawfully entitled. The Court applied the restitution principle and considered the third proviso to section 31(2) of the Land Acquisition Act.",
+      "rule": {
+        "if": "land_acquisition_compensation_dispute and competing_entitlement_claims_pending and entire_deposit_awarded_to_one_claimant_without_protecting_competing_claims",
+        "then": "exclusive_payment_direction_is_unjustified"
+      },
+      "predicates": {
+        "land_acquisition_compensation_dispute": "The proceeding concerns payment of compensation for acquired land.",
+        "competing_entitlement_claims_pending": "Competing claims to ownership or entitlement remain pending for determination.",
+        "entire_deposit_awarded_to_one_claimant_without_protecting_competing_claims": "The court directs the whole deposited amount to one claimant without resolving or adequately protecting the competing claims."
+      },
+      "definition": "When competing entitlement claims remain pending, directing the entire deposit to one claimant without protecting those claims is unjustified."
+    },
+    {
+      "legal_issue": "A court may invoke its constitutional power to do complete justice to set aside consequential procedural orders in exceptional circumstances involving substantial public funds and mishandled litigation.",
+      "material_facts": [
+        "The acquiring authority did not challenge orders allowing amendments and additional evidence.",
+        "The litigation had been mishandled by the State and different courts had made inconsistent orders.",
+        "A large amount of public money was involved."
+      ],
+      "conclusion": "The Court invoked its power under Article 142 to set aside the procedural orders and remit the matters for fresh consideration.",
+      "legal_principle": "Article 142 empowers the Supreme Court to make orders necessary to do complete justice in the case before it. The Court relied on Deb Narayan Shyam v. State of West Bengal.",
+      "rule": {
+        "if": "supreme_court_appeal and public_funds_substantially_involved and (state_litigation_mishandled or inconsistent_court_orders)",
+        "then": "complete_justice_power_may_set_aside_consequential_orders"
+      },
+      "predicates": {
+        "supreme_court_appeal": "The proceeding is an appeal before the Supreme Court.",
+        "public_funds_substantially_involved": "The challenged outcome concerns a substantial amount of public money.",
+        "state_litigation_mishandled": "The State’s handling of the litigation contributed to the anomalous procedural situation.",
+        "inconsistent_court_orders": "Different courts made inconsistent orders in the course of the litigation."
+      },
+      "definition": "In a Supreme Court appeal involving substantial public funds and mishandled litigation or inconsistent orders, the Court may set aside consequential orders to do complete justice."
+    }
+  ],
+  "seconds": 88.7
+}

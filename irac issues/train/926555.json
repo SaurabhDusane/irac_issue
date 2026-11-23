@@ -1,0 +1,120 @@
+{
+  "doc_id": "926555",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16583,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2981,
+    "prompt_tokens": 4514,
+    "total_tokens": 7495,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An executing court must determine the decree’s true effect and may need to consider the pleadings and proceedings that led to it; failing to construe the decree by ignoring that material is a failure to exercise jurisdiction.",
+      "material_facts": [
+        "The execution court and the appellate court relied on the decree’s final wording without considering the pleadings and earlier decisions placed before them.",
+        "The High Court declined to intervene on the view that an erroneous construction of a decree raised only a question of law and not jurisdiction under Section 115 of the Code of Civil Procedure.",
+        "The Supreme Court found that the lower courts had not construed the decree in light of the relevant record."
+      ],
+      "conclusion": "The lower courts’ failure to construe the decree by considering the relevant record amounted to an omission to exercise their jurisdiction, and the High Court was wrong to refuse to examine that omission in revision.",
+      "legal_principle": "An executing court cannot go behind a decree, but it must determine the decree’s true effect. To ascertain the meaning of its words, the court may, and in appropriate cases ought to, consider the pleadings and proceedings leading to the decree. A failure to do so is an omission to exercise jurisdiction, reviewable under Section 115 of the Code of Civil Procedure. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "execution_proceeding and relevant_record_available and court_ignores_record_when_construing_decree",
+        "then": "failure_to_exercise_jurisdiction"
+      },
+      "predicates": {
+        "execution_proceeding": "The matter is before a court asked to enforce a decree.",
+        "relevant_record_available": "The pleadings or proceedings leading to the decree are available to the court.",
+        "court_ignores_record_when_construing_decree": "The court construes the decree from its final wording alone despite relevant material being available."
+      },
+      "definition": "When a court enforcing a decree ignores available material that bears on its meaning, it fails to exercise jurisdiction."
+    },
+    {
+      "legal_issue": "General wording in a later decree does not extend a possession award to properties whose claims were finally rejected or were not part of the appeal that produced the wording.",
+      "material_facts": [
+        "The Board refused to award possession of four fields because tenants had received occupancy certificates, and the debtors did not appeal that decision.",
+        "The claim to redeem two houses was held time-barred on appeal, and the debtors did not appeal that decision.",
+        "The appeals after remand did not put those fields or houses in issue; the later appellate judgment did not discuss them.",
+        "Although the later judgment used broad language about restoring mortgaged properties, the Supreme Court found that the language referred only to properties that were the subject matter of those appeals."
+      ],
+      "conclusion": "The execution petition for the four fields and two houses could not proceed; the claims to possession of those properties had been rejected and were not revived by the broad wording of the later judgment.",
+      "legal_principle": "A decree must be read in context, including the proceedings and earlier adjudications leading to it. General wording is confined to the properties actually in issue in the proceeding in which it was used and does not revive claims previously rejected. The judgment also treats the unappealed decisions on these properties as final and binding. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "execution_proceeding and property_claim_previously_rejected and rejection_became_final and later_general_wording_did_not_put_property_in_issue",
+        "then": "execution_claim_for_property_excluded"
+      },
+      "predicates": {
+        "execution_proceeding": "The matter concerns enforcement of a decree for possession.",
+        "property_claim_previously_rejected": "An earlier adjudication denied possession of the property.",
+        "rejection_became_final": "The denial of possession was not successfully challenged on appeal.",
+        "later_general_wording_did_not_put_property_in_issue": "A later judgment used general language but the property was not among those actually in issue in that proceeding."
+      },
+      "definition": "A possession claim cannot be enforced under later general wording when an earlier final decision rejected the claim and the later proceeding did not put the property in issue."
+    },
+    {
+      "legal_issue": "An unappealed adjudication about the effect of occupancy certificates is binding in the subsequent execution proceedings, even if its correctness is not reconsidered there.",
+      "material_facts": [
+        "The Board considered the effect of occupancy certificates and refused possession of four fields on that basis.",
+        "The debtors did not appeal the Board’s decision concerning those fields.",
+        "The Board reiterated its decision after remand, and the later appeal did not challenge it."
+      ],
+      "conclusion": "The Board’s unappealed decision was binding on the parties, so the Supreme Court did not need to decide whether the Board was correct or whether the executing court could otherwise order delivery of land covered by occupancy certificates.",
+      "legal_principle": "An adjudication made after the parties put an issue in contest binds them when it is not challenged in appeal. The judgment refers to the Saurashtra Land Reforms Act, 1951, as the law under which the occupancy certificates were issued, but expressly leaves the substantive effect of those certificates undecided. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "execution_proceeding and occupancy_certificate_issue_adjudicated and adjudication_not_challenged_on_appeal",
+        "then": "unappealed_adjudication_binding"
+      },
+      "predicates": {
+        "execution_proceeding": "The matter concerns enforcement following an earlier adjudication.",
+        "occupancy_certificate_issue_adjudicated": "The earlier tribunal decided the effect of occupancy certificates on the claim for possession.",
+        "adjudication_not_challenged_on_appeal": "The party did not challenge that decision on appeal."
+      },
+      "definition": "In an execution proceeding, a decision on the effect of occupancy certificates binds the parties when it was adjudicated and not appealed."
+    },
+    {
+      "legal_issue": "An appeal concerning a deceased appellant’s property claim abates when the appellant dies during the appeal and no legal representatives are brought on record.",
+      "material_facts": [
+        "The appeal concerned a field for which possession was claimed from one appellant.",
+        "That appellant died while the appeal was pending.",
+        "His legal representatives were not brought on record."
+      ],
+      "conclusion": "The appeal concerning that field had abated.",
+      "legal_principle": "The judgment applies the procedural consequence of abatement where an appellant dies during the appeal and the appellant’s legal representatives are not brought on record. No specific provision or earlier case is cited for this ruling.",
+      "rule": {
+        "if": "execution_appeal and appellant_died_during_appeal and legal_representatives_not_brought_on_record",
+        "then": "appeal_abated_as_to_deceased_appellants_claim"
+      },
+      "predicates": {
+        "execution_appeal": "The matter is an appeal concerning execution of a decree.",
+        "appellant_died_during_appeal": "An appellant died while the appeal was pending.",
+        "legal_representatives_not_brought_on_record": "The deceased appellant’s legal representatives were not substituted in the appeal."
+      },
+      "definition": "An execution appeal abates as to a deceased appellant’s claim when the appellant dies during the appeal and no legal representatives are brought on record."
+    },
+    {
+      "legal_issue": "An appeal against execution of possession awards fails for properties that the operative adjudications directed creditors to restore, where the appellant establishes no basis to disturb those directions.",
+      "material_facts": [
+        "The Board’s awards directed restoration of two fields and another field to the debtors, and the appellate order confirmed those directions.",
+        "No argument was advanced concerning the property described as a yard.",
+        "The Supreme Court accordingly dismissed the appeal concerning those properties."
+      ],
+      "conclusion": "The appeal was dismissed concerning the properties for which restoration had been directed and the property for which no argument was advanced.",
+      "legal_principle": "The Court applied the operative awards and appellate decision concerning the properties and dismissed the appeal where those decisions directed restoration and were not shown to be unsustainable. It also dismissed the appeal concerning the property on which no argument was advanced. No earlier cases or specific provisions are relied on for this ruling.",
+      "rule": {
+        "if": "execution_appeal and (operative_orders_directed_restoration or no_argument_advanced_against_property_claim)",
+        "then": "appeal_dismissed_as_to_property"
+      },
+      "predicates": {
+        "execution_appeal": "The matter is an appeal concerning execution of a decree.",
+        "operative_orders_directed_restoration": "The operative adjudications directed restoration of the property to the persons claiming possession.",
+        "no_argument_advanced_against_property_claim": "No argument was advanced in the appeal against the claim concerning the property."
+      },
+      "definition": "In an execution appeal, the appeal concerning a property is dismissed when the operative orders direct its restoration or no argument is advanced against the property claim."
+    }
+  ],
+  "seconds": 18.1
+}

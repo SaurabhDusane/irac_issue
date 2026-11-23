@@ -1,0 +1,85 @@
+{
+  "doc_id": "1501564",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16973,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2566,
+    "prompt_tokens": 4669,
+    "total_tokens": 7235,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A High Court hearing a second appeal cannot interfere with concurrent factual findings of the trial court and first appellate court absent an irregularity warranting interference.",
+      "material_facts": [
+        "The trial court found the tenant in default and found the landlords’ bona fide need established.",
+        "The first appellate court affirmed those findings.",
+        "The High Court reversed both findings in second appeal."
+      ],
+      "conclusion": "The High Court was not justified in upsetting the concurrent findings of fact, and its judgment was set aside.",
+      "legal_principle": "Concurrent findings of fact by the trial court and first appellate court are not open to interference in second appeal absent an irregularity warranting interference. The Court applied this principle to findings on rent default and bona fide need; it cited no earlier case for this procedural rule.",
+      "rule": {
+        "if": "second_appeal_proceeding and concurrent_lower_court_findings and not interferable_irregularity",
+        "then": "concurrent_findings_must_not_be_reversed"
+      },
+      "predicates": {
+        "second_appeal_proceeding": "The matter is before a High Court in a second appeal.",
+        "concurrent_lower_court_findings": "The trial court and first appellate court reached the same factual findings.",
+        "interferable_irregularity": "The lower courts’ findings involve an irregularity warranting interference.",
+        "concurrent_findings_must_not_be_reversed": "The concurrent factual findings are not to be disturbed in second appeal."
+      },
+      "definition": "When a second appeal presents concurrent factual findings and no warranting irregularity, those findings must not be reversed."
+    },
+    {
+      "legal_issue": "A tenant who deliberately remits rent to an address known to be wrong has not made a valid tender of rent.",
+      "material_facts": [
+        "The tenant remitted rent to the landlords’ village address although the landlords did not live there.",
+        "The lower courts found that the tenant knew the landlords’ proper address and continued to remit rent to the wrong address even after acquiring that knowledge.",
+        "The tenant was notified that an appointed attorney could receive rent, and the attorney lived beside the suit premises, but the tenant did not pay him before the suit was filed."
+      ],
+      "conclusion": "The remittances were not valid tenders, and the tenant was a habitual defaulter.",
+      "legal_principle": "Under section 12(1) of the Bihar Buildings (Lease, Rent and Eviction) Control Act, 1977, default was a ground relied on for eviction. The Court held that sending rent to a known wrong address did not constitute valid tender; the notice under section 106 of the Transfer of Property Act identified the landlord’s attorney for receiving rent. No earlier case was cited on this issue.",
+      "rule": {
+        "if": "tenant_eviction_case and rent_sent_to_known_wrong_address and rent_not_paid_to_identified_agent",
+        "then": "tenant_is_a_habitual_rent_defaulter"
+      },
+      "predicates": {
+        "tenant_eviction_case": "A landlord brings a proceeding seeking eviction of a tenant, including on the ground of rent default.",
+        "rent_sent_to_known_wrong_address": "The tenant remits rent to an address the tenant knows is not the landlord’s proper address.",
+        "rent_not_paid_to_identified_agent": "After being told that an agent can receive rent, the tenant does not pay that agent.",
+        "tenant_is_a_habitual_rent_defaulter": "The tenant is treated as a habitual defaulter because the remittances do not amount to valid tenders."
+      },
+      "definition": "In an eviction case, a tenant who sends rent to a known wrong address and does not pay an identified receiving agent is treated as a habitual rent defaulter."
+    },
+    {
+      "legal_issue": "A landlord has a bona fide reasonable need for rented premises for the family’s business when the business has been disrupted, grown family members are idle, the premises are suitable and connected to the residence, and no conveniently occupiable vacant premises are shown.",
+      "material_facts": [
+        "The landlords’ business in another state had been disrupted, and the family sought to conduct business in the suit shop.",
+        "Some of the landlords’ children had grown up and were doing no business.",
+        "The suit shop was on a main road, was suitable for business, was adjacent to the landlords’ residence, and was connected to it by a door.",
+        "There was no evidence of other vacant premises that the landlords could conveniently occupy.",
+        "The trial court found the need proved, and the first appellate court affirmed that finding."
+      ],
+      "conclusion": "The landlords had a bona fide reasonable need for the suit shop, and the High Court was unjustified in disturbing the concurrent finding on that need.",
+      "legal_principle": "Section 12(1)(c) of the Bihar Buildings (Lease, Rent and Eviction) Control Act, 1977 provided for partial eviction in certain circumstances. The Court distinguished M.M. Qasim v. Manohar Lal Sharma, AIR 1981 SC 1113, because there was no evidence here of vacant premises the landlords could conveniently occupy. The Court upheld the lower courts’ assessment of reasonable need on the evidence of business disruption, family circumstances, and the suitability and location of the shop.",
+      "rule": {
+        "if": "tenant_eviction_case and landlord_business_disrupted and grown_family_members_without_business and premises_suitable_and_connected_to_residence and no_convenient_vacant_premises_shown",
+        "then": "landlord_has_bona_fide_reasonable_need"
+      },
+      "predicates": {
+        "tenant_eviction_case": "A landlord seeks eviction of a tenant from rented premises.",
+        "landlord_business_disrupted": "The landlord’s existing business has been disrupted, prompting a need to conduct business from the rented premises.",
+        "grown_family_members_without_business": "Some grown members of the landlord’s family are not engaged in business.",
+        "premises_suitable_and_connected_to_residence": "The rented premises are suitable for the proposed business and are adjacent or connected to the landlord’s residence.",
+        "no_convenient_vacant_premises_shown": "No evidence shows other vacant premises that the landlord could conveniently occupy.",
+        "landlord_has_bona_fide_reasonable_need": "The landlord is found to have a bona fide reasonable need for the rented premises."
+      },
+      "definition": "When a landlord seeking eviction has a disrupted business, grown family members without business, suitable premises connected to the residence, and no conveniently occupiable vacant premises are shown, the landlord has a bona fide reasonable need."
+    }
+  ],
+  "seconds": 16.1
+}

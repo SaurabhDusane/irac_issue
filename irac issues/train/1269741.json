@@ -1,0 +1,121 @@
+{
+  "doc_id": "1269741",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17412,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2981,
+    "prompt_tokens": 5039,
+    "total_tokens": 8020,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A mere increase or reduction of rent does not by itself create a new tenancy, and a factual finding that no new tenancy was created is binding in second appeal if it is not vitiated by an error of law.",
+      "material_facts": [
+        "Four shops were let under one tenancy and two additional shops were let later under another tenancy.",
+        "The lower courts found that a later agreement increased the rent but did not change the other terms or create a new tenancy.",
+        "The High Court treated all six shops as one integrated tenancy in second appeal."
+      ],
+      "conclusion": "The rent increase did not create a new tenancy, and the High Court erred in treating all six shops as one integrated tenancy because the lower courts’ factual finding was not vitiated by an error of law.",
+      "legal_principle": "A mere increase or reduction of rent does not necessarily imply surrender of an existing lease and grant of a new tenancy; the finding of fact by the courts below was binding in second appeal absent an error of law. The Court referred to Hill and Redman's Law of Landlord and Tenant, 14th ed., article 385; it relied on no statutory provision or earlier case for this point.",
+      "rule": {
+        "if": "second_appeal and lower_courts_found_no_new_tenancy and rent_change_without_changed_terms",
+        "then": "existing_tenancy_arrangement_remains"
+      },
+      "predicates": {
+        "second_appeal": "The matter is an appeal from a decision made in second appeal.",
+        "lower_courts_found_no_new_tenancy": "The courts below found that the parties did not create a new tenancy.",
+        "rent_change_without_changed_terms": "The parties changed the rent but left the other tenancy terms unchanged."
+      },
+      "definition": "When a second appeal concerns a lower-court finding that a rent change left the other tenancy terms unchanged and created no new tenancy, the existing tenancy arrangement remains."
+    },
+    {
+      "legal_issue": "A landlord’s permission for subletting is not established merely by the landlord’s receipt of rent after the subletting when the landlord’s clear knowledge of the sublease is not proved.",
+      "material_facts": [
+        "The tenant sublet two shops to another person.",
+        "The tenant did not plead that the landlord had permitted the subletting, and no issue on permission was framed.",
+        "The landlord received rent after the subletting, but there was no proof that the landlord then had clear knowledge of the sublease."
+      ],
+      "conclusion": "The lower courts erred in finding that the subletting was permitted; receipt of rent alone did not establish permission without proof of the landlord’s clear knowledge of the sublease.",
+      "legal_principle": "Permission cannot be inferred merely from a landlord’s receipt of rent after subletting unless the landlord’s clear knowledge of the sublease is proved. The Court also treated the absence of a pleading and an issue on permission as a reason the lower courts erred in making that finding. No statutory provision or earlier case was relied on for this point.",
+      "rule": {
+        "if": "rent_control_ejectment_case and subletting_disputed and consent_not_pleaded and rent_received_without_proven_knowledge",
+        "then": "landlord_permission_not_established"
+      },
+      "predicates": {
+        "rent_control_ejectment_case": "The proceeding seeks a tenant’s eviction under rent-control law.",
+        "subletting_disputed": "The parties dispute whether the tenant sublet the premises or whether the subletting was permitted.",
+        "consent_not_pleaded": "The tenant did not plead that the landlord permitted the subletting.",
+        "rent_received_without_proven_knowledge": "The landlord received rent after the subletting, but clear knowledge of the sublease was not proved."
+      },
+      "definition": "In a rent-control eviction proceeding, when permission is disputed but was not pleaded, receipt of rent without proven knowledge of the sublease does not establish the landlord’s permission."
+    },
+    {
+      "legal_issue": "A court cannot find that subletting occurred at a particular time when that timing was not pleaded and no issue on it was framed.",
+      "material_facts": [
+        "The plaint did not state when the tenant sublet the two shops.",
+        "No pleading or issue addressed the date of subletting.",
+        "The High Court found that the subletting occurred after the relevant rent-control order came into force."
+      ],
+      "conclusion": "The High Court erred in finding that the subletting occurred after the rent-control order came into force; on the record, the Court could conclude only that it occurred sometime after the later shops were let.",
+      "legal_principle": "A factual finding on a matter not pleaded and not made an issue cannot be supplied by the court. No statutory provision or earlier case was relied on for this procedural point.",
+      "rule": {
+        "if": "second_appeal and subletting_date_not_pleaded and no_issue_on_subletting_date",
+        "then": "court_cannot_find_specific_subletting_date"
+      },
+      "predicates": {
+        "second_appeal": "The matter is an appeal from a decision made in second appeal.",
+        "subletting_date_not_pleaded": "The pleadings do not state when the subletting occurred.",
+        "no_issue_on_subletting_date": "No issue was framed for trial on when the subletting occurred."
+      },
+      "definition": "In a second appeal, when the timing of a subletting was neither pleaded nor made an issue, the court cannot find a specific date for it."
+    },
+    {
+      "legal_issue": "The statutory ground of eviction for unauthorized subletting applies to a subletting made before the rent-control statute came into force if the subletting continued into the relevant present period.",
+      "material_facts": [
+        "The tenant had sublet two shops without the landlord’s permission.",
+        "The subletting occurred at some point before the rent-control statute came into force, though its precise date was not established.",
+        "The landlord sought eviction under the statutory ground for a tenant who has sublet premises without permission."
+      ],
+      "conclusion": "The unauthorized subletting could support eviction even if it began before the statute came into force, provided it continued into the present period contemplated by the statutory wording.",
+      "legal_principle": "Section 13(1)(e) of the Rajasthan Premises (Control of Rent and Eviction) Act, 1950, uses the words “has sub-let,” which encompass a subletting made in the past and continuing into the present, whether it began before or after the Act came into force. Sections 26 and 27(1) contemplate that grounds of eviction under section 13 may have arisen before the Act commenced. A tenant’s right to sublet under section 108(j) of the Transfer of Property Act does not prevent eviction under section 13(1)(e) when the subletting was without the landlord’s permission.",
+      "rule": {
+        "if": "rent_control_eviction_case and tenant_sublet_without_permission and subletting_continued_into_relevant_present_period",
+        "then": "pre_statute_subletting_can_support_eviction"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding seeks a tenant’s eviction under rent-control law.",
+        "tenant_sublet_without_permission": "The tenant sublet the premises without the landlord’s permission.",
+        "subletting_continued_into_relevant_present_period": "The subletting began in the past and continued into the period relevant to the eviction claim."
+      },
+      "definition": "In a rent-control eviction proceeding, an unauthorized subletting that began before the law took effect can support eviction if it continued into the relevant present period."
+    },
+    {
+      "legal_issue": "When separate parts of premises were let under distinct tenancies, unauthorized subletting of one part supports eviction from that part but does not support eviction from other parts sublet with the landlord’s permission.",
+      "material_facts": [
+        "Four shops were let under one tenancy and two additional shops were let later under a separate tenancy.",
+        "The courts below found that the four shops had been sublet with the landlord’s permission.",
+        "The tenant had sublet the two later shops without the landlord’s permission.",
+        "The High Court treated all six shops as one integrated tenancy and ordered eviction from all six."
+      ],
+      "conclusion": "The landlord was entitled to eviction from the two shops sublet without permission, but not from the four shops sublet with permission.",
+      "legal_principle": "Section 13(1)(e) of the Rajasthan Premises (Control of Rent and Eviction) Act, 1950, identifies unauthorized assignment, subletting, or parting with possession of the whole or any part of the premises as a ground for eviction. Because the tenancies were not integrated and the unauthorized subletting concerned only the two shops, eviction was limited to those shops.",
+      "rule": {
+        "if": "rent_control_ejectment_case and distinct_tenancies and unauthorized_subletting_of_part and permission_for_remaining_part",
+        "then": "eviction_limited_to_unauthorized_part"
+      },
+      "predicates": {
+        "rent_control_ejectment_case": "The proceeding seeks a tenant’s eviction under rent-control law.",
+        "distinct_tenancies": "Different parts of the premises were let under separate tenancies.",
+        "unauthorized_subletting_of_part": "The tenant sublet one part of the premises without the landlord’s permission.",
+        "permission_for_remaining_part": "The tenant sublet the remaining part with the landlord’s permission."
+      },
+      "definition": "When distinct tenancies cover different parts of premises, unauthorized subletting of one part supports eviction from that part, while permission for subletting the remaining part prevents eviction from it on that ground."
+    }
+  ],
+  "seconds": 19.5
+}

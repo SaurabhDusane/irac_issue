@@ -1,0 +1,77 @@
+{
+  "doc_id": "122509",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15919,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2475,
+    "prompt_tokens": 4555,
+    "total_tokens": 7030,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may decide legal issues in a suit without first ruling on an application to stay that suit when those issues can be resolved without evidence.",
+      "material_facts": [
+        "A party filed a suit for specific performance while another suit concerning possession of the same property was pending.",
+        "The party applied to stay the specific-performance suit under Section 10 of the Code of Civil Procedure.",
+        "The trial court decided limitation and maintainability without deciding the stay application; those issues could be determined without taking evidence."
+      ],
+      "conclusion": "The stay application did not prevent the trial court from deciding the legal issues first, and the High Court erred in remanding the case merely because the application had not been decided.",
+      "legal_principle": "Section 10 of the Code of Civil Procedure is a procedural rule intended to prevent concurrent courts from simultaneously trying parallel suits on the same matter. Filing an application under that section does not itself restrict the court's power to examine the merits. A decree made contrary to Section 10 is not a nullity, and a court may decide issues that can be resolved on legal grounds without evidence rather than keep a suit pending, particularly where it was instituted to cause harassment.",
+      "rule": {
+        "if": "later_suit_with_stay_request and issues_resolvable_without_evidence",
+        "then": "court_may_decide_legal_issues_before_stay_application"
+      },
+      "predicates": {
+        "later_suit_with_stay_request": "A party brought a later suit and applied to stay it because another suit concerning the same matter was pending.",
+        "issues_resolvable_without_evidence": "The issues the court decided could be resolved on legal grounds without taking evidence."
+      },
+      "definition": "When a party seeks a stay of a later suit but its issues can be resolved without evidence, the court may decide those legal issues before deciding the stay application."
+    },
+    {
+      "legal_issue": "A later suit for specific performance is barred by limitation when the right to seek that relief was already finally found to be out of time and the claimant's knowledge of refusal preceded the later suit.",
+      "material_facts": [
+        "The agreement to sell was made in 1974, and the claimant later rescinded it and sought repayment of the advance.",
+        "In an earlier suit, the claimant sought to amend the claim to seek specific performance; the trial court rejected the amendment because that relief was time-barred, and the High Court dismissed the revision against that decision.",
+        "The claimant subsequently filed another suit for specific performance, after the original owners had opposed the earlier amendment on limitation grounds."
+      ],
+      "conclusion": "The later suit for specific performance was barred by limitation, and the trial court was justified in dismissing it.",
+      "legal_principle": "Article 54 of the Limitation Act prescribes three years for a suit for specific performance, running from the date fixed for performance or, if no date is fixed, from when the plaintiff has notice that performance is refused. The earlier finding that the specific-performance relief was time-barred had attained finality, and the facts established that the claimant knew well before the later suit that the original owners would not execute the sale deed.",
+      "rule": {
+        "if": "specific_performance_suit and earlier_final_time_bar_finding and refusal_known_before_later_filing",
+        "then": "specific_performance_claim_is_time_barred"
+      },
+      "predicates": {
+        "specific_performance_suit": "A claimant filed a suit seeking specific performance of an agreement.",
+        "earlier_final_time_bar_finding": "An earlier court finally found that the claimant's request for specific performance was out of time.",
+        "refusal_known_before_later_filing": "The claimant knew before filing the later suit that the other contracting party would not perform."
+      },
+      "definition": "A specific-performance claim is time-barred when an earlier final finding held it out of time and the claimant knew of refusal before bringing the later suit."
+    },
+    {
+      "legal_issue": "Specific performance cannot be granted when the claimant's conduct shows that the claimant was not continuously ready and willing to perform the contract.",
+      "material_facts": [
+        "The claimant issued a notice rescinding the contract and sought repayment of the advance rather than performance of the sale agreement.",
+        "The claimant pursued a suit for repayment of the advance and later sought specific performance.",
+        "The claimant's conduct did not show continuing readiness and willingness to perform the claimant's obligations under the agreement."
+      ],
+      "conclusion": "The claimant was not ready and willing to perform the contract, so specific performance could not be granted and the suit was not maintainable.",
+      "legal_principle": "Section 16(c) of the Specific Relief Act, including Explanation II, requires a claimant seeking specific performance to aver and prove performance or continuous readiness and willingness to perform the essential terms of the contract, according to its true construction. The surrounding circumstances must show that readiness and willingness continued from the contract through the hearing. The Court also referred to Forms 47 and 48 of the Code of Civil Procedure as reflecting the required pleadings.",
+      "rule": {
+        "if": "specific_performance_suit and claimant_rescinded_and_sought_refund and conduct_disclaims_continuing_readiness",
+        "then": "specific_performance_cannot_be_granted"
+      },
+      "predicates": {
+        "specific_performance_suit": "A claimant brought a suit seeking specific performance of a contract.",
+        "claimant_rescinded_and_sought_refund": "The claimant rescinded the contract and sought repayment instead of insisting on performance.",
+        "conduct_disclaims_continuing_readiness": "The claimant's conduct showed that the claimant was not continuously ready and willing to perform the claimant's contractual obligations."
+      },
+      "definition": "When a claimant seeking specific performance rescinded the contract, sought a refund, and otherwise showed no continuing readiness to perform, specific performance cannot be granted."
+    }
+  ],
+  "seconds": 18.1
+}

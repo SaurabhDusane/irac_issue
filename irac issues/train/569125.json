@@ -1,0 +1,116 @@
+{
+  "doc_id": "569125",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27131,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2967,
+    "prompt_tokens": 7424,
+    "total_tokens": 10391,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The phrase “depreciation actually allowed” refers to depreciation that was in fact given effect to, rather than depreciation that could have been allowed.",
+      "material_facts": [
+        "The company’s income was exempt from taxation under an agreement, and no assessments were made under the former state law during the exemption period.",
+        "In its original assessments, the tax officer calculated depreciation using the assets’ original cost; the appellate authorities rejected a later calculation that treated depreciation as having been allowed during the exemption period."
+      ],
+      "conclusion": "Under the original wording of paragraph 2, depreciation that was never actually allowed could not be treated as depreciation actually allowed.",
+      "legal_principle": "The Court read the unambiguous words “actually allowed” as requiring an allowance that was actually given effect to. It noted that section 10(5) of the Indian Income-tax Act, 1922 contained an express deeming provision where a deemed allowance was intended; paragraph 2 as originally worded did not.",
+      "rule": {
+        "if": "merged_state_depreciation_case and depreciation_was_never_given_effect",
+        "then": "only_depreciation_actually_given_effect_counts"
+      },
+      "predicates": {
+        "merged_state_depreciation_case": "The proceeding concerns the computation of depreciation for an assessment under the general tax law following the integration of a formerly separate state.",
+        "depreciation_was_never_given_effect": "The taxpayer was not in fact granted or given effect to a depreciation allowance under the former state’s tax law."
+      },
+      "definition": "When a merged-state depreciation computation concerns an allowance that was never given effect, only depreciation actually given effect counts as depreciation allowed."
+    },
+    {
+      "legal_issue": "A retrospective amendment defining depreciation for periods of tax exemption applies to earlier assessments and requires the written-down value to reflect depreciation that would have been allowed absent the exemption.",
+      "material_facts": [
+        "The company had been exempt from taxation under an agreement with the former state’s ruler, and the exemption period ended before the assessments in dispute.",
+        "A later amendment provided that, in cases of exemption under a state law or an agreement with a ruler, depreciation that would have been allowed without the exemption was to be treated as depreciation actually allowed, and that this meaning was deemed always to have applied.",
+        "The tax officer recalculated depreciation for the disputed assessment years by taking account of depreciation that would have been allowed during the exemption period."
+      ],
+      "conclusion": "The retrospective amendment applied to the disputed assessments, and the correct computation used the tax officer’s basis, which accounted for depreciation that would have been allowed during the exemption period.",
+      "legal_principle": "Paragraph 2 of the Taxation Laws (Merged States) (Removal of Difficulties) Order, 1949, as amended by the 1962 Order under section 6 of the Taxation Laws (Extension to Merged States and Amendment) Act, 1949, governed the computation. The words “shall be deemed always to have meant” made the amendment retrospective from the commencement of the 1949 Order. Applying Commissioner of Sales-tax, U.P. v. Bijli Cotton Mills, the Court held that a court deciding a tax reference must apply an intervening retrospective amendment where it applies to the dispute.",
+      "rule": {
+        "if": "merged_state_depreciation_case and exemption_period_applied and amendment_deems_hypothetical_depreciation_always_included",
+        "then": "written_down_value_uses_hypothetical_depreciation"
+      },
+      "predicates": {
+        "merged_state_depreciation_case": "The proceeding concerns depreciation in an assessment under the general tax law following the integration of a formerly separate state.",
+        "exemption_period_applied": "The taxpayer’s income was exempt from tax for a period under the former state’s law or an agreement with its ruler.",
+        "amendment_deems_hypothetical_depreciation_always_included": "A later applicable amendment states that depreciation that would have been allowed during an exemption period is treated as allowed and that this meaning applies from the beginning of the earlier rule."
+      },
+      "definition": "If a merged-state depreciation case involves an exemption period and an applicable amendment deeming hypothetical depreciation to have always been included, the written-down value uses that hypothetical depreciation."
+    },
+    {
+      "legal_issue": "An exemption from tax under an agreement with a ruler does not prevent the taxpayer from being covered by a rule addressing income exempted under such an agreement.",
+      "material_facts": [
+        "The company’s agreement with the former state’s ruler exempted it from tax for a specified period.",
+        "The company would have been liable to tax under the former state’s law if the agreement had not granted the exemption.",
+        "No returns or assessments were made during the exemption period."
+      ],
+      "conclusion": "The amendment applied to the company because its income had been exempted under an agreement with the ruler, even though no tax had been payable while the exemption operated.",
+      "legal_principle": "The Court construed the amendment’s reference to income exempted under an agreement with a ruler according to the source of the exemption. It rejected the argument based on the former state law’s definition of an assessee as a person by whom income tax was payable: absent the agreement, the company would have been liable to tax. The applicable rule was paragraph 2 of the 1949 Order as amended by the 1962 Order.",
+      "rule": {
+        "if": "exemption_agreement_case and taxpayer_would_owe_tax_without_agreement",
+        "then": "exemption_amendment_covers_taxpayer"
+      },
+      "predicates": {
+        "exemption_agreement_case": "The taxpayer’s income was exempted from tax under an agreement with the ruler of a formerly separate state.",
+        "taxpayer_would_owe_tax_without_agreement": "The taxpayer would have been liable to tax under the former state’s law if the agreement had not granted the exemption."
+      },
+      "definition": "When an exemption-agreement case concerns a taxpayer who would otherwise have owed tax, the exemption amendment covers that taxpayer."
+    },
+    {
+      "legal_issue": "A court may apply a retrospective amendment in answering a tax reference when the referred question is broad enough to cover the amended law and applying it requires no investigation of fresh facts.",
+      "material_facts": [
+        "The Tribunal referred whether the tax officer’s or the appellate authority’s basis for computing the written-down value was correct, having regard to the 1949 Order and the agreement.",
+        "The 1962 amendment was made after the High Court answered the reference but before the Supreme Court decided the appeals.",
+        "The dispute over the exemption and the relevant depreciation computation rested on facts already in the case."
+      ],
+      "conclusion": "The referred question was broad enough to include consideration of the retrospective amendment, and the Court applied that amendment in answering it.",
+      "legal_principle": "Following Commissioner of Sales-tax, U.P. v. Bijli Cotton Mills, the Court held that an amended law with retrospective operation must be applied in a reference if the question is sufficiently broad to cover the amended law and doing so does not require investigation of fresh facts. A reference question is not ordinarily confined to the law as it stood when the Tribunal decided the matter.",
+      "rule": {
+        "if": "tax_reference_case and retrospective_amendment_applies and referred_question_is_broad_enough and no_fresh_fact_investigation_needed",
+        "then": "court_applies_retrospective_amendment"
+      },
+      "predicates": {
+        "tax_reference_case": "The proceeding asks a court to answer a question referred from a tax tribunal.",
+        "retrospective_amendment_applies": "A legal amendment made after the tribunal’s decision expressly applies retrospectively to the tax dispute.",
+        "referred_question_is_broad_enough": "The referred question asks which competing basis for the tax computation is correct and does not exclude consideration of the amended law.",
+        "no_fresh_fact_investigation_needed": "Applying the amendment requires no investigation of facts that were not already examined in the proceeding."
+      },
+      "definition": "In a tax reference, a court applies an applicable retrospective amendment when the referred question encompasses it and no new factual investigation is needed."
+    },
+    {
+      "legal_issue": "A taxpayer cannot raise an objection to the validity of a statutory tax order in the proceeding where the applicable precedent precludes that challenge.",
+      "material_facts": [
+        "The taxpayer raised objections to the validity of the 1962 Order when the order was relied on in the appeals.",
+        "The Court treated the order as a statutory direction amending the tax law applicable to the merged states.",
+        "The Court relied on its earlier decision in K. S. Venkataraman v. State of Madras in refusing to permit the validity objections to be developed."
+      ],
+      "conclusion": "The taxpayer was not permitted to pursue its objections that the 1962 Order was ultra vires.",
+      "legal_principle": "Applying K. S. Venkataraman v. State of Madras, the Court refused to entertain the validity challenge. It treated the order as an effective statutory amendment governing the tax computation and rejected the proposed distinction from that precedent.",
+      "rule": {
+        "if": "tax_appeal_or_reference and validity_of_statutory_tax_order_challenged and controlling_precedent_precludes_challenge",
+        "then": "validity_challenge_is_not_entertained"
+      },
+      "predicates": {
+        "tax_appeal_or_reference": "The proceeding is an appeal or reference concerning a tax dispute.",
+        "validity_of_statutory_tax_order_challenged": "A party seeks to contest the legal validity of an order that directs how the tax law is to be applied.",
+        "controlling_precedent_precludes_challenge": "An applicable earlier decision of the court precludes entertaining the validity objection in that proceeding."
+      },
+      "definition": "In a tax appeal or reference, a validity challenge to a statutory tax order is not entertained when controlling precedent precludes it."
+    }
+  ],
+  "seconds": 19.8
+}

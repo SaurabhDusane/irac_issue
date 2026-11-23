@@ -1,0 +1,84 @@
+{
+  "doc_id": "21852",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43302,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3468,
+    "prompt_tokens": 10963,
+    "total_tokens": 14431,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The provision on wrongful withholding of company property applies to former officers and employees who retain property obtained during their employment after that employment ends.",
+      "material_facts": [
+        "The company obtained the flat under a leave-and-licence agreement and allowed the employee to occupy it as an employee.",
+        "The employee resigned but remained in possession of the flat and refused to deliver it to the company."
+      ],
+      "conclusion": "The employee’s status as a former employee did not take the case outside the provision; retaining the company’s property after employment ended could attract its application.",
+      "legal_principle": "Section 630 of the Companies Act, 1956 covers both existing and past officers or employees. It applies where an officer or employee wrongfully obtains company property, or obtains it during employment and wrongfully withholds it after employment ends. The Court relied on Sh. Baldev Krishna Sahi v. Shipping Corporation of India Ltd. and Amrit Lal Chum v. Devo Prasad Dutta Roy.",
+      "rule": {
+        "if": "company_property_wrongful_withholding_case and possession_obtained_during_employment and employment_ended and property_retained_after_employment",
+        "then": "former_employee_retaining_company_property_is_within_scope"
+      },
+      "predicates": {
+        "company_property_wrongful_withholding_case": "The proceeding alleges that an officer or employee wrongfully obtained or withheld property belonging to a company.",
+        "possession_obtained_during_employment": "The employee received possession of the company’s property while employed by the company.",
+        "employment_ended": "The employee’s service with the company ended.",
+        "property_retained_after_employment": "The former employee continued to hold the company’s property after the employment ended."
+      },
+      "definition": "When a company-property withholding proceeding concerns property received during employment and retained after employment ends, the former employee’s status does not exclude the conduct from the provision’s scope."
+    },
+    {
+      "legal_issue": "A pending civil suit does not by itself require a criminal court to stay a company-property complaint; the criminal court may proceed when the employee’s asserted dispute is not bona fide.",
+      "material_facts": [
+        "The company’s leave-and-licence agreement identified the company as licensee, and the company paid the deposit and licence compensation.",
+        "The employee had affirmed in an affidavit and letter that the company was the licensee and that employees had no independent tenancy rights.",
+        "The employee relied on letters from a junior company employee to claim that he personally held the licence; the junior employee lacked authority to surrender the company’s rights and said he had signed the letters at the employee’s behest.",
+        "The employee filed a civil suit claiming personal licence rights shortly before resigning, and the company later filed a complaint under Section 630 of the Companies Act.",
+        "The trial court and appellate court found that the company was the licensee and that the employee had occupied the flat only as its employee."
+      ],
+      "conclusion": "The letters and the timing of the civil suit did not establish a bona fide dispute. The criminal court was not required to await the civil suit and could proceed with the complaint; the High Court erred in setting aside the lower courts’ judgments on that basis.",
+      "legal_principle": "Under Section 630 of the Companies Act, the court must consider whether there is no dispute or no bona fide dispute about the company’s claim to the property. A denial by an employee or former employee does not itself make a dispute bona fide; that assessment depends on the facts. A civil suit filed before a Section 630 complaint does not mechanically require the criminal court to stay its proceedings. The Court distinguished Damodar Das Jain v. Krishna Charan Chakraborti, including the later decision affirming the result on the facts of that case, because the dispute there was bona fide.",
+      "rule": {
+        "if": "company_property_wrongful_withholding_case and prior_civil_suit_filed and formal_company_licence_records_exist and employee_acknowledged_company_licence and claim_depends_on_unauthorized_junior_letters",
+        "then": "criminal_court_may_proceed_without_awaiting_civil_case"
+      },
+      "predicates": {
+        "company_property_wrongful_withholding_case": "The company has brought a criminal complaint alleging wrongful withholding of its property by an employee or former employee.",
+        "prior_civil_suit_filed": "The employee or former employee filed a civil suit over the property before the company brought the criminal complaint.",
+        "formal_company_licence_records_exist": "The agreement and related records identify the company, rather than the individual employee, as the person holding the licence to the property.",
+        "employee_acknowledged_company_licence": "The employee affirmed that the company held the licence and that employees occupied the property only through their employment.",
+        "claim_depends_on_unauthorized_junior_letters": "The employee’s personal claim to the property rests on letters from a junior employee who had no authority to give the employee independent rights in the property."
+      },
+      "definition": "When a company brings a property-withholding complaint despite a prior civil suit, and the company’s records and the employee’s own acknowledgments contradict a claim based on unauthorized letters, the criminal court may proceed without awaiting the civil case."
+    },
+    {
+      "legal_issue": "A company officer who is authorized to act for the company may file its complaint, and the complaint is not invalid merely because the officer’s authority is challenged.",
+      "material_facts": [
+        "The complaint was filed for the company by its divisional sales manager, who was an officer of the company and had been appointed to replace the employee.",
+        "The company’s power of attorney included a general clause covering acts lawfully done by the attorney on the company’s behalf.",
+        "The High Court found that the manager could file the complaint on the company’s instructions, and the Supreme Court upheld that conclusion.",
+        "The employee did not plead or prove that any failure of justice resulted from the alleged irregularity."
+      ],
+      "conclusion": "The manager was competent to file the complaint on behalf of the company. The complaint did not suffer from the alleged material irregularity, and the challenge failed.",
+      "legal_principle": "The Court read the power of attorney as conferring general, not merely specific, powers, and held in any event that the company’s divisional sales manager was competent to file the complaint on the company’s instructions. The Court noted that the employee had neither pleaded nor proved failure of justice as contemplated by Section 465 of the Code of Criminal Procedure. It referred to Ballavdas Agarwala v. Shri J.C. Chakravarty, but held that the question raised there did not arise because the manager had the requisite authority.",
+      "rule": {
+        "if": "company_property_wrongful_withholding_case and company_manager_filed_complaint and company_authorized_manager_to_act and no_failure_of_justice_shown",
+        "then": "company_complaint_is_validly_authorized"
+      },
+      "predicates": {
+        "company_property_wrongful_withholding_case": "The company has brought a criminal complaint alleging wrongful withholding of company property.",
+        "company_manager_filed_complaint": "A manager who is an officer of the company filed the complaint on its behalf.",
+        "company_authorized_manager_to_act": "The company’s authorization empowered the manager to act for it in the matter or the manager acted on the company’s instructions.",
+        "no_failure_of_justice_shown": "The person challenging the complaint did not establish that the alleged procedural irregularity caused a failure of justice."
+      },
+      "definition": "When a company officer files its property-withholding complaint with the company’s authority and no resulting failure of justice is shown, the complaint is validly authorized."
+    }
+  ],
+  "seconds": 24.8
+}

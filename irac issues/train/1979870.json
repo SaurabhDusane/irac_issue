@@ -1,0 +1,58 @@
+{
+  "doc_id": "1979870",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10386,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1791,
+    "prompt_tokens": 3056,
+    "total_tokens": 4847,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord’s mere desire to live separately from a parent does not establish the bona fide need required for eviction of a tenant.",
+      "material_facts": [
+        "The landlord sought eviction from a residential building, stating that the family lived with the landlord’s father and wished to live independently.",
+        "The petition did not state compelling reasons for living separately or otherwise set out a need for the premises.",
+        "The landlord produced no evidence establishing a bona fide need; the eviction claim rested only on the desire to live separately."
+      ],
+      "conclusion": "The desire to live separately was not a valid ground for eviction because it did not establish a bona fide need for the premises.",
+      "legal_principle": "Under Sections 10(3)(a)(i) and 10(3)(e) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, a landlord seeking a residential building for occupation must show the statutory occupation requirement and satisfy the Controller that the claim is bona fide. In Hameeda Hardware Stores v. Mohal Lal Sowcar, the Court explained that a landlord must show a just claim to possession; Amarjit Singh v. Smt. Khatoon Quamarain distinguishes desire from need; and Ram Dass v. Iswar Chander explains that desire must have the objective element of need to become a requirement. The need must be genuine, honest, and conceived in good faith.",
+      "rule": {
+        "if": "residential_eviction_claim and only_separate_living_desire and not need_set_out_in_petition and not bona_fide_need_evidence",
+        "then": "eviction_claim_not_supported_by_bona_fide_need"
+      },
+      "predicates": {
+        "residential_eviction_claim": "A landlord sought eviction of a tenant from a residential building for the landlord’s or a family member’s occupation.",
+        "only_separate_living_desire": "The landlord relied only on a desire to live separately from a parent.",
+        "need_set_out_in_petition": "The landlord stated in the eviction petition the need for the premises and the reasons supporting it.",
+        "bona_fide_need_evidence": "The landlord presented evidence that the need for the premises was genuine and bona fide."
+      },
+      "definition": "When a residential eviction claim rests only on a desire to live separately, and the landlord neither sets out a need in the petition nor presents evidence of bona fide need, the eviction claim is not supported by bona fide need."
+    },
+    {
+      "legal_issue": "A rent-control revisional court may interfere with a finding of fact based on no evidence, but may not act as an appellate court by reappraising evidence merely because it disagrees with the lower courts.",
+      "material_facts": [
+        "The Rent Controller and the appellate authority ordered eviction despite the absence of evidence establishing the landlord’s bona fide need.",
+        "The High Court exercised revisional jurisdiction and set aside those eviction orders.",
+        "The Supreme Court found that the lower authorities’ findings lacked evidentiary support on the landlord’s need."
+      ],
+      "conclusion": "The High Court was justified in interfering because the lower authorities’ eviction decision was unsupported by evidence; revisional jurisdiction does not otherwise permit mere reappraisal of evidence to reach a different factual finding.",
+      "legal_principle": "Section 25 of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960 empowers the High Court to examine the record for the regularity of proceedings and the correctness, legality, or propriety of a decision. This is supervisory rather than appellate jurisdiction: the High Court cannot interfere merely because it disagrees with a factual finding or reappraise evidence to substitute another finding, but it may intervene where the finding is based on no evidence.",
+      "rule": {
+        "if": "rent_control_revision and lower_eviction_finding_based_on_no_evidence",
+        "then": "revisional_interference_justified"
+      },
+      "predicates": {
+        "rent_control_revision": "A High Court considered a challenge to a rent-control decision in its revisional jurisdiction.",
+        "lower_eviction_finding_based_on_no_evidence": "The lower authorities ordered eviction without evidence supporting the landlord’s claimed bona fide need."
+      },
+      "definition": "In a rent-control revision, when the lower eviction finding is based on no evidence, revisional interference is justified."
+    }
+  ],
+  "seconds": 11.3
+}

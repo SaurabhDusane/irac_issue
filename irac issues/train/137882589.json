@@ -1,0 +1,147 @@
+{
+  "doc_id": "137882589",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13723,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4080,
+    "prompt_tokens": 3626,
+    "total_tokens": 7706,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A prosecution cannot rely on recovered weapons to establish their connection to an offence when the evidence does not link them to it, and withholding vital forensic evidence warrants an adverse inference.",
+      "material_facts": [
+        "The doctor said the injuries could have been caused by the recovered weapons but found no visible bloodstains or other marks on them.",
+        "The purported chemical analyst report was not available in the case record, and the prosecution did not otherwise establish a forensic link between the weapons and the offence.",
+        "The prosecution withheld forensic evidence relating to a seized shirt."
+      ],
+      "conclusion": "The recovered weapons were not linked to the offence, and an adverse inference had to be drawn against the prosecution for withholding vital forensic evidence.",
+      "legal_principle": "The prosecution must establish the evidentiary link on which it relies; withholding vital evidence permits an adverse inference against it.",
+      "rule": {
+        "if": "criminal_prosecution and (weapon_forensic_link_absent or vital_forensic_evidence_withheld)",
+        "then": "prosecution_evidence_weakened"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution in which the prosecution relies on evidence to establish guilt.",
+        "weapon_forensic_link_absent": "The prosecution does not establish a forensic or other evidentiary link between recovered weapons and the offence.",
+        "vital_forensic_evidence_withheld": "The prosecution withholds forensic evidence material to determining whether an accused or an exhibit was connected to the offence."
+      },
+      "definition": "When a criminal prosecution lacks a link between recovered weapons and the offence or withholds vital forensic evidence, its evidence is weakened."
+    },
+    {
+      "legal_issue": "An identification parade is not substantive evidence, and defects in its conduct can make it unworthy of reliance even as corroboration.",
+      "material_facts": [
+        "The identification parade was conducted in the presence of police officers.",
+        "Although the parade record stated that three lungis were presented, the identifying witness said he was shown only one.",
+        "The witness said similar lungis were worn by many people in the village, and no distinguishing feature linked the identified lungi to the accused."
+      ],
+      "conclusion": "The identification parade was unworthy of acceptance in support of the prosecution.",
+      "legal_principle": "Under Musheer Khan v. State of Madhya Pradesh, an identification test is not substantive evidence and may only corroborate identification in court. Under Section 162 of the Code of Criminal Procedure and Ramkishan Mithanlal Sharma v. State of Bombay, communications made by identifiers to police during investigation are barred; police presence at the identification exercise brings those communications within that bar.",
+      "rule": {
+        "if": "criminal_prosecution and identification_parade_used and (police_present_at_identification or (parade_record_lists_multiple_items and only_one_item_shown) or no_distinguishing_identification_feature)",
+        "then": "identification_parade_unworthy_of_reliance"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution in which the prosecution relies on evidence to establish guilt.",
+        "identification_parade_used": "The prosecution relies on an identification parade to support the identification of an accused or an exhibit.",
+        "police_present_at_identification": "Police officers are present while identifiers participate in the identification exercise.",
+        "parade_record_lists_multiple_items": "The record of the identification exercise states that multiple comparable items were presented.",
+        "only_one_item_shown": "The identifying witness is shown only one item despite the record stating that multiple items were presented.",
+        "no_distinguishing_identification_feature": "The identifying witness provides no distinctive feature separating the accused or identified item from others of the same kind."
+      },
+      "definition": "An identification parade relied on in a criminal prosecution is unworthy of reliance when police are present, the recorded array is not actually shown, or the identification lacks a distinguishing feature."
+    },
+    {
+      "legal_issue": "A sole eyewitness’s testimony may be discarded when the witness’s capacity and opportunity to perceive the event, the account of what was heard, and the witness’s conduct together make the testimony unreliable.",
+      "material_facts": [
+        "The sole eyewitness admitted that his eyesight was so poor that he could not see beyond one or two feet.",
+        "The incident occurred in darkness and cloudy, rainy conditions, and the witness said he heard the victim’s cry from about 200 yards away.",
+        "A person much nearer to the incident did not hear the cry, and the eyewitness also had weak hearing.",
+        "Although the eyewitness knew the victim and claimed to have seen the assault, he did not report it to the police or inform the victim’s family."
+      ],
+      "conclusion": "The eyewitness’s testimony was unreliable and deserved to be discarded.",
+      "legal_principle": "Amar Singh v. State (NCT of Delhi), relying on the principle in Selvaraj v. State of Tamil Nadu, supports rejecting sole-eyewitness testimony where inherent improbabilities and conduct inconsistent with ordinary human nature make it unsafe to rely on.",
+      "rule": {
+        "if": "criminal_appeal_challenging_conviction and sole_eyewitness_testimony and perceptual_limitations and adverse_observation_conditions and hearing_account_conflicted and witness_knew_victim and witness_made_no_prompt_report",
+        "then": "sole_eyewitness_testimony_unreliable"
+      },
+      "predicates": {
+        "criminal_appeal_challenging_conviction": "The proceeding is a criminal appeal challenging a conviction.",
+        "sole_eyewitness_testimony": "The prosecution relies on one witness as an eyewitness to the offence.",
+        "perceptual_limitations": "The eyewitness has impaired eyesight, hearing, or another capacity relevant to perceiving the event.",
+        "adverse_observation_conditions": "Darkness, weather, distance, or similar conditions substantially impede the witness’s opportunity to observe the event.",
+        "hearing_account_conflicted": "The witness’s account of what was heard conflicts with the distance or circumstances of observation or with evidence from a nearer person.",
+        "witness_knew_victim": "The eyewitness knew the victim before the event.",
+        "witness_made_no_prompt_report": "The eyewitness does not promptly report the event or inform people connected to the victim despite claiming to have witnessed it."
+      },
+      "definition": "A sole eyewitness’s testimony is unreliable when the witness has perceptual limitations, adverse observation conditions, a conflicted account of what was heard, and fails to report the event despite knowing the victim."
+    },
+    {
+      "legal_issue": "A remote motive that is no longer proximate to the offence cannot support a conviction without further material connecting it to the offence.",
+      "material_facts": [
+        "The land dispute relied on as a motive had been resolved more than two years before the offence.",
+        "The other alleged source of animosity related to a killing that occurred while the land dispute was still pending.",
+        "No further material showed a proximate and immediate motive for the offence."
+      ],
+      "conclusion": "The cited motive was too remote to support the conviction without further material showing a proximate and immediate motive.",
+      "legal_principle": "A suggested motive may support the prosecution case, but a remote motive, without further material showing its proximity to the offence, is insufficient to support a conviction.",
+      "rule": {
+        "if": "criminal_prosecution and alleged_motive_remote and no_proximate_motive_material",
+        "then": "remote_motive_insufficient_to_support_conviction"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution in which the prosecution relies on evidence to establish guilt.",
+        "alleged_motive_remote": "The alleged source of animosity had been resolved or had otherwise ceased to be proximate well before the offence.",
+        "no_proximate_motive_material": "The prosecution provides no further material showing an immediate or proximate motive for the offence."
+      },
+      "definition": "A motive is insufficient to support a conviction when the alleged animosity is remote and no material connects it proximately to the offence."
+    },
+    {
+      "legal_issue": "When the evidence in a criminal case permits two views, the view favourable to the accused must be adopted.",
+      "material_facts": [
+        "The prosecution evidence had significant infirmities concerning the identification evidence, the eyewitness’s reliability, the forensic connection of the recovered weapons, and the alleged motive.",
+        "The court considered the evidence capable of supporting a view favourable to the accused."
+      ],
+      "conclusion": "The view favourable to the accused was to be adopted.",
+      "legal_principle": "The established criminal-law principle is that where two views are possible on the evidence, one pointing to guilt and the other to innocence, the view favourable to the accused must be adopted.",
+      "rule": {
+        "if": "criminal_case and evidence_admits_two_views",
+        "then": "view_favourable_to_accused_adopted"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal case concerning whether an accused is guilty.",
+        "evidence_admits_two_views": "The evidence reasonably permits one view pointing to guilt and another view consistent with the accused’s innocence."
+      },
+      "definition": "When evidence in a criminal case reasonably permits both a guilt view and an innocence view, the innocence-favourable view is adopted."
+    },
+    {
+      "legal_issue": "A conviction cannot stand when the prosecution evidence, assessed cumulatively, is insufficiently reliable to prove guilt.",
+      "material_facts": [
+        "The recovered weapons were not forensically linked to the offence, and vital forensic evidence was withheld.",
+        "The identification parade had significant defects and the identified garment was not distinctively linked to the accused.",
+        "The sole eyewitness had severe perceptual limitations, faced adverse observation conditions, gave an implausible account of hearing the victim, and did not report the event despite knowing the victim.",
+        "The alleged motive was remote and unsupported by further material showing a proximate motive."
+      ],
+      "conclusion": "The appeal was allowed and the judgments upholding the conviction were set aside.",
+      "legal_principle": "The court applied the rules that identification-parade evidence is not substantive evidence, that vital withheld evidence may warrant an adverse inference, that unreliable sole-eyewitness testimony cannot safely sustain a conviction, and that an accused receives the benefit where the evidence permits two views.",
+      "rule": {
+        "if": "criminal_appeal_challenging_conviction and identification_evidence_unreliable and sole_eyewitness_testimony_unreliable and forensic_link_missing and alleged_motive_remote",
+        "then": "conviction_and_affirmance_set_aside"
+      },
+      "predicates": {
+        "criminal_appeal_challenging_conviction": "The proceeding is a criminal appeal challenging a conviction.",
+        "identification_evidence_unreliable": "The identification evidence has material defects that leave it unworthy of reliance.",
+        "sole_eyewitness_testimony_unreliable": "The sole eyewitness’s testimony is unreliable because of deficiencies in perception, opportunity to observe, account, or conduct.",
+        "forensic_link_missing": "The prosecution does not establish a forensic link between material recovered evidence and the offence.",
+        "alleged_motive_remote": "The alleged motive is remote and lacks further material showing a proximate connection to the offence."
+      },
+      "definition": "A conviction and its appellate affirmance are set aside when a criminal appeal reveals materially unreliable identification and sole-eyewitness evidence, a missing forensic link, and a remote alleged motive."
+    }
+  ],
+  "seconds": 24.5
+}

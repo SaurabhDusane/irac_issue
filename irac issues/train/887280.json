@@ -1,0 +1,76 @@
+{
+  "doc_id": "887280",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25510,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2203,
+    "prompt_tokens": 6781,
+    "total_tokens": 8984,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person against whom an eviction decree has been made does not remain a statutory tenant merely because another law prevents execution of the decree without permission.",
+      "material_facts": [
+        "The occupant had been a tenant and an eviction decree had been made against him.",
+        "Permission required to execute the decree in the protected area was refused, leaving the decree unexecuted.",
+        "The later rent law defined a tenant to exclude a person against whom an eviction decree had been made."
+      ],
+      "conclusion": "The occupant ceased to be a tenant within the meaning of the rent law when the eviction decree was made; the restriction on executing the decree did not restore tenant status.",
+      "legal_principle": "The definition of tenant in section 2(1) of the Delhi Rent Control Act, 1958 must be read on its own terms and excludes a person against whom an eviction decree has been made. Section 19 of the Slum Areas (Improvement and Clearance) Act, 1956 restricts execution without prior permission but does not redefine tenant status or affect that definition. Jyoti Pershad v. The Administrator for the Union Territory of Delhi was inapplicable because it did not decide whether a person remains a tenant under the rent law after an eviction order.",
+      "rule": {
+        "if": "rent_control_status_dispute and prior_eviction_decree and tenant_definition_excludes_eviction_decree_holder and other_law_restricts_execution_only",
+        "then": "former_occupant_not_statutory_tenant"
+      },
+      "predicates": {
+        "rent_control_status_dispute": "The proceeding concerns whether an occupant retains tenant status under a rent-control regime.",
+        "prior_eviction_decree": "A court made an eviction decree against the occupant while the occupant was a tenant.",
+        "tenant_definition_excludes_eviction_decree_holder": "The applicable definition of tenant excludes a person against whom an eviction decree has been made.",
+        "other_law_restricts_execution_only": "Another legal rule prevents execution of the decree without permission but does not alter the definition of tenant."
+      },
+      "definition": "When a rent-control status dispute involves a prior eviction decree, a definition excluding the decree-holder from tenant status, and a separate rule restricting execution only, the former occupant is not a statutory tenant."
+    },
+    {
+      "legal_issue": "The civil-court bar on suits for eviction of statutory tenants does not bar a suit against a person who no longer falls within the statutory definition of tenant.",
+      "material_facts": [
+        "The owner sought possession in an ordinary civil court on the ground that the occupant was a trespasser following an earlier eviction decree.",
+        "The occupant relied on the civil-court bar in the rent law, but the earlier decree meant that he was excluded from the statutory definition of tenant."
+      ],
+      "conclusion": "The rent law did not bar the civil suit because the occupant was not a tenant as defined by that law.",
+      "legal_principle": "Section 50 of the Delhi Rent Control Act, 1958 bars a civil suit for eviction of a tenant within the meaning of section 2(1), but does not bar a suit against a person who is not such a tenant. Under ordinary landlord-and-tenant law, a person against whom an eviction decree has been made no longer possesses the rights of a tenant.",
+      "rule": {
+        "if": "civil_suit_for_possession and defendant_excluded_from_tenant_definition",
+        "then": "civil_court_has_jurisdiction_over_suit"
+      },
+      "predicates": {
+        "civil_suit_for_possession": "A claimant brings a civil-court suit seeking possession from an occupant.",
+        "defendant_excluded_from_tenant_definition": "The occupant is excluded from the applicable statutory definition of tenant."
+      },
+      "definition": "A civil court has jurisdiction over a possession suit when the defendant is excluded from the applicable statutory definition of tenant."
+    },
+    {
+      "legal_issue": "A civil court's inability to execute an eviction order entrusted to a rent controller does not prevent it from deciding whether an occupant has ceased to be a tenant and is a trespasser.",
+      "material_facts": [
+        "The occupant argued that the rent controller's authority to execute orders, together with the civil-court bar, deprived the civil court of jurisdiction.",
+        "The civil suit sought a determination that the occupant was a trespasser and liable to be evicted; it did not ask the civil court to execute an order made by the rent controller."
+      ],
+      "conclusion": "The civil court could decide whether the occupant had ceased to be a tenant and become a trespasser, even though it could not execute an eviction order entrusted to the rent controller.",
+      "legal_principle": "Sections 42 and 50 of the Delhi Rent Control Act, 1958 give the Controller power to execute orders made under the Act and prevent a civil court from executing such orders. That restriction does not prevent a civil court from deciding a distinct question of status, including whether a person has ceased to be a tenant and become a trespasser. The Court found it unnecessary to express a final view on the effect of section 25.",
+      "rule": {
+        "if": "civil_suit_for_status_determination and suit_seeks_status_decision_not_controller_order_execution and controller_has_order_execution_authority",
+        "then": "civil_court_may_determine_occupant_status"
+      },
+      "predicates": {
+        "civil_suit_for_status_determination": "The proceeding is a civil suit that asks the court to determine an occupant's status and liability to give up possession.",
+        "suit_seeks_status_decision_not_controller_order_execution": "The suit does not ask the civil court to execute an eviction order made by the rent controller.",
+        "controller_has_order_execution_authority": "The rent controller is empowered to execute orders made under the rent-control law."
+      },
+      "definition": "A civil court may determine an occupant's status when the suit seeks that determination rather than execution of an order the rent controller is empowered to execute."
+    }
+  ],
+  "seconds": 13.7
+}

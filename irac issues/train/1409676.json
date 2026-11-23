@@ -1,0 +1,99 @@
+{
+  "doc_id": "1409676",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27576,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2891,
+    "prompt_tokens": 7103,
+    "total_tokens": 9994,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court cannot decide a case on a new factual basis that was not pleaded and would require fresh evidence.",
+      "material_facts": [
+        "The respondents’ pleaded case was that they had obtained the lands from the lessor from the outset.",
+        "The High Court also treated the respondents as having obtained, or being deemed to have obtained, a new tenancy after the lessee’s lease expired, although that case had not been pleaded and required further evidence.",
+        "Evidence indicated that new settlement forms had not been issued after the lease expired."
+      ],
+      "conclusion": "The High Court erred in deciding the case on the unpleaded basis of a new post-expiry tenancy.",
+      "legal_principle": "A court in appeal cannot construct a new case for a party and decide it on a ground that was not pleaded, particularly where the ground requires fresh evidence or material.",
+      "rule": {
+        "if": "appellate_civil_appeal and unpleaded_new_factual_basis and basis_requires_fresh_evidence",
+        "then": "appellate_court_cannot_decide_unpleaded_basis"
+      },
+      "predicates": {
+        "appellate_civil_appeal": "A party appealed from a civil decree that had been reversed by a higher court.",
+        "unpleaded_new_factual_basis": "A court relied on a factual basis that the party relying on it had not pleaded.",
+        "basis_requires_fresh_evidence": "Deciding the new factual basis would require evidence or material not already before the court."
+      },
+      "definition": "When an appellate civil court faces an unpleaded factual basis that requires fresh evidence, it cannot decide the appeal on that basis."
+    },
+    {
+      "legal_issue": "The in pari delicto principle does not bar a property claim where the parties are not shown to have acted together in an illegal scheme or to have been equally at fault.",
+      "material_facts": [
+        "The appellants said the named holders were unaware of the acquisition and had not been consulted.",
+        "The respondents claimed that they had acquired the lands themselves and denied being benamidars.",
+        "Neither side pleaded that the named holders and the appellants had conspired together to defraud the lessor or commit another illegal act."
+      ],
+      "conclusion": "The parties were not shown to be in pari delicto, so the maxim could not be applied to bar the appellants’ claim.",
+      "legal_principle": "The in pari delicto maxim applies where the parties are equally at fault; where the parties’ cases are opposed and no conspiracy to commit an illegal act is established, the maxim is not applicable.",
+      "rule": {
+        "if": "civil_property_claim and no_joint_illegal_scheme",
+        "then": "in_pari_delicto_does_not_bar_claim"
+      },
+      "predicates": {
+        "civil_property_claim": "A claimant brought a civil action asserting a right to property against persons in possession of it.",
+        "no_joint_illegal_scheme": "The parties did not assert or establish that the claimant and the opposing parties acted together in an illegal scheme."
+      },
+      "definition": "In a civil property claim, the absence of a joint illegal scheme means the in pari delicto principle does not bar the claim."
+    },
+    {
+      "legal_issue": "An intended fraud on a third party does not bar a claim on that basis when the third party knew the material facts and did not act on them, so the fraud was not effected.",
+      "material_facts": [
+        "The property had been acquired in benami names to avoid consequences that could follow when the lease expired.",
+        "Evidence showed that the lessor’s responsible officers had been informed of the benami arrangement, and the lessor did not enforce the relevant lease term despite that knowledge.",
+        "The alleged inadequacy of the salami was not tried as an issue, and the record did not establish that the lessor had been defrauded."
+      ],
+      "conclusion": "The alleged fraud was not effected, and it did not disentitle the appellants to judgment on their established title.",
+      "legal_principle": "A contemplated fraud that was not perpetrated does not necessarily bar a claim; where the party said to have been defrauded knew the relevant facts and elected not to act, the fraud cannot be treated as effected on that basis.",
+      "rule": {
+        "if": "benami_property_title_claim and target_knew_material_facts and target_took_no_action",
+        "then": "alleged_fraud_was_not_effected"
+      },
+      "predicates": {
+        "benami_property_title_claim": "A claimant sought to establish title to property acquired in another person’s name for the claimant’s benefit.",
+        "target_knew_material_facts": "The third party said to have been targeted by the arrangement knew the material facts about it.",
+        "target_took_no_action": "The third party did not act on those facts to prevent or undo the arrangement."
+      },
+      "definition": "For a benami property title claim, when the targeted third party knew the material facts and took no action, the alleged fraud was not effected."
+    },
+    {
+      "legal_issue": "Illegality does not bar a claim when the claimant can establish it without relying on the illegal transaction, the illegality is not grave, and the claimant abandoned the illegal purpose before it was achieved.",
+      "material_facts": [
+        "The appellants established that the purchase consideration came from their predecessor and that the named holders were only benamidars.",
+        "The predecessor had caused the named holders’ signatures to be placed on some documents without their knowledge or consent.",
+        "The appellants did not need to prove that the signatures were made without the named holders’ knowledge in order to establish the benami nature of the acquisition.",
+        "The appellants disclosed their true claim before the time when the lessor could have resumed the lands, and the lessor already knew the material facts."
+      ],
+      "conclusion": "The illegality did not disentitle the appellants to a decree, and the High Court wrongly dismissed their suit on that ground.",
+      "legal_principle": "Under ex turpi causa non oritur actio, a claimant is ordinarily barred if the cause of action depends on the claimant’s illegal act. The relevant test is whether the claimant can establish the claim without relying on the illegal transaction. Every illegality does not bar judgment: a strict view of the claimant’s conduct is required, but a claim may proceed where the illegality is trivial or venial, is not necessary to the cause of action, and the claimant abandoned the illegal purpose before it was achieved, unless the conduct is so gross as to outrage the court’s conscience. The Court relied on Holman v. Johnson; Farmers’ Mart Ltd. v. Milne; Simpson v. Bloss; Fivaz v. Nicholls; Taylor v. Chester; Alexander v. Rayson; Bowmakers Ltd. v. Barnet Instruments Ltd.; and the Indian decisions Palaniyappa Chettiar v. Chockalingam Chettiar and Bhola Nath v. Mul Chand, as well as the principles discussed in Salmond and Williston on Contracts.",
+      "rule": {
+        "if": "benami_property_title_claim and claim_provable_without_illegality and illegality_not_gross and illegal_purpose_abandoned_before_completion",
+        "then": "illegality_does_not_bar_claim"
+      },
+      "predicates": {
+        "benami_property_title_claim": "A claimant brought a property title action asserting that another person held the property for the claimant’s benefit.",
+        "claim_provable_without_illegality": "The claimant could prove the source of the purchase money and the beneficial ownership without proving the claimant’s illegal conduct.",
+        "illegality_not_gross": "The claimant’s illegal conduct was not of a character that outraged the court’s conscience.",
+        "illegal_purpose_abandoned_before_completion": "The claimant disclosed the true position or otherwise abandoned the illegal purpose before it was achieved."
+      },
+      "definition": "A claimant in a benami property title action is not barred by illegality when the claim can be proved independently of it, the illegality is not gross, and the claimant abandoned the illegal purpose before completion."
+    }
+  ],
+  "seconds": 17.6
+}

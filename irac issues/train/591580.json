@@ -1,0 +1,78 @@
+{
+  "doc_id": "591580",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33328,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2073,
+    "prompt_tokens": 9013,
+    "total_tokens": 11086,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A suit that retains the government as a defendant so that the decree will bind it constitutes a claim against the government when it challenges the government’s action.",
+      "material_facts": [
+        "The government was impleaded as a defendant.",
+        "The plaintiff sought a declaration that the government had no right to alter its earlier order and sought to have the government give effect to that earlier order against the other defendants.",
+        "The plaintiff declined to remove the government and the claims against it from the suit."
+      ],
+      "conclusion": "The suit was a claim against the Crown within the meaning of section 4(a) of the Bombay Revenue Jurisdiction Act, 1876.",
+      "legal_principle": "Section 4(a) bars civil court jurisdiction over claims against the Crown relating to lands held as Saranjam. A plaintiff who retains the government as a party to obtain a decree binding it cannot characterize the claim as one only against private defendants; this approach accords with Basalingappagouda v. Secretary of State and Basangauda v. Secretary of State.",
+      "rule": {
+        "if": "civil_suit and government_joined_for_binding_effect and government_action_challenged",
+        "then": "claim_is_against_government"
+      },
+      "predicates": {
+        "civil_suit": "A person brought a civil suit seeking relief concerning rights asserted against the government.",
+        "government_joined_for_binding_effect": "The plaintiff kept the government as a party so that the decree would bind it.",
+        "government_action_challenged": "The plaintiff challenged the validity or effect of an action taken by the government."
+      },
+      "definition": "When a civil suit challenges government action and keeps the government as a party so that the decree will bind it, the claim is against the government."
+    },
+    {
+      "legal_issue": "A declaratory claim challenging government action concerning land held under a Saranjam tenure falls within the bar on civil court jurisdiction, including when the challenged action is alleged to be ultra vires.",
+      "material_facts": [
+        "The dispute concerned an estate held as a Saranjam.",
+        "The challenged government orders directed how the estate and its constituent portions were to be held and recorded, and affected the rights and privileges claimed in relation to the estate.",
+        "The plaintiff sought declarations challenging the government’s authority to alter its earlier order, including a declaration that the later order was ultra vires."
+      ],
+      "conclusion": "The claim against the government related to lands held as Saranjam and was barred from the jurisdiction of the civil courts, even though declaratory relief was sought and the government action was alleged to be ultra vires.",
+      "legal_principle": "Section 4(a) of the Bombay Revenue Jurisdiction Act, 1876 broadly excludes claims against the Crown relating to lands held as Saranjam. The bar applies to a claim for a declaration alone and does not depend on the challenged government action being authorized. The Court approved Daulatrao v. Government of Bombay, disapproved Dattatreya Viswanath v. Secretary of State for India, and distinguished Province of Bombay v. Hormusji Manekji, which concerned section 4(b) and an objection to an assessment alleged not to be duly authorized.",
+      "rule": {
+        "if": "civil_suit and claim_against_government and dispute_concerns_saranjam_land",
+        "then": "civil_court_lacks_jurisdiction"
+      },
+      "predicates": {
+        "civil_suit": "A person brought a civil suit seeking relief concerning asserted rights.",
+        "claim_against_government": "The suit sought relief against the government or sought a decree that would bind it.",
+        "dispute_concerns_saranjam_land": "The challenged government action or claimed rights concerned land held as a Saranjam."
+      },
+      "definition": "When a civil suit includes a claim against the government concerning Saranjam land, the civil court lacks jurisdiction over that claim."
+    },
+    {
+      "legal_issue": "Claims against private defendants cannot be separated from a barred claim against the government when the claimed private rights depend on the government’s orders.",
+      "material_facts": [
+        "The plaintiff’s claims against the other family branches depended on the assertion that the government’s later order was invalid and the earlier order remained operative.",
+        "The other branches held their respective portions on the basis of the government’s orders.",
+        "The plaintiff retained the government as a party, and the requested relief against the other branches was connected to the relief sought against the government."
+      ],
+      "conclusion": "The plaintiff could not obtain the relief claimed against the other defendants by severing those claims from the claim against the government.",
+      "legal_principle": "Where the rights claimed against private defendants cannot be divorced from the claim against the Crown, the court cannot consider the private claims separately to avoid the jurisdictional bar. If the government’s claim is ignored, its orders remain unchallenged, and parties holding their properties under those orders cannot be displaced through the remaining claim. Basalingappagouda v. Secretary of State and Basangauda v. Secretary of State support this approach.",
+      "rule": {
+        "if": "civil_suit and claims_against_private_parties_depend_on_government_orders and government_retained_as_party",
+        "then": "private_party_relief_cannot_be_severed"
+      },
+      "predicates": {
+        "civil_suit": "A person brought a civil suit seeking relief against the government and private defendants.",
+        "claims_against_private_parties_depend_on_government_orders": "The plaintiff’s claimed rights against the private defendants depended on the asserted invalidity or effect of government orders.",
+        "government_retained_as_party": "The plaintiff kept the government in the suit rather than proceeding only against the private defendants."
+      },
+      "definition": "When a civil suit retains the government as a party and the claims against private defendants depend on government orders, the private-party relief cannot be severed from the government claim."
+    }
+  ],
+  "seconds": 13.2
+}

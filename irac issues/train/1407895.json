@@ -1,0 +1,58 @@
+{
+  "doc_id": "1407895",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19354,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1535,
+    "prompt_tokens": 5309,
+    "total_tokens": 6844,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A technical bar based on an earlier suit cannot be established without producing the earlier suit’s plaint to prove the cause of action on which that suit was based.",
+      "material_facts": [
+        "The defendant relied on an earlier suit concerning the same property to argue that the later suit was barred.",
+        "The plaint from the earlier suit was not produced as evidence in the later suit.",
+        "The trial court inferred the earlier cause of action from references to that suit in the later plaint and dismissed the suit.",
+        "The appellate court set aside the dismissal and remanded the suit for trial on its merits; the High Court upheld that decision."
+      ],
+      "conclusion": "The bar could not be entertained because the defendant had not produced the plaint in the earlier suit, and the appeal was dismissed.",
+      "legal_principle": "Under Order 2 Rule 2 of the Code of Civil Procedure, 1908, a technical bar founded on the identity of causes of action must be satisfactorily established and cannot be presumed by inference. The defendant must produce the earlier plaint so the court can determine the facts alleged to support the earlier relief. The Court analogized this evidentiary requirement to proving res judicata through the relevant judgment and decree; it relied on no earlier case.",
+      "rule": {
+        "if": "technical_bar_claimed and earlier_suit_complaint_not_produced",
+        "then": "bar_claim_not_entertained"
+      },
+      "predicates": {
+        "technical_bar_claimed": "In a civil suit, the defendant claims that relief is barred because it was omitted from an earlier suit.",
+        "earlier_suit_complaint_not_produced": "The defendant does not produce the complaint from the earlier suit as evidence."
+      },
+      "definition": "When a defendant claims an omission-based bar in a later civil suit but does not produce the earlier suit’s complaint, the bar claim is not entertained."
+    },
+    {
+      "legal_issue": "A bar for omitting relief in an earlier suit applies only when the later suit concerns the same cause of action, the plaintiff was entitled to multiple reliefs on that cause of action, and the plaintiff omitted the later relief without obtaining leave.",
+      "material_facts": [
+        "The defendant argued that the plaintiff had omitted to claim possession in the earlier suit and was therefore barred from seeking possession in the later suit.",
+        "The Court stated the elements required for a bar under Order 2 Rule 2(3), but did not determine whether the two suits were based on the same cause of action because the earlier plaint had not been produced."
+      ],
+      "conclusion": "To succeed, the defendant must establish all three elements: identity of cause of action, entitlement to more than one relief on that cause of action, and omission of the later relief without leave.",
+      "legal_principle": "Order 2 Rule 2(3) of the Code of Civil Procedure, 1908 permits a person entitled to multiple reliefs in respect of the same cause of action to sue for all or any of them, but bars a later suit for an omitted relief if it was omitted without the court’s leave. The defendant bears the burden of establishing the elements. The Court did not resolve the competing views on whether claims for possession and mesne profits arise from the same cause of action, and cited no earlier case as authority for the test.",
+      "rule": {
+        "if": "defendant_asserts_omission_bar and later_suit_same_cause_of_action and plaintiff_entitled_to_multiple_reliefs and later_relief_omitted_without_leave",
+        "then": "later_relief_barred"
+      },
+      "predicates": {
+        "defendant_asserts_omission_bar": "In a later civil suit, the defendant claims that the plaintiff omitted the relief now sought from an earlier suit.",
+        "later_suit_same_cause_of_action": "The earlier and later suits are based on the same cause of action.",
+        "plaintiff_entitled_to_multiple_reliefs": "The plaintiff was entitled to more than one relief in respect of that cause of action.",
+        "later_relief_omitted_without_leave": "The plaintiff omitted the relief sought in the later suit from the earlier suit without obtaining leave."
+      },
+      "definition": "A later claim is barred when a defendant asserts an omission bar and the earlier and later suits share a cause of action on which the plaintiff could seek multiple reliefs but omitted the later relief without leave."
+    }
+  ],
+  "seconds": 10.6
+}

@@ -1,0 +1,101 @@
+{
+  "doc_id": "463909",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21897,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2471,
+    "prompt_tokens": 5679,
+    "total_tokens": 8150,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A conviction based on circumstantial evidence cannot stand when the circumstances relied on do not establish guilt beyond reasonable doubt.",
+      "material_facts": [
+        "The prosecution case depended on circumstantial evidence.",
+        "The prosecution did not establish that the house where blood was found was exclusively owned or possessed by the appellant, or that the recovered clothes belonged to him.",
+        "The alleged recovery of the weapon and clothes was disbelieved, and the evidence that the appellant took the deceased away was not supported by other conclusive circumstances.",
+        "The alleged motive did not connect the appellant to the crime, and the reporting of the discovery of the body was delayed.",
+        "The courts below had convicted the appellant of murder and related offences, and he appealed."
+      ],
+      "conclusion": "The prosecution had not proved guilt beyond reasonable doubt; the conviction was set aside and the appeal allowed, with the appellant given the benefit of doubt.",
+      "legal_principle": "In a case resting on circumstantial evidence, the circumstances must connect the accused to the crime sufficiently to prove guilt beyond reasonable doubt. Here, the alleged blood evidence did not connect the appellant to the crime, and the circumstances relied on did not establish guilt. The Court referred to the charges under Sections 302 read with 34 and 201 of the Indian Penal Code; it cited no earlier cases.",
+      "rule": {
+        "if": "appeal_from_circumstantial_conviction and (key_circumstances_unproved or evidence_does_not_connect_accused)",
+        "then": "conviction_set_aside_on_benefit_of_doubt"
+      },
+      "predicates": {
+        "appeal_from_circumstantial_conviction": "The accused appeals against a conviction resting on circumstantial evidence.",
+        "key_circumstances_unproved": "One or more circumstances essential to the prosecution case are not established by reliable evidence.",
+        "evidence_does_not_connect_accused": "The evidence, even if accepted in part, does not reliably connect the accused to the crime."
+      },
+      "definition": "When an appeal concerns a circumstantial conviction and essential circumstances are unproved or the evidence does not connect the accused to the crime, the conviction is set aside on benefit of doubt."
+    },
+    {
+      "legal_issue": "An accused's burden to explain a death does not arise merely because the deceased was allegedly taken to a house when the prosecution has not proved the accused's exclusive ownership or possession of that house.",
+      "material_facts": [
+        "The prosecution alleged that the appellant took the deceased to a house and blood was later found there.",
+        "The appellant denied that the house belonged to him.",
+        "The prosecution produced no documentary evidence establishing exclusive ownership or possession, and the witnesses who referred to it as the appellant's house did not establish that fact."
+      ],
+      "conclusion": "The High Court was wrong to treat the alleged presence of the deceased in the house as shifting the burden to the appellant to explain the death.",
+      "legal_principle": "The Court rejected the burden-shifting approach on these facts because exclusive ownership or possession of the house had not been proved. It considered the appellant's statement under Section 313 of the Code of Criminal Procedure but cited no earlier cases or other provision for this ruling.",
+      "rule": {
+        "if": "circumstantial_criminal_case and deceased_allegedly_taken_to_house and not exclusive_control_proved",
+        "then": "explanatory_burden_not_shifted_to_accused"
+      },
+      "predicates": {
+        "circumstantial_criminal_case": "The prosecution seeks to establish criminal guilt through circumstantial evidence.",
+        "deceased_allegedly_taken_to_house": "The prosecution alleges that the accused took the deceased to a house before the death.",
+        "exclusive_control_proved": "The prosecution establishes that the house was exclusively owned or possessed by the accused."
+      },
+      "definition": "If the deceased was allegedly taken to a house but the accused's exclusive control of it is not proved, the explanatory burden does not shift to the accused."
+    },
+    {
+      "legal_issue": "A purported discovery of incriminating articles from an open place near a body after a substantial delay lacks credence where the circumstances of recovery are unreliable.",
+      "material_facts": [
+        "The investigating officer claimed that the appellant led police to bloodstained clothes and a weapon.",
+        "The articles were recovered from an open area about 300 feet from the body, more than ten days after the body had been inspected.",
+        "The recovery witnesses disowned the prosecution account, and the evidence did not establish which accused had made the alleged discovery."
+      ],
+      "conclusion": "The alleged discovery was farcical and could not be relied on as evidence connecting the appellant to the crime.",
+      "legal_principle": "The Court treated discovery evidence as weak and held that an alleged recovery from an open, unguarded place near the body, after a substantial delay and amid uncertainty about who made the discovery, lacked credence. It cited no earlier cases or provision in stating this principle.",
+      "rule": {
+        "if": "circumstantial_criminal_case and articles_recovered_from_open_nearby_place_after_delay and recovery_account_unreliable",
+        "then": "alleged_discovery_lacks_credence"
+      },
+      "predicates": {
+        "circumstantial_criminal_case": "The prosecution seeks to establish criminal guilt through circumstantial evidence.",
+        "articles_recovered_from_open_nearby_place_after_delay": "The alleged incriminating articles are recovered from an open place near the body after a substantial delay.",
+        "recovery_account_unreliable": "The recovery witnesses do not support the account, or the evidence does not reliably establish who made the discovery."
+      },
+      "definition": "In a circumstantial criminal case, an alleged recovery from an open nearby place after a substantial delay lacks credence when the recovery account is unreliable."
+    },
+    {
+      "legal_issue": "Evidence that the deceased was last seen with the accused is insufficient by itself to establish that the accused committed the killing when the time of death is not established and there are no other conclusive circumstances.",
+      "material_facts": [
+        "The prosecution alleged that the appellant took the deceased away at about 6 p.m.",
+        "The medical evidence did not establish the exact time of death.",
+        "The last-seen evidence was not supported by other conclusive circumstances connecting the appellant to the killing."
+      ],
+      "conclusion": "The last-seen circumstance alone could not support the conclusion that the appellant murdered the deceased.",
+      "legal_principle": "The Court held that last-seen evidence is not sufficient by itself to establish guilt when the time of death is not established and other clinching circumstances are absent. It cited no earlier cases or provision for this principle.",
+      "rule": {
+        "if": "circumstantial_criminal_case and deceased_last_seen_with_accused and death_time_unestablished and no_conclusive_corroboration",
+        "then": "last_seen_evidence_insufficient_for_conviction"
+      },
+      "predicates": {
+        "circumstantial_criminal_case": "The prosecution seeks to establish criminal guilt through circumstantial evidence.",
+        "deceased_last_seen_with_accused": "Evidence places the deceased in the accused's company before the death.",
+        "death_time_unestablished": "The evidence does not establish the time of death with sufficient precision.",
+        "no_conclusive_corroboration": "No other conclusive circumstance supports the inference that the accused committed the killing."
+      },
+      "definition": "When the deceased was last seen with the accused but the time of death is unestablished and there is no conclusive corroboration, last-seen evidence is insufficient for conviction."
+    }
+  ],
+  "seconds": 15.8
+}

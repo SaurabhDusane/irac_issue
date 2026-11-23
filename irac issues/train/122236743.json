@@ -1,0 +1,162 @@
+{
+  "doc_id": "122236743",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19273,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3430,
+    "prompt_tokens": 4979,
+    "total_tokens": 8409,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The failure to explain injuries sustained by a person on the opposing side does not necessarily undermine the prosecution case.",
+      "material_facts": [
+        "A woman related to the accused sustained small gunshot injuries during the incident.",
+        "The courts below found that pellets fired at the deceased could have passed by him and accidentally struck her, and that her injuries were concealed by her clothing and may not have been noticed by the eyewitnesses.",
+        "The defence alleged that a member of the prosecution party had shot her, but she was not called as a defence witness."
+      ],
+      "conclusion": "The prosecution sufficiently explained the injuries; even if they had remained unexplained, the circumstances did not require rejection of the prosecution case.",
+      "legal_principle": "Under State of Gujarat v. Sai Fatima, the failure to explain injuries on an accused may, depending on the facts, support self-defence, make the prosecution case doubtful, or have no effect on it. The court applied the third possibility here, finding the injuries consistent with accidental pellet strikes and not necessarily visible to the eyewitnesses.",
+      "rule": {
+        "if": "criminal_prosecution and (injuries_explained_by_prosecution or injuries_could_have_been_unnoticed_and_accidental)",
+        "then": "unexplained_opposing_side_injuries_do_not_undermine_prosecution_case"
+      },
+      "predicates": {
+        "criminal_prosecution": "The matter is a criminal prosecution in which the prosecution alleges that the accused committed an offence.",
+        "injuries_explained_by_prosecution": "The prosecution provides an explanation for injuries sustained by a person on the opposing side.",
+        "injuries_could_have_been_unnoticed_and_accidental": "The injuries could have been caused accidentally during the incident and could have gone unnoticed by the eyewitnesses."
+      },
+      "definition": "When a criminal prosecution explains the opposing side's injuries, or the injuries could have been unnoticed and accidental, those injuries do not by themselves undermine the prosecution case."
+    },
+    {
+      "legal_issue": "A defence report being recorded before the prosecution report does not by itself make the defence account more probable or defeat the prosecution case.",
+      "material_facts": [
+        "The defence report was lodged about an hour before the prosecution report.",
+        "The prosecution informant testified that he had reached the police post earlier, but the police required a written report before recording his account.",
+        "The courts below found the defence account untrue on its merits."
+      ],
+      "conclusion": "The earlier lodging of the defence report did not demolish the prosecution case.",
+      "legal_principle": "The timing of a report is not conclusive by itself; it must be considered with the evidence explaining the reporting sequence and the merits of the competing accounts.",
+      "rule": {
+        "if": "criminal_appeal and defence_report_preceded_prosecution_report and prosecution_evidence_explains_reporting_delay and defence_version_discredited",
+        "then": "earlier_defence_report_alone_does_not_defeat_prosecution_case"
+      },
+      "predicates": {
+        "criminal_appeal": "The matter is an appeal arising from a criminal prosecution.",
+        "defence_report_preceded_prosecution_report": "A report supporting the defence account was lodged before the report supporting the prosecution account.",
+        "prosecution_evidence_explains_reporting_delay": "Evidence explains why the prosecution account was not recorded before the earlier report was lodged.",
+        "defence_version_discredited": "The evidence and circumstances do not support the defence account."
+      },
+      "definition": "In a criminal appeal, an earlier defence report does not defeat the prosecution case by itself when the reporting delay is explained and the defence account is discredited."
+    },
+    {
+      "legal_issue": "The absence of blood at the alleged place of assault, alongside blood at another location, does not establish that the prosecution misstated the place of occurrence when the circumstances explain the physical evidence.",
+      "material_facts": [
+        "The investigating officer found no blood where the deceased was said to have been assaulted but found blood in the courtyard of the accused's house.",
+        "The courts below found that heavy rain had made the assault site muddy and could explain the absence of blood there.",
+        "They also found that the injured woman could have returned to the house after being wounded, explaining the blood in the courtyard."
+      ],
+      "conclusion": "The blood evidence did not establish that the prosecution had changed the place of occurrence.",
+      "legal_principle": "Physical evidence concerning the location of blood must be assessed in light of the circumstances that may explain its presence or absence; the court relied on the findings about rain, mud, and the injured woman's movement.",
+      "rule": {
+        "if": "criminal_appeal and blood_absent_at_alleged_scene and blood_found_elsewhere and (rain_or_conditions_could_remove_scene_blood or injured_person_could_have_moved_to_other_location)",
+        "then": "blood_locations_do_not_establish_misstated_place_of_occurrence"
+      },
+      "predicates": {
+        "criminal_appeal": "The matter is an appeal arising from a criminal prosecution.",
+        "blood_absent_at_alleged_scene": "No blood was found at the location where the prosecution said the assault occurred.",
+        "blood_found_elsewhere": "Blood was found at a different location connected with the incident.",
+        "rain_or_conditions_could_remove_scene_blood": "Rain or other site conditions could explain why blood was not found at the alleged scene.",
+        "injured_person_could_have_moved_to_other_location": "A person injured during the incident could have moved to the location where blood was found."
+      },
+      "definition": "When blood is absent at the alleged scene but found elsewhere, circumstances explaining either fact mean that the locations alone do not establish that the prosecution misstated where the incident occurred."
+    },
+    {
+      "legal_issue": "The Supreme Court does not ordinarily reappraise factual conclusions concurrently reached by the lower courts in an appeal by special leave.",
+      "material_facts": [
+        "The trial court and the High Court considered the evidence and circumstances and reached conclusions against the appellant.",
+        "The appellant's challenges to the reporting sequence, the injuries, and the location of blood principally sought different factual inferences.",
+        "The appeal was brought by special leave."
+      ],
+      "conclusion": "The Court would not upset the High Court's conclusions by reappraising those factual matters.",
+      "legal_principle": "In an appeal by special leave, the Supreme Court will not ordinarily reopen factual conclusions reached by the High Court after consideration of the evidence where doing so would require reappraisal of factual inferences.",
+      "rule": {
+        "if": "appeal_by_special_leave and concurrent_factual_findings and challenge_requires_reappraisal",
+        "then": "supreme_court_does_not_reopen_concurrent_factual_findings"
+      },
+      "predicates": {
+        "appeal_by_special_leave": "The proceeding is an appeal brought by special leave.",
+        "concurrent_factual_findings": "The trial court and the High Court have reached the same factual conclusion after considering the evidence.",
+        "challenge_requires_reappraisal": "The challenge asks the Supreme Court to reconsider evidence or draw different factual inferences."
+      },
+      "definition": "In an appeal by special leave, concurrent factual findings are not reopened when the challenge requires reappraisal of the evidence."
+    },
+    {
+      "legal_issue": "A reviewing court's consideration of the defence before deciding the prosecution case does not require reversal when the sequence causes no material prejudice.",
+      "material_facts": [
+        "The High Court discussed the defence account before giving its finding on the prosecution case.",
+        "The Supreme Court considered that the High Court should have addressed the prosecution case first.",
+        "The Supreme Court found that the sequence had caused no material prejudice to the accused."
+      ],
+      "conclusion": "The High Court's mistaken sequence of discussion was not consequential and did not require reversal.",
+      "legal_principle": "A court should assess the prosecution case before turning to the defence version, but an error in that order does not invalidate the decision if it causes no material prejudice.",
+      "rule": {
+        "if": "criminal_appeal and reviewing_court_considered_defence_before_prosecution and no_material_prejudice_from_order",
+        "then": "order_of_discussion_does_not_require_reversal"
+      },
+      "predicates": {
+        "criminal_appeal": "The matter is an appeal arising from a criminal prosecution.",
+        "reviewing_court_considered_defence_before_prosecution": "The reviewing court discussed the defence account before deciding whether the prosecution case was proved.",
+        "no_material_prejudice_from_order": "The sequence of discussion did not materially prejudice the accused."
+      },
+      "definition": "In a criminal appeal, considering the defence before the prosecution does not require reversal when that order caused no material prejudice."
+    },
+    {
+      "legal_issue": "A police statement recorded during investigation of a separate cross-case is inadmissible in the prosecution case, and a prior statement relied on to contradict a witness must first be put to that witness.",
+      "material_facts": [
+        "The investigating officer referred to statements made during investigation of a separate cross-case.",
+        "Those statements were used to suggest that prosecution witnesses had not explained how the opposing-side injuries occurred.",
+        "The statements had not first been put to the relevant witness in the present case."
+      ],
+      "conclusion": "The statement recorded during investigation of the cross-case was inadmissible in this case; in any event, it could not be used without first putting it to the witness.",
+      "legal_principle": "The Court applied Section 161 of the Code of Criminal Procedure in holding that the statement made during investigation of the cross-case was inadmissible in the present case. It also required that the statement be put to the witness before the investigating officer's evidence could be used to contradict that witness.",
+      "rule": {
+        "if": "criminal_case and statement_recorded_in_separate_case_investigation and (statement_not_put_to_witness or statement_offered_as_evidence_from_separate_investigation)",
+        "then": "statement_cannot_be_used_to_contradict_witness"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal case in which evidence is being assessed.",
+        "statement_recorded_in_separate_case_investigation": "The statement was recorded by police while investigating a separate case arising from the same incident.",
+        "statement_not_put_to_witness": "The statement was not put to the witness whose account it is said to contradict.",
+        "statement_offered_as_evidence_from_separate_investigation": "The statement is offered as evidence in a different case from the investigation in which it was recorded."
+      },
+      "definition": "In a criminal case, a police statement from a separate investigation cannot be used to contradict a witness if it was not put to that witness, and such a statement cannot be introduced as evidence from the separate investigation."
+    },
+    {
+      "legal_issue": "The death sentence is not warranted where the murder was committed without premeditation and the circumstances do not show brutality or a particularly cruel manner of killing.",
+      "material_facts": [
+        "The appellant's conviction for murder was affirmed, and the evidence showed that he intended to kill the deceased.",
+        "The High Court had acquitted the appellant's father of the charge based on an alleged order to kill, so that alleged order did not establish premeditation by the appellant.",
+        "The Court found that the appellant acted in excitement at the scene and that the crime was not brutal or dastardly; he did not aim at the deceased's head or heart."
+      ],
+      "conclusion": "The Court affirmed the murder conviction but commuted the death sentence to life imprisonment.",
+      "legal_principle": "The Court assessed the appropriateness of the death sentence in light of the circumstances of the offence, including the absence of premeditation and of brutality or dastardliness. It relied on no specific statutory provision or earlier case for this sentencing conclusion.",
+      "rule": {
+        "if": "murder_sentence_review and no_premeditation and no_brutal_or_dastardly_manner",
+        "then": "death_sentence_not_warranted"
+      },
+      "predicates": {
+        "murder_sentence_review": "The proceeding reviews a sentence imposed following a murder conviction.",
+        "no_premeditation": "The killing was not planned in advance by the offender.",
+        "no_brutal_or_dastardly_manner": "The manner of killing was not brutal or dastardly."
+      },
+      "definition": "On review of a murder sentence, the death sentence is not warranted when the killing was unplanned and was not committed in a brutal or dastardly manner."
+    }
+  ],
+  "seconds": 20.7
+}

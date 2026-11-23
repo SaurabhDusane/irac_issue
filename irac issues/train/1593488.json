@@ -1,0 +1,97 @@
+{
+  "doc_id": "1593488",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 8482,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2824,
+    "prompt_tokens": 2581,
+    "total_tokens": 5405,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The revisional court may examine the evidence when the governing rent-control review power extends to the legality or correctness of the challenged order.",
+      "material_facts": [
+        "The tenants challenged the eviction order in revision under a provision authorizing review of the legality or correctness of the order or proceeding.",
+        "The High Court considered the evidence in deciding whether the landlord had a reasonable bona fide requirement."
+      ],
+      "conclusion": "The High Court acted within the scope of its revisional powers, and the Supreme Court found no fault in its understanding of that scope.",
+      "legal_principle": "Section 50 of the Karnataka Rent Control Act authorizes examination of an order or proceeding for its legality or correctness. Under Bhoolchand & Anr. v. Kay Pee Cee Investments & Anr. [1991 (1) SCC 343], this revisional power is wider than the power under Section 115 of the Code of Civil Procedure and does not preclude the High Court from appreciating evidence concerning reasonable bona fide requirement.",
+      "rule": {
+        "if": "rent_control_revision_case and review_authority_covers_correctness",
+        "then": "revisional_court_may_reassess_evidence"
+      },
+      "predicates": {
+        "rent_control_revision_case": "The proceeding is a revision concerning an order made in a rent-control matter.",
+        "review_authority_covers_correctness": "The governing review authority permits examination of whether the challenged order or proceeding is correct."
+      },
+      "definition": "When a rent-control revision is governed by authority to review correctness, the reviewing court may reassess the evidence."
+    },
+    {
+      "legal_issue": "A claim of rent arrears is not established when the evidence does not show the rent payable by each tenant and the landlord's supporting witness cannot supply that missing information.",
+      "material_facts": [
+        "The landlord claimed that the tenants were in arrears but did not establish the rent rate for each tenant's premises or the amount each tenant owed when notice was issued.",
+        "The landlord did not testify; his son was called to support the petition.",
+        "The trial court rejected the son's testimony as insufficient in the absence of material about the rent rate, and the High Court did not disturb that finding."
+      ],
+      "conclusion": "The finding that the rent-arrears claim was not established was left undisturbed.",
+      "legal_principle": "A claim of arrears requires material showing the rent liability attributed to each tenant; the judgment cites no earlier case for this evidentiary conclusion.",
+      "rule": {
+        "if": "rent_control_eviction_case and rent_rate_for_each_tenant_unproved and landlord_did_not_testify",
+        "then": "rent_arrears_ground_not_established"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding concerns eviction sought under rent-control law.",
+        "rent_rate_for_each_tenant_unproved": "The evidence does not establish the rent rate applicable to each tenant's premises.",
+        "landlord_did_not_testify": "The landlord did not give evidence personally and relied on another witness to support the claim."
+      },
+      "definition": "In a rent-control eviction case, when the rent rate for each tenant is unproved and the landlord did not testify, the arrears ground is not established."
+    },
+    {
+      "legal_issue": "A landlord's personal-use claim requires an insistent, genuine need rather than a mere wish or desire, and the court must independently assess that claim.",
+      "material_facts": [
+        "The landlord said he had a large family, lived in rented premises, and wanted to combine the occupied premises into one unit after making alterations.",
+        "Although he asserted that his own landlord was insisting that he vacate, he led no evidence to support that assertion.",
+        "The landlord did not testify personally, and the High Court found no reasonable bona fide requirement, that partial eviction was not feasible, and that eviction would cause greater hardship to the tenants.",
+        "The Supreme Court reviewed the evidence and found no ground to interfere with the High Court's findings."
+      ],
+      "conclusion": "The landlord failed to prove a reasonable bona fide requirement, and the refusal to order eviction was not disturbed.",
+      "legal_principle": "Section 21(1)(h) of the Karnataka Rent Control Act requires more than a wish or impulse: 'require' contains an element of 'must have,' and reasonable and bona fide requirement are complementary and supplementary. Under Dattatraya Laxman Kamble v. Abdul Rasul Moulali Kotkunde & Anr. [1999 (4) SCC 1], the requirement must be genuinely reasonable. The court must satisfy itself independently of the landlord's claim, even if the tenant does not contest it.",
+      "rule": {
+        "if": "rent_control_eviction_case and personal_need_claimed and evidence_showed_no_insistent_need",
+        "then": "personal_need_not_established"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding concerns eviction sought under rent-control law.",
+        "personal_need_claimed": "The landlord seeks possession for personal use or occupation.",
+        "evidence_showed_no_insistent_need": "The evidence does not establish a genuine, pressing need beyond the landlord's wish to occupy the premises."
+      },
+      "definition": "When a landlord seeks eviction for personal use in a rent-control case but the evidence does not establish an insistent need, that need is not established."
+    },
+    {
+      "legal_issue": "Coercive eviction for alleged failure to comply with a payment direction is unwarranted when the payments substantially comply and the alleged unpaid balance has not been determined.",
+      "material_facts": [
+        "The landlord asked the Supreme Court to direct eviction on the basis of alleged non-compliance with its earlier payment directions.",
+        "The landlord's own calculation memo showed that the tenants had paid according to their own calculations and described only a small amount as unpaid.",
+        "The amount of rent payable had not been determined, and the landlord was unsure of the monthly rent rate."
+      ],
+      "conclusion": "The earlier order had been substantially complied with, so the Court declined to invoke the power to direct eviction under Section 29(4) of the Act.",
+      "legal_principle": "Section 29(4) of the Karnataka Rent Control Act was not invoked where the payment direction had been substantially complied with and the alleged shortfall could not be determined, particularly because the landlord himself was unsure of the rent rate.",
+      "rule": {
+        "if": "post_direction_compliance_dispute and payments_substantially_made and unpaid_balance_unquantified",
+        "then": "coercive_eviction_not_invoked"
+      },
+      "predicates": {
+        "post_direction_compliance_dispute": "A party seeks coercive eviction based on alleged non-compliance with a court-directed payment obligation.",
+        "payments_substantially_made": "The available calculations show that the tenants made payments that substantially complied with the direction.",
+        "unpaid_balance_unquantified": "The amount allegedly left unpaid has not been determined."
+      },
+      "definition": "When a compliance dispute follows a payment direction, substantial payment has been made, and any balance remains undetermined, coercive eviction is not invoked."
+    }
+  ],
+  "seconds": 18.0
+}

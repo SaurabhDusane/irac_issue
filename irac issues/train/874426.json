@@ -1,0 +1,165 @@
+{
+  "doc_id": "874426",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31803,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3867,
+    "prompt_tokens": 8016,
+    "total_tokens": 11883,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An acquisition notification is invalid when it identifies only an unspecified part of a larger parcel and provides no plan that makes the land to be acquired identifiable.",
+      "material_facts": [
+        "The notification listed parcel numbers and the total area of each parcel, but for numerous parcels stated that only a smaller part would be acquired without identifying which part.",
+        "No plan was referred to in the notification, and no plan linked to the notification was produced; the plan shown to the court was a government plan from a different year and could not be connected to the notification.",
+        "Without knowing the location of the part to be acquired, owners could not understand what they would lose or effectively assess objections and compensation claims."
+      ],
+      "conclusion": "The notification failed to provide the brief description of the land required by Section 3A(2) of the National Highways Act, 1956, and was invalid.",
+      "legal_principle": "Section 3A(2) requires a brief description of the land proposed for acquisition. A statutory requirement must be performed in the prescribed manner, and every word of the statute must be given effect. The description must at least enable the owner to identify what land is to be taken; an unlocatable part of a larger parcel, without a linked plan, does not satisfy that requirement.",
+      "rule": {
+        "if": "compulsory_acquisition_case and partial_parcel_not_locatable and no_linked_plan",
+        "then": "acquisition_notification_invalid"
+      },
+      "predicates": {
+        "compulsory_acquisition_case": "The proceeding concerns a compulsory acquisition of land.",
+        "partial_parcel_not_locatable": "The acquiring authority specified that only part of a larger parcel would be acquired but did not identify where that part was located.",
+        "no_linked_plan": "The notification did not refer to, and was not accompanied by, a plan linked to it that enabled the land to be identified."
+      },
+      "definition": "When an acquisition proceeding concerns an unlocatable part of a larger parcel and has no linked identifying plan, the acquisition notification is invalid."
+    },
+    {
+      "legal_issue": "Failure to file objections does not bar a challenge to an acquisition notification when the available objection right is limited and the challenge concerns the notification's validity.",
+      "material_facts": [
+        "The owners did not file objections within the prescribed period.",
+        "The objection right under the applicable acquisition scheme was limited to whether the land would be used for a purpose outside the permitted acquisition purposes; it did not provide a general right to object to acquisition itself.",
+        "The owners challenged the notification's compliance with the statutory requirement to describe the land."
+      ],
+      "conclusion": "The failure to file objections did not prevent the owners from challenging the validity of the notification.",
+      "legal_principle": "Section 3C(1) of the National Highways Act, 1956 confers only a limited right to object to the proposed use of the land, unlike the general right to object under Section 5A of the Land Acquisition Act, 1894. The Court distinguished Delhi Administration v. Gurdip Singh Uban, (1999) 7 SCC 44, which concerned failure to exercise the general objection right under the Land Acquisition Act; that decision did not govern a challenge to the validity of a notification under the limited objection scheme.",
+      "rule": {
+        "if": "compulsory_acquisition_case and objection_right_limited and challenge_concerns_notice_validity and objections_not_filed",
+        "then": "failure_to_object_does_not_bar_validity_challenge"
+      },
+      "predicates": {
+        "compulsory_acquisition_case": "The proceeding concerns a compulsory acquisition of land.",
+        "objection_right_limited": "The available objection right concerns only the proposed use of the land and does not allow a general objection to the acquisition itself.",
+        "challenge_concerns_notice_validity": "The landowner challenges whether the acquisition notification complies with the law.",
+        "objections_not_filed": "The landowner did not file objections within the available objection period."
+      },
+      "definition": "If a landowner challenges the notification's legal validity in an acquisition proceeding where the objection right is limited, not filing objections does not bar that challenge."
+    },
+    {
+      "legal_issue": "Delay in challenging an acquisition notification does not make a notification that violates its governing statute valid.",
+      "material_facts": [
+        "The owners challenged the notification several years after it was issued.",
+        "The company that owned the land had been de-registered and had to be revived before the challenge was brought; it was revived in the year the owners took action.",
+        "The notification did not comply with the statutory requirement to describe the land being acquired."
+      ],
+      "conclusion": "The delay did not defeat the challenge or give validity to the defective notification.",
+      "legal_principle": "A notification that fails to comply with the statute from which it derives its authority does not acquire legitimacy merely because a challenge is delayed. The Court also considered the owners' explanation that the company had to be revived before it could act.",
+      "rule": {
+        "if": "compulsory_acquisition_case and challenge_delayed and notice_has_statutory_defect and delay_explained",
+        "then": "delay_does_not_bar_validity_challenge"
+      },
+      "predicates": {
+        "compulsory_acquisition_case": "The proceeding concerns a compulsory acquisition of land.",
+        "challenge_delayed": "The landowner brought the challenge after a substantial interval from the notification.",
+        "notice_has_statutory_defect": "The notification failed to comply with a statutory requirement governing its issue.",
+        "delay_explained": "The landowner gave a case-specific explanation for the delay, including an impediment to taking action."
+      },
+      "definition": "In an acquisition proceeding, an explained delay does not bar a challenge when the notification has a statutory defect."
+    },
+    {
+      "legal_issue": "An unauthorized compensation claim made on behalf of a landowner does not prevent the owner from challenging the acquisition.",
+      "material_facts": [
+        "A person claiming to be the company's general manager submitted a compensation claim containing details of the land.",
+        "At the relevant time the company had been de-registered, and the person had no authority to make the claim on its behalf.",
+        "A court-appointed committee was responsible for managing the factory, not ownership issues, and the land details in the claim came from the notification and its appendix."
+      ],
+      "conclusion": "The compensation claim did not deprive the owners of the right to challenge the acquisition.",
+      "legal_principle": "A claim made without authority on behalf of the owner cannot waive or defeat the owner's right to challenge the acquisition. The fact that the claim repeats information contained in the notification does not establish that the owner accepted the acquisition or had the required knowledge through an authorized act.",
+      "rule": {
+        "if": "compulsory_acquisition_case and compensation_claim_submitted and claimant_lacked_owner_authority",
+        "then": "unauthorized_claim_does_not_bar_owner_challenge"
+      },
+      "predicates": {
+        "compulsory_acquisition_case": "The proceeding concerns a compulsory acquisition of land.",
+        "compensation_claim_submitted": "A person submitted a claim seeking compensation for the acquired land on behalf of the owner.",
+        "claimant_lacked_owner_authority": "The person who submitted the claim was not authorized by the owner to do so."
+      },
+      "definition": "When a compensation claim in an acquisition proceeding was submitted by someone without the owner's authority, that claim does not bar the owner's challenge."
+    },
+    {
+      "legal_issue": "A defective initial acquisition notification invalidates the subsequent declaration and vesting that depend on it.",
+      "material_facts": [
+        "The initial acquisition notification did not comply with the statutory description requirement and was held invalid.",
+        "The later declaration and purported vesting followed from the initial notification and the intervening acquisition steps."
+      ],
+      "conclusion": "The later steps, including the purported vesting of the land, were invalid because the initial notification was invalid.",
+      "legal_principle": "Under Sections 3D(1) and 3D(2) of the National Highways Act, 1956, declaration and vesting follow the preceding acquisition process. When the foundational notification is invalid, the consequential steps founded on it fall with it; purported vesting cannot validate the defective acquisition.",
+      "rule": {
+        "if": "compulsory_acquisition_case and initial_notice_invalid and later_vesting_depends_on_notice",
+        "then": "subsequent_declaration_and_vesting_invalid"
+      },
+      "predicates": {
+        "compulsory_acquisition_case": "The proceeding concerns a compulsory acquisition of land.",
+        "initial_notice_invalid": "The initial acquisition notification was held not to comply with a governing statutory requirement.",
+        "later_vesting_depends_on_notice": "The later declaration and purported transfer of ownership resulted from steps taken under the initial notification."
+      },
+      "definition": "If a later declaration and vesting depend on an invalid initial notification, those consequential steps are invalid."
+    },
+    {
+      "legal_issue": "Possession taken without the required lawful vesting, compensation deposit, notice, and authorized procedure is unlawful.",
+      "material_facts": [
+        "The initial notification and the resulting purported vesting were invalid.",
+        "Final compensation had not been determined or deposited; only a provisional amount had been deposited.",
+        "The acquiring authority gave one day's notice although the applicable procedure required sixty days' notice.",
+        "Possession was not taken through the Commissioner of Police or the Collector."
+      ],
+      "conclusion": "The taking of possession was not in accordance with law and did not cure or support the acquisition.",
+      "legal_principle": "Section 3E(1) of the National Highways Act, 1956 permits possession only after the land has vested in the Central Government and the compensation determined under Section 3G has been deposited as required by Section 3H(1). The required notice period and taking possession through the designated official must also be observed. Each requirement is a condition of lawful possession.",
+      "rule": {
+        "if": "compulsory_acquisition_case and (vesting_not_lawful or compensation_not_finally_deposited or notice_period_not_met or possession_not_taken_through_designated_official)",
+        "then": "taking_of_possession_unlawful"
+      },
+      "predicates": {
+        "compulsory_acquisition_case": "The proceeding concerns a compulsory acquisition of land.",
+        "vesting_not_lawful": "The land had not lawfully vested in the acquiring government before possession was taken.",
+        "compensation_not_finally_deposited": "The compensation finally determined for the land had not been deposited before possession was taken.",
+        "notice_period_not_met": "The acquiring authority did not give the notice period required before taking possession.",
+        "possession_not_taken_through_designated_official": "Possession was not taken through the official designated for that purpose."
+      },
+      "definition": "In a compulsory acquisition, possession is unlawful if lawful vesting, the required compensation deposit, the required notice, or the prescribed method of taking possession is absent."
+    },
+    {
+      "legal_issue": "When an invalid acquisition has been used to complete an important public project, the court may leave the notification undisturbed and assess compensation by reference to the date the owners lost possession.",
+      "material_facts": [
+        "The acquisition notification was invalid, and possession had been taken unlawfully.",
+        "Construction of the national highway on the acquired land had already been completed.",
+        "Quashing the notification would not undo the completed use and could lead to a fresh acquisition and practical difficulties.",
+        "The landowners had been deprived of possession on a known date."
+      ],
+      "conclusion": "The Court did not quash the notification; it directed that compensation be determined by reference to the date possession was taken, with amounts already paid adjusted and other applicable benefits provided.",
+      "legal_principle": "Compensation is normally determined by reference to the market value on the date of the acquisition notification. In appropriate circumstances, instead of quashing a notification, the Court may shift the valuation date to ensure adequate compensation. The Court relied on Ujjain Vikas Pradhikaran v. Rajkumar Johri, (1992) 1 SCC 328; Gauri Shankar Gaur v. State of U.P., (1994) 1 SCC 92; and Haji Saeed Khan v. State of U.P., (2001) 9 SCC 513. Here the date of dispossession was selected as the relevant date; interest was left to be decided according to law.",
+      "rule": {
+        "if": "compulsory_acquisition_case and acquisition_notice_invalid and public_project_completed and owners_deprived_of_possession and quashing_would_disrupt_completed_use",
+        "then": "notification_left_undisturbed_and_compensation_assessed_at_possession_date"
+      },
+      "predicates": {
+        "compulsory_acquisition_case": "The proceeding concerns a compulsory acquisition of land.",
+        "acquisition_notice_invalid": "The acquisition notification was held invalid.",
+        "public_project_completed": "The public project for which the land was acquired had already been completed on the land.",
+        "owners_deprived_of_possession": "The owners had lost possession of the land to the acquiring authority.",
+        "quashing_would_disrupt_completed_use": "Quashing the notification would cause practical difficulties by disturbing or failing to undo the completed use of the land."
+      },
+      "definition": "When an invalid acquisition has supported a completed public project and the owners have been dispossessed, the notification may be left in place while compensation is assessed by reference to the date of dispossession."
+    }
+  ],
+  "seconds": 23.0
+}

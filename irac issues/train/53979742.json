@@ -1,0 +1,39 @@
+{
+  "doc_id": "53979742",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 6529,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1377,
+    "prompt_tokens": 2055,
+    "total_tokens": 3432,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The limitation period for an insolvency application to recover a debt is governed by the residual limitation period for applications, running from the date of default, rather than the limitation period for suits to enforce a charge on immovable property.",
+      "material_facts": [
+        "The debt was treated as in default when the borrower was declared a non-performing asset in 2011, and that date was stated as the date of default in the application.",
+        "The creditor filed an application under Section 7 of the Insolvency and Bankruptcy Code in 2017 to recover the debt.",
+        "The application was filed more than three years after the stated date of default."
+      ],
+      "conclusion": "Article 137 of the Limitation Act applied to the Section 7 application, and the application was time-barred. The appeal was allowed and the decisions admitting the application were set aside.",
+      "legal_principle": "Article 62 of the Limitation Act applies to suits to enforce payment of money secured by or charged on immovable property; it does not apply to an application under Section 7 of the Insolvency and Bankruptcy Code. Article 137, the residuary provision for applications, therefore applies, and its three-year period runs from when the right to apply accrues, here the date of default. As stated in B.K. Educational Services Private Limited v. Parag Gupta and Associates and reflected in the Insolvency Law Committee’s report, the Code was not intended to give a new lease of life to debts already barred by limitation. Limitation provisions are to be applied as written, without an equitable or commercial interpretation that changes their operation.",
+      "rule": {
+        "if": "insolvency_debt_application and application_is_not_suit and default_more_than_three_years_before_filing",
+        "then": "application_is_time_barred"
+      },
+      "predicates": {
+        "insolvency_debt_application": "A creditor filed an insolvency-law application seeking recovery of a debt.",
+        "application_is_not_suit": "The proceeding seeking recovery was filed as an application rather than as a suit.",
+        "default_more_than_three_years_before_filing": "The debt was in default more than three years before the recovery application was filed.",
+        "application_is_time_barred": "The recovery application cannot proceed because it was filed outside the applicable limitation period."
+      },
+      "definition": "When a creditor seeks recovery of a debt through an insolvency application that is not a suit, and the default occurred more than three years before filing, the application is time-barred."
+    }
+  ],
+  "seconds": 11.7
+}

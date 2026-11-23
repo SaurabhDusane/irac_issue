@@ -1,0 +1,79 @@
+{
+  "doc_id": "1258047",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38559,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2440,
+    "prompt_tokens": 9615,
+    "total_tokens": 12055,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord who was required to vacate government-allotted residential accommodation may seek recovery under the special ground without still occupying the allotted accommodation when filing the application.",
+      "material_facts": [
+        "The landlord had occupied residential accommodation allotted by the government.",
+        "A general government order required employees who owned a dwelling at their place of posting to vacate their allotted accommodation or pay market rent.",
+        "The landlord vacated the allotted accommodation before filing the eviction application."
+      ],
+      "conclusion": "Continued occupation of the allotted accommodation on the date of filing is not a condition for maintaining an application under section 14A(1).",
+      "legal_principle": "Under section 14A(1) of the Delhi Rent Control Act, 1958, the right accrues from the date of the qualifying general or special order. The section does not require the landlord to remain in the allotted accommodation until filing; reading in such a condition would postpone the accrual of the right. The purpose of the section, as understood from the legislative background, is to provide relief to an allottee required to vacate or incur obligations because of owning residential accommodation.",
+      "rule": {
+        "if": "special_recovery_proceeding and was_allocated_residential_accommodation and was_required_to_vacate_because_of_owned_home and not occupying_allocated_home_when_filing",
+        "then": "continued_occupation_not_required"
+      },
+      "predicates": {
+        "special_recovery_proceeding": "The landlord seeks possession through a special statutory procedure for a person required to vacate residential accommodation allotted by a public authority.",
+        "was_allocated_residential_accommodation": "A public authority had allotted residential accommodation to the landlord.",
+        "was_required_to_vacate_because_of_owned_home": "An order required the landlord to vacate the allotted accommodation, or incur an obligation, because the landlord owned residential accommodation.",
+        "occupying_allocated_home_when_filing": "The landlord remained in occupation of the allotted accommodation when filing the application."
+      },
+      "definition": "When a landlord in a special recovery proceeding was required to leave allotted housing because of an owned home, not occupying the allotted housing at filing does not prevent reliance on the special recovery ground."
+    },
+    {
+      "legal_issue": "A landlord cannot use the special recovery ground when another dwelling owned by the landlord or specified close family members is available for the landlord's residence or the landlord has already moved into it, even if that dwelling is unsuitable.",
+      "material_facts": [
+        "When the landlord filed the eviction application, the landlord was residing in other premises belonging to the landlord.",
+        "Those premises were separate from the premises let to the tenant.",
+        "The Rent Controller considered the parties' respective needs and held that the landlord's occupied premises were not reasonably suitable residential accommodation.",
+        "The Court held that the landlord's existing owned premises prevented use of the special recovery ground and that any claim based on their unsuitability had to proceed under the ordinary bona fide-requirement ground."
+      ],
+      "conclusion": "The eviction application under section 14A(1) was not maintainable because the landlord had moved into another owned dwelling; the application was dismissed. If the other owned dwelling is unsuitable, the landlord must proceed under section 14(1)(e).",
+      "legal_principle": "Sections 14A(1) and 14(1)(e) of the Delhi Rent Control Act, 1958, provide distinct grounds. Section 14A(1), read with its proviso, does not allow a landlord with another owned dwelling available for residence, or already occupied by the landlord, to use the special ground to recover another let dwelling. The special ground is meant to address the need to vacate allotted housing, not to enable a landlord to choose between owned dwellings or profit from the order requiring vacation. Where the owned dwelling is not reasonably suitable, the landlord must rely on section 14(1)(e). Section 25C supports that distinction by modifying restrictions applicable to the specified landlord category when proceeding under the ordinary ground.",
+      "rule": {
+        "if": "special_recovery_proceeding and landlord_owns_another_dwelling and (another_dwelling_available_for_residence or landlord_moved_into_another_dwelling)",
+        "then": "special_recovery_application_unavailable"
+      },
+      "predicates": {
+        "special_recovery_proceeding": "The landlord seeks possession through the special statutory procedure for a person required to vacate residential accommodation allotted by a public authority.",
+        "landlord_owns_another_dwelling": "The landlord, or the landlord's wife or dependent child, owns another dwelling.",
+        "another_dwelling_available_for_residence": "The other owned dwelling is available to the landlord for residential accommodation.",
+        "landlord_moved_into_another_dwelling": "The landlord has already moved into the other owned dwelling."
+      },
+      "definition": "If a landlord using the special recovery procedure owns another dwelling that is available for residence or has moved into it, the special recovery application is unavailable."
+    },
+    {
+      "legal_issue": "A statement of objects and reasons may explain the background and mischief of legislation but may not determine the meaning and effect of its substantive provisions.",
+      "material_facts": [
+        "The amendment introducing the special recovery ground followed a government policy requiring employees who owned homes at their place of posting to vacate government accommodation or pay market rent.",
+        "The Court referred to the statement of objects and reasons accompanying the amendment to understand the background and purpose of the legislation."
+      ],
+      "conclusion": "The statement of objects and reasons could be used to understand the background, surrounding circumstances, and mischief addressed, but not to determine the true meaning and effect of the substantive statutory provisions.",
+      "legal_principle": "In interpreting legislation, a statement of objects and reasons accompanying a bill cannot determine the true meaning or effect of the enacted substantive provisions, but may be considered to understand the background, antecedent state of affairs, surrounding circumstances, and the evil the legislation sought to remedy.",
+      "rule": {
+        "if": "statutory_interpretation_proceeding and legislative_statement_of_objects_and_reasons_considered",
+        "then": "legislative_statement_may_explain_context_but_not_determine_substantive_meaning"
+      },
+      "predicates": {
+        "statutory_interpretation_proceeding": "The court must interpret the meaning or effect of enacted statutory provisions.",
+        "legislative_statement_of_objects_and_reasons_considered": "The court considers a statement of objects and reasons accompanying the bill that became the legislation."
+      },
+      "definition": "When interpreting legislation, consideration of a statement of objects and reasons may explain the legislation's context but cannot determine the meaning of its substantive provisions."
+    }
+  ],
+  "seconds": 17.0
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "1395333",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32253,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2432,
+    "prompt_tokens": 8672,
+    "total_tokens": 11104,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The tenant, rather than the rent controller, must calculate the actual arrears for tender after the first hearing of an eviction application based on non-payment of rent.",
+      "material_facts": [
+        "The landlord sought eviction for non-payment of rent, and the tenant disputed the amount due.",
+        "The tenant argued that the rent controller had to determine the arrears at the first instance.",
+        "The court found that the statutory proviso required the tenant to tender the actual arrears within the prescribed period after the first hearing and due service."
+      ],
+      "conclusion": "The rent controller is not required to determine the arrears of rent at the first instance; the tenant must calculate and tender the actual arrears.",
+      "legal_principle": "Under Section 13(2)(i) and its proviso of the Haryana Urban (Control of Rent and Eviction) Act, 1973, the tenant must pay or tender the arrears within fifteen days of the first hearing after due service, together with interest calculated by the controller and any allowed costs. The controller's role under the proviso is to calculate interest and determine costs, not to conduct an initial inquiry to determine the arrears. Sheo Narain v. Sher Singh and Sham Lal v. Atme Nand Jain Sabha were held inapplicable because they involved different issues.",
+      "rule": {
+        "if": "arrears_eviction_proceeding and first_hearing_after_due_service",
+        "then": "tenant_must_calculate_actual_arrears"
+      },
+      "predicates": {
+        "arrears_eviction_proceeding": "A landlord has brought an eviction proceeding alleging that the tenant failed to pay rent.",
+        "first_hearing_after_due_service": "The first hearing of the eviction application has occurred after the tenant was duly served."
+      },
+      "definition": "When an eviction proceeding alleges non-payment of rent and the first hearing has occurred after due service, the tenant must calculate the actual arrears."
+    },
+    {
+      "legal_issue": "A tenant who fails to tender the full actual arrears within the required period has not made a valid tender to avoid eviction for non-payment of rent.",
+      "material_facts": [
+        "The rent controller found that the agreed rent was Rs.950 per month and that the tenant had failed to pay rent from 1 April 1975.",
+        "The tenant tendered less than the arrears found due, even when calculated at the agreed rent.",
+        "The tenant's claim that further rent had been paid was rejected by the courts below, and the tenant's counsel conceded that arrears remained unpaid."
+      ],
+      "conclusion": "The tenant's tender was invalid because it did not cover the actual arrears, and the tenant was not deemed to have duly paid or tendered the rent.",
+      "legal_principle": "Section 13(2)(i) and its proviso of the Haryana Urban (Control of Rent and Eviction) Act, 1973 require tender of the actual arrears, together with the prescribed interest and any allowed costs, within fifteen days of the first hearing after due service. Failure to tender the actual arrears means the tenant has not made a valid tender and is not deemed to have duly paid or tendered the rent.",
+      "rule": {
+        "if": "arrears_eviction_proceeding and tender_shortfall and alleged_payments_unproved",
+        "then": "tenant_tender_invalid"
+      },
+      "predicates": {
+        "arrears_eviction_proceeding": "A landlord has brought an eviction proceeding alleging that the tenant failed to pay rent.",
+        "tender_shortfall": "The tenant tendered less than the actual arrears due.",
+        "alleged_payments_unproved": "The tenant's asserted payments that would eliminate the shortfall were not proved."
+      },
+      "definition": "In an eviction proceeding alleging non-payment of rent, a tenant's tender is invalid when it falls short of the actual arrears and the tenant does not prove the asserted payments that would cover the shortfall."
+    },
+    {
+      "legal_issue": "Omitting the amount of rent arrears from an eviction application does not invalidate the application where the omission causes no prejudice to the tenant.",
+      "material_facts": [
+        "The eviction application did not specify the amount of arrears due.",
+        "The tenant knew the amount of arrears claimed and did not show that the omission prejudiced the tenant.",
+        "The objection to the omission was not raised before the rent controller or the appellate authority, but was raised for the first time in the High Court.",
+        "The court considered Rules 4(c), 5(1) and 6 of the Haryana Urban (Control of Rent and Eviction) Rules, 1976."
+      ],
+      "conclusion": "Rules 4(c), 5(1) and 6 are directory, and failure to state the amount of arrears in the eviction application does not invalidate the proceeding in these circumstances.",
+      "legal_principle": "Whether a statutory provision is mandatory or directory depends on legislative intention assessed from the provision's object, purpose, scope, context, and the consequences of non-compliance; the use of “shall” is not conclusive. The court relied on Montreal Street Railway Co. v. Normandin, Seth Bikhraj Jaipuria v. Union of India, Raza Buland Sugar Co. Ltd. v. Municipal Board, K. Kamaraja Nadar v. Kunju Thevar, Ch. Subbarao v. Member, Election Tribunal, State of U.P. v. Babu Ram Upadhya, and Ajit Singh v. State of Punjab. It also relied on Dalchand v. Municipal Corporation, Bhopal for the importance of prejudice in assessing invalidity. The court held that non-compliance with Rules 4(c), 5(1) and 6 does not entail invalidation or penalty in this case.",
+      "rule": {
+        "if": "rent_eviction_application and arrears_amount_omitted and tenant_knew_arrears and no_prejudice_to_tenant",
+        "then": "omission_does_not_invalidate_application"
+      },
+      "predicates": {
+        "rent_eviction_application": "A landlord filed an application seeking eviction of a tenant for non-payment of rent.",
+        "arrears_amount_omitted": "The application did not state the amount of rent arrears claimed.",
+        "tenant_knew_arrears": "The tenant was aware of the amount of arrears claimed.",
+        "no_prejudice_to_tenant": "The omission did not prejudice the tenant."
+      },
+      "definition": "When an eviction application omits the amount of arrears, but the tenant knew the claimed arrears and suffered no prejudice, the omission does not invalidate the application."
+    }
+  ],
+  "seconds": 14.4
+}

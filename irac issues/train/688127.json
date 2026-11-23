@@ -1,0 +1,59 @@
+{
+  "doc_id": "688127",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21124,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1978,
+    "prompt_tokens": 5701,
+    "total_tokens": 7679,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A statutory rent-control eviction proceeding need not satisfy a longer notice requirement in the lease when the statutory conditions for eviction are met.",
+      "material_facts": [
+        "The lease provided for six months’ written notice to terminate it, but that notice was not given.",
+        "The landlord obtained permission to sue for eviction under the rent-control law after the tenant remained in arrears for more than three months and failed to pay within one month after a demand notice.",
+        "The High Court dismissed the suit because the lease required six months’ notice."
+      ],
+      "conclusion": "The lease’s notice requirement did not prevent eviction because the statutory conditions for eviction were met; the landlord was required to proceed under the rent-control law, not to terminate the lease under the contract or the Transfer of Property Act.",
+      "legal_principle": "Section 3 of the U.P. (Temporary) Control of Rent and Eviction Act restricted eviction to the statutory grounds and procedure, displacing inconsistent contractual terms and Transfer of Property Act requirements. Following V. Dhanapal Chettiar v. Yasodai Ammal, determination of the lease under the Transfer of Property Act is not additionally required where a case for eviction is made out under the rent-control law.",
+      "rule": {
+        "if": "rent_control_eviction_case and statutory_eviction_requirements_met",
+        "then": "eviction_without_contractual_notice_permitted"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The landlord brought a proceeding to evict a tenant under a statutory rent-control regime.",
+        "statutory_eviction_requirements_met": "The tenant satisfied the statutory conditions that permit the landlord to bring an eviction suit."
+      },
+      "definition": "When a rent-control eviction case satisfies the statutory eviction requirements, eviction may proceed without compliance with a longer contractual notice requirement."
+    },
+    {
+      "legal_issue": "A tenant cannot obtain additional relief against forfeiture under general property law after the statutory conditions for eviction under rent-control law have been met.",
+      "material_facts": [
+        "The tenant was found to be in arrears of rent for more than three months and did not pay within one month after receiving a demand notice.",
+        "The landlord obtained the required permission and brought an eviction suit under the rent-control law.",
+        "The tenant sought relief under section 114 of the Transfer of Property Act and tendered the arrears, interest, and costs during the proceedings.",
+        "The notice relied on statutory rent default, not forfeiture under the lease; the lease’s forfeiture clause could not authorize immediate possession outside the rent-control procedure."
+      ],
+      "conclusion": "The tenant was not entitled to relief under section 114 of the Transfer of Property Act; the rent-control law provided the applicable eviction regime, and the tenant could not claim double protection under general property law.",
+      "legal_principle": "Section 3 of the U.P. (Temporary) Control of Rent and Eviction Act restricts eviction to its statutory grounds and procedure, so section 114 of the Transfer of Property Act cannot be read into it to provide additional relief against forfeiture. V. Dhanapal Chettiar v. Yasodai Ammal rejected the theory of double protection under rent-control law and the Transfer of Property Act.",
+      "rule": {
+        "if": "rent_control_eviction_case and statutory_eviction_requirements_met and tenant_claims_general_forfeiture_relief and eviction_sought_on_statutory_default",
+        "then": "tenant_not_entitled_to_additional_forfeiture_relief"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The landlord brought a proceeding to evict a tenant under a statutory rent-control regime.",
+        "statutory_eviction_requirements_met": "The tenant satisfied the statutory conditions that permit the landlord to bring an eviction suit.",
+        "tenant_claims_general_forfeiture_relief": "The tenant sought relief against forfeiture under general property law.",
+        "eviction_sought_on_statutory_default": "The landlord based the eviction proceeding on a rent default covered by the rent-control regime rather than on contractual forfeiture."
+      },
+      "definition": "When a rent-control eviction case meets the statutory eviction requirements, the tenant claims general forfeiture relief, and eviction is sought on statutory default, the tenant is not entitled to additional forfeiture relief."
+    }
+  ],
+  "seconds": 13.0
+}

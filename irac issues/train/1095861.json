@@ -1,0 +1,80 @@
+{
+  "doc_id": "1095861",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35260,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2339,
+    "prompt_tokens": 9219,
+    "total_tokens": 11558,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A restriction in a lease that burdens the leasehold interest must be reflected in valuing that interest for wealth-tax purposes.",
+      "material_facts": [
+        "The assessed property included a leasehold interest in land and a house built on it.",
+        "The lease required the lessee to obtain the lessor’s written approval before assigning the leasehold interest and entitled the lessor to a share of the unearned increase in the land’s value on assignment.",
+        "The lease bound assignees and transferees to its covenants, including the assignment restriction and payment obligation."
+      ],
+      "conclusion": "The leasehold interest had to be valued subject to the burden imposed by the lease, rather than as if the interest were unrestricted.",
+      "legal_principle": "Under sections 2(e), 2(m), 3 and 7(1) of the Wealth Tax Act, 1957, the value of an asset for wealth-tax purposes is determined by reference to the price it would fetch in the open market, and the asset must be valued as it actually exists, including restrictions affecting its value. A covenant that binds successive holders is part of the rights and liabilities comprising the leasehold interest. The Court relied on Corrie v. MacDermott, which held that restrictions on an interest in property must be considered in valuing it. The lessor’s additional rights correspondingly reduce the lessee’s interest and cannot also be treated as the lessee’s wealth.",
+      "rule": {
+        "if": "wealth_tax_asset_valuation_case and leasehold_interest_is_asset and lease_covenant_burdens_successive_holders",
+        "then": "leasehold_value_reflects_lease_burden"
+      },
+      "predicates": {
+        "wealth_tax_asset_valuation_case": "The proceeding concerns valuing an asset for wealth-tax purposes.",
+        "leasehold_interest_is_asset": "The person being assessed holds a leasehold interest in the property being valued.",
+        "lease_covenant_burdens_successive_holders": "The lease contains a restriction or obligation that binds the lessee and subsequent holders of the leasehold interest."
+      },
+      "definition": "When an asset being valued for wealth tax is a leasehold interest burdened by a covenant binding successive holders, its value reflects that burden."
+    },
+    {
+      "legal_issue": "The value of a leasehold interest subject to a lessor’s right to a share of unearned increase is determined by deducting that share from the interest’s value as if unburdened.",
+      "material_facts": [
+        "The lease entitled the lessor to recover a portion of the unearned increase in the land’s value when the leasehold interest was assigned.",
+        "The assessee’s valuers estimated the property’s value and deducted the lessor’s share of the unearned increase.",
+        "The tax authorities rejected that deduction, while the Court held that the burden had to be reflected in the valuation."
+      ],
+      "conclusion": "The market value of the leasehold interest as if unaffected by the lease restriction had to be reduced by the lessor’s share of the unearned increase, calculated on the basis of a hypothetical sale on the valuation date.",
+      "legal_principle": "Section 7(1) of the Wealth Tax Act, 1957 requires the price the asset would fetch in an open-market sale to be estimated. Where a restriction makes direct valuation difficult, the Court held that the leasehold interest should be valued as if unencumbered and the value of the restriction deducted. Under the principle in C.I.T. v. Sitaldas Tirathdas, a sum diverted before reaching the assessee is distinguished from an amount received by the assessee and subsequently applied to meet an obligation.",
+      "rule": {
+        "if": "wealth_tax_asset_valuation_case and leasehold_interest_is_asset and hypothetical_open_market_sale_is_basis and lessor_has_share_of_unearned_increase_on_assignment",
+        "then": "encumbered_leasehold_value_equals_unencumbered_value_less_lessor_share"
+      },
+      "predicates": {
+        "wealth_tax_asset_valuation_case": "The proceeding concerns valuing an asset for wealth-tax purposes.",
+        "leasehold_interest_is_asset": "The person being assessed holds a leasehold interest in the property being valued.",
+        "hypothetical_open_market_sale_is_basis": "The asset’s value is assessed by estimating the price it would fetch in a hypothetical open-market sale.",
+        "lessor_has_share_of_unearned_increase_on_assignment": "The lease gives the lessor a right to receive a share of the increase in the land’s value when the leasehold interest is assigned."
+      },
+      "definition": "Where a leasehold interest is valued for wealth tax on a hypothetical open-market sale and the lessor is entitled to a share of unearned increase on assignment, the lessor’s share is deducted from the value of the interest as if unencumbered."
+    },
+    {
+      "legal_issue": "A lessor’s contractual right to a share of unearned increase on assignment is diverted to the lessor before it becomes the lessee’s property, rather than being an application of the lessee’s proceeds after receipt.",
+      "material_facts": [
+        "The lessee held the leasehold interest on terms requiring payment of a share of the unearned increase to the lessor upon assignment.",
+        "The lessor’s right arose from the lease itself and applied when the assignment occurred.",
+        "The Revenue argued that the payment was merely an application of the price received by the assessee."
+      ],
+      "conclusion": "The lessor’s share was diverted before it reached the assessee as part of the price and therefore did not form part of the assessee’s net realisable worth of the leasehold interest.",
+      "legal_principle": "Under C.I.T. v. Sitaldas Tirathdas, the decisive test is whether the amount never reached the assessee as the assessee’s own income because it was diverted by an overriding obligation, or whether it reached the assessee and was then applied to discharge an obligation. The Court applied that distinction to the lease condition and explained Pandit Lakshmi Kant Jha v. Commissioner of Wealth-Tax, Bihar, where sale-related expenses were not deductible because they were applied after the proceeds belonged to the assessee.",
+      "rule": {
+        "if": "wealth_tax_asset_valuation_case and leasehold_interest_is_asset and lessor_share_is_due_under_lease_on_assignment and lessor_share_is_diverted_before_assessee_receives_it",
+        "then": "lessor_share_is_excluded_as_diverted_before_receipt"
+      },
+      "predicates": {
+        "wealth_tax_asset_valuation_case": "The proceeding concerns valuing an asset for wealth-tax purposes.",
+        "leasehold_interest_is_asset": "The person being assessed holds a leasehold interest in the property being valued.",
+        "lessor_share_is_due_under_lease_on_assignment": "The lease makes a share of the unearned increase payable to the lessor when the leasehold interest is assigned.",
+        "lessor_share_is_diverted_before_assessee_receives_it": "The lessor’s entitlement attaches to the proceeds so that the relevant share does not first become the assessee’s own property."
+      },
+      "definition": "When the lease makes a share payable to the lessor on assignment and that share is diverted before the assessee receives it as their own, the share is excluded as an amount diverted before receipt."
+    }
+  ],
+  "seconds": 76.7
+}

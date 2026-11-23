@@ -1,0 +1,103 @@
+{
+  "doc_id": "1205820",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18635,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2561,
+    "prompt_tokens": 4988,
+    "total_tokens": 7549,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A reviewing court need not remand an eviction appeal to determine whether the contractual tenancy was terminated when termination was not disputed at trial and the reviewing court determined the issue after hearing both sides.",
+      "material_facts": [
+        "The landlord alleged that notice had terminated the contractual tenancy.",
+        "The tenant did not deny that allegation in the written statement, and no issue on termination was requested at trial.",
+        "The High Court heard both sides and concluded that the tenancy had been duly terminated."
+      ],
+      "conclusion": "The High Court was not required to remand the case for determination of whether the contractual tenancy had been terminated.",
+      "legal_principle": "Where termination was not disputed in the pleadings or made an issue at trial, and the appellate court hears both sides and determines the matter, a remand is not required merely because the point was raised at the appellate hearing.",
+      "rule": {
+        "if": "eviction_appeal and termination_not_denied and termination_issue_not_tried and appellate_court_heard_both_sides",
+        "then": "remand_unnecessary"
+      },
+      "predicates": {
+        "eviction_appeal": "The matter is an appeal in an eviction proceeding.",
+        "termination_not_denied": "The party opposing eviction did not deny the pleaded termination of the contractual tenancy.",
+        "termination_issue_not_tried": "No issue on termination was requested or tried at the original hearing.",
+        "appellate_court_heard_both_sides": "The appellate court heard both sides on whether the tenancy had been terminated."
+      },
+      "definition": "When an eviction appeal involves an undisputed and untried termination issue that the appellate court hears from both sides, remand is unnecessary."
+    },
+    {
+      "legal_issue": "Heirs of a deceased statutory tenant cannot continue a defense personal to that tenant unless the governing rent law extends the statutory protection to them.",
+      "material_facts": [
+        "The contractual tenancy had been terminated before the tenant died, leaving the tenant with statutory protection to remain in possession.",
+        "The tenant died while the landlord’s appeal was pending, and the heirs were brought on record.",
+        "The heirs sought to rely on the defense that the premises were not reasonably and bona fide required by the landlord.",
+        "The Act contained no provision shown to extend the deceased statutory tenant’s protection to the heirs."
+      ],
+      "conclusion": "The defense based on the landlord’s bona fide and reasonable requirement was personal to the deceased statutory tenant and was not available to the heirs.",
+      "legal_principle": "Under section 13 of the Rajasthan Premises (Control of Rent and Eviction) Act, 1950, the protection against eviction applied to the statutory tenant; after termination of the contractual tenancy, the statutory tenant had a personal right to remain in possession. The Court applied Anand Nivas (Private) Ltd. v. Anandji Kalyanji Pedhi, [1964] 4 S.C.R. 892, 908, and held that the protection does not devolve on heirs unless the statute provides otherwise. Under Order 22 Rules 4 and 11 of the Code of Civil Procedure, representatives may raise defenses appropriate to their representative character, but not defenses personal to the deceased.",
+      "rule": {
+        "if": "eviction_appeal and statutory_tenant_died_pending_appeal and defense_personal_to_deceased and no_statutory_extension",
+        "then": "heirs_cannot_raise_deceased_personal_defense"
+      },
+      "predicates": {
+        "eviction_appeal": "The matter is an appeal in an eviction proceeding.",
+        "statutory_tenant_died_pending_appeal": "A person whose contractual tenancy had ended and who remained under statutory protection died while the eviction appeal was pending.",
+        "defense_personal_to_deceased": "The defense invoked concerns protection personal to the deceased statutory tenant.",
+        "no_statutory_extension": "The governing law contains no provision extending that protection to the deceased tenant’s heirs."
+      },
+      "definition": "If a statutory tenant dies during an eviction appeal and the defense is personal to that tenant, the heirs cannot raise it unless the governing law extends the protection to them."
+    },
+    {
+      "legal_issue": "Heirs who pay rent during proceedings do not thereby become tenants in their own right when the contractual tenancy ended before the statutory tenant’s death and the landlord accepted payment without recognizing them as tenants.",
+      "material_facts": [
+        "The contractual tenancy had been terminated before the tenant died, when the tenant had only a personal statutory right to remain in possession.",
+        "The heirs paid amounts described as rent during the proceedings.",
+        "The landlord received those amounts without prejudice to his rights under the court’s orders and did not recognize the heirs as tenants.",
+        "The heirs did not establish that they fell within another part of the statutory definition of tenant."
+      ],
+      "conclusion": "The heirs could not claim to be tenants in their own right merely because they paid rent during the proceedings.",
+      "legal_principle": "Section 3(vii) of the Rajasthan Premises (Control of Rent and Eviction) Act, 1950 defines a tenant by reference to the person by whom rent is or would be payable and specified other occupants. Where the contractual tenancy ended before the tenant’s death, the statutory tenant’s personal right does not pass as an estate or interest in the tenancy. Payment accepted without recognition of the heirs as tenants does not make rent payable by them or bring them within the definition. The Court applied Anand Nivas (Private) Ltd. v. Anandji Kalyanji Pedhi, [1964] 4 S.C.R. 892, 908.",
+      "rule": {
+        "if": "eviction_proceeding and contractual_tenancy_ended_before_death and heirs_paid_during_proceedings and payment_accepted_without_tenant_recognition",
+        "then": "heirs_not_tenants_by_payment"
+      },
+      "predicates": {
+        "eviction_proceeding": "The matter concerns an eviction proceeding against occupants claiming through a deceased tenant.",
+        "contractual_tenancy_ended_before_death": "The contractual tenancy had ended before the tenant died, leaving only a personal statutory right to remain in possession.",
+        "heirs_paid_during_proceedings": "The deceased tenant’s heirs paid rent or equivalent amounts during the proceedings.",
+        "payment_accepted_without_tenant_recognition": "The landlord received the payments without recognizing the heirs as tenants."
+      },
+      "definition": "When heirs make payments during an eviction proceeding after the contractual tenancy ended before the tenant’s death, acceptance without recognition does not make the heirs tenants."
+    },
+    {
+      "legal_issue": "An eviction appeal survives the death of a respondent, and the respondent’s legal representatives may raise defenses appropriate to their representative character, but not defenses personal to the deceased.",
+      "material_facts": [
+        "The tenant died while the landlord’s appeal was pending, and the tenant’s heirs were brought on record as legal representatives.",
+        "The landlord’s right to pursue the appeal for possession survived the tenant’s death.",
+        "The heirs could challenge the termination notice as representatives, but the defense based on the landlord’s personal requirement was personal to the deceased tenant."
+      ],
+      "conclusion": "The appeal could proceed against the legal representatives, who could raise contentions appropriate to their representative character but not contentions personal to the deceased; they could also assert an independent title in their own right.",
+      "legal_principle": "Order 22 Rules 4 and 11 of the Code of Civil Procedure provide for continuation of a proceeding when the right to sue or appeal survives and permit a legal representative to make a defense appropriate to that character. The Court also recognized that a representative may assert an independent title in a personal capacity, avoiding a separate suit for that determination.",
+      "rule": {
+        "if": "eviction_appeal and respondent_died_during_appeal and legal_representatives_substituted",
+        "then": "representatives_may_raise_nonpersonal_defenses_and_independent_title"
+      },
+      "predicates": {
+        "eviction_appeal": "The matter is an appeal in an eviction proceeding.",
+        "respondent_died_during_appeal": "The respondent died while the appeal was pending.",
+        "legal_representatives_substituted": "The deceased respondent’s legal representatives were brought on record."
+      },
+      "definition": "When a respondent in an eviction appeal dies and legal representatives are substituted, they may raise nonpersonal representative defenses and may assert an independent title."
+    }
+  ],
+  "seconds": 16.3
+}

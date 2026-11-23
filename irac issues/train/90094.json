@@ -1,0 +1,155 @@
+{
+  "doc_id": "90094",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25314,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3500,
+    "prompt_tokens": 6568,
+    "total_tokens": 10068,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Land already declared to be reserved forest is excluded from the pending writ, without foreclosing claims in another appropriate proceeding.",
+      "material_facts": [
+        "Some of the jungle lands had already been declared reserved forest under the applicable forest law.",
+        "The proceedings concerned claims by people living in and using the affected forest areas."
+      ],
+      "conclusion": "The lands already declared reserved forest do not form part of the writ petition, and the Court expressed no opinion on whether claims to rights in those lands could be maintained in another appropriate proceeding.",
+      "legal_principle": "Under section 20 of the Indian Forest Act, 1927, an area may be declared reserved forest. The Court excluded areas already so declared from the scope of this writ but left any claims to be pursued in another appropriate proceeding, without deciding their maintainability.",
+      "rule": {
+        "if": "case_is_writ_about_land_rights and land_already_declared_reserved_forest",
+        "then": "land_excluded_from_current_writ"
+      },
+      "predicates": {
+        "case_is_writ_about_land_rights": "The proceeding is a writ concerning claims to rights in land.",
+        "land_already_declared_reserved_forest": "The land had already been declared to be reserved forest."
+      },
+      "definition": "When a writ concerns land rights and the land has already been declared reserved forest, that land is excluded from the writ."
+    },
+    {
+      "legal_issue": "People affected by a forest notification may submit claims even after the original filing period has expired, with the claim process made accessible through identification and publicity of the affected land.",
+      "material_facts": [
+        "Land had been notified under section 4 of the Indian Forest Act, 1927, for proceedings toward final declaration as reserved forest.",
+        "Some affected people had not filed claims within the period originally specified in the notification.",
+        "The affected area lacked adequate survey and settlement records, and residents needed information to determine whether their land was covered."
+      ],
+      "conclusion": "Claims concerning land notified under section 4 were to be accepted and dealt with even if they had not been filed within the time originally specified; the affected land was to be demarcated and the process publicised.",
+      "legal_principle": "Sections 4 and 6(c) of the Indian Forest Act, 1927, provide for notification and the lodging of claims in forest settlement proceedings. The Court directed that claims be accepted notwithstanding expiry of the original filing period and ordered demarcation and widespread notice to facilitate claims.",
+      "rule": {
+        "if": "case_is_writ_about_forest_land_claims and land_notified_for_forest_settlement and claim_filing_period_expired",
+        "then": "late_claims_accepted_and_claim_process_publicised"
+      },
+      "predicates": {
+        "case_is_writ_about_forest_land_claims": "The proceeding is a writ concerning claims to land affected by forest settlement proceedings.",
+        "land_notified_for_forest_settlement": "The land had been notified for proceedings to determine whether it would be declared reserved forest.",
+        "claim_filing_period_expired": "The period originally allowed for filing a claim had expired before the affected person filed it."
+      },
+      "definition": "If a writ concerns forest-land claims, the land is under forest settlement, and the original claim period has expired, late claims are accepted and the claim process is publicised."
+    },
+    {
+      "legal_issue": "A claim decided by the forest settlement officer must receive appellate-level scrutiny even when no appeal is filed.",
+      "material_facts": [
+        "Claims concerning land notified for forest settlement were to be considered by a forest settlement officer.",
+        "The Court directed that the officer's findings and supporting papers be placed before an appellate authority even if no claimant filed an appeal."
+      ],
+      "conclusion": "The appellate authority must scrutinize the forest settlement officer's findings as if an appeal had been filed, and its resulting order is to be treated as the order contemplated by the applicable forest law.",
+      "legal_principle": "Section 17 of the Indian Forest Act, 1927, provides for an appellate authority. The Court directed that findings be referred to that authority for scrutiny even in the absence of an appeal, with the resulting order treated as the statutory appellate order.",
+      "rule": {
+        "if": "case_is_writ_about_forest_settlement_claims and settlement_officer_decided_claim and no_appeal_filed",
+        "then": "mandatory_appellate_scrutiny_without_appeal"
+      },
+      "predicates": {
+        "case_is_writ_about_forest_settlement_claims": "The proceeding is a writ concerning claims being determined through forest settlement.",
+        "settlement_officer_decided_claim": "The officer responsible for deciding a forest settlement claim has made findings on it.",
+        "no_appeal_filed": "No claimant has filed an appeal against the officer's findings."
+      },
+      "definition": "When a forest settlement claim has been decided in a writ concerning such claims, the decision receives appellate scrutiny even if no appeal was filed."
+    },
+    {
+      "legal_issue": "Possession of land notified for forest settlement must be preserved while claims await appellate determination, and no final forest declaration may be made in that interval.",
+      "material_facts": [
+        "People were in possession of land notified under section 4 of the Indian Forest Act, 1927, and had claims concerning that land.",
+        "Those claims had not yet received appellate determination.",
+        "The Court had previously directed that local people in occupation not be dispossessed while the matter was pending."
+      ],
+      "conclusion": "Possession was to remain as it stood until the appellate authority determined the claims, and no declaration under section 20 was to be made in respect of the land before that decision.",
+      "legal_principle": "Sections 4 and 20 of the Indian Forest Act, 1927, govern notification for forest settlement and final declaration as reserved forest. The Court preserved existing possession and deferred a final declaration until appellate determination of the claims.",
+      "rule": {
+        "if": "case_is_writ_about_forest_land_claims and land_notified_for_forest_settlement and occupants_in_possession and claims_await_appellate_decision",
+        "then": "possession_and_forest_status_preserved_pending_review"
+      },
+      "predicates": {
+        "case_is_writ_about_forest_land_claims": "The proceeding is a writ concerning claims to land affected by forest settlement.",
+        "land_notified_for_forest_settlement": "The land had been notified for proceedings to determine whether it would be declared reserved forest.",
+        "occupants_in_possession": "People claiming rights in the land were in possession of it.",
+        "claims_await_appellate_decision": "The claims concerning the land had not yet been determined by the appellate authority."
+      },
+      "definition": "If people in possession of notified forest-settlement land have claims awaiting appellate decision, possession and the land's forest status are preserved until review."
+    },
+    {
+      "legal_issue": "The government must give effect to an admissible claim determined by the appellate authority and issue the claimant an appropriate title document.",
+      "material_facts": [
+        "The Court established a process for an appellate authority to scrutinize claims concerning notified forest land.",
+        "The government agreed that it would honour an appellate finding that a claim was admissible.",
+        "The Court directed that an appropriate title deed be issued when a claim was established."
+      ],
+      "conclusion": "When the appellate authority finds a claim admissible, the government must honour and implement that decision, and an appropriate title deed must be issued within a reasonable time when the claim is established.",
+      "legal_principle": "The Court's directions required the government to implement an admissible appellate determination and required the appropriate authority to issue a title deed when a claim was established.",
+      "rule": {
+        "if": "case_is_writ_about_forest_land_claims and appellate_authority_finds_claim_admissible",
+        "then": "recognized_claim_implemented_and_title_document_issued"
+      },
+      "predicates": {
+        "case_is_writ_about_forest_land_claims": "The proceeding is a writ concerning claims to land affected by forest settlement.",
+        "appellate_authority_finds_claim_admissible": "The appellate authority determines that a claimant's land-rights claim is admissible."
+      },
+      "definition": "When an appellate authority admits a claim in a writ concerning forest-land claims, the claim is implemented and a title document is issued."
+    },
+    {
+      "legal_issue": "People pursuing claims to land and related rights in the forest settlement process must receive legal aid to obtain information, file claims, and support them at both adjudicative stages.",
+      "material_facts": [
+        "People affected by forest proceedings needed to learn whether their land was covered and to lodge and substantiate claims.",
+        "The Court provided for claims to be considered at both an original and an appellate stage.",
+        "The Court directed that legal aid be available without requiring compliance with the ordinary procedure of the legal aid bodies."
+      ],
+      "conclusion": "Legal aid must be provided to claimants, including assistance to obtain information, lodge claims, and substantiate them at both the original and appellate stages, without requiring compliance with the ordinary legal-aid procedure.",
+      "legal_principle": "The Court directed legal aid as part of the process for determining land and related-rights claims, including assistance at both stages of adjudication and waiving the ordinary procedural requirements for accessing that aid.",
+      "rule": {
+        "if": "case_is_writ_about_forest_land_claims and people_need_help_to_pursue_claims",
+        "then": "claim_related_legal_aid_provided"
+      },
+      "predicates": {
+        "case_is_writ_about_forest_land_claims": "The proceeding is a writ concerning claims to land affected by forest settlement.",
+        "people_need_help_to_pursue_claims": "People seeking to establish land or related rights need assistance to obtain information, file claims, or substantiate them."
+      },
+      "definition": "If people in a forest-land-claims proceeding need help pursuing their claims, claim-related legal aid is provided."
+    },
+    {
+      "legal_issue": "Land needed for an important energy project may be taken out of a court-ordered bar on dispossession, provided statutory acquisition requirements and safeguards for recording the displacement are followed.",
+      "material_facts": [
+        "A time-bound thermal power project required acquisition of land occupied by local people.",
+        "The Court had imposed a general bar on dispossession while claims to land were being addressed.",
+        "The acquiring corporation agreed to follow its stated policy on facilities for people displaced by the acquisition.",
+        "The Court directed that possession be taken only after compliance with the Land Acquisition Act, 1894, in the presence of a commissioner, with a certified record of the land, displaced person, and nature of land use."
+      ],
+      "conclusion": "The land sought for the power project was freed from the bar on dispossession, but possession could be taken only after compliance with the Land Acquisition Act and subject to the specified recording and displacement safeguards.",
+      "legal_principle": "The Land Acquisition Act, 1894, had to be complied with. The Court balanced the national importance of preserving forests and ecology against the national importance of electricity generation, and made the permission to take possession subject to documentation and the acquiring corporation's undertaking concerning facilities for land oustees.",
+      "rule": {
+        "if": "case_is_writ_about_land_claims and land_occupied_by_claimants_sought_for_public_energy_project and acquisition_requirements_can_be_satisfied",
+        "then": "project_possession_permitted_subject_to_acquisition_safeguards"
+      },
+      "predicates": {
+        "case_is_writ_about_land_claims": "The proceeding is a writ concerning claims to land and the protection of people in possession.",
+        "land_occupied_by_claimants_sought_for_public_energy_project": "Land occupied by people with claims is sought for acquisition for an energy-generation project.",
+        "acquisition_requirements_can_be_satisfied": "The acquisition can proceed in compliance with the applicable acquisition requirements and the court-directed recording and displacement safeguards."
+      },
+      "definition": "If claimed land in a land-rights writ is needed for an energy project and acquisition requirements and safeguards can be met, possession for the project is permitted subject to those safeguards."
+    }
+  ],
+  "seconds": 20.9
+}

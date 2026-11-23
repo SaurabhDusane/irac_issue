@@ -1,0 +1,63 @@
+{
+  "doc_id": "473980",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41731,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2217,
+    "prompt_tokens": 10038,
+    "total_tokens": 12255,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A delayed application to bring the legal representatives of a deceased sole appellant on record should be refused where the applicants fail to establish a bona fide and plausible sufficient cause for the delay.",
+      "material_facts": [
+        "The sole appellant died while the appeal was pending, but the legal representatives did not apply to be brought on record for a considerable period.",
+        "The legal representatives attributed the delay to not knowing that the appeal was pending, but their accounts about their residences and knowledge were inconsistent.",
+        "One legal representative had testified in the trial, undermining the claim that the family was unaware of the proceedings.",
+        "The applicants did not explain why they failed to notify counsel of the death or why they did not promptly act after learning the appeal was pending.",
+        "The applications lacked supporting material for the alleged communication from counsel and contained averments the Court found untrue."
+      ],
+      "conclusion": "The applicants failed to show sufficient cause, so the application to condone the delay was dismissed; the related application to bring the legal representatives on record did not survive.",
+      "legal_principle": "Under Order 22 Rules 3 and 9 of the Code of Civil Procedure, read with Section 5 of the Limitation Act, an application to set aside abatement and bring legal representatives on record requires sufficient cause. The expression is to be applied reasonably and, where appropriate, liberally to advance substantial justice, but liberal construction does not excuse negligence, inaction, lack of bona fides, or an implausible explanation. The decisive consideration is the sufficiency of the explanation, assessed with the applicant’s conduct and the other party’s accrued rights, rather than the length of delay alone. The Court relied on Union of India v. Ram Charan, Ramlal v. Rewa Coalfields Ltd., P.K. Ramachandran v. State of Kerala, Mithailal Dalsangar Singh v. Annabai Devram Kini, Perumon Bhagvathy Devaswom v. Bhargavi Amma, and Katari Suryanarayana v. Koppisetti Subba Rao; it also discussed the distinct facts of other cited decisions.",
+      "rule": {
+        "if": "appeal_after_sole_appellant_death and delayed_substitution_request and (inconsistent_heir_accounts or heir_knew_of_proceeding) and unexplained_post_knowledge_inaction",
+        "then": "delay_condonation_denied"
+      },
+      "predicates": {
+        "appeal_after_sole_appellant_death": "An appeal was pending when its sole appellant died.",
+        "delayed_substitution_request": "The deceased appellant’s legal representatives applied to be brought on record only after a substantial delay.",
+        "inconsistent_heir_accounts": "The legal representatives gave inconsistent accounts about their circumstances or knowledge of the pending proceeding.",
+        "heir_knew_of_proceeding": "A legal representative had participated as a witness in the underlying proceeding, indicating knowledge of it.",
+        "unexplained_post_knowledge_inaction": "The legal representatives failed to explain why they did not act promptly after learning that the appeal was pending."
+      },
+      "definition": "When a pending appeal following the death of its sole appellant is met with a substantially delayed substitution request, and the heirs’ accounts are inconsistent or an heir knew of the proceeding while later inaction remains unexplained, the delay is not excused."
+    },
+    {
+      "legal_issue": "A pending proceeding abates when the right to continue survives but the legal representatives of a deceased sole appellant are not brought on record within the prescribed period, unless the abatement is set aside.",
+      "material_facts": [
+        "The sole appellant died while the appeal was pending.",
+        "The legal representatives were not brought on record within the prescribed period.",
+        "The Court dismissed the application to excuse the delay and the related substitution application."
+      ],
+      "conclusion": "The appeal had abated and, as a result, stood dismissed.",
+      "legal_principle": "Order 22 Rule 1 of the Code of Civil Procedure provides that death does not cause abatement where the right to sue survives; Order 22 Rule 3 provides for bringing the deceased plaintiff’s legal representatives on record within the prescribed time; and Order 22 Rule 9 provides for setting aside abatement. Abatement for failure to apply within time occurs automatically, without a separate order declaring it. The Court relied on Mithailal Dalsangar Singh v. Annabai Devram Kini and Union of India v. Ram Charan.",
+      "rule": {
+        "if": "appeal_after_sole_appellant_death and right_to_continue_survived and no_substitution_within_limitation and abatement_not_set_aside",
+        "then": "appeal_abated"
+      },
+      "predicates": {
+        "appeal_after_sole_appellant_death": "An appeal was pending when its sole appellant died.",
+        "right_to_continue_survived": "The deceased appellant’s claim could continue through legal representatives.",
+        "no_substitution_within_limitation": "The legal representatives were not brought on record within the prescribed period.",
+        "abatement_not_set_aside": "The court did not set aside the abatement."
+      },
+      "definition": "If an appeal can continue through a deceased sole appellant’s legal representatives but they are not brought on record in time and the abatement is not set aside, the appeal abates."
+    }
+  ],
+  "seconds": 13.5
+}

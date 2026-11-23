@@ -1,0 +1,79 @@
+{
+  "doc_id": "890110",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 37558,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2474,
+    "prompt_tokens": 9629,
+    "total_tokens": 12103,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Admitting a person outside the tenant’s statutory family as a partner in a business conducted in a non-residential rented building results in deemed cessation of occupation, vacancy, and subletting without an inquiry into the tenant’s purpose or actual transfer of possession.",
+      "material_facts": [
+        "The premises were a non-residential shop used for business.",
+        "A tenant carrying on business in the shop admitted his son-in-law, who was not within the statutory definition of the tenant’s family, as a partner in the business.",
+        "The dispute arose in proceedings concerning whether the premises had become vacant under rent-control law."
+      ],
+      "conclusion": "The tenant was deemed to have ceased to occupy the premises; the premises were deemed vacant and sub-let. No inquiry into the tenant’s purpose in admitting the partner or whether the premises were actually sub-let was permissible.",
+      "legal_principle": "Under Sections 12(2) and 12(4) of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, admitting a non-family member as a partner in a business carried on in a non-residential building deems the tenant to have ceased occupying it and the building to be vacant. Explanation (i) to Section 25 deems that cessation to be subletting, which is an eviction ground under Section 20(2)(e). A statutory fiction must be given full effect and carried to its logical consequences: East End Dwellings Co. Ltd. v. Finsbury Borough Council; State of Bombay v. Pandurang Vinayak; Chief Inspector of Mines v. K.C. Thapar; J.K. Cotton Spinning and Weaving Mills Ltd. v. Union of India; and M. Venugopal v. Divisional Manager, LIC. The Court held that the statutory language leaves no discretion to investigate the tenant’s intent or whether an actual subletting occurred.",
+      "rule": {
+        "if": "rent_control_vacancy_proceeding and nonresidential_business_premises and tenant_admitted_nonfamily_business_partner",
+        "then": "premises_are_deemed_vacant_and_sublet"
+      },
+      "predicates": {
+        "rent_control_vacancy_proceeding": "The proceeding concerns whether rented premises have become vacant under rent-control law.",
+        "nonresidential_business_premises": "The tenant carries on business in premises that are non-residential.",
+        "tenant_admitted_nonfamily_business_partner": "The tenant admitted a person outside the tenant’s family as a partner in the business conducted in the premises."
+      },
+      "definition": "When a vacancy proceeding concerns non-residential business premises and the tenant admits a person outside the tenant’s family as a business partner, the premises are treated as vacant and sub-let."
+    },
+    {
+      "legal_issue": "After an original tenant dies, the tenancy devolves on the heirs as a single joint tenancy rather than as separate tenancies, so a tenancy breach by one heir can affect the tenancy of all heirs.",
+      "material_facts": [
+        "The original tenant died leaving multiple heirs.",
+        "The heirs continued to hold and use the same premises under the tenancy, with no division of the premises or the rent payable to the landlord.",
+        "One heir admitted a person outside the tenant’s family as a partner in the business conducted in the premises."
+      ],
+      "conclusion": "The heirs succeeded to the tenancy jointly as a single tenancy, and the breach by one heir could result in the consequences prescribed for that tenancy as a whole.",
+      "legal_principle": "The Court applied Sections 12, 20 and 25 of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, and held that the tenancy rights devolve on the heirs jointly, with the same incidents as the original tenancy and no division of premises or rent. It approved H.C. Pandey v. G.C. Paul as laying down the correct law and held that Mohd. Azeem v. District Judge, Aligarh did not. Its reasoning also accords with the general proposition in Smt. Gian Devi Anand v. Jeevan Kumar that the consequences of a deceased tenant’s succession depend on the governing rent legislation. Treating heirs as separate tenants would create an unprovided-for division of liability and could produce absurd results.",
+      "rule": {
+        "if": "rent_control_tenancy_succession_dispute and original_tenant_died and multiple_heirs_succeeded_to_one_undivided_tenancy and one_heir_committed_tenancy_breach",
+        "then": "heirs_hold_one_joint_tenancy_and_breach_affects_all"
+      },
+      "predicates": {
+        "rent_control_tenancy_succession_dispute": "The dispute concerns the succession to a tenancy governed by rent-control law.",
+        "original_tenant_died": "The original tenant died while the tenancy existed.",
+        "multiple_heirs_succeeded_to_one_undivided_tenancy": "Multiple heirs succeeded to the same tenancy without a division of the premises or the rent payable to the landlord.",
+        "one_heir_committed_tenancy_breach": "One of the heirs committed a breach of a condition governing the tenancy."
+      },
+      "definition": "When multiple heirs succeed to one undivided rent-controlled tenancy and one heir breaches a tenancy condition, the heirs hold one joint tenancy and the breach can affect them all."
+    },
+    {
+      "legal_issue": "A son-in-law is not a member of a tenant’s family under the statutory family definition governing the tenancy, and the definition cannot be broadened merely by relying on the ordinary understanding of family.",
+      "material_facts": [
+        "The relevant statutory definition identified specified family relationships, including a spouse and male lineal descendants.",
+        "The person admitted as a business partner was the tenant’s son-in-law.",
+        "The tenants argued that the ordinary meaning of family should include a son-in-law."
+      ],
+      "conclusion": "The son-in-law was not a member of the tenant’s family for the purposes of the Act, and the statutory term could not be given a broader meaning in this context.",
+      "legal_principle": "Section 3(g) of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972 defines family by specified relationships. The Court held that the Act consistently uses “member of the family” in accordance with that definition and that there was no basis for a different, broader construction in applying Section 12(2). It rejected reliance on Pushpa Devi v. Milkhi Ram to expand the statutory meaning in this context.",
+      "rule": {
+        "if": "rent_control_family_definition_dispute and person_is_tenant_son_in_law and statutory_family_definition_does_not_include_son_in_law",
+        "then": "son_in_law_is_not_member_of_tenant_family"
+      },
+      "predicates": {
+        "rent_control_family_definition_dispute": "The dispute concerns who qualifies as a tenant’s family member under a statutory rent-control definition.",
+        "person_is_tenant_son_in_law": "The person whose family status is disputed is the tenant’s son-in-law.",
+        "statutory_family_definition_does_not_include_son_in_law": "The statutory definition specifies family relationships but does not include a son-in-law."
+      },
+      "definition": "When a rent-control family-definition dispute concerns a son-in-law and the statutory definition does not include that relationship, the son-in-law is not treated as a member of the tenant’s family."
+    }
+  ],
+  "seconds": 15.3
+}

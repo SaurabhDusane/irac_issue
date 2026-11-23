@@ -1,0 +1,59 @@
+{
+  "doc_id": "599571",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19390,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2272,
+    "prompt_tokens": 5504,
+    "total_tokens": 7776,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent court may impose the statutory consequence for failure to deposit rent using equivalent wording rather than the statute’s exact formula.",
+      "material_facts": [
+        "In a suit for possession and rent, the court ordered the tenants to deposit rent arrears and ongoing interim rent.",
+        "The court stated that, if the tenants defaulted, their defences would be struck off and the suit would be listed for ex parte hearing.",
+        "The tenants did not make the required deposit within the time allowed."
+      ],
+      "conclusion": "The order was within the court’s authority because its substance gave effect to the statutory consequence; the wording “defences to be struck off” did not make it invalid or without jurisdiction.",
+      "legal_principle": "Section 11(4) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 empowers the court to direct payment or deposit of rent and to restrict a defaulting tenant’s right to appear in or defend the suit without leave. The provision requires substance, not a particular formula. The Court noted that “striking out” a defence is familiar legal terminology and is also used in Order XI, rule 21 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "rent_recovery_proceeding and court_ordered_rent_deposit and court_made_defence_consequence_contingent_on_default and court_used_strike_defence_wording",
+        "then": "deposit_order_valid_despite_nonstatutory_wording"
+      },
+      "predicates": {
+        "rent_recovery_proceeding": "A landlord brought a proceeding to recover rent, with or without seeking possession of the premises.",
+        "court_ordered_rent_deposit": "The court directed the tenant to deposit rent it considered reasonably due or to make periodic rent payments during the proceeding.",
+        "court_made_defence_consequence_contingent_on_default": "The court stated that a consequence affecting the tenant’s ability to defend would follow if the tenant failed to comply with the payment direction.",
+        "court_used_strike_defence_wording": "The court described the consequence of default as the tenant’s defence being struck off or struck out."
+      },
+      "definition": "When a rent-recovery court directs rent payments and makes a defence-related consequence contingent on default, describing that consequence as striking off the defence does not invalidate the order merely because it uses different wording."
+    },
+    {
+      "legal_issue": "A tenant who fails to pay rent by the first hearing or the date fixed by the court cannot bring the suit within the statutory route based on timely payment merely by depositing money after an ex parte decree.",
+      "material_facts": [
+        "The tenants did not pay the amounts required by the court on the first hearing or by the time fixed for payment.",
+        "After an ex parte decree had been passed, the tenants were permitted to deposit a smaller amount without prejudice to the parties’ rights and contentions.",
+        "The tenants did not pursue the notice associated with that deposit, and it was discharged for want of prosecution."
+      ],
+      "conclusion": "The case did not fall within Section 12(3)(b) of the Act, and the later deposit did not make the suit one governed by that provision or justify dismissing the suit.",
+      "legal_principle": "Section 12(3)(b) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 does not govern a case in which the tenant failed to pay on the first hearing or by the date fixed by the court. The Court held that a deposit made after the ex parte decree was irrelevant to whether that decree was proper and could not support dismissal of the suit.",
+      "rule": {
+        "if": "rent_recovery_proceeding and tenant_failed_to_pay_by_court_deadline and tenant_deposited_money_after_ex_parte_decree",
+        "then": "post_decree_deposit_does_not_restore_timely_payment_protection"
+      },
+      "predicates": {
+        "rent_recovery_proceeding": "A landlord brought a proceeding to recover rent, with or without seeking possession of the premises.",
+        "tenant_failed_to_pay_by_court_deadline": "The tenant did not pay the required rent on the first hearing or by the date fixed by the court.",
+        "tenant_deposited_money_after_ex_parte_decree": "The tenant deposited money only after an ex parte decree had been passed."
+      },
+      "definition": "If a tenant defaults on the payment deadline in a rent-recovery proceeding and deposits money only after an ex parte decree, that later deposit does not restore the protection available for timely payment."
+    }
+  ],
+  "seconds": 15.4
+}

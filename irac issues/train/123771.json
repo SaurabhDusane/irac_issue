@@ -1,0 +1,101 @@
+{
+  "doc_id": "123771",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35339,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2941,
+    "prompt_tokens": 9424,
+    "total_tokens": 12365,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A party who has served a notice terminating a tenancy cannot withdraw it without the consent of the party served.",
+      "material_facts": [
+        "The tenant served written notice stating an intention to vacate on a specified date.",
+        "Before that date, the tenant attempted to cancel the notice.",
+        "The landlord refused to consent to withdrawal and insisted that the tenant vacate."
+      ],
+      "conclusion": "The notice could not be withdrawn unilaterally, and the tenancy ended when the notice period expired.",
+      "legal_principle": "Under sections 111(h) and 113 of the Transfer of Property Act, 1882, a lease is determined on expiration of a notice to quit; waiver or withdrawal of such notice requires the express or implied consent of the recipient. The Court applied the principle in Tayleur v. Wildin, (1867–68) L.R. 3 Ex. 303.",
+      "rule": {
+        "if": "lease_termination_dispute and notice_to_quit_served and withdrawal_attempted and recipient_withheld_consent",
+        "then": "tenancy_ends_on_notice_expiry"
+      },
+      "predicates": {
+        "lease_termination_dispute": "The parties disputed whether a tenancy ended through a notice to quit.",
+        "notice_to_quit_served": "A tenant gave the landlord notice stating an intention to vacate the premises.",
+        "withdrawal_attempted": "The tenant later attempted to cancel the notice before its stated expiry.",
+        "recipient_withheld_consent": "The landlord did not consent to cancellation of the notice."
+      },
+      "definition": "When a tenancy notice has been served and the tenant tries to withdraw it without the recipient's consent, the tenancy ends when the notice expires."
+    },
+    {
+      "legal_issue": "A defective notice to quit can determine a tenancy when the recipient accepts it and acts upon it.",
+      "material_facts": [
+        "The tenant's notice specified a vacating time that might not have complied with the statutory requirements for a notice to quit.",
+        "The landlord rejected the tenant's attempted withdrawal, stating that it had arranged to lease the premises to another occupier from the following day.",
+        "The landlord insisted that the tenant vacate as stated in the notice."
+      ],
+      "conclusion": "The landlord accepted and acted upon the offer to terminate the tenancy on the stated date, so the tenancy was determined despite any defect in the notice.",
+      "legal_principle": "A notice complying with section 106 of the Transfer of Property Act, 1882, terminates a tenancy under section 111(h). A defective notice may also determine a tenancy if the recipient accepts and acts upon it; in that event, the party who served it is estopped from denying its validity. The Court explained that the parties may agree to terminate a tenancy otherwise than by a notice complying with section 106.",
+      "rule": {
+        "if": "landlord_possession_claim and termination_notice_dispute and notice_may_be_defective and recipient_accepted_and_acted",
+        "then": "tenancy_terminated_on_notice_terms"
+      },
+      "predicates": {
+        "landlord_possession_claim": "A landlord sought possession of premises after the occupier had sublet part of them.",
+        "termination_notice_dispute": "The parties disputed whether a notice to quit ended the tenancy.",
+        "notice_may_be_defective": "The notice may not have met the statutory requirements for its timing or duration.",
+        "recipient_accepted_and_acted": "The recipient treated the proposed termination as effective and acted on it."
+      },
+      "definition": "If a landlord's possession claim turns on a potentially defective termination notice that the recipient accepted and acted upon, the tenancy is terminated on the notice's terms."
+    },
+    {
+      "legal_issue": "Determination of a tenancy by notice does not require the tenant to have physically delivered possession to the landlord.",
+      "material_facts": [
+        "The tenant gave notice of an intention to quit, and the landlord accepted and acted upon the proposed termination.",
+        "The tenant remained in occupation rather than delivering possession before the tenancy's stated termination time."
+      ],
+      "conclusion": "The tenancy could be determined by the notice without actual delivery of possession.",
+      "legal_principle": "Section 111(h) of the Transfer of Property Act, 1882, determines a lease on expiration of a notice to determine the lease or to quit; its terms do not make actual delivery of possession a condition of determination.",
+      "rule": {
+        "if": "lease_termination_dispute and notice_effectively_terminates_tenancy and not possession_delivered",
+        "then": "tenancy_is_determined_without_delivery_of_possession"
+      },
+      "predicates": {
+        "lease_termination_dispute": "The parties disputed whether a tenancy ended through a notice to quit.",
+        "notice_effectively_terminates_tenancy": "A notice to quit was effective, either because it complied with the applicable requirements or because the recipient accepted and acted upon it.",
+        "possession_delivered": "The tenant physically handed possession of the premises to the landlord."
+      },
+      "definition": "An effective notice determines the tenancy even if the tenant has not physically delivered possession."
+    },
+    {
+      "legal_issue": "A statutory tenant who has only personal protection against eviction cannot sublet so as to give the subtenant a right to become a direct tenant of the landlord.",
+      "material_facts": [
+        "The contractual tenancy had ended before the tenant sublet part of the premises.",
+        "The former tenant remained in occupation only under protection against eviction provided by rent-control legislation.",
+        "The former tenant sublet part of the premises, and the subtenant claimed the right to become a direct tenant after the former tenant's tenancy ended.",
+        "The legislation did not expressly confer on a statutory tenant the power to create that right for a subtenant."
+      ],
+      "conclusion": "The statutory tenant could not confer a right to direct tenancy on the subtenant, and the subtenant was not entitled to the claimed protection as a direct tenant.",
+      "legal_principle": "Reading sections 2(11), 12(1), and 13(2) of the West Bengal Premises Rent Control (Temporary Provisions) Act, 1950, in light of their scheme and object, the expression “tenant” in section 12(1)(c) and section 13(2) means a contractual tenant, not a statutory tenant. A statutory tenant has only a personal right to remain in possession and no estate or interest to convey. The Court relied on Anand Nivas (Private) Ltd. v. Anandji Kalyanji Pedhi, [1964] 4 S.C.R. 892, and Solomon v. Orwell, [1954] 1 All E.R. 874; it distinguished Indra Kumar Karnani v. Atul Chandra Patitundi, [1965] 3 S.C.R. 329, and disagreed with Krishna Prosad Bose v. Smt. Sarajubala Dassi, A.I.R. 1961 Cal. 505.",
+      "rule": {
+        "if": "rent_control_subtenant_claim and contractual_tenancy_ended_before_subletting and occupant_has_only_personal_occupancy_protection and subtenant_claims_direct_tenancy",
+        "then": "subtenant_does_not_acquire_direct_tenancy"
+      },
+      "predicates": {
+        "rent_control_subtenant_claim": "A subtenant claims rights against a landlord under rent-control protections after the head occupier's tenancy has ended.",
+        "contractual_tenancy_ended_before_subletting": "The occupier sublet the premises after the contractual tenancy had ended.",
+        "occupant_has_only_personal_occupancy_protection": "The occupier remained in the premises only through personal protection against eviction and had no estate or interest in them.",
+        "subtenant_claims_direct_tenancy": "The subtenant claims to hold directly under the landlord after the occupier's tenancy ends."
+      },
+      "definition": "When an occupier with only personal protection against eviction sublets after the contractual tenancy has ended, the subtenant does not acquire direct tenancy rights merely by claiming them after the occupier's tenancy ends."
+    }
+  ],
+  "seconds": 18.0
+}

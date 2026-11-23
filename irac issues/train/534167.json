@@ -1,0 +1,79 @@
+{
+  "doc_id": "534167",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19165,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2273,
+    "prompt_tokens": 5091,
+    "total_tokens": 7364,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Admission of an instrument in evidence prevents a later challenge to its stamping even when the applicable state law requires courts to impound insufficiently stamped instruments.",
+      "material_facts": [
+        "A development agreement was admitted in evidence as an exhibit without objection on the ground that it was insufficiently stamped.",
+        "The party challenging the agreement applied to have the admission recalled and the document sent for impounding after it had been admitted.",
+        "The applicable state amendment required courts to impound instruments that appeared insufficiently stamped."
+      ],
+      "conclusion": "The admission barred a later challenge to the instrument’s stamping, notwithstanding the state law duty to impound; the relevant admission provision applied on its own force, subject to the statutory exception for reference and revision.",
+      "legal_principle": "Section 36 of the Indian Stamp Act, 1899 operates as a standalone bar to reopening the sufficiency of stamp duty after an instrument has been admitted in evidence, except as provided by Section 61. The state amendment’s duty to impound under Section 33 does not displace that bar. Under Javer Chand v. Pukhraj Surana, the bar applies even where the instrument was improperly admitted. Ram Rattan v. Bajrang Lal clarifies that a document marked only tentatively, with an objection left judicially undetermined, is not finally admitted for this purpose.",
+      "rule": {
+        "if": "civil_document_admissibility_proceeding and insufficient_stamp_issue and state_law_requires_impounding and document_admitted_as_exhibit and (no_timely_stamp_objection or stamp_objection_judicially_resolved)",
+        "then": "later_stamp_challenge_barred"
+      },
+      "predicates": {
+        "civil_document_admissibility_proceeding": "A court is deciding whether a document may be admitted as evidence in a civil proceeding.",
+        "insufficient_stamp_issue": "A party seeks to challenge a document’s admissibility because it was not sufficiently stamped.",
+        "state_law_requires_impounding": "The applicable law requires a court to impound a document that appears insufficiently stamped.",
+        "document_admitted_as_exhibit": "The court admits the document into evidence and marks it as an exhibit.",
+        "no_timely_stamp_objection": "The opposing party does not object to the document’s stamping when it is tendered for admission.",
+        "stamp_objection_judicially_resolved": "The opposing party objects to the document’s stamping when it is tendered, and the court judicially determines that objection."
+      },
+      "definition": "When a document is admitted as an exhibit in a civil document-admissibility proceeding, and any stamping objection is either not made at the proper time or is judicially resolved, a later challenge to its stamping is barred even if the applicable law requires impounding."
+    },
+    {
+      "legal_issue": "An instrument marked only tentatively while an objection to its stamping remains judicially undetermined is not finally admitted so as to bar a later challenge.",
+      "material_facts": [
+        "The court distinguished the situation in which a document is marked subject to an objection that has not been judicially determined from the admission of the agreement in this case, which was made without objection."
+      ],
+      "conclusion": "A tentative marking of a document with an unresolved stamping objection does not trigger the bar against a later challenge.",
+      "legal_principle": "Section 36 of the Indian Stamp Act, 1899 applies after an instrument has been admitted in evidence, not where it is merely marked tentatively with an objection left undetermined. Ram Rattan v. Bajrang Lal holds that the objection must be raised when the document is tendered so the trial court can determine it judicially; an unresolved objection means the admission is not final for this purpose.",
+      "rule": {
+        "if": "civil_document_admissibility_proceeding and insufficient_stamp_issue and timely_stamp_objection and objection_left_undetermined and document_marked_tentatively",
+        "then": "later_stamp_challenge_not_barred"
+      },
+      "predicates": {
+        "civil_document_admissibility_proceeding": "A court is deciding whether a document may be admitted as evidence in a civil proceeding.",
+        "insufficient_stamp_issue": "A party seeks to challenge a document’s admissibility because it was not sufficiently stamped.",
+        "timely_stamp_objection": "A party objects to the document’s stamping when it is tendered for admission.",
+        "objection_left_undetermined": "The court leaves the objection to stamping without a judicial determination.",
+        "document_marked_tentatively": "The court marks the document as an exhibit only tentatively or subject to the unresolved objection."
+      },
+      "definition": "When a party timely objects to a document’s stamping, the court leaves that objection undetermined, and the document is marked only tentatively, a later challenge to its stamping is not barred."
+    },
+    {
+      "legal_issue": "The procedure for dealing with an instrument after it has been impounded does not itself authorize reopening the admission of an instrument in evidence.",
+      "material_facts": [
+        "After the development agreement had been admitted in evidence, the challenging party applied for it to be sent to the Collector for impounding under the provision governing the handling of impounded instruments."
+      ],
+      "conclusion": "The provision governing how impounded instruments are dealt with did not apply to the application to reopen the already-admitted document.",
+      "legal_principle": "Section 38 of the Indian Stamp Act, 1899 prescribes the steps to be taken after an instrument has been impounded; it does not provide a means to reopen the admission of a document in evidence.",
+      "rule": {
+        "if": "civil_document_admissibility_proceeding and document_already_admitted and application_seeks_impounding_under_post_impounding_procedure",
+        "then": "post_impounding_procedure_does_not_reopen_admission"
+      },
+      "predicates": {
+        "civil_document_admissibility_proceeding": "A court is considering the admissibility of a document in a civil proceeding.",
+        "document_already_admitted": "The court has already admitted the document in evidence.",
+        "application_seeks_impounding_under_post_impounding_procedure": "A party applies to have the document sent for impounding under a procedure that governs what happens after impounding."
+      },
+      "definition": "If a document has already been admitted in a civil proceeding, an application relying on a procedure for handling impounded documents does not reopen its admission."
+    }
+  ],
+  "seconds": 15.0
+}

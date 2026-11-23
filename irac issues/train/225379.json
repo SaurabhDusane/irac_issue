@@ -1,0 +1,63 @@
+{
+  "doc_id": "225379",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 63182,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2758,
+    "prompt_tokens": 15397,
+    "total_tokens": 18155,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The requirement that estate duty have been paid on settled property since the settlement is satisfied when duty became payable or was paid simultaneously with the settlement or at any time afterward.",
+      "material_facts": [
+        "The dispute concerned a claim to avoid estate duty on settled property after the death of the surviving spouse.",
+        "Estate duty had been paid on the property on the death of the first spouse, when the settlement took effect."
+      ],
+      "conclusion": "The phrase “since the date of the settlement” includes duty that became payable or was paid simultaneously with the creation of the settlement, as well as duty paid afterward; the prior-duty requirement was satisfied on these facts.",
+      "legal_principle": "Under section 29 of the Estate Duty Act, 1953, “since” is wide enough to include payment or liability arising simultaneously with the settlement or afterward. A narrower construction would frustrate the provision’s purpose of avoiding double duty. The Court approved the reasoning in Coutts & Co. v. Inland Revenue Commissioner, [1962] 2 All E.R. 521 at 527.",
+      "rule": {
+        "if": "estate_duty_exemption_claim and settled_property and duty_paid_or_became_payable_at_settlement_or_after",
+        "then": "prior_duty_requirement_satisfied"
+      },
+      "predicates": {
+        "estate_duty_exemption_claim": "An estate duty assessment is challenged on the basis that duty has already been paid on settled property.",
+        "settled_property": "The property is held subject to a settlement.",
+        "duty_paid_or_became_payable_at_settlement_or_after": "Duty on the property became payable or was paid when the settlement was created or afterward."
+      },
+      "definition": "When an estate duty exemption claim concerns settled property and duty became payable or was paid at the settlement’s creation or afterward, the prior-duty requirement is satisfied."
+    },
+    {
+      "legal_issue": "A surviving testator who accepts benefits under a mutual will is not competent to dispose of property contrary to its ultimate disposition when the will establishes an agreement to preserve that property for the ultimate beneficiaries, and the property is settled for purposes of the exemption from further estate duty.",
+      "material_facts": [
+        "Spouses jointly executed a testamentary instrument concerning jointly held property and provided for its use and income during their lives, with specific portions to pass to their grandchildren after the survivor’s death.",
+        "The instrument contained detailed provisions intended to preserve the property for those beneficiaries, made no provision to compensate for any diminution of the property, and did not permit the survivor to alter the ultimate disposition after receiving benefits under the instrument.",
+        "The wife died first, the husband received benefits under the instrument, and estate duty was paid on her share of the property on her death.",
+        "The husband later died, and the accountable person was assessed estate duty on the wife’s share as well as the husband’s share.",
+        "The husband’s wealth-tax treatment of the property after his wife’s death did not establish his disposing power under the instrument."
+      ],
+      "conclusion": "The will was mutual and became irrevocable by the surviving husband after he received benefits under it. He lacked power to dispose of the wife’s share contrary to its ultimate disposition, so that share was settled property and qualified for the exemption from estate duty after duty had been paid on the first spouse’s death.",
+      "legal_principle": "Sections 2(15), 2(16), 2(19), 6 and 29 of the Estate Duty Act, 1953, govern property, property passing on death, settled property, disposing power and the exemption. A person is competent to dispose of property if the person has power or authority to appoint or dispose of it as they think fit; whether that power exists depends on the terms under which the property was acquired or inherited. Mutual wills require both receipt of benefits by the survivor and an agreement not to revoke or act contrary to the wills after the first death. That agreement may be implied from the will’s terms, but identical terms alone do not establish it. The Court approved Kuppuswami Raja v. Perumal Raja, A.I.R. 1964 Madras 291, and discussed and distinguished Dufour v. Pereira, [1769] 21 E.R. 332; In re Oldham, 1925 Ch. 75; Gray v. Perpetual Trustee Co. Ltd., [1928] A.C. 391; Re Parsons, Parsons v. Attorney-General, [1942] 2 All E.R. 496; and Bhawani Prasad v. Smt. Surendra Bala, A.I.R. 1960 Allahabad 126. The survivor’s later treatment of the property for wealth-tax purposes was not contemporaneous conduct and did not determine the will’s effect.",
+      "rule": {
+        "if": "estate_duty_appeal_on_surviving_spouse_death and joint_will and survivor_received_benefits and will_terms_indicate_preservation_for_ultimate_beneficiaries and ultimate_gifts_are_in_specific_property and no_compensation_for_diminution and duty_paid_on_first_spouse_death",
+        "then": "survivor_share_exempt_from_estate_duty"
+      },
+      "predicates": {
+        "estate_duty_appeal_on_surviving_spouse_death": "The proceeding challenges estate duty assessed after the death of the surviving spouse.",
+        "joint_will": "Two or more testators jointly executed one testamentary instrument concerning their property.",
+        "survivor_received_benefits": "The surviving testator accepted benefits under the instrument after the other testator died.",
+        "will_terms_indicate_preservation_for_ultimate_beneficiaries": "The instrument’s terms indicate that the property is to be preserved for the beneficiaries who take after the survivor’s death.",
+        "ultimate_gifts_are_in_specific_property": "The instrument directs specific property, rather than its value or a substitute, to the ultimate beneficiaries.",
+        "no_compensation_for_diminution": "The instrument does not provide for compensation or replacement if the property is diminished before the ultimate gifts take effect.",
+        "duty_paid_on_first_spouse_death": "Estate duty on the property was paid when the first spouse died."
+      },
+      "definition": "When a surviving testator accepts benefits under a joint will whose terms preserve specific property for ultimate beneficiaries without providing for compensation for diminution, and duty was paid on the first spouse’s death, the survivor’s share is exempt from estate duty on the survivor’s death."
+    }
+  ],
+  "seconds": 17.1
+}

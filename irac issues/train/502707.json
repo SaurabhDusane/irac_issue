@@ -1,0 +1,80 @@
+{
+  "doc_id": "502707",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 37369,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2420,
+    "prompt_tokens": 10102,
+    "total_tokens": 12522,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A final appellate court’s finding on a factual issue cannot be re-opened in a further appeal when that finding is binding on the parties.",
+      "material_facts": [
+        "The first appellate court found that the alleged remarriage had not been proved.",
+        "The High Court accepted that factual finding, and the Supreme Court held that it was not open to the appellants to challenge it in the further appeal."
+      ],
+      "conclusion": "The finding that the alleged remarriage was not proved stood, and the appellants could not challenge it in the Supreme Court.",
+      "legal_principle": "A factual finding by the court that is final on questions of fact binds the parties in a further appeal; the Court applied that principle to the first appellate court’s finding.",
+      "rule": {
+        "if": "civil_appeal and final_fact_finding_rejects_allegation and further_appellants_challenge_finding",
+        "then": "final_fact_finding_is_binding"
+      },
+      "predicates": {
+        "civil_appeal": "The proceeding is a civil appeal from a lower court’s judgment.",
+        "final_fact_finding_rejects_allegation": "The court that is final on questions of fact found that an alleged event was not proved.",
+        "further_appellants_challenge_finding": "The appellants seek to contest that factual finding in a further appeal."
+      },
+      "definition": "When a civil appeal challenges a factual finding that the final fact-finding court made against the alleged event, the finding remains binding."
+    },
+    {
+      "legal_issue": "An appeal does not abate for failure to substitute the legal representatives of a deceased respondent who is unnecessary to the dispute and whose absence cannot produce contradictory decrees.",
+      "material_facts": [
+        "A respondent died while the appeal was pending, and the application to substitute that respondent’s legal representatives was dismissed.",
+        "The decree under appeal granted relief against other defendants, not the deceased respondent.",
+        "The relief sought in the appeal could be granted between the remaining parties without contradictory decrees."
+      ],
+      "conclusion": "The appeal did not abate because the deceased respondent was unnecessary to its determination.",
+      "legal_principle": "An appeal may proceed without substituting the legal representatives of a deceased party where that party is unnecessary to the dispute and effective relief can be granted among the remaining parties without inconsistent decrees.",
+      "rule": {
+        "if": "appeal_pending_after_party_death and deceased_party_unnecessary and relief_severable_without_conflicting_decrees",
+        "then": "appeal_does_not_abate"
+      },
+      "predicates": {
+        "appeal_pending_after_party_death": "An appeal remains pending when one of its parties dies.",
+        "deceased_party_unnecessary": "The deceased party is not necessary to decide the dispute or grant the relief sought.",
+        "relief_severable_without_conflicting_decrees": "The appeal can be resolved among the remaining parties without producing contradictory decrees."
+      },
+      "definition": "An appeal pending after a party’s death does not abate when that party is unnecessary and the relief can be resolved without conflicting decrees."
+    },
+    {
+      "legal_issue": "A Hindu female’s property may be treated as possessed by her for conversion of a limited interest into full ownership even when she lacks actual or constructive possession, if she retains ownership rights and can enforce a right to recover the property.",
+      "material_facts": [
+        "A widow inherited land from her husband and possessed it until other persons dispossessed her.",
+        "She brought a suit to recover the land, which remained pending when the Hindu Succession Act came into force.",
+        "The first appellate court found that she had not remarried and had not lost her rights in the land.",
+        "She died while the recovery suit was pending, and the question of her daughter’s succession arose while the land remained recoverable through the widow’s claim."
+      ],
+      "conclusion": "The widow’s retained ownership rights meant that the land was possessed by her for the purposes of section 14(1), so her limited interest became full ownership and the property passed to her daughter.",
+      "legal_principle": "Section 14(1) of the Hindu Succession Act uses “possessed by” more broadly than actual or constructive possession and includes possession in law where the female Hindu retains ownership rights, including an enforceable right to recover property from a trespasser. The provision does not apply where she has parted with her rights so completely that she can no longer exercise them, or where she has no title and is merely a trespasser. The Court applied S. S. Munna Lal v. S. S. Rajkumar and Eramma v. Veerupana, and relied on the broad interpretation of “possessed” in Gummalapura Taggina Matada Kotturuswami v. Setra Veerayya; it distinguished Brahmdeo Singh v. Deomani Missir, where the widow had alienated her rights.",
+      "rule": {
+        "if": "hindu_female_property_conversion_case and ownership_rights_persist_at_relevant_time and (actual_or_constructive_possession or enforceable_right_to_recover_possession) and not rights_completely_parted_with",
+        "then": "limited_interest_converts_to_full_ownership"
+      },
+      "predicates": {
+        "hindu_female_property_conversion_case": "The proceeding concerns whether a Hindu female’s interest in property is converted from a limited interest into full ownership.",
+        "ownership_rights_persist_at_relevant_time": "The female retained ownership rights in the property when the question of conversion arose.",
+        "actual_or_constructive_possession": "The female physically possessed the property or possessed it through another person holding it for her.",
+        "enforceable_right_to_recover_possession": "Although out of possession, the female retained an enforceable right to recover the property.",
+        "rights_completely_parted_with": "The female had given up her rights so completely that she could no longer exercise ownership rights in the property."
+      },
+      "definition": "A limited interest converts to full ownership in this kind of proceeding when ownership rights persist and the female either possesses the property or can enforce recovery of it, unless she has completely parted with her rights."
+    }
+  ],
+  "seconds": 15.5
+}

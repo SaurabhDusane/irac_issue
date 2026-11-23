@@ -1,0 +1,79 @@
+{
+  "doc_id": "72446159",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 34310,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2063,
+    "prompt_tokens": 8416,
+    "total_tokens": 10479,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A litigant seeking special leave must disclose material facts and cannot withhold a prior final order on the ground that the litigant considers it irrelevant.",
+      "material_facts": [
+        "The petitioners did not clearly disclose the circumstances or finality of an earlier order rejecting an application to extend the time for completing the sale.",
+        "The petitioners argued that the earlier order was not material because of later developments, although it was relevant to the history of the proposed sale."
+      ],
+      "conclusion": "Special leave was refused because the petitioners had suppressed a material fact.",
+      "legal_principle": "Under Hari Narain v. Badri Das, AIR 1963 SC 1558, inaccurate, untrue, or misleading statements in an application for special leave may justify revoking leave. Ramjas Foundation v. Union of India, (2010) 14 SCC 38, establishes that a litigant who suppresses facts bearing on adjudication does not come to court with clean hands and is not entitled to relief. It is for the litigant to disclose the facts, leaving their relevance to the court.",
+      "rule": {
+        "if": "special_leave_petition and material_prior_order_omitted and prior_order_final",
+        "then": "special_leave_refused_for_non_disclosure"
+      },
+      "predicates": {
+        "special_leave_petition": "A litigant asks a higher court for special leave to appeal.",
+        "material_prior_order_omitted": "The litigant does not clearly disclose a prior order relevant to the dispute and the circumstances in which it was made.",
+        "prior_order_final": "The prior order was not challenged and had become final."
+      },
+      "definition": "When a litigant seeking special leave omits a relevant prior order that has become final, special leave is refused for non-disclosure."
+    },
+    {
+      "legal_issue": "A court reviewing a dispute over the sale of charitable-trust property may mould relief to protect the trust's interest in obtaining the best available value, even if the issue presented to it is narrower.",
+      "material_facts": [
+        "The dispute concerned the proposed sale of immovable property belonging to a charitable trust and proceedings for permission to extend the time for a sale to earlier proposed purchasers.",
+        "The trustees and the earlier proposed purchasers had repeatedly changed their arrangements, and the Charity Commissioner had expressed doubts about their bona fides.",
+        "The earlier proposed purchasers challenged the rejection of an extension application without bringing the successful bidder, or the existence of third-party bids, to the court's attention.",
+        "A bidder sought to be joined in the proceedings, and the court was told that an offer higher than that bidder's offer had also been received.",
+        "The court directed the Charity Commissioner to reconsider the bids, and the Supreme Court left open the possibility of fresh offers or a new public notice."
+      ],
+      "conclusion": "Although the High Court may have overstepped the narrow issue before it, the Supreme Court declined to interfere and directed a fresh look at the sale, permitting fresh offers and, if considered necessary, a new public notice.",
+      "legal_principle": "Section 36 of the Bombay Public Trust Act, 1950 requires the Charity Commissioner, when authorising disposal of trust property, to have regard to the trust's interest, benefit, or protection. Chenchu Rami Reddy v. Government of Andhra Pradesh, 1986 (3) SCC 391, cautions against private negotiations for trust property and supports public auction and safeguards for market value. R. Venugopala Naidu v. Venkatarayulu Naidu Charities, 1989 Supp. (2) SCC 356, supports directing a public auction in appropriate circumstances. Mehrwan Homi Irani v. Charity Commissioner, Bombay, 2001 (5) SCC 305, requires exploration of the possibility of obtaining the best price for trust property. On these principles, the court may mould relief to protect the trust's interests.",
+      "rule": {
+        "if": "trust_property_sale_proceeding and (suspected_collusion or higher_market_value_possible) and limited_original_issue",
+        "then": "sale_reconsidered_to_protect_trust_interest"
+      },
+      "predicates": {
+        "trust_property_sale_proceeding": "A proceeding concerns the proposed sale of immovable property belonging to a charitable trust.",
+        "suspected_collusion": "The conduct of trustees and proposed purchasers gives reason to suspect collusion or a lack of bona fides.",
+        "higher_market_value_possible": "The circumstances indicate that further offers or an open process may produce a better price for the trust property.",
+        "limited_original_issue": "The issue initially presented to the reviewing court is narrower than the relief needed to protect the trust's interests."
+      },
+      "definition": "In a trust-property sale proceeding, suspected collusion or the possibility of a better market value, despite a narrower original issue, can lead to reconsideration of the sale to protect the trust's interests."
+    },
+    {
+      "legal_issue": "A later court order addressing materially changed circumstances does not impermissibly set aside an earlier order merely because the two orders differ.",
+      "material_facts": [
+        "An earlier order, made on the basis of a compromise, remanded an application for an extension of time for fresh consideration.",
+        "After that order, a bidder sought to participate in proceedings concerning the trust-property sale, and further bids and concerns about the conduct of the trustees and earlier proposed purchasers came to light.",
+        "The later order directed reconsideration of the sale in light of those developments."
+      ],
+      "conclusion": "The later order did not impermissibly set aside the earlier order because the circumstances had changed and the orders were not made in similar circumstances.",
+      "legal_principle": "A court may take a different view where material circumstances have changed; differing orders do not, for that reason alone, mean that a later order has set aside an earlier order made in different circumstances. No earlier case was cited for this proposition.",
+      "rule": {
+        "if": "later_order_challenged_as_setting_aside_earlier_order and material_circumstances_changed",
+        "then": "later_order_not_invalid_merely_for_differing"
+      },
+      "predicates": {
+        "later_order_challenged_as_setting_aside_earlier_order": "A party argues that a later order impermissibly displaced an earlier order of the same court.",
+        "material_circumstances_changed": "Material developments occurred after the earlier order and affected the circumstances in which the later order was made."
+      },
+      "definition": "When a later order is challenged as displacing an earlier one, material changes in circumstances mean that the later order is not invalid merely because it differs."
+    }
+  ],
+  "seconds": 73.4
+}

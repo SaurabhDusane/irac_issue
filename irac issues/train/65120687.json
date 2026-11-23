@@ -1,0 +1,124 @@
+{
+  "doc_id": "65120687",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 39040,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2921,
+    "prompt_tokens": 9850,
+    "total_tokens": 12771,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant is not liable to eviction for rent default where rent remains unpaid but the landlord has not served a written demand giving the tenant an opportunity to pay.",
+      "material_facts": [
+        "Rent on the leased land had not been paid for a lengthy period.",
+        "The secured creditors were ready and willing to pay the rent, but the precise amount had not been communicated to them by the official liquidator.",
+        "No written demand for rent from the landlord was shown to have been served on the tenant.",
+        "The High Court’s direction to communicate and pay the rent did not specify an amount to be tendered in court and was not an order of the kind contemplated for that purpose by the Rent Act."
+      ],
+      "conclusion": "The landlord was not entitled to eviction for rent default because the required written demand had not been served; the High Court’s decision on this ground did not warrant interference.",
+      "legal_principle": "Under Sections 12(2) and 12(3) of the Bombay Rents, Hotel and Lodging House Rates Control Act, a landlord must serve a written demand and allow the tenant one month to pay before instituting an eviction suit for non-payment. Readiness and willingness without actual payment do not protect a tenant indefinitely, but, absent the required demand, the tenant retains the Act’s protection. The High Court’s direction to ascertain and pay the amount due was not an order requiring a specified sum to be tendered in court under Section 12(3)(b).",
+      "rule": {
+        "if": "rent_eviction_claim and rent_unpaid and tenant_ready_willing and not written_demand_served",
+        "then": "tenant_not_evictable_for_rent_default"
+      },
+      "predicates": {
+        "rent_eviction_claim": "A landlord sought eviction of a tenant on the ground that rent was not paid.",
+        "rent_unpaid": "The rent owed for the premises had not been paid.",
+        "tenant_ready_willing": "The tenant, or those responsible for its obligations, were ready and willing to pay the rent.",
+        "written_demand_served": "The landlord served a written demand for the unpaid rent and gave the tenant an opportunity to pay."
+      },
+      "definition": "When an eviction claim concerns unpaid rent, the tenant is not evictable for that default if the rent is unpaid, the tenant is ready and willing to pay, and no written demand was served."
+    },
+    {
+      "legal_issue": "An uncompleted proposal to transfer leased premises does not establish an assignment that makes the tenant liable to eviction for an unauthorized transfer.",
+      "material_facts": [
+        "The lease permitted the tenant to let the land to others, while whether it also permitted assignment was disputed.",
+        "The eviction application relied on an earlier transfer to the company by its managing agents, rather than on a completed assignment by the official liquidator.",
+        "The official liquidator had advertised the leased land for sale, but the proposed sale or transfer had not been completed.",
+        "The landlords had also sought an order restraining the proposed sale or transfer."
+      ],
+      "conclusion": "The alleged proposed transfer by the official liquidator did not establish a ground for eviction because no assignment had been completed; the Court did not need to decide whether assignment was otherwise permissible under the lease and governing law.",
+      "legal_principle": "Section 13(1)(e) of the Bombay Rent Act concerns unlawful subletting, assignment, or transfer, and Section 15 prohibits transfer subject to a contract to the contrary. Section 13(1) is subject to Section 15. In light of Laxmidas Bapudas Darbar v. Rudravva, the limited operation of Section 15’s non-obstante clause does not make Section 108(j) of the Transfer of Property Act irrelevant. But the Court did not decide the scope of that interaction here: the eviction application did not rely on a completed assignment by the official liquidator, and an advertisement proposing a sale was not a completed transfer. The related arguments under Section 19 were answered on the same basis.",
+      "rule": {
+        "if": "assignment_eviction_claim and transfer_only_proposed and not transfer_completed",
+        "then": "proposed_transfer_not_ground_for_eviction"
+      },
+      "predicates": {
+        "assignment_eviction_claim": "A landlord sought eviction on the ground that the tenant’s interest in the premises had been assigned or transferred unlawfully.",
+        "transfer_only_proposed": "The alleged transfer by the person responsible for the premises had only been proposed or advertised.",
+        "transfer_completed": "The proposed assignment or transfer was completed."
+      },
+      "definition": "An assignment-based eviction claim does not succeed on the basis of a proposed transfer alone when that transfer has not been completed."
+    },
+    {
+      "legal_issue": "Non-use of leased premises during pending liquidation does not establish the statutory ground for eviction where the non-use has reasonable cause.",
+      "material_facts": [
+        "The company had not used the leased land for a continuous period exceeding six months.",
+        "The company was in liquidation, and the liquidation proceedings were pending.",
+        "The lease provided that non-use entitled the lessor to rent for the period of non-use, but did not provide for eviction on that account."
+      ],
+      "conclusion": "The company and official liquidator were not liable to eviction for non-use on these facts.",
+      "legal_principle": "Section 13(1)(k) of the Bombay Rent Act permits recovery of possession where premises have not been used without reasonable cause for the prescribed continuous period. Non-use resulting from pending liquidation proceedings was not unjustified non-use in this case. The lease clause addressing non-use provided for rent during the period of non-use, not eviction.",
+      "rule": {
+        "if": "nonuse_eviction_claim and premises_unused and liquidation_pending and not nonuse_without_reasonable_cause",
+        "then": "tenant_not_evictable_for_nonuse"
+      },
+      "predicates": {
+        "nonuse_eviction_claim": "A landlord sought eviction because the premises had not been used for the leased purpose.",
+        "premises_unused": "The tenant had not used the premises for the leased purpose for a continuous period exceeding six months.",
+        "liquidation_pending": "Liquidation proceedings concerning the tenant were pending during the period of non-use.",
+        "nonuse_without_reasonable_cause": "The premises had been left unused without reasonable cause."
+      },
+      "definition": "A non-use eviction claim does not succeed where the premises were unused during pending liquidation and the non-use was not without reasonable cause."
+    },
+    {
+      "legal_issue": "A company’s winding up, by itself, does not require the official liquidator to surrender leased premises to the owners.",
+      "material_facts": [
+        "The company had been ordered to be wound up, and the official liquidator remained in possession of the leased land.",
+        "The company had not been dissolved because liquidation proceedings remained ongoing.",
+        "The possibility of the company’s revival was a live issue before the High Court."
+      ],
+      "conclusion": "The winding-up order alone did not justify directing the official liquidator to return the land to the owners.",
+      "legal_principle": "Under the Companies Act, a company in liquidation continues to have corporate existence until it is dissolved upon completion of the liquidation process. The fact of winding up alone therefore does not establish that the company no longer exists or justify surrender of its leased property; the pending revival issue was also relevant on these facts.",
+      "rule": {
+        "if": "surrender_claim_during_liquidation and company_wound_up and not company_dissolved and revival_issue_live",
+        "then": "winding_up_alone_does_not_require_surrender"
+      },
+      "predicates": {
+        "surrender_claim_during_liquidation": "The owners sought return of leased premises held by a company’s official liquidator during liquidation.",
+        "company_wound_up": "The company had been ordered to be wound up.",
+        "company_dissolved": "The company had been dissolved following completion of liquidation.",
+        "revival_issue_live": "The possibility of the company’s revival remained under consideration."
+      },
+      "definition": "Winding up alone does not require surrender of leased premises where the company has not been dissolved and its revival remains a live issue."
+    },
+    {
+      "legal_issue": "Appeals involving distinct lease terms or unresolved orders concerning transfer of premises require fresh consideration rather than automatic application of the ruling in another appeal.",
+      "material_facts": [
+        "The other appeals had been decided by the High Court by following the lead appeal’s ruling.",
+        "Some appeals also involved a direction to hand over leased premises to the State Government, which had been relied on as an additional reason why sale would not arise.",
+        "The lease terms in the other appeals differed and required case-specific consideration.",
+        "Whether the handover direction had attained finality and whether public-benefit construction had been carried out on the land required consideration of the available materials."
+      ],
+      "conclusion": "The Court set aside the High Court’s orders in the other appeals and remitted those matters for fresh consideration in light of the governing principles and the specific materials in each case.",
+      "legal_principle": "The effect of the legal principles stated in the judgment must be assessed against the particular lease clauses in each case. The finality and effect of an order directing handover, and whether construction for the public benefit has occurred, require examination of the relevant materials by the High Court rather than summary resolution by applying the lead appeal’s result.",
+      "rule": {
+        "if": "appeal_from_rent_property_order and decision_followed_another_case and case_specific_lease_or_handover_issues_unresolved",
+        "then": "matter_requires_fresh_case_specific_consideration"
+      },
+      "predicates": {
+        "appeal_from_rent_property_order": "A party appealed an order concerning leased premises and the rights to possess or transfer them.",
+        "decision_followed_another_case": "The challenged decision followed the result reached in a different appeal.",
+        "case_specific_lease_or_handover_issues_unresolved": "The lease terms or the finality and consequences of a handover direction required further examination on the case’s materials."
+      },
+      "definition": "An appeal requires fresh case-specific consideration when the challenged decision followed another case but material lease or handover issues remain unresolved."
+    }
+  ],
+  "seconds": 16.5
+}

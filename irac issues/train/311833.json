@@ -1,0 +1,80 @@
+{
+  "doc_id": "311833",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20502,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3031,
+    "prompt_tokens": 5453,
+    "total_tokens": 8484,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A third party’s resistance to execution of a decree for possession may be adjudicated in the execution proceeding, but only questions that legally arise between the resistor and the decree-holder and are relevant to the resistance must be determined.",
+      "material_facts": [
+        "A person who was not a party to the eviction decree resisted delivery of possession during execution.",
+        "The resisting person applied to the execution court, alleging that the decree was collusive and invalid because it had been made without joining him.",
+        "The execution court declined to treat the matter as one under the procedure for resistance to execution and instead ordered an inquiry under its inherent powers."
+      ],
+      "conclusion": "The High Court was wrong to hold that the resisting person’s contentions could not be considered under Order 21 Rule 97. The execution court must adjudicate the legally arising and relevant questions raised by resistance to delivery of possession; it may decide them on admitted facts or averments, or direct evidence if necessary.",
+      "legal_principle": "Under Order 21 Rules 97 and 101 of the Code of Civil Procedure, resistance to delivery of possession by “any person,” including a person claiming independently of the judgment-debtor, can be brought before the execution court for adjudication. Order 21 Rule 35(1) permits the court to determine whether the resistor is bound by the decree and refuses to vacate. Rule 99 applies after dispossession, while Rule 102 excludes a transferee pendente lite from resisting on grounds beyond whether that person is such a transferee, consistent with Section 52 of the Transfer of Property Act. The questions determined under Rule 101 must legally arise between the parties and be relevant to the application. The Court relied on Bhanwar Lal v. Satyanarain and Brahmdeo Chaudhary v. Rishikesh Prasad Jaiswal.",
+      "rule": {
+        "if": "possession_decree_execution and third_party_resistance and question_legally_arises_between_resistor_and_holder and question_relevant_to_resistance",
+        "then": "execution_court_adjudicates_relevant_resistance_question"
+      },
+      "predicates": {
+        "possession_decree_execution": "A decree for delivery of immovable property is being executed.",
+        "third_party_resistance": "A person who is not a party to the decree resists or obstructs delivery of possession.",
+        "question_legally_arises_between_resistor_and_holder": "The question raised is one that legally arises between the person resisting and the decree-holder.",
+        "question_relevant_to_resistance": "The question bears on whether the resistance to delivery of possession may be maintained."
+      },
+      "definition": "When a third party resists execution of a possession decree, the execution court adjudicates a question only if it legally arises between that person and the decree-holder and is relevant to the resistance."
+    },
+    {
+      "legal_issue": "A subtenant is bound by an eviction decree unless the subtenancy qualifies for the statutory protection that permits the subtenant to be joined and protects it from ejectment in the circumstances specified by law.",
+      "material_facts": [
+        "The second respondent occupied the premises as a subtenant of a company that had itself sublet the premises from the tenant named in the eviction decree.",
+        "The second respondent was not a party to the eviction suit.",
+        "The subtenancies were created after the commencement of the applicable tenancy statute.",
+        "The second respondent did not claim to have given the landlord the required notice within the prescribed time and did not establish that a statutory exception protected him from the decree."
+      ],
+      "conclusion": "The second respondent was bound by the eviction decree and could not resist delivery of possession on the basis of his subtenancy.",
+      "legal_principle": "Section 13(3) of the West Bengal Premises Tenancy Act, 1956 makes an eviction decree binding on every subtenant except as provided in Sections 13(2) and 13(4). Section 13(2) and Section 16 operate together: the statutory protections for a subtenant depend on the applicable requirements for a qualifying subtenancy, including prior written consent of the landlord and the required notice of creation of the subtenancy within the prescribed time. The Court also relied on Shantilal Rampuria v. Vega Trading Corporation, which held that prior written consent is required for each subletting, and referred to M/s. Shalimar Tar Product Ltd. v. H.C. Sharma. Juthika Mulick v. Dr. Mahendra Yashwant Bal and Mahabir Prasad Verma v. Dr. Surinder Kaur were considered but did not displace that principle.",
+      "rule": {
+        "if": "eviction_decree_proceeding and person_is_subtenant and not statutory_protection_applies",
+        "then": "subtenant_is_bound_by_eviction_decree"
+      },
+      "predicates": {
+        "eviction_decree_proceeding": "A landlord is executing a decree for eviction of a tenant from premises.",
+        "person_is_subtenant": "The person resisting delivery occupies the premises under a subtenancy.",
+        "statutory_protection_applies": "The subtenancy satisfies the applicable statutory requirements for protection, or the subtenant otherwise falls within a statutory exception to the rule that the eviction decree binds subtenants."
+      },
+      "definition": "A person occupying under a subtenancy is bound by an eviction decree when the eviction proceeding concerns the premises and no statutory protection applies to that subtenancy."
+    },
+    {
+      "legal_issue": "A landlord’s consent permitting a tenant to create a subtenancy does not authorize that subtenant to create a further subtenancy that binds the landlord.",
+      "material_facts": [
+        "The original lease permitted the tenant to create a subtenancy.",
+        "The tenant sublet the premises to a company, which in turn created a subtenancy in favour of the person resisting execution.",
+        "The further subtenant did not claim to have notified the landlord as required for statutory protection."
+      ],
+      "conclusion": "The consent given to the tenant could not be relied on by the tenant’s subtenant to create a further subtenancy binding on the landlord.",
+      "legal_principle": "Section 16(1) of the West Bengal Premises Tenancy Act, 1956 contemplates the landlord’s prior written consent being used by the tenant of the landlord to sublet. The terms of a lease between that tenant and a subtenant cannot bind the landlord or extend the landlord’s consent to a further subletting. In Shantilal Rampuria v. Vega Trading Corporation, the Court held that prior written consent is required separately for each letting and that general authority is insufficient.",
+      "rule": {
+        "if": "landlord_tenant_eviction_proceeding and consent_given_to_direct_tenant and subtenant_creates_further_subtenancy",
+        "then": "further_subtenancy_does_not_bind_landlord_by_that_consent"
+      },
+      "predicates": {
+        "landlord_tenant_eviction_proceeding": "An eviction proceeding concerns premises let by a landlord to a tenant and sublet onward.",
+        "consent_given_to_direct_tenant": "The landlord gave consent to the tenant who directly held the premises under the landlord to create a subtenancy.",
+        "subtenant_creates_further_subtenancy": "A person holding under that tenant creates another subtenancy in favour of a further occupant."
+      },
+      "definition": "When the landlord consented to the direct tenant’s subletting but that subtenant creates a further subtenancy, the original consent does not make the further subtenancy binding on the landlord."
+    }
+  ],
+  "seconds": 18.0
+}

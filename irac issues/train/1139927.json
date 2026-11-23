@@ -1,0 +1,63 @@
+{
+  "doc_id": "1139927",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19488,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2114,
+    "prompt_tokens": 5347,
+    "total_tokens": 7461,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A document containing features of both a mortgage and a lease must be classified by its predominant intention and the reality of the transaction, not automatically as a lease because it is composite.",
+      "material_facts": [
+        "The dispute required the court to determine whether a deed transferring possession and enjoyment of property, while also referring to debts and interest, was a mortgage or a lease.",
+        "The High Court treated a composite document with features of both a mortgage and a lease as necessarily being a lease.",
+        "The court considered the deed’s terms as a whole and the parties’ treatment of it."
+      ],
+      "conclusion": "The High Court was wrong to hold that a composite document must be treated as a lease; the court must determine the parties’ predominant intention from the reality of the transaction.",
+      "legal_principle": "The document’s nomenclature is not conclusive. Intention is gathered from its recitals and terms as a whole, surrounding circumstances, and how the parties or their successors treated it. For a mixed instrument, the court must identify its predominant intention and the reality of the transaction. The essential distinction is that a mortgage transfers property as security for repayment of a debt, while a lease transfers a right to enjoy property. The court approved the approach in Velayudhan Vivekanandan v. Ayyappan Sadasivan, I.L.R. [1975] 1 Kerala 166.",
+      "rule": {
+        "if": "instrument_classification_dispute and mixed_mortgage_lease_features",
+        "then": "classify_by_predominant_intention"
+      },
+      "predicates": {
+        "instrument_classification_dispute": "The court is deciding whether an instrument is a mortgage or a lease.",
+        "mixed_mortgage_lease_features": "The instrument contains features associated with both a mortgage and a lease."
+      },
+      "definition": "When a dispute concerns an instrument with both mortgage and lease features, the court determines its classification by the parties’ predominant intention."
+    },
+    {
+      "legal_issue": "A deed transferring possession and enjoyment of property is a lease rather than a mortgage when its terms and the parties’ treatment show a right to enjoy the property, not a transfer of the property as security for repayment of debt.",
+      "material_facts": [
+        "The deed recited existing debts and money received, transferred possession of the land for a stated term, and allowed the transferee to enjoy it.",
+        "The transferee had to pay a fixed annual amount to the transferor in addition to government revenue.",
+        "The deed did not state that the land was transferred as security for the debt, provide a right to sell it if the debt was unpaid, or show that the usufruct would reduce the principal debt.",
+        "The transferors later assigned the ownership rights in the property, including the debt, for a sum that included the debt recited in the deed.",
+        "The dispute arose in a proceeding to apportion compensation for acquired property, and the classification affected the competing claims to compensation."
+      ],
+      "conclusion": "The deed was a lease, not a mortgage, and the appeal was dismissed.",
+      "legal_principle": "The court determines the nature of a mixed instrument from the whole document, the surrounding circumstances, and the parties’ treatment of it; its label is not conclusive. The essential feature of a mortgage is that the property is transferred as security for repayment of a debt, while a lease transfers a right to enjoy the property. The court applied the test approved in Velayudhan Vivekanandan v. Ayyappan Sadasivan, I.L.R. [1975] 1 Kerala 166. The compensation dispute arose under the Land Acquisition Act and the Kerala Land Reforms Act, 1963, but no specific statutory provision was cited as governing the classification test.",
+      "rule": {
+        "if": "instrument_classification_dispute and property_given_for_enjoyment and fixed_annual_payment_independent_of_principal and not property_transferred_as_debt_security and not creditor_right_to_sell_for_unpaid_debt and not usufruct_applied_to_reduce_principal and transferors_treated_transaction_as_lease",
+        "then": "classify_instrument_as_lease"
+      },
+      "predicates": {
+        "instrument_classification_dispute": "The court is deciding whether an instrument is a mortgage or a lease.",
+        "property_given_for_enjoyment": "The transferor gave the transferee possession of property and the right to enjoy it.",
+        "fixed_annual_payment_independent_of_principal": "The transferee had to pay a fixed annual amount to the transferor that was not intended to reduce the principal debt.",
+        "property_transferred_as_debt_security": "The instrument states that the property is transferred as security for repayment of a debt.",
+        "creditor_right_to_sell_for_unpaid_debt": "The instrument gives the creditor a right to sell the property if the debt is not repaid.",
+        "usufruct_applied_to_reduce_principal": "The instrument provides that the income or produce from the property will reduce the principal debt.",
+        "transferors_treated_transaction_as_lease": "The transferors later dealt with the transaction in a manner consistent with its being a lease."
+      },
+      "definition": "Where an instrument-classification dispute involves property given for enjoyment, an independent fixed annual payment, no transfer as debt security or sale right for unpaid debt, no application of usufruct to principal, and treatment of the transaction as a lease by the transferors, the instrument is classified as a lease."
+    }
+  ],
+  "seconds": 13.5
+}

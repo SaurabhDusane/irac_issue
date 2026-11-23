@@ -1,0 +1,81 @@
+{
+  "doc_id": "1496427",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20965,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2281,
+    "prompt_tokens": 5862,
+    "total_tokens": 8143,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Entries in a bank’s books of account, including certified copies of those entries, do not by themselves prove a disputed advance so as to impose liability on a borrower.",
+      "material_facts": [
+        "The borrowers denied taking a further loan after executing the mortgage and disputed the correctness of the bank’s accounts.",
+        "The bank relied on a certified copy of an account entry to establish that it had advanced a further sum.",
+        "The bank produced no independent evidence that the further sum had actually been advanced."
+      ],
+      "conclusion": "The bank did not prove the disputed advance, and the borrowers could not be held liable for it on the basis of the account entry alone.",
+      "legal_principle": "Under section 34 of the Indian Evidence Act, 1872, entries in regularly kept books of account are relevant but cannot alone suffice to charge a person with liability. Section 4 of the Bankers’ Books Evidence Act, 1891, makes certified copies prima facie evidence of the existence of entries and admits them to the same extent as the original entries would be admissible, but does not enlarge their admissibility. Where an entry is disputed, independent evidence of the transaction is required; the entry may then corroborate that evidence.",
+      "rule": {
+        "if": "bank_debt_suit and borrower_disputed_advance and bank_relied_only_on_account_entry",
+        "then": "disputed_advance_not_proved"
+      },
+      "predicates": {
+        "bank_debt_suit": "A creditor brought a proceeding to recover a debt from a borrower.",
+        "borrower_disputed_advance": "The borrower denied receiving the advance and did not accept the correctness of the creditor’s account of it.",
+        "bank_relied_only_on_account_entry": "The creditor relied on an account entry, including a certified copy of it, without independent evidence that the advance was made.",
+        "disputed_advance_not_proved": "The disputed advance is not established as a basis for imposing liability on the borrower."
+      },
+      "definition": "When a creditor seeks to recover a disputed advance and relies only on an account entry, the advance is not established as a basis for liability."
+    },
+    {
+      "legal_issue": "A claim to enforce a mortgage by sale of the mortgaged property is timely when the suit is filed within the period applicable to that mortgage remedy.",
+      "material_facts": [
+        "The borrowers executed a mortgage securing an amount already due to the bank.",
+        "The bank filed its suit within twelve years of the mortgage’s execution and sought sale of the mortgaged properties."
+      ],
+      "conclusion": "The bank’s claim for sale of the mortgaged properties was within time.",
+      "legal_principle": "Article 138 of the Limitation Act, 1908, allowed twelve years for a suit to enforce the mortgage by sale. The Court distinguished that remedy from a claim to impose personal liability on the borrowers.",
+      "rule": {
+        "if": "mortgage_enforcement_suit and filed_within_mortgage_remedy_period",
+        "then": "mortgage_sale_claim_timely"
+      },
+      "predicates": {
+        "mortgage_enforcement_suit": "A creditor brought a suit seeking to enforce a debt secured by a mortgage through sale of the mortgaged property.",
+        "filed_within_mortgage_remedy_period": "The creditor filed the suit within the period applicable to enforcing the mortgage by sale.",
+        "mortgage_sale_claim_timely": "The claim to enforce the mortgage by sale is within time."
+      },
+      "definition": "A mortgage-sale claim is timely when a suit to enforce the mortgage by sale is filed within the applicable period."
+    },
+    {
+      "legal_issue": "A claim imposing personal liability under a mortgage is barred when the applicable limitation period has expired and the creditor has not established a legally effective basis for extending it.",
+      "material_facts": [
+        "The suit seeking personal liability under the mortgage was filed more than six years after the mortgage was executed.",
+        "The bank relied on an account entry recording a payment, but did not prove a writing signed by the borrowers or an acknowledgement of payment in their handwriting or in a writing signed by them.",
+        "The account showed that mutual dealings ended with the last payment in 1949, followed only by entries of interest, and the suit was filed in 1953."
+      ],
+      "conclusion": "The bank was not entitled to a personal decree against the borrowers; its remedy was limited to sale of the mortgaged property.",
+      "legal_principle": "Article 116 of the Limitation Act, 1908, allowed six years for the personal claim under the deed. Sections 19 and 20 did not extend limitation on the basis of the recorded payment because the required signed writing or acknowledgement was not proved. Article 85 did not assist the bank: even assuming an open, current and mutual account, the mutuality had ended and the suit was brought more than three years after the close of the relevant account year.",
+      "rule": {
+        "if": "personal_liability_claim_on_mortgage and (personal_claim_period_expired or (mutual_account_claim and mutual_account_period_expired)) and no_proved_valid_limitation_extension",
+        "then": "no_personal_decree"
+      },
+      "predicates": {
+        "personal_liability_claim_on_mortgage": "A creditor sought to impose personal liability on a debtor under an obligation secured by a mortgage.",
+        "personal_claim_period_expired": "The creditor filed the personal claim after the period applicable to that claim had expired.",
+        "mutual_account_claim": "The creditor relied on an open, current and mutual account as a basis for the claim.",
+        "mutual_account_period_expired": "The mutual dealings had ended and the creditor filed the claim after the applicable period measured from the close of the relevant account year.",
+        "no_proved_valid_limitation_extension": "The creditor did not prove a legally sufficient signed acknowledgement or payment capable of extending limitation.",
+        "no_personal_decree": "The creditor is not entitled to a decree imposing personal liability on the debtor."
+      },
+      "definition": "A personal claim is barred, and no personal decree may be entered, when its applicable period or the applicable mutual-account period has expired and no legally sufficient extension is proved."
+    }
+  ],
+  "seconds": 14.1
+}

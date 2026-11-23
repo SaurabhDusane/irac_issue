@@ -1,0 +1,129 @@
+{
+  "doc_id": "1553975",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 55989,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4489,
+    "prompt_tokens": 13535,
+    "total_tokens": 18024,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant must prove an allegation that a limited-tenancy permission was procured by fraud, including an allegation that the tenant was absent from the permission proceedings.",
+      "material_facts": [
+        "The tenant first alleged in the execution objections that the permission was fraudulent, but did not then claim to have been absent from the proceedings or that the recorded signature was forged.",
+        "The tenant later relied on a rejoinder containing an altered passage, a visa and immigration stamp the Court found not genuine, and a travel ticket that related to an earlier year.",
+        "The tenant did not produce the original passport despite being given an opportunity to do so; the Court found that the tenant had not proved absence from the proceedings or the genuineness of the travel documents.",
+        "The tenant's testimony before the Rent Controller acknowledged his presence in court when the later permission was obtained."
+      ],
+      "conclusion": "The tenant failed to prove absence from the permission proceedings or fraud in obtaining the permission, and this ground of challenge was rejected.",
+      "legal_principle": "The person alleging fraud bears the burden of proving it. The Court assessed the tenant's delayed allegations against the contemporaneous record, the tenant's earlier testimony, the deficiencies in the documents relied on, and the failure to produce the original passport; it drew an adverse inference from the non-production of that passport.",
+      "rule": {
+        "if": "limited_tenancy_execution_case and absence_from_permission_alleged and (absence_claim_raised_late or supporting_travel_evidence_unreliable) and (record_of_prior_presence or original_travel_document_not_produced)",
+        "then": "fraud_not_proved"
+      },
+      "predicates": {
+        "limited_tenancy_execution_case": "The proceeding concerns execution of an order for possession following a tenancy created for a limited period.",
+        "absence_from_permission_alleged": "The tenant claims not to have attended the proceedings in which the limited-period tenancy was approved.",
+        "absence_claim_raised_late": "The tenant raises the claim of absence only after earlier opportunities to state it in the proceedings.",
+        "supporting_travel_evidence_unreliable": "The travel documents relied on to support the claimed absence contain defects, relate to another journey, or are otherwise not authenticated.",
+        "record_of_prior_presence": "The tenant's earlier testimony or other evidence records or acknowledges the tenant's presence in the permission proceedings.",
+        "original_travel_document_not_produced": "The tenant does not produce the original travel document after having an opportunity to do so."
+      },
+      "definition": "When a tenant in a limited-tenancy execution case alleges absence but raises it late or relies on unreliable travel evidence, and the record indicates prior presence or the original travel document is not produced, the allegation of fraud is not proved."
+    },
+    {
+      "legal_issue": "A tenant cannot ordinarily challenge the validity of a limited-tenancy permission collaterally after the limited tenancy has expired, but must promptly seek adjudication of the alleged defect during the tenancy.",
+      "material_facts": [
+        "The tenant admitted that the earlier limited tenancy commenced on the date that meant it had expired before the application for the later permission was made.",
+        "The tenant challenged the later permission on grounds including that the premises were not vacant and that the landlord had misrepresented the intended use, but did not seek adjudication of those grounds during the later limited tenancy.",
+        "The tenant raised the challenge in objections to execution after the limited tenancy had expired, and the Court found no exceptional circumstance justifying that delay.",
+        "The Court also found that both landlord and tenant were present before the Rent Controller when the later permission was granted and that there was no factual concealment by the landlord."
+      ],
+      "conclusion": "The tenant was not entitled to challenge the permission on these grounds after expiry of the limited tenancy; the objections were rejected, the appeal was dismissed, and possession was to be delivered to the landlord.",
+      "legal_principle": "Under Section 21 of the Delhi Rent Control Act, 1958, a tenant who discovers facts said to vitiate permission must approach the Rent Controller for adjudication during the currency of the limited tenancy, as soon as the facts are discovered or could be discovered with due diligence. The permission is presumed valid until set aside, and a collateral challenge after expiry is ordinarily unavailable. The Court relied on J.R. Vohra v. Indian Export House Pvt. Ltd., Pankaj Bhargava v. Mohinder Nath, and Shrisht Dhawan v. M/s. Shaw Brothers; the latter recognizes that a post-expiry objection may be permitted in exceptional circumstances, which were not shown here.",
+      "rule": {
+        "if": "limited_tenancy_permission_challenge_case and tenancy_expired and challenge_ground_known_during_tenancy and challenge_not_brought_promptly and not exceptional_circumstances",
+        "then": "post_expiry_permission_challenge_barred"
+      },
+      "predicates": {
+        "limited_tenancy_permission_challenge_case": "The proceeding concerns a tenant's challenge to permission for a tenancy fixed for a limited period.",
+        "tenancy_expired": "The fixed period of the tenancy has ended before the tenant seeks adjudication of the challenge.",
+        "challenge_ground_known_during_tenancy": "The tenant knew, or could with due diligence have discovered, the facts said to invalidate the permission while the tenancy was still running.",
+        "challenge_not_brought_promptly": "The tenant did not promptly ask the Rent Controller to adjudicate the alleged defect during the tenancy.",
+        "exceptional_circumstances": "Circumstances exist that exceptionally justify allowing the tenant to challenge the permission after the tenancy has expired."
+      },
+      "definition": "When a tenant knows of a ground to challenge limited-tenancy permission during the tenancy but does not promptly seek adjudication, the challenge is barred after expiry unless exceptional circumstances exist."
+    },
+    {
+      "legal_issue": "An interlocutory order allowing a tenant to lead evidence on execution objections does not prevent the appellate tribunal from deciding whether those objections are legally maintainable.",
+      "material_facts": [
+        "The Rent Controller made an interlocutory order allowing the tenant to lead evidence on the execution objections and staying dispossession pending their determination.",
+        "The landlord appealed from the later order that upheld the objections and dismissed the execution application.",
+        "The appellate tribunal considered whether the objections could be entertained after the limited tenancy had expired, notwithstanding the earlier interlocutory order."
+      ],
+      "conclusion": "The interlocutory order did not prevent the landlord from arguing, or the appellate tribunal from deciding, that the tenant's objections were not maintainable after expiry of the tenancy.",
+      "legal_principle": "An interlocutory order that permits evidence to be presented on a prima facie basis does not finally determine the legal maintainability of the objections and does not foreclose the opposing party from raising that question in the appeal.",
+      "rule": {
+        "if": "appeal_from_execution_objection_decision and trial_order_was_interlocutory and trial_order_only_permitted_evidence",
+        "then": "appellate_tribunal_may_decide_objection_maintainability"
+      },
+      "predicates": {
+        "appeal_from_execution_objection_decision": "An appeal is brought from a decision upholding or dismissing objections in a possession-execution proceeding.",
+        "trial_order_was_interlocutory": "The earlier trial-court order was procedural and did not finally dispose of the objections.",
+        "trial_order_only_permitted_evidence": "The earlier order allowed evidence to be led and did not finally adjudicate whether the objections were legally maintainable."
+      },
+      "definition": "When an appeal concerns execution objections and the earlier order only permitted evidence without finally deciding maintainability, the appellate tribunal may decide maintainability."
+    },
+    {
+      "legal_issue": "Prima facie evidence that a party has tampered with judicial records or filed false affidavits warrants setting the criminal law in motion to protect the administration of justice.",
+      "material_facts": [
+        "The Court found that the tenant had tampered with the Rent Controller's record and that a document had been interpolated into the Rent Tribunal's record.",
+        "The Court found that the visa and immigration stamp relied on by the tenant were not genuine and that false affidavits had been filed in support of the appeal.",
+        "The Court considered that the conduct was intended to mislead the Court and obstruct the course of justice."
+      ],
+      "conclusion": "The Court directed its Registrar to file a complaint before the appropriate court and set the criminal law in motion; it did not determine criminal guilt.",
+      "legal_principle": "Tampering with judicial records and filing false affidavits obstruct the due course of justice and undermine the rule of law. Where the Court is prima facie satisfied that such conduct occurred, it may direct that a complaint be filed to initiate criminal proceedings.",
+      "rule": {
+        "if": "court_proceeding and (judicial_record_tampering_found or false_affidavit_filed) and prima_facie_evidence_of_obstruction",
+        "then": "registrar_directed_to_file_complaint"
+      },
+      "predicates": {
+        "court_proceeding": "A matter is before a court exercising judicial authority.",
+        "judicial_record_tampering_found": "The court record contains alterations or interpolations attributable to a party or someone acting for that party.",
+        "false_affidavit_filed": "A party has filed an affidavit containing statements the court finds false.",
+        "prima_facie_evidence_of_obstruction": "The circumstances provide an initial evidentiary basis to find that the conduct was intended to mislead the court or obstruct justice."
+      },
+      "definition": "When a court proceeding reveals judicial-record tampering or a false affidavit and prima facie evidence of obstruction, the court directs its registrar to file a complaint."
+    },
+    {
+      "legal_issue": "Court procedures should require reliable service, authentication, identification, and dating of documents filed in proceedings so as to reduce the risk of record tampering.",
+      "material_facts": [
+        "The copy of the rejoinder said to have been served on opposing counsel lacked an acknowledgment of service and authentication as a true copy.",
+        "The original rejoinder in the court record had an unclear date stamp and lacked clear initials and dating on each page.",
+        "The application for additional evidence described the documents vaguely and did not provide full particulars for each document.",
+        "The Court noted that the applicable procedural framework required the Rent Controller and Rent Tribunal, as far as possible, to be guided by the Code of Civil Procedure."
+      ],
+      "conclusion": "The Court directed the Registry to send the judgment to the relevant government department and the High Court so that appropriate procedural rules could be made, and requested the High Court to give the matter immediate attention and arrange periodic inspection of subordinate courts.",
+      "legal_principle": "Section 56 of the Delhi Rent Control Act, 1958 empowers the Central Government to make rules, and Rule 23 of the Rules under that Act directs the Rent Controller and Rent Control Tribunal, as far as possible, to be guided by the Code of Civil Procedure, 1908. The Court considered safeguards such as acknowledged service, certification and signature of copies, clear dating and initials on filed pages, and detailed, certified lists of documents tendered as additional evidence.",
+      "rule": {
+        "if": "court_proceeding and (service_not_acknowledged or filed_documents_not_authenticated or court_pages_not_clearly_dated or additional_evidence_documents_not_identified)",
+        "then": "procedural_safeguards_referred_for_rulemaking"
+      },
+      "predicates": {
+        "court_proceeding": "A document is filed or served in a judicial proceeding.",
+        "service_not_acknowledged": "A document served on the opposing party lacks an acknowledgment showing that service occurred.",
+        "filed_documents_not_authenticated": "A filed or served copy lacks certification that it is a true copy or lacks the required signature.",
+        "court_pages_not_clearly_dated": "Pages in the court record do not bear clear filing dates and judicial initials.",
+        "additional_evidence_documents_not_identified": "An application to submit additional evidence does not adequately identify and particularize the documents tendered."
+      },
+      "definition": "When a court proceeding reveals inadequate acknowledgment, authentication, dating, or identification of documents, the need for procedural safeguards is referred for rulemaking."
+    }
+  ],
+  "seconds": 27.6
+}

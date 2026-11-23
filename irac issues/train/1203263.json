@@ -1,0 +1,97 @@
+{
+  "doc_id": "1203263",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24343,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3056,
+    "prompt_tokens": 6185,
+    "total_tokens": 9241,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A claimant may not reallocate a compensation deposit among separately specified heads of an acquisition award in order to claim further interest.",
+      "material_facts": [
+        "The acquisition award and subsequent court determinations identified compensation, solatium, interest, additional amounts and costs as distinct items.",
+        "Amounts had been paid or deposited under the respective determinations.",
+        "In execution, the claimants sought to apply the amounts first to costs, then to interest, and thereafter to compensation, and to claim further interest on the resulting balance."
+      ],
+      "conclusion": "Where a payment or deposit is made towards specified amounts, the claimant cannot redirect it to costs or interest and then claim further interest on the balance.",
+      "legal_principle": "Sections 23(1), 23(2), 28, 31, 34 and 53 of the Land Acquisition Act, 1894 treat the relevant components as distinct and make the Act prevail over inconsistent provisions of the CPC. Section 60 of the Contract Act recognizes a debtor’s right to specify appropriation, expressly or by implication; the award and the specified deposit indicate that appropriation. Order 21 Rule 1 CPC, relied on in Meghraj v. Bayabai, does not apply where inconsistent with the Act. Mathunni Mathai v. Hindustan Organic Chemicals was held not to state the correct law on this point.",
+      "rule": {
+        "if": "land_acquisition_execution and (award_separates_payment_heads and deposit_is_toward_specified_heads)",
+        "then": "claimant_cannot_reallocate_deposit_to_claim_further_interest"
+      },
+      "predicates": {
+        "land_acquisition_execution": "The dispute concerns execution of an award determining compensation for acquired land.",
+        "award_separates_payment_heads": "The award or later determination identifies compensation and other amounts as distinct heads of payment.",
+        "deposit_is_toward_specified_heads": "The paying authority pays or deposits an amount towards the specified heads."
+      },
+      "definition": "When execution concerns an acquisition award with separately identified payment heads and the authority pays or deposits money towards specified heads, the claimant cannot reallocate that money to obtain further interest."
+    },
+    {
+      "legal_issue": "Interest liability on compensation or enhanced compensation ends when the relevant amount is paid or deposited in the manner applicable to that amount.",
+      "material_facts": [
+        "The Collector paid the compensation determined in the original award.",
+        "After compensation was enhanced, a further amount was deposited.",
+        "The claimants sought interest beyond the relevant payment or deposit by treating the deposited amounts as applied first to costs and interest."
+      ],
+      "conclusion": "Interest on compensation continues until it is paid to the owner or interested person or deposited in court as applicable; interest on excess compensation continues until that excess is deposited in court.",
+      "legal_principle": "Sections 31 and 34 of the Land Acquisition Act, 1894 govern payment or deposit of the compensation awarded by the Collector and interest on that amount. Section 28 governs interest on excess compensation and continues that liability until the excess is paid into court. Section 54 applies the same principle to compensation further enhanced on appeal. Interest is computed from the date possession is taken until the applicable payment or deposit.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and compensation_amount_is_unpaid_or_undeposited",
+        "then": "interest_liability_ends_on_applicable_payment_or_deposit"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "The proceeding concerns compensation for land acquired by the State.",
+        "compensation_amount_is_unpaid_or_undeposited": "An amount of compensation or enhanced compensation remains unpaid to the owner or has not been deposited in court as applicable."
+      },
+      "definition": "In an acquisition compensation proceeding, interest on an outstanding compensation amount ends when that amount is paid or deposited in the manner applicable to it."
+    },
+    {
+      "legal_issue": "Statutory interest on acquisition compensation is not payable on solatium or on the additional amount treated separately from market-value compensation.",
+      "material_facts": [
+        "The claimants sought interest on solatium and on additional amounts awarded in connection with the acquisition.",
+        "The award treated market-value compensation, solatium and the additional amount as separate components."
+      ],
+      "conclusion": "Interest under the relevant acquisition provisions is payable on compensation or excess compensation, not on solatium or the separate additional amount.",
+      "legal_principle": "Sections 23(1), 23(2), 23(1-A), 28 and 34 of the Land Acquisition Act, 1894 distinguish market-value compensation from solatium and the additional amount, while Sections 28 and 34 provide interest on compensation or excess compensation. P. Ram Reddy v. State of Andhra Pradesh was relied on for the proposition that solatium is not payable on the additional amount.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and (award_includes_separate_solatium or award_includes_separate_additional_amount) and interest_is_claimed_on_separate_component",
+        "then": "interest_is_not_payable_on_solatium_or_separate_additional_amount"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "The proceeding concerns compensation for land acquired by the State.",
+        "award_includes_separate_solatium": "The award includes a separately identified amount for the compulsory nature of the acquisition.",
+        "award_includes_separate_additional_amount": "The award includes a separately identified additional amount beyond market-value compensation.",
+        "interest_is_claimed_on_separate_component": "A party seeks interest on a component distinct from market-value compensation."
+      },
+      "definition": "When an acquisition award separately includes solatium or an additional amount and interest is claimed on a distinct component, interest is not payable on that component."
+    },
+    {
+      "legal_issue": "Amended acquisition benefits cannot be added in a revision when the amendment does not apply to the compensation enhancement determined in that proceeding.",
+      "material_facts": [
+        "The High Court awarded additional benefits and enhanced solatium and interest under an amending Act in a revision concerning acquisition compensation.",
+        "The compensation enhancement in the revision was determined when the amending Act did not apply to it.",
+        "The claimants sought execution of those additional benefits."
+      ],
+      "conclusion": "The High Court exceeded its power by awarding the amended benefits in the circumstances, and those benefits could not be enforced.",
+      "legal_principle": "Sections 23(1-A), 23(2) and 28 of the Land Acquisition Act, 1894 provide for additional amount, solatium and interest in the circumstances prescribed by the Act. Union of India v. Raghubir Singh and K.S. Paripoornan (II) v. State of Kerala, along with the other cited decisions, were relied on for the inapplicability of the amendment to the enhancement made in revision. Sections 151 and 152 CPC did not provide a basis to amend the original order in these circumstances.",
+      "rule": {
+        "if": "land_acquisition_revision and amended_benefits_are_awarded and amendment_does_not_apply_to_revision_enhancement",
+        "then": "amended_benefits_cannot_be_awarded_in_revision"
+      },
+      "predicates": {
+        "land_acquisition_revision": "The proceeding is a revision concerning compensation for acquired land.",
+        "amended_benefits_are_awarded": "The revisional determination adds benefits introduced by an amendment to the acquisition law.",
+        "amendment_does_not_apply_to_revision_enhancement": "The amendment does not apply to the compensation enhancement determined in the revision."
+      },
+      "definition": "If a revision concerning acquisition compensation awards amended benefits that do not apply to the enhancement determined in that revision, those benefits cannot be awarded there."
+    }
+  ],
+  "seconds": 18.9
+}

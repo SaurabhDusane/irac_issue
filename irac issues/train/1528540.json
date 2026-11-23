@@ -1,0 +1,55 @@
+{
+  "doc_id": "1528540",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12598,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2198,
+    "prompt_tokens": 3580,
+    "total_tokens": 5778,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A High Court deciding a reference arising from disagreement between a trial judge and a jury must consider the entire evidence and the charge before reaching its own conclusion.",
+      "material_facts": [
+        "The jury returned a majority verdict finding the accused guilty, but the trial judge disagreed and referred the case to the High Court.",
+        "Before the High Court, counsel argued only that the charge to the jury was defective and did not invite consideration of the entire evidence.",
+        "The High Court considered the objections to the charge, accepted the jury’s verdict, and convicted the accused without considering the entire evidence."
+      ],
+      "conclusion": "The High Court violated its statutory duty by convicting the accused without considering the entire evidence; its judgment and the convictions and sentences were set aside.",
+      "legal_principle": "Section 307(3) of the Code of Criminal Procedure required the High Court to consider the entire evidence and the charge as framed and placed before the jury, give due weight to the opinions of the trial judge and jury, and reach its own conclusion. Applying Akhlakali Hayatalli v. State of Bombay and Ramanugrah Singh v. The Emperor, the Court explained that where the evidence can properly support either view, the jury’s view generally prevails; where no reasonable body could have reached the jury’s conclusion, the verdict may be disregarded in the interests of justice.",
+      "rule": {
+        "if": "jury_reference_case and high_court_omitted_full_evidence_review",
+        "then": "high_court_conviction_without_full_review_is_invalid"
+      },
+      "predicates": {
+        "jury_reference_case": "A criminal case was referred to the High Court after the trial judge disagreed with a jury verdict.",
+        "high_court_omitted_full_evidence_review": "The High Court decided the reference without considering the entire evidence."
+      },
+      "definition": "When a criminal jury reference is decided without the High Court considering the entire evidence, a conviction reached in that decision is invalid."
+    },
+    {
+      "legal_issue": "The Supreme Court should remand a jury reference for the High Court to perform its required review rather than itself conduct that review in the first instance.",
+      "material_facts": [
+        "The High Court had convicted the accused in a jury reference without considering the entire evidence.",
+        "In the appeal, counsel invited the Supreme Court to consider the evidence and reach the conclusion the High Court should have reached."
+      ],
+      "conclusion": "The Supreme Court declined to consider the entire evidence itself, allowed the appeal, and remanded the matter to the High Court for decision in accordance with law.",
+      "legal_principle": "Under section 307(3) of the Code of Criminal Procedure, the High Court was required to perform the review of the entire evidence in the jury reference. The Supreme Court held that it was not proper for it to adopt that procedure in place of the High Court and remanded the matter for the required consideration.",
+      "rule": {
+        "if": "appeal_from_jury_reference_decision and high_court_failed_to_review_full_evidence",
+        "then": "supreme_court_remands_for_high_court_review"
+      },
+      "predicates": {
+        "appeal_from_jury_reference_decision": "An appeal was brought from a High Court decision in a criminal jury reference.",
+        "high_court_failed_to_review_full_evidence": "The High Court decided the reference without considering the entire evidence."
+      },
+      "definition": "When an appeal challenges a decision in a criminal jury reference and the High Court did not consider the entire evidence, the Supreme Court remands the matter for the High Court to conduct that review."
+    }
+  ],
+  "seconds": 14.5
+}

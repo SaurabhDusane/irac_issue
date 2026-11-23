@@ -1,0 +1,116 @@
+{
+  "doc_id": "114533",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17447,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3092,
+    "prompt_tokens": 4810,
+    "total_tokens": 7902,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent court deciding an eviction claim based on alleged subletting need not determine whether cohabiting occupants are legally married when their living together as spouses is established.",
+      "material_facts": [
+        "The tenant and the person said to be a subtenant were found to be living together as husband and wife, whether or not they were legally married.",
+        "The landlord knew they were living together in that way."
+      ],
+      "conclusion": "No finding on the legal validity of the marriage was necessary; it was sufficient to proceed on the finding that the two were living together as husband and wife.",
+      "legal_principle": "In an eviction proceeding based on subletting, the relevant factual relationship could be considered without deciding marital status. The Rent Controller’s approach was sufficient under section 14 of the Delhi Rent Control Act, 1958; the Court held that the High Court erred in treating legal marital status as a substantial question of law under section 39.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and alleged_subtenant_and_tenant_lived_as_spouses",
+        "then": "legal_marriage_finding_unnecessary"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord sought eviction of a tenant through a rent-control proceeding.",
+        "alleged_subtenant_and_tenant_lived_as_spouses": "The tenant and the alleged subtenant lived together as husband and wife, whether or not they were legally married."
+      },
+      "definition": "When a rent-control eviction proceeding involves a tenant and an alleged subtenant who lived together as spouses, their legal marriage need not be determined."
+    },
+    {
+      "legal_issue": "Whether subletting occurred on the facts is a question of fact, not a mixed question of law and fact, where deciding it requires no application of a legal principle to basic facts.",
+      "material_facts": [
+        "The tenant and the alleged subtenant were living together as husband and wife to the landlord’s knowledge.",
+        "The tenant had leased the shop from the landlord.",
+        "From the beginning of the tenancy, the alleged subtenant principally ran a chemist’s business in the shop, with occasional assistance from the tenant.",
+        "The Rent Controller and Tribunal both found that subletting had not been established."
+      ],
+      "conclusion": "The inference as to whether the tenant had sublet the shop was factual, and no substantial question of law arose for the High Court to decide in second appeal.",
+      "legal_principle": "A question is mixed law and fact when the ultimate conclusion requires applying legal principles to basic findings; a conclusion reached without such application is factual. The Court followed Meenakshi Mills, Madurai v. The Commissioner of Income-Tax, Madras, [1956] S.C.R. 691. Under section 39(2) of the Delhi Rent Control Act, 1958, the High Court could interfere in second appeal only where a substantial question of law was involved.",
+      "rule": {
+        "if": "rent_control_second_appeal and concurrent_factual_findings and subletting_inference_requires_no_legal_principle",
+        "then": "high_court_cannot_disturb_concurrent_factual_finding"
+      },
+      "predicates": {
+        "rent_control_second_appeal": "The matter is a second appeal from a decision of rent-control authorities.",
+        "concurrent_factual_findings": "The first rent-control authority and the appellate rent-control authority reached the same factual finding.",
+        "subletting_inference_requires_no_legal_principle": "Deciding whether the tenant sublet the premises requires only a factual inference from the circumstances, not the application of a legal principle to basic facts."
+      },
+      "definition": "In a rent-control second appeal, where the rent-control authorities made concurrent findings and the subletting inference requires no legal principle, the High Court cannot disturb that factual finding."
+    },
+    {
+      "legal_issue": "Living together as spouses and one person’s operation of a business in premises occupied by the other do not, without other evidence, support an inference that the premises were sublet.",
+      "material_facts": [
+        "The tenant and the person alleged to be a subtenant were living together as husband and wife to the landlord’s knowledge.",
+        "The chemist’s business was carried on in the shop from the time it was let, principally by the alleged subtenant and occasionally with the tenant’s help.",
+        "There was no other evidence establishing a letting of the shop by the tenant to the alleged subtenant."
+      ],
+      "conclusion": "In the absence of other evidence, it was a rash inference that the tenant had sublet the premises to the person with whom she lived as a spouse.",
+      "legal_principle": "Subletting is a particular type of demise of immovable property and is distinct from permissive use, such as use by a licensee. The Court held that the circumstances of cohabitation and business operation alone did not justify an inference of subletting.",
+      "rule": {
+        "if": "tenant_and_occupant_lived_as_spouses and occupant_operated_business_in_premises and no_other_evidence_of_subletting",
+        "then": "subletting_not_inferred_from_those_facts_alone"
+      },
+      "predicates": {
+        "tenant_and_occupant_lived_as_spouses": "The tenant and the occupant lived together as husband and wife, whether or not legally married.",
+        "occupant_operated_business_in_premises": "The occupant operated a business in the premises, with occasional assistance from the tenant.",
+        "no_other_evidence_of_subletting": "No other evidence showed that the tenant had let the premises to the occupant."
+      },
+      "definition": "When the tenant and occupant lived as spouses, the occupant operated a business in the premises, and there was no other evidence of subletting, those facts alone do not support an inference of subletting."
+    },
+    {
+      "legal_issue": "The landlord bears the burden of proving subletting, with the tenant required to rebut the evidence only after the landlord makes a prima facie showing of the occupant’s exclusive possession for valuable consideration.",
+      "material_facts": [
+        "The landlord alleged that the tenant had sublet the whole shop and was charging rent to the alleged subtenant.",
+        "The tenant denied subletting and stated that the alleged subtenant was her husband and had operated the business from the beginning of the tenancy.",
+        "The landlord produced no evidence that the alleged subtenant had exclusive possession for valuable consideration."
+      ],
+      "conclusion": "The landlord did not prove subletting, and the tenant’s denial was not met by the required prima facie evidence.",
+      "legal_principle": "The burden of proving subletting rests on the landlord. If the landlord prima facie establishes that the occupant had exclusive possession of the premises for valuable consideration, the tenant must rebut that evidence. The Court followed Associated Hotels of India Ltd., Delhi v. S. B. Sardar Ranjit Singh, [1968] 2 S.C.R. 548.",
+      "rule": {
+        "if": "eviction_sought_for_subletting and landlord_bears_initial_burden and not landlord_proved_exclusive_possession_for_value",
+        "then": "subletting_not_proved_by_landlord"
+      },
+      "predicates": {
+        "eviction_sought_for_subletting": "The landlord sought eviction on the ground that the tenant had sublet the premises.",
+        "landlord_bears_initial_burden": "The landlord was required to prove the alleged subletting before the tenant had to rebut the evidence.",
+        "not_landlord_proved_exclusive_possession_for_value": "The landlord did not make a prima facie showing that the occupant had exclusive possession of the premises for valuable consideration."
+      },
+      "definition": "Where eviction is sought for subletting and the landlord does not make a prima facie showing of the occupant’s exclusive possession for value, subletting is not proved by the landlord."
+    },
+    {
+      "legal_issue": "A business-use deeming rule for subletting applies only when a tenant allows someone into possession ostensibly as a business partner but really for the purpose of subletting.",
+      "material_facts": [
+        "The premises were a shop used for a chemist’s business.",
+        "The case was not that the tenant owned the business and allowed the alleged subtenant into possession ostensibly as her business partner.",
+        "The alleged subtenant had carried on the business from the time the premises were let, with occasional help from the tenant."
+      ],
+      "conclusion": "The deeming provision in section 14(4) of the Delhi Rent Control Act, 1958, did not apply to these facts.",
+      "legal_principle": "Under section 14(4) of the Delhi Rent Control Act, 1958, business or professional premises are deemed to have been sublet only where the Controller is satisfied that the tenant, without the landlord’s written consent, allowed a person into possession ostensibly as a partner but really for the purpose of subletting the premises to that person.",
+      "rule": {
+        "if": "business_use_premises and not tenant_allowed_occupant_as_ostensible_partner_for_subletting",
+        "then": "business_partnership_deeming_rule_does_not_apply"
+      },
+      "predicates": {
+        "business_use_premises": "The premises were let for use in a business or profession.",
+        "tenant_allowed_occupant_as_ostensible_partner_for_subletting": "The tenant allowed the occupant into possession ostensibly as a business or professional partner but really for the purpose of subletting the premises."
+      },
+      "definition": "Where premises are used for business but the tenant did not allow the occupant into possession ostensibly as a partner for the real purpose of subletting, the business-partnership deeming rule does not apply."
+    }
+  ],
+  "seconds": 17.8
+}

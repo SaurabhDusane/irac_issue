@@ -1,0 +1,77 @@
+{
+  "doc_id": "1296928",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23272,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2819,
+    "prompt_tokens": 6438,
+    "total_tokens": 9257,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person who entered or remained in possession only after a tenant’s death, and against whom eviction proceedings were pending at the relevant later cutoff, was not entitled to regularisation as an existing tenant.",
+      "material_facts": [
+        "The deceased tenant occupied the shop at the cutoff for the original regularisation provision and was still alive then.",
+        "The claimant remained in possession only after the tenant’s death.",
+        "The landlord sought release of the shop, and proceedings contesting the claimant’s tenancy were pending at the cutoff for the amended regularisation provision."
+      ],
+      "conclusion": "The claimant could not obtain regularisation under either version of the regularisation provision: he was not the tenant at the original cutoff, and eviction proceedings against him were pending at the later cutoff.",
+      "legal_principle": "The original Section 14 of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972 applied to a tenant in occupation with the landlord’s consent immediately before the Act commenced, subject to the specified pending-proceedings exception. Amended Section 14 applied to a licensee or tenant in occupation with the landlord’s consent immediately before the amendment commenced, provided no suit or eviction proceeding against that person was pending then.",
+      "rule": {
+        "if": "tenant_regularization_claim and (claimant_not_tenant_at_original_cutoff or eviction_case_pending_at_later_cutoff)",
+        "then": "claimant_not_entitled_to_regularisation"
+      },
+      "predicates": {
+        "tenant_regularization_claim": "The claimant sought recognition as an authorised tenant through a rule regularising existing occupation.",
+        "claimant_not_tenant_at_original_cutoff": "At the original regularisation cutoff, someone other than the claimant was the tenant in occupation of the premises.",
+        "eviction_case_pending_at_later_cutoff": "Proceedings seeking the claimant’s eviction were pending at the later cutoff for regularisation."
+      },
+      "definition": "When a claimant seeks regularisation as an existing tenant, either not being the tenant at the original cutoff or facing pending eviction proceedings at the later cutoff results in the claimant not being entitled to regularisation."
+    },
+    {
+      "legal_issue": "Whether a claimant qualifies as a deceased tenant’s heir for tenancy succession depends on the meaning of “heir” in the statutory context, and a claimant outside the tenant’s defined family did not qualify in this case.",
+      "material_facts": [
+        "The premises were a shop, and the claimant was the deceased tenant’s nephew.",
+        "The claimant relied on a will and on his continued possession to claim that he was the tenant’s heir.",
+        "The claimant was not a member of the tenant’s family as defined by the Act."
+      ],
+      "conclusion": "The claimant was not an heir of the deceased tenant for purposes of tenancy succession and therefore was not a tenant on that basis.",
+      "legal_principle": "Section 3(a) of the Act defined a tenant to include the tenant’s heirs on death in the case of a non-residential building. The meaning of “heir” depends on the intention and scheme of the legislation in which it appears: it can be used narrowly or broadly. The Court referred to Smt. Rukmani Devi v. III Addl. District Judge and Munni Lal v. Smt. Shiva Devi, and approved Gulzara Singh v. Smt. Tej Kaur on the context-dependent meaning of “heir.” Applying the Act’s scheme and its definition of family in Section 3(g), the claimant was not an heir for tenancy purposes.",
+      "rule": {
+        "if": "tenant_succession_claim and claimant_not_member_of_defined_family",
+        "then": "claimant_not_heir_for_tenancy"
+      },
+      "predicates": {
+        "tenant_succession_claim": "A claimant sought recognition as a tenant by succeeding to a deceased tenant’s tenancy.",
+        "claimant_not_member_of_defined_family": "The claimant was not a member of the tenant’s family as defined for purposes of the governing tenancy scheme."
+      },
+      "definition": "When a claimant seeks tenancy succession but was not a member of the tenant’s defined family, the claimant is not treated as an heir for tenancy purposes."
+    },
+    {
+      "legal_issue": "A tenant’s rights in premises governed by the Act could not be transferred by will to take effect after the tenant’s death.",
+      "material_facts": [
+        "The deceased tenant carried on business in the shop.",
+        "The claimant asserted that a will conveyed the tenancy rights to him.",
+        "The Act’s scheme restricted a tenant’s ability to transfer or sublet tenancy rights and regulated occupation by persons outside the tenant’s family.",
+        "The Court found that the will, on its plain reading, concerned other property and the business but did not dispose of the tenancy rights."
+      ],
+      "conclusion": "The tenancy rights could not be transferred by will to take effect after the tenant’s death; in any event, the will did not cover the tenancy rights.",
+      "legal_principle": "Sections 11, 12, 13 and 15 of the Act, read with Section 3(g), restrict the transfer or subletting of tenancy rights and regulate occupation by persons outside the tenant’s family. From this scheme, the Court concluded that a tenant could not transfer tenancy rights and that the scheme did not permit such a transfer to take effect after the tenant’s lifetime.",
+      "rule": {
+        "if": "testamentary_tenancy_claim and tenancy_transfer_restricted_by_occupancy_scheme",
+        "then": "tenancy_rights_not_transferable_by_will"
+      },
+      "predicates": {
+        "testamentary_tenancy_claim": "A claimant relied on a will as the basis for acquiring a tenant’s rights in the premises.",
+        "tenancy_transfer_restricted_by_occupancy_scheme": "The governing occupancy scheme restricted the tenant’s transfer or subletting of tenancy rights."
+      },
+      "definition": "When a claimant relies on a will to acquire tenancy rights governed by a scheme restricting their transfer, the tenancy rights are not transferable by will."
+    }
+  ],
+  "seconds": 21.5
+}

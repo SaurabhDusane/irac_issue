@@ -1,0 +1,97 @@
+{
+  "doc_id": "394445",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23233,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2671,
+    "prompt_tokens": 6085,
+    "total_tokens": 8756,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A factual challenge to whether a firm came into existence cannot be decided on a reference confined to the legal validity of its constitution.",
+      "material_facts": [
+        "The Tribunal referred whether the partnership legally came into existence and should be registered.",
+        "The Tribunal had not found as a fact that the firm never came into existence."
+      ],
+      "conclusion": "The question referred concerned legal validity, not factual existence; the Court proceeded on the basis that the firm had in fact come into existence.",
+      "legal_principle": "Under section 66 of the Income-tax Act, 1922, only a question of law may be referred to the High Court. Whether a firm was constituted in fact is a question of fact, whereas whether an existing firm is valid in law is a question of law. The Tribunal’s factual decision is final on a reference.",
+      "rule": {
+        "if": "income_tax_reference and referred_question_is_legal_validity and no_tribunal_finding_firm_never_existed",
+        "then": "factual_existence_challenge_outside_reference"
+      },
+      "predicates": {
+        "income_tax_reference": "A party brought a reference from an income-tax tribunal for the High Court’s opinion.",
+        "referred_question_is_legal_validity": "The question referred asks whether a firm’s constitution is legally valid.",
+        "no_tribunal_finding_firm_never_existed": "The tribunal did not find that the firm had never come into existence."
+      },
+      "definition": "When a tax reference concerns legal validity and the tribunal made no finding that the firm never existed, factual existence is outside the issue referred."
+    },
+    {
+      "legal_issue": "A transfer of a partner’s interest in partnership assets does not require registration merely because those assets include immovable property.",
+      "material_facts": [
+        "Partners executed a deed relinquishing their individual interests in the firm’s assets in favour of the new partners.",
+        "The firm’s assets included both movable and immovable property."
+      ],
+      "conclusion": "The relinquishment deed was valid without registration because it transferred the partners’ interests in the partnership assets.",
+      "legal_principle": "Following Addanki Narayanappa v. Bhaskara Krishnappa, a partner’s interest in partnership assets is not an exclusive interest in each item of partnership property; a deed transferring that interest does not require registration under section 17(1) of the Registration Act, 1908, even when the assets include immovable property. The Court also referred to Ajudhia Pershad Ram Pershad v. Sham Sunder.",
+      "rule": {
+        "if": "partnership_asset_transfer and deed_transfers_partner_interest and partnership_assets_include_immovables",
+        "then": "registration_not_required_for_partner_interest_transfer"
+      },
+      "predicates": {
+        "partnership_asset_transfer": "A transfer is made of an interest in assets held by a partnership.",
+        "deed_transfers_partner_interest": "The deed transfers a partner’s interest in the partnership assets rather than an identified item as that partner’s separate property.",
+        "partnership_assets_include_immovables": "The partnership assets include immovable property."
+      },
+      "definition": "A deed transferring a partner’s interest in partnership assets does not require registration merely because the partnership assets include immovable property."
+    },
+    {
+      "legal_issue": "If registration of a relinquishment deed is required, invalidity affecting immovable property does not invalidate its separable transfer of movable assets.",
+      "material_facts": [
+        "The relinquishment deed dealt with the firm’s assets, including movable and immovable property.",
+        "The movable assets were separable from the immovable properties dealt with in the deed."
+      ],
+      "conclusion": "Even if registration had been required, the deed would be invalid only insofar as it affected immovable property and would remain valid in respect of the movable assets.",
+      "legal_principle": "A deed of relinquishment is analogous to a deed of gift where the properties dealt with are separable; invalidity as to one item does not invalidate the deed as to another. This differs from a deed of partition, in which rights are adjusted with reference to the properties as a whole. The Court referred to Perumal Ammal v. Perumal Naicker.",
+      "rule": {
+        "if": "relinquishment_deed and registration_requirement_assumed and movable_assets_separable_from_immovables",
+        "then": "movable_asset_transfer_remains_valid"
+      },
+      "predicates": {
+        "relinquishment_deed": "The parties executed a deed relinquishing rights in property.",
+        "registration_requirement_assumed": "The deed is considered on the assumption that registration is required for at least some property it deals with.",
+        "movable_assets_separable_from_immovables": "The deed deals with movable assets that are separable from the immovable property it also covers."
+      },
+      "definition": "On the assumption that registration is required, a relinquishment deed’s separable transfer of movable assets remains valid even if its effect on immovable property is invalid."
+    },
+    {
+      "legal_issue": "A properly constituted partnership evidenced by a duly executed deed specifying the partners’ shares is entitled to registration when its constitution is legally valid.",
+      "material_facts": [
+        "A partnership deed was executed between a trust and an individual partner and specified their shares in profits and losses.",
+        "The trust contributed capital to the new firm.",
+        "The firm applied for registration under section 26A of the Income-tax Act, 1922.",
+        "The relinquishment deed validly transferred the partners’ interests in the partnership assets, or at least the movable assets."
+      ],
+      "conclusion": "The new partnership was valid in law and should be registered.",
+      "legal_principle": "Section 26A of the Income-tax Act, 1922, provided for registration of a firm. Where a firm in fact came into existence under a properly executed partnership deed specifying the partners’ shares, and the asserted legal defect in the transfer of partnership assets did not invalidate the constitution, the firm was valid in law and entitled to registration. The Court relied on Addanki Narayanappa v. Bhaskara Krishnappa in determining the effect of the transfer of partnership interests.",
+      "rule": {
+        "if": "firm_registration_application and partnership_deed_properly_executed and partners_shares_specified and partnership_constitution_legally_valid",
+        "then": "firm_entitled_to_tax_registration"
+      },
+      "predicates": {
+        "firm_registration_application": "A firm applied for registration for income-tax purposes.",
+        "partnership_deed_properly_executed": "The partners executed a deed constituting their partnership.",
+        "partners_shares_specified": "The partnership deed specified the partners’ shares in profits and losses.",
+        "partnership_constitution_legally_valid": "The firm’s constitution was not defeated by a legal defect in the transfer of partnership assets."
+      },
+      "definition": "A firm seeking tax registration is entitled to it when it was constituted under a properly executed deed specifying the partners’ shares and its constitution is legally valid."
+    }
+  ],
+  "seconds": 18.2
+}

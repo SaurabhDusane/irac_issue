@@ -1,0 +1,89 @@
+{
+  "doc_id": "136976989",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 44620,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2683,
+    "prompt_tokens": 10640,
+    "total_tokens": 13323,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate decree that varies the trial court’s decision on the merits is not a decree of affirmance, even when the variation favors the party seeking further appeal.",
+      "material_facts": [
+        "The trial court dismissed the suit after holding that the challenged alienations bound the claimant’s share.",
+        "The appellate court held that some alienations did not bind the claimant’s share and granted partition relief for the affected property, while confirming the rest of the trial court’s decree.",
+        "The claimant sought a certificate to appeal further, and the appellate court refused it on the ground that its decree was one of affirmance.",
+        "The required valuation criterion was satisfied."
+      ],
+      "conclusion": "The appellate decree was not a decree of affirmance because it varied the trial court’s decision on the merits in the claimant’s favor. The refusal of the certificate was set aside and the matter was remitted for disposal according to law.",
+      "legal_principle": "Under Article 133(1) of the Constitution, the appellate decree must be compared as a whole with the trial court’s decision as a whole. A merits variation means the decree is not one of affirmance, regardless of the variation’s extent or whether it favors the proposed appellant. The Court relied on the plain reading of the provision and the Privy Council decisions in Rajah Tasadduq Rasul Khan v. Manik Chand and Annapurnabai v. Ruprao; it rejected a part-by-part approach and held that the valuation and substantial-question-of-law requirements do not alter this construction.",
+      "rule": {
+        "if": "civil_decree_appeal and merits_variation_by_adjudication",
+        "then": "appellate_decree_not_one_of_affirmance"
+      },
+      "predicates": {
+        "civil_decree_appeal": "A party seeks further appellate review of a decree made in a civil proceeding.",
+        "merits_variation_by_adjudication": "The appellate court changes the trial court’s decision on the merits through its adjudication, whether the change is small or large and whether it favors or disadvantages the party seeking further appeal.",
+        "appellate_decree_not_one_of_affirmance": "The appellate decree is not characterized as affirming the trial court’s decision."
+      },
+      "definition": "When a party seeks further appeal from a civil decree and the appellate court has adjudicated a change to the trial court’s decision on the merits, the appellate decree is not one of affirmance."
+    },
+    {
+      "legal_issue": "A change confined to costs does not prevent an appellate decree from being treated as a decree of affirmance.",
+      "material_facts": [],
+      "conclusion": "A variation in the costs order alone does not alter the character of an appellate decree that otherwise affirms the trial court’s decision.",
+      "legal_principle": "The Court distinguished costs, which are within the court’s discretion under section 35 of the Code of Civil Procedure, from matters forming part of the dispute between the parties. A costs-only variation does not make the appellate decree one other than affirmance.",
+      "rule": {
+        "if": "civil_decree_appeal and underlying_decision_confirmed and only_costs_order_varied",
+        "then": "appellate_decree_is_one_of_affirmance"
+      },
+      "predicates": {
+        "civil_decree_appeal": "A party seeks further appellate review of a decree made in a civil proceeding.",
+        "underlying_decision_confirmed": "The appellate court confirms the trial court’s decision on the matters in dispute.",
+        "only_costs_order_varied": "The appellate court changes only the order as to costs.",
+        "appellate_decree_is_one_of_affirmance": "The appellate decree is characterized as affirming the trial court’s decision."
+      },
+      "definition": "If an appellate court confirms the decision in dispute and changes only costs, the decree remains one of affirmance."
+    },
+    {
+      "legal_issue": "A merits-related variation in an award of interest prevents an appellate decree from being treated as a decree of affirmance.",
+      "material_facts": [],
+      "conclusion": "A variation concerning interest that forms part of the dispute between the parties affects the character of the appellate decree and means it is not one of affirmance.",
+      "legal_principle": "Unlike costs, interest awarded under section 34 of the Code of Civil Procedure can form part of the dispute between the parties. A variation in that part of the decision is therefore a relevant variation for determining whether the appellate decree affirms the trial court’s decision.",
+      "rule": {
+        "if": "civil_decree_appeal and adjudicated_interest_variation",
+        "then": "appellate_decree_not_one_of_affirmance"
+      },
+      "predicates": {
+        "civil_decree_appeal": "A party seeks further appellate review of a decree made in a civil proceeding.",
+        "adjudicated_interest_variation": "The appellate court adjudicates a change to an award of interest that forms part of the dispute between the parties.",
+        "appellate_decree_not_one_of_affirmance": "The appellate decree is not characterized as affirming the trial court’s decision."
+      },
+      "definition": "When an appellate court adjudicates a change to disputed interest in a civil decree appeal, the decree is not one of affirmance."
+    },
+    {
+      "legal_issue": "A variation resulting from concession, consent, or withdrawal of part of the subject matter does not affect whether an appellate decree is one of affirmance.",
+      "material_facts": [],
+      "conclusion": "A variation made because of a concession, the parties’ consent, or withdrawal of part of the subject matter does not affect the character of the appellate decree.",
+      "legal_principle": "The doctrine of affirmance concerns the appellate court’s decision on the merits. A change that does not result from appellate adjudication on the merits is not a merits variation for this purpose.",
+      "rule": {
+        "if": "civil_decree_appeal and underlying_decision_confirmed and variation_due_to_concession_consent_or_withdrawal",
+        "then": "appellate_decree_is_one_of_affirmance"
+      },
+      "predicates": {
+        "civil_decree_appeal": "A party seeks further appellate review of a decree made in a civil proceeding.",
+        "underlying_decision_confirmed": "The appellate court confirms the trial court’s decision on the matters in dispute.",
+        "variation_due_to_concession_consent_or_withdrawal": "Any change in the appellate decree results from a party’s concession, the parties’ consent, or withdrawal of part of the subject matter, rather than adjudication on the merits.",
+        "appellate_decree_is_one_of_affirmance": "The appellate decree is characterized as affirming the trial court’s decision."
+      },
+      "definition": "If the appellate court otherwise confirms the decision in dispute and the only change results from concession, consent, or withdrawal rather than merits adjudication, the decree remains one of affirmance."
+    }
+  ],
+  "seconds": 77.6
+}

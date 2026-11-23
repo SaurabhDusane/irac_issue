@@ -1,0 +1,103 @@
+{
+  "doc_id": "1827303",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21315,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3195,
+    "prompt_tokens": 5533,
+    "total_tokens": 8728,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A determination of a vital issue in an earlier suit between the same parties may bar its relitigation when the suit was dismissed because the claim was satisfied during its pendency rather than for a defect affecting maintainability.",
+      "material_facts": [
+        "In an earlier suit between the same parties, the tenant disputed the claimant’s ownership on the ground that the property had been bought benami for another person.",
+        "The court decided that the claimant owned the property and was entitled to rent, and allowed the claimant to withdraw rent deposited by the tenant during the suit.",
+        "The earlier suit was formally dismissed because the tenant had deposited the arrears claimed during the proceedings.",
+        "The tenant did not appeal the ownership determination and later challenged the claimant’s title again in a subsequent eviction suit."
+      ],
+      "conclusion": "The earlier determination of ownership was final and barred the tenant from relitigating the claimant’s title.",
+      "legal_principle": "Section 11 of the Code of Civil Procedure bars retrial of an issue directly and substantially in issue between the same parties that was heard and finally decided. A finding on a vital issue can operate as res judicata where the earlier claim ended because its cause of action was extinguished or otherwise satisfied, rather than because the suit was not maintainable. The principle in Midnapur Zamindari Company v. Naresh Narayan Roy (AIR 1922 PC 241) concerns an adverse finding that was unnecessary to a party’s success on an alternative ground; it does not prevent preclusion where the earlier decision on the vital issue formed part of a judgment effectively in that party’s favour.",
+      "rule": {
+        "if": "later_suit_between_same_parties and (vital_issue_directly_and_substantially_in_issue and vital_issue_decided_finally) and prior_suit_ended_because_claim_was_satisfied",
+        "then": "vital_issue_barred_from_relitigation"
+      },
+      "predicates": {
+        "later_suit_between_same_parties": "A later proceeding is brought between the same parties as an earlier proceeding.",
+        "vital_issue_directly_and_substantially_in_issue": "The issue in the later proceeding was directly and substantially contested in the earlier proceeding.",
+        "vital_issue_decided_finally": "The earlier court finally decided the vital issue after hearing the parties.",
+        "prior_suit_ended_because_claim_was_satisfied": "The earlier suit ended because the claim was satisfied or its cause of action otherwise ceased during the proceedings, rather than because the suit was not maintainable."
+      },
+      "definition": "When the same parties bring a later suit after a vital issue was finally decided in an earlier suit that ended because the claim was satisfied, that issue cannot be litigated again."
+    },
+    {
+      "legal_issue": "A party alleging that a written instrument does not record the real transaction must prove the alternative transaction alleged by that party.",
+      "material_facts": [
+        "The deed named the claimant as transferee and recited that the claimant paid the sale consideration to the transferor.",
+        "The tenant alleged that the claimant was only a name-lender and that another person was the real purchaser.",
+        "The trial court and first appellate court found that the claimant was the real transferee.",
+        "The tenant relied on evidence that the alleged real purchaser had money and that the claimant lacked sufficient funds, but the witnesses to the transaction maintained that the claimant paid the consideration."
+      ],
+      "conclusion": "The tenant bore the burden of proving that the transaction was different from the one recorded in the deed; the claimant did not have to prove independently that the deed’s recitals were true.",
+      "legal_principle": "Sections 91 and 92 of the Evidence Act require a written instrument to be used to prove its terms and generally prohibit evidence contradicting or varying those terms, subject to proof of facts that invalidate the instrument. A party asserting that the apparent transaction is not the real one bears the burden of proving the transaction asserted. Section 106 does not shift that burden to the party relying on the apparent terms merely because the other party asserts that the consideration came from a person with special knowledge of the transaction.",
+      "rule": {
+        "if": "property_rights_proceeding and written_instrument_records_transaction and opposing_party_alleges_instrument_does_not_show_real_transaction",
+        "then": "party_alleging_different_transaction_bears_burden_of_proof"
+      },
+      "predicates": {
+        "property_rights_proceeding": "The proceeding concerns a party’s rights in property under a written instrument.",
+        "written_instrument_records_transaction": "A written instrument records the transaction relied on by one party.",
+        "opposing_party_alleges_instrument_does_not_show_real_transaction": "The opposing party asserts that the instrument’s apparent transaction differs from the real transaction."
+      },
+      "definition": "In a property-rights proceeding, when an instrument records the transaction relied on and the opposing party alleges it is not the real transaction, that opposing party must prove the alternative transaction."
+    },
+    {
+      "legal_issue": "A purchaser’s receipt of financial help from another person does not, by itself, make a sale benami where the sale consideration was paid to the transferor by the named purchaser.",
+      "material_facts": [
+        "The sale deed was executed after the prohibition on benami transactions had come into force.",
+        "The deed recited that the named purchaser paid the sale consideration to the transferor, and the witnesses supported that account.",
+        "Evidence that the purchaser’s father had sufficient funds and that the purchaser lacked sufficient funds could support an inference that the father helped the purchaser raise the money.",
+        "The tenant relied on that evidence to contend that the father was the real purchaser, but the evidence did not establish that the consideration was paid or provided to the transferor by the father instead of the named purchaser."
+      ],
+      "conclusion": "The alleged financial assistance from the purchaser’s father did not make the sale benami, and the deed was not void on that basis.",
+      "legal_principle": "Section 2(a) of the Benami Transaction (Prohibition) Act, 1988 defines a benami transaction by reference to property transferred to one person for consideration paid or provided by another. “Provided” refers to consideration provided for the transfer where it was not paid; it does not refer merely to the source from which the named purchaser obtained funds to pay the seller. Section 3(1) prohibits benami transactions, and the Act applies prospectively to transactions occurring after it came into force, as held in R. Rajagopal Reddy v. Padmini Chandrasekharan (1995) 2 SCC 630.",
+      "rule": {
+        "if": "sale_transaction and transaction_after_benami_prohibition_began and deed_recites_named_buyer_paid_seller and another_person_helped_named_buyer_raise_funds",
+        "then": "sale_not_benami_merely_because_another_person_helped_fund_purchase"
+      },
+      "predicates": {
+        "sale_transaction": "The transaction transfers property by sale.",
+        "transaction_after_benami_prohibition_began": "The sale took place after the prohibition on benami transactions began to apply.",
+        "deed_recites_named_buyer_paid_seller": "The deed records that the named purchaser paid the consideration to the seller.",
+        "another_person_helped_named_buyer_raise_funds": "Another person assisted the named purchaser in obtaining funds for the purchase."
+      },
+      "definition": "A post-prohibition sale is not benami merely because another person helped the named purchaser raise the funds, when the deed records that the named purchaser paid the seller."
+    },
+    {
+      "legal_issue": "A case need not be remanded for reconsideration of a factual ground for eviction when concurrent factual findings support that ground and no formulated question of law challenges those findings.",
+      "material_facts": [
+        "The trial court and first appellate court both found that the claimant bona fide required the building for the claimant’s own business.",
+        "The second appeal did not formulate a question of law concerning that finding.",
+        "The matter reached the Supreme Court after the High Court reversed the lower courts’ decision on the claimant’s title."
+      ],
+      "conclusion": "A remand was unnecessary, and the trial court’s eviction decree as confirmed by the first appellate court was restored.",
+      "legal_principle": "Where concurrent factual findings support a ground for eviction and no formulated question of law in the second appeal concerns those findings, there is no purpose in remanding the case to reconsider that ground.",
+      "rule": {
+        "if": "second_appeal_in_eviction_case and concurrent_factual_findings_support_bona_fide_need and no_formulated_law_question_challenges_need_finding",
+        "then": "remand_for_reconsideration_of_need_is_unnecessary"
+      },
+      "predicates": {
+        "second_appeal_in_eviction_case": "The matter is a second appeal in an eviction proceeding.",
+        "concurrent_factual_findings_support_bona_fide_need": "The trial court and first appellate court both found that the claimant had a bona fide need for the premises.",
+        "no_formulated_law_question_challenges_need_finding": "No question of law formulated in the second appeal challenges the finding on the claimant’s need."
+      },
+      "definition": "In a second appeal in an eviction case, remand for reconsideration of need is unnecessary when both lower courts found bona fide need and no formulated question of law challenges that finding."
+    }
+  ],
+  "seconds": 21.2
+}

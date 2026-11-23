@@ -1,0 +1,100 @@
+{
+  "doc_id": "569555",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 62153,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3391,
+    "prompt_tokens": 15834,
+    "total_tokens": 19225,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A revisional court may interfere with a factual finding when no evidence supports it.",
+      "material_facts": [
+        "A landlord obtained a trial-court eviction decree, which an appellate court set aside after finding that the landlord had acquiesced in a subletting.",
+        "The landlord challenged that finding in revision, and the High Court concluded that no evidence supported it."
+      ],
+      "conclusion": "The High Court was competent under section 35 of the Delhi and Ajmer Rent Control Act, 1952 to interfere with the finding because it was unsupported by evidence.",
+      "legal_principle": "Under section 35 of the Delhi and Ajmer Rent Control Act, 1952, the High Court may satisfy itself that the lower court’s decision was according to law. Although Hari Shankar v. Rao Girdhari Lal Choudhary bars revisional reappraisal of a factual finding supported by evidence, a finding without evidentiary support is not a decision according to law: Pooran Chand v. Motilal. Acquiescence is a legal inference from facts: Lala Beni Ram v. Kundan Lal.",
+      "rule": {
+        "if": "rent_control_revision and appellate_finding_has_no_evidentiary_support",
+        "then": "revisional_interference_is_permitted"
+      },
+      "predicates": {
+        "rent_control_revision": "A party sought revision of a decision in a rent-control proceeding.",
+        "appellate_finding_has_no_evidentiary_support": "The appellate court made a factual finding for which the record contained no supporting evidence."
+      },
+      "definition": "When a party seeks revision in a rent-control proceeding and the challenged appellate finding has no evidentiary support, revisional interference is permitted."
+    },
+    {
+      "legal_issue": "Knowledge that another person occupies premises does not, without evidence that the person occupies as a subtenant, establish a landlord’s acquiescence in the subletting.",
+      "material_facts": [
+        "The occupant had initially worked in the premises in connection with the tenant’s activities and had an arrangement under which office accommodation was provided by the tenant.",
+        "After the tenant moved to other premises, the occupant remained and conducted business there, including work for the tenant, and later used the premises solely for the occupant’s own purposes.",
+        "The evidence showed that the landlord knew the occupant was present, but did not establish that the landlord knew the occupant was there as a subtenant.",
+        "The landlord did not accept rent after the occupant began using the premises solely for the occupant’s own purposes."
+      ],
+      "conclusion": "The appellate finding of acquiescence was unsupported by evidence, and the occupant had not established the landlord’s acquiescence in the subletting.",
+      "legal_principle": "Acquiescence is a legal inference from the facts, not an inference that necessarily follows from knowledge that someone is in possession: Lala Beni Ram v. Kundan Lal. Under section 35 of the Delhi and Ajmer Rent Control Act, 1952, the High Court may interfere in revision where an acquiescence finding has no evidence to support it; this is consistent with Pooran Chand v. Motilal and the distinction drawn in Hari Shankar v. Rao Girdhari Lal Choudhary.",
+      "rule": {
+        "if": "rent_control_eviction_case and landlord_knew_occupant_was_present and (occupant_used_premises_for_tenant_work or landlord_lacked_evidence_of_knowledge_of_subtenancy) and landlord_received_no_rent_after_occupant_used_premises_independently",
+        "then": "landlord_acquiescence_in_subletting_is_not_established"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "A landlord sought eviction in a rent-control proceeding on the ground of subletting.",
+        "landlord_knew_occupant_was_present": "The landlord knew that a person other than the tenant was occupying the premises.",
+        "occupant_used_premises_for_tenant_work": "The occupant used the premises for work connected with the tenant’s activities.",
+        "landlord_lacked_evidence_of_knowledge_of_subtenancy": "The evidence did not show that the landlord knew the occupant was in possession as a subtenant.",
+        "landlord_received_no_rent_after_occupant_used_premises_independently": "The landlord did not accept rent after the occupant began using the premises solely for the occupant’s own purposes."
+      },
+      "definition": "In an eviction case based on subletting, the stated facts do not establish acquiescence where the landlord knew of the occupant’s presence but the evidence did not show knowledge of the subtenancy, the occupant had used the premises for the tenant’s work, and the landlord received no rent after independent use began."
+    },
+    {
+      "legal_issue": "A co-defendant’s failure to appeal does not take away another defendant’s right to appeal a joint eviction decree.",
+      "material_facts": [
+        "The trial court passed one eviction decree against both the tenant and the subtenant.",
+        "The subtenant appealed, but the tenant did not.",
+        "The appellate court set aside the joint decree in deciding the subtenant’s appeal."
+      ],
+      "conclusion": "The subtenant could challenge the joint decree and obtain relief despite the tenant’s failure to appeal.",
+      "legal_principle": "A defendant against whom a joint decree has been passed has an independent right to appeal from that decree; the other defendant’s decision not to appeal does not extinguish that right. The appeal in this case was brought under section 34 of the Delhi and Ajmer Rent Control Act, 1952.",
+      "rule": {
+        "if": "joint_eviction_decree_against_tenant_and_subtenant and subtenant_appealed and tenant_did_not_appeal",
+        "then": "subtenant_may_challenge_joint_decree"
+      },
+      "predicates": {
+        "joint_eviction_decree_against_tenant_and_subtenant": "A court passed one eviction decree against a tenant and a subtenant together.",
+        "subtenant_appealed": "The subtenant appealed from the joint eviction decree.",
+        "tenant_did_not_appeal": "The tenant did not appeal from the joint eviction decree."
+      },
+      "definition": "If a joint eviction decree is passed against a tenant and subtenant, the subtenant appeals, and the tenant does not, the subtenant may still challenge the joint decree."
+    },
+    {
+      "legal_issue": "A pending eviction proceeding under a repealed rent-control law continues under that law, subject to modifications or clarifications in the replacement law, but not to its creation of entirely new rights or liabilities.",
+      "material_facts": [
+        "An eviction suit was brought under the Delhi and Ajmer Rent Control Act, 1952, and remained pending in revision when the Delhi Rent Control Act, 1958 came into force.",
+        "The alleged subletting had begun before the 1952 Act came into force.",
+        "The replacement Act changed the treatment of subletting, including by creating different rights and liabilities for sublettings occurring at different times."
+      ],
+      "conclusion": "The pending revision was governed by the 1952 Act, with any slight modifications or clarifications in the 1958 Act applied, but the replacement Act’s creation of new rights or liabilities did not override the earlier Act. The landlord could rely on the earlier Act’s eviction exception, and the appeal was dismissed.",
+      "legal_principle": "Section 57(1) and (2) of the Delhi Rent Control Act, 1958 repealed the earlier Act but saved pending suits and proceedings for disposal under its provisions. The first proviso to section 57(2), requiring the court to have regard to the replacement Act, must be read harmoniously with that saving: it permits application of slight modifications or clarifications, not provisions creating entirely new rights or liabilities. The Court relied on the ordinary meaning of “have regard to” discussed in Mysore State Electricity Board v. The Bangalore Woollen, Cotton and Silk Mills Ltd. and Ryots of Garbandho v. Zamindar of Parlakimedi, and agreed with the approach in Jhabar Mal Chokhani v. Jinendra Parshad and related Punjab decisions.",
+      "rule": {
+        "if": "eviction_proceeding_under_repealed_rent_law_pending_when_replacement_law_began and replacement_law_modified_or_clarified_prior_rules and (replacement_law_created_new_rights_or_liabilities or prior_law_provided_the_applicable_eviction_ground)",
+        "then": "pending_eviction_proceeding_is_decided_under_prior_law_subject_to_modifications_and_clarifications"
+      },
+      "predicates": {
+        "eviction_proceeding_under_repealed_rent_law_pending_when_replacement_law_began": "An eviction proceeding under an earlier rent-control law was pending when a replacement rent-control law began.",
+        "replacement_law_modified_or_clarified_prior_rules": "The replacement law modified or clarified rules contained in the earlier law.",
+        "replacement_law_created_new_rights_or_liabilities": "The replacement law created rights or liabilities that did not exist under the earlier law.",
+        "prior_law_provided_the_applicable_eviction_ground": "The earlier law provided the eviction ground relied on in the pending proceeding."
+      },
+      "definition": "When an eviction proceeding under an earlier rent-control law remains pending as a replacement law begins, the proceeding is decided under the earlier law, taking account of modifications and clarifications but not allowing newly created rights or liabilities to override it."
+    }
+  ],
+  "seconds": 21.1
+}

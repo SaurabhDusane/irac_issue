@@ -1,0 +1,68 @@
+{
+  "doc_id": "18881531",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21685,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2825,
+    "prompt_tokens": 5529,
+    "total_tokens": 8354,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The power to do complete justice permits quashing criminal proceedings for a non-compoundable offence on a voluntary compromise, subject to limits where conviction has been entered.",
+      "material_facts": [
+        "The accused had been convicted, and the conviction was under appeal when the compromise was presented.",
+        "The complainant supported the request to quash and the Court accepted that the compromise was voluntary.",
+        "The offence was treated as predominantly private in nature, and the Court considered the circumstances and conduct of the parties."
+      ],
+      "conclusion": "The Court held that non-compoundability does not prevent the exercise of the power to quash on a voluntary compromise. In a post-conviction matter, that power may be exercised while an appeal remains pending, but not after all legal remedies have been exhausted.",
+      "legal_principle": "Section 320 of the Code of Criminal Procedure does not bar the powers under Article 142 of the Constitution or Section 482 of the Code of Criminal Procedure. Under Ramgopal v. State of Madhya Pradesh, proceedings involving non-heinous offences or offences predominantly private in nature may be quashed, including at the appellate stage, after considering the offence’s nature and effect, injury, voluntariness of the compromise, and the accused’s conduct. Under Supreme Court Bar Association v. Union of India, Article 142 must be exercised consistently with relevant statutory provisions rather than by disregarding them. For post-conviction relief, an appeal must remain pending; once all legal remedies have been exhausted, quashing on compromise is impermissible.",
+      "rule": {
+        "if": "non_compoundable_criminal_case and non_heinous_or_private_offence and voluntary_compromise and proceedings_pending and (not postconviction_case or appeal_pending_after_conviction)",
+        "then": "criminal_proceedings_may_be_quashed_in_the_interests_of_complete_justice"
+      },
+      "predicates": {
+        "non_compoundable_criminal_case": "The criminal offence is not legally compoundable.",
+        "non_heinous_or_private_offence": "The offence is non-heinous or is predominantly private in nature.",
+        "voluntary_compromise": "The victim or complainant freely agrees to settle with the accused, without compulsion.",
+        "proceedings_pending": "A court proceeding concerning the criminal case remains pending.",
+        "postconviction_case": "The accused has been convicted before seeking relief on the compromise.",
+        "appeal_pending_after_conviction": "An appeal against the conviction remains pending before a court."
+      },
+      "definition": "When a pending case concerns a non-heinous or predominantly private non-compoundable offence and the compromise is voluntary, proceedings may be quashed, including after conviction only while an appeal remains pending."
+    },
+    {
+      "legal_issue": "Proceedings for an offence under a special protective law may be quashed on a voluntary compromise when the offence is private or civil in nature, is not motivated by the victim’s protected status, or continuation would be an abuse of process, and quashing would not defeat the law’s protective purpose.",
+      "material_facts": [
+        "The complainant belonged to a Scheduled Caste, and the accused had been convicted of insulting her with reference to her caste.",
+        "The parties had an existing property dispute, and the Court found that the alleged abuse arose from that dispute rather than from the complainant’s caste.",
+        "The parties lived in adjoining houses; the accused was also from a relatively weaker or backward section and was not in a better social or economic position than the complainant.",
+        "The complainant freely agreed to the compromise, and the record disclosed no subsequent untoward incident or indication that the accused was a repeat offender.",
+        "The conviction was under appeal when the Court considered the compromise."
+      ],
+      "conclusion": "The Court held that the special statute did not bar quashing in these circumstances. It invoked Article 142 to quash the criminal proceedings and set aside the conviction and sentence.",
+      "legal_principle": "The special statute protects Scheduled Castes and Scheduled Tribes from caste-based indignity, humiliation, harassment, and atrocities, consistent with the safeguards in Articles 15, 17, and 21 of the Constitution. Nevertheless, Article 142 or Section 482 of the Code of Criminal Procedure may be used to quash proceedings under a special statute where the offence is primarily private or civil, was not committed on account of the victim’s caste, or continuation would be an abuse of process, provided the statute’s underlying objective would not be contravened or diminished. The Court applied Ramgopal v. State of Madhya Pradesh and the limits on Article 142 described in Supreme Court Bar Association v. Union of India. It also stressed careful scrutiny of voluntariness, particularly where the complainant belongs to a vulnerable community; any indication of coercion or force precludes relief.",
+      "rule": {
+        "if": "criminal_case_under_special_protective_law and voluntary_compromise and (private_or_civil_origin or not_motivated_by_protected_status or continuation_is_abusive) and protective_purpose_not_diminished and (not postconviction_case or appeal_pending_after_conviction)",
+        "then": "proceedings_under_the_special_law_may_be_quashed_in_the_interests_of_complete_justice"
+      },
+      "predicates": {
+        "criminal_case_under_special_protective_law": "The criminal proceeding concerns an offence under a law enacted to protect a vulnerable group from specified forms of abuse.",
+        "voluntary_compromise": "The victim or complainant freely agrees to settle with the accused, without compulsion or force.",
+        "private_or_civil_origin": "The incident arose primarily from a private or civil dispute between the people involved.",
+        "motivated_by_protected_status": "The alleged offence was committed because of the victim’s membership in the protected group.",
+        "continuation_is_abusive": "Continuing the criminal proceeding would amount to an abuse of process.",
+        "protective_purpose_not_diminished": "Quashing the proceeding would not undermine the protective purpose of the law.",
+        "postconviction_case": "The accused has been convicted before seeking relief on the compromise.",
+        "appeal_pending_after_conviction": "An appeal against the conviction remains pending before a court."
+      },
+      "definition": "A proceeding under a special protective law may be quashed when the compromise is voluntary, at least one stated feature of the offence or proceeding supports quashing, the law’s protective purpose would remain intact, and any post-conviction appeal is still pending."
+    }
+  ],
+  "seconds": 77.4
+}

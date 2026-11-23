@@ -1,0 +1,186 @@
+{
+  "doc_id": "1048134",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 45068,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4777,
+    "prompt_tokens": 11203,
+    "total_tokens": 15980,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A criminal appeal involving a death sentence may raise a relevant plea that was not considered by the High Court, and there is no absolute bar on the Supreme Court considering such a plea.",
+      "material_facts": [
+        "The appeals by special leave involved death sentences.",
+        "The defence relied on the prosecution’s failure to examine three listed witnesses; that contention had been raised at trial but was not urged before the High Court.",
+        "The Supreme Court considered the contention and rejected it on its merits in the circumstances of the case."
+      ],
+      "conclusion": "The Court held that relevant pleas of fact or law are not automatically excluded merely because they were not raised before the High Court; a plea raised there but left undecided entitles the appellant to a decision, and no hard-and-fast rule bars consideration of other appropriate pleas. The particular omitted-witness contention failed on its merits.",
+      "legal_principle": "Under Article 136 of the Constitution, there is no absolute procedural bar against considering a relevant and material plea of fact or law in a criminal appeal involving a death sentence. If such a plea was urged before the High Court and not considered, the appellant is entitled to a decision on it. The Court also considered the solemn scrutiny required in death-sentence proceedings under sections 374 and 375 of the Code of Criminal Procedure.",
+      "rule": {
+        "if": "death_penalty_special_leave_appeal and (record_based_material_plea or plea_urged_but_not_decided)",
+        "then": "court_may_consider_omitted_plea"
+      },
+      "predicates": {
+        "death_penalty_special_leave_appeal": "The case is a criminal appeal by special leave involving a death sentence.",
+        "record_based_material_plea": "A relevant and material factual or legal plea can be argued on the existing record without taking further evidence.",
+        "plea_urged_but_not_decided": "The appellant urged the plea before the High Court, but the High Court did not decide it.",
+        "court_may_consider_omitted_plea": "The Supreme Court may consider the omitted plea."
+      },
+      "definition": "When a death-sentence special-leave appeal presents a material plea on the record, or a plea left undecided after being urged before the High Court, the Supreme Court may consider it."
+    },
+    {
+      "legal_issue": "A High Court deciding whether to confirm a death sentence must independently examine the case and carefully consider the relevant evidence, circumstances, and arguments.",
+      "material_facts": [
+        "The trial court imposed death sentences, which were referred to the High Court for confirmation.",
+        "The High Court considered the evidence, the arguments for the accused, the evidentiary infirmities, and the enmity between the factions.",
+        "The Supreme Court found that the High Court had carefully examined the case and had not overlooked the relevant points."
+      ],
+      "conclusion": "The Court held that the High Court had discharged its duty in the death-sentence proceedings and rejected the challenge to the adequacy of its review.",
+      "legal_principle": "Sections 374 and 375 of the Code of Criminal Procedure require the High Court to consider a death-sentence reference for itself, with power to take additional evidence if necessary. Jumman v. State of Punjab, AIR 1957 SC 469, was relied on for the independent and careful scrutiny required in such proceedings.",
+      "rule": {
+        "if": "death_sentence_confirmation_proceeding and high_court_examined_evidence_and_material_arguments",
+        "then": "high_court_review_is_adequate"
+      },
+      "predicates": {
+        "death_sentence_confirmation_proceeding": "The proceeding requires a High Court to decide whether a trial court’s death sentence should be confirmed.",
+        "high_court_examined_evidence_and_material_arguments": "The High Court independently examined the evidence, relevant circumstances, and material arguments raised for the accused.",
+        "high_court_review_is_adequate": "The High Court has fulfilled its duty of review."
+      },
+      "definition": "A death-sentence confirmation review is adequate when the High Court independently examines the evidence, circumstances, and material arguments."
+    },
+    {
+      "legal_issue": "The prosecution is not subject to an absolute rule requiring it to examine every witness it has cited.",
+      "material_facts": [
+        "The prosecution did not examine three listed witnesses.",
+        "The prosecutor represented that two witnesses had been won over and that the third was unable to give a coherent account after suffering severe mental shock.",
+        "The trial court found that the witnesses’ evidence was not essential to a just decision, rejected the defence request to call them, and the defence did not call them itself."
+      ],
+      "conclusion": "The Court held that it would be unsound to require the prosecution in every case to examine every cited witness, particularly where a witness is not material or is believed to have been won over or terrorised; the omission was not a ground for relief in this case.",
+      "legal_principle": "The prosecution must place before the court the material evidence necessary to unfold its case, but there is no general rule that every cited witness must be examined, including a witness whose evidence is not material or who is believed to have been won over or terrorised. Section 540 of the Code of Criminal Procedure permits the court to call a witness when necessary in the interests of justice.",
+      "rule": {
+        "if": "criminal_trial and prosecution_omits_cited_witness and (witness_not_material or prosecutor_bona_fide_believes_witness_won_over_or_terrorised) and defence_can_seek_witness_examination",
+        "then": "failure_to_examine_witness_is_not_automatically_improper"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial.",
+        "prosecution_omits_cited_witness": "The prosecution does not examine a witness it had cited.",
+        "witness_not_material": "The omitted witness’s evidence is not material to the just decision of the case.",
+        "prosecutor_bona_fide_believes_witness_won_over_or_terrorised": "The prosecutor honestly and in good faith believes that the witness has been won over or terrorised.",
+        "defence_can_seek_witness_examination": "The defence may seek to call the witness, and the court may consider doing so in the interests of justice.",
+        "failure_to_examine_witness_is_not_automatically_improper": "The prosecution’s failure to examine the witness is not automatically improper."
+      },
+      "definition": "In a criminal trial, omitting a cited witness is not automatically improper when the witness is immaterial or is honestly believed to have been won over or terrorised, especially where examination can be sought through the defence or the court."
+    },
+    {
+      "legal_issue": "Evidence from partisan or interested witnesses in a factional murder case cannot be rejected solely because of their partisanship.",
+      "material_facts": [
+        "The prosecution witnesses were mostly associated with the faction of the victims.",
+        "The case concerned murders arising from rivalry between village factions.",
+        "The courts assessed the witnesses’ evidence for discrepancies, genuineness, and probability rather than rejecting it merely because it was partisan."
+      ],
+      "conclusion": "The Court held that partisan evidence requires cautious assessment but cannot be mechanically rejected solely on the ground of partisanship.",
+      "legal_principle": "The court must assess whether partisan or interested testimony is consistent, genuine, and probable. Its partisan character alone is not a sufficient basis for rejection, because doing so in factional murder cases may lead to a failure of justice.",
+      "rule": {
+        "if": "factional_murder_case and prosecution_witnesses_are_partisan",
+        "then": "partisan_evidence_not_rejected_on_partisanship_alone"
+      },
+      "predicates": {
+        "factional_murder_case": "The alleged murders arose from rivalry between opposing factions.",
+        "prosecution_witnesses_are_partisan": "One or more prosecution witnesses are associated with a faction involved in the dispute.",
+        "partisan_evidence_not_rejected_on_partisanship_alone": "The witnesses’ evidence is not rejected solely because the witnesses are partisan."
+      },
+      "definition": "In a factional murder case, partisan testimony must be assessed on its merits and cannot be rejected only because of the witnesses’ factional interests."
+    },
+    {
+      "legal_issue": "A court may use a consistent-account threshold involving multiple witnesses when assessing evidence in a complex case involving many accused persons and victims.",
+      "material_facts": [
+        "The trial involved a large number of accused persons and victims.",
+        "The High Court applied a test requiring a consistent account from at least four witnesses to sustain a conviction against an accused.",
+        "The High Court acquitted accused persons whose cases did not meet that test, and the Supreme Court found the approach reasonable in the circumstances."
+      ],
+      "conclusion": "The Court held that applying the multiple-witness consistency test in this complex case was not irrational or unreasonable, although the quality of the evidence remains more important than the number of witnesses.",
+      "legal_principle": "The Indian Evidence Act does not make witness numbers a substitute for assessing the quality and trustworthiness of evidence; nevertheless, in a case involving many offenders and victims, a court may use a consistent-account test requiring several witnesses as a practical aid. The Court did not treat the test as an inflexible rule for all cases.",
+      "rule": {
+        "if": "complex_criminal_trial_with_many_accused_and_victims and court_uses_multiple_witness_consistency_test",
+        "then": "multiple_witness_test_is_permissible"
+      },
+      "predicates": {
+        "complex_criminal_trial_with_many_accused_and_victims": "The criminal trial concerns an incident involving many accused persons and many victims.",
+        "court_uses_multiple_witness_consistency_test": "The court requires consistent accounts from multiple witnesses before sustaining a conviction against an accused.",
+        "multiple_witness_test_is_permissible": "Using the multiple-witness consistency test is permissible in the circumstances."
+      },
+      "definition": "In a complex trial involving many accused persons and victims, a court may use consistent accounts from multiple witnesses as a practical test, while still assessing the quality of the evidence."
+    },
+    {
+      "legal_issue": "Membership in an unlawful assembly with the required common object may establish liability for an offence committed by another member without proof of a personal overt act by every accused.",
+      "material_facts": [
+        "The accused were alleged to have joined an armed group that shared the object of attacking the victims’ family.",
+        "The evidence accepted by the High Court established that the group assembled with that common object and that members committed the murders in furtherance of it.",
+        "The evidence did not assign a specific overt act to every accused."
+      ],
+      "conclusion": "The Court held that proof of an individual overt act is not invariably required to establish membership or liability under section 149, and that the earlier observations in Baladin v. State of Uttar Pradesh must be read in the context of that case.",
+      "legal_principle": "Sections 141 and 142 of the Indian Penal Code define an unlawful assembly and membership in it; section 149 makes every member liable when an offence is committed by a member in prosecution of the assembly’s common object, or is an offence the members knew was likely to be committed in prosecution of that object. The liability under section 149 is vicarious and does not require every member personally to commit the offence. Baladin v. State of Uttar Pradesh, AIR 1956 SC 181, was explained as addressing an assembly that included passive onlookers, not as establishing a universal overt-act requirement.",
+      "rule": {
+        "if": "unlawful_assembly_prosecution and accused_intentionally_joins_or_continues_assembly_aware_of_its_unlawful_character and accused_shares_common_object and offence_committed_in_prosecution_of_object_or_known_likely",
+        "then": "member_may_be_liable_without_personal_overt_act"
+      },
+      "predicates": {
+        "unlawful_assembly_prosecution": "The prosecution alleges that the accused was a member of an unlawful assembly.",
+        "accused_intentionally_joins_or_continues_assembly_aware_of_its_unlawful_character": "The accused intentionally joins or remains in the assembly while aware of facts that make it unlawful.",
+        "accused_shares_common_object": "The accused shares the assembly’s common object.",
+        "offence_committed_in_prosecution_of_object_or_known_likely": "A member commits the offence in prosecution of the common object, or the offence is one the members know is likely to be committed in prosecution of it.",
+        "member_may_be_liable_without_personal_overt_act": "The accused may be liable for the offence without proof of a personal overt act."
+      },
+      "definition": "A person who intentionally belongs to an unlawful assembly and shares its common object may be liable for an offence committed in furtherance of that object, even without a personal overt act."
+    },
+    {
+      "legal_issue": "A death sentence for murder committed in furtherance of an unlawful assembly’s common object is not categorically barred merely because the accused did not personally commit the killing.",
+      "material_facts": [
+        "The accused were convicted of murder with the aid of section 149 because members of their armed assembly committed five murders in furtherance of its common object.",
+        "Several accused carried firearms, and the courts relied on the circumstances and conduct of the assembly in imposing and confirming death sentences for those carrying firearms.",
+        "The Supreme Court held that the sentencing discretion had not been improperly exercised for the accused whose death sentences it confirmed."
+      ],
+      "conclusion": "The Court rejected a categorical rule limiting the death sentence to the person who personally committed the murder; whether death is justified depends on the facts and circumstances of the case. It upheld the distinction made for firearm-carrying members in this case, subject to the separate modification for three young accused.",
+      "legal_principle": "Section 302 read with section 149 of the Indian Penal Code permits conviction for murder based on membership in an unlawful assembly where the statutory conditions are met. There is no absolute rule that a death sentence may be imposed only on the accused who personally committed the killing; the sentence depends on the circumstances and the proper exercise of judicial discretion. Dalip Singh v. State of Punjab, [1954] SCR 145, concerned appellate enhancement of a sentence and was distinguished.",
+      "rule": {
+        "if": "murder_conviction_under_common_object_liability and murder_committed_by_assembly_member_in_furtherance_of_common_object and sentencing_court_considers_case_circumstances",
+        "then": "death_sentence_not_categorically_limited_to_personal_killer"
+      },
+      "predicates": {
+        "murder_conviction_under_common_object_liability": "The accused is convicted of murder through liability based on membership in an unlawful assembly.",
+        "murder_committed_by_assembly_member_in_furtherance_of_common_object": "An assembly member committed the murder in furtherance of the assembly’s common object.",
+        "sentencing_court_considers_case_circumstances": "The sentencing court considers the circumstances of the case when deciding the appropriate sentence.",
+        "death_sentence_not_categorically_limited_to_personal_killer": "A death sentence is not categorically barred merely because the accused did not personally kill the victim."
+      },
+      "definition": "When murder is committed by an assembly member in furtherance of the common object, the death sentence is not automatically unavailable to another convicted member who did not personally kill, and the sentence depends on the case circumstances."
+    },
+    {
+      "legal_issue": "A death sentence may be reduced where young accused joined an unlawful assembly under pressure and influence from their elders.",
+      "material_facts": [
+        "Three accused who had received death sentences were young adults.",
+        "The Court found that they had joined the unlawful assembly under pressure and influence from older members of their families.",
+        "The Court considered that modification of their sentences would meet the ends of justice."
+      ],
+      "conclusion": "The Court modified the death sentences of the three young accused to life imprisonment.",
+      "legal_principle": "In deciding sentence, the court may consider the accused’s age and the circumstances in which the unlawful assembly was formed, including whether young accused were compelled by the pressure and influence of elders. The Court applied that individualized sentencing assessment in this case.",
+      "rule": {
+        "if": "death_sentence_appeal and accused_is_young and accused_joined_assembly_under_pressure_from_elders",
+        "then": "death_sentence_reduced_to_life_imprisonment"
+      },
+      "predicates": {
+        "death_sentence_appeal": "The proceeding concerns an appeal against a death sentence.",
+        "accused_is_young": "The accused is a young person.",
+        "accused_joined_assembly_under_pressure_from_elders": "The accused joined the unlawful assembly under pressure and influence from elders.",
+        "death_sentence_reduced_to_life_imprisonment": "The death sentence is reduced to life imprisonment."
+      },
+      "definition": "In an appeal against a death sentence, a young accused’s participation under pressure from elders may result in the sentence being reduced to life imprisonment."
+    }
+  ],
+  "seconds": 88.0
+}

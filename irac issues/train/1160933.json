@@ -1,0 +1,133 @@
+{
+  "doc_id": "1160933",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 6949,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3152,
+    "prompt_tokens": 2326,
+    "total_tokens": 5478,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Lands found to have equal value should be valued uniformly for compensation.",
+      "material_facts": [
+        "The High Court found that the acquired lands were of equal value and that classification was unwarranted.",
+        "The State did not seriously dispute in the High Court that all the lands were of equal value."
+      ],
+      "conclusion": "The Court accepted the finding that compensation should be determined at a uniform rate for all the lands.",
+      "legal_principle": "Where the evidence supports a finding that acquired parcels have equal value, compensation may be determined uniformly. The Court accepted the High Court's finding on this record.",
+      "rule": {
+        "if": "compensation_appeal and parcels_found_equal_in_value",
+        "then": "compensation_determined_at_a_uniform_rate"
+      },
+      "predicates": {
+        "compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "parcels_found_equal_in_value": "The court found that the acquired parcels were equal in value."
+      },
+      "definition": "When a compensation appeal concerns parcels found equal in value, the output is a uniform compensation rate."
+    },
+    {
+      "legal_issue": "The claimants retain the burden of proving market value even when the acquiring authority fails to present evidence or effectively challenge witnesses.",
+      "material_facts": [
+        "The claimants sought increased compensation, while the acquiring officer and the State's counsel had been criticized for failing to adduce evidence or effectively cross-examine witnesses.",
+        "The Court considered the valuation evidence and held that the claimants' burden remained applicable."
+      ],
+      "conclusion": "The burden of proving the market value prevailing on the notification date remained on the claimants, and the court had to scrutinize the evidence carefully to determine just compensation.",
+      "legal_principle": "The burden of proving market value on the relevant notification date rests on the claimants. The court must carefully scrutinize the evidence despite lapses by the acquiring officer or the State's counsel. A genuine sale deed's stated consideration is presumed correct; a sale deed whose genuineness is doubted cannot be relied on.",
+      "rule": {
+        "if": "compensation_appeal and claimants_seek_higher_market_value",
+        "then": "claimants_retain_the_market_value_proof_burden"
+      },
+      "predicates": {
+        "compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "claimants_seek_higher_market_value": "The claimants seek compensation based on a higher market value."
+      },
+      "definition": "When claimants seek a higher market value in a compensation appeal, they retain the burden of proving that value."
+    },
+    {
+      "legal_issue": "Market value must be assessed from reliable evidence of what a prudent purchaser would pay in the open market, rather than from unrepresentative transactions or unsupported assumptions.",
+      "material_facts": [
+        "The sale deeds showed a wide range of prices and mostly concerned small parcels.",
+        "The sale involving a larger area related to a claimant and included a transfer to his wife; the land abutted a national highway and did not have the same market value as the acquired land.",
+        "The acquiring officer used the highest rate reflected in a sale deed, and the High Court increased that rate based partly on claimants' oral evidence.",
+        "The acquired lands covered a large area, were used as agricultural land, and the record contained evidence of price fluctuations and the lands' situation."
+      ],
+      "conclusion": "The Court fixed market value at Rs. 35,000 per acre, treating the acquired land as agricultural land and assessing it on the totality of the evidence.",
+      "legal_principle": "The court must apply the established tests for determining market value and ask what a prudent purchaser would offer in an open market. A genuine sale deed may be relied on, but a deed that is not genuine or does not reflect the acquired land's market value is not a reliable measure. The court must not indulge in feats of imagination.",
+      "rule": {
+        "if": "compensation_appeal and (sale_evidence_unrepresentative or sale_genuineness_doubted) and agricultural_use_and_market_conditions_support_a_value",
+        "then": "compensation_fixed_on_supported_prudent_open_market_value"
+      },
+      "predicates": {
+        "compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "sale_evidence_unrepresentative": "The sale transactions differ from the acquired land in size, location, or other material respects and do not represent its market value.",
+        "sale_genuineness_doubted": "The court doubts whether a relied-on sale transaction was genuine or reflected the acquired land's market value.",
+        "agricultural_use_and_market_conditions_support_a_value": "The land's existing agricultural use and the evidence about market conditions support a market valuation."
+      },
+      "definition": "In a compensation appeal, when sale evidence is unrepresentative or its genuineness is doubted, the output is a compensation figure supported by the prudent open-market assessment of the land's use and market conditions."
+    },
+    {
+      "legal_issue": "Future use intended after acquisition cannot be considered in determining compensation.",
+      "material_facts": [
+        "The land was acquired for industrial development.",
+        "The acquired land was in actual use as agricultural land.",
+        "The District Court treated the land as having future potentiality because of the intended industrial development."
+      ],
+      "conclusion": "The Court held that future use after acquisition could not be considered and assessed the land as agricultural land.",
+      "legal_principle": "Section 24, clause fifthly, of the Land Acquisition Act, 1894 prohibits consideration of the future use to which land will be put after acquisition.",
+      "rule": {
+        "if": "compensation_valuation_proceeding and acquired_land_used_agriculturally and valuation_relies_on_post_acquisition_industrial_use",
+        "then": "future_post_acquisition_use_excluded_from_valuation"
+      },
+      "predicates": {
+        "compensation_valuation_proceeding": "The proceeding concerns valuation of land acquired for compensation.",
+        "acquired_land_used_agriculturally": "The land was actually used for agriculture when its value was assessed.",
+        "valuation_relies_on_post_acquisition_industrial_use": "The valuation relies on industrial use intended after the acquisition."
+      },
+      "definition": "When compensation is assessed for agricultural land and the valuation relies on intended industrial use after acquisition, that future use is excluded from the valuation."
+    },
+    {
+      "legal_issue": "The possibility that claimants may have to refund part of an award does not justify affirming compensation unsupported by the evidence.",
+      "material_facts": [
+        "The claimants argued that they should receive the compensation awarded by the High Court or the reference court because they would otherwise have to refund the difference.",
+        "The Court determined a lower amount as the proper compensation on the evidence."
+      ],
+      "conclusion": "The Court rejected the refund argument and held that it did not prevent the appellate court from fixing proper compensation.",
+      "legal_principle": "An appellate court must determine proper compensation on the evidence; the prospect that claimants may have to refund an excess award is not a ground for confirming an unsupported amount.",
+      "rule": {
+        "if": "compensation_appeal and claimants_seek_to_preserve_a_higher_award_to_avoid_refund",
+        "then": "refund_risk_does_not_preserve_an_unsupported_award"
+      },
+      "predicates": {
+        "compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "claimants_seek_to_preserve_a_higher_award_to_avoid_refund": "The claimants argue that a higher award should stand because reducing it would require them to refund money."
+      },
+      "definition": "When claimants seek to preserve a higher award in a compensation appeal to avoid a refund, the output is that refund risk does not preserve an unsupported award."
+    },
+    {
+      "legal_issue": "A beneficiary that has paid allottees less than the increased compensation may recover the proportionate increase from them.",
+      "material_facts": [
+        "Counsel stated that the acquired lands had been sold to beneficiaries at prices lower than the compensation determined.",
+        "The Court stated that if higher compensation was paid for the lands, the beneficiary would be entitled to recover the proportionate increase from the allottees."
+      ],
+      "conclusion": "If higher compensation was paid for the land, the beneficiary was entitled to recover the proportionate increase in compensation from the allottees.",
+      "legal_principle": "The Court stated that a beneficiary that has paid higher compensation for land may recover the proportionate increase from allottees who acquired the land at lower rates.",
+      "rule": {
+        "if": "compensation_appeal and land_sold_to_allottees_at_lower_rates and beneficiary_pays_increased_compensation",
+        "then": "beneficiary_entitled_to_recover_proportionate_increase_from_allottees"
+      },
+      "predicates": {
+        "compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "land_sold_to_allottees_at_lower_rates": "The beneficiary sold or allotted the land at rates lower than the compensation subsequently determined.",
+        "beneficiary_pays_increased_compensation": "The beneficiary pays increased compensation for the acquired land."
+      },
+      "definition": "When a beneficiary sold land to allottees at lower rates and later pays increased compensation, the output is entitlement to recover the proportionate increase from the allottees."
+    }
+  ],
+  "seconds": 18.9
+}

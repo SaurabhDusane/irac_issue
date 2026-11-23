@@ -1,0 +1,76 @@
+{
+  "doc_id": "150723892",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 52493,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2375,
+    "prompt_tokens": 12803,
+    "total_tokens": 15178,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Restitution is unavailable against a party that received no unjust benefit from the order said to have caused the loss.",
+      "material_facts": [
+        "The claimant sought the benefit of a tax-incentive scheme after a court order had prevented it from obtaining permission needed to complete its project on time.",
+        "The State opposed the order that restricted the grant of permission and challenged it in court.",
+        "The restrictive order was later set aside, but the State received no benefit as a result of it."
+      ],
+      "conclusion": "The doctrine of restitution could not be applied against the State because it had received no unjust benefit from the restrictive order.",
+      "legal_principle": "Restitution restores a party, so far as possible, from a benefit conferred by an erroneous decree or order; the obligation rests on the person or authority that received the unjust benefit. Section 144 of the Code of Civil Procedure recognizes a pre-existing principle of justice and equity. The Court relied on Lal Bhagwant Singh v. Sri Kishen Das, AIR 1953 SC 136, Binayak Swain v. Ramesh Chandra Panigrahi, AIR 1966 SC 948, and South Eastern Coalfields Ltd. v. State of M.P., (2003) 8 SCC 648.",
+      "rule": {
+        "if": "restitution_proceeding and not respondent_received_unjust_benefit",
+        "then": "restitution_unavailable"
+      },
+      "predicates": {
+        "restitution_proceeding": "A party seeks restoration of a loss said to have resulted from an order that was later reversed or set aside.",
+        "respondent_received_unjust_benefit": "The party against whom restitution is sought received an unjust benefit as a result of the order."
+      },
+      "definition": "When a party seeks restitution and the opposing party received no unjust benefit from the relevant order, restitution is unavailable."
+    },
+    {
+      "legal_issue": "The act-of-court principle does not provide relief merely because an erroneous court order caused prejudice and was later reversed.",
+      "material_facts": [
+        "A court order prevented the claimant from obtaining permission needed to complete its project within the time allowed under the incentive scheme.",
+        "The order was later set aside on a different interpretation of the governing law.",
+        "The reviewing court did not hold that the earlier order had been made per incuriam."
+      ],
+      "conclusion": "The act-of-court principle could not be invoked because the earlier order was merely erroneous and had not been held to be per incuriam.",
+      "legal_principle": "The maxim actus curiae neminem gravabit permits correction where a party suffers from an act of the court, including an order made per incuriam; it does not apply merely because a court made an error later corrected on appeal. The Court relied on A.R. Antulay v. R.S. Nayak, (1988) 2 SCC 602, and considered South Eastern Coalfields Ltd. v. State of M.P., (2003) 8 SCC 648.",
+      "rule": {
+        "if": "actus_curiae_relief_claim and order_was_merely_erroneous",
+        "then": "actus_curiae_relief_unavailable"
+      },
+      "predicates": {
+        "actus_curiae_relief_claim": "A party seeks relief on the ground that an act or order of a court caused it prejudice.",
+        "order_was_merely_erroneous": "The court order was later reversed or set aside as an error, without being held to have been made per incuriam."
+      },
+      "definition": "When a party seeks relief based on prejudice caused by a court order that was merely erroneous, the act-of-court principle does not provide that relief."
+    },
+    {
+      "legal_issue": "A court cannot use equitable adjustment to extend an exemption beyond the conditions of the scheme, which must be strictly construed.",
+      "material_facts": [
+        "The claimant sought a tax-incentive benefit under a scheme that required commercial production by an applicable deadline.",
+        "The claimant began commercial production after that deadline, and the Government had refused a further extension.",
+        "The High Court excluded the period during which a court order had impeded the project and directed adjustments to the incentive, although the State had not received a benefit from the order and the scheme did not authorize that equitable adjustment."
+      ],
+      "conclusion": "The claimant was not entitled to the incentive, and the High Court could not rewrite the scheme by extending the deadline or directing adjustments.",
+      "legal_principle": "An exemption or exception must be construed strictly, and a claimant must clearly establish that it falls within the exemption; ambiguity is resolved in favour of the State. Once the claimant is shown to fall within the exemption, its terms receive full effect. The Court relied on Union of India v. Wood Papers Ltd., (1990) 4 SCC 256, and Novopan India Ltd. v. Collector of Central Excise and Customs, (1994) Supp 3 SCC 606. It distinguished Bareilly Development Authority v. Methodist Church of India, (1988) Supp SCC 174, and Hitech Electrothermics & Hydro Power Ltd. v. State of Kerala, (2003) 2 SCC 716.",
+      "rule": {
+        "if": "tax_incentive_claim and production_after_applicable_deadline and not scheme_authorized_further_extension",
+        "then": "incentive_unavailable"
+      },
+      "predicates": {
+        "tax_incentive_claim": "An industrial unit seeks a tax incentive under a scheme whose benefit depends on satisfying stated eligibility conditions.",
+        "production_after_applicable_deadline": "The unit began commercial production after the deadline applicable to it under the scheme.",
+        "scheme_authorized_further_extension": "The scheme allowed a further extension of the applicable deadline in the circumstances relied on by the claimant."
+      },
+      "definition": "When a unit seeks a scheme-based tax incentive, begins production after its applicable deadline, and the scheme does not authorize a further extension, the incentive is unavailable."
+    }
+  ],
+  "seconds": 14.6
+}

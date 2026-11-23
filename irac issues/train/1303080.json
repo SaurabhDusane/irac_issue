@@ -1,0 +1,59 @@
+{
+  "doc_id": "1303080",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35392,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1809,
+    "prompt_tokens": 8897,
+    "total_tokens": 10706,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A beneficiary of a land acquisition with a direct or indirect interest in the land or compensation may qualify as a person interested in a compensation reference.",
+      "material_facts": [
+        "The state acquired land for the benefit of a security force controlled by the Union of India, at the Union’s request.",
+        "Landowners sought enhancement of compensation through references, and the Union sought to participate because the compensation amount would adversely affect its interests."
+      ],
+      "conclusion": "The Union of India was a person interested and was entitled to be impleaded in the compensation-reference proceedings.",
+      "legal_principle": "Section 18 of the Land Acquisition Act, 1894 uses an inclusive definition of a person interested, which must be liberally construed to include persons directly or indirectly interested in title to the land or the quantum of compensation. The Court relied on Himalayan Tiles and Marbles (P) Ltd. v. Francis Victor Countinho, Neelgangabai v. State of Karnataka, and Krishi Upaj Mandi Samiti v. Ashok Singhal. It distinguished Municipal Corporation of the City of Ahmedabad v. Chandulal Shamaldas Patel and overruled the contrary majority views in M/s Indo Swiss Time Ltd. v. Umrao and Kulbhushan Kumar and Company v. State of Punjab; it approved the minority view in Indo Swiss. The provisions of Order I Rule 10 CPC and Section 50(2) of the Act may be read harmoniously.",
+      "rule": {
+        "if": "land_acquisition_reference and acquisition_for_entity_benefit and compensation_amount_affects_entity_interest",
+        "then": "beneficiary_is_person_interested"
+      },
+      "predicates": {
+        "land_acquisition_reference": "Landowners sought judicial determination of compensation following a state land acquisition.",
+        "acquisition_for_entity_benefit": "The state acquired the land for the benefit of an entity that would use or control it.",
+        "compensation_amount_affects_entity_interest": "The amount of compensation would adversely affect the entity’s interests."
+      },
+      "definition": "When landowners seek judicial determination of compensation for land acquired for an entity’s benefit and the compensation amount affects that entity’s interests, the entity is a person interested."
+    },
+    {
+      "legal_issue": "A beneficiary excluded from a compensation-reference proceeding after its request to be joined was rejected may be joined and allowed to appeal the resulting compensation judgment.",
+      "material_facts": [
+        "The Union sought impleadment while the landowners’ compensation references were pending because the acquisition was for the benefit of a security force controlled by the Union.",
+        "The application for impleadment was rejected, and the compensation was later enhanced without the Union’s participation.",
+        "The rejection of impleadment deprived the Union of an opportunity to appeal the enhancement judgment."
+      ],
+      "conclusion": "The impleadment application was allowed, and the Union was entitled to appeal the judgment enhancing compensation.",
+      "legal_principle": "A person interested in the compensation determination may be impleaded under Order I Rule 10 CPC, read harmoniously with Section 50(2) of the Land Acquisition Act, 1894. Applying Himalayan Tiles and Marbles (P) Ltd. v. Francis Victor Countinho and the later decisions in Neelgangabai v. State of Karnataka and Krishi Upaj Mandi Samiti v. Ashok Singhal, the Court rejected the contrary approach in the majority view in M/s Indo Swiss Time Ltd. v. Umrao and in Kulbhushan Kumar and Company v. State of Punjab. Where rejection of impleadment has deprived an interested beneficiary of an opportunity to appeal the compensation judgment, impleadment and the opportunity to appeal should be allowed.",
+      "rule": {
+        "if": "land_acquisition_reference and beneficiary_is_person_interested and impleadment_denied and compensation_enhanced_without_beneficiary and appeal_opportunity_lost_due_to_exclusion",
+        "then": "impleadment_allowed_and_appeal_permitted"
+      },
+      "predicates": {
+        "land_acquisition_reference": "Landowners sought judicial determination of compensation following a state land acquisition.",
+        "beneficiary_is_person_interested": "The beneficiary had a direct or indirect interest in the land or the amount of compensation.",
+        "impleadment_denied": "The court rejected the beneficiary’s request to be joined in the reference proceeding.",
+        "compensation_enhanced_without_beneficiary": "The court enhanced compensation without the beneficiary participating as a party.",
+        "appeal_opportunity_lost_due_to_exclusion": "The beneficiary could not appeal the enhanced compensation judgment because its request to be joined had been rejected."
+      },
+      "definition": "If an interested beneficiary is excluded from a compensation reference and thereby loses the opportunity to appeal an enhancement made without its participation, impleadment and an opportunity to appeal are allowed."
+    }
+  ],
+  "seconds": 11.9
+}

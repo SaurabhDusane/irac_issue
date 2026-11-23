@@ -1,0 +1,85 @@
+{
+  "doc_id": "96529",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14654,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2376,
+    "prompt_tokens": 4068,
+    "total_tokens": 6444,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A claim for eviction under the general bona fide-occupation ground may be converted to a claim under the special widow-landlady ground when the altered claim can be decided on the existing material without a fresh inquiry into new facts.",
+      "material_facts": [
+        "The landlord’s widow was substituted in the pending eviction proceedings after his death and sought to convert the existing claim into one under the special provision for widow-landladies.",
+        "The widow sought to rely on the material already on record, and the central issue of bona fides was common to both grounds.",
+        "The High Court rejected the conversion request without explaining why conversion was unavailable or whether it would require fresh evidence."
+      ],
+      "conclusion": "The refusal was set aside and the widow’s application to modify the claim was allowed.",
+      "legal_principle": "Order VII Rule 7 of the Code of Civil Procedure and Sections 14(1)(e) and 14-D of the Delhi Rent Control Act were considered. Surjit Singh Kalra v. Union of India held that a tenant may contest whether a claim under Section 14-D is bona fide; EMC Steel Limited v. Union of India stated that a widow must prove bona fide need and that restrictions on reletting apply; and V. Rajaswari v. Bombay Tyres International Ltd. entertained a widow’s claim under Section 14-D although the claim under Section 14(1)(e) had failed below. Where the decisive issue is common and the altered claim requires no fresh inquiry or proof of new facts, conversion may be permitted; subsequent developments and altered circumstances may also be considered.",
+      "rule": {
+        "if": "pending_rent_eviction_proceeding and widow_substituted_after_landlord_death and conversion_sought_to_widow_ground and (common_bona_fides_issue and existing_record_sufficient)",
+        "then": "claim_conversion_permitted"
+      },
+      "predicates": {
+        "pending_rent_eviction_proceeding": "A landlord or landlady has brought an eviction proceeding based on a claim of bona fide occupation.",
+        "widow_substituted_after_landlord_death": "The landlord dies while the eviction proceeding is pending, and his widow is substituted in the proceeding.",
+        "conversion_sought_to_widow_ground": "The substituted widow asks to rely on the special eviction ground available to a widow-landlady instead of the ground originally pleaded.",
+        "common_bona_fides_issue": "The original and proposed grounds both require consideration of whether the landlady’s claim is bona fide.",
+        "existing_record_sufficient": "The proposed claim can be considered on the existing record without a fresh inquiry or proof of new facts."
+      },
+      "definition": "When a pending rent-eviction proceeding is continued by a substituted widow, and the requested change rests on a common bona fides issue that can be decided on the existing record, the claim may be converted to the widow-specific ground."
+    },
+    {
+      "legal_issue": "A widow-landlady’s request to recover premises for her own residence is bona fide when it is genuine rather than a pretext, and her present residence with family elsewhere does not by itself defeat the claim.",
+      "material_facts": [
+        "The widow had no other premises of her own in the city where the rented premises were situated.",
+        "She wished to live separately there rather than continue living with her son and his family in another city.",
+        "The tenant produced no positive material showing that the stated need was not genuine or was merely an excuse to evict him.",
+        "The landlord had sought possession for residence, and the record described family strain and his health-related treatment as circumstances behind the wish to shift."
+      ],
+      "conclusion": "The widow’s need was bona fide, and eviction was ordered.",
+      "legal_principle": "Under Section 14-D of the Delhi Rent Control Act, the relevant matters are that the landlady is a widow, requires the premises for her own residence, and makes a bona fide request rather than using the provision as a pretext to get rid of the tenant. V. Rajaswari v. Bombay Tyres International Ltd. held that living with a daughter or another person does not by itself show that premises are not required for the widow’s residence. Under Section 14(1)(e), the requirement must be bona fide and the move to seek eviction genuine. The landlady’s choice must not be whimsical or fanciful, but courts should not impose their own view of how she should arrange her affairs based only on the tenant’s hardship.",
+      "rule": {
+        "if": "widow_eviction_claim and widow_seeks_own_residence and no_other_owned_premises_nearby and separate_residence_desired and not tenant_produced_evidence_of_pretext",
+        "then": "eviction_granted_for_bona_fide_need"
+      },
+      "predicates": {
+        "widow_eviction_claim": "A landlady brings an eviction claim under a special ground available to widow-landlords.",
+        "widow_seeks_own_residence": "The widow states that she requires the premises as her own residence.",
+        "no_other_owned_premises_nearby": "The widow has no other premises of her own in the relevant area.",
+        "separate_residence_desired": "The widow wishes to live separately from family members with whom she is presently residing elsewhere.",
+        "tenant_produced_evidence_of_pretext": "The tenant produces positive material showing that the asserted need is not genuine and is only an excuse to evict the tenant."
+      },
+      "definition": "A widow’s claim for her own residence supports eviction where she has no other nearby premises, genuinely seeks separate residence, and the tenant produces no evidence that the claim is a pretext."
+    },
+    {
+      "legal_issue": "Concurrent findings on an eviction claim do not prevent interference when the rent controller’s findings are perfunctory and the reviewing court fails to assess objectively whether the order is according to law.",
+      "material_facts": [
+        "The Rent Controller rejected the occupation claim despite acknowledging the landlord’s ownership and that he had no other property in the relevant city.",
+        "The High Court dismissed the revision without properly considering the relevant principles or the material on record.",
+        "The Supreme Court found that improper inferences had been drawn and that the findings lacked proper consideration, resulting in a miscarriage of justice."
+      ],
+      "conclusion": "The concurrent findings did not bar interference; the Supreme Court intervened and allowed the eviction claim.",
+      "legal_principle": "Section 25-B(8) of the Delhi Rent Control Act obliges the High Court exercising revisional jurisdiction to consider objectively whether the Rent Controller’s order is according to law. Where that obligation is not discharged and perfunctory findings or improper inferences cause a miscarriage of justice, the findings do not preclude further judicial interference.",
+      "rule": {
+        "if": "appeal_from_rent_eviction_decision and rent_controller_findings_perfunctory and reviewing_court_failed_objective_legal_review and material_misread_or_relevant_principles_ignored and miscarriage_of_justice",
+        "then": "higher_court_interference_warranted"
+      },
+      "predicates": {
+        "appeal_from_rent_eviction_decision": "A higher court is considering an appeal arising from a rent-control eviction decision after review by a lower court.",
+        "rent_controller_findings_perfunctory": "The rent controller’s findings do not adequately consider the material or the relevant principles.",
+        "reviewing_court_failed_objective_legal_review": "The court reviewing the rent controller’s order does not objectively assess whether that order accords with law.",
+        "material_misread_or_relevant_principles_ignored": "The lower courts draw improper inferences from the record or fail to apply relevant legal principles.",
+        "miscarriage_of_justice": "The defective consideration produces an unjust result."
+      },
+      "definition": "In an appeal from an eviction decision, higher-court interference is warranted when perfunctory findings and inadequate legal review cause a miscarriage of justice."
+    }
+  ],
+  "seconds": 17.4
+}

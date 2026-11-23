@@ -1,0 +1,80 @@
+{
+  "doc_id": "444729",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20618,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2421,
+    "prompt_tokens": 5830,
+    "total_tokens": 8251,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Market value of acquired land must be estimated objectively using reliable evidence that reflects the land’s condition and potential value at the relevant time.",
+      "material_facts": [
+        "The acquired land was in a developed area, and the evidence included a lease of nearby land and a sale of adjoining land.",
+        "The sale relied on by the High Court concerned land farther away and involved leasehold rights; the Court considered it an unsuitable comparator.",
+        "The rent under the acquired land’s earlier lease had been fixed years before the valuation date at a concessionary rate for the use made of the land.",
+        "The nearby lease and sale provided usable valuation evidence, but required adjustments for the difference in parcel size and other relevant features."
+      ],
+      "conclusion": "The Court set the market value at a reasonable estimate based on the nearby lease and sale, with appropriate adjustments, rather than the High Court’s more distant sale or the outdated rent. Compensation was fixed at the resulting rate, with statutory solatium and interest as specified in the decree.",
+      "legal_principle": "Under sections 23 and 24 of the Land Acquisition Act, 1894, market value is the price a willing seller could reasonably expect from a willing buyer, assessed objectively as of the relevant valuation date and taking account of potential value. The Court may consider expert opinion, bona fide sale prices for the acquired or suitably comparable nearby land, and capitalised actual or immediately prospective profits; these methods are not exhaustive, and more than one may be used where necessary. The Court relied on Special Land Acquisition Officer, Bangalore v. T. Adinarayan Setty, which identified the principal valuation methods.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and (nearby_comparable_sale_evidence and nearby_comparable_rental_evidence) and (distant_sale_is_unreliable or earlier_rent_does_not_reflect_current_value)",
+        "then": "market_value_assessed_from_reliable_comparable_evidence_with_adjustments"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired by the government.",
+        "nearby_comparable_sale_evidence": "The parties presented evidence of a sale of nearby land that could be compared with the acquired land, subject to adjustments.",
+        "nearby_comparable_rental_evidence": "The parties presented rental evidence for nearby land that could assist in estimating the acquired land’s value.",
+        "distant_sale_is_unreliable": "The sale used as a valuation comparator concerned land materially farther away or otherwise insufficiently comparable.",
+        "earlier_rent_does_not_reflect_current_value": "The rent for the acquired land was fixed earlier and did not reflect its value at the relevant valuation time."
+      },
+      "definition": "When a land-acquisition compensation case has usable nearby sale and rental evidence, and a distant sale or outdated rent is unreliable, the market value is assessed from reliable comparable evidence with adjustments."
+    },
+    {
+      "legal_issue": "Potential value is part of the market-value assessment and is not separately compensable as an additional percentage.",
+      "material_facts": [
+        "The High Court added a separate percentage to the market value for the land’s potential value.",
+        "The Supreme Court treated the land’s potential value as an element inherent in fixing its market value."
+      ],
+      "conclusion": "The separate addition for potential value was not justified and was disallowed.",
+      "legal_principle": "Sections 23 and 24 of the Land Acquisition Act, 1894 require the market-value assessment to take the land’s potential value into account. Because potential value is inherent in that assessment, it cannot also be awarded as a separate addition. The Court applied the market-value principles discussed in Special Land Acquisition Officer, Bangalore v. T. Adinarayan Setty.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and potential_value_included_in_market_value_assessment",
+        "then": "no_separate_potential_value_addition"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired by the government.",
+        "potential_value_included_in_market_value_assessment": "The land’s potential for future use or development is taken into account when its market value is assessed."
+      },
+      "definition": "When a land-acquisition compensation case includes the land’s potential value in the market-value assessment, no separate addition for that potential value is made."
+    },
+    {
+      "legal_issue": "Compensation for severance may be awarded when acquiring part of a property diminishes the value of the remainder, even if the remainder retains an entrance.",
+      "material_facts": [
+        "Only part of the owners’ land was acquired, leaving a portion with them.",
+        "The Judicial Commissioner awarded compensation for severance, but the High Court disallowed it because the remainder had an entrance and there was no evidence quantifying depreciation.",
+        "The Supreme Court held that leaving part of the land after acquiring another part diminishes the value of the remainder and restored the severance award as reasonable."
+      ],
+      "conclusion": "The owners were entitled to the severance compensation awarded by the Judicial Commissioner; the existence of an entrance did not justify disallowing it.",
+      "legal_principle": "Where acquisition of part of a property diminishes the value of the land left behind, compensation for that severance is to be allowed. The Court held that an entrance to the remainder does not, by itself, eliminate the diminution in value.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and part_of_property_acquired and remainder_left_with_owner and acquisition_diminishes_remainder_value",
+        "then": "severance_compensation_allowed"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired by the government.",
+        "part_of_property_acquired": "The acquisition takes only part of a larger property.",
+        "remainder_left_with_owner": "A portion of the property remains with the owner after the acquisition.",
+        "acquisition_diminishes_remainder_value": "The acquisition reduces the value of the property left with the owner."
+      },
+      "definition": "When an acquisition takes part of a property and diminishes the value of the remainder left with the owner, severance compensation is allowed."
+    }
+  ],
+  "seconds": 15.7
+}

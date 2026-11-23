@@ -1,0 +1,40 @@
+{
+  "doc_id": "194912591",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10092,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1114,
+    "prompt_tokens": 3090,
+    "total_tokens": 4204,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The low-value restriction on second appeals applies only when recovery of money is the sole subject matter of the original suit.",
+      "material_facts": [
+        "The original suit sought to prevent recovery of municipal tax and also sought declaratory and permanent injunctive relief.",
+        "The suit required determination of whether the properties were within the municipality and whether tax could be levied on them.",
+        "The amount of tax sought was below the monetary threshold for the restriction on second appeals.",
+        "The High Court dismissed the second appeal on the basis of that monetary threshold."
+      ],
+      "conclusion": "The monetary restriction did not apply because the original suit sought more than recovery of money; the High Court’s judgment was set aside and the matter remitted for a fresh decision on the second appeal.",
+      "legal_principle": "Section 102 of the Code of Civil Procedure, 1908 bars a second appeal only where the subject matter of the original suit is solely recovery of money not exceeding the specified threshold. Where the suit includes other relief or requires adjudication of non-monetary issues, the restriction cannot be invoked. The Court referred to the purpose of Section 102—reducing litigation over low-stakes money claims—but relied on no earlier cases.",
+      "rule": {
+        "if": "second_appeal_dismissed_under_low_value_rule and (suit_seeks_declaration or suit_seeks_permanent_injunction or suit_requires_nonmonetary_determination)",
+        "then": "second_appeal_is_not_barred_by_monetary_value"
+      },
+      "predicates": {
+        "second_appeal_dismissed_under_low_value_rule": "A court dismissed a second appeal because the original suit’s monetary claim fell within a low-value restriction.",
+        "suit_seeks_declaration": "The original suit seeks a declaration in addition to any recovery of money.",
+        "suit_seeks_permanent_injunction": "The original suit seeks a permanent injunction in addition to any recovery of money.",
+        "suit_requires_nonmonetary_determination": "Resolving the original suit requires deciding an issue other than recovery of money."
+      },
+      "definition": "When a second appeal is dismissed under a low-value rule, it is not barred by monetary value if the original suit seeks declaratory or injunctive relief or requires a non-monetary determination."
+    }
+  ],
+  "seconds": 8.5
+}

@@ -1,0 +1,65 @@
+{
+  "doc_id": "1747883",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 53667,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2801,
+    "prompt_tokens": 14206,
+    "total_tokens": 17007,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The classification of a ghatwali tenure as a government tenure or a zamindari tenure depends on its origin, the terms of grants concerning it, and how it was treated in the zamindari and at the Permanent Settlement.",
+      "material_facts": [
+        "The tenure was covered by a grant made while the estate was under Company management, but the grant did not specify a body of musketeers and archers as the later grant did.",
+        "After the estate was restored to its hereditary holder, a grant in that holder’s name described the tenure as a service tenure, specified its service obligations, and apportioned its rent and zamindari dues between the holders.",
+        "Numerous other ghatwali tenures in the estate received grants in the hereditary holder’s name during the same period, and the government did not later question those grants as evidence of zamindari tenures.",
+        "At the Permanent Settlement, the tenure was included in the zamindari and its assessment; it was not treated as an independent government unit.",
+        "Historical records treated the tenure as part of the zamindari, and the zamindar had rights associated with it, including the right to appoint or dismiss the ghatwal."
+      ],
+      "conclusion": "The tenure originated as a zamindari ghatwali and continued to be treated as one. Even if the earlier Company-era grant made it a government ghatwali, the later grant or, at the latest, its inclusion in the Permanent Settlement made it a zamindari ghatwali.",
+      "legal_principle": "The character of a ghatwali tenure is determined from the grants and the evidence of how the tenure was dealt with. Narayan Singh v. Niranjan Chakravarti recognises different categories, including government ghatwalis later included in a zamindari and zamindari ghatwalis created by a zamindar; the custom applicable to one category does not automatically apply to independent government ghatwalis. The Court relied on the reasoning in Raja Lelanund Singh v. Government of Bengal, Munrunjan Singh v. Raja Lelanund Singh, and Leelanund Singh v. Thakoor Munrunjan Singh, and considered the tenure’s treatment under the Permanent Settlement Regulation I of 1793.",
+      "rule": {
+        "if": "execution_proceeding and ghatwali_tenure_claimed and (originally_under_estate_holder or (later_estate_holder_grant and included_in_estate_settlement))",
+        "then": "tenure_is_zamindari_ghatwali"
+      },
+      "predicates": {
+        "execution_proceeding": "A court is deciding an objection in proceedings to execute a decree against a tenure.",
+        "ghatwali_tenure_claimed": "A party claims that the tenure is held on ghatwali terms.",
+        "originally_under_estate_holder": "The tenure was created or held under the estate holder rather than directly under the government.",
+        "later_estate_holder_grant": "The estate holder later granted or regularised the tenure in the holder’s favour.",
+        "included_in_estate_settlement": "The tenure was included in the estate holder’s assessment at the permanent settlement."
+      },
+      "definition": "When an execution court considers a claimed ghatwali tenure, the tenure is a zamindari ghatwali if it originated under the estate holder or was later granted by that holder and included in the estate settlement."
+    },
+    {
+      "legal_issue": "A zamindari ghatwali tenure governed by an established custom permitting alienation with the zamindar’s assent may be sold in execution of a decree when the zamindar has assented.",
+      "material_facts": [
+        "The decree-holders obtained a decree for arrears of rent and cess and sought attachment and sale of the tenure in execution.",
+        "The tenure was held under the zamindar and was determined to be a zamindari ghatwali.",
+        "The custom judicially recognised for ghatwali tenures under this zamindari permitted transfer or sale with the zamindar’s assent.",
+        "The sale was sought by the zamindar decree-holders for arrears due to them, which the Court treated as necessarily implying their assent.",
+        "The judgment-debtor objected under section 47 of the Code of Civil Procedure that the tenure could not be sold because it was ghatwali."
+      ],
+      "conclusion": "The objection to sale was rightly overruled. The tenure was alienable with the zamindar’s assent, and the sale sought by the zamindar decree-holders for rent arrears carried that assent.",
+      "legal_principle": "Ghatwali tenures are not invariably inalienable. Kali Pershad Singh v. Anund Roy established that ghatwali tenures under the Kharakpur zamindari are alienable with the zamindar’s assent, and Narayan Singh v. Niranjan Chakravarti recognised that this custom does not extend to independent government ghatwalis. A sale sought by the zamindar to recover rent arrears necessarily implies assent. Section 47 of the Code of Civil Procedure provided the procedural basis for the execution objection.",
+      "rule": {
+        "if": "execution_objection_to_sale and zamindari_ghatwali and established_custom_allows_alienation_with_assent and zamindar_assented",
+        "then": "tenure_is_saleable_in_execution"
+      },
+      "predicates": {
+        "execution_objection_to_sale": "A judgment-debtor objects in execution proceedings to the proposed sale of a tenure.",
+        "zamindari_ghatwali": "The tenure is held as a ghatwali under a zamindar rather than directly under the government.",
+        "established_custom_allows_alienation_with_assent": "An established custom applicable to the tenure permits alienation when the zamindar assents.",
+        "zamindar_assented": "The zamindar agreed to the sale, including by seeking it to recover rent arrears."
+      },
+      "definition": "A tenure subject to an execution objection is saleable in execution when it is a zamindari ghatwali, an established applicable custom permits alienation with assent, and the zamindar assented."
+    }
+  ],
+  "seconds": 16.9
+}

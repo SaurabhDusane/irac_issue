@@ -1,0 +1,241 @@
+{
+  "doc_id": "1362442",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 45286,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 5420,
+    "prompt_tokens": 11118,
+    "total_tokens": 16538,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The value of property sold in execution does not determine the pecuniary jurisdiction of the court that passed the decree.",
+      "material_facts": [
+        "The decree being executed was within the pecuniary limit of the court that passed it.",
+        "The property selected for execution was worth more than that limit."
+      ],
+      "conclusion": "The court that passed the decree retained jurisdiction to execute it; the higher value of the property did not oust that jurisdiction.",
+      "legal_principle": "Under Order 21 Rule 10 of the Code of Civil Procedure, an execution application is made to the court that passed the decree. As held in Banwar Lal v. Prem Latal, the value of property sold in execution is not relevant to determining the executing court's jurisdiction.",
+      "rule": {
+        "if": "decree_execution and decree_within_court_limit and property_value_above_court_limit",
+        "then": "execution_court_retains_jurisdiction"
+      },
+      "predicates": {
+        "decree_execution": "The proceeding is an execution of a decree.",
+        "decree_within_court_limit": "The amount of the decree is within the pecuniary limit of the court that passed it.",
+        "property_value_above_court_limit": "The property selected for execution is worth more than that court's pecuniary limit."
+      },
+      "definition": "When a decree is within the passing court's pecuniary limit, a higher value of the property selected for execution does not prevent that court from executing the decree."
+    },
+    {
+      "legal_issue": "A known deposit in related proceedings may be treated as payment toward a money decree where the deposit is available to satisfy the decree.",
+      "material_facts": [
+        "Before execution began, the judgment-debtor had deposited rent in related proceedings.",
+        "The decree-holder knew of the deposit, and the amount on deposit exceeded the decree debt.",
+        "The executing court did not direct the deposited money to be applied toward the decree or require its transfer into the execution account."
+      ],
+      "conclusion": "The deposit should be treated as one made toward satisfaction of the decree, and the executing court should have addressed it rather than proceeding directly to sell the judgment-debtor's property.",
+      "legal_principle": "Order 21 Rule 1(1)(a) provides for payment of a money decree by deposit in the executing court. The Court treated the deposit in the related proceedings as such a deposit in the circumstances, applying the substance of that provision and the executing court's duty under Order 21 Rule 23(2) to consider objections to execution.",
+      "rule": {
+        "if": "money_decree_execution and deposit_made_before_execution and decree_holder_knew_of_deposit and deposit_covers_decree",
+        "then": "deposit_may_be_applied_to_satisfy_decree"
+      },
+      "predicates": {
+        "money_decree_execution": "The proceeding seeks execution of a money decree.",
+        "deposit_made_before_execution": "The judgment-debtor deposited money in related proceedings before execution began.",
+        "decree_holder_knew_of_deposit": "The decree-holder knew that the money had been deposited.",
+        "deposit_covers_decree": "The amount deposited was sufficient to cover the decree debt."
+      },
+      "definition": "If a judgment-debtor has deposited enough money in related proceedings before execution and the decree-holder knew of it, the deposit may be applied toward satisfaction of the money decree."
+    },
+    {
+      "legal_issue": "An executing court's failure to decide an objection under Order 21 Rule 23(2) does not bar the judgment-debtor from raising the objection after sale.",
+      "material_facts": [
+        "The judgment-debtor objected to execution, including on the basis that money sufficient to satisfy the decree was already deposited.",
+        "The executing court did not decide those objections under Order 21 Rule 23(2) before ordering the sale.",
+        "The judgment-debtor later challenged the sale."
+      ],
+      "conclusion": "The objections remained open to be raised after the sale under Section 47 or Order 21 Rule 90; the executing court's omission to decide them was not itself appealable.",
+      "legal_principle": "Order 21 Rule 23(2) requires the executing court to consider objections to execution and make an order. An order made on those objections may be appealable, but omission to consider them is not. Section 47 addresses questions relating to execution, discharge or satisfaction of a decree; Order 21 Rule 90 addresses material irregularity or fraud in the publicity or conduct of a sale, subject to proof of substantial injury.",
+      "rule": {
+        "if": "decree_execution and judgment_debtor_objected_to_execution and court_failed_to_decide_objection and sale_challenged_afterward",
+        "then": "execution_objection_remains_open_after_sale"
+      },
+      "predicates": {
+        "decree_execution": "The proceeding is an execution of a decree.",
+        "judgment_debtor_objected_to_execution": "The judgment-debtor raised an objection to execution.",
+        "court_failed_to_decide_objection": "The executing court did not consider and decide the objection as part of the execution proceeding.",
+        "sale_challenged_afterward": "The judgment-debtor challenged the sale after it took place."
+      },
+      "definition": "When a judgment-debtor objects to execution and the court does not decide the objection before sale, the objection remains available for a later challenge to the sale."
+    },
+    {
+      "legal_issue": "A sale-challenge proceeding may proceed without joining every joint auction-purchaser if the decree-holder and one joint purchaser are parties.",
+      "material_facts": [
+        "The judgment-debtor challenged an execution sale purchased jointly by two people.",
+        "The decree-holder and one of the joint purchasers were parties to the challenge.",
+        "The other joint purchaser was not individually named as a respondent."
+      ],
+      "conclusion": "It was not necessary to implead every joint purchaser; joining one of them was sufficient in the circumstances.",
+      "legal_principle": "In proceedings under Section 47 or Order 21 Rule 90, the decree-holder is an affected necessary party because the decree-holder initiated the execution and is responsible for the sale process. Auction-purchasers should be joined, but where the property was bought jointly, it is sufficient to join one of the joint purchasers.",
+      "rule": {
+        "if": "execution_sale_challenge and decree_holder_joined and one_joint_purchaser_joined",
+        "then": "challenge_need_not_join_every_joint_purchaser"
+      },
+      "predicates": {
+        "execution_sale_challenge": "The proceeding challenges a sale conducted in execution of a decree.",
+        "decree_holder_joined": "The decree-holder is a party to the challenge.",
+        "one_joint_purchaser_joined": "At least one of the joint auction-purchasers is a party to the challenge."
+      },
+      "definition": "In a challenge to an execution sale, joining the decree-holder and one joint purchaser is sufficient without joining every joint purchaser."
+    },
+    {
+      "legal_issue": "A person who bids both for himself and for another joint purchaser need not produce separate authority from that purchaser merely to participate in the bid.",
+      "material_facts": [
+        "One auction participant bid both for himself and on behalf of his wife.",
+        "The participant purchased the property jointly with his wife.",
+        "The objection was that he had not produced written authority from his wife to bid for her."
+      ],
+      "conclusion": "Separate authority from the wife was not required because the participant bid for himself as well as for her, rather than acting solely as her agent.",
+      "legal_principle": "Form 29 of Appendix E to the Code of Civil Procedure concerns a bidder acting as an agent. The need for authority arises when the bidder acts as an agent, not when the bidder participates in the bid for himself and another person.",
+      "rule": {
+        "if": "execution_auction and bidder_bids_for_self_and_joint_purchaser and bidder_not_acting_only_as_agent",
+        "then": "separate_authority_from_joint_purchaser_not_required"
+      },
+      "predicates": {
+        "execution_auction": "The proceeding involves an auction conducted in execution of a decree.",
+        "bidder_bids_for_self_and_joint_purchaser": "A participant bids both for himself and on behalf of another person who is to purchase jointly.",
+        "bidder_not_acting_only_as_agent": "The participant is not acting solely as an agent for the other person."
+      },
+      "definition": "In an execution auction, a participant who bids for himself as well as another joint purchaser need not produce separate authority from that purchaser."
+    },
+    {
+      "legal_issue": "Failure to serve the judgment-debtor personally with an attachment order does not invalidate a sale when the order was affixed to the property and no later encumbrance was created.",
+      "material_facts": [
+        "The attachment order was not personally served on the judgment-debtor.",
+        "Evidence showed that it was affixed at the property.",
+        "No encumbrance was created on the property after attachment."
+      ],
+      "conclusion": "The failure of personal service was an irregularity but did not render the sale void or invalid in these circumstances.",
+      "legal_principle": "Order 21 Rule 54 serves to notify the judgment-debtor of attachment and prevent later transfer or encumbrance. The Court held that omission to serve a copy personally is an irregularity, not a ground to invalidate the sale where the attachment was affixed at the site and no subsequent encumbrance was created.",
+      "rule": {
+        "if": "execution_sale and attachment_order_not_personally_served and attachment_order_affixed_at_property and no_post_attachment_encumbrance",
+        "then": "sale_not_invalid_for_nonservice_of_attachment_order"
+      },
+      "predicates": {
+        "execution_sale": "The proceeding involves a sale in execution of a decree.",
+        "attachment_order_not_personally_served": "The attachment order was not personally served on the judgment-debtor.",
+        "attachment_order_affixed_at_property": "The attachment order was affixed at the property.",
+        "no_post_attachment_encumbrance": "No encumbrance was created on the property after attachment."
+      },
+      "definition": "A failure to serve the attachment order personally does not invalidate an execution sale where the order was affixed at the property and no later encumbrance was created."
+    },
+    {
+      "legal_issue": "Omission of a full property description from attachment material is an irregularity rather than a ground to invalidate a sale where the property remains identifiable and bidders are not misled.",
+      "material_facts": [
+        "The execution material identified the property by its plot number and area but did not fully describe it in the attachment order.",
+        "A plan with a fuller description was attached to the execution petition.",
+        "The property was identifiable and the bidders were not misled."
+      ],
+      "conclusion": "The omission of a fuller description was an irregularity and did not invalidate the sale.",
+      "legal_principle": "Order 21 Form 24 contemplates a full description of property, but an omission is only an irregularity where the property is identifiable and the bidders are not misled.",
+      "rule": {
+        "if": "execution_sale and property_description_incomplete and property_identifiable and bidders_not_misled",
+        "then": "incomplete_description_does_not_invalidate_sale"
+      },
+      "predicates": {
+        "execution_sale": "The proceeding involves a sale in execution of a decree.",
+        "property_description_incomplete": "The sale or attachment material does not give a full description of the property.",
+        "property_identifiable": "The property can nevertheless be identified from the available information.",
+        "bidders_not_misled": "The bidders were not misled by the incomplete description."
+      },
+      "definition": "An incomplete property description does not invalidate an execution sale if the property remains identifiable and bidders were not misled."
+    },
+    {
+      "legal_issue": "A sale of immovable property is a nullity when the judgment-debtor receives no notice before settlement of the sale proclamation and the court does not judicially settle and publish a compliant proclamation.",
+      "material_facts": [
+        "The judgment-debtor was not served with notice before settlement of the sale proclamation and did not waive notice by appearing.",
+        "The executing court issued only a schedule of sale dates and did not judicially settle the terms of a sale proclamation.",
+        "The court did not properly determine material particulars or comply with the requirements for publication of the proclamation."
+      ],
+      "conclusion": "The sale was a nullity because the mandatory procedure under Order 21 Rules 54, 66 and 67 was not followed.",
+      "legal_principle": "Order 21 Rule 54(1-A) requires notice to the judgment-debtor before settlement of the proclamation; Rule 66(2) requires notice to the decree-holder and judgment-debtor and a proclamation stating the prescribed particulars; and Rule 67 governs publication. The Court relied on Rajagopala Ayyar v. Ramachandra Ayyar for the rule that a sale without required notice is void, on Gajadhar Prasad v. Babu Bhakta Ratan concerning material valuation particulars, and on Shalimar Cinema v. Bhasin Film Corporation concerning the court's duty to ensure compliance with Rule 66.",
+      "rule": {
+        "if": "immovable_property_execution_sale and judgment_debtor_not_notified_before_proclamation and notice_not_waived and court_did_not_judicially_settle_proclamation",
+        "then": "execution_sale_is_nullity"
+      },
+      "predicates": {
+        "immovable_property_execution_sale": "The proceeding is a sale of immovable property in execution of a decree.",
+        "judgment_debtor_not_notified_before_proclamation": "The judgment-debtor was not notified before the sale proclamation was settled.",
+        "notice_not_waived": "The judgment-debtor did not appear in a manner that waived notice.",
+        "court_did_not_judicially_settle_proclamation": "The court did not judicially settle a proclamation containing the required sale particulars."
+      },
+      "definition": "A sale of immovable property in execution is a nullity where the judgment-debtor was neither notified nor waived notice and the court did not judicially settle the sale proclamation."
+    },
+    {
+      "legal_issue": "An executing court must sell only the property, or portion of it, necessary to satisfy the decree, and failure to consider a sufficient part may constitute a material irregularity causing substantial injury.",
+      "material_facts": [
+        "The entire commercial plot, measuring 550 square yards, was sold to recover a debt of about Rs 7,780.",
+        "The plot was worth substantially more than the debt.",
+        "The executing court did not consider whether a smaller portion could satisfy the decree."
+      ],
+      "conclusion": "Selling the whole plot without considering whether a portion would suffice was a material irregularity causing substantial injury, and the sale was liable to be set aside.",
+      "legal_principle": "Order 21 Rule 17(4), Rule 64 and Rule 66(2)(a), together with Form 27 of Appendix E, require the executing court to sell only so much property as is necessary to satisfy the decree. The Court relied on Ambati Narasayya v. M. Subba Rao, Mangal Prasad v. Krishna Kumar Maheshwari and Takaseela Pedda Subba Reddy v. Pujari Padmavathamma. Under Order 21 Rule 90, a material irregularity must cause substantial injury to the judgment-debtor.",
+      "rule": {
+        "if": "immovable_property_execution_sale and whole_property_sold and property_value_greatly_exceeded_debt and court_did_not_consider_partial_sale",
+        "then": "sale_set_aside_for_excessive_execution"
+      },
+      "predicates": {
+        "immovable_property_execution_sale": "The proceeding is a sale of immovable property in execution of a decree.",
+        "whole_property_sold": "The whole property was sold to recover the decree debt.",
+        "property_value_greatly_exceeded_debt": "The value of the property greatly exceeded the debt being recovered.",
+        "court_did_not_consider_partial_sale": "The executing court did not consider whether selling only part of the property would satisfy the decree."
+      },
+      "definition": "When the whole of a property worth far more than the decree debt is sold without considering whether a part would suffice, the sale may be set aside for excessive execution."
+    },
+    {
+      "legal_issue": "Order 21 Rule 90(3) does not bar a judgment-debtor from challenging pre-sale defects where the court failed to give the notice required for settlement of the sale proclamation.",
+      "material_facts": [
+        "The judgment-debtor was not given notice before the proclamation was to be settled.",
+        "The executing court did not draw up a proper sale proclamation.",
+        "The judgment-debtor challenged the sale after it occurred."
+      ],
+      "conclusion": "The judgment-debtor was not precluded by Rule 90(3) from raising the defects after the sale; the sale defects could be considered under Section 47 or Order 21 Rule 90 as appropriate.",
+      "legal_principle": "Order 21 Rule 90(3) precludes grounds that an applicant could have raised on or before the date the proclamation was drawn up. The Court explained that the rule presupposes notice and an opportunity to act; it does not penalize a judgment-debtor who was denied the mandatory notice under Order 21 Rule 54(1-A). Under Section 47, pre-sale defects relating to execution may be raised; under Order 21 Rule 90, post-sale material irregularities or fraud in publicity or conduct require proof of substantial injury.",
+      "rule": {
+        "if": "execution_sale_challenge and judgment_debtor_not_notified_before_proclamation and pre_sale_defect_challenged_after_sale",
+        "then": "rule_90_3_does_not_bar_pre_sale_defect"
+      },
+      "predicates": {
+        "execution_sale_challenge": "The proceeding challenges a sale conducted in execution of a decree.",
+        "judgment_debtor_not_notified_before_proclamation": "The judgment-debtor was not notified before the sale proclamation was to be settled.",
+        "pre_sale_defect_challenged_after_sale": "The judgment-debtor raises after the sale a defect that arose before the sale."
+      },
+      "definition": "The post-sale bar on grounds that could have been raised before settlement of the proclamation does not apply when the judgment-debtor was not given notice of that settlement."
+    },
+    {
+      "legal_issue": "Mere inadequacy of the price obtained at a court sale does not by itself invalidate the sale.",
+      "material_facts": [
+        "The judgment-debtor alleged that the property was worth substantially more than the price obtained at auction.",
+        "The Court identified independent procedural defects and excessive execution as grounds for setting aside the sale."
+      ],
+      "conclusion": "Inadequacy of price alone is not sufficient to set aside a court sale; the sale in this case was set aside on other grounds.",
+      "legal_principle": "Under Order 21 Rule 90, material irregularity or fraud in publicity or conduct must be proved, and the applicant must show substantial injury. Kayjay Industries (P) Ltd. v. Asnew Drums (P) Ltd. holds that a court sale is a forced sale, that the best market price may not be obtained, and that mere inadequacy of price does not invalidate it. The Court also considered Janak Rai v. Gurdial Singh.",
+      "rule": {
+        "if": "court_execution_sale and only_ground_is_inadequate_price",
+        "then": "sale_not_set_aside_for_price_inadequacy_alone"
+      },
+      "predicates": {
+        "court_execution_sale": "The proceeding concerns a sale conducted by a court in execution.",
+        "only_ground_is_inadequate_price": "The only asserted ground for setting aside the sale is that the price obtained was inadequate."
+      },
+      "definition": "A court execution sale is not set aside when the only asserted defect is that the price obtained was inadequate."
+    }
+  ],
+  "seconds": 29.4
+}

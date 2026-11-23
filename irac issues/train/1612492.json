@@ -1,0 +1,103 @@
+{
+  "doc_id": "1612492",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 54678,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3525,
+    "prompt_tokens": 13242,
+    "total_tokens": 16767,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A subsequent writ petition is not barred by principles analogous to res judicata when the earlier writ was dismissed without a speaking order, the petitioner then pursued a statutory revision, and the later petition seeks relief not claimed in the earlier proceeding.",
+      "material_facts": [
+        "The first writ petition challenged the cancellation of permanent settlement rights and was dismissed in limine by a non-speaking order.",
+        "The petitioner then pursued a statutory revision, which was rejected by the revisional authority.",
+        "The later writ petition challenged the revisional order and specifically sought cash compensation, a relief not claimed in the first writ petition."
+      ],
+      "conclusion": "The later writ petition was not barred by principles analogous to res judicata, either because the earlier petition was dismissed without a speaking order or because the compensation claim was a separate relief not raised earlier.",
+      "legal_principle": "Under the principles in Daryao v. State of U.P., Virudhunagar Steel Rolling Mills Ltd. v. Government of Madras, Tilokchand Motichand v. H.B. Munshi, and P.D. Sharma v. State Bank of India, a writ petition dismissed in limine without a speaking order does not create a res judicata bar. A dismissal on the ground of an available alternative remedy likewise does not bar a later petition after that remedy is pursued. Merger of the original order into a revisional order does not by itself bar the later petition, and a distinct relief not claimed earlier is not barred on that basis.",
+      "rule": {
+        "if": "subsequent_writ_after_statutory_revision and earlier_writ_dismissed_without_speaking_order and (statutory_remedy_pursued or compensation_relief_not_claimed_earlier)",
+        "then": "subsequent_writ_not_barred_by_res_judicata"
+      },
+      "predicates": {
+        "subsequent_writ_after_statutory_revision": "A petitioner files a later writ petition after a statutory revisional authority has decided the petitioner's revision.",
+        "earlier_writ_dismissed_without_speaking_order": "A court dismisses the petitioner's earlier writ petition without giving reasons in a speaking order.",
+        "statutory_remedy_pursued": "After the earlier writ is dismissed, the petitioner pursues an available statutory appeal or revision before filing the later writ petition.",
+        "compensation_relief_not_claimed_earlier": "The petitioner seeks compensation in the later writ petition but did not seek that relief in the earlier writ petition."
+      },
+      "definition": "When a later writ follows a statutory revision, a non-speaking dismissal of the earlier writ or a newly claimed compensation relief means the later petition is not barred by principles analogous to res judicata."
+    },
+    {
+      "legal_issue": "A quasi-permanent allotment cannot be cancelled or resumed by the custodian except on an authorized ground, and the asserted resumption must be supported by evidence that the power was exercised in the required circumstances.",
+      "material_facts": [
+        "The petitioner held agricultural land under a quasi-permanent allotment.",
+        "The government took possession of part of the allotted land for a public purpose.",
+        "The respondents did not produce material showing that the custodian had resumed the land under the applicable restricted power or that the required circumstances existed.",
+        "The respondents also did not establish that a state resettlement scheme had been framed and that the allotment was cancelled to implement it."
+      ],
+      "conclusion": "The respondents did not establish a valid cancellation or resumption of the quasi-permanent allotment; the custodian could resume or cancel it only within the applicable statutory limits.",
+      "legal_principle": "Amar Singh v. Custodian, Evacuee Property, Punjab recognized the statutory rights of quasi-permanent allottees, including quiet enjoyment and heritable interests. State of Punjab v. Suraj Prakash Kapur and Joginder Singh v. Deputy Custodian General of Evacuee Property establish that, after the restriction took effect, the custodian could cancel or resume a quasi-permanent allotment only in the circumstances permitted by rule 14(6) of the Administration of Evacuee Property (Central) Rules, 1950, made under the Administration of Evacuee Property Act, 1950. A claimed power under the state rules also required proof of the relevant scheme and its implementation.",
+      "rule": {
+        "if": "quasi_permanent_allotment_case and government_resumed_allotted_land and not authorized_resumption_ground_proved",
+        "then": "resumption_not_established_as_valid"
+      },
+      "predicates": {
+        "quasi_permanent_allotment_case": "A displaced person holds land under a quasi-permanent allotment.",
+        "government_resumed_allotted_land": "The government takes possession of land held under that allotment.",
+        "authorized_resumption_ground_proved": "The government establishes that the authorized decision-maker exercised the resumption power on a ground permitted by the governing rules."
+      },
+      "definition": "When the government takes land held under a quasi-permanent allotment without proving an authorized ground for resumption, the resumption is not established as valid."
+    },
+    {
+      "legal_issue": "A displaced person whose agricultural land was allotted under the applicable Punjab conditions and later taken by the government remains entitled to compensation whether the land was taken before the compensation legislation or became part of the compensation pool upon a later notification.",
+      "material_facts": [
+        "The petitioner was allotted agricultural land on a quasi-permanent basis under the applicable Punjab conditions.",
+        "The government took possession of part of the land before the compensation legislation came into force.",
+        "The court considered the alternative possibility that the evacuee interest was extinguished only later by a notification under that legislation.",
+        "The land was agricultural land, and the allotment was not a fresh allotment made under the later legislation."
+      ],
+      "conclusion": "The petitioner was entitled to compensation: if the land had already been taken before the legislation, the relevant acquisition provisions did not apply; if the evacuee interest was extinguished later by notification, the allottee could continue in possession on the same conditions and was entitled to compensation under section 10. Chapter VIII of the 1955 Rules, including rule 49, did not apply to this agricultural allotment.",
+      "legal_principle": "Sections 10 and 12(2) of the Displaced Persons (Compensation and Rehabilitation) Act, 1954 provide, respectively, for continued possession on the same conditions where qualifying allotted property becomes part of the compensation pool, and for extinguishment of evacuee interests upon notification. Rule 69 of the Displaced Persons (Compensation and Rehabilitation) Rules, 1955 excludes the relevant Punjab agricultural allotments from Chapter VIII, including rule 49. Section 10 recognizes the earlier allotment and does not create a fresh allotment.",
+      "rule": {
+        "if": "qualifying_agricultural_allotment and (government_takeover_before_compensation_framework or evacuee_interest_extinguished_by_later_notification)",
+        "then": "allottee_entitled_to_compensation"
+      },
+      "predicates": {
+        "qualifying_agricultural_allotment": "A displaced person holds agricultural land under the applicable conditions for such allotments.",
+        "government_takeover_before_compensation_framework": "The government takes possession of the allotted land before the compensation framework comes into force.",
+        "evacuee_interest_extinguished_by_later_notification": "A later notification extinguishes the evacuee interest in the allotted land and brings it into the compensation pool."
+      },
+      "definition": "For a qualifying agricultural allotment, either a government takeover before the compensation framework or a later notification extinguishing the evacuee interest leaves the allottee entitled to compensation."
+    },
+    {
+      "legal_issue": "Cash compensation may be paid to a quasi-permanent allottee when a small part of the allotted land is taken for a public purpose and the applicable government policy provides for cash payment.",
+      "material_facts": [
+        "The government took part of the petitioner's quasi-permanently allotted land for a public purpose.",
+        "The area taken was less than the threshold covered by the government policy for cash compensation.",
+        "A government decision provided for cash compensation to quasi-permanent allottees whose small areas of land were taken for public purposes.",
+        "The respondents had not paid compensation for the land taken."
+      ],
+      "conclusion": "The petitioner was entitled to cash compensation for the land taken, with the amount to be determined according to law.",
+      "legal_principle": "The court applied the government decision announced after the intergovernmental meeting on compensation for displaced land allottees. Because rule 49 did not apply to the relevant agricultural allotment under rule 69, no provision of the Act barred cash compensation. The court also noted that the petitioner had previously received cash compensation for other land taken from him.",
+      "rule": {
+        "if": "quasi_permanent_allottee_compensation_case and land_taken_for_public_purpose and small_part_of_allotted_land_taken and government_cash_compensation_policy_applies",
+        "then": "cash_compensation_payable"
+      },
+      "predicates": {
+        "quasi_permanent_allottee_compensation_case": "A displaced person seeks compensation for land held under a quasi-permanent allotment.",
+        "land_taken_for_public_purpose": "The government takes the allotted land for a public purpose.",
+        "small_part_of_allotted_land_taken": "The area taken is small enough to fall within the government's cash-compensation policy for such cases.",
+        "government_cash_compensation_policy_applies": "The government has adopted a policy providing cash compensation for qualifying small areas taken from quasi-permanent allottees."
+      },
+      "definition": "When a government takes a qualifying small part of a quasi-permanent allotment for public purposes and the cash-compensation policy applies, cash compensation is payable."
+    }
+  ],
+  "seconds": 22.1
+}

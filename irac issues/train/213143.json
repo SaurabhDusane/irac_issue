@@ -1,0 +1,79 @@
+{
+  "doc_id": "213143",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 6099,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1941,
+    "prompt_tokens": 1976,
+    "total_tokens": 3917,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An owner cannot obtain a decree for possession of land after the land has vested in the State under land reform legislation.",
+      "material_facts": [
+        "The plaintiffs sought possession of land as owners.",
+        "The land vested in the State under the Bihar Land Reforms Act on January 26, 1955.",
+        "The plaintiffs conceded that they could not obtain a decree for possession after the vesting."
+      ],
+      "conclusion": "The plaintiffs could not obtain a decree for possession from the defendants after the land vested in the State.",
+      "legal_principle": "Under Sections 3, 4 and 6 of the Bihar Land Reforms Act, 1950, land vests in the State, and an owner or landlord cannot obtain a decree for possession after that vesting. The Court relied on Ram Ran Bijai Singh v. Behari Singh and Gurucharan Singh v. Kamla Singh.",
+      "rule": {
+        "if": "land_possession_suit and land_vested_in_state",
+        "then": "possession_decree_unavailable_after_vesting"
+      },
+      "predicates": {
+        "land_possession_suit": "The plaintiff brought a suit seeking possession of land.",
+        "land_vested_in_state": "The land vested in the State under land reform legislation."
+      },
+      "definition": "When a suit seeks possession of land that has vested in the State, a decree for possession is unavailable after the vesting."
+    },
+    {
+      "legal_issue": "The limitation period for a suit based on dispossession does not apply when the plaintiff's claim is that the defendants' possession became unlawful, rather than that the plaintiff was dispossessed in the relevant sense.",
+      "material_facts": [
+        "The plaintiffs sought a declaration of title and possession, and also claimed mesne profits.",
+        "The plaint, read as a whole, alleged that the defendants' possession became unlawful from a certain date and that the plaintiffs consequently became entitled to possession.",
+        "The plaint referred to orders under Section 145 of the Code of Criminal Procedure as giving rise to a cause of action, not as establishing dispossession in the sense relevant to the limitation article."
+      ],
+      "conclusion": "Article 3 of Schedule III of the Bihar Tenancy Act did not apply, so the suit was not barred by that article.",
+      "legal_principle": "Article 3 of Schedule III of the Bihar Tenancy Act, 1885, prescribes a two-year limitation period for a suit to recover possession of land claimed by a landlord or raiyat, running from the date of dispossession. It did not apply because the plaint alleged that the defendants' possession became unlawful, rather than that the plaintiffs had been dispossessed in the sense used by that article.",
+      "rule": {
+        "if": "land_possession_suit and plaintiff_claims_defendant_possession_became_unlawful and not plaintiff_alleges_relevant_dispossession",
+        "then": "limitation_bar_does_not_apply"
+      },
+      "predicates": {
+        "land_possession_suit": "The plaintiff brought a suit seeking possession of land.",
+        "plaintiff_claims_defendant_possession_became_unlawful": "The plaintiff alleged that the defendant's possession became unlawful from a particular point and that this entitled the plaintiff to seek possession.",
+        "plaintiff_alleges_relevant_dispossession": "The plaintiff alleged that the defendant dispossessed the plaintiff in the sense relevant to a limitation rule for possession claims."
+      },
+      "definition": "If a land-possession suit rests on the allegation that the defendant's possession became unlawful, and not on relevant dispossession of the plaintiff, the limitation bar does not apply."
+    },
+    {
+      "legal_issue": "A plaintiff unable to recover possession because land vested in the State may still recover mesne profits for the period of the defendants' wrongful possession before vesting, subject to the applicable limitation period.",
+      "material_facts": [
+        "The plaintiffs claimed mesne profits against the defendants, whose possession the plaint alleged had become unlawful.",
+        "The land vested in the State on January 26, 1955, preventing the plaintiffs from obtaining possession from the defendants.",
+        "The Court held that the plaintiffs could recover mesne profits for the three years before the suit was instituted up to the vesting date, and specified that the recoverable period in this case was May 26, 1950, to January 26, 1955.",
+        "The amount of mesne profits was to be determined according to law by the court dealing with the proceeding."
+      ],
+      "conclusion": "The plaintiffs were entitled to mesne profits from the defendants only for May 26, 1950, through January 26, 1955, with the amount to be determined according to law.",
+      "legal_principle": "The fact that land reform vesting prevents an owner from obtaining possession does not by itself prevent recovery of mesne profits from defendants whose possession became wrongful. Recovery is subject to the applicable limitation period and ends when the land vests in the State.",
+      "rule": {
+        "if": "mesne_profits_claim and defendants_possession_became_wrongful and land_vested_in_state and claim_within_limitation_period",
+        "then": "mesne_profits_recoverable_for_wrongful_possession_before_vesting"
+      },
+      "predicates": {
+        "mesne_profits_claim": "The plaintiff claimed compensation for the defendants' use or occupation of land.",
+        "defendants_possession_became_wrongful": "The defendants remained in possession after their possession had become wrongful in relation to the plaintiff.",
+        "land_vested_in_state": "The land vested in the State under land reform legislation.",
+        "claim_within_limitation_period": "The claimed period of wrongful possession fell within the period recoverable under the applicable limitation law."
+      },
+      "definition": "A timely claim for mesne profits may be recovered for the defendants' wrongful possession before the land vests in the State."
+    }
+  ],
+  "seconds": 13.2
+}

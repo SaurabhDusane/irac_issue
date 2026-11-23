@@ -1,0 +1,80 @@
+{
+  "doc_id": "746895",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 55600,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2472,
+    "prompt_tokens": 13733,
+    "total_tokens": 16205,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The right to receive compensation for acquired land remains property passing on death when the claimant has not fully accepted the acquisition authority’s award, and that right must be valued as of the date of death.",
+      "material_facts": [
+        "Land belonging to the deceased had vested in the government before the relevant death, so the land itself was no longer part of the estate.",
+        "The acquisition authority had made compensation awards, but the claimants did not accept them and sought references to a civil court; references were pending at the relevant death.",
+        "The civil court later enhanced the compensation, but appeals against that enhancement were pending."
+      ],
+      "conclusion": "The land itself did not pass on death, but the surviving right to receive compensation at market value on the relevant notification dates was property passing on death. The assessing authority had to value that right as of the date of death, taking account of the nature and marketability of the right and the risk of litigation; a later civil court award was not itself the valuation at that date.",
+      "legal_principle": "Under section 36 of the Estate Duty Act, the property must be valued at the price it would fetch in the open market at the deceased’s death. Sections 11 and 12 of the Land Acquisition Act concern the Collector’s award, which is an offer of compensation; where it is not accepted, or is accepted under protest and a reference is sought under section 18, the underlying right to compensation survives. The civil court quantifies that same right under section 26; it does not create a separate right to extra compensation. Under section 25(1), the civil court cannot award less than the Collector’s award, but the claimant’s demand or a later civil court award is not automatically the property’s value at death because litigation risk affects value. The Court applied Pandit Lakshmi Kant Jha v. Commissioner of Wealth Tax, Bihar and Orissa, and followed Ezra v. Secretary of State for India, Raja Harish Chandra v. Dy. Land Requisition Officer, and Dr. G. H. Grant v. State of Bihar.",
+      "rule": {
+        "if": "estate_duty_valuation_on_death and land_vested_before_death and award_not_fully_accepted and reference_sought_or_pending",
+        "then": "compensation_right_is_property_valued_as_of_death"
+      },
+      "predicates": {
+        "estate_duty_valuation_on_death": "The proceeding assesses property passing on a person's death for estate duty.",
+        "land_vested_before_death": "The acquired land had vested in the government before the person's death.",
+        "award_not_fully_accepted": "The claimant did not accept the acquisition authority's compensation award in full.",
+        "reference_sought_or_pending": "The claimant sought a court reference about compensation, or that reference was pending."
+      },
+      "definition": "When an estate-duty valuation concerns land that vested before death and the claimant kept the compensation claim alive by contesting the award, the output is that the compensation right is property valued as of death."
+    },
+    {
+      "legal_issue": "A reopening notice cannot be sustained when it proceeds on the basis that acquired land remained in the estate at death and seeks to include compensation enhanced later by a court as property passing on death.",
+      "material_facts": [
+        "The land had vested in the government before the relevant death.",
+        "The original assessment valued the compensation right by reference to the acquisition authority’s awards.",
+        "A civil court later enhanced compensation, and appeals against the enhancement were pending.",
+        "The reopening notice relied on the later enhancement and treated the acquired land as having been undervalued, intending to include the enhanced amount in the estate passing on death."
+      ],
+      "conclusion": "The notice under section 59(a) and the reassessment made under it were quashed because they proceeded on an unsustainable basis: the acquired land was no longer part of the estate, and the later enhanced compensation was not the proper valuation of the compensation right as of death.",
+      "legal_principle": "The right passing on death was the right to compensation, not the acquired land or a later-created right to enhanced compensation. That right had to be valued as of death under section 36 of the Estate Duty Act, with due regard to litigation risk; a subsequent civil court award, particularly one subject to appeal, could not simply be added to the earlier award and treated as the value at death. The Court did not decide whether non-disclosure of the references independently justified reopening.",
+      "rule": {
+        "if": "estate_duty_reopening_notice and acquired_land_treated_as_estate_at_death and later_court_enhancement_used_as_death_value",
+        "then": "reopening_notice_and_resulting_reassessment_are_invalid"
+      },
+      "predicates": {
+        "estate_duty_reopening_notice": "The proceeding challenges a notice seeking to reopen an estate-duty assessment.",
+        "acquired_land_treated_as_estate_at_death": "The notice treated land already vested in the government as property forming part of the estate at death.",
+        "later_court_enhancement_used_as_death_value": "The notice relied on a later court enhancement to treat the property as undervalued at death."
+      },
+      "definition": "In a proceeding challenging an estate-duty reopening notice, if the notice treats land already vested in the government as part of the estate at death and uses a later court enhancement as the death-date value, the output is that the notice and resulting reassessment are invalid."
+    },
+    {
+      "legal_issue": "Rectification is not available to change an estate-duty valuation because another authority later valued the acquired property differently.",
+      "material_facts": [
+        "The original assessment adopted the acquisition authority’s compensation award as the valuation of the acquired property.",
+        "After a civil court enhanced the compensation, the assessing authority proposed to rectify the assessment by adopting the enhanced amount.",
+        "The proposed rectification sought to alter the valuation already adopted in the original assessment rather than correct an apparent mistake in that assessment."
+      ],
+      "conclusion": "The notice under section 61 and the rectification order made under it were quashed. The proposed alteration was a change of opinion about valuation, for which reassessment under section 59 was required, subject to the time limit in section 73A.",
+      "legal_principle": "Section 61 permits correction of a mistake apparent from the assessment record, not a change of opinion about valuation based on a different valuation made later by another authority. Where the assessing authority had adopted a valuation in the original assessment and later sought to replace it, the proper course was reassessment under section 59, subject to section 73A. The Court applied Ethel Rodriques v. Assistant Controller of Estate Duty, Estate Duty-cum Income Tax Circle, Mangalore.",
+      "rule": {
+        "if": "estate_duty_rectification_proceeding and original_assessment_adopted_a_valuation and later_authority_valuation_used_to_replace_it",
+        "then": "rectification_notice_and_order_are_invalid"
+      },
+      "predicates": {
+        "estate_duty_rectification_proceeding": "The proceeding concerns rectification of an estate-duty assessment.",
+        "original_assessment_adopted_a_valuation": "The assessing authority adopted a valuation in the original assessment after examining the assessment material.",
+        "later_authority_valuation_used_to_replace_it": "The assessing authority later sought to replace that valuation with one made by another authority."
+      },
+      "definition": "When rectification is sought in an estate-duty proceeding to replace a valuation already adopted in the original assessment with a later valuation made by another authority, the output is that the rectification notice and order are invalid."
+    }
+  ],
+  "seconds": 15.1
+}

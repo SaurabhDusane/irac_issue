@@ -1,0 +1,76 @@
+{
+  "doc_id": "707409",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17279,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2701,
+    "prompt_tokens": 5005,
+    "total_tokens": 7706,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A subtenant under a tenant holding directly from the landlord can acquire direct tenancy without the landlord's consent to the subletting, while a subtenant under an inferior tenant requires the consent of both the landlord and the superior tenant.",
+      "material_facts": [
+        "The tenant who sublet the premises held directly from the landlord.",
+        "The lease prohibited subletting, and the subtenant claimed direct tenancy after the tenant's tenancy ended."
+      ],
+      "conclusion": "For a sublease by a tenant holding directly from the landlord, the landlord's consent is not a condition of the subtenant acquiring direct tenancy. For a sublease by an inferior tenant, both the landlord's and the superior tenant's consent are required.",
+      "legal_principle": "Sections 13(1) and 13(2) of the West Bengal Premises Rent Control (Temporary Provisions) Act, 1950 distinguish subleases made by a tenant of the first degree from subleases made by an inferior tenant. Section 13(1) requires the landlord's and superior tenant's consent for the latter class, and section 13(2) grants the subtenant direct-tenancy status subject to the applicable conditions. No earlier cases are relied on.",
+      "rule": {
+        "if": "qualifying_tenancy_termination and ((first_degree_sublease) or (inferior_tenant_sublease and landlord_consented and superior_tenant_consented))",
+        "then": "subtenant_acquires_direct_tenancy"
+      },
+      "predicates": {
+        "qualifying_tenancy_termination": "The tenant's tenancy ended lawfully, other than through a decree based on the excluded ground described by the law.",
+        "first_degree_sublease": "A tenant holding directly from the landlord sublet the premises or part of them.",
+        "inferior_tenant_sublease": "A tenant holding under another tenant sublet the premises or part of them.",
+        "landlord_consented": "The landlord consented to the inferior tenant's subletting.",
+        "superior_tenant_consented": "The tenant above the inferior tenant consented to the subletting."
+      },
+      "definition": "When the tenant's tenancy ends in the qualifying way, a subtenant under a direct tenant acquires direct tenancy without a consent condition, whereas a subtenant under an inferior tenant does so only if both required consents were given."
+    },
+    {
+      "legal_issue": "The requirement that a sublease be binding on the landlord applies only to subleases created by an inferior tenant, not to subleases created by a tenant holding directly from the landlord.",
+      "material_facts": [
+        "The tenant who granted the sublease held directly from the landlord.",
+        "The lease prohibited subletting, and the landlord argued that the sublease was not binding on the landlord."
+      ],
+      "conclusion": "The statutory phrase requiring the sublease to be binding on the landlord qualifies only subleases created by an inferior tenant.",
+      "legal_principle": "The Court construed the grammatical structure and context of section 13(2) together with the distinction between the two classes of subtenancies in section 13(1) of the West Bengal Premises Rent Control (Temporary Provisions) Act, 1950. No earlier cases are relied on.",
+      "rule": {
+        "if": "first_degree_sublease",
+        "then": "landlord_binding_requirement_confined_to_inferior_subleases"
+      },
+      "predicates": {
+        "first_degree_sublease": "A tenant holding directly from the landlord sublet the premises or part of them."
+      },
+      "definition": "If a direct tenant created the sublease, the requirement that the sublease bind the landlord applies only to inferior-tenant subleases and does not govern that sublease."
+    },
+    {
+      "legal_issue": "A subtenant's statutory entitlement to direct tenancy is not defeated merely because the subletting violated the lease or the landlord sought eviction on account of subletting.",
+      "material_facts": [
+        "The lease prohibited the tenant from subletting the premises or any part of them.",
+        "The subtenant claimed direct tenancy after the tenant's tenancy ended.",
+        "The landlord argued that the breach of the lease and the eviction provisions prevented the subtenant from acquiring statutory rights."
+      ],
+      "conclusion": "A breach of the lease's prohibition on subletting does not by itself prevent the subtenant from acquiring the rights provided by section 13(2); the rights of subtenants remain governed by section 13 even where the landlord brings an eviction suit based on subletting.",
+      "legal_principle": "Section 13(2) of the West Bengal Premises Rent Control (Temporary Provisions) Act, 1950 does not limit protection to subleases lawful under the lease. Section 12(1)(c) preserves the rights and obligations of subtenants under section 13 in the stated eviction context. The Court contrasted this language with section 11(3) of the 1948 Act, which referred to premises lawfully sublet, and held that the 1950 Act deliberately enlarged the protected class. No earlier cases are relied on.",
+      "rule": {
+        "if": "first_degree_sublease and lease_prohibited_subletting and qualifying_tenancy_termination",
+        "then": "subtenant_acquires_direct_tenancy"
+      },
+      "predicates": {
+        "first_degree_sublease": "A tenant holding directly from the landlord sublet the premises or part of them.",
+        "lease_prohibited_subletting": "The lease barred the tenant from subletting the premises or part of them.",
+        "qualifying_tenancy_termination": "The tenant's tenancy ended lawfully, other than through a decree based on the excluded ground described by the law."
+      },
+      "definition": "When a direct tenant sublets despite a lease prohibition and the tenancy ends in the qualifying way, the subtenant acquires direct tenancy notwithstanding the breach."
+    }
+  ],
+  "seconds": 16.6
+}

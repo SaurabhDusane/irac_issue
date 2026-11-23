@@ -1,0 +1,99 @@
+{
+  "doc_id": "112778127",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 44807,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4555,
+    "prompt_tokens": 10504,
+    "total_tokens": 15059,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "In statutory rent-control eviction proceedings, failure to establish a landlord-tenant relationship bars an eviction decree based solely on the claimant’s general title.",
+      "material_facts": [
+        "The plaintiff brought an eviction suit under the state accommodation-control law and sought delivery of possession.",
+        "The courts found that no landlord-tenant relationship existed between the parties.",
+        "The lower appellate court nevertheless awarded possession on the basis of the plaintiff’s title, while the High Court held that eviction could not be ordered under the rent-control law without the required relationship."
+      ],
+      "conclusion": "The plaintiff was not entitled to eviction under the rent-control law because the landlord-tenant relationship was not established; possession could not be awarded in that proceeding merely on the basis of general title.",
+      "legal_principle": "Under Sections 12(1)(a) and 12(1)(e) of the Madhya Pradesh Accommodation Control Act, 1961, read with the Act’s definitions of landlord and tenant, the existence of that relationship is essential to relief under the Act. The court’s inquiry in such a proceeding is limited to the statutory grounds for eviction. Rajendra Tiwary v. Basudeo Prasad distinguishes ordinary civil actions under the Transfer of Property Act, in which an alternative relief may be available under Order VII Rule 7 of the Code of Civil Procedure; Bhagwati Prasad v. Chandramaul and Biswanath Agarwalla v. Sabitri Bera concerned such ordinary civil actions. Dr. Ranbir Singh v. Asharfi Lal and LIC v. India Automobiles & Co. support the limited scope of an eviction action based on a landlord-tenant relationship.",
+      "rule": {
+        "if": "statutory_rent_eviction_proceeding and not landlord_tenant_relationship_established",
+        "then": "eviction_under_rent_law_unavailable"
+      },
+      "predicates": {
+        "statutory_rent_eviction_proceeding": "The claimant brought a proceeding seeking eviction under a statutory rent-control regime.",
+        "landlord_tenant_relationship_established": "The evidence established that the claimant and occupant stood in a landlord-tenant relationship."
+      },
+      "definition": "When a claimant seeks eviction through a statutory rent-control proceeding and the parties’ landlord-tenant relationship is not established, eviction under that regime is unavailable."
+    },
+    {
+      "legal_issue": "A limited statutory eviction forum cannot determine ownership or adverse possession when the landlord-tenant relationship required for its jurisdiction is not established.",
+      "material_facts": [
+        "The defendant disputed the plaintiff’s title and claimed to have acquired title by adverse possession.",
+        "The trial court found for the defendant on adverse possession, and the lower appellate court later rejected that finding and awarded possession based on the plaintiff’s title.",
+        "The absence of a landlord-tenant relationship was established, so the statutory eviction proceeding did not require a decision on either party’s title.",
+        "The High Court restored the trial court’s decree, including its adverse-possession determination."
+      ],
+      "conclusion": "The title and adverse-possession questions were outside the limited inquiry in the statutory eviction proceeding and remained open for determination in an ordinary civil suit; the High Court’s affirmation of the trial court’s adverse-possession finding was set aside.",
+      "legal_principle": "Under the scheme of the Madhya Pradesh Accommodation Control Act, the statutory court’s inquiry concerns the parties’ status and the grounds for eviction, not final determination of title. Rajendra Tiwary v. Basudeo Prasad explains that a court exercising limited jurisdiction under a special rent law cannot grant an alternative decree on general title under Order VII Rule 7 of the Code of Civil Procedure where that relief is outside the Act. Dr. Ranbir Singh v. Asharfi Lal and LIC v. India Automobiles & Co. explain that title may be considered incidentally in an eviction action only as needed to assess the landlord-tenant relationship, not to determine title finally. Bhagwati Prasad v. Chandramaul and Biswanath Agarwalla v. Sabitri Bera were distinguished because they involved ordinary civil suits.",
+      "rule": {
+        "if": "limited_statutory_eviction_proceeding and not landlord_tenant_relationship_established and title_or_adverse_possession_claim_disputed",
+        "then": "title_and_adverse_possession_questions_remain_open_for_ordinary_civil_suit"
+      },
+      "predicates": {
+        "limited_statutory_eviction_proceeding": "The claimant brought an eviction proceeding in a forum whose authority is limited by a special rent-control scheme.",
+        "landlord_tenant_relationship_established": "The evidence established that the claimant and occupant stood in a landlord-tenant relationship.",
+        "title_or_adverse_possession_claim_disputed": "A party disputed ownership or asserted that possession had matured into title by adverse possession."
+      },
+      "definition": "When a limited statutory eviction proceeding lacks an established landlord-tenant relationship and ownership or adverse possession is disputed, those title questions remain open for an ordinary civil suit."
+    },
+    {
+      "legal_issue": "Filing a suit seeking recovery of possession arrests the running of time for acquisition of title by adverse possession while the proceedings continue, if the title had not already been perfected when the suit was filed.",
+      "material_facts": [
+        "The plaintiff’s eviction suit sought delivery of possession.",
+        "The defendant claimed longstanding possession and adverse possession, but the courts’ findings on title and adverse possession did not finally resolve whether title had been perfected before the suit was filed.",
+        "The Court concluded that the proceeding was not before a forum inherently incapable of ordering delivery of possession and that filing it showed an intention to recover possession."
+      ],
+      "conclusion": "The time for acquiring title by adverse possession was arrested, or held in suspension, from institution of the suit until the proceedings arising from it ended, provided the defendant had not already perfected title by that date.",
+      "legal_principle": "Adverse possession requires hostile, actual, open, exclusive and continuous possession for the legally required period; the claimant must plead and establish the nature and commencement of possession, its publicity and duration, and the owner’s knowledge. The Court relied on Secretary of State for India in Council v. Debendra Lal Khan, S.M. Karim v. Mst. Bibi Sakina, Karnataka Board of Wakf v. Government of India and P.T. Munichikkanna Reddy v. Revamma. Under the limitation principles discussed with Section 28 of the Limitation Act, 1963, filing a possession action arrests the running of the period: Mst. Sultan Jehan Begum v. Gul Mohd., Sultan Khan v. State of Madhya Pradesh and Babu Khan v. Nazim Khan, which approved the relevant principle in Ragho Prasad v. P.N. Agarwal. A title already perfected before filing stands on a different footing.",
+      "rule": {
+        "if": "possession_recovery_proceeding and possession_relief_requested and forum_had_inherent_power_to_order_possession and adverse_title_not_already_perfected_at_filing",
+        "then": "adverse_possession_period_suspended_until_proceedings_end"
+      },
+      "predicates": {
+        "possession_recovery_proceeding": "The claimant brought a proceeding seeking recovery of possession from an occupant.",
+        "possession_relief_requested": "The claimant asked the court to deliver possession of the property.",
+        "forum_had_inherent_power_to_order_possession": "The forum was not inherently incapable of ordering delivery of possession.",
+        "adverse_title_not_already_perfected_at_filing": "The occupant had not already completed the legally required adverse possession before the proceeding began."
+      },
+      "definition": "When a claimant seeks possession in a proceeding before a forum capable of ordering it, and adverse title was not already perfected at filing, the adverse-possession period is suspended until the proceedings end."
+    },
+    {
+      "legal_issue": "A claimant whose statutory eviction action fails for lack of a landlord-tenant relationship may bring a separate ordinary civil suit to establish title and recover possession when title was not determined in the statutory proceeding.",
+      "material_facts": [
+        "The plaintiff’s statutory eviction suit failed because the landlord-tenant relationship was not established.",
+        "The statutory proceeding could not finally determine the parties’ competing title and adverse-possession claims.",
+        "The plaintiff had sought delivery of possession, and the Court held that filing the suit suspended the adverse-possession period during the proceedings, subject to the possibility that title had already been perfected before filing."
+      ],
+      "conclusion": "The plaintiff was permitted to institute a fresh suit for title, recovery of possession and any other relief allowed by law, within the period specified by the Court; the defendant could raise all available defences, including adverse possession.",
+      "legal_principle": "A statutory eviction proceeding that cannot determine title does not foreclose a separate ordinary civil action for title and possession. The Court relied on the distinction between limited statutory jurisdiction and ordinary civil jurisdiction explained in Rajendra Tiwary v. Basudeo Prasad, and on the principle that filing a possession action arrests the running of adverse possession, as discussed in Mst. Sultan Jehan Begum v. Gul Mohd., Sultan Khan v. State of Madhya Pradesh and Babu Khan v. Nazim Khan. The plaintiff must still establish title in the ordinary civil suit, and the occupant may contest it, including by pleading adverse possession.",
+      "rule": {
+        "if": "statutory_eviction_suit_failed_for_absent_tenancy_relationship and title_not_determined_in_that_proceeding and possession_was_sought",
+        "then": "separate_title_and_possession_suit_permitted"
+      },
+      "predicates": {
+        "statutory_eviction_suit_failed_for_absent_tenancy_relationship": "The claimant’s statutory eviction suit failed because the required landlord-tenant relationship was not established.",
+        "title_not_determined_in_that_proceeding": "The statutory proceeding did not finally determine the parties’ competing claims to ownership or adverse possession.",
+        "possession_was_sought": "The claimant asked in the proceeding for delivery of possession of the property."
+      },
+      "definition": "When a statutory eviction suit fails for want of the required tenancy relationship, leaves title undetermined, and sought possession, a separate suit to establish title and recover possession is permitted."
+    }
+  ],
+  "seconds": 27.7
+}

@@ -1,0 +1,106 @@
+{
+  "doc_id": "1954254",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41419,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2512,
+    "prompt_tokens": 9831,
+    "total_tokens": 12343,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant’s time to apply for determination of standard rent under the limitation provision runs from the commencement of that tenant’s own tenancy when the premises are let to that tenant after the Act came into force.",
+      "material_facts": [
+        "The tenant was initially inducted as a sub-tenant by the head-tenant after the Act came into force.",
+        "After the head-tenant surrendered the tenancy, the landlord accepted the applicant as a direct tenant from a later effective date.",
+        "The applicant sought determination of standard rent within six months of becoming the direct tenant."
+      ],
+      "conclusion": "The application for determination of standard rent was within time under Section 11(b).",
+      "legal_principle": "Under Section 11(b) of the Delhi and Ajmer Rent Control Act, 1952, an application concerning premises let after the Act came into force must be filed within six months from the date they are let to the tenant applying to determine the standard rent. The Court construed “so let” as referring to the letting to that tenant, not the first letting of the premises to anyone. It also considered the Act’s definition of tenant in Section 2(j) and the restriction on unauthorised subletting in Section 13(1)(b).",
+      "rule": {
+        "if": "standard_rent_application and (applicant_became_direct_tenant_after_act or applicant_was_newly_let_the_premises) and application_filed_within_six_months_of_applicant_tenancy",
+        "then": "standard_rent_application_is_timely"
+      },
+      "predicates": {
+        "standard_rent_application": "A tenant applied to a court for determination of the standard rent of the premises.",
+        "applicant_became_direct_tenant_after_act": "The landlord accepted the applicant as a direct tenant after the governing rent legislation came into force.",
+        "applicant_was_newly_let_the_premises": "The premises were let to the applicant after the governing rent legislation came into force.",
+        "application_filed_within_six_months_of_applicant_tenancy": "The applicant filed the standard-rent application within six months after the applicant’s tenancy began."
+      },
+      "definition": "When a tenant applies to determine standard rent for premises newly let to that tenant, and applies within six months of that tenancy beginning, the application is timely."
+    },
+    {
+      "legal_issue": "A tenant’s defence cannot be struck for failing to comply with a purported rent-deposit direction that was interpolated and therefore legally non-existent.",
+      "material_facts": [
+        "The landlord sued for arrears of rent and possession, alleging default, while the tenant’s application to determine standard rent was pending.",
+        "The tenant deposited the arrears claimed and applied to have interim rent fixed pending determination of standard rent.",
+        "The trial court record contained a purported direction requiring monthly payment at the agreed rate; two High Court judges found that the direction had been interpolated.",
+        "The tenant’s defence was struck for failing to comply with that purported direction."
+      ],
+      "conclusion": "The purported direction and the order striking the tenant’s defence were set aside; the interim-rent application remained undecided and the tenant was entitled to defend the suit on its merits.",
+      "legal_principle": "Sections 4, 8, 9 and 13 of the Delhi and Ajmer Rent Control Act, 1952 govern the tenant’s obligation to pay rent, determination of standard and interim rent, and protection against eviction. Where a tenant disputes the rent and seeks determination of standard rent, the court should decide that issue first or make an interim-rent order and specify the required payment. Section 13(5) cannot support striking a defence for disobedience of an interpolated, legally non-existent order. The Court relied on Vora Abbasbhai Alimahomed v. Haji Gulamnabi Haji Safibhai for the analogous principle that a rent dispute should be determined and the tenant called upon to pay the rent fixed before the tenant’s protection is lost.",
+      "rule": {
+        "if": "rent_default_eviction_suit and standard_rent_dispute_pending and interim_rent_requested and purported_deposit_order_interpolated and defence_struck_for_noncompliance",
+        "then": "order_striking_defence_cannot_stand"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "A landlord brought a suit seeking rent or possession on the ground that the tenant had defaulted in paying rent.",
+        "standard_rent_dispute_pending": "The tenant had applied to determine standard rent and that application remained pending.",
+        "interim_rent_requested": "The tenant asked the court to fix the rent payable while the standard-rent application was pending.",
+        "purported_deposit_order_interpolated": "The purported direction requiring rent deposits was added to the court record by interpolation rather than made as a valid order.",
+        "defence_struck_for_noncompliance": "The court struck the tenant’s defence because the tenant did not comply with the purported direction."
+      },
+      "definition": "In a rent-default eviction suit, a defence cannot be struck for failure to comply with an interpolated rent-deposit direction when a standard-rent dispute is pending and interim rent has been requested."
+    },
+    {
+      "legal_issue": "Delay in appealing a rent-deposit order should be condoned when the circumstances explain the delay and refusing condonation would cause a miscarriage of justice.",
+      "material_facts": [
+        "The appeal challenged an order directing future rent deposits and was accompanied by an application to condone delay.",
+        "The tenant stated that the orders were made in the tenant’s absence and were not communicated to the tenant.",
+        "The landlord’s suit was dismissed for default and later restored; the tenant appealed within three days of restoration.",
+        "The order appealed from was found to be interpolated, and refusal to condone delay left the tenant subject to the striking of a defence for noncompliance with a legally non-existent order."
+      ],
+      "conclusion": "The tenant had shown sufficient cause for the delay; the refusal to condone it was set aside and the delay was condoned.",
+      "legal_principle": "Under Section 5 of the Limitation Act, 1963, delay may be condoned for sufficient cause. Although a court ordinarily does not interfere with a factual decision on such an application, it may do so where the failure to exercise jurisdiction would cause a miscarriage of justice. The Court found the combination of lack of communication, the suit’s dismissal and restoration, the prompt appeal after restoration, and the interpolated nature of the order sufficient to justify condonation.",
+      "rule": {
+        "if": "appeal_against_rent_deposit_order and order_not_communicated_to_appellant and appeal_filed_promptly_after_obstacle_ended and refusal_to_condone_would_cause_miscarriage_of_justice",
+        "then": "delay_in_appeal_must_be_condoned"
+      },
+      "predicates": {
+        "appeal_against_rent_deposit_order": "A party appealed an order requiring rent deposits during a pending rent dispute.",
+        "order_not_communicated_to_appellant": "The order was made in the appellant’s absence and was not communicated to the appellant.",
+        "appeal_filed_promptly_after_obstacle_ended": "The appellant filed the appeal promptly after the circumstance preventing an earlier appeal ended.",
+        "refusal_to_condone_would_cause_miscarriage_of_justice": "Refusing to excuse the delay would leave the appellant suffering a serious consequence based on an order later found to be legally non-existent."
+      },
+      "definition": "When an appellant was not informed of a rent-deposit order, appealed promptly once the obstacle ended, and refusal to excuse the delay would cause a miscarriage of justice, the delay must be condoned."
+    },
+    {
+      "legal_issue": "Delay in seeking substitution of a deceased respondent may be condoned and abatement set aside when the applicant acts promptly after learning of the death and the surrounding circumstances provide sufficient cause.",
+      "material_facts": [
+        "The original landlord died while the appeals were pending.",
+        "The original landlord had transferred the property years earlier, and the transferees were the parties actually contesting the property litigation.",
+        "The applicant said the death was first communicated by the transferees’ counsel and sought substitution within three weeks of that communication.",
+        "Order XXII Rule 10A placed a duty on the deceased party’s pleader to inform the opposite party of the death; the information was provided years after the death."
+      ],
+      "conclusion": "Sufficient cause was established; the delay was condoned, the abatement was set aside, and substitution of the deceased respondent’s legal representatives was allowed.",
+      "legal_principle": "Order XXII Rule 10A of the Code of Civil Procedure, 1908, places a duty on a pleader appearing for a deceased party to inform the opposite party of the death. The Court assessed sufficient cause from the cumulative circumstances, including the delayed notification, the applicant’s prompt action after receiving notice, and the deceased respondent’s lack of continuing interest in property transferred long before.",
+      "rule": {
+        "if": "substitution_sought_in_pending_appeal and applicant_learned_of_death_late and substitution_sought_promptly_after_notice and deceased_party_had_transferred_litigation_property",
+        "then": "delay_condoned_and_substitution_allowed"
+      },
+      "predicates": {
+        "substitution_sought_in_pending_appeal": "A party sought to substitute the legal representatives of a respondent who died while an appeal was pending.",
+        "applicant_learned_of_death_late": "The applicant received notice of the respondent’s death substantially after it occurred.",
+        "substitution_sought_promptly_after_notice": "The applicant sought substitution promptly after learning of the death.",
+        "deceased_party_had_transferred_litigation_property": "The deceased respondent had transferred the property in dispute before the relevant litigation and no longer had an interest in it."
+      },
+      "definition": "When substitution is sought in a pending appeal, notice of death arrives late, the applicant acts promptly after notice, and the deceased had already transferred the property in dispute, the delay may be condoned and substitution allowed."
+    }
+  ],
+  "seconds": 15.6
+}

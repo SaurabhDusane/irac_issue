@@ -1,0 +1,95 @@
+{
+  "doc_id": "317554",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 78936,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3637,
+    "prompt_tokens": 18450,
+    "total_tokens": 22087,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Whether the existence of a bar to civil-court jurisdiction must be determined from the entire plaint and the substance of the claim rather than from the reliefs alone.",
+      "material_facts": [
+        "The plaint sought declarations that a religious body had ceased to exist and that another body was its legal successor, as well as injunctions concerning the use, possession and management of church property.",
+        "The plaint also stated that the dispute involved rights in property belonging to the former religious body and described actions obstructing the administration of its churches."
+      ],
+      "conclusion": "The jurisdictional bar must be assessed by considering the plaint as a whole, including its material averments, cause of action and reliefs, and by identifying the substance of the claim.",
+      "legal_principle": "The court applies the principles in Dhulabhai v. State of Madhya Pradesh and Sopan Sukhdeo Sable v. Assistant Charity Commissioner: exclusion of civil jurisdiction is not readily inferred, but the court must examine the statutory scheme and the substance of the claim; jurisdiction cannot be decided from the reliefs de hors the factual averments. A plaint that, read as a whole, discloses no cause of action entertainable by a civil court may be rejected under Order 7 Rule 11 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "civil_suit_jurisdiction_objection and plaint_contains_material_averments_and_reliefs",
+        "then": "jurisdiction_bar_is_assessed_from_the_entire_plaint"
+      },
+      "predicates": {
+        "civil_suit_jurisdiction_objection": "A party to a civil suit objects that the civil court lacks jurisdiction.",
+        "plaint_contains_material_averments_and_reliefs": "The plaint sets out factual averments, a cause of action and the reliefs sought."
+      },
+      "definition": "When a jurisdiction objection is raised in a civil suit with factual averments and requested reliefs, the jurisdictional bar is assessed from the plaint as a whole."
+    },
+    {
+      "legal_issue": "Whether a civil suit seeking decisions about the administration, possession or succession of property belonging to a registered public religious trust is barred when those matters are assigned to the statutory trust authorities.",
+      "material_facts": [
+        "The religious body whose property was in dispute had been registered as a public trust.",
+        "The suit sought declarations about the body's dissolution and its successor, and injunctions affecting church property and its administration and possession.",
+        "The claimant had obtained registration as a public trust, but its change report concerning the trust records had not been decided.",
+        "The suit did not allege that the statutory authorities had failed to comply with the governing law or fundamental principles of judicial procedure."
+      ],
+      "conclusion": "The suit was not maintainable because the matters its requested reliefs required the court to decide fell within the jurisdiction of the statutory trust authorities.",
+      "legal_principle": "Under Sections 19–22, 31, 50, 51, 79 and 80 of the Bombay Public Trusts Act, the trust authorities inquire into trust status and trust property, record and amend trust entries, and decide matters assigned to them; suits seeking specified reliefs concerning public trusts are subject to the Act's requirements, including consent where applicable. Section 26 applies only to questions a competent civil court may decide because they are not expressly or impliedly barred. The court applies Dhulabhai v. State of Madhya Pradesh on statutory finality and exclusion of civil jurisdiction, and relies on Virupakshayya Shankarayya v. Neelakanta Shivacharya Pattadadevaru and Shree Gollaleshwar Dev v. Gangawwa Kom Shantayya Math concerning statutory procedures for claims involving trust property. The statutory scheme provides a remedy and appeal process, and the suit's substance concerned trust administration, property and succession rather than a matter outside that scheme.",
+      "rule": {
+        "if": "civil_suit_concerning_public_trust and claim_requires_decision_about_trust_administration_or_property_or_succession and statutory_authority_has_power_to_decide_the_claim",
+        "then": "civil_suit_is_not_maintainable"
+      },
+      "predicates": {
+        "civil_suit_concerning_public_trust": "A civil suit concerns property or affairs of a public trust.",
+        "claim_requires_decision_about_trust_administration_or_property_or_succession": "The relief sought depends on deciding how the trust is administered, who succeeds to it, or who may possess or manage its property.",
+        "statutory_authority_has_power_to_decide_the_claim": "A statutory authority is empowered to decide the trust-related matter and the governing scheme provides a means to challenge its decision."
+      },
+      "definition": "A civil suit concerning a public trust is not maintainable when the requested relief depends on a matter that a statutory authority is empowered to decide."
+    },
+    {
+      "legal_issue": "Whether dissolution of a society automatically dissolves a related public trust or transfers or adjusts property vested in the trust.",
+      "material_facts": [
+        "The religious body had been registered both as a society and as a public trust, and the plaint treated it as a single entity rather than pleading that the society and trust had separate functions or property.",
+        "The disputed properties had vested in the trust's trustees, and the plaint did not allege that the society owned those properties or that the society managed the trust separately.",
+        "The claimant relied on a resolution to dissolve and merge the religious bodies and claimed to be successor to their property, but the suit did not conform to the procedure for adjustment of a society's affairs on dissolution."
+      ],
+      "conclusion": "Dissolution of the society would not, by itself, dissolve the trust or transfer or adjust property vested in the trust.",
+      "legal_principle": "Sections 5 and 13 of the Societies Registration Act, 1860 address the vesting and adjustment of society property and the procedure for dissolution. Where property has vested in trustees, dissolution of the society does not itself transfer that trust property or establish a successor's rights to it. A society registered for religious or charitable purposes is also included within the definition of public trust in Section 2(13) of the Bombay Public Trusts Act, and trust registration, property and changes are addressed by Sections 19–22 and 79–80. The court also referred to Board of Trustees, Ayurvedic and Unani Tibia College v. State of Delhi, Dharam Dutt v. Union of India and Illachi Devi v. Jain Society, Protection of Orphans India.",
+      "rule": {
+        "if": "society_dissolution_case and property_vested_in_trustees and no_lawful_transfer_or_adjustment_of_trust_property",
+        "then": "society_dissolution_does_not_transfer_trust_property"
+      },
+      "predicates": {
+        "society_dissolution_case": "A dispute concerns the dissolution of a society and the consequences claimed to follow from it.",
+        "property_vested_in_trustees": "The property at issue was vested in trustees rather than owned by the society as its own property.",
+        "no_lawful_transfer_or_adjustment_of_trust_property": "No legally effective transfer or adjustment of the trust property has occurred."
+      },
+      "definition": "When a dissolution dispute concerns property vested in trustees and no lawful transfer or adjustment has occurred, dissolution of the society does not transfer that trust property."
+    },
+    {
+      "legal_issue": "Whether a civil court may determine the foundational question of whether a trust exists or property is trust property when that question falls outside the statutory authority's jurisdiction.",
+      "material_facts": [
+        "The claim concerned the successor to a religious body registered as a public trust and rights over property treated in the plaint as belonging to that trust.",
+        "The court found no case in the plaint that the trust was legally invalid or that the property had never validly vested in it."
+      ],
+      "conclusion": "Civil-court jurisdiction is not barred for a foundational question where the property is not trust property in law or the trust itself is invalid in law, because the statutory authorities would then lack jurisdiction to decide it.",
+      "legal_principle": "Section 80 of the Bombay Public Trusts Act excludes civil jurisdiction only over questions that the Act assigns to its officers or authorities. The court held that a question whether property ever validly vested in a trust, or whether the trust itself is valid in law, may remain for the civil court because it is a jurisdictional question outside the statutory authorities' power.",
+      "rule": {
+        "if": "civil_suit_concerning_trust_status_or_property and property_is_not_trust_property_in_law_or_trust_is_invalid_in_law",
+        "then": "civil_court_jurisdiction_is_not_barred"
+      },
+      "predicates": {
+        "civil_suit_concerning_trust_status_or_property": "A civil suit raises a foundational dispute about whether a trust exists or whether property belongs to it.",
+        "property_is_not_trust_property_in_law_or_trust_is_invalid_in_law": "The property did not validly vest in a trust, or the trust itself is legally invalid."
+      },
+      "definition": "When a civil suit raises a foundational trust question and the property is not legally trust property or the trust is invalid, civil-court jurisdiction is not barred."
+    }
+  ],
+  "seconds": 21.0
+}

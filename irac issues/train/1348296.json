@@ -1,0 +1,64 @@
+{
+  "doc_id": "1348296",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17290,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2129,
+    "prompt_tokens": 4602,
+    "total_tokens": 6731,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court may not reverse an acquittal merely because it prefers a different view of the evidence when the trial court’s view is reasonably supported.",
+      "material_facts": [
+        "The trial court gave a detailed assessment of the prosecution evidence and acquitted the accused.",
+        "The High Court reversed the acquittal, but did not address material reasons on which the trial court had relied."
+      ],
+      "conclusion": "The High Court was not justified in interfering with the acquittal; the Supreme Court allowed the appeal and restored the acquittal.",
+      "legal_principle": "An appellate court may reappraise evidence in an appeal against acquittal, but it should not substitute a conviction merely because another view is possible where the trial court’s conclusion is reasonably available on the evidence. Interference requires substantial and compelling reasons. No earlier cases are cited for this principle.",
+      "rule": {
+        "if": "appeal_against_acquittal and trial_view_reasonably_supported and substantial_reasons_for_reversal_absent",
+        "then": "appellate_interference_unjustified"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The proceeding is an appeal seeking to overturn an acquittal.",
+        "trial_view_reasonably_supported": "The trial court’s conclusion in favour of the accused is reasonably supported by the evidence it assessed.",
+        "substantial_reasons_for_reversal_absent": "The appellate court does not give substantial and compelling reasons for setting aside the acquittal."
+      },
+      "definition": "When an appeal seeks to overturn an acquittal, the trial court’s reasonably supported view is not to be displaced without substantial reasons, and the resulting output is that appellate interference is unjustified."
+    },
+    {
+      "legal_issue": "The conviction could not stand where the prosecution evidence had substantial credibility defects that the appellate court did not adequately address.",
+      "material_facts": [
+        "The trial court found conflicting accounts about whether an earlier report had been made and when the formal report was recorded; the record did not establish when the report was sent to or received by the Magistrate.",
+        "Witnesses gave materially discrepant accounts of the alleged oral dying declarations, and the doctor said the deceased would likely have become unconscious within 10 to 15 minutes of sustaining their injuries.",
+        "The alleged recipients of the dying declarations had serious enmity with the accused.",
+        "The sole eyewitness did not tell family members about the incident after returning to the village and then hid for a period, conduct the trial court considered unnatural.",
+        "The High Court relied on the declarations and eyewitness account without adequately meeting the trial court’s reasons for doubting them."
+      ],
+      "conclusion": "The High Court’s judgment was erroneous; the Supreme Court allowed the appeal and restored the acquittal.",
+      "legal_principle": "A dying declaration must be assessed cautiously, including whether its maker was physically capable of making it and whether it represented the true state of affairs. An oral declaration to a person with serious enmity against the accused warrants hesitation and reservation. Material inconsistencies, medical evidence bearing on consciousness, and unnatural witness conduct are relevant to credibility. The absence of evidence about dispatch or receipt of the report by the Magistrate was also relevant under Section 157 of the Code of Criminal Procedure. No earlier cases are cited for these principles.",
+      "rule": {
+        "if": "appeal_from_conviction_after_reversal_of_acquittal and (report_timing_conflicted and magistrate_report_transmission_unproved) and (declaration_accounts_inconsistent and medical_evidence_limits_consciousness) and declaration_recipient_hostile and sole_witness_conduct_unnatural and trial_reasons_unaddressed",
+        "then": "acquittal_restored"
+      },
+      "predicates": {
+        "appeal_from_conviction_after_reversal_of_acquittal": "The proceeding challenges a conviction entered after an appellate court reversed an acquittal.",
+        "report_timing_conflicted": "The prosecution accounts or records materially conflict about whether or when the first report was made.",
+        "magistrate_report_transmission_unproved": "The evidence does not establish when the report was sent to or received by the Magistrate.",
+        "declaration_accounts_inconsistent": "Witnesses give materially different accounts of the alleged oral dying declaration.",
+        "medical_evidence_limits_consciousness": "Medical evidence indicates that the injuries could have rendered the declarant unconscious before the alleged statement was made.",
+        "declaration_recipient_hostile": "A recipient of the alleged declaration has serious enmity with the accused.",
+        "sole_witness_conduct_unnatural": "The sole eyewitness behaves in a way the fact-finder considers inconsistent with the claimed presence or account of the incident.",
+        "trial_reasons_unaddressed": "The appellate court does not adequately address material reasons given by the trial court for doubting the prosecution evidence."
+      },
+      "definition": "When a conviction follows an appellate reversal of acquittal and the specified report, declaration, witness, and review defects are present, the output is restoration of the acquittal."
+    }
+  ],
+  "seconds": 13.9
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "1482396",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25424,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2619,
+    "prompt_tokens": 7047,
+    "total_tokens": 9666,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The mortgaged security included property that the deed expressly made saleable to recover the mortgage debt.",
+      "material_facts": [
+        "The deed separately described two properties as security and also provided that, on default, the mortgagee could recover the debt by selling those properties and a third property.",
+        "The third property was the mortgagor’s property when the mortgage was made."
+      ],
+      "conclusion": "The third property was included in the mortgage security; the High Court erred in holding that only the first two properties were mortgaged.",
+      "legal_principle": "The court construed the deed as a whole. Because it authorized the mortgagee to sell the third property to recover the debt, the mortgagor’s interest in that property was intended to be encumbered; the mortgagee could not sell it in satisfaction of the debt unless it was mortgaged.",
+      "rule": {
+        "if": "mortgage_enforcement_suit and deed_authorizes_sale_of_property_to_recover_debt",
+        "then": "property_is_included_in_mortgage_security"
+      },
+      "predicates": {
+        "mortgage_enforcement_suit": "A claimant brought a proceeding seeking enforcement of a mortgage.",
+        "deed_authorizes_sale_of_property_to_recover_debt": "The mortgage deed authorizes the mortgagee to sell the property to recover the secured debt.",
+        "property_is_included_in_mortgage_security": "The property that the deed makes saleable to recover the debt is included in the mortgage security."
+      },
+      "definition": "When a mortgage enforcement proceeding concerns a deed authorizing sale of a property to recover the debt, that property is included in the mortgage security."
+    },
+    {
+      "legal_issue": "A mortgagor’s part payment extends the limitation period for enforcing a mortgage only if the mortgagor retained an interest in mortgaged property when making the payment.",
+      "material_facts": [
+        "The mortgage debts were payable on a specified date, and the enforcement suit was filed more than twelve years later.",
+        "For one mortgage, the mortgagor made a signed part payment while he still retained an interest in one of the mortgaged properties; the payment was within twelve years of the debt becoming due.",
+        "For the other mortgage, the mortgagor made a signed part payment only after he had transferred or lost his interests in all the mortgaged properties.",
+        "The claimant relied on the payments to extend the limitation period."
+      ],
+      "conclusion": "The payment made while the mortgagor retained an interest in mortgaged property extended the limitation period for the later mortgage. The payment made after he had lost all interest did not extend the period for the earlier mortgage, which was time-barred.",
+      "legal_principle": "Under section 20 of the Limitation Act, 1908, a qualifying part payment before expiry of the prescribed period starts a fresh period of limitation when made by a person liable to pay the debt. A mortgagor who has transferred or otherwise lost all interest in the equity of redemption is not such a person, and cannot by payment bind the transferee. The court relied on Pavai v. Palanivela Goundan, I.L.R. [1940] Mad. 872. A suit to enforce payment of money charged on immovable property is governed by Article 132 of the Limitation Act, 1908.",
+      "rule": {
+        "if": "mortgage_enforcement_suit and mortgagor_made_part_payment",
+        "then": "part_payment_extends_limitation_only_if_mortgagor_retained_mortgaged_interest"
+      },
+      "predicates": {
+        "mortgage_enforcement_suit": "A claimant brought a proceeding seeking enforcement of a mortgage.",
+        "mortgagor_made_part_payment": "The mortgagor made a part payment toward the mortgage debt.",
+        "part_payment_extends_limitation_only_if_mortgagor_retained_mortgaged_interest": "A part payment extends the limitation period for mortgage enforcement only when the mortgagor retained an interest in mortgaged property when making it."
+      },
+      "definition": "In a mortgage enforcement suit involving a mortgagor’s part payment, the payment extends the limitation period only if the mortgagor retained an interest in mortgaged property at the time of payment."
+    },
+    {
+      "legal_issue": "A mortgagee’s remedies for a personal promise to repay or deprivation of security are distinct from enforcement of the mortgage and are subject to their own limitation periods.",
+      "material_facts": [
+        "The deeds included personal promises to repay the mortgage money and arrangements for the mortgagees to receive royalty from property.",
+        "The property from which royalty was to be received was sold in execution of a decree against the mortgagor, depriving the mortgagees of that property or their possession.",
+        "The mortgage money had become payable more than twelve years before suit, and the suit was brought within twelve years of the deprivation.",
+        "The claimant relied on the deprivation as a fresh basis for enforcing the mortgage."
+      ],
+      "conclusion": "Dispossession did not extend the limitation period for a suit to enforce the mortgage. A claim under section 68 of the Transfer of Property Act, 1882, was a distinct personal-covenant or compensation claim, not mortgage enforcement; on the facts, that claim was also time-barred.",
+      "legal_principle": "Section 68 of the Transfer of Property Act, 1882, confers a right to sue for mortgage money on a personal covenant or to claim compensation in specified circumstances; it does not confer a right to enforce the mortgage or extend the limitation period for mortgage enforcement. Article 132 of the Limitation Act, 1908, governs enforcement of money charged on immovable property. Article 116 governs a suit on the personal covenant, while Article 120 governs a claim for compensation, running from deprivation of the security or possession. The court relied on Unichaman v. Ahmed, I.L.R. 21 Mad. 242.",
+      "rule": {
+        "if": "mortgage_enforcement_suit and mortgagee_claims_personal_repayment_or_compensation_for_deprivation",
+        "then": "personal_repayment_claim_runs_from_breach_and_compensation_claim_runs_from_deprivation"
+      },
+      "predicates": {
+        "mortgage_enforcement_suit": "A claimant brought a proceeding seeking enforcement of a mortgage.",
+        "mortgagee_claims_personal_repayment_or_compensation_for_deprivation": "The mortgagee seeks repayment under a personal promise or compensation because the security or possession was lost or disturbed.",
+        "personal_repayment_claim_runs_from_breach_and_compensation_claim_runs_from_deprivation": "A personal repayment claim runs from the relevant breach, while a compensation claim for loss of security or possession runs from the deprivation or disturbance."
+      },
+      "definition": "When a mortgagee seeks personal repayment or compensation for deprivation in a mortgage enforcement proceeding, the personal repayment claim runs from breach and the compensation claim runs from deprivation."
+    }
+  ],
+  "seconds": 16.7
+}

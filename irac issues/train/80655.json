@@ -1,0 +1,77 @@
+{
+  "doc_id": "80655",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38020,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2331,
+    "prompt_tokens": 10367,
+    "total_tokens": 12698,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A fixed statutory period for applying to be registered as an occupant cannot be extended by equitable interpretation when the statute provides no power to condone delay.",
+      "material_facts": [
+        "The application for registration as an occupant was filed after the statutory application period had expired.",
+        "The earlier statutory provision allowing the Tribunal to admit a late application for sufficient cause had been deleted, and no other provision authorizing extension was identified."
+      ],
+      "conclusion": "The application was time-barred, and the fixed filing period could not be extended through a liberal or equitable interpretation.",
+      "legal_principle": "Sections 45 and 48-A of the Karnataka Land Reforms Act, 1961 fixed the period for applying and, after the amendment removed the power to condone delay, did not permit an extension. The Court relied on Virupaxappa v. Land Tribunal (1980 (2) Karnataka L.J. 428); Tirath Singh v. Bachiter Singh (AIR 1955 SC 830) and Sham Rai v. District Magistrate (AIR 1952 SC 624) on avoiding unjust or absurd constructions only where the language admits another interpretation; and Nagendranath Dev v. Suresh Chandra Dev (ILR 60 Cal 1 (PC)) on applying the strict grammatical meaning of limitation provisions despite possible hardship.",
+      "rule": {
+        "if": "occupancy_registration_application and fixed_filing_period_expired",
+        "then": "application_is_time_barred"
+      },
+      "predicates": {
+        "occupancy_registration_application": "A person applies to be registered as an occupant of land under a land-tenancy regime.",
+        "fixed_filing_period_expired": "The filing period fixed by law for that application has expired before the application is filed."
+      },
+      "definition": "When a person applies to be registered as an occupant after the fixed filing period has expired, the application is time-barred."
+    },
+    {
+      "legal_issue": "Pending proceedings to determine who is entitled to a re-grant do not postpone the filing period for an application for occupant registration when the applicant can identify the claimed landlord and use available notice procedures.",
+      "material_facts": [
+        "The applicant claimed to have acquired the land from a former holder and could have named that person, or the person’s successor, as the landlord in the application.",
+        "Other persons disputed entitlement to shares in the land in proceedings concerning re-grant.",
+        "The application process allowed the applicant to note the dispute and provided for public notice to landlords and other interested persons, but the applicant did not use that procedure before the filing period expired."
+      ],
+      "conclusion": "The pending re-grant proceedings did not prevent the filing period from running or extend it until those proceedings became final.",
+      "legal_principle": "Sections 45 and 48-A of the Karnataka Land Reforms Act, 1961, read with Rule 19(1) and Forms 7 and 8, allowed an applicant to identify the claimed landlord and provided for public notice to other landlords and interested persons. Section 126, framed as a declaration for removal of doubts and amended to include lands attached to abolished village offices, confirmed the applicability of the Act to such lands. The Court distinguished Eswarappa v. State of Karnataka (1979 (2) Karnataka L.J. 182), where timely applications had been filed and the issue was whether they should remain pending, not whether a late application was time-barred.",
+      "rule": {
+        "if": "occupancy_registration_application and landlord_entitlement_disputed and alternative_landlord_notice_available and regrant_proceeding_pending",
+        "then": "regrant_proceeding_does_not_postpone_filing_period"
+      },
+      "predicates": {
+        "occupancy_registration_application": "A person applies to be registered as an occupant of land under a land-tenancy regime.",
+        "landlord_entitlement_disputed": "People disagree about which person or persons are entitled to the land as landlord or re-grantee.",
+        "alternative_landlord_notice_available": "The applicant can identify a claimed landlord or use a notice procedure to inform other interested persons.",
+        "regrant_proceeding_pending": "Proceedings to determine entitlement to a re-grant of the land remain unresolved."
+      },
+      "definition": "When an occupant-registration application is affected by a disputed landlord entitlement, an available notice procedure, and unresolved re-grant proceedings, those proceedings do not postpone the filing period."
+    },
+    {
+      "legal_issue": "Resumption of land attached to an abolished village office, when expressly subject to re-grant, does not make the land government land excluded from the land-tenancy regime.",
+      "material_facts": [
+        "The disputed lands were emoluments attached to a village office that had been abolished.",
+        "The land was resumed subject to statutory provisions allowing re-grant to former office holders or other eligible persons.",
+        "The governing provisions distinguished that conditional resumption from a separate situation in which land could vest in the Government free of encumbrances."
+      ],
+      "conclusion": "The lands did not become government lands merely upon resumption and remained within the scope of the Land Reforms Act.",
+      "legal_principle": "Section 4(3) of the Karnataka Village Offices Abolition Act, 1961 made resumption subject to Sections 5, 6 and 7, which provided for re-grant. That conditional resumption was distinct from the vesting free of encumbrances described in Section 5(3). Accordingly, the exclusion in Section 107 of the Karnataka Land Reforms Act, 1961 for land belonging to the Government did not apply merely because of resumption; Section 110 provided for exclusion from that regime by government notification. The Court also considered that treating the land as government land would defeat the asserted claim to occupant registration under Section 45.",
+      "rule": {
+        "if": "land_reforms_occupancy_claim and land_attached_to_abolished_office and resumption_subject_to_regrant",
+        "then": "resumed_land_remains_within_land_reforms_regime"
+      },
+      "predicates": {
+        "land_reforms_occupancy_claim": "A person claims occupant registration under a land-tenancy regime in respect of the land.",
+        "land_attached_to_abolished_office": "The land was attached to a village office that was later abolished.",
+        "resumption_subject_to_regrant": "The land was resumed under a scheme that remained subject to possible re-grant to eligible persons."
+      },
+      "definition": "When an occupant-registration claim concerns land attached to an abolished village office and the resumption remains subject to re-grant, the land remains within the land-tenancy regime."
+    }
+  ],
+  "seconds": 14.9
+}

@@ -1,0 +1,98 @@
+{
+  "doc_id": "232986",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17863,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2894,
+    "prompt_tokens": 4762,
+    "total_tokens": 7656,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court reviewing compensation for compulsory acquisition may interfere with a valuation only when the challenged decision is shown to be wrong in principle or to have overlooked or misapplied an important valuation matter.",
+      "material_facts": [
+        "The compensation was increased at successive stages, and the claimant sought a further increase on appeal.",
+        "The High Court considered the claimant’s recent purchase of the acquired land and other sale evidence.",
+        "No error of principle or omission or misapplication of important valuation material was demonstrated."
+      ],
+      "conclusion": "The Supreme Court found no basis for appellate interference and dismissed the appeal.",
+      "legal_principle": "An appellate court does not interfere merely because another conclusion is possible or because the judgment may not be right; the judgment must be shown to be wrong through a wrong application of principle or an overlooked or misapplied important point affecting valuation. The Supreme Court applied this standard to compensation assessed by reference to market value under section 23 of the Land Acquisition Act.",
+      "rule": {
+        "if": "compensation_appeal and (wrong_valuation_principle_applied or important_valuation_point_overlooked_or_misapplied)",
+        "then": "appellate_interference_warranted"
+      },
+      "predicates": {
+        "compensation_appeal": "The proceeding is an appeal challenging compensation awarded for compulsory acquisition.",
+        "wrong_valuation_principle_applied": "The challenged court applied a wrong principle in assessing compensation.",
+        "important_valuation_point_overlooked_or_misapplied": "The challenged court overlooked or misapplied an important point affecting valuation."
+      },
+      "definition": "If a compensation appeal shows either a wrong valuation principle or an overlooked or misapplied important valuation point, appellate interference is warranted."
+    },
+    {
+      "legal_issue": "A claimant’s recent bona fide purchase of the very land acquired is strong evidence of market value, subject to the circumstances and terms of the transaction.",
+      "material_facts": [
+        "The claimant had purchased the acquired land about ten months before the acquisition notification.",
+        "The claimant did not plead or give evidence of special circumstances that distorted the purchase price.",
+        "The claimant alleged spending additional money to fill a pond but did not provide evidence of that expenditure; the available estimate was substantially lower."
+      ],
+      "conclusion": "The Supreme Court treated the claimant’s recent purchase as important evidence of value and found no reason to disregard it or grant further compensation.",
+      "legal_principle": "Under section 23 of the Land Acquisition Act, market value is assessed by what a willing purchaser would pay a willing vendor. A bona fide purchase of the very property, proximate to the relevant date and made with regard to prevailing market conditions, is ordinarily the best evidence of its value, though the relationship of the parties, market conditions, terms of sale and date of sale may affect its weight. If the sale is old, more recent comparable sales may provide better evidence. The Court relied on S.L.A. Officer v. T.A. Setty, which identifies bona fide purchases of acquired or comparable land within a reasonable time as a method of valuation.",
+      "rule": {
+        "if": "land_acquisition_valuation_case and claimant_recently_bought_identical_land and sale_bona_fide and sale_close_to_valuation_date and not sale_distortion_shown",
+        "then": "recent_purchase_is_strong_market_value_evidence"
+      },
+      "predicates": {
+        "land_acquisition_valuation_case": "The proceeding concerns the assessment of compensation for compulsorily acquired land.",
+        "claimant_recently_bought_identical_land": "The claimant purchased the same land that was later acquired, reasonably close in time to the valuation date.",
+        "sale_bona_fide": "The purchase was a genuine transaction made between a willing purchaser and a willing vendor with regard to market conditions.",
+        "sale_close_to_valuation_date": "The purchase occurred close enough to the valuation date to be informative about value at that date.",
+        "sale_distortion_shown": "Evidence establishes that special circumstances, the parties’ relationship, or the terms of sale distorted the purchase price."
+      },
+      "definition": "When a claimant recently and bona fide purchased the same land and no distortion of the sale is shown, that purchase is strong evidence of market value."
+    },
+    {
+      "legal_issue": "Comparable land sales must be assessed for their proximity, similarity and local conditions, and neither distant sales nor a general assumption of rising prices automatically establishes market value.",
+      "material_facts": [
+        "Sales of nearby land showed lower prices than sales of land farther away.",
+        "The more distant sale relied on concerned land about a mile and a half away, while local industrial, social and geographic conditions could affect prices.",
+        "The evidence did not establish an inevitable rise in prices throughout the relevant period, and some evidence showed prices in the area had remained stationary."
+      ],
+      "conclusion": "The Supreme Court found that the High Court could reasonably assess the totality of the evidence and was not shown to have erred by relying on nearby sales and the circumstances of the area.",
+      "legal_principle": "Comparable sales may assist valuation, particularly when the sale of the acquired land is old, but their value as evidence depends on temporal proximity, comparable advantages and relevant local conditions. A distant sale is not automatically a guide, and a rise in land prices is not an axiomatic proposition. The Court applied the market-value principles in section 23 of the Land Acquisition Act and referred to S.L.A. Officer v. T.A. Setty concerning valuation by bona fide sales of acquired or comparable land.",
+      "rule": {
+        "if": "land_acquisition_valuation_case and comparable_sales_differ_in_proximity_or_advantages and local_conditions_affect_value",
+        "then": "comparable_sales_must_be_assessed_in_context"
+      },
+      "predicates": {
+        "land_acquisition_valuation_case": "The proceeding concerns the assessment of compensation for compulsorily acquired land.",
+        "comparable_sales_differ_in_proximity_or_advantages": "The sales offered as comparisons concern land that differs in distance, timing, advantages or other relevant characteristics.",
+        "local_conditions_affect_value": "Geographic, economic, industrial or social conditions in the area affect land values."
+      },
+      "definition": "When comparable sales differ in proximity or advantages and local conditions affect value, the sales must be evaluated in their context rather than treated as automatically controlling."
+    },
+    {
+      "legal_issue": "The public purpose for which land is acquired does not determine the land’s market value for compensation.",
+      "material_facts": [
+        "The land was acquired for construction of a housing colony for employees of a public authority.",
+        "The Court stated that the acquisition purpose had no bearing on the value to be determined."
+      ],
+      "conclusion": "The Court held that the acquisition purpose did not alter its market-value assessment.",
+      "legal_principle": "Compensation is assessed by the market-value criteria in section 23 of the Land Acquisition Act, with market value pegged to the date specified by section 4(1); the purpose for which the land is acquired does not affect that valuation.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and market_value_is_being_assessed",
+        "then": "acquisition_purpose_does_not_determine_market_value"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for compulsorily acquired land.",
+        "market_value_is_being_assessed": "The court is determining the land’s market value for compensation."
+      },
+      "definition": "In a compulsory-acquisition compensation case assessing market value, the purpose of the acquisition does not determine that value."
+    }
+  ],
+  "seconds": 18.1
+}

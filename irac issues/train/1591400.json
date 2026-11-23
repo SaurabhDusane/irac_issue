@@ -1,0 +1,58 @@
+{
+  "doc_id": "1591400",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14208,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2212,
+    "prompt_tokens": 3971,
+    "total_tokens": 6183,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court cannot refer only part of a civil suit to arbitration when the suit also concerns matters outside the arbitration agreement or includes parties who are not bound by it.",
+      "material_facts": [
+        "The suit sought dissolution of a partnership and accounts, as well as relief challenging transfers of flats to purchasers and other defendants who were not parties to the partnership agreement.",
+        "The partnership agreement contained an arbitration clause binding the partners.",
+        "The applicant sought referral of the dispute to arbitration, including, alternatively, referral of only the dispute between the partners."
+      ],
+      "conclusion": "The suit could not be split between arbitration and the civil court, and the application to refer the dispute under Section 8 was rejected. Section 5 did not change that result.",
+      "legal_principle": "Under Section 8 of the Arbitration and Conciliation Act, 1996, referral is required only where the action is in a matter that is the subject of the arbitration agreement. The provision does not authorize splitting the subject matter or separating parties for referral. Section 5, which limits judicial intervention in matters governed by Part I, does not expand Section 8. The contrast with Section 24 of the Arbitration Act, 1940—which expressly permitted referral of separable matters between some parties—supports this reading. No earlier cases were relied on.",
+      "rule": {
+        "if": "civil_suit and referral_sought and (claims_outside_arbitration_scope or joined_non_signatories)",
+        "then": "no_partial_referral"
+      },
+      "predicates": {
+        "civil_suit": "A claimant brought a civil suit seeking relief from a court.",
+        "referral_sought": "A party to the suit asked the court to send the dispute to arbitration.",
+        "claims_outside_arbitration_scope": "The suit included claims concerning matters not covered by the parties' arbitration agreement.",
+        "joined_non_signatories": "The suit included parties who had not agreed to arbitrate."
+      },
+      "definition": "When a party seeks referral in a civil suit that includes claims outside the arbitration agreement or parties who did not agree to arbitrate, the suit is not divided for partial referral."
+    },
+    {
+      "legal_issue": "Section 89 of the Code of Civil Procedure cannot be used to expand the scope of referral available under Section 8 of the Arbitration and Conciliation Act, 1996.",
+      "material_facts": [
+        "The applicant relied on Section 89 of the Code of Civil Procedure to argue that the dispute should be referred to arbitration.",
+        "The suit included claims and parties beyond the scope of the arbitration agreement."
+      ],
+      "conclusion": "Section 89 could not be used to interpret Section 8 as requiring referral; the court would still have to consider and follow Section 89's procedure independently.",
+      "legal_principle": "Section 89 of the Code of Civil Procedure operates on a different footing from Section 8 and may apply even where there is no arbitration agreement. Its requirements must be considered independently, and it cannot be used to enlarge the referral power under Section 8. No earlier cases were relied on.",
+      "rule": {
+        "if": "civil_suit and referral_sought and section_89_invoked",
+        "then": "section_89_does_not_expand_referral_scope"
+      },
+      "predicates": {
+        "civil_suit": "A claimant brought a civil suit seeking relief from a court.",
+        "referral_sought": "A party to the suit asked the court to send the dispute to arbitration.",
+        "section_89_invoked": "A party relied on a general court-supervised dispute-resolution procedure to support referral."
+      },
+      "definition": "When a party invokes a general court-supervised dispute-resolution procedure to support referral in a civil suit, that procedure does not enlarge the scope of referral available under the arbitration agreement."
+    }
+  ],
+  "seconds": 14.9
+}

@@ -1,0 +1,59 @@
+{
+  "doc_id": "768853",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22380,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2208,
+    "prompt_tokens": 6143,
+    "total_tokens": 8351,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Prior permission under slum-protection legislation was not required to execute a rent-control eviction decree based on bona fide requirement.",
+      "material_facts": [
+        "The eviction decree was based on the landlord’s bona fide requirement.",
+        "The decree-holder sought permission under slum-protection legislation before seeking execution."
+      ],
+      "conclusion": "The court held that permission under the Slum Areas (Improvement and Clearance) Act was not required to execute this decree.",
+      "legal_principle": "The court relied on Ravi Dutt v. Rattan Lal, which held that the Delhi Rent Control Act provisions in Chapter III-A concerning eviction for bona fide requirement had overriding effect and rendered the Slum Act inapplicable. Accordingly, section 19 of the Slum Act did not require permission to execute this decree.",
+      "rule": {
+        "if": "rent_control_eviction_execution and decree_based_on_bona_fide_requirement",
+        "then": "prior_slum_permission_not_required"
+      },
+      "predicates": {
+        "rent_control_eviction_execution": "The proceeding seeks execution of an eviction decree made under rent-control legislation.",
+        "decree_based_on_bona_fide_requirement": "The eviction decree was made on the ground that the landlord required the premises bona fide."
+      },
+      "definition": "When an execution proceeding concerns a rent-control eviction decree based on bona fide requirement, prior slum-protection permission is not required."
+    },
+    {
+      "legal_issue": "A decree-holder cannot postpone the accrual of limitation for executing an eviction decree merely by relying on a procedural obstacle to execution when the right to execute has already accrued and timely steps were available.",
+      "material_facts": [
+        "The eviction decree was made in 1960 and the appeal against it was dismissed in 1961.",
+        "The decree-holder’s first application for permission to execute was dismissed in 1963.",
+        "The decree-holder took no further steps until applying again for permission in 1978, and sought execution in 1979.",
+        "The court held that permission was not required for this decree and that no legal impediment prevented the decree-holder from seeking permission earlier."
+      ],
+      "conclusion": "The execution claim was time-barred, and the execution application had to be dismissed.",
+      "legal_principle": "Under Article 182 of the Indian Limitation Act, 1908, the execution claim had become barred before the Limitation Act, 1963 commenced; section 31(a) of the 1963 Act did not revive an application whose limitation period had already expired. Even if Article 136 of the 1963 Act applied, the claim was barred after the applicable period from the decree. The court applied the principle in Lala Baijnath Prosad v. Nursingdas Guzrati that the right to enforce a decree may accrue even when an external circumstance makes enforcement temporarily impracticable. It also relied on Ravi Dutt v. Rattan Lal in holding that permission was unnecessary here, and referred to Des Raj v. Noor Khan concerning permission and the commencement of limitation.",
+      "rule": {
+        "if": "rent_control_eviction_execution and right_to_execute_accrued_when_decree_was_made and (permission_not_required or permission_was_only_a_procedural_obstacle) and limitation_elapsed_before_execution_application",
+        "then": "execution_claim_time_barred"
+      },
+      "predicates": {
+        "rent_control_eviction_execution": "The proceeding seeks execution of an eviction decree made under rent-control legislation.",
+        "right_to_execute_accrued_when_decree_was_made": "The decree’s terms gave the decree-holder a present right to execute it when it was made.",
+        "permission_not_required": "The decree-holder did not need permission from another authority before seeking execution.",
+        "permission_was_only_a_procedural_obstacle": "Any asserted need for permission concerned a procedural step, and the decree-holder could have pursued that step earlier.",
+        "limitation_elapsed_before_execution_application": "The decree-holder waited until the applicable limitation period had elapsed before applying to execute the decree."
+      },
+      "definition": "In a rent-control eviction execution proceeding, if the right to execute accrued with the decree, permission was unnecessary or only a procedural obstacle, and the limitation period elapsed before execution was sought, the execution claim is time-barred."
+    }
+  ],
+  "seconds": 16.5
+}

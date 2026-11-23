@@ -1,0 +1,103 @@
+{
+  "doc_id": "1049099",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31756,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2793,
+    "prompt_tokens": 8236,
+    "total_tokens": 11029,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A compromise entered into by an authorized representative may bind the persons represented and support a valid consent decree.",
+      "material_facts": [
+        "The predecessor had transferred his rights in the property to the representative for consideration, and the transfer was later confirmed and acknowledged.",
+        "The heirs executed declarations and powers of attorney confirming the earlier transfer and authorizing the representative to act in court and compromise disputes.",
+        "The representative signed and filed the compromise, and the court accepted it.",
+        "The court found the compromise just and reasonable."
+      ],
+      "conclusion": "The representative acted within the authority conferred on him, and the consent decree was binding on the heirs.",
+      "legal_principle": "Order XXIII Rule 3 of the Code of Civil Procedure permits a compromise to be signed by a duly authorized representative, including a power-of-attorney holder; the principal need not personally sign it. Byram Pestonji Gariwala v. Union Bank of India and Jineshwardas (D) by LRs. v. Jagrani support the validity of a compromise made by an authorized representative. Under Section 202 of the Indian Contract Act, an agency created for valuable consideration to protect the agent’s interest cannot, absent an express contract, be terminated to the agent’s prejudice; Loonkaran v. State Bank, Jaipur applies that principle.",
+      "rule": {
+        "if": "appeal_challenging_consent_decree and representative_authorized_to_compromise and principal_confirmed_representative_authority",
+        "then": "consent_decree_binds_principals"
+      },
+      "predicates": {
+        "appeal_challenging_consent_decree": "The proceeding is an appeal challenging a consent decree.",
+        "representative_authorized_to_compromise": "A person appointed to represent another was expressly authorized to compromise disputes on that person’s behalf.",
+        "principal_confirmed_representative_authority": "The person represented confirmed or ratified the representative’s authority."
+      },
+      "definition": "When an appeal challenges a consent decree, the decree binds the represented person if the representative had authority to compromise and that authority was confirmed or ratified."
+    },
+    {
+      "legal_issue": "A party seeking to set aside a compromise on grounds of fraud or coercion must plead the material particulars and prove the allegation.",
+      "material_facts": [
+        "The heirs sought recall of the consent decree, alleging fraud and coercion.",
+        "Although they referred to complaints made to the police, they did not pursue those complaints to their conclusion.",
+        "The court found that the allegations were not set out with full and precise particulars and were not established by the evidence.",
+        "The heirs’ declarations acknowledged the transfer and the representative’s rights and authority."
+      ],
+      "conclusion": "The allegations of fraud and coercion failed, and they did not justify setting aside the consent decree.",
+      "legal_principle": "Order VI Rule 4 of the Code of Civil Procedure requires particulars of fraud, coercion, or undue influence to be pleaded with precision. The party alleging that a compromise under Order XXIII Rule 3 was tainted bears the burden of proving it. Bishundeo Narain v. Seogeni Rai holds that general allegations are insufficient and that the case must be decided on the particulars pleaded. Shankar Sitaram Sontakke v. Balkrishna Sitaram Sontakke recognizes that a consent decree not vitiated by fraud or similar grounds binds the parties.",
+      "rule": {
+        "if": "appeal_challenging_consent_decree and fraud_or_coercion_alleged and (material_particulars_not_pleaded or allegation_not_proved)",
+        "then": "challenge_to_consent_decree_fails"
+      },
+      "predicates": {
+        "appeal_challenging_consent_decree": "The proceeding is an appeal challenging a consent decree.",
+        "fraud_or_coercion_alleged": "A party seeking to undo the compromise alleges that it resulted from fraud or coercion.",
+        "material_particulars_not_pleaded": "The party does not plead the material facts supporting the allegation with sufficient detail.",
+        "allegation_not_proved": "The party does not establish the allegation with evidence."
+      },
+      "definition": "A challenge to a consent decree based on fraud or coercion fails if the party either omits material particulars or does not prove the allegation."
+    },
+    {
+      "legal_issue": "An agency created for valuable consideration and an agent’s interest is not revoked merely by filing complaints or executing a later power of attorney that preserves the earlier authority.",
+      "material_facts": [
+        "The earlier transfer and powers of attorney were registered, and the transfer was supported by consideration.",
+        "The heirs filed police complaints alleging harassment and later executed another power of attorney.",
+        "The later power of attorney expressly stated that it did not revoke other powers of attorney.",
+        "The heirs did not formally cancel the earlier powers of attorney or other registered documents."
+      ],
+      "conclusion": "The complaints and later power of attorney did not revoke the earlier authority.",
+      "legal_principle": "Section 202 of the Indian Contract Act provides that where an agent has an interest in the property forming the subject of the agency, the agency cannot, absent an express contract, be terminated to the agent’s prejudice. Loonkaran v. State Bank, Jaipur applies this rule. The court also relied on the absence of any cancellation of the registered documents and the express preservation of earlier powers of attorney in the later instrument.",
+      "rule": {
+        "if": "appeal_challenging_consent_decree and agency_created_for_value_and_agent_interest and (only_revocation_steps_were_complaints_or_later_poa or registered_authority_not_cancelled)",
+        "then": "prior_agency_remains_effective"
+      },
+      "predicates": {
+        "appeal_challenging_consent_decree": "The proceeding is an appeal challenging a consent decree made by a representative.",
+        "agency_created_for_value_and_agent_interest": "The representative’s authority was created for valuable consideration and the representative had an interest in the subject property.",
+        "only_revocation_steps_were_complaints_or_later_poa": "The principal relied only on complaints or execution of a later power of attorney as steps to revoke the earlier authority.",
+        "registered_authority_not_cancelled": "The earlier registered authority was not formally cancelled."
+      },
+      "definition": "In an appeal challenging a consent decree, the earlier agency remains effective where it was created for value and the agent had an interest, if the asserted revocation consists only of complaints or a later power of attorney, or the registered authority was not cancelled."
+    },
+    {
+      "legal_issue": "A successor cannot claim a better title to property than the predecessor through whom the successor’s claim is derived.",
+      "material_facts": [
+        "The predecessor transferred all of his rights, title, and interest in the property to the representative for consideration.",
+        "The transfer was registered, and later documents confirmed that it remained in force.",
+        "The heirs claimed through the predecessor."
+      ],
+      "conclusion": "The heirs could not claim a subsisting title to the property or a right to challenge the decree on the basis of a better title than their predecessor had retained.",
+      "legal_principle": "The general rule is that no person can confer a better title than that person possesses. The court relied on Mahabir Gope v. Harbans Narain Singh, Asaram v. Mst. Ram Kali, and All India Film Corporation Ltd. v. Raja Gyan Nath.",
+      "rule": {
+        "if": "appeal_challenging_consent_decree and successor_claims_through_predecessor and predecessor_transferred_all_property_rights",
+        "then": "successor_cannot_claim_better_title"
+      },
+      "predicates": {
+        "appeal_challenging_consent_decree": "The proceeding is an appeal challenging a consent decree concerning property.",
+        "successor_claims_through_predecessor": "The person asserting title derives that claim from a predecessor.",
+        "predecessor_transferred_all_property_rights": "The predecessor transferred all rights and interests in the property before the successor asserted title."
+      },
+      "definition": "A successor challenging a consent decree concerning property cannot claim better title than the predecessor through whom the successor claims if that predecessor transferred all rights in the property."
+    }
+  ],
+  "seconds": 77.3
+}

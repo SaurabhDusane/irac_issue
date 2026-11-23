@@ -1,0 +1,74 @@
+{
+  "doc_id": "663115",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41414,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2342,
+    "prompt_tokens": 11172,
+    "total_tokens": 13514,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The period used to calculate average annual forest income must be selected reasonably by considering the forest’s relevant history, characteristics, and condition.",
+      "material_facts": [
+        "The Compensation Officer used a 35-year period without giving reasons tied to the relevant criteria.",
+        "The forest had been exploited prudently, began yielding income from tree sales only in the 10 or 11 years before vesting, and was in good condition on the date of vesting.",
+        "The High Court considered relevant features of the forest and selected a 20-year period; the first fellings had occurred within that period."
+      ],
+      "conclusion": "The High Court was right to use a 20-year period in the circumstances.",
+      "legal_principle": "Under Section 39(1)(e)(i) of the U.P. Zamindari Abolition and Land Reforms Act, 1950, the Compensation Officer has discretion to select a period between 20 and 40 agricultural years, but must exercise it reasonably rather than arbitrarily. Rule 34 guides that choice by requiring consideration of matters including the class and condition of the forest, its fellings, its income over the preceding 40 years, and the species, age, and class of its trees. The Court relied on no earlier case for this issue.",
+      "rule": {
+        "if": "forest_compensation_assessment and (prudent_forest_exploitation or good_forest_condition_at_vesting) and fellings_began_within_lower_averaging_window",
+        "then": "reasonable_averaging_period_selected"
+      },
+      "predicates": {
+        "forest_compensation_assessment": "A decision-maker is calculating average annual income from a forest for a compensation assessment.",
+        "prudent_forest_exploitation": "The forest was exploited in a prudent manner.",
+        "good_forest_condition_at_vesting": "The forest was in good condition when it vested.",
+        "fellings_began_within_lower_averaging_window": "The first fellings occurred within the lower end of the period used to calculate average income."
+      },
+      "definition": "When a forest compensation assessment involves prudent exploitation or good condition at vesting and the first fellings occurred within the lower end of the averaging window, a reasonable averaging period is selected."
+    },
+    {
+      "legal_issue": "Average annual income from a forest must be assessed using both its income over the relevant preceding years and the appraised annual yield of the forest on the date of vesting.",
+      "material_facts": [
+        "The Compensation Officer calculated average income from past forest-sale proceeds but did not appraise the forest’s annual yield on the date of vesting.",
+        "The High Court appraised the yield at vesting, considered evidence about the forest and a post-vesting sale of a forest coupe, and combined that appraisal with the historical-income calculation."
+      ],
+      "conclusion": "The Compensation Officer was required to consider both historical income and the appraised annual yield at vesting; the High Court’s resulting assessment was not disturbed.",
+      "legal_principle": "Section 39(1)(e)(i) and (ii) of the U.P. Zamindari Abolition and Land Reforms Act, 1950, provides cumulative rather than alternative methods: the word “and” requires both factors to be considered. Using the at-vesting yield helps keep compensation proportionate to the forest’s actual and potential value and counteracts distortions caused by unusually heavy or light exploitation. The Court relied on Ganga Devi v. State of Uttar Pradesh, which held that both sub-clauses must be referred to and that the at-vesting yield is appraised by considering matters including the number and age of trees, the forest area, and its produce.",
+      "rule": {
+        "if": "forest_compensation_assessment",
+        "then": "historical_income_and_vesting_date_yield_both_considered"
+      },
+      "predicates": {
+        "forest_compensation_assessment": "A decision-maker is assessing forest income in a compensation proceeding."
+      },
+      "definition": "In a forest compensation assessment, both historical income and yield at vesting must be considered."
+    },
+    {
+      "legal_issue": "The deduction for management costs and irrecoverable rent arrears does not authorize a deduction from forest income assessed for compensation.",
+      "material_facts": [
+        "The Compensation Officer deducted 15 percent from the calculated forest income for management costs.",
+        "The State argued that the deduction applied to forest income, but the statutory scheme separately addressed deductions associated with other income sources and did not specifically authorize this deduction from forest income."
+      ],
+      "conclusion": "The 15 percent deduction could not be made from the forest income.",
+      "legal_principle": "Section 44(c) of the U.P. Zamindari Abolition and Land Reforms Act, 1950, pairs the cost of management with irrecoverable arrears of rent; in context, management costs refer to collecting rents. The scheme of Section 44 specifies deductions for particular income sources, and contains no provision applying this deduction to forest income under Section 39(1)(e). The Court relied on the text and scheme of Sections 39 and 44 and cited no earlier case for this issue.",
+      "rule": {
+        "if": "forest_income_in_compensation_assessment and management_cost_deduction_sought",
+        "then": "management_cost_deduction_from_forest_income_disallowed"
+      },
+      "predicates": {
+        "forest_income_in_compensation_assessment": "Forest income is being included in a compensation assessment.",
+        "management_cost_deduction_sought": "A party seeks to deduct management costs from the assessed forest income."
+      },
+      "definition": "When forest income is included in a compensation assessment and a management-cost deduction is sought from it, that deduction is disallowed."
+    }
+  ],
+  "seconds": 15.8
+}

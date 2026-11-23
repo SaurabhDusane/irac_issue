@@ -1,0 +1,99 @@
+{
+  "doc_id": "1137189",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28963,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2353,
+    "prompt_tokens": 7790,
+    "total_tokens": 10143,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tax recovery officer who conducts a public auction is a revenue officer for the purpose of transmitting a sale certificate copy, and the registering officer must file that copy without treating the filing as registration of the original certificate.",
+      "material_facts": [
+        "The purchasers acquired immovable properties at income-tax recovery auctions conducted by a Tax Recovery Officer.",
+        "The Tax Recovery Officer sent copies of the sale certificates to the Sub-Registrar under the applicable rule.",
+        "The Sub-Registrar did not make the requested record entry."
+      ],
+      "conclusion": "The Tax Recovery Officer is a revenue officer for this purpose, and the Sub-Registrar must file the copy received in Book No. 1; the Sub-Registrar need not transcribe the certificate or make other entries.",
+      "legal_principle": "Registration Act, 1908, section 89(4), requires a revenue officer granting a certificate of sale after a public auction to send a copy to the registering officer, who must file it in Book No. 1. Rule 21 of the Income Tax (Certificate Proceedings) Rules, 1962, makes a corresponding requirement for a Tax Recovery Officer. The term “revenue officer” is broad enough to include a Tax Recovery Officer. Filing a transmitted copy is distinct from registering the original document and does not require the registration procedures or transcription applicable to registration.",
+      "rule": {
+        "if": "tax_recovery_auction and sale_certificate_copy_transmitted",
+        "then": "registering_officer_must_file_copy_in_public_record"
+      },
+      "predicates": {
+        "tax_recovery_auction": "A public auction of immovable property was conducted to recover a tax debt.",
+        "sale_certificate_copy_transmitted": "The public officer who conducted the auction sent a copy of the sale certificate to the registering officer.",
+        "registering_officer_must_file_copy_in_public_record": "The registering officer must file the transmitted copy in the relevant public record."
+      },
+      "definition": "When a tax recovery auction results in a sale certificate copy being sent to the registering officer, the officer must file the copy in the public record."
+    },
+    {
+      "legal_issue": "A purchaser at a tax recovery public auction need not register the sale certificate to perfect title, and non-registration does not invalidate the transfer of title.",
+      "material_facts": [
+        "The purchasers acquired immovable properties at tax recovery public auctions and received sale certificates.",
+        "The certificates were not registered.",
+        "The purchasers sought to have the properties recorded in their names."
+      ],
+      "conclusion": "Registration of the sale certificate is not obligatory to perfect the purchasers’ title, and failure to register the certificate does not vitiate the transfer of title.",
+      "legal_principle": "Registration Act, 1908, section 17(2)(xii), exempts a certificate of sale issued to a purchaser of property sold by public auction by a civil court or revenue officer from compulsory registration. The Court held that a certificate issued by a Tax Recovery Officer is covered by that provision. The copy filed in Book No. 1 and the related public indices provide notice of the certificate’s principal contents to persons inspecting them.",
+      "rule": {
+        "if": "tax_recovery_auction and sale_certificate_issued",
+        "then": "purchaser_title_does_not_depend_on_certificate_registration"
+      },
+      "predicates": {
+        "tax_recovery_auction": "A public auction of immovable property was conducted to recover a tax debt.",
+        "sale_certificate_issued": "The public officer who conducted the auction issued a sale certificate to the purchaser.",
+        "purchaser_title_does_not_depend_on_certificate_registration": "The purchaser’s title is not conditional on registration of the sale certificate."
+      },
+      "definition": "When a sale certificate is issued following a tax recovery auction, the purchaser’s title does not depend on registering that certificate."
+    },
+    {
+      "legal_issue": "The Court does not determine whether stamp duty is payable on a sale certificate issued after a tax recovery auction and leaves that question for adjudication through the applicable process when necessary.",
+      "material_facts": [
+        "The auction notice did not promise an exemption from stamp duty.",
+        "The departmental manual indicated that stamp duty was payable, while the Tax Recovery Officer later referred to legal advice that no duty was payable.",
+        "The purchasers had not obtained an adjudication of the stamp-duty question, and the Court considered that the question could arise in the statutory processes for adjudication or when the certificate was presented for registration or evidence."
+      ],
+      "conclusion": "The Court expressed no opinion on whether stamp duty is payable and left the issue to be adjudicated in the normal course when necessary.",
+      "legal_principle": "Stamp Act, 1899, sections 3 and 29(f), and Schedule I, Article 18, were relevant to the ordinary allocation of stamp-duty liability, subject to a contract to the contrary. Sections 31 and 32 provide a process for seeking adjudication of the duty, with section 56 providing for reference to the High Court by the Chief Controlling Revenue Authority. Under sections 33 and 38, a document considered insufficiently stamped may be impounded and sent to the Collector; a court or authority receiving it in evidence may also have to impound it. The Court did not decide the certificate’s liability under these provisions.",
+      "rule": {
+        "if": "tax_recovery_sale and auction_terms_do_not_promise_stamp_exemption and stamp_duty_question_not_adjudicated",
+        "then": "stamp_duty_payability_remains_open_for_adjudication"
+      },
+      "predicates": {
+        "tax_recovery_sale": "Immovable property was sold at a public auction to recover a tax debt.",
+        "auction_terms_do_not_promise_stamp_exemption": "The auction terms did not promise the purchaser that the sale certificate would be exempt from stamp duty.",
+        "stamp_duty_question_not_adjudicated": "No competent authority had adjudicated whether stamp duty was payable on the sale certificate.",
+        "stamp_duty_payability_remains_open_for_adjudication": "Whether stamp duty is payable remains to be determined through the applicable process when necessary."
+      },
+      "definition": "When a tax recovery sale’s terms do not promise a stamp-duty exemption and the duty question has not been adjudicated, payability remains open for determination through the applicable process."
+    },
+    {
+      "legal_issue": "Whether a municipal transfer fee is payable on a property acquired at a tax recovery auction is left open, and the purchaser may contest the levy in appropriate proceedings.",
+      "material_facts": [
+        "The purchasers sought mutation of the properties in municipal records.",
+        "The municipal transfer fee was described as additional stamp duty, but the Court was not given the relevant statutory provisions or their interpretation.",
+        "The Court expressed no opinion on stamp-duty liability."
+      ],
+      "conclusion": "The Court expressed no opinion on whether the municipal transfer fee was payable and left the purchasers free to contest the levy in other appropriate proceedings.",
+      "legal_principle": "The Court had no basis to decide the municipal transfer-fee question because the relevant statutory provisions and their interpretation had not been presented. It considered that payment of the fee might depend on whether stamp duty was payable, a question on which it expressed no opinion.",
+      "rule": {
+        "if": "municipal_transfer_fee_disputed and governing_basis_not_presented",
+        "then": "purchaser_may_contest_fee_in_appropriate_proceedings"
+      },
+      "predicates": {
+        "municipal_transfer_fee_disputed": "A purchaser disputed a municipal fee sought in connection with recording a property transfer.",
+        "governing_basis_not_presented": "The relevant legal provisions and their interpretation were not presented to the court.",
+        "purchaser_may_contest_fee_in_appropriate_proceedings": "The purchaser may contest the fee in appropriate proceedings."
+      },
+      "definition": "When a purchaser disputes a municipal transfer fee and its governing legal basis has not been presented, the purchaser may contest the fee in appropriate proceedings."
+    }
+  ],
+  "seconds": 14.7
+}

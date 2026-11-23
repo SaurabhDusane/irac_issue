@@ -1,0 +1,108 @@
+{
+  "doc_id": "382093",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 74667,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3336,
+    "prompt_tokens": 17656,
+    "total_tokens": 20992,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A debt recovery tribunal has jurisdiction over a bank’s claim against a non-borrower who knowingly disposes of goods hypothecated to the bank.",
+      "material_facts": [
+        "The bank provided financial assistance to borrowers secured by hypothecated stock, machinery and other goods.",
+        "The appellant was not a borrower and had no contract with the bank, but took possession of the premises and the goods.",
+        "The appellant was informed that the goods were hypothecated to the bank and nevertheless sold goods and machinery without the bank’s consent.",
+        "The bank sought recovery from the appellant in proceedings before the debt recovery tribunal."
+      ],
+      "conclusion": "The claim relating to the hypothecated goods fell within the tribunal’s jurisdiction, notwithstanding the absence of privity of contract or a borrower relationship between the appellant and the bank.",
+      "legal_principle": "Under Sections 2(g) and 17 of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993, “debt” includes a liability claimed by a bank from any person in connection with its business, and is not confined to a contractual debtor or borrower. The provision is to be given a broad, plain meaning consistent with the Act’s purpose of expeditious recovery and protection of securities. United Bank of India v. Debt Recovery Tribunal, State Bank of Bikaner & Jaipur v. Ballabh Das & Co., State of Gujarat v. Akhil Gujarat Pravasi V.S. Mahamandal, Raman Lal Bhailal Patel v. State of Gujarat, Greater Bombay Coop. Bank Ltd. v. United Yarn Tex (P) Ltd., and Unique Butyle Tube Industries (P) Ltd. v. U.P. Financial Corporation support the applicable interpretive principles. Indian Oil Corporation v. NEPC India Limited explains the nature of hypothecation and the creditor’s rights in relation to hypothecated goods.",
+      "rule": {
+        "if": "bank_debt_recovery_proceeding and bank_financed_borrower and borrower_hypothecated_goods and third_party_knew_of_charge and third_party_sold_goods_without_consent",
+        "then": "tribunal_has_jurisdiction_over_claim_for_charged_goods"
+      },
+      "predicates": {
+        "bank_debt_recovery_proceeding": "A bank brings a claim in a proceeding for recovery of a debt owed to it.",
+        "bank_financed_borrower": "The bank provided financial assistance to a borrower in the course of its banking business.",
+        "borrower_hypothecated_goods": "The borrower created a security interest in goods in favour of the bank.",
+        "third_party_knew_of_charge": "A person other than the borrower knew that the goods were charged to the bank.",
+        "third_party_sold_goods_without_consent": "That person sold or otherwise disposed of the charged goods without the bank’s consent."
+      },
+      "definition": "When a bank brings a debt recovery claim and a third party knowingly sells goods charged to the bank without consent, the claim concerning those goods falls within the tribunal’s jurisdiction."
+    },
+    {
+      "legal_issue": "A non-borrower who knowingly disposes of goods charged to a bank may be liable for the established value of those goods, but not for a broader debt unsupported by the claim and evidence.",
+      "material_facts": [
+        "The appellant was not a borrower and had no contractual obligation to repay the bank’s loan.",
+        "The appellant knew that the stock and machinery taken into its possession were hypothecated to the bank and sold them without permission.",
+        "The evidence supported the value of the stock and machinery disposed of by the appellant.",
+        "The bank’s evidence did not establish a basis for imposing the entire loan liability on the appellant."
+      ],
+      "conclusion": "The appellant was liable only to the extent of the value of the hypothecated goods it sold, with interest; the entire suit could not be decreed against it.",
+      "legal_principle": "A hypothecated asset cannot be used or sold for a person’s benefit without the secured creditor’s consent, and a person who knowingly disposes of charged goods may be liable for the resulting loss to the bank. The amount of liability must be confined to what the pleadings and evidence establish. The Court applied the principles concerning hypothecation discussed in Indian Oil Corporation v. NEPC India Limited and the broad meaning of “debt” under Section 2(g) of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993.",
+      "rule": {
+        "if": "bank_debt_recovery_proceeding and third_party_not_borrower and third_party_knew_of_charge and third_party_sold_goods_without_consent and value_of_goods_established and no_evidence_supports_broader_liability",
+        "then": "third_party_liable_only_for_proven_value_of_charged_goods_with_interest"
+      },
+      "predicates": {
+        "bank_debt_recovery_proceeding": "A bank seeks recovery of a debt in a debt recovery proceeding.",
+        "third_party_not_borrower": "The person proceeded against did not borrow from the bank.",
+        "third_party_knew_of_charge": "The person knew that the goods were charged to the bank.",
+        "third_party_sold_goods_without_consent": "The person sold or otherwise disposed of the charged goods without the bank’s consent.",
+        "value_of_goods_established": "The evidence establishes the value of the charged goods disposed of by the person.",
+        "no_evidence_supports_broader_liability": "The evidence does not establish a basis for holding the person liable for the borrower’s entire debt."
+      },
+      "definition": "A non-borrower who knowingly disposes of charged goods without consent is liable for the established value of those goods, with interest, where no evidence supports broader liability."
+    },
+    {
+      "legal_issue": "A court may draw an adverse inference when a party withholds the best evidence in its possession concerning disputed goods and their disposal.",
+      "material_facts": [
+        "The appellant had taken possession of the goods and was in a position to provide evidence about them and their disposal.",
+        "The appellant sold goods and machinery, but did not produce the best evidence available to it concerning the goods despite prolonged litigation.",
+        "The appellant’s denials concerning the sale and the bank’s charge were vague, while the documentary and oral evidence supported the bank’s claim."
+      ],
+      "conclusion": "The Court drew an adverse inference against the appellant because it failed to produce the best evidence in its possession.",
+      "legal_principle": "Where a party withholds the best evidence within its power and possession, the Court may draw an adverse inference against that party and doubt its bona fides.",
+      "rule": {
+        "if": "court_proceeding and party_controlled_best_evidence and party_failed_to_produce_it and evidence_concerns_disputed_goods_or_their_disposal",
+        "then": "adverse_inference_drawn_against_withholding_party"
+      },
+      "predicates": {
+        "court_proceeding": "A dispute concerning goods or their disposal is before a court.",
+        "party_controlled_best_evidence": "A party had the best evidence about the disputed goods or their disposal in its possession or control.",
+        "party_failed_to_produce_it": "The party did not produce that evidence before the court.",
+        "evidence_concerns_disputed_goods_or_their_disposal": "The withheld evidence relates to the goods or their disposal that are in dispute."
+      },
+      "definition": "When a party controls and fails to produce the best evidence concerning disputed goods or their disposal, an adverse inference may be drawn against that party."
+    },
+    {
+      "legal_issue": "A bank must address official negligence that jeopardizes recovery of public funds and take appropriate action in accordance with law.",
+      "material_facts": [
+        "The bank’s officers knew of the licence arrangement involving the premises but sanctioned and disbursed financial assistance without adequate verification of the relevant securities.",
+        "The bank did not take timely and effective steps to protect the hypothecated goods after learning that possession had been handed to the appellant and that the goods were being sold.",
+        "The bank’s delay and inaction jeopardized the bank’s interest and public funds.",
+        "The record contained no reasonable explanation for the failure to take effective steps."
+      ],
+      "conclusion": "The Court directed the bank’s Chairman to examine the matter and take appropriate action against the officers or officials responsible, in accordance with law.",
+      "legal_principle": "Public accountability, public trust and public duty require public officers and officers of State instrumentalities to act fairly, responsibly and promptly; both inaction and irresponsible action may attract accountability. The Court relied on State of Bihar v. Subhash Singh, Centre for Public Interest Litigation v. Union of India, State of Andhra Pradesh v. Food Corporation of India, and the principles of public accountability and performance. The scheme and obligations of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993, require proper and expeditious recovery of bank dues.",
+      "rule": {
+        "if": "public_bank_recovery_case and bank_officials_negligently_failed_to_protect_security and public_funds_jeopardized and no_reasonable_explanation_for_failure",
+        "then": "bank_must_examine_official_negligence_and_take_lawful_action"
+      },
+      "predicates": {
+        "public_bank_recovery_case": "A case concerns a bank’s recovery of money secured by goods or other assets.",
+        "bank_officials_negligently_failed_to_protect_security": "Bank officers failed to take reasonable and timely steps to verify or protect security available to the bank.",
+        "public_funds_jeopardized": "The officers’ conduct placed the bank’s funds or other public funds at risk.",
+        "no_reasonable_explanation_for_failure": "The bank provides no reasonable explanation for the failure to take effective steps."
+      },
+      "definition": "When bank officers negligently fail to protect security in a recovery matter, jeopardize public funds, and have no reasonable explanation, the bank must examine their conduct and take lawful action."
+    }
+  ],
+  "seconds": 21.3
+}

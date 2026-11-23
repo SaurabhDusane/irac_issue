@@ -1,0 +1,78 @@
+{
+  "doc_id": "763991",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18290,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3122,
+    "prompt_tokens": 4882,
+    "total_tokens": 8004,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord’s claim for eviction to rebuild must be assessed by reference to the surrounding circumstances, not merely the landlord’s stated intention.",
+      "material_facts": [
+        "The landlord sought possession on the ground that the premises were dilapidated and would be rebuilt.",
+        "The Rent Controller and appellate authority found that the premises were in good condition and that the landlord had not shown means to rebuild them.",
+        "The High Court treated the condition of the premises as irrelevant and ordered eviction based on the landlord’s asserted intention."
+      ],
+      "conclusion": "A genuine intention to rebuild must be honestly held in light of the surrounding circumstances, including the condition of the premises and the landlord’s means. On the concurrent findings in this case, the rebuilding claim was not established as bona fide.",
+      "legal_principle": "Under sections 13(3)(a)(iii) and 13(3)(b) of the Patiala and East Punjab States Union Urban Rent Restriction Ordinance, the Controller must be satisfied that the landlord’s claim to require the premises for re-erection or replacement is bona fide. Section 13(4) provides for restoration to the former tenant if the landlord uses the premises for another purpose or lets them to another tenant. The Rent Restriction Acts’ protective purpose would be defeated if a landlord could obtain eviction on the bare assertion of an intention to rebuild; the claim must be considered honestly in relation to the surrounding circumstances, including the building’s condition and the landlord’s means.",
+      "rule": {
+        "if": "rent_control_reconstruction_eviction and landlord_seeks_possession_for_rebuilding and building_found_sound and landlord_rebuilding_means_unproven",
+        "then": "reconstruction_claim_not_bona_fide"
+      },
+      "predicates": {
+        "rent_control_reconstruction_eviction": "The proceeding seeks eviction under rent control protections.",
+        "landlord_seeks_possession_for_rebuilding": "The landlord seeks possession in order to rebuild or replace the premises.",
+        "building_found_sound": "The fact-finder finds that the premises are in good condition and do not need rebuilding.",
+        "landlord_rebuilding_means_unproven": "The landlord has not established the means to carry out the proposed rebuilding."
+      },
+      "definition": "When a rent-control eviction claim rests on rebuilding, and the building is found sound while the landlord’s means to rebuild are unproven, the rebuilding claim is not bona fide."
+    },
+    {
+      "legal_issue": "A revisional court may not reverse concurrent factual findings without demonstrating their error, particularly where the original tribunals applied the correct law.",
+      "material_facts": [
+        "The Rent Controller and appellate authority both rejected the landlord’s rebuilding claim after considering the premises’ condition and the landlord’s means.",
+        "The High Court reversed those concurrent findings without discussing the evidence or giving substantial reasons showing that they were erroneous.",
+        "The Supreme Court found that the tribunals had examined the facts from the correct legal perspective."
+      ],
+      "conclusion": "The High Court was not justified in reversing the concurrent findings, and the appellate authority’s order was restored.",
+      "legal_principle": "Section 15(5) of the East Punjab Urban Rent Restriction Act, 1949 does not empower the High Court to reverse concurrent findings without showing how they are erroneous. As explained with reference to Moti Ram v. Suraj Bhan, [1960] 2 S.C.R. 896, a revisional court should be slow to interfere where the tribunals have examined the facts after correctly instructing themselves on the law, unless it demonstrates the impropriety of the order under revision.",
+      "rule": {
+        "if": "rent_control_revision and concurrent_factual_findings and lower_tribunals_applied_correct_law and revisional_court_gave_no_demonstrated_error",
+        "then": "revisional_interference_unjustified"
+      },
+      "predicates": {
+        "rent_control_revision": "The proceeding is a revision arising from a rent-control decision.",
+        "concurrent_factual_findings": "The first-instance tribunal and the appellate tribunal reached the same factual findings.",
+        "lower_tribunals_applied_correct_law": "The tribunals considered the facts using the correct legal standard.",
+        "revisional_court_gave_no_demonstrated_error": "The revisional court reversed the findings without showing how they were erroneous or giving substantial reasons."
+      },
+      "definition": "When a revisional court overturns concurrent findings made under the correct legal standard without demonstrating their error, its interference is unjustified."
+    },
+    {
+      "legal_issue": "A prior case’s factual outcome does not determine the factual result in a later case, which must be assessed on its own circumstances.",
+      "material_facts": [
+        "A prior decision was invoked in argument concerning the relevance of municipal approval to a landlord’s rebuilding claim.",
+        "The Supreme Court noted that the facts of that prior decision were not fully stated and that the present case involved its own evidence and circumstances."
+      ],
+      "conclusion": "The prior decision could not serve as authority on the factual question; the circumstances of each case had to be examined individually.",
+      "legal_principle": "A case is not authority on a point of fact. A factual question must be decided in light of the circumstances and evidence in the case being considered.",
+      "rule": {
+        "if": "court_deciding_fact_dependent_reconstruction_claim and prior_case_invoked_as_proof_of_factual_need",
+        "then": "current_case_requires_independent_assessment_of_its_circumstances"
+      },
+      "predicates": {
+        "court_deciding_fact_dependent_reconstruction_claim": "The court is deciding a rebuilding claim whose outcome depends on the facts.",
+        "prior_case_invoked_as_proof_of_factual_need": "A party relies on the factual outcome of an earlier case to support the claimed need for rebuilding."
+      },
+      "definition": "When a party relies on an earlier case’s factual outcome in a fact-dependent rebuilding claim, the current case still requires an independent assessment of its circumstances."
+    }
+  ],
+  "seconds": 19.7
+}

@@ -1,0 +1,82 @@
+{
+  "doc_id": "148738",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20122,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2771,
+    "prompt_tokens": 5573,
+    "total_tokens": 8344,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant’s subletting without the landlord’s prior written consent, or failure to follow the prescribed procedure for a consented subtenancy, provides a ground for eviction.",
+      "material_facts": [
+        "The tenant created a subtenancy without the previous landlord’s written consent.",
+        "The subtenancy was created after the Act came into force, and the required procedure for notifying the landlord was not followed.",
+        "The trial court found that the subletting had occurred."
+      ],
+      "conclusion": "The absence of prior written consent was a ground for eviction, and the failure to comply with the prescribed procedure for the subtenancy was an additional reason the tenant could not avoid eviction. Mere knowledge of the subletting or acceptance of rent did not defeat the landlord’s right to eviction.",
+      "legal_principle": "Sections 13(1)(a), 16(1) and 16(2) of the West Bengal Premises Tenancy Act, 1956 require prior written consent for subletting and prescribe notification procedures for subtenancies. The requirement of written consent serves a public purpose, and mere permission or acquiescence is insufficient; the Court relied on M/s Shalimar Tar Products Ltd. v. H.C. Sharma & Ors., [1988] 1 SCC 70.",
+      "rule": {
+        "if": "subletting_eviction_proceeding and tenant_created_subtenancy and (prior_written_consent_absent or consented_subtenancy_notice_procedure_not_followed)",
+        "then": "eviction_available_for_subletting"
+      },
+      "predicates": {
+        "subletting_eviction_proceeding": "The proceeding seeks eviction on the ground that the tenant created a subtenancy.",
+        "tenant_created_subtenancy": "The tenant created a subtenancy of the rented premises.",
+        "prior_written_consent_absent": "The landlord had not given written consent before the subtenancy was created.",
+        "consented_subtenancy_notice_procedure_not_followed": "Although the landlord had given written consent, the tenant and subtenant did not follow the required procedure for notifying the landlord of the subtenancy."
+      },
+      "definition": "When an eviction proceeding concerns a tenant-created subtenancy, eviction is available if the landlord had not given prior written consent or the required notification procedure for a consented subtenancy was not followed."
+    },
+    {
+      "legal_issue": "A landlord’s acceptance of rent does not waive the right to eviction for subletting unless the landlord consciously relinquished that right.",
+      "material_facts": [
+        "The landlords accepted rent from the tenant through January 1975.",
+        "The tenant did not disclose the subletting in his reply to the notice to quit.",
+        "The landlords learned of the subletting when the subtenant notified them in September 1975.",
+        "The tenant did not establish that the landlords accepted rent while consciously intending to relinquish their right to seek eviction for subletting."
+      ],
+      "conclusion": "Acceptance of rent did not waive the landlords’ right to eviction for subletting because conscious relinquishment of that right was not established.",
+      "legal_principle": "Waiver is a question of fact depending on the circumstances, and waiver of a statutory right requires proof of conscious relinquishment. The Court relied on M/s Shalimar Tar Products Ltd. v. H.C. Sharma & Ors., [1988] 1 SCC 70, in support of the requirement that consent or relinquishment cannot be inferred merely from permission or acquiescence.",
+      "rule": {
+        "if": "subletting_eviction_proceeding and rent_accepted_from_tenant and not conscious_relinquishment_of_eviction_right",
+        "then": "acceptance_of_rent_does_not_waive_eviction_right"
+      },
+      "predicates": {
+        "subletting_eviction_proceeding": "The proceeding seeks eviction on the ground that the tenant created a subtenancy.",
+        "rent_accepted_from_tenant": "The landlord accepted rent from the tenant after the subtenancy had been created.",
+        "conscious_relinquishment_of_eviction_right": "The landlord accepted rent while consciously intending to give up the right to seek eviction for the subletting."
+      },
+      "definition": "In a subletting eviction proceeding, acceptance of rent does not waive the eviction right when the landlord did not consciously relinquish it."
+    },
+    {
+      "legal_issue": "A landlord who acquires premises after a tenant has created an unauthorized subtenancy may rely on that subletting as a ground for eviction.",
+      "material_facts": [
+        "The tenant created the subtenancy in 1970 without the previous landlord’s written consent.",
+        "The respondents purchased the premises in 1973.",
+        "The subletting was the tenant’s own act, rather than an act inherited from a predecessor tenant.",
+        "The court found no written consent for the subtenancy."
+      ],
+      "conclusion": "The fact that the subtenancy was created before the respondents acquired the premises did not prevent them from seeking eviction on that ground.",
+      "legal_principle": "Section 13(1)(a) of the West Bengal Premises Tenancy Act, 1956 provides a ground for eviction where the tenant sublets without the landlord’s prior written consent. The Court distinguished A.S. Sulochna v. C. Dharmalingam, [1981] 1 SCC 180, where the alleged unlawful subletting was committed by a predecessor tenant long before the governing Act came into force; the present subletting was the act of the tenant sought to be evicted.",
+      "rule": {
+        "if": "subletting_eviction_proceeding and tenant_created_subtenancy and landlord_acquired_premises_after_subletting and prior_written_consent_absent",
+        "then": "acquiring_landlord_may_rely_on_subletting_for_eviction"
+      },
+      "predicates": {
+        "subletting_eviction_proceeding": "The proceeding seeks eviction on the ground that the tenant created a subtenancy.",
+        "tenant_created_subtenancy": "The tenant sought to be evicted personally created the subtenancy.",
+        "landlord_acquired_premises_after_subletting": "The landlord acquired the premises after the tenant created the subtenancy.",
+        "prior_written_consent_absent": "The landlord or the landlord’s predecessor had not given written consent before the subtenancy was created."
+      },
+      "definition": "A landlord may rely on a tenant’s unauthorized subletting for eviction even when the landlord acquired the premises after that subletting occurred."
+    }
+  ],
+  "seconds": 16.7
+}

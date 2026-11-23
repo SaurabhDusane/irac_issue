@@ -1,0 +1,123 @@
+{
+  "doc_id": "1112252",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 39968,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3428,
+    "prompt_tokens": 10230,
+    "total_tokens": 13658,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Preliminary information prompting police attendance before a formal report does not itself become the first information report or bar the later report under the restriction on police statements.",
+      "material_facts": [
+        "After the assault, the bus conductor informed the transport depot and the police were also informed; police and transport officials reached the village and made preliminary inquiries.",
+        "The formal report naming the accused and describing their acts was recorded later that night.",
+        "The general-diary entry was not produced, and the record did not establish that witness statements had been recorded before the formal report."
+      ],
+      "conclusion": "The earlier information did not amount to the first information report, and its receipt and the preliminary inquiries did not attract the statutory restriction on police statements or vitiate the trial.",
+      "legal_principle": "An officer may act on information about a cognizable offence before a formal first information report is recorded; information that does not contain the details necessary to constitute such a report is not itself the first information report. Preliminary inquiries to ascertain the truth or apprehend the accused do not, without more, establish that the investigation had begun in a manner that attracts Section 162 of the Code of Criminal Procedure.",
+      "rule": {
+        "if": "criminal_case and early_information_prompted_police_attendance and not early_information_contained_report_details",
+        "then": "early_information_not_first_report"
+      },
+      "predicates": {
+        "criminal_case": "The matter is a criminal prosecution arising from an alleged cognizable offence.",
+        "early_information_prompted_police_attendance": "A person conveyed information about the occurrence to the police, prompting them to attend or make preliminary inquiries before a formal report was recorded.",
+        "early_information_contained_report_details": "The early information set out the occurrence and its particulars sufficiently to constitute the formal first report."
+      },
+      "definition": "When a criminal case involves early information that prompts police attendance but does not contain the particulars of a formal report, that information is not treated as the first report."
+    },
+    {
+      "legal_issue": "Witness testimony must be assessed as a whole and cannot be rejected wholesale merely because a witness is interested or injured, or because witnesses cannot describe every detail of a sudden group assault.",
+      "material_facts": [
+        "The injured son of the deceased testified to the assault, as did other witnesses who said they were present on the bus.",
+        "The accused and witnesses were known to one another and belonged to the same village; a light was on near the relevant seats.",
+        "The trial court rejected the witnesses on grounds including their relationship or enmity, perceived inconsistencies, lack of documentary proof of their travel, and doubts about identification and the purpose of their visit.",
+        "The accounts were supported in material respects by the sequence of events, the injuries, and other circumstances; the trial court did not give specific reasons for rejecting the injured witness's account."
+      ],
+      "conclusion": "The witnesses' accounts could not properly be discarded on those grounds alone; the evidence had to be assessed for truthfulness in light of the surrounding circumstances.",
+      "legal_principle": "A court may accept all or part of a witness's testimony, but must use a proper method of evaluating it and may not label a prosecution witness wholly untrustworthy merely because corroboration is absent or the witness is interested. An injured witness's testimony is not automatically false because of enmity. A witness to a sudden attack by several persons need not give a minute, identical account of every weapon and act. The Court relied on Dharmendrasinh Alias Mansing Ratansinh v. State of Gujarat for the treatment of natural testimony and conduct.",
+      "rule": {
+        "if": "criminal_prosecution and witnesses_knew_accused and (injured_witness_testified or eyewitnesses_testified) and supporting_circumstances_corroborated_material_events and trial_court_rejected_accounts_without_reasoned_assessment",
+        "then": "testimony_not_rejected_solely_for_interest_or_imperfect_detail"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution in which the court must assess witness testimony.",
+        "witnesses_knew_accused": "The witnesses and accused were acquainted before the alleged offence.",
+        "injured_witness_testified": "A person who sustained injuries in the alleged incident testified about it.",
+        "eyewitnesses_testified": "One or more witnesses testified that they saw the alleged incident.",
+        "supporting_circumstances_corroborated_material_events": "Other evidence or circumstances supported important parts of the witnesses' accounts, such as the occurrence, injuries, or immediate aftermath.",
+        "trial_court_rejected_accounts_without_reasoned_assessment": "The trial court rejected the witnesses' accounts without adequately explaining why, or relied on their interest or inability to recount every detail as a wholesale basis for rejection."
+      },
+      "definition": "When acquainted eyewitnesses or an injured witness testify in a criminal prosecution, material circumstances support their accounts, and the trial court rejects them without a reasoned assessment, their testimony is not rejected solely for interest or imperfect detail."
+    },
+    {
+      "legal_issue": "An appellate court may set aside an acquittal when the trial court's assessment is perverse or unreasonable because it disregards material evidence or relies on irrelevant considerations, and no reasonable view of the evidence supports the acquittal.",
+      "material_facts": [
+        "The trial court acquitted the accused after rejecting the eyewitnesses and injured witness on grounds that included missing documentary proof, doubts about their reasons for travel, and the absence of a produced general-diary entry.",
+        "The appellate court reassessed the record and found material support for the prosecution account, including the injured witness's evidence, corroborating circumstances, and evidence concerning the occurrence and injuries.",
+        "The Supreme Court identified serious errors in the trial court's legal approach and appreciation of the evidence, including non-consideration of material facts and consideration of irrelevant facts."
+      ],
+      "conclusion": "The appellate court was justified in setting aside the acquittal, and the Supreme Court dismissed the appeal against the resulting convictions.",
+      "legal_principle": "An appellate court ordinarily should not interfere with an acquittal where two reasonable views of the evidence are possible, since acquittal strengthens the presumption of innocence. However, interference is permissible where the acquittal is perverse or highly unreasonable, rests on irrelevant or inadmissible evidence, or material evidence has been ignored and the evidence does not reasonably support the acquittal. The Court relied on Mahadeo Laxman Sarane v. State of Maharashtra, Swami Prasad v. State of Madhya Pradesh, and Chandrappa v. State of Karnataka.",
+      "rule": {
+        "if": "appeal_from_acquittal and trial_court_ignored_material_evidence and trial_court_relied_on_irrelevant_considerations and acquittal_not_reasonably_supported_by_record",
+        "then": "setting_aside_acquittal_justified"
+      },
+      "predicates": {
+        "appeal_from_acquittal": "The appellate proceeding challenges a judgment acquitting the accused.",
+        "trial_court_ignored_material_evidence": "The trial court failed to consider evidence material to whether the accused committed the offence.",
+        "trial_court_relied_on_irrelevant_considerations": "The trial court relied on considerations that did not rationally bear on the reliability or sufficiency of the evidence.",
+        "acquittal_not_reasonably_supported_by_record": "The evidence on the record does not reasonably support the acquittal."
+      },
+      "definition": "In an appeal from an acquittal, when the trial court ignores material evidence, relies on irrelevant considerations, and the record does not reasonably support acquittal, setting the acquittal aside is justified."
+    },
+    {
+      "legal_issue": "A first information report need not provide an encyclopedic account, and failure to prove the case against some named accused does not by itself invalidate the prosecution against others.",
+      "material_facts": [
+        "The formal report named the accused and described their alleged acts, though it did not set out every detail of the incident.",
+        "The prosecution did not establish its case against all the persons named or charged, and some accused were acquitted.",
+        "The Court found the report truthful and considered the evidence against the appellants separately from the failure to prove the case against others."
+      ],
+      "conclusion": "The report's lack of every detail and the failure to prove the case against some accused did not justify rejecting the prosecution case against the appellants.",
+      "legal_principle": "A first information report is not intended to be encyclopedic; omissions must be assessed in light of the informant's probable physical and mental condition and the possibility of false implication. Once a report is found truthful, the failure to establish the case against some persons named in it does not require rejection of the entire prosecution case.",
+      "rule": {
+        "if": "criminal_prosecution and first_report_truthful and some_named_accused_not_proved_guilty",
+        "then": "case_against_other_accused_not_discarded_for_that_reason_alone"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution based on an alleged offence.",
+        "first_report_truthful": "The court finds the initial formal account of the offence truthful, notwithstanding omissions of detail.",
+        "some_named_accused_not_proved_guilty": "The prosecution does not prove its case against some persons named or charged in connection with the offence."
+      },
+      "definition": "When a criminal prosecution rests on a truthful first report, failure to prove the case against some named accused does not by itself require discarding the case against the others."
+    },
+    {
+      "legal_issue": "Acquittal of some participants does not automatically entitle the remaining accused to acquittal where the evidence supports their participation in the offence.",
+      "material_facts": [
+        "The injured witness attributed an assault on himself to a group of accused, some of whom were acquitted by the appellate court.",
+        "The evidence also implicated the appellants in the fatal attack, and the Court considered the number and extent of the injuries and the circumstances of the assault.",
+        "The Court stated that the accused could have formed a common intention or common object at the scene and that the maxim falsus in uno, falsus in omnibus does not apply in India."
+      ],
+      "conclusion": "The acquittal of the other accused did not, by itself, require extending the same benefit to the appellants.",
+      "legal_principle": "The maxim falsus in uno, falsus in omnibus is not applicable in India; a court may distinguish the evidence against different accused. The acquittal of some accused therefore does not automatically require acquittal of others whose participation is supported by the evidence.",
+      "rule": {
+        "if": "multi_accused_criminal_case and some_accused_acquitted and evidence_independently_supports_remaining_accused_participation",
+        "then": "acquittal_of_some_does_not_compel_acquittal_of_others"
+      },
+      "predicates": {
+        "multi_accused_criminal_case": "The criminal case alleges that several persons participated in the offence.",
+        "some_accused_acquitted": "The court acquits some of the persons accused of participating in the offence.",
+        "evidence_independently_supports_remaining_accused_participation": "Evidence supports the participation of the remaining accused apart from the evidence that led to the acquittals."
+      },
+      "definition": "In a multi-accused criminal case, acquittal of some accused does not compel acquittal of the others when evidence independently supports the others' participation."
+    }
+  ],
+  "seconds": 22.5
+}

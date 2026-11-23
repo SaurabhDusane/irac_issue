@@ -1,0 +1,124 @@
+{
+  "doc_id": "1722040",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27230,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4235,
+    "prompt_tokens": 6784,
+    "total_tokens": 11019,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory right to plead for acquittal or a reduced sentence in response to a State sentence-enhancement appeal before a High Court does not extend as of right to an enhancement appeal under the Supreme Court’s extraordinary jurisdiction.",
+      "material_facts": [
+        "The State appealed under Article 136 against the High Court’s refusal to confirm the death sentences.",
+        "The respondents asked to plead for acquittal or a reduced sentence, relying on the provision governing State enhancement appeals before a High Court.",
+        "Their earlier challenge to their convictions had been dismissed on the merits, and they had not sought review.",
+        "The Court considered whether the respondents’ request should nevertheless be allowed by applying analogous procedural principles, and declined it in the circumstances."
+      ],
+      "conclusion": "The statutory right in Section 377(3) of the Code of Criminal Procedure applies to enhancement appeals before a High Court, not to an appeal under Article 136. The Court may adopt analogous principles to ensure fair procedure, but declined to permit the respondents’ requested plea in this case.",
+      "legal_principle": "Section 377(3) CrPC gives an accused the right to plead for acquittal or reduction of sentence in a State appeal before the High Court; it does not apply as of right to an appeal under Article 136, which is an extraordinary jurisdiction rather than a statutory appeal under the Code. The Court relied on Nihal Singh v. State of Punjab and Chandrakant Patil v. State through CBI, and distinguished U.J.S. Chopra v. State of Bombay. It may use analogous principles in the Code to shape a fair procedure, depending on the circumstances.",
+      "rule": {
+        "if": "state_sentence_enhancement_appeal_under_extraordinary_jurisdiction",
+        "then": "statutory_acquittal_plea_right_unavailable"
+      },
+      "predicates": {
+        "state_sentence_enhancement_appeal_under_extraordinary_jurisdiction": "The State has appealed to the Supreme Court’s extraordinary jurisdiction seeking enhancement of a sentence."
+      },
+      "definition": "When the State seeks sentence enhancement through the Supreme Court’s extraordinary jurisdiction, the accused does not have the statutory right to plead for acquittal under the rule applicable to High Court enhancement appeals."
+    },
+    {
+      "legal_issue": "A period spent in custody before a death sentence is imposed does not, by itself, require commutation of that sentence.",
+      "material_facts": [
+        "The High Court treated the respondents as having spent more than three years in a death cell, but that period included time when they were under-trial prisoners before any death sentence was imposed.",
+        "The death sentence was imposed by the trial court and was considered by the High Court for confirmation for less than two years before the High Court commuted it.",
+        "The High Court relied on the supposed period in the death cell as its reason for commuting the sentence.",
+        "The case concerned the imposition and confirmation of a death sentence, not a prolonged delay in executing a confirmed sentence."
+      ],
+      "conclusion": "The High Court’s reasoning was factually and legally erroneous. There is no fixed period of custody that automatically makes a death sentence improper or requires commutation; delay may be relevant in an appropriate case, but custody before sentence alone did not justify commutation here.",
+      "legal_principle": "Section 354(3) CrPC requires special reasons for a death sentence. The Court relied on the Constitution Bench decision in Smt. Triveni Ben v. State of Gujarat, which held that no fixed period of delay makes a death sentence inexecutable. The Court distinguished delay in execution from the earlier stages of trial and confirmation, and held that prolonged trial or execution beyond a reasonable period may be relevant in a given case but does not create an automatic rule of commutation.",
+      "rule": {
+        "if": "death_sentence_review and high_court_relied_on_pre_sentence_custody and no_exceptional_execution_delay_established",
+        "then": "delay_alone_does_not_require_commutation"
+      },
+      "predicates": {
+        "death_sentence_review": "The proceeding concerns review of a death sentence or its commutation.",
+        "high_court_relied_on_pre_sentence_custody": "The High Court relied on time spent in custody before the death sentence was imposed.",
+        "no_exceptional_execution_delay_established": "The case does not establish an exceptional delay in executing a confirmed death sentence."
+      },
+      "definition": "In a death-sentence review, pre-sentence custody without exceptional execution delay does not, by itself, require commutation."
+    },
+    {
+      "legal_issue": "The absence of proof identifying each accused person’s individual act does not create an absolute bar to imposing a death sentence when the evidence distinguishes the principal perpetrators and the crime is among the rarest of rare cases.",
+      "material_facts": [
+        "Five sleeping, aged, young, or otherwise vulnerable members of a family were killed in a premeditated attack involving multiple stab wounds.",
+        "The attack inflicted 53 wounds, and the victims each suffered numerous injuries aimed at parts of the body where a single stab could have caused death.",
+        "The evidence showed that the two respondents had separate motives, planned the attack, and enlisted four others to carry it out when the more able family members were away.",
+        "The trial court and High Court distinguished the respondents as the principal perpetrators from the other accused.",
+        "The prosecution had not established which accused inflicted each individual blow.",
+        "The Court found no mitigating circumstances and concluded that the crime was among the rarest of rare cases."
+      ],
+      "conclusion": "The Court rejected an absolute rule against the death penalty where individual overt acts are not established. Given the respondents’ distinct roles and the circumstances of the crime, it restored the death sentences.",
+      "legal_principle": "Section 354(3) CrPC requires special reasons for imposing death. The Court applied the rarest-of-rare approach and held that no straight-jacket formula governs the choice of sentence; the facts of each case matter. It considered Ronny v. State of Maharashtra, explaining that its result depended on that case’s facts, including uncertainty about the comparative culpability of the accused and extenuating circumstances, and did not establish an absolute rule against death sentences whenever individual acts are not identified. The Court also referred to the obligation, discussed in Ronny, to impose death in appropriate cases.",
+      "rule": {
+        "if": "capital_sentence_review and multiple_vulnerable_victims_killed and premeditated_extremely_brutal_attack and principal_perpetrators_distinguished_from_others and no_individual_blows_identified and no_mitigating_circumstances_found",
+        "then": "death_sentence_may_be_justified_despite_unidentified_individual_blows"
+      },
+      "predicates": {
+        "capital_sentence_review": "The proceeding concerns whether a capital sentence should be imposed or confirmed.",
+        "multiple_vulnerable_victims_killed": "The accused participated in killing multiple victims who were sleeping, aged, young, or otherwise vulnerable.",
+        "premeditated_extremely_brutal_attack": "The killings resulted from a planned attack carried out with exceptional brutality.",
+        "principal_perpetrators_distinguished_from_others": "The evidence and findings distinguish the accused as principal perpetrators from other participants.",
+        "no_individual_blows_identified": "The evidence does not establish which participant inflicted each individual fatal or other blow.",
+        "no_mitigating_circumstances_found": "The court finds no mitigating circumstances sufficient to displace the capital sentence."
+      },
+      "definition": "A capital sentence may be justified despite uncertainty about who inflicted each blow when multiple vulnerable victims were killed in a planned, exceptionally brutal attack, the principal perpetrators are distinguished from others, and no mitigating circumstances are found."
+    },
+    {
+      "legal_issue": "An accused person’s expectation of survival after a lower court commutes a death sentence is not a mitigating factor against appellate restoration of the sentence.",
+      "material_facts": [
+        "The High Court commuted the death sentences to life imprisonment.",
+        "The respondents argued that they had developed an expectation of survival after the High Court’s decision.",
+        "The State appealed seeking restoration of the death sentences."
+      ],
+      "conclusion": "The respondents’ expectation of survival provided no legal basis to prevent the Court from restoring the death sentences where restoration was otherwise warranted.",
+      "legal_principle": "In a judicial system with a hierarchy of courts, appellate reversal is an inevitable possibility. An accused person’s expectation arising from a lower court’s judgment is not a mitigating factor in an appeal seeking enhancement of sentence.",
+      "rule": {
+        "if": "sentence_enhancement_appeal and accused_relies_on_expectation_created_by_lower_court_commutation",
+        "then": "expectation_of_survival_is_not_a_mitigating_factor"
+      },
+      "predicates": {
+        "sentence_enhancement_appeal": "The State has appealed seeking enhancement of a sentence.",
+        "accused_relies_on_expectation_created_by_lower_court_commutation": "The accused relies on an expectation of survival arising from a lower court’s decision to commute a death sentence."
+      },
+      "definition": "In a sentence-enhancement appeal, an accused’s expectation of survival based on a lower court’s commutation does not count as a mitigating factor."
+    },
+    {
+      "legal_issue": "An appellate court may reverse a sentence decision when the lower court’s exercise of sentencing discretion rests on a material factual or legal error, particularly where the trial court gave cogent reasons for the sentence.",
+      "material_facts": [
+        "The trial court gave reasons for imposing death and distinguished the respondents from the other accused.",
+        "The High Court agreed with the trial court’s assessment of the respondents’ roles and the gravity of the crime, but commuted the sentences on the mistaken view that the respondents had spent more than three years in a death cell.",
+        "The High Court’s reason for commutation was inconsistent with the facts and accepted legal principles.",
+        "The State appealed the refusal to confirm the death sentences."
+      ],
+      "conclusion": "Because the High Court’s commutation rested on a factual and legal error and the trial court’s reasons were cogent, the Court reversed the commutation and restored the death sentences.",
+      "legal_principle": "The question of sentence is generally discretionary, and an appellate court should not interfere to an accused’s detriment when discretion has been properly exercised along accepted judicial lines, except for strong and cogent reasons. Interference is warranted where the lower court’s decision involves illegality or a question of principle, or where the lower court failed to exercise its discretion according to accepted judicial principles.",
+      "rule": {
+        "if": "state_sentence_enhancement_appeal and lower_court_sentence_decision_rest_on_material_factual_or_legal_error and trial_court_gave_cogent_reasons_for_sentence",
+        "then": "appellate_interference_with_sentence_decision_is_justified"
+      },
+      "predicates": {
+        "state_sentence_enhancement_appeal": "The State has appealed seeking enhancement of a sentence.",
+        "lower_court_sentence_decision_rest_on_material_factual_or_legal_error": "The lower court’s sentence decision rests on a material factual or legal error.",
+        "trial_court_gave_cogent_reasons_for_sentence": "The trial court gave cogent reasons for the sentence it imposed."
+      },
+      "definition": "In a State sentence-enhancement appeal, appellate interference is justified when the lower court’s sentence decision rests on a material factual or legal error and the trial court gave cogent reasons for its sentence."
+    }
+  ],
+  "seconds": 24.9
+}

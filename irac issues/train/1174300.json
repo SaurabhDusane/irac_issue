@@ -1,0 +1,79 @@
+{
+  "doc_id": "1174300",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 49683,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2786,
+    "prompt_tokens": 12385,
+    "total_tokens": 15171,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The Supreme Court ordinarily does not reassess concurrent criminal findings in an appeal admitted by special leave unless a substantial error affecting the trial or the result is shown.",
+      "material_facts": [
+        "The convictions and sentences had been confirmed by the High Court, and the appellants challenged the concurrent assessment of the evidence.",
+        "The Supreme Court found no error of the kind that warranted intervention."
+      ],
+      "conclusion": "The Court declined to disturb the concurrent findings and dismissed the appeal.",
+      "legal_principle": "Under Articles 134 and 136 of the Constitution, an appeal admitted by special leave is distinct from an appeal available as of right or on a certificate. The Court ordinarily accepts concurrent findings and does not reassess the evidence at large; it may interfere where, for example, there is a violation of natural justice or the accused's rights, a misreading of vital evidence, an improper reception or rejection of evidence that leaves the conviction unsupported, or an error of law or procedure causing a failure of justice. No specific earlier case is cited for this principle in the majority opinion.",
+      "rule": {
+        "if": "special_leave_criminal_appeal and concurrent_lower_court_findings and not fundamental_error_shown",
+        "then": "concurrent_findings_not_reopened"
+      },
+      "predicates": {
+        "special_leave_criminal_appeal": "The matter is a criminal appeal that the Supreme Court is hearing after granting special leave.",
+        "concurrent_lower_court_findings": "The lower criminal courts reached the same material findings.",
+        "fundamental_error_shown": "The record establishes a serious legal, evidentiary, procedural, or fairness error that warrants intervention."
+      },
+      "definition": "When a criminal appeal comes by special leave, the lower courts made concurrent findings, and no fundamental error is shown, those findings are not reopened."
+    },
+    {
+      "legal_issue": "An approver's testimony may support a conviction when the approver is credible and the evidence corroborates both the approver's participation and the accused's participation in material particulars.",
+      "material_facts": [
+        "The prosecution case had no eyewitness other than the approver, whose account implicated the appellants in the murders.",
+        "The majority considered the approver's account credible despite challenges to his character, a discrepancy about lighting, and his minimisation of his own role.",
+        "The approver's account was supported by discoveries and other evidence concerning his participation and the appellants' involvement, including evidence relating to motive, bloodstained clothing, fingerprints, and a weapon.",
+        "The lower courts had assessed the approver's credibility, general corroboration, and corroboration connecting each appellant to the crime."
+      ],
+      "conclusion": "The majority accepted the approver's testimony and held that its corroboration supported the appellants' convictions.",
+      "legal_principle": "Sections 133 and 114 of the Indian Evidence Act, 1872, govern accomplice testimony: an accomplice is competent to testify and an uncorroborated accomplice account does not by itself make a conviction illegal, but the Court ordinarily seeks corroboration in material particulars. The majority required the account to be credible and considered the corroborative evidence generally and as it connected each accused with the crime. The majority did not cite an earlier case for this application.",
+      "rule": {
+        "if": "approver_testimony_case and approver_account_credible and approver_participation_corroborated and accused_participation_corroborated",
+        "then": "approver_evidence_supports_conviction"
+      },
+      "predicates": {
+        "approver_testimony_case": "The prosecution relies materially on testimony from a person who participated in the crime and testified for the prosecution as an approver.",
+        "approver_account_credible": "The approver's account is credible when assessed in light of its substance, probabilities, and the evidence as a whole.",
+        "approver_participation_corroborated": "Evidence independent of the approver's account supports that the approver took part in the crime.",
+        "accused_participation_corroborated": "Evidence independent of the approver's account connects the accused with participation in the crime."
+      },
+      "definition": "If an approver gives a credible account, and independent evidence supports both the approver's participation and the accused's participation, the approver's evidence can support a conviction."
+    },
+    {
+      "legal_issue": "A witness who assists in concealing evidence after a murder is not, for that reason alone, an accomplice in the murder.",
+      "material_facts": [
+        "A witness testified that an appellant gave him bloodstained clothes to burn after the murders.",
+        "The burning and the recovery of ashes and charred cloth supported the witness's account.",
+        "The majority found that the witness had not participated in the murders, though he might have committed an offence by helping to conceal evidence."
+      ],
+      "conclusion": "The majority held that the witness was not an accomplice in the murders; at most, he could be an accessory after the fact or an offender under Section 201 of the Indian Penal Code.",
+      "legal_principle": "The majority distinguished participation in the murder from assistance given afterward to conceal evidence. It referred to Section 201 of the Indian Penal Code as potentially applying to a person who, with the necessary guilty intention, causes evidence of an offence to disappear or gives false information to screen an offender.",
+      "rule": {
+        "if": "testimony_concealment_case and assistance_given_only_after_crime and no_participation_in_underlying_crime",
+        "then": "post_offence_helper_not_accomplice_to_underlying_crime"
+      },
+      "predicates": {
+        "testimony_concealment_case": "The prosecution relies on testimony from a witness who helped conceal evidence of the crime.",
+        "assistance_given_only_after_crime": "The witness's assistance in concealing evidence occurred after the underlying crime was completed.",
+        "no_participation_in_underlying_crime": "The evidence does not show that the witness took part in committing the underlying crime."
+      },
+      "definition": "A witness who only helps conceal evidence after a crime, and did not participate in that crime, is not an accomplice in the underlying crime."
+    }
+  ],
+  "seconds": 19.0
+}

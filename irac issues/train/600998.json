@@ -1,0 +1,59 @@
+{
+  "doc_id": "600998",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23121,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1317,
+    "prompt_tokens": 5980,
+    "total_tokens": 7297,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "For a land-acquisition deadline requiring an award to be made within a fixed period, the award is made when the Collector signs it, not when notice of it is served.",
+      "material_facts": [
+        "The acquisition declaration was published before the amendment that introduced the award deadline, so the applicable period ran from commencement of that amendment.",
+        "The Collector signed the award within that period, but notice of the award was served after the period expired.",
+        "The landowners argued that service after the deadline meant the acquisition proceedings had lapsed, relying on a decision concerning the start of the limitation period for seeking a compensation reference."
+      ],
+      "conclusion": "The award was made within time because it was signed before the deadline expired; later service of notice did not cause the acquisition proceedings to lapse.",
+      "legal_principle": "Under section 11-A of the Land Acquisition Act, 1894, read with its proviso, making an award within the prescribed period means signing it within that period; the date of service of notice is immaterial. The meaning of statutory words depends on their context and purpose. The Court distinguished Raja Harish Chandra Raj Singh v. The Deputy Land Acquisition Officer, which construed section 18 to protect a landowner's time to seek a reference from running before notice was received. Section 18 provides a remedy to challenge compensation, whereas section 11-A sets an outer limit for making an award, and the consequences of non-compliance differ.",
+      "rule": {
+        "if": "land_acquisition_challenge and declaration_before_deadline_regime and award_signed_within_outer_limit and notice_served_after_outer_limit",
+        "then": "acquisition_does_not_lapse_due_to_late_notice"
+      },
+      "predicates": {
+        "land_acquisition_challenge": "A person challenges the validity of proceedings to acquire land.",
+        "declaration_before_deadline_regime": "The acquisition declaration was published before the rule setting the award deadline took effect.",
+        "award_signed_within_outer_limit": "The Collector signed the award before the applicable maximum period expired.",
+        "notice_served_after_outer_limit": "Notice of the award was served after the applicable maximum period expired."
+      },
+      "definition": "When an acquisition declaration predates the applicable deadline regime, a challenge does not succeed on the ground of late notice if the Collector signed the award within the maximum period."
+    },
+    {
+      "legal_issue": "An acquisition award made within the applicable statutory maximum period is not invalidated solely because it was made after an alleged inordinate delay.",
+      "material_facts": [
+        "The award was made near the end of the two-year period applicable to the acquisition.",
+        "The landowners alleged that the time taken to make the award was inordinate and sought to have the acquisition set aside.",
+        "The award was nevertheless made within the maximum period prescribed for making it."
+      ],
+      "conclusion": "The time taken to make the award was not fatal to the acquisition proceedings because the prescribed maximum period had not been exceeded.",
+      "legal_principle": "Section 11-A of the Land Acquisition Act, 1894 establishes the maximum time for making an award. Where that period has not been exceeded, a court should not invalidate acquisition proceedings merely by applying its own varying standards of speed. The Court noted that requiring an award earlier could deprive claimants of adequate time to present valuation evidence and could prevent due consideration of that evidence.",
+      "rule": {
+        "if": "land_acquisition_challenge and award_within_statutory_outer_limit and delay_alleged_without_exceeding_limit",
+        "then": "acquisition_not_invalid_for_delay_alone"
+      },
+      "predicates": {
+        "land_acquisition_challenge": "A person challenges the validity of proceedings to acquire land.",
+        "award_within_statutory_outer_limit": "The award was made within the maximum period prescribed for making it.",
+        "delay_alleged_without_exceeding_limit": "The challenger alleges delay even though the prescribed maximum period was not exceeded."
+      },
+      "definition": "If an acquisition award is made within the prescribed maximum period, an allegation of delay alone does not invalidate the acquisition."
+    }
+  ],
+  "seconds": 9.0
+}

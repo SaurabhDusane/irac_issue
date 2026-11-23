@@ -1,0 +1,76 @@
+{
+  "doc_id": "209401",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15983,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2230,
+    "prompt_tokens": 4571,
+    "total_tokens": 6801,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The equitable principle underlying the statutory discharge of a surety applies to a surety bond executed in favour of a court, although the statutory provisions do not directly govern that bond.",
+      "material_facts": [
+        "The surety bond was executed in favour of the court rather than directly in favour of the creditor.",
+        "The dispute concerned whether a compromise between the creditor and debtor affected the sureties’ liability."
+      ],
+      "conclusion": "The statutory provisions do not apply in terms to a court bond, but the equitable principle underlying them applies to such a bond.",
+      "legal_principle": "Sections 126 and 135 of the Indian Contract Act, 1872 contemplate a guarantee involving a surety, principal debtor and creditor, and therefore do not apply in terms to a bond executed in favour of a court. The equitable principle underlying section 135 nevertheless applies: a surety is entitled to discharge where the creditor’s agreement with the debtor materially affects the surety’s ability to require payment or pay the debt and pursue a remedy against the debtor. The Court referred to The Official Liquidators, The Travancore National & Quilon Bank Ltd. v. The Official Assignee of Madras; Parvatibai v. Vinayak Balvant; Mahomedalli Ibrahimji v. Laxmibai; Narsingh Mahton v. Nirpat Singh; Muhammad Yusaf v. Ram Gobinda Ojha; Haji Ahmed v. Maruti Ramji; Appunni Nair v. Isack Mackadan; and Kanailal Mookerjee v. Kali Mohan Chatterjee.",
+      "rule": {
+        "if": "court_favor_surety_bond",
+        "then": "equitable_surety_discharge_principle_applies"
+      },
+      "predicates": {
+        "court_favor_surety_bond": "A surety executed a bond in favour of a court rather than directly in favour of the creditor."
+      },
+      "definition": "When a surety’s bond is given to a court, the equitable surety-discharge principle applies to that bond."
+    },
+    {
+      "legal_issue": "A compromise decree discharges a court-bond surety when the bond contemplated determination of the dispute by the court rather than an amicable settlement and the compromise materially changes the obligations or delays their enforcement.",
+      "material_facts": [
+        "The bond undertook payment if the debtor became liable for restitution as a result of the specified appellate decision.",
+        "The dispute contemplated by the bond was a money dispute to be determined by the court.",
+        "The compromise introduced arrangements for taking possession of properties and adjusting the parties’ rival claims, granted time to both parties to perform their obligations, and settled a claim outside the judicial proceedings for which the bond had been given.",
+        "The bond did not indicate that the sureties contemplated an amicable settlement of the dispute."
+      ],
+      "conclusion": "The compromise decree discharged the sureties, and the creditor could not enforce the bond against them.",
+      "legal_principle": "Whether a compromise discharges a surety on a court bond depends on construing the bond. If the surety undertook liability on the basis that the dispute would be decided by the court and not amicably settled, a compromise discharges the surety; if the bond shows that the surety contemplated settlement and liability under a compromise decree, the surety is not discharged. The Court relied on The Official Liquidators, The Travancore National & Quilon Bank Ltd. v. The Official Assignee of Madras; Parvatibai v. Vinayak Balvant; Mahomedalli Ibrahimji v. Laxmibai; Narsingh Mahton v. Nirpat Singh; Muhammad Yusaf v. Ram Gobinda Ojha; Haji Ahmed v. Maruti Ramji; Appunni Nair v. Isack Mackadan; and Kanailal Mookerjee v. Kali Mohan Chatterjee. The equitable principle underlying section 135 of the Indian Contract Act, 1872 also supports discharge when the creditor grants time to the debtor without the surety’s assent.",
+      "rule": {
+        "if": "court_bond_in_judicial_proceeding and bond_contemplated_merits_decision and not bond_contemplated_compromise and compromise_changed_obligations_or_delayed_enforcement",
+        "then": "surety_is_discharged"
+      },
+      "predicates": {
+        "court_bond_in_judicial_proceeding": "A surety gave a bond to a court in connection with a judicial proceeding.",
+        "bond_contemplated_merits_decision": "The bond’s terms show that the surety undertook liability on the basis that the court would decide the underlying dispute on its merits.",
+        "bond_contemplated_compromise": "The bond’s terms show that the surety contemplated an amicable settlement and liability under a resulting compromise decree.",
+        "compromise_changed_obligations_or_delayed_enforcement": "The parties’ compromise introduced obligations or claims beyond the dispute contemplated by the bond, or delayed enforcement of the debtor’s obligations."
+      },
+      "definition": "When a court-proceeding bond contemplated a merits decision but not a compromise, and the compromise changed or delayed the obligations, the surety is discharged."
+    },
+    {
+      "legal_issue": "A surety may raise the discharge effect of a compromise in an appeal even if the surety did not raise that contention at trial, where the issue is raised in the appeal and the opposing party does not then assert that the surety consented to the compromise.",
+      "material_facts": [
+        "The sureties did not raise the discharge contention at trial, where the parties had focused on who was in default.",
+        "The surety specifically raised the contention before the High Court.",
+        "The creditor did not tell the High Court that the sureties had consented to the compromise, and the Court regarded that proposed factual response as an afterthought."
+      ],
+      "conclusion": "The High Court was entitled to consider the sureties’ discharge contention, and the creditor’s objection to its being raised there had no substance.",
+      "legal_principle": "The Court rejected the objection that the contention was not a pure question of law and therefore should not have been allowed for the first time in appeal. It observed that if the creditor’s case was that the sureties had consented to the compromise, that case should have been stated before the High Court, which could then have sought a finding or refused permission to raise the point.",
+      "rule": {
+        "if": "surety_discharge_defense_raised_in_appeal and not creditor_asserted_surety_consent_in_that_appeal",
+        "then": "appellate_court_may_consider_surety_discharge_defense"
+      },
+      "predicates": {
+        "surety_discharge_defense_raised_in_appeal": "A surety raised the contention that a compromise discharged the surety in an appellate court, although it had not been raised at trial.",
+        "creditor_asserted_surety_consent_in_that_appeal": "The creditor asserted in the appellate court that the surety had consented to the compromise."
+      },
+      "definition": "When a surety raises a discharge defense in appeal and the creditor does not assert there that the surety consented to the compromise, the appellate court may consider the defense."
+    }
+  ],
+  "seconds": 16.0
+}

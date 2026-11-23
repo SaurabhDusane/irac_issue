@@ -1,0 +1,98 @@
+{
+  "doc_id": "572071",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33476,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3376,
+    "prompt_tokens": 8513,
+    "total_tokens": 11889,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A land-ceiling proceeding pending when the ceiling is reduced must determine the permissible holding first under the original ceiling regime and then under the reduced regime, applying the amended transfer cutoff at the second stage.",
+      "material_facts": [
+        "A proceeding to determine the holders’ ceiling under the original regime began before the reduction legislation took effect and remained unfinished when it took effect.",
+        "The holders had made sales after the original notified date but before the reduction legislation took effect.",
+        "The authorities treated those sales as wholly excluded when determining the reduced ceiling."
+      ],
+      "conclusion": "The proceeding must first determine the permissible holding under the original regime and then determine the reduced holding under the modified regime. For the second calculation, the amended transfer cutoff applies, so sales before the reduction legislation took effect must be taken into account. The matter was remanded for redetermination.",
+      "legal_principle": "Under Section 3(1) of the Tamil Nadu Land Reforms (Reduction of Ceiling on Land) Act, 1970, an unfinished proceeding continues under the Principal Act as originally enacted; under Section 3(2), the reduced ceiling must also be determined by applying the Principal Act as modified by the Reduction Act. These subsections must be read harmoniously. The amended Section 23 supplies the transfer cutoff for the further reduction, rather than simply replacing the original calculation.",
+      "rule": {
+        "if": "land_ceiling_proceeding and proceeding_unfinished_when_ceiling_reduced and transfer_occurred_before_reduction",
+        "then": "pre_reduction_transfer_counts_in_reduced_ceiling_assessment"
+      },
+      "predicates": {
+        "land_ceiling_proceeding": "The proceeding concerns determination of a person’s permissible land holding under a land-ceiling regime.",
+        "proceeding_unfinished_when_ceiling_reduced": "The ceiling proceeding had begun but had not concluded when legislation reduced the permissible ceiling.",
+        "transfer_occurred_before_reduction": "The holder transferred land before the legislation reducing the ceiling took effect."
+      },
+      "definition": "When a land-ceiling proceeding remains unfinished as the ceiling is reduced, a transfer made before the reduction takes effect counts in determining the reduced ceiling assessment."
+    },
+    {
+      "legal_issue": "A transfer made after the revised notified date but before publication of the final ceiling statement is not deducted from the transferor’s holding in the ceiling calculation.",
+      "material_facts": [
+        "A ceiling proceeding concerning an estate remained pending after the reduction legislation took effect.",
+        "The estate’s representatives sold land after the revised notified date and before publication of the final statement.",
+        "The purchasers argued that the land should not be treated as part of the estate’s holding."
+      ],
+      "conclusion": "The sales could not be excluded from the estate’s holding for the reduced-ceiling calculation, and the matter was decided on the basis that the sales did not reduce the holding taken into account.",
+      "legal_principle": "Section 23 of the Principal Act, as amended by the Reduction Act, excludes from consideration transfers made on or after the revised notified date and before publication of the final statement. Applied to the transferor’s ceiling calculation, the land subject to such a transfer is therefore not deducted from the holding. Section 3(2) requires the reduced holding in a pending proceeding to be determined under the modified Principal Act.",
+      "rule": {
+        "if": "land_ceiling_proceeding and transfer_after_revised_cutoff and transfer_before_final_statement",
+        "then": "transferred_land_remains_in_transferor_holding_for_ceiling_calculation"
+      },
+      "predicates": {
+        "land_ceiling_proceeding": "The proceeding concerns determination of a person’s permissible land holding under a land-ceiling regime.",
+        "transfer_after_revised_cutoff": "The holder transferred the land after the revised cutoff for transfers considered in the ceiling calculation.",
+        "transfer_before_final_statement": "The holder transferred the land before the final ceiling statement was published."
+      },
+      "definition": "In a land-ceiling proceeding, land transferred after the revised cutoff but before the final statement remains in the transferor’s holding for the ceiling calculation."
+    },
+    {
+      "legal_issue": "The death of a holder during an unfinished ceiling proceeding does not terminate that proceeding when the holder’s legal representatives are on record.",
+      "material_facts": [
+        "A ceiling proceeding began while the holder was alive and remained unfinished when the holder died.",
+        "The holder’s legal representatives were brought onto the record.",
+        "The heirs argued that the property had vested in the remaindermen and that the proceeding could not continue."
+      ],
+      "conclusion": "The existing proceeding continued despite the holder’s death; it did not terminate or require a fresh proceeding, and the holding was to be determined under both the original and reduced ceiling regimes.",
+      "legal_principle": "Sections 3(1) and 3(2) of the Reduction Act provide for one continuous proceeding: the original ceiling is determined under the Principal Act, and the reduced ceiling is then determined under the Principal Act as modified. Section 3(2) prescribes a reduced ceiling and method of calculation, not commencement of a fresh proceeding. The distinction from B.K. v. Radhamani Ammal is that the proceeding here had not concluded before the Reduction Act took effect.",
+      "rule": {
+        "if": "pending_land_ceiling_proceeding and holder_died_during_proceeding and legal_representatives_on_record",
+        "then": "proceeding_continues_after_holder_death"
+      },
+      "predicates": {
+        "pending_land_ceiling_proceeding": "A proceeding to determine the holder’s permissible land holding had begun and remained unfinished.",
+        "holder_died_during_proceeding": "The holder died while the ceiling proceeding remained unfinished.",
+        "legal_representatives_on_record": "The holder’s legal representatives were brought onto the record of the proceeding."
+      },
+      "definition": "If a holder dies during an unfinished land-ceiling proceeding and the legal representatives are on the record, the proceeding continues after the holder’s death."
+    },
+    {
+      "legal_issue": "A voluntary transfer to a qualifying educational institution during the special transfer period is valid and receives the statutory protection in an unfinished ceiling proceeding.",
+      "material_facts": [
+        "The ceiling proceedings concerning the holdings had begun under the original legislation and were unfinished when the reduction legislation took effect.",
+        "During the special transfer period, the holder voluntarily settled land in trust for an educational institution.",
+        "The authorities denied the transfer’s effect on the ground that the proceedings had begun under the original legislation."
+      ],
+      "conclusion": "The transfer was protected under Section 21-A and had to be applied when calculating the holder’s landholding, notwithstanding that the ceiling proceeding had begun under the original Act. The matter was remanded for fresh determination.",
+      "legal_principle": "Section 21-A, inserted into the Principal Act by the Reduction Act, provides that qualifying voluntary transfers to educational institutions during the specified period are valid, notwithstanding Section 22 or any other provision. Its non obstante clause overrides Section 3(1) as well. Susila Devi Ammal v. State of Madras confirms that Section 21-A applies in pending proceedings and overrides Section 23; M.K. Harihar Iyer v. Authorised Officer, Land Reforms, Tirunelveli confirms its overriding effect over Section 22. B.K. v. Radhamani Ammal concerned proceedings that had already concluded and was distinguished.",
+      "rule": {
+        "if": "pending_land_ceiling_proceeding and transfer_during_special_transfer_window and voluntary_transfer_to_educational_institution",
+        "then": "qualifying_transfer_is_valid_and_excluded_from_transferor_holding"
+      },
+      "predicates": {
+        "pending_land_ceiling_proceeding": "A proceeding to determine the holder’s permissible land holding had begun and remained unfinished when the transfer was made.",
+        "transfer_during_special_transfer_window": "The transfer occurred during the temporary period in which the special transfer rule applied.",
+        "voluntary_transfer_to_educational_institution": "The holder voluntarily transferred land to an educational institution for its purposes."
+      },
+      "definition": "When an unfinished land-ceiling proceeding concerns a holder who voluntarily transfers land to an educational institution during the special transfer window, the qualifying transfer is valid and the land is excluded from the transferor’s holding."
+    }
+  ],
+  "seconds": 20.5
+}

@@ -1,0 +1,84 @@
+{
+  "doc_id": "1956372",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25711,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2715,
+    "prompt_tokens": 6486,
+    "total_tokens": 9201,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An unregistered charge created by a company over property is ineffective as security against its liquidator and creditors, while the underlying debt remains recoverable as an unsecured debt.",
+      "material_facts": [
+        "A company secured advances with an equitable mortgage over its property by depositing title deeds.",
+        "The company went into liquidation, and the charge was not registered.",
+        "The liquidator challenged the security as void against the liquidator and the creditors."
+      ],
+      "conclusion": "The charge was void as security against the liquidator and creditors, but non-registration did not extinguish the obligation to repay the debt; the creditor could recover as an unsecured creditor.",
+      "legal_principle": "Under Section 125(1) of the Companies Act, 1956, a charge of a kind covered by Section 125(4) created by a company is void against the liquidator and creditors, so far as it confers security on company property, unless duly registered. Sections 125(2) and 125(3) preserve the repayment obligation and make the secured money immediately payable when the charge becomes void. Section 125 does not apply to a charge arising by operation of law or created by a court order or decree. The Court approved the principle in Praga Tools Ltd. v. Official Liquidator of Bengal Engineering Co. (P) Ltd. and also relied on In re Overseas Aviation Engineering (G.B.) Ltd.",
+      "rule": {
+        "if": "company_winding_up_proceeding and company_created_security_charge and charge_requires_registration and charge_not_registered",
+        "then": "charge_unenforceable_as_security_against_liquidator_and_creditors"
+      },
+      "predicates": {
+        "company_winding_up_proceeding": "The case concerns the winding up of a company and the rights of its liquidator or creditors.",
+        "company_created_security_charge": "The company created a charge over its property to secure a debt.",
+        "charge_requires_registration": "The charge is a kind of security charge that must be registered to be effective against the liquidator and creditors.",
+        "charge_not_registered": "The charge was not registered as required."
+      },
+      "definition": "When a company in a winding-up proceeding created a registrable security charge and did not register it, the charge cannot operate as security against the liquidator and creditors."
+    },
+    {
+      "legal_issue": "A winding-up court cannot declare void a decree passed by a competent court in a suit brought with leave against the company represented by its liquidator.",
+      "material_facts": [
+        "The winding-up court gave the bank leave to sue for its debt.",
+        "The bank sued the company, represented by the liquidator, and the liquidator contested the suit, including by raising non-registration of the charge.",
+        "The competent court passed a preliminary decree, and the liquidator did not appeal.",
+        "The liquidator later applied to the winding-up court for a declaration that the decree was void."
+      ],
+      "conclusion": "The decree was binding on the liquidator, and the winding-up court had no power under Section 446 to declare it void; the application was not maintainable to that extent.",
+      "legal_principle": "Section 446(1) permits proceedings against a company in liquidation with leave of the winding-up court, and Section 446(2), including clause (d), gives that court jurisdiction over claims and questions arising in winding up. A decree passed by a competent court in a suit brought with leave against the company represented by the liquidator binds the liquidator, and an inconsistent plea cannot be raised in deciding priorities. Section 446 does not empower the winding-up court to declare that decree void.",
+      "rule": {
+        "if": "company_winding_up_proceeding and suit_brought_with_winding_up_court_leave and decree_passed_against_company_represented_by_liquidator and decree_became_final",
+        "then": "winding_up_court_cannot_declare_decree_void"
+      },
+      "predicates": {
+        "company_winding_up_proceeding": "The matter arises in the winding up of a company.",
+        "suit_brought_with_winding_up_court_leave": "A suit against the company was brought after the winding-up court granted leave.",
+        "decree_passed_against_company_represented_by_liquidator": "The competent court passed a decree against the company as represented by its liquidator.",
+        "decree_became_final": "The decree was not appealed and became final."
+      },
+      "definition": "If a final decree was passed against a company represented by its liquidator in a suit brought with leave during winding up, the winding-up court cannot declare that decree void."
+    },
+    {
+      "legal_issue": "Whether a preliminary mortgage decree based on an unregistered charge is affected by the registration requirement depends on the decree's terms and on whether, after default, its operative relief rests on the decree rather than the original charge.",
+      "material_facts": [
+        "The bank's suit was based on an equitable mortgage secured by an unregistered charge.",
+        "The preliminary decree allowed the company to pay by a specified date, after which the bank could seek a final decree for sale of the mortgaged property.",
+        "The company did not pay by that date.",
+        "The liquidator applied for a declaration that the preliminary decree was void after the payment deadline had passed."
+      ],
+      "conclusion": "After the payment deadline passed without payment, the decree's operative direction was for sale of the property to realize the decretal amount, not merely enforcement of the unregistered charge. The preliminary decree was therefore not void or unenforceable on that ground.",
+      "legal_principle": "Section 125 applies to a charge created by a company, but its effect on a preliminary decree in a mortgage suit must be assessed by construing the decree. If the decree keeps the unregistered charge alive, Section 125 applies to that charge; if the decree extinguishes or replaces it with an operative court-ordered remedy, the decree is not invalid merely because the original charge was unregistered. Once the time for redemption passes without payment, the parties' rights are governed by the decree rather than the original contract. The Court relied on Rani Sundar Koer v. Rai Sham Krishan, Kusum Kumari v. Debi Prosad Dhandhania, Gyarsi Bai v. Dhansukh Lal, and Suryakant Natvarlal Surati v. Kamani Bros. Pvt. Ltd.",
+      "rule": {
+        "if": "mortgage_decree_in_company_winding_up_proceeding and company_created_charge_not_registered and decree_allows_redemption_before_sale and redemption_deadline_passed_without_payment and decree_authorizes_sale",
+        "then": "mortgage_decree_enforceable_despite_unregistered_charge"
+      },
+      "predicates": {
+        "mortgage_decree_in_company_winding_up_proceeding": "The issue concerns a preliminary mortgage decree in a proceeding involving a company in winding up.",
+        "company_created_charge_not_registered": "The company created the mortgage charge and did not register it.",
+        "decree_allows_redemption_before_sale": "The decree permits payment by a deadline to discharge the mortgage before sale may be pursued.",
+        "redemption_deadline_passed_without_payment": "The company did not pay by the deadline set for redemption.",
+        "decree_authorizes_sale": "The decree authorizes the creditor to seek sale of the property to realize the decretal amount after default."
+      },
+      "definition": "When a mortgage decree allows redemption before sale and the company defaults, the decree's sale remedy remains enforceable even if the company's original charge was unregistered."
+    }
+  ],
+  "seconds": 17.1
+}

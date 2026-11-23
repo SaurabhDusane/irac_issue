@@ -1,0 +1,85 @@
+{
+  "doc_id": "1426669",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20741,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3101,
+    "prompt_tokens": 5598,
+    "total_tokens": 8699,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A presumption of a lost grant cannot be made when the evidence does not establish its factual basis or the proposed grant would have been legally impossible.",
+      "material_facts": [
+        "The defendants claimed that they and their predecessors held the lands under a rent-free grant made before the permanent settlement, but the lands had been found to be assessed lands included in the estate at that settlement.",
+        "The defendants’ documents asserting a Lakheraj title were not shown to relate to the suit lands, and there was no proof that they asserted a hostile title to the plaintiff’s knowledge before the 1931 record of rights.",
+        "The duration of possession was not precisely found; the evidence established only possession for a considerable period without payment of rent.",
+        "The defendants denied the title of both the estate owner and the religious institution, then sought to rely on a presumed grant from them after that denial failed.",
+        "The proposed Lakheraj grant by the head of the religious institution would have been unsupported by consideration and beyond his powers."
+      ],
+      "conclusion": "The courts below were not entitled to presume a lost grant in favour of the defendants; the plaintiff was entitled to assessment of fair and equitable rent.",
+      "legal_principle": "A lost grant may be presumed where ancient and continued possession is held under an unchallenged assertion of title derived from the owner and cannot otherwise reasonably be explained, but the presumption is not irrebuttable and need not be made where the evidence contradicts it or a legal impediment makes the grant impossible. An assessed estate could not be treated as containing pre-settlement Lakheraj lands consistently with section 36 of Regulation No. 8 of 1793. A party who denies the title of a person cannot, after failing on that denial, rely on a presumed grant from that person. A manager of a religious institution cannot bind it by a perpetual grant absent compelling necessity or benefit; a gratuitous Lakheraj grant is beyond that power. The Court relied on Attorney-General v. Simpson, Raja Braja Sundar Deb v. Moni Behara, Barker v. Richardson, The Rochdale Canal Company v. Radcliffe, and Palaniappa Chetty v. Sreenath Devasikamony.",
+      "rule": {
+        "if": "lost_grant_dispute and (land_assessed_at_settlement or grantor_title_denied or proposed_grantor_lacked_legal_power or (no_proved_hostile_assertion and possession_duration_unascertained))",
+        "then": "lost_grant_not_presumed"
+      },
+      "predicates": {
+        "lost_grant_dispute": "The proceeding involves a claim that a grant should be presumed from long possession.",
+        "land_assessed_at_settlement": "The land was included as revenue-assessed land in a settlement that excluded existing rent-free land from assessment.",
+        "grantor_title_denied": "The claimant denied the title of the person from whom the claimant later sought to derive a presumed grant.",
+        "proposed_grantor_lacked_legal_power": "The proposed grantor could not legally make the grant pleaded, including because it would bind a religious institution without necessity or benefit.",
+        "no_proved_hostile_assertion": "The evidence did not establish an unchallenged assertion of the claimed title known to the owner.",
+        "possession_duration_unascertained": "The evidence showed lengthy possession but did not establish its precise duration."
+      },
+      "definition": "When a lost-grant dispute has one of the stated impediments or lacks the stated proof of hostile assertion and duration, the grant is not presumed."
+    },
+    {
+      "legal_issue": "An entry recording possession without payment of rent does not, by itself, establish a historic rent-free grant for purposes of presuming a lost grant.",
+      "material_facts": [
+        "The record of rights described the lands as “Bhog Dakhal Sutre Niskar.”",
+        "The applicable settlement instruction directed that land occupied by a person who was not actually paying rent be recorded as Niskar and that the words “Bhog Dakhal Sutre” be added if no rent-free title deed was produced.",
+        "The defendants stated that they had been unable to produce a revenue-free grant and that the settlement officers recorded their right in a general way."
+      ],
+      "conclusion": "The record-of-rights entry showed that rent was not actually being paid; it did not prove a rent-free grant and could not support the presumption of a lost pre-settlement grant.",
+      "legal_principle": "Under Rule 37 of the Technical Rules and Instructions issued by the Settlement Department, the described entry could record possession without actual payment of rent where no sanad or title deed was produced. In that context, the entry did not establish a grant, and its evidentiary weight could not overcome the finding that the land was part of the assessed estate.",
+      "rule": {
+        "if": "lost_grant_dispute and possession_recorded_as_rent_free and no_title_deed_produced and entry_made_to_record_nonpayment",
+        "then": "record_entry_not_proof_of_historic_rent_free_grant"
+      },
+      "predicates": {
+        "lost_grant_dispute": "The proceeding involves a claim that a grant should be presumed from long possession.",
+        "possession_recorded_as_rent_free": "An official land record describes the occupant’s possession as rent-free or uses equivalent wording.",
+        "no_title_deed_produced": "The occupant produced no title deed establishing a rent-free grant.",
+        "entry_made_to_record_nonpayment": "The entry was made under a recordkeeping practice that described possession without actual rent payment."
+      },
+      "definition": "In a lost-grant dispute, an entry made to record possession without payment of rent, where no title deed was produced, does not establish a historic rent-free grant."
+    },
+    {
+      "legal_issue": "Nonpayment of rent without a proved hostile assertion of title does not establish adverse possession, and a suit brought within the applicable period after the first clear hostile assertion is not time-barred.",
+      "material_facts": [
+        "The evidence established nonpayment of rent for a considerable but unascertained period, but not a hostile assertion of title known to the plaintiff before 1931.",
+        "The documents relied on to show earlier assertions of a Lakheraj title were not shown to concern the suit lands, and the receipts relied on to establish the plaintiff’s knowledge were excluded for lack of proof of their contents.",
+        "The defendants’ title was clearly asserted in the 1931 record of rights, and the suits were filed within twelve years of publication of the final settlement records."
+      ],
+      "conclusion": "The defendants’ possession was not shown to be adverse merely because rent was unpaid, and the limitation defence was rejected.",
+      "legal_principle": "Nonpayment of rent alone is insufficient to make possession adverse; adverse possession requires a hostile assertion of title. The Court applied article 131 of the Limitation Act and held that the suits were within time because the first clear hostile assertion was in 1931 and the suits followed within the applicable period.",
+      "rule": {
+        "if": "rent_assessment_suit and rent_unpaid_without_prior_hostile_assertion and hostile_assertion_first_made_later and suit_filed_within_limitation_period",
+        "then": "limitation_defence_rejected"
+      },
+      "predicates": {
+        "rent_assessment_suit": "The proceeding seeks assessment or recovery of rent for occupied land.",
+        "rent_unpaid_without_prior_hostile_assertion": "Rent was not paid, but no earlier hostile claim of title was proved.",
+        "hostile_assertion_first_made_later": "The occupant first made a clear hostile assertion of title at a later point.",
+        "suit_filed_within_limitation_period": "The suit was filed within the applicable limitation period measured from the first clear hostile assertion."
+      },
+      "definition": "In a rent-assessment suit, when rent was unpaid without an earlier hostile title claim and the suit followed the first clear hostile assertion within the applicable period, the limitation defence is rejected."
+    }
+  ],
+  "seconds": 18.9
+}

@@ -1,0 +1,109 @@
+{
+  "doc_id": "1642365",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 49487,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2853,
+    "prompt_tokens": 12595,
+    "total_tokens": 15448,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A suit brought by persons claiming through parties to an earlier suit dismissed for default is barred when its essential cause of action is substantially identical to that of the earlier suit.",
+      "material_facts": [
+        "Heirs had earlier sued to challenge a mortgage decree and sale, alleging that the mortgagor owned only a fractional share and that the remaining heirs held the other interests.",
+        "That earlier suit was dismissed for default when the plaintiffs did not appear for trial.",
+        "The later plaintiffs claimed through purchases from the heirs and sought the same property on the basis of substantially the same allegations about the heirs’ interests and the effect of the mortgage and sale.",
+        "The later suit additionally alleged that the plaintiffs had obtained possession and were dispossessed."
+      ],
+      "conclusion": "The later suit was substantially barred, apart from the share of persons who were not parties to the earlier suit and whose share was therefore unaffected by its dismissal.",
+      "legal_principle": "Under Order IX, Rule 9 of the Code of Civil Procedure, dismissal under Rule 8 precludes a fresh suit in respect of the same cause of action. The bar applies not only to the original plaintiff but also to that plaintiff’s assigns and legal representatives; otherwise, the rule could be evaded by transferring the claim. Whether causes of action are the same is determined by their substance, not their technical form: the court adopted the test in Mohammad Khalil Khan v. Mahbub Ali Mian and the approach in Soorijamonee Dasee v. Suddanund. It considered but rejected the contrary argument associated with Gopi Ram v. Jagannath Singh. Additional allegations of possession and dispossession do not alter the identity of the cause of action when the claimant could obtain no relief without establishing the same underlying title allegations.",
+      "rule": {
+        "if": "later_suit_after_default_dismissal and (claim_through_earlier_plaintiff or earlier_plaintiff_is_legal_predecessor) and same_property_claimed and essential_title_basis_substantially_identical",
+        "then": "later_suit_barred_for_same_cause_of_action"
+      },
+      "predicates": {
+        "later_suit_after_default_dismissal": "A later suit is brought after an earlier suit was dismissed for the plaintiffs’ failure to appear.",
+        "claim_through_earlier_plaintiff": "The later claimant derives the asserted right from a plaintiff in the earlier suit.",
+        "earlier_plaintiff_is_legal_predecessor": "A plaintiff in the earlier suit is a legal predecessor of the later claimant.",
+        "same_property_claimed": "The later suit seeks relief concerning the same property as the earlier suit.",
+        "essential_title_basis_substantially_identical": "The essential facts supporting title and relief in the later suit are substantially the same as those in the earlier suit."
+      },
+      "definition": "When a later claimant seeks the same property through an earlier plaintiff and relies on substantially the same essential title basis after the earlier suit was dismissed for nonappearance, the later suit is barred for the same cause of action."
+    },
+    {
+      "legal_issue": "A renewed government lease may preserve the beneficial interests of co-sharers even when the lease names only one of them as lessee.",
+      "material_facts": [
+        "The original leasehold belonged beneficially to the deceased proprietor’s heirs, including the eldest son and other co-sharers.",
+        "When the original lease expired, the government’s records identified several co-sharers and asked in whose favour the renewed lease should issue.",
+        "The eldest son requested issuance according to the land register, and the renewed lease was executed in his name alone.",
+        "The renewed lease was intended by the government as a renewal of the earlier lease, and there was no indication that the government intended to exclude the other co-sharers’ beneficial interests."
+      ],
+      "conclusion": "The renewed lease benefited the co-sharers as well as the named lessee; the sole naming of the lessee did not extinguish their beneficial interests.",
+      "legal_principle": "The parties’ intention, principally the grantor’s intention, determines the nature and extent of the interest conferred. Section 3 of the Crown Grants Act validates the terms and limitations of a government grant notwithstanding contrary law, but does not remove beneficial interests where the grant was intended to benefit the co-sharers and contains no term excluding such interests.",
+      "rule": {
+        "if": "government_lease_renewed and prior_co_sharers_had_beneficial_interests and grantor_intended_co_sharers_to_benefit and lease_names_one_co_sharer_alone",
+        "then": "co_sharers_retain_beneficial_interests_in_renewed_lease"
+      },
+      "predicates": {
+        "government_lease_renewed": "A government lease is renewed after an earlier lease expires.",
+        "prior_co_sharers_had_beneficial_interests": "Several co-sharers held beneficial interests in the earlier leasehold.",
+        "grantor_intended_co_sharers_to_benefit": "The grantor intended the renewed grant to benefit the co-sharers as well as the named lessee.",
+        "lease_names_one_co_sharer_alone": "The renewed lease names only one co-sharer as lessee."
+      },
+      "definition": "Where a government lease renews an interest held beneficially by co-sharers, the grantor intends them to benefit, and only one is named, the co-sharers retain beneficial interests in the renewed lease."
+    },
+    {
+      "legal_issue": "A transferee cannot rely on the protection for transfers by an ostensible owner without proof that the true owners consented to that person appearing to be the owner and that the transferee took reasonable care to ascertain the authority to transfer.",
+      "material_facts": [
+        "The eldest son mortgaged the entire property as though he were its full owner, although other heirs held beneficial shares.",
+        "The other co-sharers permitted him to manage the common property, and the property was recorded in his name.",
+        "There was no evidence that the co-sharers had put him forward as the ostensible owner of the entire property.",
+        "An enquiry by the mortgagee would have disclosed that he was not the full owner."
+      ],
+      "conclusion": "The protection under section 41 of the Transfer of Property Act did not assist the transferee; management by one co-sharer and an entry in his name did not establish that the others consented to his being held out as full owner, and the required reasonable enquiry was not made.",
+      "legal_principle": "Section 41 of the Transfer of Property Act requires proof that the transferor was the ostensible owner with the consent, express or implied, of the persons interested in the property, and that the transferee took reasonable care to ascertain the transferor’s power to transfer and acted in good faith. Permitting a co-sharer to manage common property does not, by itself, create an estoppel or establish that consent.",
+      "rule": {
+        "if": "transfer_by_apparent_full_owner and co_owners_have_interests and not co_owners_held_transferor_out_as_full_owner and reasonable_inquiry_would_reveal_limited_title",
+        "then": "ostensible_owner_protection_unavailable"
+      },
+      "predicates": {
+        "transfer_by_apparent_full_owner": "A person transfers or mortgages property while appearing to claim full ownership.",
+        "co_owners_have_interests": "Other persons hold interests in the property.",
+        "co_owners_held_transferor_out_as_full_owner": "The other interest-holders put forward or consented to the transferor appearing to be the full owner.",
+        "reasonable_inquiry_would_reveal_limited_title": "A reasonable enquiry by the transferee would disclose that the transferor does not own the entire interest."
+      },
+      "definition": "If a transferor appears to own the whole property but other interest-holders did not hold the transferor out as full owner and reasonable enquiry would reveal the limited title, the ostensible-owner protection is unavailable."
+    },
+    {
+      "legal_issue": "A claim based on a disputed conveyance should be remitted for a factual finding when the conveyance is in evidence but its reality was not determined below and the record contains circumstances requiring scrutiny.",
+      "material_facts": [
+        "The plaintiffs claimed an additional share through a conveyance made by a co-heir to an intermediate purchaser and a later conveyance from that purchaser to the plaintiffs.",
+        "The conveyances were in evidence, and the intermediate purchaser had testified to prove them.",
+        "The defendants disputed whether the first conveyance was genuine and intended to pass title.",
+        "The claim had not been pressed or decided in the lower courts, and circumstances—including the seller’s later conduct and the failure to pursue the claim below—raised suspicion about the transaction.",
+        "The respondent accepted that the first conveyance concerned the claimed share, but the court considered the evidence insufficient to decide its reality itself."
+      ],
+      "conclusion": "The court remitted the matter to the trial court to determine, on the existing evidence, whether the conveyance was real; if it was, the plaintiffs were entitled to the additional share, and if it was not, they were entitled only to the share already decreed.",
+      "legal_principle": "Where a pleaded title claim rests on documentary evidence in the record but its factual basis was not adjudicated below, the claim need not be rejected merely because it was not pursued in the lower courts. If the record contains circumstances requiring careful scrutiny, the appropriate course is to remit the factual question for determination rather than grant the claimed relief without a finding.",
+      "rule": {
+        "if": "appeal_in_civil_title_suit and claim_based_on_conveyance and conveyance_in_evidence and conveyance_reality_not_decided_below and transaction_requires_factual_scrutiny",
+        "then": "remit_for_finding_on_conveyance_reality"
+      },
+      "predicates": {
+        "appeal_in_civil_title_suit": "The matter is an appeal in a civil suit seeking relief based on title to property.",
+        "claim_based_on_conveyance": "A claimant asserts an interest derived from a conveyance.",
+        "conveyance_in_evidence": "The conveyance relied on by the claimant is in evidence.",
+        "conveyance_reality_not_decided_below": "The lower court did not determine whether the conveyance was genuine and intended to pass title.",
+        "transaction_requires_factual_scrutiny": "Circumstances in the record make the reality of the transaction require careful factual examination."
+      },
+      "definition": "In a civil title appeal, when a claim rests on an admitted-in-evidence conveyance whose reality was not decided below and requires factual scrutiny, the issue is remitted for a finding on that reality."
+    }
+  ],
+  "seconds": 18.8
+}

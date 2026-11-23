@@ -1,0 +1,64 @@
+{
+  "doc_id": "1225359",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29282,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2018,
+    "prompt_tokens": 7728,
+    "total_tokens": 9746,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "In a second appeal, a High Court may consider a substantial question of law raised after admission only if it records reasons for doing so and gives the opposing party fair notice and an opportunity to address it, and it must decide the substantial question already formulated.",
+      "material_facts": [
+        "The High Court formulated a substantial question of law when admitting the second appeal.",
+        "At the final hearing, the High Court formulated five additional questions and decided the appeal on those questions without recording reasons for introducing them.",
+        "The additional questions were not substantial questions of law, and the opposing party was not given fair notice and an opportunity to meet them.",
+        "The High Court did not address the substantial question formulated at admission."
+      ],
+      "conclusion": "The High Court acted illegally and beyond its jurisdiction in deciding the second appeal in that manner; its judgment could not stand.",
+      "legal_principle": "Section 100(1) and (3)–(5) of the Code of Civil Procedure requires a substantial question of law, its formulation, and a hearing on the formulated question. Under the proviso to Section 100(5), the High Court may hear another substantial question of law if it records its reasons; the opposing party must receive a fair opportunity to meet it. Kshitish Chandra Purkait v. Santosh Kumar Purkait (1997) 5 SCC 438 holds that failure to comply with these requirements makes the hearing of the second appeal illegal and may deny natural justice.",
+      "rule": {
+        "if": "second_appeal and (initial_question_formulated and initial_question_not_decided or (additional_question_introduced and (additional_question_not_substantial or reasons_not_recorded or fair_opportunity_not_given)))",
+        "then": "high_court_decision_in_second_appeal_is_invalid"
+      },
+      "predicates": {
+        "second_appeal": "A party brought an appeal to a High Court from an appellate decree of a subordinate court.",
+        "initial_question_formulated": "The High Court identified a substantial question of law for the appeal at an earlier stage.",
+        "initial_question_not_decided": "The High Court disposed of the appeal without deciding the substantial question it had identified earlier.",
+        "additional_question_introduced": "The High Court introduced another question of law for decision after the earlier formulation.",
+        "additional_question_not_substantial": "The additional question was not a substantial question of law.",
+        "reasons_not_recorded": "The High Court did not record reasons for considering the additional question.",
+        "fair_opportunity_not_given": "The opposing party was not given fair notice and an opportunity to address the additional question."
+      },
+      "definition": "When a High Court decides a second appeal without deciding its previously formulated substantial question, or considers an additional question that is not substantial, lacks recorded reasons, or was not fairly put to the opposing party, its decision is invalid."
+    },
+    {
+      "legal_issue": "A High Court hearing a second appeal cannot replace evidence-based findings of fact made by the first appellate court through a fresh assessment of the evidence merely because another view is possible.",
+      "material_facts": [
+        "The first appellate court assessed the oral and documentary evidence and found that the claimants had established their entitlement to relief.",
+        "Those findings were based on evidence and were not findings made in the absence of material.",
+        "The High Court reassessed evidence and displaced the first appellate court’s findings, although another view on the evidence did not establish that those findings lacked a basis in the record."
+      ],
+      "conclusion": "The High Court exceeded its jurisdiction by interfering with the first appellate court’s findings of fact, and its judgment could not stand.",
+      "legal_principle": "Under Section 100 of the Code of Civil Procedure, the High Court’s jurisdiction in a second appeal is limited to cases involving a substantial question of law. Where the first appellate court’s findings of fact are based on evidence, the High Court cannot substitute its own findings by reappreciating that evidence merely because another view is possible, unless the findings are unsupported by material. The Court also referred generally to its decisions in a catena of cases on this limitation.",
+      "rule": {
+        "if": "second_appeal and first_appellate_findings_based_on_evidence and high_court_reassessed_evidence and findings_not_without_material",
+        "then": "high_court_interference_with_fact_findings_is_unlawful"
+      },
+      "predicates": {
+        "second_appeal": "A party brought an appeal to a High Court from an appellate decree of a subordinate court.",
+        "first_appellate_findings_based_on_evidence": "The first appellate court assessed evidence and based its factual findings on that evidence.",
+        "high_court_reassessed_evidence": "The High Court reassessed the evidence to reach its own factual conclusions.",
+        "findings_not_without_material": "The first appellate court’s factual findings had material supporting them in the record."
+      },
+      "definition": "In a second appeal, when the first appellate court’s evidence-based findings have material supporting them, the High Court acts unlawfully by replacing them through reassessment of the evidence."
+    }
+  ],
+  "seconds": 13.0
+}

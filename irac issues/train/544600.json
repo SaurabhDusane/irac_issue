@@ -1,0 +1,137 @@
+{
+  "doc_id": "544600",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20370,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3215,
+    "prompt_tokens": 5814,
+    "total_tokens": 9029,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A newly extended limitation law governs a later suit even when the former local law imposed no limitation, where the transition law gave a reasonable period to bring the suit.",
+      "material_facts": [
+        "The former local limitation law did not apply to suits to recover wakf property, so no limitation period applied to this claim under that law.",
+        "The Indian Limitation Act was extended to the territory, and the transition provision allowed suits subject to a shorter period under the new law to be brought within two years of the extension or within the period prescribed by the former law, whichever expired first.",
+        "The recovery suit was instituted in 1956, more than two years after the extension took effect."
+      ],
+      "conclusion": "The extension did not confiscate the existing cause of action; the Indian Limitation Act governed the suit, and the plaintiffs could not rely on the transition provision because they did not sue within its two-year period.",
+      "legal_principle": "Limitation law is procedural, and the normal rule is that the law in force when the suit is instituted governs. The transition provision in section 30 of the Indian Limitation Act, 1908, should be construed liberally to alleviate hardship from a shorter new limitation period; it supplied a reasonable period to sue in this case.",
+      "rule": {
+        "if": "former_law_imposed_no_limit and new_law_imposes_shorter_limit and transition_grace_period_expired and recovery_suit",
+        "then": "new_limitation_law_governs"
+      },
+      "predicates": {
+        "former_law_imposed_no_limit": "The former local law imposed no limitation period on this kind of recovery claim.",
+        "new_law_imposes_shorter_limit": "The newly applicable law imposes a limitation period where the former law imposed none or a longer period.",
+        "transition_grace_period_expired": "The claimant instituted the suit after the transitional period for bringing the claim had expired.",
+        "recovery_suit": "The proceeding is a suit to recover property."
+      },
+      "definition": "When a recovery suit is filed after the transition period has expired and the former law imposed no limit but the new law does, the new limitation law governs."
+    },
+    {
+      "legal_issue": "A suit brought by a statutory wakf board to recover wakf property is not a suit by or on behalf of the government merely because the board has supervisory powers over wakfs.",
+      "material_facts": [
+        "The Board was a statutory corporation with powers and duties concerning wakfs, including general superintendence and measures to recover lost wakf property and bring related suits.",
+        "The Board could hold property and control the wakf fund; the government was not responsible for its expenditure or acts, although it had control in specified circumstances.",
+        "The Board brought the recovery suit, and the claim was argued to fall within the limitation rule for suits by or on behalf of the government."
+      ],
+      "conclusion": "The Board was not an agent of the government, and its suit to recover wakf property was not a suit by or on behalf of the government; the government-suit limitation rule did not apply.",
+      "legal_principle": "A statutory corporation vested with its own powers, functions, property, and duties is not a government agent merely because it is subject to government control. The Court referred to Tamlin v. Hannaford and State Trading Corporation of India Ltd. v. Commercial Tax Officer, and considered sections 9, 15, 48 and 54 of the Muslim Wakfs Act, 1954, and the Religious Endowments Act, 1863.",
+      "rule": {
+        "if": "wakf_recovery_suit and statutory_board_has_independent_duties and government_not_responsible_for_board_acts",
+        "then": "suit_is_not_on_behalf_of_government"
+      },
+      "predicates": {
+        "wakf_recovery_suit": "The proceeding is a suit brought to recover wakf property.",
+        "statutory_board_has_independent_duties": "A statutory board with its own powers and duties concerning the property brought the suit.",
+        "government_not_responsible_for_board_acts": "The government is not responsible for the board's acts or expenditure, notwithstanding its specified supervisory control."
+      },
+      "definition": "A recovery suit brought by a statutory board with its own duties, for whose acts the government is not responsible, is not treated as a suit on the government's behalf."
+    },
+    {
+      "legal_issue": "A mutawalli's appointment neither makes the recovery suit one on behalf of the government nor gives a fresh starting point for limitation.",
+      "material_facts": [
+        "The wakf was dispossessed while it possessed the property, and its right to sue for recovery arose at that time.",
+        "A mutawalli later brought or joined in the recovery suit.",
+        "The mutawalli was not appointed by the government and did not manage the endowment on its behalf."
+      ],
+      "conclusion": "The mutawalli was not a government procurator, the suit was not on behalf of the government, and the mutawalli's appointment did not restart limitation.",
+      "legal_principle": "After the Religious Endowments Act, 1863, a mutawalli cannot be treated as a government procurator merely by virtue of that role. The wakf's right to sue arises upon dispossession, and appointment of a mutawalli creates no new right of suit or fresh starting point for limitation. The Court distinguished Jewan Doss Sahoo v. Shah Kubeer-ood-Deen and referred to Shaikh Laul Mahomed v. Lalla Brij Kishore and Behari Lal & Sons v. Muhammad Muttaki.",
+      "rule": {
+        "if": "wakf_dispossessed and mutawalli_later_appointed and recovery_suit",
+        "then": "limitation_is_not_restarted_by_mutawalli_appointment"
+      },
+      "predicates": {
+        "wakf_dispossessed": "The wakf was dispossessed of property it had possessed.",
+        "mutawalli_later_appointed": "A mutawalli was appointed after the wakf's right to recover the property had arisen.",
+        "recovery_suit": "The proceeding is a suit to recover the wakf property."
+      },
+      "definition": "If a wakf is dispossessed and a mutawalli is appointed later, the appointment does not restart limitation for a recovery suit."
+    },
+    {
+      "legal_issue": "For a suit to recover property governed by the applicable limitation law, the period runs from the wakf's dispossession, notwithstanding that limitation did not run under the former local law.",
+      "material_facts": [
+        "The wakf was dispossessed on September 20, 1937.",
+        "The former local limitation law did not apply to suits for recovery of wakf property, but it did not change the date of dispossession.",
+        "The recovery suit was brought more than twelve years after the dispossession."
+      ],
+      "conclusion": "The date of dispossession was the starting point under Article 142 of the Indian Limitation Act, 1908, and the suit was barred by limitation.",
+      "legal_principle": "Under Article 142 of the Indian Limitation Act, 1908, the starting point for a suit of this kind is the date of dispossession. The fact that limitation did not run under the former local law does not change that date; the suit filed more than twelve years later was barred.",
+      "rule": {
+        "if": "recovery_suit and wakf_dispossessed and suit_filed_more_than_twelve_years_after_dispossession",
+        "then": "recovery_claim_is_time_barred"
+      },
+      "predicates": {
+        "recovery_suit": "The proceeding is a suit to recover property.",
+        "wakf_dispossessed": "The wakf was dispossessed of property it had possessed.",
+        "suit_filed_more_than_twelve_years_after_dispossession": "The suit was instituted more than twelve years after the dispossession."
+      },
+      "definition": "A recovery suit brought more than twelve years after the wakf was dispossessed is time-barred."
+    },
+    {
+      "legal_issue": "Time is not excluded under the rule concerning an injunction where the injunction did not restrain institution of the recovery suit.",
+      "material_facts": [
+        "The defendants obtained an injunction concerning their eviction in a separate summary proceeding to recover the property.",
+        "The injunction did not restrain the plaintiffs from instituting the recovery suit.",
+        "The plaintiffs' contention for exclusion of time under section 15 of the Indian Limitation Act, 1908, was no longer pressed in the Supreme Court."
+      ],
+      "conclusion": "The plaintiffs were not entitled to exclude time under section 15 because no injunction restrained institution of the suit; the Court agreed with the High Court on that point.",
+      "legal_principle": "Section 15 of the Indian Limitation Act, 1908, does not exclude time on the basis of an injunction that did not restrain institution of the suit for which limitation is being computed.",
+      "rule": {
+        "if": "recovery_suit and injunction_did_not_bar_filing",
+        "then": "injunction_period_is_not_excluded"
+      },
+      "predicates": {
+        "recovery_suit": "The proceeding is a suit to recover property.",
+        "injunction_did_not_bar_filing": "An injunction affecting another proceeding did not restrain the claimant from instituting the recovery suit."
+      },
+      "definition": "Time is not excluded from limitation for a recovery suit when an injunction did not prevent the claimant from filing it."
+    },
+    {
+      "legal_issue": "A claim for exclusion of time that depends on mixed questions of law and fact will not be considered when first raised in the Supreme Court.",
+      "material_facts": [
+        "The plaintiffs argued for the first time in the Supreme Court that time spent in a pending summary proceeding should be excluded under section 14 of the Indian Limitation Act, 1908.",
+        "The argument raised mixed questions of law and fact and had not been raised in the courts below or in the stated appeal materials."
+      ],
+      "conclusion": "The Court did not allow the plaintiffs to raise the section 14 contention for the first time in the Supreme Court.",
+      "legal_principle": "A contention raising mixed questions of law and fact, not raised in the courts below, need not be entertained when advanced for the first time in the Supreme Court. The contention invoked section 14 of the Indian Limitation Act, 1908.",
+      "rule": {
+        "if": "supreme_court_appeal and exclusion_claim_raised_first_on_appeal and claim_involves_mixed_law_and_fact",
+        "then": "new_exclusion_claim_is_not_considered"
+      },
+      "predicates": {
+        "supreme_court_appeal": "The proceeding is an appeal before the Supreme Court.",
+        "exclusion_claim_raised_first_on_appeal": "A claim to exclude time was raised for the first time in the Supreme Court.",
+        "claim_involves_mixed_law_and_fact": "The exclusion claim raises mixed questions of law and fact."
+      },
+      "definition": "In a Supreme Court appeal, a time-exclusion claim first raised there and involving mixed questions of law and fact is not considered."
+    }
+  ],
+  "seconds": 20.5
+}

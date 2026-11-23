@@ -1,0 +1,60 @@
+{
+  "doc_id": "1066170",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15004,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2053,
+    "prompt_tokens": 4254,
+    "total_tokens": 6307,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person invoking the good-faith limb of the defamation exception must establish an objectively reasonable inquiry and due care before making the imputation.",
+      "material_facts": [
+        "In a prosecution for defamation, the accused had described the complainant and his brother as illegitimate sons in a written response to a proceeding concerning land possession.",
+        "The trial court found the imputation false and defamatory, and the accused relied on the exception for good-faith imputations.",
+        "There was no evidence that the accused made an inquiry before the imputation or exercised due care and attention; the accused was related to the complainant."
+      ],
+      "conclusion": "The accused failed to establish good faith and could not rely on the good-faith limb of the exception.",
+      "legal_principle": "Under the Ninth Exception to section 499 of the Indian Penal Code, good faith is a question of fact and requires more than a sincere or subjective belief: the maker must establish an inquiry conducted with due care and attention, providing a rational basis for the belief that the imputation was true. Proof that the imputation was actually true is not required under this exception. The Court relied on Harbhajan Singh v. State of Punjab, [1965] 3 S.C.R. 235, and Chaman Lal v. State of Punjab, A.I.R. 1970 S.C. 1372, including the need to consider the circumstances, malice, inquiry, care and caution, and the probability of good faith.",
+      "rule": {
+        "if": "defamation_prosecution and defamatory_imputation_made and not prior_inquiry_made and not due_care_shown and imputation_maker_related_to_target",
+        "then": "good_faith_not_established"
+      },
+      "predicates": {
+        "defamation_prosecution": "A person was prosecuted for making an allegedly defamatory imputation.",
+        "defamatory_imputation_made": "The accused made an imputation about another person that was found false and defamatory.",
+        "prior_inquiry_made": "Before making the imputation, the accused investigated whether it was true.",
+        "due_care_shown": "The accused acted with care and attention in assessing the basis for the imputation.",
+        "imputation_maker_related_to_target": "The person who made the imputation was related to the person targeted by it."
+      },
+      "definition": "When a person prosecuted for a defamatory imputation made it without first making an inquiry or showing due care, and was related to its target, good faith is not established."
+    },
+    {
+      "legal_issue": "A defamatory imputation is not established as protecting the maker’s interest merely because it was made in a proceeding concerning possession of property.",
+      "material_facts": [
+        "The imputation that the complainant and his brother were illegitimate sons concerned their parentage.",
+        "The proceeding in which the imputation was made concerned who was in possession of the land, not title to it.",
+        "The accused argued that the imputation was made because the complainant and his brother claimed property to which they had no right."
+      ],
+      "conclusion": "The pending possession proceeding did not make the defamatory imputation a protection of the accused’s interest, and the accused could not rely on that limb of the exception.",
+      "legal_principle": "The Ninth Exception to section 499 of the Indian Penal Code requires an imputation to be made in good faith for the protection of the maker’s or another person’s interest, or for the public good. Protection of interest must be established by showing that the imputation itself served that protective purpose; the mere pendency of a proceeding does not authorize defamatory statements. A communication made to protect an interest is understood as one made bona fide on a subject in which the maker has an interest or duty and the recipient has a corresponding interest or duty. The Court considered the nature of the possession proceeding under section 144 of the Code of Criminal Procedure and the illustration to the Ninth Exception.",
+      "rule": {
+        "if": "defamation_prosecution and proceeding_concerned_possession and imputation_concerned_parentage",
+        "then": "protection_of_interest_not_established"
+      },
+      "predicates": {
+        "defamation_prosecution": "A person was prosecuted for making an allegedly defamatory imputation.",
+        "proceeding_concerned_possession": "The proceeding in which the imputation was made concerned who possessed property.",
+        "imputation_concerned_parentage": "The imputation concerned the parentage or legitimacy of the people targeted by it."
+      },
+      "definition": "When a defamatory imputation about parentage is made in a proceeding concerned with possession, the proceeding alone does not establish that the imputation protected the maker’s interest."
+    }
+  ],
+  "seconds": 14.8
+}

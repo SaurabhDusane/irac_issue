@@ -1,0 +1,141 @@
+{
+  "doc_id": "1338325",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25698,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2669,
+    "prompt_tokens": 6510,
+    "total_tokens": 9179,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory vesting of an acquired undertaking does not, by itself, terminate an existing tenancy of premises within the undertaking.",
+      "material_facts": [
+        "The occupants were tenants of shops, offices, or storage premises under the former hotel company.",
+        "After the undertaking was acquired, the Hotel Authority accepted rent from the occupants and dealt with them as tenants.",
+        "The State argued that statutory vesting and the termination of contracts ended the tenancies."
+      ],
+      "conclusion": "The tenancies continued after acquisition, and the State Government took the former company's place as landlord.",
+      "legal_principle": "Under Sections 4(1) and 4(2) of the Great Eastern Hotel (Acquisition of Undertaking) Act, 1980, vesting free of encumbrances and deemed termination of contracts did not end the landlord-tenant relationship. A tenancy is not an encumbrance of the kind listed in Section 4(1), and the deemed termination in Section 4(2) did not terminate that relationship. The State stepped into the former company's shoes as landlord.",
+      "rule": {
+        "if": "acquisition_tenancy_case and existing_tenant_relationship and (rent_accepted_after_acquisition or landlord_relationship_continued_in_practice)",
+        "then": "tenancy_continues_after_acquisition"
+      },
+      "predicates": {
+        "acquisition_tenancy_case": "The case concerns whether a tenancy survived the statutory acquisition of an undertaking containing the rented premises.",
+        "existing_tenant_relationship": "The occupant held the premises as a tenant under the former owner before the acquisition.",
+        "rent_accepted_after_acquisition": "The new public owner or its representative accepted rent from the occupant after the acquisition.",
+        "landlord_relationship_continued_in_practice": "After acquisition, the new public owner or its representative dealt with the occupant in a manner consistent with a continuing landlord-tenant relationship."
+      },
+      "definition": "When an acquisition case concerns a pre-existing tenant and the new public owner accepts rent or otherwise continues the landlord relationship, the tenancy continues after acquisition."
+    },
+    {
+      "legal_issue": "A statutory power to take steps to secure possession of acquired property does not authorize the government to evict occupants by force without using a procedure recognized by law.",
+      "material_facts": [
+        "The State acquired the hotel undertaking and was empowered to take steps it considered necessary to secure possession.",
+        "The occupants remained in premises within the hotel undertaking.",
+        "The State removed them with police assistance without first obtaining possession through a procedure recognized by law."
+      ],
+      "conclusion": "The possession-securing power did not authorize eviction by force; the State had to obtain possession in due course of law.",
+      "legal_principle": "Section 4(8) of the Great Eastern Hotel (Acquisition of Undertaking) Act, 1980, authorizes steps necessary to secure possession but does not authorize the use of force to evict occupants. Under Bishan Das v. State of Punjab and State of U.P. v. Maharaja Dharmander Prasad Singh, the State cannot take possession otherwise than in due course of law; legal steps require action under a relevant law rather than executive self-help.",
+      "rule": {
+        "if": "government_possession_dispute and property_vested_in_government and occupants_remain_in_possession and government_uses_force_without_lawful_possession_process",
+        "then": "eviction_by_force_is_unlawful"
+      },
+      "predicates": {
+        "government_possession_dispute": "The proceeding challenges government action to obtain possession of property occupied by others.",
+        "property_vested_in_government": "The property or undertaking has vested in the government.",
+        "occupants_remain_in_possession": "People continue to occupy the property when the government seeks possession.",
+        "government_uses_force_without_lawful_possession_process": "The government uses force to remove occupants without first following a procedure recognized by law to obtain possession."
+      },
+      "definition": "When the government seeks possession of vested property from continuing occupants, using force without a lawful possession process makes the eviction unlawful."
+    },
+    {
+      "legal_issue": "A claim that property is required for a public purpose does not permit the government to evict occupants by force without following due process of law.",
+      "material_facts": [
+        "The State argued that the premises were required for a public purpose and that this justified forceful eviction.",
+        "The hotel was a commercial venture used by paying guests and was described as serving an affluent section of society rather than the general public.",
+        "The occupants were removed by force without a lawful possession process."
+      ],
+      "conclusion": "The public-interest argument did not justify forceful eviction; possession had to be obtained in accordance with law.",
+      "legal_principle": "Applying Bishan Das v. State of Punjab and State of U.P. v. Maharaja Dharmander Prasad Singh, the Court held that even an asserted public purpose cannot justify executive eviction by force absent specific legal authority. The acquisition's stated object of providing better boarding and lodging facilities did not make this commercial hotel operation a public purpose that could excuse bypassing due process.",
+      "rule": {
+        "if": "government_eviction_dispute and occupants_are_in_possession and government_relies_on_public_interest and government_uses_force_without_lawful_possession_process",
+        "then": "public_interest_does_not_authorize_forceful_eviction"
+      },
+      "predicates": {
+        "government_eviction_dispute": "The proceeding challenges government action to remove occupants from property.",
+        "occupants_are_in_possession": "The people the government seeks to remove are in possession of the property.",
+        "government_relies_on_public_interest": "The government asserts that the property is needed for a public purpose or public interest.",
+        "government_uses_force_without_lawful_possession_process": "The government uses force to remove occupants without following a procedure recognized by law to obtain possession."
+      },
+      "definition": "When the government invokes public interest to remove occupants who remain in possession, that interest does not authorize forceful eviction without a lawful possession process."
+    },
+    {
+      "legal_issue": "A statutory power to use force against unauthorized occupants who are not tenants cannot be used to evict occupants who retain tenant status.",
+      "material_facts": [
+        "The occupants had been tenants under the former hotel company.",
+        "The tenancies continued after acquisition, with the State taking the former company's place as landlord.",
+        "The State argued that the occupants could be removed under a provision allowing force against persons who were not tenants and occupied government premises without written authority."
+      ],
+      "conclusion": "The occupants could not be evicted under the statutory force provision because they continued to be tenants.",
+      "legal_principle": "Section 6A of the West Bengal Government Premises (Tenancy Regulation) Act, 1976, permits force to remove a person who is not a tenant and occupies or remains in government premises without the prescribed written authority. Because the occupants remained tenants, that provision did not apply. The Court did not decide whether the 1976 Act applied only to residential premises.",
+      "rule": {
+        "if": "government_premises_eviction_case and occupant_is_tenant and force_power_limited_to_non_tenants",
+        "then": "non_tenant_force_power_cannot_be_used"
+      },
+      "predicates": {
+        "government_premises_eviction_case": "The proceeding concerns the use of a statutory power to remove an occupant from government premises.",
+        "occupant_is_tenant": "The occupant holds the premises as a tenant.",
+        "force_power_limited_to_non_tenants": "The asserted statutory force power applies only to occupants who are not tenants."
+      },
+      "definition": "In a government-premises eviction case, a force power restricted to non-tenants cannot be used against an occupant who is a tenant."
+    },
+    {
+      "legal_issue": "An oral direction to vacate that provides no opportunity to answer the proposed eviction is not sufficient notice to justify dispossession.",
+      "material_facts": [
+        "A government representative orally directed the occupants to deliver possession shortly before they were removed.",
+        "The occupants were told to vacate without an opportunity to show cause against eviction.",
+        "The State argued that the oral direction gave sufficient notice."
+      ],
+      "conclusion": "The oral direction was insufficient because the occupants had no opportunity to show cause before dispossession.",
+      "legal_principle": "The Court rejected the claim that oral notice alone was sufficient where the occupants were directed to vacate without an opportunity to show cause. The judgment treats this as part of the requirement that possession be obtained in accordance with law and not through executive action that bypasses due process.",
+      "rule": {
+        "if": "eviction_notice_dispute and notice_was_only_oral_direction_to_vacate and no_opportunity_to_answer_before_eviction",
+        "then": "notice_is_insufficient_for_dispossession"
+      },
+      "predicates": {
+        "eviction_notice_dispute": "The proceeding challenges whether notice given before an eviction was legally sufficient.",
+        "notice_was_only_oral_direction_to_vacate": "The government gave an oral direction to vacate rather than notice through a process that allowed a response.",
+        "no_opportunity_to_answer_before_eviction": "The occupant was not given an opportunity to explain or object before being dispossessed."
+      },
+      "definition": "Where eviction notice consists only of an oral direction to vacate and the occupant cannot respond before removal, the notice is insufficient for dispossession."
+    },
+    {
+      "legal_issue": "The power to take possession under the land-acquisition procedure does not authorize invoking the related enforcement provision to obtain possession from a landowner outside that procedure.",
+      "material_facts": [
+        "The State argued that its possession-securing power under the hotel-acquisition law was akin to a provision of the Land Acquisition Act, 1894.",
+        "The State relied on Section 47 of that Act in support of its position.",
+        "The Court considered the argument in relation to taking possession of land from its owner."
+      ],
+      "conclusion": "Section 47 of the Land Acquisition Act, 1894, could not be invoked to take possession of land from the landowner in the circumstances considered.",
+      "legal_principle": "The Court rejected the proposed analogy between the possession-securing power in the hotel-acquisition law and Section 47 of the Land Acquisition Act, 1894, and held that Section 47 could not be invoked for taking possession of land from the landowner.",
+      "rule": {
+        "if": "land_possession_dispute and government_seeks_possession_from_landowner and government_relies_on_enforcement_power_outside_applicable_acquisition_process",
+        "then": "enforcement_power_cannot_replace_lawful_acquisition_possession_process"
+      },
+      "predicates": {
+        "land_possession_dispute": "The proceeding concerns the government's attempt to obtain possession of land.",
+        "government_seeks_possession_from_landowner": "The government seeks possession of land from its owner.",
+        "government_relies_on_enforcement_power_outside_applicable_acquisition_process": "The government invokes a general enforcement power rather than obtaining possession through the applicable acquisition procedure."
+      },
+      "definition": "When the government seeks land from its owner, a general enforcement power cannot replace the applicable lawful acquisition process."
+    }
+  ],
+  "seconds": 18.4
+}

@@ -1,0 +1,119 @@
+{
+  "doc_id": "89820566",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 127360,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3823,
+    "prompt_tokens": 33670,
+    "total_tokens": 37493,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court should not interfere with an acquittal unless the acquittal is perverse or otherwise unsustainable on the evidence.",
+      "material_facts": [
+        "The appeals challenged a High Court judgment that had reversed convictions and acquitted the accused.",
+        "The High Court identified gaps, inconsistencies and improbabilities in the prosecution evidence, including an uncompleted chain of circumstances.",
+        "The Supreme Court found that the High Court’s reasons were not flimsy, untenable or perverse."
+      ],
+      "conclusion": "The acquittal was not liable to be disturbed, and the appeals were dismissed.",
+      "legal_principle": "Under Article 136 of the Constitution, the Supreme Court may intervene against an acquittal where necessary to prevent miscarriage of justice, including where the acquittal is perverse. An appeal against acquittal is distinct from an appeal against conviction: the reinforced presumption of innocence means interference is warranted only where the acquittal is perverse. The Court relied on State of Rajasthan v. Islam (2011) 6 SCC 343 and Sadhu Saran Singh v. State of U.P. (2016) 4 SCC 357.",
+      "rule": {
+        "if": "appeal_from_acquittal and acquittal_reasons_address_evidentiary_gaps and not perverse_appreciation_shown",
+        "then": "acquittal_left_undisturbed"
+      },
+      "predicates": {
+        "appeal_from_acquittal": "The proceeding was an appeal challenging a judgment of acquittal.",
+        "acquittal_reasons_address_evidentiary_gaps": "The acquittal rested on an assessment identifying gaps or weaknesses in the prosecution evidence.",
+        "perverse_appreciation_shown": "The reviewing court found that the acquittal resulted from a perverse assessment of the evidence."
+      },
+      "definition": "When an appeal challenges an acquittal, evidentiary reasons supporting that acquittal and no perverse assessment mean the acquittal remains undisturbed."
+    },
+    {
+      "legal_issue": "A conviction based on circumstantial evidence requires a complete chain of firmly established circumstances that excludes reasonable hypotheses consistent with innocence.",
+      "material_facts": [
+        "There was no eyewitness to the deaths.",
+        "The medical evidence did not conclusively establish whether the deaths resulted from an assault with an iron rod or from a collision and subsequent impact or run-over.",
+        "The prosecution did not conclusively connect the lorry to the deaths or establish that the accused were in it.",
+        "The evidence did not rule out the possibility that an unknown vehicle caused a fatal hit-and-run collision."
+      ],
+      "conclusion": "The prosecution failed to prove guilt beyond reasonable doubt, and the convictions could not stand.",
+      "legal_principle": "The prosecution bears the burden of proving guilt beyond reasonable doubt. In a case based on circumstantial evidence, each circumstance must be firmly established, the circumstances must cumulatively form a complete chain pointing to guilt, and the chain must exclude reasonable explanations consistent with innocence. Where two views are possible, the view consistent with innocence must be preferred. The Court relied on Shivaji Sahabrao Bobade v. State of Maharashtra (1973) 2 SCC 793; Sharad Birdhichand Sarda v. State of Maharashtra (1984) 4 SCC 116; Bablu v. State of Rajasthan (2006) 13 SCC 116; Vijay Shankar v. State of Haryana (2015) 12 SCC 644; Satish Nirankari v. State of Rajasthan (2017) 8 SCC 497; and Shanti Devi v. State of Rajasthan (2012) 12 SCC 158.",
+      "rule": {
+        "if": "circumstantial_evidence_case and evidentiary_chain_incomplete and reasonable_innocent_hypothesis_remains",
+        "then": "guilt_not_proved_beyond_reasonable_doubt"
+      },
+      "predicates": {
+        "circumstantial_evidence_case": "The prosecution sought to establish guilt through circumstances rather than direct eyewitness evidence.",
+        "evidentiary_chain_incomplete": "One or more circumstances needed to connect the accused to the crime were not firmly established.",
+        "reasonable_innocent_hypothesis_remains": "The evidence left a reasonable explanation consistent with the accused’s innocence."
+      },
+      "definition": "In a circumstantial-evidence case, an incomplete chain and a remaining reasonable innocent explanation mean guilt is not proved beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "Statements made to police during an investigation cannot prove a conspiracy when an officer recounts them in court and the alleged speakers deny making them.",
+      "material_facts": [
+        "The investigating officer recounted statements allegedly made by two witnesses about a meeting and an agreement to kill the deceased.",
+        "Both witnesses denied in court that they had made those statements and denied participating in or witnessing the alleged conspiracy.",
+        "The officer’s account of the statements came from statements attributed to the witnesses during the investigation."
+      ],
+      "conclusion": "The officer’s account was inadmissible and of no value, and the alleged conspiracy was not proved by that evidence.",
+      "legal_principle": "Statements made to police under Section 161 of the Code of Criminal Procedure in the course of an investigation are inadmissible in evidence. The Court applied that rule to the investigating officer’s account of what the witnesses allegedly told him.",
+      "rule": {
+        "if": "criminal_conspiracy_prosecution and officer_recounts_investigation_statements and alleged_speakers_deny_statements",
+        "then": "conspiracy_not_established_by_recounted_statements"
+      },
+      "predicates": {
+        "criminal_conspiracy_prosecution": "The prosecution charged that the accused had agreed to commit a crime.",
+        "officer_recounts_investigation_statements": "A police officer testified to statements that witnesses allegedly made during the investigation.",
+        "alleged_speakers_deny_statements": "The witnesses whose statements were recounted denied making those statements in court."
+      },
+      "definition": "In a conspiracy prosecution, an officer’s account of investigation statements that the alleged speakers deny cannot establish the conspiracy."
+    },
+    {
+      "legal_issue": "A handwriting opinion linking a person to an old hotel-register entry does not, without evidence connecting the entry to an agreement to commit a crime, establish that the person participated in a conspiracy.",
+      "material_facts": [
+        "A handwriting expert found similarities between an accused’s handwriting and an entry in a hotel register.",
+        "The hotel manager contradicted the prosecution account concerning the register entry and denied the relevant allegations.",
+        "At most, the handwriting evidence showed that the accused may have made an entry in the hotel register months before the crime; it did not establish the purpose of the visit or an agreement to commit the crime."
+      ],
+      "conclusion": "The handwriting evidence did not prove the alleged conspiracy; at most, it connected one accused to a hotel visit.",
+      "legal_principle": "Expert opinion is not necessarily conclusive, and handwriting identification is not a perfect science. The Court relied on Murari Lal v. State of Madhya Pradesh (1980) 1 SCC 704 and considered the conflicting evidence of the hotel manager.",
+      "rule": {
+        "if": "criminal_conspiracy_prosecution and handwriting_opinion_links_person_only_to_hotel_entry and no_evidence_connects_entry_to_criminal_agreement",
+        "then": "handwriting_opinion_does_not_establish_conspiracy"
+      },
+      "predicates": {
+        "criminal_conspiracy_prosecution": "The prosecution alleged that the accused had agreed to commit a crime.",
+        "handwriting_opinion_links_person_only_to_hotel_entry": "An expert opinion connected a person’s handwriting to an entry in a hotel register but no further conduct.",
+        "no_evidence_connects_entry_to_criminal_agreement": "No evidence connected the register entry or the person’s presence at the hotel to an agreement to commit the crime."
+      },
+      "definition": "When handwriting evidence shows only a hotel-register entry and no evidence connects that entry to a criminal agreement, the opinion does not establish conspiracy."
+    },
+    {
+      "legal_issue": "In a case based on circumstantial evidence, vague or unsubstantiated property disputes do not establish a motive to commit murder.",
+      "material_facts": [
+        "The prosecution relied on disputes over family property and property management as evidence of motive.",
+        "Some disputes had been compromised, and the evidence disclosed no compelling reason for the accused to arrange the deaths.",
+        "The prosecution presented no direct evidence of the crime."
+      ],
+      "conclusion": "The alleged property disputes did not establish a motive to murder, and the asserted motive was speculative and unsubstantiated.",
+      "legal_principle": "Where a criminal case rests on circumstantial evidence and there is no direct evidence of the crime, motive must be proved. Suspicion arising from property disputes cannot substitute for proof. The Court applied the circumstantial-evidence principles in Sharad Birdhichand Sarda v. State of Maharashtra (1984) 4 SCC 116 and the related authorities it discussed.",
+      "rule": {
+        "if": "circumstantial_evidence_case and no_direct_evidence_of_crime and alleged_motive_is_unsubstantiated_property_dispute",
+        "then": "motive_not_established"
+      },
+      "predicates": {
+        "circumstantial_evidence_case": "The prosecution sought to prove the crime through circumstances rather than direct evidence.",
+        "no_direct_evidence_of_crime": "No direct evidence established who committed the crime or how the accused participated.",
+        "alleged_motive_is_unsubstantiated_property_dispute": "The prosecution relied on property disputes that were vague, compromised or unsupported by evidence of a compelling reason to commit the crime."
+      },
+      "definition": "In a circumstantial-evidence case without direct evidence, an unsubstantiated property dispute does not establish motive."
+    }
+  ],
+  "seconds": 22.0
+}

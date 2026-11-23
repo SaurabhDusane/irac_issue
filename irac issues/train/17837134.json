@@ -1,0 +1,79 @@
+{
+  "doc_id": "17837134",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27559,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2352,
+    "prompt_tokens": 6834,
+    "total_tokens": 9186,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil trial commences when, after issues are framed, the case is fixed for the party entitled to begin to produce evidence.",
+      "material_facts": [
+        "Issues had been framed and the case had been fixed for the plaintiff to produce evidence before the amendment application was filed.",
+        "The plaintiff had not produced evidence when he filed the amendment application."
+      ],
+      "conclusion": "The trial had technically commenced once the case was fixed for the plaintiff to lead evidence, even though the plaintiff had not yet produced evidence.",
+      "legal_principle": "Under Order XIV of the Code of Civil Procedure, issues are framed before the matter proceeds to evidence, and Order XVIII governs the hearing and examination of witnesses. In Vidyabai v. Padmalatha, (2009) 2 SCC 409, the Court held that filing an affidavit in lieu of examination-in-chief amounts to commencement of proceedings. In this case, the Court held that trial technically commenced when the case was fixed for the party entitled to begin to produce evidence.",
+      "rule": {
+        "if": "civil_suit_with_pleadings_amendment and issues_framed and case_fixed_for_party_to_begin_to_produce_evidence",
+        "then": "trial_commenced"
+      },
+      "predicates": {
+        "civil_suit_with_pleadings_amendment": "A party in a civil suit sought to amend its pleadings.",
+        "issues_framed": "The court framed issues in the suit.",
+        "case_fixed_for_party_to_begin_to_produce_evidence": "The court fixed the case for the party entitled to begin to produce evidence."
+      },
+      "definition": "When a civil suit with an amendment application has reached the stage where issues are framed and the party entitled to begin is scheduled to produce evidence, the trial has commenced."
+    },
+    {
+      "legal_issue": "An amendment sought after the trial has technically commenced may be allowed when it was sought before evidence was produced and the parties later presented evidence on the proposed amendment without prejudice to the opponent.",
+      "material_facts": [
+        "The amendment application was filed after the case had been fixed for the plaintiff to produce evidence, but before the plaintiff had produced evidence.",
+        "The parties subsequently led evidence, and the plaintiff's counsel stated that they had done so in view of the proposed amendment.",
+        "The Court found that the opponent was not prejudiced by allowing the amendment."
+      ],
+      "conclusion": "The amendment application was not barred by the proviso to Order VI Rule 17 and was allowed.",
+      "legal_principle": "Order VI Rule 17 of the Code of Civil Procedure permits amendments necessary to determine the real questions in controversy, subject to its proviso limiting amendments after trial commences unless the party could not have raised the matter earlier despite due diligence. Salem Advocate Bar Association, T.N. v. Union of India, (2005) 6 SCC 344, explains the proviso's purpose of preventing delay; Rajesh Kumar Aggarwal v. K.K. Modi, (2006) 4 SCC 385, emphasizes amendments necessary to determine the real controversy; Chander Kanta Bansal v. Rajinder Singh Anand, (2008) 5 SCC 117, discusses the purpose and scope of the proviso; and Mahila Ramkali Devi v. Nandram, (2015) 13 SCC 132, reiterates that procedural rules serve justice and amendments should not be rejected on technical grounds absent mala fides or uncompensable injury. In the circumstances here, the Court held that the purpose of the proviso did not bar the amendment because it preceded the evidence and the opponent suffered no prejudice.",
+      "rule": {
+        "if": "civil_suit_with_pleadings_amendment and amendment_sought_after_trial_technically_commenced and amendment_sought_before_evidence and parties_later_led_evidence_on_proposed_amendment and opponent_not_prejudiced",
+        "then": "amendment_permitted"
+      },
+      "predicates": {
+        "civil_suit_with_pleadings_amendment": "A party in a civil suit sought to amend its pleadings.",
+        "amendment_sought_after_trial_technically_commenced": "The party sought the amendment after the case had reached the stage at which trial had technically commenced.",
+        "amendment_sought_before_evidence": "The party sought the amendment before evidence was produced in the suit.",
+        "parties_later_led_evidence_on_proposed_amendment": "After the application, the parties presented evidence addressing the proposed amendment.",
+        "opponent_not_prejudiced": "Allowing the amendment did not cause prejudice to the opposing party."
+      },
+      "definition": "An amendment sought after trial technically commences may be allowed when it precedes the production of evidence, the parties later present evidence on it, and the opponent is not prejudiced."
+    },
+    {
+      "legal_issue": "Whether a claim introduced by amendment is time-barred should not be determined at the amendment stage when its nature and the claimant's asserted right depend on consideration of the evidence.",
+      "material_facts": [
+        "The proposed amendment sought to add a claim to share in proceeds from the sale of a property.",
+        "The claimant asserted a right to a share in the property, while the lower courts treated the proposed relief as a time-barred claim for recovery of money.",
+        "Whether the claimant had a share, the nature of that share, and the limitation applicable to the claim required consideration of evidence."
+      ],
+      "conclusion": "The claim should not have been rejected as time-barred at the amendment stage; the Court made no final ruling on limitation, leaving the issue for determination on the evidence.",
+      "legal_principle": "Article 110 of the Limitation Act, 1963, concerns a person's right to enforce a share in joint family property. The Court held that the character of the claim and the claimant's right could not be finally determined without considering the evidence, and that it was premature at the amendment stage to conclude that only a three-year limitation period applied. The Court did not decide whether Article 110 applied or whether the claim was ultimately time-barred.",
+      "rule": {
+        "if": "civil_suit_amendment_application and proposed_claim_depends_on_claimant_share_in_property and nature_of_claim_requires_evidence",
+        "then": "limitation_bar_not_decided_at_amendment_stage"
+      },
+      "predicates": {
+        "civil_suit_amendment_application": "A party in a civil suit sought to amend its pleadings to add a claim.",
+        "proposed_claim_depends_on_claimant_share_in_property": "The proposed claim rests on the claimant's asserted share in property or its proceeds.",
+        "nature_of_claim_requires_evidence": "Determining the nature of the claim and the claimant's rights requires consideration of evidence."
+      },
+      "definition": "When an amended claim rests on an asserted share in property and its nature requires evidence, limitation is not finally decided at the amendment stage."
+    }
+  ],
+  "seconds": 14.1
+}

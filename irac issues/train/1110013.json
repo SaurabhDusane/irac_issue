@@ -1,0 +1,60 @@
+{
+  "doc_id": "1110013",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 47109,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1737,
+    "prompt_tokens": 12009,
+    "total_tokens": 13746,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A party seeking to amend pleadings in a civil suit after trial has commenced must establish that, despite due diligence, the matter could not have been raised before trial commenced.",
+      "material_facts": [
+        "The defendants applied to amend their written statement after the issues had been settled and the suit had been set down for recording evidence.",
+        "The proposed matters were known to the defendants and had been raised in earlier proceedings.",
+        "The amendment application did not set out facts or grounds showing that the matters could not have been raised earlier despite due diligence.",
+        "The proposed amendment introduced new and inconsistent pleas, and allowing it at that stage would prejudice the plaintiffs."
+      ],
+      "conclusion": "The defendants were not entitled to leave to amend their written statement, and the appeal was dismissed.",
+      "legal_principle": "Order VI Rule 17 of the Code of Civil Procedure, as amended by the Code of Civil Procedure (Amendment) Act, 2002, restricts amendments after trial has commenced unless the court concludes that, despite due diligence, the party could not have raised the matter before trial commenced. The proviso must be given full effect and was intended to prevent delay. Salem Advocate Bar Association, T.N. v. Union of India (2005) explains the proviso’s purpose; Kailash v. Nanhku (2005) addresses when trial commences; and Baldev Singh v. Manohar Singh (2006) is cited on that proposition. A general assertion of care is insufficient without particulars establishing due diligence.",
+      "rule": {
+        "if": "civil_suit_amendment_request and post_trial_request and proposed_matter_known_earlier and no_particularized_due_diligence_explanation",
+        "then": "leave_to_amend_denied"
+      },
+      "predicates": {
+        "civil_suit_amendment_request": "A party in a civil suit applied to amend its pleadings.",
+        "post_trial_request": "The party applied after the suit had reached the stage of trial.",
+        "proposed_matter_known_earlier": "The party knew of the matter it sought to add before trial commenced.",
+        "no_particularized_due_diligence_explanation": "The party did not provide particulars showing that, despite due diligence, it could not have raised the matter before trial commenced."
+      },
+      "definition": "When a party in a civil suit seeks an amendment after trial has commenced, already knew the proposed matter, and gives no particularized explanation establishing due diligence, leave to amend is denied."
+    },
+    {
+      "legal_issue": "For deciding whether the restriction on post-commencement amendments applies, trial in a civil suit commences when issues have been settled and the case has been set down for recording evidence.",
+      "material_facts": [
+        "The issues in the suit had been settled.",
+        "The suit had been set down for recording evidence before the defendants applied to amend their written statement.",
+        "The plaintiffs’ examination-in-chief was filed by affidavit, and the court recorded that recording of evidence had begun."
+      ],
+      "conclusion": "Trial had commenced before the defendants filed their amendment application.",
+      "legal_principle": "For purposes of the proviso to Order VI Rule 17 of the Code of Civil Procedure, Kailash v. Nanhku (2005) states that trial is deemed to commence when the issues are settled and the case is set down for recording evidence. The court concluded that trial had commenced on the facts here, including the commencement of evidence.",
+      "rule": {
+        "if": "civil_suit_amendment_request and issues_settled and case_set_down_for_evidence",
+        "then": "trial_commenced"
+      },
+      "predicates": {
+        "civil_suit_amendment_request": "A party in a civil suit applied to amend its pleadings.",
+        "issues_settled": "The court had settled the issues for trial.",
+        "case_set_down_for_evidence": "The court had set the case down for recording evidence."
+      },
+      "definition": "When an amendment is sought in a civil suit after the issues have been settled and the case has been set down for recording evidence, trial is treated as having commenced."
+    }
+  ],
+  "seconds": 12.0
+}

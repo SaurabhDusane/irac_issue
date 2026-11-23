@@ -1,0 +1,59 @@
+{
+  "doc_id": "1353164",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10723,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1846,
+    "prompt_tokens": 3235,
+    "total_tokens": 5081,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court practice prescribing a period for seeking certiorari does not create a binding limitation period when no statutory filing deadline applies.",
+      "material_facts": [
+        "The High Court had no specific statutory rule prescribing a limitation period for certiorari petitions.",
+        "A prior High Court decision treated ninety days as the period ordinarily to be taken for filing such petitions, with possible extension in special circumstances."
+      ],
+      "conclusion": "The ninety-day period was a rule of practice, not a binding rule of limitation; it could guide the court’s discretion in deciding whether an applicant was guilty of laches or undue delay.",
+      "legal_principle": "Under Article 226 of the Constitution, absent a specific statutory limitation rule, whether a certiorari petition should be rejected for delay depends on the circumstances and whether the applicant was guilty of laches or undue delay. A practice rule may guide the exercise of discretion but cannot impose a binding limitation period. The court relied on Mongey v. Board of Revenue, U.P. for the relevant practice, while treating the period for appeals only as a rough measure.",
+      "rule": {
+        "if": "certiorari_petition and no_statutory_filing_deadline",
+        "then": "practice_period_is_not_binding_limitation"
+      },
+      "predicates": {
+        "certiorari_petition": "The applicant seeks a court order quashing a decision of a subordinate court or tribunal.",
+        "no_statutory_filing_deadline": "No applicable statutory rule prescribes a filing deadline for the application."
+      },
+      "definition": "When an applicant seeks certiorari and no statutory filing deadline applies, a court practice period guides discretion but does not itself bar the application as a limitation period."
+    },
+    {
+      "legal_issue": "A certiorari petition should not be dismissed solely for missing a court-practice filing period without assessing laches where the filing delay resulted from an unexpected court closure after the applicant had completed the necessary preliminary steps.",
+      "material_facts": [
+        "The petition challenged orders made in consolidation proceedings and was filed after the ninety-day period used as a practice guideline.",
+        "The day on which the petition was due to be filed had originally been declared a working day, but the court and its offices closed around midday without prior notice and reopened several days later.",
+        "The petition had been sworn, an advocate had been engaged to lodge it, and the required notice had been served before the closure.",
+        "The High Court dismissed the petition based on the filing period without considering whether the applicants were guilty of laches or undue delay; the record disclosed no indication of laches apart from the missed practice period."
+      ],
+      "conclusion": "The Supreme Court set aside the High Court’s order and remanded the proceedings for hearing and disposal according to law because the High Court had treated a practice rule as a limitation rule without assessing laches. The special circumstances justified departure from the ordinary rule that the High Court’s exercise of discretion on delay would not be disturbed.",
+      "legal_principle": "Whether a certiorari petition was brought with undue delay is ordinarily for the High Court to decide, and its exercise of discretion is not normally disturbed. But a practice period is only a guide to that discretion, and special circumstances may justify interference where the High Court treats it as a binding limitation period and fails to assess laches. The court applied Article 226 and relied on the practice described in Mongey v. Board of Revenue, U.P.",
+      "rule": {
+        "if": "certiorari_proceeding and court_treated_practice_as_binding_deadline and deadline_day_unexpectedly_closed and filing_steps_completed_before_closure and no_other_laches_indicated",
+        "then": "dismissal_set_aside_and_proceeding_remanded"
+      },
+      "predicates": {
+        "certiorari_proceeding": "The proceeding seeks certiorari against a decision of a subordinate court or tribunal.",
+        "court_treated_practice_as_binding_deadline": "The court dismissed the application by treating a practice period as a binding filing deadline rather than assessing undue delay.",
+        "deadline_day_unexpectedly_closed": "The court and its offices unexpectedly closed on the day the application was due under the practice period.",
+        "filing_steps_completed_before_closure": "The applicant completed the preliminary steps for filing before the unexpected closure.",
+        "no_other_laches_indicated": "The record contains no indication of laches or undue delay apart from missing the practice period."
+      },
+      "definition": "When a certiorari proceeding is dismissed as late under a practice period, the deadline day unexpectedly closes, filing preparations were completed, and no other laches is indicated, the dismissal is set aside and the proceeding is remanded."
+    }
+  ],
+  "seconds": 13.0
+}

@@ -1,0 +1,101 @@
+{
+  "doc_id": "1557321",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 6908,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2183,
+    "prompt_tokens": 2201,
+    "total_tokens": 4384,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person who entered possession under a sale agreement cannot establish title by adverse possession while relying on that agreement as the basis for remaining in possession.",
+      "material_facts": [
+        "The appellant entered possession under an agreement of sale and relied on that agreement to claim a right to retain possession.",
+        "The appellant also pleaded that he had acquired title by adverse possession.",
+        "He did not disclaim the agreement and establish that he had openly asserted hostile possession to the knowledge of the transferor or successor in title, with acquiescence throughout the required period."
+      ],
+      "conclusion": "The adverse-possession plea was unavailable because it was inconsistent with the appellant’s reliance on the agreement as the basis of his possession.",
+      "legal_principle": "A person who entered possession lawfully under an agreement must disclaim the contractual basis of possession and plead and prove an independent, hostile assertion of title to the knowledge of the owner or successor, together with acquiescence for the full prescriptive period. A claim under Section 53-A of the Transfer of Property Act, 1882, implicitly admits that possession began lawfully under the agreement and continued on that basis.",
+      "rule": {
+        "if": "possession_suit and possession_began_under_agreement and (claimant_relies_on_agreement or not hostile_possession_proved)",
+        "then": "adverse_possession_title_unavailable"
+      },
+      "predicates": {
+        "possession_suit": "A person seeking possession brought a suit against the occupant.",
+        "possession_began_under_agreement": "The occupant entered possession pursuant to an agreement to transfer the property.",
+        "claimant_relies_on_agreement": "The occupant relies on the agreement as the basis for a right to remain in possession.",
+        "hostile_possession_proved": "The occupant disclaimed the agreement and proved an openly hostile claim of title known to the owner or successor, with acquiescence for the full prescriptive period."
+      },
+      "definition": "When a person defending a possession suit entered under an agreement and relies on it or has not proved the required hostile possession, the person cannot obtain title by adverse possession."
+    },
+    {
+      "legal_issue": "A transferee cannot retain possession under an agreement after the suit seeking specific performance of that agreement has been dismissed finally.",
+      "material_facts": [
+        "The appellant entered possession under an agreement of sale.",
+        "The appellant’s suit for specific performance of the agreement was dismissed, and that dismissal became final.",
+        "The respondent, as a subsequent purchaser and successor in interest, sued for possession."
+      ],
+      "conclusion": "The appellant could not retain possession under the agreement after losing the right to enforce it through the final dismissal of the specific-performance suit.",
+      "legal_principle": "Section 53-A of the Transfer of Property Act, 1882, permits part performance to operate as a shield, not as a sword; an agreement does not itself create title or an interest in the property. Once the suit for specific performance was dismissed finally, the transferee could not claim a continuing contractual right to remain in possession.",
+      "rule": {
+        "if": "possession_suit and possession_began_under_agreement and specific_performance_suit_dismissed_finally",
+        "then": "contractual_right_to_retain_possession_unavailable"
+      },
+      "predicates": {
+        "possession_suit": "A person seeking possession brought a suit against the occupant.",
+        "possession_began_under_agreement": "The occupant entered possession pursuant to an agreement to transfer the property.",
+        "specific_performance_suit_dismissed_finally": "The occupant’s suit to enforce the transfer agreement was dismissed and that dismissal became final."
+      },
+      "definition": "If an occupant entered under an agreement and the occupant’s specific-performance suit was finally dismissed, the occupant cannot retain possession on the basis of that agreement in a possession suit."
+    },
+    {
+      "legal_issue": "A transferee relying on part performance to defend possession must specifically plead and prove continuous readiness and willingness to perform the agreement.",
+      "material_facts": [
+        "The respondent, a subsequent purchaser and successor in interest, sued for possession of the property.",
+        "The appellant relied on part performance to retain possession.",
+        "The appellant’s written statement contained only a vague denial concerning readiness and willingness, rather than a specific plea.",
+        "The appellant had paid only part of the stated consideration and did not pay the balance before the sale to the respondent, deposit it when the suit was filed, or offer payment."
+      ],
+      "conclusion": "The appellant could not retain possession under Section 53-A because he had not specifically pleaded and proved readiness and willingness to perform his part of the agreement.",
+      "legal_principle": "Section 53-A of the Transfer of Property Act, 1882, makes the protection of part performance conditional on the transferee’s continuing willingness to perform the contract. A transferee invoking that protection in a suit for possession must plead and prove readiness and willingness. Section 16(c) of the Specific Relief Act, 1963, requires a plaintiff seeking enforcement of a contract to plead readiness and willingness; the same requirement applies when a transferee seeks to retain possession under Section 53-A. The principle that a person seeking equity must do equity supports this requirement.",
+      "rule": {
+        "if": "possession_suit and part_performance_defense and (readiness_not_specifically_pleaded or readiness_not_proved)",
+        "then": "part_performance_defense_unavailable"
+      },
+      "predicates": {
+        "possession_suit": "A person seeking possession brought a suit against the occupant.",
+        "part_performance_defense": "The occupant relies on part performance of a transfer agreement to retain possession.",
+        "readiness_not_specifically_pleaded": "The occupant did not specifically plead continuing readiness and willingness to perform the agreement.",
+        "readiness_not_proved": "The occupant did not prove continuing readiness and willingness to perform the agreement, including by performing or offering to perform outstanding obligations."
+      },
+      "definition": "When an occupant relies on part performance in a possession suit but has not specifically pleaded or proved continuing readiness and willingness to perform, the occupant cannot use that defense to retain possession."
+    },
+    {
+      "legal_issue": "A subsequent purchaser seeking possession is not entitled to damages from an occupant whose possession began under an agreement of sale.",
+      "material_facts": [
+        "The appellant remained in possession after entering under an agreement of sale.",
+        "The respondent, a subsequent purchaser, obtained a decree for possession.",
+        "The respondent also sought damages from the appellant."
+      ],
+      "conclusion": "The respondent was not entitled to damages because the appellant had remained in possession under the agreement of sale.",
+      "legal_principle": "Although the occupant was not entitled to retain possession, the Court held that the subsequent purchaser was not entitled to damages where the occupant’s possession had begun under the agreement of sale.",
+      "rule": {
+        "if": "possession_suit and possession_began_under_agreement and damages_sought_for_occupancy",
+        "then": "damages_unavailable_to_subsequent_purchaser"
+      },
+      "predicates": {
+        "possession_suit": "A person seeking possession brought a suit against the occupant.",
+        "possession_began_under_agreement": "The occupant entered possession pursuant to an agreement to transfer the property.",
+        "damages_sought_for_occupancy": "The person seeking possession also claimed damages for the occupant’s continued occupancy."
+      },
+      "definition": "When a subsequent purchaser seeks possession and damages from someone whose possession began under an agreement, damages for that occupancy are unavailable."
+    }
+  ],
+  "seconds": 13.8
+}

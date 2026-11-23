@@ -1,0 +1,103 @@
+{
+  "doc_id": "1660548",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19765,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2655,
+    "prompt_tokens": 4976,
+    "total_tokens": 7631,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A fatal injury inflicted with a sharp-edged weapon on a vital part of the body can constitute murder even when it is caused by a single blow.",
+      "material_facts": [
+        "The accused inflicted one incised wound on the deceased’s neck with a sharp-edged weapon.",
+        "The wound severed major blood vessels and other structures in the neck, causing excessive bleeding and heart failure.",
+        "The medical evidence identified the neck wound as the cause of death.",
+        "The trial court found the accused guilty of murder, while the High Court reduced the offence to culpable homicide not amounting to murder, relying in part on the fact that there was only one blow."
+      ],
+      "conclusion": "The injury and the circumstances established the intention and knowledge required for murder; the single blow did not justify reducing the offence to culpable homicide not amounting to murder.",
+      "legal_principle": "Under Sections 300 and 302 of the Indian Penal Code, culpable homicide is murder where the offender causes a bodily injury that the offender knows is likely to cause death and the victim dies from it. The number of injuries is not decisive; the nature of the injury, the body part struck, and the weapon used are relevant to intention and knowledge. A hypothetical possibility of survival with medical care does not displace the ordinary consequences contemplated by Section 300. The Court distinguished Ramchandra Ohdar v. State of Bihar, where the medical evidence did not establish the injury’s nature, and State of Madhya Pradesh v. Kalu Ram, which turned on different facts. It also held that Toran Singh v. State of M.P. did not preclude intervention where findings below were contrary to the evidence.",
+      "rule": {
+        "if": "homicide_case and fatal_injury_caused_by_accused and vital_body_part_struck and sharp_edged_weapon_used and (major_structures_damaged or medical_evidence_links_injury_to_death)",
+        "then": "offence_is_murder"
+      },
+      "predicates": {
+        "homicide_case": "The proceeding concerns the classification of a death-causing attack as murder or a lesser homicide offence.",
+        "fatal_injury_caused_by_accused": "The accused caused the injury that led to the victim’s death.",
+        "vital_body_part_struck": "The injury was inflicted on a vital part of the victim’s body.",
+        "sharp_edged_weapon_used": "The injury was inflicted with a sharp-edged weapon.",
+        "major_structures_damaged": "The injury severed or seriously damaged major structures in the affected part of the body.",
+        "medical_evidence_links_injury_to_death": "Medical evidence identified the injury, or its consequences, as the cause of death."
+      },
+      "definition": "When an accused causes a fatal injury to a vital body part with a sharp-edged weapon, and the injury’s severity or medical evidence links it to death, the rule treats the offence as murder."
+    },
+    {
+      "legal_issue": "Failure to prove that a fatal incised wound was inflicted with a particular alleged weapon does not prevent the court from finding that it was caused with a sharp-edged weapon.",
+      "material_facts": [
+        "The accused’s responsibility for causing the injury was accepted and was not challenged in the appeal.",
+        "The doctor described the injury as an incised cut wound that caused extensive damage to blood vessels in the neck.",
+        "The alleged sword was not produced in court, and the prosecution had not established that it bore bloodstains or been identified by a witness."
+      ],
+      "conclusion": "The absence of proof that the injury was caused by the particular alleged sword did not prevent the court from finding that the accused caused it with a sharp-edged weapon.",
+      "legal_principle": "The nature of the proved injury may establish that it was caused by a sharp-edged cutting weapon even if the prosecution has not proved that it was caused by a particular alleged weapon. The Court relied on the medical evidence describing the incised wound and on the accepted finding that the accused caused it.",
+      "rule": {
+        "if": "homicide_case and accused_causation_accepted and medical_evidence_shows_incised_cut_wound and particular_weapon_not_proved",
+        "then": "sharp_edged_weapon_use_may_be_found"
+      },
+      "predicates": {
+        "homicide_case": "The proceeding concerns the weapon used to inflict an injury that caused a death.",
+        "accused_causation_accepted": "The accused’s responsibility for causing the injury was accepted in the proceedings.",
+        "medical_evidence_shows_incised_cut_wound": "Medical evidence described the injury as an incised cut wound consistent with a sharp-edged cutting weapon.",
+        "particular_weapon_not_proved": "The prosecution did not prove that the injury was inflicted with the specific weapon it alleged."
+      },
+      "definition": "If the accused’s responsibility is accepted and medical evidence establishes an incised cut wound, failure to prove the particular alleged weapon does not prevent a finding that a sharp-edged weapon was used."
+    },
+    {
+      "legal_issue": "A court imposing sentence must assess the appropriate sentence rather than reduce it to time already served without considering the relevant circumstances.",
+      "material_facts": [
+        "The High Court retained a conviction for a lesser homicide offence but reduced the sentence to the period already undergone.",
+        "The High Court did not state how long the respondent had already been imprisoned or why a sentence shorter than the available maximum was appropriate."
+      ],
+      "conclusion": "The Court deprecated reducing a sentence to time already undergone without applying the court’s mind to the appropriate sentence, the reason for imposing a lesser sentence, or the period already served.",
+      "legal_principle": "Every conviction must be followed by an appropriate sentence within the limits prescribed by law. Sentencing discretion is controlled by law and by judicial discretion applied to the facts; it is not absolute or whimsical. The Court cited no earlier case for this proposition.",
+      "rule": {
+        "if": "sentencing_proceeding and sentence_reduced_to_time_already_served and (time_served_not_assessed or reasons_for_reduction_not_assessed)",
+        "then": "sentence_requires_individualized_assessment"
+      },
+      "predicates": {
+        "sentencing_proceeding": "The proceeding involves a court determining or reviewing a sentence following conviction.",
+        "sentence_reduced_to_time_already_served": "The court reduced the sentence to the period the convicted person had already served.",
+        "time_served_not_assessed": "The court did not determine or take account of the period the person had actually served.",
+        "reasons_for_reduction_not_assessed": "The court did not assess or explain why the sentence should be reduced in light of the case’s circumstances."
+      },
+      "definition": "When a court reduces a sentence to time already served without assessing the time served or the reasons for reduction, the rule requires individualized assessment of the sentence."
+    },
+    {
+      "legal_issue": "The Supreme Court may interfere with an appellate court’s altered offence classification when that classification rests on an erroneous appreciation of the evidence or law.",
+      "material_facts": [
+        "The trial court convicted the accused of murder after finding that he caused the fatal injury.",
+        "The High Court changed the conviction to a lesser homicide offence, relying on the single blow and on its view that the doctor had not established the injury’s fatal character.",
+        "The Supreme Court found that the High Court had misread the medical evidence and had treated the number of injuries as decisive.",
+        "The finding that the accused caused the fatal incident was not challenged."
+      ],
+      "conclusion": "The Supreme Court set aside the High Court’s altered conviction and restored the trial court’s judgment.",
+      "legal_principle": "Article 136 of the Constitution permits interference where findings of the court or courts below are contrary to the evidence on record. Toran Singh v. State of M.P. recognizes that limitation on the general reluctance to disturb findings based on appreciation of evidence; the Court also observed that the offence classification in this case was not a concurrent finding.",
+      "rule": {
+        "if": "supreme_court_appeal_from_appellate_classification and material_findings_below_are_contrary_to_record",
+        "then": "supreme_court_may_interfere_with_classification"
+      },
+      "predicates": {
+        "supreme_court_appeal_from_appellate_classification": "The proceeding is an appeal to the Supreme Court against an appellate court’s classification of the offence.",
+        "material_findings_below_are_contrary_to_record": "The material findings supporting the appellate court’s classification conflict with the evidence in the record."
+      },
+      "definition": "In an appeal against an appellate offence classification, the rule permits Supreme Court intervention when the material findings supporting that classification are contrary to the record."
+    }
+  ],
+  "seconds": 23.8
+}

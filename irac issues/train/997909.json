@@ -1,0 +1,80 @@
+{
+  "doc_id": "997909",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29921,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2611,
+    "prompt_tokens": 7781,
+    "total_tokens": 10392,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person that did not sign an agreement containing an arbitration clause is bound by that clause only if a written arbitration agreement with that person is established in a legally recognized form.",
+      "material_facts": [
+        "The agreement containing the arbitration clause was signed by the seller and a finance company, but not by the company against which arbitration was sought.",
+        "The agreement made its effect conditional on approval by the relevant boards or shareholders, but the company did not approve it.",
+        "There was no other contract incorporating the arbitration clause, written exchange recording the company’s agreement to arbitrate, or exchange of pleadings in which the company accepted that such an agreement existed."
+      ],
+      "conclusion": "The company was not a party to the arbitration agreement, so the application to appoint an arbitrator in respect of claims against it had to be dismissed.",
+      "legal_principle": "Under sections 2(b), 2(h) and 7(1)–(5) of the Arbitration and Conciliation Act, 1996, an arbitration agreement must be in writing and must be between the parties to the dispute, and must apply to that dispute. It may be established by a document signed by the parties, a recorded exchange of communications, an exchange of pleadings in which the agreement is alleged and not denied, or a written contract incorporating by reference a document containing the arbitration clause. Yogi Agrawal v. Inspiration Clothes & U supports the requirement that the agreement be between the parties and relate to the dispute.",
+      "rule": {
+        "if": "arbitrator_appointment_application and respondent_did_not_sign and no_written_record_of_assent and no_written_incorporation_of_arbitration_clause",
+        "then": "non_signatory_not_bound_by_arbitration_agreement"
+      },
+      "predicates": {
+        "arbitrator_appointment_application": "A party applied for appointment of an arbitrator in a dispute involving the respondent.",
+        "respondent_did_not_sign": "The respondent did not sign the agreement containing the arbitration clause.",
+        "no_written_record_of_assent": "No written communication or exchange of pleadings recorded the respondent’s agreement to arbitrate.",
+        "no_written_incorporation_of_arbitration_clause": "No written contract made the arbitration clause part of an agreement with the respondent by reference."
+      },
+      "definition": "When an arbitrator appointment application concerns a respondent who did not sign, and there is no written record of assent or written incorporation of the arbitration clause, the respondent is not bound by that clause."
+    },
+    {
+      "legal_issue": "A company’s relationship with a signatory company and its subsequent business dealings do not, without adoption of the agreement or a legally sufficient written record, make it a party to the arbitration agreement.",
+      "material_facts": [
+        "The signatory and the company were separately incorporated entities, although they had a common registered office, common directors, and a promoter-nominee relationship.",
+        "The agreement described the company as the signatory’s nominee and contemplated that assets would be acquired for it, but the company did not approve or adopt the agreement.",
+        "The company later purchased wind generators and issued shares, but the sale documents did not refer to the agreement containing the arbitration clause.",
+        "The company’s prospectus described the signatory as having entered into the agreement for acquisition of assets in the company’s name, without stating that the company had authorized, ratified, or adopted the agreement."
+      ],
+      "conclusion": "The corporate relationship, transactions, and conduct relied on did not make the company a party to the arbitration agreement.",
+      "legal_principle": "Each company is a separate legal entity; common shareholders or directors do not by themselves make one company bound by another’s acts. Ratification, approval, adoption, or confirmation may be relevant, but ordinary contractual conduct or transactions alone do not establish an arbitration agreement where the governing law requires a written agreement in a recognized form. Economic Transport Organisation v. M/s. Charan Spinning Mills (P) Ltd. explains that examination of a document depends on the context in which it is relied upon. The cited United States decisions were not followed because they did not concern a provision comparable to section 7 of the Indian Act.",
+      "rule": {
+        "if": "arbitrator_appointment_application and respondent_is_separate_company and relationship_with_signatory_company and subsequent_dealings_do_not_refer_to_arbitration_agreement and no_adoption_of_agreement",
+        "then": "corporate_relationship_and_business_conduct_alone_do_not_establish_arbitration_agreement"
+      },
+      "predicates": {
+        "arbitrator_appointment_application": "A party applied for appointment of an arbitrator in a dispute involving the respondent.",
+        "respondent_is_separate_company": "The respondent and the signatory are separately incorporated companies.",
+        "relationship_with_signatory_company": "The respondent has a corporate, promotional, nominee, or management relationship with the signatory company.",
+        "subsequent_dealings_do_not_refer_to_arbitration_agreement": "The later transactions between the respondent and the other party do not refer to the agreement containing the arbitration clause.",
+        "no_adoption_of_agreement": "The respondent did not approve, ratify, adopt, or confirm the agreement containing the arbitration clause."
+      },
+      "definition": "Where a separate company has a relationship with a signatory but has not adopted the agreement, dealings that do not refer to the arbitration agreement do not, by themselves, establish that agreement with the company."
+    },
+    {
+      "legal_issue": "In an application to appoint an arbitrator, the court must finally determine whether an arbitration agreement exists between the relevant parties and cannot leave that question to a provisional determination.",
+      "material_facts": [
+        "The application sought appointment of an arbitrator against a company whose status as a party to the arbitration agreement was disputed.",
+        "The appointing court held only that the company was prima facie a party to the agreement and bound by its arbitration clause."
+      ],
+      "conclusion": "The appointing court had to decide finally whether the company was a party to the arbitration agreement; a prima facie finding was insufficient.",
+      "legal_principle": "Under section 11 of the Arbitration and Conciliation Act, 1996, the court considers whether it is the appropriate court and whether an arbitration agreement exists between the relevant parties, including whether the party against whom the application is made is a party to it. The determination of that issue is final and cannot be left for the arbitrator to decide inconsistently. This follows from SBP & Co. v. Patel Engineering Ltd. and National Insurance Co. Ltd. v. Boghara Polyfab Pvt. Ltd.",
+      "rule": {
+        "if": "arbitrator_appointment_application and respondent_party_status_is_disputed",
+        "then": "court_must_finally_determine_whether_respondent_is_party_to_arbitration_agreement"
+      },
+      "predicates": {
+        "arbitrator_appointment_application": "A party applied to a court for appointment of an arbitrator.",
+        "respondent_party_status_is_disputed": "The parties dispute whether the respondent is a party to the arbitration agreement."
+      },
+      "definition": "When an arbitrator appointment application raises a dispute about the respondent’s status as a party to the arbitration agreement, the court must finally decide that status."
+    }
+  ],
+  "seconds": 16.8
+}

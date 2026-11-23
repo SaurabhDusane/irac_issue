@@ -1,0 +1,82 @@
+{
+  "doc_id": "427502",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14158,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3612,
+    "prompt_tokens": 3983,
+    "total_tokens": 7595,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Statutory review of an order under the governing Act is confined to the grounds and time limit specified by the Act.",
+      "material_facts": [
+        "The Act provided for review only on the ground of a clerical or arithmetical mistake and only within one year of the decision or order.",
+        "The challengers sought review or recall of a settlement order more than one year after it was made, relying on an alleged defect in public notice; they conceded that their proceedings were not under the Act's review provision."
+      ],
+      "conclusion": "The statutory review provision did not authorize the challengers' application, and the order could be reconsidered only if the authority had power to recall it.",
+      "legal_principle": "Section 38A of the Orissa Estates Abolition Act, 1951, permits review within one year only for a clerical or arithmetical mistake. The challengers conceded that their proceedings were not brought under that provision.",
+      "rule": {
+        "if": "review_or_recall_application and (statutory_review_not_invoked or review_ground_not_clerical_or_arithmetic or review_filed_outside_permitted_period)",
+        "then": "statutory_review_power_unavailable"
+      },
+      "predicates": {
+        "review_or_recall_application": "A person applied to have an earlier administrative order reviewed or recalled.",
+        "statutory_review_not_invoked": "The applicant did not bring the application under the statutory review procedure.",
+        "review_ground_not_clerical_or_arithmetic": "The applicant relied on a ground other than a clerical or arithmetical mistake.",
+        "review_filed_outside_permitted_period": "The application was filed outside the period allowed for statutory review."
+      },
+      "definition": "When an application seeks review or recall and any stated condition is present, statutory review power is unavailable."
+    },
+    {
+      "legal_issue": "A tribunal or court may recall its own order only on limited grounds, and not merely because an ordinary challenge to the order could have been made through the original proceeding or another available remedy.",
+      "material_facts": [
+        "The settlement order had become final without an appeal.",
+        "The challengers sought to reopen it on the basis of alleged defects in the notice process and additional objections that they had not raised in their application seeking recall.",
+        "The record did not establish fraud or collusion, a prejudicial mistake by the authority, a patent inherent lack of jurisdiction, or that a necessary party had not been served or had died without representation."
+      ],
+      "conclusion": "The challengers established no recognized ground for recalling the settlement order, and the authority could not use recall to reopen it on the grounds advanced.",
+      "legal_principle": "Inherent recall powers are available where proceedings suffer from a patent inherent lack of jurisdiction, a judgment was obtained by fraud or collusion, the court made a prejudicial mistake, or a necessary party was not served or had died without representation. Recall is not available for grounds that could have been raised in the original proceeding, where another proper remedy such as appeal or revision was available but unused, or where waiver, estoppel, or acquiescence bars relief. The Court relied on Indian Bank v. M/s Satyam Fibres India Pvt. Ltd., A.R. Antulay v. R.S. Nayak, and the stated principles on opening and vacating judgments in Corpus Juris Secundum, Vol. XIX.",
+      "rule": {
+        "if": "proceeding_to_recall_an_order and (not exceptional_recall_ground or ordinary_ground_left_unraised or alternative_remedy_not_used or waiver_estoppel_or_acquiescence)",
+        "then": "recall_not_available"
+      },
+      "predicates": {
+        "proceeding_to_recall_an_order": "A party applied to the authority that made an order to have that order recalled.",
+        "exceptional_recall_ground": "The proceedings had a patent inherent jurisdictional defect, the order was obtained by fraud or collusion, the authority made a prejudicial mistake, or a necessary party was not served or had died without representation.",
+        "ordinary_ground_left_unraised": "The asserted ground could have been raised in the original proceeding but was not raised there.",
+        "alternative_remedy_not_used": "A proper alternative remedy, such as appeal or revision, was available but was not used.",
+        "waiver_estoppel_or_acquiescence": "The injured party waived the challenge, was estopped from pursuing it, or acquiesced in the order."
+      },
+      "definition": "For an application to recall an order, recall is unavailable if no exceptional ground exists or if an unraised ordinary ground, an unused alternative remedy, or waiver, estoppel, or acquiescence bars reopening."
+    },
+    {
+      "legal_issue": "An irregularity in notice, an order made on a time-barred application, or an error in classifying an application does not by itself amount to an inherent lack of jurisdiction when the authority had jurisdiction over the subject matter and the parties.",
+      "material_facts": [
+        "The challengers objected to the manner in which public notice had been given, not to non-service of the notice; the notice was on the record, although some pages were missing, and the original authority was satisfied that it had been published.",
+        "The challengers' objections that the settlement application was out of time and should have been treated as a lease application had not been raised in their pleadings or before the authority hearing the recall application.",
+        "The authority was empowered to entertain both types of application and had jurisdiction over the settlement matter."
+      ],
+      "conclusion": "The alleged notice defect and the additional objections amounted at most to errors or irregularities, not an inherent jurisdictional defect; they did not justify recall of the settlement order.",
+      "legal_principle": "A distinction must be drawn between a lack of inherent jurisdiction, which may render proceedings and an order a nullity, and an error in exercising jurisdiction, which does not invalidate the order unless it is set aside through a proper legal challenge. Hira Lal Patni v. Sri Kali Nath explains the requirement of an inherent jurisdictional defect; Ittyavira Mathai v. Varkey Varkey holds that deciding a time-barred suit is an illegality, not an absence of jurisdiction. The Court also held that the authority had jurisdiction to deal with either a claim application or a lease application.",
+      "rule": {
+        "if": "proceeding_to_recall_an_administrative_order and authority_had_subject_matter_and_party_jurisdiction and (notice_manner_irregularity or application_time_barred or application_classification_error)",
+        "then": "alleged_error_does_not_establish_inherent_lack_of_jurisdiction"
+      },
+      "predicates": {
+        "proceeding_to_recall_an_administrative_order": "A party sought recall of an administrative order settling a claim or application.",
+        "authority_had_subject_matter_and_party_jurisdiction": "The authority was empowered to decide the type of matter before it and had jurisdiction over the parties.",
+        "notice_manner_irregularity": "The challenge concerned the manner of giving notice rather than an established absence of service.",
+        "application_time_barred": "The application decided by the authority was alleged to have been filed after the permitted time.",
+        "application_classification_error": "The application was alleged to have been handled under the wrong procedural classification, even though the authority could entertain either classification."
+      },
+      "definition": "When an administrative order is challenged for one of the stated errors despite the authority having jurisdiction over the subject matter and parties, the error does not establish an inherent lack of jurisdiction."
+    }
+  ],
+  "seconds": 22.6
+}

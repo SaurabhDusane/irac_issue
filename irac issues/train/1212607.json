@@ -1,0 +1,58 @@
+{
+  "doc_id": "1212607",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14021,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2073,
+    "prompt_tokens": 4111,
+    "total_tokens": 6184,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An administrative authority empowered to act only when a preliminary jurisdictional fact exists does not have conclusive authority to determine that fact unless the governing law grants it that power.",
+      "material_facts": [
+        "The rent-control officer could allot the premises to another person only if they were vacant.",
+        "The officer found that the tenant had vacated and declared the premises vacant, but the governing law did not make the officer’s determination of vacancy conclusive."
+      ],
+      "conclusion": "Whether the premises were vacant was a jurisdictional fact, and the officer’s determination of that fact was not final.",
+      "legal_principle": "Under the principle stated in Reg v. Commissioner of Income-tax (21 Q.B.D. 313), approved in Ebrahim Aboobakar & Anr. v. Custodian-General of Evacuee Property ([1952] S.C.R. 696), an authority’s determination of a preliminary fact is conclusive only if the legislature has entrusted it with power to determine that fact conclusively. Sections 7 and 7A of the U.P. (Temporary) Control of Rent and Eviction Act, 1947, conditioned the officer’s power on vacancy but did not confer conclusive power to determine vacancy. The Court also referred to Chaube Jagdish Prasad v. Ganga Prasad Chaturvedi ((1959) Supp. (1) S.C.R. 733).",
+      "rule": {
+        "if": "rent_control_allotment_proceeding and official_power_requires_vacancy and no_conclusive_fact_finding_authority",
+        "then": "vacancy_finding_not_final"
+      },
+      "predicates": {
+        "rent_control_allotment_proceeding": "The proceeding concerns an official’s decision to allot premises under a rent-control system.",
+        "official_power_requires_vacancy": "The official’s power to allot the premises depends on whether they are vacant.",
+        "no_conclusive_fact_finding_authority": "The governing law does not empower the official to determine conclusively whether the premises are vacant."
+      },
+      "definition": "When an allotment proceeding concerns an official whose power depends on vacancy and the official lacks conclusive fact-finding authority, the vacancy finding is not final."
+    },
+    {
+      "legal_issue": "A statutory bar on questioning an administrative order in court does not prevent a civil court from examining whether the authority acted without jurisdiction because the required vacancy did not exist.",
+      "material_facts": [
+        "The officer declared the premises vacant and allotted them to another person.",
+        "The tenant brought a civil suit seeking a declaration that he remained the tenant and was entitled to occupy the premises.",
+        "The civil court found that the tenant had never vacated the premises and that his tenancy had not been terminated.",
+        "The officer’s power to allot the premises depended on a vacancy, and the statutory bar applied to orders made within the officer’s jurisdiction."
+      ],
+      "conclusion": "The civil suit was maintainable because the officer had no jurisdiction to make the allotment order in the absence of a vacancy; the statutory bar did not prevent the civil court from examining that jurisdictional defect.",
+      "legal_principle": "Sections 7 and 7A of the U.P. (Temporary) Control of Rent and Eviction Act, 1947, authorized action on the existence of a vacancy, while section 16 barred challenge to an order only when it was made with jurisdiction. An authority cannot acquire jurisdiction by wrongly deciding that a jurisdictional fact exists. The Court relied on Reg v. Commissioner of Income-tax (21 Q.B.D. 313), approved in Ebrahim Aboobakar & Anr. v. Custodian-General of Evacuee Property ([1952] S.C.R. 696), and referred to Chaube Jagdish Prasad v. Ganga Prasad Chaturvedi ((1959) Supp. (1) S.C.R. 733).",
+      "rule": {
+        "if": "civil_suit_challenging_rent_allotment_order and official_power_requires_vacancy and vacancy_did_not_occur",
+        "then": "civil_court_may_review_order_without_jurisdiction"
+      },
+      "predicates": {
+        "civil_suit_challenging_rent_allotment_order": "A person brings a civil suit challenging an official order that allotted premises under a rent-control system.",
+        "official_power_requires_vacancy": "The official’s power to allot the premises depends on whether they are vacant.",
+        "vacancy_did_not_occur": "The tenant remained in occupation and the tenancy had not ended, so the premises had not become vacant."
+      },
+      "definition": "When a civil suit challenges an allotment order, the official’s power depends on vacancy, and no vacancy occurred, the civil court may review the order as one made without jurisdiction."
+    }
+  ],
+  "seconds": 13.4
+}

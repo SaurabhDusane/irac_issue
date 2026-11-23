@@ -1,0 +1,140 @@
+{
+  "doc_id": "27215",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 45415,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3884,
+    "prompt_tokens": 11323,
+    "total_tokens": 15207,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant responding to a summary eviction application by a classified landlord cannot rely on the general eviction ground in Section 14(1)(e) when that ground is unrelated to the classified landlord’s claim.",
+      "material_facts": [
+        "The landlords applied for eviction under the special provisions for classified landlords in Sections 14B to 14D.",
+        "The tenants argued that the unchanged wording of Section 25B(4) and (5) allowed them to contest those applications on grounds that would defeat an application under Section 14(1)(e).",
+        "The 1988 amendment added applications under Sections 14B to 14D to Section 25B(1), but did not make corresponding changes to Section 25B(4) and (5) or to the Third Schedule summons form."
+      ],
+      "conclusion": "A tenant may obtain leave to contest only on grounds relevant to the particular claim made by the landlord and cannot raise a defence under Section 14(1)(e) against an application under Sections 14B to 14D.",
+      "legal_principle": "Sections 25B(4) and (5) operate together: leave is given under subsection (5) on facts that would defeat the particular claim for possession. The summons must identify the actual ground invoked, and the tenant’s defence must relate to it. A purposive and harmonious construction must give effect to Sections 14B to 14D rather than make their special rights nugatory. The Court affirmed Busching Schmitz Private Ltd. v. P.T. Menghani, [1977] 2 SCC 835, held Precision Steel & Engineering Works v. Prem Deva Niranjan Deva Tayal, [1982] 3 SCC 270 consistent with its conclusion, and relied on Craies, Statute Law, 7th ed., p. 109, Hameedia Hardware Stores v. B. Mohan Lal Sowcar, [1988] 2 SCC 513, and Sirajul Haq Khan v. Sunni Central Board of Waqf, [1959] SCR 1287.",
+      "rule": {
+        "if": "classified_landlord_summary_eviction and tenant_relies_on_unrelated_general_ground",
+        "then": "unrelated_defence_unavailable"
+      },
+      "predicates": {
+        "classified_landlord_summary_eviction": "A landlord in a specially classified category brings a summary eviction proceeding based on the rights conferred on that category.",
+        "tenant_relies_on_unrelated_general_ground": "The tenant seeks to resist that proceeding by relying on a general eviction ground that does not relate to the landlord’s particular claim.",
+        "unrelated_defence_unavailable": "The tenant cannot use a defence unrelated to the particular claim on which the eviction proceeding is based."
+      },
+      "definition": "When a classified landlord brings a summary eviction proceeding and the tenant relies on an unrelated general ground, that defence is unavailable."
+    },
+    {
+      "legal_issue": "A classified landlord seeking eviction must establish a bona fide requirement, and the tenant may contest whether that requirement is bona fide.",
+      "material_facts": [
+        "The eviction applications were brought by landlords relying on the special provisions for classified landlords.",
+        "The tenants argued that they could contest the applications by raising matters relevant to the bona fide requirement under Section 14(1)(e).",
+        "The Court held that the classified landlords’ claims remained subject to the requirement of bona fides, notwithstanding that Sections 14B to 14D did not expressly use the phrase “bona fide requirement.”"
+      ],
+      "conclusion": "The landlord must prove that the requirement is bona fide, and the tenant may raise relevant contentions showing that it is not.",
+      "legal_principle": "Although Sections 14B to 14D confer rights distinct from those under Section 14(1)(e), the absence of the words “bona fide requirement” in those sections does not remove the requirement of bona fides. Every claim for eviction must be bona fide. The Court also relied on the title of Section 25B, which describes the procedure as applying to eviction applications on the ground of bona fide requirement.",
+      "rule": {
+        "if": "classified_landlord_eviction_claim and landlord_asserts_need_for_premises",
+        "then": "bona_fide_requirement_must_be_proved_and_contestable"
+      },
+      "predicates": {
+        "classified_landlord_eviction_claim": "A landlord in a specially classified category seeks eviction under the rights given to that category.",
+        "landlord_asserts_need_for_premises": "The landlord claims that the premises are required for the relevant residential purpose.",
+        "bona_fide_requirement_must_be_proved_and_contestable": "The landlord must establish a genuine requirement, and the tenant may contest whether that requirement is genuine."
+      },
+      "definition": "A classified landlord’s claim that premises are needed must be genuine, and the tenant may challenge its genuineness."
+    },
+    {
+      "legal_issue": "A landlord who acquired premises by transfer cannot use the special eviction procedure for classified landlords to evict a tenant already occupying those premises.",
+      "material_facts": [
+        "The Court considered the relationship between the special rights under Sections 14B to 14D and the protection in Section 14(6) for tenants of premises acquired by transfer.",
+        "It held that Sections 14B to 14D concern premises let out by the landlord or the relevant predecessor, not premises acquired by the applicant through transfer while the tenant was in occupation."
+      ],
+      "conclusion": "A transferee landlord seeking to evict a tenant already occupying transferred premises must proceed under Section 14(1)(e), not Sections 14B to 14D.",
+      "legal_principle": "Sections 14B to 14D refer to premises let out by the qualifying landlord or relevant predecessor and do not extend to premises acquired by transfer. Section 14(6) protects a tenant from an application under Section 14(1)(e) by a landlord who acquired the premises by transfer until the specified period has elapsed. The transferee’s eviction claim must therefore be brought under Section 14(1)(e).",
+      "rule": {
+        "if": "special_classified_landlord_eviction_proceeding and landlord_acquired_premises_by_transfer and tenant_occupied_premises_before_transfer",
+        "then": "special_eviction_route_unavailable"
+      },
+      "predicates": {
+        "special_classified_landlord_eviction_proceeding": "The landlord seeks eviction through a special procedure available to a classified category of landlord.",
+        "landlord_acquired_premises_by_transfer": "The applicant became landlord by acquiring the premises through a transfer.",
+        "tenant_occupied_premises_before_transfer": "The tenant was already occupying the premises when the applicant acquired them.",
+        "special_eviction_route_unavailable": "The transferee cannot use the special classified-landlord eviction route against the existing tenant."
+      },
+      "definition": "A transferee landlord cannot use the special eviction route against a tenant who occupied the premises before the transfer."
+    },
+    {
+      "legal_issue": "The statutory minimum period for surrender under Section 14(7) and the amended provision in Section 25C(2) do not govern eviction under Sections 14B to 14D, but the Controller must exercise discretion to allow reasonable time to surrender possession.",
+      "material_facts": [
+        "The Court considered whether Section 14(7) and the amended Section 25C(2) applied to eviction under Sections 14B to 14D.",
+        "It held that neither provision applied to those special eviction proceedings.",
+        "The Court stated that the Controller, as a quasi-judicial authority, must exercise judicial discretion in each case and grant the tenant reasonable time to surrender possession."
+      ],
+      "conclusion": "The specified statutory time protections do not apply to eviction under Sections 14B to 14D, but the Controller must determine and grant reasonable time in the circumstances of the case.",
+      "legal_principle": "Section 14(7) applies to an eviction order on the ground in Section 14(1)(e), and the amended Section 25C(2) applies to tenants of landlords covered by Section 14A. Neither applies to eviction under Sections 14B to 14D. The Controller nevertheless has a duty to exercise judicial discretion, having regard to the circumstances, and grant reasonable time for surrender.",
+      "rule": {
+        "if": "classified_landlord_eviction_order and tenant_needs_time_to_surrender",
+        "then": "controller_must_allow_reasonable_surrender_time"
+      },
+      "predicates": {
+        "classified_landlord_eviction_order": "An eviction order is made in a proceeding brought under the special rights of a classified landlord.",
+        "tenant_needs_time_to_surrender": "The tenant needs time to give up possession after the eviction order.",
+        "controller_must_allow_reasonable_surrender_time": "The Controller must exercise discretion in the circumstances and allow the tenant reasonable time to surrender possession."
+      },
+      "definition": "After a classified-landlord eviction order, the Controller must allow reasonable surrender time when the tenant needs time to vacate."
+    },
+    {
+      "legal_issue": "A person who retired from the armed forces before the special eviction provision was introduced may still apply under that provision if the application is made within its transitional filing window.",
+      "material_facts": [
+        "A landlord had taken voluntary retirement before Section 14B was introduced.",
+        "The tenant argued that the landlord had become an ordinary landlord and was not entitled to the special right to recover possession.",
+        "Section 14B(1) expressly provided a filing window for persons who had already retired, measured by reference to their retirement and the introduction of the provision."
+      ],
+      "conclusion": "The landlord’s earlier retirement did not disqualify him from the special right where he applied within the filing window specified by Section 14B(1).",
+      "legal_principle": "Section 14B(1) expressly allows persons already released or retired to apply within the later of the period running from their release or retirement or the transitional period running from the provision’s commencement. The Court treated this as the legislative choice governing eligibility.",
+      "rule": {
+        "if": "special_retirement_eviction_proceeding and landlord_retired_before_special_right_began and application_within_transitional_window",
+        "then": "prior_retirement_does_not_disqualify_landlord"
+      },
+      "predicates": {
+        "special_retirement_eviction_proceeding": "A former service member seeks eviction under a special right based on release or retirement.",
+        "landlord_retired_before_special_right_began": "The landlord retired before the special eviction right came into force.",
+        "application_within_transitional_window": "The landlord applied within the transitional filing window available to persons already retired.",
+        "prior_retirement_does_not_disqualify_landlord": "Retirement before the special right began does not by itself prevent the landlord from applying under that right."
+      },
+      "definition": "A landlord who retired before the special right began remains eligible if the application is made within the transitional filing window."
+    },
+    {
+      "legal_issue": "A classified landlord who resides in rented accommodation and genuinely requires the landlord’s own premises for residential use cannot be denied possession merely because the landlord has a rented residence.",
+      "material_facts": [
+        "In one appeal, the landlord was living in rented accommodation and paying monthly rent.",
+        "The landlord required the premises for himself and members of his family.",
+        "The eviction order was made under the special provision for a classified landlord."
+      ],
+      "conclusion": "The landlord could not be denied possession under Section 14B on the basis that he was residing in rented accommodation.",
+      "legal_principle": "Under Section 14B, a qualifying landlord may recover possession of premises required for the landlord’s own residence. The Court upheld the eviction order where the landlord lived in rented accommodation and required his own premises for himself and his family, subject to the requirement that the claim be bona fide.",
+      "rule": {
+        "if": "classified_landlord_eviction_proceeding and landlord_lives_in_rented_accommodation and landlord_genuinely_needs_own_premises",
+        "then": "possession_cannot_be_denied_on_rented_residence_ground"
+      },
+      "predicates": {
+        "classified_landlord_eviction_proceeding": "A landlord seeks eviction under a special right available to a classified category of landlord.",
+        "landlord_lives_in_rented_accommodation": "The landlord is residing in accommodation rented from another person.",
+        "landlord_genuinely_needs_own_premises": "The landlord genuinely requires the premises for the relevant residential use.",
+        "possession_cannot_be_denied_on_rented_residence_ground": "The landlord cannot be denied possession merely because the landlord is living in rented accommodation."
+      },
+      "definition": "A classified landlord who genuinely needs the landlord’s own premises cannot be refused possession solely because the landlord lives in rented accommodation."
+    }
+  ],
+  "seconds": 23.8
+}

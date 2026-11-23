@@ -1,0 +1,115 @@
+{
+  "doc_id": "41304997",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 51201,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3991,
+    "prompt_tokens": 12554,
+    "total_tokens": 16545,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An application for judicial appointment under the agreed-procedure route is maintainable only when the parties have a written arbitration agreement and have agreed in writing on the appointment procedure.",
+      "material_facts": [
+        "The parties referred their family property dispute to arbitration and appointed a sole arbitrator by mutual consent.",
+        "There was no written contract containing an arbitration agreement or an agreed written appointment procedure.",
+        "A party applied to the High Court under the agreed-procedure route to terminate the existing arbitrator’s mandate and appoint a replacement."
+      ],
+      "conclusion": "The application under section 11(6) was not maintainable. Where parties have agreed to arbitrate but have no agreed appointment procedure, the appointment route under section 11(5), rather than section 11(6), applies.",
+      "legal_principle": "Under sections 11(2), 11(5) and 11(6) of the Arbitration and Conciliation Act, 1996, parties may agree on an appointment procedure; section 11(5) applies when there is no agreed procedure for appointing a sole arbitrator, while section 11(6) applies where a written arbitration agreement and agreed appointment procedure exist and a failure occurs under that procedure.",
+      "rule": {
+        "if": "court_appointment_application_under_agreed_procedure and not written_arbitration_and_appointment_procedure",
+        "then": "agreed_procedure_appointment_application_not_maintainable"
+      },
+      "predicates": {
+        "court_appointment_application_under_agreed_procedure": "A party asks a court to appoint an arbitrator by relying on an appointment procedure agreed between the parties.",
+        "written_arbitration_and_appointment_procedure": "The parties have a written agreement to arbitrate that also records their agreed procedure for appointing the arbitrator."
+      },
+      "definition": "If a party seeks court appointment through an agreed procedure but the parties lack a written arbitration agreement recording that procedure, the application through that route is not maintainable."
+    },
+    {
+      "legal_issue": "A dispute over termination of an arbitrator’s mandate for inability to act or failure to act without undue delay must be decided by the competent court, not through an application for appointment under the agreed-procedure route.",
+      "material_facts": [
+        "The arbitrator had been appointed by the parties themselves.",
+        "Parties alleged that the arbitrator had failed to proceed without undue delay and sought termination of his mandate.",
+        "Applications asking the competent court to determine termination of the mandate were already pending when a party applied to the High Court under section 11(6).",
+        "The High Court used the section 11(6) proceeding to terminate the mandate and appoint a new arbitrator."
+      ],
+      "conclusion": "The mandate dispute had to be determined by the competent court under section 14(2), and could not be decided in the section 11(6) proceeding. The High Court’s order was set aside, and the withdrawn section 14(2) applications were revived for determination on their merits.",
+      "legal_principle": "Sections 14(1)(a) and 14(2), read with the definition of “court” in section 2(e), require a controversy about inability to act or failure to act without undue delay to be decided by the competent court. Sections 14 and 15 govern termination and substitution; once termination is established, substitution follows the applicable appointment rules.",
+      "rule": {
+        "if": "arbitration_mandate_dispute and dispute_based_on_inability_or_undue_delay and party_seeks_resolution_through_appointment_application",
+        "then": "mandate_dispute_must_be_decided_by_competent_court"
+      },
+      "predicates": {
+        "arbitration_mandate_dispute": "A party contests whether an existing arbitrator’s mandate has ended.",
+        "dispute_based_on_inability_or_undue_delay": "The asserted ground is that the arbitrator is unable to perform the role or has failed to act without undue delay.",
+        "party_seeks_resolution_through_appointment_application": "A party asks a court to decide the mandate dispute within a proceeding seeking appointment of an arbitrator."
+      },
+      "definition": "When a party disputes an existing arbitrator’s mandate on grounds of inability or undue delay but seeks a decision through an appointment proceeding, the mandate dispute must instead be decided by the competent court."
+    },
+    {
+      "legal_issue": "Once parties have referred a dispute to arbitration and appointed an arbitrator by mutual consent, the arbitration appointment process cannot be invoked a second time to displace that arbitrator.",
+      "material_facts": [
+        "The parties had referred their dispute to arbitration and mutually appointed the sole arbitrator.",
+        "After that appointment, a party applied under section 11(6) to terminate the arbitrator’s mandate and obtain a replacement."
+      ],
+      "conclusion": "The arbitration appointment process could not be invoked again to terminate the existing arbitrator’s mandate or substitute another arbitrator; the mandate dispute had to be pursued before the competent court.",
+      "legal_principle": "The Court relied on Antrix Corporation Limited v. Devas Multimedia Private Limited, (2014) 11 SCC 560, paragraphs 31 and 33, which held that a second appointment proceeding is unavailable after an arbitrator has been appointed and that a challenge must follow the statutory challenge procedure. It also relied on S.P. Singla Constructions Private Limited v. State of Himachal Pradesh, (2019) 2 SCC 488, applying the principle that an arbitration agreement cannot be invoked a second time after appointment under it.",
+      "rule": {
+        "if": "arbitration_dispute_already_referred and arbitrator_already_mutually_appointed and later_application_seeks_replacement",
+        "then": "arbitration_appointment_process_cannot_be_invoked_again"
+      },
+      "predicates": {
+        "arbitration_dispute_already_referred": "The parties have already referred their dispute to arbitration.",
+        "arbitrator_already_mutually_appointed": "The parties have already appointed an arbitrator by mutual consent.",
+        "later_application_seeks_replacement": "A party later asks a court to use the appointment process to replace the appointed arbitrator."
+      },
+      "definition": "If the parties have already referred the dispute to arbitration and mutually appointed an arbitrator, a later request to replace that arbitrator cannot restart the appointment process."
+    },
+    {
+      "legal_issue": "An application to reject a pleading cannot be allowed by resolving a disputed factual defence that must be determined on the merits.",
+      "material_facts": [
+        "The appellant sought rejection of applications to terminate the arbitrator’s mandate, contending that there had been no undue delay.",
+        "Whether undue delay had occurred was a matter to be decided on the merits in the proceedings concerning termination.",
+        "The appellant’s contention was a defence to those applications rather than a basis apparent from their allegations."
+      ],
+      "conclusion": "The Trial Court correctly dismissed the application seeking rejection of the termination applications.",
+      "legal_principle": "Under Order VII Rule 11 of the Code of Civil Procedure, the court deciding an application to reject a pleading considers the averments and allegations in that pleading, not the opposing party’s written statement, reply or defence. A disputed merits issue such as whether undue delay occurred is for adjudication in the underlying proceeding.",
+      "rule": {
+        "if": "application_seeks_pleading_rejection and decision_requires_resolving_opposing_factual_defence",
+        "then": "pleading_rejection_application_must_be_denied"
+      },
+      "predicates": {
+        "application_seeks_pleading_rejection": "A party asks the court to reject an opposing party’s pleading at the threshold.",
+        "decision_requires_resolving_opposing_factual_defence": "The asserted basis for rejection depends on deciding a disputed factual defence rather than considering the allegations in the pleading itself."
+      },
+      "definition": "If threshold rejection would require the court to resolve an opposing factual defence, the rejection application must be denied and the dispute left for merits adjudication."
+    },
+    {
+      "legal_issue": "When an arbitrator’s mandate is terminated, the substitute arbitrator must be appointed using the procedure that governed the original appointment.",
+      "material_facts": [
+        "The parties had originally appointed the sole arbitrator by mutual consent.",
+        "The Court directed that, if the competent court ultimately found that the mandate had terminated, a substitute arbitrator should be appointed by following the original appointment procedure.",
+        "The Court further directed that, if the parties could not agree on the substitute, an aggrieved party could seek appointment through the applicable default procedure."
+      ],
+      "conclusion": "If termination of the mandate is established, the substitute arbitrator must be appointed under the same procedure used for the original appointment; if the parties cannot agree, the aggrieved party may seek a court appointment under the default sole-arbitrator procedure.",
+      "legal_principle": "Section 15(2) of the Arbitration and Conciliation Act, 1996 provides that a substitute arbitrator is appointed according to the rules applicable to the appointment of the arbitrator being replaced. The Court applied that principle to the parties’ original mutual appointment and directed recourse to section 11(5) if they could not agree on a replacement.",
+      "rule": {
+        "if": "arbitration_substitution_after_mandate_termination and original_appointment_followed_agreed_method",
+        "then": "substitute_must_be_appointed_under_original_method"
+      },
+      "predicates": {
+        "arbitration_substitution_after_mandate_termination": "An arbitrator’s mandate in an arbitration has been terminated and a substitute must be appointed.",
+        "original_appointment_followed_agreed_method": "The parties used an agreed method to appoint the arbitrator whose mandate ended."
+      },
+      "definition": "When a terminated arbitrator was appointed through an agreed method, the substitute must be appointed through that same method."
+    }
+  ],
+  "seconds": 83.5
+}

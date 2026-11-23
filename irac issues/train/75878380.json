@@ -1,0 +1,65 @@
+{
+  "doc_id": "75878380",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 75632,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2805,
+    "prompt_tokens": 17967,
+    "total_tokens": 20772,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A guardianship and custody petition may be entertained only by the court within whose jurisdiction the minor ordinarily resides.",
+      "material_facts": [
+        "The children had lived with their parents in the United States from birth and were attending school there.",
+        "Their mother brought them to India for what was initially a temporary visit and filed a custody petition there about twenty days after arriving.",
+        "She had already filed a custody proceeding in the United States and did not disclose it when seeking an ex parte order in India.",
+        "The children’s connection to India at the time of filing consisted of their recent presence there; the parents’ marriage had taken place in India."
+      ],
+      "conclusion": "The children were not ordinarily resident within the territorial jurisdiction of the Indian Family Court, so the custody petition was rightly rejected for lack of territorial jurisdiction.",
+      "legal_principle": "Section 9(1) of the Guardians and Wards Act, 1890 places jurisdiction over a guardianship application in the court where the minor ordinarily resides. The Court applied Order 7 Rule 11 of the Code of Civil Procedure in upholding rejection of the petition. It distinguished Jasmeet Kaur v. Navtej Singh, where a child’s birth in India was among the circumstances supporting a different approach to whether jurisdiction could be decided summarily; the fact that the parents married in India did not itself establish territorial jurisdiction over these children.",
+      "rule": {
+        "if": "guardianship_custody_petition and child_ordinarily_resident_elsewhere and temporary_recent_presence",
+        "then": "guardianship_petition_rejected_for_territorial_lack"
+      },
+      "predicates": {
+        "guardianship_custody_petition": "A party filed a guardianship or custody petition in a court whose territorial jurisdiction was disputed.",
+        "child_ordinarily_resident_elsewhere": "The child had an established ordinary residence outside the territorial jurisdiction of the court where the petition was filed.",
+        "temporary_recent_presence": "The child was present within the court’s territory only after a recent temporary move there."
+      },
+      "definition": "When a guardianship custody petition concerns a child ordinarily resident elsewhere who is only temporarily and recently present in the forum, the petition is rejected for lack of territorial jurisdiction."
+    },
+    {
+      "legal_issue": "In a habeas corpus proceeding concerning a child removed from the country where the child had been settled, return to that country may be ordered after a summary inquiry when the child’s welfare, considered on the facts as a whole, favors return and return is not shown to cause harm.",
+      "material_facts": [
+        "The children were born in the United States, were United States citizens, and lived there with both parents from birth until their mother took them to India.",
+        "They had been attending school and had social and cultural ties in the United States; their parents had also established their family home there.",
+        "Before the mother’s trip, she had initiated a custody proceeding in the United States, and an order prohibited a change of the children’s residence that would affect the other parent’s custodial rights.",
+        "After the mother retained the children in India, the United States court continued to exercise jurisdiction, granted the father temporary physical custody, and directed that the children be returned there.",
+        "The mother had not alleged abuse in her initial United States custody filing, and the record did not establish that returning the children would cause them physical, mental, or psychological harm.",
+        "The children’s welfare was assessed in light of their environment, schooling, relationships with both parents and extended family, and the pending custody proceeding in the country where they had lived."
+      ],
+      "conclusion": "The children’s best interests were served by returning them to the United States for their natural environment and for the custody issue to be determined there. The mother was directed to accompany them; if she did not, arrangements were made for their transfer to the father pending further orders of the United States court. The Court’s summary observations did not determine the merits of the pending custody proceeding.",
+      "legal_principle": "The child’s best interests and welfare are paramount; comity, the foreign court’s order, citizenship, and the country of closest connection are relevant considerations but cannot override the child’s welfare. A habeas corpus court may order return after a summary inquiry when the totality of the circumstances supports return, while declining return or conducting a fuller inquiry where welfare requires it. A foreign custody order is a factor for consideration, not an order to be mechanically enforced, and the Indian court does not thereby become an executing court. The Court relied on Nithya Anand Raghavan v. State (NCT of Delhi), which approved the principles in Dhanwanti Joshi v. Madhav Unde and V. Ravi Chandran v. Union of India and disapproved parts of Surya Vadanan v. State of Tamil Nadu; it also considered Surinder Kaur Sandhu v. Harbax Singh Sandhu, Elizabeth Dinshaw v. Arvand M. Dinshaw, and Kanika Goel v. State of Delhi. The meaning of the child’s best interests in Section 2(9) of the Juvenile Justice (Care and Protection of Children) Act, 2015 was also noted.",
+      "rule": {
+        "if": "habeas_corpus_child_custody_proceeding and children_long_resident_abroad and wrongful_retention_after_temporary_travel and foreign_custody_order_directs_return and not demonstrated_return_harm and return_preserves_child_connections",
+        "then": "children_returned_abroad_for_custody_determination"
+      },
+      "predicates": {
+        "habeas_corpus_child_custody_proceeding": "A court is asked through habeas corpus to decide whether a child should be returned in a cross-border custody dispute.",
+        "children_long_resident_abroad": "The children had lived for a substantial period in the country from which they were taken and had established schooling or social ties there.",
+        "wrongful_retention_after_temporary_travel": "A parent took the children abroad for a temporary stay and then kept them there despite the other parent’s custodial rights or pending custody proceedings.",
+        "foreign_custody_order_directs_return": "A court in the country where the children had lived issued an order directing their return while custody proceedings remained pending there.",
+        "demonstrated_return_harm": "The evidence showed that returning the children would cause them physical, mental, psychological, or other harm.",
+        "return_preserves_child_connections": "The children’s established environment, schooling, and relationships with their parents or other close family members were connected to the country to which return was sought."
+      },
+      "definition": "When a habeas corpus custody proceeding concerns children settled abroad who were retained there after temporary travel, and the record supports return without demonstrated harm while preserving their established connections, the children are returned abroad for custody determination."
+    }
+  ],
+  "seconds": 17.6
+}

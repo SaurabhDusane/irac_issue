@@ -1,0 +1,119 @@
+{
+  "doc_id": "820492",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 59503,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3079,
+    "prompt_tokens": 14149,
+    "total_tokens": 17228,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Participants who have been permitted to intervene in proceedings concerning a company scheme and have submitted proposals may challenge a decision that excludes their objections.",
+      "material_facts": [
+        "The appellants were not creditors, contributories, or debenture holders of the company.",
+        "They had been permitted to intervene in earlier stages of the scheme proceedings, submitted proposals, and responded to invitations for offers.",
+        "One appellant had participated in the earlier proposed scheme and had deposited money and furnished security pursuant to court directions.",
+        "The appellate decision excluded their objections on the ground that they lacked standing."
+      ],
+      "conclusion": "The appellants could maintain their appeals; their standing did not determine whether their objections were meritorious.",
+      "legal_principle": "In the circumstances of these proceedings, the appellants' prior participation, court-authorised intervention, and submission of proposals gave them standing to challenge the decision treating their objections as irrelevant.",
+      "rule": {
+        "if": "scheme_proceeding and intervention_allowed and proposals_submitted",
+        "then": "participant_has_standing_to_challenge_the_decision"
+      },
+      "predicates": {
+        "scheme_proceeding": "A proceeding was conducted to consider or approve a proposed arrangement for a company.",
+        "intervention_allowed": "The court permitted a participant who was not a creditor, contributory, or debenture holder to intervene in the proceeding.",
+        "proposals_submitted": "The participant submitted proposals or offers in the proceeding."
+      },
+      "definition": "When a participant has been allowed to intervene in a company-scheme proceeding and has submitted proposals, that participant may challenge the decision."
+    },
+    {
+      "legal_issue": "A scheme sponsor is not barred from appealing merely because the sponsor received company assets after the challenged decision.",
+      "material_facts": [
+        "A contributory had jointly sponsored the scheme.",
+        "The appellate court added material terms based on undertakings made by the associated developer, and the sponsor objected to those changes.",
+        "After the appellate decision, the sponsor received possession of the company assets from the Official Liquidator along with the other sponsors."
+      ],
+      "conclusion": "The sponsor was not estopped from appealing against the material changes to the scheme.",
+      "legal_principle": "Receipt of possession pursuant to the challenged order did not, in the circumstances, deprive a scheme sponsor of the right to appeal against material modifications that the sponsor opposed.",
+      "rule": {
+        "if": "appeal_by_scheme_sponsor and material_changes_opposed and possession_received_under_challenged_order",
+        "then": "sponsor_not_estopped_from_appealing"
+      },
+      "predicates": {
+        "appeal_by_scheme_sponsor": "A person who sponsored a company scheme appealed against the order approving it.",
+        "material_changes_opposed": "The sponsor objected to material changes made to the scheme.",
+        "possession_received_under_challenged_order": "The sponsor received possession of company assets pursuant to the order being challenged."
+      },
+      "definition": "A scheme sponsor who opposed material changes is not barred from appealing solely because the sponsor received possession under the challenged order."
+    },
+    {
+      "legal_issue": "The compromise-and-arrangement provisions apply to a company that has already been ordered to be wound up.",
+      "material_facts": [
+        "The company had been ordered to be wound up and the Official Liquidator had taken charge of its affairs.",
+        "Contributories proposed a compromise or arrangement while the winding-up order remained in force."
+      ],
+      "conclusion": "A company already ordered to be wound up remains eligible for a compromise or arrangement under the compromise-and-arrangement provisions.",
+      "legal_principle": "Sections 390 and 391 of the Companies Act, 1956, read together, encompass a company that is being wound up; Section 391(1)(b), which recognises a liquidator's ability to propose an arrangement, supports that reading. The Court proceeded on the assumption that contributories could apply and did not decide whether only the Official Liquidator could initiate such an application.",
+      "rule": {
+        "if": "company_in_winding_up and compromise_or_arrangement_proposed",
+        "then": "company_remains_eligible_for_compromise_or_arrangement"
+      },
+      "predicates": {
+        "company_in_winding_up": "A company was subject to a winding-up order when the proposal was made.",
+        "compromise_or_arrangement_proposed": "A compromise or arrangement was proposed for the company."
+      },
+      "definition": "A company remains eligible for a compromise or arrangement when such a proposal is made while it is being wound up."
+    },
+    {
+      "legal_issue": "A scheme for a company in liquidation must be assessed for genuine revival, public interest, and commercial morality, and cannot be used as a device to dispose of the company's assets privately.",
+      "material_facts": [
+        "The company was in liquidation, and the proposed scheme was intended to take it out of liquidation.",
+        "A viability report found that only part of the spinning operation could be revived, with disposal of other machinery and part of the company's land required to fund that revival.",
+        "The amended proposal contemplated transferring the mill property to a developer in return for funds to pay liabilities.",
+        "The company itself was not committed to revive its mill business on the property; proposed industrial activity by the developer or elsewhere did not constitute revival of the company."
+      ],
+      "conclusion": "The court considering the scheme had to determine whether it genuinely revived the company or instead operated as a disposal of its assets; the proposal as modified was, in substance, an asset disposal rather than revival of the company.",
+      "legal_principle": "Sections 391 to 394A must be read harmoniously with Section 466 of the Companies Act, 1956. A court considering a scheme for a company in liquidation must examine genuine revival, public interest, commercial morality, and bona fides, and ensure that the scheme is not a ruse for private disposal of assets. Miheer H. Mafatlal v. Mafatlal Industries Ltd. (1997) 1 SCC 579 describes the court's supervisory role and the limits on reviewing commercial wisdom, but did not determine the additional considerations applicable to a company in liquidation. The earlier binding appellate directions in the same proceedings also required consideration of revival.",
+      "rule": {
+        "if": "company_in_winding_up and scheme_seeks_to_end_liquidation and company_business_not_to_be_revived",
+        "then": "proposal_is_asset_disposal_not_company_revival"
+      },
+      "predicates": {
+        "company_in_winding_up": "A company was subject to a winding-up order.",
+        "scheme_seeks_to_end_liquidation": "A proposed scheme was intended to take the company out of liquidation.",
+        "company_business_not_to_be_revived": "The proposal did not provide for the company to resume its business, but instead contemplated disposing of its assets or having another entity conduct activity on them."
+      },
+      "definition": "A scheme seeking to end liquidation is an asset disposal rather than company revival when the company itself is not to resume its business."
+    },
+    {
+      "legal_issue": "A court may make only modifications needed for the proper working of an approved scheme; a substantial change to the scheme or an essential term requires fresh approval at a meeting.",
+      "material_facts": [
+        "The general meeting had approved a scheme based on partial revival of the company's spinning operation.",
+        "The appellate court accepted additional undertakings from a developer who was not a member, creditor, or other person identified as entitled to participate in approval under the statutory procedure.",
+        "Those undertakings materially changed the scheme, including the proposed use and transfer of the mill land and obligations concerning industrial activity.",
+        "The changed scheme had not been placed before a further meeting for approval by the requisite majority."
+      ],
+      "conclusion": "The material modifications required fresh approval at a meeting under Section 391; the appellate court could not approve them as mere modifications for proper working under Section 392. The matter was remitted for a meeting and fresh consideration by the Company Court.",
+      "legal_principle": "Section 392 of the Companies Act, 1956, permits modifications necessary for the proper working of an arrangement but does not authorise substantial changes to the arrangement or its essential terms. Such changes require approval at a meeting under Section 391. Miheer H. Mafatlal v. Mafatlal Industries Ltd. (1997) 1 SCC 579 requires compliance with the statutory meeting and approval procedure before a scheme can be sanctioned.",
+      "rule": {
+        "if": "scheme_proceeding and court_approved_scheme_materially_changes_meeting_approved_terms and fresh_meeting_approval_absent",
+        "then": "material_changes_require_fresh_meeting_approval"
+      },
+      "predicates": {
+        "scheme_proceeding": "A proceeding was conducted to consider or approve a proposed arrangement for a company.",
+        "court_approved_scheme_materially_changes_meeting_approved_terms": "The court-approved arrangement materially differed from the terms approved at the meeting.",
+        "fresh_meeting_approval_absent": "The changed arrangement had not been submitted to a further meeting for approval by the requisite majority."
+      },
+      "definition": "When a court-approved arrangement materially changes the meeting-approved terms and has not received fresh meeting approval, those changes require approval at a further meeting."
+    }
+  ],
+  "seconds": 19.0
+}

@@ -1,0 +1,76 @@
+{
+  "doc_id": "1803657",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16085,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1569,
+    "prompt_tokens": 4632,
+    "total_tokens": 6201,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A constitutional challenge to a statutory provision must be presented in the context of sufficient case-specific facts rather than in the abstract.",
+      "material_facts": [
+        "The petitioner challenged the validity of a rent-control provision but did not identify the premises he owned or explain the grievance in relation to those premises.",
+        "The High Court dismissed the petition in limine."
+      ],
+      "conclusion": "The petition was rightly rejected because the essential facts needed to examine the constitutional challenge were lacking, and the Court would not interfere with that rejection.",
+      "legal_principle": "A challenge to the constitutional validity of a provision must arise in the context of relevant facts and cannot be decided in the abstract or a vacuum. The Court relied on this principle without citing an earlier case.",
+      "rule": {
+        "if": "constitutional_validity_challenge and lacks_case_specific_property_facts",
+        "then": "challenge_rejected_for_lack_of_case_specific_facts"
+      },
+      "predicates": {
+        "constitutional_validity_challenge": "A person brought a proceeding challenging the constitutional validity of a legal provision.",
+        "lacks_case_specific_property_facts": "The challenger did not provide particulars of the property or other case-specific facts needed to assess the claimed injury."
+      },
+      "definition": "When a constitutional validity challenge lacks case-specific facts needed to assess it, the challenge is rejected for that lack."
+    },
+    {
+      "legal_issue": "Differences between the rent-regulation laws of different States do not, by themselves, make one State's law invalid under Article 14.",
+      "material_facts": [
+        "The petitioner argued that rent-fixation provisions in other States were fairer, more just, and more reasonable than the challenged provision.",
+        "The challenged law and the laws from other States had been enacted by different legislatures, each choosing a method it considered suited to its State."
+      ],
+      "conclusion": "Article 14 does not permit a State law to be struck down merely because its provisions differ from those of laws on the same subject in other States.",
+      "legal_principle": "Article 14 does not authorize invalidating one State's law through a comparative study of laws enacted by different legislatures, and legislative choice among methods suited to different States is not a ground for challenging validity. The Court relied on Prabhakaran Nair v. State of Tamil Nadu and others, [1987] 4 SCC 238.",
+      "rule": {
+        "if": "state_law_validity_challenge and cross_state_comparison_only",
+        "then": "different_state_laws_alone_do_not_invalidate_law"
+      },
+      "predicates": {
+        "state_law_validity_challenge": "A person brought a proceeding challenging the validity of a law enacted by a State legislature.",
+        "cross_state_comparison_only": "The challenger relied on differences between the challenged law and laws on the same subject enacted by other States."
+      },
+      "definition": "When a State-law validity challenge rests only on differences from other States' laws, those differences alone do not invalidate the challenged law."
+    },
+    {
+      "legal_issue": "A rent-control scheme that uses earlier local rents as a basis for fixing fair rent is not unreasonable per se merely because prices later rose or other States used different methods.",
+      "material_facts": [
+        "The challenged rent-control law was enacted in 1949 and used rents prevalent for similar accommodation in the locality during 1938 as the basis for determining basic rent.",
+        "The scheme permitted specified increases over basic rent.",
+        "The law's stated object included restricting increases in rent.",
+        "The petitioner relied on later price rises and on different rent-fixation methods used in other States."
+      ],
+      "conclusion": "The scheme was not unreasonable per se, and the challenge to the rent-fixation provision on the grounds advanced was rejected.",
+      "legal_principle": "The Court held that legislative choices about fair-rent methods are not invalidated by comparison with methods chosen elsewhere; whether a particular method is suited to local conditions is for the relevant legislature. In light of the law's stated rent-restriction objective, its use of earlier local rents with specified increases was not unreasonable per se. The Court referred to Article 14 and Article 19(1)(g), distinguished M/s Raval & Co. v. K.C. Ramachandran and others, AIR 1974 SC 818, [1974] 2 SCR 629 as arising in a different context, and also referred to Prabhakaran Nair v. State of Tamil Nadu and others, [1987] 4 SCC 238.",
+      "rule": {
+        "if": "constitutional_challenge_to_rent_control and earlier_local_rents_used_as_baseline and permitted_rent_increases and rent_restriction_object",
+        "then": "rent_fixation_scheme_not_unreasonable_per_se"
+      },
+      "predicates": {
+        "constitutional_challenge_to_rent_control": "A person brought a proceeding challenging the constitutionality of a rent-control scheme.",
+        "earlier_local_rents_used_as_baseline": "The scheme based rent fixation on rents previously prevailing for similar accommodation in the locality.",
+        "permitted_rent_increases": "The scheme allowed specified increases over the baseline rent.",
+        "rent_restriction_object": "The scheme was enacted with the stated object of restricting rent increases."
+      },
+      "definition": "When a constitutional challenge concerns a rent-control scheme that uses earlier local rents as a baseline, permits specified increases, and has a rent-restriction object, the scheme is not unreasonable per se."
+    }
+  ],
+  "seconds": 10.4
+}

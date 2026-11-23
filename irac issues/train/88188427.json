@@ -1,0 +1,158 @@
+{
+  "doc_id": "88188427",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 324972,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4871,
+    "prompt_tokens": 77585,
+    "total_tokens": 82456,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An unconditional tender of compensation constitutes payment even when the landholder refuses it, and failure to deposit compensation in court does not by itself cause an acquisition to lapse.",
+      "material_facts": [
+        "The Court considered proceedings in which compensation under the earlier acquisition law had been tendered but refused, as well as cases in which compensation had not been deposited in court.",
+        "The statutory scheme separately addressed tender or payment, court deposit in specified circumstances, and interest where compensation remained unpaid or undeposited.",
+        "Rules and orders governing public funds provided for treasury deposits in circumstances where compensation was not collected and no reference to court was sought."
+      ],
+      "conclusion": "For the lapse provision, payment means an unconditional tender that makes compensation available to the landholder; court deposit is not included in that meaning. A failure to deposit in court does not itself cause lapse, and a landholder who refuses a proper tender cannot rely on that refusal to obtain lapse.",
+      "legal_principle": "Under sections 31(1), 31(2) and 34 of the Land Acquisition Act, 1894, tender, court deposit and the interest consequence of non-payment are distinct; section 24(2) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 uses “paid,” not “deposited.” Section 77 and section 80 of the 2013 Act similarly distinguish tender or payment from deposit and interest. The Court relied on Straw Board Manufacturing Co. Ltd. v. Gobind, Management of Delhi Transport Undertaking v. Industrial Tribunal, Indian Oxygen Ltd. v. Narayan Bhoumik, and J. Dalmia v. Commissioner of Income Tax for the principle that tender making money unconditionally available can amount to payment. It applied harmonious and ordinary construction, including Raj Krushna v. Binod Kanungo and Sultana Begum v. Premchand Jain, and held the contrary ruling in Pune Municipal Corporation v. Harakchand Misirimal Solanki to be per incuriam by majority; one judge disagreed only with that characterization.",
+      "rule": {
+        "if": "legacy_acquisition_lapse_claim and compensation_unconditionally_tendered and compensation_refused",
+        "then": "tender_counts_as_payment"
+      },
+      "predicates": {
+        "legacy_acquisition_lapse_claim": "A claimant seeks to have an acquisition under an earlier land-acquisition regime treated as lapsed under a later transition rule.",
+        "compensation_unconditionally_tendered": "The acquiring authority offered the compensation unconditionally and made it available to the person entitled to receive it.",
+        "compensation_refused": "The person entitled to compensation declined to accept the amount offered."
+      },
+      "definition": "When a claimant seeks lapse of an earlier acquisition and the authority unconditionally offered compensation that the claimant refused, the offer counts as payment."
+    },
+    {
+      "legal_issue": "A failure to deposit compensation in court does not cause lapse, and a qualifying treasury deposit can satisfy the deposit requirement concerning compensation for the majority of holdings.",
+      "material_facts": [
+        "The Court considered the distinction between a deposit in court under the earlier acquisition law and a deposit with the acquisition authority or in the treasury.",
+        "State rules and orders provided for treasury deposits when persons entitled to compensation did not appear or did not seek a reference to court.",
+        "The transition provision addressed whether compensation for a majority of holdings had been deposited in beneficiaries’ accounts and provided a compensation consequence rather than lapse in that situation."
+      ],
+      "conclusion": "Court deposit is not required to establish payment for purposes of the lapse rule, and non-deposit in court does not itself cause lapse. A treasury or acquisition-authority deposit made in accordance with applicable rules can satisfy the majority-holdings deposit provision; if that deposit is not made, the stated consequence is entitlement to compensation under the later law, not lapse.",
+      "legal_principle": "Sections 31(2) and 34 of the Land Acquisition Act, 1894 distinguish court deposit from payment and provide an interest consequence for relevant failures to pay or deposit. The proviso to section 24(2) of the 2013 Act uses “deposited” separately from “paid,” and section 77 of the 2013 Act provides for deposit with the relevant authority when specified contingencies prevent payment. Rules made under section 55 of the 1894 Act and financial instructions governing public money permit treasury deposits; the Court relied on Delhi Development Authority v. Sukhbir Singh as to treasury deposit as a mode under section 31(1), and on sections 32 and 33 of the 1894 Act concerning investment of deposited funds.",
+      "rule": {
+        "if": "legacy_acquisition_lapse_claim and court_deposit_missing",
+        "then": "court_deposit_failure_alone_does_not_cause_lapse"
+      },
+      "predicates": {
+        "legacy_acquisition_lapse_claim": "A claimant seeks to have an acquisition under an earlier land-acquisition regime treated as lapsed under a later transition rule.",
+        "court_deposit_missing": "The compensation was not deposited in the reference court."
+      },
+      "definition": "A missing court deposit, by itself, does not cause an earlier acquisition to lapse when lapse is claimed under a later transition rule."
+    },
+    {
+      "legal_issue": "A properly recorded possession memorandum is an accepted means of taking possession of acquired land, with the required steps depending on the land’s condition.",
+      "material_facts": [
+        "The Court considered how possession is taken when the State acquires land, including open land, land with crops or structures, and large tracts that cannot practically be occupied parcel by parcel.",
+        "It considered possession memoranda prepared by officials and signed by witnesses, and prior decisions accepting that method of taking possession.",
+        "It rejected the view that photographs showing later occupation necessarily negate an earlier recorded taking of possession."
+      ],
+      "conclusion": "A possession memorandum or panchnama is ordinarily sufficient for vacant land and can establish symbolic possession of a large tract. Where crops or structures are present, the authority ordinarily must give notice and take possession in the presence of independent witnesses; an owner’s refusal to cooperate does not necessarily defeat possession.",
+      "legal_principle": "Sections 16 and 17 of the Land Acquisition Act, 1894 provide for vesting upon taking possession. The Court applied the principles in Balwant Narayan Bhagde v. M.D. Bhagwat, Tamil Nadu Housing Board v. A. Viswam, and Banda Development Authority v. Moti Lal Agarwal. Banda sets out the differing approach for vacant land, occupied land, and large tracts. The Court held that Velaxan Kumar v. Union of India was contrary to the settled approach and overruled it.",
+      "rule": {
+        "if": "acquisition_possession_dispute and ((vacant_land and official_possession_memorandum) or (occupied_land_notice_and_witnesses) or large_tract_symbolic_possession_recorded)",
+        "then": "possession_is_ordinarily_treated_as_taken"
+      },
+      "predicates": {
+        "acquisition_possession_dispute": "The issue is whether possession was taken in a land-acquisition proceeding.",
+        "vacant_land": "The acquired land was vacant when the authority went to take possession.",
+        "official_possession_memorandum": "The authority recorded a memorandum or panchnama of taking possession.",
+        "occupied_land_notice_and_witnesses": "For land with crops or structures, the authority gave notice and recorded possession in the presence of independent witnesses.",
+        "large_tract_symbolic_possession_recorded": "The acquisition covered a large tract and the authority recorded symbolic possession in an appropriate document."
+      },
+      "definition": "In a possession dispute, possession is ordinarily treated as taken when the authority uses the appropriate recorded procedure for vacant land, occupied land, or a large tract."
+    },
+    {
+      "legal_issue": "The later transition provision does not revive stale or barred claims or reopen claims conclusively rejected in earlier litigation.",
+      "material_facts": [
+        "The Court considered claims concerning acquisitions that had been completed or challenged many years earlier, sometimes through multiple rounds of litigation.",
+        "Some claimants had previously lost challenges, obtained compensation, or failed to raise possession-related arguments in earlier proceedings.",
+        "The Court considered the risk that long delay could make material evidence unavailable and that later claims might contradict prior final findings, including findings based on possession memoranda."
+      ],
+      "conclusion": "The transition provision does not revive dead, stale, or barred claims, undo final judgments, or permit a claim to be raised again when it was or should have been raised in earlier litigation.",
+      "legal_principle": "The Court applied the doctrines of delay and laches, res judicata, and constructive res judicata. It relied on Mahavir v. Union of India, Tamil Nadu Housing Board v. M. Meiyappan, Jasveer Singh v. State of U.P., Rabindranath Bose v. Union of India, and Dharappa v. Bijapur Co-operative Milk Producers Societies Union. It also applied section 6 of the General Clauses Act, 1897, preserved by section 114 of the 2013 Act, to conclude that repeal did not undo accrued rights or existing proceedings absent a different intention.",
+      "rule": {
+        "if": "transition_lapse_claim and (claim_stale_or_barred or prior_final_adjudication)",
+        "then": "claim_is_not_revived_or_reopened"
+      },
+      "predicates": {
+        "transition_lapse_claim": "A claimant invokes a later transition rule to seek lapse of an earlier land acquisition.",
+        "claim_stale_or_barred": "The claim was brought after a substantial unexplained delay or had already become barred or non-existent.",
+        "prior_final_adjudication": "An earlier court decision finally rejected the claim, or the claimant could and should have raised it in that proceeding."
+      },
+      "definition": "A later lapse claim does not revive a claim that was stale or barred, or reopen an issue already finally decided or required to be raised earlier."
+    },
+    {
+      "legal_issue": "An acquisition that has vested absolutely in the State is not divested by the later transition provision when the statutory conditions for vesting have been met.",
+      "material_facts": [
+        "The Court considered the effect of the earlier acquisition law where an award had been made and possession had been taken, including cases where compensation had been tendered but refused.",
+        "The Court considered claims seeking to use the later transition provision to undo acquisitions after land had vested and development or prior litigation had followed.",
+        "The earlier acquisition law provided for absolute vesting upon the specified acquisition and possession steps."
+      ],
+      "conclusion": "Where the acquisition has vested absolutely through the required steps, the later transition provision does not divest the State of the land; a claimant cannot undo that vesting merely by relying on later litigation, a stay, or a refused tender.",
+      "legal_principle": "Sections 16 and 17 of the Land Acquisition Act, 1894 provide for absolute vesting upon the required possession steps. The Court relied on Fruit and Vegetable Merchants Union v. Delhi Improvement Trust, State of Punjab v. Sadhu Ram, Star Wire (India) Ltd. v. State of Haryana, and the principles concerning vested rights in Mosammat Bibi Sayeeda v. State of Bihar and J.S. Yadav v. State of Uttar Pradesh. It read section 24 of the 2013 Act as providing for lapse only in its specified circumstances, not as expressly or implicitly taking away completed vesting.",
+      "rule": {
+        "if": "transition_lapse_claim and earlier_award_made and possession_taken_and_vesting_completed",
+        "then": "completed_vesting_is_not_divested_by_transition_rule"
+      },
+      "predicates": {
+        "transition_lapse_claim": "A claimant invokes a later transition rule to seek lapse of an earlier land acquisition.",
+        "earlier_award_made": "An award had been made under the earlier acquisition regime.",
+        "possession_taken_and_vesting_completed": "The authority took possession in the legally accepted manner, resulting in absolute vesting under the earlier acquisition regime."
+      },
+      "definition": "A later transition-based lapse claim does not divest land where an earlier award and taking of possession already completed absolute vesting."
+    },
+    {
+      "legal_issue": "Time during which a court order or other conduct disables the acquiring authority from taking the required steps is excluded when calculating the period relevant to lapse.",
+      "material_facts": [
+        "The Court considered cases in which an interim or final court order restrained possession or otherwise prevented further acquisition steps.",
+        "It also considered proceedings initiated by landholders whose conduct or litigation prevented the authority from proceeding, including claims that compensation should nevertheless have been paid during a restraint on possession.",
+        "The statute expressly excluded court-stay periods in some other provisions but did not include an express exclusion in the transition provision at issue."
+      ],
+      "conclusion": "Where a court order or other disabling circumstance prevented the authority from acting, the period of that restraint is excluded from the relevant five-year calculation. The later transition provision does not confer a lapse benefit for steps prevented by the claimant’s litigation or conduct, and it does not apply after a court has quashed the acquisition.",
+      "legal_principle": "The Court applied the principle actus curiae neminem gravabit and related common-law principles against benefiting from one’s own wrong, together with restitution. It relied on Abhey Ram v. Union of India, Suresh Chand v. Gulam Chisti, South Eastern Coal Fields Ltd. v. State of Madhya Pradesh, and Amarjeet Singh v. Devi Ratan. It considered section 24(2) of the 2013 Act alongside section 114 of that Act and section 6(e) of the General Clauses Act, 1897, and held that the omission of an express stay-period exclusion did not prevent this construction.",
+      "rule": {
+        "if": "transition_lapse_claim and (court_order_prevented_authority_action or claimant_conduct_prevented_authority_action)",
+        "then": "disabled_period_is_excluded_from_lapse_calculation"
+      },
+      "predicates": {
+        "transition_lapse_claim": "A claimant invokes a later transition rule to seek lapse of an earlier land acquisition.",
+        "court_order_prevented_authority_action": "An interim or final court order prevented the authority from taking possession or carrying out the relevant acquisition steps.",
+        "claimant_conduct_prevented_authority_action": "The claimant’s litigation or conduct prevented the authority from carrying out the relevant acquisition steps."
+      },
+      "definition": "When an authority was prevented from acting by a court order or the claimant’s conduct, the period of that prevention is excluded from the lapse calculation."
+    },
+    {
+      "legal_issue": "The earlier ruling equating court deposit with payment for purposes of the transition lapse provision was treated as per incuriam by the majority.",
+      "material_facts": [
+        "The Court reviewed an earlier decision that treated compensation as paid only when it had been tendered and, upon refusal, deposited in court.",
+        "The Court concluded that the earlier decision had not considered the distinction between payment and deposit, the statutory proviso, treasury-deposit rules, the interest provisions, or authorities on the meaning of tender and payment.",
+        "The final order recorded agreement on the answers to the referred questions but noted that the judges differed on whether the earlier ruling was per incuriam."
+      ],
+      "conclusion": "The majority held that the earlier ruling was per incuriam and overruled it to that extent; one judge disagreed with that characterization, although the judges agreed on the answers to the referred questions.",
+      "legal_principle": "The Court applied the doctrine of per incuriam, under which a decision rendered in ignorance of binding authority or an applicable statutory provision does not control to that extent. It relied on A.R. Antulay v. R.S. Nayak, State of Uttar Pradesh v. Synthetics and Chemicals Ltd., Municipal Corporation of Delhi v. Gurnam Kaur, and Mamleshwar Prasad v. Kanahaiya Lal. The majority identified the earlier decision’s failure to consider sections 31 and 34 of the Land Acquisition Act, 1894, section 24(2) and its proviso of the 2013 Act, applicable rules and orders, and binding decisions on tender and payment.",
+      "rule": {
+        "if": "precedent_on_transition_payment and precedent_ignored_material_statute_or_binding_authority",
+        "then": "precedent_is_per_incuriam_to_that_extent"
+      },
+      "predicates": {
+        "precedent_on_transition_payment": "A prior court ruling decided how payment is determined when applying a transition rule to an earlier land acquisition.",
+        "precedent_ignored_material_statute_or_binding_authority": "The prior ruling did not consider a material statutory distinction or binding authority relevant to its conclusion."
+      },
+      "definition": "A prior ruling on transition payment is treated as per incuriam to the extent it ignored a material statutory provision or binding authority."
+    }
+  ],
+  "seconds": 28.7
+}

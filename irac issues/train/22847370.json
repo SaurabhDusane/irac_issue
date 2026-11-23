@@ -1,0 +1,122 @@
+{
+  "doc_id": "22847370",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36863,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3665,
+    "prompt_tokens": 9234,
+    "total_tokens": 12899,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person living in an illegally constructed building in a cantonment is not entitled to be enrolled as an elector merely because the person meets the age and residence-period requirements.",
+      "material_facts": [
+        "The dispute concerned electoral rolls for cantonment board elections that included people living in illegally constructed buildings.",
+        "The statute set age and residence-period qualifications and defined a resident by reference to maintaining a house available for occupation; it separately defined an inhabitant more broadly.",
+        "The statutory scheme required prior sanction for building construction and provided for penalties and demolition for illegal construction."
+      ],
+      "conclusion": "A person must reside in a legally constructed house to be enrolled as an elector; a person living in an illegally constructed building is not entitled to be enrolled.",
+      "legal_principle": "The right to vote is statutory, not a fundamental or common-law right (Jyoti Basu v. Debi Ghosal). Sections 27 and 28 of the Cantonment Act, 2006 govern electoral rolls and elector qualifications; Sections 2(zt) and 2(zc) distinguish a ‘resident’ from the broader category of ‘inhabitant’, while Sections 234, 247 and 248 address sanctioned construction, illegal construction and demolition. The statutory context must be considered when construing a provision (Municipal Corporation of City of Hubli v. Subha Rao Hanumatharao Prayag). Election-law provisions are strictly construed (Banwari Dass v. Sumer Chand). Different words used in the same enactment may carry different meanings (Gibson v. Skibs A/S Marina and Orkla Grobe A/B and Smith Coggins, Ltd.; Kailash Nath Agarwal v. Pradeshiya Industrial & Investment Corporation of UP Ltd.). The meaning of ‘resident’ under this Act differs from ‘ordinarily resident’ under the Representation of the People Act, 1950; Election Commission of India v. Dr. Manmohan Singh was considered in that comparison.",
+      "rule": {
+        "if": "cantonment_board_election_case and elector_age_and_residence_qualifications_met and lives_in_illegally_constructed_building",
+        "then": "person_not_entitled_to_electoral_enrolment"
+      },
+      "predicates": {
+        "cantonment_board_election_case": "The proceeding concerns a person's entitlement to enrolment for an election to a cantonment board.",
+        "elector_age_and_residence_qualifications_met": "The person meets the applicable minimum-age and minimum-residence-period requirements for enrolment.",
+        "lives_in_illegally_constructed_building": "The person lives in a building constructed without the required lawful authorization.",
+        "person_not_entitled_to_electoral_enrolment": "The person is not entitled to be enrolled as an elector."
+      },
+      "definition": "When a person meets the age and residence-period requirements but lives in an illegally constructed building in a cantonment board election case, the person is not entitled to electoral enrolment."
+    },
+    {
+      "legal_issue": "The electoral-roll preparation requirement that elector names be arranged by house numbers does not permit occupants of illegal, unnumbered buildings to be included in the roll.",
+      "material_facts": [
+        "The electoral roll included people living in illegal buildings that had no house numbers.",
+        "The applicable rule required elector names in each part of the roll to be arranged according to house numbers.",
+        "The court found that the roll-preparation rule was consistent with the statutory elector qualifications."
+      ],
+      "conclusion": "Occupants of illegally constructed buildings without house numbers are not entitled to inclusion in the electoral roll prepared under the applicable rule.",
+      "legal_principle": "Rule 10(3) of the Cantonment Electoral Rules, 2007 requires elector names to be arranged according to house numbers. Read with Section 28 of the Cantonment Act, 2006, it does not conflict with the statutory qualifications and does not authorize inclusion of occupants of illegal, unnumbered buildings.",
+      "rule": {
+        "if": "cantonment_electoral_roll_preparation_case and illegal_buildings_lack_house_numbers",
+        "then": "omit_occupants_of_illegal_buildings_from_electoral_roll"
+      },
+      "predicates": {
+        "cantonment_electoral_roll_preparation_case": "The proceeding concerns preparation of an electoral roll for a cantonment board election.",
+        "illegal_buildings_lack_house_numbers": "People included in the proposed roll live in illegal buildings that have no house numbers.",
+        "omit_occupants_of_illegal_buildings_from_electoral_roll": "The occupants of those illegal buildings are omitted from the electoral roll."
+      },
+      "definition": "In a cantonment electoral-roll preparation case, occupants of illegal buildings without house numbers are omitted from the roll."
+    },
+    {
+      "legal_issue": "A writ petition challenging inclusion or exclusion of names in a cantonment electoral roll is maintainable when an election petition is unavailable for that challenge.",
+      "material_facts": [
+        "A writ petition challenged the electoral roll before the election.",
+        "The appellants relied on the procedure for claims and objections and on the provision allowing an election petition to challenge an election.",
+        "The rules expressly barred an election petition for a dispute about inclusion or exclusion in the electoral roll."
+      ],
+      "conclusion": "The writ petition challenging the electoral roll was maintainable because an election petition was not maintainable for an inclusion-or-exclusion challenge.",
+      "legal_principle": "The Court considered the claims-and-objections procedure in Chapter III of the Cantonment Electoral Rules, 2007, Rule 54 concerning election petitions, and the proviso to Rule 55, which precludes an election petition concerning inclusion or exclusion in the electoral rolls.",
+      "rule": {
+        "if": "cantonment_electoral_roll_challenge and election_petition_unavailable_for_roll_inclusion_or_exclusion",
+        "then": "writ_petition_maintainable"
+      },
+      "predicates": {
+        "cantonment_electoral_roll_challenge": "The proceeding challenges the inclusion or exclusion of names in a cantonment electoral roll.",
+        "election_petition_unavailable_for_roll_inclusion_or_exclusion": "The applicable election procedure does not allow an election petition to determine the challenged inclusion or exclusion.",
+        "writ_petition_maintainable": "A writ petition may be maintained to challenge the electoral roll."
+      },
+      "definition": "A writ petition may be maintained when a cantonment electoral-roll challenge cannot be brought by election petition."
+    },
+    {
+      "legal_issue": "Candidates elected in an election held under an interim order expressly subject to the outcome of an appeal acquire no right to retain their election after it is set aside.",
+      "material_facts": [
+        "The election proceeded under an interim order that made it subject to the outcome of the appeal.",
+        "The candidates were declared elected before the appeal was decided.",
+        "The appeal succeeded and the election was set aside."
+      ],
+      "conclusion": "The successful candidates acquired no rights from the election held subject to the appeal, and the direction to prepare a fresh electoral roll was upheld.",
+      "legal_principle": "An election conducted under an interim order expressly subject to the outcome of an appeal creates no right for successful candidates to retain the result once the election is set aside.",
+      "rule": {
+        "if": "election_appeal_case and election_held_under_order_subject_to_appeal and election_later_set_aside",
+        "then": "successful_candidates_acquire_no_right_to_retain_election"
+      },
+      "predicates": {
+        "election_appeal_case": "The proceeding is an appeal concerning the validity of an election.",
+        "election_held_under_order_subject_to_appeal": "The election was conducted under an interim order expressly making it subject to the appeal's outcome.",
+        "election_later_set_aside": "The election was set aside when the appeal was decided.",
+        "successful_candidates_acquire_no_right_to_retain_election": "The candidates declared elected acquire no right to retain the election result."
+      },
+      "definition": "When an election appeal concerns an election held subject to the appeal and the election is later set aside, the successful candidates acquire no right to retain it."
+    },
+    {
+      "legal_issue": "A final direction to prepare an electoral roll in accordance with the applicable rules does not authorize inclusion of occupants of illegal buildings when a later review removes language that had directed their inclusion.",
+      "material_facts": [
+        "An earlier judgment, which became final, directed preparation of electoral rolls in accordance with the applicable rule.",
+        "An appellate judgment initially included language directing that encroachers be mentioned in the roll, but that language was deleted on review.",
+        "The board later included occupants of illegal buildings in the electoral roll and contended that the modified judgment permitted it to do so."
+      ],
+      "conclusion": "The earlier final directions did not authorize the board to include occupants of illegal buildings in the electoral roll.",
+      "legal_principle": "The binding directions must be read in light of the review that deleted the language directing inclusion of encroachers. The remaining directions required compliance with the electoral-roll rule and did not authorize their inclusion.",
+      "rule": {
+        "if": "cantonment_electoral_roll_dispute and prior_final_direction_required_rule_compliant_roll and review_removed_language_directing_inclusion and board_included_illegal_building_occupants",
+        "then": "prior_directions_do_not_authorize_inclusion"
+      },
+      "predicates": {
+        "cantonment_electoral_roll_dispute": "The proceeding concerns whether occupants of illegal buildings may be included in a cantonment electoral roll.",
+        "prior_final_direction_required_rule_compliant_roll": "A final earlier judgment directed preparation of the electoral roll in accordance with the applicable rules.",
+        "review_removed_language_directing_inclusion": "A review later deleted language that had directed inclusion of encroachers in the roll.",
+        "board_included_illegal_building_occupants": "The board included occupants of illegal buildings in the electoral roll.",
+        "prior_directions_do_not_authorize_inclusion": "The earlier directions do not authorize inclusion of those occupants in the electoral roll."
+      },
+      "definition": "When a final direction required a rule-compliant roll and review removed language directing inclusion, the earlier directions do not authorize the board to include occupants of illegal buildings."
+    }
+  ],
+  "seconds": 22.5
+}

@@ -1,0 +1,78 @@
+{
+  "doc_id": "99131",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18111,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2783,
+    "prompt_tokens": 4829,
+    "total_tokens": 7612,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Equitable solatium and interest may be awarded for acquired land despite the governing compensation scheme containing no express provision for them when appointment of an arbitrator and determination of compensation have been inordinately delayed.",
+      "material_facts": [
+        "The land was acquired under a statutory requisition-and-acquisition scheme that made no express provision for solatium or interest.",
+        "The Government appointed an arbitrator sixteen years after the owners sought one, following court proceedings to compel the appointment.",
+        "The arbitrator awarded solatium and interest, and owners of land acquired in similar circumstances for the same purpose had received those benefits."
+      ],
+      "conclusion": "The owners were entitled to solatium and interest because of the inordinate delay in appointing the arbitrator, notwithstanding the absence of an express provision for those benefits in the governing Act.",
+      "legal_principle": "The Requisitioning and Acquisition of Immovable Property Act, 1952 contains no provision for solatium or interest, and its compensation scheme is not to be equated with that under the Land Acquisition Act. However, equitable relief has been granted in exceptional cases involving inordinate delay in appointing an arbitrator: Harbans Singh v. Union of India; Union of India v. Hari Krishan Khosla; Union of India v. Chajju Ram; and Prabhu Dayal v. Union of India. Union of India v. Parmal Singh, relying also on Satinder Singh v. Umrao Singh, recognized interest on delayed compensation and stated that, following acquisition of requisitioned property, interest is payable from the date of acquisition rather than the earlier date of requisition.",
+      "rule": {
+        "if": "is_special_acquisition_compensation_appeal and compensation_scheme_omits_extra_awards and arbitrator_appointment_inordinately_delayed",
+        "then": "solatium_and_interest_awarded"
+      },
+      "predicates": {
+        "is_special_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for land acquired under a special statutory requisition-and-acquisition scheme.",
+        "compensation_scheme_omits_extra_awards": "The governing compensation scheme contains no express provision for solatium or interest.",
+        "arbitrator_appointment_inordinately_delayed": "The acquiring authority appointed an arbitrator only after an inordinate delay following the owners' request."
+      },
+      "definition": "When an appeal concerns compensation under a special acquisition scheme that omits express provision for additional awards and the arbitrator's appointment was inordinately delayed, the output is that solatium and interest are awarded."
+    },
+    {
+      "legal_issue": "Compensation may be enhanced where owners appeal for an increase and comparable, closely timed acquisitions for the same purpose support a higher valuation without a distinguishing feature justifying different treatment.",
+      "material_facts": [
+        "The owners appealed seeking enhancement of compensation for land acquired for the same purpose as land considered in earlier cases.",
+        "The acquisitions were close in time to comparable acquisitions, and the lands were near a growing town with increasing non-agricultural potential.",
+        "A higher compensation rate had been upheld for comparable land in earlier proceedings, and some awards at that rate had become final.",
+        "The High Court rejected the owners' enhancement claims without reasons and did not account for the comparable decisions or the similarities between the acquisitions."
+      ],
+      "conclusion": "For the owners who appealed seeking enhancement, compensation was increased to the rate upheld for comparable acquisitions, with proportionate solatium and interest.",
+      "legal_principle": "A valuation upheld for a comparable acquisition may guide compensation for land acquired at a proximate time for the same purpose, particularly where the lands share relevant characteristics and no distinguishing feature justifies different treatment. The Court relied on Shanker Singh v. Union of India and Union of India v. Inder Singh, where enhanced compensation for comparable acquisitions had been upheld.",
+      "rule": {
+        "if": "is_owner_appeal_seeking_enhancement and comparable_acquisitions_support_higher_valuation and no_relevant_distinguishing_features",
+        "then": "compensation_enhanced_to_comparable_level"
+      },
+      "predicates": {
+        "is_owner_appeal_seeking_enhancement": "The proceeding is an appeal by landowners seeking increased compensation.",
+        "comparable_acquisitions_support_higher_valuation": "Closely comparable acquisitions support a higher valuation for land acquired for the same purpose and with similar relevant characteristics.",
+        "no_relevant_distinguishing_features": "The record discloses no relevant feature that justifies treating the land differently from the comparable land."
+      },
+      "definition": "When landowners appeal for increased compensation, comparable acquisitions support a higher valuation, and no relevant distinguishing feature is shown, compensation is enhanced to the comparable level."
+    },
+    {
+      "legal_issue": "Compensation is not enhanced for owners who have not sought enhancement on appeal where the record contains no cogent evidence supporting an increase.",
+      "material_facts": [
+        "In one acquisition case, the acquiring authority appealed the award of solatium and interest, but the owners did not appeal seeking increased compensation.",
+        "The record contained no cogent evidence to justify increasing the compensation in that case."
+      ],
+      "conclusion": "The Court declined to enhance compensation in that case.",
+      "legal_principle": "An increase in compensation must be supported by a basis for appellate relief; where the owners have not sought enhancement and the record contains no cogent evidence for a higher award, there is no basis to direct increased compensation. The judgment identifies no earlier case as authority for this particular conclusion.",
+      "rule": {
+        "if": "is_compensation_appeal and owners_do_not_seek_enhancement and no_cogent_evidence_supports_increase",
+        "then": "compensation_not_enhanced"
+      },
+      "predicates": {
+        "is_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "owners_do_not_seek_enhancement": "The owners have not appealed or otherwise sought an increase in compensation.",
+        "no_cogent_evidence_supports_increase": "The record contains no cogent evidence supporting a higher valuation."
+      },
+      "definition": "When an appeal concerns land compensation, the owners have not sought an increase, and cogent evidence for a higher valuation is absent, compensation is not enhanced."
+    }
+  ],
+  "seconds": 17.7
+}

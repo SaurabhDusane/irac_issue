@@ -1,0 +1,203 @@
+{
+  "doc_id": "151141",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28260,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3916,
+    "prompt_tokens": 7077,
+    "total_tokens": 10993,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Concurrent findings of guilt based on evidence are not disturbed on appeal unless their appreciation is unreasonable or unjustified.",
+      "material_facts": [
+        "The trial court and the High Court both convicted the appellants after assessing the evidence.",
+        "The Supreme Court found no basis to regard the lower courts’ appreciation of the evidence as unreasonable or unjustified."
+      ],
+      "conclusion": "There was no ground to interfere with the concurrent findings, and the appeals were dismissed.",
+      "legal_principle": "On appeal, concurrent findings based on appreciation of evidence are not interfered with unless that appreciation is shown to be unreasonable or unjustified.",
+      "rule": {
+        "if": "criminal_appeal and concurrent_evidence_findings and not findings_unreasonable",
+        "then": "concurrent_findings_left_undisturbed"
+      },
+      "predicates": {
+        "criminal_appeal": "The proceeding is a criminal appeal against a conviction.",
+        "concurrent_evidence_findings": "The trial court and the appellate court reached the same findings after assessing the evidence.",
+        "findings_unreasonable": "The appellant showed that the courts’ appreciation of the evidence was unreasonable or unjustified."
+      },
+      "definition": "When a criminal appeal challenges concurrent evidence-based findings and their appreciation is not shown to be unreasonable, those findings are left undisturbed."
+    },
+    {
+      "legal_issue": "A defective investigation or the investigating officer’s non-examination does not require rejection of otherwise reliable injured eyewitness evidence.",
+      "material_facts": [
+        "The investigating officer did not testify without a justifiable ground, and some police witnesses resiled from earlier statements.",
+        "Two injured eyewitnesses were present at the scene, their injuries were medically proved, and their accounts were consistent with the first information report.",
+        "The accused examined defence witnesses, and the investigating officer was not material to deciding which side was the aggressor."
+      ],
+      "conclusion": "The investigating officer’s non-examination and the conduct of other police witnesses did not justify disbelieving the injured eyewitnesses.",
+      "legal_principle": "Evidence must be assessed apart from omissions or contaminated conduct in the investigation; a defective investigation does not warrant acquittal when the case is otherwise conclusively established. The Court relied on Karnel Singh v. State of M.P. (1995) 5 SCC 518, Ram Bihari Yadav v. State of Bihar (1998) 4 SCC 517, Paras Yadav v. State of Bihar (1999) 2 SCC 126, and State of U.P. v. Anil Singh, AIR 1988 SC 1998.",
+      "rule": {
+        "if": "criminal_appeal and investigating_officer_not_examined and injured_witnesses_present and injuries_corroborate_testimony and testimony_reliable",
+        "then": "investigating_officer_non_examination_does_not_defeat_prosecution"
+      },
+      "predicates": {
+        "criminal_appeal": "The proceeding is a criminal appeal challenging a conviction.",
+        "investigating_officer_not_examined": "The investigating officer did not testify at trial.",
+        "injured_witnesses_present": "Witnesses who testified to the occurrence were themselves injured and present at the scene.",
+        "injuries_corroborate_testimony": "Medical evidence supports the injuries described by the eyewitnesses.",
+        "testimony_reliable": "The eyewitness testimony is otherwise reliable and consistent with the prosecution account."
+      },
+      "definition": "In a criminal appeal, an investigating officer’s absence does not defeat the prosecution when injured eyewitnesses were present, their injuries corroborate their accounts, and their testimony is reliable."
+    },
+    {
+      "legal_issue": "The prosecution’s failure to examine independent witnesses does not by itself justify rejecting otherwise credible eyewitness evidence.",
+      "material_facts": [
+        "People had gathered at the scene, but the prosecution did not examine independent witnesses to the occurrence.",
+        "The injured eyewitnesses’ presence and injuries were established, while the evidence indicated that witnesses faced fear and reluctance to testify."
+      ],
+      "conclusion": "The absence of independent witnesses was not a ground to reject the injured eyewitnesses’ evidence.",
+      "legal_principle": "A prosecution case that is otherwise true and acceptable is not to be rejected merely because all occurrence witnesses were not examined or independent corroboration was absent. The Court relied on State of U.P. v. Anil Singh, AIR 1988 SC 1998.",
+      "rule": {
+        "if": "criminal_trial and independent_witnesses_not_examined and eyewitnesses_reliable",
+        "then": "absence_of_independent_witnesses_does_not_defeat_prosecution"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial for an alleged offence.",
+        "independent_witnesses_not_examined": "The prosecution did not call independent persons who were said to have witnessed the occurrence.",
+        "eyewitnesses_reliable": "The eyewitnesses who testified gave evidence the court found credible."
+      },
+      "definition": "In a criminal trial, failure to call independent occurrence witnesses does not defeat the prosecution when the testifying eyewitnesses are reliable."
+    },
+    {
+      "legal_issue": "Delay in recording an eyewitness’s statement does not require rejection of convincing and reliable evidence when the delay is explained.",
+      "material_facts": [
+        "One injured witness had facial and mouth injuries that made speaking difficult, and the investigating officer visited the hospital.",
+        "Another injured witness testified that fear caused him to avoid going out and to stay away from his home.",
+        "Both witnesses were found injured at the scene, and their injuries were medically proved."
+      ],
+      "conclusion": "The delay in recording the injured witnesses’ statements was explained and did not make their evidence unacceptable.",
+      "legal_principle": "Delay in examining an eyewitness, including inordinate delay, is not by itself a ground to discard convincing and reliable evidence. The Court relied on Dr. Krishna Pal v. State of U.P. (1996) 7 SCC 194.",
+      "rule": {
+        "if": "criminal_trial and witness_statement_delayed and delay_explained and testimony_reliable",
+        "then": "delayed_statement_does_not_defeat_testimony"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial for an alleged offence.",
+        "witness_statement_delayed": "The investigating agency recorded an eyewitness’s statement after a delay.",
+        "delay_explained": "The circumstances, such as injury-related difficulty or fear, explain the delay.",
+        "testimony_reliable": "The eyewitness’s evidence is convincing and reliable."
+      },
+      "definition": "A delayed eyewitness statement does not defeat the testimony in a criminal trial when the delay is explained and the testimony is reliable."
+    },
+    {
+      "legal_issue": "Minor inconsistencies and a witness’s partial retraction do not require rejection of reliable, corroborated injured eyewitness testimony.",
+      "material_facts": [
+        "The informant resiled from parts of his initial account, and other witnesses turned hostile.",
+        "The two injured eyewitnesses gave accounts of the assault that were corroborated by medical evidence and were consistent with the first information report.",
+        "The accused pointed to minor inconsistencies and embellishments in one eyewitness’s account."
+      ],
+      "conclusion": "The minor inconsistencies and the informant’s partial retraction did not undermine the injured eyewitnesses’ evidence.",
+      "legal_principle": "The evidence is assessed as a whole; insignificant embellishments do not discredit reliable testimony, particularly where the witnesses were injured and their accounts have medical corroboration.",
+      "rule": {
+        "if": "criminal_trial and injured_eyewitnesses_testify and medical_corroboration and inconsistencies_insignificant",
+        "then": "corroborated_injured_testimony_remains_acceptable"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial for an alleged offence.",
+        "injured_eyewitnesses_testify": "Witnesses who were injured in the occurrence testify about it.",
+        "medical_corroboration": "Medical evidence supports the injured witnesses’ accounts of the occurrence.",
+        "inconsistencies_insignificant": "The identified inconsistencies or embellishments do not materially undermine the witnesses’ accounts."
+      },
+      "definition": "In a criminal trial, injured eyewitness testimony remains acceptable when medical evidence corroborates it and its inconsistencies are insignificant."
+    },
+    {
+      "legal_issue": "Failure to state an accused’s proper name in the first information report does not invalidate identification when the report describes the person and witnesses who know the person identify them.",
+      "material_facts": [
+        "The first information report described the alleged shooter by his relationship to another accused and by distinctive physical characteristics rather than by his proper name.",
+        "The eyewitnesses knew the person and identified him in court.",
+        "The courts found no reason for the witnesses to falsely implicate him."
+      ],
+      "conclusion": "The absence of the accused’s proper name from the first information report did not justify rejecting the eyewitness identifications.",
+      "legal_principle": "Identification may be accepted where the report sufficiently describes the person and witnesses familiar with that person identify them; omission of the proper name alone does not require rejection of the evidence.",
+      "rule": {
+        "if": "criminal_trial and accused_not_named_properly_in_initial_report and accused_described_in_report and known_witnesses_identify_accused",
+        "then": "identification_not_invalidated_by_name_omission"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial for an alleged offence.",
+        "accused_not_named_properly_in_initial_report": "The accused’s proper name was omitted from the initial report.",
+        "accused_described_in_report": "The initial report described the accused by other identifying details.",
+        "known_witnesses_identify_accused": "Witnesses who knew the accused identified that person as involved in the occurrence."
+      },
+      "definition": "In a criminal trial, omission of an accused’s proper name from the initial report does not invalidate identification when the report describes the person and known witnesses identify them."
+    },
+    {
+      "legal_issue": "A plea of alibi is not established when its supporting evidence does not reliably place the accused elsewhere at the time of the occurrence and credible eyewitnesses place the accused at the scene.",
+      "material_facts": [
+        "The accused claimed he was training at an athletic venue several kilometres from the scene when the occurrence took place.",
+        "His supporting witness admitted that the usual training hours ended well before the occurrence and that he had not earlier reported the accused’s claimed presence there.",
+        "The injured eyewitnesses and the informant placed the accused at the scene."
+      ],
+      "conclusion": "The plea of alibi was rightly rejected.",
+      "legal_principle": "The court assesses the evidence offered for an alibi against the timing and circumstances of the occurrence and the prosecution evidence placing the accused at the scene; the Court relied on the trial court’s assessment of the defence evidence and the eyewitness testimony.",
+      "rule": {
+        "if": "criminal_appeal and alibi_claimed and alibi_evidence_does_not_cover_occurrence_time and credible_witnesses_place_accused_at_scene",
+        "then": "alibi_not_established"
+      },
+      "predicates": {
+        "criminal_appeal": "The proceeding is a criminal appeal challenging a conviction.",
+        "alibi_claimed": "The accused claims to have been elsewhere when the alleged offence occurred.",
+        "alibi_evidence_does_not_cover_occurrence_time": "The evidence supporting the claim does not reliably place the accused elsewhere at the time of the occurrence.",
+        "credible_witnesses_place_accused_at_scene": "Credible witnesses place the accused at the scene of the occurrence."
+      },
+      "definition": "In a criminal appeal, an alibi is not established when its evidence does not cover the time of the occurrence and credible witnesses place the accused at the scene."
+    },
+    {
+      "legal_issue": "A claim that the complainant side was the aggressor is not accepted when it is unsupported by evidence and the prosecution evidence shows that the accused side was armed while the complainant side was not.",
+      "material_facts": [
+        "The accused claimed that the complainant side came to demolish a boundary wall and that a person in a crowd fired the fatal shot.",
+        "No person whose boundary wall was allegedly demolished, or person connected with the alleged place of worship, testified to support that account.",
+        "The evidence did not show that the complainant side was armed, while the accused side carried a firearm and other weapons; the complainant side sustained more serious injuries."
+      ],
+      "conclusion": "The claim that the complainant side was the aggressor was baseless and was rejected.",
+      "legal_principle": "The court assesses a claim of aggression against the evidence supporting it, the weapons carried by each side, and the nature of the injuries; an unsupported defence account does not displace established prosecution evidence.",
+      "rule": {
+        "if": "criminal_trial and aggressor_claim_unsupported and complainant_side_unarmed and accused_side_armed_with_weapons",
+        "then": "aggressor_claim_rejected"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial for an alleged offence.",
+        "aggressor_claim_unsupported": "The claim that the complainant side initiated the violence lacks supporting evidence.",
+        "complainant_side_unarmed": "The evidence does not show that the complainant side carried weapons.",
+        "accused_side_armed_with_weapons": "The evidence shows that the accused side carried weapons during the occurrence."
+      },
+      "definition": "In a criminal trial, an unsupported claim that the complainant side was the aggressor is rejected when the complainant side was unarmed and the accused side carried weapons."
+    },
+    {
+      "legal_issue": "A prolonged adjournment of cross-examination after a witness’s examination-in-chief is improper where the trial court should proceed with the trial from day to day.",
+      "material_facts": [
+        "A witness’s examination-in-chief was completed.",
+        "At defence counsel’s request, the witness’s cross-examination was postponed for more than a year.",
+        "The trial court had the ability to limit the adjournment to a short period."
+      ],
+      "conclusion": "The prolonged adjournment was highly improper; the trial court should have followed the day-to-day trial requirement and should not have deferred cross-examination beyond a few days.",
+      "legal_principle": "Section 309 of the Code of Criminal Procedure requires the trial to be completed by examining witnesses from day to day, and an adjournment for cross-examination should not be prolonged in the circumstances described.",
+      "rule": {
+        "if": "criminal_trial and examination_in_chief_completed and cross_examination_deferred_for_prolonged_period",
+        "then": "prolonged_cross_examination_adjournment_improper"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial.",
+        "examination_in_chief_completed": "A witness’s examination-in-chief has been completed.",
+        "cross_examination_deferred_for_prolonged_period": "The court postpones the witness’s cross-examination for a prolonged period after examination-in-chief."
+      },
+      "definition": "In a criminal trial, postponing cross-examination for a prolonged period after examination-in-chief is improper."
+    }
+  ],
+  "seconds": 22.1
+}

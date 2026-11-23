@@ -1,0 +1,101 @@
+{
+  "doc_id": "1985369",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 39438,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2491,
+    "prompt_tokens": 9701,
+    "total_tokens": 12192,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A dispute over possession of property acquired by a cooperative bank from a member does not touch the bank’s business when the bank is not engaged in constructing or acquiring houses for letting.",
+      "material_facts": [
+        "The society was a cooperative bank that acquired a building after its member defaulted on a loan secured by the property.",
+        "The bank sought possession from persons occupying part of the building as tenants of the former owner.",
+        "The dispute was referred for arbitration under the cooperative societies legislation.",
+        "The bank was not shown to be engaged in constructing or acquiring houses for letting."
+      ],
+      "conclusion": "The dispute did not touch the business of the bank within the meaning of Section 91(1) of the Maharashtra Co-operative Societies Act, 1960, and could not be referred under that provision.",
+      "legal_principle": "Section 91(1) concerns disputes touching a society’s actual trading, commercial, or similar business activity that it is authorised to undertake, not every matter connected with its affairs or assets. Whether a dispute about a society’s assets touches its business depends on the society’s nature and governing rules and bye-laws. The Court accepted that “touching” includes matters relating to or concerning the business, but rejected the proposition that everything a society does to carry out its objects is necessarily part of its business. It relied on Farkhundali v. Potdar for the nature of a society’s business and the breadth of “touching,” while qualifying that decision’s formulation; it also referred to E.C. Mulkern v. James Lord concerning the limits of disputes intended for referral.",
+      "rule": {
+        "if": "cooperative_arbitration_dispute and society_is_a_bank and dispute_concerns_tenant_possession_of_acquired_property and society_not_engaged_in_housing_letting",
+        "then": "dispute_does_not_touch_society_business"
+      },
+      "predicates": {
+        "cooperative_arbitration_dispute": "A dispute between a society and another person was referred for resolution through cooperative arbitration.",
+        "society_is_a_bank": "The society involved in the dispute operates as a bank.",
+        "dispute_concerns_tenant_possession_of_acquired_property": "The society seeks possession from an occupant who claims tenancy through the former owner of property acquired by the society.",
+        "society_not_engaged_in_housing_letting": "The society is not engaged in constructing or acquiring houses for the purpose of letting them."
+      },
+      "definition": "When a cooperative arbitration dispute involving a bank concerns a tenant’s possession of acquired property and the bank is not engaged in housing letting, the dispute does not touch the society’s business."
+    },
+    {
+      "legal_issue": "A person claiming rights through a member falls within the member-related dispute category only when the member’s underlying transaction with the society was entered into in the member’s capacity as a member.",
+      "material_facts": [
+        "The former owner was a member and chairman of the bank and had mortgaged the building to secure a loan.",
+        "The occupant’s tenancy arose under a lease executed by the former owner while acting as mortgagor in possession, rather than in his capacity as a bank member.",
+        "The bank sought possession from the occupant and asserted that the occupant claimed through the former owner."
+      ],
+      "conclusion": "The occupant was not a person claiming through a member within Section 91(1)(b), because the lease giving rise to the occupant’s rights was not entered into by the former owner in his capacity as a member.",
+      "legal_principle": "Under Section 91(1)(b) of the Maharashtra Co-operative Societies Act, 1960, the claim must derive through a member in respect of a transaction the member entered into with the society as a member. A member’s separate dealings or capacity as a stranger do not make a dispute one between the society and a member qua member. The Court preferred the approaches in Morrison v. Glover, Prentice v. London, Palliser v. Dale, Judson v. Ellesmere Port Ex-servicemen’s Club, Shyam Co-operative Society v. Ramibai, Krishna Ayyar v. Urban Bank, Vegetols Ltd. v. Wholesale Co-operative Stores, and Mammu Keyi v. Thirurangadi Co-operative Rural Bank Ltd., and declined to follow the contrary reasoning in Mishrimal and Kisanlal v. Co-operative Central Bank Ltd.",
+      "rule": {
+        "if": "cooperative_arbitration_dispute and claimant_derives_rights_through_member and member_entered_underlying_transaction_as_mortgagor_not_as_member",
+        "then": "claimant_is_not_claiming_through_member_in_member_capacity"
+      },
+      "predicates": {
+        "cooperative_arbitration_dispute": "A dispute between a society and another person was referred for resolution through cooperative arbitration.",
+        "claimant_derives_rights_through_member": "The claimant derives the rights in dispute from a person who is a member of the society.",
+        "member_entered_underlying_transaction_as_mortgagor_not_as_member": "The member entered the transaction giving rise to the claimant’s rights in the capacity of a mortgagor rather than in the capacity of a society member."
+      },
+      "definition": "When a claimant derives rights through a member but the underlying transaction was entered into by that member as a mortgagor rather than as a member, the claimant is not claiming through the member in the member capacity."
+    },
+    {
+      "legal_issue": "A proceeding by a landlord to recover possession from a tenant of premises covered by rent-control legislation falls within the exclusive jurisdiction conferred on the designated rent court, rather than cooperative arbitration.",
+      "material_facts": [
+        "The bank, as the party claiming to be landlord, sought to eject occupants who claimed to be tenants.",
+        "The premises were covered by the Bombay Rent Act.",
+        "The occupants’ status and possession were disputed, and the bank sought to have the dispute determined through cooperative arbitration.",
+        "The rent legislation provided special protections for tenants and assigned landlord-tenant possession proceedings to the Court of Small Causes."
+      ],
+      "conclusion": "Section 28 of the Rent Act gave the Court of Small Causes exclusive jurisdiction over the ejectment proceeding, and Section 91 of the cooperative societies legislation did not displace that jurisdiction.",
+      "legal_principle": "Section 28 of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, assigns landlord-tenant proceedings concerning recovery of possession of covered premises to the specified court and excludes other courts. Although Section 91 of the Maharashtra Co-operative Societies Act, 1960, also contains overriding language, the provisions must be harmonised in light of their respective purposes: rent-control matters are to be dealt with under the Rent Act so that its tenant protections and procedures apply. The Court relied on the principle stated in Shri Ram Narain v. Simla Banking and Industrial Co. Ltd. that competing overriding provisions should be assessed by considering the purpose and policy of the Acts and the language used. It noted Thakur Jugal Kishore Sinha v. Sitamarhi Central Co-operative Bank Ltd. on the status of a Registrar acting under another cooperative statute, but found it unnecessary to decide whether the Registrar was a court for purposes of the Rent Act.",
+      "rule": {
+        "if": "landlord_tenant_ejectment_proceeding and premises_covered_by_rent_control and proceeding_seeks_recovery_of_possession",
+        "then": "designated_rent_court_has_exclusive_jurisdiction"
+      },
+      "predicates": {
+        "landlord_tenant_ejectment_proceeding": "A landlord seeks to eject a person who claims to be a tenant.",
+        "premises_covered_by_rent_control": "The premises involved are covered by rent-control legislation.",
+        "proceeding_seeks_recovery_of_possession": "The proceeding seeks recovery of possession of the premises."
+      },
+      "definition": "When a landlord-tenant ejectment proceeding concerns premises covered by rent control and seeks recovery of possession, the designated rent court has exclusive jurisdiction."
+    },
+    {
+      "legal_issue": "A High Court may review and quash an interlocutory referral order despite disputed facts and the availability of a revisional remedy when that remedy does not provide an alternative for deciding the issues raised.",
+      "material_facts": [
+        "The occupants challenged an interlocutory order referring the dispute to a cooperative arbitrator by a petition under Article 226 of the Constitution.",
+        "The dispute raised questions about whether the referral authority had jurisdiction over the matter.",
+        "A revisional power existed under Section 154 of the cooperative societies legislation, but it did not provide an alternative remedy for deciding the questions raised."
+      ],
+      "conclusion": "The High Court had jurisdiction to consider disputed questions of fact and quash the interlocutory order, notwithstanding the existence of the revisional remedy.",
+      "legal_principle": "The existence of a statutory revisional power does not bar constitutional review where that power cannot be treated as an alternative remedy for determining the questions raised. In the circumstances considered, the High Court could examine disputed facts and quash an interlocutory order.",
+      "rule": {
+        "if": "constitutional_writ_challenges_interlocutory_referral and jurisdictional_questions_are_raised and statutory_revision_is_not_an_adequate_alternative",
+        "then": "high_court_may_review_and_quash_referral_order"
+      },
+      "predicates": {
+        "constitutional_writ_challenges_interlocutory_referral": "A party brings a constitutional writ petition challenging an interlocutory order referring a dispute for determination.",
+        "jurisdictional_questions_are_raised": "The challenge raises questions about whether the referral authority had jurisdiction over the dispute.",
+        "statutory_revision_is_not_an_adequate_alternative": "An available statutory revisional remedy does not provide an alternative means of deciding the questions raised."
+      },
+      "definition": "When a constitutional writ challenges an interlocutory referral on jurisdictional grounds and statutory revision is not an adequate alternative, the High Court may review and quash the referral order."
+    }
+  ],
+  "seconds": 15.4
+}

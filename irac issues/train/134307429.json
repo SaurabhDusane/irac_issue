@@ -1,0 +1,100 @@
+{
+  "doc_id": "134307429",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 44813,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2884,
+    "prompt_tokens": 11156,
+    "total_tokens": 14040,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may summon a person who is not already an accused during trial only when evidence before it provides a substantially stronger basis than a mere prima facie case.",
+      "material_facts": [
+        "The complainant applied during the trial to add persons who had not been charge-sheeted as accused.",
+        "The trial court considered the evidence recorded in court and dismissed the application; the High Court reversed that decision.",
+        "The Supreme Court found that the evidence recorded at trial did not provide the required strong and cogent basis for summoning the proposed accused."
+      ],
+      "conclusion": "The power to add a person as an accused during trial is discretionary and extraordinary and may be exercised only on strong and cogent evidence; the evidence here did not meet that threshold.",
+      "legal_principle": "Under Section 319 of the Code of Criminal Procedure, the court may act on material brought before it during the trial, including examination-in-chief not yet tested by cross-examination, but the required satisfaction is stronger than that for framing a charge and falls short of satisfaction that the evidence would lead to conviction. The power must be exercised sparingly, not casually. The Court relied on Hardeep Singh v. State of Punjab (2014) 3 SCC 92 and Brijendra Singh v. State of Rajasthan (2017) 7 SCC 706.",
+      "rule": {
+        "if": "proceeding_is_trial_request_to_add_non_accused and trial_evidence_is_strong_and_cogent",
+        "then": "non_accused_may_be_summoned"
+      },
+      "predicates": {
+        "proceeding_is_trial_request_to_add_non_accused": "A court is considering during an ongoing criminal trial whether to add a person who is not already an accused.",
+        "trial_evidence_is_strong_and_cogent": "Evidence brought before the court during trial strongly and cogently indicates the proposed person's involvement, beyond mere probability or a prima facie case."
+      },
+      "definition": "When a court is considering adding a non-accused during trial, strong and cogent trial evidence permits the court to summon that person."
+    },
+    {
+      "legal_issue": "The trial evidence did not justify summoning the proposed accused in this case.",
+      "material_facts": [
+        "The landlords were not present at the premises during the alleged incident, and the trial witnesses did not give evidence of a conspiracy by them.",
+        "One witness said that he later learned the people involved had been sent by the landlords, but the Supreme Court found that statement insufficient to meet the required evidentiary standard.",
+        "No trial witness specifically attributed the alleged criminal conduct to the bailiff.",
+        "The police investigation had not found a role for the proposed accused, and the disciplinary inquiry found the bailiff guilty only of dereliction of duty, not of the alleged violent or other criminal conduct."
+      ],
+      "conclusion": "There was no strong and cogent trial evidence on which the proposed accused could be summoned, so the High Court's order was set aside and the trial court's dismissal of the application was restored.",
+      "legal_principle": "Section 319 of the Code of Criminal Procedure requires strong and cogent evidence emerging before the court during trial. The investigation outcome and the departmental inquiry were relevant context, but the criminal decision depended on the absence of sufficient evidence in the trial record. The Court applied Hardeep Singh v. State of Punjab (2014) 3 SCC 92 and Brijendra Singh v. State of Rajasthan (2017) 7 SCC 706.",
+      "rule": {
+        "if": "proceeding_is_trial_request_to_add_non_accused and (proposed_person_was_absent_from_incident or trial_witnesses_did_not_specifically_attribute_crime) and trial_evidence_is_not_strong_and_cogent",
+        "then": "proposed_person_must_not_be_summoned"
+      },
+      "predicates": {
+        "proceeding_is_trial_request_to_add_non_accused": "A court is considering during an ongoing criminal trial whether to add a person who is not already an accused.",
+        "proposed_person_was_absent_from_incident": "The proposed person was not present at the location when the alleged criminal incident occurred.",
+        "trial_witnesses_did_not_specifically_attribute_crime": "Witnesses who testified at trial did not specifically attribute the alleged criminal conduct to the proposed person.",
+        "trial_evidence_is_not_strong_and_cogent": "The evidence brought before the court during trial does not strongly and cogently indicate the proposed person's involvement."
+      },
+      "definition": "In a trial-time request to add a non-accused, absence from the incident or lack of specific trial testimony, together with insufficiently strong and cogent evidence, means the person must not be summoned."
+    },
+    {
+      "legal_issue": "Statements recorded during investigation cannot independently supply the evidence required to summon a person during trial.",
+      "material_facts": [
+        "The High Court relied on names in the first information report and statements recorded during investigation when directing that the proposed accused be summoned.",
+        "The Supreme Court held that those statements could be used only to corroborate or support evidence recorded in court, and could not independently establish the basis for summoning.",
+        "The trial evidence did not otherwise provide strong and cogent support for summoning the proposed accused."
+      ],
+      "conclusion": "The High Court could not treat the investigation statements as independent evidence for summoning the proposed accused.",
+      "legal_principle": "For purposes of Section 319 of the Code of Criminal Procedure, the relevant evidence is material brought before the court during trial; material collected during investigation may be used only to corroborate or support that evidence. The Court relied on Hardeep Singh v. State of Punjab (2014) 3 SCC 92 and Brijendra Singh v. State of Rajasthan (2017) 7 SCC 706.",
+      "rule": {
+        "if": "proceeding_is_trial_request_to_add_non_accused and reliance_is_only_on_investigation_statements and no_supporting_trial_evidence",
+        "then": "investigation_statements_cannot_independently_support_summoning"
+      },
+      "predicates": {
+        "proceeding_is_trial_request_to_add_non_accused": "A court is considering during an ongoing criminal trial whether to add a person who is not already an accused.",
+        "reliance_is_only_on_investigation_statements": "The proposed basis for adding the person consists only of statements gathered during the investigation.",
+        "no_supporting_trial_evidence": "No evidence recorded or otherwise brought before the court during trial supports the proposed person's involvement."
+      },
+      "definition": "When a court considers adding a non-accused during trial, investigation statements without supporting trial evidence cannot independently support summoning."
+    },
+    {
+      "legal_issue": "A person's omission from the charge sheet and the complainant's failure to file a protest petition do not bar later consideration of summoning that person during trial.",
+      "material_facts": [
+        "The proposed accused had been named in the complaint but were omitted from the charge sheet after investigation.",
+        "No protest petition was filed when the charge sheet omitted them.",
+        "The application to add them was made during trial, where the court was required to assess the evidence that had surfaced there."
+      ],
+      "conclusion": "The court remains empowered to consider summoning a person omitted from the charge sheet, but that power is triggered only when evidence against that person surfaces during trial.",
+      "legal_principle": "Section 319 of the Code of Criminal Procedure permits a trial court to consider adding a person who was not charge-sheeted when evidence surfaces during trial. The Court relied on Hardeep Singh v. State of Punjab (2014) 3 SCC 92 and noted the propositions in India Carat Pvt. Ltd. v. State of Karnataka (1989) 2 SCC 132 and Geeta Ram v. Vedi Ram (2002) 10 SCC 499.",
+      "rule": {
+        "if": "person_was_omitted_from_charge_sheet and no_protest_petition_was_filed and proceeding_is_trial_request_to_add_non_accused and trial_evidence_surfaces_against_person",
+        "then": "court_retains_power_to_consider_summoning"
+      },
+      "predicates": {
+        "person_was_omitted_from_charge_sheet": "The investigating agency filed a charge sheet that did not include the person as an accused.",
+        "no_protest_petition_was_filed": "The complainant did not file a protest petition when the person was omitted from the charge sheet.",
+        "proceeding_is_trial_request_to_add_non_accused": "A court is considering during an ongoing criminal trial whether to add a person who is not already an accused.",
+        "trial_evidence_surfaces_against_person": "Evidence against the person emerges before the court during trial."
+      },
+      "definition": "Even if a person was omitted from the charge sheet and no protest petition was filed, trial evidence against that person allows the court to retain power to consider summoning."
+    }
+  ],
+  "seconds": 77.8
+}

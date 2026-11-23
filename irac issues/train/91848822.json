@@ -1,0 +1,121 @@
+{
+  "doc_id": "91848822",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21419,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3109,
+    "prompt_tokens": 5641,
+    "total_tokens": 8750,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A summary land-revenue procedure for determining whether land belongs to the government cannot be used to adjudicate a genuine dispute over title to land recorded as privately owned.",
+      "material_facts": [
+        "The government initiated summary proceedings against occupants after a complaint challenged the ownership of an estate conveyed more than a century earlier.",
+        "The estate had been divided and transferred through registered transactions, and the government had acquired portions of it while paying compensation to members of the private owner's family.",
+        "The proceedings included directions to evict occupants and deliver the land to the government."
+      ],
+      "conclusion": "The summary proceedings were without jurisdiction because the statutory procedure did not authorize adjudication of a title dispute between the government and private individuals.",
+      "legal_principle": "Section 67(1) and (2) of the Karnataka Land Revenue Act, 1964 applies to public lands and lands that are not the property of individuals or other legally capable owners; it does not empower the revenue authority to decide a dispute over private title. The Court relied on the text of Section 67 and the established private ownership and transfers in this case.",
+      "rule": {
+        "if": "summary_revenue_proceeding and (private_ownership_evidence or title_dispute_between_state_and_individuals)",
+        "then": "summary_proceeding_lacks_jurisdiction_to_adjudicate_private_title"
+      },
+      "predicates": {
+        "summary_revenue_proceeding": "The government used a summary land-revenue procedure to assert a claim to land.",
+        "private_ownership_evidence": "Documents or official conduct showed that individuals held the land as private property.",
+        "title_dispute_between_state_and_individuals": "The government and individuals asserted competing claims of ownership over the land."
+      },
+      "definition": "When the government uses a summary revenue proceeding despite evidence of private ownership or a dispute over title with individuals, the proceeding cannot determine private title."
+    },
+    {
+      "legal_issue": "A government challenge to long-recognized private ownership may be time-barred when it is brought only after an extraordinary delay and after the government has itself treated the land as privately owned.",
+      "material_facts": [
+        "The original conveyance was executed in 1900, but the government challenged the ownership only after more than a century.",
+        "Over the intervening years, the government acquired portions of the estate and paid compensation to the private owner's family.",
+        "The estate was transferred through subsequent transactions, and the government did not object to the recorded ownership or registered sales before the complaint was made."
+      ],
+      "conclusion": "The proceedings were beyond the period of limitation.",
+      "legal_principle": "The Court held that the proceedings were beyond limitation in light of the extraordinary delay and the history of the government's recognition of private ownership. It relied on Section 67(3) of the Karnataka Land Revenue Act, 1964, which provides a period for instituting a civil suit to contest an order, and on the circumstances of the prolonged delay and prior government conduct.",
+      "rule": {
+        "if": "state_land_claim_proceeding and exceptionally_delayed_challenge and long_recognized_private_ownership",
+        "then": "government_claim_is_time_barred"
+      },
+      "predicates": {
+        "state_land_claim_proceeding": "The government commenced proceedings to assert ownership of land against private occupants or owners.",
+        "exceptionally_delayed_challenge": "The government first challenged the ownership only after an extraordinary interval from the original transaction and subsequent dealings.",
+        "long_recognized_private_ownership": "The government had, over a prolonged period, treated individuals as owners through acquisitions, compensation, or acceptance of recorded transactions."
+      },
+      "definition": "A government claim brought after an extraordinary delay is time-barred when private ownership was recognized over a prolonged period."
+    },
+    {
+      "legal_issue": "An allegation that a historic conveyance or later transfers were fraudulent cannot be presumed from a complaint and must be supported by proof.",
+      "material_facts": [
+        "A government official complained that the original conveyance had fraudulently concealed that the land was acquired for the state rather than for a private beneficiary.",
+        "Contemporaneous records showed that the purchase was arranged for the private beneficiary and was to be funded from her personal funds, with approval obtained before the conveyance.",
+        "The government later acquired portions of the estate and paid compensation to the beneficiary's family, while subsequent transfers and ownership records were not challenged for many years."
+      ],
+      "conclusion": "The allegation of fraud was not established, and the original transaction and subsequent transfers could not be treated as fraudulent on the basis of the complaint alone.",
+      "legal_principle": "Fraud must be pleaded and proved and cannot be presumed. The Court relied on the contemporaneous documentary record, the subsequent government acquisitions and compensation, and the long course of unchallenged ownership and transactions.",
+      "rule": {
+        "if": "state_title_challenge_alleging_fraud and contemporaneous_private_purchase_evidence and later_state_recognition and no_proof_of_fraud",
+        "then": "fraudulent_title_claim_is_not_established"
+      },
+      "predicates": {
+        "state_title_challenge_alleging_fraud": "The government challenged private title by alleging that the original purchase or later transactions were fraudulent.",
+        "contemporaneous_private_purchase_evidence": "Records made at the time of the purchase showed that it was intended for a private beneficiary and funded from that beneficiary's resources.",
+        "later_state_recognition": "The government later acted consistently with private ownership, including by acquiring land from private owners or paying them compensation.",
+        "no_proof_of_fraud": "The challenger presented no sufficient proof establishing the alleged fraud."
+      },
+      "definition": "A government allegation of fraud does not establish fraud when contemporaneous records support a private purchase, later government conduct recognizes private ownership, and sufficient proof of fraud is absent."
+    },
+    {
+      "legal_issue": "Contemporaneous evidence of a private beneficiary and private funding, reinforced by later government treatment of the land as privately owned, establishes that the estate was private property.",
+      "material_facts": [
+        "Although the conveyance named a government official as purchaser, an earlier official memorandum stated that the property was being bought for a private beneficiary and that the purchase money would come from her personal funds.",
+        "The memorandum was approved after the private beneficiary was to be informed and her clearance obtained.",
+        "The government later acquired portions of the estate and paid compensation to the private beneficiary, her daughter, and her successor.",
+        "The estate was subsequently inherited and transferred through registered transactions."
+      ],
+      "conclusion": "The estate was purchased on behalf of the private beneficiary using her personal funds, and the government had no right over the property.",
+      "legal_principle": "The Court determined the character of the original purchase from the contemporaneous memorandum, approval, and source of the purchase money, and considered later acquisitions and compensation as evidence of the government's recognition of private ownership.",
+      "rule": {
+        "if": "property_title_dispute and deed_names_intermediary and contemporaneous_private_beneficiary_records and state_paid_compensation_to_private_successors",
+        "then": "estate_is_private_property"
+      },
+      "predicates": {
+        "property_title_dispute": "A dispute arose over whether land belonged to the government or private owners.",
+        "deed_names_intermediary": "The conveyance named an official or intermediary rather than the private beneficiary as purchaser.",
+        "contemporaneous_private_beneficiary_records": "Records made at the time of purchase identified a private beneficiary and showed that the purchase was funded from that beneficiary's resources.",
+        "state_paid_compensation_to_private_successors": "The government later paid compensation for parts of the land to the private owner's successors."
+      },
+      "definition": "In a title dispute, an intermediary named in the conveyance does not prevent a finding of private ownership when contemporaneous records identify a privately funded beneficiary and the government later compensates that beneficiary's successors."
+    },
+    {
+      "legal_issue": "Supervisory review may quash an administrative notice that is without jurisdiction even when an alternative statutory remedy is available.",
+      "material_facts": [
+        "The government issued a notice asserting ownership and seeking to remove occupants through a summary proceeding that could not resolve the private title dispute.",
+        "The occupants challenged the notice, and an alternative appeal remedy was available.",
+        "The Court held that the notice was without jurisdiction and that it could be quashed under Article 227 of the Constitution."
+      ],
+      "conclusion": "The notice could be quashed in supervisory proceedings despite the availability of an alternative remedy.",
+      "legal_principle": "Article 227 of the Constitution permits supervisory intervention where an administrative notice is without jurisdiction; in the circumstances of this case, the availability of an alternative remedy did not prevent the notice from being quashed. The Court relied on Section 67 of the Karnataka Land Revenue Act, 1964 in determining that the notice exceeded the authority conferred by that provision.",
+      "rule": {
+        "if": "supervisory_challenge_to_administrative_notice and notice_lacks_jurisdiction and alternative_remedy_available",
+        "then": "notice_can_be_quashed_in_supervisory_review"
+      },
+      "predicates": {
+        "supervisory_challenge_to_administrative_notice": "A person challenged an administrative notice in supervisory proceedings.",
+        "notice_lacks_jurisdiction": "The issuing authority lacked power to take the action asserted in the notice.",
+        "alternative_remedy_available": "A statutory appeal or other alternative remedy was available to challenge the notice."
+      },
+      "definition": "A person challenging an administrative notice in supervisory proceedings may obtain its quashing despite an available alternative remedy when the issuing authority lacked jurisdiction."
+    }
+  ],
+  "seconds": 18.6
+}

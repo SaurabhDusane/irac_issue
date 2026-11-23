@@ -1,0 +1,95 @@
+{
+  "doc_id": "1766505",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29004,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2147,
+    "prompt_tokens": 7407,
+    "total_tokens": 9554,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person claiming an income-tax exemption must establish that the income qualifies for the exemption.",
+      "material_facts": [
+        "The respondent claimed that income from sales of forest trees was agricultural income exempt from tax.",
+        "The Tribunal found that the respondent had failed to establish that the trees had been planted by the estate authorities.",
+        "The High Court placed the burden on the income-tax authorities to prove that the income was not exempt."
+      ],
+      "conclusion": "The High Court erred in placing the burden on the income-tax authorities; the person claiming the exemption had to establish it.",
+      "legal_principle": "A person claiming an exemption under the Income-tax Act must establish entitlement to it. The Court followed Commissioner of Income-tax v. Venkataswamy Naidu, which held that an assessee claiming exemption for agricultural income must provide material showing that the income is agricultural income.",
+      "rule": {
+        "if": "income_tax_exemption_claim",
+        "then": "claimant_must_establish_exemption"
+      },
+      "predicates": {
+        "income_tax_exemption_claim": "A person claims that income is exempt from income tax."
+      },
+      "definition": "When a person claims an income-tax exemption, that person must establish entitlement to the exemption."
+    },
+    {
+      "legal_issue": "In a statutory reference, the High Court is bound by the Tribunal’s finding on a question of fact.",
+      "material_facts": [
+        "The Tribunal found that the trees producing the assessed income were of spontaneous growth and had not been planted by the estate authorities.",
+        "The High Court considered the matter on a reference under section 66(1) of the Indian Income-tax Act, 1922, and did not accept the Tribunal’s finding."
+      ],
+      "conclusion": "Whether the trees were of spontaneous growth or were products of plantation was a question of fact, and the Tribunal’s finding was binding on the High Court in the reference.",
+      "legal_principle": "Under section 66(1) of the Indian Income-tax Act, 1922, the High Court decides a reference on the facts found by the Tribunal; a finding on an essentially factual question is binding in that proceeding.",
+      "rule": {
+        "if": "statutory_tax_reference and tribunal_made_factual_finding",
+        "then": "tribunal_factual_finding_binding_on_high_court"
+      },
+      "predicates": {
+        "statutory_tax_reference": "A High Court considers a tax matter through a statutory reference from a tribunal.",
+        "tribunal_made_factual_finding": "The tribunal made a finding on a question of fact relevant to the reference."
+      },
+      "definition": "In a statutory tax reference, a factual finding made by the tribunal binds the High Court."
+    },
+    {
+      "legal_issue": "Income from the sale of spontaneously grown forest trees is not agricultural income merely because the forest is maintained or its growth is assisted.",
+      "material_facts": [
+        "The respondent claimed an agricultural-income exemption for income from sales of forest trees.",
+        "The Tribunal found that the trees producing the income were of spontaneous growth and that there had been no substantial plantation by the estate authorities.",
+        "The estate maintained an establishment to preserve the forests and assist the growth of trees, and performed operations after the trees had grown.",
+        "The High Court’s conclusion rested on those subsequent operations despite the absence of a finding that the trees had been planted."
+      ],
+      "conclusion": "The income from the sale of the trees was not agricultural income: the trees had not been planted, and their maintenance or the assistance of their growth did not change that result.",
+      "legal_principle": "Under sections 2(1) and 4(3)(viii) of the Indian Income-tax Act, 1922, agricultural income requires the relevant basic agricultural operations, such as cultivation or plantation, to raise products from the land. Subsequent operations such as pruning or watering acquire an agricultural character when connected with those basic operations, but do not do so on their own. Spontaneous growth does not involve the required agricultural process. The Court applied and explained Commissioner of Income-tax v. Raja Benoy Kumar Sahas Roy.",
+      "rule": {
+        "if": "forest_tree_income_claimed_as_agricultural_exempt_income and trees_grew_spontaneously and no_basic_operations_raised_the_trees",
+        "then": "income_is_not_agricultural_income"
+      },
+      "predicates": {
+        "forest_tree_income_claimed_as_agricultural_exempt_income": "A person claims an agricultural-income exemption for income from selling forest trees.",
+        "trees_grew_spontaneously": "The trees producing the income grew spontaneously rather than as a result of planting by the claimant.",
+        "no_basic_operations_raised_the_trees": "The claimant did not perform basic agricultural operations that raised the trees from the land."
+      },
+      "definition": "When a person claims an agricultural-income exemption for forest-tree income and the trees grew spontaneously without basic operations raising them, the income is not agricultural income."
+    },
+    {
+      "legal_issue": "Substantial expenditure on maintaining a forest does not by itself establish that the trees producing its income were planted or that the income is agricultural income.",
+      "material_facts": [
+        "The respondent relied on forest-maintenance expenses that were large in relation to the forest receipts.",
+        "The Tribunal had found that the trees producing the assessed income were of spontaneous growth.",
+        "The precedent relied on by the respondent involved findings that the proprietor had planted trees in denuded areas; the Court distinguished that situation from the present factual finding."
+      ],
+      "conclusion": "The maintenance expenses did not establish that the trees had been planted and could not overcome the Tribunal’s finding of spontaneous growth.",
+      "legal_principle": "The Court explained Commissioner of Income-tax v. Raja Benoy Kumar Sahas Roy: substantial expenditure may support a factual inference about income from planted trees when a considerable portion of the forest is found to have been planted, but expenditure alone does not prove plantation. The inference depends on all the facts found.",
+      "rule": {
+        "if": "forest_income_tax_case and substantial_forest_maintenance_expenses and tribunal_found_trees_spontaneous",
+        "then": "maintenance_expenses_alone_do_not_establish_plantation"
+      },
+      "predicates": {
+        "forest_income_tax_case": "A tax dispute concerns income derived from a forest.",
+        "substantial_forest_maintenance_expenses": "The forest owner incurred substantial expenses to maintain the forest relative to its receipts.",
+        "tribunal_found_trees_spontaneous": "The tribunal found that the trees producing the income grew spontaneously."
+      },
+      "definition": "In a forest-income tax dispute, substantial maintenance expenses alone do not establish plantation when the tribunal found that the income-producing trees grew spontaneously."
+    }
+  ],
+  "seconds": 13.2
+}

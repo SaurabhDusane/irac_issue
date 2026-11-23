@@ -1,0 +1,81 @@
+{
+  "doc_id": "418852",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30730,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2604,
+    "prompt_tokens": 8069,
+    "total_tokens": 10673,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A prior compensation-title decision does not bar a later claim when the claimant was not a party to the earlier proceeding or the claimant’s earlier claim was dismissed for default without a hearing and decision on the merits.",
+      "material_facts": [
+        "The later dispute concerned entitlement to compensation for different plots associated with the same asserted title.",
+        "One claimant to the later compensation was not a party to the earlier proceeding.",
+        "Another claimant and her sons had asserted their title in the earlier proceeding, but their claim was dismissed for default, without a hearing and final decision on the merits.",
+        "The earlier decree upheld the opposing claimant’s entitlement to compensation."
+      ],
+      "conclusion": "The earlier decree did not operate as res judicata against either claimant in the later proceeding.",
+      "legal_principle": "For res judicata to apply, the earlier matter must have been heard and finally decided on the merits. A dismissal for default at the initial adjudication, without a merits hearing, does not meet that requirement. By contrast, under Sheodan Singh v. Smt. Daryao Kunwar, an appellate dismissal on a preliminary ground may leave a merits decision of the trial court confirmed and operate as res judicata. Rai Lakshmi Dasi v. Banamali Sen involved a title decision reached after contest, and Pulavarthi Venkata Subba Rao v. Valluri Jagannadha Rao states that the earlier matter must have been heard and finally decided. No statutory provision is identified as the basis for this ruling.",
+      "rule": {
+        "if": "subsequent_compensation_title_dispute and same_title_issue and (claimant_not_party_to_prior_case or (prior_claim_dismissed_for_default and not prior_merits_hearing))",
+        "then": "prior_decision_not_res_judicata_against_claimant"
+      },
+      "predicates": {
+        "subsequent_compensation_title_dispute": "A court later considered who was entitled to compensation in a dispute based on title to acquired property.",
+        "same_title_issue": "The later dispute raised the same issue of title as the earlier proceeding.",
+        "claimant_not_party_to_prior_case": "The claimant in the later proceeding did not participate as a party in the earlier proceeding.",
+        "prior_claim_dismissed_for_default": "The claimant’s earlier claim was dismissed because of default.",
+        "prior_merits_hearing": "The earlier claim was heard and finally decided on its merits."
+      },
+      "definition": "The rule means that in a later compensation-title dispute involving the same title issue, an earlier decision is not res judicata against a claimant who was absent from the earlier case or whose claim there was dismissed for default without a merits hearing."
+    },
+    {
+      "legal_issue": "A purchaser at a court sale is entitled to compensation only for the share in the property that the seller held and that the sale transferred.",
+      "material_facts": [
+        "The compensation dispute concerned a plot recorded in settlement materials as being in the possession of a group whose holders included two persons each entitled to an equal share.",
+        "The court found that the predecessor of the purchaser held a half share in the plot.",
+        "The purchaser’s title to the plot derived from a court sale of that predecessor’s interest."
+      ],
+      "conclusion": "The purchaser acquired only a half share and was entitled to only half of the compensation; the claim to full ownership failed.",
+      "legal_principle": "The Court relied on its reading of the settlement khatian and the court-sale record: the settlement materials showed equal shares, and the purchaser acquired the share of the person whose interest was sold. No statutory provision or earlier case is cited as the basis for this determination.",
+      "rule": {
+        "if": "land_compensation_title_appeal and settlement_recorded_equal_half_interests and court_sale_transferred_predecessor_share",
+        "then": "purchaser_entitled_only_to_transferred_half_share"
+      },
+      "predicates": {
+        "land_compensation_title_appeal": "A court considered an appeal about entitlement to compensation for acquired land based on competing claims of title.",
+        "settlement_recorded_equal_half_interests": "Settlement materials recorded two holders as each entitled to an equal share in the relevant property.",
+        "court_sale_transferred_predecessor_share": "A court sale transferred the interest in the property held by the purchaser’s predecessor."
+      },
+      "definition": "The rule means that in an appeal concerning compensation for acquired land, where settlement materials show equal shares and a court sale transfers the predecessor’s interest, the purchaser is entitled only to the transferred half share."
+    },
+    {
+      "legal_issue": "A court-sale purchaser does not acquire title to a parcel that falls outside the locality described in the sale certificate.",
+      "material_facts": [
+        "The purchaser claimed title to a plot in one locality through a court sale.",
+        "The sale certificate described properties in a different locality, which the courts found to be a distinct entity from the locality containing the claimed plot.",
+        "The Supreme Court found no flaw in the finding that the claimed plot was not included in the court sale."
+      ],
+      "conclusion": "The purchaser had no right, title, or interest in the claimed plot through the court sale.",
+      "legal_principle": "The Court applied the sale certificate’s description of the properties and the finding that the two localities were distinct. Because the claimed plot was not included in the sale, the purchaser acquired no title to it through that sale. No statutory provision or earlier case is cited as the basis for this determination.",
+      "rule": {
+        "if": "land_compensation_title_appeal and sale_certificate_limited_to_one_locality and claimed_parcel_in_distinct_locality",
+        "then": "claimant_has_no_title_to_parcel_through_sale"
+      },
+      "predicates": {
+        "land_compensation_title_appeal": "A court considered an appeal about entitlement to compensation for acquired land based on competing claims of title.",
+        "sale_certificate_limited_to_one_locality": "The sale certificate described property confined to one locality.",
+        "claimed_parcel_in_distinct_locality": "The parcel for which title was claimed was in a different locality from the property described in the sale certificate."
+      },
+      "definition": "The rule means that in an appeal about title to land for which compensation is claimed, a purchaser has no title through a sale when the certificate covers one locality but the claimed parcel is in a distinct locality."
+    }
+  ],
+  "seconds": 16.4
+}

@@ -1,0 +1,80 @@
+{
+  "doc_id": "70092",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14640,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1731,
+    "prompt_tokens": 4274,
+    "total_tokens": 6005,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may not grant a decree in an ex parte suit unless the plaintiff establishes the claim through reliable and relevant evidence.",
+      "material_facts": [
+        "The defendants did not appear, and the suit proceeded ex parte.",
+        "The plaintiff relied on one witness and documents to prove that the third defendant had been inducted into the property after an earlier decree.",
+        "The plaintiff led no evidence supporting that alleged post-decree induction, and the witness instead stated that the third defendant had been in possession before the earlier decree."
+      ],
+      "conclusion": "The plaintiff was not entitled to a decree on the evidence presented; the appellate court was justified in scrutinising the evidence and setting aside the decree.",
+      "legal_principle": "Even in the absence of a defence, a court cannot pass an ex parte decree without reliable relevant evidence. The plaintiff's choice to present some evidence does not by itself establish entitlement to a decree. No earlier cases are relied on for this principle.",
+      "rule": {
+        "if": "ex_parte_civil_suit and (claim_lacks_reliable_relevant_evidence or material_pleaded_fact_is_unsupported_or_contradicted)",
+        "then": "plaintiff_not_entitled_to_decree_on_existing_evidence"
+      },
+      "predicates": {
+        "ex_parte_civil_suit": "The plaintiff's civil suit proceeded without the defendants appearing to contest it.",
+        "claim_lacks_reliable_relevant_evidence": "The plaintiff did not present reliable and relevant evidence sufficient to establish the claim.",
+        "material_pleaded_fact_is_unsupported_or_contradicted": "A material factual basis pleaded for the claim was unsupported by the plaintiff's evidence or contradicted by that evidence."
+      },
+      "definition": "When a civil suit proceeds ex parte and the claim lacks reliable relevant evidence or a material pleaded fact is unsupported or contradicted, the plaintiff is not entitled to a decree on the existing evidence."
+    },
+    {
+      "legal_issue": "An affidavit cannot be used to repair an evidentiary omission on appeal unless the court has ordered that it may be used as evidence.",
+      "material_facts": [
+        "The plaintiff relied in the Supreme Court on an affidavit to establish the relationship of her sole witness to her and his connection to the property.",
+        "The affidavit was tendered belatedly to address a deficiency in the evidence given at trial.",
+        "The record did not show an order allowing the affidavit to be used as evidence."
+      ],
+      "conclusion": "The affidavit could not be relied on to fill the lacuna in the trial evidence at the Supreme Court stage.",
+      "legal_principle": "Section 3 of the Indian Evidence Act, 1872 does not include affidavits in the definition of evidence. An affidavit may be used as evidence only where the court, for sufficient reason, orders so under Order XIX, Rules 1 or 2 of the Code of Civil Procedure, 1908. A party cannot belatedly fill a gap in its evidence at the Supreme Court stage. No earlier cases are relied on for this principle.",
+      "rule": {
+        "if": "supreme_court_appeal and affidavit_offered_as_evidence and not court_order_allows_affidavit_as_evidence and affidavit_addresses_trial_evidence_gap",
+        "then": "affidavit_cannot_cure_trial_evidence_gap"
+      },
+      "predicates": {
+        "supreme_court_appeal": "The matter is before the Supreme Court in an appeal.",
+        "affidavit_offered_as_evidence": "A party offers an affidavit to establish a fact relevant to its case.",
+        "court_order_allows_affidavit_as_evidence": "The court has ordered that the affidavit may be used as evidence.",
+        "affidavit_addresses_trial_evidence_gap": "The affidavit is offered to supply information missing from the evidence presented at trial."
+      },
+      "definition": "In a Supreme Court appeal, an affidavit offered to supply a gap in trial evidence cannot cure that gap if the court has not ordered that the affidavit may be used as evidence."
+    },
+    {
+      "legal_issue": "A suit may be remanded for retrial where the evidence leaves material factual questions unresolved and the parties seek and accept a retrial.",
+      "material_facts": [
+        "The plaintiff requested that the suit be remanded for retrial after the appellate court set aside the ex parte decree.",
+        "The defendant opposing the plaintiff's claim supported the request for remand and conceded that the suit should be retried.",
+        "The existing evidence raised questions about the third defendant's possession before the earlier decree, requiring further evidence and consideration of other issues."
+      ],
+      "conclusion": "The appellate judgments were set aside and the suit was remanded to the trial court for retrial and disposal in accordance with law.",
+      "legal_principle": "In the circumstances, including the plaintiff's request, the opposing defendant's concession, and the further factual issues requiring evidence, the interests of justice supported remanding the suit for retrial. No earlier cases or specific statutory provisions are relied on for this ruling.",
+      "rule": {
+        "if": "appeal_from_suit_disposition and material_factual_issues_require_further_evidence and plaintiff_requests_retrial_remand and opposing_party_concedes_retrial_remand",
+        "then": "suit_remanded_for_retrial"
+      },
+      "predicates": {
+        "appeal_from_suit_disposition": "A party appeals from a court's disposition of a civil suit.",
+        "material_factual_issues_require_further_evidence": "The existing pleadings and evidence leave material factual issues that require further evidence and consideration.",
+        "plaintiff_requests_retrial_remand": "The plaintiff asks that the suit be sent back for a new trial.",
+        "opposing_party_concedes_retrial_remand": "The opposing party agrees that the suit should be sent back for a new trial."
+      },
+      "definition": "When an appeal concerns a suit with material factual issues requiring further evidence, and the plaintiff seeks a retrial remand that the opposing party accepts, the suit is remanded for retrial."
+    }
+  ],
+  "seconds": 11.5
+}

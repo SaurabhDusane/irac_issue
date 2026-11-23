@@ -1,0 +1,80 @@
+{
+  "doc_id": "1272928",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 34415,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2681,
+    "prompt_tokens": 8484,
+    "total_tokens": 11165,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A secured creditor must consider and communicate reasons for rejecting a borrower’s response to an enforcement notice only when the borrower has made such a response.",
+      "material_facts": [
+        "The borrower had defaulted on a loan secured by mortgaged property, and the bank served a notice demanding payment before taking enforcement measures.",
+        "The borrower claimed it sent a representation the day after receiving the notice, but the bank denied receiving it and said a letter it did receive referred to telephone discussions, not the notice.",
+        "The borrower did not file a rejoinder denying the bank’s account until after the Court had noted that the bank’s denial remained unrebutted; the record did not establish that a response to the notice had been received."
+      ],
+      "conclusion": "The borrower did not establish that it had submitted a representation requiring the bank’s consideration, so no failure by the bank to consider or respond to such a representation was shown and no relief was warranted on that ground.",
+      "legal_principle": "Under Section 13(2) and Section 13(3-A) of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002, and the principles stated in Mardia Chemicals Ltd. v. Union of India, when a borrower responds to a notice under Section 13(2) with an objection or relevant facts, the secured creditor must consider the response with due application of mind and communicate reasons for rejecting it. Communication of those reasons is for the borrower’s information and does not itself confer a right to apply to the Debt Recovery Tribunal at that stage. The duty depends on a response having been made; the Court found that fact was not established here.",
+      "rule": {
+        "if": "secured_enforcement_challenge and borrower_defaulted and no_response_to_notice_established",
+        "then": "response_based_challenge_fails"
+      },
+      "predicates": {
+        "secured_enforcement_challenge": "The proceeding challenges a secured creditor’s enforcement action following a payment default.",
+        "borrower_defaulted": "The borrower failed to make required repayments on the secured credit.",
+        "no_response_to_notice_established": "The borrower did not establish that it sent a response to the enforcement notice."
+      },
+      "definition": "When a borrower in a secured-enforcement challenge has defaulted and has not established that it responded to the notice, a challenge based on the creditor’s failure to consider or answer a response fails."
+    },
+    {
+      "legal_issue": "A court may withhold discretionary relief from a party that continues to disobey a court order on which that party’s interim relief depends, where the disobedience impedes the course of justice and has not been remedied.",
+      "material_facts": [
+        "The Court continued a stay of dispossession on the condition that the borrower make monthly payments into Court.",
+        "The borrower made none of the required payments, did not challenge the payment condition, and did not apply to modify it while continuing to benefit from the stay.",
+        "The non-compliance continued for about two years and was recorded by the Court as an admitted breach of its order."
+      ],
+      "conclusion": "The borrower was in contempt of the conditional order and did not deserve discretionary relief while the breach remained unpurged; the Court nevertheless considered the merits and found no basis to interfere.",
+      "legal_principle": "A court order, whether interim or final, must be obeyed. Under Hadkinson v. Hadkinson, a court may refuse to hear a party whose continuing contempt impedes the course of justice where no other effective means secures compliance. The rule is not absolute: a party may be heard to argue that the order was outside the court’s jurisdiction or that the conduct did not breach its meaning. Gorden v. Gorden distinguishes an order alleged to be outside jurisdiction from one said merely to have been wrongly made. Refusal to hear a party is a drastic step justified only by grave considerations of public policy.",
+      "rule": {
+        "if": "appeal_seeking_discretionary_relief and conditional_interim_order_obtained and order_terms_disobeyed and breach_unremedied and disobedience_impedes_justice",
+        "then": "discretionary_relief_may_be_withheld_until_breach_is_purged"
+      },
+      "predicates": {
+        "appeal_seeking_discretionary_relief": "The proceeding is an appeal in which a party seeks discretionary relief from the court.",
+        "conditional_interim_order_obtained": "The party obtained interim relief subject to compliance with stated conditions.",
+        "order_terms_disobeyed": "The party failed to comply with the conditions imposed by the court.",
+        "breach_unremedied": "The party did not cure the non-compliance or obtain a modification of the order.",
+        "disobedience_impedes_justice": "The continuing disobedience obstructs the court’s ability to enforce its orders or administer justice."
+      },
+      "definition": "When a party seeking discretionary relief in an appeal has left unremedied a breach of the conditions of interim relief, and the breach impedes justice, the court may withhold discretionary relief until the breach is purged."
+    },
+    {
+      "legal_issue": "A party seeking extraordinary or equitable relief must candidly disclose material facts, and suppression or distortion of those facts may justify dismissal without adjudicating the merits.",
+      "material_facts": [
+        "The borrower sought writ relief without disclosing that it had created third-party interests in property mortgaged to the bank, despite an undertaking concerning that property.",
+        "The borrower had shifted machinery and materials without informing the bank, and third parties claimed tenancy rights in mortgaged property.",
+        "The Court found that material facts had been suppressed and that the borrower had not candidly placed its position before the courts."
+      ],
+      "conclusion": "The borrower was not entitled to extraordinary or equitable relief, and the High Court did not err in dismissing the writ petition in limine.",
+      "legal_principle": "A writ remedy under Article 226 of the Constitution is discretionary and equitable, as is relief under Article 136. A litigant invoking such jurisdiction must make full and fair disclosure of material facts. Under the principle stated in R v. Kensington Income Tax Commissioners, an applicant’s failure to state material facts fully and fairly may justify setting aside or refusing relief obtained on an incomplete account. Suppression, distortion, or misleading presentation of material facts may therefore warrant dismissal without adjudication on the merits.",
+      "rule": {
+        "if": "writ_or_equitable_relief_sought and material_facts_suppressed and suppressed_facts_relevant_to_relief",
+        "then": "extraordinary_or_equitable_relief_may_be_refused_without_merits_adjudication"
+      },
+      "predicates": {
+        "writ_or_equitable_relief_sought": "The party asks a court for extraordinary or equitable relief.",
+        "material_facts_suppressed": "The party omits or distorts facts material to the application.",
+        "suppressed_facts_relevant_to_relief": "The omitted or distorted facts bear on whether the requested relief should be granted."
+      },
+      "definition": "When a party seeks extraordinary or equitable relief while suppressing facts relevant to that relief, the court may refuse the relief without deciding the merits."
+    }
+  ],
+  "seconds": 16.5
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "1976119",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21930,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2126,
+    "prompt_tokens": 6197,
+    "total_tokens": 8323,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A subtenant may obtain direct-tenancy protection where the original tenancy has ended by notice but no eviction decree has been made when the Controller declares the subtenant a direct tenant.",
+      "material_facts": [
+        "The subtenant was inducted while the original tenant’s tenancy was still subsisting.",
+        "The landlord later gave notice terminating that tenancy and filed an ejectment suit, which remained pending when the protective tenancy law came into force.",
+        "The Controller declared the subtenant a direct tenant before an eviction decree was made against the original tenant."
+      ],
+      "conclusion": "The original tenant continued to be a tenant under the Act until the eviction decree was made, so the subtenant remained entitled to seek the benefit of section 16(3).",
+      "legal_principle": "Section 2(h) of the West Bengal Premises Tenancy Act, 1956 defines a tenant to include a person continuing in possession after termination of the tenancy, while excluding a person against whom a competent court has made an eviction decree. Nothing in the subject or context of section 16(3) displaces that definition. Accordingly, termination by notice alone does not end the tenant’s status for this purpose; the Act’s protection applies until an eviction decree is made. The Court cited no earlier case in deciding this issue.",
+      "rule": {
+        "if": "direct_tenancy_proceeding and subtenant_inducted_during_tenancy and tenancy_ended_by_notice and no_eviction_decree_when_declaration_made",
+        "then": "subtenant_eligible_for_direct_tenancy_declaration"
+      },
+      "predicates": {
+        "direct_tenancy_proceeding": "The proceeding concerns a subtenant’s request to be declared a direct tenant under the landlord.",
+        "subtenant_inducted_during_tenancy": "The tenant inducted the subtenant while the tenant’s own tenancy was still subsisting.",
+        "tenancy_ended_by_notice": "The landlord gave notice terminating the tenant’s tenancy, but no eviction decree had yet ended the tenant’s status.",
+        "no_eviction_decree_when_declaration_made": "No competent court had made an eviction decree against the tenant when the Controller declared the subtenant a direct tenant."
+      },
+      "definition": "When a direct-tenancy proceeding involves a subtenant inducted during the tenancy and the tenancy has ended by notice without an eviction decree by the time of declaration, the subtenant is eligible for a direct-tenancy declaration."
+    },
+    {
+      "legal_issue": "A Controller cannot rescind a correct declaration making a subtenant a direct tenant on the basis of an event occurring after the declaration while rent remains to be fixed.",
+      "material_facts": [
+        "The Controller declared the subtenant a direct tenant while the original tenant’s tenancy remained subsisting and directed that rent be fixed in further proceedings.",
+        "An eviction decree against the original tenant was made after the declaration but before the rent-fixation proceedings concluded.",
+        "The Controller later dismissed the subtenant’s application on the ground that the original tenant had been evicted.",
+        "The Controller’s later decision was not based on a clerical or arithmetical mistake, or on newly discovered material that existed when the declaration was made."
+      ],
+      "conclusion": "The declaration was final as far as the Controller was concerned and could not be rescinded because of the subsequent eviction decree; the Controller had no power to dismiss the application on that basis.",
+      "legal_principle": "Section 16(3) has a declaration stage and a rent-fixation stage. A declaration that is correct when made is final as far as the Controller is concerned and cannot be rescinded during rent fixation because of a subsequent event. Section 29(5) permits review on the conditions in Order XLVII of the Code of Civil Procedure, but review for newly discovered matter requires matter existing at the time of the order. Sections 151 and 152 of the Code do not authorize setting aside a correct order because of a later event; section 152 concerns clerical or arithmetical mistakes. The Court relied on Rajah Kotagiri Venkata Subbamma Rao v. Raja Vallanki Venkatrama Rao, (1899–1900) 27 I.A. 197, for the principle that review for newly discovered matter concerns matter existing when the order was made. It noted Anil Kumar Mukherjee v. Malin Kumar Mazumdar, (1959–60) 64 C.W.N. 938, but did not decide whether that case was correctly decided.",
+      "rule": {
+        "if": "direct_tenancy_proceeding and controller_made_declaration_correct_when_made and rent_fixation_remained_pending and later_event_occurred_after_declaration",
+        "then": "controller_cannot_rescind_declaration"
+      },
+      "predicates": {
+        "direct_tenancy_proceeding": "The proceeding concerns a subtenant’s request to be declared a direct tenant under the landlord.",
+        "controller_made_declaration_correct_when_made": "The Controller declared the subtenant a direct tenant on facts that supported the declaration at the time it was made.",
+        "rent_fixation_remained_pending": "The Controller still had to determine the rent after making the direct-tenancy declaration.",
+        "later_event_occurred_after_declaration": "An event affecting the original tenancy occurred after the Controller made the declaration."
+      },
+      "definition": "If the Controller correctly declares a subtenant a direct tenant, rent fixation remains pending, and a relevant event occurs later, the Controller cannot rescind the declaration."
+    },
+    {
+      "legal_issue": "An order dismissing an application for a direct-tenancy declaration is a final order appealable under the tenancy law.",
+      "material_facts": [
+        "After making a direct-tenancy declaration, the Controller later dismissed the subtenant’s application.",
+        "The subtenant appealed the dismissal to the Court of Small Causes."
+      ],
+      "conclusion": "The Controller’s dismissal was a final order appealable under section 29(1), and the subtenant was entitled to appeal it.",
+      "legal_principle": "Section 29(1) of the West Bengal Premises Tenancy Act, 1956 provides for an appeal from a final order of the Controller. The Court held that an order dismissing an application under section 16(3) is such a final order. No earlier case was relied on for this holding.",
+      "rule": {
+        "if": "direct_tenancy_proceeding and controller_dismissed_application",
+        "then": "dismissal_is_appealable_final_order"
+      },
+      "predicates": {
+        "direct_tenancy_proceeding": "The proceeding concerns a subtenant’s request to be declared a direct tenant under the landlord.",
+        "controller_dismissed_application": "The Controller dismissed the application seeking the direct-tenancy declaration."
+      },
+      "definition": "When the Controller dismisses an application seeking a direct-tenancy declaration, that dismissal is a final order that may be appealed."
+    }
+  ],
+  "seconds": 13.6
+}

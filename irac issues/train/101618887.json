@@ -1,0 +1,81 @@
+{
+  "doc_id": "101618887",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 34699,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3072,
+    "prompt_tokens": 8356,
+    "total_tokens": 11428,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person recognized as a member of a protected caste in one state cannot rely on that status alone to acquire land protected for members of that caste in another state where the person is ordinarily resident elsewhere.",
+      "material_facts": [
+        "The land was allotted to a landless member of a protected caste in the state where the land was situated.",
+        "The purchaser was recognized as a member of the protected caste in another state and was ordinarily resident there, not in the state where the land was situated.",
+        "The purchaser's address in the transaction and mutation records, and his testimony, identified him as a resident of the other state; ownership of agricultural land there by his forebears did not establish his ordinary residence in the state where the land was situated."
+      ],
+      "conclusion": "The purchaser could not claim the protected-caste status of the state where the land was situated, so the transfer violated the restriction on transfers from a member of that state's protected caste to a person who was not a member of it.",
+      "legal_principle": "Under Section 42 of the Rajasthan Tenancy Act, 1955, a transfer by a member of a Scheduled Caste to a person who is not a member of that Scheduled Caste is restricted. Articles 341 and 342 specify Scheduled Castes and Scheduled Tribes in relation to particular states. Applying Marri Chandra Shekar Rao v. Dean, Geth G.S. Medical College, Action Committee on Issue of Caste Certificate to Scheduled Castes and Scheduled Tribes in the State of Maharashtra v. Union of India, and Ranjana Kumari v. State of Uttarakhand, a person recognized as a Scheduled Caste in an origin state does not thereby obtain that status in a state to which the person has moved. The principle applies to the purchase and sale of protected land, not only to employment or education.",
+      "rule": {
+        "if": "protected_land_transfer_challenge and land_allotted_to_local_protected_caste_member and buyer_ordinarily_resident_in_another_state and buyer_protected_caste_status_confined_to_another_state",
+        "then": "transfer_violates_local_protected_land_restriction"
+      },
+      "predicates": {
+        "protected_land_transfer_challenge": "The proceeding challenges a transfer of land allotted or otherwise protected for a member of a protected caste in the state where the land is situated.",
+        "land_allotted_to_local_protected_caste_member": "The land was allotted to a person who belonged to the protected caste of the state where the land is situated.",
+        "buyer_ordinarily_resident_in_another_state": "The buyer was ordinarily resident in a state other than the state where the land is situated.",
+        "buyer_protected_caste_status_confined_to_another_state": "The buyer's protected-caste status was established in the other state, but not in the state where the land is situated."
+      },
+      "definition": "When a challenge concerns a transfer of land protected for a local protected-caste member to a buyer ordinarily resident elsewhere whose protected-caste status is confined to that other state, the transfer violates the local protected-land restriction."
+    },
+    {
+      "legal_issue": "Ownership of land by a person's forebears in a state does not, by itself, establish that the person is ordinarily resident in that state.",
+      "material_facts": [
+        "The purchaser's address in the transaction and mutation records was in another state, and he admitted in cross-examination that he was resident there.",
+        "The purchaser relied on his grandfather's and father's ownership of agricultural land in the state where the disputed land was situated to claim ordinary residence there.",
+        "The court found that the forebears' land ownership did not make the purchaser ordinarily resident in that state."
+      ],
+      "conclusion": "The purchaser was not ordinarily resident in the state where the disputed land was situated.",
+      "legal_principle": "Section 20(1) of the Representation of the People Act, 1950 provides that a person is not deemed ordinarily resident in a constituency merely because the person owns or possesses a dwelling house there. The court applied that principle alongside the evidence of the purchaser's stated address and admission, and held that his forebears' ownership of agricultural land did not establish his ordinary residence.",
+      "rule": {
+        "if": "protected_land_transfer_dispute and residence_records_show_another_state and residence_admission_shows_another_state and local_residence_claim_based_on_forebears_land_ownership",
+        "then": "person_not_ordinarily_resident_in_local_state"
+      },
+      "predicates": {
+        "protected_land_transfer_dispute": "The proceeding concerns whether a person was ordinarily resident in the state for purposes of a transfer of protected land there.",
+        "residence_records_show_another_state": "The relevant transaction or land records identify the person as residing in another state.",
+        "residence_admission_shows_another_state": "The person admitted residing in another state.",
+        "local_residence_claim_based_on_forebears_land_ownership": "The person relied on land owned in the local state by forebears to claim ordinary residence there."
+      },
+      "definition": "When a protected-land transfer dispute involves records and an admission placing a person in another state, and the local residence claim rests on forebears' land ownership, the person is not ordinarily resident in the local state."
+    },
+    {
+      "legal_issue": "A transfer made without required prior permission cannot be regularized under the applicable compounding provision after the order of ejectment has been carried out.",
+      "material_facts": [
+        "The transfer was made without the required prior permission.",
+        "An order of ejectment had been passed against the purchaser and the person found in actual possession.",
+        "Before the compounding order was made, possession had been recovered from the person in actual possession and handed over to the original allottee's side.",
+        "The revenue authority nevertheless permitted compounding and regularization of the transfer."
+      ],
+      "conclusion": "The authority could not grant compounding after ejectment had been carried out; the compounding order was invalid and did not regularize the transfer.",
+      "legal_principle": "Section 13 of the Rajasthan Colonization Act, 1954 requires prior permission for the relevant transfer. Under Section 13A(2), compounding is available where an order of ejectment has been passed but the person against whom it was made has not actually been ejected. Because the land had already been recovered and possession handed over before compounding was allowed, Section 13A(2) did not authorize compounding.",
+      "rule": {
+        "if": "challenge_to_compounding_in_unpermitted_land_transfer and transfer_without_required_prior_permission and ejectment_order_carried_out_before_compounding",
+        "then": "compounding_order_invalid"
+      },
+      "predicates": {
+        "challenge_to_compounding_in_unpermitted_land_transfer": "The proceeding challenges an order purporting to compound and regularize a land transfer made without required prior permission.",
+        "transfer_without_required_prior_permission": "The land was transferred without obtaining the permission required before the transfer.",
+        "ejectment_order_carried_out_before_compounding": "Before compounding was granted, the person in actual possession had been ejected and possession of the land had been handed over to another person."
+      },
+      "definition": "When a challenge concerns compounding an unpermitted land transfer and ejectment was carried out before compounding, the compounding order is invalid."
+    }
+  ],
+  "seconds": 18.3
+}

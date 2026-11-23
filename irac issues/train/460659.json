@@ -1,0 +1,100 @@
+{
+  "doc_id": "460659",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15284,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2639,
+    "prompt_tokens": 4494,
+    "total_tokens": 7133,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A change in the number of judges assigned to hear an appeal does not take away a vested right of appeal or require the appeal to be heard by the panel composition prescribed when the suit or appeal was instituted.",
+      "material_facts": [
+        "When the suit and the appeal were instituted, the governing law required appeals of the relevant value to be heard by a Division Bench.",
+        "Before the appeals were heard, a new law expanded the jurisdiction of a single Judge to hear appeals of that value.",
+        "The appeal remained available and was heard and decided by a single Judge.",
+        "The appellant argued that the earlier panel-composition rule gave him a vested right to a Division Bench."
+      ],
+      "conclusion": "The appellant had no vested right to have the appeal heard by a specified number of judges, and the appeal was rightly heard by a single Judge under the law in force when it was heard.",
+      "legal_principle": "The right of appeal is a substantive right, preserved under the principle stated in Garikapati Veeraya v. N. Subbaiah Choudhury, but the number of judges who hear an appeal is procedural. The Travancore-Cochin High Court Act regulated High Court procedure and did not confer a right of appeal; the right to appeal from the first-instance judgment arose under s. 96 of the Code of Civil Procedure. Following Ittavira Mathai v. Varkey Varkey and the procedural approach in Mahendra v. Darsan, the Court rejected Radhakrishan v. Shridhar.",
+      "rule": {
+        "if": "high_court_appeal and appeal_filed_before_panel_change and panel_change_took_effect_before_hearing and appeal_remained_available",
+        "then": "single_judge_hearing_is_valid"
+      },
+      "predicates": {
+        "high_court_appeal": "A party pursued an appeal before a High Court.",
+        "appeal_filed_before_panel_change": "The appeal was filed before a change in the rules assigning appeals to panels of different sizes.",
+        "panel_change_took_effect_before_hearing": "The changed panel-assignment rule was in force when the appeal was heard.",
+        "appeal_remained_available": "The change in panel assignment did not remove the party’s appeal."
+      },
+      "definition": "When a High Court appeal remains available but the rules for assigning it to panels change before it is heard, hearing it under the changed panel rule is valid."
+    },
+    {
+      "legal_issue": "Changing an appeal from a multi-judge hearing to a single-judge hearing does not itself create or impair a vested right to appeal to the Supreme Court under the Constitution.",
+      "material_facts": [
+        "The High Court appeal was heard and decided by a single Judge under the law in force at the time of hearing.",
+        "The appellant argued that losing a Division Bench hearing also affected a further appeal to the Supreme Court.",
+        "The judgment states that Parliament had not enacted a law permitting an appeal to the Supreme Court from a judgment of one High Court Judge."
+      ],
+      "conclusion": "No right to appeal to the Supreme Court under Article 133 vested on the basis of an asserted right to have the High Court appeal heard by a Division Bench.",
+      "legal_principle": "Article 133(3) provides that an appeal does not lie to the Supreme Court from a judgment, decree, or final order of one High Court Judge unless Parliament provides otherwise. Because a party has no vested right to have a High Court appeal heard by more than one Judge, the appellant could not claim a vested further appeal on that basis.",
+      "rule": {
+        "if": "constitutional_appeal_sought and high_court_single_judge_decision and no_law_authorizes_appeal_from_single_judge",
+        "then": "constitutional_appeal_unavailable"
+      },
+      "predicates": {
+        "constitutional_appeal_sought": "A party sought a further appeal to the Supreme Court under the Constitution.",
+        "high_court_single_judge_decision": "The High Court decided the case through a single Judge.",
+        "no_law_authorizes_appeal_from_single_judge": "No law authorizes a further appeal to the Supreme Court from that single-Judge decision."
+      },
+      "definition": "A constitutional appeal is unavailable when a party seeks one from a single-Judge High Court decision and no law authorizes that appeal."
+    },
+    {
+      "legal_issue": "The Supreme Court may decline to entertain an argument raised for the first time before it when the party did not raise the point in either court below.",
+      "material_facts": [
+        "The appellant sought to argue that a respondent should not have been permitted to raise an objection to the suit.",
+        "The appellant had not raised that point in either of the two lower courts.",
+        "The Supreme Court declined to permit the argument to be raised for the first time before it."
+      ],
+      "conclusion": "The Court declined to entertain the point because it had not been raised in either court below.",
+      "legal_principle": "The Court applied the procedural approach that it may refuse to permit a point to be raised for the first time before it when that point was not raised in the courts below.",
+      "rule": {
+        "if": "supreme_court_appeal and argument_raised_for_first_time and argument_not_raised_in_lower_courts",
+        "then": "court_may_decline_to_consider_argument"
+      },
+      "predicates": {
+        "supreme_court_appeal": "A party brought an appeal before the Supreme Court.",
+        "argument_raised_for_first_time": "A party presented an argument to the Supreme Court that had not previously been presented in the case.",
+        "argument_not_raised_in_lower_courts": "The argument was not raised in the courts below."
+      },
+      "definition": "In a Supreme Court appeal, the Court may decline to consider an argument first presented there when it was not raised in the lower courts."
+    },
+    {
+      "legal_issue": "The Supreme Court will not reopen factual findings in a special-leave appeal absent grave error in reaching those findings.",
+      "material_facts": [
+        "The appeal included challenges to factual findings made by the High Court.",
+        "The Court described it as settled practice not to interfere with High Court factual findings unless grave errors had occurred.",
+        "The appellant was unable to identify any grave error in the findings."
+      ],
+      "conclusion": "The Court declined to permit argument on the factual findings.",
+      "legal_principle": "Under Article 136, the Court retains power to entertain an appeal, but its settled practice is not to interfere with a High Court’s factual findings unless it is satisfied that grave errors occurred in reaching them.",
+      "rule": {
+        "if": "special_leave_appeal and challenged_findings_are_factual and no_grave_error_in_reaching_findings",
+        "then": "supreme_court_declines_to_reopen_factual_findings"
+      },
+      "predicates": {
+        "special_leave_appeal": "A party appealed to the Supreme Court by special leave.",
+        "challenged_findings_are_factual": "The challenged findings concern facts determined by the High Court.",
+        "no_grave_error_in_reaching_findings": "The appellant did not establish a grave error in the process by which the High Court reached its factual findings."
+      },
+      "definition": "In a special-leave appeal, the Supreme Court declines to reopen High Court factual findings when the appellant establishes no grave error in reaching them."
+    }
+  ],
+  "seconds": 16.7
+}

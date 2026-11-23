@@ -1,0 +1,81 @@
+{
+  "doc_id": "282585",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 63745,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2704,
+    "prompt_tokens": 14644,
+    "total_tokens": 17348,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A mining lease for non-forest use of forest land cannot be renewed without prior central approval, and mineral-concession rules do not displace that requirement.",
+      "material_facts": [
+        "The mining operations used forest land, and the company sought renewal of its lease after the existing lease period expired.",
+        "The central government had not granted prior approval for use of the forest land for a non-forest purpose.",
+        "The company relied on a mineral-concession rule and argued that renewal was an accrued right not requiring fresh approval."
+      ],
+      "conclusion": "Prior central approval was required for renewal as well as for an initial grant. The mineral-concession rule did not authorize mining without that approval, and renewal was not a vested right.",
+      "legal_principle": "Section 2(ii) of the Forest (Conservation) Act, 1980 requires prior central approval before forest land is used for a non-forest purpose, notwithstanding anything in another law. That requirement applies to a renewal as well as an initial grant: Ambica Quarry Works v. State of Gujarat and Rural Litigation and Entitlement Kendra v. State of U.P. A lessee has no vested right to renewal: Divisional Forest Officer v. S. Nageswaramma. The mineral-concession rules cannot override the statutory requirement.",
+      "rule": {
+        "if": "forest_mining_lease_renewal_dispute and forest_land_proposed_for_nonforest_use and prior_central_approval_absent",
+        "then": "forest_mining_lease_renewal_requires_prior_central_approval"
+      },
+      "predicates": {
+        "forest_mining_lease_renewal_dispute": "The proceeding concerns renewal of a mining lease for operations on forest land.",
+        "forest_land_proposed_for_nonforest_use": "The proposed mining operations use forest land for a non-forest purpose.",
+        "prior_central_approval_absent": "The central government has not approved the proposed non-forest use of the forest land."
+      },
+      "definition": "When a mining lease renewal concerns non-forest use of forest land and prior central approval is absent, the renewal requires that approval."
+    },
+    {
+      "legal_issue": "Land in a protected area cannot be excluded from its protection in defiance of an order prohibiting de-reservation.",
+      "material_facts": [
+        "An earlier court order prohibited de-reservation of forests, sanctuaries, and national parks.",
+        "A later notification concerning the protected area excluded land being used for mining."
+      ],
+      "conclusion": "The exclusion of the mining land from the protected area was not in order because it contravened the prohibition on de-reservation.",
+      "legal_principle": "The order dated 14 November 2000 in the pending writ proceeding prohibited de-reservation of forests, sanctuaries, and national parks. The court held that excluding the mining land through a notification under Section 35(4) of the Wildlife (Protection) Act, 1972 was contrary to that order.",
+      "rule": {
+        "if": "protected_area_notification_dispute and no_dereservation_order_in_force and notification_excludes_protected_land",
+        "then": "protected_area_land_cannot_be_excluded_in_defiance_of_no_dereservation_order"
+      },
+      "predicates": {
+        "protected_area_notification_dispute": "The proceeding concerns a notification that changes the coverage of a protected area.",
+        "no_dereservation_order_in_force": "A court order prohibiting de-reservation of the relevant protected area was in force.",
+        "notification_excludes_protected_land": "An authority issued a notification excluding land within the protected area."
+      },
+      "definition": "If a notification excludes protected land while a court order prohibiting de-reservation is in force, that land cannot be excluded in defiance of the order."
+    },
+    {
+      "legal_issue": "Mining in a sensitive forest area may be permitted for a limited transition period when expert assessments support that course, but only within the already disturbed area and subject to ecological safeguards.",
+      "material_facts": [
+        "The proceeding arose from an environmental application concerning mining in a sensitive forest area.",
+        "The Central Empowered Committee’s majority recommended winding up operations within five years from the lease expiry or when the weathered secondary ore in the already broken-up area was exhausted, whichever came first, subject to ecological and other conditions.",
+        "A member of that committee dissented and recommended immediate cessation and restoration during the winding-up period.",
+        "The Forest Advisory Committee recommended allowing mining until 2005, by which time the weathered secondary ore in the already broken-up area was expected to be exhausted.",
+        "The court considered the committee materials and accepted the Forest Advisory Committee’s time period, subject to the Central Empowered Committee’s ecological recommendations and arrangements for their implementation."
+      ],
+      "conclusion": "Mining could continue only in the already broken-up area until the end of 2005, by which time the available weathered secondary ore was to be exhausted, and subject to the committee’s ecological and other recommendations.",
+      "legal_principle": "The court applied sustainable development and the precautionary principle, requiring ecological protection to be balanced with development and public interests. It relied on Articles 21 and 48-A and Article 51-A(g) of the Constitution, and on the Convention on Biological Diversity, including its provisions on conservation, monitoring, and environmental impact assessment. It also relied on the role and assessments of the statutory committees, while requiring the government and the operator to implement the ecological safeguards. The judgment’s discussion of environmental rights and duties refers to Sachindanand Pandey v. State of West Bengal, Virender Gaur v. State of Haryana, Rural Litigation and Entitlement Kendra v. State of Uttar Pradesh, M.C. Mehta v. Union of India, and Vishaka v. State of Rajasthan.",
+      "rule": {
+        "if": "environmental_application_in_continuing_writ and mining_in_sensitive_forest_area and mining_confined_to_already_disturbed_land and expert_assessments_support_limited_transition and continuation_subject_to_ecological_safeguards",
+        "then": "limited_mining_continuation_may_be_allowed_subject_to_resource_exhaustion_and_ecological_safeguards"
+      },
+      "predicates": {
+        "environmental_application_in_continuing_writ": "The matter is an environmental application in an ongoing writ proceeding.",
+        "mining_in_sensitive_forest_area": "The operations are mining in a forest area of significant ecological sensitivity.",
+        "mining_confined_to_already_disturbed_land": "The proposed continued operations are confined to land already disturbed by mining.",
+        "expert_assessments_support_limited_transition": "Expert committee assessments support a limited transition period for winding up the operations.",
+        "continuation_subject_to_ecological_safeguards": "The proposed continuation is subject to ecological restoration and other protective conditions."
+      },
+      "definition": "In an environmental application in an ongoing writ proceeding, limited mining continuation may be allowed where the mining is in a sensitive forest area, confined to already disturbed land, supported by expert assessments, and subject to ecological safeguards, until the resource is exhausted."
+    }
+  ],
+  "seconds": 16.5
+}

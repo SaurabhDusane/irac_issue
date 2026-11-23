@@ -1,0 +1,80 @@
+{
+  "doc_id": "1528815",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12800,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2251,
+    "prompt_tokens": 3799,
+    "total_tokens": 6050,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A summons cannot be treated as duly served on an alleged refusal when the required affixation and reliable record of service are not established.",
+      "material_facts": [
+        "A process server said the defendant refused summons and a copy of the plaint, but the written endorsement said those documents were returned to the court and did not record that they were affixed.",
+        "The process server's testimony that documents were to be affixed conflicted with his endorsement, which also recorded that no witness was available.",
+        "The defendant testified that no summons had been tendered to him, and his testimony was not challenged in cross-examination."
+      ],
+      "conclusion": "The summons was not duly served; the defendant's application to set aside the ex parte decree was allowed.",
+      "legal_principle": "Under Order 5 Rules 17 and 18 of the Code of Civil Procedure, on refusal the serving officer must affix a copy of the summons and report that act and its circumstances; the return must record the time and manner of service and, where applicable, the identifying and witnessing persons. The court found these requirements were not reliably established. No earlier cases were relied on.",
+      "rule": {
+        "if": "challenge_to_ex_parte_decree and refusal_report_inconsistent and affixation_unproved and independent_witnesses_absent",
+        "then": "summons_not_duly_served"
+      },
+      "predicates": {
+        "challenge_to_ex_parte_decree": "A defendant seeks to set aside a decree entered after the defendant did not appear.",
+        "refusal_report_inconsistent": "The serving officer's oral account of refusal or subsequent steps conflicts with the officer's written service report.",
+        "affixation_unproved": "The evidence does not establish that the serving officer affixed a copy of the summons as required after the alleged refusal.",
+        "independent_witnesses_absent": "No independent person is recorded as identifying the recipient or witnessing the tender or affixation."
+      },
+      "definition": "When a defendant challenges a decree entered in their absence and the alleged refusal is recorded inconsistently, required affixation is unproved, and independent witnesses are absent, the summons is not duly served."
+    },
+    {
+      "legal_issue": "Knowledge that a suit is pending does not by itself prevent setting aside an ex parte decree when the defendant lacked notice of the hearing date and sufficient time to appear.",
+      "material_facts": [
+        "The defendant had acknowledged in another proceeding that he knew the suit was pending.",
+        "The defendant's unchallenged testimony did not establish that he knew the date of hearing and had sufficient time to appear and answer the claim.",
+        "The court found that the summons had not been served."
+      ],
+      "conclusion": "Knowledge of the suit's pendency did not bar setting aside the decree; the second proviso to Order 9 Rule 13 did not apply to the established non-service.",
+      "legal_principle": "The second proviso to Order 9 Rule 13 of the Code of Civil Procedure prevents setting aside a decree merely for an irregularity in service only where the defendant had notice of the date of hearing and sufficient time to appear and answer the claim. Knowledge of the pendency of the suit is not the required notice, and the proviso does not address non-service. No earlier cases were relied on.",
+      "rule": {
+        "if": "challenge_to_ex_parte_decree and suit_pendency_known and not hearing_date_and_time_notice and summons_not_served",
+        "then": "proviso_does_not_bar_setting_aside"
+      },
+      "predicates": {
+        "challenge_to_ex_parte_decree": "A defendant seeks to set aside a decree entered after the defendant did not appear.",
+        "suit_pendency_known": "The defendant knew that the suit was pending.",
+        "hearing_date_and_time_notice": "The defendant had notice of the hearing date and sufficient time to appear and answer the claim.",
+        "summons_not_served": "The summons was not duly served on the defendant."
+      },
+      "definition": "If a defendant challenging an ex parte decree knew only that the suit was pending, lacked notice of the hearing date and sufficient time to respond, and was not served, the proviso does not bar setting aside the decree."
+    },
+    {
+      "legal_issue": "A court may proceed ex parte for a defendant's non-appearance only after satisfying itself that the summons was duly served.",
+      "material_facts": [
+        "The defendant did not appear on the appointed hearing date.",
+        "The service record did not establish due service, and the court found that the summons had not been served.",
+        "The trial court proceeded ex parte without properly satisfying itself that service was duly effected."
+      ],
+      "conclusion": "Proceeding ex parte was unjustified, and refusing to set aside the resulting decree was a serious error of law resulting in failure of justice.",
+      "legal_principle": "Order 9 Rule 6 of the Code of Civil Procedure requires the court, where the defendant is absent, to distinguish between duly served summons, summons not duly served, and summons served too late. The court may proceed ex parte in the relevant situation only when due service is proved; it must consciously satisfy itself on that point. No earlier cases were relied on.",
+      "rule": {
+        "if": "challenge_to_ex_parte_decree and defendant_absent and due_service_not_proved",
+        "then": "ex_parte_proceeding_unjustified"
+      },
+      "predicates": {
+        "challenge_to_ex_parte_decree": "A defendant challenges a decree entered after proceedings continued in the defendant's absence.",
+        "defendant_absent": "The defendant did not appear at the hearing.",
+        "due_service_not_proved": "The court has not been satisfied by proof that the summons was duly served."
+      },
+      "definition": "When a defendant challenging an ex parte decree was absent and due service was not proved, proceeding ex parte was unjustified."
+    }
+  ],
+  "seconds": 13.9
+}

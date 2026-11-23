@@ -1,0 +1,61 @@
+{
+  "doc_id": "462234",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 5917,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2000,
+    "prompt_tokens": 1920,
+    "total_tokens": 3920,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A revenue tribunal acting in a limited revision may set aside a collector’s finding that is contrary to law because it is unsupported by the pleadings or evidence.",
+      "material_facts": [
+        "The tenant sought a declaration of tenancy, and the first-instance authority accepted that he had remained in possession and paid rent.",
+        "The Collector concluded that the tenant possessed the land as a purchaser, relying on evidence of an agreement to sell and payment of earnest money.",
+        "The landlord’s pleaded and evidentiary case was that he had taken possession himself, not that the tenant possessed the land as a purchaser.",
+        "The Revenue Tribunal set aside the Collector’s order and restored the first-instance order; the landlord challenged the Tribunal’s jurisdiction to do so."
+      ],
+      "conclusion": "The Revenue Tribunal did not act without jurisdiction. The Collector’s finding about possession as a purchaser was contrary to law because it was not supported by the landlord’s pleadings or evidence, and the Tribunal could interfere with that error in revision.",
+      "legal_principle": "Section 76 of the Bombay Tenancy and Agricultural Lands Act, 1948, permits revision where the Collector’s order is contrary to law, the Collector failed to determine a material issue of law, or a substantial procedural defect caused a miscarriage of justice. Those revisional powers are practically identical to the High Court’s second-appellate powers under Section 100 of the Code of Civil Procedure before its amendment by Act 104 of 1976. A finding unsupported by the pleadings or evidence may be contrary to law.",
+      "rule": {
+        "if": "revision_from_collector_order and collector_finding_unsupported_by_pleadings_or_evidence",
+        "then": "revisional_interference_is_within_jurisdiction"
+      },
+      "predicates": {
+        "revision_from_collector_order": "A tribunal is considering a limited revision from a collector’s order in a tenancy proceeding.",
+        "collector_finding_unsupported_by_pleadings_or_evidence": "The collector makes a material finding that is not supported by the parties’ pleadings or evidence.",
+        "revisional_interference_is_within_jurisdiction": "The tribunal’s interference with the collector’s order falls within its jurisdiction."
+      },
+      "definition": "When a tribunal reviews a collector’s order in a limited revision and the collector’s material finding lacks support in the pleadings or evidence, the tribunal’s interference is within its jurisdiction."
+    },
+    {
+      "legal_issue": "An agreement to sell and payment of earnest money do not, without more, establish that a tenant’s possession was possession pursuant to the sale agreement.",
+      "material_facts": [
+        "The tenant was in possession as a tenant and asserted that he continued in possession despite the purported surrender.",
+        "The Collector relied on evidence of an agreement to sell the land and payment of earnest money to characterize the tenant’s possession as that of a purchaser.",
+        "The landlord’s case was that the landlord himself had taken possession, not that the tenant’s possession followed from the sale agreement."
+      ],
+      "conclusion": "The existence of an agreement to sell and payment of earnest money was distinct from proof that the tenant’s possession was pursuant to that agreement. The Collector misdirected himself by failing to appreciate that distinction.",
+      "legal_principle": "The Court distinguished a tenant who agrees to purchase land while already in possession from a purchaser whose possession is pursuant to an agreement of sale. Evidence of the agreement and earnest money does not, by itself, establish the latter characterization. The Court applied this distinction when considering whether the Collector’s finding was contrary to law under Section 76 of the Bombay Tenancy and Agricultural Lands Act, 1948.",
+      "rule": {
+        "if": "tenancy_status_determination and preexisting_tenant_possession and sale_agreement_and_earnest_money and no_support_for_possession_pursuant_to_sale",
+        "then": "sale_agreement_and_earnest_money_alone_do_not_establish_purchase_based_possession"
+      },
+      "predicates": {
+        "tenancy_status_determination": "A proceeding requires the decision-maker to determine whether a person’s possession is as a tenant or as a purchaser.",
+        "preexisting_tenant_possession": "The person was already in possession as a tenant when the agreement to sell was made.",
+        "sale_agreement_and_earnest_money": "The parties had an agreement to sell and the tenant paid earnest money.",
+        "no_support_for_possession_pursuant_to_sale": "The evidence does not otherwise support that the person’s possession began or continued pursuant to the agreement to sell.",
+        "sale_agreement_and_earnest_money_alone_do_not_establish_purchase_based_possession": "The agreement to sell and payment of earnest money, without more, do not establish that possession was pursuant to the sale agreement."
+      },
+      "definition": "When a tenancy-status proceeding concerns a person already in possession as a tenant, an agreement to sell and payment of earnest money do not alone establish purchase-based possession if the evidence does not otherwise connect possession to the agreement."
+    }
+  ],
+  "seconds": 12.5
+}

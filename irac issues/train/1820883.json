@@ -1,0 +1,119 @@
+{
+  "doc_id": "1820883",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36252,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3988,
+    "prompt_tokens": 9304,
+    "total_tokens": 13292,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court hearing an appeal against conviction must consider the material eyewitness testimony before reversing the conviction and acquitting the accused.",
+      "material_facts": [
+        "The trial court convicted the accused after relying on the testimony of three eyewitnesses who had themselves been injured and on medical evidence.",
+        "The High Court allowed the accused's appeal and acquitted them without considering the eyewitness testimony."
+      ],
+      "conclusion": "The High Court's acquittal was unsustainable; the Supreme Court set it aside and restored the trial court's judgment.",
+      "legal_principle": "Sections 384, 385(2) and 386 of the Code of Criminal Procedure require an appellate court hearing an appeal that has not been summarily dismissed to peruse the record, including the witness statements, before deciding the appeal. Reversing a conviction without considering direct eyewitness testimony is a clear infraction of Section 386. Biswanath Ghosh v. State of West Bengal, AIR 1987 SC 1155, and State of U.P. v. Sahai, AIR 1981 SC 1442, support the requirement that the appellate court examine the evidence and the risk of miscarriage of justice from failing to do so.",
+      "rule": {
+        "if": "appeal_from_conviction and direct_eyewitness_case and appellate_court_ignored_eyewitness_testimony",
+        "then": "appellate_acquittal_unsustainable"
+      },
+      "predicates": {
+        "appeal_from_conviction": "The proceeding is an appeal from a trial court's conviction.",
+        "direct_eyewitness_case": "The prosecution case rests on direct testimony from witnesses to the events.",
+        "appellate_court_ignored_eyewitness_testimony": "The appellate court reversed the conviction without considering the eyewitness testimony."
+      },
+      "definition": "When an appellate court hearing an appeal from conviction in a direct-eyewitness case ignores that testimony, its acquittal is unsustainable."
+    },
+    {
+      "legal_issue": "Delay in reporting an offence does not by itself make the prosecution case doubtful when the circumstances explain the delay and do not indicate fabrication.",
+      "material_facts": [
+        "Several people, including the first informant and his sons, were injured in the shooting; one later died and another had injuries that were dangerous to life.",
+        "The injured were taken first to a hospital for treatment, and the first informant's statement was recorded at the hospital after a doctor confirmed he was fit to give it.",
+        "The statement was then carried to the police station, where the formal report was recorded; the special report was sent to the magistrate promptly after that.",
+        "The High Court treated the time taken to record the report as a reason to doubt the prosecution, without accounting for the medical emergency and the sequence of events."
+      ],
+      "conclusion": "In the circumstances, there was no basis to draw an adverse inference from the time taken to lodge the report or send the special report.",
+      "legal_principle": "Delay in lodging a first information report is not automatically fatal; whether it casts doubt on the prosecution depends on the circumstances, including the informant's condition, the injuries, efforts to obtain treatment, and the distances involved. The court must look for indications of fabrication rather than apply a mathematical rule. Tara Singh v. State of Punjab, AIR 1991 SC 63; Zahoor v. State of U.P., AIR 1991 SC 40; and Jamna v. State of Uttar Pradesh, AIR 1994 SC 79, support this principle.",
+      "rule": {
+        "if": "criminal_prosecution and delayed_first_report and urgent_medical_care_preceded_reporting and reporting_sequence_explained and not fabrication_indications",
+        "then": "delay_alone_does_not_make_prosecution_case_doubtful"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution in which the timing of the first report is relied on to challenge the case.",
+        "delayed_first_report": "The first report was made some time after the alleged offence.",
+        "urgent_medical_care_preceded_reporting": "The injured people were taken for urgent medical treatment before the report was made.",
+        "reporting_sequence_explained": "The circumstances account for the steps and time involved in recording and transmitting the report.",
+        "fabrication_indications": "The circumstances indicate that the delay was used to fabricate or alter the prosecution account."
+      },
+      "definition": "In a criminal prosecution, an explained reporting delay following urgent medical care, without indications of fabrication, does not by itself make the prosecution case doubtful."
+    },
+    {
+      "legal_issue": "An inquest report is concerned with the apparent cause of death, and omission from it of the manner of the assault or the assailants does not by itself undermine the prosecution case.",
+      "material_facts": [
+        "The High Court treated the omission of details of the occurrence from the inquest report as suggesting that the investigating officer was unsure of the case.",
+        "The omitted details concerned how the incident occurred and who was responsible, rather than the apparent cause of death and the injuries observed."
+      ],
+      "conclusion": "The omission of those details from the inquest report did not justify doubting the prosecution case.",
+      "legal_principle": "Section 174 of the Code of Criminal Procedure requires an inquiry and report on the apparent cause of death and descriptions of wounds or other marks of injury; it does not require details of how the assault occurred or the identity of the assailants. Podda Narayana v. State of Andhra Pradesh, AIR 1975 SC 1252; Khujji v. State of Madhya Pradesh, AIR 1991 SC 1853; and Shakila Khadar v. Nausher Gama, AIR 1975 SC 1324, explain the limited scope of an inquest.",
+      "rule": {
+        "if": "inquest_report_is_at_issue and inquest_report_omits_occurrence_details",
+        "then": "omission_of_occurrence_details_does_not_undermine_prosecution"
+      },
+      "predicates": {
+        "inquest_report_is_at_issue": "The proceeding concerns whether an inquest report's contents undermine the prosecution case.",
+        "inquest_report_omits_occurrence_details": "The inquest report does not state how the incident occurred or who committed the assault."
+      },
+      "definition": "When an inquest report is challenged for omitting details of the occurrence, that omission does not undermine the prosecution case."
+    },
+    {
+      "legal_issue": "Defects or omissions in an investigation do not alone justify acquitting an accused when reliable eyewitness evidence, corroborated by medical evidence, establishes the prosecution case.",
+      "material_facts": [
+        "The investigating officer did not take possession of the window gauze and did not send the firearms and recovered cartridges for forensic comparison.",
+        "Certain details were not separately entered in the daily diary register, though the formal report contained them.",
+        "Three injured eyewitnesses gave accounts of the incident, and the medical evidence corroborated their accounts and established the injuries and death."
+      ],
+      "conclusion": "The investigative omissions did not make the prosecution case doubtful or unworthy of belief.",
+      "legal_principle": "A court should carefully evaluate evidence where the investigation is defective, but it should not acquit solely because of investigative defects. The prosecution evidence must be examined independently of such omissions, so that a designed or negligent lapse does not defeat justice. Karnel Singh v. State of M.P., (1995) 5 SCC 518; Paras Yadav v. State of Bihar, (1999) 2 SCC 126; and Ram Bihari Yadav v. State of Bihar, (1998) 4 SCC 517, support this principle. The court also noted that Section 155 of the Code of Criminal Procedure governed the recording of the report's contents in the daily diary register.",
+      "rule": {
+        "if": "criminal_prosecution and investigative_omissions and credible_injured_eyewitnesses and medical_evidence_corroborates_eyewitnesses",
+        "then": "investigative_defects_alone_do_not_justify_acquittal"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution in which the investigation is challenged as defective.",
+        "investigative_omissions": "The investigation contains omissions or failures in collecting, recording, or testing evidence.",
+        "credible_injured_eyewitnesses": "Witnesses who were injured in the incident give credible eyewitness accounts.",
+        "medical_evidence_corroborates_eyewitnesses": "Medical evidence supports the eyewitness accounts of the injuries or death."
+      },
+      "definition": "In a criminal prosecution supported by credible injured eyewitnesses and corroborating medical evidence, investigative omissions alone do not justify acquittal."
+    },
+    {
+      "legal_issue": "The prosecution need not examine every person who witnessed an offence, and the non-examination of additional witnesses does not by itself warrant an adverse inference when the evidence of those examined is sufficient.",
+      "material_facts": [
+        "The prosecution examined three injured eyewitnesses whose accounts corroborated one another.",
+        "Two other injured eyewitnesses were not examined after the prosecution stated they had been won over; another person named in the first report was also not examined.",
+        "The accused did not call the unexamined eyewitnesses as defence witnesses."
+      ],
+      "conclusion": "No adverse inference against the prosecution was justified merely because the additional witnesses were not examined.",
+      "legal_principle": "Section 134 of the Indian Evidence Act provides that no particular number of witnesses is required to prove a fact. The prosecution must call witnesses essential to unfolding its case, but it need not call every person who witnessed the occurrence. State of U.P. v. Jaggo, AIR 1971 SC 1586, was cited for the duty to call essential witnesses; Vadivelu Thevar v. State of Madras, AIR 1957 SC 614, and Ramratan v. State of Rajasthan, AIR 1962 SC 424, support the rule that evidence is weighed, not counted.",
+      "rule": {
+        "if": "criminal_prosecution and multiple_credible_eyewitnesses_examined and additional_witnesses_not_examined",
+        "then": "non_examination_of_additional_witnesses_alone_does_not_warrant_adverse_inference"
+      },
+      "predicates": {
+        "criminal_prosecution": "The proceeding is a criminal prosecution in which the number of witnesses examined is challenged.",
+        "multiple_credible_eyewitnesses_examined": "The prosecution has presented more than one credible eyewitness whose account supports its case.",
+        "additional_witnesses_not_examined": "Other people who witnessed the occurrence were not called as prosecution witnesses."
+      },
+      "definition": "In a criminal prosecution, if multiple credible eyewitnesses have been examined, the non-examination of additional witnesses alone does not warrant an adverse inference."
+    }
+  ],
+  "seconds": 23.3
+}

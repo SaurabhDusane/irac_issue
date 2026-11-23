@@ -1,0 +1,81 @@
+{
+  "doc_id": "1422366",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28781,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2368,
+    "prompt_tokens": 7929,
+    "total_tokens": 10297,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A payment required by a compromise decree to be deposited in court by a specified deadline may be made on the first practicable day when the court is closed on the deadline and performance that day is impossible.",
+      "material_facts": [
+        "The compromise decree required the plaintiff to deposit the payment in court by a specified day and provided for dismissal of the suit on default.",
+        "The court was closed on the last working day before the deadline and on the deadline itself; the banks were also closed.",
+        "The plaintiff deposited the payment on the first day the court reopened.",
+        "The decree required payment into court, so the plaintiff had no option to pay the defendant directly."
+      ],
+      "conclusion": "The deposit on the first practicable day was in substance and effect a deposit in compliance with the decree, and the plaintiff could enforce the right granted by it.",
+      "legal_principle": "A person who has the liberty to perform an act through the last day allowed is not deprived of that liberty by having chosen not to act earlier. Where the court itself prevents an act required to be done in court, the act may be done at the first subsequent opportunity if the court's closure makes performance on the deadline impossible. The Court applied the exception described in Halsbury's Laws of England, vol. 37, 3rd ed., para. 172, and relied on Fateh Khan v. Chhajju, Muhammad Jan v. Shiam Lal, Shooshee Bhusan Rudro v. Gobind Chunder Roy, Sambasiva Chari v. Ramasami Reddi, and Mayor v. Harding. It distinguished decisions involving a debtor who could pay the decree-holder directly, referring to Order XXI, Rule 1, and held that distinction inapplicable because this decree specifically required a court deposit.",
+      "rule": {
+        "if": "compromise_decree_payment_condition and court_only_payment_method and court_closed_on_deadline and performance_impossible_on_deadline and payment_made_first_practicable_day",
+        "then": "court_deposit_is_timely_compliance"
+      },
+      "predicates": {
+        "compromise_decree_payment_condition": "The proceeding concerns a compromise decree that makes a party's payment by a deadline a condition of obtaining a benefit under the decree.",
+        "court_only_payment_method": "The decree requires the payment to be made into court rather than giving the paying party an option to pay the other party directly.",
+        "court_closed_on_deadline": "The court is closed on the deadline for making the required payment.",
+        "performance_impossible_on_deadline": "The court's closure prevents the party from making the required court deposit on the deadline.",
+        "payment_made_first_practicable_day": "The party makes the deposit on the first day on which the court is again available to receive it."
+      },
+      "definition": "When a compromise decree requires payment only into court, and court closure makes payment on the deadline impossible, a deposit on the first practicable day counts as timely compliance."
+    },
+    {
+      "legal_issue": "An executing court may construe a decree in light of applicable law to determine whether an act complies with it, without thereby varying the decree.",
+      "material_facts": [
+        "The parties disputed whether a deposit made on the first day the court reopened complied with the compromise decree.",
+        "The decree required a court deposit by a specified deadline and provided for dismissal on default.",
+        "The lower courts treated the deposit as compliance with the decree, and the High Court affirmed their decision."
+      ],
+      "conclusion": "The executing court did not vary the decree by treating the deposit as compliant; it was entitled to construe and execute the decree as it stood in light of applicable law.",
+      "legal_principle": "An executing court must execute a decree as it stands and may not modify or vary its terms. It may, however, construe the decree in light of applicable law; if that construction establishes that the act performed complied with the decree, enforcing the decree on that basis is not a variation. The Court applied this principle to the legal rule permitting an act required in court to be done at the first practicable opportunity when court closure prevents performance on the deadline.",
+      "rule": {
+        "if": "execution_proceeding and decree_requires_court_deposit and court_closed_on_deadline and deposit_made_first_practicable_day",
+        "then": "executing_court_may_enforce_decree_without_modifying_it"
+      },
+      "predicates": {
+        "execution_proceeding": "A party asks an executing court to enforce a decree.",
+        "decree_requires_court_deposit": "The decree requires a party to make a payment by depositing it in court.",
+        "court_closed_on_deadline": "The court is closed on the deadline for making the required deposit.",
+        "deposit_made_first_practicable_day": "The party deposits the payment on the first day the court is available to receive it after the closure."
+      },
+      "definition": "In an execution proceeding, an executing court may enforce a decree without modifying it when the decree requires a court deposit, the court is closed on the deadline, and the party deposits the payment on the first practicable day."
+    },
+    {
+      "legal_issue": "A compromise embodied in a judicial order is more than an ordinary contract, so the order is not governed solely by rules applicable to private contracts.",
+      "material_facts": [
+        "The parties' compromise was embodied in a court decree.",
+        "The decree set a deadline for a court deposit and stated that time was essential and that default would result in dismissal.",
+        "The deadline and the preceding day were court holidays, and there was no evidence that either party knew this when the compromise was made."
+      ],
+      "conclusion": "Although a contract does not cease to be a contract when embodied in a judge's order, it is something more than a contract, and different considerations apply to its construction and enforcement.",
+      "legal_principle": "The Court distinguished the contractual character of an agreement from the additional force and effect it has once embodied in a judicial order. It relied on Wentworth v. Bullen, Charles Hubert Kinch v. Edward Keith Walcott, Govind Waman v. Murlidhar Shrinivas, and Morris v. Barret.",
+      "rule": {
+        "if": "consent_decree_proceeding and agreement_embodied_in_judicial_order",
+        "then": "consent_decree_is_not_governed_only_as_an_ordinary_contract"
+      },
+      "predicates": {
+        "consent_decree_proceeding": "The proceeding concerns an agreement made between parties to resolve a dispute through a consent decree.",
+        "agreement_embodied_in_judicial_order": "The court incorporates the parties' agreement into a judicial order or decree."
+      },
+      "definition": "When an agreement resolving a dispute is embodied in a judicial order, the order is not governed only as an ordinary contract."
+    }
+  ],
+  "seconds": 15.5
+}

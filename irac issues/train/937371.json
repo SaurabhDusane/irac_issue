@@ -1,0 +1,58 @@
+{
+  "doc_id": "937371",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18762,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1571,
+    "prompt_tokens": 5217,
+    "total_tokens": 6788,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A pending first appeal must remain before the court in which it was pending when a statutory saving clause requires pending proceedings to continue there, and cannot be transferred to a court that is not competent to hear it.",
+      "material_facts": [
+        "A first appeal from a suit decided before the amending legislation took effect was pending in the High Court when the High Court transferred it to a District Court.",
+        "The legislation enlarged the District Courts’ jurisdiction over first appeals but also provided that proceedings commenced in any court before the legislation took effect would continue to be heard and decided by that court.",
+        "The first appeal had been instituted in the High Court, and the District Court’s competence to hear appeals of that kind arose from the amendment."
+      ],
+      "conclusion": "The District Court was not competent to hear the pending appeal, and the High Court’s transfer order was set aside; the appeal was to be heard by the High Court, absent any law to the contrary.",
+      "legal_principle": "Section 3(1) of the U.P. Civil Laws (Reforms and Amendment) Act, 1954, required proceedings instituted before its commencement to continue to be heard and decided by the court in which they were instituted. Section 24 of the Code of Civil Procedure, 1908, permits transfer only to a court competent to dispose of the proceeding. The Court relied on Cyril Spencer v. M. H. Spencer, 1955 All. L.J. 307, as authority that the saving provision preserved pending appeals, and rejected the contrary approach in Sarjudei v. Rampati Kunwari, 1962 All. L.J. 544.",
+      "rule": {
+        "if": "first_appeal and appeal_pending_in_original_court_when_jurisdiction_changed and pending_proceedings_must_remain_in_original_court and transferee_not_competent_to_hear_saved_appeal",
+        "then": "appeal_must_be_heard_by_original_court"
+      },
+      "predicates": {
+        "first_appeal": "The proceeding is a first appeal from a decision in a suit.",
+        "appeal_pending_in_original_court_when_jurisdiction_changed": "The appeal was pending in the court where it was instituted when the law changing appellate jurisdiction took effect.",
+        "pending_proceedings_must_remain_in_original_court": "The applicable saving rule requires proceedings begun before the change to continue in the court where they began.",
+        "transferee_not_competent_to_hear_saved_appeal": "The court to which the appeal was transferred lacked authority to hear that saved pending appeal."
+      },
+      "definition": "When a first appeal is pending in its original court at the time jurisdiction changes, the saving rule keeps it there, and the proposed transferee lacks authority to hear it, the appeal must be heard by the original court."
+    },
+    {
+      "legal_issue": "A costs award ordinarily should not be made against a court that is a respondent in a civil appeal.",
+      "material_facts": [
+        "The High Court granted costs against the judicial officer who was the opposing party in the proceedings before it.",
+        "That respondent was a court, and the Supreme Court made no order as to costs."
+      ],
+      "conclusion": "The High Court was in error in awarding costs against the court, and no costs were ordered.",
+      "legal_principle": "The Court stated that costs ordinarily are not granted against a court.",
+      "rule": {
+        "if": "civil_appeal and court_is_respondent and lower_court_awarded_costs_against_court",
+        "then": "costs_award_against_court_set_aside"
+      },
+      "predicates": {
+        "civil_appeal": "The proceeding is a civil appeal.",
+        "court_is_respondent": "A court is a respondent in the proceeding.",
+        "lower_court_awarded_costs_against_court": "The lower court awarded costs against the respondent court."
+      },
+      "definition": "In a civil appeal, if a court is a respondent and the lower court awarded costs against it, that costs award is set aside."
+    }
+  ],
+  "seconds": 10.1
+}

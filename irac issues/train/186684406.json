@@ -1,0 +1,80 @@
+{
+  "doc_id": "186684406",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 57063,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3290,
+    "prompt_tokens": 13421,
+    "total_tokens": 16711,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A statutory first charge over a debtor’s property makes the tax authority a secured creditor in insolvency proceedings.",
+      "material_facts": [
+        "The debtor owed statutory sales-tax dues to the state.",
+        "A state law made unpaid tax, interest, and penalties a first charge on the dealer’s property.",
+        "The tax authority sought recognition of its claim during the debtor’s insolvency resolution process."
+      ],
+      "conclusion": "The statutory charge created a security interest, making the state a secured creditor; a creditor’s status as an operational creditor does not negate its status as a secured creditor. The statutory charge was not displaced by the liquidation distribution provisions, and the state’s secured debt ranked with the other debts specified for secured creditors that relinquish security.",
+      "legal_principle": "Under Sections 3(30) and 3(31) of the Insolvency and Bankruptcy Code, a security interest may arise by operation of law, and the definition of secured creditor does not exclude a government authority. Section 48 of the Gujarat Value Added Tax Act creates a first charge, bringing the state within those definitions. Section 53(1)(b)(ii) ranks the relevant secured debts equally; its non-obstante clause does not make Section 48 inconsistent with or overridden by Section 53.",
+      "rule": {
+        "if": "corporate_insolvency_resolution and statutory_tax_debt_owed and law_creates_first_charge_on_debtor_property",
+        "then": "statutory_charge_holder_is_secured_creditor"
+      },
+      "predicates": {
+        "corporate_insolvency_resolution": "The proceeding concerns insolvency resolution of a corporate debtor.",
+        "statutory_tax_debt_owed": "The debtor owes a public authority taxes or related statutory amounts.",
+        "law_creates_first_charge_on_debtor_property": "A law makes the unpaid statutory amounts a first charge on the debtor’s property."
+      },
+      "definition": "When a corporate insolvency resolution involves statutory tax debt and a law creates a first charge for that debt, the charge holder is a secured creditor."
+    },
+    {
+      "legal_issue": "A late-filed claim for statutory dues cannot be rejected solely because it was submitted after the claims deadline.",
+      "material_facts": [
+        "The insolvency process commenced before the 2018 amendment to the claims regulation.",
+        "The tax authority had initiated recovery proceedings for the statutory dues.",
+        "The authority’s claim was submitted after the deadline stated in the public announcement.",
+        "The claim was not considered, and the lower tribunals treated its lateness as a ground for rejection."
+      ],
+      "conclusion": "The rejection of the state’s claim was unsustainable. The applicable time stipulations were directory, and delay in filing a claim could not be the sole ground for rejecting it.",
+      "legal_principle": "Regulations 10, 12 and 14(2) of the Insolvency and Bankruptcy Board of India (Insolvency Resolution Process for Corporate Persons) Regulations, 2016, read as a whole and in light of the Code, make the relevant time stipulations directory; Regulation 14(2) permits revision of admitted claims when additional information becomes available. The Court referred to Vishal Saxena v. Swami Deen Gupta, Resolution Professional, and Assistant Commissioner of Customs v. Mathur Sabhapathy Vishwanathan in support of the directory character of the time stipulation.",
+      "rule": {
+        "if": "corporate_insolvency_resolution and statutory_dues_claim and claim_submitted_after_deadline",
+        "then": "late_claim_not_rejected_solely_for_delay"
+      },
+      "predicates": {
+        "corporate_insolvency_resolution": "The proceeding concerns insolvency resolution of a corporate debtor.",
+        "statutory_dues_claim": "A public authority asserts a claim for statutory dues owed by the debtor.",
+        "claim_submitted_after_deadline": "The public authority submits its claim after the deadline set for claims in the insolvency process."
+      },
+      "definition": "When a public authority asserts statutory dues in a corporate insolvency resolution and submits its claim late, lateness alone does not justify rejecting the claim."
+    },
+    {
+      "legal_issue": "A resolution plan that omits outstanding statutory dues altogether does not satisfy the statutory requirements for approval.",
+      "material_facts": [
+        "The debtor had outstanding statutory tax dues, and recovery proceedings had been initiated for them.",
+        "The resolution professional did not include the authority’s statutory claim in the resolution plan.",
+        "The plan waived the authority’s claim without making provision for payment of the statutory dues.",
+        "The plan was approved by the committee of creditors and the adjudicating authority without the required examination of its statutory compliance."
+      ],
+      "conclusion": "A plan that ignores statutory dues altogether must be rejected and is not binding on the authority owed those dues. The resolution plan was set aside, and a fresh plan could be considered with provision for the statutory creditors’ dues.",
+      "legal_principle": "Sections 29, 30(2)(b) and 30(2)(e) of the Insolvency and Bankruptcy Code require relevant information to be included and the plan to provide for operational creditors’ dues and not contravene applicable law. Sections 31(1) and 31(2) require the adjudicating authority to examine compliance before approval and permit rejection of a non-conforming plan; Section 61(3) provides grounds to challenge approval. Regulation 36(2)(h) requires information about material litigation and proceedings initiated by government and statutory authorities. The Court relied on Swiss Ribbons (P) Ltd. v. Union of India for the resolution professional’s role, Ghanshyam Mishra & Sons (P) Ltd. v. Edelweiss Asset Reconstruction Co. Ltd. for the statutory requirements and limits of review, and Ebix Singapore Private Limited v. Committee of Creditors of Educomp Solutions Limited for the adjudicating authority’s compliance-checking role. Commercial wisdom does not permit the committee of creditors to secure its own dues at the cost of statutory dues.",
+      "rule": {
+        "if": "corporate_insolvency_resolution_plan and outstanding_statutory_dues and plan_omits_statutory_dues_altogether",
+        "then": "resolution_plan_omitting_statutory_dues_is_invalid"
+      },
+      "predicates": {
+        "corporate_insolvency_resolution_plan": "A resolution plan is submitted for approval in a corporate insolvency resolution process.",
+        "outstanding_statutory_dues": "The debtor owes statutory dues to a government authority or other public authority.",
+        "plan_omits_statutory_dues_altogether": "The plan makes no provision for the outstanding statutory dues."
+      },
+      "definition": "When a plan submitted in a corporate insolvency resolution process omits the debtor’s outstanding statutory dues altogether, the plan is invalid."
+    }
+  ],
+  "seconds": 23.6
+}

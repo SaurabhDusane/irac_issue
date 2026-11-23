@@ -1,0 +1,118 @@
+{
+  "doc_id": "175832973",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35726,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3415,
+    "prompt_tokens": 9111,
+    "total_tokens": 12526,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An acquisition under the former land acquisition law lapses when the award was made at least five years before the new law commenced and either physical possession was not taken or compensation was not paid.",
+      "material_facts": [
+        "The acquisition award had been made more than five years before the new law commenced.",
+        "The owner had not been paid compensation.",
+        "The owner remained in possession, and the Court found that possession had not been taken by the acquiring authority."
+      ],
+      "conclusion": "The acquisition proceedings in respect of the owner's land were deemed to have lapsed, and the acquisition notifications were quashed.",
+      "legal_principle": "Section 24(2) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 creates a legal fiction of lapse where an award was made five years or more before commencement and either possession has not been taken or compensation has not been paid. The Court applied Pune Municipal Corporation v. Harakchand Misirimal Solanki, which held that the conditions are alternatives and that Section 6 of the General Clauses Act, 1897 is subject to Section 24(2); it also relied on Sree Balaji Nagar Residential Association v. State of Tamil Nadu. The contrary argument based on Satendra Prasad Jain and Sanjeevanagar Medical and Health Employees' Co-operative Housing Society was rejected.",
+      "rule": {
+        "if": "former_law_acquisition_proceeding and award_old_enough and (physical_possession_not_taken or compensation_not_paid)",
+        "then": "acquisition_proceedings_deemed_lapsed"
+      },
+      "predicates": {
+        "former_law_acquisition_proceeding": "The proceeding was for acquisition under the former land acquisition law.",
+        "award_old_enough": "The acquisition award was made at least five years before the new land acquisition law commenced.",
+        "physical_possession_not_taken": "The acquiring authority had not actually taken possession of the land from the owner or interested person.",
+        "compensation_not_paid": "The compensation awarded for the land had not been paid to the owner or interested person."
+      },
+      "definition": "When an acquisition under the former law has an award old enough and either possession has not been taken or compensation has not been paid, the acquisition proceedings are deemed to have lapsed."
+    },
+    {
+      "legal_issue": "Physical possession for land acquisition requires actual possession, and a possession record that does not establish actual taking cannot by itself establish that possession was taken.",
+      "material_facts": [
+        "A possession-taking record showed that only the vacant portion of the land was dealt with, while the building structure was not taken because a demolition squad was unavailable.",
+        "The original record stated that further possession-taking action was to continue, but the acquiring authority later relied on a conflicting memo stating that possession had been taken.",
+        "The owner was protected by a court order maintaining the status quo as to possession, and the acquiring authority knew of that order.",
+        "The owner was not given notice calling on it to hand over possession, and the alleged possession memo was not made in the presence of independent witnesses."
+      ],
+      "conclusion": "The Court rejected the claim that possession had been taken and found that physical possession had not been taken from the owner.",
+      "legal_principle": "Under Section 16 of the Land Acquisition Act, 1894, vesting follows the actual taking of possession; until then the acquiring authority cannot rely on the statutory vesting presumption. A paper or merely symbolic taking is insufficient, and the manner of taking possession depends on the nature of the land. The Court relied on Prahlad Singh v. Union of India, Raghbir Singh Sehrawat v. State of Haryana, Balwant Narayan Bhagde v. M.D. Bhagwat, and the discussion of accepted possession-taking methods in Sita Ram Bhandar Society v. Lieutenant Governor and T.N. Housing Board v. A. Viswam.",
+      "rule": {
+        "if": "land_acquisition_possession_dispute and (building_structure_left_untaken or possession_record_contradicted_by_original_record or possession_claim_conflicted_with_court_order)",
+        "then": "physical_possession_not_established"
+      },
+      "predicates": {
+        "land_acquisition_possession_dispute": "The proceeding concerned whether an acquiring authority had taken possession of land for a compulsory acquisition.",
+        "building_structure_left_untaken": "The acquiring authority left a building structure on the land untaken during the alleged possession-taking operation.",
+        "possession_record_contradicted_by_original_record": "A later possession record conflicted with the contemporaneous possession-taking record.",
+        "possession_claim_conflicted_with_court_order": "The alleged possession-taking claim conflicted with a court order maintaining the status quo as to possession."
+      },
+      "definition": "In a land-acquisition possession dispute, leaving a structure untaken, relying on a record contradicted by the original record, or claiming possession contrary to a court order means physical possession has not been established."
+    },
+    {
+      "legal_issue": "A court-ordered stay or status quo order does not extend the five-year period used to determine lapse under the new land acquisition law.",
+      "material_facts": [
+        "The owner's possession was protected by status quo orders during the acquisition proceedings.",
+        "The owner relied on the rule that the period was not extended because of the court orders, and the Court applied the prior decision stating that such periods are not excluded."
+      ],
+      "conclusion": "The period during which the proceedings were affected by a stay, injunction, or status quo order is not excluded from the five-year period.",
+      "legal_principle": "Section 24(2) contains no exclusion of time during which proceedings were delayed by a stay, injunction, or status quo order. The Court relied on Sree Balaji Nagar Residential Association v. State of Tamil Nadu, which held that the legislature had not extended the five-year period for such delays.",
+      "rule": {
+        "if": "former_law_acquisition_proceeding and judicial_order_delayed_proceedings",
+        "then": "stay_period_not_excluded"
+      },
+      "predicates": {
+        "former_law_acquisition_proceeding": "The proceeding was for acquisition under the former land acquisition law.",
+        "judicial_order_delayed_proceedings": "A stay, injunction, or status quo order of a court delayed or affected the acquisition proceedings."
+      },
+      "definition": "When a court order delays a proceeding for acquisition under the former law, that delay is not excluded from the period used to determine lapse."
+    },
+    {
+      "legal_issue": "The statutory restrictions on transferring land in the capital territory did not defeat the owner's claim where the acquisition was not made by the central government and permission to transfer had been obtained.",
+      "material_facts": [
+        "The acquisition notification identified the territorial government as the acquiring authority and did not state that it was acquiring the land on behalf of the central government.",
+        "The sale deed stated that the vendor had obtained a no-objection certificate under the land-transfer restrictions."
+      ],
+      "conclusion": "The transfer-restriction objection was rejected because the restrictions did not apply on the facts, and permission to transfer had in any event been obtained.",
+      "legal_principle": "Sections 3, 4, and 9 of the Delhi Land (Restriction on Transfer) Act, 1972 restrict transfers of land acquired by the central government or land proposed to be acquired in specified circumstances. The Court held that the acquisition was by the territorial government, not the central government, and also relied on the stated permission for the transfer.",
+      "rule": {
+        "if": "statutory_transfer_objection_in_acquisition_proceeding and (acquisition_not_by_central_government or transfer_permission_obtained)",
+        "then": "transfer_restriction_objection_rejected"
+      },
+      "predicates": {
+        "statutory_transfer_objection_in_acquisition_proceeding": "An objection was raised that a transfer of land breached statutory restrictions on transfers during or after acquisition proceedings.",
+        "acquisition_not_by_central_government": "The land was acquired by an authority other than the central government.",
+        "transfer_permission_obtained": "The transferor had obtained the required permission for the transfer."
+      },
+      "definition": "When a statutory transfer objection is raised in an acquisition proceeding, the objection is rejected if the acquisition was not by the central government or the transferor had obtained permission."
+    },
+    {
+      "legal_issue": "Knowingly making a false possession claim and creating a false official possession record in defiance of a court order maintaining the status quo amounts to contempt of court.",
+      "material_facts": [
+        "The Court found that the Land Acquisition Collector's account of possession-taking was false and contradicted the original record.",
+        "The Court found that a possession memo had been falsely created to support the claim that possession was taken.",
+        "The acquiring officials knew of the court's status quo order but proceeded to assert that possession had been taken."
+      ],
+      "conclusion": "The Court found that the officials' conduct amounted to contempt of court and deprecated their misrepresentation of facts.",
+      "legal_principle": "The Court treated the deliberate disobedience of its status quo order and the filing or creation of false official records to justify that disobedience as contemptuous conduct.",
+      "rule": {
+        "if": "court_order_protected_possession and officials_knew_of_order and false_possession_record_created",
+        "then": "conduct_amounts_to_contempt"
+      },
+      "predicates": {
+        "court_order_protected_possession": "A court order required the parties to maintain the status quo regarding possession of the land.",
+        "officials_knew_of_order": "The officials responsible for the alleged possession-taking knew of the court order.",
+        "false_possession_record_created": "Officials created or relied on an official record falsely stating that possession had been taken."
+      },
+      "definition": "When officials knowingly defy an order protecting possession by creating a false record of possession-taking, their conduct amounts to contempt."
+    }
+  ],
+  "seconds": 21.2
+}

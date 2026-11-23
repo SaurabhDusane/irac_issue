@@ -1,0 +1,85 @@
+{
+  "doc_id": "20344",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29681,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2765,
+    "prompt_tokens": 7342,
+    "total_tokens": 10107,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court confirming the sale of a company’s assets in liquidation must independently ensure that the sale is for a reasonable price through proper disclosure and judicial scrutiny of a reliable valuation.",
+      "material_facts": [
+        "The court-appointed valuer produced a report that was not disclosed to the secured creditor before the sale was confirmed.",
+        "The report relied on unverified local estimates and treated long-term leasehold land as having a value based on rent, without adequately considering the land area or the lease-renewal condition.",
+        "The court accepted the report’s final valuation figure without examining its reasoning, and no reserve price was fixed for the sale.",
+        "The company’s property was sold as a going concern on the basis of an offer matching the report’s valuation, and the secured creditor challenged the confirmation."
+      ],
+      "conclusion": "The confirmation of the sale was set aside because the court had not applied its mind to whether the price was reasonable, had not disclosed the valuation report to interested parties, and had proceeded without a reserve price. The property was to be revalued by another reliable expert and resold after disclosure of the valuation and appropriate advertisement.",
+      "legal_principle": "In a winding-up sale, the court acts as custodian of the interests of the company and its creditors and must exercise judicial discretion to ensure a reasonable price. It must obtain and examine an expert valuation and disclose it to secured creditors and other interested persons; this duty applies even if objections are not raised. Under M/s Navlakha & Sons v. Sri Ramayana Das & Ors. (1969), confirmation does not give an offeror an automatic right to the property, and the court must satisfy itself that the price is reasonable. This principle was also relied on in Allahabad Bank v. Bengal Paper Mills Co. Ltd. (1999), Gordhan Das Chuni Lal v. T. Sriman Kanthimathinatha Pillai, Rathnaswami Pillai v. Sadapathy Pillai, S. Soundararajan v. Roshan & Co., and A. Subbaraya Mudaliar v. K. Sundararajan. Kayjay Industries (P) Ltd. v. Asnew Drums (P) Ltd. does not remove the duty to assess price; a failure to consider material factors may amount to material irregularity, particularly where the price is substantially inadequate.",
+      "rule": {
+        "if": "liquidation_court_auction and sale_confirmed_without_reasoned_market_value_review and (valuation_withheld_from_secured_creditors or valuation_report_materially_unreliable or reserve_price_not_fixed)",
+        "then": "sale_confirmation_is_invalid"
+      },
+      "predicates": {
+        "liquidation_court_auction": "A court conducted or confirmed an auction of a company's assets in liquidation.",
+        "sale_confirmed_without_reasoned_market_value_review": "The court confirmed the sale without adequately assessing whether the price was reasonable in light of the property's market value.",
+        "valuation_withheld_from_secured_creditors": "The valuation report was not provided to secured creditors before the sale was confirmed.",
+        "valuation_report_materially_unreliable": "The valuation report used materially inadequate or unsupported methods or assumptions.",
+        "reserve_price_not_fixed": "No reserve price was fixed for the auction."
+      },
+      "definition": "When a court confirms an auction sale in liquidation without a reasoned assessment of market value and the valuation was withheld, materially unreliable, or unaccompanied by a reserve price, the confirmation is invalid."
+    },
+    {
+      "legal_issue": "A proposed sale of a company in liquidation as a going concern cannot be justified by unsupported claims about workers’ employment or re-employment when the company has long been closed and efforts to revive it have failed.",
+      "material_facts": [
+        "The factory had been closed for many years before the auction.",
+        "The statutory bodies that considered revival of the sick company had rejected the applications to revive it.",
+        "The court changed the proposed sale to a sale as a going concern after an advocate asserted that many workers would be affected and that workers would be re-employed.",
+        "The record contained no adequate material establishing that the company could be revived or that the workers would be re-employed; after purchase, the company was restarted only for its inauguration."
+      ],
+      "conclusion": "The decision to sell the assets as a going concern on the basis of the unverified worker-related assertions was unjustified and could not support confirmation of the sale.",
+      "legal_principle": "A court exercising judicial discretion over a company's assets in liquidation must act on verified material rather than untested oral assertions. It must examine whether there is a factual basis for a proposed going-concern sale and claimed worker re-employment, particularly where the company has been closed and expert revival efforts have failed.",
+      "rule": {
+        "if": "liquidation_court_auction and company_long_closed and revival_attempts_failed and going_concern_sale_based_on_unverified_worker_claim",
+        "then": "going_concern_sale_lacks_adequate_basis"
+      },
+      "predicates": {
+        "liquidation_court_auction": "A court conducted or confirmed an auction of a company's assets in liquidation.",
+        "company_long_closed": "The company's business had been closed for a substantial period before the proposed sale.",
+        "revival_attempts_failed": "Bodies or processes that considered revival of the company did not succeed in securing its revival.",
+        "going_concern_sale_based_on_unverified_worker_claim": "The court treated the sale as a going-concern sale based on an unverified assertion about workers or their re-employment, without adequate evidence that revival was feasible."
+      },
+      "definition": "When a long-closed company whose revival efforts have failed is to be sold as a going concern based on an unverified worker-related claim, the proposed going-concern sale lacks an adequate basis."
+    },
+    {
+      "legal_issue": "An auction purchaser whose sale is set aside is not automatically entitled to interest on the refunded purchase price where the purchaser had received possession and the sale terms reserved the court’s power to set the sale aside after payment.",
+      "material_facts": [
+        "The auction sale was set aside on appeal.",
+        "The purchaser had paid the purchase price and received possession of the property.",
+        "The sale terms expressly allowed the court to set aside the sale even after confirmation or payment.",
+        "The purchaser sought interest and recovery of expenditure incurred after the purchase."
+      ],
+      "conclusion": "The purchaser was entitled to a refund of the amount deposited without interest, but could apply to recover other expenditure if legally entitled to it.",
+      "legal_principle": "Motors and Invests Ltd. v. Union Bank of India was distinguishable because possession had been handed over after payment in the present case. Relying on Allahabad Bank v. Bengal Paper Mills Co. Ltd., the Court held that a purchaser who knew or was bound by the possibility of the sale being set aside could not claim interest merely because the sale was later invalidated; the purchaser could separately apply for recovery of expenditure if entitled to it in law. The express sale condition also reserved the court’s power to set aside the sale after confirmation or payment.",
+      "rule": {
+        "if": "liquidation_court_auction and sale_set_aside_on_appeal and purchaser_received_possession_after_payment and sale_terms_reserved_power_to_set_aside_after_payment",
+        "then": "purchase_price_refund_is_without_interest"
+      },
+      "predicates": {
+        "liquidation_court_auction": "A court conducted or confirmed an auction of a company's assets in liquidation.",
+        "sale_set_aside_on_appeal": "An appellate court set aside the confirmed auction sale.",
+        "purchaser_received_possession_after_payment": "The purchaser paid for the property and received possession after payment.",
+        "sale_terms_reserved_power_to_set_aside_after_payment": "The sale terms allowed the court to set aside the sale even after confirmation or payment."
+      },
+      "definition": "When a liquidation auction sale is set aside on appeal after the purchaser has paid and received possession, and the sale terms reserved the power to set it aside after payment, the purchase price is refunded without interest."
+    }
+  ],
+  "seconds": 20.8
+}

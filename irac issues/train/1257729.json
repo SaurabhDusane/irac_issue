@@ -1,0 +1,60 @@
+{
+  "doc_id": "1257729",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 40634,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2164,
+    "prompt_tokens": 10334,
+    "total_tokens": 12498,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The house-rent amount was properly deleted in computing taxable income.",
+      "material_facts": [
+        "The appeal concerned whether the Tribunal was right to delete an amount claimed toward house rent under the applicable income-tax provision.",
+        "The High Court had answered this issue against the assessee, but the Supreme Court’s decision in Commissioner of Income Tax v. Mafatlal Gangabhai & Co. (P) Ltd. had overruled that answer."
+      ],
+      "conclusion": "The issue was answered in favour of the assessee and against the revenue; the Tribunal was right to delete the house-rent amount.",
+      "legal_principle": "The Court applied its decision in Commissioner of Income Tax v. Mafatlal Gangabhai & Co. (P) Ltd. (1996) 7 SCC 569, which overruled the High Court’s ruling on the house-rent issue under Section 40(a)(v) of the Income Tax Act, 1961.",
+      "rule": {
+        "if": "income_tax_appeal and house_rent_deduction_dispute",
+        "then": "house_rent_amount_deletion_allowed"
+      },
+      "predicates": {
+        "income_tax_appeal": "The matter arose in an appeal concerning the computation of taxable income.",
+        "house_rent_deduction_dispute": "The dispute concerned deletion of an amount claimed toward house rent in computing taxable income."
+      },
+      "definition": "When an income-tax appeal concerns deletion of an amount claimed toward house rent, the amount's deletion is allowed."
+    },
+    {
+      "legal_issue": "An assessee who has claimed depreciation on a depreciable asset cannot elect its historical fair market value as the cost of acquisition when computing capital gains on its transfer.",
+      "material_facts": [
+        "The assessee had owned the properties since before the relevant historical valuation date and sold some of them during the year in question.",
+        "Depreciation had been claimed and allowed on the properties in earlier years.",
+        "In computing capital gains, the assessee elected to use the properties’ fair market value on the historical valuation date instead of their written-down value.",
+        "The dispute concerned assets acquired directly by the assessee, not through one of the modes specified for the special rules governing transferred assets."
+      ],
+      "conclusion": "The assessee could not substitute the historical fair market value for the cost of acquisition. For depreciable assets on which depreciation had been allowed, the cost of acquisition had to be determined under Section 50 read with Section 48, and the appeal on this issue was dismissed.",
+      "legal_principle": "Under Sections 48 and 50 of the Income Tax Act, 1961, where depreciation has been obtained on an asset, the adjusted written-down value is taken as its cost of acquisition. Section 55(2), which provides an option to use historical fair market value, applies for the purposes of Sections 48 and 49 but does not displace the special method in Section 50. Section 55(1)(a) explains the adjustment to written-down value. The Court agreed with Rajnagar Vaktapur Ginning, Pressing and Manufacturing Co. Ltd. v. CIT (1975) 99 ITR 264, CIT v. Upper Doab Sugar Mills (1979) 116 ITR 240, Prime Product Pvt. Ltd. v. CIT (1979) 116 ITR 473, India Jute Co. Ltd. v. CIT (1982) 136 ITR 597, and the impugned Kerala High Court decision, and rejected the contrary approach in Goculdas Dossa and Co. v. J.P. Shah (1995) 211 ITR 706.",
+      "rule": {
+        "if": "income_tax_capital_gains_proceeding and asset_transferred and asset_depreciable and depreciation_allowed and asset_owned_before_valuation_date and historical_value_elected",
+        "then": "historical_fair_market_value_option_unavailable"
+      },
+      "predicates": {
+        "income_tax_capital_gains_proceeding": "The proceeding concerns computation of capital gains for income-tax purposes.",
+        "asset_transferred": "The assessee transferred the asset during the relevant period.",
+        "asset_depreciable": "The transferred asset was of a kind on which depreciation could be claimed.",
+        "depreciation_allowed": "Depreciation had been claimed and allowed on the asset before its transfer.",
+        "asset_owned_before_valuation_date": "The assessee had owned the asset before the date for which historical fair market value could be elected.",
+        "historical_value_elected": "The assessee elected to use the asset's historical fair market value instead of its written-down value as the cost of acquisition."
+      },
+      "definition": "When an income-tax capital-gains proceeding involves a transferred depreciable asset owned before the valuation date, depreciation allowed on that asset, and an election to use its historical fair market value, that election is unavailable."
+    }
+  ],
+  "seconds": 13.5
+}

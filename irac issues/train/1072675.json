@@ -1,0 +1,62 @@
+{
+  "doc_id": "1072675",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19127,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1370,
+    "prompt_tokens": 5217,
+    "total_tokens": 6587,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court considering a challenge to an arbitral award cannot set it aside by re-examining and reappraising evidence that the arbitrator considered and believed.",
+      "material_facts": [
+        "The parties referred their disputes to arbitration, and the arbitrator heard and considered substantial oral and documentary evidence.",
+        "The arbitrator accepted the Chief Engineer’s evidence and found that the contractor was not entitled to additional payment.",
+        "In proceedings to set aside the award, a High Court judge re-examined and reappraised that evidence and set aside part of the award."
+      ],
+      "conclusion": "The High Court could not sit in appeal over the arbitrator’s award by reappraising the evidence; the award could not be set aside on that basis.",
+      "legal_principle": "Under sections 30 and 33 of the Arbitration Act, 1940, a court hearing a challenge to an award does not exercise appellate jurisdiction over the arbitrator’s assessment of evidence. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "award_challenge_proceeding and arbitrator_considered_evidence and arbitrator_believed_evidence and reviewing_court_reappraised_evidence",
+        "then": "award_not_set_aside_for_reappraisal"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party brought a proceeding to have an arbitral award set aside.",
+        "arbitrator_considered_evidence": "The arbitrator considered evidence bearing on the dispute.",
+        "arbitrator_believed_evidence": "The arbitrator accepted evidence in reaching the award.",
+        "reviewing_court_reappraised_evidence": "The reviewing court reassessed evidence to reach a different view from the arbitrator."
+      },
+      "definition": "When a party challenges an award and the arbitrator considered and accepted evidence, a reviewing court's reassessment of that evidence does not justify setting the award aside."
+    },
+    {
+      "legal_issue": "A contractual requirement for a written authorization before additional work or payment may be claimed cannot be displaced by estoppel merely because the other party's officials did not respond to requests or allowed the work to proceed.",
+      "material_facts": [
+        "The contract required the Chief Engineer’s written order before work involving additional leads beyond the specified average could support extra payment.",
+        "The contractor sought such an order, but the arbitrator believed the Chief Engineer’s evidence that no order had been made and found that the written-order requirement was unmet.",
+        "The contractor had written to the engineering department, which did not reply for a considerable time, and a lower court treated the condition as fulfilled despite the absence of a written order."
+      ],
+      "conclusion": "In the absence of the required written order, the court could not impose liability for extra payment by applying estoppel or an analogous principle; the arbitrator’s conclusion disclosed no error justifying setting aside the award.",
+      "legal_principle": "Under sections 30 and 33 of the Arbitration Act, 1940, the award could not be set aside on the basis of an appellate reassessment or an estoppel-like principle that displaced the contract’s express requirement for the Chief Engineer’s written order. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "award_challenge_proceeding and written_order_condition_required and written_order_absent and claimant_requested_authorization and department_delayed_reply and reviewing_court_used_estoppel",
+        "then": "award_not_set_aside_for_estoppel"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party brought a proceeding to have an arbitral award set aside.",
+        "written_order_condition_required": "The contract required written authorization before additional work or payment could be claimed.",
+        "written_order_absent": "The required written authorization was not made.",
+        "claimant_requested_authorization": "The claimant asked the relevant officials for the required written authorization.",
+        "department_delayed_reply": "The officials did not reply to the claimant's request for a considerable time.",
+        "reviewing_court_used_estoppel": "The reviewing court treated the claimant as entitled to payment by applying estoppel or an analogous principle despite the missing authorization."
+      },
+      "definition": "When a challenged award concerns a contractual requirement for written authorization, the authorization is absent, and a reviewing court relies on estoppel despite that absence, the award is not set aside on that basis."
+    }
+  ],
+  "seconds": 10.6
+}

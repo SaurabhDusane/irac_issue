@@ -1,0 +1,79 @@
+{
+  "doc_id": "2040",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22533,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2831,
+    "prompt_tokens": 6155,
+    "total_tokens": 8986,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Depreciation allowance is calculated by reference to the original actual cost of the asset to the person who owns it and is being assessed.",
+      "material_facts": [
+        "The assessee acquired colliery assets from another company and claimed depreciation on the basis of their acquisition cost rather than only their written-down value in the former owner's assessment records.",
+        "The dispute concerned the cost relevant to depreciation and the statutory limit on aggregate depreciation allowances."
+      ],
+      "conclusion": "The relevant original cost is the actual cost to the assessee who owns the asset and is being assessed, not the asset's original cost to its former owner.",
+      "legal_principle": "Sections 10(2)(vi) and 10(5) of the Income-tax Act, 1922 require the original actual cost to the assessee to be ascertained to calculate written-down value for assets other than ocean-going ships; the proviso's aggregate-allowance limit also refers to original cost to the assessee. Commissioner of Income Tax v. Buckingham and Carnatic Co. Ltd. and Jogta Coal Co. Ltd. establish that “assessee” means the person owning the asset and being assessed, including where that person acquired the business from another.",
+      "rule": {
+        "if": "depreciation_allowance_assessment and assessee_owns_asset and asset_acquired_from_prior_owner",
+        "then": "depreciation_cost_is_actual_cost_to_assessee"
+      },
+      "predicates": {
+        "depreciation_allowance_assessment": "A tax assessment determines depreciation allowance for an asset.",
+        "assessee_owns_asset": "The person being assessed owns the asset for which depreciation is claimed.",
+        "asset_acquired_from_prior_owner": "The assessed owner acquired the asset from a previous owner."
+      },
+      "definition": "When a depreciation assessment concerns an asset acquired from a previous owner and owned by the person assessed, the depreciation cost is the asset's actual cost to that assessed owner."
+    },
+    {
+      "legal_issue": "Tax authorities may look beyond a deed's stated valuation and allocation of purchase consideration when the circumstances indicate that those figures do not reflect the actual cost of the assets.",
+      "material_facts": [
+        "The sale deed allocated the total consideration among categories of colliery property, but the tax authorities found that the purchaser and vendor had directors and shareholders in common.",
+        "The inquiry found that the values of depreciable assets and stores had been written up while the values of non-depreciable assets had been written down.",
+        "The vendor had made good profits, but the deed made no provision for goodwill; the Tribunal regarded the deed's allocation as arbitrary and accepted the inquiry officer's reassessment of the allocation.",
+        "The tax authorities considered valuation material and expert reports before determining a different allocation between goodwill, mines, stores and other assets."
+      ],
+      "conclusion": "In the circumstances, the tax authorities were entitled to go behind the deed's valuation and allocation and determine afresh the valuation and allocation between depreciable and non-depreciable assets.",
+      "legal_principle": "Original cost is a question of fact determined from the evidence or material before the tax authorities. A formal deed stating the consideration is prima facie evidence of cost, but it need not be accepted where circumstances indicate a fictitious price, fraud or collusion, or inflation or deflation of value for an ulterior purpose. Sections 10(2)(vi) and 10(5) of the Income-tax Act, 1922 apply. Pindi Kashmir Transport Co. Ltd. v. Commissioner of Income Tax and Kalooram Govindram v. Commissioner of Income Tax are relied on concerning the authority to reject the stated price and ascertain actual cost; Buckingham and Carnatic Co. Ltd. and Jogta Coal Co. Ltd. are also discussed on cost to the assessee.",
+      "rule": {
+        "if": "depreciation_allowance_assessment and (fictitious_price_indicated_by_evidence or vendor_purchaser_collusion_indicated or asset_values_adjusted_for_ulterior_purpose)",
+        "then": "tax_authority_may_redetermine_asset_valuation_and_allocation"
+      },
+      "predicates": {
+        "depreciation_allowance_assessment": "A tax assessment determines depreciation allowance for acquired assets.",
+        "fictitious_price_indicated_by_evidence": "Evidence available to the tax authority indicates that the stated price for an asset was fictitious.",
+        "vendor_purchaser_collusion_indicated": "Evidence indicates that the vendor and purchaser colluded in stating the price or allocation.",
+        "asset_values_adjusted_for_ulterior_purpose": "Evidence indicates that asset values were inflated or deflated for an ulterior purpose."
+      },
+      "definition": "In a depreciation assessment, if evidence indicates a fictitious price, collusion, or value adjustments for an ulterior purpose, the tax authority may redetermine the valuation and allocation of the assets."
+    },
+    {
+      "legal_issue": "Whether goodwill formed part of the consideration for acquired assets may be determined from evidence even when the sale deed does not expressly identify goodwill as sold.",
+      "material_facts": [
+        "The sale deed allocated the consideration among categories of colliery property but did not expressly identify goodwill as an item sold.",
+        "The vendor had been making good profits, and the tax inquiry considered whether goodwill had been included in the transaction and how the consideration should be allocated.",
+        "The tax authorities considered expert material and other evidence in determining the allocation."
+      ],
+      "conclusion": "The tax authorities may determine from the evidence whether goodwill was purchased, even if the deed does not expressly state that goodwill was sold.",
+      "legal_principle": "The stated consideration and allocation in a deed are evidence, but the actual cost and what it included are factual matters that may be determined from the available evidence. Sections 10(2)(vi) and 10(5) of the Income-tax Act, 1922 govern the depreciation inquiry. The Court referred to Pindi Kashmir Transport Co. Ltd. v. Commissioner of Income Tax and Kalooram Govindram v. Commissioner of Income Tax on ascertaining actual cost, and to S. C. Cambatta & Co. P. Ltd. v. Commissioner of Excess Profits Tax concerning goodwill.",
+      "rule": {
+        "if": "depreciation_allowance_assessment and goodwill_not_expressly_identified and evidence_bears_on_goodwill_transfer",
+        "then": "tax_authority_may_determine_whether_goodwill_was_acquired"
+      },
+      "predicates": {
+        "depreciation_allowance_assessment": "A tax assessment determines depreciation allowance for acquired assets.",
+        "goodwill_not_expressly_identified": "The transaction document does not expressly identify goodwill as an item sold.",
+        "evidence_bears_on_goodwill_transfer": "Evidence is available that bears on whether goodwill passed to the purchaser as part of the transaction."
+      },
+      "definition": "In a depreciation assessment, when goodwill is not expressly identified in the transaction document but evidence bears on its transfer, the tax authority may determine whether goodwill was acquired."
+    }
+  ],
+  "seconds": 18.7
+}

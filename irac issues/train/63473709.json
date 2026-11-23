@@ -1,0 +1,223 @@
+{
+  "doc_id": "63473709",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 74171,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4801,
+    "prompt_tokens": 17631,
+    "total_tokens": 22432,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "For environmental-clearance thresholds, built-up area includes all covered construction and is not limited to floor-space-index area.",
+      "material_facts": [
+        "The project’s clearance specified a built-up area of 57,658.42 square metres.",
+        "The project proponent treated construction excluded from floor-space-index calculations under local development rules as outside the clearance limit.",
+        "The project’s covered construction exceeded the area specified in the clearance when both floor-space-index and non-floor-space-index construction were counted."
+      ],
+      "conclusion": "Built-up area under the 2006 notification includes all constructed area that is not open to the sky, without an exclusion for non-floor-space-index construction; the construction exceeded the clearance.",
+      "legal_principle": "Item 8(a) of the Schedule to the Environmental Impact Assessment Notification, 2006 describes built-up area as covered construction and provides that open-to-sky facilities are measured by activity area. The 2011 notification expressly includes covered area on all floors, including basements and service areas. Floor-space-index exclusions under local development rules do not govern environmental-clearance calculations.",
+      "rule": {
+        "if": "environmental_clearance_threshold_case and (covered_construction_includes_non_fsi_area or covered_construction_exceeds_clearance_area)",
+        "then": "all_covered_construction_counts_toward_environmental_clearance_area"
+      },
+      "predicates": {
+        "environmental_clearance_threshold_case": "The proceeding concerns the calculation of a construction project’s area for an environmental-clearance threshold or limit.",
+        "covered_construction_includes_non_fsi_area": "The project contains covered construction that local building rules exclude from floor-space-index calculations.",
+        "covered_construction_exceeds_clearance_area": "The project’s covered construction, counted as a whole, exceeds the area authorized by its environmental clearance."
+      },
+      "definition": "When a project’s environmental-clearance area is disputed, covered construction counts toward that area even if local building rules exclude some of it from floor-space-index calculations."
+    },
+    {
+      "legal_issue": "A non-gazetted administrative memorandum cannot alter or nullify a statutory environmental notification.",
+      "material_facts": [
+        "The 2006 notification was issued and published after the process prescribed for statutory notifications, and the 2011 notification amended its definition of built-up area.",
+        "A Joint Director issued an office memorandum stating that projects predating the 2011 notification should have their built-up area assessed under local building rules.",
+        "The memorandum was not notified in the Gazette and purported to change the effect of the statutory notifications."
+      ],
+      "conclusion": "The office memorandum was illegal and was quashed.",
+      "legal_principle": "Rule 5(3) of the Environment (Protection) Rules, 1986 governs the statutory notification process. An administrative office memorandum cannot set aside or render redundant statutory notifications issued under that process. The Court also held that the 2006 definition was clear and needed no such clarification.",
+      "rule": {
+        "if": "challenge_to_administrative_environmental_guidance and guidance_changes_statutory_notification_effect and guidance_not_gazetted",
+        "then": "administrative_guidance_cannot_override_statutory_notification"
+      },
+      "predicates": {
+        "challenge_to_administrative_environmental_guidance": "The proceeding challenges administrative guidance about the meaning or effect of an environmental requirement.",
+        "guidance_changes_statutory_notification_effect": "The guidance purports to change or nullify the effect of a statutory environmental notification.",
+        "guidance_not_gazetted": "The guidance was not issued as a gazetted statutory notification."
+      },
+      "definition": "Administrative guidance that changes the effect of a statutory environmental notification cannot prevail when it was not issued as a gazetted notification."
+    },
+    {
+      "legal_issue": "A project’s expansion clearance is invalid when it omits existing covered construction and consequently uses the wrong appraisal category or rests on an order that has been quashed.",
+      "material_facts": [
+        "The first clearance authorized 57,658.42 square metres of built-up area, but existing construction amounted to 1,00,002.25 square metres when all covered construction was counted.",
+        "The expansion clearance did not include the non-floor-space-index area built under the first clearance and treated the project as falling within a lower appraisal category.",
+        "The expansion clearance also relied on a state order that the Tribunal had quashed."
+      ],
+      "conclusion": "The expansion environmental clearance was beyond the authority of the granting body and was quashed.",
+      "legal_principle": "The project’s total covered construction, including existing construction, had to be considered in deciding the applicable category under Item 8 of the 2006 notification. An authority cannot grant clearance by disregarding relevant existing construction or by relying on an order that has been quashed.",
+      "rule": {
+        "if": "challenge_to_expansion_clearance and existing_covered_construction_omitted and (wrong_appraisal_category_used or clearance_rests_on_quashed_order)",
+        "then": "expansion_environmental_clearance_is_invalid"
+      },
+      "predicates": {
+        "challenge_to_expansion_clearance": "The proceeding challenges an environmental clearance granted for an expansion of an existing project.",
+        "existing_covered_construction_omitted": "The granting authority excluded existing covered construction when assessing the project’s total area.",
+        "wrong_appraisal_category_used": "The project was assessed under an appraisal category that did not apply to its total area and proposed construction.",
+        "clearance_rests_on_quashed_order": "The clearance relied on an administrative order that had already been quashed."
+      },
+      "definition": "An expansion clearance is invalid when the authority omits existing covered construction and thereby uses the wrong appraisal category or relies on an order that has been quashed."
+    },
+    {
+      "legal_issue": "A review application should ordinarily be heard by the original bench, and a review should not proceed on an issue already before the appellate court.",
+      "material_facts": [
+        "The review application was heard by a different bench even though a member of the original bench remained available.",
+        "The review application sought increased damages based on an affidavit whose filing and consideration were disputed.",
+        "An appeal concerning the original order, including the extent of damages, was pending before the Supreme Court when the review was heard."
+      ],
+      "conclusion": "The review order was set aside as illegal.",
+      "legal_principle": "Section 19(4)(f) of the National Green Tribunal Act, 2010 gives the Tribunal review powers akin to those of a civil court. Rule 22 of the National Green Tribunal (Practices and Procedure) Rules, 2011 and Order XLVII Rules 1 and 5 of the Code of Civil Procedure support the ordinary requirement that the original bench hear the review, subject to practical impossibility or recusal, and restrict review where the same ground is before the appellate court. The Court relied on Malthesh Gudda Pooja v. State of Karnataka, (2011) 15 SCC 330, and referred to Common Cause v. Union of India, (2017) 9 SCC 499, in discussing improper official clarifications.",
+      "rule": {
+        "if": "challenge_to_review_order and (original_bench_available and different_bench_heard_review or appeal_pending_on_review_issue)",
+        "then": "review_order_is_set_aside"
+      },
+      "predicates": {
+        "challenge_to_review_order": "The proceeding challenges an order made on review of an earlier decision.",
+        "original_bench_available": "At least one member of the original bench remained available to hear the review and had not recused.",
+        "different_bench_heard_review": "A bench other than the original bench heard the review application.",
+        "appeal_pending_on_review_issue": "An appeal was pending in which the issue raised in the review was already before the appellate court."
+      },
+      "definition": "A review order is liable to be set aside when a different bench hears it despite the original bench being available, or when the same issue is already before the appellate court."
+    },
+    {
+      "legal_issue": "Demolition is not required where the exceptional circumstances make it an unjust response to existing occupied construction, but the developer may not continue with further unauthorized buildings.",
+      "material_facts": [
+        "Hundreds of flats and shops were completed or under construction, and many had been occupied or purchased by members of the public who had invested their savings.",
+        "The proposed additional buildings were not covered by a valid clearance and the plan for them was submitted after the earlier clearance had expired.",
+        "The Court found that demolition would cause innocent purchasers substantial loss but also barred construction of the two additional buildings."
+      ],
+      "conclusion": "In the peculiar circumstances, demolition of the existing permitted-for-completion construction was not ordered; completion was limited to the specified existing flats, shops, offices and community facilities, and the two additional buildings were prohibited.",
+      "legal_principle": "Although the Court is normally reluctant to legalize illegal construction, it may account for the position of third parties who were not parties to the proceedings and who have already invested in or occupied the construction. That consideration did not justify further construction unsupported by a valid clearance.",
+      "rule": {
+        "if": "environmental_construction_violation_case and third_party_purchasers_invested_or_occupied and additional_construction_lacks_valid_clearance",
+        "then": "demolition_of_existing_construction_is_not_required_but_further_unauthorized_construction_is_barred"
+      },
+      "predicates": {
+        "environmental_construction_violation_case": "The proceeding concerns construction carried out in violation of environmental-clearance requirements.",
+        "third_party_purchasers_invested_or_occupied": "Members of the public who were not parties to the proceeding had purchased, invested in, or occupied the existing construction.",
+        "additional_construction_lacks_valid_clearance": "Further proposed construction is not supported by a valid environmental clearance."
+      },
+      "definition": "Where third parties have invested in or occupied existing construction, demolition may be avoided, but that circumstance does not permit further construction without valid clearance."
+    },
+    {
+      "legal_issue": "A person pursuing a private grievance cannot obtain special damages by presenting the dispute as a public-interest environmental case.",
+      "material_facts": [
+        "The original applicant had applied for a flat in the project and had pursued a consumer complaint about service deficiencies before filing the environmental application.",
+        "The environmental application followed other disputes between the applicant and the project proponent.",
+        "The applicant sought special damages for himself while also seeking general directions."
+      ],
+      "conclusion": "The application was not a public-interest litigation, and the applicant’s claim for special damages was rejected.",
+      "legal_principle": "The Court assessed the nature and history of the applicant’s own dispute with the project proponent and concluded that the proceeding was not genuinely brought as public-interest litigation. The judgment identifies no statutory provision or earlier case as the basis for rejecting the special-damages claim.",
+      "rule": {
+        "if": "claim_for_special_damages_in_environmental_proceeding and applicant_has_personal_dispute_with_project_proponent",
+        "then": "special_damages_claim_is_rejected_as_not_public_interest_relief"
+      },
+      "predicates": {
+        "claim_for_special_damages_in_environmental_proceeding": "An applicant seeks personal special damages in an environmental proceeding that also seeks general directions.",
+        "applicant_has_personal_dispute_with_project_proponent": "The applicant has a personal dispute with the project proponent, including a prior claim concerning the project or its services."
+      },
+      "definition": "A claimant with a personal dispute who seeks special damages in an environmental proceeding cannot obtain that personal relief by characterizing the proceeding as public-interest litigation."
+    },
+    {
+      "legal_issue": "Environmental damages cannot be assessed on a new carbon-footprint method without pleadings and reliable expert or empirical support, although that method is not categorically unavailable in other cases.",
+      "material_facts": [
+        "The carbon-footprint method was introduced in an affidavit after the original pleadings and evidence, and the applicant’s authority to file that affidavit was disputed.",
+        "The Court had no reliable expert evidence or empirical data establishing that the proposed method could assess the environmental harm in this case.",
+        "The calculations relied on assumptions about matters including groundwater use, cultural-centre space and basements that the Court had not established."
+      ],
+      "conclusion": "The Court declined to assess damages using the carbon-footprint method in this case, while leaving open its use where reliable expert evidence or empirical data supports it.",
+      "legal_principle": "A court should not introduce a new method of assessing damages without expert evidence or established principles, particularly where the method is raised after pleadings and evidence have closed. The Court did not hold that carbon-footprint damages are never permissible; it stated that reliable expert evidence or empirical data may support their use in an appropriate case.",
+      "rule": {
+        "if": "environmental_damages_assessment_case and carbon_footprint_method_proposed and (no_reliable_expert_or_empirical_support or method_not_pleaded_before_evidence_closed)",
+        "then": "carbon_footprint_damages_are_not_assessed_on_this_record"
+      },
+      "predicates": {
+        "environmental_damages_assessment_case": "The proceeding requires the court to assess damages for environmental harm caused by a project.",
+        "carbon_footprint_method_proposed": "A party asks the court to calculate damages using a carbon-footprint method.",
+        "no_reliable_expert_or_empirical_support": "The record contains no reliable expert evidence or empirical data supporting the method’s use to assess the harm.",
+        "method_not_pleaded_before_evidence_closed": "The method was introduced after the pleadings and evidence had closed."
+      },
+      "definition": "A carbon-footprint method is not used to assess environmental damages when it is proposed without reliable support or introduced only after the evidentiary stage, though supported use remains possible in another case."
+    },
+    {
+      "legal_issue": "Substantial environmental damages are justified where a project proponent has seriously and persistently violated its clearance and environmental laws, and speculative damage calculations are not necessary to impose them.",
+      "material_facts": [
+        "The project’s construction substantially exceeded the area authorized by its environmental clearance, and construction after the clearance expired lacked a valid clearance.",
+        "The project proponent built more buildings and flats than originally approved and pursued further construction without obtaining the required fresh clearance.",
+        "The Court described the project proponent’s conduct as intransigent and unapologetic and found that officials had been manipulated or maneuvered.",
+        "The carbon-footprint calculation was unsupported by reliable material, but the record established violations of the clearance and environmental laws."
+      ],
+      "conclusion": "The Court imposed environmental damages of 100 crore rupees or 10 percent of project cost, whichever was higher, and an additional 5 crore rupees for contravening mandatory environmental laws.",
+      "legal_principle": "The Court stated that 5 percent of project cost had been awarded as damages in a number of cases as a general approach, but imposed a higher measure in light of the serious and persistent conduct in this case. Damages could be imposed on well-settled legal principles without adopting an unproven carbon-footprint calculation.",
+      "rule": {
+        "if": "environmental_damages_assessment_case and serious_environmental_clearance_violations and (continued_or_expanded_construction_without_valid_clearance or intransigent_project_conduct)",
+        "then": "substantial_environmental_damages_are_imposed"
+      },
+      "predicates": {
+        "environmental_damages_assessment_case": "The proceeding requires the court to determine damages for environmental violations by a project proponent.",
+        "serious_environmental_clearance_violations": "The project proponent substantially exceeded the construction authorized by its clearance or contravened mandatory environmental requirements.",
+        "continued_or_expanded_construction_without_valid_clearance": "The project proponent continued or expanded construction without a valid environmental clearance.",
+        "intransigent_project_conduct": "The project proponent persisted in serious non-compliance and displayed conduct the court considered intransigent or unapologetic."
+      },
+      "definition": "Substantial damages may be imposed when a project proponent commits serious clearance violations and continues unauthorized construction or acts intransigently."
+    },
+    {
+      "legal_issue": "Exceptional permission to seek an ex post facto environmental clearance may be made conditional on payment of environmental damages and compliance with conditions set by the competent authority.",
+      "material_facts": [
+        "The project proponent had violated the earlier clearance and the clearance for the expansion had been quashed.",
+        "The Court directed payment of damages and, in the peculiar facts of the case, allowed the project proponent thereafter to approach the competent authority for clearance to complete the permitted portion of the project.",
+        "The authority was left to impose appropriate conditions."
+      ],
+      "conclusion": "After depositing the damages, the project proponent could apply to the appropriate authority for an ex post facto clearance, which could be granted on conditions the authority considered necessary.",
+      "legal_principle": "The Court stated that it would not normally grant ex post facto environmental clearance, but allowed an application to the competent authority in the peculiar facts of this case after payment of damages. The authority retained discretion to impose appropriate conditions.",
+      "rule": {
+        "if": "environmental_clearance_violation_case and exceptional_project_circumstances and damages_paid_before_application",
+        "then": "project_may_apply_for_ex_post_facto_clearance_subject_to_authority_conditions"
+      },
+      "predicates": {
+        "environmental_clearance_violation_case": "The proceeding concerns a project that has violated its environmental clearance requirements.",
+        "exceptional_project_circumstances": "The court finds circumstances sufficiently unusual to justify permitting an application for clearance despite the prior violations.",
+        "damages_paid_before_application": "The project proponent has paid the damages required by the court before applying for clearance."
+      },
+      "definition": "In exceptional circumstances, a project proponent that has paid the required damages may apply for ex post facto clearance, subject to conditions imposed by the competent authority."
+    },
+    {
+      "legal_issue": "Directions concerning municipal officials and municipal liability may be upheld on the record of official assistance to a project proponent, while individual officers cannot be condemned without being parties to the proceedings.",
+      "material_facts": [
+        "The Tribunal found that municipal officers had suppressed facts or given an interpretation of the environmental requirements tailored to assist the project proponent.",
+        "The municipality challenged the directions imposing a fine and requiring action against erring officers, and the Supreme Court upheld those directions.",
+        "Individual officers accused of misconduct had not been made parties in their personal capacities and had no opportunity to respond."
+      ],
+      "conclusion": "The Court upheld the municipal fine and directions to take action against erring officers, and directed a report concerning the relevant senior official; it declined to comment on allegations against individuals who were not parties.",
+      "legal_principle": "A person should not be condemned unheard. The Court therefore refrained from deciding allegations against individuals who were not parties, but upheld official-capacity directions supported by the record. The judgment cites no specific statutory provision or earlier case for this ruling.",
+      "rule": {
+        "if": "environmental_enforcement_appeal and official_assistance_to_noncompliant_project_found and (municipality_challenges_accountability_directions or accused_individuals_not_parties)",
+        "then": "official_capacity_directions_may_be_upheld_but_nonparty_individuals_are_not_condemned"
+      },
+      "predicates": {
+        "environmental_enforcement_appeal": "The proceeding challenges enforcement directions made in an environmental matter.",
+        "official_assistance_to_noncompliant_project_found": "The record supports a finding that officials acted to assist a project that was not complying with environmental requirements.",
+        "municipality_challenges_accountability_directions": "The municipality challenges a fine or directions for official accountability.",
+        "accused_individuals_not_parties": "The individuals accused of misconduct were not parties and had no opportunity to answer the allegations."
+      },
+      "definition": "When official assistance to a noncompliant project is established, accountability directions against the public body may stand, but nonparty individuals are not condemned without a hearing."
+    }
+  ],
+  "seconds": 25.3
+}

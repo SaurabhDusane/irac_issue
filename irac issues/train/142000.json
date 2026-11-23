@@ -1,0 +1,58 @@
+{
+  "doc_id": "142000",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13015,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1830,
+    "prompt_tokens": 3806,
+    "total_tokens": 5636,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A prior decision on a pure question of law concerning a court’s jurisdiction does not bar a later challenge to that jurisdiction through res judicata or estoppel.",
+      "material_facts": [
+        "In earlier eviction proceedings before the Rent Controller, the respondent argued that the Rent Controller lacked jurisdiction, and the proceedings were rejected on that basis.",
+        "In the later eviction suit before the City Civil Court, the respondent argued that the City Civil Court lacked jurisdiction.",
+        "The lower courts treated the respondent’s earlier position as barring the later jurisdictional objection."
+      ],
+      "conclusion": "The earlier decisions did not preclude the respondent from challenging the City Civil Court’s jurisdiction; res judicata and estoppel could not confer jurisdiction on a court that lacked it in law.",
+      "legal_principle": "Under Section 11 of the Code of Civil Procedure, a decision on a pure question of law concerning jurisdiction is not res judicata in a later proceeding. Estoppel under Section 115 of the Evidence Act cannot operate on a pure question of law to confer jurisdiction. The Court relied on Mathura Prasad Bajoo Jaiswal v. Dossibai N.B. Jeejeebhoy and Sushil Kumar Mehta v. Gobind Ram Bohra, and held Avtar Singh v. Jagjit Singh not good law to the extent it treated an erroneous decision on jurisdiction as res judicata.",
+      "rule": {
+        "if": "later_case_contests_court_jurisdiction and prior_jurisdiction_decision and jurisdiction_is_pure_question_of_law",
+        "then": "prior_decision_does_not_bar_jurisdiction_challenge"
+      },
+      "predicates": {
+        "later_case_contests_court_jurisdiction": "A party contests the jurisdiction of the court in a later proceeding.",
+        "prior_jurisdiction_decision": "A court previously decided a jurisdictional issue between the parties.",
+        "jurisdiction_is_pure_question_of_law": "The jurisdictional issue turns on a pure question of law."
+      },
+      "definition": "When a later proceeding contests a court’s jurisdiction after a prior decision on that issue, and the issue is a pure question of law, the prior decision does not bar the jurisdictional challenge."
+    },
+    {
+      "legal_issue": "An ordinary civil court lacks jurisdiction to hear an eviction suit when the governing rent-control scheme assigns that matter exclusively to the rent-control forum.",
+      "material_facts": [
+        "The suit sought recovery of possession of premises occupied by the respondent as a tenant, together with mesne profits.",
+        "The Andhra Pradesh Rent Control Act governed the eviction dispute, and the High Court concluded that jurisdiction lay exclusively with the Rent Controller.",
+        "The suit had been brought in the City Civil Court."
+      ],
+      "conclusion": "The City Civil Court had no jurisdiction to entertain the suit because jurisdiction lay exclusively with the Rent Controller.",
+      "legal_principle": "Section 3 of the Andhra Pradesh Rent Control Act, 1960, formed part of the statutory setting for the dispute. The Court upheld the conclusion that the suit lay exclusively within the Rent Controller’s jurisdiction; a court lacking jurisdiction in law cannot acquire it through res judicata or estoppel.",
+      "rule": {
+        "if": "rent_control_eviction_suit and rent_law_assigns_exclusive_forum and suit_filed_in_ordinary_civil_court",
+        "then": "ordinary_civil_court_lacks_jurisdiction"
+      },
+      "predicates": {
+        "rent_control_eviction_suit": "The proceeding seeks eviction in a dispute governed by a rent-control scheme.",
+        "rent_law_assigns_exclusive_forum": "The governing rent-control scheme assigns jurisdiction over the eviction dispute exclusively to a designated rent-control forum.",
+        "suit_filed_in_ordinary_civil_court": "The eviction suit was filed in an ordinary civil court rather than the designated rent-control forum."
+      },
+      "definition": "If an eviction suit governed by a rent-control scheme is filed in an ordinary civil court even though the scheme assigns the matter exclusively to a designated rent-control forum, the ordinary civil court lacks jurisdiction."
+    }
+  ],
+  "seconds": 11.2
+}

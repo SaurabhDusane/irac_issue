@@ -1,0 +1,88 @@
+{
+  "doc_id": "1371397",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9215,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3178,
+    "prompt_tokens": 2742,
+    "total_tokens": 5920,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Evidence may be admitted to show that a person named as tenant in a written lease acted as an agent, or that a qualifying subsequent oral agreement modified the lease.",
+      "material_facts": [
+        "The rent note named an individual as tenant, while the occupants argued that he had acted for the partnership.",
+        "The courts below treated the written rent note as preventing evidence that the partnership was the real tenant.",
+        "Both sides led evidence about the identity of the tenant and whether the named individual acted as the partnership’s agent."
+      ],
+      "conclusion": "The view that the written rent note categorically barred evidence of agency or a distinct subsequent oral modification was too broad. Such evidence may be admitted subject to the Evidence Act; a subsequent oral agreement may be proved where it is not legally required to be in writing or registered.",
+      "legal_principle": "Sections 91 and 92 of the Evidence Act govern proof of written contract terms and restrict oral evidence that contradicts, varies, adds to, or subtracts from them. Proviso (4) to Section 92 permits proof of a distinct subsequent oral agreement modifying the contract, except where writing or registration is legally required. As noted in Woodfall’s Landlord and Tenant (27th ed., Vol. 1, para. 312), describing a person in a lease as the tenant does not necessarily negate agency, subject to the Evidence Act. No earlier judicial decisions are relied on.",
+      "rule": {
+        "if": "rent_control_tenancy_dispute and written_lease_names_individual and (evidence_claims_individual_acted_as_agent or (evidence_claims_subsequent_oral_modification and modification_not_required_to_be_written_or_registered))",
+        "then": "oral_evidence_admissible_for_agency_or_qualifying_modification"
+      },
+      "predicates": {
+        "rent_control_tenancy_dispute": "The dispute concerns who was the tenant of premises in a rent-control proceeding.",
+        "written_lease_names_individual": "The written lease identifies an individual as the tenant.",
+        "evidence_claims_individual_acted_as_agent": "A party offers evidence that the named individual acted for another person or entity when entering the lease.",
+        "evidence_claims_subsequent_oral_modification": "A party offers evidence of a distinct oral agreement made later that changed the written contract.",
+        "modification_not_required_to_be_written_or_registered": "The alleged later modification is not one that the law requires to be written or registered.",
+        "oral_evidence_admissible_for_agency_or_qualifying_modification": "Oral evidence may be considered to establish the claimed agency or a qualifying later modification."
+      },
+      "definition": "When a rent-control tenancy dispute concerns a written lease naming an individual, oral evidence may be considered if it is offered to establish agency or a qualifying later modification."
+    },
+    {
+      "legal_issue": "A firm’s occupation of rented premises after the individual tenant retires does not establish that the firm was the original tenant when the evidence establishes that the individual took the premises personally.",
+      "material_facts": [
+        "The rent note named the individual as tenant, and he negotiated with the landlord.",
+        "The appellants claimed that he had taken the premises as agent for the partnership, but he was not called as a witness and the dissolution deed, the relevant cash-book entry, and the advance-rent receipt were not produced.",
+        "The Court found positive evidence that the individual took the premises in his personal capacity and that he did not act as the partnership’s agent.",
+        "The partnership continued to use the premises, including after the named individual retired."
+      ],
+      "conclusion": "The appellants did not establish that the individual had taken the premises on behalf of the partnership. The finding that he was the personal tenant and that the partners occupied as subtenants was upheld, and the eviction order was confirmed.",
+      "legal_principle": "The eviction application was brought under Section 13 of the East Punjab Urban Rent Restriction Act on the ground of unlawful subletting. The Court assessed the evidence to determine whether the named tenant had contracted personally or as an agent; it upheld the finding of personal tenancy and subletting. No earlier judicial decisions are relied on for this determination.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and written_lease_names_individual and evidence_supports_individual_personal_tenancy and firm_continues_occupation_after_individual_retires",
+        "then": "personal_tenancy_and_subletting_established"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The proceeding seeks eviction from rented premises under a rent-control regime.",
+        "written_lease_names_individual": "The written lease identifies an individual as the tenant.",
+        "evidence_supports_individual_personal_tenancy": "The evidence supports that the individual entered the tenancy personally rather than as an agent for the firm.",
+        "firm_continues_occupation_after_individual_retires": "The firm continues to occupy the premises after the named individual retires from it.",
+        "personal_tenancy_and_subletting_established": "The individual is treated as the personal tenant and the firm’s occupation as subletting."
+      },
+      "definition": "When a rent-control eviction proceeding concerns a lease naming an individual, evidence of personal contracting and the firm’s continued occupation after that individual retires supports treating the individual as tenant and the firm as subtenant."
+    },
+    {
+      "legal_issue": "A partnership reconstituted after the tenant’s retirement does not become the landlord’s tenant merely because it continues the business in the premises, without notice to the landlord or a new agreement.",
+      "material_facts": [
+        "The individual named in the rent note retired from the partnership, after which the partnership was reconstituted with other partners.",
+        "The reconstituted firm continued to carry on business in the premises.",
+        "The landlord received no notice of the dissolution, and no new tenancy agreement with the reconstituted firm was established."
+      ],
+      "conclusion": "Even assuming the original tenant had acted for the partnership that existed when the premises were let, the reconstituted firm could not be treated as the landlord’s tenant merely on that basis; doing so would impose a new contract on the landlord. The appeal was dismissed.",
+      "legal_principle": "A tenancy cannot be imposed on a landlord as a new contract between the landlord and a partnership formed after the original tenant’s retirement. The Court relied on the absence of notice of dissolution and the absence of a basis to treat the reconstituted partnership as a contracting tenant. No statutory provision or earlier judicial decision is cited for this point.",
+      "rule": {
+        "if": "rent_control_tenancy_dispute and original_tenant_retires and partnership_is_reconstituted and reconstituted_partnership_continues_occupation and not landlord_receives_notice_of_dissolution and no_new_tenancy_agreement",
+        "then": "reconstituted_partnership_not_tenant"
+      },
+      "predicates": {
+        "rent_control_tenancy_dispute": "The dispute concerns the identity of the tenant of premises governed by rent control.",
+        "original_tenant_retires": "The person who originally took the premises retires from the partnership using them.",
+        "partnership_is_reconstituted": "The partnership changes its membership after the original tenant retires.",
+        "reconstituted_partnership_continues_occupation": "The partnership with changed membership continues to occupy the premises.",
+        "landlord_receives_notice_of_dissolution": "The landlord is given notice that the original partnership has dissolved or changed.",
+        "no_new_tenancy_agreement": "No new agreement establishing a tenancy between the landlord and the reconstituted partnership is shown.",
+        "reconstituted_partnership_not_tenant": "The reconstituted partnership is not treated as the landlord’s tenant merely because it continues occupation."
+      },
+      "definition": "If a tenant retires, the partnership is reconstituted and continues occupation without notice to the landlord or a new tenancy agreement, the reconstituted partnership is not treated as the landlord’s tenant."
+    }
+  ],
+  "seconds": 18.8
+}

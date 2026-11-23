@@ -1,0 +1,80 @@
+{
+  "doc_id": "1430296",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10337,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1949,
+    "prompt_tokens": 3208,
+    "total_tokens": 5157,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil revision is unavailable against an interlocutory order that does not finally decide the lis.",
+      "material_facts": [
+        "The respondent filed a revision challenging an order made during execution proceedings.",
+        "The challenged order did not finally decide the lis.",
+        "The High Court entertained the revision and granted relief that would impede execution of the eviction decree."
+      ],
+      "conclusion": "The revision was incompetent under the amended Section 115 of the Code of Civil Procedure, and the High Court erred in entertaining it and granting relief.",
+      "legal_principle": "Under the amended Section 115 of the Code of Civil Procedure, an order that is interlocutory or does not finally decide the lis cannot be challenged by revision. The Court applied Shiv Shakti Coop. Housing Society v. Swaraj Developers.",
+      "rule": {
+        "if": "civil_revision_proceeding and challenged_order_interlocutory and order_did_not_finally_decide_lis",
+        "then": "revision_not_maintainable"
+      },
+      "predicates": {
+        "civil_revision_proceeding": "A party brought a civil revision challenging an order made in an ongoing proceeding.",
+        "challenged_order_interlocutory": "The challenged order was made at an interlocutory stage of the proceeding.",
+        "order_did_not_finally_decide_lis": "The challenged order did not finally determine the dispute between the parties.",
+        "revision_not_maintainable": "The civil revision cannot be maintained."
+      },
+      "definition": "When a party brings a civil revision against an interlocutory order that does not finally determine the dispute, the revision cannot be maintained."
+    },
+    {
+      "legal_issue": "A claim that a decree was procured by fraud cannot be accepted when fraud was neither pleaded nor proved.",
+      "material_facts": [
+        "The respondent alleged in later proceedings that the eviction decree had been obtained by fraud.",
+        "The alleged fraud had not been pleaded or proved in the proceedings leading to the decree.",
+        "The respondent repeated the fraud allegation in challenging execution of the decree."
+      ],
+      "conclusion": "The Court rejected the fraud allegation because it had no pleaded or proved basis.",
+      "legal_principle": "Fraud must necessarily be pleaded and proved before a court can act on it. The Court considered S.P. Chengalvaraya Naidu v. Jagannath and United India Insurance Co. Ltd. v. Rajendra Singh, while holding that the general proposition that fraud unravels judicial acts did not assist the respondent without a factual basis.",
+      "rule": {
+        "if": "decree_enforcement_challenge and fraud_alleged and not fraud_pleaded_and_proved",
+        "then": "fraud_claim_not_accepted"
+      },
+      "predicates": {
+        "decree_enforcement_challenge": "A party challenged or sought to impede enforcement of a judicial decree.",
+        "fraud_alleged": "A party asserted that the decree had been obtained through fraud.",
+        "fraud_pleaded_and_proved": "The alleged fraud was properly raised and established with evidence.",
+        "fraud_claim_not_accepted": "The court does not accept the fraud claim as a basis for relief."
+      },
+      "definition": "When a party challenging enforcement of a decree alleges fraud but the fraud was not pleaded and proved, the fraud claim is not accepted."
+    },
+    {
+      "legal_issue": "An executing court cannot reopen matters that were determined in the proceedings resulting in the decree.",
+      "material_facts": [
+        "The respondent objected during execution on grounds that had been considered in the eviction proceedings resulting in the decree.",
+        "The respondent also alleged fraud, which had not been raised during the trial leading to the decree.",
+        "The executing court rejected the objections, and the Supreme Court found no basis to accept the repeated objections."
+      ],
+      "conclusion": "The executing court was right to reject objections that sought to reopen matters settled before the decree, including the unsupported fraud allegation.",
+      "legal_principle": "Questions determined in the proceedings resulting in a decree cannot be reopened by an executing court. A fraud objection also cannot succeed without a pleaded and proved basis.",
+      "rule": {
+        "if": "execution_proceeding and objection_relates_to_matter_decided_in_decree_proceeding",
+        "then": "execution_objection_rejected"
+      },
+      "predicates": {
+        "execution_proceeding": "A party raised an objection in a proceeding to enforce a decree.",
+        "objection_relates_to_matter_decided_in_decree_proceeding": "The objection concerned a matter already determined in the proceedings that produced the decree.",
+        "execution_objection_rejected": "The executing court rejects the objection."
+      },
+      "definition": "When an objection in a proceeding to enforce a decree concerns a matter already determined in the proceeding that produced the decree, the objection is rejected."
+    }
+  ],
+  "seconds": 12.8
+}

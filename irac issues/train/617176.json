@@ -1,0 +1,131 @@
+{
+  "doc_id": "617176",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 62900,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3743,
+    "prompt_tokens": 15153,
+    "total_tokens": 18896,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A conviction may be sustained where credible injured eyewitness testimony is supported by reliable evidence, including a dying declaration made by another victim.",
+      "material_facts": [
+        "The surviving witness was present during the attack, sustained extensive burns, and identified the accused as the person who set the room on fire.",
+        "The court found that the surviving witness had an adequate opportunity to observe the attacker and that the contradictions and omissions in her evidence were not substantial.",
+        "A second victim, who later died, made a declaration identifying the accused and describing the attack.",
+        "The courts below accepted the evidence, and the Supreme Court found that the prosecution proved the accused's guilt beyond reasonable doubt."
+      ],
+      "conclusion": "The Supreme Court upheld the convictions, finding the eyewitness evidence reliable and corroborated, including by the dying declaration of the victim who later died.",
+      "legal_principle": "A dying declaration by a person who later dies may be substantive evidence, and a conviction may rest on it if it is voluntary, truthful, made while the declarant was fit, and uninfluenced. A declaration by a maker who survives is not substantive evidence but may corroborate that witness's testimony when recorded by a Magistrate under Section 164 of the Code of Criminal Procedure, as proved under Section 157 of the Evidence Act; its use as corroboration is barred where the statement was recorded by a police officer under Section 162 of the Code of Criminal Procedure. The Court applied Ramprasad v. State of Maharashtra, Laxman v. State of Maharashtra, Shanmugham @ Kulandaivelu v. State of Tamil Nadu, and P.V. Radhakrishnan v. State of Karnataka.",
+      "rule": {
+        "if": "criminal_appeal_against_conviction and injured_eyewitness_reliable and (dying_declaration_reliable or other_corroboration_present)",
+        "then": "conviction_upheld"
+      },
+      "predicates": {
+        "criminal_appeal_against_conviction": "The accused appealed against a conviction in a criminal case.",
+        "injured_eyewitness_reliable": "A witness who was injured in the incident was present, had an adequate opportunity to observe it, and gave credible evidence identifying the offender.",
+        "dying_declaration_reliable": "A victim made a voluntary and truthful declaration identifying the offender while fit to make it, and the declaration was found reliable.",
+        "other_corroboration_present": "Evidence apart from the injured eyewitness's testimony supported the account of the offence."
+      },
+      "definition": "When a criminal appeal challenges a conviction, credible evidence from an injured eyewitness together with a reliable dying declaration or other corroboration supports upholding the conviction."
+    },
+    {
+      "legal_issue": "A dying declaration may be accepted without a doctor's written fitness endorsement when the evidence otherwise establishes the declarant's fitness and the declaration's reliability.",
+      "material_facts": [
+        "A Magistrate recorded declarations from the surviving injured witness and from a victim who later died.",
+        "The declarations did not bear a doctor's written endorsement of the declarants' fitness.",
+        "The Magistrate testified that he had sought and obtained the doctor's opinion that the declarants were fit to make statements, and that he had taken precautions before recording them.",
+        "The Magistrate's evidence on obtaining the doctor's opinion was not challenged in cross-examination.",
+        "The court found the declarations voluntary, truthful, and reliable; the declaration of the surviving witness was used as corroboration, while the other declaration was substantive evidence."
+      ],
+      "conclusion": "The absence of a written medical endorsement did not require rejection of either declaration; the declaration of the victim who died was substantive evidence, and the surviving witness's declaration corroborated her testimony.",
+      "legal_principle": "A doctor's certification is ordinarily relevant to whether a declarant was fit, but it is not indispensable where other evidence establishes fitness and the declaration is reliable. Under Section 157 of the Evidence Act, a Magistrate-recorded declaration by a witness who survives may corroborate that witness's testimony; a declaration by a person who dies may be substantive evidence. The Court relied on the Constitution Bench ruling in Laxman v. State of Maharashtra and also referred to Shanmugham @ Kulandaivelu v. State of Tamil Nadu and P.V. Radhakrishnan v. State of Karnataka.",
+      "rule": {
+        "if": "dying_declaration_case and magistrate_recorded_declaration and doctor_endorsement_absent and declarant_fit_to_speak and declaration_voluntary_and_reliable",
+        "then": "declaration_accepted_without_written_medical_endorsement"
+      },
+      "predicates": {
+        "dying_declaration_case": "The case involves a statement made by a person who believed death was impending or who later died, or by an injured witness who survived.",
+        "magistrate_recorded_declaration": "A Magistrate recorded the declarant's statement.",
+        "doctor_endorsement_absent": "The recorded statement did not contain a doctor's written certification of the declarant's fitness.",
+        "declarant_fit_to_speak": "Evidence established that the declarant was conscious and mentally fit to make the statement.",
+        "declaration_voluntary_and_reliable": "The court found that the statement was voluntary, truthful, and not influenced by another person or circumstance."
+      },
+      "definition": "A Magistrate-recorded declaration can be accepted without a written medical endorsement when the declarant was fit and the declaration was voluntary and reliable."
+    },
+    {
+      "legal_issue": "A contradiction in a witness's earlier statement cannot be used against the witness when it has not been properly put to the witness or proved through the person who recorded the earlier statement.",
+      "material_facts": [
+        "The surviving witness's testimony referred to three fuel containers, while her earlier recorded declaration referred to one.",
+        "The alleged contradiction was not put to the Magistrate who recorded the earlier declaration.",
+        "The witness was not specifically given an opportunity to explain the difference.",
+        "The court also found that the three containers had been recovered at the scene and that the discrepancy did not undermine the witness's credibility."
+      ],
+      "conclusion": "The alleged discrepancy could not be relied on as a contradiction because it had not been properly proved or put to the witness for explanation.",
+      "legal_principle": "A prior inconsistent statement must be put to the witness so that the witness has an opportunity to explain it; where the alleged contradiction concerns a recorded statement, it must be proved by putting it to the person who recorded that statement. The Court relied on this procedure in assessing the evidence, without citing a specific provision for this proposition.",
+      "rule": {
+        "if": "criminal_evidence_case and prior_statement_conflicts_with_testimony and contradiction_not_put_to_recorder and witness_not_given_opportunity_to_explain",
+        "then": "contradiction_disregarded"
+      },
+      "predicates": {
+        "criminal_evidence_case": "The court is assessing witness evidence in a criminal proceeding.",
+        "prior_statement_conflicts_with_testimony": "A witness's earlier recorded statement appears to differ from the witness's testimony at trial.",
+        "contradiction_not_put_to_recorder": "The alleged difference was not put to the person who recorded the earlier statement to prove it.",
+        "witness_not_given_opportunity_to_explain": "The witness was not specifically asked to explain the alleged difference."
+      },
+      "definition": "An apparent inconsistency is disregarded when it is neither proved through the recorder nor presented to the witness for explanation."
+    },
+    {
+      "legal_issue": "Defective investigation does not entitle an accused to have a conviction set aside where the prosecution otherwise proves guilt beyond reasonable doubt.",
+      "material_facts": [
+        "The court found that the investigation was casual and incomplete, including failures to record available declarations and obtain a forensic report.",
+        "The prosecution nevertheless presented reliable eyewitness evidence, a reliable declaration by a victim who later died, and supporting circumstances.",
+        "The court found that the investigation's deficiencies had not prejudiced the accused and that guilt was proved beyond reasonable doubt."
+      ],
+      "conclusion": "The inadequate investigation did not provide a basis to interfere with the convictions because the prosecution had independently proved the offence.",
+      "legal_principle": "Incompetent investigation should not give an accused an unfair advantage where reliable evidence proves guilt and the investigation's deficiencies have not prejudiced the accused. The Court reiterated its established principle on the effect of defective investigation but cited no particular earlier case for it in this discussion.",
+      "rule": {
+        "if": "criminal_appeal_against_conviction and investigation_incompetent and guilt_proved_by_reliable_evidence and no_prejudice_from_investigation",
+        "then": "conviction_not_set_aside_for_investigation_defects"
+      },
+      "predicates": {
+        "criminal_appeal_against_conviction": "The accused appealed against a conviction in a criminal case.",
+        "investigation_incompetent": "The investigation was materially incomplete or conducted carelessly.",
+        "guilt_proved_by_reliable_evidence": "Reliable evidence apart from the deficient investigative steps established the accused's guilt beyond reasonable doubt.",
+        "no_prejudice_from_investigation": "The investigative deficiencies did not cause unfair prejudice to the accused."
+      },
+      "definition": "A conviction is not set aside merely because the investigation was deficient when reliable evidence proves guilt and the deficiencies caused no prejudice."
+    },
+    {
+      "legal_issue": "The death penalty is justified only in the gravest cases where, after balancing aggravating and mitigating circumstances, life imprisonment is inadequate.",
+      "material_facts": [
+        "The accused deliberately brought fuel and weapons to a family home, poured fuel in a room where the family was eating, set it alight, and closed the door.",
+        "The accused attacked a victim who escaped the burning room with a sword, causing a fatal neck wound.",
+        "Five people died, several of them after suffering extensive burns, and the sole survivor sustained extensive burns.",
+        "The court found that the attack was planned, cold-blooded, extremely cruel, and committed without immediate provocation; the victims were helpless, and the offence effectively destroyed a family.",
+        "The court found no mitigating circumstance sufficient to outweigh the aggravating circumstances and rejected the argument that the passage of time justified reducing the sentence."
+      ],
+      "conclusion": "The Supreme Court held that the case was one of the rarest of the rare, upheld the death sentence, and dismissed the appeal.",
+      "legal_principle": "Under Bachan Singh v. State of Punjab, the death penalty may be imposed only in the gravest cases and only when life imprisonment appears inadequate, after an overall balancing of aggravating and mitigating circumstances. Machhi Singh v. State of Punjab elaborated on that balance and identified circumstances such as extreme brutality, multiple murders, and the murder of helpless victims. The Court also considered Devender Pal Singh v. State of NCT of Delhi, Atbir v. Government of NCT of Delhi, C. Muniappan v. State of Tamil Nadu, Ravji alias Ram Chandra v. State of Rajasthan, Dhananjoy Chatterjee v. State of West Bengal, State of U.P. v. Dharmendra Singh, Triveniben v. State of Gujarat, Sushil Murmu v. State of Jharkhand, Gurdev Singh v. State of Punjab, Haru Ghosh v. State of West Bengal, Dilip Premnarayan Tiwari v. State of Maharashtra, and Swamy Shraddananda v. State of Karnataka.",
+      "rule": {
+        "if": "appeal_against_death_sentence and premeditated_extreme_brutality and multiple_helpless_victims_killed and aggravating_circumstances_outweigh_mitigating_circumstances and life_imprisonment_inadequate",
+        "then": "death_sentence_justified"
+      },
+      "predicates": {
+        "appeal_against_death_sentence": "The proceeding is an appeal challenging a sentence of death.",
+        "premeditated_extreme_brutality": "The offence was planned and carried out with extreme cruelty or brutality.",
+        "multiple_helpless_victims_killed": "The offence killed multiple victims who were helpless to protect themselves.",
+        "aggravating_circumstances_outweigh_mitigating_circumstances": "The court's overall assessment found the aggravating circumstances outweighed the mitigating circumstances.",
+        "life_imprisonment_inadequate": "The court found that life imprisonment would be an inadequate punishment for the offence."
+      },
+      "definition": "A death sentence is justified in an appeal against that sentence when planned extreme brutality killed multiple helpless victims, aggravating circumstances outweigh mitigating circumstances, and life imprisonment is inadequate."
+    }
+  ],
+  "seconds": 23.0
+}

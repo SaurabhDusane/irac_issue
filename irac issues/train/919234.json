@@ -1,0 +1,179 @@
+{
+  "doc_id": "919234",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42764,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3523,
+    "prompt_tokens": 11352,
+    "total_tokens": 14875,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A former intermediary whose interest in requisitioned property has vested in the State cannot receive recurring compensation for periods after vesting.",
+      "material_facts": [
+        "The claimants’ predecessor held patni rights in the property and was an intermediary under the applicable estates acquisition law.",
+        "The property’s requisition continued after the predecessor’s interest vested in the State.",
+        "The High Court awarded recurring compensation on the assumption that the claimants continued to hold rights in the property after vesting."
+      ],
+      "conclusion": "The claimants could not receive recurring compensation for periods after their interest vested in the State; the award had to be limited to the period before vesting.",
+      "legal_principle": "Sections 2(1), 4(1)–(2), and 5 of the West Bengal Estates Acquisition Act, 1953 provide for acquisition of an intermediary’s interest and required the State to notify the entire area covered by the Act for vesting by the specified statutory deadline. Once the interest vested, the former intermediary and heirs had no continuing interest in the property, apart from the right to compensation under that Act.",
+      "rule": {
+        "if": "requisition_compensation_appeal and intermediary_interest and estate_interest_vested",
+        "then": "no_recurring_compensation_after_vesting"
+      },
+      "predicates": {
+        "requisition_compensation_appeal": "The proceeding is an appeal concerning compensation for property that was requisitioned.",
+        "intermediary_interest": "The claimant or the claimant’s predecessor held an intermediary interest in the property.",
+        "estate_interest_vested": "The intermediary’s interest in the property vested in the State."
+      },
+      "definition": "When a requisition-compensation appeal concerns a claimant with an intermediary interest that has vested in the State, recurring compensation is not payable for periods after vesting."
+    },
+    {
+      "legal_issue": "The exception for land already taken for acquisition does not protect land taken only under requisition from the operation of the estates acquisition law.",
+      "material_facts": [
+        "The State had taken possession of the property in requisition proceedings.",
+        "The property was not under acquisition proceedings when the relevant vesting occurred.",
+        "The claimants argued that the statutory exception for land whose possession had been taken for acquisition applied."
+      ],
+      "conclusion": "The exception did not apply because possession had been taken under requisition proceedings, not in furtherance of acquisition.",
+      "legal_principle": "Section 3 of the West Bengal Estates Acquisition Act, 1953 gives the Act overriding effect subject to its provisos. The second proviso protects land taken into possession in furtherance of a proposal to acquire it; it does not cover land taken under requisition proceedings. The provision is intended to preserve tenure holders’ rights to compensation in acquisition proceedings.",
+      "rule": {
+        "if": "requisition_compensation_appeal and land_taken_for_requisition and not land_taken_for_acquisition",
+        "then": "acquisition_exception_does_not_apply"
+      },
+      "predicates": {
+        "requisition_compensation_appeal": "The proceeding is an appeal concerning compensation for property that was requisitioned.",
+        "land_taken_for_requisition": "The State took possession of the land under requisition proceedings.",
+        "land_taken_for_acquisition": "The State took possession of the land in furtherance of a proposal to acquire it."
+      },
+      "definition": "In a requisition-compensation appeal, land taken under requisition but not in furtherance of acquisition does not qualify for the acquisition exception."
+    },
+    {
+      "legal_issue": "A claim to retain agricultural land under the intermediary-retention provisions requires proof that the claimant qualified for retention and cannot be raised for the first time in the compensation appeal.",
+      "material_facts": [
+        "The claimants sought to retain an area of agricultural land and relied on the fact that the land was under requisition.",
+        "There was no evidence that the claimed area was in their khas possession when vesting occurred or that they had no other agricultural land.",
+        "The claimants had not established their retention claim before the appropriate authorities and raised it in the appeal."
+      ],
+      "conclusion": "The claimants’ retention claim could not be determined in the appeal and failed for want of evidence; requisition alone did not entitle them to retain the land.",
+      "legal_principle": "Sections 6(1)(d) and 6(1)(k) of the West Bengal Estates Acquisition Act, 1953 permit an intermediary to retain qualifying agricultural land in khas possession and qualifying requisitioned land to the extent otherwise retainable. The claimant must establish entitlement under the applicable category with cogent evidence and pursue the claim before the appropriate authorities; the fact of requisition alone does not establish a right to retain land.",
+      "rule": {
+        "if": "requisition_compensation_appeal and retention_claim and (not proof_of_qualifying_possession or retention_claim_first_raised_on_appeal)",
+        "then": "retention_claim_rejected"
+      },
+      "predicates": {
+        "requisition_compensation_appeal": "The proceeding is an appeal concerning compensation for property that was requisitioned.",
+        "retention_claim": "The claimant seeks to retain some of the requisitioned land despite vesting.",
+        "proof_of_qualifying_possession": "Evidence establishes that the claimed agricultural land was in the claimant’s khas possession and otherwise qualified for retention.",
+        "retention_claim_first_raised_on_appeal": "The claimant raises the retention claim for the first time in the compensation appeal rather than before the appropriate authorities."
+      },
+      "definition": "A retention claim fails in a requisition-compensation appeal when qualifying possession is unproved or the claim is raised for the first time on appeal."
+    },
+    {
+      "legal_issue": "An intermediary may obtain the benefit associated with a mine only if the intermediary directly worked the mine immediately before vesting.",
+      "material_facts": [
+        "The claimants argued that mineral deposits, including mooram and coloured clay, entitled them to retain the land.",
+        "The evidence showed that mooram had been excavated in some area but did not establish who excavated it or whether the claimants directly carried on mining immediately before vesting.",
+        "There was no evidence that the claimants directly prospected or excavated the coloured clay."
+      ],
+      "conclusion": "The claimants were not entitled to the benefit associated with the mine because they did not prove that they were directly carrying on mining immediately before vesting.",
+      "legal_principle": "Section 28 of the West Bengal Estates Acquisition Act, 1953 treats an area used by an intermediary as a mine immediately before vesting as leased to that intermediary on terms fixed by the State. The intermediary must have been directly working the mine; operation by a licensee or another person is insufficient. The Court relied on Tarkeshwar Sio Thakur Jiu v. Bar Dass Dey & Co. & Ors., [1979] 3 SCR 18.",
+      "rule": {
+        "if": "requisition_compensation_appeal and mineral_mining_claim and not proof_of_direct_mining_before_vesting",
+        "then": "mine_retention_benefit_denied"
+      },
+      "predicates": {
+        "requisition_compensation_appeal": "The proceeding is an appeal concerning compensation for property that was requisitioned.",
+        "mineral_mining_claim": "The claimant relies on mineral deposits to assert a right to retain land or continue mining.",
+        "proof_of_direct_mining_before_vesting": "Evidence establishes that the claimant directly worked the mine immediately before the property vested."
+      },
+      "definition": "A mineral-based claim to retain land or continue mining fails when direct mining by the claimant immediately before vesting is not proved."
+    },
+    {
+      "legal_issue": "Terminal compensation is payable for property shown to have been destroyed as a result of requisition.",
+      "material_facts": [
+        "The High Court found that the military authorities’ occupation resulted in the destruction of the bungalow, furniture, building materials, stacked materials, timber, and fuel wood.",
+        "The High Court assessed the resulting loss and awarded terminal compensation.",
+        "The Union did not challenge the High Court’s findings on that loss."
+      ],
+      "conclusion": "The award of terminal compensation for the destroyed property was upheld.",
+      "legal_principle": "In determining compensation for requisitioned property, terminal compensation may be awarded for established loss caused by destruction of property. The Court upheld the High Court’s assessment on the evidence and noted that the findings were not challenged.",
+      "rule": {
+        "if": "requisition_compensation_appeal and property_destroyed_during_requisition and loss_assessed_on_evidence",
+        "then": "terminal_compensation_upheld"
+      },
+      "predicates": {
+        "requisition_compensation_appeal": "The proceeding is an appeal concerning compensation for property that was requisitioned.",
+        "property_destroyed_during_requisition": "Property belonging to the claimant was destroyed during the requisition.",
+        "loss_assessed_on_evidence": "The loss from the destruction was assessed on the evidence."
+      },
+      "definition": "Terminal compensation is upheld when property was destroyed during requisition and the resulting loss was assessed on evidence."
+    },
+    {
+      "legal_issue": "Recurring compensation is payable for demonstrated annual loss from the use of requisitioned land and its produce only while the claimant remains entitled to the property.",
+      "material_facts": [
+        "The evidence established that sal trees stood on the land and that agricultural land was cultivated, a tank was present, and mango trees grew there.",
+        "The High Court assessed annual compensation for those items, and the Supreme Court found no infirmity in that assessment.",
+        "The claimants’ interest in the property vested in the State, limiting their entitlement to the period before vesting."
+      ],
+      "conclusion": "The claimants were entitled to the assessed recurring compensation for the sal forest, agricultural land, tank, and mango trees for the period before vesting.",
+      "legal_principle": "Recurring compensation is intended to make good the annual loss suffered by the owner from requisition. The Court upheld the evidence-based annual assessment for the established trees, cultivation, tank, and crops, but confined entitlement to the period during which the claimants retained an interest in the property.",
+      "rule": {
+        "if": "requisition_compensation_appeal and proven_annual_loss_from_land_or_produce and claimant_interest_continued",
+        "then": "recurring_compensation_awarded_for_proven_loss_during_interest"
+      },
+      "predicates": {
+        "requisition_compensation_appeal": "The proceeding is an appeal concerning compensation for property that was requisitioned.",
+        "proven_annual_loss_from_land_or_produce": "Evidence establishes annual loss from the use of the land or its produce, such as trees, cultivation, or a tank.",
+        "claimant_interest_continued": "The claimant retained an interest in the property during the period for which recurring compensation is claimed."
+      },
+      "definition": "In a requisition-compensation appeal, proven annual loss from land or its produce supports recurring compensation for the period during which the claimant retained an interest."
+    },
+    {
+      "legal_issue": "Recurring compensation for mineral deposits cannot be awarded without evidence of their extent, quality, and the annual loss suffered.",
+      "material_facts": [
+        "The claimants sought recurring compensation for mooram and coloured clay deposits.",
+        "They produced no evidence establishing the deposits’ extent or quality or the actual recurring loss they suffered.",
+        "The High Court based its annual awards on assumptions about excavation and potential income."
+      ],
+      "conclusion": "The awards of recurring compensation for mooram and coloured clay were set aside because the claimed annual loss was not proved.",
+      "legal_principle": "Recurring compensation is intended to make good the loss an owner suffers; the owner must prove recurring annual loss. Speculation about the availability, quality, quantity, extraction, or potential income from mineral deposits does not establish that loss.",
+      "rule": {
+        "if": "requisition_compensation_appeal and mineral_recurring_compensation_claim and not proof_of_deposit_and_annual_loss",
+        "then": "mineral_recurring_compensation_denied"
+      },
+      "predicates": {
+        "requisition_compensation_appeal": "The proceeding is an appeal concerning compensation for property that was requisitioned.",
+        "mineral_recurring_compensation_claim": "The claimant seeks recurring compensation for mineral deposits on the requisitioned land.",
+        "proof_of_deposit_and_annual_loss": "Evidence establishes the deposits’ relevant extent and quality and the claimant’s actual recurring annual loss."
+      },
+      "definition": "A claim for recurring compensation from mineral deposits is denied when the deposits and actual annual loss are not proved."
+    },
+    {
+      "legal_issue": "Interest on compensation for requisitioned property runs from the taking of possession until payment.",
+      "material_facts": [
+        "The authorities took possession of the property for requisition.",
+        "The claimants sought interest on the compensation payable to them.",
+        "The Court considered the facts and circumstances and held that interest was payable from possession to payment."
+      ],
+      "conclusion": "The claimants were entitled to interest at six per cent per annum on the compensation payable from the date possession was taken until payment.",
+      "legal_principle": "Having regard to the facts and circumstances, the Court awarded interest on the compensation payable from the date the authorities took possession until the date of payment.",
+      "rule": {
+        "if": "requisition_compensation_appeal and possession_taken_for_requisition and compensation_payable",
+        "then": "interest_runs_from_possession_until_payment"
+      },
+      "predicates": {
+        "requisition_compensation_appeal": "The proceeding is an appeal concerning compensation for property that was requisitioned.",
+        "possession_taken_for_requisition": "The authorities took possession of the property for requisition.",
+        "compensation_payable": "The claimant is entitled to compensation for the requisitioned property."
+      },
+      "definition": "When compensation is payable in a requisition-compensation appeal, interest runs from the taking of possession until payment."
+    }
+  ],
+  "seconds": 23.3
+}

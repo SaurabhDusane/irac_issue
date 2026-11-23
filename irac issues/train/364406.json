@@ -1,0 +1,58 @@
+{
+  "doc_id": "364406",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36595,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3238,
+    "prompt_tokens": 9387,
+    "total_tokens": 12625,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Enhanced statutory solatium and interest are available only when the relevant compensation award falls within the transitional period specified for the amendments.",
+      "material_facts": [
+        "The land was acquired under the 1894 acquisition law, and the Collector’s awards and the reference court’s awards in the relevant cases were made before 30 April 1982.",
+        "The claimants later sought enhanced solatium and interest under amendments that came into force on 24 September 1984.",
+        "In some cases, a later court order granted the enhanced benefits despite the dates of the underlying awards."
+      ],
+      "conclusion": "The claimants were not entitled to the enhanced statutory solatium and interest because none of the relevant Collector’s or reference court’s awards was made within the transitional period.",
+      "legal_principle": "Under sections 30(2), 23(2) and 28 of the Land Acquisition Act, 1894, as amended by Act 68 of 1984, the enhanced solatium applies to a Collector’s or court’s award made between 30 April 1982 and 24 September 1984, and to appeals against such awards. The date of the underlying award is decisive; an appellate order made during that period does not qualify an award made before it. The Court applied the five-judge decision in Union of India v. Raghubir Singh (1989) 2 SCC 754. The judgment also considered the amended interest provisions, including section 34.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and no_qualifying_award_within_transition_window",
+        "then": "enhanced_transitional_benefits_unavailable"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "The proceeding concerns compensation for land acquired under a statutory land acquisition process.",
+        "no_qualifying_award_within_transition_window": "Neither the relevant award made by the acquiring authority nor the relevant award made by the reference court fell within the transitional period."
+      },
+      "definition": "When a land acquisition compensation proceeding has no relevant award within the transitional period, the enhanced transitional benefits are unavailable."
+    },
+    {
+      "legal_issue": "An executing court may treat a compensation order as a nullity if the court that made it lacked inherent jurisdiction, but it may not otherwise go behind a valid decree.",
+      "material_facts": [
+        "The original compensation judgments had become final, and no appeal was brought against them in the Supreme Court.",
+        "After the amendments, claimants sought enhanced solatium and interest through later proceedings, including applications invoking powers to correct or supplement judgments.",
+        "The later orders granting the enhanced benefits were made when the underlying awards did not qualify under the transitional provisions, or purported to make substantive changes to final judgments through correction powers.",
+        "The executing court refused to enforce the enhanced-benefit orders as nullities, and the High Court upheld that refusal."
+      ],
+      "conclusion": "The executing court and the High Court were justified in treating the orders granting enhanced benefits as without jurisdiction and nullities. Although an executing court ordinarily cannot go behind a decree, a decree or order made without inherent jurisdiction may be challenged at the execution stage.",
+      "legal_principle": "An executing court ordinarily cannot go behind a decree or grant relief not contained in it, as stated in State of Punjab v. Krishan Dayal Sharma, AIR 1990 SC 2177. However, a decree made without inherent jurisdiction is non est and may be challenged even in execution or collateral proceedings; the defect cannot be cured by consent or waiver. The Court relied on Union of India v. Sube Ram (1997) 9 SCC 69, Amrit Bhikaji Kale v. Kashinath Janardhan Trade (1983) 3 SCC 437, Balvant N. Viswamitra v. Yadav Sadashiv Mule (2004) 8 SCC 706, and Chiranjilal Shrilal Goenka v. Jasjit Singh (1993) 2 SCC 507. It also applied sections 151 and 152 of the Code of Civil Procedure, 1908, and Union of India v. Swaran Singh (1996) 5 SCC 501 and Dwaraka Das v. State of M.P. (1999) 3 SCC 500, holding that those provisions do not permit substantive alteration of a final judgment or decree.",
+      "rule": {
+        "if": "execution_proceeding and final_compensation_decree and later_enhancement_order_lacked_inherent_jurisdiction",
+        "then": "null_order_may_be_challenged_in_execution"
+      },
+      "predicates": {
+        "execution_proceeding": "A court is being asked to enforce a judgment or decree through execution proceedings.",
+        "final_compensation_decree": "The compensation judgment or decree had become final before the later order was made.",
+        "later_enhancement_order_lacked_inherent_jurisdiction": "A later court order granted substantive enhanced compensation benefits even though the underlying case did not qualify for them, or the court used correction powers to alter a final judgment on its merits."
+      },
+      "definition": "In an execution proceeding involving a final compensation decree, a later enhancement order that lacked inherent jurisdiction may be challenged in execution."
+    }
+  ],
+  "seconds": 21.0
+}

@@ -1,0 +1,61 @@
+{
+  "doc_id": "432276",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25524,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2584,
+    "prompt_tokens": 6642,
+    "total_tokens": 9226,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A payment extends the limitation period for a personal debt claim only when the payment was made within the existing limitation period and a qualifying written acknowledgment existed before the suit was instituted.",
+      "material_facts": [
+        "The claim for a personal money decree was filed after the ordinary limitation period had expired.",
+        "The debtors made several payments before the limitation period expired.",
+        "The debtors’ acknowledgment of the payments appeared in a written statement filed after the suit was instituted; there was no qualifying acknowledgment before institution."
+      ],
+      "conclusion": "The post-institution acknowledgment could not save the personal claim from limitation, so the personal money decree was not justified.",
+      "legal_principle": "Under section 20(1) of the Indian Limitation Act, 1908, payment within the prescribed period can start a fresh period of limitation, but the payment must be acknowledged in the payer’s handwriting or in a writing signed by the payer. The acknowledgment need not itself be made before the existing limitation period expires, but it must exist before the suit is instituted. Section 3 requires dismissal of a time-barred suit, and Order 7, Rule 6, of the Code of Civil Procedure requires the plaintiff to plead the facts supporting an exemption. The Court approved Mohd. Moizuddin v. Nalini Bala, Lal Singh v. Gulab Rai, Venkata Subbhu v. Appa Sundaram, Ram Prasad v. Mohan Lal, and Viswanath v. Mahadeo.",
+      "rule": {
+        "if": "personal_debt_recovery_claim and claim_otherwise_time_barred and (not payment_within_period or not payer_written_acknowledgment or not acknowledgment_before_suit)",
+        "then": "personal_claim_time_barred"
+      },
+      "predicates": {
+        "personal_debt_recovery_claim": "The proceeding seeks personal recovery of a debt from the debtor.",
+        "claim_otherwise_time_barred": "The personal claim was filed after its otherwise applicable limitation period had expired.",
+        "payment_within_period": "The debtor or an authorized agent made the relevant payment before the existing limitation period expired.",
+        "payer_written_acknowledgment": "The payer acknowledged the payment in the payer’s handwriting or in a writing signed by the payer.",
+        "acknowledgment_before_suit": "The qualifying written acknowledgment existed before the suit was instituted."
+      },
+      "definition": "For a personal debt recovery claim otherwise filed too late, the claim is time-barred if the payment was not timely, was not acknowledged in the required writing, or was not acknowledged before suit."
+    },
+    {
+      "legal_issue": "A mortgage instrument is not duly attested where the attesting witnesses signed it when it was written, before the executants later executed it elsewhere, and the evidence does not show the witnesses attesting the execution.",
+      "material_facts": [
+        "The instrument was written at the mortgagees’ village, and the attesting witnesses were residents of that village.",
+        "The executants signed the instrument several days later at a different place when it was presented for registration.",
+        "The testimony placed the attesting witnesses’ signatures on the instrument on the day it was written, and the evidence did not show that they went to the place where the executants later signed."
+      ],
+      "conclusion": "The instrument was not duly attested and could not support a mortgage decree.",
+      "legal_principle": "The Court concluded from the instrument and witness testimony that signatures made by witnesses when a document was written, before its later execution by the executants elsewhere, did not establish proper attestation. The Court rejected the High Court’s contrary inference from the witnesses’ use of a word that might have meant execution as well as writing. The judgment cites no statutory provision or earlier case for this attestation conclusion.",
+      "rule": {
+        "if": "mortgage_enforcement_proceeding and witnesses_signed_at_drafting and executants_signed_later_elsewhere and witnesses_absent_at_later_execution",
+        "then": "instrument_not_duly_attested"
+      },
+      "predicates": {
+        "mortgage_enforcement_proceeding": "The proceeding seeks enforcement of a mortgage instrument against the mortgaged property.",
+        "witnesses_signed_at_drafting": "The attesting witnesses signed the instrument at the time and place it was written.",
+        "executants_signed_later_elsewhere": "The executants signed the instrument later at a different place.",
+        "witnesses_absent_at_later_execution": "The evidence does not show that the attesting witnesses were present when the executants later signed."
+      },
+      "definition": "In a mortgage enforcement proceeding, an instrument is not duly attested when the witnesses signed it at drafting, the executants signed it later elsewhere, and the witnesses were absent at that later execution."
+    }
+  ],
+  "seconds": 17.1
+}

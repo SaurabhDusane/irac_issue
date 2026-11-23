@@ -1,0 +1,79 @@
+{
+  "doc_id": "1247733",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 48153,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2003,
+    "prompt_tokens": 12070,
+    "total_tokens": 14073,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent-control requirement for prior permission to terminate a tenancy by a landlord does not apply when the tenant chooses to surrender the tenancy.",
+      "material_facts": [
+        "The landlords applied for permission to terminate the tenancy under the applicable rent-control order.",
+        "The tenant then agreed to surrender the tenancy rights and undertook to vacate the premises by an agreed date.",
+        "The Rent Controller filed the proceedings after the parties submitted their compromise."
+      ],
+      "conclusion": "Prior permission was not required because the tenancy was terminated by the tenant’s surrender, not by the landlord’s determination of the tenancy.",
+      "legal_principle": "Clause 13 of the C.P. and Berar Letting of Houses and Rent Control Order, 1949 restricts the landlord’s right to determine a tenancy and requires permission when the landlord seeks to terminate it. It does not restrict a tenant from surrendering the lease. Sections 106 and 111 of the Transfer of Property Act, 1882 recognize termination by either lessor or lessee and the ending of a lease by surrender.",
+      "rule": {
+        "if": "rent_control_permission_proceeding and tenant_agreed_to_surrender",
+        "then": "prior_permission_not_required_for_tenant_surrender"
+      },
+      "predicates": {
+        "rent_control_permission_proceeding": "A landlord sought permission in a proceeding to terminate a tenant’s lease under a rent-control restriction.",
+        "tenant_agreed_to_surrender": "The tenant agreed to end the tenancy by surrendering the tenancy rights."
+      },
+      "definition": "When a landlord sought permission to terminate a tenancy but the tenant agreed to surrender it, prior permission was not required for that surrender."
+    },
+    {
+      "legal_issue": "A tenant’s surrender may end a tenancy despite the tenant remaining in possession, and an arrangement for time to vacate and payment for use and occupation after surrender does not continue or create a tenancy.",
+      "material_facts": [
+        "The tenant agreed in a compromise to surrender the tenancy and later signed an arbitration agreement stating that the tenancy rights had been surrendered.",
+        "The resulting award and decree allowed the tenant further time in possession in return for damages for use and occupation.",
+        "The tenant remained in possession after the agreed surrender, but the later arrangement neither continued the old tenancy nor created a new one."
+      ],
+      "conclusion": "The tenancy ended by mutual agreement and surrender even though possession was not physically handed over; the later arrangement was not a contract to evade the rent-control restriction, and the decree based on it could be executed.",
+      "legal_principle": "Under Section 111(e) and (f) of the Transfer of Property Act, 1882, a lease may end by express or implied surrender. In Shah Mathuradas Maganlal & Co. v. Nagappa Shankarappa Malaga, AIR 1976 SC 1565, the Court explained that surrender may be inferred from mutual consent and related conduct. Foster v. Robinson, [1950] 2 All E.R. 342, supports the conclusion that continued physical possession does not prevent a finding of surrender where the parties’ arrangement determines the old tenancy. An arrangement fixing time to vacate and damages for occupation after surrender does not itself continue or create a tenancy.",
+      "rule": {
+        "if": "eviction_decree_execution_proceeding and parties_mutually_agreed_to_end_tenancy and post_surrender_arrangement_only_allowed_time_to_vacate and tenant_remained_in_possession",
+        "then": "surrender_effective_despite_continued_possession"
+      },
+      "predicates": {
+        "eviction_decree_execution_proceeding": "A party sought execution of a decree for possession based on the ending of a tenancy.",
+        "parties_mutually_agreed_to_end_tenancy": "The landlord and tenant mutually agreed that the tenancy would end.",
+        "post_surrender_arrangement_only_allowed_time_to_vacate": "After agreeing to end the tenancy, the parties arranged for the tenant to remain temporarily while paying for use and occupation until vacating.",
+        "tenant_remained_in_possession": "The tenant did not physically hand over possession when the tenancy was agreed to end."
+      },
+      "definition": "When parties mutually ended a tenancy, a later arrangement only allowed time to vacate, and the tenant remained in possession, the surrender could still be effective."
+    },
+    {
+      "legal_issue": "A judgment-debtor who had an opportunity to challenge a decree but did not do so may be barred from raising that objection later in execution proceedings.",
+      "material_facts": [
+        "The tenant received notice when the arbitration award was placed before the court and did not object that the decree could not be passed without rent-controller permission.",
+        "The tenant also did not raise that objection during an earlier execution proceeding, despite opportunities to do so.",
+        "The tenant first raised the objection in a later execution proceeding."
+      ],
+      "conclusion": "The tenant was estopped from raising the objection belatedly, and constructive res judicata applies in execution proceedings; the Court considered this an additional ground, though its decision on surrender made it unnecessary to rely on it.",
+      "legal_principle": "The principles of constructive res judicata apply in execution proceedings. Mohanlal Goenka v. Benoy Kishna Mukherjee, AIR 1953 SC 65, applied those principles to execution proceedings. An objection available when a decree is made, but not raised despite an opportunity to do so, may not be raised later in execution.",
+      "rule": {
+        "if": "execution_proceeding and objection_available_before_decree_was_passed and judgment_debtor_did_not_raise_objection_despite_opportunity and objection_first_raised_in_later_execution",
+        "then": "belated_objection_barred"
+      },
+      "predicates": {
+        "execution_proceeding": "A party sought to execute a court decree.",
+        "objection_available_before_decree_was_passed": "The judgment-debtor could have raised the objection when the award or proposed decree was before the court.",
+        "judgment_debtor_did_not_raise_objection_despite_opportunity": "The judgment-debtor received an opportunity to raise the objection but did not do so.",
+        "objection_first_raised_in_later_execution": "The judgment-debtor first raised the objection in a later execution proceeding."
+      },
+      "definition": "When an objection could have been raised before a decree was passed but was not raised despite an opportunity, raising it for the first time in a later execution proceeding is barred."
+    }
+  ],
+  "seconds": 13.3
+}

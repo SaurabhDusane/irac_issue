@@ -1,0 +1,77 @@
+{
+  "doc_id": "500723",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13315,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2082,
+    "prompt_tokens": 3733,
+    "total_tokens": 5815,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory opportunity to be heard on an objection to a proposed land acquisition must be provided by the designated inquiry officer, and a hearing by the government does not substitute for it.",
+      "material_facts": [
+        "An objection was filed asserting that the land was attached to a religious institution and fell within an excluded category.",
+        "The Collector did not hear the objector before submitting his report.",
+        "The government later heard the objection and rejected it before the declaration was upheld by the High Court."
+      ],
+      "conclusion": "The Collector was required to hear the objector, and the government’s later hearing did not cure the failure. The declaration was quashed.",
+      "legal_principle": "Section 5A of the Land Acquisition Act, 1894 places the duty to hear an objector on the Collector, and that duty is mandatory. A government decision on the objection cannot replace the hearing the Collector must provide. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_objection_case and objector_filed_objection and not collector_provided_hearing",
+        "then": "acquisition_declaration_is_invalid"
+      },
+      "predicates": {
+        "land_acquisition_objection_case": "The proceeding concerns a proposed acquisition of land and an objection to that proposed acquisition.",
+        "objector_filed_objection": "A person whose land was proposed for acquisition submitted an objection to the proposal.",
+        "collector_provided_hearing": "The official responsible for hearing and reporting on the objection gave the objector an opportunity to be heard."
+      },
+      "definition": "When a person objects in a land-acquisition proceeding and the responsible official does not hear that person, the resulting acquisition declaration is invalid."
+    },
+    {
+      "legal_issue": "The designated inquiry officer must investigate an objection and make a recommendation even though the government makes the final decision and may reject that recommendation.",
+      "material_facts": [
+        "The Collector’s report noted the objection but stated that a decision could be taken after inspection of the site.",
+        "The Collector did not investigate the objection after giving the objector an opportunity to be heard or make a substantive recommendation.",
+        "The government later decided the objection itself."
+      ],
+      "conclusion": "The Collector’s responsibility to inquire into the objection and make a recommendation was not removed by the government’s authority to make the ultimate decision. The Collector was directed to hear the objector, inquire into the objection, and make the necessary recommendation.",
+      "legal_principle": "Under Section 5A of the Land Acquisition Act, 1894, the Collector must hear the objector, inquire into the objection, and make a recommendation to the appropriate government. The recommendation is not binding on the government, but that does not excuse the Collector from performing those duties. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_objection_case and collector_failed_to_investigate and collector_failed_to_recommend",
+        "then": "collector_must_investigate_and_recommend"
+      },
+      "predicates": {
+        "land_acquisition_objection_case": "The proceeding concerns a proposed acquisition of land and an objection to that proposed acquisition.",
+        "collector_failed_to_investigate": "The official responsible for examining the objection did not inquire into the matters raised by it.",
+        "collector_failed_to_recommend": "The official responsible for examining the objection did not make a substantive recommendation to the government."
+      },
+      "definition": "If an objection in a land-acquisition proceeding is not investigated and no substantive recommendation is made, the responsible official must investigate the objection and make a recommendation."
+    },
+    {
+      "legal_issue": "An objection that depends on facts as well as law cannot be treated as a purely legal question to avoid the designated inquiry procedure.",
+      "material_facts": [
+        "The objection asserted that the land belonged to and was attached to a religious institution, an assertion whose resolution depended on facts about the land and its use.",
+        "The High Court treated the objection as a question of law that the government could decide without an inquiry and recommendation by the Collector.",
+        "The Supreme Court concluded that the objection raised mixed questions of law and fact."
+      ],
+      "conclusion": "The Collector was required to inquire into the factual matters raised by the objection and make a recommendation; the prescribed procedure could not be replaced by a different process.",
+      "legal_principle": "Section 5A of the Land Acquisition Act, 1894 requires the Collector to inquire into an objection and make a recommendation. Where the objection raises factual matters, the Collector cannot decline that task by characterizing the objection as purely legal. A court may not substitute a different procedure for the one prescribed by the legislature. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_objection_case and objection_depended_on_underlying_facts",
+        "then": "collector_must_investigate_objection"
+      },
+      "predicates": {
+        "land_acquisition_objection_case": "The proceeding concerns a proposed acquisition of land and an objection to that proposed acquisition.",
+        "objection_depended_on_underlying_facts": "The objector's claim depended in part on facts about the land, its relationship to an institution, or how it was used."
+      },
+      "definition": "When an objection in a land-acquisition proceeding depends on underlying facts, the responsible official must investigate the objection."
+    }
+  ],
+  "seconds": 12.7
+}

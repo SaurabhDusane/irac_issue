@@ -1,0 +1,79 @@
+{
+  "doc_id": "116651",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16270,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1906,
+    "prompt_tokens": 4334,
+    "total_tokens": 6240,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A Hindu husband's adoption while his wife is living is invalid if it is made without her consent.",
+      "material_facts": [
+        "The alleged adopter had a living first wife when the adoption was said to have taken place.",
+        "The first wife declined to participate in the adoption and did not consent to it.",
+        "The defendants relied on the alleged adoption to deny the plaintiffs’ rights in the properties."
+      ],
+      "conclusion": "The alleged adoption was invalid because the living wife had not consented.",
+      "legal_principle": "Section 7 of the Hindu Adoptions and Maintenance Act, 1956 permits a Hindu male who is of sound mind and not a minor to adopt, but, if he has a wife living, he cannot adopt without her consent.",
+      "rule": {
+        "if": "adoption_claim and wife_living and wife_withheld_consent",
+        "then": "adoption_invalid"
+      },
+      "predicates": {
+        "adoption_claim": "A party relies on an alleged adoption to establish legal rights or defeat another party’s claim.",
+        "wife_living": "The person alleged to have made the adoption had a wife living at the time.",
+        "wife_withheld_consent": "The living wife did not consent to the adoption."
+      },
+      "definition": "When an adoption is relied on, and the adopter had a living wife who did not consent, the adoption is invalid."
+    },
+    {
+      "legal_issue": "A will requiring attestation is not proved unless the evidence establishes due attestation and execution in accordance with the applicable legal requirements.",
+      "material_facts": [
+        "The defendants relied on a will allegedly executed by the deceased in favour of his grandson.",
+        "The witnesses called about the will did not testify that the deceased signed it in their presence or otherwise establish the required attestation.",
+        "One witness discussed the will in connection with the adoption, but did not say that the deceased signed the will in his presence.",
+        "The High Court inferred due execution from the evidence about the adoption, whereas the trial court and first appellate court found that the will had not been proved."
+      ],
+      "conclusion": "The will was not proved in accordance with law; the High Court could not assume the required execution and attestation from the evidence about the adoption.",
+      "legal_principle": "Section 68 of the Evidence Act requires at least one attesting witness to be called to prove a document required by law to be attested, where such a witness is alive, subject to the court’s process, and capable of giving evidence. Section 63(c) of the Indian Succession Act, 1925 sets out the requirements for attestation of an unprivileged will, and Section 3 of the Transfer of Property Act defines attestation. Attestation and execution are distinct acts; execution is not proved without proof of due attestation, and a court cannot assume a requirement that the evidence does not establish.",
+      "rule": {
+        "if": "will_claim and will_requires_attestation and witnesses_failed_to_prove_attestation",
+        "then": "will_not_proved"
+      },
+      "predicates": {
+        "will_claim": "A party relies on an alleged will to establish rights in property.",
+        "will_requires_attestation": "The alleged will is a document that must be attested by law.",
+        "witnesses_failed_to_prove_attestation": "The witnesses’ evidence does not establish that the testator signed or acknowledged the will in the required manner and that the witnesses attested it."
+      },
+      "definition": "When a party relies on a will that must be attested and the witnesses do not prove the required attestation, the will is not proved."
+    },
+    {
+      "legal_issue": "A High Court cannot use a second appeal to reappreciate evidence and reverse concurrent factual findings without a substantial question of law.",
+      "material_facts": [
+        "The trial court found that the alleged adoption and will had not been proved and granted the plaintiffs’ partition claim.",
+        "The first appellate court independently assessed the evidence and affirmed those findings.",
+        "The High Court reappraised the evidence and reversed the concurrent findings without formulating a substantial question of law."
+      ],
+      "conclusion": "The High Court had no justification to interfere with the concurrent, well-reasoned factual findings; its judgment and decree were set aside and the trial court’s decree was restored.",
+      "legal_principle": "Under Sections 100(1) and 100(4) of the Code of Civil Procedure, a second appeal lies only where the High Court is satisfied that the case involves a substantial question of law, which it must formulate. An erroneous finding of fact based on appreciation of relevant evidence does not by itself confer jurisdiction to entertain a second appeal.",
+      "rule": {
+        "if": "second_appeal and concurrent_well_reasoned_findings and fact_reappraisal_only",
+        "then": "second_appeal_interference_improper"
+      },
+      "predicates": {
+        "second_appeal": "The challenged decision is made by a High Court in a second appeal.",
+        "concurrent_well_reasoned_findings": "The trial court and first appellate court reached the same factual findings after assessing the evidence, and those findings are well reasoned.",
+        "fact_reappraisal_only": "The High Court reconsiders the evidence and reverses those findings without a substantial question of law justifying the interference."
+      },
+      "definition": "In a second appeal, when lower courts have made concurrent, well-reasoned factual findings and the High Court’s intervention is only a reappraisal of facts, that intervention is improper."
+    }
+  ],
+  "seconds": 14.3
+}

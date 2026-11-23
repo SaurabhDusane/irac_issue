@@ -1,0 +1,59 @@
+{
+  "doc_id": "655625",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13848,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1712,
+    "prompt_tokens": 3994,
+    "total_tokens": 5706,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The annual value of rent-controlled premises for municipal assessment is limited by the standard rent even when no order fixing standard rent has been made.",
+      "material_facts": [
+        "The premises were subject to rent control, but no order fixing standard rent had been made.",
+        "Under the rent-control statute’s definition, standard rent was the amount that would have been fixed had an application been made.",
+        "The tenant paid rent that was treated as the statutorily determined standard rent, while the municipal authority assessed the premises using the higher rent received by the tenant from sub-tenants."
+      ],
+      "conclusion": "The annual value had to be assessed on the basis of the standard rent payable by the tenant to the owner, not the higher subletting receipts.",
+      "legal_principle": "Under section 168(1) of the Calcutta Municipal Corporation Act, 1951, annual value is the gross annual rent at which premises might reasonably be expected to let. The proviso does not alter the meaning of that standard. Applying Corporation of Calcutta v. Smt. Padma Debi, which interpreted section 127(a) of the Calcutta Municipal Act, 1923, statutory rent limits the hypothetical rent. Section 2(10)(b) of the West Bengal Premises Rent Control (Temporary Provisions) Act, 1950 defines standard rent, where no rent has been fixed under section 9, as the rent that would have been fixed if an application had been made under that section.",
+      "rule": {
+        "if": "municipal_annual_value_assessment and rent_control_limits_rent and standard_rent_is_determinable_without_order",
+        "then": "annual_value_does_not_exceed_standard_rent"
+      },
+      "predicates": {
+        "municipal_annual_value_assessment": "An authority is determining the annual value of premises for municipal assessment.",
+        "rent_control_limits_rent": "The premises are subject to a rent-control regime that limits the rent at which they may reasonably be expected to let.",
+        "standard_rent_is_determinable_without_order": "The applicable rent-control regime makes it possible to determine standard rent even though no authority has issued an order fixing it."
+      },
+      "definition": "When premises are assessed for municipal purposes, rent control limits the letting value, and standard rent can be determined without a fixing order, the annual value does not exceed standard rent."
+    },
+    {
+      "legal_issue": "Rent received by a tenant from sub-tenants is not included in determining the annual value of premises for municipal assessment.",
+      "material_facts": [
+        "The tenant sublet a major part of the premises to several sub-tenants and received more in aggregate rent from them than it paid to the owner.",
+        "The municipal authority used the subletting receipts to determine annual value.",
+        "The owner’s appeal resulted in annual value being assessed on the basis of the rent payable by the tenant to the owner.",
+        "The municipal statute’s provision concerning gradations of owners addressed apportionment of the consolidated rate."
+      ],
+      "conclusion": "The rent received by the tenant from sub-tenants was irrelevant to annual value; the relevant rent was the rent the owner could realize by letting the premises. The provision for apportioning the consolidated rate did not affect that determination.",
+      "legal_principle": "Under section 168(1) of the Calcutta Municipal Corporation Act, 1951, annual value depends on the gross rent for which the premises might reasonably be expected to let, meaning the rent realizable by the owner, not the rent a tenant receives on subletting. Although section 5(53) defines “owner” to include certain persons receiving rent, section 193 concerns apportionment of the consolidated rate among gradations of owners and is irrelevant to determining annual value. Corporation of Calcutta v. Smt. Padma Debi supports using the rent the landlord may realize, rather than value in the hands of the tenant.",
+      "rule": {
+        "if": "municipal_annual_value_assessment and tenant_sublets_premises and assessment_uses_hypothetical_owner_rent",
+        "then": "subtenant_rent_is_excluded_from_annual_value"
+      },
+      "predicates": {
+        "municipal_annual_value_assessment": "An authority is determining the annual value of premises for municipal assessment.",
+        "tenant_sublets_premises": "A tenant sublets some or all of the premises and receives rent from sub-tenants.",
+        "assessment_uses_hypothetical_owner_rent": "The annual-value assessment is based on the rent the owner could reasonably realize by letting the premises."
+      },
+      "definition": "When municipal annual value is assessed using the rent reasonably realizable by the owner, rent received by a tenant from sub-tenants is excluded."
+    }
+  ],
+  "seconds": 11.0
+}

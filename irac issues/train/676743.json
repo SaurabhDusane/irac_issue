@@ -1,0 +1,62 @@
+{
+  "doc_id": "676743",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22840,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2182,
+    "prompt_tokens": 5908,
+    "total_tokens": 8090,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An arbitral tribunal exceeds the scope of its submission when it awards compensation for a loss that was not part of the dispute referred to arbitration.",
+      "material_facts": [
+        "The arbitration agreement referred the parties’ disputes in the pending writ proceeding to arbitration.",
+        "The writ proceeding sought damages for damage to houses, crops and an orchard, and reclamation of agricultural land rendered unfit for cultivation; it did not claim compensation for loss of the land’s potential or plead that such compensation as an alternative.",
+        "The arbitral tribunal awarded compensation for loss of the land’s potential, together with interest on that amount.",
+        "The respondent objected that the compensation for loss of potential was beyond the scope of the reference."
+      ],
+      "conclusion": "The award of compensation for loss of the land’s potential and the interest on that compensation fell outside the scope of the arbitration reference and was set aside.",
+      "legal_principle": "Under Section 34(2)(iv) of the Arbitration and Conciliation Act, 1996, an award may be set aside insofar as it decides a dispute not contemplated by, or beyond the scope of, the submission to arbitration. The proviso permits only the portion dealing with matters beyond the submission to be set aside when that portion can be separated from decisions on matters submitted. The scope of the submission here was determined by the arbitration agreement read with the dispute in the underlying writ proceeding. No earlier case was relied on for this ruling.",
+      "rule": {
+        "if": "award_challenge_pending and arbitration_reference_limited_to_underlying_claim and land_potential_compensation_not_claimed and award_grants_land_potential_compensation",
+        "then": "out_of_scope_compensation_set_aside"
+      },
+      "predicates": {
+        "award_challenge_pending": "A court is considering a challenge to an arbitral award.",
+        "arbitration_reference_limited_to_underlying_claim": "The parties referred to arbitration the dispute raised in an underlying proceeding.",
+        "land_potential_compensation_not_claimed": "The claimant did not seek or plead, in the underlying proceeding, compensation for the land’s lost potential.",
+        "award_grants_land_potential_compensation": "The arbitral tribunal awarded compensation for the land’s lost potential."
+      },
+      "definition": "When a challenged award grants compensation for lost land potential that was not claimed in the dispute referred to arbitration, that compensation is set aside as outside the reference."
+    },
+    {
+      "legal_issue": "A separable part of an arbitral award need not be preserved when the party entitled to benefit from it does not ask the court to preserve it and seeks to pursue the broader underlying claim.",
+      "material_facts": [
+        "The award separately quantified compensation for crop damage, an item that the court considered readily separable from the award for loss of land potential.",
+        "The respondent did not make a specific argument against the crop-damage compensation.",
+        "The appellants did not ask the court to preserve the crop-damage portion of the award and instead wished to pursue their broader claim concerning reclamation of the land.",
+        "The court set aside the award and directed that the appeal be heard on its merits."
+      ],
+      "conclusion": "The court set aside the entire award, including the separable crop-damage item, and allowed the underlying appeal to proceed on its merits.",
+      "legal_principle": "The proviso to Section 34(2)(iv) of the Arbitration and Conciliation Act, 1996, permits a court to set aside only the separable portion of an award that exceeds the submission. In this case, however, the appellants did not seek preservation of the separable crop-damage award and wished to pursue their broader claim; the court therefore set aside the award in full so that the appeal could be heard on its merits. No earlier case was relied on for this ruling.",
+      "rule": {
+        "if": "award_challenge_pending and award_contains_separable_compensation_item and claimant_does_not_seek_preservation and claimant_seeks_broader_underlying_claim",
+        "then": "entire_award_set_aside_and_underlying_appeal_heard_on_merits"
+      },
+      "predicates": {
+        "award_challenge_pending": "A court is considering whether to set aside an arbitral award.",
+        "award_contains_separable_compensation_item": "The award includes a compensation item that can be separated from other items.",
+        "claimant_does_not_seek_preservation": "The claimant does not ask the court to preserve that separable compensation item.",
+        "claimant_seeks_broader_underlying_claim": "The claimant wishes to pursue a broader claim in the underlying proceeding."
+      },
+      "definition": "When a challenged award includes a separable compensation item, but the claimant does not seek to preserve it and wishes to pursue the broader underlying claim, the entire award is set aside and the underlying appeal proceeds on its merits."
+    }
+  ],
+  "seconds": 14.6
+}

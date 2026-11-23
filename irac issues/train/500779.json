@@ -1,0 +1,124 @@
+{
+  "doc_id": "500779",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 62197,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3531,
+    "prompt_tokens": 15364,
+    "total_tokens": 18895,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person who commits murder while still serving a life sentence is liable to the special mandatory punishment for murder by a life-sentence prisoner, even if released from prison on licence.",
+      "material_facts": [
+        "The accused had previously been convicted of murder and sentenced to imprisonment for life after his death sentence was commuted.",
+        "He was released on licence, but the licence period had not expired when he committed the present murder.",
+        "The court found that the accused was the same person who had received the earlier sentence."
+      ],
+      "conclusion": "The accused was liable to be convicted under Section 303 of the Indian Penal Code and sentenced to death.",
+      "legal_principle": "Section 303 of the Indian Penal Code applies when a person commits murder while under a sentence of imprisonment for life. Under Sections 2, 3 and 4 of the Uttar Pradesh Prisoners’ Release on Probation Act, 1938, release on licence does not end the sentence; the licensed period is counted as part of it. The sentence must still be in force when the subsequent murder is committed.",
+      "rule": {
+        "if": "murder_trial and prior_life_sentence and life_sentence_in_force_at_murder",
+        "then": "liable_to_mandatory_death_sentence"
+      },
+      "predicates": {
+        "murder_trial": "The proceeding is a trial for murder.",
+        "prior_life_sentence": "The accused had previously received a sentence of life imprisonment.",
+        "life_sentence_in_force_at_murder": "The accused committed the murder while that life sentence remained in force, including while released on licence."
+      },
+      "definition": "If a murder trial concerns an accused who committed the murder while a prior life sentence remained in force, the accused is liable to the mandatory death sentence."
+    },
+    {
+      "legal_issue": "A separate charge based on the prior conviction is not required before applying the special murder rule to a person who commits murder while serving a life sentence.",
+      "material_facts": [
+        "The accused was tried for murder while serving a life sentence for an earlier murder, although he had been released on licence.",
+        "The trial court did not frame a separate charge under the special murder provision.",
+        "The High Court applied that provision and imposed the mandatory punishment without remanding the case for a further charge and trial."
+      ],
+      "conclusion": "The High Court did not act illegally by imposing the special punishment without following the procedure for a further charge under Section 310 of the Code of Criminal Procedure.",
+      "legal_principle": "Section 310 of the Code of Criminal Procedure concerns enhanced punishment based on a previous conviction and, read with Section 75 of the Indian Penal Code, does not require the earlier sentence to remain in force. The special murder provision instead requires that the life sentence be in force when the murder is committed. The Court treated that provision as a proviso to Section 302: once the relevant fact is brought to the court’s attention, it removes the sentencing alternative otherwise available for murder. Accordingly, Section 310 does not require a separate charge in this situation.",
+      "rule": {
+        "if": "murder_trial and murder_committed_during_life_sentence",
+        "then": "separate_previous_conviction_charge_not_required"
+      },
+      "predicates": {
+        "murder_trial": "The proceeding is a trial for murder.",
+        "murder_committed_during_life_sentence": "The accused committed the murder while serving a life sentence."
+      },
+      "definition": "When a murder trial concerns a murder committed during a life sentence, a separate charge based on the prior conviction is not required."
+    },
+    {
+      "legal_issue": "The High Court may enhance a sentence in criminal revision on the basis of a private party’s petition when the sentence warrants enhancement and the accused has notice of the proposed enhancement.",
+      "material_facts": [
+        "The State did not appeal the life sentence imposed by the trial court.",
+        "A private party filed revision petitions challenging the trial court’s refusal to apply the special murder provision.",
+        "The High Court gave the accused notice to show cause why his sentence should not be enhanced.",
+        "The High Court found that the accused had committed the murder while serving a life sentence."
+      ],
+      "conclusion": "The High Court had power to enhance the sentence in revision, and the private party’s initiation of the revision did not make the enhancement illegal.",
+      "legal_principle": "Section 439 of the Code of Criminal Procedure gives the High Court revisional power that it may exercise suo motu. A private revision petitioner may draw the court’s attention to an illegal, improper or incorrect finding, sentence or order; the absence of a State appeal does not remove that power. The Court also referred to Section 423(1A) of the Code.",
+      "rule": {
+        "if": "criminal_revision and private_party_filed_revision and enhancement_notice_given and lower_court_sentence_warrants_enhancement",
+        "then": "high_court_may_enhance_sentence"
+      },
+      "predicates": {
+        "criminal_revision": "The proceeding before the High Court is a criminal revision.",
+        "private_party_filed_revision": "A private party filed a revision petition drawing attention to the lower court’s order.",
+        "enhancement_notice_given": "The accused received notice that the sentence might be enhanced.",
+        "lower_court_sentence_warrants_enhancement": "The lower court’s sentence was incorrect or otherwise warranted enhancement on the facts found."
+      },
+      "definition": "In a criminal revision, if a private party brings a sentence warranting enhancement to the High Court’s attention and the accused receives notice, the High Court may enhance the sentence."
+    },
+    {
+      "legal_issue": "A sudden quarrel does not reduce a killing to culpable homicide when the offender acts in a cruel or unusual manner.",
+      "material_facts": [
+        "After an exchange of abuses during a dispute, the accused struck the deceased on the neck with a pharsa, causing death.",
+        "The occurrence was not premeditated and involved a sudden quarrel, and the accused inflicted a single blow.",
+        "The trial court found that the accused acted in a cruel and unusual manner and convicted him of murder.",
+        "The prosecution eyewitness accounts and medical evidence supported the finding that the accused caused the death."
+      ],
+      "conclusion": "The murder conviction under Section 302 of the Indian Penal Code was upheld; the Court found no reason to differ from the lower courts on guilt.",
+      "legal_principle": "Section 300, Exception 4, requires that the offender not take undue advantage or act in a cruel or unusual manner. The trial court found that condition was not met, so the sudden quarrel did not bring the killing within the exception. The murder conviction was therefore sustained under Section 302 of the Indian Penal Code.",
+      "rule": {
+        "if": "murder_trial and sudden_quarrel and cruel_or_unusual_manner and evidence_supports_killing",
+        "then": "murder_conviction_upheld"
+      },
+      "predicates": {
+        "murder_trial": "The proceeding is a trial or appeal concerning a murder charge.",
+        "sudden_quarrel": "The killing followed a sudden quarrel rather than premeditation.",
+        "cruel_or_unusual_manner": "The offender acted in a cruel or unusual manner or took undue advantage.",
+        "evidence_supports_killing": "The eyewitness and medical evidence support the finding that the accused caused the death."
+      },
+      "definition": "If a murder case involves a sudden quarrel but the offender acted cruelly or unusually and the evidence supports the killing, the murder conviction is upheld."
+    },
+    {
+      "legal_issue": "Enhancement to the special capital punishment is unjustified where the accused was tried without notice of the enhanced charge and lacked an effective opportunity to contest its essential facts.",
+      "material_facts": [
+        "The trial charge alleged murder but did not state the earlier conviction or that the accused was serving a life sentence when the present murder occurred.",
+        "The prosecution sought to introduce documents about the earlier conviction and release on licence during the trial, but did not timely produce the necessary evidence or seek an adjournment to do so.",
+        "The High Court later directed an inquiry into whether the accused was the person previously convicted; he had no counsel in that inquiry, and the relevant records were not compared by an expert.",
+        "The State did not seek enhancement, and the High Court imposed the capital sentence on revision at the instance of a private complainant."
+      ],
+      "conclusion": "In dissent, Justice Dua would have quashed the death sentence and restored the life sentence because the enhancement caused a failure of justice.",
+      "legal_principle": "Under Sections 221 and 435 and 439 of the Code of Criminal Procedure, the accused must receive proper notice of the essential facts of the charge, and revisional power is discretionary and directed to correcting grave failures or miscarriages of justice. The dissent relied on Bashira v. State of U.P., AIR 1958 SC 1313, concerning the desirability of legal assistance for an accused facing a charge carrying capital punishment.",
+      "rule": {
+        "if": "criminal_revision and private_party_filed_revision and no_notice_of_enhanced_charge and prosecution_failed_to_prepare_essential_evidence and no_effective_legal_assistance",
+        "then": "sentence_enhancement_should_be_quashed"
+      },
+      "predicates": {
+        "criminal_revision": "The proceeding seeking enhancement is a criminal revision.",
+        "private_party_filed_revision": "A private party, rather than the State, initiated the revision seeking enhancement.",
+        "no_notice_of_enhanced_charge": "The charge and trial proceedings did not give the accused notice of the essential facts supporting the more serious punishment.",
+        "prosecution_failed_to_prepare_essential_evidence": "The prosecution did not timely secure or present the evidence needed to prove the facts supporting enhancement.",
+        "no_effective_legal_assistance": "The accused lacked effective legal assistance in proceedings determining whether the enhanced punishment applied."
+      },
+      "definition": "If a private party seeks enhancement in criminal revision after the accused lacked notice of the enhanced charge, the prosecution failed to prepare the essential evidence, and the accused lacked effective legal assistance, the enhancement should be quashed."
+    }
+  ],
+  "seconds": 21.9
+}

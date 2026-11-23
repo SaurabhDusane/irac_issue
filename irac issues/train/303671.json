@@ -1,0 +1,81 @@
+{
+  "doc_id": "303671",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 4850,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2229,
+    "prompt_tokens": 1630,
+    "total_tokens": 3859,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "In an appeal challenging compensation for compulsory land acquisition, the Supreme Court does not reappraise evidence unless a legal principle has been violated or gross injustice has occurred.",
+      "material_facts": [
+        "The appeal challenged the compensation assessed for acquired land and property, alleging gross overvaluation.",
+        "The Court found no violation of principle or gross injustice that would justify its intervention."
+      ],
+      "conclusion": "The Court declined to reappraise the evidence because no special ground for intervention was established.",
+      "legal_principle": "The Court's review of an evidentiary valuation is not an opportunity to reappraise the evidence; intervention is warranted only in special cases involving a violation of principle or gross injustice. The appeal was brought by certificate under Article 133(1)(a) of the Constitution as it then stood.",
+      "rule": {
+        "if": "compensation_valuation_appeal and not legal_principle_violation and not gross_injustice",
+        "then": "supreme_court_does_not_reappraise_evidence"
+      },
+      "predicates": {
+        "compensation_valuation_appeal": "The proceeding is an appeal challenging a court's valuation of compensation for acquired property.",
+        "legal_principle_violation": "A legal principle was violated in reaching the valuation.",
+        "gross_injustice": "The valuation resulted in gross injustice."
+      },
+      "definition": "When a compensation-valuation appeal presents neither a violation of legal principle nor gross injustice, the Supreme Court does not reappraise the evidence."
+    },
+    {
+      "legal_issue": "A land valuation based on evidence of local property values is not disturbed on the basis of an unsupported or previously unraised claim that some of the land was low lying.",
+      "material_facts": [
+        "The High Court assessed the land value after considering documents relating to values in the locality.",
+        "The State argued that a uniform value for the land failed to account for low-lying portions.",
+        "There was no material showing how much land was low lying or whether its extent affected the unit rate, and the submission had not been raised before the High Court.",
+        "The Court identified no fundamental error or legal flaw in the High Court's assessment."
+      ],
+      "conclusion": "The Court declined to reconsider the land valuation and left the High Court's assessment undisturbed.",
+      "legal_principle": "A valuation supported by the court's assessment of local-value evidence is not reconsidered on a new factual contention when the record does not establish the extent or significance of the alleged difference in the land. The Court found no fundamental error or legal flaw warranting intervention.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and valuation_based_on_local_evidence and low_lying_extent_unsupported and low_lying_claim_not_raised_below and no_fundamental_error_identified",
+        "then": "land_valuation_left_undisturbed"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for compulsorily acquired land.",
+        "valuation_based_on_local_evidence": "The lower court assessed land value after considering evidence of values in the locality.",
+        "low_lying_extent_unsupported": "The record does not show the extent of the low-lying land or whether it could affect the valuation.",
+        "low_lying_claim_not_raised_below": "The contention that low-lying land should affect the valuation was not raised before the lower court whose valuation is challenged.",
+        "no_fundamental_error_identified": "No fundamental error or legal flaw in the lower court's valuation is identified."
+      },
+      "definition": "If a land-acquisition compensation appeal challenges a locally evidenced valuation using an unsupported, previously unraised claim about low-lying land, and no fundamental error is identified, the valuation is left undisturbed."
+    },
+    {
+      "legal_issue": "The age of a building alone does not justify a depreciation deduction where deterioration has not been established.",
+      "material_facts": [
+        "The building was about five years old at the time of acquisition, was described as excellent, and remained in use.",
+        "The owner had constructed it for use as a residence, with associated improvements.",
+        "The claim for a deduction rested on the passage of time, and no deterioration in the building was established."
+      ],
+      "conclusion": "The Court held that the building's age alone did not justify a depreciation deduction and found no error of law in refusing one.",
+      "legal_principle": "The general proposition that older buildings have lesser value is not an inflexible rule. Depreciation must be established rather than presumed from age alone; deterioration such as defects or damage may support it. The Court referred to Privy Council decisions, including AIR 1942 PC 35, for the general proposition concerning the relationship between age and value.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and building_age_is_only_basis_for_depreciation and building_in_good_condition_and_use and deterioration_not_proved",
+        "then": "no_depreciation_deduction"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for compulsorily acquired property that includes a building.",
+        "building_age_is_only_basis_for_depreciation": "The requested depreciation deduction rests only on the passage of time since the building was completed.",
+        "building_in_good_condition_and_use": "The building is in good condition and remains in use.",
+        "deterioration_not_proved": "No deterioration or damage reducing the building's value has been established."
+      },
+      "definition": "When an acquisition-compensation appeal seeks depreciation solely because of a building's age, while the building is in good condition and no deterioration is proved, no depreciation deduction is made."
+    }
+  ],
+  "seconds": 21.8
+}

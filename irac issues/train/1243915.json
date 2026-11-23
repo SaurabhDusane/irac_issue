@@ -1,0 +1,97 @@
+{
+  "doc_id": "1243915",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20293,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3082,
+    "prompt_tokens": 5425,
+    "total_tokens": 8507,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The time limit for bringing legal representatives on record in proceedings under rent-control legislation does not apply to execution proceedings treated as civil-court proceedings.",
+      "material_facts": [
+        "An eviction order was made under rent-control legislation and an execution petition was filed within time.",
+        "The decree holder died while the execution petition was pending, and the decree holder’s legal representatives applied to be impleaded more than one month after the death.",
+        "The execution court rejected the application as time-barred under the rule governing substitution in proceedings under the Act."
+      ],
+      "conclusion": "The substitution time limit did not apply to the execution proceeding, and the application to implead the legal representatives was not time-barred under that rule.",
+      "legal_principle": "The amended Section 18 required eviction orders to be executed as if they were orders of a Civil Court and gave the Controller the powers of a Civil Court for that purpose. Full effect must be given to that statutory fiction: Dargah Committee, Ajmer v. State of Rajasthan. Order 22 Rule 12 CPC excludes execution proceedings from the ordinary abatement rules applicable to suits; Venkatachalam v. Ramaswami and the statement of law in Mulla’s Commentary on the CPC support that position. Accordingly, Rule 25’s one-month limit for proceedings under the Act does not govern execution proceedings. The Court agreed with the approach in Ramanujam Naidu, Ghouse Khan and Trigolchand, and distinguished the pre-amendment decision in Subramania Pillai; it also found no conflict with Hydro-Chains, as affirmed by this Court.",
+      "rule": {
+        "if": "statutory_execution_proceeding and order_given_civil_court_execution_status",
+        "then": "substitution_time_limit_not_applicable"
+      },
+      "predicates": {
+        "statutory_execution_proceeding": "The proceeding is to execute an eviction order made under rent-control legislation.",
+        "order_given_civil_court_execution_status": "The governing framework directs that the eviction order be executed as though it were a civil-court order and gives the executing authority civil-court powers."
+      },
+      "definition": "When an eviction order is being executed under a framework that treats it as a civil-court order, the substitution time limit for other proceedings under the rent-control legislation does not apply."
+    },
+    {
+      "legal_issue": "A timely execution proceeding does not abate when a decree holder or judgment debtor dies during its pendency.",
+      "material_facts": [
+        "The decree holder filed the execution petition within time and died while it remained pending.",
+        "The decree holder’s legal representatives applied to join the pending execution proceeding.",
+        "The dispute concerned whether the pending execution proceeding could continue despite the death and the delay in bringing the legal representatives on record."
+      ],
+      "conclusion": "The pending execution proceeding did not abate on the death. In the case of a deceased decree holder, the legal representatives may come on record while it remains pending; in the case of a deceased judgment debtor, the court may set a reasonable time for bringing that person’s legal representatives on record and may dismiss for default if they are not brought on record within that time, but not as abated.",
+      "legal_principle": "Order 22 Rule 12 CPC makes the rules concerning abatement inapplicable to execution proceedings. Venkatachalam v. Ramaswami held that the penalty of abatement does not attach to such proceedings, and Mulla’s Commentary on the CPC states that the decree holder’s heirs may continue the pending proceeding or file a fresh execution application. By reason of Section 18’s civil-court fiction, this principle applies to execution proceedings before the Controller as well.",
+      "rule": {
+        "if": "execution_proceeding and execution_filed_within_time and (decree_holder_dies_while_pending or judgment_debtor_dies_while_pending)",
+        "then": "execution_proceeding_does_not_abate"
+      },
+      "predicates": {
+        "execution_proceeding": "The case is a proceeding to execute an order or decree.",
+        "execution_filed_within_time": "The decree holder filed the execution proceeding within the time allowed for filing it.",
+        "decree_holder_dies_while_pending": "The decree holder dies while the execution proceeding remains pending.",
+        "judgment_debtor_dies_while_pending": "The judgment debtor dies while the execution proceeding remains pending."
+      },
+      "definition": "A timely execution proceeding remains un-abated if either the decree holder or the judgment debtor dies while it is pending."
+    },
+    {
+      "legal_issue": "The legal representatives of a deceased decree holder may file a fresh execution petition, which is treated in law as a continuation of the timely pending execution petition.",
+      "material_facts": [
+        "The decree holder had filed an execution petition within time and died while it was pending.",
+        "The decree holder’s legal representatives sought to be impleaded in the pending petition.",
+        "The tenant conceded that the legal representatives could file an independent execution petition."
+      ],
+      "conclusion": "The legal representatives could file a fresh execution petition, and such a petition would be treated in law as a continuation of the execution petition originally filed within time.",
+      "legal_principle": "Order 22 Rule 12 CPC permits the legal representatives of a deceased decree holder to continue a pending execution proceeding or to file a fresh execution application. A fresh application in those circumstances is, in law, a continuation of the timely original application. Section 18’s direction to treat execution as civil-court execution makes that principle applicable to proceedings before the Controller.",
+      "rule": {
+        "if": "execution_proceeding_filed_within_time and decree_holder_dies_while_pending and legal_representatives_seek_execution",
+        "then": "fresh_execution_is_continuation_of_original"
+      },
+      "predicates": {
+        "execution_proceeding_filed_within_time": "The decree holder filed an execution proceeding within the time allowed for filing it.",
+        "decree_holder_dies_while_pending": "The decree holder dies while the execution proceeding remains pending.",
+        "legal_representatives_seek_execution": "The deceased decree holder’s legal representatives seek to enforce the order or decree."
+      },
+      "definition": "If legal representatives seek enforcement after the decree holder dies during a timely pending execution proceeding, a fresh execution petition is treated as a continuation of the original proceeding."
+    },
+    {
+      "legal_issue": "A review need not be allowed to undo an order permitting legal representatives to join a pending execution proceeding when they may instead file a fresh execution petition and review would serve no practical purpose.",
+      "material_facts": [
+        "The High Court allowed the legal representatives to be impleaded in the pending execution petition.",
+        "The tenant sought review of that decision, while conceding that the legal representatives could file an independent execution petition.",
+        "The review court found no point in setting aside impleadment and requiring the legal representatives to start a fresh proceeding."
+      ],
+      "conclusion": "The review court was right to dismiss the review application because allowing it would have produced an idle formality and unnecessary multiplicity of proceedings.",
+      "legal_principle": "Under Order 47 Rule 1 CPC, review was not warranted in these circumstances: where the legal representatives could file a fresh execution petition, undoing their impleadment in the pending petition would serve no practical purpose. Courts should avoid unnecessary multiplicity of proceedings.",
+      "rule": {
+        "if": "review_challenges_impleadment_in_execution and fresh_execution_remedy_available",
+        "then": "review_need_not_be_allowed"
+      },
+      "predicates": {
+        "review_challenges_impleadment_in_execution": "A review application challenges an order allowing legal representatives to join a pending execution proceeding.",
+        "fresh_execution_remedy_available": "The legal representatives can file a fresh execution proceeding to enforce the order or decree."
+      },
+      "definition": "When review challenges impleadment in an execution proceeding and a fresh execution remedy is available, review need not be allowed if it would serve no practical purpose."
+    }
+  ],
+  "seconds": 20.0
+}

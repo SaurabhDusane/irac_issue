@@ -1,0 +1,161 @@
+{
+  "doc_id": "1008845",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 39308,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3842,
+    "prompt_tokens": 9699,
+    "total_tokens": 13541,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A licensing officer may validly grant permission after bona fide consideration of advice from an advisory body, even if the officer would otherwise have reached a different decision.",
+      "material_facts": [
+        "An advisory committee recommended that the application be granted, and the Commissioner granted permission by a letter that did not indicate that the decision was anyone else’s.",
+        "The Commissioner later stated in an affidavit that he would have refused the application without the committee’s advice.",
+        "There was no suggestion that the Commissioner’s will was overborne or that he acted dishonestly or fraudulently."
+      ],
+      "conclusion": "The permission was a valid decision of the Commissioner, notwithstanding that he accepted the committee’s advice.",
+      "legal_principle": "The officer entrusted with discretion may, in its bona fide exercise, consider and accept advice from an advisory body; adopting that advice does not invalidate the decision absent coercion, dishonesty, or fraud.",
+      "rule": {
+        "if": "licensing_decision and officer_had_discretion and advisory_body_recommended_grant and officer_bona_fide_accepted_advice and not coercion_or_fraud",
+        "then": "permission_grant_is_valid"
+      },
+      "predicates": {
+        "licensing_decision": "The proceeding concerns a decision on an application for permission to undertake a regulated activity.",
+        "officer_had_discretion": "The responsible officer was entrusted with discretion to grant or refuse permission.",
+        "advisory_body_recommended_grant": "An advisory body recommended that the application be granted.",
+        "officer_bona_fide_accepted_advice": "The responsible officer considered and accepted the advisory body's recommendation in good faith.",
+        "coercion_or_fraud": "The responsible officer's will was overborne, or the officer acted dishonestly or fraudulently."
+      },
+      "definition": "When an officer with discretion in a licensing decision bona fide accepts an advisory body's recommendation to grant permission, and was not coerced or fraudulent, the grant is valid."
+    },
+    {
+      "legal_issue": "A public order made under statutory authority must be construed objectively from its language and cannot be recharacterized by explanations later given by its maker.",
+      "material_facts": [
+        "The cancellation communication stated that the Commissioner was directed by the Government to inform the recipient that permission was cancelled.",
+        "The Commissioner had previously told the recipient to await Government orders, and later said that the cancellation had been made under Government orders.",
+        "The Commissioner’s affidavit was relied on to argue that the cancellation was in fact his own decision."
+      ],
+      "conclusion": "The communication conveyed an order made by the Government, with the Commissioner acting only as a transmitting agent.",
+      "legal_principle": "Public orders intended to affect the conduct of their recipients must be construed objectively by reference to the language used in the order, not by later explanations of what the officer intended or had in mind.",
+      "rule": {
+        "if": "public_order and order_language_attributes_decision_to_another_authority and later_explanation_claims_officer_made_decision",
+        "then": "order_is_attributable_to_the_other_authority"
+      },
+      "predicates": {
+        "public_order": "A public authority issued an order under public power that was intended to affect the conduct of its recipient.",
+        "order_language_attributes_decision_to_another_authority": "The order's wording says that the officer is conveying a direction or decision made by another authority.",
+        "later_explanation_claims_officer_made_decision": "The officer later claims that the order was actually the officer's own decision."
+      },
+      "definition": "When a public order's wording attributes the decision to another authority, a later claim by the transmitting officer does not change that attribution."
+    },
+    {
+      "legal_issue": "Only the officer entrusted with licensing authority may cancel a licence when the governing scheme assigns that cancellation power to the officer alone.",
+      "material_facts": [
+        "The governing rules vested the Commissioner with authority to grant or refuse the relevant licence and with discretion to cancel or suspend a licence already granted.",
+        "The cancellation communication conveyed a Government decision, and the Commissioner acted only as a transmitting agent.",
+        "The rules did not confer the cancellation power on the Government."
+      ],
+      "conclusion": "The Government had no authority to cancel the licence, so the communicated cancellation was invalid.",
+      "legal_principle": "Under the City of Bombay Police Act, 1902, section 22(1), and the rules made under it, including rules 8 and 237–250, the Commissioner alone could grant or refuse the relevant licence and exercise the power to cancel or suspend it; that power could not be exercised by the Government.",
+      "rule": {
+        "if": "licence_cancellation and governing_scheme_assigns_cancellation_power_only_to_licensing_officer and another_authority_made_cancellation",
+        "then": "cancellation_is_invalid"
+      },
+      "predicates": {
+        "licence_cancellation": "The proceeding concerns an attempt to cancel a licence already granted.",
+        "governing_scheme_assigns_cancellation_power_only_to_licensing_officer": "The governing regulatory scheme assigns the cancellation decision exclusively to the officer responsible for licensing.",
+        "another_authority_made_cancellation": "An authority other than the officer entrusted with licensing made the cancellation decision."
+      },
+      "definition": "A cancellation is invalid when a licence is cancelled by an authority other than the officer to whom the governing scheme gives exclusive cancellation power."
+    },
+    {
+      "legal_issue": "A public officer's discretionary power conferred for public benefit carries a duty to exercise the officer's own judgment when circumstances call for a decision.",
+      "material_facts": [
+        "The Commissioner had a discretionary power to cancel or suspend the licence.",
+        "Objections to the licence had been raised, but the Commissioner had not exercised his own discretion on them and had merely conveyed the Government's decision.",
+        "The recipient sought an order requiring the Commissioner to withdraw the cancellation or grant permission, although the original permission remained valid and the rules preserved the Commissioner's discretion to cancel it."
+      ],
+      "conclusion": "The Commissioner could not be compelled to grant permission or to withdraw a cancellation, but could be directed to consider the objections independently and make a definite decision on whether to cancel the licence.",
+      "legal_principle": "A power may be coupled with a duty where its nature, purpose, conditions, or beneficiaries require its exercise when called upon; a discretion conferred for public convenience, safety, morality, and welfare must be exercised when circumstances demand it. Julius v. Lord Bishop of Oxford, 5 App. Cas. 214, was relied on. Under section 45 of the Specific Relief Act, 1877, the officer could be directed to perform that duty, but not to reach a particular discretionary outcome.",
+      "rule": {
+        "if": "application_to_compel_public_officer and public_welfare_discretion and circumstances_call_for_decision and officer_has_not_exercised_independent_judgment",
+        "then": "officer_must_make_independent_decision"
+      },
+      "predicates": {
+        "application_to_compel_public_officer": "The proceeding seeks an order requiring a public officer to act or refrain from acting.",
+        "public_welfare_discretion": "The officer holds discretionary power conferred to protect or promote public welfare.",
+        "circumstances_call_for_decision": "Circumstances have arisen that call for the officer to decide whether to exercise the discretion.",
+        "officer_has_not_exercised_independent_judgment": "The officer has not applied the officer's own independent judgment to the matter requiring decision."
+      },
+      "definition": "When circumstances call for a decision under a public-welfare discretion and the officer has not exercised independent judgment, the officer must make an independent decision, though the outcome cannot be dictated."
+    },
+    {
+      "legal_issue": "The remedy for compelling performance of a public duty is not confined to duties imposed by statute.",
+      "material_facts": [
+        "The application sought an order under section 45 of the Specific Relief Act, 1877, requiring the Commissioner to perform a duty arising from the licensing rules.",
+        "The Commissioner’s discretion, conferred for public purposes, carried a duty to decide the objections when circumstances called for a decision."
+      ],
+      "conclusion": "The phrase “any law” in section 45 includes duties arising under law other than statutory law, so performance of the duty could be compelled under that section.",
+      "legal_principle": "Section 45 of the Specific Relief Act, 1877, applies to duties enjoined by any kind of law, not only statutory duties. In Alcock, Ashdown & Co. v. Chief Revenue Authority, Bombay, 50 I.A. 227, the Privy Council recognized the use of section 45 to compel a public officer to perform a duty.",
+      "rule": {
+        "if": "application_under_summary_public_duty_remedy and public_officer_duty_arises_under_law and duty_is_clear_and_specific",
+        "then": "nonstatutory_legal_duty_is_enforceable"
+      },
+      "predicates": {
+        "application_under_summary_public_duty_remedy": "The proceeding seeks a summary order compelling a public officer to perform a duty.",
+        "public_officer_duty_arises_under_law": "The public officer's duty arises from a rule or other source of law, whether or not it is statutory.",
+        "duty_is_clear_and_specific": "The duty sought to be compelled is sufficiently specific to identify the act the officer must perform."
+      },
+      "definition": "A clear and specific duty imposed on a public officer by law may be compelled through the summary public-duty remedy even if the duty is not statutory."
+    },
+    {
+      "legal_issue": "An applicant lacks another specific and adequate legal remedy when ignoring an official order would expose the applicant to risk and ordinary litigation would not adequately resolve the resulting uncertainty in time.",
+      "material_facts": [
+        "The purported cancellation was served by a responsible public officer and purported to come from the Government, making it imprudent for the recipient simply to ignore it.",
+        "The recipient needed a definite decision to arrange its affairs, and proceeding with construction risked further action and lengthy litigation.",
+        "An injunction suit would involve delay, including notice and civil litigation procedures, while the proposed commercial undertaking faced accumulating costs and competition."
+      ],
+      "conclusion": "Ignoring the purported cancellation was not a specific and adequate remedy, and an injunction suit was not adequate in the circumstances; the applicant had no other specific and adequate legal remedy.",
+      "legal_principle": "Section 45 of the Specific Relief Act, 1877, requires the absence of another specific and adequate legal remedy. Whether an injunction or other remedy is adequate depends on the circumstances of the particular case; a person need not ignore an official order at their peril. The Court referred to Alcock, Ashdown & Co. v. Chief Revenue Authority, Bombay, 50 I.A. 227.",
+      "rule": {
+        "if": "application_under_summary_public_duty_remedy and official_order_creates_uncertainty_or_risk and alternative_remedy_is_delayed_or_inadequate",
+        "then": "no_other_adequate_legal_remedy_exists"
+      },
+      "predicates": {
+        "application_under_summary_public_duty_remedy": "The proceeding seeks a summary order compelling a public officer to perform a duty.",
+        "official_order_creates_uncertainty_or_risk": "An official order leaves the applicant uncertain about what may be done, or makes disregarding it risky.",
+        "alternative_remedy_is_delayed_or_inadequate": "The available alternative remedy would not resolve the matter adequately or promptly in the circumstances."
+      },
+      "definition": "When an official order creates uncertainty or risk and the alternative remedy is delayed or inadequate, no other adequate legal remedy exists for the applicant."
+    },
+    {
+      "legal_issue": "A demand for justice and denial may be established in substance through correspondence with the authority that directed the officer, where the officer has referred the applicant to that authority.",
+      "material_facts": [
+        "The recipient's solicitors asked why the permission had been cancelled and challenged the fairness of the decision.",
+        "The Commissioner replied that the cancellation was under Government orders and directed the recipient to approach the Government.",
+        "The solicitors then sought a hearing from the Government, asserted that justice had been denied, and received a response that the Government had nothing to add."
+      ],
+      "conclusion": "The correspondence established a substantial demand for justice and denial of that demand, satisfying section 46 of the Specific Relief Act, 1877.",
+      "legal_principle": "Section 46 of the Specific Relief Act, 1877, requires a demand for justice and a denial in substance, not necessarily in formal terms or through a particular form of communication. Evasion or shelving of a demand can constitute denial.",
+      "rule": {
+        "if": "application_under_specific_public_duty_remedy and applicant_demanded_justice and officer_referred_applicant_to_decision_maker and decision_maker_refused_or_evaded_relief",
+        "then": "demand_and_denial_requirement_is_met"
+      },
+      "predicates": {
+        "application_under_specific_public_duty_remedy": "The proceeding seeks relief under a remedy that requires a demand for justice and denial.",
+        "applicant_demanded_justice": "The applicant sought an explanation, reconsideration, hearing, or other justice concerning the challenged action.",
+        "officer_referred_applicant_to_decision_maker": "The officer said that another authority had made the decision and directed the applicant to that authority.",
+        "decision_maker_refused_or_evaded_relief": "The authority addressed by the applicant refused relief, declined to add to its prior response, or otherwise evaded the demand."
+      },
+      "definition": "When an applicant demands justice, the officer refers the applicant to the decision-maker, and that decision-maker refuses or evades relief, the demand-and-denial requirement is met."
+    }
+  ],
+  "seconds": 22.7
+}

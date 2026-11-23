@@ -1,0 +1,62 @@
+{
+  "doc_id": "829648",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9943,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2513,
+    "prompt_tokens": 3041,
+    "total_tokens": 5554,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A completed civil adjudication finding that possession arose from an independent tenancy supersedes a contrary criminal finding of wrongful retention of company property unless the civil finding is reversed on appeal.",
+      "material_facts": [
+        "The criminal court convicted the former employee of wrongfully retaining a flat belonging to the company and directed its return.",
+        "After a full trial of the company's eviction suit, the civil court found that the company had not proved that it was tenant of the flat, that it had given the flat to the former employee as a licensee or in lieu of services, or that the former employee occupied it through the company.",
+        "The civil court found that the former employee was a monthly tenant directly under the landlords and dismissed the company's eviction suit.",
+        "An appeal from the civil court's judgment was pending, and that judgment had not been reversed."
+      ],
+      "conclusion": "The civil court's findings superseded the contrary criminal findings, so the former employee's conviction and punishment for wrongful possession, and the direction to hand over the flat, could not be sustained.",
+      "legal_principle": "Under section 630(1) of the Companies Act, an employee who wrongfully withholds company property obtained through employment may be liable. Baldev Krishna v. Shipping Corporation of India Ltd. explains this principle. Atul Mathur v. Atul Kalra holds that a civil suit's mere pendency does not by itself prevent a criminal court from proceeding, and that a disputed claim must be assessed on its facts. But where a civil court, after a full trial, finds that possession arose independently of the company, that finding takes precedence over the contrary criminal finding and binds the parties unless reversed on appeal. M.S. Shariff v. State of Madras explains that criminal proceedings generally need not await civil proceedings, while recognizing that the appropriate course depends on the circumstances of the case.",
+      "rule": {
+        "if": "criminal_prosecution_for_retaining_company_property and civil_trial_completed and civil_court_found_independent_possession and civil_court_dismissed_company_eviction_claim and not civil_finding_reversed",
+        "then": "wrongful_possession_conviction_unsustainable"
+      },
+      "predicates": {
+        "criminal_prosecution_for_retaining_company_property": "A person was prosecuted for wrongfully retaining property claimed by a company.",
+        "civil_trial_completed": "A civil court completed a full trial concerning the company's claim to the property and the person's basis for possessing it.",
+        "civil_court_found_independent_possession": "The civil court found that the person's possession arose independently of the company.",
+        "civil_court_dismissed_company_eviction_claim": "The civil court dismissed the company's claim to evict the person from the property.",
+        "civil_finding_reversed": "An appellate court reversed the civil court's finding about the independent basis for the person's possession.",
+        "wrongful_possession_conviction_unsustainable": "A criminal conviction based on the person's alleged wrongful possession of the property cannot be sustained."
+      },
+      "definition": "When a criminal prosecution concerns alleged wrongful retention of company property, a completed civil trial finding independent possession and dismissing the company's eviction claim makes a contrary criminal conviction unsustainable unless an appellate court has reversed the civil finding."
+    },
+    {
+      "legal_issue": "A pending appeal from a civil judgment does not suspend the operation of the judgment in a criminal prosecution concerning alleged wrongful retention of company property.",
+      "material_facts": [
+        "The civil court dismissed the company's eviction suit after finding that the former employee possessed the flat as a direct tenant of the landlords rather than through the company.",
+        "An appeal from the civil court's judgment was pending when the criminal conviction was considered."
+      ],
+      "conclusion": "The pending appeal did not suspend the operation of the civil court's judgment or make it inoperative.",
+      "legal_principle": "The Court held that the mere pendency of an appeal does not suspend the operation of the civil court's decree or make it inoperative, including in a summary criminal proceeding concerning alleged wrongful retention of company property.",
+      "rule": {
+        "if": "criminal_prosecution_for_retaining_company_property and civil_court_entered_eviction_judgment and civil_appeal_pending",
+        "then": "civil_judgment_remains_operational"
+      },
+      "predicates": {
+        "criminal_prosecution_for_retaining_company_property": "A person was prosecuted for wrongfully retaining property claimed by a company.",
+        "civil_court_entered_eviction_judgment": "A civil court entered a judgment deciding the company's claim to evict the person from the property.",
+        "civil_appeal_pending": "An appeal from the civil court's judgment was pending.",
+        "civil_judgment_remains_operational": "The civil court's judgment remains operative despite the pending appeal."
+      },
+      "definition": "When a criminal prosecution concerns alleged wrongful retention of company property and an appeal is pending from the civil court's eviction judgment, the civil judgment remains operative."
+    }
+  ],
+  "seconds": 18.9
+}

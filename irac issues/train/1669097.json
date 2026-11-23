@@ -1,0 +1,85 @@
+{
+  "doc_id": "1669097",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22642,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2991,
+    "prompt_tokens": 6006,
+    "total_tokens": 8997,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant may deposit rent in court after either of the prescribed non-court payment routes fails because of the landlord, rather than only after attempting both routes in sequence.",
+      "material_facts": [
+        "The tenant deposited rent in court after claiming that the landlord had not responded to a written request for bank-account particulars.",
+        "The landlord argued that a court deposit was valid only after the tenant had first remitted rent by postal money order and then requested bank-account particulars."
+      ],
+      "conclusion": "The alternatives in the provision are disjunctive: a court deposit may be made after either qualifying route fails, and the tenant need not attempt both routes consecutively.",
+      "legal_principle": "Under Section 19-A(3) and (4) of the Rajasthan Premises (Control of Rent and Eviction) Act, 1950, personal payment, postal money order and bank deposit are alternative methods. The word “and” in clause (c) may be read as “or” where the context and legislative intent require it; the Court relied on the rule of homogeneous construction and the principle of statutory interpretation discussed in G.P. Singh, Statutory Interpretation, 8th edition, page 370.",
+      "rule": {
+        "if": "rent_control_payment_dispute and court_deposit_made and (money_order_returned_unaccepted or bank_details_requested_but_not_provided)",
+        "then": "court_deposit_counts_as_rent_payment_or_tender"
+      },
+      "predicates": {
+        "rent_control_payment_dispute": "The dispute concerns a tenant’s payment or tender of rent in a rent-control setting.",
+        "court_deposit_made": "The tenant deposited rent in court.",
+        "money_order_returned_unaccepted": "The tenant remitted rent by postal money order and it was returned with an endorsement of refusal or that the landlord was unfound.",
+        "bank_details_requested_but_not_provided": "The tenant asked the landlord in writing to specify bank-account particulars, and the landlord did not provide them."
+      },
+      "definition": "When a tenant in a rent-control payment dispute deposits rent in court after either qualifying payment route fails, the deposit counts as payment or tender of rent."
+    },
+    {
+      "legal_issue": "A tenant relying on a written request for bank-account particulars must prove that the request was served, and a disputed certificate of posting does not necessarily establish service.",
+      "material_facts": [
+        "The tenant relied on a copy of a written request allegedly sent under a certificate of posting, rather than by registered post.",
+        "The landlord denied receiving the request.",
+        "The tenant did not produce the advocate said to have sent it or other evidence from a person who posted it; the address on the request differed from the address on the posting certificate; and the request and certificate were produced belatedly.",
+        "The Court found that the circumstances did not justify drawing a presumption that the request had been sent and served."
+      ],
+      "conclusion": "The tenant did not prove service of the written request, and no safe presumption of service could be drawn on the evidence presented.",
+      "legal_principle": "Section 19-A(3)(b) requires written notice to the landlord but does not itself prescribe the manner of service. Section 30 of the Rajasthan General Clauses Act, 1955, read with Section 114 of the Evidence Act, supports a presumption of service where a notice is properly addressed, prepaid and sent by registered post. A presumption under Section 114 is permissive and depends on the circumstances. The Court relied on Shiv Kumar v. State of Haryana, (1994) 4 SCC 445, in noting the caution warranted in relying on a disputed certificate of posting.",
+      "rule": {
+        "if": "rent_control_payment_dispute and written_bank_details_request_relied_on and landlord_denied_receipt and notice_sent_only_by_posting_certificate and (no_sender_or_posting_witness or address_details_inconsistent or notice_evidence_produced_late)",
+        "then": "service_of_written_request_not_proved"
+      },
+      "predicates": {
+        "rent_control_payment_dispute": "The dispute concerns a tenant’s payment or tender of rent in a rent-control setting.",
+        "written_bank_details_request_relied_on": "The tenant relied on a written request asking the landlord to specify bank-account particulars.",
+        "landlord_denied_receipt": "The landlord denied receiving the written request.",
+        "notice_sent_only_by_posting_certificate": "The tenant relied on a certificate of posting and did not send the request by registered post.",
+        "no_sender_or_posting_witness": "The tenant did not produce the person said to have sent or posted the request, or another witness who could confirm its posting.",
+        "address_details_inconsistent": "The address on the written request differed from the address recorded on the posting certificate.",
+        "notice_evidence_produced_late": "The tenant produced the request and posting certificate belatedly in the proceedings."
+      },
+      "definition": "Where service of a written bank-details request is denied and the request is supported only by a disputed posting certificate amid the stated evidentiary shortcomings, service is not proved."
+    },
+    {
+      "legal_issue": "A tenant who remains in arrears for the statutory period and cannot establish that court deposits followed a qualifying payment route is liable to eviction for rent default.",
+      "material_facts": [
+        "The eviction suit alleged a second default after the tenant had previously obtained protection from eviction by making the required rent payments or deposits.",
+        "The tenant was in arrears for a period exceeding six months.",
+        "The tenant deposited rent in court but did not prove service of the written request for bank-account particulars on which the deposits were said to depend.",
+        "The appellate court decreed eviction, and the High Court upheld that decree."
+      ],
+      "conclusion": "The tenant had defaulted in payment of rent, the ground for eviction was established, and the eviction decree was sustained; the appeal was dismissed.",
+      "legal_principle": "Section 13(1)(a) of the Rajasthan Premises (Control of Rent and Eviction) Act, 1950, permits eviction where the tenant has neither paid nor tendered rent due for six months. Sections 13(3) to (6) set out the court’s rent-determination and payment procedure and the consequences of compliance or default, including the restriction on further relief after a qualifying prior benefit followed by another default. Under Section 19-A(3) and (4), a court deposit counts as payment or tender only when the statutory requirements for that deposit are met; the tenant did not establish the required written-request route here.",
+      "rule": {
+        "if": "rent_default_eviction_case and arrears_reached_six_months and prior_default_relief_received and court_deposits_not_preceded_by_a_proven_qualifying_payment_route",
+        "then": "eviction_ground_for_rent_default_is_established"
+      },
+      "predicates": {
+        "rent_default_eviction_case": "The proceeding seeks eviction on the ground that rent was not paid or tendered.",
+        "arrears_reached_six_months": "The tenant’s rent arrears extended for at least six months.",
+        "prior_default_relief_received": "The tenant had previously obtained protection from eviction after complying with a statutory rent-payment requirement.",
+        "court_deposits_not_preceded_by_a_proven_qualifying_payment_route": "The tenant deposited rent in court but did not establish that a qualifying payment route had failed because of the landlord."
+      },
+      "definition": "In a rent-default eviction case, six months of arrears, prior default relief and court deposits unsupported by a proven qualifying payment route establish the eviction ground for rent default."
+    }
+  ],
+  "seconds": 19.1
+}

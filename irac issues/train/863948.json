@@ -1,0 +1,76 @@
+{
+  "doc_id": "863948",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24241,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2537,
+    "prompt_tokens": 6382,
+    "total_tokens": 8919,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The ten-year exemption for a newly constructed building subject to assessment begins on the date its first assessment takes effect when that is the applicable completion date.",
+      "material_facts": [
+        "The premises were let in 1976 and were first assessed for house tax with effect from October 1, 1976.",
+        "The parties did not seriously dispute that the first assessment date was the relevant date for calculating the exemption period."
+      ],
+      "conclusion": "The ten-year exemption period began on the date the first assessment took effect.",
+      "legal_principle": "Under Section 2(2) and Explanation I(a) of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, a newly constructed building is exempt from the Act for ten years, and for an assessed building the completion date is determined by the date the first assessment takes effect, subject to the other dates specified in the Explanation. Om Prakash Gupta v. Dig Vijendrapal Gupta applied that interpretation.",
+      "rule": {
+        "if": "tenant_eviction_suit and newly_constructed_building and building_subject_to_assessment and first_assessment_recorded",
+        "then": "exemption_period_begins_on_first_assessment"
+      },
+      "predicates": {
+        "tenant_eviction_suit": "The proceeding is a suit seeking eviction of a tenant.",
+        "newly_constructed_building": "The building is newly constructed.",
+        "building_subject_to_assessment": "The building is subject to assessment by the local authority.",
+        "first_assessment_recorded": "The local authority has made a first assessment of the building."
+      },
+      "definition": "When a tenant-eviction suit concerns a newly constructed building subject to local-authority assessment and a first assessment has been made, the exemption period begins on that first assessment."
+    },
+    {
+      "legal_issue": "The transitional protections for pending eviction suits and appeals or revisions do not apply when the eviction suit was filed after the governing Act commenced.",
+      "material_facts": [
+        "The Act commenced before the eviction suit was filed.",
+        "The suit was not pending when the Act commenced; it was filed later."
+      ],
+      "conclusion": "The tenant could not rely on Sections 39 or 40 because the suit was not pending on the date the Act commenced.",
+      "legal_principle": "Section 39 applies to an eviction suit pending on the date of commencement of the Act. Section 40 applies to an appeal or revision arising from a suit that was pending on that date. Om Prakash Gupta v. Dig Vijendrapal Gupta confirmed that a suit filed after commencement does not meet those conditions.",
+      "rule": {
+        "if": "tenant_eviction_suit and eviction_suit_filed_after_act_commenced",
+        "then": "transitional_protection_unavailable"
+      },
+      "predicates": {
+        "tenant_eviction_suit": "The proceeding is a suit seeking eviction of a tenant.",
+        "eviction_suit_filed_after_act_commenced": "The eviction suit was filed after the governing Act had commenced."
+      },
+      "definition": "If a tenant-eviction suit was filed after the governing Act commenced, the transitional protection for suits pending at commencement is unavailable."
+    },
+    {
+      "legal_issue": "A tenant does not obtain statutory eviction protection merely because a building's exemption expires while an eviction suit instituted during the exemption is pending.",
+      "material_facts": [
+        "The premises were within the ten-year exemption when the eviction suit was instituted.",
+        "The exemption period expired while the litigation was pending.",
+        "The suit had been filed after the Act commenced, so the transitional provisions for suits pending at commencement did not apply."
+      ],
+      "conclusion": "The later expiry of the exemption did not make the statutory restriction on eviction applicable to the already instituted suit, and the tenant was not entitled to protection under the Act.",
+      "legal_principle": "Section 2(2) exempts a newly constructed building from the Act for the specified period. Section 20(1) bars the institution of an eviction suit except on specified grounds when that section applies. The Court held that the parties’ rights were determined by the law applicable when the suit was instituted and that Section 20's restriction on instituting a suit did not attach retroactively when the exemption expired during litigation. The Court relied on Om Prakash Gupta v. Dig Vijendrapal Gupta and distinguished Vineet Kumar v. Mangal Sain Wadhera, noting that Om Prakash Gupta had not been brought to the Court's attention in Vineet Kumar. Firm Amar Nath Basheshar Das v. Tek Chand was also cited in the parties' arguments concerning rights during an exemption period.",
+      "rule": {
+        "if": "tenant_eviction_suit and building_exempt_when_suit_filed and exemption_expired_while_litigation_pending",
+        "then": "later_expiry_does_not_make_tenant_protected"
+      },
+      "predicates": {
+        "tenant_eviction_suit": "The proceeding is a suit seeking eviction of a tenant.",
+        "building_exempt_when_suit_filed": "The building was exempt from the governing rental protections when the eviction suit was instituted.",
+        "exemption_expired_while_litigation_pending": "The exemption period ended while the eviction litigation was still pending."
+      },
+      "definition": "When an eviction suit is instituted while the building is exempt and the exemption expires during the litigation, the later expiry does not make the tenant protected in that suit."
+    }
+  ],
+  "seconds": 16.3
+}

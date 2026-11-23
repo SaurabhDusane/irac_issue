@@ -1,0 +1,79 @@
+{
+  "doc_id": "1266860",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11012,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1769,
+    "prompt_tokens": 3069,
+    "total_tokens": 4838,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A compromise in a pending appeal cannot be made a decree when it has not been proved or verified.",
+      "material_facts": [
+        "An application sought a decree in terms of an alleged compromise of the appeal.",
+        "The alleged compromise was not admitted, and the parties did not appear before the judge asked to verify it.",
+        "Some persons interested in the decree were also not parties to the document."
+      ],
+      "conclusion": "The application to record the compromise was dismissed because the alleged compromise was not proved.",
+      "legal_principle": "Under Order 23, Rule 3 of the Code of Civil Procedure, a compromise must be established before a decree can be passed in its terms. The Court relied on no earlier cases for this ruling.",
+      "rule": {
+        "if": "compromise_recording_application and not compromise_verified",
+        "then": "compromise_decree_refused"
+      },
+      "predicates": {
+        "compromise_recording_application": "A party to a pending appeal applied for a decree in terms of an alleged compromise.",
+        "compromise_verified": "The parties appeared and verified the alleged compromise."
+      },
+      "definition": "When a party applies to record a compromise in a pending appeal and the parties have not verified it, the compromise is not made a decree."
+    },
+    {
+      "legal_issue": "A family custom excluding female heirs from inheritance is not established by insufficient and unreliable evidence.",
+      "material_facts": [
+        "The defendants asserted a family custom excluding female heirs from inheritance.",
+        "There was no documentary evidence supporting the custom, and the trial court rejected the testimony of the witnesses called to prove it.",
+        "A mutation entry recorded the alleged custom based on a statement by a young person who was interested in the matter."
+      ],
+      "conclusion": "The asserted custom excluding female heirs from inheritance was not established.",
+      "legal_principle": "A party asserting a custom that derogates from the general law bears a heavy burden and must prove it by clear and cogent evidence. The Court relied on no earlier cases for this ruling.",
+      "rule": {
+        "if": "partition_suit_appeal and asserted_custom_excluding_female_heirs and no_documentary_custom_evidence and (witness_evidence_rejected or mutation_entry_based_on_interested_statement)",
+        "then": "custom_not_established"
+      },
+      "predicates": {
+        "partition_suit_appeal": "The proceeding was an appeal in a suit seeking partition of inherited property.",
+        "asserted_custom_excluding_female_heirs": "A party asserted that a family custom excluded female heirs from inheritance.",
+        "no_documentary_custom_evidence": "The party asserting the custom produced no documentary evidence supporting it.",
+        "witness_evidence_rejected": "The trial court rejected the testimony offered to establish the custom.",
+        "mutation_entry_based_on_interested_statement": "A mutation entry recording the custom relied on a statement by a young person interested in the matter."
+      },
+      "definition": "In a partition appeal, when a party asserts a custom excluding female heirs but produces no documentary evidence and the available proof is rejected or rests on an interested person's statement, the custom is not established."
+    },
+    {
+      "legal_issue": "A co-sharer's possession does not become adverse to other co-sharers without a denial of their rights known to them and an ensuing ouster for the required period.",
+      "material_facts": [
+        "The parties were co-sharers in the inherited estate.",
+        "The plaintiffs continued to receive income from the estate, and their receipts were of the same character as those of the defendants.",
+        "The defendants did not deny the plaintiffs' title until they executed a deed asserting control over the property."
+      ],
+      "conclusion": "The plaintiffs' claim was not barred by adverse possession because there had been no ouster before the denial of their title, and they had continued to participate in the income.",
+      "legal_principle": "As between co-sharers, possession by one is ordinarily possession by all. It becomes adverse only when the person in possession denies the others' rights to their knowledge and exclusion and ouster follow for the statutory period. Participation in profits, even to some degree, negates ouster. The Court relied on no earlier cases for this ruling.",
+      "rule": {
+        "if": "partition_suit_between_coshareers and co_sharer_income_participation and no_known_denial_followed_by_ouster_for_required_period",
+        "then": "claim_not_barred_by_adverse_possession"
+      },
+      "predicates": {
+        "partition_suit_between_coshareers": "The proceeding concerned a claim to partition property held by co-sharers.",
+        "co_sharer_income_participation": "A claimant continued to receive or participate in income from the commonly held property.",
+        "no_known_denial_followed_by_ouster_for_required_period": "The possessor did not deny the claimant's rights to the claimant's knowledge and exclude the claimant for the required period."
+      },
+      "definition": "When a partition claimant remains a co-sharer and participates in income, and there is no known denial followed by exclusion for the required period, the claim is not barred by adverse possession."
+    }
+  ],
+  "seconds": 11.6
+}

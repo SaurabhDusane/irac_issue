@@ -1,0 +1,100 @@
+{
+  "doc_id": "1666603",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25315,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2742,
+    "prompt_tokens": 6344,
+    "total_tokens": 9086,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An interim mandatory injunction restoring possession requires clear prima facie findings that the applicant was in possession when the status quo order was made and was dispossessed afterward.",
+      "material_facts": [
+        "The plaintiff claimed possession as a tenant under a disputed letter said to record the tenancy; the defendants denied the tenancy and challenged the letter.",
+        "The appellate court directed the parties to maintain status quo without specifying what the status quo was.",
+        "On remand, the court granting mandatory relief did not adequately discuss the evidence or make clear findings that the plaintiff was in possession on the date of the status quo order and was forcibly dispossessed the next day.",
+        "The evidence relied on did not establish the alleged dispossession, and the tenancy document and the foundation for the claimed possession remained disputed."
+      ],
+      "conclusion": "The interim mandatory injunction was unsupported by the necessary findings and was set aside; the plaintiff’s request for that relief was rejected.",
+      "legal_principle": "An interim mandatory injunction is an extraordinary remedy appropriate only where clear prima facie material shows that a party altered the status quo and justice requires restoration of the prior position. The court must find that the applicant was in possession when the status quo order was made and was dispossessed after it. The court considered the application under Order XXXIX Rules 1 and 2 and the request for restoration under Section 151 of the Code of Civil Procedure, and noted the relevance of Section 107 of the Transfer of Property Act to the claimed lease. No earlier cases were relied on.",
+      "rule": {
+        "if": "interim_mandatory_injunction_request and (not clear_finding_of_prior_possession or not clear_finding_of_later_dispossession)",
+        "then": "interim_mandatory_injunction_is_unjustified"
+      },
+      "predicates": {
+        "interim_mandatory_injunction_request": "A party asks a court for an interim mandatory order restoring possession during litigation.",
+        "clear_finding_of_prior_possession": "The court clearly finds, on prima facie material, that the applicant was in possession when the status quo order was made.",
+        "clear_finding_of_later_dispossession": "The court clearly finds, on prima facie material, that the applicant was dispossessed after the status quo order was made."
+      },
+      "definition": "When a party seeks interim mandatory restoration of possession but either necessary finding about possession or subsequent dispossession is absent, the injunction is unjustified."
+    },
+    {
+      "legal_issue": "A supervisory court must correct an order made through an improper approach or without the findings necessary to support the lower court’s jurisdiction to grant relief.",
+      "material_facts": [
+        "The High Court recognized that the plaintiff bore the burden of establishing possession when the status quo order was made and dispossession in violation of it.",
+        "The High Court did not examine whether the lower court had made the required findings, properly considered the evidence, or complied with the remand directions.",
+        "The lower court’s mandatory injunction lacked adequate findings on possession and dispossession."
+      ],
+      "conclusion": "The High Court failed to exercise its supervisory jurisdiction properly, and its order confirming the injunction was set aside.",
+      "legal_principle": "Although Article 227 of the Constitution is supervisory and limited to correcting jurisdictional errors, an order remains amenable to correction where the lower court asks itself the wrong question, approaches the matter improperly, or fails to make findings required to support its jurisdiction. The grant of an interim mandatory injunction without the necessary findings is a jurisdictional error.",
+      "rule": {
+        "if": "supervisory_review_of_lower_court_order and lower_court_granted_relief and (lower_court_used_improper_approach or lower_court_lacked_necessary_findings)",
+        "then": "order_is_correctable_in_supervisory_review"
+      },
+      "predicates": {
+        "supervisory_review_of_lower_court_order": "A court is asked to review a lower court’s order in the exercise of supervisory jurisdiction.",
+        "lower_court_granted_relief": "The lower court made an order granting the relief at issue.",
+        "lower_court_used_improper_approach": "The lower court asked itself the wrong question or dealt with the relevant question in an improper manner.",
+        "lower_court_lacked_necessary_findings": "The lower court omitted findings required to support its authority to grant the relief."
+      },
+      "definition": "In supervisory review, a lower court’s order is correctable when it grants relief after an improper approach or without findings necessary to support that relief."
+    },
+    {
+      "legal_issue": "An appellate court considering only a refusal of an ex parte interim injunction should not direct the parties to maintain status quo without identifying the existing status quo.",
+      "material_facts": [
+        "The trial court refused an ex parte interim injunction and issued notice on the pending injunction application.",
+        "The appeal concerned only that refusal, while the main application for an interim injunction remained pending before the trial court.",
+        "The appellate court ordered the parties to maintain status quo but did not state what the status quo was."
+      ],
+      "conclusion": "The appellate court ought not to have issued an equivocal status quo order in those circumstances.",
+      "legal_principle": "When an appeal is limited to whether an ex parte interim injunction should have been granted and the underlying injunction application remains pending, the appellate court should grant an appropriate injunction if justified rather than make an undefined status quo order. The judgment refers to the appeal under Order XLIII Rule 1 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "appeal_from_refusal_of_ex_parte_interim_injunction and main_injunction_application_remains_pending and status_quo_order_does_not_define_existing_state",
+        "then": "undefined_status_quo_order_is_improper"
+      },
+      "predicates": {
+        "appeal_from_refusal_of_ex_parte_interim_injunction": "A party appeals an order refusing an ex parte interim injunction.",
+        "main_injunction_application_remains_pending": "The application for an interim injunction has not yet been finally determined by the court hearing it.",
+        "status_quo_order_does_not_define_existing_state": "The appellate court directs the parties to maintain status quo without specifying the state of affairs to be maintained."
+      },
+      "definition": "An appellate court’s undefined status quo order is improper when it is reviewing only a refusal of an ex parte interim injunction and the underlying injunction application remains pending."
+    },
+    {
+      "legal_issue": "When possession has been transferred under an order that is later set aside, restitution may restore possession to the party from whom it was taken.",
+      "material_facts": [
+        "The plaintiff was put in possession through the process of court in enforcement of the mandatory injunction under challenge.",
+        "The Supreme Court set aside the orders granting and affirming that injunction and rejected the request for mandatory relief.",
+        "The Court directed that possession be restored to the defendants through the court, while barring them from creating third-party interests in the property pending disposal of the suit."
+      ],
+      "conclusion": "The defendants were entitled to restitution of possession through the court, subject to the direction not to create third-party interests pending the suit.",
+      "legal_principle": "After setting aside an order under which possession was delivered through the court, the Court may direct restitution to restore possession to the party from whom it was taken. No earlier cases or specific statutory provisions were relied on for this direction.",
+      "rule": {
+        "if": "appellate_proceeding_against_possession_order and possession_transferred_under_order and possession_order_is_set_aside",
+        "then": "restitution_of_possession_is_available"
+      },
+      "predicates": {
+        "appellate_proceeding_against_possession_order": "A party pursues an appeal challenging an order that affects possession.",
+        "possession_transferred_under_order": "A party obtained possession through the court in enforcement of the challenged order.",
+        "possession_order_is_set_aside": "The challenged order authorizing or supporting the transfer of possession is set aside."
+      },
+      "definition": "When possession was transferred through the court under an order that is set aside on appeal, restitution of possession is available."
+    }
+  ],
+  "seconds": 17.2
+}

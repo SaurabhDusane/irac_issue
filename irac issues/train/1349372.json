@@ -1,0 +1,58 @@
+{
+  "doc_id": "1349372",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 2774,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1223,
+    "prompt_tokens": 1135,
+    "total_tokens": 2358,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Filing an appeal does not excuse a pre-emptor from complying with an unaltered decree requiring payment within a specified time, and failure to pay by that time results in dismissal of the suit.",
+      "material_facts": [
+        "A decree in a pre-emption suit required the plaintiff to deposit the sale price within two months.",
+        "An appeal was filed against the decree and later withdrawn, but the decree was not altered.",
+        "The plaintiff did not deposit the price within the time fixed by the decree."
+      ],
+      "conclusion": "The suit stood dismissed because the required deposit was not made within the time fixed by the decree; filing an appeal did not suspend the decree.",
+      "legal_principle": "An appeal does not by itself suspend a decree. Unless the appellate court alters it, the decree must be obeyed. Under Order XX, Rule 14 of the Civil Procedure Code, failure to make the required deposit within the time fixed results in dismissal of the pre-emption suit.",
+      "rule": {
+        "if": "is_preemption_decree_proceeding and appeal_filed_against_decree and decree_not_altered_on_appeal and required_deposit_not_made_by_deadline",
+        "then": "suit_stands_dismissed"
+      },
+      "predicates": {
+        "is_preemption_decree_proceeding": "A court has issued a decree in a pre-emption proceeding requiring the claimant to make a deposit.",
+        "appeal_filed_against_decree": "A party filed an appeal against the decree.",
+        "decree_not_altered_on_appeal": "The appellate court did not alter the decree's relevant requirement.",
+        "required_deposit_not_made_by_deadline": "The claimant did not make the required deposit by the deadline fixed in the decree."
+      },
+      "definition": "When an unaltered decree in a pre-emption proceeding requires a deposit, an appeal against the decree does not prevent dismissal if the claimant fails to deposit by the deadline."
+    },
+    {
+      "legal_issue": "Omitting an express direction in the decree that the suit will be dismissed for failure to make the required deposit does not prevent dismissal under the mandatory rule governing pre-emption decrees.",
+      "material_facts": [
+        "The decree required the plaintiff to deposit the sale price within a specified time but did not expressly state that the suit would stand dismissed if the deposit was not made.",
+        "The plaintiff failed to deposit the price within the specified time."
+      ],
+      "conclusion": "The omission of an express dismissal direction from the decree did not affect the parties' rights; the suit stood dismissed under the mandatory rule.",
+      "legal_principle": "Under Order XX, Rule 14 of the Civil Procedure Code, dismissal for failure to make the required deposit follows from the mandatory provision, not from a separate decision stated in the decree. Omitting an express direction to that effect does not affect the parties' rights.",
+      "rule": {
+        "if": "is_preemption_decree_proceeding and decree_omits_automatic_dismissal_direction and required_deposit_not_made_by_deadline",
+        "then": "suit_stands_dismissed"
+      },
+      "predicates": {
+        "is_preemption_decree_proceeding": "A court has issued a decree in a pre-emption proceeding requiring the claimant to make a deposit.",
+        "decree_omits_automatic_dismissal_direction": "The decree does not expressly state that the suit will be dismissed if the required deposit is not made.",
+        "required_deposit_not_made_by_deadline": "The claimant did not make the required deposit by the deadline fixed in the decree."
+      },
+      "definition": "If a claimant fails to make a required deposit by the deadline in a pre-emption decree, omission of an express dismissal direction does not prevent the suit from being dismissed."
+    }
+  ],
+  "seconds": 8.3
+}

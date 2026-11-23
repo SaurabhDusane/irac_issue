@@ -1,0 +1,103 @@
+{
+  "doc_id": "1141333",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15770,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2440,
+    "prompt_tokens": 4025,
+    "total_tokens": 6465,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A land-acquisition notification must give owners sufficient information to identify whether their land is proposed for acquisition and to exercise their right to object.",
+      "material_facts": [
+        "The notification identified a large survey field and stated areas to be acquired from it, but did not precisely locate the portions proposed for acquisition.",
+        "No plans showing the land to be acquired were published or made available to the owners.",
+        "The appellants’ plots were within the larger field, and the record did not show that the entire field was to be acquired.",
+        "No order dispensing with the objection inquiry was issued."
+      ],
+      "conclusion": "The notification did not give the owners due notice that their lands were intended for acquisition, and the resulting denial of a meaningful opportunity to object raised a serious challenge to the acquisition proceedings; the ultimate validity of those proceedings was left for determination on remand.",
+      "legal_principle": "Under Sections 4(1) and 4(2) of the Land Acquisition Act, the acquiring authority must publish sufficient information to give owners due notice that their properties are intended to be acquired. Section 5-A gives interested persons an opportunity to object, and the inquiry and report under that section may be dispensed with only through an order under Section 17(4). A declaration under Section 6 follows consideration of the report under Section 5-A unless that inquiry has been dispensed with. No earlier case was relied on for this principle.",
+      "rule": {
+        "if": "land_acquisition_proceeding and (land_not_precisely_identifiable_from_notice or acquisition_plans_unavailable) and objection_inquiry_not_dispensed_with",
+        "then": "notification_provided_insufficient_notice"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The government initiated proceedings to acquire land for a public purpose.",
+        "land_not_precisely_identifiable_from_notice": "The notice described the land in a way that did not enable affected owners to identify whether their particular land was included.",
+        "acquisition_plans_unavailable": "Plans identifying the land proposed for acquisition were neither published nor made available to affected owners.",
+        "objection_inquiry_not_dispensed_with": "The government did not dispense with the statutory objection inquiry."
+      },
+      "definition": "When an acquisition notice does not identify affected land and the objection inquiry remains available, the notice provides insufficient notice."
+    },
+    {
+      "legal_issue": "A writ court may determine disputed questions of fact and should not dismiss a petition in limine solely because factual issues arise.",
+      "material_facts": [
+        "The High Court dismissed the petition at the threshold because it considered the demarcation dispute factual and relied on the Collector’s satisfaction about the demarcated area.",
+        "The petition raised serious challenges to the acquisition process, many allegations were supported by documentary evidence, and the possible factual conflict concerned publication of the notification.",
+        "The High Court dismissed the petition before receiving the respondents’ affidavit in reply."
+      ],
+      "conclusion": "The High Court was not justified in dismissing the petition in limine on the ground that disputed facts could not be determined; it should have entertained the petition, obtained a reply, and proceeded to decide it.",
+      "legal_principle": "Article 226 gives the High Court jurisdiction to try issues of fact as well as law. That jurisdiction is discretionary and must be exercised on sound judicial principles. A court may decline a writ petition when complex factual disputes require oral evidence or for analogous reasons, but disputed facts alone do not justify summary rejection. No earlier case was relied on for this principle.",
+      "rule": {
+        "if": "writ_petition_proceeding and serious_reviewable_claim and (documentary_evidence_supports_allegations or factual_dispute_is_limited) and petition_dismissed_only_for_disputed_facts",
+        "then": "threshold_dismissal_unjustified"
+      },
+      "predicates": {
+        "writ_petition_proceeding": "The proceeding is a petition asking a High Court to exercise its writ jurisdiction.",
+        "serious_reviewable_claim": "The petition raises a substantial challenge to the legality of official action.",
+        "documentary_evidence_supports_allegations": "Documents are relied on to support a substantial part of the petition’s allegations.",
+        "factual_dispute_is_limited": "The factual conflict is confined to an issue that does not make the whole dispute inappropriate for writ adjudication.",
+        "petition_dismissed_only_for_disputed_facts": "The court rejects the petition at the outset solely because it considers factual matters disputed."
+      },
+      "definition": "A writ petition raising a serious, suitably examinable claim should not be rejected at the outset solely because factual issues are disputed."
+    },
+    {
+      "legal_issue": "A Collector’s view about the correspondence of demarcated land with notified land does not prevent a landowner from challenging the notification or asserting denial of the statutory opportunity to object.",
+      "material_facts": [
+        "The Collector stated that the area demarcated corresponded to the area notified and had been demarcated as accurately as reasonably possible.",
+        "The appellants disputed whether their land had been identified in the notification and asserted that they had no opportunity to make objections.",
+        "The Collector was acting for the government in connection with compensation for the land proposed to be acquired."
+      ],
+      "conclusion": "The Collector’s satisfaction did not bar the appellants from challenging the notification or arguing that they had been denied an opportunity to object; the High Court had to consider those claims.",
+      "legal_principle": "The Collector’s role in the acquisition process does not convert a writ challenge into an appeal from the Collector’s opinion or make that opinion conclusive as to the validity of the notification. The Collector’s jurisdiction depends on a valid notification, and the affected owners may challenge whether they received the opportunity provided by Section 5-A. No earlier case was relied on for this principle.",
+      "rule": {
+        "if": "land_acquisition_writ_challenge and collector_expressed_demarcation_opinion and owner_alleges_defective_notice_or_denied_objection_opportunity",
+        "then": "collectors_opinion_does_not_bar_judicial_challenge"
+      },
+      "predicates": {
+        "land_acquisition_writ_challenge": "The proceeding is a writ challenge to a land-acquisition process.",
+        "collector_expressed_demarcation_opinion": "The Collector stated that the land demarcated corresponded to the land described in the acquisition notice.",
+        "owner_alleges_defective_notice_or_denied_objection_opportunity": "An affected owner asserts that the notice did not identify the owner’s land or that the owner could not exercise the right to object."
+      },
+      "definition": "A Collector’s demarcation opinion does not bar judicial consideration when an owner challenges notice or the opportunity to object."
+    },
+    {
+      "legal_issue": "A purchaser who acquires land after an acquisition notification may challenge a vague notification if the purchaser has title to the land.",
+      "material_facts": [
+        "The appellants purchased their plots after the acquisition notification had issued.",
+        "They held title to the plots and had constructed, or obtained permission to construct, buildings on them.",
+        "They asserted that the vague notification did not identify their plots as land proposed for acquisition."
+      ],
+      "conclusion": "The appellants were not barred merely because they purchased the land after the notification; as title-holders, they could challenge a vague notification and contend that it did not apply to their land.",
+      "legal_principle": "Where a notification is vague, a purchaser who has title to the land may challenge its validity or its application to that land, notwithstanding that the purchase occurred after publication of the notification. No statutory provision or earlier case was relied on for this particular standing principle.",
+      "rule": {
+        "if": "land_acquisition_challenge and purchaser_acquired_land_after_notice and purchaser_holds_title and notice_is_vague",
+        "then": "post_notice_purchaser_may_challenge"
+      },
+      "predicates": {
+        "land_acquisition_challenge": "The proceeding challenges a government acquisition of land.",
+        "purchaser_acquired_land_after_notice": "The claimant acquired the land after an acquisition notice had been issued.",
+        "purchaser_holds_title": "The claimant has title to the land at issue.",
+        "notice_is_vague": "The notice does not sufficiently identify whether the claimant’s land is proposed for acquisition."
+      },
+      "definition": "A title-holder who buys land after an acquisition notice may challenge the notice when it is vague."
+    }
+  ],
+  "seconds": 16.1
+}

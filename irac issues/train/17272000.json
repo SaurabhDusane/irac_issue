@@ -1,0 +1,85 @@
+{
+  "doc_id": "17272000",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12458,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2380,
+    "prompt_tokens": 3450,
+    "total_tokens": 5830,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A compensation award for land in a geographically distant village is not a suitable comparator for determining the market value of acquired land.",
+      "material_facts": [
+        "The appeals challenged compensation fixed for land acquired in one village under a single acquisition notification.",
+        "The landowners relied on an award concerning land in another village, but the plans and map showed that village was more than two kilometres away and was not adjoining; a different village was the nearest one.",
+        "The earlier award for the distant village had relied on the view that the villages were adjoining and in close proximity."
+      ],
+      "conclusion": "The award for the distant village was not a helpful guide and could not be used as the basis for determining the market value of the acquired land.",
+      "legal_principle": "In a reference under Section 18 of the Land Acquisition Act, 1894, the suitability of an award as a comparator depends on the relevant locations and their proximity. The determination in State of Punjab v. Mohinder Singh, which concerned the distant village and rested on a proximity finding not borne out by the maps, was not a useful guide for this acquisition.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and (comparator_village_not_nearby or comparator_village_not_adjoining)",
+        "then": "distant_village_award_rejected_as_comparator"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning the compensation payable for acquired land.",
+        "comparator_village_not_nearby": "The land covered by the proposed comparator award is situated in a village that is not near the acquired land.",
+        "comparator_village_not_adjoining": "The village covered by the proposed comparator award does not adjoin the village containing the acquired land.",
+        "distant_village_award_rejected_as_comparator": "The award for the distant village is not accepted as a suitable basis for determining the acquired land's market value."
+      },
+      "definition": "When a compensation appeal concerns land and the proposed comparator award relates to a village that is not nearby or adjoining, the distant village award is rejected as a comparator."
+    },
+    {
+      "legal_issue": "The market value of land acquired earlier cannot be derived by deducting an adjustment from the value of land acquired later when intervening acquisitions have led to development.",
+      "material_facts": [
+        "The proposed later comparator concerned land acquired more than two years after the land in dispute.",
+        "Other land had been acquired in the intervening period.",
+        "The court found that development had taken place by the time of the later acquisition as a consequence of the earlier acquisitions.",
+        "The later acquisition's compensation was higher than the compensation awarded for the land in dispute."
+      ],
+      "conclusion": "The later acquisition's market value could not be used, even with a suitable deduction, to determine the value of the land acquired earlier.",
+      "legal_principle": "A later acquisition may reflect not merely general appreciation in prices but development occurring after earlier acquisitions. Where intervening acquisitions and resulting development have affected the later land's value, the later award cannot be used as a basis for valuing land acquired earlier by applying a deduction. The court considered the later award in Harbachan Kaur v. State of Punjab but did not use it to value the earlier acquisition.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and later_acquisition_used_as_comparator and (intervening_acquisitions or development_after_earlier_acquisition)",
+        "then": "later_acquisition_value_rejected_for_earlier_land"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning the compensation payable for acquired land.",
+        "later_acquisition_used_as_comparator": "A party relies on the value determined for land acquired later to establish the value of land acquired earlier.",
+        "intervening_acquisitions": "Further land acquisitions occurred between the acquisition being valued and the later acquisition used as a comparator.",
+        "development_after_earlier_acquisition": "Development took place after the earlier acquisition and before the later acquisition.",
+        "later_acquisition_value_rejected_for_earlier_land": "The later acquisition's value is not used to determine the market value of the earlier-acquired land."
+      },
+      "definition": "If a later acquisition is offered as a comparator and intervening acquisitions or subsequent development affected its value, that later value is rejected for valuing the earlier-acquired land."
+    },
+    {
+      "legal_issue": "A compensation award for land acquired under the same notification may support the valuation of other land acquired under that notification when the award has attained finality and there are no relevant sale instances.",
+      "material_facts": [
+        "The reference court relied on an award for land in another village that was acquired under the same notification as the land in dispute.",
+        "That award had not been appealed by either the landowners or the State.",
+        "The courts found that the parties had produced no relevant sale instances for determining market value.",
+        "The High Court maintained the compensation assessed on the basis of the unchallenged award."
+      ],
+      "conclusion": "The High Court was right to rely on the compensation award for land acquired under the same notification, and there was no error warranting appellate interference.",
+      "legal_principle": "In a reference under Section 18 of the Land Acquisition Act, 1894, where no relevant sale instance is available, an unchallenged determination of compensation for land acquired under the same notification may provide a basis for determining the market value. The court treated the award for the other village under the same notification as the relevant prior determination.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and same_notification_award_exists and same_notification_award_unappealed and no_relevant_sale_instances",
+        "then": "same_notification_award_accepted_as_valuation_basis"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning the compensation payable for acquired land.",
+        "same_notification_award_exists": "A compensation award exists for other land acquired under the same notification as the land being valued.",
+        "same_notification_award_unappealed": "Neither side appealed the award for the other land, so that award attained finality.",
+        "no_relevant_sale_instances": "The parties produced no sale instances that the courts found relevant to determining market value.",
+        "same_notification_award_accepted_as_valuation_basis": "The award for land acquired under the same notification is accepted as a basis for determining market value."
+      },
+      "definition": "When an appeal concerns acquired land, an unappealed award exists for land acquired under the same notification, and no relevant sale instances are available, that award is accepted as a valuation basis."
+    }
+  ],
+  "seconds": 14.4
+}

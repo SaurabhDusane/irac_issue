@@ -1,0 +1,101 @@
+{
+  "doc_id": "109629725",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28188,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2096,
+    "prompt_tokens": 6839,
+    "total_tokens": 8935,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A first appellate court must determine the issues raised in the appeal by independently assessing the evidence and giving reasoned findings.",
+      "material_facts": [
+        "The trial court dismissed the specific-performance suit after finding that the plaintiff was not willing to purchase the property with the tenants in occupation.",
+        "The High Court allowed the first appeal without framing points for determination, discussing the evidence, or addressing the trial court’s reasoning on willingness."
+      ],
+      "conclusion": "The High Court failed to comply with the requirements governing a first appeal, and its judgment was unsustainable.",
+      "legal_principle": "Section 96 and Order XLI Rule 31 of the Code of Civil Procedure require a first appellate court to state the points for determination, decide them, give reasons, and specify relief where it reverses or varies the decree. The judgment must reflect independent assessment of the evidence and address the issues and contentions. The Court relied on B.V. Nagesh v. H.V. Sreenivasa Murthy, (2010) 13 SCC 530; H. Siddiqui v. A. Ramalingam, (2011) 4 SCC 240; State Bank of India v. Emmsons International Ltd., (2011) 12 SCC 174; and the principles in Santosh Hazari v. Purushottam Tiwari, (2001) 3 SCC 179, and Madhukar v. Sangram, (2001) 4 SCC 756.",
+      "rule": {
+        "if": "first_appeal and appellate_court_omitted_determination_points and appellate_court_failed_to_assess_evidence_and_give_reasons",
+        "then": "first_appellate_judgment_is_unsustainable"
+      },
+      "predicates": {
+        "first_appeal": "The proceeding is a first appeal from an original decree.",
+        "appellate_court_omitted_determination_points": "The appellate court did not identify the points it had to decide.",
+        "appellate_court_failed_to_assess_evidence_and_give_reasons": "The appellate court did not independently assess the evidence and give reasons for its findings.",
+        "first_appellate_judgment_is_unsustainable": "The first appellate judgment cannot stand."
+      },
+      "definition": "When a first appellate court omits determination points and fails to assess the evidence and give reasons, its judgment cannot stand."
+    },
+    {
+      "legal_issue": "A first appellate court cannot rely on an affidavit that introduces a case contrary to the pleadings when the pleadings have not been amended.",
+      "material_facts": [
+        "The plaint and the plaintiff’s notice required the defendant to evict the tenants and deliver vacant possession before the sale deed was executed.",
+        "After the trial court found that the plaintiff was unwilling to purchase the property with the tenants, the plaintiff filed an affidavit in the High Court stating for the first time that he was willing to do so.",
+        "The plaintiff had not applied to amend the plaint, and the High Court relied on the affidavit to decree specific performance."
+      ],
+      "conclusion": "The High Court’s reliance on the affidavit, without an amendment to the pleadings, was impermissible.",
+      "legal_principle": "A first appeal must be decided according to the procedure governing civil appeals. A party cannot use an affidavit to introduce a case contrary to the pleadings without first seeking an amendment of those pleadings under Order VI Rule 17 of the Code of Civil Procedure, where such amendment is permissible.",
+      "rule": {
+        "if": "first_appeal and affidavit_introduces_case_contrary_to_pleadings and pleadings_not_amended",
+        "then": "reliance_on_affidavit_is_impermissible"
+      },
+      "predicates": {
+        "first_appeal": "The proceeding is a first appeal from an original decree.",
+        "affidavit_introduces_case_contrary_to_pleadings": "A party filed an affidavit advancing a position inconsistent with the case pleaded in the suit.",
+        "pleadings_not_amended": "The party did not obtain an amendment of the pleadings to include the new position.",
+        "reliance_on_affidavit_is_impermissible": "The appellate court cannot rely on the affidavit to decide the appeal on the new position."
+      },
+      "definition": "In a first appeal, an affidavit cannot supply a contrary case for decision when the pleadings have not been amended."
+    },
+    {
+      "legal_issue": "A plaintiff seeking specific performance must establish both readiness and willingness to perform the contract, and failure to establish willingness defeats the claim.",
+      "material_facts": [
+        "The agreement required the defendant to evict the tenants and deliver vacant possession before executing the sale deed.",
+        "The plaintiff’s notice and plaint insisted on vacant possession and did not state that the plaintiff would purchase the property with the tenants.",
+        "The trial court found the plaintiff ready but not willing to purchase the property with the tenants; the plaintiff first claimed willingness to do so in an affidavit filed in the High Court.",
+        "The Supreme Court agreed that the plaintiff had not established willingness to purchase the property with the tenants."
+      ],
+      "conclusion": "The plaintiff was not entitled to specific performance because he had not proved willingness to perform the contract.",
+      "legal_principle": "A decree for specific performance requires proof of both readiness and willingness. Where the evidence and pleadings establish that the plaintiff was unwilling to perform on the terms available, the plaintiff is not entitled to the decree. The Court applied this principle in considering the requirement of readiness and willingness for specific performance.",
+      "rule": {
+        "if": "specific_performance_suit and plaintiff_did_not_accept_performance_with_tenants",
+        "then": "specific_performance_must_be_refused"
+      },
+      "predicates": {
+        "specific_performance_suit": "The proceeding is a suit seeking specific performance of a contract.",
+        "plaintiff_did_not_accept_performance_with_tenants": "The plaintiff insisted on vacant possession and did not establish willingness to purchase the property with the tenants remaining in occupation.",
+        "specific_performance_must_be_refused": "The plaintiff is not entitled to a decree for specific performance."
+      },
+      "definition": "In a specific-performance suit, a plaintiff who insists on vacant possession and does not establish willingness to proceed with tenants remaining is not entitled to specific performance."
+    },
+    {
+      "legal_issue": "A defendant’s failure to refund an advance as ordered by the trial court is not a ground to uphold an appellate decree for specific performance.",
+      "material_facts": [
+        "The trial court dismissed the specific-performance suit and ordered the defendant to refund the advance with interest.",
+        "The defendant had not made the refund when the matter reached the Supreme Court.",
+        "The Supreme Court held that the plaintiff could execute the trial court’s refund order and separately directed the defendant to make the refund."
+      ],
+      "conclusion": "The failure to refund the advance did not justify upholding the High Court’s specific-performance decree; the refund order could be enforced, and the defendant was directed to pay the amount with interest.",
+      "legal_principle": "A party seeking payment under an existing judgment or decree may pursue execution of that order. Non-compliance with a refund order does not establish the plaintiff’s entitlement to specific performance or validate an otherwise unsustainable decree.",
+      "rule": {
+        "if": "specific_performance_appeal and trial_court_ordered_refund and refund_order_remains_unpaid",
+        "then": "unpaid_refund_does_not_validate_specific_performance_decree"
+      },
+      "predicates": {
+        "specific_performance_appeal": "The proceeding is an appeal concerning a decree for specific performance.",
+        "trial_court_ordered_refund": "The trial court ordered the defendant to return money paid under the contract.",
+        "refund_order_remains_unpaid": "The defendant had not paid the amount ordered to be returned.",
+        "unpaid_refund_does_not_validate_specific_performance_decree": "The unpaid refund order does not justify upholding a decree for specific performance."
+      },
+      "definition": "In an appeal concerning specific performance, an unpaid trial-court refund order does not make a specific-performance decree valid."
+    }
+  ],
+  "seconds": 13.5
+}

@@ -1,0 +1,124 @@
+{
+  "doc_id": "1802788",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36801,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4038,
+    "prompt_tokens": 9715,
+    "total_tokens": 13753,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant who remains in occupation after the contractual tenancy ends is protected from eviction while satisfying the statutory requirements for payment and performance, subject to the Act’s exceptions and limitations.",
+      "material_facts": [
+        "The tenant remained in occupation after the landlord sought possession and relied on the statutory protection against eviction.",
+        "The tenant disputed the rent claimed and sought fixation of standard rent; the courts considered whether he was ready and willing to pay the rent legally due."
+      ],
+      "conclusion": "The protection applies to a tenant who remains in occupation after determination of the contractual tenancy, provided the tenant pays or is ready and willing to pay standard rent and permitted increases and observes the other consistent conditions of the tenancy. The protection remains subject to the Act’s specified exceptions and limitations.",
+      "legal_principle": "Section 12(1) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, protects a tenant remaining in occupation after contractual tenancy ends, subject to section 13 and the limitations in section 12(2) and section 12(3).",
+      "rule": {
+        "if": "eviction_suit and tenant_remains_after_contract_ends and (rent_paid_or_tenant_ready_to_pay_standard_rent_and_increases) and tenancy_conditions_observed",
+        "then": "tenant_protected_from_eviction"
+      },
+      "predicates": {
+        "eviction_suit": "A landlord brought a proceeding seeking to recover possession from a tenant.",
+        "tenant_remains_after_contract_ends": "The tenant continued occupying the premises after the contractual tenancy ended.",
+        "rent_paid_or_tenant_ready_to_pay_standard_rent_and_increases": "The tenant paid, or was ready and willing to pay, the legally applicable rent and permitted increases.",
+        "tenancy_conditions_observed": "The tenant observed and performed the conditions of tenancy that were consistent with the governing law."
+      },
+      "definition": "When a possession-recovery proceeding concerns a tenant who remains after the contract ends and who meets the stated payment and performance conditions, the tenant is protected from eviction."
+    },
+    {
+      "legal_issue": "When the statutory conditions for eviction for monthly rent arrears without a dispute about the rent are satisfied, the court must order eviction despite the statute’s use of the word “may.”",
+      "material_facts": [
+        "The landlord sued for possession on the ground of unpaid rent.",
+        "The tenant disputed the amount of rent and sought to have standard rent fixed, so the case did not fall within the category of undisputed rent arrears addressed by this rule."
+      ],
+      "conclusion": "The word “may” in section 12(3)(a) is mandatory: when that clause’s conditions are fulfilled, the court must decree eviction.",
+      "legal_principle": "Section 12(3)(a) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, applies where rent is payable monthly, there is no dispute about standard rent or permitted increases, arrears have continued for at least six months, and the tenant neglects to pay within the period after the statutory demand notice. In that context, “may” requires a decree for eviction. The Court relied on Bhaiya Punyalal Bhagwandin v. Bhagwatprasad, [1963] 3 S.C.R. 312.",
+      "rule": {
+        "if": "rent_default_eviction_suit and rent_payable_monthly and no_rent_amount_dispute and arrears_persist_for_required_period and tenant_neglects_payment_after_demand_notice",
+        "then": "court_must_order_eviction"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "A landlord brought a proceeding seeking eviction on the ground of unpaid rent.",
+        "rent_payable_monthly": "The rent was payable by the month.",
+        "no_rent_amount_dispute": "The tenant and landlord did not dispute the amount of standard rent or permitted increases.",
+        "arrears_persist_for_required_period": "The rent or permitted increases remained unpaid for the statutory duration.",
+        "tenant_neglects_payment_after_demand_notice": "The tenant failed to pay the arrears before the period following the landlord’s demand notice expired."
+      },
+      "definition": "If a monthly-rent eviction proceeding involves undisputed rent arrears of the required duration and the tenant fails to pay after demand, the court must order eviction."
+    },
+    {
+      "legal_issue": "To obtain protection in cases outside the mandatory-arrears category, a tenant must pay or tender standard rent and permitted increases by the hearing date or a date fixed by the court, continue doing so through the suit, and pay costs if directed; interim rent is not itself standard rent.",
+      "material_facts": [
+        "The tenant disputed the contractual rent, applied for fixation of standard rent and interim rent, and deposited amounts pursuant to an order specifying interim rent.",
+        "The trial court fixed standard rent at one rate, and the appellate court later fixed it at a higher rate.",
+        "The tenant did not continue paying regularly until the suit was finally decided.",
+        "The appellate court did not fix a date for payment of the difference after enhancing standard rent."
+      ],
+      "conclusion": "Section 12(3)(b) requires payment or tender of standard rent, not merely interim rent, and regular payment or tender thereafter until final decision. Costs are payable only if the court directs them. When an appellate court enhances standard rent, it may fix a date for paying the difference; the appellate court should have fixed such a date here. The District Court’s failure to do so was a technical error.",
+      "legal_principle": "Sections 11(1) and 11(3) distinguish standard rent fixed by the court from interim rent specified pending final determination. Section 12(3)(b) requires payment or tender of standard rent and permitted increases on or before the first hearing or another date fixed by the court, followed by regular payment or tender until the suit is finally decided. Costs are required only when directed. If an appellate court enhances standard rent, it may set a date for payment of the difference.",
+      "rule": {
+        "if": "rent_default_eviction_suit and case_outside_mandatory_default_category and tenant_pays_or_tenders_standard_rent_by_hearing_or_fixed_date and tenant_continues_regular_payment_until_final_decision and (not court_directs_costs or tenant_pays_directed_costs)",
+        "then": "tenant_qualifies_for_protection_under_other_rent_default_category"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "A landlord brought a proceeding seeking eviction on the ground of unpaid rent.",
+        "case_outside_mandatory_default_category": "The circumstances do not place the proceeding in the category where undisputed monthly arrears of the required duration make eviction mandatory.",
+        "tenant_pays_or_tenders_standard_rent_by_hearing_or_fixed_date": "The tenant pays or tenders the standard rent and permitted increases by the first hearing or another date fixed by the court.",
+        "tenant_continues_regular_payment_until_final_decision": "The tenant regularly pays or tenders the standard rent and permitted increases until the suit is finally decided.",
+        "court_directs_costs": "The court directs the tenant to pay or deposit the costs of the suit.",
+        "tenant_pays_directed_costs": "The tenant pays or deposits the costs the court directed the tenant to pay."
+      },
+      "definition": "In a rent-default eviction proceeding outside the mandatory category, a tenant who meets the stated payment and, if applicable, costs requirements qualifies for protection under the other statutory category."
+    },
+    {
+      "legal_issue": "Regular compliance with an interim-rent order after a timely application concerning disputed rent creates an evidentiary presumption of readiness and willingness, but does not convert interim rent into standard rent.",
+      "material_facts": [
+        "After receiving a demand notice, the tenant applied to have standard rent fixed within the following month and sought an order specifying interim rent.",
+        "The court ordered payment of interim rent, and the tenant made deposits pursuant to that order, but did not continue paying regularly until final disposal of the suit."
+      ],
+      "conclusion": "The statutory explanation creates a rule of evidence: if the tenant makes the timely application and thereafter regularly pays or tenders the court-specified interim rent until the suit is disposed of, the court must presume readiness and willingness at the date of the decree. Interim rent is not thereby equated with standard rent.",
+      "legal_principle": "The Explanation to section 12 of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, supplies an evidentiary presumption where a tenant disputing standard rent or permitted increases applies under section 11(3) within the period following the demand notice and thereafter regularly pays or tenders the interim amount specified by the court. Section 12(3)(b)’s standard-rent requirement remains distinct from the interim-rent amount under section 11(3).",
+      "rule": {
+        "if": "rent_dispute and tenant_applies_for_rent_determination_within_notice_period and court_specifies_interim_rent and tenant_regularly_pays_or_tenders_interim_rent_until_suit_disposal",
+        "then": "tenant_presumed_ready_and_willing_at_decree"
+      },
+      "predicates": {
+        "rent_dispute": "The landlord and tenant disputed the amount of standard rent or permitted increases.",
+        "tenant_applies_for_rent_determination_within_notice_period": "The tenant applied to the court to determine rent within the period following the landlord’s demand notice.",
+        "court_specifies_interim_rent": "The court specified an interim amount to be paid pending final determination of rent.",
+        "tenant_regularly_pays_or_tenders_interim_rent_until_suit_disposal": "The tenant regularly paid or tendered the specified interim amount until the suit was disposed of."
+      },
+      "definition": "A tenant in a rent dispute is presumed ready and willing at the decree when the tenant makes the timely application, receives an interim-rent order, and regularly complies with it until disposal of the suit."
+    },
+    {
+      "legal_issue": "The High Court may not use revisional jurisdiction to set aside a subordinate court’s decision merely because it considers the decision wrong on fact or law when the subordinate court acted within its jurisdiction.",
+      "material_facts": [
+        "The District Court decided whether the tenant had established readiness and willingness to pay rent and permitted increases and dismissed the possession claim.",
+        "The High Court reversed that decision in revision based on its view of the tenant’s payment obligations and entitlement to protection.",
+        "The District Court had jurisdiction to decide the possession suit and the tenant’s claim to statutory protection."
+      ],
+      "conclusion": "The High Court lacked authority under section 115 of the Code of Civil Procedure to reverse the District Court merely for an alleged error of fact or law. The Supreme Court allowed the appeal and restored the District Court’s order.",
+      "legal_principle": "Section 115 of the Code of Civil Procedure, 1908, permits revision where a subordinate court has exercised jurisdiction not vested in it, failed to exercise jurisdiction vested in it, or acted illegally or with material irregularity in exercising jurisdiction. An error on a question within the subordinate court’s jurisdiction does not by itself permit revision. The Court relied on Balakrishna Udayar v. Vasudeva Aiyar, L.R. 44 I.A. 261; Rajah Amir Hassan Khan v. Sheo Baksh Singh, L.R. 11 I.A. 237; Joy Chand Lal Babu v. Laksha Chaudhury, L.R. 76 I.A. 131; and Manindra Land and Building Corporation v. Bhutnath Bannerjee, [1964] 3 S.C.R. 495.",
+      "rule": {
+        "if": "revision_from_subordinate_court_decision and no_further_appeal_lies and subordinate_court_had_jurisdiction and alleged_error_is_only_merits_error",
+        "then": "high_court_must_not_interfere_in_revision"
+      },
+      "predicates": {
+        "revision_from_subordinate_court_decision": "A party asked the High Court to revise a decision made by a subordinate court.",
+        "no_further_appeal_lies": "No further appeal lies from the subordinate court decision at issue.",
+        "subordinate_court_had_jurisdiction": "The subordinate court had jurisdiction to decide the dispute and the question raised before it.",
+        "alleged_error_is_only_merits_error": "The asserted error concerns the court’s factual or legal conclusion on a matter within its jurisdiction, rather than an excess, failure, or materially irregular exercise of jurisdiction."
+      },
+      "definition": "When a revisional challenge concerns only a merits error in a decision the subordinate court had jurisdiction to make, the High Court must not interfere in revision."
+    }
+  ],
+  "seconds": 23.4
+}

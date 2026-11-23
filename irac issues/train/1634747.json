@@ -1,0 +1,100 @@
+{
+  "doc_id": "1634747",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24667,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3361,
+    "prompt_tokens": 6414,
+    "total_tokens": 9775,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The right of private defence does not justify a deadly attack in a land dispute when the opposing party is unarmed and either has possession or entered without the intent required for criminal trespass.",
+      "material_facts": [
+        "The prosecution evidence showed that the complainant party had cultivated the land and had sown crops on it; the trial court found that it was in possession.",
+        "The accused were already ploughing the land and were armed with firearms and lathis when the deceased and another person arrived unarmed and questioned them.",
+        "The accused shot the deceased and assaulted him and the other person with lathis.",
+        "Even on the alternative assumption that the accused were in possession, there was no evidence that the complainants entered with intent to commit an offence or to intimidate, insult, or annoy the persons in possession."
+      ],
+      "conclusion": "The accused could not rely on the right of private defence to justify the attack.",
+      "legal_principle": "Sections 97 and 99 IPC govern the right and restrictions on private defence of person and property. Under Section 441 IPC, entry on property is criminal trespass only if accompanied by the specified intent. Section 103 IPC does not permit causing death merely to resist ordinary criminal trespass; the judgment also refers to Section 104 IPC. Relying on Rajinder v. State of Haryana, (1995) 5 SCC 187, the Court held that the required intent for criminal trespass must be established from the facts and circumstances, and that an armed, premeditated murderous attack in these circumstances was not justified as private defence.",
+      "rule": {
+        "if": "land_dispute_assault_case and accused_armed_and_prepared and complainants_unarmed and (complainants_in_possession or complainants_lacked_trespass_intent)",
+        "then": "private_defence_unavailable"
+      },
+      "predicates": {
+        "land_dispute_assault_case": "The case concerns an assault arising from a dispute over possession or cultivation of land.",
+        "accused_armed_and_prepared": "The accused arrived or acted armed and prepared to use force in the land dispute.",
+        "complainants_unarmed": "The opposing persons were unarmed when they encountered the accused.",
+        "complainants_in_possession": "The opposing persons were in possession of the disputed land when the incident occurred.",
+        "complainants_lacked_trespass_intent": "The opposing persons entered or approached the land without intent to commit an offence or to intimidate, insult, or annoy a person in possession."
+      },
+      "definition": "When an armed and prepared attack occurs in a land dispute against unarmed persons who either possess the land or lack criminal-trespass intent, the rule makes private defence unavailable."
+    },
+    {
+      "legal_issue": "The exception for causing death while exceeding the right of private defence does not apply to a premeditated attack intended to cause more harm than necessary.",
+      "material_facts": [
+        "The accused were fully armed and had acted with premeditation to cause death.",
+        "The deceased was shot, and the gunshot injuries caused his death.",
+        "The attack was not an effort to use only the force necessary to remove alleged trespassers; the circumstances showed an intention to do more harm than necessary."
+      ],
+      "conclusion": "The exception did not reduce the offence from murder to culpable homicide; the death remained murder.",
+      "legal_principle": "Explanation 2 to Section 300 IPC excludes murder where a person, in good faith exercising private defence, exceeds the lawful power without premeditation and without intending to do more harm than necessary. The Court held those conditions were absent because the attack was premeditated and intended to cause more harm than was necessary.",
+      "rule": {
+        "if": "homicide_case_with_private_defence_claim and attack_was_premeditated and accused_intended_excessive_harm",
+        "then": "death_treated_as_murder"
+      },
+      "predicates": {
+        "homicide_case_with_private_defence_claim": "The case concerns a death and the accused claim that they acted in private defence.",
+        "attack_was_premeditated": "The accused prepared for and carried out the attack with premeditation.",
+        "accused_intended_excessive_harm": "The accused intended to cause more harm than was necessary for the claimed defensive purpose."
+      },
+      "definition": "In a homicide case involving a private-defence claim, a premeditated attack intended to cause excessive harm results in the death being treated as murder."
+    },
+    {
+      "legal_issue": "A reversal of trial convictions is unsustainable when the appellate court assesses possession evidence one-sidedly while accepting the prosecution account of the incident and the injuries.",
+      "material_facts": [
+        "The trial court convicted the accused of murder or murder with common-object liability and of other offences arising from the incident.",
+        "The High Court reversed or reduced those convictions after finding that the accused were in possession and the complainant party was the aggressor, but did not address the prosecution evidence of possession, including revenue records and evidence that crops had been sown on the land.",
+        "The High Court accepted the occurrence and the eyewitness evidence that the accused caused the injuries.",
+        "The deceased died from gunshot injuries inflicted by two accused; the evidence also showed injuries caused by lathi blows, and firearms and lathis had been recovered."
+      ],
+      "conclusion": "The High Court judgment could not be sustained; the State's appeal was allowed, the trial court's judgment and convictions were restored, and the appeals by the two accused were dismissed.",
+      "legal_principle": "The Court held that the High Court was not right to overturn the trial court's possession finding without properly considering the evidence on record. It relied on the accepted eyewitness account, the fatal gunshot injuries, the other injuries, and the evidence concerning the recovered weapons in restoring the trial court's decision. The restored convictions were under Sections 302, 302/149, 148, 447, and 323 IPC, as applicable to the respective accused.",
+      "rule": {
+        "if": "state_appeal_from_reversal_of_trial_convictions and appellate_court_omitted_material_prosecution_evidence and prosecution_occurrence_and_injuries_were_accepted",
+        "then": "trial_court_convictions_restored"
+      },
+      "predicates": {
+        "state_appeal_from_reversal_of_trial_convictions": "The State appealed after an appellate court reversed or reduced convictions entered by the trial court.",
+        "appellate_court_omitted_material_prosecution_evidence": "The appellate court reached its decision without addressing material prosecution evidence relevant to its findings.",
+        "prosecution_occurrence_and_injuries_were_accepted": "The appellate court accepted the prosecution account of the incident and the evidence that the accused caused the injuries."
+      },
+      "definition": "When the State appeals a reversal of trial convictions, material prosecution evidence was omitted, and the prosecution account and injuries were accepted, the rule restores the trial court's convictions."
+    },
+    {
+      "legal_issue": "A conviction cannot be entered for an offence for which no charge was framed at trial.",
+      "material_facts": [
+        "The police submitted challans alleging offences under the Arms Act.",
+        "No charge for those offences was framed against any accused at trial."
+      ],
+      "conclusion": "There could be no conviction for the uncharged Arms Act offences.",
+      "legal_principle": "The Court stated that because no charge had been framed for the alleged Arms Act offences, no accused could be convicted of those offences.",
+      "rule": {
+        "if": "criminal_trial_case and no_charge_framed_for_offence",
+        "then": "no_conviction_for_uncharged_offence"
+      },
+      "predicates": {
+        "criminal_trial_case": "The matter is a criminal trial in which the accused face alleged offences.",
+        "no_charge_framed_for_offence": "The trial court did not frame a charge against the accused for the offence in question."
+      },
+      "definition": "In a criminal trial, when no charge is framed for an offence, the rule bars conviction for that uncharged offence."
+    }
+  ],
+  "seconds": 21.7
+}

@@ -1,0 +1,81 @@
+{
+  "doc_id": "43367",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 45197,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3137,
+    "prompt_tokens": 12215,
+    "total_tokens": 15352,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A partition suit brought by one family branch does not by itself sever the joint status of other branches, and male members belonging to the same maternal branch may retain an undivided interest despite the death of their mother.",
+      "material_facts": [
+        "A woman and her children brought a suit to partition family property; the three male members at issue were defendants, not plaintiffs.",
+        "The three defendants jointly sought allotment of their share, and the parties’ joint memo and preliminary decree allotted them one share jointly.",
+        "There was no material showing that the three defendants had divided their status before the deaths of two of them."
+      ],
+      "conclusion": "The three defendants held their allotted share jointly, and the partition suit did not establish that they had divided their status. The deaths of two defendants therefore occurred while they had an undivided interest.",
+      "legal_principle": "Under sections 3(b)(i) and 3(b)(ii) of the Madras Aliyasantana Act, a male’s kavaru is the kavaru of his mother; a male is not independently a kavaru under that definition. The explanation to section 35(2) deems a male member to be a kavaru for the purpose of claiming partition under Chapter VI, but does not establish that all kavarus have separated when another branch files suit. Whether the other kavarus remained joint is a question of fact. Jalaja Shedthi v. Lakshmi Shedthi and Sundara Adappa v. Girija were distinguished on their facts.",
+      "rule": {
+        "if": "partition_case and suit_brought_by_other_branch and jointly_allocated_share and no_severance_evidence",
+        "then": "other_branches_remain_joint_unless_severance_proved"
+      },
+      "predicates": {
+        "partition_case": "A member of a family brought a proceeding seeking partition of family property.",
+        "suit_brought_by_other_branch": "The partition proceeding was brought by a family branch other than the members whose status is in dispute.",
+        "jointly_allocated_share": "The disputed members jointly sought and received an allotment as one share.",
+        "no_severance_evidence": "No evidence established that the disputed members had separated their status."
+      },
+      "definition": "When another branch brings a partition proceeding and the disputed members receive a joint allotment without evidence of their separation, their joint status is not treated as severed merely because the proceeding was filed."
+    },
+    {
+      "legal_issue": "An undivided interest in family property held by a member governed by the Aliyasantana system devolves under the Hindu succession regime rather than under the customary rule of reversion to the family or a related branch.",
+      "material_facts": [
+        "The three male members were governed by the Aliyasantana law and were jointly allotted a share in the family partition.",
+        "Two members died after the Hindu Succession Act came into force while the share remained undivided between them and the surviving member.",
+        "The deaths were treated as intestate, and the deceased members’ legal representatives claimed their interests."
+      ],
+      "conclusion": "Each deceased member’s undivided interest devolved on his heirs under the Hindu Succession Act; it did not revert to the kutumba or pass under the Aliyasantana rule to a nearby santhathi kavaru.",
+      "legal_principle": "Section 4 of the Hindu Succession Act overrides inconsistent existing law. Section 7(2) provides for testamentary or intestate devolution of an undivided interest in a kutumba or kavaru; its explanation deems the member’s per-capita share to have been allotted to that member absolutely immediately before death. Section 30 and its explanation concern testamentary disposition of such an interest. Section 17 applies specified succession provisions, including sections 8, 10 and 15, with modifications to separate property. Jalaja Shedthi v. Lakshmi Shedthi was distinguished, including its observations on intestate succession, which the Court treated as obiter in that context.",
+      "rule": {
+        "if": "intestate_succession_dispute and aliyasantana_family_interest and undivided_at_death and succession_reform_in_force",
+        "then": "undivided_interest_devolves_to_heirs_under_general_succession_law"
+      },
+      "predicates": {
+        "intestate_succession_dispute": "Heirs disputed who took a deceased person's property where the deceased had died without a will.",
+        "aliyasantana_family_interest": "The deceased held an interest in property of a family governed by a customary matrilineal system of inheritance.",
+        "undivided_at_death": "The deceased's interest had not been divided from the relevant family property when the deceased died.",
+        "succession_reform_in_force": "A general succession reform applicable to the deceased had taken effect before the deceased died."
+      },
+      "definition": "If an intestate succession dispute concerns an undivided interest in a family property and the applicable succession reform was in force at death, the interest passes to the deceased’s heirs under the general succession law."
+    },
+    {
+      "legal_issue": "A limited life interest held under the Aliyasantana law does not cause property to revert to the kutumba or a santhathi kavaru on the holder’s death when the Hindu Succession Act governs succession.",
+      "material_facts": [
+        "The defendants belonged to a nissanthathi kavaru and were entitled to a life interest in the property allotted to it at partition under the Aliyasantana Act.",
+        "The parties disputed whether the property or the deceased members’ interests should pass to their heirs or revert under the Aliyasantana rule.",
+        "The Court held that the Hindu Succession Act governed the devolution after the deaths."
+      ],
+      "conclusion": "The customary rule that the property would devolve to the kutumba or nearest santhathi kavaru gave way to the Hindu Succession Act; the property devolved to the deceased holder’s heirs under that Act.",
+      "legal_principle": "Section 36(5) of the Madras Aliyasantana Act provides for devolution of property allotted to a nissanthathi kavaru upon the kutumba or, in specified circumstances, a santhathi kavaru. Section 4 of the Hindu Succession Act overrides inconsistent prior law. For an undivided interest, section 7(2) governs; for separate property, section 17 applies specified succession provisions, including section 8, with modifications. The Court held that the customary mode of reversion under section 36(5) could not displace the applicable succession provisions of the Hindu Succession Act.",
+      "rule": {
+        "if": "intestate_succession_dispute and life_interest_under_customary_law and death_of_interest_holder and succession_reform_in_force",
+        "then": "property_devolves_to_heirs_under_general_succession_law_not_by_customary_reversion"
+      },
+      "predicates": {
+        "intestate_succession_dispute": "Heirs disputed devolution of property after a person died without a will.",
+        "life_interest_under_customary_law": "The deceased held a life interest in property under a customary family-law system.",
+        "death_of_interest_holder": "The person holding the life interest died.",
+        "succession_reform_in_force": "A general succession reform applicable to the deceased had taken effect before the deceased died."
+      },
+      "definition": "When a holder of a customary life interest dies intestate after an applicable succession reform takes effect, the property passes to the heirs under that succession law rather than reverting under the customary rule."
+    }
+  ],
+  "seconds": 19.5
+}

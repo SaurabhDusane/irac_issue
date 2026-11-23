@@ -1,0 +1,40 @@
+{
+  "doc_id": "1187238",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14309,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1089,
+    "prompt_tokens": 4008,
+    "total_tokens": 5097,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person under twenty-one years of age is not eligible for the statutory probation benefit when convicted of an offence punishable with imprisonment for life, even if the offence also permits a lesser term of imprisonment.",
+      "material_facts": [
+        "The appellant was assumed to have been under twenty-one years of age when convicted.",
+        "The appellant was convicted of voluntarily causing grievous hurt as a member of an unlawful assembly.",
+        "The offence was punishable with imprisonment for life or, alternatively, imprisonment for a term of up to ten years.",
+        "The sentence for the principal offence was reduced to three years, after which the appellant sought the benefit of probation."
+      ],
+      "conclusion": "The appellant could not claim the probation benefit because the offence was punishable with imprisonment for life; the appeal was dismissed.",
+      "legal_principle": "Section 6(1) of the Probation of Offenders Act, 1958 applies to an offender under twenty-one only when the offence is punishable with imprisonment but not with imprisonment for life. An alternative lesser term does not remove an offence from the category of offences punishable with life imprisonment; construing the provision otherwise would make the words excluding life imprisonment ineffective. The Court followed Som Nath Puri v. State of Rajasthan, which applied the same construction to section 4 of the Act.",
+      "rule": {
+        "if": "probation_eligibility_proceeding and offender_under_twenty_one and offense_punishable_with_life",
+        "then": "probation_benefit_unavailable"
+      },
+      "predicates": {
+        "probation_eligibility_proceeding": "The proceeding concerns whether a convicted person is eligible for release on probation.",
+        "offender_under_twenty_one": "The convicted person was under twenty-one years of age at the relevant time.",
+        "offense_punishable_with_life": "The offence of conviction carries imprisonment for life as an available punishment.",
+        "probation_benefit_unavailable": "The convicted person is not eligible for the statutory probation benefit."
+      },
+      "definition": "When a probation-eligibility proceeding concerns a person under twenty-one convicted of an offence that carries life imprisonment as an available punishment, the person is not eligible for the statutory probation benefit."
+    }
+  ],
+  "seconds": 8.5
+}

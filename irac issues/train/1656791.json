@@ -1,0 +1,58 @@
+{
+  "doc_id": "1656791",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16053,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1992,
+    "prompt_tokens": 4608,
+    "total_tokens": 6600,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An auction bid that is expressly subject to confirmation does not create a completed sale before confirmation.",
+      "material_facts": [
+        "The highest bid was made subject to confirmation by the Chief Commissioner, who could reject it.",
+        "The Chief Commissioner did not confirm the bid."
+      ],
+      "conclusion": "The sale was not complete without confirmation, and the bidder could withdraw the bid before confirmation without incurring liability for breach of contract or a resale shortfall.",
+      "legal_principle": "Under clause 33 of the auction conditions, final bids were subject to the Chief Commissioner's confirmation; clause 16 of Rule 5.34 also made sales open to revision by the Chief Commissioner. A conditional acceptance does not conclude a contract, and the offer may be withdrawn before absolute acceptance. The Court relied on Hussey v. Horne Payne, [1878] 8 Ch. D. 670 at 676.",
+      "rule": {
+        "if": "conditional_auction_contract_dispute and bid_subject_to_confirmation and confirmation_not_given",
+        "then": "no_completed_sale_contract_before_confirmation"
+      },
+      "predicates": {
+        "conditional_auction_contract_dispute": "The proceeding concerns whether an auction bid created a binding contract.",
+        "bid_subject_to_confirmation": "The auction terms made the bid subject to confirmation by an authority.",
+        "confirmation_not_given": "The authority did not confirm the bid."
+      },
+      "definition": "When a contract dispute concerns a bid made subject to confirmation and confirmation is not given, there is no completed sale contract before confirmation."
+    },
+    {
+      "legal_issue": "A bidder is not liable for a resale price deficiency where the auction sale was subject to confirmation and no completed sale resulted.",
+      "material_facts": [
+        "The bidder did not pay the required deposit after the auction.",
+        "The Chief Commissioner did not confirm the bid, and the licence was resold at a lower price.",
+        "The Collector sought to recover the difference between the bids from the original bidder."
+      ],
+      "conclusion": "The original bidder was not liable for the resale deficiency because the sale had not been completed.",
+      "legal_principle": "Clause 21 of Rule 5.34 distinguishes a person to whom a shop has been sold from a bidder whose bid has only been provisionally accepted. Its first part concerns a completed sale; its later part expressly addresses an auction conducted by an officer lower in rank than the Collector and permits recovery of a deficiency from a defaulting bidder in that situation. Because the sale here required confirmation and was not confirmed, the essential prerequisites of a completed sale were absent. Clause 33 of the auction conditions made bids subject to confirmation.",
+      "rule": {
+        "if": "resale_deficiency_recovery_dispute and auction_sale_subject_to_confirmation and confirmation_not_given and resale_deficiency_claimed",
+        "then": "provisional_bidder_not_liable_for_resale_deficiency"
+      },
+      "predicates": {
+        "resale_deficiency_recovery_dispute": "The proceeding concerns recovery from an auction bidder of a price deficiency following resale.",
+        "auction_sale_subject_to_confirmation": "The auction terms required confirmation before the sale became complete.",
+        "confirmation_not_given": "The authority did not confirm the bidder's bid.",
+        "resale_deficiency_claimed": "A deficiency arose on resale and recovery of it was sought from the original bidder."
+      },
+      "definition": "In a dispute over recovery of a resale deficiency, a bidder whose sale required confirmation is not liable for the deficiency if confirmation was not given."
+    }
+  ],
+  "seconds": 14.5
+}

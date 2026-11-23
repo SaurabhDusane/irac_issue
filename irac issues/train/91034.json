@@ -1,0 +1,40 @@
+{
+  "doc_id": "91034",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13172,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 960,
+    "prompt_tokens": 3642,
+    "total_tokens": 4602,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A beneficial administrative circular directing the discontinuance of acquisition proceedings applies while those proceedings remain pending at the appellate stage and have not attained finality.",
+      "material_facts": [
+        "The property was purchased for an apparent consideration below the threshold stated in the circular.",
+        "An acquisition order was made, but it was challenged and the acquisition proceedings remained unresolved in appellate proceedings.",
+        "The circular directed that acquisition proceedings be dropped where the apparent consideration was below the stated threshold."
+      ],
+      "conclusion": "The circular applies to all pending acquisition proceedings, including proceedings at the appellate stage, that have not attained finality.",
+      "legal_principle": "An appeal is part of the same legal proceeding as the original proceeding; a proceeding does not cease to be pending merely because the competent authority has made an order that is under appeal. The Court relied on Garikapati Veeraya v. N. Subiah Choudhry, AIR 1957 SC 540, and agreed with Commissioner of Income Tax v. Rattan Chand Sood, Commissioner of Income Tax v. Export India Corporation (P) Ltd., Commissioner of Income Tax v. Gobind Ram, Commissioner of Income Tax v. Gursher Singh, Competent Authority (Acquisition) v. Smt. Lalita Today, and Commissioner of Income Tax v. Sivan Soap Factory. It also relied on section 119, under which authorities executing the Act must follow the Board’s directions, and section 269I, under which proceedings attain finality as specified in that provision.",
+      "rule": {
+        "if": "acquisition_proceeding and appeal_pending and not attained_finality and apparent_consideration_below_threshold",
+        "then": "circular_applies_to_pending_proceeding"
+      },
+      "predicates": {
+        "acquisition_proceeding": "The matter concerns proceedings to acquire immovable property under the statutory acquisition scheme.",
+        "appeal_pending": "A party has challenged an order in the acquisition proceeding, and the challenge remains pending before an appellate body.",
+        "attained_finality": "The acquisition proceeding has reached the point at which no further appeal or other step affecting its finality remains pending.",
+        "apparent_consideration_below_threshold": "The consideration stated for the property is below the threshold at which the circular directs that acquisition proceedings be discontinued.",
+        "circular_applies_to_pending_proceeding": "The beneficial circular directing discontinuance applies to the acquisition proceeding while it remains pending."
+      },
+      "definition": "When an acquisition proceeding remains under appeal, has not attained finality, and concerns consideration below the circular’s threshold, the circular applies to that proceeding."
+    }
+  ],
+  "seconds": 7.7
+}

@@ -1,0 +1,85 @@
+{
+  "doc_id": "640382",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 45118,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3423,
+    "prompt_tokens": 12575,
+    "total_tokens": 15998,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A written acknowledgment or part payment extends limitation only for the existing liability or pending claim it concerns, and does not save a fresh claim first asserted later.",
+      "material_facts": [
+        "The contractor’s final bill was signed under protest, and the cause of action for the claims arose when it was signed.",
+        "The employer later wrote that it would examine the contractor’s pending claims and settle any dues found payable; the contractor then specified pending claims totaling Rs.50,15,820.",
+        "After examining those claims, the employer paid Rs.3,50,000.",
+        "Only Rs.28,32,128 of the claims later presented to the arbitrator formed part of the specified pending claims; the remaining Rs.67,64,488 were fresh claims first made in the arbitration claim statement.",
+        "The notice invoking arbitration was served within three years of the employer’s acknowledgment and payment."
+      ],
+      "conclusion": "The acknowledgment and payment extended limitation only for claims forming part of the pending claims then asserted. Those claims were timely, but the fresh claims first made in the arbitration claim statement were barred by limitation. Limitation for the claims was assessed when arbitration commenced upon service of the notice invoking arbitration, separately from limitation for an application seeking appointment of an arbitrator.",
+      "legal_principle": "Under sections 18 and 19 of the Limitation Act, 1963, a written acknowledgment of a subsisting liability or a payment on account of an existing debt starts a fresh limitation period only for the liability or debt acknowledged or paid. The acknowledgment must show a subsisting jural relationship and an intention to admit that relationship; it need not specify an exact amount. It does not extend limitation for a fresh or additional claim that was not then pending, or for a different liability. Under section 37(3) of the Arbitration Act, 1940, arbitration is deemed to commence for limitation purposes when notice requiring appointment of an arbitrator is served. Limitation for the claim is distinct from limitation for an application under section 8(2) of that Act. The Court relied on Shapur Fredoom Mazda v. Durga Prosad Chamaria and, on the distinction concerning arbitration limitation, Inder Singh Rekhi v. Delhi Development Authority, Panchu Gopal Bose v. Board of Trustees for Port of Calcutta, and Utkal Commercial Corporation v. Central Coal Fields.",
+      "rule": {
+        "if": "arbitration_claim and claim_cause_of_action_accrued and ordinary_limitation_expired_at_notice and (claim_outside_acknowledged_scope or not notice_within_extended_limitation_period)",
+        "then": "claim_is_barred_by_limitation"
+      },
+      "predicates": {
+        "arbitration_claim": "A party presented a claim for decision in an arbitration proceeding.",
+        "claim_cause_of_action_accrued": "The events giving rise to the claim had occurred before the relevant arbitration notice was served.",
+        "ordinary_limitation_expired_at_notice": "The ordinary limitation period for the claim had expired by the time the arbitration notice was served.",
+        "claim_outside_acknowledged_scope": "The claim was not part of the existing liability or pending claim that the other party acknowledged or paid toward.",
+        "notice_within_extended_limitation_period": "The arbitration notice was served within the fresh limitation period arising from an acknowledgment or payment applicable to that claim."
+      },
+      "definition": "When a claim in an arbitration proceeding had accrued and was already out of time by the notice, it remains barred if it was outside the acknowledged or paid claim, or if the notice was not served within the extended period."
+    },
+    {
+      "legal_issue": "An arbitrator exceeds jurisdiction by awarding relief beyond the claim presented, including by relying on an unpleaded change to the amount credited as paid or by granting escalation beyond the amount claimed.",
+      "material_facts": [
+        "The arbitration claim statement stated the total amount claimed after crediting the employer with payments of Rs.1,49,88,566.90.",
+        "During the arbitration, the claimant asserted that a portion of those payments related to other contracts, but did not amend the claim statement.",
+        "The arbitrator used the reduced payment credit and thereby awarded more on the relevant work claims than the claim statement allowed.",
+        "The total award exceeded the total claim, and the escalation awarded was calculated at a rate exceeding the rates claimed."
+      ],
+      "conclusion": "The portions of the award exceeding the claims were invalid because the arbitrator exceeded jurisdiction and committed legal misconduct.",
+      "legal_principle": "Under section 30 of the Arbitration Act, 1940, an award may be set aside on the specified grounds, including legal misconduct. An arbitrator cannot grant more than the relief claimed or proceed on a material alteration of the claim that was not made by amendment. The award of escalation beyond the amount or rate claimed likewise exceeds jurisdiction.",
+      "rule": {
+        "if": "arbitration_award_under_review and (award_exceeds_claimed_relief or award_uses_unpleaded_payment_credit or escalation_exceeds_claimed_relief)",
+        "then": "excess_award_is_invalid"
+      },
+      "predicates": {
+        "arbitration_award_under_review": "A court is reviewing an award made in an arbitration proceeding.",
+        "award_exceeds_claimed_relief": "The arbitrator awarded relief greater than the claimant had sought.",
+        "award_uses_unpleaded_payment_credit": "The arbitrator calculated the award using a changed payment credit that the claimant had not incorporated into an amended claim.",
+        "escalation_exceeds_claimed_relief": "The arbitrator awarded escalation greater than the escalation sought by the claimant."
+      },
+      "definition": "An award under review is invalid to the extent that it grants more relief than was claimed or relies on an unpleaded change to the claim."
+    },
+    {
+      "legal_issue": "A valid and severable part of an arbitral award may be upheld when the grounds for setting aside other parts do not affect it.",
+      "material_facts": [
+        "Some claims before the arbitrator were part of the existing pending claims and were not barred by limitation.",
+        "The amounts awarded on those claims were identifiable and severable from the amounts awarded on barred claims or in excess of the claims presented.",
+        "The Court found no legal misconduct or error apparent on the face of the award in respect of the severable valid portion."
+      ],
+      "conclusion": "The Court upheld the valid, severable portion of the award and directed that a decree be entered for that portion with the interest stated in the award as modified by the Court.",
+      "legal_principle": "The court’s power to set aside an arbitral award is confined to the grounds specified in section 30 of the Arbitration Act, 1940; it does not sit as an appellate court to reappreciate the evidence or correct an arbitrator’s factual or legal conclusions merely because they may be wrong. A valid and separable part of an award can be upheld. The Court relied on Hindustan Construction Co. Ltd. v. Governor of Orissa and Hindustan Tea Co. v. M/s K. Sashikant & Co.",
+      "rule": {
+        "if": "arbitration_award_under_review and valid_portion_within_jurisdiction and valid_portion_severable and no_setting_aside_ground_affects_valid_portion",
+        "then": "valid_severable_portion_is_upheld"
+      },
+      "predicates": {
+        "arbitration_award_under_review": "A court is reviewing an award made in an arbitration proceeding.",
+        "valid_portion_within_jurisdiction": "The identified portion of the award concerns claims that the arbitrator could properly decide.",
+        "valid_portion_severable": "The valid portion can be separated from the parts affected by defects.",
+        "no_setting_aside_ground_affects_valid_portion": "No ground for setting aside the award applies to the identified valid portion."
+      },
+      "definition": "A court upholds the part of an arbitration award that is within the arbitrator’s authority, can be separated from defective parts, and is not itself affected by a ground for setting the award aside."
+    }
+  ],
+  "seconds": 22.4
+}

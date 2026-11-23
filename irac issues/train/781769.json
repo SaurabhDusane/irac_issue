@@ -1,0 +1,156 @@
+{
+  "doc_id": "781769",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 55515,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4912,
+    "prompt_tokens": 14941,
+    "total_tokens": 19853,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A son in the womb at the time of adoption does not invalidate the adoption.",
+      "material_facts": [
+        "The adopter took a boy in adoption while her co-wife was pregnant.",
+        "The pregnancy later resulted in the birth of a son."
+      ],
+      "conclusion": "The adoption was valid notwithstanding the existence of a son in embryo at the time it was made.",
+      "legal_principle": "Hindu law texts do not make the absence of a pregnancy a condition of adoption. Adoption principally serves a spiritual purpose, and rules treating a child in the womb as already existing for secular matters such as inheritance and challenging alienations should not be extended to adoption. The Court approved Nagabhushanam v. Seshammagaru (1878–81) I.L.R. 3 Mad. 180, Shamavahoo v. Dwarkadas Vasanji (1888) I.L.R. 12 Bom. 202, and Daulat Ram v. Ram Lal (1907) I.L.R. 29 All. 310, and referred to Narayana Reddi v. Varadachala Reddi, S.A. No. 223 of 1859, M.S.D. 1859, p. 97.",
+      "rule": {
+        "if": "adoption_validity_dispute and son_in_embryo_at_adoption",
+        "then": "adoption_remains_valid"
+      },
+      "predicates": {
+        "adoption_validity_dispute": "A court proceeding contests the validity of an adoption in a family-law dispute.",
+        "son_in_embryo_at_adoption": "A son was conceived and still in the womb when the adoption was made."
+      },
+      "definition": "If a proceeding contests an adoption and a son was in the womb when it was made, the adoption remains valid."
+    },
+    {
+      "legal_issue": "A sole surviving coparcener may dispose of joint family property while no other person has a joint interest in it.",
+      "material_facts": [
+        "The property transfers in favour of the senior widow were executed when the transferor was the sole surviving coparcener.",
+        "No other coparcener had a joint interest in the property at the time of those transfers."
+      ],
+      "conclusion": "The transfers made while the transferor was the sole surviving coparcener were within his absolute power of disposal and were properly upheld.",
+      "legal_principle": "A sole surviving member of a coparcenary has absolute power to alienate family property because there is then no other member with a joint interest in it. The Court distinguished those transfers from later transfers made after another member had been conceived and referred to Avdesh Kumar v. Zakaul Hassain, I.L.R. [1944] All. 612, Chandramani v. Jambeswara, A.I.R. 1931 Mad. 550, and Bhagwat Prasad Bahidar v. Debichand Bogra, (1941) I.L.R. 20 Pat. 727.",
+      "rule": {
+        "if": "joint_family_property_transfer_dispute and transferor_was_sole_coparcener and no_other_member_had_joint_interest",
+        "then": "transfer_is_within_transferors_absolute_power"
+      },
+      "predicates": {
+        "joint_family_property_transfer_dispute": "A proceeding disputes a transfer of joint family property.",
+        "transferor_was_sole_coparcener": "The person who made the transfer was the sole surviving coparcener when it was made.",
+        "no_other_member_had_joint_interest": "No other family member had a joint interest in the property when the transfer was made."
+      },
+      "definition": "When a transfer of joint family property is disputed and the transferor was the sole coparcener with no other member having a joint interest, the transfer is within the transferor’s absolute power."
+    },
+    {
+      "legal_issue": "A manager’s power to alienate joint family property is limited when another coparcener is already in existence or in the womb.",
+      "material_facts": [
+        "The transferor executed deeds in favour of two family members after a son had been conceived.",
+        "The later-born son could not consent to or ratify the transfers before another adopted son was inducted into the family.",
+        "The impugned transfers were not shown to have been made for a purpose binding on the estate."
+      ],
+      "conclusion": "The later transfers were not binding on the family and were liable to be set aside at the instance of a member whose interest arose by birth or adoption.",
+      "legal_principle": "A managing member may alienate joint family property for value for family necessity or the benefit of the estate, or with the consent of all coparceners. If another member exists or is in the womb, an alienation outside those grounds is voidable at the instance of that member or a member subsequently born; an intervening adoption does not defeat that right. The Court referred to Avdesh Kumar v. Zakaul Hassain, I.L.R. [1944] All. 612, Chandramani v. Jambeswara, A.I.R. 1931 Mad. 550, and Bhagwat Prasad Bahidar v. Debichand Bogra, (1941) I.L.R. 20 Pat. 727.",
+      "rule": {
+        "if": "joint_family_property_transfer_dispute and another_coparcener_in_existence_or_womb and not transfer_for_necessity_or_estate_benefit and not consent_of_all_coparceners",
+        "then": "transfer_is_voidable_at_instance_of_family_member"
+      },
+      "predicates": {
+        "joint_family_property_transfer_dispute": "A proceeding disputes a transfer of joint family property.",
+        "another_coparcener_in_existence_or_womb": "Another coparcener existed or had been conceived when the transfer was made.",
+        "transfer_for_necessity_or_estate_benefit": "The transfer was made for family necessity or the benefit of the estate.",
+        "consent_of_all_coparceners": "All coparceners consented to the transfer."
+      },
+      "definition": "If a transfer is disputed, another coparcener existed or was in the womb, and neither a binding family purpose nor the consent of all coparceners supports it, the transfer is voidable at a family member’s instance."
+    },
+    {
+      "legal_issue": "A manager cannot give joint family property to an outsider merely out of affection or gratitude.",
+      "material_facts": [
+        "The manager gave immovable joint family property to a relative outside the coparcenary.",
+        "The deed described the transfer as a token of love and appreciation for services rendered.",
+        "The transfer was not established as a permitted small gift for a pious purpose."
+      ],
+      "conclusion": "The gift to the outsider was void.",
+      "legal_principle": "A manager has no absolute power of disposal over joint family property. Hindu law permits only limited gifts of a small extent of property to strangers for pious purposes; affection, gratitude, or a broad charitable characterization does not authorize the gift at issue. The Court referred to Mitakshara, Chapter I, section 1, verse 28, and Partha Sarathi Pillai v. Tiruvengada (1907) I.L.R. 30 Mad. 340.",
+      "rule": {
+        "if": "joint_family_gift_dispute and donor_was_family_manager and recipient_was_outside_coparcenary and not gift_within_permitted_pious_gift_limit",
+        "then": "gift_is_void"
+      },
+      "predicates": {
+        "joint_family_gift_dispute": "A proceeding disputes a gift of joint family property.",
+        "donor_was_family_manager": "The donor managed the joint family property but was not its sole owner with absolute disposal power.",
+        "recipient_was_outside_coparcenary": "The recipient was a stranger to the coparcenary.",
+        "gift_within_permitted_pious_gift_limit": "The gift fell within the limited category of small gifts to outsiders permitted for pious purposes."
+      },
+      "definition": "When a family manager gives joint family property to an outsider outside the limited permitted category of pious gifts, the gift is void."
+    },
+    {
+      "legal_issue": "A father or family representative may make a reasonable provision from family property for a daughter’s maintenance, and the obligation is not confined to the time of marriage.",
+      "material_facts": [
+        "The daughter was widowed and living in her father’s household.",
+        "Property previously provided for her maintenance produced insufficient income.",
+        "The family owned extensive property, and the new provision gave the daughter a life interest in a small part of it.",
+        "The reasonableness of the provision in the circumstances was not challenged."
+      ],
+      "conclusion": "The provision for the daughter’s maintenance was valid to the extent of the right conferred on her.",
+      "legal_principle": "Hindu law texts gave daughters or sisters a right to a share at partition; although that right fell into disuse, it became a continuing moral obligation to provide for a daughter. A father or his representative may discharge that obligation at or after marriage by a reasonable provision, assessed in light of the family estate, other charges, and relevant circumstances. The Court relied on Mitakshara, Chapter I, section 7, placita 10 and 11, and the texts of Manu, Katyayana, Brihaspati, and Devala. It approved Vettorammal v. Poochammal (1912) 22 M.L.J. 321, Kudutamma v. Narasimhacharyalu (1907) 17 M.L.J. 528, Sundaramaya v. Seethamma (1911) 21 M.L.J. 695, Ramaswamy Aiyyar v. Vengidsami Iyer (1898) I.L.R. 22 Mad. 113, Bachoo v. Mankorebai (1907) I.L.R. 31 Bom. 373, Ramalinga Annavi v. Narayana Annavi (1922) 49 I.A. 168, Sithamahalakshmamma v. Kotayya (1936) 71 M.L.J. 259, Annamalai v. Sundarathammal (1952) 2 M.L.J. 782, and Churaman Sahu v. Gopi Sahu (1910) I.L.R. 37 Cal. 1; it disapproved Jinnappa Mahadevappa v. Chimmava (1935) I.L.R. 59 Bom. 459.",
+      "rule": {
+        "if": "family_property_gift_dispute and provision_for_daughters_maintenance and provision_reasonable_in_family_circumstances",
+        "then": "maintenance_provision_is_valid"
+      },
+      "predicates": {
+        "family_property_gift_dispute": "A proceeding disputes a gift or provision made from family property.",
+        "provision_for_daughters_maintenance": "A father or family representative made a provision for a daughter’s maintenance.",
+        "provision_reasonable_in_family_circumstances": "The provision was reasonable in light of the family estate and its other relevant obligations."
+      },
+      "definition": "If a disputed family-property gift makes a reasonable provision for a daughter’s maintenance, that provision is valid."
+    },
+    {
+      "legal_issue": "A provision from joint family property that is justified as maintenance for a daughter does not validate a gift-over of the property to another person after her life interest.",
+      "material_facts": [
+        "The deed gave a widowed daughter a life interest in property for her maintenance and directed that the property pass to another person after her death."
+      ],
+      "conclusion": "The gift-over was invalid, although the daughter’s maintenance interest was valid.",
+      "legal_principle": "The father’s power to make a gift of joint family property was supported in this case by the continuing moral obligation to provide reasonably for his daughter; the Court held that the gift-over was necessarily invalid. The Court’s discussion of the daughter’s maintenance provision relied on the Hindu law texts and authorities cited in its analysis of reasonable gifts for daughters, including Vettorammal v. Poochammal (1912) 22 M.L.J. 321 and Ramalinga Annavi v. Narayana Annavi (1922) 49 I.A. 168.",
+      "rule": {
+        "if": "family_property_gift_dispute and daughter_receives_life_interest_for_maintenance and property_given_over_to_another_person",
+        "then": "gift_over_is_invalid"
+      },
+      "predicates": {
+        "family_property_gift_dispute": "A proceeding disputes a gift or provision made from family property.",
+        "daughter_receives_life_interest_for_maintenance": "A daughter receives a life interest in property as provision for her maintenance.",
+        "property_given_over_to_another_person": "The deed directs that the property pass to another person after the daughter’s life interest ends."
+      },
+      "definition": "When a daughter receives a maintenance life interest from family property and the deed gives the property over to another person afterward, the gift-over is invalid."
+    },
+    {
+      "legal_issue": "In the relevant regional law governing Sudras, an adopted son takes a smaller share than a natural-born son when they divide the family property.",
+      "material_facts": [
+        "The adopted son and a natural-born son born after the adoption were competing for shares in family property.",
+        "The family was governed by the law applied in the Bombay Presidency.",
+        "The Court proceeded on the assumption that the law applicable to Sudras applied to the community in question, without deciding whether that community was Sudra."
+      ],
+      "conclusion": "The adopted son was entitled to one-fifth of the family property, or one-fourth of the natural-born son’s share.",
+      "legal_principle": "The Court held that the Dattaka Chandrika rule of equal shares for an adopted son and an after-born natural son had not been followed in the Bombay Presidency. It maintained the established regional rule that the adopted son receives one-fifth of the property, equivalent to one-fourth of the natural-born son’s share. It relied on Giriapa v. Ningapa (1892) I.L.R. 17 Bom. 100 and Tukaram Mahadu v. Ramachandra Mahadu (1925) I.L.R. 49 Bom. 672, and distinguished Arumilli Perrazu v. Arumilli Subbarayadu (1921) 48 I.A. 280 as reflecting the rule followed in other regions. The Court also referred to Tirkangauda Mallangauda v. Shivappa Patil, I.L.R. 1943 Bom. 706, Gopal Narhar Safray v. Hanumant Ganesh Safray (1879) I.L.R. 3 Bom. 273, Gopalan v. Venkataraghavulu (1915) I.L.R. 40 Mad. 632, and Asita v. Nirode (1916) 20 C.W.N. 901.",
+      "rule": {
+        "if": "family_partition_share_dispute and adopted_son_competes_with_afterborn_natural_son and regional_rule_does_not_follow_equal_share_text",
+        "then": "adopted_son_receives_smaller_share_than_natural_born_son"
+      },
+      "predicates": {
+        "family_partition_share_dispute": "A proceeding determines shares in a family-property partition.",
+        "adopted_son_competes_with_afterborn_natural_son": "An adopted son competes for a share with a natural-born son born after the adoption.",
+        "regional_rule_does_not_follow_equal_share_text": "The governing regional rule does not follow the text that would give the adopted son an equal share."
+      },
+      "definition": "If an adopted son competes with an after-born natural son in a partition governed by a regional rule that does not require equal shares, the adopted son receives a smaller share."
+    }
+  ],
+  "seconds": 27.1
+}

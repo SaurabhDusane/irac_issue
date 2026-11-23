@@ -1,0 +1,84 @@
+{
+  "doc_id": "781706",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28409,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3966,
+    "prompt_tokens": 8128,
+    "total_tokens": 12094,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A prior suit does not bar a later statutory occupancy claim where it did not decide an issue between the claimant and the opposing party.",
+      "material_facts": [
+        "The claimants brought the occupancy-right suits before the other suits relied on as creating a bar.",
+        "In those other suits, the claimants and the opposing party were co-defendants, and no issue between them was tried or decided.",
+        "The other suits were dismissed for a technical defect, and an appeal was dismissed for non-appearance."
+      ],
+      "conclusion": "The prior suits did not bar the claimants from pursuing their occupancy-right claims.",
+      "legal_principle": "Res judicata did not apply because the prior suits had not adjudicated an issue between the claimants and the opposing party; the claimants had also filed their own suits before the allegedly preclusive suits.",
+      "rule": {
+        "if": "current_statutory_occupancy_suit and claimants_previously_sued and earlier_suits_ended_without_merits and no_issue_between_co_defendants_tried",
+        "then": "res_judicata_does_not_bar_current_claim"
+      },
+      "predicates": {
+        "current_statutory_occupancy_suit": "The claimants brought a suit seeking possession on the basis of recorded occupancy under a statutory land-reform scheme.",
+        "claimants_previously_sued": "The claimants had filed their own suits before the other suits relied on as preclusive were brought.",
+        "earlier_suits_ended_without_merits": "The earlier suits relied on as preclusive ended without a decision on their merits.",
+        "no_issue_between_co_defendants_tried": "The claimants and the opposing party were co-defendants in the earlier suits, and no issue between them was tried or decided."
+      },
+      "definition": "When claimants have already brought their statutory occupancy claim and the earlier suits ended without deciding an issue between them and the opposing party, those suits do not bar the claim."
+    },
+    {
+      "legal_issue": "An occupancy entry that was not corrected before vesting cannot later be challenged as incorrect for the purpose of the statutory occupancy claim.",
+      "material_facts": [
+        "The claimants were recorded as occupants in the relevant land record, in a remarks column, as persons in possession.",
+        "The opposing party alleged that the entry had been fraudulently made and relied on earlier doubts about the entry and a prosecution of the record-maker; the record-maker had been discharged.",
+        "No correction of the entry, or final order requiring its correction, had been made before vesting.",
+        "The court found no evidence in these proceedings establishing that the entry was irregularly made."
+      ],
+      "conclusion": "The opposing party could not challenge the correctness of the entry after vesting, and the entry could not be discarded in the occupancy claim.",
+      "legal_principle": "Section 20(b)(i) of the U.P. Zamindari Abolition and Land Reforms Act, 1950 makes the relevant khasra or khatauni entry the basis of the claim. Explanations II and III provide that a correction made before vesting, including one required by a final order or decree before vesting, prevails. The court also considered sections 28 and 33 of the U.P. Land Revenue Act, 1901, and paragraphs 85(c) and 87 of the Land Records Manual; the entry in the remarks column was consistent with paragraph 85(c).",
+      "rule": {
+        "if": "statutory_occupancy_claim and recorded_occupant_entry and no_final_record_correction_before_vesting and entry_not_shown_irregular",
+        "then": "later_challenge_to_entry_is_barred"
+      },
+      "predicates": {
+        "statutory_occupancy_claim": "A claimant seeks occupancy rights based on an entry in an official land record under a statutory land-reform scheme.",
+        "recorded_occupant_entry": "The claimant is recorded as an occupant in the relevant official land record.",
+        "no_final_record_correction_before_vesting": "No correction of the entry, or final order requiring its correction, was made before the land-reform scheme took effect.",
+        "entry_not_shown_irregular": "The party challenging the entry does not establish in the proceeding that it was irregularly made."
+      },
+      "definition": "If an occupancy claim relies on an official occupant entry that was not corrected before the scheme took effect and is not shown to have been irregularly made, a later challenge to that entry is barred."
+    },
+    {
+      "legal_issue": "A person recorded as an occupant in the relevant annual land record may claim statutory occupancy rights without separately proving actual possession, and an eligible occupant dispossessed after the statutory cutoff may regain possession.",
+      "material_facts": [
+        "The claimants were recorded as qabiz, meaning in possession, in the relevant annual khasra, in its remarks column.",
+        "The opposing party obtained possession on July 1, 1949, and the record showed no disturbance of the claimants’ possession between the relevant recording period and that transfer.",
+        "The land was later attached during criminal proceedings, but the claimants’ statutory occupancy suits rested on the earlier occupant entry.",
+        "The claimants were not intermediaries entitled to the land."
+      ],
+      "conclusion": "The claimants did not need to prove actual possession independently of the entry, and, as recorded occupants dispossessed after June 30, 1948, they were entitled to regain possession notwithstanding an order or decree to the contrary.",
+      "legal_principle": "Section 20(b)(i) and Explanation I to the U.P. Zamindari Abolition and Land Reforms Act, 1950 make the relevant annual khasra or khatauni entry the basis for adhivasi status and provide for regaining possession after eviction. Explanation IV excludes an intermediary. An occupant means a person in possession or actual enjoyment; mediate possession is immaterial unless the immediate possessor holds on behalf of the mediate possessor. The section does not require separate proof of actual possession in the recorded year. The court followed Lala Nanak Chand v. Board of Revenue, U.P., Ram Dular Singh v. Babu Sukh Ram, Bhal Singh v. Bhop, and Sugriva v. Mukhi; it noted that The Upper Ganges Sugar Mills Ltd. v. Khalil-ul-Rehman had left the possession question open.",
+      "rule": {
+        "if": "statutory_adhivasi_claim and recorded_occupant_in_relevant_year and not intermediary_claimant and (remained_in_possession or evicted_after_cutoff)",
+        "then": "recorded_occupant_is_entitled_to_retain_or_regain_possession_without_separate_possession_proof"
+      },
+      "predicates": {
+        "statutory_adhivasi_claim": "The proceeding seeks statutory occupancy status and possession on the basis of an official land-record entry.",
+        "recorded_occupant_in_relevant_year": "The claimant is recorded as an occupant in the land record for the year designated by the statutory scheme.",
+        "intermediary_claimant": "The claimant claims through an intermediary interest in the land rather than as the recorded occupant.",
+        "remained_in_possession": "The recorded occupant continued in possession of the land.",
+        "evicted_after_cutoff": "The recorded occupant was dispossessed after the statutory cutoff for eviction."
+      },
+      "definition": "A non-intermediary claimant in a statutory occupancy proceeding who is recorded as an occupant may retain possession or regain it after a qualifying eviction without separately proving actual possession."
+    }
+  ],
+  "seconds": 24.3
+}

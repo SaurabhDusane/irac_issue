@@ -1,0 +1,105 @@
+{
+  "doc_id": "231057",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22670,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3155,
+    "prompt_tokens": 6138,
+    "total_tokens": 9293,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A liquidator cannot execute a transfer on behalf of a company after its dissolution unless expressly authorized by statute.",
+      "material_facts": [
+        "The company agreed to sell its assets, including its leasehold interest, to a bank before the company was dissolved.",
+        "The liquidator executed the deed formally transferring the leasehold interest to the bank after the company had been dissolved.",
+        "The governing legislation gave the liquidator no express authority to act on behalf of the dissolved company."
+      ],
+      "conclusion": "The liquidator had no jurisdiction to execute the deed of sale after the company’s dissolution.",
+      "legal_principle": "Under the Indian Companies Act, 1913, dissolution ended the company’s existence, so the liquidator could not represent it or act for it unless expressly authorized by statute. Sections 209(H) and 244(B) did not authorize the deed in question after dissolution. Pulsford v. Demanish concerned a liquidator’s liability for breach of duty while functioning as liquidator; it did not establish that a liquidator could represent a dissolved company.",
+      "rule": {
+        "if": "corporate_asset_transfer_dispute and company_dissolved_before_deed and liquidator_executed_transfer_after_dissolution and not express_post_dissolution_authority",
+        "then": "liquidator_lacks_authority_to_transfer_for_dissolved_company"
+      },
+      "predicates": {
+        "corporate_asset_transfer_dispute": "The dispute concerns a transfer of property belonging to a company in liquidation.",
+        "company_dissolved_before_deed": "The company had been dissolved before the deed was executed.",
+        "liquidator_executed_transfer_after_dissolution": "The liquidator executed the deed on behalf of the company after its dissolution.",
+        "express_post_dissolution_authority": "The governing law expressly authorized the liquidator to act for the company after its dissolution.",
+        "liquidator_lacks_authority_to_transfer_for_dissolved_company": "The liquidator has no authority to transfer property on behalf of the dissolved company."
+      },
+      "definition": "When a company-property transfer dispute concerns a deed executed by a liquidator after the company’s dissolution, and no law expressly authorizes that post-dissolution act, the liquidator lacks authority to transfer for the dissolved company."
+    },
+    {
+      "legal_issue": "A dissolved corporation’s subsisting property interest passes to the government by escheat or as bona vacantia, making a private recovery claim based on that interest unmaintainable.",
+      "material_facts": [
+        "The company held a permanent leasehold interest when it was dissolved, and no lease term was shown to extinguish that interest upon dissolution.",
+        "The deed purporting to transfer the leasehold interest to the bank was executed only after the company’s dissolution.",
+        "The plaintiffs, as successors to the lessors, sought possession on the ground that the later transfer was invalid."
+      ],
+      "conclusion": "If the company had a subsisting leasehold interest when it was dissolved, that interest vested in the government by escheat or as bona vacantia, and the plaintiffs’ suit was not maintainable on that basis.",
+      "legal_principle": "The property of a dissolved corporation, like the property of an intestate who dies without lawful heirs, passes to the government by escheat or as bona vacantia, subject to any trusts or charges affecting it. The Court relied on M/s. Pierce Leslie & Co. Ltd. v. Violat Ouchterlony Wapshare. It distinguished Tulsi Ram Sahu v. Gur Dayal Singh and Mussamat Ramman Bibi v. Mathura Prasad, which concerned fixed-rate tenancies whose rights were extinguished by statute and reverted to the landlord, and referred to Sonet Kooer v. Himmat Bahadur, where a leasehold interest could pass to the Crown by escheat.",
+      "rule": {
+        "if": "private_recovery_claim_after_corporate_dissolution and corporation_had_subsisting_property_interest_at_dissolution",
+        "then": "lessor_successors_cannot_maintain_recovery_claim_based_on_that_interest"
+      },
+      "predicates": {
+        "private_recovery_claim_after_corporate_dissolution": "A private claimant seeks recovery of property following the dissolution of a corporation that held an interest in it.",
+        "corporation_had_subsisting_property_interest_at_dissolution": "The corporation still held the property interest when it was dissolved.",
+        "lessor_successors_cannot_maintain_recovery_claim_based_on_that_interest": "The lessors’ successors cannot maintain a recovery claim based on the corporation’s subsisting interest because that interest passed to the government."
+      },
+      "definition": "If a private recovery claim follows a corporation’s dissolution and the corporation still held the relevant property interest at dissolution, the lessors’ successors cannot maintain a recovery claim based on that interest."
+    },
+    {
+      "legal_issue": "A lessor’s successors who accept rent from a transferee’s predecessor and allow the transferee to act openly as an interest-holder may be estopped from denying the transferee’s interest.",
+      "material_facts": [
+        "The lessors’ predecessors demanded and accepted rent from the bank’s liquidator after the asserted transfer of the leasehold interest to the bank.",
+        "A later successor to those lessors also accepted rent from the bank’s liquidator.",
+        "The lessors’ predecessors did not object to the sale of the leasehold interest to the defendant.",
+        "The defendant obtained municipal permission and constructed on the land, while the plaintiffs, who lived nearby, raised no objection.",
+        "The plaintiffs later sued to recover possession by denying the defendant’s interest in the land."
+      ],
+      "conclusion": "The plaintiffs were estopped from contending that the defendant had no interest in the land; their right was to receive rent.",
+      "legal_principle": "The Court applied estoppel based on the lessors’ successors’ conduct: accepting rent from the bank’s liquidator indicated acceptance of the bank’s succession to the leasehold interest, while their failure to object to the sale and to construction on the land reinforced the parties’ common understanding that the defendant had succeeded to that interest. No statutory provision or earlier case was cited for this holding.",
+      "rule": {
+        "if": "possession_claim_denies_transferee_interest and lessor_successors_accepted_rent_from_transferee_predecessor and lessor_successors_did_not_object_to_sale and transferee_constructed_without_objection",
+        "then": "lessor_successors_are_estopped_from_denial_of_transferee_interest"
+      },
+      "predicates": {
+        "possession_claim_denies_transferee_interest": "The lessors’ successors bring a possession claim by denying the defendant’s interest in the property.",
+        "lessor_successors_accepted_rent_from_transferee_predecessor": "The lessors or their predecessors accepted rent from the transferee’s predecessor after the asserted transfer.",
+        "lessor_successors_did_not_object_to_sale": "The lessors’ successors did not object when the interest was sold to the defendant.",
+        "transferee_constructed_without_objection": "The defendant constructed on the property without objection from the lessors’ successors.",
+        "lessor_successors_are_estopped_from_denial_of_transferee_interest": "The lessors’ successors are barred from denying the defendant’s interest in the property."
+      },
+      "definition": "When lessors’ successors seek possession by denying a transferee’s interest after accepting rent from the transferee’s predecessor and allowing the sale and construction to proceed without objection, they are estopped from denying that interest."
+    },
+    {
+      "legal_issue": "The part-performance protection for an incomplete transfer is unavailable against a successor to the lessor who does not claim under the transferor.",
+      "material_facts": [
+        "The company-lessee entered into an agreement to transfer its leasehold interest, but the formal deed was executed after the company’s dissolution.",
+        "The plaintiffs claimed as successors to the lessors, not as persons claiming under the company-lessee that made the incomplete transfer.",
+        "The defendant relied on the part-performance protection in seeking to resist the plaintiffs’ claim."
+      ],
+      "conclusion": "Section 53A of the Transfer of Property Act did not apply against the plaintiffs because a successor to the lessor is not a person claiming under the lessee who made the incomplete transfer.",
+      "legal_principle": "Section 53A of the Transfer of Property Act protects a transferee against the transferor and persons claiming under the transferor. The Court held that a successor-in-interest of the lessor cannot be treated as a person claiming under the lessee who made the incomplete transfer.",
+      "rule": {
+        "if": "part_performance_defense_in_lease_transfer_dispute and claimant_is_successor_of_lessor and incomplete_transferor_is_lessee",
+        "then": "part_performance_protection_is_unavailable_against_lessor_successor"
+      },
+      "predicates": {
+        "part_performance_defense_in_lease_transfer_dispute": "A party invokes part-performance protection in a dispute about an incomplete transfer of a leasehold interest.",
+        "claimant_is_successor_of_lessor": "The opposing claimant derives title from the lessor rather than from the transferor.",
+        "incomplete_transferor_is_lessee": "The party that made the incomplete transfer was the lessee.",
+        "part_performance_protection_is_unavailable_against_lessor_successor": "Part-performance protection cannot be used against the successor to the lessor."
+      },
+      "definition": "If part-performance protection is invoked in a lease-transfer dispute against a claimant who succeeds to the lessor, and the incomplete transfer was made by the lessee, that protection is unavailable against the claimant."
+    }
+  ],
+  "seconds": 18.5
+}

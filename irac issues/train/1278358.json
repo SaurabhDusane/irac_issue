@@ -1,0 +1,75 @@
+{
+  "doc_id": "1278358",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12751,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2330,
+    "prompt_tokens": 3894,
+    "total_tokens": 6224,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A decree passed against a person who was insane when the suit was instituted, without appointment of a guardian to represent that person, is void.",
+      "material_facts": [
+        "The court found that the defendant was insane when the earlier suit was instituted.",
+        "The suit proceeded without appointment of a guardian-ad-litem for the defendant, and an ex parte decree was passed against him."
+      ],
+      "conclusion": "The decree was without jurisdiction and had to be treated as void, not merely voidable.",
+      "legal_principle": "Under Order 32, rule 15 of the Code of Civil Procedure, the principle that a decree against a minor without appointment of a guardian is void applies to a lunatic. The court relied on that established principle in holding the decree void.",
+      "rule": {
+        "if": "civil_suit_against_lunatic and defendant_insane_when_suit_instituted and guardian_not_appointed",
+        "then": "decree_void"
+      },
+      "predicates": {
+        "civil_suit_against_lunatic": "The proceeding is a civil suit brought against a person who is insane.",
+        "defendant_insane_when_suit_instituted": "The defendant was insane when the suit was instituted.",
+        "guardian_not_appointed": "No guardian was appointed to represent the defendant in the suit."
+      },
+      "definition": "When a civil suit is brought against a person who is insane at its institution and no guardian represents that person, the decree is void."
+    },
+    {
+      "legal_issue": "A sale conducted in execution of a decree that is void is itself void from the outset and conveys no rights to the purchaser.",
+      "material_facts": [
+        "The house was sold in execution of the decree passed against the defendant who was insane and unrepresented by a guardian.",
+        "The purchaser acquired the house at that execution sale, and the decree was void.",
+        "The purchaser's father had obtained formal delivery of possession, but the defendant continued to reside in the house."
+      ],
+      "conclusion": "The execution sale was void ab initio, the purchaser acquired no rights through it, and a claim based on the sale could be resisted without first having the sale set aside under Order 21, rules 89 to 91.",
+      "legal_principle": "A sale held in execution of a decree that is a nullity is itself void ab initio because the decree is treated as non-existent. Such a sale may be disregarded without an application to set it aside under Order 21, rules 89 to 91 of the Code of Civil Procedure. The court distinguished Janak Rai v. Gurdial Singh, where a valid decree existed when the sale was held, and relied on the distinction recognized in that case. It also considered Khiarajmal v. Daim and Malkarjun v. Narhari, rejecting the view that a stranger auction purchaser could acquire valid title under a sale held pursuant to a void decree.",
+      "rule": {
+        "if": "execution_sale_title_dispute and sale_held_under_decree_entered_against_unrepresented_lunatic",
+        "then": "execution_sale_void_and_purchaser_acquires_no_rights"
+      },
+      "predicates": {
+        "execution_sale_title_dispute": "The proceeding concerns a claim to title based on a sale conducted in execution of a judgment.",
+        "sale_held_under_decree_entered_against_unrepresented_lunatic": "The property was sold in execution of a decree entered against a person who was insane and had no guardian appointed to represent that person."
+      },
+      "definition": "In a dispute over title based on an execution sale, if the sale was conducted under a decree entered against an unrepresented person who was insane, the sale is void and the purchaser acquires no rights through it."
+    },
+    {
+      "legal_issue": "Property of a person who dies without an heir passes by escheat to the sovereign under the applicable Hindu-law principle.",
+      "material_facts": [
+        "The defendant died without leaving an heir.",
+        "The defendant had been a subject of the Maharaja, whose servants took possession of the house after his death.",
+        "The purchaser's claim to the house rested on an execution sale that was void."
+      ],
+      "conclusion": "The property passed by escheat to the Maharaja.",
+      "legal_principle": "The court applied the Hindu-law principle that property passes by escheat when its owner dies without leaving an heir, referring to Mulla's Hindu Law, 13th Edition, paragraph 59.",
+      "rule": {
+        "if": "property_title_dispute_after_owner_death and owner_died_without_heir",
+        "then": "property_passes_by_escheat_to_sovereign"
+      },
+      "predicates": {
+        "property_title_dispute_after_owner_death": "The proceeding concerns the title to property after its owner has died.",
+        "owner_died_without_heir": "The owner died without leaving an heir."
+      },
+      "definition": "When a property-title dispute follows the owner's death and the owner left no heir, the property passes by escheat to the sovereign."
+    }
+  ],
+  "seconds": 15.5
+}

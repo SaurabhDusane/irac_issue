@@ -1,0 +1,118 @@
+{
+  "doc_id": "1532286",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30110,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3361,
+    "prompt_tokens": 7909,
+    "total_tokens": 11270,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A reference seeking enhanced land-acquisition compensation is an original proceeding in which market value must be determined afresh on evidence produced and proved before the court.",
+      "material_facts": [
+        "The landowner challenged the compensation offered by the acquisition officer and sought a reference for determination of market value.",
+        "The trial court had treated the acquisition officer’s award substantially as a judgment under appeal."
+      ],
+      "conclusion": "The reference court must determine market value afresh and cannot treat the acquisition officer’s award as an appellate decision or rely on material used for that award unless that material is produced and proved before it.",
+      "legal_principle": "Under section 18 of the Land Acquisition Act, a reference is not an appeal against the acquisition officer’s award. The claimant is in the position of a plaintiff who must show that the offer is inadequate on the material produced in court; material produced and proved by either side may be considered.",
+      "rule": {
+        "if": "land_acquisition_reference and claimant_seeks_higher_compensation",
+        "then": "court_determines_market_value_afresh"
+      },
+      "predicates": {
+        "land_acquisition_reference": "A landowner brings a reference seeking judicial determination of compensation for acquired land.",
+        "claimant_seeks_higher_compensation": "The landowner contends that the compensation offered for the land is inadequate."
+      },
+      "definition": "When a landowner seeks higher compensation through a reference, the court determines market value afresh."
+    },
+    {
+      "legal_issue": "Market value in a land-acquisition reference is determined by comparing genuine, suitably proximate transactions and adjusting for material differences between the compared land and the acquired land.",
+      "material_facts": [
+        "The court set out general valuation guidance for determining the market value of acquired land.",
+        "The valuation compared the acquired land with sale instances and considered differences including parcel size, road access, development, and interior location."
+      ],
+      "conclusion": "The court must identify genuine and sufficiently comparable instances, use them as a measure of market value, and make suitable adjustments for relevant plus and minus factors in a common-sense manner.",
+      "legal_principle": "The market value is assessed as of the publication of the section 4 notification, from the standpoint of a willing hypothetical purchaser and seller. Genuine instances are assessed for proximity in time and situation; post-notification instances may be used when sufficiently proximate and genuine and when the acquisition did not motivate the price. Relevant differences are adjusted as a prudent purchaser would assess them. The court stated these principles under the Land Acquisition Act without relying on an earlier case.",
+      "rule": {
+        "if": "land_acquisition_reference and genuine_comparable_transactions_exist and material_land_differences_exist",
+        "then": "market_value_is_assessed_from_comparable_transactions_with_contextual_adjustments"
+      },
+      "predicates": {
+        "land_acquisition_reference": "A court determines compensation for acquired land in a reference proceeding.",
+        "genuine_comparable_transactions_exist": "The evidence contains genuine transactions involving land that can provide an indication of market value.",
+        "material_land_differences_exist": "The acquired land differs from the compared land in features that would affect a prudent purchaser’s price."
+      },
+      "definition": "Where a reference includes genuine comparable transactions and material differences between the lands, market value is assessed using those transactions with contextual adjustments."
+    },
+    {
+      "legal_issue": "A case-specific allowance for the size of a large acquired block and a valuation reflecting its inferior location are not displaced merely because a different allowance or valuation is urged.",
+      "material_facts": [
+        "The acquired parcel was a large block for which land would need to be set aside for roads and other purposes.",
+        "The parcel lay in the interior among undeveloped land, away from roads and developed areas.",
+        "The High Court assessed the parcel’s value and made a case-specific allowance for land required for roads and open spaces.",
+        "The Supreme Court found no material showing that the High Court’s assessment of the parcel’s value or its allowance for the large block was erroneous."
+      ],
+      "conclusion": "The High Court’s assessment of the land’s value and its allowance for the large block were upheld as factual determinations made on the circumstances of the case.",
+      "legal_principle": "A deduction for land needed for roads, open spaces, and subdivision may be appropriate for a large block, but there is no fixed percentage; the amount depends on the facts, including the block’s shape, size, and situation. Valuation and such deductions are essentially factual matters. The court applied its general guidance under the Land Acquisition Act and cited no earlier case on this issue.",
+      "rule": {
+        "if": "land_acquisition_appeal and large_block_requires_infrastructure_land and valuation_accounts_for_location_and_development and no_material_shows_valuation_error",
+        "then": "case_specific_valuation_and_allowance_are_upheld"
+      },
+      "predicates": {
+        "land_acquisition_appeal": "A party appeals a court’s determination of compensation for acquired land.",
+        "large_block_requires_infrastructure_land": "The acquired parcel is large enough that land must be allowed for infrastructure or subdivision.",
+        "valuation_accounts_for_location_and_development": "The valuation reflects the parcel’s location and its prospects for development.",
+        "no_material_shows_valuation_error": "The record supplies no material demonstrating that the challenged valuation or allowance is erroneous."
+      },
+      "definition": "In an appeal about compensation for a large parcel, a case-specific valuation and allowance are upheld when they account for location and development and the record does not show error."
+    },
+    {
+      "legal_issue": "A valuation that already accounts for an interior location and delayed development cannot be reduced again by discounting that same factor through the value assigned to the interior land in the future.",
+      "material_facts": [
+        "The High Court valued the interior parcel at a lower rate than land nearer roads and developed areas, taking account of the time expected for development to reach it.",
+        "The High Court then discounted that interior-land value again for the same expected waiting period.",
+        "The court reasoned that, by the time development reached the parcel, it would be adjoining developed land rather than interior land."
+      ],
+      "conclusion": "The interior-land valuation was accepted, but the additional discount was erroneous; the relevant future value was the value of land adjoining the developed area, discounted to present value, rather than a further discount of the already reduced interior-land value.",
+      "legal_principle": "When a valuation already reflects the inferior situation and development delay, the same factors cannot be counted again by discounting that reduced value for the waiting period. If future value is discounted, it must be the value the land would have when development reaches it. The court applied its land-valuation guidance and referred to Miram’s Table 7 in A.K. Mitra’s Theory and Practice of Valuation; it cited no earlier case on this issue.",
+      "rule": {
+        "if": "land_acquisition_appeal and interior_location_is_reflected_in_lower_current_valuation and development_delay_is_also_reflected_in_that_valuation and same_delay_is_discounted_again",
+        "then": "duplicate_discount_for_location_and_development_delay_is_not_permitted"
+      },
+      "predicates": {
+        "land_acquisition_appeal": "A party appeals a court’s determination of compensation for acquired land.",
+        "interior_location_is_reflected_in_lower_current_valuation": "The land is valued below better-situated land because it is in the interior.",
+        "development_delay_is_also_reflected_in_that_valuation": "The lower valuation also accounts for the time expected for development to reach the land.",
+        "same_delay_is_discounted_again": "The valuation applies a further reduction for the same expected delay after that delay has already informed the lower valuation."
+      },
+      "definition": "When an interior location and development delay have already lowered a valuation, applying another reduction for that same delay is not permitted."
+    },
+    {
+      "legal_issue": "Enhanced statutory solatium and interest apply to a pending land-acquisition appeal only if the governing interpretation gives the amendments retrospective effect for the relevant class of awards.",
+      "material_facts": [
+        "The appeals were pending before the Supreme Court on the specified cutoff date.",
+        "The underlying award fell within the period whose treatment under the amendments was in dispute.",
+        "A Constitution Bench was expected to decide whether the amendments applied retrospectively to that class of appeal."
+      ],
+      "conclusion": "The landowner’s entitlement was left conditional: the enhanced benefits would apply if the Constitution Bench adopted the view in Bhag Singh and overruled Kamalajammanniavaru, and would not apply if it affirmed Kamalajammanniavaru.",
+      "legal_principle": "Section 30(2) of the Land Acquisition Act, read with amended sections 23(2) and 28, governs the transitional entitlement. The court made its conclusion depend on the pending Constitution Bench decision, describing the competing interpretations in Bhag Singh, (1985) 3 SCC 737, and Kamalajammanniavaru, (1985) 1 SCC 582.",
+      "rule": {
+        "if": "land_acquisition_appeal_pending_on_applicable_cutoff and award_falls_within_disputed_transition_class and later_binding_ruling_supports_retrospective_application",
+        "then": "enhanced_statutory_benefits_apply"
+      },
+      "predicates": {
+        "land_acquisition_appeal_pending_on_applicable_cutoff": "The appeal concerning land-acquisition compensation was pending on the applicable cutoff date.",
+        "award_falls_within_disputed_transition_class": "The award belongs to the class for which the retrospective reach of the amendments is disputed.",
+        "later_binding_ruling_supports_retrospective_application": "A later binding ruling adopts the interpretation that the amendments apply retrospectively to that class of case."
+      },
+      "definition": "Enhanced statutory benefits apply when an appeal was pending on the applicable cutoff, the award is within the disputed class, and a later binding ruling supports retrospective application."
+    }
+  ],
+  "seconds": 20.8
+}

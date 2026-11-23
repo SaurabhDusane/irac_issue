@@ -1,0 +1,83 @@
+{
+  "doc_id": "1141880",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21266,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3125,
+    "prompt_tokens": 6008,
+    "total_tokens": 9133,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A factual defence that was not pleaded and was admitted at trial cannot be raised for the first time at an appellate stage.",
+      "material_facts": [
+        "The landlord pleaded that the sweetmeat business he wished to move to the disputed shop was his own business.",
+        "The tenants admitted that allegation in their written statement and did not contest it at trial.",
+        "No issue was framed and no evidence was led on whether the business belonged to a joint family.",
+        "The tenants first argued at a late appellate stage that the business belonged to the landlord’s joint family."
+      ],
+      "conclusion": "The new factual defence could not be entertained at the appellate stage.",
+      "legal_principle": "A claim or defence not put forward in the pleadings cannot be supported by evidence, and a new factual contention cannot be raised for the first time on appeal. The Court relied on Siddik Mahomed Shah v. Mt. Saran, Bhagat Singh v. Jaswant Singh, and Bachan Singh v. Dhian Dass.",
+      "rule": {
+        "if": "appellate_stage_in_eviction_case and business_ownership_admitted_in_pleadings and no_issue_or_evidence_on_ownership and new_factual_defence_first_raised_on_appeal",
+        "then": "new_factual_defence_is_not_considered"
+      },
+      "predicates": {
+        "appellate_stage_in_eviction_case": "The dispute is being considered at an appellate stage in an eviction case.",
+        "business_ownership_admitted_in_pleadings": "The opposing party admitted in its pleadings that the business relied on for the eviction claim belonged to the claimant.",
+        "no_issue_or_evidence_on_ownership": "No issue was framed and no evidence was presented on the disputed ownership of the business at trial.",
+        "new_factual_defence_first_raised_on_appeal": "A party first raised on appeal a factual defence about who owned the business."
+      },
+      "definition": "When an appeal in an eviction case concerns a business ownership point admitted in the pleadings and not tried as an issue, a factual defence first raised on appeal is not considered."
+    },
+    {
+      "legal_issue": "A landlord’s occupation of another rented shop does not, by itself, disqualify the landlord from seeking eviction for a business need where the required alternative accommodation must be the landlord’s own and in the landlord’s occupation.",
+      "material_facts": [
+        "The landlord sought to move his sweetmeat business from a rented shop into the premises occupied by the tenants.",
+        "The landlord was in occupation of the other shop, but that shop was rented and was not owned by him.",
+        "The first appellate court found that the landlord bona fide required the disputed shop for his business."
+      ],
+      "conclusion": "The rented shop occupied by the landlord was not a sufficient ground to deny eviction under Section 12(1)(f).",
+      "legal_principle": "Section 12(1)(f) of the Madhya Pradesh Accommodation Control Act, 1961 requires that the landlord have no other reasonably suitable non-residential accommodation of his own in his occupation. The accommodation must both belong to the landlord and be in the landlord’s occupation; occupation of a rented shop alone is insufficient. This differs from Section 4(h) of the Madhya Pradesh Accommodation Control Act, 1955, which referred to the landlord being in occupation of other accommodation.",
+      "rule": {
+        "if": "business_need_eviction_case and landlord_occupies_alternative_shop and alternative_shop_is_rented_not_owned",
+        "then": "rented_alternative_accommodation_does_not_bar_eviction"
+      },
+      "predicates": {
+        "business_need_eviction_case": "The landlord seeks eviction of non-residential premises to use them for the landlord’s business.",
+        "landlord_occupies_alternative_shop": "The landlord occupies another shop in the same city or town.",
+        "alternative_shop_is_rented_not_owned": "The other shop is rented by the landlord and does not belong to the landlord."
+      },
+      "definition": "In a business-need eviction case, the landlord’s occupation of another rented shop that the landlord does not own does not bar eviction on that ground."
+    },
+    {
+      "legal_issue": "A tenant protected by rent-control law does not become a wrongful occupant merely because the contractual tenancy has ended, and damages for occupation are recoverable only for occupation after an eviction decree.",
+      "material_facts": [
+        "The contractual tenancy was terminated before the eviction decree was made.",
+        "The tenants remained in possession after termination of the contractual tenancy.",
+        "The first appellate court made the eviction decree, and the tenants remained in possession thereafter until delivery of the premises.",
+        "The lower courts had awarded damages from the date following termination of the contractual tenancy."
+      ],
+      "conclusion": "The tenants were not liable for damages for occupation before the eviction decree; damages were payable only for occupation after the decree until possession was delivered.",
+      "legal_principle": "Under Sections 2(1) and 13(1) of the Madhya Pradesh Accommodation Control Act, 1961, a person continuing in possession after termination of the contractual tenancy remains a tenant unless and until an eviction order or decree is made. The Court relied on Damadilal v. Parashram, overruled Kikabhai Abdul Hussain v. Kamlakar on the relevant point, and distinguished Ganga Dutt Murarka v. Kartik Chandra Das.",
+      "rule": {
+        "if": "rent_control_eviction_case and contractual_tenancy_ended and occupant_remained_in_possession_after_termination and eviction_decree_passed and occupant_remained_in_possession_after_decree",
+        "then": "damages_are_confined_to_post_decree_occupation"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The proceeding is an eviction case governed by rent-control protections.",
+        "contractual_tenancy_ended": "The contractual tenancy ended before an eviction decree was made.",
+        "occupant_remained_in_possession_after_termination": "The occupant continued to possess the premises after the contractual tenancy ended.",
+        "eviction_decree_passed": "A court made a decree requiring the occupant to leave the premises.",
+        "occupant_remained_in_possession_after_decree": "The occupant continued to possess the premises after the eviction decree was made."
+      },
+      "definition": "Where a rent-control eviction case involves continued possession after the end of a contractual tenancy and after an eviction decree, damages are confined to the post-decree occupation."
+    }
+  ],
+  "seconds": 20.6
+}

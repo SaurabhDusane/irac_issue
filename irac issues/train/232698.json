@@ -1,0 +1,96 @@
+{
+  "doc_id": "232698",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 34685,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2650,
+    "prompt_tokens": 8924,
+    "total_tokens": 11574,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Oral examination of parties during a civil suit is limited to clarifying matters in controversy and cannot replace the ordinary trial process.",
+      "material_facts": [
+        "The dispute concerned whether an agreement and receipt had been executed and whether money had been advanced under it.",
+        "The court examined a party during the suit before the parties had presented their evidence at trial."
+      ],
+      "conclusion": "The examination could be used to clarify matters in controversy, but not to record evidence, secure admissions, or conduct selective cross-examination in place of the ordinary trial procedure.",
+      "legal_principle": "Order 10 Rules 1 and 2 of the Code of Civil Procedure distinguish ascertaining admissions or denials from elucidating matters in controversy. An examination under Order 10 Rule 2 is not on oath and is not a substitute for examination under Order 18. The Privy Council in Manmohan Das v. Mt. Ramdei and the Madras High Court in Arunagiri Goundan v. Vasantharoya Koundan held that this power should not supersede the ordinary procedure at trial.",
+      "rule": {
+        "if": "civil_suit_party_examination and court_seeks_to_clarify_controversy",
+        "then": "court_examination_is_limited_to_clarifying_controversy"
+      },
+      "predicates": {
+        "civil_suit_party_examination": "A court examines a party during a civil suit.",
+        "court_seeks_to_clarify_controversy": "The court uses the examination to clarify matters that remain in controversy."
+      },
+      "definition": "When a court examines a party in a civil suit to clarify contested matters, the examination is confined to clarifying those matters."
+    },
+    {
+      "legal_issue": "A court may not use a concealed portion of a disputed, unexhibited document to confront a party during a preliminary examination and elicit identification of a signature or stamp.",
+      "material_facts": [
+        "The defendants denied executing the disputed agreement and receipt and alleged that the signatures were forged.",
+        "During a preliminary examination, the court covered the document's other contents and showed the party only the signature and company stamp for identification.",
+        "The party identified the signature and stamp, and the court treated the response as an admission concerning the document."
+      ],
+      "conclusion": "Confronting the party in that manner was beyond the permissible scope of the examination, and the answer had to be excluded from consideration and disregarded.",
+      "legal_principle": "Order 10 Rule 2 of the Code of Civil Procedure permits examination to identify matters in controversy, not to prove or disprove a document or cross-examine a party. Order 12 Rule 3A permits the court to call upon a party to admit a document, but does not authorize cross-examination about it. The court held that covering parts of a disputed, unexhibited document to expose only its signature or stamp exceeded those powers.",
+      "rule": {
+        "if": "civil_suit_party_examination and document_is_disputed_and_unexhibited and document_contents_are_concealed and court_asks_party_to_identify_signature_or_stamp",
+        "then": "concealed_document_confrontation_is_impermissible_and_answer_must_be_disregarded"
+      },
+      "predicates": {
+        "civil_suit_party_examination": "A court examines a party during a civil suit.",
+        "document_is_disputed_and_unexhibited": "A document whose authenticity or execution is disputed has not been admitted as an exhibit.",
+        "document_contents_are_concealed": "The court covers part of the document so that the party cannot see its full contents.",
+        "court_asks_party_to_identify_signature_or_stamp": "The court asks the party to identify a signature or stamp shown on the concealed document."
+      },
+      "definition": "If a court conducting a civil-suit examination conceals the contents of a disputed, unexhibited document and asks a party to identify its signature or stamp, that confrontation is impermissible and the answer must be disregarded."
+    },
+    {
+      "legal_issue": "A party's identification of a signature as their own does not, by itself, amount to an admission that they executed the document or accepted its contents.",
+      "material_facts": [
+        "The defendants denied executing the agreement and receipt and claimed that the signature was a clever forgery.",
+        "The party identified a signature shown without the rest of the document as their own.",
+        "The court treated that identification as an admission of execution."
+      ],
+      "conclusion": "Identification of the signature was not an admission of execution of the agreement or of its contents.",
+      "legal_principle": "An admission must be a conscious and deliberate act, and an admission that a signature is one's own is distinct from an admission that the document was executed or that its contents are true. The genuineness of an allegedly forged signature must be determined on the evidence, including expert evidence and testimony tested by cross-examination.",
+      "rule": {
+        "if": "civil_suit_party_examination and party_identifies_signature_on_disputed_document and execution_is_denied",
+        "then": "signature_identification_does_not_establish_document_execution"
+      },
+      "predicates": {
+        "civil_suit_party_examination": "A court examines a party during a civil suit.",
+        "party_identifies_signature_on_disputed_document": "A party identifies a signature appearing on a document whose authenticity or execution is disputed.",
+        "execution_is_denied": "The party has denied executing the document."
+      },
+      "definition": "When a party in a civil suit identifies a signature on a disputed document but denies executing it, the identification alone does not establish execution."
+    },
+    {
+      "legal_issue": "A party cannot be prosecuted for false evidence solely on the basis of an answer given during a preliminary, unsworn examination in a civil suit.",
+      "material_facts": [
+        "A party answered a question during a preliminary examination in the civil suit, not while giving evidence under oath.",
+        "The court proposed considering proceedings against the party on the basis of that answer.",
+        "The court had not found that the party made a false statement in the examination."
+      ],
+      "conclusion": "Proceedings for false evidence could not be initiated on the basis of the answer; considering such proceedings on that basis was without jurisdiction.",
+      "legal_principle": "Section 340 of the Code of Criminal Procedure, read with Section 195(1)(b) of that Code and Section 195 of the Indian Penal Code, concerns an inquiry and complaint in relation to offences involving the giving or fabrication of false evidence. An answer under Order 10 Rule 2 of the Code of Civil Procedure is unsworn and is not testimony by a witness, so it cannot attract those provisions. The Court rejected the contrary view in Satish Kumar v. Union of India and distinguished B.K. Gupta v. Damodar H. Bajaj, which concerned false affidavits or evidence.",
+      "rule": {
+        "if": "civil_suit_preliminary_party_examination and answer_is_unsworn_and_not_testimony",
+        "then": "false_evidence_prosecution_cannot_be_based_on_the_answer"
+      },
+      "predicates": {
+        "civil_suit_preliminary_party_examination": "A party gives an answer during a preliminary examination in a civil suit.",
+        "answer_is_unsworn_and_not_testimony": "The party gives the answer without being under oath and is not then giving testimony as a witness."
+      },
+      "definition": "An unsworn answer given by a party during a preliminary examination in a civil suit cannot itself be the basis for a false-evidence prosecution."
+    }
+  ],
+  "seconds": 16.3
+}

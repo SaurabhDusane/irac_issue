@@ -1,0 +1,61 @@
+{
+  "doc_id": "1289043",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16778,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2218,
+    "prompt_tokens": 4664,
+    "total_tokens": 6882,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An advance payment of rent received in excess of the statutory limit may be applied to later rent arrears without a further request by the tenant when no agreement makes such a request a condition of adjustment.",
+      "material_facts": [
+        "The tenant paid two months’ rent in advance when the tenancy began, although the landlord could lawfully receive no more than one month’s rent in advance.",
+        "The advance was understood to be available for set-off against rent whenever necessary or required; there was no agreement requiring the tenant to request adjustment, and no other debt between the parties.",
+        "The landlord sought eviction for non-payment of rent for two months, and the advance was sufficient to cover those arrears."
+      ],
+      "conclusion": "The advance could be appropriated towards the rent arrears without a further request by the tenant, so the tenant was not in default for two months and was not liable to eviction on that ground.",
+      "legal_principle": "Section 3 of the Bihar Building (Lease, Rent and Eviction) Control Act, 1947 prohibited a landlord from receiving more than one month’s rent in advance, and section 11(1)(d) permitted eviction for failure to pay two months’ rent. In applying those provisions, the Court relied on Mohd. Salimuddin v. Misri Lal, which allowed an advance made in violation of section 3 to be adjusted against subsequently accruing rent. The Court distinguished Budhwanti v. Gulab Chand Prasad, where eviction was sustained on bona fide requirement, and did not decide the general correctness of the Patna High Court’s broader observation in Gulab Chand Prasad v. Budhwanti.",
+      "rule": {
+        "if": "rent_control_eviction_for_rent_default and landlord_received_excess_advance_rent and advance_available_for_setoff and not tenant_request_required_by_agreement and advance_covers_rent_arrears",
+        "then": "tenant_not_evictable_for_rent_default"
+      },
+      "predicates": {
+        "rent_control_eviction_for_rent_default": "A landlord seeks eviction in a rent-control proceeding on the ground that the tenant failed to pay rent.",
+        "landlord_received_excess_advance_rent": "The landlord received rent in advance beyond the amount the law permits.",
+        "advance_available_for_setoff": "The parties’ arrangement made the advance available to be set off against rent when necessary or required.",
+        "tenant_request_required_by_agreement": "The parties agreed that adjustment could occur only if the tenant requested it.",
+        "advance_covers_rent_arrears": "The advance is sufficient to cover the rent arrears relied on for eviction."
+      },
+      "definition": "When a landlord seeks rent-default eviction, an excess advance available for set-off that covers the arrears defeats that ground if adjustment does not depend on a tenant’s request."
+    },
+    {
+      "legal_issue": "The doctrine of in pari delicto does not prevent a tenant from relying on an unlawfully received advance payment of rent to seek adjustment against rent arrears.",
+      "material_facts": [
+        "The landlord received two months’ rent in advance even though the law prohibited receiving more than one month’s rent in advance.",
+        "The tenant relied on the advance as a credit against the later rent arrears in an eviction proceeding based on non-payment.",
+        "The payment was rent in advance, not excess rent paid over a long period under an agreement to enhance rent unlawfully."
+      ],
+      "conclusion": "The tenant could rely on the statutory prohibition and claim adjustment of the advance; the doctrine of in pari delicto did not bar that claim.",
+      "legal_principle": "Section 3 of the Bihar Building (Lease, Rent and Eviction) Control Act, 1947 prohibited the landlord from receiving more than one month’s rent in advance. Following Mohd. Salimuddin v. Misri Lal, the Court held that the doctrine of in pari delicto did not prevent adjustment of an advance made in violation of that prohibition. It distinguished Budhwanti v. Gulab Chand Prasad, which did not decide the default or adjustment question, and declined to decide the broader issue concerning excess rent paid over a long period under an illegal rent-enhancement agreement discussed in Gulab Chand Prasad v. Budhwanti.",
+      "rule": {
+        "if": "rent_control_eviction_for_rent_default and landlord_received_prohibited_advance_rent and tenant_seeks_adjustment_of_advance and advance_was_rent_not_prolonged_illegal_enhancement",
+        "then": "in_pari_delicto_does_not_bar_adjustment"
+      },
+      "predicates": {
+        "rent_control_eviction_for_rent_default": "A landlord seeks eviction in a rent-control proceeding on the ground that the tenant failed to pay rent.",
+        "landlord_received_prohibited_advance_rent": "The landlord received an advance payment of rent that the law prohibited the landlord from receiving.",
+        "tenant_seeks_adjustment_of_advance": "The tenant seeks to credit the advance against rent arrears.",
+        "advance_was_rent_not_prolonged_illegal_enhancement": "The payment was rent paid in advance, rather than excess rent paid over a long period under an agreement to increase rent unlawfully."
+      },
+      "definition": "In a rent-default eviction proceeding, the doctrine does not bar a tenant from seeking adjustment of prohibited advance rent when the payment was rent in advance rather than prolonged unlawful rent enhancement."
+    }
+  ],
+  "seconds": 13.2
+}

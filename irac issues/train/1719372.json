@@ -1,0 +1,102 @@
+{
+  "doc_id": "1719372",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26365,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2988,
+    "prompt_tokens": 6967,
+    "total_tokens": 9955,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A High Court reviewing an eviction decree cannot reopen a concurrent finding on an independent ground after holding that the decree based on rent default cannot stand, where the finding presents no substantial question of law in a second appeal or no jurisdictional error in revision.",
+      "material_facts": [
+        "The trial court and first appellate court both found that the alleged construction did not establish a ground for eviction based on material alteration.",
+        "During the second appeal, the tenant deposited the rent, interest and costs determined by the court within the period allowed under the amended Act.",
+        "The High Court held that the appellate decree based on rent default could not stand, but then reconsidered the concurrent finding on material alteration and dismissed the second appeal."
+      ],
+      "conclusion": "The High Court could not reopen the concurrent finding after holding that the rent-default basis for the appellate decree was unsustainable; its judgment was set aside and the trial court's decree dismissing the eviction suit was restored.",
+      "legal_principle": "Under Section 100 of the Code of Civil Procedure, a second appeal does not permit reconsideration of a factual finding that raises no substantial question of law; a respondent who has not filed a cross-objection cannot use the second appeal to challenge that finding. If the High Court is exercising revisional jurisdiction under the proviso to Section 22(2) of the Rajasthan Premises (Control of Rents and Eviction) Act, it cannot interfere with concurrent findings absent an error in the exercise of jurisdiction by the courts below. Gian Chand v. K.B. Lal was referred to, and Raghunath v. Kedar Nath was followed.",
+      "rule": {
+        "if": "high_court_review_of_eviction_decree and default_ground_rendered_unsustainable and ((second_appeal and no_substantial_question_on_concurrent_finding) or (revision and no_jurisdictional_error_in_lower_finding))",
+        "then": "high_court_must_not_reopen_concurrent_finding"
+      },
+      "predicates": {
+        "high_court_review_of_eviction_decree": "The High Court reviewed a decree in an eviction proceeding.",
+        "default_ground_rendered_unsustainable": "The tenant completed the payment required by the court, so the decree based on rent default could not stand.",
+        "second_appeal": "The High Court considered the matter as a second appeal.",
+        "no_substantial_question_on_concurrent_finding": "The challenged concurrent finding was factual, or at most mixed law and fact, and raised no substantial question of law.",
+        "revision": "The High Court considered the matter in its revisional jurisdiction.",
+        "no_jurisdictional_error_in_lower_finding": "The concurrent finding did not result from an error in the exercise of jurisdiction by the lower courts."
+      },
+      "definition": "When the High Court reviews an eviction decree, the rent-default basis has become unsustainable, and neither the second-appeal nor revisional conditions for disturbing a concurrent finding are met, it must not reopen that finding."
+    },
+    {
+      "legal_issue": "A respondent cannot sustain an eviction decree on a separate, rejected ground that did not form the basis of the decree when the respondent did not challenge that finding by cross-objection.",
+      "material_facts": [
+        "The landlord sought eviction on several distinct grounds, and the lower courts rejected the ground concerning material alteration.",
+        "The first appellate court granted eviction only after striking off the tenant's defence for rent default.",
+        "The landlord did not file a cross-objection challenging the finding on material alteration in the second appeal."
+      ],
+      "conclusion": "The landlord could not support the appellate eviction decree by relying on the rejected material-alteration ground.",
+      "legal_principle": "Where a party accepts an adverse finding and does not appeal or file a cross-objection, that party cannot obtain relief inconsistent with that finding. The Court applied Raghunath v. Kedar Nath.",
+      "rule": {
+        "if": "appeal_reviewing_eviction_decree and decree_based_on_one_ground and separate_eviction_ground_rejected_below and no_cross_objection_on_rejected_ground",
+        "then": "respondent_cannot_support_decree_on_rejected_ground"
+      },
+      "predicates": {
+        "appeal_reviewing_eviction_decree": "A court reviewed an eviction decree on appeal.",
+        "decree_based_on_one_ground": "The decree under review was granted on one ground distinct from another ground advanced for eviction.",
+        "separate_eviction_ground_rejected_below": "The lower courts rejected the separate ground that the respondent later relied on.",
+        "no_cross_objection_on_rejected_ground": "The respondent did not file a cross-objection challenging the rejection of that ground."
+      },
+      "definition": "If an eviction decree rests on one ground, another ground was rejected below, and the respondent did not cross-object to that rejection, the respondent cannot use the rejected ground to support the decree."
+    },
+    {
+      "legal_issue": "A finding that raising the height of walls constitutes material alteration cannot stand when the record lacks evidence about the relevant dimensions of the premises and the finding is drawn by the reviewing court itself.",
+      "material_facts": [
+        "The tenant had raised the walls of the enclosed open space from about five feet to about eleven feet.",
+        "The trial court and first appellate court found that the construction did not amount to material alteration.",
+        "The record contained no details about the dimensions of the plot or the constructed portion, but the High Court concluded that the increased wall height was material alteration."
+      ],
+      "conclusion": "The High Court's finding that the construction constituted material alteration was unsupported by evidence and could not stand.",
+      "legal_principle": "Section 13(c) of the Rajasthan Premises (Control of Rents and Eviction) Act concerns material alteration. A court cannot conclude that construction amounts to material alteration without evidentiary support for the relevant physical circumstances; the High Court's conclusion here was made without evidence about the dimensions of the premises.",
+      "rule": {
+        "if": "high_court_review_of_eviction_decree and wall_height_increased and premises_dimensions_absent_from_record and lower_courts_rejected_material_alteration",
+        "then": "unsupported_material_alteration_finding_cannot_stand"
+      },
+      "predicates": {
+        "high_court_review_of_eviction_decree": "The High Court reviewed an eviction proceeding involving an allegation of material alteration.",
+        "wall_height_increased": "The tenant increased the height of walls on the leased premises.",
+        "premises_dimensions_absent_from_record": "The evidence did not establish the dimensions of the plot or the constructed portion.",
+        "lower_courts_rejected_material_alteration": "The lower courts found that the construction did not constitute material alteration."
+      },
+      "definition": "When a reviewing court finds material alteration from increased wall height despite missing evidence about the premises' dimensions and contrary findings below, that unsupported finding cannot stand."
+    },
+    {
+      "legal_issue": "A tenant who makes the payment required under the amended rent-control provision within the court-fixed period is treated as having committed no default for purposes of the rent-default eviction proceeding.",
+      "material_facts": [
+        "While the second appeal was pending, the tenant invoked the amended provision for determining rent, interest and costs.",
+        "The court determined the amount, and the tenant deposited it within the period fixed by the court.",
+        "The High Court held that the appellate decree striking off the defence and granting eviction for rent default could not stand."
+      ],
+      "conclusion": "The rent-default basis for striking off the tenant's defence and granting eviction could not be sustained after the tenant complied with the amended provision.",
+      "legal_principle": "Section 13A(b) of the Rajasthan Premises (Control of Rents and Eviction) Act provides that, upon payment of the court-determined amount within the period fixed by the court, the proceeding is to be disposed of as if the tenant had not committed a default.",
+      "rule": {
+        "if": "rent_default_eviction_proceeding and court_determined_payment_completed_within_fixed_period",
+        "then": "tenant_treated_as_not_in_default"
+      },
+      "predicates": {
+        "rent_default_eviction_proceeding": "The proceeding seeks eviction on the ground of non-payment of rent.",
+        "court_determined_payment_completed_within_fixed_period": "The tenant paid the rent-related amount determined by the court within the period fixed by it."
+      },
+      "definition": "In a rent-default eviction proceeding, timely payment of the court-determined amount means the tenant is treated as not being in default."
+    }
+  ],
+  "seconds": 18.5
+}

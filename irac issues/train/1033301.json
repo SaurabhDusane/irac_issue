@@ -1,0 +1,82 @@
+{
+  "doc_id": "1033301",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23367,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2765,
+    "prompt_tokens": 6153,
+    "total_tokens": 8918,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The inherent jurisdiction to quash criminal proceedings may be exercised to prevent abuse of process or secure the ends of justice only in recognized categories of cases.",
+      "material_facts": [
+        "The challenged proceeding arose from a first information report alleging that the accused had made fraudulent representations that induced another person to pay money.",
+        "The accused sought quashing before the magistrate had considered the police report on its merits."
+      ],
+      "conclusion": "Proceedings may be quashed where a legal bar prevents their institution or continuation, where the allegations taken at face value do not disclose the alleged offence, or where there is no legal evidence or the evidence manifestly fails to prove the charge.",
+      "legal_principle": "Section 561-A of the Code of Criminal Procedure, 1898 preserves the High Court’s inherent power to prevent abuse of process or secure the ends of justice, but it cannot be used where the matter is specifically covered by another provision of the Code. The Court relied on In re Shripad G. Chandavarkar, Jagat Chandra Mozumdar v. Queen Empress, Dr. Shankar Singh v. The State of Punjab, Nripendra Bhusan Ray v. Govind Bhandhu Majumdar, and Ramanathan Chettiar v. K. Sivarama Subrahmanya Ayyar.",
+      "rule": {
+        "if": "criminal_proceeding_challenged_for_quashing and (legal_bar_to_proceeding or allegations_do_not_disclose_offence or no_legal_evidence or evidence_manifestly_fails_to_prove_charge)",
+        "then": "proceedings_may_be_quashed"
+      },
+      "predicates": {
+        "criminal_proceeding_challenged_for_quashing": "An accused person asks a court to quash a criminal proceeding.",
+        "legal_bar_to_proceeding": "A legal bar prevents the institution or continuation of the criminal proceeding.",
+        "allegations_do_not_disclose_offence": "The allegations, accepted at face value and in their entirety, do not disclose the offence alleged.",
+        "no_legal_evidence": "There is no legal evidence supporting the charge.",
+        "evidence_manifestly_fails_to_prove_charge": "The evidence clearly or manifestly fails to prove the charge."
+      },
+      "definition": "When a criminal proceeding is challenged for quashing and at least one of the stated defects exists, the rule permits the proceeding to be quashed."
+    },
+    {
+      "legal_issue": "A court exercising inherent jurisdiction to quash criminal proceedings cannot weigh the reliability of evidence that requires assessment at trial.",
+      "material_facts": [
+        "The accused argued that correspondence, statements, and the conduct of the people involved showed that the alleged misrepresentations were untrue.",
+        "Deciding that argument would have required the Court to consider and assess the evidence.",
+        "The allegations in the first information report disclosed the offences alleged, and the charge was not unsustainable on the face of the record."
+      ],
+      "conclusion": "The evidence-based challenge did not justify quashing because its assessment belonged to the magistrate at trial; the Court expressed no opinion on the merits.",
+      "legal_principle": "Under section 561-A of the Code of Criminal Procedure, 1898, inherent jurisdiction may be invoked where there is no legal evidence or the evidence is clearly or manifestly inconsistent with the accusation, but the High Court cannot inquire into whether evidence is reliable or decide whether a reasonable appreciation of it would sustain the accusation. The Court relied on In re Shripad G. Chandavarkar, Jagat Chandra Mozumdar v. Queen Empress, Dr. Shankar Singh v. The State of Punjab, Nripendra Bhusan Ray v. Govind Bhandhu Majumdar, and Ramanathan Chettiar v. K. Sivarama Subrahmanya Ayyar; it distinguished S. P. Jaiswal v. The State.",
+      "rule": {
+        "if": "criminal_proceeding_challenged_for_quashing and allegations_disclose_offence and no_legal_bar_to_proceeding and evidence_requires_reliability_assessment",
+        "then": "quashing_is_not_justified"
+      },
+      "predicates": {
+        "criminal_proceeding_challenged_for_quashing": "An accused person asks a court to quash a criminal proceeding.",
+        "allegations_disclose_offence": "The allegations, taken at face value and in their entirety, disclose the offence alleged.",
+        "no_legal_bar_to_proceeding": "No legal bar prevents the institution or continuation of the criminal proceeding.",
+        "evidence_requires_reliability_assessment": "The accused’s argument depends on weighing evidence or assessing its reliability rather than identifying a manifest failure of proof."
+      },
+      "definition": "If an accused challenges a criminal proceeding whose allegations disclose an offence and face no legal bar, and resolving the challenge requires assessing evidentiary reliability, quashing is not justified."
+    },
+    {
+      "legal_issue": "Delay in the police investigation, without a qualifying basis for quashing, does not by itself justify quashing criminal proceedings.",
+      "material_facts": [
+        "The police took nearly seven months to submit their report after the first information report was lodged.",
+        "The report was submitted after the accused had petitioned for quashing.",
+        "The Court deplored the delay but found no legal bar to the proceeding, and the allegations disclosed the offences alleged."
+      ],
+      "conclusion": "The investigation delay could not materially assist the request to quash the proceedings.",
+      "legal_principle": "The inherent power under section 561-A of the Code of Criminal Procedure, 1898 is directed to preventing abuse of process or securing the ends of justice and is exercised on grounds such as a legal bar, allegations that fail to disclose an offence, or an absence of legal evidence or manifest failure of proof. The Court held on these facts that police delay did not establish such a ground.",
+      "rule": {
+        "if": "criminal_proceeding_challenged_for_quashing and police_investigation_was_delayed and allegations_disclose_offence and no_legal_bar_to_proceeding and no_manifest_failure_of_proof",
+        "then": "investigation_delay_alone_does_not_justify_quashing"
+      },
+      "predicates": {
+        "criminal_proceeding_challenged_for_quashing": "An accused person asks a court to quash a criminal proceeding.",
+        "police_investigation_was_delayed": "The police took an unusually long time to complete the investigation or submit their report.",
+        "allegations_disclose_offence": "The allegations, taken at face value and in their entirety, disclose the offence alleged.",
+        "no_legal_bar_to_proceeding": "No legal bar prevents the institution or continuation of the criminal proceeding.",
+        "no_manifest_failure_of_proof": "The record does not show an absence of legal evidence or a clear or manifest failure of the evidence to prove the charge."
+      },
+      "definition": "When an accused seeks quashing of a proceeding and the investigation was delayed, but the allegations disclose an offence and there is neither a legal bar nor a manifest failure of proof, the delay alone does not justify quashing."
+    }
+  ],
+  "seconds": 17.6
+}

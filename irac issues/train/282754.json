@@ -1,0 +1,117 @@
+{
+  "doc_id": "282754",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22889,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2933,
+    "prompt_tokens": 6074,
+    "total_tokens": 9007,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The pre-amendment compensation limit was substantive and prevented a reference court from awarding more than the compensation claimed after a claim had been made in response to notice.",
+      "material_facts": [
+        "The land was acquired and a compensation claim was made before the statutory amendment took effect.",
+        "The owners claimed compensation of Rs. 30,000 per acre in response to notice, and did not challenge the making of that claim in their reference application.",
+        "Although the reference court assessed the land at a higher market value, the High Court awarded compensation above the amount claimed."
+      ],
+      "conclusion": "The limit was substantive, not procedural. Under the law in force when the claim was made, the court could not award more than the amount claimed; the owners were entitled to compensation only at the claimed rate.",
+      "legal_principle": "Section 25(1), read with Sections 9, 11 and 18 of the Land Acquisition Act, imposed a substantive limit on the reference court’s power where a claimant had made a claim in response to notice. Section 25(5) concerned a claimant who had omitted to claim for a sufficient reason and did not displace the limit in Section 25(1). The Court approved Krishi Utpadan Mandi Samiti v. Kanhaiya Lal on the substantive nature of Section 25 and relied on Dadoo Yogendrenath Singh v. The Collector concerning the statutory limit.",
+      "rule": {
+        "if": "land_acquisition_reference and pre_change_compensation_limit_applies and claimant_made_claim_after_notice",
+        "then": "court_award_capped_at_claim"
+      },
+      "predicates": {
+        "land_acquisition_reference": "A claimant in a land acquisition matter sought a court determination of compensation after the initial award.",
+        "pre_change_compensation_limit_applies": "The compensation limit in force before a statutory change governed the acquisition.",
+        "claimant_made_claim_after_notice": "The claimant made a compensation claim in response to notice concerning the acquisition."
+      },
+      "definition": "When a land acquisition reference is governed by the earlier compensation limit and the claimant made a claim after notice, the court’s award cannot exceed that claim."
+    },
+    {
+      "legal_issue": "A substantive change to the compensation limit does not apply retrospectively to an earlier acquisition merely because an appeal remains pending when the change takes effect.",
+      "material_facts": [
+        "The Collector made the award before the statutory amendment took effect.",
+        "The matter remained pending in appeal when the amendment took effect.",
+        "The amendment did not state that its revised compensation limit applied retrospectively."
+      ],
+      "conclusion": "The amended limit did not apply to the earlier award or the pending appeal; the case remained governed by the unamended provision.",
+      "legal_principle": "A substantive provision is not retrospective unless the provision indicates that effect. The Court distinguished Union of India v. Raghubir Singh, which concerned the transitional provision in Section 30(2) relating to solatium under Section 23(2), and which did not extend the amended Section 25 to earlier awards.",
+      "rule": {
+        "if": "land_acquisition_appeal and award_preceded_change and appeal_pending_when_change_took_effect and substantive_limit_changed",
+        "then": "amended_limit_not_applied_retroactively"
+      },
+      "predicates": {
+        "land_acquisition_appeal": "A party appealed a decision concerning compensation for acquired land.",
+        "award_preceded_change": "The initial compensation award was made before a statutory change took effect.",
+        "appeal_pending_when_change_took_effect": "The compensation dispute remained pending on appeal when the statutory change took effect.",
+        "substantive_limit_changed": "A statutory change altered the substantive limit on compensation that a court could award."
+      },
+      "definition": "In a land acquisition appeal, if the award preceded a change to the substantive compensation limit and the appeal was pending when the change took effect, the changed limit does not apply retrospectively."
+    },
+    {
+      "legal_issue": "An earlier decision was incorrect to apply the amended compensation limit to an earlier award by relying on a transitional provision addressing a different compensation benefit.",
+      "material_facts": [
+        "An earlier decision applied the amended Section 25 to an award made before the amendment, relying on a transitional provision concerning amended solatium.",
+        "That transitional provision addressed Section 23(2) and did not refer to Section 25.",
+        "The Court had to decide whether the earlier decision correctly resolved the application of the amended Section 25."
+      ],
+      "conclusion": "The earlier decision was not correctly decided to the extent that it treated the amended Section 25 as applicable to an earlier award on the basis of the transitional provision concerning solatium.",
+      "legal_principle": "The Court applied the distinction in Union of India v. Raghubir Singh: Section 30(2) addressed amended solatium under Section 23(2), not the compensation limit in Section 25. It therefore rejected the contrary reasoning in Krishi Utpadan Mandi Samiti v. Kanhaiya Lal on retrospective application, while approving that case’s conclusion that Section 25 is substantive.",
+      "rule": {
+        "if": "land_acquisition_appeal and earlier_decision_relied_on_transition_for_different_benefit and compensation_limit_is_distinct_from_that_benefit",
+        "then": "earlier_retrospective_reasoning_rejected"
+      },
+      "predicates": {
+        "land_acquisition_appeal": "A party appealed a decision concerning compensation for acquired land.",
+        "earlier_decision_relied_on_transition_for_different_benefit": "An earlier court applied a changed compensation rule by relying on a transition provision addressing a different compensation benefit.",
+        "compensation_limit_is_distinct_from_that_benefit": "The compensation ceiling at issue was separate from the benefit addressed by the transition provision."
+      },
+      "definition": "In a land acquisition appeal, retrospective reasoning is rejected when an earlier decision relied on a transition provision for a different benefit to apply a distinct compensation limit."
+    },
+    {
+      "legal_issue": "Discretionary appellate review should not preserve a judgment that exceeds a clear and settled statutory limit on the court’s authority to award compensation.",
+      "material_facts": [
+        "The High Court awarded compensation above the amount claimed despite the applicable statutory limit.",
+        "The governing statutory language was clear, and an earlier decision had addressed the limit.",
+        "The appellants sought review under the Supreme Court’s discretionary appellate jurisdiction, while the claimants argued that the Court should not interfere in the interests of justice."
+      ],
+      "conclusion": "The Court declined to refrain from interference on discretionary grounds, set aside the High Court judgment, and applied the statutory cap.",
+      "legal_principle": "Under Article 136, the Court may decline to interfere absent substantial and grave injustice, as discussed in Teherakhatoon v. Salambin Mohammad, but whether to do so depends on the circumstances. That principle did not justify preserving a judgment made without authority under a clear and settled statutory limit; the Court also relied on Dadoo Yogendrenath Singh v. The Collector.",
+      "rule": {
+        "if": "discretionary_supreme_appeal and lower_court_exceeded_clear_compensation_limit and governing_rule_was_settled",
+        "then": "discretionary_interference_warranted"
+      },
+      "predicates": {
+        "discretionary_supreme_appeal": "A party sought review of a lower court judgment through discretionary appellate jurisdiction.",
+        "lower_court_exceeded_clear_compensation_limit": "The lower court awarded compensation beyond a clear statutory ceiling applicable to the claim.",
+        "governing_rule_was_settled": "The applicable legal limit was clear and had already been addressed by an earlier decision."
+      },
+      "definition": "When a discretionary Supreme Court appeal concerns a lower court award exceeding a clear and settled compensation limit, interference is warranted."
+    },
+    {
+      "legal_issue": "A constitutional petition is not entertained to challenge the validity of a provision that is no longer in force.",
+      "material_facts": [
+        "The claimants filed a petition under Article 32 challenging the validity of the unamended compensation-limit provision.",
+        "That provision had ceased to be in force when the Court considered the petition."
+      ],
+      "conclusion": "The Court declined to entertain the Article 32 petition and dismissed it.",
+      "legal_principle": "The Court applied Article 32 and held that it would not examine the validity of the challenged provision at a time when that provision no longer subsisted.",
+      "rule": {
+        "if": "constitutional_original_petition and challenged_provision_no_longer_in_force",
+        "then": "petition_not_entertained"
+      },
+      "predicates": {
+        "constitutional_original_petition": "A petitioner invoked the Supreme Court’s original constitutional jurisdiction to challenge a legal provision.",
+        "challenged_provision_no_longer_in_force": "The provision whose validity was challenged had ceased to be in force when the Court considered the petition."
+      },
+      "definition": "A constitutional original petition challenging a provision is not entertained when that provision is no longer in force."
+    }
+  ],
+  "seconds": 17.6
+}

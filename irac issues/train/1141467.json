@@ -1,0 +1,82 @@
+{
+  "doc_id": "1141467",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13520,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2945,
+    "prompt_tokens": 3774,
+    "total_tokens": 6719,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The limitation rule for setting aside a decree applies when a claimant who was not a party to it seeks a declaration avoiding it because the decree prevents the claimant from establishing derivative title.",
+      "material_facts": [
+        "The claimant asserted title through a person who was a party to the earlier partition proceedings.",
+        "The earlier partition decrees allotted the disputed land to another person.",
+        "The claimant's suit sought declarations that the earlier decrees were invalid and did not bind him, and sought to have them set aside."
+      ],
+      "conclusion": "The suit was governed by Article 59 of the Limitation Act, 1963, rather than the residual Article 113, even though the claimant was not a party to the decrees.",
+      "legal_principle": "Article 59 is a general provision governing suits to set aside or cancel a decree, instrument, or contract on grounds including fraud or other grounds. Where a claimant cannot establish title without avoiding a decree that stands in the way, the claimant must seek its cancellation or setting aside. Section 31 of the Specific Relief Act, 1963 uses “person” broadly enough to include someone claiming derivative title. Article 113 does not apply in that situation.",
+      "rule": {
+        "if": "suit_seeks_to_set_aside_decree and claimant_derives_title_from_decree_party and decree_prevents_claimant_establishing_title",
+        "then": "decree_cancellation_limitation_rule_applies"
+      },
+      "predicates": {
+        "suit_seeks_to_set_aside_decree": "The claimant brought a suit seeking a declaration that an earlier decree was invalid or nonbinding and seeking to have it set aside.",
+        "claimant_derives_title_from_decree_party": "The claimant asserted title derived from a person who was a party to the earlier decree.",
+        "decree_prevents_claimant_establishing_title": "The earlier decree stood in the way of the claimant establishing the asserted title without having it avoided."
+      },
+      "definition": "When a claimant derives title from a party to a decree and sues to avoid that decree because it prevents the claimant establishing title, the decree-cancellation limitation rule applies."
+    },
+    {
+      "legal_issue": "A claimant may be treated as having knowledge of an adverse decree known to the person through whom the claimant derives title when the circumstances of the transfer and the claimant's conduct support that inference.",
+      "material_facts": [
+        "The claimant said that the earlier purchaser was his benamidar and that he derived title through him.",
+        "The benamidar had filed the earlier sale deed in the partition suit and knew of the preliminary and final decrees.",
+        "The claimant later obtained another sale deed from the benamidar but did not produce it at trial or attempt to prove it by secondary evidence.",
+        "The courts below found that the claimant had knowledge of the earlier proceedings and decrees."
+      ],
+      "conclusion": "The benamidar's knowledge of the earlier proceedings and decrees was imputable to the claimant, who was found to have had knowledge of them from the beginning.",
+      "legal_principle": "Section 3 of the Transfer of Property Act, 1882 treats a person as having notice of a fact if the person actually knows it or would have known it but for wilful abstention from an inquiry or search that ought to have been made, or gross negligence. Constructive notice generally requires specific circumstances that would prompt an inquiry. Section 55(1) requires a seller to disclose material defects in the property or title of which the seller is aware and the buyer is not, and supports imputing the seller's knowledge of title defects when the buyer acquires through that seller. Explanation II to Section 3 addresses notice of the title of a person in actual possession of immovable property.",
+      "rule": {
+        "if": "suit_seeks_to_set_aside_decree and claimant_derives_title_through_transferor and transferor_knew_adverse_decree and claimant_acquired_title_from_transferor and (transferor_conveyed_relevant_knowledge or claimant_wilfully_avoided_inquiry)",
+        "then": "claimant_is_treated_as_knowing_adverse_decree"
+      },
+      "predicates": {
+        "suit_seeks_to_set_aside_decree": "The claimant brought a suit seeking to avoid an earlier decree.",
+        "claimant_derives_title_through_transferor": "The claimant asserted title derived through a transferor.",
+        "transferor_knew_adverse_decree": "The transferor knew of an earlier decree adverse to the title later asserted by the claimant.",
+        "claimant_acquired_title_from_transferor": "The claimant obtained a transfer of the asserted property interest from the transferor.",
+        "transferor_conveyed_relevant_knowledge": "The transferor communicated, or the transfer circumstances support imputing, the transferor's knowledge of the adverse decree to the claimant.",
+        "claimant_wilfully_avoided_inquiry": "The claimant wilfully abstained from an inquiry or search that would have disclosed the adverse decree."
+      },
+      "definition": "In a suit to avoid a decree, when the claimant derives title through a transferor who knew of the adverse decree and relevant knowledge was conveyed or inquiry was wilfully avoided, the claimant is treated as knowing of the decree."
+    },
+    {
+      "legal_issue": "A suit to set aside a decree is barred when it is brought after the applicable limitation period has elapsed from the time the facts entitling the claimant to seek that relief first became known or chargeable to the claimant as knowledge.",
+      "material_facts": [
+        "The claimant was found to have knowledge of the earlier partition proceedings and decrees from the beginning through the benamidar from whom he claimed title.",
+        "The claimant filed his suit in 1981, more than three years after the knowledge attributed to him.",
+        "The claimant sought to have the preliminary and final decrees set aside."
+      ],
+      "conclusion": "The suit was barred by limitation because it was filed more than three years after the claimant had knowledge of the facts entitling him to seek the decrees' cancellation.",
+      "legal_principle": "Under Article 59 of the Limitation Act, 1963, the limitation period for a suit to set aside or cancel a decree begins when the facts entitling the plaintiff to that relief first become known. The court held Article 113 inapplicable and treated the claimant's knowledge through his benamidar as knowledge for this purpose.",
+      "rule": {
+        "if": "suit_seeks_to_set_aside_decree and claimant_knew_or_was_chargeable_with_knowledge and suit_filed_after_applicable_limitation_period",
+        "then": "suit_is_barred_by_limitation"
+      },
+      "predicates": {
+        "suit_seeks_to_set_aside_decree": "The claimant brought a suit seeking to set aside an earlier decree.",
+        "claimant_knew_or_was_chargeable_with_knowledge": "The claimant knew, or was treated as knowing, the facts entitling the claimant to seek the decree's cancellation.",
+        "suit_filed_after_applicable_limitation_period": "The claimant filed the suit after the applicable limitation period had elapsed from the date of that knowledge."
+      },
+      "definition": "A suit seeking to set aside a decree is barred when the claimant knew or was chargeable with knowledge of the relevant facts and filed after the applicable limitation period."
+    }
+  ],
+  "seconds": 18.5
+}

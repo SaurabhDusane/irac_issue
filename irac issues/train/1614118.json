@@ -1,0 +1,121 @@
+{
+  "doc_id": "1614118",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 79978,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4608,
+    "prompt_tokens": 19320,
+    "total_tokens": 23928,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Penalty for concealment or furnishing inaccurate particulars requires a deliberate act, and cannot be imposed merely because a reported amount is found incorrect.",
+      "material_facts": [
+        "The taxpayer reported a capital loss using a registered valuer’s estimate of the property’s value.",
+        "The tax authorities adopted a different estimate and treated the reported particulars as inaccurate, but the record did not establish a deliberate act of concealment or furnishing inaccurate particulars."
+      ],
+      "conclusion": "On these facts, the valuation difference did not establish the deliberate conduct required to sustain the penalty, and the penalty could not stand.",
+      "legal_principle": "Section 271(1)(c) is penal and is subject to strict construction. Concealment and furnishing inaccurate particulars are distinct concepts, but each involves a deliberate act; mere omission or negligence is insufficient. The Court relied on Commissioner of Income Tax v. Anwar Ali and Commissioner of Income Tax v. Khoday Eswarsa & Sons, while noting the statutory changes and the deletion of the word “deliberately.”",
+      "rule": {
+        "if": "tax_penalty_proceeding and (concealment_or_inaccurate_particulars and deliberate_conduct)",
+        "then": "penalty_may_be_imposed"
+      },
+      "predicates": {
+        "tax_penalty_proceeding": "An authority is deciding whether to impose a tax penalty for concealment or inaccurate income particulars.",
+        "concealment_or_inaccurate_particulars": "The taxpayer concealed income particulars or furnished particulars that were inaccurate.",
+        "deliberate_conduct": "The taxpayer acted deliberately in concealing income particulars or furnishing inaccurate particulars."
+      },
+      "definition": "In a tax penalty proceeding, penalty may be imposed when concealment or inaccurate particulars resulted from deliberate conduct."
+    },
+    {
+      "legal_issue": "The statutory presumption of concealment applies only when the specified conditions concerning the taxpayer’s explanation are established.",
+      "material_facts": [
+        "The taxpayer offered an explanation based on a registered valuer’s report and supplied particulars relating to the property and valuation.",
+        "The authorities did not establish that the explanation was false, or that it was both unsubstantiated and not bona fide despite disclosure of all material facts."
+      ],
+      "conclusion": "The conditions for applying the statutory presumption were not established on these facts.",
+      "legal_principle": "Explanation 1 to Section 271(1)(c) applies to both concealment and furnishing inaccurate particulars. The deeming provision applies where the taxpayer fails to explain or gives a false explanation, or where an explanation cannot be substantiated and the taxpayer also fails to show that it was bona fide and that all material facts were disclosed. The Court relied on Ashok Leyland Ltd. v. State of Tamil Nadu, S. Sundaram Pillai v. V.R. Pattabiraman, Swedish Match AB v. Securities & Exchange Board of India, and Commissioner of Income Tax v. Mussadilal Ram Bharose.",
+      "rule": {
+        "if": "tax_penalty_proceeding and material_computation_fact and (no_explanation or false_explanation or (unsubstantiated_explanation and not (bona_fide_explanation and all_material_facts_disclosed)))",
+        "then": "deemed_concealment_applies"
+      },
+      "predicates": {
+        "tax_penalty_proceeding": "An authority is deciding whether to impose a tax penalty for income particulars.",
+        "material_computation_fact": "A fact material to computing the taxpayer’s total income is at issue.",
+        "no_explanation": "The taxpayer failed to offer an explanation concerning the material fact.",
+        "false_explanation": "The taxpayer offered an explanation concerning the material fact that the authority found false.",
+        "unsubstantiated_explanation": "The taxpayer offered an explanation that the taxpayer could not substantiate.",
+        "bona_fide_explanation": "The taxpayer’s explanation was bona fide.",
+        "all_material_facts_disclosed": "The taxpayer disclosed all facts relating to the explanation that were material to computing income."
+      },
+      "definition": "The presumption applies when a material computation fact is unexplained or falsely explained, or when an unsubstantiated explanation is neither shown to be bona fide nor accompanied by disclosure of all material facts."
+    },
+    {
+      "legal_issue": "A difference between a taxpayer’s disclosed valuation based on a registered expert’s opinion and a tax authority’s competing valuation does not, by itself, establish inaccurate particulars.",
+      "material_facts": [
+        "The taxpayer disclosed that the valuation was obtained from a registered valuer and set out the basis and particulars used in the report.",
+        "The registered valuer did not rely on sale instances, although a referenced sheet and a newspaper copy were not attached.",
+        "The tax authority’s valuer relied on different sale instances and produced a different estimate, and the taxpayer had supplied supporting particulars in the penalty proceedings."
+      ],
+      "conclusion": "The competing valuation and the omissions from the report did not, by themselves, establish that the taxpayer furnished inaccurate particulars; the penalty could not be sustained on that basis.",
+      "legal_principle": "Sections 48, 55(2)(b), and 55A of the Income Tax Act recognize valuation in computing capital gains and permit reference to a valuation officer. Valuation may involve different methods and estimates, and an expert’s opinion not being accepted does not alone prove inaccurate particulars where the basis and material particulars were disclosed. The Court relied on Union of India v. Pramod Gupta for the recognition that valuation may involve different methods and some estimation.",
+      "rule": {
+        "if": "tax_penalty_proceeding and registered_expert_valuation_used and valuation_basis_disclosed and competing_estimate_only and no_specific_false_particulars_found",
+        "then": "valuation_difference_alone_does_not_establish_inaccurate_particulars"
+      },
+      "predicates": {
+        "tax_penalty_proceeding": "An authority is deciding whether to impose a tax penalty based on reported income particulars.",
+        "registered_expert_valuation_used": "The taxpayer used an estimate prepared by a registered valuation expert.",
+        "valuation_basis_disclosed": "The taxpayer disclosed the valuation method and the material particulars on which the estimate was based.",
+        "competing_estimate_only": "The difference identified by the authorities consisted of a competing valuation estimate.",
+        "no_specific_false_particulars_found": "The authorities did not identify a specific valuation particular furnished by the taxpayer that was false."
+      },
+      "definition": "A difference between a disclosed expert valuation and a competing estimate does not establish inaccurate particulars by itself when no specific false particular is found."
+    },
+    {
+      "legal_issue": "A penalty order is vitiated when an ambiguous standard notice and the authority’s treatment of the case show that it did not determine which statutory ground it was pursuing.",
+      "material_facts": [
+        "The penalty notice used a standard form that called for inappropriate words and paragraphs to be deleted, but those deletions were not made.",
+        "The authority’s treatment of the penalty proceeding left unclear whether the allegation was concealment or furnishing inaccurate particulars."
+      ],
+      "conclusion": "The penalty order suffered from non-application of mind and could not be sustained.",
+      "legal_principle": "Sections 271 and 274 require the authority to apply its mind to the basis for penalty and to comply with the principles of natural justice. The Court relied on Malabar Industrial Co. Ltd. v. Commissioner of Income Tax, Kerala State.",
+      "rule": {
+        "if": "tax_penalty_proceeding and standard_notice_retains_alternative_grounds and authority_does_not_identify_the_ground",
+        "then": "penalty_order_vitiated_for_non_application_of_mind"
+      },
+      "predicates": {
+        "tax_penalty_proceeding": "An authority is deciding whether to impose a tax penalty.",
+        "standard_notice_retains_alternative_grounds": "The authority issued a standard notice that retained alternatives that should have been deleted.",
+        "authority_does_not_identify_the_ground": "The authority’s actions do not identify which ground for penalty it is pursuing."
+      },
+      "definition": "A penalty order is vitiated when the notice retains alternative grounds and the authority does not identify the ground pursued."
+    },
+    {
+      "legal_issue": "An income assessment finding does not, by itself, discharge the revenue’s burden to establish concealment or inaccurate particulars in a separate penalty proceeding.",
+      "material_facts": [
+        "The assessment adopted the tax authority’s valuation and computed a higher capital gain than the taxpayer had reported.",
+        "The penalty authorities relied on the valuation difference and the assessment but did not independently establish that the taxpayer consciously concealed income or deliberately furnished inaccurate particulars.",
+        "The taxpayer produced particulars supporting the valuation report in the penalty proceedings."
+      ],
+      "conclusion": "The assessment finding was evidence that could be considered, but it was not conclusive and could not alone sustain the penalty; the penalty proceeding required a separate consideration of the evidence.",
+      "legal_principle": "The revenue bears the primary burden of establishing concealment or inaccurate particulars in penalty proceedings; the burden shifts only after that burden is discharged. A finding in the assessment proceeding may be evidence but is not conclusive in the penalty proceeding, which must be considered afresh. The Court relied on Commissioner of Income Tax v. Anwar Ali, Commissioner of Income Tax v. Khoday Eswarsa & Sons, D.M. Manasvi v. Commissioner of Income Tax, and Anantharam Veerasinghaiah & Co. v. Commissioner of Income Tax.",
+      "rule": {
+        "if": "tax_penalty_proceeding and assessment_finding_exists and no_independent_evidence_establishes_concealment_or_inaccuracy",
+        "then": "assessment_finding_alone_is_insufficient_for_penalty"
+      },
+      "predicates": {
+        "tax_penalty_proceeding": "An authority is deciding whether to impose a tax penalty in a proceeding distinct from the income assessment.",
+        "assessment_finding_exists": "The income assessment includes a finding that the reported income or valuation was incorrect.",
+        "no_independent_evidence_establishes_concealment_or_inaccuracy": "The revenue has not produced evidence in the penalty proceeding, apart from the assessment finding, establishing concealment or inaccurate particulars."
+      },
+      "definition": "In a separate tax penalty proceeding, an assessment finding alone is insufficient when the revenue has not independently established concealment or inaccurate particulars."
+    }
+  ],
+  "seconds": 30.1
+}

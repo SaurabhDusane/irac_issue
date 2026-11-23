@@ -1,0 +1,60 @@
+{
+  "doc_id": "225361",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10922,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1815,
+    "prompt_tokens": 3456,
+    "total_tokens": 5271,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A private criminal complaint alleging cheating based on a disputed agreement to sell cannot proceed where its allegations are civil in nature and do not show dishonest or fraudulent intent when the promise was made.",
+      "material_facts": [
+        "The complaint relied on an alleged agreement to sell and advance payment, both of which the accused denied in response to a legal notice.",
+        "The dispute concerned performance of a property transaction, and the complaint did not disclose facts showing dishonest or fraudulent intent at the time of the alleged promise.",
+        "The police report named the first accused for alleged cheating but gave the other accused a clean chit; the Magistrate issued process without judicially considering the report."
+      ],
+      "conclusion": "The complaint did not prima facie disclose cheating, and the Magistrate’s process order, as affirmed by the High Court, was set aside.",
+      "legal_principle": "Under Sections 415 and 420 of the IPC, cheating requires fraudulent or dishonest intention when the promise is made. The dispute must disclose the ingredients of the alleged offence, not merely a civil disagreement. Under Sections 156(3) and 190(1)(b) of the CrPC, a Magistrate may take cognizance irrespective of the police’s opinion, but must consider the police report judicially. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "private_criminal_complaint and (disputed_contractual_transaction and not dishonest_intent_at_promise_shown) and magistrate_failed_to_assess_report_judicially",
+        "then": "criminal_process_set_aside"
+      },
+      "predicates": {
+        "private_criminal_complaint": "The complainant initiated a private criminal complaint alleging an offence arising from the dispute.",
+        "disputed_contractual_transaction": "The complaint rested on a contractual transaction whose existence or performance the accused disputed.",
+        "dishonest_intent_at_promise_shown": "The complaint alleged facts showing that the accused had dishonest or fraudulent intent when making the alleged promise.",
+        "magistrate_failed_to_assess_report_judicially": "The Magistrate did not judicially consider the police report before taking cognizance and issuing process.",
+        "criminal_process_set_aside": "The criminal process based on the complaint is set aside."
+      },
+      "definition": "When a private criminal complaint rests on a disputed contract, does not show dishonest intent at the time of the promise, and the Magistrate fails to assess the police report judicially, the criminal process is set aside."
+    },
+    {
+      "legal_issue": "A private criminal complaint may be dismissed for inordinate delay where it is brought long after the alleged transaction and after prolonged silence following the accused’s denial.",
+      "material_facts": [
+        "The alleged agreement was made in 1988, while the private complaint was filed in 1999.",
+        "The accused denied the alleged agreement and advance payment in a reply to a legal notice in 1996, and the complainant remained silent for nearly three years before filing the complaint."
+      ],
+      "conclusion": "The complaint was not maintainable after the inordinate delay and was liable to be dismissed on account of the complainant’s laches.",
+      "legal_principle": "The Court treated the substantial delay and the complainant’s prolonged silence after the denial as laches making the private complaint not maintainable at that distance of time. The judgment cites no specific provision or earlier case for this conclusion.",
+      "rule": {
+        "if": "private_criminal_complaint and complaint_filed_long_after_transaction and complainant_silent_after_denial",
+        "then": "complaint_dismissed_for_delay"
+      },
+      "predicates": {
+        "private_criminal_complaint": "The complainant initiated a private criminal complaint.",
+        "complaint_filed_long_after_transaction": "The complainant filed the private criminal complaint long after the alleged transaction.",
+        "complainant_silent_after_denial": "The complainant remained silent for a prolonged period after the accused denied the alleged transaction.",
+        "complaint_dismissed_for_delay": "The complaint is dismissed as not maintainable because of the delay."
+      },
+      "definition": "When a private criminal complaint is filed long after the alleged transaction and the complainant remained silent after the accused denied it, the complaint is dismissed for delay."
+    }
+  ],
+  "seconds": 11.8
+}

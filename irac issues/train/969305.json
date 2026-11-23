@@ -1,0 +1,83 @@
+{
+  "doc_id": "969305",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27118,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3013,
+    "prompt_tokens": 7373,
+    "total_tokens": 10386,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A testamentary gift to a named beneficiary and that beneficiary’s heirs, executors and administrators may create a substitutional bequest when the will’s language and circumstances show an intention to benefit those successors if the primary gift fails.",
+      "material_facts": [
+        "The testator’s will gave the estate to a person he described as his mother, followed by words benefiting both her and her heirs, executors and administrators.",
+        "The will stated that the beneficiary and those successors were to have the property for their own use and benefit, absolutely and forever.",
+        "The testator expressed that he regarded the beneficiary as his mother and that no one could dispute that description.",
+        "The primary beneficiary’s husband attested the will, making the gift to her void under section 67 of the Indian Succession Act."
+      ],
+      "conclusion": "The will created a primary bequest to the beneficiary and a substitutional bequest to her heirs, executors and administrators if the primary bequest failed.",
+      "legal_principle": "A will must be read as a whole, with its parts construed in relation to one another (section 82 of the Indian Succession Act); where a clause can reasonably have effect, that construction is preferred over one that gives it none (section 84); and no part should be rejected as meaningless if a reasonable construction is possible (section 85). The court distinguished and disagreed with the approach in In re McElligott, which did not give effect to the words providing for the beneficiary’s successors’ own use and benefit. The testator’s intention is determined from the language used and the surrounding circumstances.",
+      "rule": {
+        "if": "will_gift_dispute and will_names_beneficiary_and_successors and will_provides_for_beneficiary_and_successors_own_benefit and testator_expresses_personal_attachment_to_beneficiary",
+        "then": "substitutional_bequest_exists"
+      },
+      "predicates": {
+        "will_gift_dispute": "The dispute concerns the meaning of a gift made by a will.",
+        "will_names_beneficiary_and_successors": "The will names a primary beneficiary and also refers to that beneficiary’s successors as recipients.",
+        "will_provides_for_beneficiary_and_successors_own_benefit": "The will states that the beneficiary and the successors are to hold or use the property for their own benefit.",
+        "testator_expresses_personal_attachment_to_beneficiary": "The testator expresses a personal relationship with, or attachment to, the primary beneficiary."
+      },
+      "definition": "When a will-gift dispute involves a will that names a beneficiary and successors, provides for their own benefit, and reflects the testator’s personal attachment to the beneficiary, the rule recognizes a substitutional bequest."
+    },
+    {
+      "legal_issue": "A substitutional bequest takes effect under section 129 when the primary bequest is void for a reason different from a specifically stated condition limiting when the substitutional bequest is to operate.",
+      "material_facts": [
+        "The will made a substitutional bequest to the primary beneficiary’s heirs, executors and administrators.",
+        "The primary bequest was void because the beneficiary’s husband attested the will.",
+        "Although the testator may have contemplated that the beneficiary could predecease him, the will did not state that the substitutional bequest would take effect only in that event."
+      ],
+      "conclusion": "Section 130 did not apply because the will did not limit the substitutional bequest to failure of the primary bequest in a specified manner; section 129 applied, so the substitutional bequest took effect despite the primary bequest being void under section 67.",
+      "legal_principle": "Sections 129 and 130 of the Indian Succession Act govern substitutional bequests in different circumstances. Section 130, including its illustration, applies where the will makes the substitute gift conditional on the primary gift failing in a particular stated manner. Where the will does not impose that specific condition, section 129 applies, and the substitutional bequest may operate although the primary bequest fails for another reason. The primary gift here was void under section 67 because the beneficiary’s husband attested the will.",
+      "rule": {
+        "if": "will_gift_dispute and substitutional_bequest_exists and primary_bequest_void_due_to_attesting_witness_relationship and substitute_gift_not_limited_to_a_specific_failure_mode",
+        "then": "substitutional_bequest_takes_effect"
+      },
+      "predicates": {
+        "will_gift_dispute": "The dispute concerns the meaning or effect of a gift made by a will.",
+        "substitutional_bequest_exists": "The will provides a substitute recipient if the primary bequest fails.",
+        "primary_bequest_void_due_to_attesting_witness_relationship": "The primary bequest is void because a person whose relationship to the beneficiary disqualifies the gift attested the will.",
+        "substitute_gift_not_limited_to_a_specific_failure_mode": "The will does not state that the substitute gift operates only if the primary gift fails in one specified way."
+      },
+      "definition": "If a will-gift dispute involves a substitutional bequest, a primary bequest void because of an attesting witness’s relationship to the beneficiary, and no restriction to a specific failure mode, the substitutional bequest takes effect."
+    },
+    {
+      "legal_issue": "Where a substitutional bequest is made to a beneficiary’s heirs and representatives, the beneficiary’s presumptive heirs at the testator’s death may take even if the beneficiary is then alive and no executor or administrator can take.",
+      "material_facts": [
+        "The testator’s will made a substitutional bequest to the primary beneficiary’s heirs, executors and administrators.",
+        "The primary beneficiary was alive when the testator died, so the executors and administrators described in the will could not be identified as recipients on the relevant basis.",
+        "The primary beneficiary had two daughters, who were her presumptive heirs when the testator died.",
+        "The substitutional bequest had already been found to take effect."
+      ],
+      "conclusion": "The two daughters, as the beneficiary’s presumptive heirs at the testator’s death, were entitled to take under the will. The failure of the gift to executors and administrators did not defeat the gift to the heirs; there was no intestacy, and the plaintiffs had no right to maintain the suit as heirs of the testator.",
+      "legal_principle": "Although technically no one is the heir of a living person, the word “heirs” may be used in a will to designate those who are presumptive heirs at the relevant time. A failure of the gift to one part of a described class, such as executors or administrators, does not necessarily defeat the gift to another part, such as heirs. The court relied on Halsbury, volume 34, article 358, page 309, for the treatment of presumptive heirs as recipients of a direct gift.",
+      "rule": {
+        "if": "will_gift_dispute and substitutional_gift_names_beneficiary_heirs_and_representatives and beneficiary_alive_at_testator_death and presumptive_heirs_identifiable_at_testator_death",
+        "then": "presumptive_heirs_take_under_substitutional_bequest"
+      },
+      "predicates": {
+        "will_gift_dispute": "The dispute concerns the effect of a gift made by a will.",
+        "substitutional_gift_names_beneficiary_heirs_and_representatives": "The substitute gift names the primary beneficiary’s heirs and representatives as recipients.",
+        "beneficiary_alive_at_testator_death": "The primary beneficiary was alive when the testator died.",
+        "presumptive_heirs_identifiable_at_testator_death": "People could be identified as the primary beneficiary’s presumptive heirs when the testator died."
+      },
+      "definition": "When a will-gift dispute involves a substitute gift to a beneficiary’s heirs and representatives, and the beneficiary is alive but presumptive heirs are identifiable at the testator’s death, those presumptive heirs take under the substitute gift."
+    }
+  ],
+  "seconds": 17.9
+}

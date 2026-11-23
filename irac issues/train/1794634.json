@@ -1,0 +1,59 @@
+{
+  "doc_id": "1794634",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12878,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1917,
+    "prompt_tokens": 3752,
+    "total_tokens": 5669,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Affidavits tendered as evidence must be verified so the court can identify which statements rest on personal knowledge and which rest on information or belief, with the source of information disclosed.",
+      "material_facts": [
+        "The complainant verified generally that the petition's statements were true to her knowledge, belief and information, without identifying which facts fell into each category.",
+        "The reply affidavit was filed by an advocate's clerk, who said its statements were based on the advocate's office records and instructions from the clients.",
+        "The proceedings concerned alleged disobedience of the Court's orders."
+      ],
+      "conclusion": "Both affidavits were defective and could not be relied on; the complainant's affidavit was vague and general, and the clerk's affidavit was improper and inadmissible.",
+      "legal_principle": "An affidavit is a mode of placing evidence before the Court. Under Order XI Rules 2, 5 and 13 of the Supreme Court Rules, 1966, and the similar requirements of Order XIX Rule 3 of the Code of Civil Procedure, affidavits must distinguish statements based on personal knowledge from those based on information or belief, and disclose the source of information. A non-compliant affidavit has no probative value and may be rejected. Strict verification is especially necessary for allegations of mala fides or disobedience of court orders. The Court relied on State of Bombay v. Purushottam Jog Naik, [1952] SCR 674.",
+      "rule": {
+        "if": "court_affidavit_evidence and (verification_basis_not_distinguished or information_source_not_disclosed or deponent_lacks_personal_knowledge)",
+        "then": "affidavit_rejected_as_evidence"
+      },
+      "predicates": {
+        "court_affidavit_evidence": "A party submits an affidavit to place evidence before a court.",
+        "verification_basis_not_distinguished": "The affidavit's verification does not identify which statements are based on the deponent's personal knowledge and which are based on information or belief.",
+        "information_source_not_disclosed": "The affidavit relies on information but does not identify the source of that information.",
+        "deponent_lacks_personal_knowledge": "The affidavit is made by a deponent who lacks personal knowledge of the facts asserted."
+      },
+      "definition": "When an affidavit is submitted as evidence and its verification fails to distinguish the basis of its statements, its information source is undisclosed, or its deponent lacks personal knowledge, the affidavit is rejected as evidence."
+    },
+    {
+      "legal_issue": "A contempt petition resting on defective supporting and reply affidavits cannot be decided on those affidavits, but the parties may be allowed to file properly verified affidavits.",
+      "material_facts": [
+        "The complainant sought contempt action for alleged failure to comply with the Court's orders.",
+        "The complainant's supporting affidavit and the reply affidavit filed by an advocate's clerk did not comply with the verification requirements.",
+        "The Court rejected both affidavits and gave the parties six weeks to file proper affidavits, directing that the matter be listed thereafter."
+      ],
+      "conclusion": "The contempt petition was liable to be rejected on the basis of the defective affidavits, but the parties were given an opportunity to file proper affidavits and the matter was to be listed thereafter.",
+      "legal_principle": "Evidence in support of court applications is accepted by affidavit, and the Court must be able to assess the basis and reliability of the statements. Where affidavits do not comply with Order XI Rules 5 and 13 of the Supreme Court Rules, 1966, they cannot be relied on; in a contempt proceeding alleging disobedience of a court order, proper verification is particularly necessary. The Court also relied on Order XI Rule 2 and Order XIX Rule 3 of the Code of Civil Procedure and State of Bombay v. Purushottam Jog Naik, [1952] SCR 674.",
+      "rule": {
+        "if": "contempt_proceeding and petition_depends_on_affidavits and supporting_and_reply_affidavits_defective",
+        "then": "petition_deferred_pending_proper_affidavits"
+      },
+      "predicates": {
+        "contempt_proceeding": "A party brings a proceeding seeking action for alleged disobedience of a court order.",
+        "petition_depends_on_affidavits": "The factual basis for the petition is placed before the court through affidavits.",
+        "supporting_and_reply_affidavits_defective": "Both the affidavit supporting the petition and the affidavit filed in reply fail to meet the requirements for proper verification."
+      },
+      "definition": "When a contempt proceeding depends on affidavits and both the supporting and reply affidavits are defective, the petition is deferred pending the filing of proper affidavits."
+    }
+  ],
+  "seconds": 13.2
+}

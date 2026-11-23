@@ -1,0 +1,98 @@
+{
+  "doc_id": "273023",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25136,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3581,
+    "prompt_tokens": 7049,
+    "total_tokens": 10630,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The later tenancy enactment does not apply retrospectively to disputes governed by the earlier tenancy enactment.",
+      "material_facts": [
+        "The dispute concerned mortgagees in possession who claimed tenancy status under the earlier tenancy enactment.",
+        "The later enactment added an express exclusion for mortgagees in possession, but the Court held that it had no retrospective effect on these suits."
+      ],
+      "conclusion": "The suits were governed by the earlier tenancy enactment, not the later one.",
+      "legal_principle": "The Court held that the later enactment was not retrospective. It contrasted section 2A of the Bombay Tenancy Act, 1939, with section 4 of the Bombay Tenancy and Agricultural Lands Act, 1948, which added an exclusion for mortgagees in possession.",
+      "rule": {
+        "if": "tenancy_redemption_dispute and rights_governed_by_earlier_law and later_law_not_retroactive",
+        "then": "dispute_governed_by_earlier_law"
+      },
+      "predicates": {
+        "tenancy_redemption_dispute": "The proceeding concerns redemption of a mortgage and possession of the land.",
+        "rights_governed_by_earlier_law": "The tenancy rights in dispute arose while an earlier tenancy law governed them.",
+        "later_law_not_retroactive": "The later tenancy law does not apply retrospectively to the rights in dispute."
+      },
+      "definition": "When a redemption dispute concerns rights governed by an earlier law and the later law is not retrospective, the dispute remains governed by the earlier law."
+    },
+    {
+      "legal_issue": "A mortgagee in possession cannot acquire deemed-tenant status under the earlier tenancy law by relying on the later law’s saving provision.",
+      "material_facts": [
+        "The occupants were mortgagees in possession of the land and claimed to be deemed tenants under the earlier tenancy law.",
+        "They relied on the later enactment’s saving provision to assert that status.",
+        "The later enactment expressly excluded mortgagees in possession from deemed-tenant status."
+      ],
+      "conclusion": "The mortgagees could not become deemed tenants under section 2A of the 1939 Act on the strength of section 89(2)(b) of the 1948 Act.",
+      "legal_principle": "Sections 2A of the Bombay Tenancy Act, 1939, 4 and 89(2)(b) of the Bombay Tenancy and Agricultural Lands Act, 1948, were considered. Applying Sidram Narsappa Kamble v. Sholapur Borough Municipality, the Court held that the saving provision could not preserve a claimed status contrary to the later Act’s express provisions. The Court overruled Salman Raje v. Madhavsang Banesang and Ishwara Bhau Sawant v. Pandurang Vasudeo Karmarkar, and approved Dinkar Bhagwant Salekar v. Babaji Mahamulkar, Jaswantrai Tricumlal v. Bai Jiwi, Shankar Kalyan Kulkarni v. Basappa Sidramappa Kolar, and Patel Ambalal Manilal v. Desai Jagdishchandra Naginlal.",
+      "rule": {
+        "if": "tenancy_redemption_dispute and mortgagee_in_possession and claim_based_on_saved_prior_tenancy_law and later_tenancy_law_expressly_excludes_mortgagees",
+        "then": "mortgagee_not_deemed_tenant_by_saving_clause"
+      },
+      "predicates": {
+        "tenancy_redemption_dispute": "The proceeding concerns redemption of a mortgage and possession of the land.",
+        "mortgagee_in_possession": "The occupant possesses the land as a mortgagee.",
+        "claim_based_on_saved_prior_tenancy_law": "The occupant relies on a saving provision to claim tenant status under an earlier tenancy law.",
+        "later_tenancy_law_expressly_excludes_mortgagees": "The later tenancy law expressly excludes mortgagees in possession from the relevant deemed-tenant status."
+      },
+      "definition": "When a mortgagee in possession claims status under an earlier tenancy law through a saving provision, and the later tenancy law expressly excludes mortgagees, the mortgagee does not acquire that status through the saving provision."
+    },
+    {
+      "legal_issue": "A landowner who does not timely seek a declaration against a cultivator’s tenant status loses the right to challenge that status under the applicable tenancy provisions.",
+      "material_facts": [
+        "The landowner could have applied to the Mamlatdar within the prescribed period for a declaration that the occupants were not tenants.",
+        "The landowner made no such application.",
+        "The Court held that the landowner therefore lost whatever right he had to challenge their status."
+      ],
+      "conclusion": "The landowner’s failure to apply within the prescribed period prevented him from relying on that challenge to displace the occupants’ tenant status.",
+      "legal_principle": "Sections 2A and 3A of the Bombay Tenancy Act, 1939, provided for applications to the Mamlatdar challenging tenant or protected-tenant status within the specified period. The Court held that, because the landowner did not apply, he lost whatever right he had to do so.",
+      "rule": {
+        "if": "tenancy_status_dispute and cultivator_lawfully_cultivates_another_persons_land and owner_misses_tenant_status_challenge_window",
+        "then": "owner_loses_right_to_challenge_tenant_status"
+      },
+      "predicates": {
+        "tenancy_status_dispute": "The proceeding concerns whether a cultivator has tenant status in land belonging to another person.",
+        "cultivator_lawfully_cultivates_another_persons_land": "The cultivator lawfully cultivates land belonging to someone else.",
+        "owner_misses_tenant_status_challenge_window": "The landowner does not seek a declaration against the cultivator’s tenant status within the available period."
+      },
+      "definition": "When a cultivator lawfully cultivates another person’s land and the landowner misses the available opportunity to challenge tenant status, the landowner loses the right to make that challenge."
+    },
+    {
+      "legal_issue": "A civil court cannot grant actual possession against occupants claiming protected-tenant status in a tenancy-law dispute and may grant only symbolic possession on a redemption decree.",
+      "material_facts": [
+        "The occupants claimed protected-tenant status and remained in possession of the mortgaged land.",
+        "The landowner sought actual possession in civil suits for redemption.",
+        "The Court held that relief for actual possession against occupants claiming protected-tenant status could be granted only by a revenue court."
+      ],
+      "conclusion": "The landowner could obtain only symbolic possession under the redemption decree, not actual physical possession from the occupants through the civil court.",
+      "legal_principle": "The Court held that relief for actual possession from persons claiming to be protected tenants lay only before the revenue court, not the civil court. It therefore limited the civil court’s redemption decree to symbolic possession. The judgment did not cite a specific provision or earlier case for this forum ruling.",
+      "rule": {
+        "if": "civil_redemption_proceeding and occupants_claim_protected_tenancy and actual_possession_requested",
+        "then": "civil_court_limited_to_symbolic_possession"
+      },
+      "predicates": {
+        "civil_redemption_proceeding": "The proceeding is a civil action for redemption of a mortgage.",
+        "occupants_claim_protected_tenancy": "The occupants in possession claim protected-tenant status.",
+        "actual_possession_requested": "The claimant asks the civil court to deliver actual physical possession of the land."
+      },
+      "definition": "When a civil redemption action seeks actual possession from occupants claiming protected-tenant status, the civil court may grant only symbolic possession."
+    }
+  ],
+  "seconds": 21.5
+}

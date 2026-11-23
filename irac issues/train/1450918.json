@@ -1,0 +1,80 @@
+{
+  "doc_id": "1450918",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 46482,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2347,
+    "prompt_tokens": 11428,
+    "total_tokens": 13775,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory priority of workmen’s dues alongside secured creditors does not eliminate the pre-existing priority between secured creditors.",
+      "material_facts": [
+        "The company in liquidation had granted a first charge over its property to certain lenders and a later, second charge to another lender.",
+        "The later charge was expressly made subject to the first charge, and the later lender acknowledged that ordering.",
+        "The dispute concerned distribution of the proceeds of the charged property in the company’s liquidation."
+      ],
+      "conclusion": "The priority between secured creditors survives; the first charge holder retains priority over the second charge holder, subject to the statutory pari passu rights of workmen.",
+      "legal_principle": "Sections 529 and 529-A of the Companies Act, 1956, read in light of their purpose of placing workmen’s dues pari passu with secured creditors, do not erase priorities between secured creditors. Section 529-A’s non-obstante clause operates only to the extent of that legislative purpose. Allahabad Bank v. Canara Bank was not authority for eliminating inter se priorities; Rajasthan State Financial Corporation v. Official Liquidator explained the limited priority conferred by Section 529-A.",
+      "rule": {
+        "if": "company_liquidation and first_charge_exists and later_charge_exists and liquidation_framework_does_not_remove_inter_se_priority",
+        "then": "earlier_charge_has_priority_over_later_charge_subject_to_workmen_rights"
+      },
+      "predicates": {
+        "company_liquidation": "The proceeding concerns distribution of a company’s assets in liquidation.",
+        "first_charge_exists": "A creditor held an earlier-ranking charge over the company’s property.",
+        "later_charge_exists": "Another creditor held a later-ranking charge over the same property.",
+        "liquidation_framework_does_not_remove_inter_se_priority": "The rules governing the liquidation do not expressly remove the priority between the secured creditors."
+      },
+      "definition": "When a company is in liquidation and creditors hold successive charges over the same property, the earlier charge remains prior to the later charge if the liquidation framework does not remove their inter se priority, subject to workmen’s rights."
+    },
+    {
+      "legal_issue": "The statutory rules governing company liquidation do not displace the general rule that an earlier-created right over immovable property has priority over a later-created inconsistent right.",
+      "material_facts": [
+        "The first and second charges related to the same immovable property and were created at different times.",
+        "The second charge was expressly subordinate to the first charge.",
+        "The later charge holder had acknowledged the first charge holder’s superior position."
+      ],
+      "conclusion": "Section 48 of the Transfer of Property Act, 1882, continues to apply, and the earlier charge takes priority over the later charge.",
+      "legal_principle": "Section 48 of the Transfer of Property Act, 1882, gives priority to earlier-created rights over later-created inconsistent rights in the same immovable property. Sections 529 and 529-A of the Companies Act, 1956, contain no contrary provision displacing that rule between secured creditors. The Court relied on Maru Ram v. Union of India for the distinction between a specific provision and a special law, and on Workmen of M/s Firestone Tyre and Rubber Co. of India (P.) Ltd. v. Management for the principle that a valuable existing right is not presumed to have been taken away without clear legislative intent.",
+      "rule": {
+        "if": "company_liquidation and competing_rights_over_same_immovable_property and earlier_right_created_first and no_express_displacement_of_earlier_right",
+        "then": "earlier_property_right_takes_priority"
+      },
+      "predicates": {
+        "company_liquidation": "The proceeding concerns rights affecting property of a company in liquidation.",
+        "competing_rights_over_same_immovable_property": "Different creditors claim rights over the same immovable property.",
+        "earlier_right_created_first": "One creditor’s right over the property was created before the competing right.",
+        "no_express_displacement_of_earlier_right": "The rules governing the liquidation do not expressly displace the earlier property right."
+      },
+      "definition": "An earlier property right takes priority when competing rights over the same immovable property arise in a company liquidation, unless the governing rules expressly displace that priority."
+    },
+    {
+      "legal_issue": "A secured creditor does not relinquish its security merely by filing proof of its debt with the official liquidator.",
+      "material_facts": [
+        "The creditor filed proof of its claim in response to a notice from the official liquidator.",
+        "The creditor claimed as a secured creditor and sought to preserve its security rights.",
+        "The creditor did not consciously surrender its security for the general benefit of the creditors."
+      ],
+      "conclusion": "Filing proof of the debt did not amount to relinquishment of the security, and the creditor did not lose its status as a secured creditor on that basis.",
+      "legal_principle": "Section 47 of the Provincial Insolvency Act, 1920, applies through Section 529(1) of the Companies Act, 1956. Under Section 47(2), relinquishment requires a conscious act of surrender for the general benefit of creditors; filing proof alone is insufficient. Section 47(3) contemplates a creditor who neither realizes nor relinquishes its security. The Court agreed with State Bank of Mysore v. Official Liquidator and Gujarat Steel Tube Employees Union v. Official Liquidator that relinquishment requires positive action. It also referred to Mahindra and Mahindra Ltd. v. Union of India on interpreting statutory powers in their context and purpose.",
+      "rule": {
+        "if": "company_liquidation and creditor_filed_proof_of_debt and creditor_did_not_consciously_surrender_security_for_general_benefit",
+        "then": "creditor_remains_secured_despite_filing_proof"
+      },
+      "predicates": {
+        "company_liquidation": "The proceeding concerns the handling of claims against a company in liquidation.",
+        "creditor_filed_proof_of_debt": "A creditor submitted proof of its debt to the official liquidator.",
+        "creditor_did_not_consciously_surrender_security_for_general_benefit": "The creditor did not positively and consciously give up its security for the general benefit of the creditors."
+      },
+      "definition": "A creditor that files proof of its debt in a company liquidation remains secured if it has not consciously surrendered its security for the creditors’ general benefit."
+    }
+  ],
+  "seconds": 14.8
+}

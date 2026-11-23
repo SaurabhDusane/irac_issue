@@ -1,0 +1,100 @@
+{
+  "doc_id": "298217",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14664,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2807,
+    "prompt_tokens": 4094,
+    "total_tokens": 6901,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A police-recorded statement by an injured person who later dies is not admissible as a dying declaration when the prosecution does not establish that the death was connected to the injury.",
+      "material_facts": [
+        "The injured person gave a statement to police that was treated as the First Information Report and also gave a statement recorded under Section 161 of the Code of Criminal Procedure.",
+        "The injured person died while the trial was pending, but the prosecution did not establish when he died or that his death was connected to the injury."
+      ],
+      "conclusion": "The police-recorded statements were not admissible as dying declarations under Section 32 of the Evidence Act.",
+      "legal_principle": "Section 32 of the Evidence Act did not make the statements admissible as dying declarations on these facts, because the prosecution did not establish a connection between the death and the injury described in them.",
+      "rule": {
+        "if": "criminal_trial and police_recorded_statement and injured_person_later_died and not death_connected_to_injury",
+        "then": "police_recorded_statement_not_admissible_as_dying_declaration"
+      },
+      "predicates": {
+        "criminal_trial": "The statement was offered in a criminal trial.",
+        "police_recorded_statement": "The injured person made the statement to the police, which recorded it.",
+        "injured_person_later_died": "The injured person died after making the statement.",
+        "death_connected_to_injury": "The prosecution established that the later death was connected to the injury described in the statement."
+      },
+      "definition": "When a police-recorded statement is offered in a criminal trial, the injured person later dies, and the prosecution has not established that the death was connected to the injury, the statement is not admissible as a dying declaration."
+    },
+    {
+      "legal_issue": "A statement recorded from a person under police investigation is not admissible under the rule for evidence from a prior proceeding when it was not given as testimony in such a proceeding.",
+      "material_facts": [
+        "The injured person's statement to the Investigating Officer was recorded under Section 161 of the Code of Criminal Procedure.",
+        "The trial court relied on that statement under Section 33 of the Evidence Act, but the High Court held it inadmissible on that basis, and the Supreme Court agreed."
+      ],
+      "conclusion": "The injured person's statement under Section 161 of the Code of Criminal Procedure was not admissible under Section 33 of the Evidence Act.",
+      "legal_principle": "Section 33 of the Evidence Act did not make the police statement admissible; the Court affirmed that the Section 161 statement could not be admitted under that provision.",
+      "rule": {
+        "if": "criminal_trial and police_investigation_statement and not testimony_in_prior_proceeding",
+        "then": "police_investigation_statement_not_admissible_as_prior_proceeding_testimony"
+      },
+      "predicates": {
+        "criminal_trial": "The statement was offered in a criminal trial.",
+        "police_investigation_statement": "The person made the statement during a police investigation.",
+        "testimony_in_prior_proceeding": "The statement was given as testimony in a prior proceeding."
+      },
+      "definition": "A statement offered in a criminal trial is not admissible as testimony from a prior proceeding when it was made during a police investigation rather than given as testimony in a prior proceeding."
+    },
+    {
+      "legal_issue": "A victim's identification of an assailant made substantially contemporaneously with an attack or immediately thereafter may be admitted as part of the same transaction.",
+      "material_facts": [
+        "A witness heard a shot, went to the scene, and saw the injured person lying on the ground.",
+        "When the witness asked him what had happened, the injured person said that the assailant had shot him.",
+        "The witness did not see the shooting, but the statement was made immediately after the event, without an interval sufficient to allow fabrication."
+      ],
+      "conclusion": "The injured person's statement to the witness was admissible under Section 6 of the Evidence Act as part of the same transaction.",
+      "legal_principle": "Section 6 of the Evidence Act makes a statement relevant as part of the same transaction when it is substantially contemporaneous with the event or made immediately thereafter, with sufficient proximity to exclude an opportunity for fabrication. The Court applied Gentela Vijayavardhan Rao v. State of A.P. and Rattan Singh v. State of H.P.",
+      "rule": {
+        "if": "criminal_trial and statement_related_to_event and statement_made_immediately_after_event and no_interval_allowed_fabrication",
+        "then": "statement_admissible_as_part_of_same_transaction"
+      },
+      "predicates": {
+        "criminal_trial": "The statement was offered in a criminal trial.",
+        "statement_related_to_event": "The statement described the event that was in issue.",
+        "statement_made_immediately_after_event": "The statement was made substantially contemporaneously with the event or immediately thereafter.",
+        "no_interval_allowed_fabrication": "There was no interval sufficient to allow the statement to be fabricated."
+      },
+      "definition": "A statement offered in a criminal trial is admissible as part of the same transaction when it relates to the event and was made immediately after it, without an interval sufficient to allow fabrication."
+    },
+    {
+      "legal_issue": "A conviction cannot be sustained solely on uncorroborated testimony that is not of an unimpeachable character, particularly where the witness is inimically disposed toward the accused and available supporting witnesses were not examined.",
+      "material_facts": [
+        "The witness who recounted the injured person's identification admitted longstanding enmity with the accused.",
+        "The witness said that more than twenty people had gathered and that the injured person identified the accused in front of them, but the prosecution examined none of those people.",
+        "No oral evidence or other circumstance corroborated the witness's account."
+      ],
+      "conclusion": "The witness's uncorroborated and unreliable testimony could not sustain the conviction; the Court set aside the conviction and sentence and acquitted the accused.",
+      "legal_principle": "Although the statement was admissible under Section 6 of the Evidence Act, admissibility did not make the witness's account reliable. Given the witness's enmity, the unexamined available witnesses, and the absence of corroboration, the testimony could not alone sustain the conviction.",
+      "rule": {
+        "if": "appeal_against_conviction and testimony_is_sole_basis and witness_is_inimical and available_supporting_witnesses_not_examined and no_corroboration",
+        "then": "conviction_set_aside_and_accused_acquitted"
+      },
+      "predicates": {
+        "appeal_against_conviction": "The matter is an appeal against a conviction.",
+        "testimony_is_sole_basis": "The conviction rests solely on the testimony at issue.",
+        "witness_is_inimical": "The witness is shown to be inimically disposed toward the accused.",
+        "available_supporting_witnesses_not_examined": "Other people who could support the witness's account were available but were not examined.",
+        "no_corroboration": "No other oral evidence or circumstance corroborates the witness's account."
+      },
+      "definition": "In an appeal against a conviction, if the conviction rests solely on testimony from an inimical witness, available supporting witnesses were not examined, and there is no corroboration, the conviction is set aside and the accused is acquitted."
+    }
+  ],
+  "seconds": 18.0
+}

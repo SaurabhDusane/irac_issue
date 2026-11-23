@@ -1,0 +1,105 @@
+{
+  "doc_id": "461402",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 76869,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3447,
+    "prompt_tokens": 19237,
+    "total_tokens": 22684,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An ex parte decree of a court outside the forum’s territory is a foreign judgment that is a nullity outside the territory of the court that issued it when the defendants had no legally recognised connection to, or submission to, that court’s jurisdiction.",
+      "material_facts": [
+        "The decree was passed by a court in Gwalior when Gwalior was outside the territory governed by the Indian Code of Civil Procedure.",
+        "The defendants were residents of the United Provinces, did not appear in the Gwalior proceedings, and did not submit to the Gwalior court’s jurisdiction.",
+        "The defendants were not subjects or residents of Gwalior, were not temporarily present there when process was served, had not selected the forum, and had not agreed to submit to its jurisdiction."
+      ],
+      "conclusion": "The majority held that the decree was a foreign judgment and a nullity outside the territory of the court that issued it; it could not be enforced in the forum on that basis. The other two judges considered it unnecessary to decide whether the decree was foreign or a nullity because the execution court lacked power to execute it in any event.",
+      "legal_principle": "Under sections 2(5), 2(6), and 13 of the Code of Civil Procedure, a judgment of a foreign court is governed by the rules for foreign judgments, and section 13 concerns substantive rights as well as procedure. The principles in Sirdar Gurdyal Singh v. Raja of Faridkot require a recognised basis of jurisdiction, such as residence, presence, voluntary appearance, choice of forum, or agreement to submit; absent such a basis, a personal judgment pronounced in the defendant’s absence is a nullity outside the territory of the court that pronounced it. The judgment also refers to Halsbury’s Laws of England and Cheshire on Private International Law.",
+      "rule": {
+        "if": "foreign_decree_execution_case and court_outside_forum_territory and defendants_did_not_submit and no_recognised_jurisdictional_connection",
+        "then": "foreign_judgment_is_nullity_outside_originating_territory"
+      },
+      "predicates": {
+        "foreign_decree_execution_case": "The proceeding seeks to enforce a judgment issued by a court outside the territory of the enforcing forum.",
+        "court_outside_forum_territory": "The court issuing the judgment was outside the territory in which enforcement is sought.",
+        "defendants_did_not_submit": "The defendants did not appear, choose the foreign forum, or agree to submit to its jurisdiction.",
+        "no_recognised_jurisdictional_connection": "The defendants were not subjects or residents of the originating territory and were not present there when served."
+      },
+      "definition": "When an enforcement proceeding concerns a judgment from outside the forum, and the defendants neither submitted to the originating court nor had a recognised jurisdictional connection to its territory, the judgment is a nullity outside that territory."
+    },
+    {
+      "legal_issue": "Later constitutional changes and procedural amendments do not retrospectively convert an unenforceable foreign decree into an enforceable domestic decree without a specific provision giving them that effect.",
+      "material_facts": [
+        "The decree was passed before the relevant constitutional changes and before the Indian Code of Civil Procedure became applicable in Gwalior.",
+        "The decree was unenforceable outside its originating territory when passed because the defendants had not submitted to the court’s jurisdiction.",
+        "Later adaptations and amendments changed the territorial and procedural framework, but the court found no specific provision retrospectively validating this decree.",
+        "Article 261(3) was invoked in support of execution, but the decree had been passed before the Constitution came into force."
+      ],
+      "conclusion": "The majority held that the decree retained its original character and did not become executable through later constitutional changes, adaptations, amendments, or Article 261(3).",
+      "legal_principle": "The Constitution and the relevant changes were prospective, and the Adaptation of Laws Order’s saving provision, later numbered clause 20, preserved the previous operation of existing law and accrued rights and liabilities. Section 20 of the Code of Civil Procedure (Amendment) Act, 1951 likewise preserved the effect of earlier law and decrees. The Court relied on Kishori Lal v. Shanti Devi for the principle that a judgment’s effect is not changed by later constitutional developments without specific legislation; it also referred to Laxmi Chand v. Mst. Tipuri, E. Radhesham Roshan Lal v. Kundanlal Mohanlal, Ram Kishan Jankilal v. Seth Harmukharai Lachmi Narayan, and decisions supporting the prospective operation of the Constitution, including Janardhan Reddy v. The State of Hyderabad, Lachmandas Kewal Ram Ahuja v. The State of Bombay, and Keshavan Madhua Menon v. State of Bombay.",
+      "rule": {
+        "if": "execution_case and decree_predates_constitutional_change and decree_was_unenforceable_when_made and no_specific_retroactive_validation",
+        "then": "later_changes_do_not_make_decree_executable"
+      },
+      "predicates": {
+        "execution_case": "The proceeding seeks execution of a previously issued decree.",
+        "decree_predates_constitutional_change": "The decree was issued before the constitutional or legal changes relied on to support its enforcement.",
+        "decree_was_unenforceable_when_made": "The decree could not then be enforced in the forum because it lacked the required legal effect there.",
+        "no_specific_retroactive_validation": "No specific legal measure gives the later changes retrospective effect on the decree."
+      },
+      "definition": "If execution is sought for a decree that predated a legal change and was unenforceable when made, later changes do not make it executable unless a specific measure retrospectively validates it."
+    },
+    {
+      "legal_issue": "A court that later becomes subject to a procedural code is not, for purposes of transferring a decree under that code, necessarily the same court that issued the decree while governed by a different procedural code.",
+      "material_facts": [
+        "The decree was passed by the Gwalior court under the local procedural code.",
+        "The Indian Code of Civil Procedure later became applicable in Gwalior.",
+        "The transfer relied on by the decree-holder was made after the Indian Code became applicable, and the court proceeded on the assumption that the later order was the operative transfer order.",
+        "The court held that the Gwalior court under the Indian Code had a distinct identity, for this purpose, from the court that had passed the decree under the local code."
+      ],
+      "conclusion": "The Gwalior court acting under the Indian Code was not the court that had passed the decree within the meaning of section 39, so the purported transfer was not effective under sections 38 and 39 and the Allahabad court acquired no power to execute the decree through that transfer.",
+      "legal_principle": "Sections 38 and 39 of the Code of Civil Procedure provide for execution by the court that passed a decree or by a court to which it is sent, and for transfer by the court that passed it. The Court held that, in this statutory scheme, the relevant court is one governed by the Indian Code; the later court at Gwalior, operating under that Code, was distinct from the court that had issued the decree under the local code. Section 20 of the Code of Civil Procedure (Amendment) Act, 1951 preserved the decree under the earlier applicable law rather than converting it into a decree passed under the Indian Code. The reasoning was also adopted by the two judges who found it unnecessary to decide whether the decree was foreign.",
+      "rule": {
+        "if": "decree_execution_case and decree_passed_under_different_local_code and transfer_made_by_later_code_court and later_court_did_not_pass_decree",
+        "then": "transfer_is_not_effective_under_general_execution_procedure"
+      },
+      "predicates": {
+        "decree_execution_case": "The proceeding seeks execution of a decree through a transfer to another court.",
+        "decree_passed_under_different_local_code": "The decree was issued under a procedural system different from the one later governing the originating court.",
+        "transfer_made_by_later_code_court": "The transfer was made after the originating court became subject to the later procedural system.",
+        "later_court_did_not_pass_decree": "The court making the transfer was not the court that issued the decree in its capacity under the earlier procedural system."
+      },
+      "definition": "When a decree was issued under one procedural system but a later court operating under another system makes the transfer, the transfer is ineffective if that later court was not the court that passed the decree."
+    },
+    {
+      "legal_issue": "A decree of a civil court in a territory before that territory became a Part B State cannot be executed in another State under the statutory routes for decrees from specified territories or revenue courts where the statutory conditions are not met.",
+      "material_facts": [
+        "The decree was a civil decree issued in Gwalior before the territory became part of a Part B State.",
+        "The decree was not passed by a civil court in a Part B State at the time it was issued.",
+        "The applicable later version of section 44 concerned decrees of revenue courts, not this civil decree.",
+        "There was no notification under the earlier version of section 44 declaring the relevant civil-court decrees executable in the forum."
+      ],
+      "conclusion": "The decree could not be executed in Allahabad under section 43 or section 44 of the Code of Civil Procedure.",
+      "legal_principle": "Section 43, as amended, applied to the categories of decrees specified in its text; the words referring to a decree passed by a civil court in a Part B State did not include a decree passed before the territory became a Part B State. The Court declined to read the provision retrospectively and relied on the prospective operation of the Constitution. Section 44, in the version applicable when execution was sought, covered decrees of revenue courts in places to which the Code did not extend; under the earlier version, execution of the relevant class of decrees also required a government notification, and none had been issued.",
+      "rule": {
+        "if": "decree_execution_case and decree_is_civil_court_decree and decree_predates_part_b_status and no_applicable_statutory_execution_route",
+        "then": "decree_cannot_be_executed_under_special_territorial_routes"
+      },
+      "predicates": {
+        "decree_execution_case": "The proceeding seeks execution of a decree in a court other than the court that issued it.",
+        "decree_is_civil_court_decree": "The decree was issued by a civil court rather than a revenue court.",
+        "decree_predates_part_b_status": "The decree was issued before the territory in which the originating court sat became a Part B State.",
+        "no_applicable_statutory_execution_route": "No applicable statutory category or required government notification authorises execution of the decree in the enforcing forum."
+      },
+      "definition": "A civil decree issued before its territory became a Part B State cannot be executed through the special territorial routes when no applicable statutory category or required notification covers it."
+    }
+  ],
+  "seconds": 21.7
+}

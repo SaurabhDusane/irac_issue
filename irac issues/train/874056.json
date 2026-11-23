@@ -1,0 +1,101 @@
+{
+  "doc_id": "874056",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11778,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2798,
+    "prompt_tokens": 3357,
+    "total_tokens": 6155,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An intra-court appeal from a single judge’s judgment of a High Court is maintainable under the applicable Letters Patent appeal jurisdiction.",
+      "material_facts": [
+        "The respondent challenged the single judge’s decision before a Division Bench by a Letters Patent appeal.",
+        "The single judge’s decision was a judgment of the High Court, rather than a decree passed in appeal by a court subordinate to the High Court."
+      ],
+      "conclusion": "The Letters Patent appeal was maintainable; a second appeal under Section 100 of the Code of Civil Procedure was not the required remedy.",
+      "legal_principle": "Clause 15 of the Letters Patent covers the appeal in question. Section 100 of the Code of Civil Procedure applies to decrees passed in appeal by a court subordinate to the High Court, so it did not displace the Letters Patent appeal.",
+      "rule": {
+        "if": "intra_court_appeal and decision_by_single_high_court_judge",
+        "then": "intra_court_appeal_maintainable"
+      },
+      "predicates": {
+        "intra_court_appeal": "The proceeding is an appeal within the same High Court from a decision of one of its judges.",
+        "decision_by_single_high_court_judge": "A single judge of the High Court issued the decision being appealed.",
+        "intra_court_appeal_maintainable": "The appeal within the High Court is maintainable."
+      },
+      "definition": "When an appeal within a High Court challenges a decision issued by one of its judges, the appeal is maintainable."
+    },
+    {
+      "legal_issue": "Evidence on title is inadmissible when title has not been pleaded or made an issue in the case.",
+      "material_facts": [
+        "The respondent’s claim rested on possession, not title.",
+        "The pleadings and framed issues did not raise title, and the remand expressly limited the scope of the further proceedings.",
+        "The single judge permitted additional evidence concerning the appellant’s alleged title and relied on title-related findings."
+      ],
+      "conclusion": "The additional title evidence was inadmissible, and the single judge acted beyond the permissible scope of the appeal by admitting and relying on it.",
+      "legal_principle": "The Court applied the rule that evidence is not admissible in the absence of a plea, and noted that the single judge had also overlooked the limits on additional evidence in Order XLI Rule 27 of the Code of Civil Procedure and the restricted scope of the remand.",
+      "rule": {
+        "if": "civil_appeal_proceeding and title_not_pleaded and title_not_in_issue and additional_title_evidence_admitted",
+        "then": "title_evidence_inadmissible"
+      },
+      "predicates": {
+        "civil_appeal_proceeding": "The matter is a civil appeal in which the court is considering evidence beyond the original trial record.",
+        "title_not_pleaded": "Neither party pleaded a claim or defence putting ownership in issue.",
+        "title_not_in_issue": "The court did not frame ownership as an issue for decision.",
+        "additional_title_evidence_admitted": "The appellate court admitted additional evidence concerning ownership.",
+        "title_evidence_inadmissible": "Evidence concerning ownership cannot be admitted to decide an issue that was not pleaded or put in issue."
+      },
+      "definition": "In a civil appeal, additional evidence concerning ownership is inadmissible when ownership was neither pleaded nor made an issue."
+    },
+    {
+      "legal_issue": "A person in long, continuous possession may obtain protection against dispossession without due process even when another person claims ownership.",
+      "material_facts": [
+        "The respondent’s suit sought an injunction based on possession and did not claim title.",
+        "The trial court granted relief for part of the property on the basis of possession and the threat of dispossession otherwise than by due process, leaving title open.",
+        "The appellant claimed ownership, but title was not an issue in the proceedings.",
+        "The Supreme Court stated that long, continuous possession can be protected against persons other than the true owner and that even an owner must recover possession through due process."
+      ],
+      "conclusion": "The possession-based claim was not defeated by the appellant’s asserted title; possession could be protected against dispossession except through due process, while the parties’ title remained undecided.",
+      "legal_principle": "The Court applied the principles of possessory title and protection of long, continuous possession. It stated that a person in such possession may seek an injunction against anyone other than the true owner, and that even the owner may regain possession only through due process of law. The question of title remained open.",
+      "rule": {
+        "if": "possessory_injunction_proceeding and claimant_in_long_continuous_possession and threatened_dispossession_without_due_process",
+        "then": "possession_protected_until_due_process"
+      },
+      "predicates": {
+        "possessory_injunction_proceeding": "The proceeding seeks an injunction to protect possession rather than a decision establishing title.",
+        "claimant_in_long_continuous_possession": "The claimant has been in long, continuous possession of the property.",
+        "threatened_dispossession_without_due_process": "Another person threatens to remove the claimant from possession without using due process of law.",
+        "possession_protected_until_due_process": "The claimant’s possession may not be displaced except through due process of law."
+      },
+      "definition": "A claimant in long, continuous possession who seeks protection in a possessory injunction proceeding is protected from threatened dispossession until due process is used."
+    },
+    {
+      "legal_issue": "A notice alleging interference with possession does not admit that the person accused of interference was already in possession.",
+      "material_facts": [
+        "The respondent’s notice referred to the appellant’s construction of a boundary wall and alleged interference with the respondent’s possession and an attempt to trespass.",
+        "The notice did not state that the appellant was in possession of any part of the property."
+      ],
+      "conclusion": "The notice contained no admission that the appellant was in possession and therefore did not support the contention that the respondent could not maintain the suit.",
+      "legal_principle": "The Court construed the notice according to what it actually said: an allegation of interference with the respondent’s possession and attempted trespass was not an admission of the appellant’s possession.",
+      "rule": {
+        "if": "possession_protection_proceeding and notice_alleges_interference_only and notice_does_not_acknowledge_defendant_possession",
+        "then": "notice_is_not_admission_of_defendant_possession"
+      },
+      "predicates": {
+        "possession_protection_proceeding": "The proceeding seeks protection of the claimant’s possession.",
+        "notice_alleges_interference_only": "The claimant’s notice alleges that the other person interfered with possession or attempted to trespass.",
+        "notice_does_not_acknowledge_defendant_possession": "The notice does not state that the other person was already in possession.",
+        "notice_is_not_admission_of_defendant_possession": "The notice is not an admission that the other person was in possession."
+      },
+      "definition": "In a proceeding to protect possession, a notice alleging interference without acknowledging the other person’s possession is not an admission of that possession."
+    }
+  ],
+  "seconds": 17.6
+}

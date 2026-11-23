@@ -1,0 +1,60 @@
+{
+  "doc_id": "930951",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24360,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1682,
+    "prompt_tokens": 6423,
+    "total_tokens": 8105,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil court cannot entertain a suit challenging an eviction order under a public-premises regime merely because the authority may have wrongly classified the premises as public premises.",
+      "material_facts": [
+        "An authority empowered to order eviction from public premises found, after hearing the occupant and considering evidence, that the premises were public premises and that the occupant was unauthorised.",
+        "The occupant appealed to the designated appellate authority, which affirmed the finding, and subsequent judicial challenges to that decision were dismissed.",
+        "The occupant later brought a civil suit challenging the eviction order as void on the ground that the premises were not public premises."
+      ],
+      "conclusion": "The civil suit was barred. The authority had jurisdiction to determine whether the premises were public premises, and an error in that determination would not make its order a nullity; the statutory appeal was the remedy for correcting such an error.",
+      "legal_principle": "Section 15 of the Haryana Public Premises and Land (Eviction and Land Recovery) Act, 1972 bars civil-court jurisdiction over proceedings concerning eviction of unauthorised occupants of public premises. Under Section 5, the Collector may determine whether premises are public premises; a mistaken determination is an error within jurisdiction, not a nullity. Section 9 provides an appeal to the Commissioner to correct such an error. No earlier cases are relied on.",
+      "rule": {
+        "if": "civil_suit_challenging_eviction_order and premises_status_determined_by_authorized_officer and (statutory_appeal_available or not determination_is_jurisdictional_nullity)",
+        "then": "civil_suit_barred"
+      },
+      "predicates": {
+        "civil_suit_challenging_eviction_order": "A person brings a civil suit challenging an order for eviction from premises under a public-premises regime.",
+        "premises_status_determined_by_authorized_officer": "An officer empowered to administer the public-premises regime determines whether the premises fall within that regime.",
+        "statutory_appeal_available": "The regime provides an appeal through which an alleged error in the officer's determination can be challenged.",
+        "determination_is_jurisdictional_nullity": "The officer's determination is legally a nullity because the officer lacked authority to make it."
+      },
+      "definition": "When a civil suit challenges an eviction order, the suit is barred if an authorized officer determined the premises' status and the challenge is an error that is not a jurisdictional nullity."
+    },
+    {
+      "legal_issue": "A second appellate court cannot properly overturn concurrent findings that premises belong to the State and are public premises on the basis of an ownership claim made in earlier proceedings when that claim was not accepted and the position taken in the current suit does not dispute the State's title.",
+      "material_facts": [
+        "The trial court and first appellate court both found, on the evidence, that the disputed premises belonged to the State and were public premises.",
+        "The second appellate court reversed those findings based on an earlier written statement in which a municipal authority had claimed ownership.",
+        "That ownership claim had not been accepted in the earlier proceedings, and in the present suit the municipal authority stated that the premises formed part of a public road."
+      ],
+      "conclusion": "The second appellate court was not justified in reversing the concurrent findings; its judgment could not be sustained, and the findings of the lower courts were restored.",
+      "legal_principle": "On the record in this case, it was not legally justified to reverse concurrent factual findings based solely on an ownership claim made in earlier proceedings that had not been accepted, particularly when the municipal authority's position in the present suit did not dispute the State's title. No statutory provision or earlier case is relied on for this ruling.",
+      "rule": {
+        "if": "second_appeal and concurrent_findings_on_public_status and (reversal_based_only_on_unaccepted_prior_ownership_claim) and current_position_does_not_dispute_state_title",
+        "then": "concurrent_findings_on_public_status_upheld"
+      },
+      "predicates": {
+        "second_appeal": "The challenged decision is made in a second appeal.",
+        "concurrent_findings_on_public_status": "The trial court and first appellate court both find that the premises belong to the State and are public premises.",
+        "reversal_based_only_on_unaccepted_prior_ownership_claim": "The second appellate court reverses those findings solely on an ownership claim made in earlier proceedings that was not accepted there.",
+        "current_position_does_not_dispute_state_title": "The position taken in the current proceedings by the party that previously claimed ownership does not dispute the State's title."
+      },
+      "definition": "In a second appeal, concurrent findings that premises belong to the State and are public premises are upheld when they are reversed solely on an unaccepted earlier ownership claim that is not maintained in the current proceedings."
+    }
+  ],
+  "seconds": 10.6
+}

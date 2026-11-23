@@ -1,0 +1,59 @@
+{
+  "doc_id": "379296",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22308,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1605,
+    "prompt_tokens": 6244,
+    "total_tokens": 7849,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A legal ground that was neither raised before nor considered by the tax tribunal cannot be introduced in an appeal confined to a certified question merely because it might arise from the facts found.",
+      "material_facts": [
+        "The assessee argued in the Supreme Court that the land had been acquired as a gift and that capital gains provisions could not apply without a cost of acquisition.",
+        "The cost-of-acquisition argument had not been raised before the income-tax authorities, the tribunal, or the High Court, and there was no finding that the land had been received without consideration.",
+        "The appeal certificate covered only whether granting long leases amounted to a transfer, not whether the provisions applied to property acquired without cost."
+      ],
+      "conclusion": "The assessee could not raise the cost-of-acquisition argument in the appeal because it did not arise out of the tribunal’s decision.",
+      "legal_principle": "Under the principle in Commissioner of Income Tax, Bombay v. Scindia Steam Navigation Co. Ltd., [1961] 42 ITR 589, a question of law that was neither raised before the tribunal nor considered by it does not arise out of its order, even if it might arise on the facts found. The appeal proceeded from a reference under Section 66(1) of the Indian Income-tax Act, 1922, and was limited by the certificate of fitness.",
+      "rule": {
+        "if": "tax_reference_appeal and legal_ground_not_raised_before_tribunal and legal_ground_not_considered_by_tribunal",
+        "then": "new_legal_ground_not_entertained"
+      },
+      "predicates": {
+        "tax_reference_appeal": "The proceeding is an appeal arising from a tax tribunal’s decision through a reference to a court.",
+        "legal_ground_not_raised_before_tribunal": "The party did not present the legal ground to the tax tribunal.",
+        "legal_ground_not_considered_by_tribunal": "The tax tribunal did not consider or decide the legal ground."
+      },
+      "definition": "In a tax reference appeal, if a party did not raise a legal ground before the tribunal and the tribunal did not consider it, the ground is not entertained in the appeal."
+    },
+    {
+      "legal_issue": "Granting a long-term lease for a premium can amount to a transfer of a capital asset for capital gains purposes even though the owner retains the underlying property.",
+      "material_facts": [
+        "The assessee developed land into building sites and leased plots to various parties for 99 years.",
+        "The leases required payment of a premium and transferred rights to possession and enjoyment of the plots for the lease term, subject to conditions for termination.",
+        "The question before the Court was whether granting those leases amounted to a transfer, although the leases conveyed leasehold interests rather than the complete interests of the owner."
+      ],
+      "conclusion": "The grant of the leases amounted to a transfer of capital assets for the purposes of capital gains taxation.",
+      "legal_principle": "Section 12-B of the Indian Income-tax Act, 1922, imposed tax on profits or gains arising from the transfer of a capital asset; Section 2(4A) defined a capital asset. Applying the principle in Traders and Miners Ltd. v. Commissioner of Income Tax, Bihar and Orissa, [1955] 27 ITR 341, the Court held that a long lease for a premium, under which rights of possession and enjoyment of an enduring nature were parted with, could constitute a transfer.",
+      "rule": {
+        "if": "capital_gains_proceeding and long_term_lease and premium_received and enduring_property_rights_transferred",
+        "then": "lease_grant_is_transfer_of_capital_asset"
+      },
+      "predicates": {
+        "capital_gains_proceeding": "The proceeding concerns whether a transaction gives rise to taxable capital gains.",
+        "long_term_lease": "The owner granted another person the right to use property for a lengthy fixed term.",
+        "premium_received": "The owner received a premium for granting the lease.",
+        "enduring_property_rights_transferred": "The lease gave the lessee rights to possess and enjoy the property for the lease term, subject to termination conditions."
+      },
+      "definition": "In a capital gains proceeding, a lengthy lease for which a premium is received and which transfers enduring rights of possession and enjoyment is treated as a transfer of a capital asset."
+    }
+  ],
+  "seconds": 10.4
+}

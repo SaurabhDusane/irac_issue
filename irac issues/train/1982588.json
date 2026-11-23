@@ -1,0 +1,59 @@
+{
+  "doc_id": "1982588",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10801,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1802,
+    "prompt_tokens": 3077,
+    "total_tokens": 4879,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An award requiring prior approval is not made merely by preparing and submitting a proposed award when that approval has not been granted.",
+      "material_facts": [
+        "The land acquisition officer submitted a document identified as a proposed award and requested prior approval before the award deadline.",
+        "The required prior approval was not granted before the deadline."
+      ],
+      "conclusion": "The proposed award was not an award in law; without the required prior approval, no award had been made.",
+      "legal_principle": "Section 11 of the Land Acquisition Act, 1894, and its first proviso require prior approval of the appropriate Government or its authorised officer where approval is required. That approval is a condition precedent to making the award, and an award made in violation of the requirement is non est and void. No earlier cases are relied on.",
+      "rule": {
+        "if": "land_acquisition_proceeding and prior_approval_required and proposed_award_only and approval_not_granted",
+        "then": "award_not_made_in_law"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The matter concerns a proceeding to acquire land for a public purpose.",
+        "prior_approval_required": "The applicable authorization required the land acquisition officer to obtain approval before making the award.",
+        "proposed_award_only": "The officer submitted a proposed award rather than completing and issuing a final award.",
+        "approval_not_granted": "The required approving authority did not grant approval."
+      },
+      "definition": "When a land acquisition proceeding requires prior approval, submitting only a proposed award without obtaining that approval means no award has been made in law."
+    },
+    {
+      "legal_issue": "Land acquisition proceedings lapse when no award is made within the prescribed period after publication of the acquisition declaration.",
+      "material_facts": [
+        "A declaration in the land acquisition proceeding was published, starting the period for making an award.",
+        "The applicable two-year period expired without a final award; the officer had only submitted a proposed award, and prior approval had not been granted.",
+        "The court below had directed the authorities to proceed on the basis that an award had been made."
+      ],
+      "conclusion": "The acquisition proceedings lapsed when the period expired without an award, and the direction to take further steps on the basis of the proposed award was set aside.",
+      "legal_principle": "Section 11-A of the Land Acquisition Act, 1894, requires the Collector to make an award within two years from publication of the declaration. The requirement is mandatory, and if no award is made within that period the acquisition proceedings lapse, subject to the statutory proviso, which was not at issue.",
+      "rule": {
+        "if": "land_acquisition_proceeding and declaration_published and award_period_expired and no_final_award_made",
+        "then": "acquisition_proceeding_lapses"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The matter concerns a proceeding to acquire land for a public purpose.",
+        "declaration_published": "The acquisition declaration was published, starting the period for making an award.",
+        "award_period_expired": "The prescribed period for making the award ended.",
+        "no_final_award_made": "The land acquisition officer had not completed and issued a final award before the period ended."
+      },
+      "definition": "When a declaration has been published in a land acquisition proceeding, expiry of the award period without a final award means the proceeding lapses."
+    }
+  ],
+  "seconds": 12.5
+}

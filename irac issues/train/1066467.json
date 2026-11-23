@@ -1,0 +1,98 @@
+{
+  "doc_id": "1066467",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26979,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2579,
+    "prompt_tokens": 7233,
+    "total_tokens": 9812,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent controller has discretion to strike out a tenant’s defence when the tenant fails to make payments or deposits required by the controller’s order.",
+      "material_facts": [
+        "In an eviction proceeding, the tenant failed to make rent deposits as directed.",
+        "The landlord applied to have the tenant’s defence struck out, and the controller did so."
+      ],
+      "conclusion": "The word “may” gives the controller discretion to strike out the defence or not; striking it out is not mandatory whenever the tenant fails to comply.",
+      "legal_principle": "Section 15(7) of the Delhi Rent Control Act, 1958, provides that the controller may strike out the defence and proceed with the hearing if the tenant fails to make a payment or deposit required by an order under section 15(1). The Court relied on the legislative choice of “may,” including its substitution for “shall” in the corresponding provision of the Delhi and Ajmer Rent Control Act, 1952, and found no need to construe “may” as “shall.”",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and tenant_failed_ordered_rent_deposit",
+        "then": "controller_may_strike_tenant_defence"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord brought a proceeding seeking eviction of a tenant under rent-control law.",
+        "tenant_failed_ordered_rent_deposit": "The tenant failed to make a rent payment or deposit required by the controller’s order.",
+        "controller_may_strike_tenant_defence": "The controller has discretion to strike out the tenant’s defence."
+      },
+      "definition": "When a tenant fails to make an ordered rent deposit in a rent-control eviction proceeding, the controller may choose whether to strike out the tenant’s defence."
+    },
+    {
+      "legal_issue": "A tenant’s failure to comply with an order requiring rent payments or deposits does not by itself entitle the landlord to an eviction order.",
+      "material_facts": [
+        "In eviction proceedings based on rent default and other grounds, tenants failed to comply with orders requiring arrears and subsequent rent to be paid or deposited.",
+        "In some proceedings the controller struck out the tenant’s defence, while in another it was not struck out.",
+        "The controller proceeded with the eviction applications, and some eviction orders rested on grounds other than rent default."
+      ],
+      "conclusion": "The controller must proceed with the eviction application and the landlord must establish a ground for eviction. That inquiry continues even if the tenant’s defence has been struck out; if the defence has not been struck out, the tenant must be given an opportunity to present it.",
+      "legal_principle": "Sections 14(1)(a), 14(2), 15(6), and 15(7) of the Delhi Rent Control Act, 1958, show that compliance with an order under section 15(1) bars recovery of possession on the ground of rent default, but non-compliance does not itself require eviction. The landlord’s cause of action for rent default survives non-compliance with both the demand notice and the controller’s order, but the landlord must still establish the case for possession. Section 15(7) expressly requires the hearing to proceed even when the defence is struck out.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and tenant_failed_ordered_rent_deposit",
+        "then": "landlord_must_establish_eviction_ground_before_possession_order"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord brought a proceeding seeking eviction of a tenant under rent-control law.",
+        "tenant_failed_ordered_rent_deposit": "The tenant failed to make a rent payment or deposit required by the controller’s order.",
+        "landlord_must_establish_eviction_ground_before_possession_order": "The landlord must establish a legally sufficient ground for eviction before an order for possession can be made."
+      },
+      "definition": "In a rent-control eviction proceeding, failure to make an ordered rent deposit does not itself produce an eviction order; the landlord must establish an eviction ground."
+    },
+    {
+      "legal_issue": "A rent controller has no discretion to extend the time fixed by law for complying with an order requiring payment or deposit of rent.",
+      "material_facts": [
+        "The controller ordered the tenant to pay or deposit arrears within the period specified and to continue making rent payments or deposits thereafter.",
+        "The tenant failed to comply within the prescribed period, and the dispute concerned whether the controller could extend that period."
+      ],
+      "conclusion": "The controller cannot extend the time prescribed for compliance with the order.",
+      "legal_principle": "Section 15(1) of the Delhi Rent Control Act, 1958, requires payment or deposit of arrears within one month of the order and continued monthly payments or deposits. Sections 14(2) and 15(6) make compliance with the order consequential to the parties’ rights concerning eviction for rent default. The statutory period cannot be modified by the controller.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and controller_ordered_rent_payment and tenant_failed_to_comply_within_prescribed_time",
+        "then": "controller_cannot_extend_compliance_time"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord brought a proceeding seeking eviction of a tenant under rent-control law.",
+        "controller_ordered_rent_payment": "The controller ordered the tenant to pay or deposit arrears and to continue making rent payments or deposits.",
+        "tenant_failed_to_comply_within_prescribed_time": "The tenant did not make a required payment or deposit within the time prescribed for compliance.",
+        "controller_cannot_extend_compliance_time": "The controller has no discretion to extend the prescribed time for compliance."
+      },
+      "definition": "When the controller orders rent payments or deposits and the tenant fails to comply within the prescribed time, the controller cannot extend that time."
+    },
+    {
+      "legal_issue": "An appellate court reviewing eviction orders must decide whether striking out the tenant’s defence was proper and determine the resulting disposition accordingly.",
+      "material_facts": [
+        "The controller struck out a tenant’s defence and then proceeded with the eviction application.",
+        "The landlord appealed after a tribunal set aside the striking-out order and the eviction order.",
+        "The High Court decided the appeals without determining whether the defence had been properly struck out."
+      ],
+      "conclusion": "The appellate court must decide whether the defence was properly struck out. If it was, the eviction order may be upheld if the controller proceeded with the application and ordered possession; if it was not, the possession order must be set aside and the application heard with an opportunity for the tenant to present a defence.",
+      "legal_principle": "Section 15(7) of the Delhi Rent Control Act, 1958, makes striking out the defence discretionary. The Court held that the appellate court must review whether that discretion was properly exercised; the consequences for the eviction order depend on that determination and on the proceedings before the controller.",
+      "rule": {
+        "if": "appeal_from_rent_control_eviction_order and defence_was_struck_out and appellate_court_has_not_reviewed_striking_out",
+        "then": "appellate_court_must_determine_propriety_of_striking_out"
+      },
+      "predicates": {
+        "appeal_from_rent_control_eviction_order": "A party appealed an order for eviction made in a rent-control proceeding.",
+        "defence_was_struck_out": "The controller struck out the tenant’s defence before proceeding with the eviction application.",
+        "appellate_court_has_not_reviewed_striking_out": "The appellate court did not decide whether the controller was right to strike out the defence.",
+        "appellate_court_must_determine_propriety_of_striking_out": "The appellate court must decide whether striking out the defence was proper."
+      },
+      "definition": "When an appeal concerns an eviction order made after the tenant’s defence was struck out, and the appellate court has not reviewed that step, the appellate court must decide whether striking out the defence was proper."
+    }
+  ],
+  "seconds": 17.8
+}

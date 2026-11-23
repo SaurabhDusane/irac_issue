@@ -1,0 +1,55 @@
+{
+  "doc_id": "756414",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 7327,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1788,
+    "prompt_tokens": 2319,
+    "total_tokens": 4107,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "In a rent-default eviction suit requiring a tenant to make a curative payment at the first hearing, the first hearing occurs after issues are framed and the suit is posted for trial.",
+      "material_facts": [
+        "The suit sought eviction for arrears of rent under a provision allowing the tenant to avoid eviction by paying the required amounts at the first hearing.",
+        "The issues in the suit were framed after the tenant had tendered and deposited the money."
+      ],
+      "conclusion": "The first hearing for the purpose of the statutory payment requirement is the stage after issues have been framed, when the suit is posted for trial; it cannot occur earlier than the preliminary examination of the parties and settlement of issues.",
+      "legal_principle": "Section 20(4) of the U.P. Urban Building (Regulation of Letting, Rent & Eviction) Act, 1972 ties the tenant’s curative payment to the first hearing. The Court adopted the Allahabad High Court’s interpretation and relied on Order X Rule 1, Order XIV Rule 1(5), and Order XV Rule 1 of the Code of Civil Procedure, which indicate that the first hearing cannot precede preliminary examination and settlement of issues.",
+      "rule": {
+        "if": "rent_default_eviction_suit and cure_payment_due_at_first_hearing",
+        "then": "first_hearing_occurs_after_issues_are_framed_and_suit_is_posted_for_trial"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "The proceeding seeks eviction on the ground of a tenant’s default in paying rent.",
+        "cure_payment_due_at_first_hearing": "The governing rule permits the tenant to avoid eviction by making the required payment at the first hearing."
+      },
+      "definition": "When a rent-default eviction suit makes a curative payment due at the first hearing, that hearing occurs after issues are framed and the suit is posted for trial."
+    },
+    {
+      "legal_issue": "A payment tendered to the court and processed through a challan is treated as deposited on the date of tender or challan presentation when the treasury deposit follows afterward.",
+      "material_facts": [
+        "The tenant tendered the required money to the court before the relevant hearing and a challan was processed.",
+        "The money was deposited in the treasury afterward, but before the issues were framed and the suit was posted for trial."
+      ],
+      "conclusion": "The treasury deposit related back to the date on which the money was tendered or the challan was presented, so the tenant’s payment was within time.",
+      "legal_principle": "Under Section 20(4) of the U.P. Urban Building (Regulation of Letting, Rent & Eviction) Act, 1972, payment had to be made by the first hearing. The Court accepted the approach in Bankey Bahari v. Gopal Dass and Daya Ram v. Virender Kumar Goel: where money is tendered before the court, a challan is passed and the money is then deposited in the treasury using that challan, the deposit relates back to the tender or challan-presentation date.",
+      "rule": {
+        "if": "rent_default_eviction_suit and payment_tendered_to_court and challan_processed_before_treasury_deposit",
+        "then": "treasury_deposit_dates_from_tender_or_challan_presentation"
+      },
+      "predicates": {
+        "rent_default_eviction_suit": "The proceeding seeks eviction on the ground of a tenant’s default in paying rent.",
+        "payment_tendered_to_court": "The tenant tendered the required money to the court.",
+        "challan_processed_before_treasury_deposit": "The court processed a challan before the tenant deposited the money in the treasury under it."
+      },
+      "definition": "In a rent-default eviction suit, when the tenant tenders payment to the court and a challan is processed before the later treasury deposit, the deposit dates from the tender or challan-presentation date."
+    }
+  ],
+  "seconds": 10.9
+}

@@ -1,0 +1,155 @@
+{
+  "doc_id": "884253",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 39769,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4445,
+    "prompt_tokens": 9653,
+    "total_tokens": 14098,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An industrial unit subject to a land-surrender order must surrender the entire plot covered by that order, subject to the portion the owner is entitled to retain under the original directions.",
+      "material_facts": [
+        "An earlier order directed specified industries to surrender land for community green space and open areas, while allowing owners to retain a portion according to the prescribed allocation.",
+        "A prior direction for surrender of only factory land in a particular case involved land divided by a road and was based on that case’s peculiar facts."
+      ],
+      "conclusion": "The earlier order requires surrender of the entire land covered by it, subject to the owner’s entitlement to retain land under that order; the exceptional direction in the divided-land case does not apply generally.",
+      "legal_principle": "The directions in M.C. Mehta v. Union of India, (1996) 4 SCC 351, govern surrender of the land and the owner’s retained share. The Court’s order in the Hindustan Vegetables matter dated 7 December 1999 was confined to its peculiar facts and did not dilute the general surrender direction.",
+      "rule": {
+        "if": "land_surrender_enforcement_case and plot_subject_to_surrender_order",
+        "then": "entire_plot_surrendered_subject_to_owner_retained_share"
+      },
+      "predicates": {
+        "land_surrender_enforcement_case": "The proceeding concerns enforcement of a court order requiring industrial land to be surrendered for community use.",
+        "plot_subject_to_surrender_order": "The industrial plot is land covered by the court’s surrender direction."
+      },
+      "definition": "When a plot is covered by the surrender direction in an enforcement proceeding, the entire plot is surrendered except for the share the owner is entitled to retain."
+    },
+    {
+      "legal_issue": "The owner of land required to be surrendered must include an approach from the road if the owner owns that approach, but need not provide an approach the owner does not own.",
+      "material_facts": [
+        "The authority sought land that could be reached from a road so it could be used by the community.",
+        "The Court distinguished land with an owner-owned approach from land whose approach road belonged to someone else."
+      ],
+      "conclusion": "Where the owner owns the approach, the land must be surrendered with that approach; where the owner does not own the approach, surrender takes effect on an as-is-where-is basis.",
+      "legal_principle": "The Court applied the purpose of the surrender direction—making the land usable for the community—while limiting the owner’s obligation to land and access the owner owns. This was a clarification of the surrender directions in M.C. Mehta v. Union of India, (1996) 4 SCC 351.",
+      "rule": {
+        "if": "land_surrender_enforcement_case and land_requires_surrender and (owner_owns_road_approach or not owner_owns_road_approach)",
+        "then": "include_owner_owned_approach_otherwise_accept_land_as_is"
+      },
+      "predicates": {
+        "land_surrender_enforcement_case": "The proceeding concerns enforcement of a court order requiring industrial land to be surrendered.",
+        "land_requires_surrender": "The land in question is subject to the surrender direction.",
+        "owner_owns_road_approach": "The owner of the land also owns its approach from the road.",
+        "not_owner_owns_road_approach": "The owner of the land does not own its approach from the road."
+      },
+      "definition": "For land that must be surrendered, the owner includes an approach the owner owns and otherwise surrenders the land as it is."
+    },
+    {
+      "legal_issue": "An owner cannot use land retained under the surrender directions while the land to be surrendered remains encumbered, and failure to clear the encumbrance within the court-set period results in the retained land vesting in the authority.",
+      "material_facts": [
+        "Some land proposed for surrender was encumbered, and the Court considered that the community could not use it unless the encumbrance was cleared.",
+        "The Court directed that the owner could not use the retained land until the surrendered land was made free from encumbrance, and that the retained land would vest in the authority if the encumbrance was not cleared within five years."
+      ],
+      "conclusion": "The owner cannot use the retained land until the surrendered land is free from encumbrance; if the encumbrance is not cleared within five years, the retained land vests in the authority for community use.",
+      "legal_principle": "The Court balanced the community purpose of the surrender order with the burden of requiring an owner to clear an existing encumbrance. It imposed the consequence in clarification of the directions in M.C. Mehta v. Union of India, (1996) 4 SCC 351.",
+      "rule": {
+        "if": "land_surrender_enforcement_case and surrendered_land_is_encumbered",
+        "then": "retained_land_unusable_until_encumbrance_cleared_and_vests_if_not_cleared_in_time"
+      },
+      "predicates": {
+        "land_surrender_enforcement_case": "The proceeding concerns enforcement of a court order requiring industrial land to be surrendered.",
+        "surrendered_land_is_encumbered": "The land required to be surrendered is subject to an encumbrance that has not been cleared."
+      },
+      "definition": "When surrendered land remains encumbered, the owner cannot use retained land until the encumbrance is cleared, and the retained land vests in the authority if it is not cleared in time."
+    },
+    {
+      "legal_issue": "An industrial unit required to surrender no more than a tiny parcel need not surrender that parcel when it cannot serve a community need.",
+      "material_facts": [
+        "Some industrial units were required to surrender very small areas of land.",
+        "The Court considered that a parcel no larger than 100 square metres could not be used to meet a community need."
+      ],
+      "conclusion": "An industry required to surrender up to 100 square metres need not surrender that land.",
+      "legal_principle": "The Court limited the surrender obligation where the resulting parcel was too small to serve the community purpose underlying the direction in M.C. Mehta v. Union of India, (1996) 4 SCC 351.",
+      "rule": {
+        "if": "land_surrender_enforcement_case and required_surrender_parcel_cannot_serve_community_need",
+        "then": "tiny_unusable_parcel_need_not_be_surrendered"
+      },
+      "predicates": {
+        "land_surrender_enforcement_case": "The proceeding concerns enforcement of a court order requiring industrial land to be surrendered.",
+        "required_surrender_parcel_cannot_serve_community_need": "The parcel an owner would have to surrender is too small to be useful for a community need."
+      },
+      "definition": "In an enforcement proceeding, a parcel that cannot serve a community need need not be surrendered."
+    },
+    {
+      "legal_issue": "An industry that has actually started a permitted new activity after obtaining the required clearances need not surrender its land if it has not relocated the hazardous industry elsewhere, whereas an intention to start such an activity is insufficient.",
+      "material_facts": [
+        "An earlier order allowed the occupants and owners of closed industrial plots to follow the required procedure to establish a new industry permitted by the applicable plan, obtaining required permissions and clearances.",
+        "The Court distinguished units that had actually started a permitted new industry after obtaining clearances from units that had not started one and merely intended to do so.",
+        "The Court stated that a unit which had relocated the hazardous industry elsewhere could not claim the benefit of the exception for a new industry on the plot."
+      ],
+      "conclusion": "A unit that has started a new industry permitted by the Master Plan after obtaining the necessary clearances need not surrender the land if it has not relocated the hazardous industry elsewhere; an unimplemented intention to start such an industry does not excuse surrender.",
+      "legal_principle": "The Court applied its order of 4 December 1996, reported at (1997) 11 SCC 327, which required a fresh procedure and necessary permissions for a new industry, and its order of 28 April 2000, reported at 2000 (4) SCALE 267, concerning units that had relocated. The Master Plan determines whether the new industry is permitted.",
+      "rule": {
+        "if": "land_surrender_enforcement_case and closed_industry_subject_to_surrender and new_industry_actually_started and new_industry_permitted and required_clearances_obtained and not hazardous_industry_relocated_elsewhere",
+        "then": "no_surrender_required_for_land_used_by_permitted_cleared_new_industry"
+      },
+      "predicates": {
+        "land_surrender_enforcement_case": "The proceeding concerns enforcement of a court order requiring industrial land to be surrendered.",
+        "closed_industry_subject_to_surrender": "The former industry has closed and its land is otherwise subject to the surrender direction.",
+        "new_industry_actually_started": "A new industry has in fact begun operating on the land, rather than merely being proposed.",
+        "new_industry_permitted": "The applicable land-use plan permits the new industry on the land.",
+        "required_clearances_obtained": "The operator obtained the permissions and clearances required for the new industry.",
+        "not_hazardous_industry_relocated_elsewhere": "The hazardous industry was not relocated to another site."
+      },
+      "definition": "A closed industry subject to surrender may retain the land for a new activity only if that activity has actually begun, is permitted, has the required clearances, and the hazardous industry was not relocated elsewhere."
+    },
+    {
+      "legal_issue": "An industry listed as subject to closure cannot avoid the land-surrender direction by asserting that it closed before the direction when it did not appear or object.",
+      "material_facts": [
+        "The names of certain industries appeared in the Court’s lists of industries subject to closure.",
+        "Those industries did not appear or raise an objection, but later claimed that they had closed before the relevant surrender order."
+      ],
+      "conclusion": "An industry whose name appeared in the relevant list and that did not appear or object cannot rely on its claimed earlier closure as a ground for avoiding surrender.",
+      "legal_principle": "The Court enforced the existing closure and surrender directions against listed industries that had not appeared or objected, rather than allowing a later claim of prior closure to defeat those directions.",
+      "rule": {
+        "if": "land_surrender_enforcement_case and industry_listed_for_closure and no_objection_or_appearance and prior_closure_claimed",
+        "then": "prior_closure_claim_does_not_exempt_land_from_surrender"
+      },
+      "predicates": {
+        "land_surrender_enforcement_case": "The proceeding concerns enforcement of a court order requiring industrial land to be surrendered.",
+        "industry_listed_for_closure": "The industry was included in a court list of industries subject to closure.",
+        "no_objection_or_appearance": "The industry neither appeared nor raised an objection to its inclusion in the relevant proceedings.",
+        "prior_closure_claimed": "The industry later asserted that it had closed before the surrender direction."
+      },
+      "definition": "A listed industry that did not appear or object cannot avoid surrender by later claiming it had already closed."
+    },
+    {
+      "legal_issue": "The landowner must surrender land on which an industry ordered to close was operated by a tenant, even if the tenant later returned the premises to the owner.",
+      "material_facts": [
+        "The closure order applied to the injurious industry being carried on at the premises, whether by the landowner or a tenant.",
+        "A tenant closed the industry and handed the rented premises back to the original owner."
+      ],
+      "conclusion": "The owner is bound by the surrender order because it concerns the land on which the industry was carried on and ordered to close; the tenant’s return of the premises to the owner does not alter that obligation.",
+      "legal_principle": "The Court treated the closure and subsequent surrender directions as relating to the land where the injurious industry operated, irrespective of whether the operator was the owner or a tenant. The directions derive from M.C. Mehta v. Union of India, (1996) 4 SCC 351, and the clarification in (1997) 11 SCC 327.",
+      "rule": {
+        "if": "land_surrender_enforcement_case and industry_operated_on_land and industry_ordered_to_close and operator_was_tenant",
+        "then": "landowner_must_surrender_land_despite_tenant_returning_premises"
+      },
+      "predicates": {
+        "land_surrender_enforcement_case": "The proceeding concerns enforcement of a court order requiring industrial land to be surrendered.",
+        "industry_operated_on_land": "The industry was carried on at the land in question.",
+        "industry_ordered_to_close": "The industry operating there was ordered to close.",
+        "operator_was_tenant": "The industry was operated by a tenant rather than by the landowner."
+      },
+      "definition": "When an industry ordered to close operated on the land through a tenant, the owner must surrender the land even if the tenant returned the premises."
+    }
+  ],
+  "seconds": 27.0
+}

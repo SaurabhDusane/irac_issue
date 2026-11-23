@@ -1,0 +1,65 @@
+{
+  "doc_id": "1869770",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 54196,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3031,
+    "prompt_tokens": 13493,
+    "total_tokens": 16524,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory protection for tenants in pending rent-default eviction proceedings does not extend to an application for special leave or an appeal admitted by special leave.",
+      "material_facts": [
+        "An eviction decree was entered against the tenant on the ground of non-payment of rent, and the High Court affirmed it on appeal.",
+        "The tenant applied for special leave before the amending ordinance commenced; the ordinance commenced while that application was pending, and special leave was granted afterward.",
+        "The tenant sought the statutory protection after special leave was granted.",
+        "The statutory text defined a proceeding as a suit, appeal or application for revision and made the relief for appeals turn on the presentation of a memorandum of appeal or an application for revision."
+      ],
+      "conclusion": "The application for special leave and the appeal admitted by special leave were outside the proceedings covered by the statutory protection, so the tenant could not obtain that protection in the Supreme Court appeal.",
+      "legal_principle": "The Court held that an application for special leave under Article 136 is an extraordinary, discretionary remedy and is not an ordinary appeal as of right. The statutory definition of a proceeding as a suit, appeal or revision, read with the requirement that relief in an appeal be sought by reference to the presentation of a memorandum of appeal, covered the ordinary hierarchy of appeals and revisions, not a special-leave proceeding. The Court contrasted Order 41, Rule 1 of the Code of Civil Procedure, which requires an appeal memorandum to be presented, with Order 16, Rule 11 of the Supreme Court Rules, under which a special-leave petition is treated as an appeal petition after leave is granted but no separate appeal memorandum is presented. The majority also held that section 22 did not assist: it concerns decrees or orders passed under the Act, whereas eviction suits are brought in ordinary civil courts. No earlier cases were relied on.",
+      "rule": {
+        "if": "special_leave_appeal and rent_default_eviction_decree and special_leave_petition_pending_when_protection_began and (tenant_relief_limited_to_suits_regular_appeals_and_revisions or relief_triggered_by_presentation_of_regular_appeal_memorandum) and no_separate_appeal_memorandum_presented",
+        "then": "tenant_relief_unavailable_in_special_leave_proceeding"
+      },
+      "predicates": {
+        "special_leave_appeal": "The tenant sought review through a discretionary special-leave process rather than an ordinary appeal as of right.",
+        "rent_default_eviction_decree": "The lower courts entered and affirmed an eviction decree based on the tenant's non-payment of rent.",
+        "special_leave_petition_pending_when_protection_began": "The tenant's special-leave petition was pending when the new tenant protection began.",
+        "tenant_relief_limited_to_suits_regular_appeals_and_revisions": "The statutory scheme described the covered proceedings as suits, ordinary appeals and applications for revision.",
+        "relief_triggered_by_presentation_of_regular_appeal_memorandum": "The statutory scheme tied relief in an appeal to the presentation of an appeal memorandum.",
+        "no_separate_appeal_memorandum_presented": "After special leave was granted, the tenant's petition was treated as the appeal petition without a separate appeal memorandum being presented."
+      },
+      "definition": "When a rent-default eviction decree is challenged through a special-leave appeal, and the relief is confined to suits, ordinary appeals and revisions or depends on presentation of an ordinary appeal memorandum, the tenant cannot obtain that relief in the special-leave proceeding."
+    },
+    {
+      "legal_issue": "The Supreme Court should not disturb concurrent findings supporting an eviction decree where the tenant had notice of the proceedings, failed to participate for a prolonged period without explanation, and did not establish grounds for interference.",
+      "material_facts": [
+        "The tenant was served with summonses but did not formally appear in the trial proceedings.",
+        "The tenant knew that the defence had been struck out and joined his brothers in challenging that order by appeal and revision.",
+        "After the case returned to the trial court, the tenant did not explain his prolonged failure to participate before seeking to set aside the ex parte order.",
+        "The lower appellate court found that the tenants had defaulted in paying rent, and the High Court affirmed that finding; the other pleaded grounds for eviction were rejected."
+      ],
+      "conclusion": "The Supreme Court declined to interfere with the concurrent findings on the merits and dismissed the appeal.",
+      "legal_principle": "The Court relied on the concurrent factual findings of the lower courts and the tenant's unexplained lack of diligence, including his failure to participate despite notice and knowledge of the proceedings. It found no basis to disturb the eviction decree in the special-leave appeal. No earlier cases were relied on for this conclusion.",
+      "rule": {
+        "if": "special_leave_appeal and tenant_received_notice and tenant_knew_of_prior_proceedings and prolonged_nonparticipation_unexplained and concurrent_findings_support_eviction",
+        "then": "supreme_court_does_not_disturb_eviction_findings"
+      },
+      "predicates": {
+        "special_leave_appeal": "The tenant asked the Supreme Court to intervene through a special-leave appeal.",
+        "tenant_received_notice": "The tenant was served with summonses in the eviction suit.",
+        "tenant_knew_of_prior_proceedings": "The tenant demonstrated knowledge of the proceedings by joining challenges to an order striking out the defence.",
+        "prolonged_nonparticipation_unexplained": "The tenant did not explain his prolonged failure to participate in the trial proceedings.",
+        "concurrent_findings_support_eviction": "The lower appellate court and the High Court both found that rent default supported eviction."
+      },
+      "definition": "When a tenant in a special-leave appeal had notice and knowledge of the proceedings, left prolonged nonparticipation unexplained, and faces concurrent findings supporting eviction, the Supreme Court does not disturb those findings."
+    }
+  ],
+  "seconds": 19.0
+}

@@ -1,0 +1,106 @@
+{
+  "doc_id": "1012429",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29262,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3379,
+    "prompt_tokens": 8130,
+    "total_tokens": 11509,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A limitation law extended to a territory governs a later suit even if it shortens the earlier limitation period, unless the change impairs a vested right protected by the transition provisions.",
+      "material_facts": [
+        "The mortgage was created and became enforceable while the territory’s earlier limitation law prescribed a longer period.",
+        "Before the suit was filed, that law was repealed and the Indian Limitation Act was extended to the territory.",
+        "The new law shortened the period for enforcing the mortgage, and the transition legislation made provision to safeguard vested rights."
+      ],
+      "conclusion": "The Indian Limitation Act applied to the suit because shortening the limitation period did not impair or take away a vested right.",
+      "legal_principle": "The Part-B States (Laws) Act, 1951 extended the Indian Limitation Act and repealed the earlier territorial law. Sections 6 and 30 of the Part-B States (Laws) Act and the transition provision in section 30 of the Indian Limitation Act protected relevant vested rights, but there was no vested right in the former procedural limitation period. The abridgment of that period therefore did not prevent application of the Indian Act.",
+      "rule": {
+        "if": "civil_suit_after_limitation_law_change and (new_law_shortens_old_period and not vested_right_impaired)",
+        "then": "new_limitation_law_governs"
+      },
+      "predicates": {
+        "civil_suit_after_limitation_law_change": "A party filed a civil suit after a new limitation regime had replaced the previously applicable regime.",
+        "new_law_shortens_old_period": "The new regime prescribed a shorter limitation period than the former regime for the claim.",
+        "vested_right_impaired": "The change impaired or took away a vested right protected by the transition arrangements.",
+        "new_limitation_law_governs": "The limitation regime in force when the suit was filed governs the suit."
+      },
+      "definition": "When a civil suit follows a change in limitation law, the new regime governs where it shortens the former period without impairing a protected vested right."
+    },
+    {
+      "legal_issue": "A suit seeking foreclosure only on an anomalous mortgage is governed by the ordinary limitation rule for mortgage enforcement, not the special rule applicable to an English mortgage carrying a right to sue for sale.",
+      "material_facts": [
+        "The mortgage deed created an anomalous mortgage and gave the mortgagee a right to foreclosure only, with no alternative right to sue for sale.",
+        "The mortgagee did not exercise the option to enforce the mortgage upon non-payment of instalments, so the mortgage money became due when the full stipulated period expired.",
+        "The suit sought foreclosure only."
+      ],
+      "conclusion": "The suit was governed by Article 132 of the Indian Limitation Act, not Article 147, and its limitation period ran from when the mortgage money became due.",
+      "legal_principle": "Articles 132 and 147 of the Indian Limitation Act, 1908 distinguish the applicable limitation rules for mortgage suits. In Vasudeva Mudaliar v. K. S. Shriniwas Pillai, the Privy Council held that Article 147 applied only to an English mortgage, as defined before the 1929 amendment to the Transfer of Property Act, under which the mortgagee could sue for foreclosure or sale. The Court applied that decision to hold that a suit for foreclosure only fell under Article 132.",
+      "rule": {
+        "if": "foreclosure_suit and anomalous_mortgage and foreclosure_only and no_right_to_sue_for_sale",
+        "then": "ordinary_mortgage_limitation_rule_applies"
+      },
+      "predicates": {
+        "foreclosure_suit": "A claimant brought a suit seeking foreclosure of a mortgage.",
+        "anomalous_mortgage": "The mortgage was not an English mortgage and was classified as an anomalous mortgage.",
+        "foreclosure_only": "The claimant sought foreclosure and did not seek sale as an alternative remedy.",
+        "no_right_to_sue_for_sale": "The mortgage terms did not give the mortgagee a right to sue for sale.",
+        "ordinary_mortgage_limitation_rule_applies": "The suit is governed by the ordinary limitation rule for mortgage enforcement rather than the special rule for an English mortgage."
+      },
+      "definition": "A foreclosure suit on an anomalous mortgage, where foreclosure is the only remedy and there is no right to sue for sale, is governed by the ordinary mortgage limitation rule."
+    },
+    {
+      "legal_issue": "When new parties are added to a suit to assert their own rights, the suit as regards them is treated as instituted on the date they are added, and their claims are barred if limitation had expired by then.",
+      "material_facts": [
+        "The original plaintiff sued in his own right, claiming that he alone was entitled to enforce the mortgage as the deceased mortgagee’s adopted son.",
+        "After the trial court found that the adoption had not been established, the original plaintiff sought to add his natural mother as a co-plaintiff and her sisters as defendants so they could claim the mortgage right as heirs.",
+        "The added parties asserted their own rights; their names were not corrections of a misdescription, and they were not being added as persons represented by the original plaintiff.",
+        "By the time the parties were added, a suit to enforce the mortgage was outside the applicable limitation period."
+      ],
+      "conclusion": "Under section 22(1) of the Indian Limitation Act, 1908, the suit as regards the added parties was deemed instituted when they were added and was barred by limitation.",
+      "legal_principle": "Section 22(1) of the Indian Limitation Act, 1908 applies when a new plaintiff or defendant is added or substituted and deems the suit, as regards that party, to have been instituted on that date. The Court relied on Moyappa Chetty v. Supramanian Chetty and Ramsebuk v. Ramlall Koondoo, and disapproved the contrary approach in Subodini Devi v. Cumar Ganoda Kant Roy and Ravji v. Mahadev. The exception for correction of a misdescription or addition of a proper representative did not apply because the original plaintiff had sued personally, not representatively. The later proviso to section 21(1) of the Limitation Act, 1963 had no application.",
+      "rule": {
+        "if": "civil_suit and new_parties_added and original_plaintiff_sued_personally and added_parties_assert_own_rights and limitation_expired_at_addition",
+        "then": "added_parties_claims_barred"
+      },
+      "predicates": {
+        "civil_suit": "A claimant brought a civil suit to enforce a right.",
+        "new_parties_added": "The court added one or more new plaintiffs or defendants after the suit had begun.",
+        "original_plaintiff_sued_personally": "The original plaintiff claimed the right for himself and did not sue in a representative capacity.",
+        "added_parties_assert_own_rights": "The new parties were added to assert rights of their own rather than to correct a misdescription or join persons already represented.",
+        "limitation_expired_at_addition": "The applicable limitation period had expired by the time the new parties were added.",
+        "added_parties_claims_barred": "The new parties cannot obtain relief because their claims are treated as instituted only when they were added, after limitation had expired."
+      },
+      "definition": "New parties who assert their own rights in a civil suit cannot rely on its earlier filing date when limitation had expired by the time they were added."
+    },
+    {
+      "legal_issue": "A court may add a co-plaintiff and other interested persons as defendants under the civil procedure rules and permit consequential amendments, although limitation may prevent the added parties from obtaining relief.",
+      "material_facts": [
+        "While an appeal from dismissal of the original suit was pending, the plaintiff applied to add a willing claimant as a co-plaintiff and two other interested persons as defendants because they would not join as plaintiffs.",
+        "The plaintiff also sought consequential amendments to the pleadings and relief sought.",
+        "The added parties were seeking to enforce the mortgage in their own capacity."
+      ],
+      "conclusion": "The High Court had power to join the co-plaintiff under Order 1, rule 10(1), to join the defendants under Order 1, rule 10(2), and to allow consequential amendments under Order 6, rule 17; the added parties nevertheless could not obtain relief because their claims were time-barred.",
+      "legal_principle": "Order 1, rule 10(1) and (2) of the Code of Civil Procedure, 1908 provided for addition of plaintiffs and defendants, and Order 6, rule 17 permitted consequential amendments. The Court held that the High Court had procedural power to make those additions and amendments, while section 22(1) of the Indian Limitation Act, 1908 made the claims of the added parties time-barred.",
+      "rule": {
+        "if": "civil_appeal_pending and application_to_add_co_plaintiff_and_defendants and consequential_amendments_sought",
+        "then": "court_may_allow_joinder_and_amendment"
+      },
+      "predicates": {
+        "civil_appeal_pending": "An appeal in a civil suit was pending when the application to alter the parties was made.",
+        "application_to_add_co_plaintiff_and_defendants": "A party asked the court to add a willing claimant as a co-plaintiff and other interested persons as defendants.",
+        "consequential_amendments_sought": "The applicant asked to amend the pleadings and relief to reflect the proposed joinder.",
+        "court_may_allow_joinder_and_amendment": "The court has procedural power to permit the proposed joinder and consequential amendments, subject to any other bar to relief."
+      },
+      "definition": "During a pending civil appeal, the court may permit the proposed joinder and related amendments, subject to any separate bar that prevents relief."
+    }
+  ],
+  "seconds": 22.5
+}

@@ -1,0 +1,81 @@
+{
+  "doc_id": "917496",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19619,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2449,
+    "prompt_tokens": 5571,
+    "total_tokens": 8020,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Time spent pursuing remedies that were not pursued diligently and in good faith cannot be excluded when deciding whether an appeal was filed within time.",
+      "material_facts": [
+        "The appeals were filed after the limitation period had expired, and the appellants sought exclusion of more than three years spent pursuing earlier proceedings.",
+        "The appellants had pursued a further appeal that was not maintainable and then initiated fresh proceedings before consolidation authorities after an earlier High Court judgment had finally resolved the matter.",
+        "The appellants supplied no proper affidavit or other material showing due diligence or that they had obtained proper legal advice.",
+        "The Court found that the advice to restart proceedings before authorities unable to set aside the High Court judgment could not have been given in good faith."
+      ],
+      "conclusion": "The appellants did not establish a basis to exclude the time spent in the earlier proceedings, and the appeals were dismissed as time-barred.",
+      "legal_principle": "Section 14 of the Limitation Act, 1963, does not permit time spent in earlier proceedings to be excluded absent due diligence and good faith. The party seeking exclusion must provide material supporting those conditions; pursuing remedies that could not legally grant the relief sought does not satisfy them.",
+      "rule": {
+        "if": "delayed_civil_appeal and exclusion_of_prior_proceedings_claimed and (not diligent_prosecution or not good_faith_prosecution)",
+        "then": "appeal_time_barred"
+      },
+      "predicates": {
+        "delayed_civil_appeal": "A party brings a civil appeal after the applicable filing period has expired.",
+        "exclusion_of_prior_proceedings_claimed": "The party asks that time spent pursuing earlier proceedings be excluded when assessing whether the appeal was timely.",
+        "diligent_prosecution": "The party diligently pursued the earlier proceedings and remedies.",
+        "good_faith_prosecution": "The party pursued the earlier proceedings in good faith, relying on advice and remedies that could reasonably be regarded as proper."
+      },
+      "definition": "When a civil appeal is late and the party seeks exclusion for earlier proceedings, the appeal is time-barred if those proceedings were not pursued diligently or in good faith."
+    },
+    {
+      "legal_issue": "A party cannot use fresh proceedings before subordinate authorities to reopen a matter finally decided by a higher court when those authorities lack power to set aside that decision.",
+      "material_facts": [
+        "The High Court had finally resolved the dispute in the respondents’ favour by quashing the appellate and revisional orders and maintaining the Consolidation Officer’s order.",
+        "The appellants did not challenge that judgment by seeking further review in the Supreme Court but instead made a fresh application to the Settlement Officer (Consolidation).",
+        "The Settlement Officer rejected the fresh application, the revisional authority rejected the challenge, and the High Court dismissed a further writ petition.",
+        "The consolidation authorities had no jurisdiction to set aside the earlier High Court judgment."
+      ],
+      "conclusion": "The fresh proceedings before the consolidation authorities were not legally valid as a means of reopening the matter, and pursuing them could not support exclusion of time on the basis of good faith.",
+      "legal_principle": "A final higher-court decision cannot be set aside by subordinate administrative or consolidation authorities that lack jurisdiction to do so. Resort to such authorities to reopen the decided matter is not a valid remedy and, in the circumstances described, cannot constitute good-faith prosecution for purposes of excluding time under Section 14 of the Limitation Act, 1963.",
+      "rule": {
+        "if": "collateral_proceeding_after_final_court_decision and lower_authority_cannot_set_aside_decision",
+        "then": "collateral_proceeding_invalid"
+      },
+      "predicates": {
+        "collateral_proceeding_after_final_court_decision": "A party starts a fresh proceeding before a lower authority to reopen a matter already finally decided by a higher court.",
+        "lower_authority_cannot_set_aside_decision": "The lower authority lacks power to set aside or alter the higher court’s final decision."
+      },
+      "definition": "A fresh proceeding is invalid as a means of reopening a matter when it follows a final court decision and the authority approached cannot set that decision aside."
+    },
+    {
+      "legal_issue": "A transfer made while an existing tenancy prevents the transferor from creating a second tenancy is inoperative, and estoppel by deed cannot give the transferee an interest under that invalid transfer.",
+      "material_facts": [
+        "The land was subject to a subsisting tenancy when an earlier deed purporting to create a tenancy in favour of the appellants was executed.",
+        "The landlord could not create a second tenancy over the property while the earlier tenancy subsisted, so the earlier deed was invalid and inoperative.",
+        "A later deed granted a patta to the respondents, whose claim was accepted by the Consolidation Officer, and the High Court found error in the contrary appellate and revisional decisions.",
+        "The appellants argued that the later acquisition of an interest by the transferor could benefit them under the principle of estoppel by deed."
+      ],
+      "conclusion": "Section 43 of the Transfer of Property Act did not apply because the earlier transfer was invalid owing to the subsisting tenancy, rather than being ineffective because of a fraudulent or erroneous representation; the appellants acquired no interest under it.",
+      "legal_principle": "Section 43 of the Transfer of Property Act embodies estoppel by deed and may allow a transferee to claim an interest subsequently acquired by a transferor who made a fraudulent or erroneous representation of authority. The principle does not apply where the transfer itself is invalid. A landlord cannot create a second tenancy over property subject to a subsisting tenancy.",
+      "rule": {
+        "if": "property_transfer_dispute and transferee_claims_estoppel_by_deed and transfer_invalid_due_to_existing_tenancy",
+        "then": "estoppel_by_deed_unavailable"
+      },
+      "predicates": {
+        "property_transfer_dispute": "The dispute concerns whether a party acquired an interest in property through a transfer.",
+        "transferee_claims_estoppel_by_deed": "A transferee claims that a later-acquired interest of the transferor should benefit the transferee under estoppel by deed.",
+        "transfer_invalid_due_to_existing_tenancy": "The purported transfer was invalid because an existing tenancy prevented the transferor from creating the claimed tenancy."
+      },
+      "definition": "In a property transfer dispute, estoppel by deed is unavailable when the transferee relies on a transfer invalidated by an existing tenancy."
+    }
+  ],
+  "seconds": 16.0
+}

@@ -1,0 +1,59 @@
+{
+  "doc_id": "1667643",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42929,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2009,
+    "prompt_tokens": 11453,
+    "total_tokens": 13462,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The later award-time-limit amendment to the general land acquisition law applies to acquisition proceedings under a special law that relies on that general law for essential acquisition machinery and concerns the same subject.",
+      "material_facts": [
+        "The special law provided for acquisition of land to grant house sites to weaker sections, but contained no independent machinery for inquiry, award, reference to a court, apportionment, or payment of compensation.",
+        "The special law applied the general land acquisition law, as amended by state legislation, to those matters.",
+        "The special law dealt with land acquisition and did not address subjects beyond the scope of the general land acquisition law."
+      ],
+      "conclusion": "The award-time-limit amendment, including Section 11-A of the Land Acquisition Act, 1894, applies to the relevant acquisition procedures under the special law. The Court did not decide whether other amendments made to the general law in 1984 apply.",
+      "legal_principle": "Under State of M.P. v. M.V. Narasimhan, 1975 (2) SCC 377, amendments to an incorporated enactment may apply where the enactments are supplemental, are in pari materia, the later enactment would otherwise be unworkable or ineffectual, or the amendment is expressly or necessarily intended to apply. The special law was incomplete without the general law’s machinery, was supplemental to it, and dealt with the same subject. M/s Ashok Service Centre v. State of Orissa, 1983 (2) SCC 82, explains that “mutatis mutandis” permits necessary adaptations without changing the essential nature of what is adapted; those words alone do not bring in subsequent amendments. Special Land Acquisition Officer v. P. Govindan, 1976 (4) SCC 697, supports applying the general acquisition procedure as it operates at the time of the acquisition proceedings. Secretary of State v. Hindustan Cooperative Society Ltd., AIR 1931 PC 148, Gauri Shankar v. State of U.P., 1994 (1) SCC 92, and U.P. Avas Vikas Parishad v. Jainul Islam, 1998 (1) Scale 185, were distinguished because the enactments considered there had more complete, self-contained acquisition machinery.",
+      "rule": {
+        "if": "special_land_acquisition_proceeding and (special_law_lacks_acquisition_machinery and depends_on_general_law_for_acquisition_procedure) and same_subject_as_general_law",
+        "then": "later_award_time_limit_applies"
+      },
+      "predicates": {
+        "special_land_acquisition_proceeding": "The proceeding concerns acquisition of land under a special law.",
+        "special_law_lacks_acquisition_machinery": "The special law does not itself provide the essential procedures for inquiry, award, court reference, apportionment, and payment.",
+        "depends_on_general_law_for_acquisition_procedure": "The special law relies on a general land acquisition law to supply those procedures.",
+        "same_subject_as_general_law": "The special law concerns land acquisition rather than a distinct subject outside the general law."
+      },
+      "definition": "When a special-law land acquisition proceeding concerns the same subject as the general law and the special law lacks essential acquisition procedures that it obtains from the general law, the later award-time limit applies."
+    },
+    {
+      "legal_issue": "Acquisition proceedings lapse when the applicable statutory period for making an award expires without an award, after excluding time during which a court stayed the proceedings.",
+      "material_facts": [
+        "The acquisition proceeded under a special law for granting house sites, to which the award-time-limit amendment applied.",
+        "Court orders stayed dispossession during parts of the proceedings.",
+        "Even after excluding the periods covered by stay orders, the prescribed time for making an award had expired, and no award had been made."
+      ],
+      "conclusion": "The acquisition proceedings, including the notifications initiating and declaring the acquisition, lapsed.",
+      "legal_principle": "Section 11-A of the Land Acquisition Act, 1894 requires an award to be made within the prescribed period, with periods during which court proceedings are stayed excluded from the calculation; failure to make an award within the applicable period causes the acquisition proceedings to lapse. The Court held that Section 11-A applied to the special-law acquisition because the special law lacked its own machinery and depended on the general law for acquisition procedure.",
+      "rule": {
+        "if": "special_land_acquisition_proceeding and award_time_limit_applies and (award_not_made_within_applicable_period_excluding_stay_time)",
+        "then": "acquisition_proceedings_lapse"
+      },
+      "predicates": {
+        "special_land_acquisition_proceeding": "The proceeding concerns acquisition of land under a special law.",
+        "award_time_limit_applies": "The award-making time limit governs the proceeding.",
+        "award_not_made_within_applicable_period_excluding_stay_time": "No award was made before the applicable time limit expired after periods covered by court stays were excluded."
+      },
+      "definition": "When a special-law land acquisition proceeding is governed by an award-making time limit and no award is made within that limit after excluding court-stay time, the acquisition proceedings lapse."
+    }
+  ],
+  "seconds": 12.8
+}

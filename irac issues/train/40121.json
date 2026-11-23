@@ -1,0 +1,65 @@
+{
+  "doc_id": "40121",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30892,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2763,
+    "prompt_tokens": 8275,
+    "total_tokens": 11038,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appeal filed without the decree is defective, but where the decree had not been drawn up and the defect passed unnoticed until admission, the appellate court may allow the appellant to obtain and file the decree rather than dismiss the appeal.",
+      "material_facts": [
+        "The appellants applied for certified copies of both the judgment and decree before the decree had been drawn up, but were supplied only the judgment and costs memo.",
+        "They filed the appeal without a copy of the decree, believing the documents supplied would suffice.",
+        "The trial court had not prepared the decree, and the appellate court’s office did not identify the defect before the appeal was admitted.",
+        "After the objection was raised, the appellate court allowed time to obtain and file the decree; the decree was subsequently filed."
+      ],
+      "conclusion": "The appellate court correctly allowed time for the decree to be drawn up and filed instead of dismissing the appeal. The decree-copy requirement is mandatory, but the appropriate response to defective presentation depends on the circumstances; where the decree was not yet drawn and the appeal passed admission through oversight, the hearing could be adjourned to permit the defect to be cured.",
+      "legal_principle": "Order XLI, rule 1 of the Code of Civil Procedure requires an appeal to be accompanied by a copy of the decree and the appellate court cannot dispense with that requirement; an appeal presented without the decree is incomplete and defective. Sections 33 and Order XX, rules 3, 4(2), 6 and 7 place the task of preparing and signing the decree on the court and its office. Where a decree has not been drawn when the appeal is presented and a copy has been sought, the court may direct that the decree be prepared and allow the appeal to proceed once the copy is filed, particularly when court-office failures contributed to the defect. A litigant need not remind the court to perform its duty to draw up the decree. The court relied on Rodger v. Comptoir d'Escompte de Paris for the principle that courts must ensure their acts do not injure litigants.",
+      "rule": {
+        "if": "civil_appeal_against_decree and decree_not_drawn_when_appeal_presented and appellant_applied_for_decree_copy and court_offices_failed_to_prepare_or_detect_defect and appeal_passed_admission_stage",
+        "then": "missing_decree_copy_should_be_cured_without_dismissing_appeal"
+      },
+      "predicates": {
+        "civil_appeal_against_decree": "A party brought a civil appeal challenging a decree.",
+        "decree_not_drawn_when_appeal_presented": "The court had not prepared the decree when the appellant presented the appeal.",
+        "appellant_applied_for_decree_copy": "The appellant applied for a certified copy of the decree but did not receive it because it had not been prepared.",
+        "court_offices_failed_to_prepare_or_detect_defect": "The trial court’s office failed to prepare the decree, and the appellate court’s office failed to identify the missing copy at the initial stage.",
+        "appeal_passed_admission_stage": "The appeal proceeded through admission before the missing decree copy was addressed.",
+        "missing_decree_copy_should_be_cured_without_dismissing_appeal": "The appellate court should permit the missing decree copy to be obtained and filed rather than dismiss the appeal in these circumstances."
+      },
+      "definition": "When a civil appeal proceeds past admission without a decree copy because the decree was not prepared despite an application and the court offices failed to address the defect, the missing copy should be allowed to be supplied without dismissing the appeal."
+    },
+    {
+      "legal_issue": "For limitation purposes, when a litigant applies for a decree copy before the decree has been drawn up, the time taken by the court to prepare and sign the decree is part of the time requisite for obtaining the copy.",
+      "material_facts": [
+        "The appellants applied for a certified copy of the decree before it had been drawn up.",
+        "The decree was not prepared until long after the application, and a certified copy was filed with the appellate court when it became available.",
+        "After excluding the time taken to prepare the decree, the appeal was within the prescribed period."
+      ],
+      "conclusion": "The time from the application for the certified copy until the decree was signed was to be excluded when computing limitation, so the appeal was in time when the decree copy was filed.",
+      "legal_principle": "Section 12(2) of the Limitation Act, 1908 excludes the time requisite for obtaining a copy of the decree; where the application for a copy is made before the decree is drawn up, the time taken by the court to draw it up after that application is included in the requisite time. Article 156 prescribed the limitation period for the appeal. The court referred to Tarabati Koer v. Lala Jagdeo Narain, Bani Madhub Mitter v. Mathungini Dassi, Gabriel Christian v. Chandra Mohan Missir, Jayashankar Mulshankar Mehta v. Mayabhai Lalbhai Shah, Gokul Prasad v. Kunwar Bahadur, and Umda v. Rupchand as supporting the rule that decree-preparation time is included when the copy application preceded preparation of the decree.",
+      "rule": {
+        "if": "civil_appeal_against_decree and copy_application_preceded_decree_preparation and court_delay_in_preparing_decree and decree_copy_later_filed and adjusted_filing_period_within_limit",
+        "then": "appeal_is_within_limitation_after_excluding_decree_preparation_time"
+      },
+      "predicates": {
+        "civil_appeal_against_decree": "A party brought a civil appeal challenging a decree.",
+        "copy_application_preceded_decree_preparation": "The appellant applied for a certified copy of the decree before the court prepared it.",
+        "court_delay_in_preparing_decree": "The court took time to prepare and sign the decree after the copy application was made.",
+        "decree_copy_later_filed": "The appellant filed the certified decree copy after it became available.",
+        "adjusted_filing_period_within_limit": "After accounting for the time taken to prepare the decree, the appeal was filed within the applicable limitation period.",
+        "appeal_is_within_limitation_after_excluding_decree_preparation_time": "The appeal is treated as timely after the decree-preparation time is excluded from the limitation computation."
+      },
+      "definition": "When an appellant applies for a decree copy before the court prepares the decree, and the filing period remains within the limit after accounting for that preparation time, the appeal is timely."
+    }
+  ],
+  "seconds": 17.8
+}

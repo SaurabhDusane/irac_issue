@@ -1,0 +1,81 @@
+{
+  "doc_id": "1026294",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17668,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2318,
+    "prompt_tokens": 5079,
+    "total_tokens": 7397,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The power to strike a tenant’s defence for non-payment or non-deposit of rent is discretionary and must not be exercised punitively where the tenant acted in good faith and the failure resulted from the advocate’s conduct.",
+      "material_facts": [
+        "The tenant regularly paid the rent arrears by cash or cheque to her advocate, whom she had engaged because she could not attend every hearing.",
+        "The advocate did not deposit the money in court or pay it to the landlord.",
+        "The tenant complained to the Bar Council after discovering that the money had not been remitted.",
+        "The Rent Controller struck out the tenant’s defence, and the tenant ultimately deposited the arrears as directed by the Supreme Court."
+      ],
+      "conclusion": "The tenant had not failed to pay or deposit rent in the relevant sense, and no case for the punitive exercise of discretion was made out. The order striking out her defence was illegal, and she should have an opportunity to contest the eviction claim.",
+      "legal_principle": "Section 15(7) of the Delhi Rent Control Act, 1958 uses the word “may” and is directory, not mandatory; it gives the Controller a liberal judicial discretion. Because striking out a defence is a penal and extreme measure that deprives a tenant of the protection of section 14, it must be used with due circumspection and in light of the circumstances. The power is not triggered mechanically by non-payment or non-deposit: the failure must indicate wilfulness, deliberate default, or volitional non-performance, such as defiance or gross neglect. The court relied on V. K. Varma v. Radhey Shyam, AIR 1964 SC 1370, which explained the deliberate change from the mandatory wording of section 13(5) of the 1952 Act to the discretionary wording of section 15(7) of the 1958 Act.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and tenant_paid_rent_to_advocate and advocate_failed_to_remit_rent and tenant_acted_in_good_faith and not tenant_wilfully_defaulted",
+        "then": "defence_striking_order_is_unlawful"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord sought eviction of a tenant in a proceeding governed by rent-control law.",
+        "tenant_paid_rent_to_advocate": "The tenant paid rent to an advocate engaged to represent and protect the tenant’s interests.",
+        "advocate_failed_to_remit_rent": "The advocate did not pay or deposit the rent received from the tenant.",
+        "tenant_acted_in_good_faith": "The tenant entrusted the rent to the advocate in good faith and took steps after discovering it had not been remitted.",
+        "tenant_wilfully_defaulted": "The tenant deliberately or wilfully failed to pay or deposit rent."
+      },
+      "definition": "When a tenant in a rent-control eviction proceeding pays rent in good faith to an advocate who fails to remit it, and the tenant did not wilfully default, the order striking out the tenant’s defence is unlawful."
+    },
+    {
+      "legal_issue": "An order striking out a tenant’s defence under the ordinary rent-control procedure is appealable under the general appeal provision and is not barred by the restriction applicable to orders made under the special summary procedure.",
+      "material_facts": [
+        "The Rent Controller struck out the tenant’s defence under section 15(7) of the Delhi Rent Control Act.",
+        "The High Court dismissed the tenant’s appeal as not maintainable by relying on section 25B(8).",
+        "The order striking out the defence was made under section 15, not under the procedure specified in section 25B."
+      ],
+      "conclusion": "The order striking out the defence was appealable under section 38. Section 25B(8) did not bar the appeal because the order was not made under the procedure specified in section 25B.",
+      "legal_principle": "Section 38 provides an appeal from an order striking out a defence. Under sections 25B(8) and 25B(10) of the Delhi Rent Control Act, the restriction on appeal applies to an order for recovery made in accordance with the procedure specified in section 25B; section 25B(10) otherwise preserves the procedure. Since the impugned order was made under section 15 and not under the special procedure, section 25B(8) did not defeat the appeal.",
+      "rule": {
+        "if": "appeal_from_defence_striking_order and order_made_under_ordinary_procedure and not order_made_under_special_summary_procedure",
+        "then": "appeal_is_maintainable"
+      },
+      "predicates": {
+        "appeal_from_defence_striking_order": "A party appealed from an order striking out a tenant’s defence.",
+        "order_made_under_ordinary_procedure": "The order striking out the defence was made under the ordinary procedure for rent-control proceedings.",
+        "order_made_under_special_summary_procedure": "The order for recovery was made in accordance with a special summary procedure."
+      },
+      "definition": "An appeal from a defence-striking order is maintainable when the order was made under the ordinary procedure rather than the special summary procedure."
+    },
+    {
+      "legal_issue": "An eviction order that depends on an unlawful order striking out the tenant’s defence cannot be sustained.",
+      "material_facts": [
+        "The eviction order followed the order striking out the tenant’s defence.",
+        "The order striking out the defence was unlawful because the tenant had paid the rent to her advocate in good faith and had not wilfully defaulted.",
+        "The courts below had relied on the striking-out order in allowing the eviction proceedings to proceed without the tenant’s defence."
+      ],
+      "conclusion": "The eviction order could not stand once the order striking out the defence was found illegal; the orders below were set aside and the matter was returned to the Rent Controller for the tenant to contest the eviction claim.",
+      "legal_principle": "The legality of an eviction order founded on striking out a tenant’s defence depends on the legality of the striking-out order. The theory of merger cannot preserve the eviction order when its underlying order is illegal; what follows from that unlawful order cannot be sustained.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and eviction_order_followed_defence_striking and defence_striking_order_is_unlawful",
+        "then": "eviction_order_is_unsustainable"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord sought eviction of a tenant in a proceeding governed by rent-control law.",
+        "eviction_order_followed_defence_striking": "The eviction order was made after the tenant’s defence had been struck out.",
+        "defence_striking_order_is_unlawful": "The order striking out the tenant’s defence was unlawful."
+      },
+      "definition": "An eviction order in a rent-control proceeding is unsustainable when it followed an unlawful order striking out the tenant’s defence."
+    }
+  ],
+  "seconds": 13.7
+}

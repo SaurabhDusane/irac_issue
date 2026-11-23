@@ -1,0 +1,99 @@
+{
+  "doc_id": "199908142",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 98947,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3276,
+    "prompt_tokens": 26180,
+    "total_tokens": 29456,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The special process for evicting occupants from public premises applies to premises only from the time they become public premises, and does not displace rent-control protection acquired by an occupant beforehand.",
+      "material_facts": [
+        "The occupant entered under a leave-and-licence arrangement while the premises belonged to a private insurance company.",
+        "A state rent-control amendment deemed qualifying licensees in occupation on the specified date to be tenants, and the occupant acquired that protected status before the premises became the property of a government company.",
+        "The government first took over management of the private company, but ownership of the premises passed to the government company only on the later merger.",
+        "The government company initiated eviction proceedings under the special public-premises procedure."
+      ],
+      "conclusion": "The premises became public premises only when they belonged to the government company, not when management of the private company was taken over. Because the occupant had already acquired protected tenant status, eviction had to be pursued under the applicable rent-control legislation, and the special-procedure eviction proceedings were invalid.",
+      "legal_principle": "Under Sections 1(3) and 2(e) of the Public Premises (Eviction of Unauthorised Occupants) Act, 1971, its deemed commencement does not make premises public premises before they meet the statutory definition; for a government company, the relevant point is when the premises belong to or are taken on lease by that company. Section 15A of the Bombay Rents, Hotel and Lodging Houses Rates Control Act, 1947 conferred deemed-tenancy protection on qualifying licensees, continued under Section 7(15)(a)(ii) of the Maharashtra Rent Control Act, 1999. The Court distinguished a transfer of management from a transfer of ownership, relying on Rashtriya Mill Mazdoor Sangh v. Model Mills and Bhuri Nath v. State of Jammu and Kashmir. It read the enactments harmoniously and clarified Ashoka Marketing Ltd. v. Punjab National Bank: the special public-premises law overrides rent-control law in its field once premises are public premises, but that decision did not determine the date on which premises become public premises.",
+      "rule": {
+        "if": "eviction_appeal and protected_tenant_status_preceded_public_ownership and (management_only_was_transferred or premises_became_public_later)",
+        "then": "special_eviction_process_unavailable_for_preexisting_protected_tenant"
+      },
+      "predicates": {
+        "eviction_appeal": "The proceeding is an appeal concerning an order to evict an occupant through a special public-premises procedure.",
+        "protected_tenant_status_preceded_public_ownership": "The occupant acquired statutory tenant protection before the premises belonged to or were leased by a public entity of the relevant kind.",
+        "management_only_was_transferred": "Control of the former owner’s management changed without transferring ownership of the premises.",
+        "premises_became_public_later": "The premises acquired public-premises status only after the occupant had acquired statutory tenant protection."
+      },
+      "definition": "When an eviction appeal concerns an occupant whose statutory tenant protection predates the premises’ public ownership, a transfer of management alone does not make the special eviction process available against that occupant."
+    },
+    {
+      "legal_issue": "A later law does not extinguish substantive tenant protection acquired under an earlier law unless retrospective operation is expressly provided or necessarily implied.",
+      "material_facts": [
+        "The occupant acquired deemed-tenant status under the state rent-control law before the premises became public premises.",
+        "The public-premises legislation contained no express provision retrospectively removing that previously acquired protection, and the Court found no necessary implication to that effect.",
+        "The occupant was proceeded against under the public-premises procedure after the premises later became public premises."
+      ],
+      "conclusion": "The occupant’s previously acquired statutory protection could not be destroyed by retrospectively applying the public-premises legislation. The remedy for eviction was under the applicable rent-control legislation.",
+      "legal_principle": "Substantive legislation is presumed prospective and does not alter or destroy accrued rights unless that effect is expressed or necessarily implied. The Court relied on Janardan Reddy v. State, Garkiapati Veeraya v. N. Subbiah Choudhry, Mahadeolal Kanodia v. Administrator General of West Bengal, Amireddi Raja Gopala Rao v. Amireddi Sitharamamma, J.P. Jani v. Induprasad Devshanker Bhatt, Arjan Singh v. State of Punjab, K.C. Arora v. State of Haryana, K.S. Paripoornan v. State of Kerala, and Gajraj Singh v. State Transport Appellate Tribunal. It also applied Section 15A of the Bombay Rent Act and Section 7(15)(a)(ii) of the Maharashtra Rent Control Act, 1999, which preserved the relevant tenant status.",
+      "rule": {
+        "if": "eviction_appeal and substantive_tenant_protection_accrued_earlier and later_law_lacks_retroactive_effect",
+        "then": "earlier_protected_tenant_right_not_extinguished"
+      },
+      "predicates": {
+        "eviction_appeal": "The proceeding is an appeal concerning an eviction order.",
+        "substantive_tenant_protection_accrued_earlier": "The occupant acquired statutory tenant protection before the later legal regime applied to the premises.",
+        "later_law_lacks_retroactive_effect": "The later law does not expressly or by necessary implication provide for removing the previously acquired protection."
+      },
+      "definition": "If an eviction appeal concerns tenant protection acquired before a later law applies, and that law has no retrospective effect, the earlier protection remains in place."
+    },
+    {
+      "legal_issue": "A precedent holding that one special eviction law overrides rent-control law does not resolve whether that eviction law applies retrospectively to rights acquired before premises became public premises.",
+      "material_facts": [
+        "An earlier Constitution Bench decision had held that the public-premises law overrides rent-control law concerning premises within the scope of both enactments.",
+        "The earlier decision addressed the conflict between the enactments, not the retrospective application of the public-premises law to a tenancy predating the premises’ public status.",
+        "The Court was asked to refer the matter to a larger bench but determined that the temporal issue had not been decided by the earlier precedent."
+      ],
+      "conclusion": "The Court followed the earlier decision on the conflict between the enactments, clarified that it did not decide the retrospective-application issue, and declined to refer the matter to a larger bench.",
+      "legal_principle": "A decision is authority for what it decides, read in the context of the questions before the court, and not for propositions merely deduced from it. The Court relied on Ashoka Marketing Ltd. v. Punjab National Bank, State of Haryana v. Ranbir, and Commissioner of Income Tax v. Sun Engineering Works (P.) Ltd. It held that Ashoka Marketing resolved the priority of the two special statutes where both applied, but did not determine when premises became public premises or whether pre-existing protected rights could be retrospectively displaced.",
+      "rule": {
+        "if": "precedent_conflict_issue_decided and temporal_application_issue_not_considered and larger_bench_referral_sought",
+        "then": "court_may_clarify_unresolved_temporal_issue_without_referral"
+      },
+      "predicates": {
+        "precedent_conflict_issue_decided": "An earlier precedent decided which of two overlapping legal regimes prevails.",
+        "temporal_application_issue_not_considered": "The earlier precedent did not consider when the later regime first applied or its effect on earlier-acquired rights.",
+        "larger_bench_referral_sought": "A party asks the court to refer the issue to a larger bench."
+      },
+      "definition": "When an earlier precedent resolved the conflict between legal regimes but not their temporal application, the court may decide that unresolved issue without referring it to a larger bench."
+    },
+    {
+      "legal_issue": "Government guidelines intended to prevent arbitrary eviction under a special eviction regime are advisory and do not independently confer enforceable tenant rights, but may inform interpretation of that regime.",
+      "material_facts": [
+        "The government issued guidelines directing public authorities to use the special eviction procedure primarily against wholly unauthorised occupants and to avoid arbitrary eviction of genuine tenants.",
+        "The guidelines also contemplated that genuine tenants could be dealt with under rent-control legislation.",
+        "The Court considered the guidelines in interpreting the purpose and intended use of the statutory eviction powers."
+      ],
+      "conclusion": "The guidelines were advisory and did not confer rights on tenants, but their purpose could not be ignored and they could inform interpretation of the statute.",
+      "legal_principle": "The Court relied on New India Assurance Company Ltd. v. Nusli Neville Wadia for the proposition that the guidelines are advisory and do not themselves confer tenant rights. It considered them as interpretive material indicating the intended limits on the use of statutory powers, not as a source of enforceable rights.",
+      "rule": {
+        "if": "public_authority_eviction_case and government_eviction_guidelines_are_advisory",
+        "then": "guidelines_inform_interpretation_but_create_no_tenant_rights"
+      },
+      "predicates": {
+        "public_authority_eviction_case": "The proceeding concerns a public authority’s use of a special process to evict an occupant.",
+        "government_eviction_guidelines_are_advisory": "The government has issued guidance about how the public authority should exercise its eviction powers, without making that guidance legally binding on occupants."
+      },
+      "definition": "In a public-authority eviction case, advisory government guidance may help explain how eviction powers are intended to be used but does not itself create tenant rights."
+    }
+  ],
+  "seconds": 20.9
+}

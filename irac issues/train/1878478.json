@@ -1,0 +1,112 @@
+{
+  "doc_id": "1878478",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43733,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3091,
+    "prompt_tokens": 11473,
+    "total_tokens": 14564,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An arbitrator cannot decide whether a will was duly executed or is genuine when that question falls within probate jurisdiction.",
+      "material_facts": [
+        "A will appointed an executrix, and probate proceedings concerning that will were pending before a High Court.",
+        "An arbitrator appointed to settle disputes concerning representation of the deceased’s estate framed issues about the execution and genuineness of the will."
+      ],
+      "conclusion": "The probate court alone had jurisdiction to determine the will’s execution and validity; the arbitrator could not decide those issues.",
+      "legal_principle": "Under the Indian Succession Act, 1925, including sections 213, 217, 222, 223, 276, 295 and 299, probate is determined through the statutory probate process, and the probate court must decide due execution and genuineness. The court relied on Inswardeo Narain Singh v. Smt. Kanta Devi, Sheoparsan Singh v. Ramnandan Prasad Singh, Narbheram Jivram v. Jayvallabh Harjivan, Chellan Bhai v. Nandu Bhai, Gopi Rai v. B.N. Rai and Manmohini Guha v. Banga Chandra Das.",
+      "rule": {
+        "if": "probate_proceeding and will_execution_or_validity_in_dispute",
+        "then": "only_probate_court_may_decide_will_execution_or_validity"
+      },
+      "predicates": {
+        "probate_proceeding": "A proceeding is brought to obtain or contest probate of a will.",
+        "will_execution_or_validity_in_dispute": "A party asks for a determination of whether a will was duly executed or is genuine and valid."
+      },
+      "definition": "When a probate proceeding concerns whether a will was duly executed or is genuine and valid, only the probate court may decide those matters."
+    },
+    {
+      "legal_issue": "Consent to arbitration cannot confer authority on an arbitrator to decide a matter reserved to the probate court.",
+      "material_facts": [
+        "The parties had consented to referring disputes, including the will dispute, to arbitration.",
+        "The will dispute concerned matters assigned to the probate court by the statutory scheme.",
+        "Other legatees named in the will were not parties to the arbitration."
+      ],
+      "conclusion": "Even if the parties consented to arbitration, that consent did not give the arbitrator jurisdiction to decide the will’s execution or validity.",
+      "legal_principle": "Jurisdiction derives from law and cannot be conferred by consent or waiver where a tribunal lacks inherent authority. A decision made without jurisdiction is a nullity. The court relied on A.R. Antulay v. R.S. Naik, Bahadur Singh v. Muni Subrat Dass, Kaushalya Devi v. K.L. Bansal, Ferozi Lal Jain v. Man Mal and Sushil Kumar Mehta v. Gobind Ram Bohra, as well as the statutory probate scheme under the Indian Succession Act, 1925.",
+      "rule": {
+        "if": "arbitration_proceeding and parties_consented_to_arbitration and issue_reserved_to_probate_court",
+        "then": "consent_does_not_authorize_arbitrator_to_decide_reserved_issue"
+      },
+      "predicates": {
+        "arbitration_proceeding": "A dispute is referred to an arbitrator for decision.",
+        "parties_consented_to_arbitration": "The parties agreed to refer the disputed matter to arbitration.",
+        "issue_reserved_to_probate_court": "The disputed matter is one that the law assigns exclusively to a probate court."
+      },
+      "definition": "When parties consent to arbitration of an issue that the law reserves to the probate court, their consent does not authorize the arbitrator to decide it."
+    },
+    {
+      "legal_issue": "A competent probate grant conclusively establishes a will’s due execution and validity against all persons unless the grant is revoked through the prescribed process.",
+      "material_facts": [
+        "The dispute concerned the execution and validity of a will that was the subject of probate proceedings.",
+        "The Court considered the legal effect of a probate grant, which would bind persons beyond those who appeared in the probate proceeding."
+      ],
+      "conclusion": "A probate grant is a judgment in rem and remains conclusive as to the will’s due execution and validity unless revoked according to law.",
+      "legal_principle": "The Indian Succession Act, 1925 provides for grants of probate and their legal effect, including under sections 227 and 273, and provides for appeal and revocation through the statutory process. The Court approved Sheoparsan Singh v. Ramnandan Prasad Singh and Narbheram Jivram v. Jayvallabh Harjivan.",
+      "rule": {
+        "if": "competent_probate_grant and grant_not_revoked",
+        "then": "will_execution_and_validity_are_conclusive_against_all_persons"
+      },
+      "predicates": {
+        "competent_probate_grant": "A court with probate jurisdiction has granted probate of a will.",
+        "grant_not_revoked": "The probate grant has not been revoked through the legally prescribed process."
+      },
+      "definition": "When a competent court grants probate and the grant has not been revoked, the will’s due execution and validity are conclusive against all persons."
+    },
+    {
+      "legal_issue": "An executor appointed by a will is a legal representative for purposes of representing the deceased’s estate in civil proceedings.",
+      "material_facts": [
+        "After the deceased died, the will named an executrix.",
+        "Competing claims arose about who should represent the estate in pending proceedings, and the executrix and others sought substitution as legal representatives."
+      ],
+      "conclusion": "The named executrix is a legal representative of the deceased for estate proceedings, although the grant of probate establishes her right to represent the estate as executor.",
+      "legal_principle": "Section 2(11) of the Code of Civil Procedure, 1908 defines legal representative broadly to include a person who in law represents the estate, and Order 22 rules 3, 4, 5 and 11 provide for substitution and determination of disputes over legal representation. The Court relied on The Andhra Bank Ltd. v. R. Srinivasan and The Official Liquidator v. Parthasarathi Sinha.",
+      "rule": {
+        "if": "substitution_proceeding_after_party_death and person_named_executor_in_will",
+        "then": "named_executor_is_legal_representative_for_estate_proceedings"
+      },
+      "predicates": {
+        "substitution_proceeding_after_party_death": "A civil proceeding continues after a party dies and the court must determine who may represent that party’s estate.",
+        "person_named_executor_in_will": "The deceased’s will names the person as executor."
+      },
+      "definition": "When a party dies in a civil proceeding and the will names a person as executor, that person is a legal representative for estate proceedings."
+    },
+    {
+      "legal_issue": "An arbitrator may continue with other referred disputes while deferring will-validity issues until the probate court decides them.",
+      "material_facts": [
+        "The arbitrator had framed issues concerning the wills as well as other issues arising from the referred disputes.",
+        "Probate proceedings concerning the wills were pending before the High Court.",
+        "The Court directed the probate court to decide the probate suit and directed the arbitrator to await that decision before completing the will-related issues."
+      ],
+      "conclusion": "The arbitrator was not to decide the will-related issues before the probate court’s decision, but could proceed with the other issues and later complete the will-related findings in light of that decision.",
+      "legal_principle": "Because the probate court has exclusive jurisdiction over proof and validity of a will, the arbitration must defer those issues to the probate determination while other referred matters may continue.",
+      "rule": {
+        "if": "arbitration_proceeding and other_referred_issues_exist and probate_decision_pending_on_will_validity",
+        "then": "arbitrator_must_defer_will_issues_until_probate_decision"
+      },
+      "predicates": {
+        "arbitration_proceeding": "A dispute is referred to an arbitrator for decision.",
+        "other_referred_issues_exist": "The arbitration includes referred issues in addition to the will’s execution or validity.",
+        "probate_decision_pending_on_will_validity": "A probate court has not yet decided the will’s execution or validity, and that question is pending before it."
+      },
+      "definition": "When arbitration includes other issues and a probate decision on will validity is pending, the arbitrator must defer the will issues until that decision."
+    }
+  ],
+  "seconds": 18.9
+}

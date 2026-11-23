@@ -1,0 +1,81 @@
+{
+  "doc_id": "105132",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32982,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2699,
+    "prompt_tokens": 8257,
+    "total_tokens": 10956,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A High Court order setting aside a final decree and remanding a matter is a final order for purposes of an appeal certificate when it finally determines the purchaser’s standing and reopens rights extinguished by the decree.",
+      "material_facts": [
+        "The High Court set aside a final foreclosure decree and remanded the matter, allowing the purchaser to participate and argue that the preliminary decree should be changed to permit redemption.",
+        "The High Court’s decision allowed the purchaser to challenge the foreclosure and reopened the question of redemption, which the final decree had extinguished."
+      ],
+      "conclusion": "The High Court’s order was a final order, and the certificate granted for appeal was competent.",
+      "legal_principle": "An order that finally determines rights in dispute is not merely interlocutory because it remands the matter for further proceedings. The Court distinguished Sardar Syedna Tahar Saifuddin Saheb v. State of Bombay and M/s. Jethanand & Sons v. State of Uttar Pradesh, where the orders did not finally determine the parties’ rights.",
+      "rule": {
+        "if": "appeal_from_high_court_order and final_decree_set_aside and rights_finally_determined",
+        "then": "appeal_certificate_competent"
+      },
+      "predicates": {
+        "appeal_from_high_court_order": "A party appeals from an order made by a High Court.",
+        "final_decree_set_aside": "The High Court sets aside a decree that had finally disposed of the matter.",
+        "rights_finally_determined": "The High Court’s order finally determines a party’s standing or substantive rights, even though further proceedings are ordered."
+      },
+      "definition": "When an appeal is from a High Court order that sets aside a final decree and finally determines rights, the order supports a competent appeal certificate."
+    },
+    {
+      "legal_issue": "A court may correct a decree that does not reflect its intended decision when the discrepancy resulted from an accidental slip or omission rather than a substantive error in the decision.",
+      "material_facts": [
+        "The suit sought foreclosure under a mortgage by conditional sale, and the mortgagee’s pleadings sought foreclosure and possession rather than a sale or personal decree.",
+        "The trial court’s judgment and the preliminary decree used language providing for a sale, although the judgment as a whole showed that the court intended foreclosure.",
+        "The defendants’ contest did not challenge the mortgagee’s entitlement to foreclosure, and the purchaser did not establish that he acquired his interest in reliance on the mistaken wording or in ignorance of circumstances showing the error."
+      ],
+      "conclusion": "The trial court had power to correct the accidental error in the judgment and preliminary decree and to pass a final decree for foreclosure as intended.",
+      "legal_principle": "Under sections 151 and 152 of the Code of Civil Procedure, read with Order 20 rule 3, a court may correct clerical mistakes and errors arising from accidental slips or omissions to give effect to its true intention; the power does not permit replacing a decision that was substantively wrong. The Court relied on Mellor v. Swira, Janakirama Iyer v. Nilakanta Iyer and Barhamdeo Singh v. Harnam Singh. It also considered Hatton v. Harris on the possibility that correction may be too late where third-party rights were acquired on the basis of the decree and in ignorance of the error, but found no such circumstances here.",
+      "rule": {
+        "if": "mortgage_foreclosure_case and decree_wording_conflicts_with_intended_decision and error_caused_by_accidental_slip and no_substantive_wrong_decision and no_third_party_reliance_on_error",
+        "then": "court_may_correct_decree_to_intended_decision"
+      },
+      "predicates": {
+        "mortgage_foreclosure_case": "A court is deciding a suit seeking foreclosure of a mortgage.",
+        "decree_wording_conflicts_with_intended_decision": "The decree’s wording differs from the decision intended by the court, as shown by the judgment and the proceedings.",
+        "error_caused_by_accidental_slip": "The discrepancy arose from inadvertence or an accidental omission rather than deliberate adjudication.",
+        "no_substantive_wrong_decision": "The court’s actual decision was not wrong; only the wording used to express it was mistaken.",
+        "no_third_party_reliance_on_error": "No third party acquired rights in reliance on the mistaken wording while ignorant of circumstances showing that it was erroneous."
+      },
+      "definition": "In a mortgage foreclosure case, an accidental discrepancy in a decree may be corrected to match the court’s intended decision when the decision itself was not substantively wrong and no third party relied on the error."
+    },
+    {
+      "legal_issue": "The doctrine of lis pendens binds an execution auction purchaser who acquires an interest in property directly in issue while an appeal concerning that property is pending, and the purchaser cannot redeem after a valid foreclosure decree extinguishes the equity of redemption.",
+      "material_facts": [
+        "A purchaser acquired part of the judgment debtor’s interest in mortgaged property at an execution sale while the debtor’s appeal against the preliminary decree in the mortgage suit was pending.",
+        "The property and the right to redeem it were directly in issue in the pending mortgage litigation.",
+        "The final foreclosure decree was validly passed and extinguished the equity of redemption."
+      ],
+      "conclusion": "The purchaser was bound by the result of the mortgage litigation and had no remaining right to redeem after the foreclosure decree.",
+      "legal_principle": "Section 52 of the Transfer of Property Act, including its explanation as to the duration of pendency, embodies the doctrine that a transferee pendente lite is bound by the result of litigation concerning the property. Although section 52 does not strictly apply to involuntary alienations such as court sales, the doctrine’s principle does apply to them. Sections 91 and 59A recognize redemption rights in persons deriving an interest from the mortgagor, but a pendente lite purchaser remains bound by the litigation’s result. The Court relied on Radhamadhub Holdar v. Monohar, Nilkant v. Suresh Chandra and Motilal v. Karrabuldin.",
+      "rule": {
+        "if": "mortgage_property_rights_case_pending_on_appeal and property_directly_in_issue and execution_sale_during_pendency and purchaser_derives_interest_from_litigant and valid_foreclosure_extinguishes_redemption",
+        "then": "auction_purchaser_bound_by_result_and_cannot_redeem"
+      },
+      "predicates": {
+        "mortgage_property_rights_case_pending_on_appeal": "An appeal is pending in a mortgage case in which rights to the property are being determined.",
+        "property_directly_in_issue": "The property acquired by the purchaser is directly involved in the pending litigation.",
+        "execution_sale_during_pendency": "A court sells the litigant’s interest in the property by execution while the appeal is pending.",
+        "purchaser_derives_interest_from_litigant": "The auction purchaser acquires the interest of a person who is a party to the pending litigation.",
+        "valid_foreclosure_extinguishes_redemption": "A valid final foreclosure decree extinguishes the equity of redemption in the property."
+      },
+      "definition": "An execution purchaser who acquires a litigant’s interest in property directly in issue during a pending mortgage appeal is bound by the outcome and cannot redeem once a valid foreclosure decree extinguishes redemption."
+    }
+  ],
+  "seconds": 19.5
+}

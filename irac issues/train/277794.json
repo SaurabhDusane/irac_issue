@@ -1,0 +1,83 @@
+{
+  "doc_id": "277794",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23661,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3516,
+    "prompt_tokens": 6080,
+    "total_tokens": 9596,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord’s death after an eviction decree has been passed does not prevent the landlord’s heirs from continuing to defend that decree against the tenant’s appeal.",
+      "material_facts": [
+        "A landlord obtained an eviction decree based on a bona fide need to use non-residential premises for business.",
+        "The landlord died while the tenant’s appeal against the decree was pending, and the landlord’s heirs were substituted and continued the proceedings.",
+        "The High Court dismissed the eviction suit on the ground that the landlord’s personal need had ended on his death."
+      ],
+      "conclusion": "The heirs were entitled to defend the eviction decree, and the landlord’s death during the tenant’s appeal did not require dismissal of the suit.",
+      "legal_principle": "In Smt. Phool Rani v. Naubat Rai Ahluwalia, the Court held that where a possession decree has been passed before the landlord’s death, the landlord’s estate is entitled to the benefit of the decree and the heirs may defend it against an appeal. Shantilal Thakordas v. Chimanlal Maganlal Telwala overruled Phool Rani to the extent that it treated the family’s need as ending with the landlord’s death, and supports the heirs’ ability to continue eviction proceedings. Section 12(1) of the Madhya Pradesh Accommodation Control Act, 1961 restricts the grounds on which an eviction suit may be filed; it does not extinguish a decree already obtained when the landlord dies during the tenant’s appeal. The principle actus curiae neminem gravabit also supports preventing the court’s stay of the decree from prejudicing the landlord’s estate.",
+      "rule": {
+        "if": "tenant_eviction_appeal and eviction_decree_before_landlord_death and landlord_died_during_appeal and heirs_substituted",
+        "then": "heirs_may_defend_eviction_decree"
+      },
+      "predicates": {
+        "tenant_eviction_appeal": "A tenant has appealed against a decree ordering eviction.",
+        "eviction_decree_before_landlord_death": "A court passed an eviction decree in the landlord’s favour before the landlord died.",
+        "landlord_died_during_appeal": "The landlord died while the tenant’s appeal was pending.",
+        "heirs_substituted": "The landlord’s heirs were substituted in the proceedings after the landlord’s death."
+      },
+      "definition": "When a tenant appeals an eviction decree passed before the landlord’s death and the heirs are substituted, the heirs may defend that decree."
+    },
+    {
+      "legal_issue": "For a rent-control eviction suit based on bona fide need, the relevant date for determining whether the need existed is the date the suit was instituted, and the landlord’s later death does not by itself invalidate a suit validly filed.",
+      "material_facts": [
+        "The landlord instituted an eviction suit alleging a bona fide need to use non-residential premises for business.",
+        "The trial court passed an eviction decree before the landlord died during the tenant’s appeal.",
+        "The High Court treated the landlord’s death as ending the need and dismissed the suit.",
+        "The applicable statute barred filing an eviction suit except on specified grounds, including the bona fide business need described in the case."
+      ],
+      "conclusion": "The bona fide need is examined as of the institution of the eviction proceedings; the landlord’s death after an eviction decree has been passed does not make the validly instituted suit unmaintainable.",
+      "legal_principle": "Section 12(1) of the Madhya Pradesh Accommodation Control Act, 1961 bars the filing of an eviction suit except on specified grounds, and Section 12(1)(f) includes a landlord’s bona fide need for non-residential premises for business. The Court read the statutory bar as governing whether the suit was validly filed, not as requiring the need to persist until the decree becomes final. Kamleshwar Prasad v. Pradumanju Agarwal, Gaya Prasad v. Pradeep Srivastava and G.C. Kapoor v. Nand Kumar Bhasin support assessing bona fide need on the date of the eviction application. The broad observations in P.V. Papanna v. K. Padmanabhaiah that subsequent events may be considered until a final decree were not the correct legal position on this point and were unnecessary to that decision. The Act’s preamble also emphasizes expeditious trial of bona fide-need eviction cases.",
+      "rule": {
+        "if": "rent_control_eviction_case and bona_fide_need_at_filing and eviction_decree_before_landlord_death and landlord_died_during_appeal",
+        "then": "later_death_does_not_make_valid_suit_unmaintainable"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "A landlord has brought an eviction suit governed by rent-control legislation.",
+        "bona_fide_need_at_filing": "The landlord alleged a bona fide need that existed when the eviction suit was instituted.",
+        "eviction_decree_before_landlord_death": "A court passed an eviction decree in the landlord’s favour before the landlord died.",
+        "landlord_died_during_appeal": "The landlord died while the tenant’s appeal was pending."
+      },
+      "definition": "If a rent-control eviction suit was supported by bona fide need when filed and an eviction decree preceded the landlord’s death during the tenant’s appeal, that later death does not make the suit unmaintainable."
+    },
+    {
+      "legal_issue": "When pleadings are amended and the lower courts decide the eviction dispute on the amended pleadings and evidence, the appellate court must decide the dispute on that basis rather than dismissing it solely by reference to the original landlord’s need.",
+      "material_facts": [
+        "After the landlord died, the heirs amended the pleadings to assert their own need to use the premises for business.",
+        "The heirs’ need was further pleaded after the sons attained majority, and the parties had the opportunity to adduce evidence on the amended pleadings.",
+        "The lower appellate court found the heirs’ need bona fide and decreed eviction.",
+        "The High Court dismissed the suit by focusing on the original landlord’s death rather than examining the issues decided on the amended pleadings."
+      ],
+      "conclusion": "The High Court acted illegally by failing to decide the dispute on the amended pleadings and evidence; the eviction decree based on those pleadings was restored.",
+      "legal_principle": "Once an amendment is allowed, the proceedings are to be decided on the amended pleadings. Here, the parties and the lower courts had proceeded on the heirs’ pleaded business need and the evidence supporting it, so the High Court could not instead dismiss the suit on the ground that the original landlord’s need had ended.",
+      "rule": {
+        "if": "tenant_eviction_second_appeal and pleadings_amended_to_assert_heirs_need and lower_court_decided_on_amended_pleadings and appellate_court_relied_only_on_original_landlords_need",
+        "then": "appellate_court_must_decide_on_amended_pleadings"
+      },
+      "predicates": {
+        "tenant_eviction_second_appeal": "A tenant has brought a second appeal against an eviction decree.",
+        "pleadings_amended_to_assert_heirs_need": "The landlord’s heirs amended the pleadings to assert their own need for the premises.",
+        "lower_court_decided_on_amended_pleadings": "A lower court decided the eviction dispute on the amended pleadings and the evidence adduced on them.",
+        "appellate_court_relied_only_on_original_landlords_need": "The appellate court relied only on the original landlord’s need and did not examine the issues decided on the amended pleadings."
+      },
+      "definition": "When the heirs’ need is pleaded by amendment and the lower court decides the dispute on that basis, an appellate court that otherwise relies only on the original landlord’s need must decide the dispute on the amended pleadings."
+    }
+  ],
+  "seconds": 21.5
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "1157153",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19093,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1660,
+    "prompt_tokens": 5422,
+    "total_tokens": 7082,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The construction-based exemption from rent-control legislation applies to buildings completed before the legislation came into force as well as to buildings completed afterward.",
+      "material_facts": [
+        "The building was found to have been constructed in 1968, before the 1972 Act came into force.",
+        "The eviction suit was instituted in 1977, less than ten years after the building’s construction was completed."
+      ],
+      "conclusion": "The ten-year exemption applied to the building, notwithstanding that it had been constructed before the Act came into force.",
+      "legal_principle": "Section 2(2) of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, provides that the Act does not apply to a building during the ten years after completion of its construction. In Om Prakash Gupta v. Dig Vijdendrapal Gupta, the Court held that this applies regardless of whether the building was constructed before or after the Act commenced. Ratan Lal Shinghal v. Smt. Murti Devi did not establish that the Act applied to all pre-commencement buildings regardless of their construction date.",
+      "rule": {
+        "if": "eviction_suit and building_within_construction_exemption_when_suit_filed",
+        "then": "rent_control_law_inapplicable_to_suit"
+      },
+      "predicates": {
+        "eviction_suit": "A landlord instituted a suit seeking eviction of a tenant from a building.",
+        "building_within_construction_exemption_when_suit_filed": "The suit was instituted before ten years had elapsed from completion of the building’s construction."
+      },
+      "definition": "When a landlord files an eviction suit within ten years of the building’s completion, the rent-control law does not govern that suit under the construction-based exemption."
+    },
+    {
+      "legal_issue": "The applicability of rent-control legislation to an eviction suit is determined when the suit is instituted, and expiry of the construction-based exemption while the suit or a related proceeding is pending does not make the legislation applicable to that proceeding.",
+      "material_facts": [
+        "The eviction suit was instituted before ten years had elapsed from completion of the building’s construction.",
+        "The ten-year period expired while the suit or subsequent proceedings were pending.",
+        "The tenant argued that the Act consequently governed the pending proceedings and restricted eviction to the statutory grounds."
+      ],
+      "conclusion": "Expiry of the ten-year period during the pendency of the suit, appeal, or revision did not make the Act applicable; the suit had to be decided without reference to it.",
+      "legal_principle": "The law applicable on the date of institution of the suit governs it. In Nand Kishore Marwah v. Samundri Devi, the Court held that expiry of the ten-year period during a suit, appeal, or revision does not make the Act applicable to the proceeding. The Court agreed with that decision and distinguished the contrary reliance placed on Vineet Kumar v. Mangal Sain Wadhera.",
+      "rule": {
+        "if": "eviction_suit and suit_filed_during_construction_exemption and exemption_expired_while_proceeding_pending",
+        "then": "rent_control_law_remains_inapplicable_to_proceeding"
+      },
+      "predicates": {
+        "eviction_suit": "A landlord instituted a suit seeking eviction of a tenant from a building.",
+        "suit_filed_during_construction_exemption": "The suit was instituted before ten years had elapsed from completion of the building’s construction.",
+        "exemption_expired_while_proceeding_pending": "Ten years from completion of the building’s construction elapsed while the suit or a related proceeding remained pending."
+      },
+      "definition": "If an eviction suit is filed while the building remains within the construction-based exemption and that exemption expires during the proceeding, the rent-control law remains inapplicable to the proceeding."
+    }
+  ],
+  "seconds": 11.4
+}

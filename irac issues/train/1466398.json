@@ -1,0 +1,99 @@
+{
+  "doc_id": "1466398",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 54935,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3544,
+    "prompt_tokens": 12703,
+    "total_tokens": 16247,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court in a civil suit cannot require a plaintiff to promise payment of damages to the defendant if the plaintiff fails in the suit without legal authority for that obligation.",
+      "material_facts": [
+        "The suit sought specific performance of an alleged property-development collaboration agreement and was still pending.",
+        "The court directed the plaintiff to undertake to pay a specified sum to the defendants if the suit failed, although no contract or legal provision authorized that undertaking.",
+        "The direction was made because the court considered the claim weak and the pending suit harmful to the owners, not because of a default or delay by the plaintiff."
+      ],
+      "conclusion": "The direction requiring the plaintiff to undertake payment of damages was unauthorized. The court could not impose it under its inherent procedural power or rely on the provision for security for costs to support it.",
+      "legal_principle": "The Code of Civil Procedure provides specific means to address vexatious claims, costs, security for costs, and compensation in defined circumstances, but does not authorize a damages undertaking payable merely upon failure in a pending suit. The provision on security for costs concerns costs incurred or likely to be incurred, not damages. The inherent power preserved by section 151 is procedural: it cannot create substantive rights, liabilities, or obligations, conflict with the Code, or be used where the Code provides a specific procedure. The Court relied on Padam Sen v. State of Uttar Pradesh, Manohar Lal Chopra v. Rai Bahadur Rao Raja Seth Hiralal, Ram Chand and Sons Sugar Mills Pvt. Ltd. v. Kanhayalal Bhargav, and Nainsingh v. Koonwarjee.",
+      "rule": {
+        "if": "civil_suit_pending and damages_promise_required_if_plaintiff_loses and no_legal_basis_for_promise",
+        "then": "court_lacks_power_to_require_damages_promise"
+      },
+      "predicates": {
+        "civil_suit_pending": "A plaintiff has brought a civil suit that remains pending before the court.",
+        "damages_promise_required_if_plaintiff_loses": "The court requires the plaintiff to promise payment to the defendant solely in the event that the plaintiff fails in the suit.",
+        "no_legal_basis_for_promise": "No agreement or governing law authorizes the court to impose that payment obligation."
+      },
+      "definition": "When a civil suit is pending and the court requires a damages promise solely for the event that the plaintiff loses, the court lacks power to impose it if no agreement or governing law authorizes it."
+    },
+    {
+      "legal_issue": "An alleged property-development collaboration agreement requiring ongoing personal performance and leaving important terms unsettled is not specifically enforceable when the court cannot supervise its performance.",
+      "material_facts": [
+        "The plaintiff alleged an oral arrangement under which he would demolish an existing building, construct a multi-storey building to agreed specifications, deliver some floors to the owners, and pay additional consideration.",
+        "The alleged arrangement left important details unresolved, required further decisions or agreement, and involved continuing construction duties that the court could not practically supervise.",
+        "The plaintiff had not sought alternative compensation for breach."
+      ],
+      "conclusion": "The alleged collaboration agreement was not specifically enforceable. Compensation for breach could not be awarded because the plaintiff had made no alternative prayer for it.",
+      "legal_principle": "Sections 14(1)(b) and 14(1)(d) of the Specific Relief Act, 1963 bar specific enforcement of the relevant kinds of contracts, including contracts involving continuous duties the court cannot supervise. The Court distinguished an ordinary sale or transfer, which may be carried out through the procedure in Order XXI Rule 32(5) of the Code of Civil Procedure. Section 21 of the Specific Relief Act bars compensation for breach where it has not been claimed as an alternative. The Court based its assessment on the incompleteness of the alleged terms, the personal and continuing nature of the developer's obligations, and the practical inability to supervise performance.",
+      "rule": {
+        "if": "specific_performance_suit and development_collaboration_agreement and agreement_terms_incomplete and performance_requires_unsupervisable_continuous_duties and no_alternative_compensation_prayer",
+        "then": "specific_performance_unavailable_and_compensation_unavailable"
+      },
+      "predicates": {
+        "specific_performance_suit": "A plaintiff seeks specific performance of an agreement in a civil suit.",
+        "development_collaboration_agreement": "The alleged agreement requires one party to develop property in exchange for a share or other benefit.",
+        "agreement_terms_incomplete": "Important terms remain unsettled or require further agreement between the parties.",
+        "performance_requires_unsupervisable_continuous_duties": "Performance requires continuing personal work that a court cannot practically supervise.",
+        "no_alternative_compensation_prayer": "The plaintiff has not asked for compensation as an alternative remedy for breach."
+      },
+      "definition": "When a specific-performance suit concerns an incomplete development collaboration agreement requiring continuing duties that the court cannot supervise, specific performance is unavailable; if alternative compensation was not requested, compensation is unavailable as well."
+    },
+    {
+      "legal_issue": "A transfer of immovable property during a pending suit directly concerning rights in that property is not void but remains subject to the result of the suit.",
+      "material_facts": [
+        "The pending suit directly placed rights in the property in issue.",
+        "The court considered the effect of a transfer made while the suit was pending."
+      ],
+      "conclusion": "A transfer during the suit is not annulled by the doctrine of lis pendens; it is subject to the rights ultimately established by the decree or order in the suit.",
+      "legal_principle": "Section 52 of the Transfer of Property Act, 1882 embodies the doctrine of lis pendens. As explained in Bellamy v. Sabine, the doctrine prevents a party from defeating the outcome of litigation through a transfer during the proceedings. It does not make the transfer void; the transfer is instead subordinate to the rights of the other parties as determined in the litigation.",
+      "rule": {
+        "if": "pending_suit_directly_concerns_property_rights and property_transferred_during_suit",
+        "then": "transfer_subject_to_final_decision"
+      },
+      "predicates": {
+        "pending_suit_directly_concerns_property_rights": "A suit is pending in which rights to immovable property are directly in issue.",
+        "property_transferred_during_suit": "A party transfers or otherwise deals with the property while the suit is pending."
+      },
+      "definition": "When a party transfers property during a pending suit directly concerning rights in that property, the transfer remains subject to the suit's final decision."
+    },
+    {
+      "legal_issue": "A court may permit a party to deal with property during a pending property suit free from the ordinary effect of lis pendens, subject to appropriate security.",
+      "material_facts": [
+        "The pending specific-performance suit concerned immovable property and restricted the owner's ability to deal with it or obtain its fair market value.",
+        "The plaintiff described the proposed collaboration as a commercial venture and stated the intended investment and expected benefit.",
+        "The Court considered security sufficient to protect the opposing party while allowing the owners to deal with the property."
+      ],
+      "conclusion": "The defendants were permitted to deal with or dispose of the property despite the pending suit, provided they furnished security to the satisfaction of the court.",
+      "legal_principle": "Section 52 of the Transfer of Property Act, 1882 allows the court in which the suit is pending to exempt the property from the operation of lis pendens on conditions it considers appropriate. The Court applied that power and found reasonable security an appropriate condition in the circumstances.",
+      "rule": {
+        "if": "pending_civil_suit_directly_concerns_immovable_property and suit_pendency_restricts_owner_dealing and court_finds_exemption_appropriate and reasonable_security_can_protect_opposing_party",
+        "then": "owner_may_deal_with_property_subject_to_security"
+      },
+      "predicates": {
+        "pending_civil_suit_directly_concerns_immovable_property": "A civil suit is pending in which rights to immovable property are directly in issue.",
+        "suit_pendency_restricts_owner_dealing": "The pending suit materially restricts the owner's ability to deal with the property or obtain its fair market value.",
+        "court_finds_exemption_appropriate": "The court determines that the circumstances justify allowing the owner to deal with the property despite the pending suit.",
+        "reasonable_security_can_protect_opposing_party": "Security can reasonably protect the opposing party's interests while the property is dealt with."
+      },
+      "definition": "When a pending civil suit directly concerns immovable property, restricts the owner's dealings, and the court finds an exemption appropriate with reasonable security sufficient to protect the opposing party, the owner may deal with the property subject to that security."
+    }
+  ],
+  "seconds": 23.2
+}

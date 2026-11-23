@@ -1,0 +1,99 @@
+{
+  "doc_id": "142295176",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 64650,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2821,
+    "prompt_tokens": 15625,
+    "total_tokens": 18446,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The deadline for making an award in a saved acquisition proceeding in which no award had been made under the repealed law is governed by the compensation provisions of the new law, provided the earlier deadline had not already expired when the new law commenced.",
+      "material_facts": [
+        "Acquisition proceedings had been initiated under the earlier land acquisition law, but no award had been made before that law was repealed.",
+        "The earlier statutory period for making an award had not expired by the time the new law commenced."
+      ],
+      "conclusion": "The new law’s award deadline applies to awards under Section 24(1)(a), and that period runs from the commencement of the new law. Proceedings that had already lapsed under the earlier law before or on the transition date are not revived.",
+      "legal_principle": "Sections 24(1)(a), 25 and 114 of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013, read with Section 6 of the General Clauses Act, 1897, preserve earlier acquisition proceedings while applying the new law’s provisions relating to compensation. The words “all the provisions” and “relating to” include the award deadline in Section 25. The court followed Indore Development Authority v. Manoharlal, (2020) 8 SCC 129, on the operation of Section 24 and the need to give effect to its provisions, and applied principles of limitation and statutory construction, including that a new limitation provision does not revive an already-barred right absent the required legislative intention.",
+      "rule": {
+        "if": "saved_acquisition_without_prior_award and prior_award_deadline_unexpired_at_transition",
+        "then": "new_compensation_law_deadline_governs_award"
+      },
+      "predicates": {
+        "saved_acquisition_without_prior_award": "The acquisition was initiated under an earlier law and remained pending without an award when that law was repealed.",
+        "prior_award_deadline_unexpired_at_transition": "The deadline for making an award under the earlier law had not expired when the new law commenced.",
+        "new_compensation_law_deadline_governs_award": "The deadline prescribed by the new law for making an award governs the saved acquisition."
+      },
+      "definition": "When an acquisition begun under an earlier law remains pending without an award and its earlier award deadline has not expired at the transition, the new law’s award deadline governs."
+    },
+    {
+      "legal_issue": "Time during which a court order prevents authorities from proceeding with the making of an award is excluded when calculating the award deadline for a saved acquisition.",
+      "material_facts": [
+        "A court stayed the operation of a notification specifying the compensation multiplier applicable to rural land.",
+        "The stay inhibited the authorities from proceeding with the determination and making of awards until a later order modified its effect."
+      ],
+      "conclusion": "The period during which the court order inhibited the authorities from proceeding with the award must be excluded from the award period.",
+      "legal_principle": "Section 25 of the 2013 Act is to be construed to exclude time during which a court order prevents the authorities from making an award. The court applied the reasoning in Indore Development Authority v. Manoharlal, (2020) 8 SCC 129, which read an exclusion for periods of operative court orders into the lapse provision of Section 24(2), and relied on Abhey Ram (D) by LRs. v. Union of India, (1997) 5 SCC 421, concerning the meaning of a stay that inhibits official action. The principles that the law does not require the impossible and that an act of court should prejudice no one support that construction.",
+      "rule": {
+        "if": "saved_acquisition_award_case and court_order_prevented_award_action",
+        "then": "prevented_period_is_excluded_from_award_deadline"
+      },
+      "predicates": {
+        "saved_acquisition_award_case": "The proceeding concerns an award in an acquisition saved from an earlier land acquisition law.",
+        "court_order_prevented_award_action": "A court order prevented or inhibited the authorities from proceeding with the making of the award.",
+        "prevented_period_is_excluded_from_award_deadline": "The period of court-imposed prevention is left out when calculating the time allowed to make the award."
+      },
+      "definition": "If a court order prevents authorities from making an award in a saved acquisition, the period of prevention is excluded from the award deadline."
+    },
+    {
+      "legal_issue": "An award made within the applicable deadline, calculated after excluding a period during which a court order inhibited its making, prevents the acquisition from lapsing even if the award is alleged to have been backdated.",
+      "material_facts": [
+        "The acquisition was pending without an award when the new law commenced.",
+        "A court order inhibited action on the award, and the resulting period was excluded from the applicable deadline.",
+        "The landowners alleged that the award bearing an earlier date had been backdated.",
+        "The award had been approved by the Commissioner before the extended deadline, and the High Court had not found that it was made after that deadline."
+      ],
+      "conclusion": "The acquisition had not lapsed and the award was valid. The allegation of backdating did not alter that conclusion because the award was made within the applicable period. The alleged manipulation was left open for an independent inquiry by the appropriate authority.",
+      "legal_principle": "Sections 24(1)(a) and 25 of the 2013 Act govern the saved acquisition and its award deadline; time during which a court order inhibits the making of an award is excluded. The court applied its interpretation of those provisions and the reasoning in Indore Development Authority v. Manoharlal, (2020) 8 SCC 129. The court did not decide whether the award had in fact been manipulated or backdated; it held that the allegation did not establish lapse where the award was made within the adjusted period.",
+      "rule": {
+        "if": "saved_acquisition_without_prior_award and court_order_prevented_award_action and award_made_within_adjusted_deadline",
+        "then": "award_is_valid_and_acquisition_has_not_lapsed"
+      },
+      "predicates": {
+        "saved_acquisition_without_prior_award": "The acquisition was initiated under an earlier law and remained pending without an award when that law was repealed.",
+        "court_order_prevented_award_action": "A court order prevented or inhibited the authorities from proceeding with the making of the award.",
+        "award_made_within_adjusted_deadline": "The award was made within the applicable period after excluding time during which a court order prevented its making.",
+        "award_is_valid_and_acquisition_has_not_lapsed": "The award remains valid and the acquisition proceedings have not lapsed."
+      },
+      "definition": "A saved acquisition without an earlier award does not lapse where the award is made within the applicable deadline after excluding any period in which a court order prevented its making."
+    },
+    {
+      "legal_issue": "Delay in giving notice of an award to interested landowners does not invalidate an award that was made within the statutory period.",
+      "material_facts": [
+        "The landowners received notice of the award after the award was said to have been made.",
+        "The court found that notice is required after the making of an award and is not a condition precedent to making it.",
+        "The award was determined to have been made within the applicable period."
+      ],
+      "conclusion": "Belated service of notice does not affect the validity of an award made within the prescribed period, although it may have other consequences. The period for challenging the compensation begins when the landowners receive communication or otherwise learn of the award.",
+      "legal_principle": "Sections 12(1) and 12(2) of the Land Acquisition Act, 1894, and Sections 37(1) and 37(3) of the 2013 Act concern the filing, public availability and notice of the award. Notice to an interested person who was not present when the award was made is to be issued immediately but is not a condition precedent to making the award. Under Raja Harish Chandra Raj Singh v. Deputy Land Acquisition Officer, AIR 1961 SC 1500, the time to challenge an award runs from communication of it or when it becomes known to the affected party, actually or constructively.",
+      "rule": {
+        "if": "acquisition_award_case and award_made_within_required_period and notice_served_after_award",
+        "then": "award_validity_is_unaffected_by_delayed_notice"
+      },
+      "predicates": {
+        "acquisition_award_case": "The proceeding concerns an award made in a land acquisition.",
+        "award_made_within_required_period": "The award was made within the applicable statutory period.",
+        "notice_served_after_award": "Notice of the award was given to an interested person after the award had been made.",
+        "award_validity_is_unaffected_by_delayed_notice": "The delay in giving notice does not invalidate an award that was made within the required period."
+      },
+      "definition": "Where an acquisition award is timely made, later service of notice does not itself invalidate the award."
+    }
+  ],
+  "seconds": 18.1
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "386879",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13422,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2076,
+    "prompt_tokens": 3636,
+    "total_tokens": 5712,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A writ proceeding is not an appropriate means to resolve disputed title where granting possession would require a declaration of title and determination of contested facts.",
+      "material_facts": [
+        "The claimant sought restoration of a house through a constitutional writ petition.",
+        "The parties disputed the claimant’s eligibility for allotment, the rights acquired through the allotment process, and the basis on which the claimant had entered possession.",
+        "The competing claims required deciding factual and legal questions, and restoration would effectively require a declaration that the claimant had title and a right to possession."
+      ],
+      "conclusion": "The title and possession disputes should be determined in a properly constituted civil suit, not in the writ proceeding.",
+      "legal_principle": "Under Article 226, a writ court should not determine contested questions of fact and law where the requested relief would effectively require a decree declaring title and ordering recovery of property; those questions are appropriately decided by a Civil Court in a properly constituted suit.",
+      "rule": {
+        "if": "writ_petition and disputed_title_and_material_facts and relief_requires_title_declaration",
+        "then": "writ_court_should_decline_to_determine_title_and_order_recovery"
+      },
+      "predicates": {
+        "writ_petition": "The claimant sought relief through a constitutional writ petition.",
+        "disputed_title_and_material_facts": "The parties disputed the claimant’s rights to property and the material facts needed to determine those rights.",
+        "relief_requires_title_declaration": "Granting the requested recovery of property would require deciding that the claimant had title or an enforceable right to possession."
+      },
+      "definition": "When a claimant seeks property through a writ petition and the competing claims depend on disputed facts and a title determination, the writ court should leave that determination and recovery claim to an appropriate civil proceeding."
+    },
+    {
+      "legal_issue": "A writ of mandamus ordinarily cannot compel a private person in possession to restore property absent proof of collusion with public authorities or comparable circumstances making the possession merely colourable.",
+      "material_facts": [
+        "After the claimant was evicted, the government allotted the house to another displaced person, issued that person an allotment letter, and gave that person possession.",
+        "The private possessor had apparently complied with the allotment conditions and had entered possession under the government’s authority.",
+        "There was no evidence or finding that the private possessor colluded with the government or knew that the claimant’s eviction was illegal."
+      ],
+      "conclusion": "The writ order directing the private possessor to restore the house was not justified.",
+      "legal_principle": "Mandamus ordinarily issues against a person to require performance of a public duty, not against a private individual. Halsbury’s Laws of England states this general principle. By analogy to R. v. Chester Corporation, where a person has entered and acted in possession, a direct challenge to that person’s entitlement ordinarily requires an appropriate proceeding; mandamus may be available where the possession or transaction is merely colourable. The Court considered that collusion with the public authority could support jurisdiction, but found no evidence of it here.",
+      "rule": {
+        "if": "writ_petition and private_person_in_possession and bona_fide_possession_without_knowledge_of_illegal_eviction and not collusion_with_public_authority",
+        "then": "mandamus_should_not_issue_against_private_possessor"
+      },
+      "predicates": {
+        "writ_petition": "The claimant sought relief through a constitutional writ petition.",
+        "private_person_in_possession": "A private individual held the property when the writ court was asked to order restoration.",
+        "bona_fide_possession_without_knowledge_of_illegal_eviction": "The private individual entered possession under apparent authority and without knowledge that the prior eviction was illegal.",
+        "collusion_with_public_authority": "The private individual and a public authority acted together through a colourable transaction to deprive the claimant of rights."
+      },
+      "definition": "When a private individual holds property in bona fide possession without knowledge of an illegal eviction and has not colluded with a public authority, mandamus should not be used to compel that individual to restore it."
+    },
+    {
+      "legal_issue": "An occupant evicted without the notice required by law is unlawfully evicted and may obtain restoration by mandamus against the government while the government retains the property.",
+      "material_facts": [
+        "The claimant had entered the house with the accommodation officer’s involvement.",
+        "The government evicted the claimant without first serving the notice required before eviction.",
+        "The property was no longer in the government’s possession when restoration was sought because it had been delivered to a private allottee."
+      ],
+      "conclusion": "The eviction contravened the statutory notice requirement and was illegal; restoration could be ordered against the government if it still possessed the property.",
+      "legal_principle": "Section 3 of the Public Premises (Eviction) Act, 1950 required notice directing the occupant to vacate within the prescribed time before eviction. The Court held that eviction in contravention of that express requirement was illegal and that mandamus could require the government to restore possession if the property remained in its possession.",
+      "rule": {
+        "if": "government_eviction and required_pre_eviction_notice_not_served and government_still_holds_property",
+        "then": "government_must_restore_possession_to_unlawfully_evicted_occupant"
+      },
+      "predicates": {
+        "government_eviction": "A public authority removed an occupant from property.",
+        "required_pre_eviction_notice_not_served": "The public authority evicted the occupant without serving the notice required before eviction.",
+        "government_still_holds_property": "The property remained in the public authority’s possession when restoration was sought."
+      },
+      "definition": "If a public authority evicts an occupant without the required prior notice and still holds the property, it must restore possession to the unlawfully evicted occupant."
+    }
+  ],
+  "seconds": 13.5
+}

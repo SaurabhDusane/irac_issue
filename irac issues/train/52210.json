@@ -1,0 +1,85 @@
+{
+  "doc_id": "52210",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36439,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2451,
+    "prompt_tokens": 9089,
+    "total_tokens": 11540,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A party claiming title through a sale of a minor’s property by a person acting as guardian must prove the transaction relied upon, including its bona fides and asserted legal necessity, before the minor’s successor is required to disprove it.",
+      "material_facts": [
+        "The plaintiff relied on a sale deed said to have been executed on behalf of the appellant when she was a minor by a person who was neither her natural guardian nor a court-appointed guardian.",
+        "The plaintiff asserted that the sale was made to meet a debt of the appellant’s deceased mother and claimed the property under the deed in a partition suit.",
+        "The deed purported to transfer the appellant’s share to the alleged guardian and his nephew, and the appellant disputed the transaction.",
+        "The plaintiff did not lead evidence establishing that the deed was genuine or that the sale was made for legal necessity.",
+        "The appellant claimed and remained in possession of her share, and the other brother did not support the plaintiff’s account of the sale."
+      ],
+      "conclusion": "The plaintiff failed to prove the transaction on which his claim to the appellant’s share depended. The appellant was not required first to disprove the deed, and the share could not be included in the partition on the basis of that unproved transaction.",
+      "legal_principle": "Under Section 101 of the Indian Evidence Act, 1872, the party asserting facts on which a claimed right depends bears the burden of proving them and cannot rely on the weakness of the other party’s case. Roop Narain v. Gangadhar and Anna Malay v. Na U Ma are cited for the principle that a person upholding a guardian’s sale of a minor’s property must establish the guardian’s power and the bona fides of the transaction. Subhra Mukherjee v. Bharat Coaking Coal Ltd. supports requiring the party relying on a document to establish its genuineness before the opposing party must show that it is sham or fictitious. State of J & K v. Hindustan Forest Company and Corporation of City of Bangalore v. Zulekha Bi are cited for the claimant’s obligation to positively establish the claim and title. Misplacing the burden of proof vitiates the resulting judgment, as also supported by Koppula Koteshwara Rao v. Koppula Hemant Rao.",
+      "rule": {
+        "if": "partition_suit and plaintiff_relies_on_guardian_sale and sale_concerns_property_of_minor and plaintiff_fails_to_prove_transaction",
+        "then": "claimant_fails_to_establish_title_under_transaction"
+      },
+      "predicates": {
+        "partition_suit": "A plaintiff seeks partition of property among members of a family.",
+        "plaintiff_relies_on_guardian_sale": "The plaintiff claims an interest in property on the basis of a sale made by someone said to have acted as a guardian.",
+        "sale_concerns_property_of_minor": "The asserted sale was made on behalf of a person who was a minor at the time.",
+        "plaintiff_fails_to_prove_transaction": "The plaintiff does not establish the genuineness and asserted justification of the transaction relied upon."
+      },
+      "definition": "When a plaintiff in a partition suit relies on an unproved guardian’s sale of a minor’s property, the plaintiff fails to establish title through that transaction."
+    },
+    {
+      "legal_issue": "A defendant who remains in possession and first learns of an asserted sale when it is relied upon in a partition suit is not barred merely because the sale was executed long before the defendant contests it.",
+      "material_facts": [
+        "The appellant claimed that she remained in actual possession of her share and had no knowledge of the alleged sale deed.",
+        "The plaintiff first relied on the sale deed in the partition suit, which included the appellant’s property even though she had not originally been made a party.",
+        "The appellant sought impleadment after learning that her property had been included and contested the plaintiff’s reliance on the deed.",
+        "The High Court treated the passage of time from execution of the deed as a reason the appellant should have challenged it earlier."
+      ],
+      "conclusion": "The High Court erred in treating the claim as barred because the appellant had not challenged the deed within a period measured from its execution. On these facts, she had no reason to sue while in possession and before the deed was first asserted against her.",
+      "legal_principle": "A limitation objection cannot be imposed on a defendant as though she had brought a challenge to a transaction when the plaintiff first raised that transaction in a partition suit, the defendant remained in possession, and knowledge of the asserted transaction could not be attributed to her earlier. The Court held that the consequence of the plaintiff’s delay in asserting a claim based on the deed could not be shifted to the appellant.",
+      "rule": {
+        "if": "partition_suit and plaintiff_first_asserts_sale_against_defendant and defendant_remains_in_possession and defendant_lacks_prior_knowledge",
+        "then": "delay_alone_does_not_bar_defendant_from_contesting_sale"
+      },
+      "predicates": {
+        "partition_suit": "A plaintiff seeks partition of property among members of a family.",
+        "plaintiff_first_asserts_sale_against_defendant": "The plaintiff first relies on an alleged sale against the defendant in the partition proceeding.",
+        "defendant_remains_in_possession": "The defendant continues to occupy or possess the disputed property or share.",
+        "defendant_lacks_prior_knowledge": "The defendant had no knowledge of the alleged sale before it was asserted against her in the proceeding."
+      },
+      "definition": "When a plaintiff first asserts an alleged sale in a partition suit against a defendant who remains in possession and lacked prior knowledge, the passage of time alone does not bar the defendant from contesting the sale."
+    },
+    {
+      "legal_issue": "A plaintiff seeking partition must establish that disputed property belongs to the family whose property is to be partitioned, and property claimed by a third party cannot be included merely on an unproved assertion of title.",
+      "material_facts": [
+        "The plaintiff brought a partition suit against his brother and included the appellant’s share in the scheduled property.",
+        "The appellant, whose property had initially been included without making her a party, was later impleaded and disputed the family’s title to her share.",
+        "The plaintiff claimed that the share had passed to his family through the alleged sale by a guardian, but did not prove that transaction.",
+        "The appellant claimed inheritance from her parents and possession of her share."
+      ],
+      "conclusion": "The decree for partition between the brothers could remain in force, but it had to exclude the appellant’s share because the plaintiff did not establish that it belonged to the family whose partition he sought.",
+      "legal_principle": "A suit is to be tried on the pleadings of the contesting parties, with the issues arising from those pleadings; Section 101 of the Indian Evidence Act, 1872 then determines who must prove the asserted facts. In a partition suit, the plaintiff must establish that the property scheduled for partition clearly belongs to the family concerned. Where a third party is impleaded and contests the family’s title to disputed property, the plaintiff bears the burden of establishing that title.",
+      "rule": {
+        "if": "partition_suit and disputed_property_included_in_partition and third_party_contests_family_title and plaintiff_fails_to_prove_family_title",
+        "then": "disputed_property_must_be_excluded_from_partition"
+      },
+      "predicates": {
+        "partition_suit": "A plaintiff seeks partition of property among members of a family.",
+        "disputed_property_included_in_partition": "The plaintiff includes property in the partition claim whose ownership is disputed.",
+        "third_party_contests_family_title": "A person outside the family whose property is claimed disputes the family’s asserted ownership.",
+        "plaintiff_fails_to_prove_family_title": "The plaintiff does not establish that the disputed property belongs to the family whose partition is sought."
+      },
+      "definition": "When disputed property is included in a partition suit, a third party contests the family’s title, and the plaintiff fails to prove that title, the property must be excluded from the partition."
+    }
+  ],
+  "seconds": 15.2
+}

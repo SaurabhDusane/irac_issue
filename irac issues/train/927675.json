@@ -1,0 +1,102 @@
+{
+  "doc_id": "927675",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23168,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2734,
+    "prompt_tokens": 6355,
+    "total_tokens": 9089,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Sub-tenancy under rent-control legislation requires both the occupant’s exclusive right to possess the premises or part of them and consideration for that right.",
+      "material_facts": [
+        "The tenant permitted an occupant to use part of the premises for sewing and tailoring work.",
+        "The occupant also performed sewing work for the tenant and the tenant’s family and did work for others.",
+        "There was no pleading or evidence that the occupant had exclusive possession of any part of the premises or that the tenant had relinquished control over it.",
+        "There was no finding or evidence of money paid in exchange for occupation."
+      ],
+      "conclusion": "Sub-tenancy was not established because the required findings of exclusive possession and consideration were absent.",
+      "legal_principle": "Under Section 13(1)(a) of the West Bengal Premises Act, 1956, the essential ingredients of sub-tenancy include the occupant’s exclusive right of possession or interest in the premises or part of them and consideration for that right. Section 105 of the Transfer of Property Act, 1882, describes a lease as a transfer of the right to enjoy immovable property in consideration of specified value. Associated Hotels of India Ltd. v. S.B. Sardar Ranjit Singh was relied on for the relevance of retained control in determining whether an occupier is a tenant; Sachindra Nath Shah v. Santosh Kumar Bhattacharya was relied on for the principle that a finding cannot stand when basic facts necessary to support it have not been found. The Court also referred to Smt. Krishnawati v. Shri Hans Raj on restraint in disturbing concurrent findings where no question of law arises.",
+      "rule": {
+        "if": "rent_control_subletting_case and (not exclusive_possession_established or not consideration_for_occupation_established)",
+        "then": "subletting_not_established"
+      },
+      "predicates": {
+        "rent_control_subletting_case": "The proceeding concerns an allegation that an occupant was given part of rented premises as a sub-tenant.",
+        "exclusive_possession_established": "The evidence establishes that the occupant had an exclusive right to possess the premises or part of them, with the tenant not retaining control over that area.",
+        "consideration_for_occupation_established": "The evidence establishes that the occupant provided consideration in exchange for the right to occupy the premises or part of them.",
+        "subletting_not_established": "The alleged sub-tenancy is not proved."
+      },
+      "definition": "If an alleged sub-tenancy case lacks proof of either exclusive possession or consideration for occupation, sub-tenancy is not established."
+    },
+    {
+      "legal_issue": "Services performed in exchange for the right to occupy premises do not constitute rent for creating a sub-tenancy under the applicable rent-control legislation.",
+      "material_facts": [
+        "The alleged occupant performed sewing work for the tenant and the tenant’s family and also did work for others.",
+        "The evidence did not clearly establish what sewing work the occupant performed for the tenant.",
+        "There was no evidence of an agreed monetary payment for occupation."
+      ],
+      "conclusion": "Services in exchange for the right of occupation did not amount to receipt of rent under the Rent Act and could not establish sub-tenancy on that basis.",
+      "legal_principle": "The Court considered Sections 2(d), 2(h), 4, 5(b), 8, 9, 13(i), 13(j), 17(1), 17(2) and 17B of the West Bengal Premises Act, 1956, and concluded that the Act’s structure requires monetary amounts capable of being quantified and does not treat services in lieu of occupation as rent. Although Section 105 of the Transfer of Property Act, 1882, can encompass services or other value as consideration for a lease, that broader concept does not make services rent under this Rent Act. The Court referred to Barnes v. Barratt and the discussion there of Hornsby v. Maynard concerning the need for quantified rent under rent-control legislation.",
+      "rule": {
+        "if": "rent_control_subletting_case and occupation_exchanged_for_services and not monetary_rent_agreed",
+        "then": "services_not_rent_for_subtenancy"
+      },
+      "predicates": {
+        "rent_control_subletting_case": "The proceeding concerns an allegation that an occupant was given part of rented premises as a sub-tenant.",
+        "occupation_exchanged_for_services": "The occupant performed services in exchange for the right to occupy the premises or part of them.",
+        "monetary_rent_agreed": "The parties agreed on a monetary amount or an agreed method of quantifying rent for the occupation.",
+        "services_not_rent_for_subtenancy": "Services exchanged for occupation do not constitute rent for establishing sub-tenancy under the rent-control legislation."
+      },
+      "definition": "When occupation is exchanged for services without agreed monetary rent, the services do not count as rent for establishing sub-tenancy."
+    },
+    {
+      "legal_issue": "The Supreme Court may intervene under Article 136 despite concurrent findings of fact when essential facts required to support those findings were not found and manifest injustice is shown.",
+      "material_facts": [
+        "The trial court, first appellate court and High Court concurrently found that sub-tenancy had been proved.",
+        "No court found that the alleged sub-tenant had exclusive possession of any part of the premises or that the tenant had relinquished control.",
+        "The appellant challenged the concurrent findings in an appeal by special leave and demonstrated that essential ingredients of sub-tenancy had not been established."
+      ],
+      "conclusion": "The Court was entitled and required to examine and remedy the injustice despite the concurrent findings, and it set aside those findings.",
+      "legal_principle": "Article 136 of the Constitution of India confers a jurisdiction normally exercised sparingly in relation to concurrent findings of fact. However, where essential ingredients necessary to support a finding have not been found and the appellant discharges the burden of showing manifest injustice, the Court may—and has a duty to—remedy the injustice. The Court relied on M/s Variety Emporium v. V.R.M. Mohd. Ibrahim Naina and also referred to Smt. Krishnawati v. Shri Hans Raj on the ordinary restraint concerning concurrent findings.",
+      "rule": {
+        "if": "special_leave_appeal_against_concurrent_fact_findings and essential_facts_not_found and manifest_injustice_shown",
+        "then": "supreme_court_must_review_and_remedy_injustice"
+      },
+      "predicates": {
+        "special_leave_appeal_against_concurrent_fact_findings": "The proceeding is an appeal by special leave challenging concurrent factual findings of lower courts or tribunals.",
+        "essential_facts_not_found": "The lower courts or tribunals did not find facts that are essential to support the conclusion they reached.",
+        "manifest_injustice_shown": "The appellant demonstrates that the concurrent decision is manifestly unjust.",
+        "supreme_court_must_review_and_remedy_injustice": "The Supreme Court must examine the decision and remedy the injustice."
+      },
+      "definition": "When an appeal by special leave challenges concurrent findings that lack essential factual support and manifest injustice is shown, the Supreme Court must review the decision and remedy the injustice."
+    },
+    {
+      "legal_issue": "Use of a sewing machine as part of a tenant’s apparatus, rather than separately or independently, does not establish a change of user.",
+      "material_facts": [
+        "A sewing machine was used on the premises in connection with the tailoring work of the alleged occupant.",
+        "On the facts, the machine was used as part of the tenant’s apparatus and not separately or independently."
+      ],
+      "conclusion": "The sewing machine’s use did not constitute a change of user under Section 13(1)(h) of the West Bengal Premises Act, 1956.",
+      "legal_principle": "Under Section 13(1)(h) of the West Bengal Premises Act, 1956, the Court assessed whether the premises had been put to a different use. It held that the sewing machine, on these facts, was part of the tenant’s apparatus and was not used separately or independently, so its use did not establish a change of user.",
+      "rule": {
+        "if": "change_of_user_case and machine_used_as_tenant_apparatus and not machine_used_independently",
+        "then": "no_change_of_user_established"
+      },
+      "predicates": {
+        "change_of_user_case": "The proceeding includes an allegation that rented premises were put to a different use.",
+        "machine_used_as_tenant_apparatus": "The sewing machine was used as part of the tenant’s apparatus.",
+        "machine_used_independently": "The sewing machine was used separately or independently from the tenant’s apparatus.",
+        "no_change_of_user_established": "The use of the sewing machine does not establish a change of user."
+      },
+      "definition": "In a change-of-user case, if a sewing machine is part of the tenant’s apparatus and is not used independently, its use does not establish a change of user."
+    }
+  ],
+  "seconds": 16.3
+}

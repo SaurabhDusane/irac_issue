@@ -1,0 +1,83 @@
+{
+  "doc_id": "1778763",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32123,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2784,
+    "prompt_tokens": 8252,
+    "total_tokens": 11036,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil court lacks jurisdiction to grant eviction on a rent-control ground unless the statutory condition permitting recourse to that court has been satisfied.",
+      "material_facts": [
+        "The occupants had entered possession as tenants, and the landlords’ own pleading stated that their possession continued to be that of tenants.",
+        "The landlords sought possession by counterclaim, relying on the occupants’ denial of the landlords’ title and claim under an alleged agreement of sale.",
+        "No Rent Controller finding had been made that the denial of title was bona fide, and the landlords had not otherwise satisfied the statutory condition for bringing an eviction claim in a civil court.",
+        "The trial court granted possession without considering evidence on the counterclaim, and the High Court upheld that grant."
+      ],
+      "conclusion": "The civil court had no jurisdiction to entertain the eviction counterclaim on these facts. The decree on the counterclaim was set aside; a decree passed without jurisdiction is a nullity.",
+      "legal_principle": "Under Sections 10(1) and 10(2)(vi) of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960, eviction on denial of the landlord’s title is ordinarily for the Rent Controller to determine. The proviso to Section 10(1) permits a civil-court eviction suit only after the Controller finds the denial or claim bona fide. A civil court cannot bypass that condition, and its jurisdiction is barred for an eviction ground governed by the Act. A decree made without jurisdiction is a nullity: Kiran Singh v. Chaman Paswan; Bihar State Mineral Development Corporation v. Encon Builders; Dwarka Prasad Agarwal v. B.D. Agarwal; Ashok Leyland Ltd. v. State of Tamil Nadu; and M.D., Army Welfare Housing Organisation v. Sumangal Services.",
+      "rule": {
+        "if": "rent_control_eviction_counterclaim and eviction_based_on_title_denial and not required_controller_finding",
+        "then": "civil_court_lacks_eviction_jurisdiction"
+      },
+      "predicates": {
+        "rent_control_eviction_counterclaim": "The proceeding is a counterclaim seeking eviction from premises governed by rent-control protections.",
+        "eviction_based_on_title_denial": "The claimant seeks eviction on the ground that the occupant denied the landlord’s title or claimed a right inconsistent with the tenancy.",
+        "required_controller_finding": "The Rent Controller made the statutory finding that permits the landlord to pursue eviction in a civil court."
+      },
+      "definition": "When an eviction counterclaim concerns rent-controlled premises and rests on denial of title, the civil court lacks eviction jurisdiction if the required Controller finding has not been made."
+    },
+    {
+      "legal_issue": "A tenant’s claim to possess premises under an alleged, uncompleted sale agreement does not by itself terminate the tenancy or remove the tenant from rent-control protection.",
+      "material_facts": [
+        "The occupant had originally possessed the premises as a tenant and pleaded that he continued in possession after an alleged oral sale agreement in part performance of that agreement.",
+        "The occupant did not claim to have acquired title by a completed sale; the alleged agreement itself was disputed.",
+        "The landlords stated in their pleading that the occupant remained in possession as a tenant, even while seeking possession by counterclaim.",
+        "The landlords did not plead forfeiture of the tenancy in the counterclaim or serve notice conveying an intention to determine the lease.",
+        "An earlier eviction proceeding before the Rent Controller had been dismissed for default."
+      ],
+      "conclusion": "The occupant could not be treated as having automatically ceased to be a tenant merely because he claimed possession under the alleged sale agreement. The landlords’ eviction rights had to be determined through the applicable rent-control process; the doctrine against approbating and reprobating could not confer jurisdiction contrary to statute.",
+      "legal_principle": "Section 54 of the Transfer of Property Act does not permit an agreement of sale, by itself, to transfer title; at most, Section 53-A may support a claim to possession in part performance. Under Sections 106 and 111 of that Act, determination of a lease requires the applicable notice or other lawful basis for determination. The rent-control process and the conditions in Section 10 of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960 remain applicable. Inconsistent defences may ordinarily be pleaded, and approbation and reprobation is a species of estoppel that cannot operate against a statute. The Court distinguished Arjunlal Bhatt Mall Gothani v. Girish Chandra Dutta, R. Kanthimathi v. Beatrice Xavier, Sultan v. Ganesh, Nagubai Ammal v. B. Shama Rao, and R.N. Gosain v. Yashpal Dhir on their facts; it relied on Sheela v. Firm Prahlad Rai Prem Prakash concerning denial of a landlord’s title and the tenant’s intention.",
+      "rule": {
+        "if": "rent_control_tenancy_dispute and original_tenancy and possession_claimed_under_uncompleted_sale_agreement and landlord_maintains_tenant_status and not lawful_lease_termination",
+        "then": "tenant_retains_rent_control_protection"
+      },
+      "predicates": {
+        "rent_control_tenancy_dispute": "The dispute concerns possession of premises occupied under a tenancy governed by rent-control protections.",
+        "original_tenancy": "The occupant originally entered or remained in possession as a tenant.",
+        "possession_claimed_under_uncompleted_sale_agreement": "The occupant claims possession under an alleged sale agreement that has not itself transferred title.",
+        "landlord_maintains_tenant_status": "The landlord’s own pleaded position is that the occupant remains a tenant.",
+        "lawful_lease_termination": "The landlord has taken the legally required steps to determine the lease."
+      },
+      "definition": "In a rent-control tenancy dispute, an original tenant who claims possession under an uncompleted sale agreement remains protected as a tenant where the landlord also treats the occupant as a tenant and the lease has not been lawfully terminated."
+    },
+    {
+      "legal_issue": "Concurrent factual findings rejecting a claim for specific performance did not warrant interference on the appeal.",
+      "material_facts": [
+        "The occupant sought specific performance of an alleged oral agreement to sell the premises.",
+        "The trial court rejected the claim, and the High Court dismissed the appeal from that decision.",
+        "The appellant’s counsel did not persuade the Supreme Court to interfere with the concurrent factual findings on the specific-performance claim."
+      ],
+      "conclusion": "The dismissal of the specific-performance claim was upheld.",
+      "legal_principle": "The Court declined to interfere with the concurrent factual findings on the alleged oral sale agreement. It did not rely on a specific statutory provision or earlier case for this determination.",
+      "rule": {
+        "if": "civil_appeal and concurrent_findings_reject_specific_performance and no_basis_for_interference_shown",
+        "then": "specific_performance_dismissal_upheld"
+      },
+      "predicates": {
+        "civil_appeal": "The proceeding is an appeal in a civil case.",
+        "concurrent_findings_reject_specific_performance": "The courts below have both rejected the claim for specific performance on factual findings.",
+        "no_basis_for_interference_shown": "The appellant has not shown a basis for the Supreme Court to disturb those concurrent findings."
+      },
+      "definition": "When a civil appeal challenges concurrent factual findings rejecting specific performance and no basis for disturbing them is shown, the dismissal of that claim is upheld."
+    }
+  ],
+  "seconds": 19.9
+}

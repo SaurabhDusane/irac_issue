@@ -1,0 +1,79 @@
+{
+  "doc_id": "506181",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27779,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2392,
+    "prompt_tokens": 7030,
+    "total_tokens": 9422,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A revision against an order of a subordinate court is not incompetent merely because an appeal from that order lies to a court other than the High Court.",
+      "material_facts": [
+        "A subordinate court allowed a review application and deleted a direction requiring repayment or deposit of the loan as a condition of recovering possession.",
+        "An appeal from that review order lay to the District Court, not to the High Court.",
+        "The High Court rejected the revision application as incompetent on the ground that the review order was appealable."
+      ],
+      "conclusion": "The revision application could not be rejected as incompetent on that ground because no appeal from the subordinate court’s order lay to the High Court.",
+      "legal_principle": "Under section 115 of the Code of Civil Procedure, revision lies only where no appeal lies to the High Court from the order sought to be revised. Order XLIII, rule 1(s) provides an appeal from an order allowing review, but the appeal from this subordinate court’s order lay to the District Court. The limitation in section 115 concerns an appeal to the High Court, since an appeal to that court is a larger remedy than revision.",
+      "rule": {
+        "if": "revision_from_subordinate_order and appeal_from_order_lies_outside_high_court",
+        "then": "revision_not_incompetent_on_appeal_ground"
+      },
+      "predicates": {
+        "revision_from_subordinate_order": "A party sought revision of an order made by a subordinate court.",
+        "appeal_from_order_lies_outside_high_court": "An appeal from the subordinate court’s order lay to a court other than the High Court."
+      },
+      "definition": "When a party seeks revision of a subordinate court’s order and an appeal from it lies only to another court, the revision is not incompetent on the ground that an appeal lies."
+    },
+    {
+      "legal_issue": "When repayment of a loan and delivery of possession are concurrent obligations, recovery of possession is conditional on repayment or deposit of the loan.",
+      "material_facts": [
+        "An agreement provided that the borrower could seek possession after the agreed period by repaying the loan, and that possession was to be delivered upon repayment.",
+        "The borrower sought possession, and the original ex parte decree required him to pay the loan or deposit it in court.",
+        "A review order deleted that payment direction, and the High Court upheld its deletion.",
+        "The borrower had taken possession under the decree by the time the Supreme Court decided the appeal."
+      ],
+      "conclusion": "The direction requiring repayment or deposit of the loan was valid and should not have been deleted; because possession had already been taken, the borrower was ordered to repay the loan with interest.",
+      "legal_principle": "The agreement made repayment and delivery of possession mutual and concurrent obligations requiring simultaneous performance. A party seeking possession must therefore accompany that claim with payment or deposit of the amount due. The Court relied on Dixon v. Clark (1847) 16 L.J.C.P. 237, 136 E.R. 919, for the principle that a refused tender does not itself discharge the obligation to pay.",
+      "rule": {
+        "if": "appeal_from_review_order and possession_claim_under_concurrent_obligations and review_removed_repayment_condition",
+        "then": "possession_requires_repayment_or_deposit"
+      },
+      "predicates": {
+        "appeal_from_review_order": "A party appealed an order allowing review of a decree.",
+        "possession_claim_under_concurrent_obligations": "A party sought possession under an arrangement requiring that party to repay an amount while the other party delivered possession.",
+        "review_removed_repayment_condition": "The review order removed a requirement that the amount be paid or deposited as a condition of obtaining possession."
+      },
+      "definition": "When an appeal challenges a review order that removed the repayment condition from a possession claim involving concurrent obligations, possession remains conditional on repayment or deposit."
+    },
+    {
+      "legal_issue": "A tender made before the agreed time for repayment is invalid, and without a later valid tender the other party is not obliged to deliver possession or liable for wrongful occupation.",
+      "material_facts": [
+        "The agreement allowed repayment and a claim for possession only after a two-year period had expired.",
+        "The borrower’s alleged tender was made before that period expired.",
+        "The borrower did not make a later valid tender.",
+        "The borrower relied on the alleged refusal of the early tender to claim possession and damages."
+      ],
+      "conclusion": "The early tender was invalid; because no later valid tender was made, the occupant was not obliged to deliver possession and was not liable for damages for wrongful occupation.",
+      "legal_principle": "A tender made before the contractual time for repayment is due is invalid. Even a tender wrongly refused does not discharge the tendering party’s obligation to pay; where payment and delivery of possession are concurrent, the claim for possession must be accompanied by payment or deposit. The Court relied on Dixon v. Clark (1847) 16 L.J.C.P. 237, 136 E.R. 919.",
+      "rule": {
+        "if": "possession_recovery_proceeding and tender_precedes_repayment_eligibility and no_later_valid_tender",
+        "then": "no_entitlement_to_possession_or_damages"
+      },
+      "predicates": {
+        "possession_recovery_proceeding": "A party sought to recover possession under an agreement linking possession to repayment.",
+        "tender_precedes_repayment_eligibility": "The alleged repayment tender was made before the agreement permitted repayment.",
+        "no_later_valid_tender": "The party seeking possession made no valid tender after repayment became eligible."
+      },
+      "definition": "In a possession recovery proceeding, an early tender followed by no later valid tender means the claimant is not entitled to possession or damages for wrongful occupation."
+    }
+  ],
+  "seconds": 15.8
+}

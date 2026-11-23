@@ -1,0 +1,82 @@
+{
+  "doc_id": "78422638",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27434,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4078,
+    "prompt_tokens": 7047,
+    "total_tokens": 11125,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A further intra-court appeal is not maintainable when a single judge has decided an appeal and the prohibition on a further appeal applies.",
+      "material_facts": [
+        "A single judge of the High Court dismissed an appeal from the trial court’s decision.",
+        "The plaintiff then filed an intra-court appeal after the amended no-further-appeal provision had come into force."
+      ],
+      "conclusion": "The intra-court appeal was not maintainable, and its dismissal on that ground was correct.",
+      "legal_principle": "Section 100-A of the Code of Civil Procedure, as amended by the 2002 amendment and effective from 1 July 2002, bars a further appeal where a single judge decides an appeal from an original or appellate decree or order. Kamla Devi v. Kushal Kanwar and Mohd. Saud v. Dr. (Maj.) Shaikh Mahfooz establish that an intra-court appeal filed after that amendment is not maintainable.",
+      "rule": {
+        "if": "intra_court_appeal and single_judge_decided_appeal and further_appeal_bar_applied",
+        "then": "intra_court_appeal_not_maintainable"
+      },
+      "predicates": {
+        "intra_court_appeal": "A party filed an appeal within the same High Court against a single judge’s decision.",
+        "single_judge_decided_appeal": "A single judge decided an appeal from an original or appellate decision.",
+        "further_appeal_bar_applied": "The rule barring a further appeal applied when the intra-court appeal was filed."
+      },
+      "definition": "When an intra-court appeal follows a single judge’s decision in an appeal and a further-appeal bar applies, the intra-court appeal is not maintainable."
+    },
+    {
+      "legal_issue": "A transferee cannot obtain protection of possession under the doctrine of part performance without establishing the required readiness and willingness to perform the contract, and protection is unavailable against a purchaser for value whose notice of the contract or part performance is not established.",
+      "material_facts": [
+        "The predecessor of the defendants entered into a written agreement to purchase the property, paid a substantial part of the price and took possession in part performance.",
+        "The defendants did not bring an action to enforce the agreement, and the evidence did not clearly establish that they had always been ready and willing to perform their part; readiness and willingness were not pleaded in clear and specific terms.",
+        "The evidence did not establish that the plaintiff knew of the agreement or of the possession being held in part performance when she purchased the property for value.",
+        "The plaintiff’s registered sale deed remained valid and had not been set aside."
+      ],
+      "conclusion": "The defendants were not entitled to protection of their possession under Section 53A of the Transfer of Property Act, read with Section 16 of the Specific Relief Act; the plaintiff’s suit for declaration and possession was therefore decreed.",
+      "legal_principle": "Section 53A of the Transfer of Property Act requires a written contract for transfer, possession taken or continued in part performance, an act in furtherance, and performance or willingness to perform the transferee’s part. Its proviso excludes a transferee for value who has no notice of the contract or part performance. Section 16(c) of the Specific Relief Act requires the person seeking specific performance to aver and prove performance or continuing readiness and willingness. Shrimant Shamrao Suryavanshi v. Pralhad Bhairoba Suryavanshi holds that expiry of the limitation period alone does not defeat a qualifying possession defence, but all statutory preconditions must still be met. A. Lewis v. M.T. Ramamurthy holds that a transferee who remains passive and does not take effective steps or convey readiness and willingness cannot claim the protection.",
+      "rule": {
+        "if": "title_and_possession_suit and written_contract_for_transfer and possession_in_part_performance and act_in_furtherance and (not readiness_and_willingness_proven or not purchaser_notice_proven)",
+        "then": "part_performance_protection_unavailable"
+      },
+      "predicates": {
+        "title_and_possession_suit": "A claimant brought a suit seeking title to and possession of property against an occupier relying on a purchase agreement.",
+        "written_contract_for_transfer": "The occupier relied on a written agreement to transfer the property for consideration.",
+        "possession_in_part_performance": "The occupier took or continued in possession as part performance of the agreement.",
+        "act_in_furtherance": "The occupier did an act in furtherance of the agreement, such as paying part of the price.",
+        "readiness_and_willingness_proven": "The occupier clearly pleaded and proved performance or continuing readiness and willingness to perform the essential terms of the agreement.",
+        "purchaser_notice_proven": "The evidence established that the later purchaser for value had notice of the agreement or its part performance."
+      },
+      "definition": "In a title-and-possession suit, an occupier relying on a written purchase agreement and possession in part performance cannot claim the protection if readiness and willingness is not proved or the later purchaser’s notice is not proved."
+    },
+    {
+      "legal_issue": "Expiry of the limitation period for suing for specific performance does not, by itself, prevent a transferee in possession from asserting the part-performance protection as a defence, provided all requirements for that protection are met.",
+      "material_facts": [
+        "The defendants relied on an agreement to purchase the property and possession said to have been delivered in part performance.",
+        "No action for specific performance had been brought, and the defendants asserted that expiry of the limitation period did not extinguish the possession protection.",
+        "The Court found that readiness and willingness to perform had not been adequately established, so the defendants did not satisfy all requirements for the protection."
+      ],
+      "conclusion": "Expiry of the limitation period alone does not bar a possession defence based on part performance, but the defence remains conditional on proof of all essential requirements; those requirements were not met here.",
+      "legal_principle": "Section 53A of the Transfer of Property Act provides a defensive protection of possession when its requirements are satisfied. Shrimant Shamrao Suryavanshi v. Pralhad Bhairoba Suryavanshi holds that limitation expiry for a specific-performance suit does not alone preclude that defence, while emphasizing that every prerequisite for protection must be met. Section 16(c) of the Specific Relief Act requires performance or continuing readiness and willingness to be averred and proved when specific performance is sought.",
+      "rule": {
+        "if": "possession_protection_defence and limitation_period_expired and written_contract_and_part_performance and readiness_and_willingness_proven",
+        "then": "limitation_expiry_alone_does_not_bar_possession_protection"
+      },
+      "predicates": {
+        "possession_protection_defence": "A person in possession raises a purchase agreement as a defence against another person’s claim to the property.",
+        "limitation_period_expired": "The period for bringing an action to enforce the purchase agreement has expired.",
+        "written_contract_and_part_performance": "A written agreement for transfer exists and the person in possession has taken or continued in possession and acted in part performance of it.",
+        "readiness_and_willingness_proven": "The person in possession has performed or proved continuing readiness and willingness to perform the essential terms of the agreement."
+      },
+      "definition": "When a person raises a qualifying part-performance possession defence and has proved the required contractual performance or readiness, expiry of the time to sue for specific performance alone does not bar that defence."
+    }
+  ],
+  "seconds": 23.1
+}

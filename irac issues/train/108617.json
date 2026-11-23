@@ -1,0 +1,83 @@
+{
+  "doc_id": "108617",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 7571,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2264,
+    "prompt_tokens": 2324,
+    "total_tokens": 4588,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court may admit additional evidence establishing a material event that occurred after the decision below when considering it is necessary to determine the appeal justly.",
+      "material_facts": [
+        "The probate was granted after the High Court had decided the appeal, so it could not have been produced there.",
+        "The appellants applied in the Supreme Court appeal to place the probate on the record.",
+        "The probate was a judgment in rem and concerned the appellants’ authority to pursue the mortgage claim.",
+        "The respondents objected that there was no specific provision for admitting additional evidence, that they had not been parties to the probate proceeding, and that the application was late."
+      ],
+      "conclusion": "The probate was admitted as additional evidence; the objections did not prevent its admission.",
+      "legal_principle": "Order 45, rule 5 of the Supreme Court Rules recognises the Court’s inherent power to make orders necessary for the ends of justice or to prevent abuse of process. The Court relied on Indrajit Pratap Sahi v. Amar Singh for the power to admit evidence where sufficient grounds explain its earlier non-production, and on Lachmeshwar Prasad Shukul v. Keshwar Lal Chaudhuri, which approved the principle in Patterson v. State of Alabama that an appellate court may consider supervening changes in fact or law when determining what justice requires. A judgment in rem is not ineffective merely because the objecting respondents were not parties to it.",
+      "rule": {
+        "if": "supreme_court_appeal and additional_evidence_unavailable_below and material_event_occurred_after_lower_decision and evidence_is_judgment_in_rem and evidence_relevant_to_justice",
+        "then": "additional_evidence_admitted"
+      },
+      "predicates": {
+        "supreme_court_appeal": "The proceeding is an appeal before the Supreme Court from a lower court decision.",
+        "additional_evidence_unavailable_below": "The party seeking admission could not produce the evidence in the court below.",
+        "material_event_occurred_after_lower_decision": "The event established by the evidence occurred after the lower court decision.",
+        "evidence_is_judgment_in_rem": "The evidence is a judgment that determines a matter with effect beyond the parties to the proceeding in which it was made.",
+        "evidence_relevant_to_justice": "The evidence bears materially on the appellate court’s determination of what justice requires."
+      },
+      "definition": "When a Supreme Court appeal involves material evidence unavailable below because it records a later event, and the evidence is a relevant judgment in rem, the evidence is admitted."
+    },
+    {
+      "legal_issue": "A grant of probate removes the defect in a claimant’s reliance on a will that had not been shown to satisfy the required attestation formalities and establishes the claimant’s standing as successor under that will.",
+      "material_facts": [
+        "The appellants claimed rights under a will that bequeathed them interests in a mortgage.",
+        "The High Court held that the will had not been attested by two witnesses and that the appellants therefore lacked standing to sue.",
+        "After the High Court’s decision, a probate court granted probate of the will in favour of the appellants and their mother.",
+        "The probate was placed before the Supreme Court in the appeal."
+      ],
+      "conclusion": "The probate removed the infirmity arising from the want of proper attestation, and the High Court’s finding that the appellants lacked standing on that ground was reversed.",
+      "legal_principle": "Section 63(1)(c) of the Indian Succession Act requires a will to be attested by two or more witnesses. The Court treated the grant of probate as a judgment in rem and held that, once the probate was taken into account, the infirmity arising from the lack of proper attestation was removed.",
+      "rule": {
+        "if": "appeal_from_decision_denying_standing_under_a_will and will_attestation_defect_was_basis_for_denial and probate_granted_to_claimant and probate_is_judgment_in_rem",
+        "then": "claimant_has_standing_under_the_will"
+      },
+      "predicates": {
+        "appeal_from_decision_denying_standing_under_a_will": "The proceeding is an appeal from a decision denying a claimant standing based on rights under a will.",
+        "will_attestation_defect_was_basis_for_denial": "The court below denied standing because the will had not been shown to satisfy the required attestation formalities.",
+        "probate_granted_to_claimant": "A probate court granted probate of the will in favour of the claimant.",
+        "probate_is_judgment_in_rem": "The probate grant is a judgment in rem."
+      },
+      "definition": "When an appeal concerns a denial of standing based on a will’s attestation defect and probate has been granted to the claimant as a judgment in rem, the claimant has standing under the will."
+    },
+    {
+      "legal_issue": "An appellate court may take account of a material change in fact or law that occurs after the decision under appeal when shaping the relief required by justice.",
+      "material_facts": [
+        "The probate was granted after the High Court’s decision but before the Supreme Court decided the appeal.",
+        "The grant addressed the defect on which the High Court had relied to find that the appellants lacked standing.",
+        "The Supreme Court considered the probate in deciding the appeal and remitted the case for determination of the remaining issues."
+      ],
+      "conclusion": "The Supreme Court took the supervening grant of probate into account in deciding the appeal.",
+      "legal_principle": "The Court adopted the principle stated in Lachmeshwar Prasad Shukul v. Keshwar Lal Chaudhuri, drawing on Patterson v. State of Alabama, that an appellate court may consider changes in fact or law occurring after the decision under review when determining the disposition justice requires. It also referred to the appellate process as a rehearing in which later events may be considered when moulding relief.",
+      "rule": {
+        "if": "appellate_proceeding and material_change_after_decision_under_review and change_relevant_to_relief",
+        "then": "appellate_court_considers_supervening_change"
+      },
+      "predicates": {
+        "appellate_proceeding": "The court is reviewing a decision in an appellate proceeding.",
+        "material_change_after_decision_under_review": "A material change in fact or law occurred after the decision being reviewed.",
+        "change_relevant_to_relief": "The change bears on the relief or disposition that justice requires."
+      },
+      "definition": "In an appellate proceeding, a material later change relevant to the relief is considered by the appellate court."
+    }
+  ],
+  "seconds": 16.0
+}

@@ -1,0 +1,203 @@
+{
+  "doc_id": "844274",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43099,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4674,
+    "prompt_tokens": 10610,
+    "total_tokens": 15284,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A revenue sale conducted through a predetermined nominal bid, without competing bids, is not a sale by public auction and does not transfer title.",
+      "material_facts": [
+        "The property was put up for sale to recover revenue arrears after earlier recovery efforts had failed.",
+        "No outside bidder offered to buy the land at the auction.",
+        "A revenue official, acting for the government, made a predetermined bid of one rupee for each parcel, irrespective of its market value, and the bids were accepted.",
+        "The sales took place before a rule expressly authorizing a government bid of one rupee had been added."
+      ],
+      "conclusion": "The purported sales were not sales by public auction as contemplated by law, were invalid, and transferred no title to the government.",
+      "legal_principle": "Sections 155 and 167 of the Bombay Land Revenue Code authorized recovery through sale by public auction; the Code did not authorize forfeiture of a defaulter’s property through a predetermined nominal bid. Government resolutions without statutory force could not supply that authority, and the later-added Rule 129(4) did not apply to these sales. An auction invites successive offers so that the property’s fair market price may be ascertained; without bids, there is no such sale. The Court approved Tumdu Dhansing v. Government for the Province of Bombay and referred by analogy to Luchmeswar Singh v. Chairman of the Darbhanga Municipality.",
+      "rule": {
+        "if": "revenue_recovery_sale_case and predetermined_nominal_bid and no_competing_bids and not statutory_authority_for_nominal_purchase",
+        "then": "purported_sale_transfers_no_title"
+      },
+      "predicates": {
+        "revenue_recovery_sale_case": "A public authority conducts a sale of a defaulter’s property to recover a public revenue debt.",
+        "predetermined_nominal_bid": "An official makes a fixed nominal bid regardless of the property’s actual value.",
+        "no_competing_bids": "No other bidder offers to purchase the property at the sale.",
+        "statutory_authority_for_nominal_purchase": "A law in force at the time authorizes the public authority to purchase the property at the predetermined nominal price.",
+        "purported_sale_transfers_no_title": "The purported sale is invalid and does not transfer title."
+      },
+      "definition": "When a public authority seeks to recover a revenue debt through a sale, a fixed nominal bid without competing bids and without legal authority for that method means the purported sale transfers no title."
+    },
+    {
+      "legal_issue": "Advance notice of a planned nominal bid does not waive the requirement of a lawful public auction or estop the defaulter from challenging the purported sale.",
+      "material_facts": [
+        "The defaulter was told in advance that the government would bid one rupee if no other bidder came forward.",
+        "The purported sale used a predetermined nominal bid rather than competing offers.",
+        "The purchasers relied on their belief that the government had acquired title, not on any representation, act, or conduct of the defaulter."
+      ],
+      "conclusion": "The advance notice did not validate the purported sales, waive the legal requirement, or estop the defaulter from challenging them.",
+      "legal_principle": "The statutory requirement of a sale by public auction is an essential condition for property to pass through this summary recovery process and cannot be waived where the purported sale does not meet that requirement. Estoppel requires a representation by the person to be estopped and prejudice to the person invoking estoppel; neither was present. The Court’s conclusion accords with Tumdu Dhansing v. Government for the Province of Bombay, which it approved.",
+      "rule": {
+        "if": "revenue_recovery_sale_case and predetermined_nominal_bid and prior_notice_of_nominal_bid",
+        "then": "notice_does_not_cure_invalid_sale"
+      },
+      "predicates": {
+        "revenue_recovery_sale_case": "A public authority conducts a sale of a defaulter’s property to recover a public revenue debt.",
+        "predetermined_nominal_bid": "An official makes a fixed nominal bid regardless of the property’s actual value.",
+        "prior_notice_of_nominal_bid": "The defaulter is told in advance that the public authority intends to make the fixed nominal bid.",
+        "notice_does_not_cure_invalid_sale": "Advance notice does not make an otherwise invalid purported sale valid."
+      },
+      "definition": "In a revenue recovery sale, telling the defaulter in advance about a predetermined nominal bid does not cure the invalidity of a sale made by that method."
+    },
+    {
+      "legal_issue": "The one-year limitation rule for setting aside a sale does not bar a suit where no sale contemplated by law took place.",
+      "material_facts": [
+        "The suit challenged the nominal-bid transactions as unauthorized purported sales that transferred no title.",
+        "The plaintiff sought relief on the basis that no legally effective sale had occurred, rather than seeking to set aside an existing sale."
+      ],
+      "conclusion": "The suit was not barred by Article 11 of the Indian Limitation Act.",
+      "legal_principle": "Article 11 of the Indian Limitation Act applies where a sale has taken place and needs to be set aside; it does not apply where no sale contemplated by law took place.",
+      "rule": {
+        "if": "suit_challenging_revenue_sale and no_lawful_sale_occurred and suit_does_not_seek_to_set_aside_effective_sale",
+        "then": "one_year_sale_limitation_does_not_bar_suit"
+      },
+      "predicates": {
+        "suit_challenging_revenue_sale": "A civil suit challenges a purported sale made to recover a public revenue debt.",
+        "no_lawful_sale_occurred": "The transaction did not constitute a sale authorized by law.",
+        "suit_does_not_seek_to_set_aside_effective_sale": "The claimant seeks relief on the basis that no legally effective sale occurred, rather than asking to set aside an effective sale.",
+        "one_year_sale_limitation_does_not_bar_suit": "The one-year limitation rule for setting aside a sale does not bar the suit."
+      },
+      "definition": "Where a suit challenges a revenue transaction on the ground that no lawful sale occurred, and does not seek to set aside an effective sale, the one-year sale limitation rule does not bar it."
+    },
+    {
+      "legal_issue": "The civil-court bar for claims to set aside revenue sales does not apply to a suit alleging that a purported sale transferred no title.",
+      "material_facts": [
+        "The plaintiff challenged the nominal-bid transactions as purported sales that did not transfer title.",
+        "The suit sought recovery of the property on the basis that the transactions were not legally effective sales, rather than setting aside an existing sale for irregularity."
+      ],
+      "conclusion": "Section 4(c) of the Bombay Revenue Jurisdiction Act did not bar the suit.",
+      "legal_principle": "Section 4(c) of the Bombay Revenue Jurisdiction Act bars specified claims to set aside sales for arrears of land revenue on grounds other than fraud. It assumes a sale exists and title has passed; it does not bar a suit to recover property while treating a purported sale that passed no title as ineffective.",
+      "rule": {
+        "if": "suit_challenging_revenue_sale and no_title_passed and suit_seeks_recovery_ignoring_purported_sale",
+        "then": "civil_court_bar_for_setting_aside_sale_does_not_apply"
+      },
+      "predicates": {
+        "suit_challenging_revenue_sale": "A civil suit challenges a purported sale made to recover a public revenue debt.",
+        "no_title_passed": "The purported sale did not transfer title to the purchaser.",
+        "suit_seeks_recovery_ignoring_purported_sale": "The claimant seeks recovery of the property on the basis that the purported sale was ineffective, rather than asking to set aside an effective sale.",
+        "civil_court_bar_for_setting_aside_sale_does_not_apply": "The statutory civil-court bar for claims to set aside revenue sales does not bar the suit."
+      },
+      "definition": "If a purported revenue sale transferred no title and the suit seeks recovery of the property by treating it as ineffective, the civil-court bar for setting aside a sale does not apply."
+    },
+    {
+      "legal_issue": "The requirement to exhaust revenue appeals does not bar a civil suit when the complained-of administrative act was not an appealable decision or order.",
+      "material_facts": [
+        "The complained-of act was the Collector’s administrative authorization for a subordinate official to make a nominal bid.",
+        "No appeal was provided against that authorization as an administrative act, and no other appealable decision was identified.",
+        "The suit challenged the purported sale as void."
+      ],
+      "conclusion": "Section 11 of the Bombay Revenue Jurisdiction Act did not bar the suit.",
+      "legal_principle": "Section 11 of the Bombay Revenue Jurisdiction Act requires a claimant to pursue available appeals before suing the government. Its application requires an act or omission giving rise to the claim, an appeal provided by law against that act or omission, and failure to use that remedy. Section 203 of the Bombay Land Revenue Code permits appeals from decisions or orders of revenue officers, but the administrative authorization at issue was not an appealable decision or order.",
+      "rule": {
+        "if": "suit_against_public_authority and complained_of_act_is_not_appealable and no_available_appeal_was_omitted",
+        "then": "appeal_exhaustion_bar_does_not_apply"
+      },
+      "predicates": {
+        "suit_against_public_authority": "A civil suit seeks relief against a public authority based on an act of a revenue official.",
+        "complained_of_act_is_not_appealable": "The act complained of is not a decision or order for which an appeal is provided.",
+        "no_available_appeal_was_omitted": "The claimant did not fail to pursue an appeal that was available against the complained-of act.",
+        "appeal_exhaustion_bar_does_not_apply": "The requirement to exhaust revenue appeals does not bar the civil suit."
+      },
+      "definition": "A suit against a public authority is not barred for failure to exhaust appeals when the complained-of act was not appealable and no available appeal was omitted."
+    },
+    {
+      "legal_issue": "A purchaser cannot rely on the rule protecting a transferee from an ostensible owner when the purchaser relied on the transferor’s title rather than a representation by the true owner.",
+      "material_facts": [
+        "The purchasers bought the lands from the government after the government had acquired them through the nominal-bid transactions.",
+        "The purchasers relied on their belief that the government had acquired title through those transactions.",
+        "The purchasers did not rely on any representation, act, or conduct by the original owner that the government was the owner."
+      ],
+      "conclusion": "Section 41 of the Transfer of Property Act did not protect the purchasers or prevent the original owner from challenging their title.",
+      "legal_principle": "Section 41 of the Transfer of Property Act has no application where the transferee did not rely on a representation, act, or conduct of the person whose title is challenged. If the transferor had no title to convey, the transferee could not acquire title on the basis of a belief that the transferor owned the property.",
+      "rule": {
+        "if": "transfer_from_ostensible_owner and purchaser_reliance_on_transferor_title and not true_owner_representation",
+        "then": "ostensible_owner_protection_does_not_apply"
+      },
+      "predicates": {
+        "transfer_from_ostensible_owner": "A person transfers property while appearing to hold ownership without having acquired valid title.",
+        "purchaser_reliance_on_transferor_title": "The purchaser relies on the transferor’s apparent title rather than on conduct by the true owner.",
+        "true_owner_representation": "The true owner made a representation, or engaged in conduct, that the transferor owned the property.",
+        "ostensible_owner_protection_does_not_apply": "The protection for a transferee from an ostensible owner does not apply."
+      },
+      "definition": "A purchaser relying only on the transferor’s apparent title cannot invoke ostensible-owner protection when the true owner made no representation or engaged in no relevant conduct."
+    },
+    {
+      "legal_issue": "An allegedly inadequate sale price, standing alone, does not invalidate a revenue sale.",
+      "material_facts": [
+        "A house was sold in a revenue sale to a private purchaser for an amount alleged to be less than its estimated value.",
+        "No other irregularity that would invalidate the house sale was identified."
+      ],
+      "conclusion": "The complaint that the house sold for an inadequate amount did not justify holding that sale void, and the claim concerning the house was dismissed.",
+      "legal_principle": "An allegation that the price obtained at a sale was inadequate does not, standing alone, establish a ground for declaring the sale void.",
+      "rule": {
+        "if": "revenue_sale_case and only_challenge_is_inadequate_price",
+        "then": "sale_not_void_for_inadequate_price_alone"
+      },
+      "predicates": {
+        "revenue_sale_case": "A public authority conducts a sale of property to recover a public revenue debt.",
+        "only_challenge_is_inadequate_price": "The sole asserted defect is that the sale price was inadequate, with no other invalidating irregularity identified.",
+        "sale_not_void_for_inadequate_price_alone": "The sale is not void solely because the price obtained was inadequate."
+      },
+      "definition": "In a revenue sale, an inadequate price alone does not make the sale void when no other invalidating irregularity is shown."
+    },
+    {
+      "legal_issue": "An appellate court may decline to consider factual objections raised for the first time when they were not pleaded or investigated below.",
+      "material_facts": [
+        "Several objections concerning the sale procedure and payment of the bid were raised for the first time in the appeal.",
+        "Those objections involved factual questions that had not been pleaded or investigated in the lower courts."
+      ],
+      "conclusion": "The Court declined to entertain those objections.",
+      "legal_principle": "The Court did not decide the merits of the newly raised objections because they involved factual questions that were not pleaded or investigated in the courts below.",
+      "rule": {
+        "if": "civil_appeal and new_factual_objections and not pleaded_or_investigated_below",
+        "then": "appellate_court_declines_to_consider_new_factual_objections"
+      },
+      "predicates": {
+        "civil_appeal": "The matter is a civil appeal.",
+        "new_factual_objections": "A party raises objections involving factual questions for the first time on appeal.",
+        "pleaded_or_investigated_below": "The factual objections were pleaded and investigated in the lower courts.",
+        "appellate_court_declines_to_consider_new_factual_objections": "The appellate court declines to consider the newly raised factual objections."
+      },
+      "definition": "In a civil appeal, factual objections raised for the first time and not pleaded or investigated below may be left unconsidered."
+    },
+    {
+      "legal_issue": "A claim for compensation for improvements cannot be entertained on appeal when it lacks an evidentiary basis and was not raised for determination below.",
+      "material_facts": [
+        "The purchasers asserted on appeal that they had made improvements to the property and sought compensation.",
+        "No evidence had been led on the improvements, and no issue concerning compensation had been framed in the trial court."
+      ],
+      "conclusion": "The Court declined to entertain the claim for compensation for improvements at that stage.",
+      "legal_principle": "Although the claim invoked section 51 of the Transfer of Property Act, it raised a question of fact for which no evidence had been led and no issue had been framed below; the Court therefore declined to consider it at the appellate stage.",
+      "rule": {
+        "if": "civil_appeal and improvement_compensation_claim and no_evidence_or_trial_issue",
+        "then": "appellate_court_declines_to_entertain_improvement_claim"
+      },
+      "predicates": {
+        "civil_appeal": "The matter is a civil appeal.",
+        "improvement_compensation_claim": "A purchaser seeks compensation on the basis that improvements were made to the property.",
+        "no_evidence_or_trial_issue": "No evidence on the improvements was led and no issue concerning the claim was framed at trial.",
+        "appellate_court_declines_to_entertain_improvement_claim": "The appellate court declines to entertain the improvement-compensation claim."
+      },
+      "definition": "In a civil appeal, an improvement-compensation claim may be left unconsidered when no evidence was led and no issue was framed on it at trial."
+    }
+  ],
+  "seconds": 25.0
+}

@@ -1,0 +1,77 @@
+{
+  "doc_id": "924340",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29247,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2665,
+    "prompt_tokens": 7937,
+    "total_tokens": 10602,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A confessional first information report made by an accused to a police officer is excluded as a whole, rather than only to the extent that it directly describes commission of the offence.",
+      "material_facts": [
+        "The accused personally gave a first information report to a police officer, and the report, read as a whole, confessed to the murders.",
+        "The report also described motive, movements, concealment, and other incriminating circumstances.",
+        "The prosecution relied principally on the report, and the remaining evidence was insufficient to convict."
+      ],
+      "conclusion": "The whole confessional report was inadmissible against its maker, except for information admissible under the discovery exception and the formal portions identifying him as the person who made the report.",
+      "legal_principle": "Under section 25 of the Indian Evidence Act, 1872, a confession to a police officer is inadmissible against the accused, regardless of whether the accused was in custody or an investigation had begun. The bar covers the entire confessional statement, including admissions of incriminating facts related to the offence, not merely the direct admission of guilt; the portions cannot be severed and admitted as non-confessional statements. Section 27 permits the limited exception for information distinctly related to a fact discovered, and the formal identification of the maker may be admitted. The Court applied the understanding of confession in Pakala Narayanaswami v. The King Emperor, approved in Palvinder Kaur v. The State of Punjab and State of U.P. v. Deoman Upadhyaya, and relied on Hanumant v. State of U.P. and Palvinder Kaur concerning the treatment of an admission as a whole.",
+      "rule": {
+        "if": "criminal_trial and accused_confessional_report_to_police",
+        "then": "whole_confessional_report_inadmissible_except_discovery_information_and_maker_identification"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which a statement is offered against the accused.",
+        "accused_confessional_report_to_police": "The accused gave a report to a police officer that, read as a whole, admitted the offence and did not contain an exculpatory fact negating it."
+      },
+      "definition": "When an accused gives a confessional report to a police officer in a criminal trial, the whole report is inadmissible except for discovery information and identification of its maker."
+    },
+    {
+      "legal_issue": "Information from an accused in police custody may be admitted to the extent that it distinctly relates to a fact discovered in consequence of that information.",
+      "material_facts": [
+        "The report identified locations where the dead bodies and a concealed weapon could be found.",
+        "The police later went with the accused to those locations, and the bodies and weapon were found there.",
+        "The Court assumed for purposes of the case that the accused was constructively in police custody when he gave the information."
+      ],
+      "conclusion": "The information in the report that led to the discovery of the bodies and the weapon was admissible to the extent that it related distinctly to those discoveries.",
+      "legal_principle": "Section 27 of the Indian Evidence Act, 1872, partially lifts the exclusion under sections 24, 25 and 26 for so much of information received from an accused in police custody as relates distinctly to a fact discovered in consequence of it. The Court referred to State of U.P. v. Deoman Upadhyaya on the custody question and proceeded on an assumption of constructive custody without deciding that question.",
+      "rule": {
+        "if": "criminal_trial and accused_in_police_custody and information_caused_discovery and information_distinctly_related_to_discovered_fact",
+        "then": "distinct_discovery_information_admissible"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which information is offered against an accused.",
+        "accused_in_police_custody": "The accused was in police custody when the information was given.",
+        "information_caused_discovery": "A fact was discovered in consequence of information given by the accused.",
+        "information_distinctly_related_to_discovered_fact": "The offered portion of the information related distinctly to the fact that was discovered."
+      },
+      "definition": "In a criminal trial, information from an accused in police custody is admissible to the extent that it caused and distinctly relates to a discovery."
+    },
+    {
+      "legal_issue": "A conviction cannot stand when the evidence remaining admissible after exclusion of the confessional statement is insufficient to support it.",
+      "material_facts": [
+        "There was no eyewitness to the murders.",
+        "After excluding the inadmissible portions of the report, the evidence consisted of discovery of the bodies and weapon following information attributed to the accused, recovery of a blood-stained cloth from his house, and evidence that he had gone to the forest on the morning of the offences.",
+        "The Court found that this evidence was insufficient to convict the accused of the offences."
+      ],
+      "conclusion": "The appeal was allowed, and the convictions and sentences were set aside.",
+      "legal_principle": "The Court assessed whether the admissible evidence remaining after application of the exclusionary rules was sufficient to sustain the convictions. It concluded that the discovery evidence and other remaining circumstances in this case did not suffice; it cited no separate earlier case for this conclusion.",
+      "rule": {
+        "if": "appeal_from_conviction and admissible_remaining_evidence_insufficient",
+        "then": "conviction_set_aside"
+      },
+      "predicates": {
+        "appeal_from_conviction": "The proceeding is an appeal by an accused against a conviction.",
+        "admissible_remaining_evidence_insufficient": "After inadmissible evidence is excluded, the evidence left does not suffice to support the conviction."
+      },
+      "definition": "On an appeal from conviction, if the admissible evidence remaining is insufficient, the conviction is set aside."
+    }
+  ],
+  "seconds": 16.6
+}

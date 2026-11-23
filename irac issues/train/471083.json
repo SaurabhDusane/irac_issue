@@ -1,0 +1,89 @@
+{
+  "doc_id": "471083",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38161,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2061,
+    "prompt_tokens": 9309,
+    "total_tokens": 11370,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The prosecution did not establish the alleged financial motive for the killing, and the alleged unpaid sale consideration would not, by itself, provide a reasonable motive to kill the seller.",
+      "material_facts": [
+        "The prosecution alleged that the purchaser had not paid the stated sale price and that the deceased had repeatedly demanded it.",
+        "The sale deed recorded receipt of the consideration, possession had been delivered, and the deceased and his wife had taken no formal recovery action despite advice to do so.",
+        "A letter found with the deceased showed that the accused had demanded repayment of a separate loan and accused the deceased and his relations of goondaism.",
+        "Even if the sale price remained unpaid, the deceased's wife and grown children could still have pursued the claim after his death."
+      ],
+      "conclusion": "The alleged failure to pay the sale price was not established as a motive; even assuming non-payment, the circumstances did not show a reasonable motive to murder the deceased.",
+      "legal_principle": "Motive is relevant in a circumstantial-evidence case, but it must be fully established like any other incriminating circumstance. Motive alone cannot replace proof of the other essential circumstances. The Court applied the approach to circumstantial evidence in Hanumant v. State of Madhya Pradesh and the poisoning-case analysis in Dharambir Singh v. State of Punjab.",
+      "rule": {
+        "if": "circumstantial_criminal_case and alleged_motive_depends_on_disputed_debt and (claimant_took_no_formal_recovery_action or other_persons_could_pursue_claim_after_death)",
+        "then": "alleged_motive_not_established"
+      },
+      "predicates": {
+        "circumstantial_criminal_case": "The prosecution sought to establish criminal guilt through circumstantial evidence.",
+        "alleged_motive_depends_on_disputed_debt": "The prosecution relied on an alleged unpaid debt or sale price as the reason for the crime.",
+        "claimant_took_no_formal_recovery_action": "The person said to be owed money did not take formal steps to recover it during the relevant period.",
+        "other_persons_could_pursue_claim_after_death": "Other persons retained the ability to pursue the alleged financial claim after the deceased's death.",
+        "alleged_motive_not_established": "The alleged financial reason for the crime was not proved as an established motive."
+      },
+      "definition": "When a circumstantial criminal case relies on a disputed debt as motive, the absence of formal recovery steps or the continued ability of others to pursue the claim supports treating that motive as unestablished."
+    },
+    {
+      "legal_issue": "A conviction based on circumstantial evidence cannot stand unless the established circumstances form a complete chain that excludes every reasonable hypothesis consistent with innocence.",
+      "material_facts": [
+        "The case rested entirely on circumstantial evidence.",
+        "The evidence that the deceased was owed the sale price was doubtful, and the Court found that the alleged motive was not established.",
+        "The principal witnesses' accounts of the accused serving the deceased a cup of tea were unreliable and materially inconsistent.",
+        "The alleged poison was not detected in the water remaining in the tumbler or in the vomit, and the amount of the compound found in the viscera was not measured.",
+        "The accused promptly contacted the police after the deceased collapsed; the Court found that his account of events could not be treated as incriminating in light of the deficiencies in the prosecution case."
+      ],
+      "conclusion": "The circumstances did not form a complete chain excluding reasonable hypotheses consistent with innocence, so the conviction and sentence were set aside and the accused was acquitted.",
+      "legal_principle": "Under Hanumant v. State of Madhya Pradesh, circumstances relied on for guilt must first be fully established, be consistent only with guilt, be conclusive in nature and tendency, and exclude every reasonable hypothesis other than guilt. The Court recalled the caution in Reg. v. Hodge against allowing conjecture or suspicion to substitute for proof.",
+      "rule": {
+        "if": "criminal_appeal_from_conviction and case_rests_on_circumstantial_evidence and (material_circumstances_are_unproved or reasonable_innocent_hypothesis_remains)",
+        "then": "conviction_cannot_stand"
+      },
+      "predicates": {
+        "criminal_appeal_from_conviction": "The matter is a criminal appeal challenging a conviction.",
+        "case_rests_on_circumstantial_evidence": "The prosecution's case depends on circumstances rather than direct evidence of the crime.",
+        "material_circumstances_are_unproved": "One or more circumstances essential to the prosecution's chain have not been established by reliable evidence.",
+        "reasonable_innocent_hypothesis_remains": "The established evidence leaves a reasonable explanation consistent with the accused's innocence.",
+        "conviction_cannot_stand": "A conviction based on the evidence cannot be maintained."
+      },
+      "definition": "In an appeal from a conviction resting on circumstances, the conviction cannot stand if essential circumstances remain unproved or the evidence leaves a reasonable innocent explanation."
+    },
+    {
+      "legal_issue": "In a poisoning case based on circumstantial evidence, the prosecution must prove the deceased died from the poison in question, the accused possessed that poison, and the accused had an opportunity to administer it; those matters were not proved here.",
+      "material_facts": [
+        "The chemical analyst detected kerosene oil and an organochloro compound in the viscera but did not measure their quantities or explain whether the amount was lethal.",
+        "No poison was found in the tumbler containing water or in the vomit, although medical evidence indicated that vomit following ingestion of a liquid poison could contain the compound.",
+        "The prosecution produced no evidence that the accused possessed an organochloro compound.",
+        "The evidence that the accused administered poison in tea was not reliable: the witnesses gave materially conflicting accounts, and no cup was seized.",
+        "The chemical evidence and medical testimony did not establish the amount ingested or that the detected compound caused death."
+      ],
+      "conclusion": "The prosecution failed to establish that the accused possessed or administered a lethal poison, and the evidence did not prove the alleged poisoning beyond the deficiencies identified by the Court.",
+      "legal_principle": "In a circumstantial poisoning case, the Court applied the three questions identified in Dharambir Singh v. State of Punjab: whether the deceased died of the poison in question, whether the accused possessed it, and whether the accused had an opportunity to administer it. Motive, even if present, does not dispense with proof of those essential facts. The Court also relied on the medical-jurisprudence discussion in Taylor's Principles and Practice of Medical Jurisprudence concerning the effects and likely quantities of organochloro compounds.",
+      "rule": {
+        "if": "poisoning_case_based_on_circumstantial_evidence and (accused_possession_of_poison_unproved or poison_administration_unproved or lethal_cause_of_death_unproved)",
+        "then": "poisoning_by_accused_not_proved"
+      },
+      "predicates": {
+        "poisoning_case_based_on_circumstantial_evidence": "The prosecution alleges poisoning and relies on circumstantial evidence to connect the accused with it.",
+        "accused_possession_of_poison_unproved": "The evidence does not establish that the accused possessed the poison alleged to have caused death.",
+        "poison_administration_unproved": "The evidence does not reliably establish that the accused administered the alleged poison to the deceased.",
+        "lethal_cause_of_death_unproved": "The evidence does not establish that the detected substance or quantity caused the deceased's death.",
+        "poisoning_by_accused_not_proved": "The evidence does not prove that the accused poisoned the deceased."
+      },
+      "definition": "In a circumstantial poisoning case, failure to prove possession, administration, or that the poison caused death means that poisoning by the accused has not been proved."
+    }
+  ],
+  "seconds": 12.9
+}

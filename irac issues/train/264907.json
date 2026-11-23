@@ -1,0 +1,82 @@
+{
+  "doc_id": "264907",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42214,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2657,
+    "prompt_tokens": 10685,
+    "total_tokens": 13342,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The authority responsible for recovering state dues may determine both the amount recoverable and whether the alleged defaulter is liable, while ordinary civil courts cannot determine those matters under the recovery scheme.",
+      "material_facts": [
+        "The recovery scheme assigned the head of department the task of determining the exact state dues recoverable from a defaulter and provided for objections to be examined during that process.",
+        "The scheme made the recovery certificate conclusive as to the stated matters and barred the recovery authorities receiving it from hearing objections about the amount or liability.",
+        "The alleged surety disputed that he had undertaken liability for the bank debt."
+      ],
+      "conclusion": "The head of department could determine whether the alleged defaulter was liable as well as the amount due. An ordinary civil court had no jurisdiction to determine either matter.",
+      "legal_principle": "Under sections 4, 6 and 11 of the Patiala Recovery of State Dues Act, read with rules 3–6, determination of the recoverable dues includes deciding disputed liability; the exclusion of ordinary civil-court jurisdiction applies to both liability and amount. Lachhman Dass v. State of Punjab supports the authority’s ability to consider evidence on disputed objections, and Kanshi Ram v. State of Punjab adopted the same construction.",
+      "rule": {
+        "if": "state_dues_recovery_proceeding and alleged_defaulter_disputes_liability and recovery_scheme_assigns_department_determination_of_recoverable_dues",
+        "then": "department_may_determine_amount_and_liability_and_ordinary_civil_court_lacks_jurisdiction"
+      },
+      "predicates": {
+        "state_dues_recovery_proceeding": "A proceeding is brought under a scheme for recovering dues owed to the state or a state institution.",
+        "alleged_defaulter_disputes_liability": "The person claimed to owe the dues disputes that they are liable to pay them.",
+        "recovery_scheme_assigns_department_determination_of_recoverable_dues": "The recovery scheme assigns a departmental authority the task of determining the dues recoverable from the alleged defaulter.",
+        "department_may_determine_amount_and_liability_and_ordinary_civil_court_lacks_jurisdiction": "The departmental authority may determine both the amount recoverable and the alleged defaulter’s liability, and an ordinary civil court may not determine those matters."
+      },
+      "definition": "When a state-dues recovery proceeding assigns the department to determine recoverable dues and the alleged defaulter contests liability, the department may decide both amount and liability, while an ordinary civil court may not decide them."
+    },
+    {
+      "legal_issue": "An insolvency court may examine the genuineness and extent of a claimed debt, including one determined through a separate recovery process, when deciding an insolvency petition or proof of debts.",
+      "material_facts": [
+        "A creditor sought adjudication of the alleged debtor as insolvent on the basis of a debt said to arise from a guarantee.",
+        "The alleged debtor denied executing the guarantee and disputed owing the debt.",
+        "The insolvency proceedings could affect the distribution of the debtor’s assets among creditors who were not parties to the recovery determination."
+      ],
+      "conclusion": "The insolvency court was not precluded from enquiring whether the alleged debtor really owed the claimed debt, notwithstanding the recovery authority’s determination and the restriction on ordinary civil-court jurisdiction.",
+      "legal_principle": "Sections 2, 3, 4, 7, 9, 24 and 33 of the Provincial Insolvency Act, 1920 empower the insolvency court to determine whether a petitioning creditor is owed a debt and to scrutinize proofs of debt for distribution among creditors. The court may go behind a decree and investigate the underlying debt, ordinarily where fraud, collusion or circumstances suggesting miscarriage of justice are alleged. The judgment relies on Ex parte Kibble, In re Onslow; Ex parte Lennox, In re Lennox; In re Fraser, Ex parte Central Bank of London; In re Van Laun, Ex parte Chatterton; In re Van Laun, Ex parte Pattullo; Narasimha Sastri v. Official Assignee, Madras; and Sadhu Ram v. Kishori Lal.",
+      "rule": {
+        "if": "insolvency_proceeding and claimed_debt_supports_adjudication_or_proof and (claimed_debt_is_disputed or other_creditors_may_be_affected) and debt_was_determined_in_separate_recovery_process",
+        "then": "insolvency_court_may_examine_genuineness_and_extent_of_claimed_debt"
+      },
+      "predicates": {
+        "insolvency_proceeding": "A court is considering an insolvency petition or the proof of debts in an insolvency case.",
+        "claimed_debt_supports_adjudication_or_proof": "A creditor relies on the claimed debt to seek insolvency adjudication or to prove a claim against the debtor’s estate.",
+        "claimed_debt_is_disputed": "The debtor or another person with a relevant interest disputes whether the debt is genuine or its extent.",
+        "other_creditors_may_be_affected": "The decision may affect how the debtor’s assets are distributed among creditors beyond the creditor asserting the debt.",
+        "debt_was_determined_in_separate_recovery_process": "An authority in a separate recovery process has determined or could determine the claimed debt."
+      },
+      "definition": "If an insolvency court must consider a claimed debt that was determined in a separate process, and the debt is disputed or other creditors may be affected, the court may examine its genuineness and extent."
+    },
+    {
+      "legal_issue": "An insolvency petition based on guarantee liability cannot succeed where the alleged guarantor did not execute the guarantee.",
+      "material_facts": [
+        "The insolvency petition relied on the alleged debtor’s liability as surety for another person’s debt.",
+        "The alleged debtor denied signing or executing the guarantee.",
+        "The insolvency court found that the alleged debtor had not executed the guarantee and dismissed the petition; the appellate courts upheld that finding."
+      ],
+      "conclusion": "Because the alleged debtor had not executed the guarantee, he was not liable to make payment under it, and dismissal of the insolvency petition was correct. The appeal was dismissed.",
+      "legal_principle": "Under the Provincial Insolvency Act, a creditor’s petition requires proof that the debtor owes the claimed debt. The court’s authority under section 4 to decide questions arising in insolvency proceedings permitted it to determine whether the asserted guarantee debt was genuine.",
+      "rule": {
+        "if": "insolvency_proceeding and petition_relies_on_guarantee_liability and alleged_guarantor_did_not_execute_guarantee",
+        "then": "insolvency_petition_based_on_guarantee_debt_is_dismissed"
+      },
+      "predicates": {
+        "insolvency_proceeding": "A creditor brings a proceeding seeking adjudication of a person as insolvent.",
+        "petition_relies_on_guarantee_liability": "The creditor relies on the person’s alleged promise to answer for another person’s debt.",
+        "alleged_guarantor_did_not_execute_guarantee": "The court finds that the person alleged to be the guarantor did not execute the guarantee.",
+        "insolvency_petition_based_on_guarantee_debt_is_dismissed": "The insolvency petition founded on the alleged guarantee debt is dismissed."
+      },
+      "definition": "When an insolvency petition relies on guarantee liability and the court finds that the alleged guarantor did not execute the guarantee, the petition is dismissed."
+    }
+  ],
+  "seconds": 16.7
+}

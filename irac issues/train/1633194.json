@@ -1,0 +1,97 @@
+{
+  "doc_id": "1633194",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 40907,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2837,
+    "prompt_tokens": 10376,
+    "total_tokens": 13213,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A common issue concerning title is directly and substantially in issue in related suits when it arises from the parties’ pleadings and is treated as a common issue in the trial judgment.",
+      "material_facts": [
+        "Four related suits between the same parties were tried together, and the trial court identified common issues concerning whether the parties were joint or separate and their respective rights to the property.",
+        "The trial court’s judgment showed that the title-related issues arose in the respondent’s suits as well as in the appellant’s suits."
+      ],
+      "conclusion": "The title-related issues were directly and substantially in issue in the respondent’s suits.",
+      "legal_principle": "Under section 11 of the Code of Civil Procedure, the matter in the later proceeding must have been directly and substantially in issue in the former suit. Whether an issue meets that test is determined from the pleadings and the record of the earlier proceedings.",
+      "rule": {
+        "if": "connected_suits and common_title_issue_pleaded",
+        "then": "title_issue_is_directly_and_substantially_in_issue"
+      },
+      "predicates": {
+        "connected_suits": "The parties brought related suits that were tried together or otherwise shared issues.",
+        "common_title_issue_pleaded": "The parties’ pleadings raised the same issue concerning title in the related suits."
+      },
+      "definition": "When related suits share a pleaded title issue, that issue is directly and substantially in issue in each relevant suit."
+    },
+    {
+      "legal_issue": "For res judicata jurisdiction purposes, the competence of the court that decided the former suit is considered, even when the suit was initially filed in a different court and later transferred.",
+      "material_facts": [
+        "The respondent’s suits were initially filed in a Munsif’s court, transferred to the Additional Civil Judge, and decided by that judge.",
+        "The court that decided the respondent’s suits had jurisdiction to try the appellant’s later title suit."
+      ],
+      "conclusion": "The initial filing of the respondent’s suits in the Munsif’s court did not prevent the decisions from operating as res judicata, because the court that actually decided them was competent to try the later title suit.",
+      "legal_principle": "Section 11 of the Code of Civil Procedure requires the court that decided the former suit to have been competent to try the subsequent suit or the issue later raised. The relevant court is the court that decided the former suit, not the court in which it was first filed.",
+      "rule": {
+        "if": "res_judicata_claim_in_later_proceeding and former_suit_decided_by_competent_court",
+        "then": "former_suit_satisfies_jurisdiction_requirement"
+      },
+      "predicates": {
+        "res_judicata_claim_in_later_proceeding": "A party invokes the decision in an earlier proceeding to bar a later proceeding or issue.",
+        "former_suit_decided_by_competent_court": "The court that actually decided the earlier suit had jurisdiction to try the later suit or issue."
+      },
+      "definition": "A former suit satisfies the jurisdiction requirement when the court that decided it was competent to try the later suit or issue."
+    },
+    {
+      "legal_issue": "A decision in a separately filed suit may qualify as a decision in a former suit when it was decided before the suit or issue for which res judicata is invoked.",
+      "material_facts": [
+        "The trial court decided the related suits on the same day, but the High Court decisions in the appeals arising from the respondent’s suits preceded its consideration of the other appeals.",
+        "The proceedings arose from separate suits, each requiring a separate appeal."
+      ],
+      "conclusion": "The earlier High Court decisions in the appeals arising from the respondent’s suits satisfied the requirement of a decision in a former suit.",
+      "legal_principle": "Section 11, Explanation I, to the Code of Civil Procedure defines a former suit by reference to when it was decided, not when it was instituted. The Court distinguished Nahari v. Shankar because that case concerned one suit followed by two appeals, whereas the present matter involved separate suits and appeals.",
+      "rule": {
+        "if": "res_judicata_claim_in_later_proceeding and separate_suits and earlier_suit_decided_before_later_proceeding",
+        "then": "earlier_decided_suit_qualifies_as_former_suit"
+      },
+      "predicates": {
+        "res_judicata_claim_in_later_proceeding": "A party invokes the decision in an earlier proceeding to bar a later proceeding or issue.",
+        "separate_suits": "The proceedings arose from distinct suits rather than separate appeals from a single suit.",
+        "earlier_suit_decided_before_later_proceeding": "The suit relied on for preclusion was decided before the suit or issue in which preclusion is invoked."
+      },
+      "definition": "A distinct suit decided before the later proceeding qualifies as a former suit for res judicata purposes."
+    },
+    {
+      "legal_issue": "Dismissal of an appeal on a preliminary ground amounts to a hearing and final decision for res judicata when it confirms the trial court’s decision on the merits concerning issues common to related suits.",
+      "material_facts": [
+        "The trial court decided the related suits on the merits and resolved common issues, including the parties’ rights to the property.",
+        "Separate appeals were brought from the decrees in the related suits.",
+        "The appeals arising from the respondent’s suits were dismissed, one as time-barred and the other for failure to take steps to print the record.",
+        "Those dismissals left the trial court’s merits decision on the common issues confirmed.",
+        "The remaining appeals raised the same common issues between the parties."
+      ],
+      "conclusion": "The dismissals confirmed the trial court’s merits decision, so the common issues were heard and finally decided and could not be reopened in the remaining appeals.",
+      "legal_principle": "Section 11 of the Code of Civil Procedure requires the matter to have been heard and finally decided. When the trial court decides an issue on the merits and an appeal is dismissed on a preliminary ground with the result that the merits decision stands confirmed, the appellate decision is treated as a final decision on the merits for res judicata. The result differs where the appellate decision does not confirm the trial court’s merits decision. The Court relied on Syed Ahmad Ali Khan Alavi v. Hinga Lal and overruled Shankar Sahai v. Bhagwat Sahai and Obedur Rahman v. Darbari Lal to the extent they supported a contrary rule; it distinguished Sheosagar Singh v. Sitaram and Ashgar Ali Khan v. Ganesh Das because the appellate courts there did not confirm the relevant merits decisions.",
+      "rule": {
+        "if": "appeals_in_related_suits and same_parties_and_title and common_issue_decided_on_merits and appeal_dismissed_on_preliminary_ground and dismissal_confirms_merits_decision",
+        "then": "common_issue_is_barred_from_relitigation"
+      },
+      "predicates": {
+        "appeals_in_related_suits": "Appeals arise from distinct but related suits involving common issues.",
+        "same_parties_and_title": "The same parties litigated the common issue under the same title in the related proceedings.",
+        "common_issue_decided_on_merits": "The trial court resolved the common issue on its merits.",
+        "appeal_dismissed_on_preliminary_ground": "An appeal from the trial court’s decision was dismissed without deciding the merits of the issue.",
+        "dismissal_confirms_merits_decision": "The dismissal leaves the trial court’s decision on the common issue confirmed."
+      },
+      "definition": "When related suits between the same parties share an issue decided on the merits, dismissal of an appeal on a preliminary ground bars relitigation of that issue if the dismissal confirms the merits decision."
+    }
+  ],
+  "seconds": 17.7
+}

@@ -1,0 +1,76 @@
+{
+  "doc_id": "71315",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19219,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2090,
+    "prompt_tokens": 5127,
+    "total_tokens": 7217,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A property subject to a preliminary partition decree cannot be put to auction in execution before a final decree determines the allotment or directs a sale.",
+      "material_facts": [
+        "A preliminary decree declared the co-sharers’ rights, but no final decree had been passed.",
+        "The property was found to be impartible, and the court ordered an auction without first completing final-decree proceedings or determining in a final decree that the property should be sold.",
+        "The purported execution application was treated as an application for final-decree proceedings, but the auction proceeded before a final decree was made."
+      ],
+      "conclusion": "The auction sale was illegal because only a final decree, not the preliminary decree, could be executed; valuation, final allotment, or a determination to sell the impartible property had to be made in final-decree proceedings.",
+      "legal_principle": "Under Section 2(2) and Order XX Rule 18 of the Code of Civil Procedure, a preliminary decree declares rights but further proceedings may be needed to dispose of the suit. Order XXI permits sale in execution of a decree, and Order XXVI Rules 13 and 14 provide for a commission and a decree following its report in partition matters. Section 54 governs partition or separation by the Collector for estates assessed to government revenue. A final decree may follow a preliminary decree and is the decree that can be executed: Shankar Balwant Lokhande v. Chandrakant Shankar Lokhande; Rachakonda Venkat Rao v. R. Satya Bai; Hameed Joharan v. Abdul Salam; and Dr. Chiranji Lal v. Hari Das.",
+      "rule": {
+        "if": "partition_decree_execution and only_preliminary_decree_exists and property_auctioned_before_final_determination",
+        "then": "auction_sale_is_illegal"
+      },
+      "predicates": {
+        "partition_decree_execution": "The proceeding seeks to execute a decree that declares parties’ shares in property in a partition suit.",
+        "only_preliminary_decree_exists": "The court has declared the parties’ rights but has not passed a final decree disposing of the partition.",
+        "property_auctioned_before_final_determination": "The property has been put to auction before a final decree determines the allotment or directs the sale."
+      },
+      "definition": "When a partition decree is being executed, only a preliminary decree exists, and the property is auctioned before final determination, the auction sale is illegal."
+    },
+    {
+      "legal_issue": "An order made without jurisdiction over the subject matter is a nullity and is not validated by waiver, estoppel, acquiescence, or res judicata.",
+      "material_facts": [
+        "The trial court ordered an auction in execution without first passing the final decree required to determine the property’s allotment or sale.",
+        "The appellant’s conduct, including earlier participation in the proceedings, was relied on as a reason not to interfere, but the challenge raised the court’s authority to order the auction."
+      ],
+      "conclusion": "The order was a nullity because the court lacked authority to order the auction without a final decree, and procedural doctrines such as waiver and acquiescence could not cure that lack of subject-matter jurisdiction.",
+      "legal_principle": "A court’s jurisdiction over the subject matter is distinct from territorial or pecuniary jurisdiction. An order made without subject-matter jurisdiction is coram non judice and a nullity; procedural principles including estoppel, waiver, acquiescence, and res judicata do not confer that jurisdiction. The Court relied on Chief Justice of Andhra Pradesh v. L.V.A. Dikshitulu, M.D. Army Welfare Housing Organisation v. Sumangal Services (P) Ltd., and Harshad Chiman Lal Modi v. DLF Universal Ltd.; it also distinguished territorial and pecuniary objections addressed by Section 21 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "civil_proceeding and court_lacked_subject_matter_authority",
+        "then": "order_is_nullity_and_procedural_waiver_cannot_validate_it"
+      },
+      "predicates": {
+        "civil_proceeding": "A court has made an order in a civil proceeding.",
+        "court_lacked_subject_matter_authority": "The court lacked legal authority over the subject matter to make the order."
+      },
+      "definition": "In a civil proceeding, an order made by a court lacking authority over the subject matter is a nullity and procedural waiver cannot validate it."
+    },
+    {
+      "legal_issue": "The Supreme Court may set aside an illegal auction conditionally, using its power to do complete justice to protect the parties and compensate an auction purchaser.",
+      "material_facts": [
+        "The auction sale was held to be illegal because it occurred without a final decree.",
+        "The property was a residential house, and possession had not been delivered to the auction purchaser.",
+        "The Court directed the appellant to deposit the co-sharers’ shares and compensation by way of interest for the auction purchaser; it ordered that compliance would set aside the auction and satisfy the partition decree."
+      ],
+      "conclusion": "Exercising its power to do complete justice, the Court directed that, upon the prescribed deposits, the auction would stand set aside and the partition decree would stand satisfied; the appeal was allowed subject to those directions.",
+      "legal_principle": "Article 142 of the Constitution permits the Supreme Court to make orders necessary to do complete justice between the parties. The Court relied on Kishori Lal v. Sales Officer, District Land Development Bank, where it imposed payment terms as a condition for setting aside an auction.",
+      "rule": {
+        "if": "appeal_challenges_illegal_auction and possession_not_delivered_to_auction_purchaser and appellant_makes_directed_compensatory_deposit",
+        "then": "auction_is_set_aside_and_partition_decree_is_satisfied"
+      },
+      "predicates": {
+        "appeal_challenges_illegal_auction": "An appeal challenges an auction sale that the court has found to be illegal.",
+        "possession_not_delivered_to_auction_purchaser": "The purchaser has not received possession of the property sold at auction.",
+        "appellant_makes_directed_compensatory_deposit": "The appellant deposits the sums directed to pay the other co-sharers and compensate the auction purchaser."
+      },
+      "definition": "When an appeal challenges an illegal auction, the purchaser has not received possession, and the appellant makes the directed compensatory deposit, the auction is set aside and the partition decree is satisfied."
+    }
+  ],
+  "seconds": 13.8
+}

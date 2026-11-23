@@ -1,0 +1,60 @@
+{
+  "doc_id": "804199",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15441,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2341,
+    "prompt_tokens": 4297,
+    "total_tokens": 6638,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landowner challenging the treatment of a pre-ceiling-law land transfer must prove not only that the transfer was genuine and supported by consideration, but also that it was not made in anticipation of and to avoid or defeat the ceiling law, including by showing a compelling reason for the timing of the sale.",
+      "material_facts": [
+        "The landowners transferred substantial agricultural land during the period covered by the special transfer provision.",
+        "They argued that the sales were genuine and were made to raise funds for a proposed expansion of their industry."
+      ],
+      "conclusion": "Proof that a transfer was genuine, supported by consideration, or made in good faith is not sufficient; the transferor must prove that it was not made in anticipation of and with a view to avoiding or defeating the ceiling law, and must show some necessity or compulsion to sell at that time.",
+      "legal_principle": "Section 7(1) of the Andhra Pradesh Land Reforms (Ceiling on Agricultural Holdings) Act places on the transferor the burden of proving that a transfer in the covered period was not made in anticipation of, and with a view to avoiding or defeating, a law reducing agricultural land ceilings. Unlike Section 5(6) of the Uttar Pradesh Imposition of Ceiling on Land Holdings Act, Section 7(1) does not make good faith or genuineness alone sufficient. The Court relied on Meria Venkata Rao v. State of A.P. in support of the need for a reason such as pressure to discharge debts or another binding obligation; it distinguished Brijendra Singh v. State of U.P. and Jagmal Singh v. State of U.P. because they concerned a different statutory scheme. Authorised Officer v. S. Naganatha Ayyar was also distinguished as concerning a different statute.",
+      "rule": {
+        "if": "ceiling_transfer_case and transfer_during_pre_reform_window",
+        "then": "transferor_must_prove_non_evasive_purpose_and_compelling_timing_reason"
+      },
+      "predicates": {
+        "ceiling_transfer_case": "The proceeding concerns whether a land transfer affects calculation of the transferor's agricultural land ceiling.",
+        "transfer_during_pre_reform_window": "The landholder transferred land during the period covered by a rule governing transfers made before a ceiling reform took effect."
+      },
+      "definition": "When a land transfer falls within the covered pre-reform period in a ceiling proceeding, the transferor must prove both a non-evasive purpose and a compelling reason for the timing."
+    },
+    {
+      "legal_issue": "Large transfers made shortly before a ceiling law takes effect are to be disregarded when the transferor fails to explain their timing and the stated purpose depends on an industry expansion that was not yet licensed.",
+      "material_facts": [
+        "The landowners sold more than 220 acres through multiple deeds over a short period in December 1971, while ceiling legislation was pending.",
+        "They said the proceeds were needed for a proposed expansion of a sugar industry.",
+        "They had not applied for the expansion licence when the sales occurred; the application was made later, and the licence was granted still later.",
+        "The record did not explain why the landowners chose to make the sales when they did."
+      ],
+      "conclusion": "The transfers were made in anticipation of and with a view to avoiding or defeating the ceiling law and had to be disregarded in computing the landowners' ceiling area. The Appellate Tribunal acted illegally in reversing the original Tribunal's order; the appeals were allowed and that order was restored.",
+      "legal_principle": "Under Section 7(1) of the Andhra Pradesh Land Reforms (Ceiling on Agricultural Holdings) Act, the transferor bears the burden of proving that a covered transfer was not intended to anticipate and avoid or defeat a law reducing agricultural ceilings. A claimed need to raise money for a proposed enterprise does not discharge that burden where there is no explanation for the timing of large, clustered sales and the required expansion licence had not been obtained. Meria Venkata Rao v. State of A.P. supported the importance of a demonstrated necessity for the alienation. The Court held that the Appellate Tribunal acted illegally in exercising its jurisdiction by reversing the original Tribunal's finding on these facts.",
+      "rule": {
+        "if": "ceiling_transfer_case and transfer_during_pre_reform_window and large_clustered_land_sale and ceiling_reform_pending and no_compelling_reason_for_timing_proved and claimed_expansion_not_yet_licensed",
+        "then": "transfer_is_disregarded_for_ceiling_computation"
+      },
+      "predicates": {
+        "ceiling_transfer_case": "The proceeding concerns whether a land transfer affects calculation of the transferor's agricultural land ceiling.",
+        "transfer_during_pre_reform_window": "The landholder transferred land during the period covered by a rule governing transfers made before a ceiling reform took effect.",
+        "large_clustered_land_sale": "The landholder transferred a large amount of land through several sales over a short period.",
+        "ceiling_reform_pending": "A reform reducing agricultural land ceilings was pending when the sales occurred.",
+        "no_compelling_reason_for_timing_proved": "The landholder did not establish a necessity or compulsion explaining why the sales had to occur at that time.",
+        "claimed_expansion_not_yet_licensed": "The landholder relied on a proposed industrial expansion, but the required licence had not been obtained when the sales occurred."
+      },
+      "definition": "When a large cluster of land sales occurs during a pending ceiling reform and the landholder proves neither a compelling reason for the timing nor an already licensed claimed expansion, the transfers are disregarded in calculating the ceiling."
+    }
+  ],
+  "seconds": 15.7
+}

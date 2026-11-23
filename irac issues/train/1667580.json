@@ -1,0 +1,98 @@
+{
+  "doc_id": "1667580",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24440,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2653,
+    "prompt_tokens": 6410,
+    "total_tokens": 9063,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A requisition must serve a public purpose, but the purpose need not be stated in the requisition order if the State can establish it to the court.",
+      "material_facts": [
+        "The requisition order did not state the public purpose for which the flat was requisitioned.",
+        "The State placed no material before the court showing the public purpose for the requisition, and the relevant assertion that the allottee was neither a government servant nor a homeless person was not denied."
+      ],
+      "conclusion": "Omitting the public purpose from the order did not by itself invalidate it, but the State had to establish the purpose by other means; on the material before the court, it had not done so.",
+      "legal_principle": "A requisition must be for a public purpose, but the purpose need not be recited in the order if the necessary facts establishing it are proved to the court's satisfaction. The Court relied on State of Bombay v. Bhanji Munji & Anr. and section 6(4)(a) of the Bombay Land Requisition Act, 1948.",
+      "rule": {
+        "if": "requisition_order_challenged and state_does_not_establish_public_purpose",
+        "then": "state_fails_to_establish_public_purpose"
+      },
+      "predicates": {
+        "requisition_order_challenged": "A person with an interest in property challenged an order requisitioning that property.",
+        "state_does_not_establish_public_purpose": "The State did not place facts before the court sufficient to show the public purpose for which the property was requisitioned.",
+        "state_fails_to_establish_public_purpose": "The State has not shown that the requisition was made for a public purpose."
+      },
+      "definition": "When an order requisitioning property is challenged and the State does not establish its public purpose, the State has not shown that the requisition was made for a public purpose."
+    },
+    {
+      "legal_issue": "Requisition is temporary in nature and cannot be used to serve a permanent purpose or continue for an unreasonably long period.",
+      "material_facts": [
+        "The flat was requisitioned and allotted to an occupant who remained in possession under the requisition.",
+        "The requisition continued for about thirty years.",
+        "Even assuming the original purpose was to house a homeless person, the requisition continued long after that initial purpose could justify it."
+      ],
+      "conclusion": "Even if valid when made, the requisition ceased to be valid and effective after a reasonable period; it could not continue for about thirty years, and the State had to revoke it, remove the allottee, and return vacant possession to the owner.",
+      "legal_principle": "Acquisition transfers the owner's title and is permanent, whereas requisition takes control without transferring ownership and must be temporary. Requisition may be used only for a transitory public purpose; a permanent purpose from the outset makes requisition an improper use of the power, and a requisition cannot continue indefinitely. The Court relied on Entry 42 of List III of the Seventh Schedule and the original Article 31(2) of the Constitution, and referred to Chiranjitlal's case.",
+      "rule": {
+        "if": "requisition_order_challenged and (permanent_purpose_from_inception or continued_for_unreasonable_time)",
+        "then": "requisition_order_ceases_to_be_effective"
+      },
+      "predicates": {
+        "requisition_order_challenged": "A person with an interest in property challenged an order requisitioning that property.",
+        "permanent_purpose_from_inception": "The property was required from the outset for a purpose that was permanent or likely to continue indefinitely.",
+        "continued_for_unreasonable_time": "The requisition remained in force for a period that was unreasonably long in the circumstances.",
+        "requisition_order_ceases_to_be_effective": "The requisition order is no longer valid and effective."
+      },
+      "definition": "If a challenged requisition was made for a permanent purpose from the outset or continued for an unreasonably long time, it ceases to be effective."
+    },
+    {
+      "legal_issue": "A challenge to a requisition is not barred merely because it is brought long after the order was made when it also asserts that the requisition cannot continue indefinitely.",
+      "material_facts": [
+        "The owner challenged the requisition in a writ petition about thirty years after the order was made.",
+        "The challenge included the claim that the requisition could not survive for such a long period and that the State was bound to end it."
+      ],
+      "conclusion": "The writ petition was maintainable despite the lapse of about thirty years because it raised the independent ground that the requisition could not continue indefinitely.",
+      "legal_principle": "The Court distinguished a challenge resting only on the absence of a public purpose, which might face an objection based on delay, from the independent ground that requisition cannot continue for an unreasonable period. On that latter ground, the challenge was maintainable.",
+      "rule": {
+        "if": "writ_challenges_old_requisition and challenge_includes_unreasonable_continuance",
+        "then": "challenge_is_maintainable_despite_delay"
+      },
+      "predicates": {
+        "writ_challenges_old_requisition": "A writ petition challenges an order requisitioning property long after the order was made.",
+        "challenge_includes_unreasonable_continuance": "The writ petition asserts that the requisition has continued for an unreasonably long time and cannot continue indefinitely.",
+        "challenge_is_maintainable_despite_delay": "The challenge may be heard despite the time that passed before it was brought."
+      },
+      "definition": "A writ challenging an old requisition may be heard despite delay when it asserts that the requisition has continued unreasonably long."
+    },
+    {
+      "legal_issue": "An allottee under a requisition does not become the owner's direct tenant merely by paying amounts described as rent directly to the owner with the State's assent.",
+      "material_facts": [
+        "The occupant entered the flat as an allottee under the requisition order.",
+        "The occupant paid amounts described as rent directly to the owner, who accepted them, with the State's express or implied assent.",
+        "The occupant's possession remained attributable to the requisition order."
+      ],
+      "conclusion": "The direct payments did not end the requisition or make the allottee a direct tenant of the owner.",
+      "legal_principle": "An allottee under a requisition is liable to pay compensation to the State, and the State is liable to compensate the owner. Direct payment by the allottee to the owner, with the State's assent, does not alter the basis of the allottee's possession or create a tenancy; the description of the payment as rent does not change that result.",
+      "rule": {
+        "if": "requisition_allottee_claims_direct_tenancy and occupied_under_requisition and direct_payments_accepted_with_state_assent",
+        "then": "allottee_does_not_become_direct_tenant"
+      },
+      "predicates": {
+        "requisition_allottee_claims_direct_tenancy": "An occupant allotted property under a requisition claims to have become the owner's direct tenant.",
+        "occupied_under_requisition": "The occupant entered and remained in possession of the property as an allottee under the requisition.",
+        "direct_payments_accepted_with_state_assent": "The occupant paid the owner directly, and the owner accepted the payments with the State's express or implied assent.",
+        "allottee_does_not_become_direct_tenant": "The allottee does not become the owner's direct tenant merely through those payments."
+      },
+      "definition": "An allottee who claims direct tenancy does not acquire it merely by occupying under requisition and making direct payments accepted with the State's assent."
+    }
+  ],
+  "seconds": 19.0
+}

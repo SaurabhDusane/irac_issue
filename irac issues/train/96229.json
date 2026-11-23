@@ -1,0 +1,79 @@
+{
+  "doc_id": "96229",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33602,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2135,
+    "prompt_tokens": 8904,
+    "total_tokens": 11039,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent court cannot make an eviction decree by consent unless there is a material foundation for a statutory ground of eviction.",
+      "material_facts": [
+        "The landlord brought a possession suit alleging rent arrears and a need for personal use.",
+        "The parties compromised, and the court entered a decree for possession on the agreed terms."
+      ],
+      "conclusion": "The parties’ consent could not itself confer jurisdiction to order eviction, but the decree was valid because material in the record, including admissions in the compromise, could support a statutory ground for eviction.",
+      "legal_principle": "The public policy protecting tenants under sections 12, 13 and 28 of the Bombay Rent Act limits the rent court’s jurisdiction to the statutory grounds for eviction; those grounds are a necessary condition of its authority, and consent cannot enlarge that authority. Under Order 23 Rule 3 of the Code of Civil Procedure, the court must satisfy itself that a compromise is lawful, including that its terms are consistent with the Rent Act. The court approved Shah Rasiklal Chunilal v. Sindhi Shyamlal Mulchand and applied Barton v. Fincham.",
+      "rule": {
+        "if": "rent_eviction_proceeding and consent_possession_decree and material_supports_statutory_ground",
+        "then": "consent_eviction_decree_valid"
+      },
+      "predicates": {
+        "rent_eviction_proceeding": "A landlord brought a proceeding seeking possession of rented premises.",
+        "consent_possession_decree": "The court entered a possession decree on terms agreed to by the landlord and tenant.",
+        "material_supports_statutory_ground": "Evidence or admissions before the court could provide a prima facie basis for a statutory ground of eviction."
+      },
+      "definition": "When a possession decree is agreed to in a rent-eviction proceeding, it is valid if material before the court could support a statutory ground of eviction."
+    },
+    {
+      "legal_issue": "Clear judicial admissions in a compromise may provide the material needed to presume that the court was satisfied of a statutory ground for eviction.",
+      "material_facts": [
+        "The tenant agreed in the compromise to pay arrears and mesne profits at the contractual monthly rate.",
+        "The tenant had applied for fixation of standard rent but, by agreeing to pay at the contractual rate, abandoned that dispute.",
+        "The compromise recorded that rent was in arrears, and the decree incorporated those terms."
+      ],
+      "conclusion": "The admissions established material facts constituting a ground for eviction under section 12(3)(a) of the Bombay Rent Act, so the court could be presumed to have been satisfied of that ground and the consent decree was valid.",
+      "legal_principle": "If material before the court could prima facie support a statutory ground for eviction, satisfaction of that ground is presumed even where the decree is based on compromise. That material may consist of evidence or express or implied admissions in the compromise. True and clear judicial admissions under section 58 of the Evidence Act can themselves establish admitted facts and waive proof. The court followed K. K. Chari v. B. M. Seshadri, distinguished Jeshwant Raj Mulukchand v. Anandilal Bapalal, and held Bahadur Singh v. Muni Subrat Dass, Kaushalya Devi v. Shri K. L. Bansal, and Ferozi Lal Jain v. Man Mal inapplicable.",
+      "rule": {
+        "if": "rent_eviction_proceeding and compromise_contains_clear_judicial_admission and admission_establishes_rent_arrears and rent_amount_not_in_dispute",
+        "then": "court_may_presume_statutory_ground_satisfaction"
+      },
+      "predicates": {
+        "rent_eviction_proceeding": "A landlord brought a proceeding seeking possession of rented premises.",
+        "compromise_contains_clear_judicial_admission": "The tenant made a clear admission of material facts in the compromise placed before the court.",
+        "admission_establishes_rent_arrears": "The admission established that rent was unpaid and in arrears.",
+        "rent_amount_not_in_dispute": "The tenant’s conduct in the compromise ended the dispute over the rent amount."
+      },
+      "definition": "In a rent-eviction proceeding, clear admissions in a compromise that establish arrears, together with the end of any dispute over the rent amount, permit the court’s satisfaction of a statutory eviction ground to be presumed."
+    },
+    {
+      "legal_issue": "An executing court may not go behind an eviction decree once the decree or the original trial record discloses material that could support a statutory ground for eviction.",
+      "material_facts": [
+        "The decree incorporated the tenant’s admissions about arrears and payment at the contractual rent rate.",
+        "The tenant objected in execution that the decree was a nullity because the rent court had not been satisfied that a statutory ground existed.",
+        "The decree itself disclosed material supporting a statutory ground for eviction."
+      ],
+      "conclusion": "The executing court was not entitled to question the decree’s validity and had to execute it.",
+      "legal_principle": "An executing court must accept and execute a decree that on its face discloses material on which the rent court could have been satisfied of a statutory ground for eviction. If the decree does not disclose such material, the executing court may inspect the original trial record; once it finds prima facie supporting material, it may not go further and reassess the rent court’s satisfaction. The court applied the principle in K. K. Chari v. B. M. Seshadri.",
+      "rule": {
+        "if": "execution_proceeding and (decree_shows_supporting_material or (original_record_inspected and original_record_shows_supporting_material))",
+        "then": "executing_court_must_execute_decree_without_reexamining_validity"
+      },
+      "predicates": {
+        "execution_proceeding": "A party sought to enforce a possession decree through execution proceedings.",
+        "decree_shows_supporting_material": "The decree itself disclosed material capable of supporting a statutory ground for eviction.",
+        "original_record_inspected": "The executing court inspected the original trial record because the decree did not disclose supporting material on its face.",
+        "original_record_shows_supporting_material": "The original trial record disclosed material capable of supporting a statutory ground for eviction."
+      },
+      "definition": "In execution proceedings, the executing court must execute a possession decree without reexamining its validity if the decree or the inspected trial record discloses material capable of supporting a statutory ground for eviction."
+    }
+  ],
+  "seconds": 13.2
+}

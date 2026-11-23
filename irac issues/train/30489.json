@@ -1,0 +1,137 @@
+{
+  "doc_id": "30489",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 73333,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3389,
+    "prompt_tokens": 18863,
+    "total_tokens": 22252,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A ward may challenge a transaction made by a statutory property-management body under a discretionary power only on grounds that the body acted in bad faith or committed a fraud on its power, or failed to apply its mind and form the judgment the power required.",
+      "material_facts": [
+        "The ward challenged transactions made by the Court of Wards on the ground that they were not beneficial to the estate.",
+        "The Court of Wards had considered the relevant transaction and formed its own judgment about its benefit to the estate."
+      ],
+      "conclusion": "A decision reached honestly after applying the body's mind to the benefit question cannot be set aside merely because it was erroneous on the merits or because some relevant aspect was not considered; it may be challenged for bad faith or fraud on the power, or for failure to exercise judgment at all.",
+      "legal_principle": "Section 18 of the Court of Wards Act, 1879 empowered the Court of Wards to judge whether an act would benefit the property and advantage the ward. The Court of Wards is a statutory body, not merely a guardian, and the statute entrusts that judgment to it. The approach is supported by Allcroft v. Lord Bishop of London: Lighton v. Lord Bishop of London ([1891] A.C. 666). The Court also discussed the context-dependent interpretation of subjective statutory powers in Nakkuda Ali v. M. F. De S. Jayaratne ([1951] A.C. 66) and Liversidge v. Sir John Anderson ([1942] A.C. 206).",
+      "rule": {
+        "if": "ward_challenges_statutory_management_transaction and (bad_faith_or_fraud or no_judgment_exercised)",
+        "then": "challenge_is_legally_open"
+      },
+      "predicates": {
+        "ward_challenges_statutory_management_transaction": "A ward challenges a transaction made on the ward's behalf by a statutory body exercising property-management authority.",
+        "bad_faith_or_fraud": "The statutory body acted in bad faith or used its authority to commit a fraud on the power.",
+        "no_judgment_exercised": "The statutory body did not in fact consider whether the transaction served the benefit entrusted to its judgment."
+      },
+      "definition": "The rule means that a ward's challenge to a statutory management transaction is legally open when the body acted in bad faith or fraudulently, or did not exercise the required judgment."
+    },
+    {
+      "legal_issue": "A statutory property-management body with general authority to manage an estate may extend a licence beyond the ward's attainment of majority.",
+      "material_facts": [
+        "The Court of Wards extended the duration of a prospecting licence, with the possible result that it would continue well beyond the ward's majority.",
+        "The governing statute contained no limit tying the duration of a transaction to the ward's minority.",
+        "The statute covered wards whose estates could be managed for reasons other than minority."
+      ],
+      "conclusion": "The Court of Wards was competent to extend the licence beyond the date when the ward attained majority.",
+      "legal_principle": "Section 18 of the Court of Wards Act, 1879 confers general and unqualified authority to undertake acts judged beneficial to the property and advantageous to the ward. Unlike section 29(b) of the Guardians and Wards Act, 1890, the Court of Wards Act contains no restriction tying the duration of a lease to the ward's minority. The ward's approaching majority may be considered when judging the transaction, but does not remove the body's statutory power or duty to manage the estate.",
+      "rule": {
+        "if": "challenge_to_post_majority_extension and statutory_management_authority_has_no_minority_duration_limit",
+        "then": "extension_beyond_majority_is_within_authority"
+      },
+      "predicates": {
+        "challenge_to_post_majority_extension": "A ward challenges an estate-management transaction because its term continues beyond the ward's majority.",
+        "statutory_management_authority_has_no_minority_duration_limit": "The governing authority permits estate-management transactions without limiting their duration to the ward's minority."
+      },
+      "definition": "The rule means that a challenged transaction may continue beyond the ward's majority when the statutory management authority has no minority-based duration limit."
+    },
+    {
+      "legal_issue": "A transaction that benefits the property and produces revenue for its owner also satisfies a requirement that it advantage the ward, even if those requirements are read cumulatively.",
+      "material_facts": [
+        "The extended licence was expected to enable the prospecting and working of a large coalfield over a longer period.",
+        "The transaction provided for minimum ground rent, salami and royalties payable to the estate.",
+        "The Court of Wards considered the estate's interest in development of the coalfield and the revenue the transaction could produce."
+      ],
+      "conclusion": "The extension satisfied the statutory requirements because the benefits to the estate would also advantage the ward, who would receive the resulting revenue.",
+      "legal_principle": "Section 18 of the Court of Wards Act, 1879 refers to benefit to the property and advantage to the ward. Even assuming these requirements are cumulative, a transaction that benefits the property through revenue benefits its owner, who receives that revenue.",
+      "rule": {
+        "if": "estate_transaction_advances_property_use and transaction_generates_revenue_for_owner and ward_is_owner_benefiting_from_revenue",
+        "then": "property_benefit_also_advantages_ward"
+      },
+      "predicates": {
+        "estate_transaction_advances_property_use": "An estate transaction enables property to be developed, worked or otherwise put to beneficial use.",
+        "transaction_generates_revenue_for_owner": "The transaction provides revenue to the owner of the property.",
+        "ward_is_owner_benefiting_from_revenue": "The ward owns the property and would receive the revenue generated by the transaction."
+      },
+      "definition": "The rule means that when a transaction advances the use of property and generates revenue for the ward who owns it, the property benefit also advantages the ward."
+    },
+    {
+      "legal_issue": "A statutory sanction requirement is satisfied when the authority approves a transaction in all its essential particulars, even if the final document is not resubmitted for approval to settle non-essential details.",
+      "material_facts": [
+        "The Board first required a draft agreement to be submitted for further scrutiny before final acceptance.",
+        "After review by the legal department, the Board returned a revised draft with suggestions for action.",
+        "The remaining matters were formal or reflected a misunderstanding of what the parties had agreed, and the essential terms had been approved.",
+        "The final agreement was executed without being resubmitted to the Board."
+      ],
+      "conclusion": "The Board's approval of the transaction in all its essential particulars was sufficient sanction, despite the absence of renewed approval of the final document.",
+      "legal_principle": "Section 18 of the Court of Wards Act, 1879 requires sanction for the transaction, not necessarily for the final document embodying it. Sanction is sufficient when the transaction's essential particulars have been approved and only details remain to be worked out. Gulabsingh v. Seth Gokuldas (40 I.A. 117) and Ramkanai Singh Deb Darpashaha v. Mathewson (42 I.A. 97) support this principle. A recital of sanction in a document is not conclusive; sanction must actually have been given.",
+      "rule": {
+        "if": "challenge_for_lack_of_sanction and authority_approved_essential_particulars and remaining_changes_are_nonessential",
+        "then": "sanction_requirement_is_satisfied"
+      },
+      "predicates": {
+        "challenge_for_lack_of_sanction": "A party challenges a transaction on the ground that the required authority did not sanction it.",
+        "authority_approved_essential_particulars": "The competent authority actually approved the essential terms of the transaction.",
+        "remaining_changes_are_nonessential": "Any terms not covered by the approval were details to be settled later rather than essential particulars of the transaction."
+      },
+      "definition": "The rule means that a challenge for lack of sanction fails when the authority approved the essential particulars and only non-essential details remained."
+    },
+    {
+      "legal_issue": "An unauthorized provision in a lease does not invalidate the entire lease if the provision can be severed and the remainder remains workable.",
+      "material_facts": [
+        "A lease contained a clause postponing minimum royalty payments based on an unauthorized modification.",
+        "The clause could be removed without disturbing the remaining terms of the lease.",
+        "The lease without the clause remained valid and was more advantageous to the ward."
+      ],
+      "conclusion": "The unauthorized clause was inoperative, but it did not invalidate the remainder of the lease.",
+      "legal_principle": "An unauthorized clause does not invalidate an entire deed unless it is so integral to the transaction that the valid and invalid parts cannot be separated. The remaining lease terms may stand when they remain effective without the invalid clause.",
+      "rule": {
+        "if": "lease_contains_unauthorized_clause and clause_is_severable and remainder_is_workable",
+        "then": "unauthorized_clause_is_inoperative_but_remainder_stands"
+      },
+      "predicates": {
+        "lease_contains_unauthorized_clause": "A lease includes a provision that was not authorized.",
+        "clause_is_severable": "The unauthorized provision can be removed without making the rest of the transaction inseparable or incoherent.",
+        "remainder_is_workable": "The remaining lease terms continue to operate effectively without the unauthorized provision."
+      },
+      "definition": "The rule means that a severable unauthorized lease provision is inoperative while a workable remainder remains in force."
+    },
+    {
+      "legal_issue": "A transaction's subsequent failure on the merits does not retrospectively make an earlier sanction ineffective.",
+      "material_facts": [
+        "The Board had sanctioned the lease transaction before it was entered into.",
+        "A provision in the lease was later held inoperative because the modification on which it depended was invalid.",
+        "The lease could continue to operate without that provision."
+      ],
+      "conclusion": "The later invalidity of the provision did not undo the sanction given to the transaction; the provision failed on its merits, not for want of sanction.",
+      "legal_principle": "Section 18 of the Court of Wards Act, 1879 requires that a transaction be entered into with the required sanction. Once that sanction has been given, the transaction's later failure on the merits, whether in part or in whole, does not render the sanction ineffective.",
+      "rule": {
+        "if": "statutory_management_transaction and authority_sanctioned_transaction_before_entry and transaction_later_fails_on_merits",
+        "then": "prior_sanction_remains_effective"
+      },
+      "predicates": {
+        "statutory_management_transaction": "A transaction is made under statutory authority to manage property on another person's behalf.",
+        "authority_sanctioned_transaction_before_entry": "The competent authority sanctioned the transaction before it was entered into.",
+        "transaction_later_fails_on_merits": "The transaction or one of its provisions is later held invalid on substantive grounds."
+      },
+      "definition": "The rule means that prior sanction remains effective even when a sanctioned transaction later fails on its merits."
+    }
+  ],
+  "seconds": 22.0
+}

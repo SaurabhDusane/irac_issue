@@ -1,0 +1,59 @@
+{
+  "doc_id": "57839806",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20198,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1986,
+    "prompt_tokens": 4964,
+    "total_tokens": 6950,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A disciplinary enquiry cannot sustain a penalty when the employee lacks a fair opportunity to defend against the charges and the findings rest on material that has not been proved.",
+      "material_facts": [
+        "The enquiry officer found most charges proved after perusing files, without a presenting officer presenting the employer’s case or evidence being recorded in support of the charges.",
+        "The employee was not given a reasonable opportunity to present his defence, although the governing regulations required a personal hearing.",
+        "The Board of Directors dismissed the employee on the basis of the enquiry and the disciplinary authority’s recommendation."
+      ],
+      "conclusion": "The enquiry was vitiated by failure to follow the prescribed procedure and provide a sufficient opportunity to defend. The dismissal and the High Court judgments were set aside, and the matter was remitted for a fresh enquiry from the enquiry stage, followed by a reasoned decision after a full hearing.",
+      "legal_principle": "Regulation 39 of the Bihar State Financial Corporation (Staff) Regulations, 1965 requires written charges and a reasonable opportunity to answer them, including a personal hearing. Natural justice requires an employee to know the evidence supporting the accusation, have a fair chance to hear and challenge it, and be able to rebut it; material relied on to establish guilt must be proved. Findings based merely on conjecture, surmise, or the enquiry officer’s unsupported assertion cannot stand. The Court relied on State of U.P. v. Saroj Kumar Sinha, (2010) 2 SCC 772, which explains the enquiry officer’s independent, quasi-judicial role and the need to prove documents through evidence.",
+      "rule": {
+        "if": "disciplinary_proceeding and (no_reasonable_defence_opportunity or findings_based_on_unproved_material)",
+        "then": "disciplinary_penalty_order_set_aside_and_fresh_enquiry_ordered"
+      },
+      "predicates": {
+        "disciplinary_proceeding": "An employer conducted an enquiry to determine whether an employee should be disciplined.",
+        "no_reasonable_defence_opportunity": "The employee was not given a reasonable chance to answer the charges and present a defence.",
+        "findings_based_on_unproved_material": "The enquiry findings relied on material that was not proved through evidence."
+      },
+      "definition": "When an employee facing a disciplinary enquiry lacks a reasonable chance to defend or the findings rely on unproved material, the penalty order is set aside and a fresh enquiry is ordered."
+    },
+    {
+      "legal_issue": "An appellate authority cannot impose the original disciplinary penalty in a way that deprives the employee of an available appeal, and a disciplinary authority’s participation in the decision-making body’s consideration of the matter vitiates the process.",
+      "material_facts": [
+        "The governing regulations gave an employee a right of appeal against an order by the competent authority that injuriously affected the employee’s interests.",
+        "Instead of imposing the penalty itself, the disciplinary authority referred its recommendation to the Board of Directors, which imposed dismissal as the initial penalty.",
+        "The disciplinary authority participated in the Board meeting when the Board decided to dismiss the employee, leaving the employee without an appeal from that dismissal to the Board."
+      ],
+      "conclusion": "The procedure was erroneous, arbitrary, discriminatory, and affected by bias. The dismissal was set aside, and the matter was remitted to the disciplinary authority; the employee retained a right of appeal against the final order made after reconsideration.",
+      "legal_principle": "Regulation 40 of the Bihar State Financial Corporation (Staff) Regulations, 1965 confers a right of appeal against an order by the competent authority that injuriously affects the employee’s interests. An authority cannot defeat that substantive right by having the appellate authority impose the original penalty, and the resulting choice of who receives an appeal can produce discrimination. The Court relied on Surjit Ghosh v. United Commercial Bank, AIR 1995 SC 1053; Amar Nath Chowdhury v. Braithwaite and Company Ltd., (2002) 2 SCC 290; Institute of Chartered Accountants of India v. L.K. Ratna, (1986) 4 SCC 537; and K. Chelliah v. Chairman, Industrial Finance Corporation of India, AIR 1973 Mad. 122, including the principle that participation by the disciplinary authority in the body deciding the matter can vitiate the proceeding.",
+      "rule": {
+        "if": "disciplinary_proceeding and appeal_right_exists and (appellate_authority_imposes_initial_penalty or disciplinary_authority_participates_in_decision)",
+        "then": "disciplinary_decision_set_aside_and_employee_retains_right_of_appeal"
+      },
+      "predicates": {
+        "disciplinary_proceeding": "An employer conducted a proceeding to determine whether an employee should be disciplined.",
+        "appeal_right_exists": "The governing employment framework gives the employee an appeal from a penalty imposed by the competent disciplinary authority.",
+        "appellate_authority_imposes_initial_penalty": "The body that would ordinarily hear an appeal imposes the original penalty instead of the disciplinary authority.",
+        "disciplinary_authority_participates_in_decision": "The disciplinary authority takes part in the decision-making body’s consideration of the employee’s case."
+      },
+      "definition": "If an appeal is available in a disciplinary proceeding, the decision is set aside and the employee retains the right of appeal when the appellate authority imposes the initial penalty or the disciplinary authority participates in the decision."
+    }
+  ],
+  "seconds": 16.6
+}

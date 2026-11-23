@@ -1,0 +1,99 @@
+{
+  "doc_id": "966542",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 37127,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2784,
+    "prompt_tokens": 9639,
+    "total_tokens": 12423,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant who enters premises in bona fide reliance on the landlord’s assurance of compliance cannot be treated as having entered unlawfully, and an authority must examine that claim before ordering eviction.",
+      "material_facts": [
+        "The tenant said that the landlord assured him the premises could be occupied after the required vacancy notice had been given and no allotment order had been served within the prescribed time.",
+        "The tenant gave evidence of the assurance, but the allotment authority did not examine or explain its rejection and did not determine whether the landlord had notified the vacancy or whether an allotment order had been made.",
+        "The landlord’s successor, who could have addressed whether the assurance was given, did not participate in the proceedings."
+      ],
+      "conclusion": "The authority’s eviction order was invalid because it failed to examine a material claim. A tenant who bona fide relies on the landlord’s assurance, and is not shown to be acting in league with the landlord, cannot be charged with unlawful entry on that basis.",
+      "legal_principle": "Under clauses 22(1), 22(2) and 23(2) of the Central Provinces and Berar Letting of Houses and Rent Control Order, 1949, the landlord bears the duty to notify the vacancy; if no allotment order is served within the prescribed period, the landlord may let the premises to anyone. The tenant’s duty in that situation is to seek the landlord’s assurance that occupation is permitted under clause 23(2). Bona fide reliance on that assurance, absent collusion, protects the tenant from being treated as having entered in contravention of the occupation requirements.",
+      "rule": {
+        "if": "rent_control_occupancy_case and tenant_claimed_landlord_assurance and authority_failed_to_examine_vacancy_compliance",
+        "then": "eviction_order_invalid"
+      },
+      "predicates": {
+        "rent_control_occupancy_case": "The proceeding concerns an allegation that a tenant occupied premises contrary to a regulated vacancy and allotment process.",
+        "tenant_claimed_landlord_assurance": "The tenant said the landlord assured the tenant that occupation was permitted after the required process had been followed.",
+        "authority_failed_to_examine_vacancy_compliance": "The deciding authority did not determine whether the vacancy had been notified and whether an allotment order had been served, despite the tenant’s assurance claim."
+      },
+      "definition": "When an occupancy proceeding involves a tenant’s claim of the landlord’s assurance and the authority fails to examine compliance with the vacancy process, the eviction order is invalid."
+    },
+    {
+      "legal_issue": "A former government employee is required to vacate premises upon ceasing employment only if the employee entered under a qualifying allotment order.",
+      "material_facts": [
+        "The tenant had been a government employee when he entered the premises and remained there after retirement.",
+        "No allotment order placing the tenant in the premises was produced or established.",
+        "The authority treated retirement alone as requiring the tenant to vacate."
+      ],
+      "conclusion": "The authority could not require the tenant to vacate merely because he had retired; a qualifying allotment order had to be established.",
+      "legal_principle": "Clause 25 of the Central Provinces and Berar Letting of Houses and Rent Control Order, 1949, applies where a person was put in possession under an allotment order made under clause 23 or clause 24-A. The existence of that order is a sine qua non to imposing the duty to vacate upon cessation of the office or post.",
+      "rule": {
+        "if": "rent_control_occupancy_case and tenant_entered_while_government_employee and no_qualifying_allotment_order and eviction_based_on_ceasing_employment",
+        "then": "no_vacate_obligation_based_on_ceasing_employment"
+      },
+      "predicates": {
+        "rent_control_occupancy_case": "The proceeding concerns whether a tenant must vacate premises occupied through a regulated allotment process.",
+        "tenant_entered_while_government_employee": "The tenant entered the premises while holding government employment or an equivalent qualifying post.",
+        "no_qualifying_allotment_order": "No order placing the tenant in the premises on the basis of that employment or post was established.",
+        "eviction_based_on_ceasing_employment": "The authority relied on the tenant’s cessation of employment as a ground for requiring the tenant to vacate."
+      },
+      "definition": "If a tenant entered while holding government employment but no qualifying allotment order was established, cessation of that employment does not itself require the tenant to vacate."
+    },
+    {
+      "legal_issue": "A public authority’s power to remedy an unlawful occupation must be exercised reasonably and within a reasonable time, and does not invariably require eviction.",
+      "material_facts": [
+        "The tenant had occupied the premises for many years before the eviction proceeding began.",
+        "The landlord had accepted rent, and neither the landlord nor the successor had previously challenged the tenant’s entry as unlawful, despite earlier proceedings concerning the premises.",
+        "The authority ordered eviction based on an alleged defect in the tenant’s original entry, long after that entry."
+      ],
+      "conclusion": "Even if the original entry was unlawful, the authority was not bound to order eviction after such a long period and could decline to evict the tenant.",
+      "legal_principle": "A power conferred to achieve a purpose must be exercised reasonably, and reasonable exercise of the power includes exercising it within a reasonable time. The Court relied on Murlidhar Aggarwal v. State of U.P. and State of Gujarat v. Patel Raghav Natha for the principle that a discretionary power without a prescribed limitation period must still be exercised within a reasonable time; delay may make action improper or support declining eviction.",
+      "rule": {
+        "if": "public_enforcement_occupancy_proceeding and alleged_unlawful_entry_is_old and landlord_or_successor_accepted_rent_without_challenge",
+        "then": "authority_may_decline_eviction"
+      },
+      "predicates": {
+        "public_enforcement_occupancy_proceeding": "The proceeding asks a public authority to use its enforcement power to remedy an allegedly unlawful occupation.",
+        "alleged_unlawful_entry_is_old": "A substantial period passed between the alleged unlawful entry and the authority’s enforcement action.",
+        "landlord_or_successor_accepted_rent_without_challenge": "The landlord or successor accepted rent while not challenging the occupation as unlawful."
+      },
+      "definition": "When enforcement concerns an old alleged unlawful entry and the landlord or successor accepted rent without challenging it, the authority may decline eviction."
+    },
+    {
+      "legal_issue": "A court exercising supervisory jurisdiction should not dismiss a challenge in limine without reasons when the challenge raises material contentions requiring a decision.",
+      "material_facts": [
+        "The tenant challenged the allotment authority’s eviction order under Article 227 of the Constitution.",
+        "The challenge raised material contentions, including the landlord’s assurance and the absence of an established allotment order.",
+        "The High Court dismissed the challenge in limine without giving reasons."
+      ],
+      "conclusion": "The High Court erred in dismissing the challenge in limine; the contentions required a reasoned decision or at least a brief speaking order.",
+      "legal_principle": "A court considering a supervisory challenge must give a reasoned decision, or a brief speaking order explaining why the material contentions do not succeed, rather than dismissing such a challenge in limine without reasons.",
+      "rule": {
+        "if": "supervisory_challenge_to_eviction_order and material_contentions_require_decision and court_dismissed_without_reasons",
+        "then": "summary_dismissal_improper"
+      },
+      "predicates": {
+        "supervisory_challenge_to_eviction_order": "A person challenged an eviction order in a court exercising supervisory jurisdiction.",
+        "material_contentions_require_decision": "The challenge raised substantial contentions that required judicial consideration.",
+        "court_dismissed_without_reasons": "The court dismissed the challenge without explaining why the contentions did not succeed."
+      },
+      "definition": "When a supervisory challenge to an eviction order raises material contentions and is dismissed without reasons, the summary dismissal is improper."
+    }
+  ],
+  "seconds": 17.4
+}

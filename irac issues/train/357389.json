@@ -1,0 +1,96 @@
+{
+  "doc_id": "357389",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 37143,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3235,
+    "prompt_tokens": 9545,
+    "total_tokens": 12780,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Workmen of a private mine owner acquire statutory employee status only where the mine is nationalised and included in the relevant schedule.",
+      "material_facts": [
+        "The workmen claimed that they had been employed by a private owner of a colliery and sought recognition as employees of the Central Government.",
+        "The colliery was not included in the schedule to the nationalisation legislation and was not nationalised."
+      ],
+      "conclusion": "The workmen were not entitled to statutory employee status or the related protection because the colliery was not nationalised and scheduled.",
+      "legal_principle": "Section 14 of the Coal Mines (Nationalisation) Act, 1973 protects workmen employed immediately before the appointed day in a coal mine specified in the Act’s Schedule; employment by a private owner alone does not confer employee status with the Central Government. The Court also described the management and nationalisation legislation as parts of an integrated scheme, referring to Central Coal Fields Ltd. v. Bhubaneswar Singh, [1984] 4 SCC 429, and Tara Prasad Singh v. Union of India, [1980] 3 SCR 1042.",
+      "rule": {
+        "if": "claim_for_transfer_of_employee_status and mine_not_in_nationalisation_schedule",
+        "then": "workmen_do_not_acquire_government_employee_status"
+      },
+      "predicates": {
+        "claim_for_transfer_of_employee_status": "Workmen seek recognition as employees of the government or its company on the basis of their employment at a privately owned mine.",
+        "mine_not_in_nationalisation_schedule": "The mine was not included in the schedule by which mines were nationalised."
+      },
+      "definition": "When workmen seek transferred employee status and their mine was not included in the nationalisation schedule, they do not acquire government employee status."
+    },
+    {
+      "legal_issue": "The duty to declare a mine under the management legislation depends on the mine having existed on the appointed day, and later government knowledge of a mine does not by itself create that duty.",
+      "material_facts": [
+        "The petitioner sought a mandatory declaration concerning the colliery, arguing that the government’s knowledge of it required the government to declare and take over its management.",
+        "The Court found that the colliery was not a coal mine on the appointed day because mining operations had not then been carried on."
+      ],
+      "conclusion": "The government had no duty to issue the requested declaration because the colliery did not exist as a coal mine on the appointed day; later knowledge alone was insufficient.",
+      "legal_principle": "Section 2(b) of the Coal Mines (Taking Over of Management) Act, 1973 defines a coal mine as a mine in which one or more seams of coal exist. The proviso to section 3(2) permits a notified declaration when the existence of another coal mine comes to the government’s knowledge, but presupposes that the mine existed on the appointed day. The Court held that the proviso does not impose a duty to declare a mine merely because the government later learns of it.",
+      "rule": {
+        "if": "petition_seeking_mandatory_mine_declaration and government_learned_of_mine and not mine_existed_on_trigger_date",
+        "then": "government_has_no_mandatory_declaration_duty"
+      },
+      "predicates": {
+        "petition_seeking_mandatory_mine_declaration": "A petitioner asks the government to make a mandatory declaration taking a mine’s management under public control.",
+        "government_learned_of_mine": "The government acquired information about the mine after the relevant starting date.",
+        "mine_existed_on_trigger_date": "A mine meeting the statutory description existed on the relevant starting date."
+      },
+      "definition": "If a petitioner seeks a mandatory declaration, the government learned of the mine, and the mine did not exist on the relevant starting date, the government has no mandatory duty to declare it."
+    },
+    {
+      "legal_issue": "A claimant seeking to establish that mining operations were carried on at the relevant time bears the burden of proof, and the absence of ordinary operational records may support a finding that the burden was not met.",
+      "material_facts": [
+        "The petitioner and the private owner asserted that mining had begun before the appointed day, but produced no evidence that the safety directions preceding the proposed opening had been complied with or that extraction had begun by then.",
+        "The owner produced an employees’ register relating to a later year, but did not produce expected records such as mine-manager appointments, inspection reports, opening notices, royalty assessments, annual returns, or wage registers.",
+        "The owner had not notified the government of the mine as contemplated by the management legislation, and the State asserted that no mining had occurred and that only dead rent had been paid."
+      ],
+      "conclusion": "The petitioner and the owner failed to prove that mining operations were carried on at the relevant time; the material supported the conclusion that no mine existed then.",
+      "legal_principle": "The burden of establishing that mining operations were being carried on at the relevant time rested on the owner and the workmen claiming relief. The Court identified records expected from actual operations, including those arising under section 17 of the Mines Act, 1952, section 2-A(1) of that Act, the Payment of Wages (Mines) Rules, 1956, and section 3(5) of the management legislation. Their absence, together with the lack of the required intimation, supported the inference that operations had not occurred.",
+      "rule": {
+        "if": "claim_to_establish_mine_operations_for_takeover and claimant_bears_proof_burden and expected_mining_records_not_produced and required_mine_intimation_not_given",
+        "then": "claimants_fail_to_prove_relevant_mining_operations"
+      },
+      "predicates": {
+        "claim_to_establish_mine_operations_for_takeover": "An owner and workmen rely on past mining operations to establish that a mine qualified for public takeover.",
+        "claimant_bears_proof_burden": "The owner and workmen seeking relief bear the burden of proving that operations occurred at the relevant time.",
+        "expected_mining_records_not_produced": "The owner does not produce ordinary records that would be expected if the asserted mining operations had occurred.",
+        "required_mine_intimation_not_given": "The owner did not give the required notice of the mine to the government."
+      },
+      "definition": "When a claim to establish past mine operations is subject to the claimants’ proof burden, expected operational records are absent, and required notice was not given, the claimants fail to prove those operations."
+    },
+    {
+      "legal_issue": "A court cannot compel the government to recognise workmen as its employees, operate a mine, or pay wages where the mine was neither taken over nor nationalised and the statutory employee protection does not apply.",
+      "material_facts": [
+        "The colliery was not included in the schedules to the management or nationalisation legislation, and its management and ownership did not vest in the government.",
+        "The Court found that no mining operations had been carried on by the appointed day; any mining alleged later, after the relevant private leases had terminated, would have been unauthorised.",
+        "The petitioner sought orders requiring the government to recognise the workmen as its employees, operate the colliery using them, and pay arrears of wages."
+      ],
+      "conclusion": "The petitioner was not entitled to mandamus requiring employee recognition, operation of the colliery, or payment of arrears of wages.",
+      "legal_principle": "The Court held that section 14 of the Coal Mines (Nationalisation) Act, 1973 did not protect workmen where the mine had not been nationalised and scheduled. It also held that the government could not be compelled to start operating a mine, which depended on a number of factors, and had no legal obligation to pay the claimed arrears. Under section 3(3) of the Nationalisation Act, as amended in 1976, coal mining was restricted to specified classes, and the private leases in question had terminated. The Court referred to Central Coal Fields Ltd. v. Bhubaneswar Singh, [1984] 4 SCC 429, on the management scheme, and Tara Prasad Singh v. Union of India, [1980] 3 SCR 1042, on the validity of the 1976 amendment.",
+      "rule": {
+        "if": "writ_claim_seeking_compelled_public_action and mine_not_taken_over_or_nationalised and mine_not_in_nationalisation_schedule",
+        "then": "no_mandamus_for_employee_status_mine_operation_or_wages"
+      },
+      "predicates": {
+        "writ_claim_seeking_compelled_public_action": "A petitioner seeks an order compelling the government to recognise workmen, operate a mine, or pay wages.",
+        "mine_not_taken_over_or_nationalised": "The mine’s management and ownership did not vest in the government through takeover or nationalisation.",
+        "mine_not_in_nationalisation_schedule": "The mine was not included in the schedule by which mines were nationalised."
+      },
+      "definition": "When a writ seeks compelled public action concerning workmen and a mine that was neither taken over nor nationalised nor included in the nationalisation schedule, no mandamus requires employee status, mine operation, or wages."
+    }
+  ],
+  "seconds": 20.1
+}

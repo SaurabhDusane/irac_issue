@@ -1,0 +1,95 @@
+{
+  "doc_id": "919539",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13406,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2530,
+    "prompt_tokens": 3922,
+    "total_tokens": 6452,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A payment described as a donation is prohibited tenancy consideration when it is received in connection with granting a lease rather than as a free gift.",
+      "material_facts": [
+        "The person acting for a public trust agreed to lease trust-owned residential premises at a monthly rent on payment of an amount described as a donation to the trust’s building fund.",
+        "The prospective tenant paid the amount before occupying the premises, and the courts found that it was paid and received for the purpose of obtaining the tenancy, not as a free gift for the trust’s purposes."
+      ],
+      "conclusion": "The payment came within the statutory expressions “premium” or “consideration” and supported the conviction; calling it a donation did not change its character.",
+      "legal_principle": "Under section 18(1) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, a payment received in consideration of granting a tenancy is prohibited whether it is called a premium or other like sum, a deposit, or other consideration beyond standard rent. Consideration may be pecuniary or non-pecuniary. The Court rejected the restriction of “consideration” to non-pecuniary consideration discussed in Karansey Kanji v. Velji Virji, (1954) 56 Bom. L.R. 619. The wording added to the earlier Bombay rent-control enactments and Explanation 1 to section 18(4), which treats specified cash receipts as a fine, premium, or consideration, supported this construction.",
+      "rule": {
+        "if": "rental_control_offence_case and payment_linked_to_granting_tenancy and not free_gift_for_trust_purposes",
+        "then": "payment_is_prohibited_tenancy_consideration"
+      },
+      "predicates": {
+        "rental_control_offence_case": "The proceeding concerns an alleged rent-control offense based on receipt of an additional payment in connection with a tenancy.",
+        "payment_linked_to_granting_tenancy": "The landlord or a person acting for the landlord received a payment in connection with granting the tenancy.",
+        "free_gift_for_trust_purposes": "The payment was received as a free gift to advance the recipient trust’s purposes."
+      },
+      "definition": "When an additional payment is made in a rent-control offense case for the grant of a tenancy, and it is not a free gift for the trust’s purposes, the payment is prohibited tenancy consideration."
+    },
+    {
+      "legal_issue": "A trustee who receives rent on behalf of a trust falls within the statutory meaning of landlord.",
+      "material_facts": [
+        "The person charged was a trustee of the trust that owned the premises.",
+        "He received rent on account of and on behalf of the trust."
+      ],
+      "conclusion": "The person came within the statutory definition of landlord.",
+      "legal_principle": "Section 5(3) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 defines “landlord” to include a person who receives, or is entitled to receive, rent on account of, on behalf of, or for the benefit of another person, or as trustee for another person.",
+      "rule": {
+        "if": "rental_control_offence_case and trustee_received_rent_for_another",
+        "then": "trustee_qualifies_as_landlord"
+      },
+      "predicates": {
+        "rental_control_offence_case": "The proceeding concerns an alleged rent-control offense based on receipt of an additional payment in connection with a tenancy.",
+        "trustee_received_rent_for_another": "A trustee received rent for premises on behalf of, or for the benefit of, another person or trust."
+      },
+      "definition": "In a rent-control offense case, a trustee who receives rent for another qualifies as a landlord."
+    },
+    {
+      "legal_issue": "Premises held by a charitable public trust are not exempt from rent-control provisions without the required government direction and applicable qualifying rental terms.",
+      "material_facts": [
+        "The premises were owned by a public trust held for charitable purposes.",
+        "There was no evidence that the State Government had directed that the relevant provisions of the Act would not apply to the premises.",
+        "The rent was not shown to be nominal or concessional."
+      ],
+      "conclusion": "The claimed charitable-trust exemption did not apply.",
+      "legal_principle": "Section 4(2)(ii) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 permits the State Government to direct, subject to specified terms and conditions, that provisions of the Act will not apply to premises held by a public trust for religious or charitable purposes and let at a nominal or concessional rent. The Court found no such direction and found that the rent was neither nominal nor shown to be concessional.",
+      "rule": {
+        "if": "rental_control_offence_case and public_trust_premises and (no_exemption_direction or rent_not_nominal_or_concessional)",
+        "then": "trust_premises_not_exempt"
+      },
+      "predicates": {
+        "rental_control_offence_case": "The proceeding concerns an alleged rent-control offense involving premises let to a tenant.",
+        "public_trust_premises": "The premises are held by a public trust for a religious or charitable purpose.",
+        "no_exemption_direction": "The government has not directed that the relevant rent-control provisions do not apply to the premises.",
+        "rent_not_nominal_or_concessional": "The premises were not let at a nominal or concessional rent."
+      },
+      "definition": "In a rent-control offense case, premises held by a public trust are not exempt when there is no government exemption direction or the rent is not nominal or concessional."
+    },
+    {
+      "legal_issue": "A person’s receipt of prohibited tenancy consideration on behalf of a trust, rather than for personal reasons, does not prevent the person’s conduct from constituting the offense.",
+      "material_facts": [
+        "The person charged received the payment while acting on behalf of the trust and not for personal reasons.",
+        "The payment was received in connection with granting the tenancy."
+      ],
+      "conclusion": "Acting on behalf of the trust did not affect whether the conduct fell within the offense; it could affect only the sentence.",
+      "legal_principle": "Section 18(1) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947 applies to the conduct of a person who receives prohibited consideration for granting a tenancy. The person’s representative capacity does not remove the conduct from the provision, although it may be relevant to sentence.",
+      "rule": {
+        "if": "rental_control_offence_case and received_prohibited_tenancy_consideration and acted_only_for_trust",
+        "then": "representative_capacity_does_not_avoid_offense"
+      },
+      "predicates": {
+        "rental_control_offence_case": "The proceeding concerns an alleged rent-control offense based on receipt of additional consideration for a tenancy.",
+        "received_prohibited_tenancy_consideration": "The person received a payment that was consideration for granting the tenancy beyond standard rent.",
+        "acted_only_for_trust": "The person acted on behalf of a trust and not for personal reasons."
+      },
+      "definition": "When a person in a rent-control offense case receives prohibited tenancy consideration while acting only for a trust, that representative capacity does not avoid the offense."
+    }
+  ],
+  "seconds": 15.6
+}

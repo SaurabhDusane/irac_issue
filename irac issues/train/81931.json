@@ -1,0 +1,80 @@
+{
+  "doc_id": "81931",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12436,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2404,
+    "prompt_tokens": 4604,
+    "total_tokens": 7008,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A compensation award cannot be enhanced on the basis of an award for other land unless the comparator land is shown to be comparable in nature and potentiality.",
+      "material_facts": [
+        "The claimants relied on a certified award relating to land about 150 feet from the acquired land.",
+        "The comparator land had been acquired for a road and was three feet higher than the acquired land.",
+        "No evidence established that the comparator land and the acquired land were similar in nature and potentiality."
+      ],
+      "conclusion": "The other award was properly not relied on, and the reference court's compensation award was upheld without further enhancement.",
+      "legal_principle": "Market value is most reliably determined by comparable sales of the same or adjacent land made near the notification date. A comparison is valid only where the lands are comparable in nature and potentiality; an award relating to other land cannot establish that comparability without supporting evidence.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and comparator_award_relied_on and (comparable_nature_unproved or comparable_potentiality_unproved)",
+        "then": "enhancement_denied"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "comparator_award_relied_on": "A party relies on an award concerning other land to support the claimed market value.",
+        "comparable_nature_unproved": "The evidence does not establish that the comparator land is similar in nature to the acquired land.",
+        "comparable_potentiality_unproved": "The evidence does not establish that the comparator land has similar potential to the acquired land.",
+        "enhancement_denied": "The claim for compensation beyond the amount already awarded is rejected."
+      },
+      "definition": "When a compensation appeal relies on an award for other land but the similarity of nature or potentiality is unproved, the claim for further enhancement is rejected."
+    },
+    {
+      "legal_issue": "The increased statutory solatium applies where a land acquisition reference was pending during the period to which the amendment gave limited retrospective effect.",
+      "material_facts": [
+        "The Collector made the award before the amendment's specified period.",
+        "The reference court made its award after that period.",
+        "The reference remained pending during the period between the amendment's commencement and the end of its specified retrospective period."
+      ],
+      "conclusion": "The claimants were entitled to the increased solatium, and the award was modified accordingly.",
+      "legal_principle": "Section 23(2) of the Land Acquisition Act, 1894 provides for solatium. Section 30(2) of the 1984 Amendment Act gave the increased rate limited retrospective effect. In Union of India v. Raghubir Singh, the Court confined the benefit to specified awards and appeals; Union of India v. Filip Tiago De Gama applied the amendment to avoid an anomalous result; and K.S. Paripoornan v. State of Kerala extended the benefit to proceedings pending when the amendment came into force. Applying that interpretation, the increased solatium was available where the reference was pending during the relevant period.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and reference_pending_during_amendment_transition",
+        "then": "increased_solatium_allowed"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "reference_pending_during_amendment_transition": "The reference seeking determination of compensation remained pending during the period to which the amendment gave limited retrospective effect.",
+        "increased_solatium_allowed": "The owner is entitled to the increased statutory solatium."
+      },
+      "definition": "If a compensation appeal concerns a reference that remained pending during the amendment's transition period, the increased solatium is allowed."
+    },
+    {
+      "legal_issue": "A statutory solatium entitlement cannot be denied merely because the local enactment governing an acquisition does not provide for it.",
+      "material_facts": [
+        "The respondents argued that the local land development and planning enactment did not contemplate solatium for the acquired land.",
+        "The Court relied on earlier decisions holding that deprivation of solatium under that enactment violated Article 14 and that its exclusion provision was invalid."
+      ],
+      "conclusion": "The argument that the local enactment excluded solatium was rejected, and solatium remained payable.",
+      "legal_principle": "The solatium provided by Section 23(2) of the Land Acquisition Act is mandatory. Monoranjan Routh v. State of West Bengal and Ramendranath v. State of West Bengal held that deprivation of solatium under the local enactment violated Article 14 and that the exclusion provision was invalid.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and local_law_excludes_solatium and exclusion_deprives_owner_of_statutory_solatium",
+        "then": "solatium_remains_payable"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "The proceeding concerns compensation for compulsorily acquired land.",
+        "local_law_excludes_solatium": "The local law governing the acquisition does not provide for, or purports to exclude, solatium.",
+        "exclusion_deprives_owner_of_statutory_solatium": "Applying the local-law exclusion would deprive the owner of statutory solatium.",
+        "solatium_remains_payable": "The owner remains entitled to solatium notwithstanding the local-law exclusion."
+      },
+      "definition": "Where a local-law exclusion would deprive an owner in an acquisition proceeding of statutory solatium, solatium remains payable."
+    }
+  ],
+  "seconds": 15.0
+}

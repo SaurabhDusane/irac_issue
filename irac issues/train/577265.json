@@ -1,0 +1,62 @@
+{
+  "doc_id": "577265",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 48181,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2181,
+    "prompt_tokens": 12624,
+    "total_tokens": 14805,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A contractor engaged to work a nationalised mine is treated as an owner for vesting purposes, so assets installed or brought into the mine for its operation vest with the mine.",
+      "material_facts": [
+        "The contractors had agreements to work the collieries, including a long-term agreement giving them substantial control over one colliery.",
+        "The contractors were entitled to, and in fact had, actual possession and enjoyment of the collieries.",
+        "They installed machinery, plants and equipment and brought other assets into the mines for their operation.",
+        "The mines were taken over and nationalised, and the contractors claimed that their assets had not vested because they were not owners."
+      ],
+      "conclusion": "The contractors fell within the statutory meaning of owner, and the assets used in the mines vested in the Central Government.",
+      "legal_principle": "The Nationalisation Act, s. 3(n), incorporates the definition of owner in the Mines Act, 1952, s. 2(1). That definition includes an occupier and treats a contractor for working a mine as if the contractor were an owner. The legal fiction must be given its full effect and carried to its logical consequences, as stated in East End Dwelling Co. Ltd. v. Finsbury Borough Council. The Court distinguished The Chief Inspector of Mines v. Lala Karamchand Thapar because the contractors here possessed and controlled the mines in their own right. The separate definition of managing contractor in s. 3(i) of the Nationalisation Act serves the compensation-apportionment provision in s. 26(2) and does not narrow the meaning of owner for vesting under s. 4(1).",
+      "rule": {
+        "if": "nationalisation_vesting_proceeding and mine_working_contractor and (contractor_actual_occupier or contractor_substantially_controlled_mine) and assets_used_in_mine",
+        "then": "contractor_and_mine_assets_vest_in_state"
+      },
+      "predicates": {
+        "nationalisation_vesting_proceeding": "The proceeding concerns whether interests in a mine and assets used in it pass to the state under a nationalisation measure.",
+        "mine_working_contractor": "A contractor was engaged to work the mine or a part of it.",
+        "contractor_actual_occupier": "The contractor was in actual possession and occupation of the mine.",
+        "contractor_substantially_controlled_mine": "The contractor exercised substantial control over the mine's operations.",
+        "assets_used_in_mine": "The disputed assets were installed or brought into the mine for use in its operation."
+      },
+      "definition": "When a nationalisation vesting proceeding concerns a mine worked by a contractor who occupied or substantially controlled it, assets used in the mine pass to the state with the mine."
+    },
+    {
+      "legal_issue": "A reimbursement claim for mine operations carried out before nationalisation is an amount due to the mine that the state may recover and apply toward the mine's outstanding liabilities.",
+      "material_facts": [
+        "Before the mines were taken over, the contractors had carried out sand-stowing, safety and hard-mining operations at their own expense.",
+        "They had submitted claims for subsidy to reimburse the cost of those completed operations, and the amount remained receivable when the mines were taken over.",
+        "The Central Government recovered the amount and sought to apply it toward liabilities of the mines that remained unpaid."
+      ],
+      "conclusion": "The reimbursement was an amount due to the mine and could be recovered by the Central Government and applied toward the mine's liabilities; it was not recoverable by the contractors to the exclusion of the Central Government.",
+      "legal_principle": "Under the Nationalisation Act, s. 22(3), money due to a coking coal mine is recoverable by the Central Government, and under s. 22(4) it may be applied toward the mine's unpaid liabilities. Because the operations had already been performed at the contractors' expense, the payment was reimbursement and was not impressed with a specific purpose. The Court distinguished Barclays Bank Ltd. v. Quistclose Investments Ltd. and Coal Products Private Ltd. v. Income Tax Officer, which concerned money advanced for a specific purpose. The Court added that even if a grant were conditional assistance under r. 49 of the Coal Mines (Conservation and Safety) Rules, 1952, the Central Government would have to use it in accordance with r. 54 for the purposes of that grant.",
+      "rule": {
+        "if": "nationalisation_subsidy_proceeding and subsidy_claimed_for_completed_mine_operations and subsidy_due_when_mine_transferred and reimbursement_for_past_expenses",
+        "then": "state_may_recover_subsidy_for_mine_liabilities"
+      },
+      "predicates": {
+        "nationalisation_subsidy_proceeding": "The proceeding concerns who may recover a subsidy claim connected with a mine transferred through nationalisation.",
+        "subsidy_claimed_for_completed_mine_operations": "The mine operator claimed a subsidy for operations that had already been carried out.",
+        "subsidy_due_when_mine_transferred": "The subsidy remained receivable when the mine was transferred.",
+        "reimbursement_for_past_expenses": "The claimed payment reimbursed expenses already incurred by the operator rather than funding future operations."
+      },
+      "definition": "When a subsidy claim in a nationalisation proceeding reimburses completed operations and remains due at transfer, the state may recover it for the mine's liabilities."
+    }
+  ],
+  "seconds": 13.6
+}

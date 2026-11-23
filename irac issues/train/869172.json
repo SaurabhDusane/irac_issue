@@ -1,0 +1,59 @@
+{
+  "doc_id": "869172",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26052,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1619,
+    "prompt_tokens": 7794,
+    "total_tokens": 9413,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The law governing a concealment penalty in a reassessment is the law in force when the original return containing the concealment was filed, rather than the law in force when a return in response to reassessment notice was filed.",
+      "material_facts": [
+        "The assessee filed original returns that omitted profits from land sales.",
+        "After reassessment notices were issued, the assessee filed returns again, still omitting those profits, after the penalty law had changed.",
+        "The reassessments included the omitted income, and penalty proceedings were initiated for the concealment."
+      ],
+      "conclusion": "The original returns determine the applicable law for the penalty proceedings; the later returns filed in response to reassessment notices do not make the amended penalty law applicable. The appeals were dismissed.",
+      "legal_principle": "Under section 271(1)(c), as interpreted in Brij Mohan v. CIT, the applicable law is the law in force when the offending return is filed. In a case involving multiple returns, the original return, if any, is the relevant return for this purpose. The Court adopted the reasoning in CIT v. S.S.K.G. Arthanariswamy Chettiar and Addl. CIT v. Joginder Singh, and relied on the principles illustrated by Malbary and Bros. v. CIT, Govindarajulu Iyer v. CIT, and Jagan Mohan Rao’s case. Sections 148 and 139(2) did not make the reassessment return the relevant return for choosing the applicable penalty law.",
+      "rule": {
+        "if": "concealment_penalty_proceeding_in_reassessment and original_return_contained_concealment and original_return_preceded_penalty_law_change and reassessment_return_filed_after_penalty_law_change",
+        "then": "penalty_law_at_original_return_applies"
+      },
+      "predicates": {
+        "concealment_penalty_proceeding_in_reassessment": "Penalty proceedings for concealment were initiated in connection with a reassessment.",
+        "original_return_contained_concealment": "The taxpayer's original return omitted income that was later assessed.",
+        "original_return_preceded_penalty_law_change": "The original return was filed before a change in the law governing the measure of the penalty.",
+        "reassessment_return_filed_after_penalty_law_change": "The taxpayer filed a return in response to reassessment after the change in the penalty law."
+      },
+      "definition": "When concealment penalty proceedings arise from a reassessment, and the original return contained the concealment and preceded a change in penalty law while the reassessment return followed it, the law in force at the original return applies."
+    },
+    {
+      "legal_issue": "A penalty imposed during reassessment may be based on concealment in the original return and original assessment proceedings.",
+      "material_facts": [
+        "The assessee omitted land-sale income from its original returns.",
+        "The original assessments were completed without including all the omitted income, and reassessments were later undertaken for the same assessment years.",
+        "The penalty proceedings were initiated after reassessment, based on the failure to return the land-sale income."
+      ],
+      "conclusion": "A penalty may be imposed in reassessment proceedings by reference to concealment in the original assessment proceedings.",
+      "legal_principle": "Section 271(1)(c) permits a penalty in reassessment proceedings based on concealment in the original return. Malbary and Bros. v. CIT upheld a penalty imposed in reassessment by reference to the original return, and Govindarajulu Iyer v. CIT supports the same principle. The Court also referred to Jagan Mohan Rao’s case in explaining that reassessment reopens the determination of the correct total income for the year.",
+      "rule": {
+        "if": "concealment_penalty_proceeding_in_reassessment and original_return_contained_concealment and reassessment_redetermined_income_for_same_tax_year",
+        "then": "penalty_may_be_based_on_original_return_concealment"
+      },
+      "predicates": {
+        "concealment_penalty_proceeding_in_reassessment": "Penalty proceedings for concealment were initiated in connection with a reassessment.",
+        "original_return_contained_concealment": "The taxpayer's original return omitted income that was later assessed.",
+        "reassessment_redetermined_income_for_same_tax_year": "The reassessment redetermined the taxpayer's income for the same tax year covered by the original return."
+      },
+      "definition": "When concealment penalty proceedings arise in a reassessment that redetermines income for the same tax year, concealment in the original return may support the penalty."
+    }
+  ],
+  "seconds": 10.6
+}

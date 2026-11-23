@@ -1,0 +1,80 @@
+{
+  "doc_id": "422729",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 46746,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2382,
+    "prompt_tokens": 11896,
+    "total_tokens": 14278,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A stay of an appellate order dismissing an appeal does not revive the disposed appeal or make the underlying proceeding pending.",
+      "material_facts": [
+        "The industrial company’s proceedings before the relevant statutory bodies had ended, and its appeal against the decision recommending winding up had been dismissed.",
+        "A court later stayed the operation of the dismissal order but did not quash it.",
+        "A winding-up proceeding against the company was being considered."
+      ],
+      "conclusion": "The stay did not revive the dismissed appeal, so no proceeding was pending before the statutory bodies and the winding-up proceeding could continue.",
+      "legal_principle": "Under Section 22(1) of the Sick Industrial Companies (Special Provisions) Act, 1985, the bar applies only when one of the specified proceedings is pending. A stay of an order suspends its operation but does not erase it; unlike quashing, it does not restore the position that existed before the order. Quashing may restore a disposed appeal, but a stay alone does not.",
+      "rule": {
+        "if": "winding_up_proceeding and industrial_company_appeal_dismissed and dismissal_order_only_stayed and not statutory_proceeding_pending",
+        "then": "winding_up_proceeding_may_continue"
+      },
+      "predicates": {
+        "winding_up_proceeding": "A proceeding seeking the winding up of an industrial company is before a court.",
+        "industrial_company_appeal_dismissed": "An appeal by an industrial company was disposed of by dismissal.",
+        "dismissal_order_only_stayed": "A court stayed the operation of the dismissal order without quashing it.",
+        "statutory_proceeding_pending": "A proceeding concerning the industrial company remains pending before the relevant statutory body."
+      },
+      "definition": "When a winding-up proceeding is before a court, the industrial company’s appeal has been dismissed, that dismissal has only been stayed, and no proceeding remains pending before the relevant statutory body, the winding-up proceeding may continue."
+    },
+    {
+      "legal_issue": "A landlord’s proceeding to evict a sick industrial company from rented premises is not a proceeding for execution, distress, or a like process against the company’s property.",
+      "material_facts": [
+        "The landlord sought eviction of the industrial company for default in payment of rent.",
+        "The company was occupying the premises as a statutory tenant under rent-control protection.",
+        "At the time the eviction order was made, proceedings concerning the company were pending before the statutory body."
+      ],
+      "conclusion": "Section 22(1) did not automatically suspend the landlord’s eviction proceeding, and the eviction order was not passed in contravention of that provision.",
+      "legal_principle": "Section 22(1) of the Sick Industrial Companies (Special Provisions) Act, 1985 suspends specified proceedings, including proceedings for execution, distress, or the like against the company’s property, when a qualifying matter is pending or a sanctioned scheme is being implemented, unless the relevant authority consents. The words “or the like” are read with “execution” and “distress” and concern processes for recovering dues against property. The Act’s purpose is to protect the consideration and implementation of measures for sick companies, not to allow a tenant company to incur further rent liabilities while requiring the landlord to keep providing premises.",
+      "rule": {
+        "if": "landlord_eviction_proceeding and sick_industrial_company_tenant and eviction_seeks_possession_not_recovery_by_execution and qualifying_statutory_matter_pending",
+        "then": "eviction_proceeding_not_automatically_suspended"
+      },
+      "predicates": {
+        "landlord_eviction_proceeding": "A landlord brings a proceeding to obtain possession of premises from a tenant.",
+        "sick_industrial_company_tenant": "The tenant in the eviction proceeding is a sick industrial company.",
+        "eviction_seeks_possession_not_recovery_by_execution": "The landlord seeks eviction and possession rather than recovery of dues through execution, distress, or a similar process against the company’s property.",
+        "qualifying_statutory_matter_pending": "A qualifying inquiry, scheme-related matter, or appeal concerning the company is pending before the relevant statutory body, or a sanctioned scheme is being implemented."
+      },
+      "definition": "When a landlord seeks possession from a sick industrial company through an eviction proceeding, rather than recovery of dues through an execution-like process against its property, the eviction proceeding is not automatically suspended even if a qualifying statutory matter is pending."
+    },
+    {
+      "legal_issue": "A statutory tenant’s non-transferable interest in rented premises is not property of the tenant company for the purpose of the statutory stay on proceedings against company property.",
+      "material_facts": [
+        "The company remained in occupation of the premises as a statutory tenant under rent-control law.",
+        "The applicable rent-control provisions prohibited a statutory tenant from assigning or transferring the tenancy interest.",
+        "The eviction proceeding concerned the company’s continued occupation of the premises."
+      ],
+      "conclusion": "The company’s statutory tenancy interest was not its property for the purpose of Section 22(1), so that provision did not bar the eviction proceeding on this ground.",
+      "legal_principle": "Section 22(1) of the Sick Industrial Companies (Special Provisions) Act, 1985 concerns proceedings against the industrial company’s property. Under the Karnataka Rent Control Act, 1961, Sections 3(r), 21(1)(f), and 23 define and limit the statutory tenant’s interest: the interest may pass to specified family members or a person continuing in possession after termination, but a statutory tenant’s interest cannot be assigned or transferred. Applying Smt. Gian Devi Anand v. Jeevan Kumar & Ors., [1985] Supp. 1 SCR 1, the Court recognized that rent-control legislation may define the nature and extent of the tenant’s continuing interest; the limited, non-transferable interest at issue was not company property for Section 22(1).",
+      "rule": {
+        "if": "landlord_eviction_proceeding and company_is_statutory_tenant and statutory_tenancy_interest_nontransferable",
+        "then": "statutory_tenancy_interest_not_company_property"
+      },
+      "predicates": {
+        "landlord_eviction_proceeding": "A landlord brings a proceeding to obtain possession of premises from a tenant.",
+        "company_is_statutory_tenant": "A company continues to occupy rented premises under statutory rent-control protection after its contractual tenancy has ended.",
+        "statutory_tenancy_interest_nontransferable": "The applicable law makes the statutory tenant’s interest non-transferable and limits the persons who may continue or inherit that interest."
+      },
+      "definition": "When a company occupies premises as a statutory tenant and its tenancy interest is non-transferable, that interest is not company property for purposes of the rule."
+    }
+  ],
+  "seconds": 15.5
+}

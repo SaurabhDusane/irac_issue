@@ -1,0 +1,63 @@
+{
+  "doc_id": "1378712",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31544,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2542,
+    "prompt_tokens": 7989,
+    "total_tokens": 10531,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "When reliable evidence for other recognized methods of land valuation is unavailable, compensation may be determined by capitalising the land’s net annual income.",
+      "material_facts": [
+        "The land was acquired for a public project and included agricultural and uncultivable land.",
+        "The lower courts determined market value using the capitalisation method.",
+        "The record did not contain reliable evidence on which to base valuation using comparable bona fide sales, a willing buyer and seller, or expert opinion.",
+        "The net annual income finding made by the District Court and affirmed by the High Court was not challenged by either party."
+      ],
+      "conclusion": "In the absence of reliable evidence supporting another recognized valuation method, the Court adopted the capitalisation method, using the net annual income from the land as the basis for determining compensation.",
+      "legal_principle": "Under section 23 of the Land Acquisition Act, 1894, compensation is based on market value. Recognized valuation methods include comparable bona fide transactions, the price a willing buyer would pay a willing seller, expert opinion, and capitalisation of net income. Where reliable evidence does not support the other methods, capitalisation may be used. Net annual income is gross annual income less outgoings such as cultivation expenses and land revenue; the relevant valuation date is the publication of the notification under section 4(1).",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and no_reliable_alternative_valuation_evidence",
+        "then": "capitalisation_method_is_used"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning the determination of compensation for acquired land.",
+        "no_reliable_alternative_valuation_evidence": "The record contains no reliable evidence supporting another recognized method of valuing the land.",
+        "capitalisation_method_is_used": "The land's net annual income is capitalised to determine its value."
+      },
+      "definition": "When an appeal concerns compensation for acquired land and reliable evidence for another valuation method is unavailable, the land's net annual income is capitalised to determine its value."
+    },
+    {
+      "legal_issue": "The multiplier used to capitalise agricultural land’s net annual income must reflect the expected return on investment in the relevant market conditions, and a twenty-year purchase multiplier was too high for the lands in this case.",
+      "material_facts": [
+        "The lands were agricultural or uncultivable lands acquired in 1962 and 1963.",
+        "The lower courts applied a twenty-year purchase multiplier to the net annual income.",
+        "The Court considered that an investor in agricultural land in the relevant conditions expected an annual net return of at least eight per cent.",
+        "There was no evidence that the lands had potential value for another use or were likely to be in demand for another purpose.",
+        "No reliable alternative valuation method was supported by the evidence, so the Court used the capitalisation method."
+      ],
+      "conclusion": "The appropriate multiplier was fifteen years’ purchase, not twenty years’ purchase. Compensation fixed using the twenty-year multiplier was reduced by one-fourth; solatium and interest were payable on the revised basis.",
+      "legal_principle": "Capitalisation involves dividing the property’s expected net annual income by the rate of return a willing buyer would expect during the relevant period. The appropriate multiplier varies with prevailing investment returns: as the expected return rises, the multiplier falls. The Court relied on Collector, Raigarh v. Dr. Harisingh Thakur; State of Kerala v. Hassan Koya; State of West Bengal v. Shyamapada; Oriental Gas Ltd. v. State of West Bengal; T. Radhakrishna Chettiar v. Province of Madras; Sri Lakshmi Narasimha Devaru v. Revenue Divisional Officer; and Varadarajulu Naidu v. Revenue Divisional Officer. Applying that approach to the relevant market conditions and the evidence about the land, the Court held that fifteen years’ purchase was appropriate.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and capitalisation_method_applied and agricultural_land and prevailing_expected_return_is_high and no_evidence_of_other_use_or_demand",
+        "then": "lower_capitalisation_multiplier_applies"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "capitalisation_method_applied": "The land's value is being determined by capitalising its net annual income.",
+        "agricultural_land": "The acquired land is agricultural land or land assessed in the context of agricultural use.",
+        "prevailing_expected_return_is_high": "The prevailing investment conditions indicate that a buyer would expect a substantial net return from the land.",
+        "no_evidence_of_other_use_or_demand": "The record does not show that the land has likely value for another use or is likely to be in demand for another purpose."
+      },
+      "definition": "When compensation for agricultural land is challenged in an appeal, capitalisation is used, expected returns are substantial, and evidence of other use or demand is absent, a lower multiplier is appropriate."
+    }
+  ],
+  "seconds": 16.7
+}

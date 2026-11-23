@@ -1,0 +1,80 @@
+{
+  "doc_id": "249027",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16104,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2367,
+    "prompt_tokens": 4572,
+    "total_tokens": 6939,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A special tenancy-law provision assigning eviction suits by suit value or premises value determines which court has exclusive jurisdiction to try the suit.",
+      "material_facts": [
+        "The action was a landlord’s suit for recovery of possession under the tenancy statute, filed on the High Court’s original civil side.",
+        "The rent was about 110 rupees per month, but the landlord valued the premises above the jurisdictional limit and the court found that valuation was not contrary to law.",
+        "The statutory schedule assigned suits to the High Court where the suit value exceeded the limit or the value of the premises whose possession was sought exceeded it."
+      ],
+      "conclusion": "The High Court had jurisdiction to try the suit, and the City Civil Court did not.",
+      "legal_principle": "Section 20 of the West Bengal Premises Tenancy Act, 1956, read with its Schedule, affects jurisdiction rather than merely the place of suing. Under the Schedule, either the value of the suit or the value of the premises could place the suit within the High Court’s exclusive jurisdiction. The Court distinguished the ordinary valuation rules under section 8 of the Suits Valuation Act, 1887, and section 7(xi)(cc) of the Court Fees Act, 1870, and found no conflict with section 5(2) of the City Civil Court Act, 1953.",
+      "rule": {
+        "if": "tenancy_eviction_suit and (suit_value_above_jurisdictional_limit or premises_value_above_jurisdictional_limit)",
+        "then": "high_court_has_exclusive_jurisdiction"
+      },
+      "predicates": {
+        "tenancy_eviction_suit": "A landlord brings a suit seeking recovery of possession from a tenant under a special tenancy-law procedure.",
+        "suit_value_above_jurisdictional_limit": "The value assigned to the suit exceeds the boundary that assigns cases to the higher court.",
+        "premises_value_above_jurisdictional_limit": "The value of the premises whose possession is sought exceeds the boundary that assigns cases to the higher court."
+      },
+      "definition": "When a tenancy eviction suit meets either value criterion, the higher court has exclusive jurisdiction to try it."
+    },
+    {
+      "legal_issue": "A landlord’s reasonable need to occupy premises is not barred merely because the tenant has been using them for a different purpose, if the premises can be put to different uses.",
+      "material_facts": [
+        "The landlord sought the premises for personal residential occupation and had no other reasonably suitable accommodation.",
+        "The tenant used the premises for business.",
+        "The premises were capable of being put to different uses.",
+        "The trial court’s findings on the landlord’s need and lack of suitable accommodation were upheld by the High Court."
+      ],
+      "conclusion": "The landlord’s residential need could support eviction even though the tenant used the premises for business.",
+      "legal_principle": "Section 13(1)(ff) of the West Bengal Premises Tenancy Act, 1956, as introduced by the 1969 amendment, provides a ground for eviction where premises are reasonably required for the landlord’s own occupation and the landlord lacks reasonably suitable accommodation. The Court held that the landlord need not require the premises for the same purpose for which the tenant uses them, provided the premises are capable of different uses. It referred to B. Banerjee v. Smt. Anita Pan, AIR 1975 SC 1146, in connection with the retrospective operation of the amendment, whose validity had been upheld.",
+      "rule": {
+        "if": "reasonable_requirement_eviction_suit and landlord_needs_personal_occupation and no_suitable_alternative_accommodation and premises_capable_of_different_uses and tenant_use_differs_from_landlord_use",
+        "then": "different_purpose_requirement_may_support_eviction"
+      },
+      "predicates": {
+        "reasonable_requirement_eviction_suit": "A landlord seeks eviction on the ground that the premises are reasonably required for the landlord’s occupation.",
+        "landlord_needs_personal_occupation": "The landlord reasonably requires the premises for the landlord’s own occupation.",
+        "no_suitable_alternative_accommodation": "The landlord is not in possession of other reasonably suitable accommodation.",
+        "premises_capable_of_different_uses": "The premises can be used for more than one kind of purpose.",
+        "tenant_use_differs_from_landlord_use": "The tenant’s use of the premises differs from the use for which the landlord requires them."
+      },
+      "definition": "If a landlord reasonably needs premises for personal occupation, lacks suitable alternative accommodation, and the premises can support uses different from the tenant’s use, that difference alone does not prevent the requirement from supporting eviction."
+    },
+    {
+      "legal_issue": "An eviction order need not be restricted to part of the premises where the circumstances do not warrant ordering eviction from only part.",
+      "material_facts": [
+        "The landlord sought possession of the first and second floors of the building for personal occupation.",
+        "The High Court concluded, on the circumstances before it, that this was not a case for ordering eviction from only part of the premises.",
+        "The Supreme Court considered the facts presented and agreed with the High Court’s conclusion."
+      ],
+      "conclusion": "The High Court was right not to restrict the eviction order to part of the premises.",
+      "legal_principle": "The Court applied section 13(4) of the West Bengal Premises Tenancy Act, 1956, and agreed that the circumstances did not justify an order for eviction from only part of the premises.",
+      "rule": {
+        "if": "tenancy_eviction_suit and facts_do_not_support_partial_possession",
+        "then": "eviction_order_need_not_be_limited_to_part"
+      },
+      "predicates": {
+        "tenancy_eviction_suit": "A landlord brings a suit seeking recovery of possession from a tenant under a special tenancy-law procedure.",
+        "facts_do_not_support_partial_possession": "The circumstances do not support limiting the landlord’s recovery of possession to only part of the premises."
+      },
+      "definition": "In a tenancy eviction suit, where the circumstances do not support recovery of only part of the premises, the eviction order need not be limited to a part."
+    }
+  ],
+  "seconds": 14.9
+}

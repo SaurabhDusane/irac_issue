@@ -1,0 +1,102 @@
+{
+  "doc_id": "137893087",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31432,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3898,
+    "prompt_tokens": 8009,
+    "total_tokens": 11907,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A successor who establishes joint ownership or succeeds to a landlord recognised by the tenant has standing to seek eviction, even if the underlying will is not formally proved in the eviction proceeding.",
+      "material_facts": [
+        "A final compromise decree declared the claimants and other heirs to be joint owners of the premises, and no interested person challenged that decree or their ownership.",
+        "The tenant had accepted the predecessor as landlady and had paid rent to her son, from whom the claimants succeeded.",
+        "The claimants sought eviction and release of the premises, but the proceedings below rejected their claims for want of proof of the will and standing."
+      ],
+      "conclusion": "The rejection of the proceedings for want of standing was unsustainable. The claimants could maintain the eviction proceeding as joint owners and landlords.",
+      "legal_principle": "Under Section 3(j) of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, a landlord includes the person to whom rent is payable and that person's agent or attorney. A tenant is estopped under Section 116 of the Indian Evidence Act, 1872 from denying the title of the landlord through whom the tenancy is claimed. A co-owner may maintain an eviction suit without joining other co-owners if they do not object, as held in Sri Ram Pasricha v. Jagannath, Dhannalal v. Kalawatibai, and India Umbrella Manufacturing Co. v. Bhagabandei Agarwalla. The final compromise decree established joint ownership, so formal proof of the will was not required to reject the claimants' standing.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and ((claimant_joint_ownership_established and no_coowner_objection) or (claimant_succeeded_to_recognized_landlord and tenant_paid_rent_to_predecessor))",
+        "then": "claimant_has_standing_to_seek_eviction"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "The claimant brought a proceeding seeking eviction of a tenant or release of tenanted premises.",
+        "claimant_joint_ownership_established": "A final, unchallenged determination established the claimant's joint ownership of the premises.",
+        "no_coowner_objection": "No other co-owner or person interested in the title objected to the claimant maintaining the proceeding.",
+        "claimant_succeeded_to_recognized_landlord": "The claimant succeeded to a person whom the tenant had accepted as the landlord.",
+        "tenant_paid_rent_to_predecessor": "The tenant paid rent to the person from whom the claimant succeeded."
+      },
+      "definition": "In a tenant eviction proceeding, either established joint ownership without objection by co-owners or succession to a landlord recognised by the tenant supports the output that the claimant has standing to seek eviction."
+    },
+    {
+      "legal_issue": "A tenant does not avoid default by offering rent to a former rent collector and depositing it in court after being notified that rent is payable to the current landlords.",
+      "material_facts": [
+        "A final compromise decree had declared the claimants and other heirs to be owners of the premises.",
+        "The claimants gave notice demanding rent from the tenant and identifying themselves as landlords.",
+        "After that notice, the tenant sent rent to the claimants' father, who had previously collected rent, and, following refusal, deposited rent in court rather than offering it to the claimants.",
+        "The tenant did not attempt to pay rent to the claimants after the decree."
+      ],
+      "conclusion": "The offers to the former rent collector and subsequent court deposits did not comply with the statutory requirements and did not protect the tenant from being treated as a defaulter; the tenant was liable to eviction on that ground.",
+      "legal_principle": "Sections 20(2), 20(4), and 30 of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972 govern eviction for rent arrears, relief upon payment or tender at the first hearing, and court deposits following refusal of rent or a bona fide dispute over the person entitled to receive it. Under Section 3(j), the landlord is the person entitled to rent. Once the tenant had notice that the claimants were the landlords, offering rent to a person who no longer held that status and depositing it in court did not satisfy those requirements.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and landlord_notice_identified_current_payees and tenant_paid_or_offered_rent_only_to_former_collector and tenant_deposited_rent_in_court_instead_of_offering_it_to_current_payees",
+        "then": "tenant_is_in_rent_default"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "The landlord brought a proceeding seeking eviction of a tenant.",
+        "landlord_notice_identified_current_payees": "The landlord notified the tenant that rent was payable to the current persons entitled to receive it.",
+        "tenant_paid_or_offered_rent_only_to_former_collector": "The tenant paid or offered rent only to a person who had previously collected it but was no longer identified as entitled to receive it.",
+        "tenant_deposited_rent_in_court_instead_of_offering_it_to_current_payees": "After the former collector refused rent, the tenant deposited it in court without offering it to the current persons entitled to receive it."
+      },
+      "definition": "In a tenant eviction proceeding, notice identifying the current rent payees, followed by payment only to a former collector and a court deposit instead of an offer to those payees, produces the output that the tenant is in rent default."
+    },
+    {
+      "legal_issue": "A tenant's unauthorised induction of another person into the premises may constitute subletting where the tenant has moved to a separate home.",
+      "material_facts": [
+        "The tenant's nephew occupied the premises for his business, while the tenant had constructed and was residing in a house elsewhere with his wife.",
+        "The occupation by the nephew was without the landlords' knowledge or approval.",
+        "The trial court found that the nephew had been inducted as a subtenant, and the Supreme Court agreed with that finding."
+      ],
+      "conclusion": "The unauthorised subletting provided an independent ground for eviction.",
+      "legal_principle": "Section 20 of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972 permits eviction on the ground of subletting in contravention of Section 25. On the facts found, the nephew's occupation of the premises while the tenant lived in his own house amounted to subletting without the landlords' knowledge and approval.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and third_party_occupies_premises_without_landlord_approval and tenant_resides_in_separate_house",
+        "then": "tenant_is_liable_for_eviction_for_unauthorized_subletting"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "The landlord brought a proceeding seeking eviction of a tenant.",
+        "third_party_occupies_premises_without_landlord_approval": "A person other than the tenant occupies the premises without the landlord's knowledge or approval.",
+        "tenant_resides_in_separate_house": "The tenant has a separate house and resides there rather than in the premises."
+      },
+      "definition": "In a tenant eviction proceeding, unauthorised occupation by a third party while the tenant resides in a separate house produces the output that the tenant is liable for eviction for unauthorised subletting."
+    },
+    {
+      "legal_issue": "A tenant who has built or acquired another residential building, or has not met the required first-hearing payment conditions, cannot obtain statutory relief from eviction on the ground of rent default.",
+      "material_facts": [
+        "The tenant had constructed his own house elsewhere and resided there with his wife.",
+        "The record did not establish that the tenant had fully paid or tendered the required rent, occupation damages, interest, and costs at the first hearing.",
+        "The tenant relied on court deposits of rent, but the court held that the statutory protection against eviction was unavailable."
+      ],
+      "conclusion": "The tenant was not entitled to relief from eviction on the ground of default under the statutory payment provision.",
+      "legal_principle": "Section 20(4) of the Uttar Pradesh Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972 allows a court, in specified circumstances, to relieve a tenant from eviction for default if the tenant unconditionally pays or tenders the required sums at the first hearing, after accounting for qualifying deposits under Section 30(1). Its proviso denies that benefit where the tenant or a family member has built or acquired a residential building of the specified kind. The Court held that the tenant's own house disqualified him and also noted the absence of evidence of full compliance with the payment conditions.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and (tenant_or_family_has_another_residential_building or tenant_did_not_meet_first_hearing_payment_conditions)",
+        "then": "tenant_cannot_obtain_relief_from_eviction_for_rent_default"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "The landlord brought a proceeding seeking eviction of a tenant for rent default.",
+        "tenant_or_family_has_another_residential_building": "The tenant or a member of the tenant's family has built or acquired another residential building.",
+        "tenant_did_not_meet_first_hearing_payment_conditions": "The tenant did not establish that the required sums were unconditionally paid or tendered at the first hearing."
+      },
+      "definition": "In a tenant eviction proceeding for rent default, either another residential building held by the tenant or family or failure to meet the first-hearing payment conditions produces the output that the tenant cannot obtain relief from eviction for rent default."
+    }
+  ],
+  "seconds": 84.8
+}

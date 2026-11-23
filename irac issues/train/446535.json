@@ -1,0 +1,84 @@
+{
+  "doc_id": "446535",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9151,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1796,
+    "prompt_tokens": 2729,
+    "total_tokens": 4525,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A fatal stab wound that caused death in the ordinary course of nature supports a murder conviction where the evidence does not establish that medical treatment negligently caused the death.",
+      "material_facts": [
+        "The accused stabbed the deceased in the chest with a penknife, injuring the diaphragm and pleura and extending the wound into the abdominal cavity.",
+        "The deceased experienced difficulty breathing, and the stomach and omentum herniated through the wound.",
+        "The deceased died about twelve hours later. The doctor considered the injury fatal, and the post-mortem findings supported that assessment.",
+        "The court found no evidence of negligence by the doctor in performing the operation."
+      ],
+      "conclusion": "The injury was sufficient to cause death in the ordinary course of nature, the doctor's treatment did not break the causal connection, and the conviction for murder was upheld.",
+      "legal_principle": "Whether a particular injury is fatal is a question of fact assessed on the evidence in the case. Medical literature does not establish that diaphragm injuries cannot be fatal. The court relied on the doctor's evidence and the post-mortem findings, applied the ordinary-course-of-nature test under Section 300 of the Indian Penal Code, and upheld the conviction under Section 302. No earlier cases were relied on.",
+      "rule": {
+        "if": "murder_conviction_appeal and accused_inflicted_injury and injury_caused_death_in_ordinary_course and medical_evidence_supports_fatality and not negligent_treatment_caused_death",
+        "then": "murder_conviction_upheld"
+      },
+      "predicates": {
+        "murder_conviction_appeal": "The proceeding is an appeal from a conviction for murder.",
+        "accused_inflicted_injury": "The accused inflicted the injury on the deceased.",
+        "injury_caused_death_in_ordinary_course": "The injury was sufficient to cause death in the ordinary course of nature.",
+        "medical_evidence_supports_fatality": "Medical evidence and related findings support that the injury was fatal.",
+        "negligent_treatment_caused_death": "Negligent medical treatment caused the death rather than the injury."
+      },
+      "definition": "When an appeal from a murder conviction concerns an injury inflicted by the accused that medical evidence supports as fatal in the ordinary course, and negligent treatment did not cause the death, the murder conviction is upheld."
+    },
+    {
+      "legal_issue": "The sudden-fight exception to murder does not apply where the deceased was not a participant in the fight and the accused took undue advantage by stabbing an unarmed person who posed no threat.",
+      "material_facts": [
+        "The accused and another person were involved in a quarrel after the accused had pelted that person with stones and the other person had slapped the accused.",
+        "The deceased intervened only to tell the other person to stop fighting and offered to resolve the dispute.",
+        "The deceased did not take part in the fight or make threatening gestures.",
+        "The accused drew a penknife and stabbed the deceased. The court rejected the accused's account that the deceased had attacked and grappled with him."
+      ],
+      "conclusion": "The sudden-fight exception did not apply, and the murder conviction was upheld.",
+      "legal_principle": "The fourth exception to Section 300 of the Indian Penal Code requires, among other things, that the offender not take undue advantage and that the fight be with the person killed. A fight between the accused and someone else does not satisfy that requirement merely because the accused acted during that quarrel. No earlier cases were relied on.",
+      "rule": {
+        "if": "murder_conviction_appeal and accused_killed_person_outside_fight and victim_made_no_threatening_gesture and accused_used_weapon_against_unarmed_victim",
+        "then": "sudden_fight_exception_unavailable"
+      },
+      "predicates": {
+        "murder_conviction_appeal": "The proceeding is an appeal from a conviction for murder.",
+        "accused_killed_person_outside_fight": "The accused killed a person who was not a participant in the fight.",
+        "victim_made_no_threatening_gesture": "The person killed made no threatening gesture toward the accused.",
+        "accused_used_weapon_against_unarmed_victim": "The accused used a weapon against a person who was unarmed."
+      },
+      "definition": "If, in an appeal from a murder conviction, the accused killed someone outside the fight who made no threatening gesture, and used a weapon against that unarmed person, the sudden-fight exception is unavailable."
+    },
+    {
+      "legal_issue": "A death sentence is not warranted where the killing was unpremeditated and the accused drew the weapon only after a slap and the ensuing quarrel.",
+      "material_facts": [
+        "The accused was slapped during a quarrel and then drew a penknife from his waist before stabbing the deceased.",
+        "The killing was not premeditated.",
+        "The slap evidently caused the accused, described by the court as hot-blooded, to lose control, but the deceased was an innocent bystander who had mildly intervened."
+      ],
+      "conclusion": "The death sentence was reduced to transportation for life.",
+      "legal_principle": "The court assessed the appropriate sentence in light of the lack of premeditation and the circumstances in which the weapon was drawn, while noting that those circumstances did not justify killing an innocent bystander. No specific provision or earlier case was relied on for this sentencing decision.",
+      "rule": {
+        "if": "appeal_against_death_sentence and killing_was_unpremeditated and weapon_drawn_after_quarrel_began and provocation_preceded_killing",
+        "then": "death_sentence_reduced_to_life_term"
+      },
+      "predicates": {
+        "appeal_against_death_sentence": "The proceeding is an appeal in which a death sentence is under review.",
+        "killing_was_unpremeditated": "The killing was not planned in advance.",
+        "weapon_drawn_after_quarrel_began": "The accused drew the weapon after the quarrel had begun.",
+        "provocation_preceded_killing": "A provocation occurred before the accused killed the victim."
+      },
+      "definition": "When an appeal concerns a death sentence for an unpremeditated killing and the accused drew the weapon after the quarrel began in response to prior provocation, the death sentence is reduced to a life term."
+    }
+  ],
+  "seconds": 11.4
+}

@@ -1,0 +1,80 @@
+{
+  "doc_id": "1217738",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24474,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1831,
+    "prompt_tokens": 6513,
+    "total_tokens": 8344,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A purchaser with a documented interest in land being acquired is a person interested for purposes of the acquisition proceedings.",
+      "material_facts": [
+        "The claimant purchased the land at an auction and received a sale certificate.",
+        "The Collector had sued the claimant for possession of the land, and that suit and the appeal were dismissed.",
+        "The Collector later served the claimant with a notice calling for a claim to compensation.",
+        "The Collector did not deny the claimant’s entitlement to compensation in the proceedings before the High Court."
+      ],
+      "conclusion": "The claimant was a person interested within the meaning of section 3(b) of the Land Acquisition Act.",
+      "legal_principle": "Section 3(b) of the Land Acquisition Act includes persons claiming an interest in compensation payable on account of an acquisition. The circumstances, including the sale certificate and the Collector’s conduct acknowledging the claimant’s interest, established that status. No earlier cases were relied on.",
+      "rule": {
+        "if": "land_acquisition_proceeding and (sale_certificate_issued or acquisition_authority_acknowledged_interest)",
+        "then": "claimant_is_a_person_interested"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The government undertook proceedings to acquire land.",
+        "sale_certificate_issued": "A purchaser received a sale certificate after buying the land at auction.",
+        "acquisition_authority_acknowledged_interest": "The acquisition authority acted in ways acknowledging the claimant’s interest, including suing for possession, seeking a compensation claim, or not denying entitlement to compensation."
+      },
+      "definition": "When land is being acquired, a claimant is a person interested if the claimant has a sale certificate or the acquisition authority has acted in ways acknowledging the claimant’s interest."
+    },
+    {
+      "legal_issue": "An acquisition for a company is invalid if the mandatory preliminary inquiry and reporting requirements for company acquisitions are not followed.",
+      "material_facts": [
+        "The land was acquired for a registered co-operative housing society, which was a company for purposes of the Act.",
+        "The Collector did not conduct or report the inquiry required by Rule 4 of the Land Acquisition (Companies) Rules, 1963.",
+        "The report that was submitted was under section 5A, not Rule 4, and did not address the claimant’s objections or the matters required by Rule 4."
+      ],
+      "conclusion": "The notification under section 6 was invalid for non-compliance with Rule 4.",
+      "legal_principle": "For an acquisition for a company, Part VII of the Land Acquisition Act applies. Rule 4 of the Land Acquisition (Companies) Rules, 1963, requires an inquiry and report on the specified matters, followed by the prescribed consideration and consultation. The rule is mandatory, and compliance must precede the section 4 notification as well as the section 6 declaration. Non-compliance makes the section 6 notification invalid. The provisions relied on were sections 4, 5A, 6, 3(e), and 41 of the Act and Rules 3 and 4 of the 1963 Rules; no earlier cases were relied on.",
+      "rule": {
+        "if": "company_land_acquisition_proceeding and acquisition_for_company and not required_company_acquisition_inquiry_completed",
+        "then": "acquisition_declaration_is_invalid"
+      },
+      "predicates": {
+        "company_land_acquisition_proceeding": "The proceeding concerns acquisition of land for a company.",
+        "acquisition_for_company": "The government sought to acquire land for the use or benefit of a company.",
+        "required_company_acquisition_inquiry_completed": "The Collector completed and reported the required inquiry into the matters relevant to an acquisition for a company."
+      },
+      "definition": "In a proceeding to acquire land for a company, the declaration is invalid when the required company-acquisition inquiry was not completed."
+    },
+    {
+      "legal_issue": "A limitation challenge that raises a mixed question of fact and law for the first time in a special-leave appeal is not entertained when factual investigation is required and the record does not establish the necessary facts.",
+      "material_facts": [
+        "The appellant first raised the limitation contention in the Supreme Court, not before the High Court.",
+        "The contention depended on factual matters, including the circumstances of the land’s occupation and whether the land was contiguous to other land occupied by the person in possession.",
+        "The record did not establish the facts necessary to determine whether the limitation requirements had been met."
+      ],
+      "conclusion": "The limitation contention could not be entertained in the appeal.",
+      "legal_principle": "A mixed question of fact and law requiring factual investigation cannot be raised for the first time in an appeal by special leave under Article 136. The Court also noted that the evidence did not establish that the requirements associated with sections 45(f) and 180 of the Tenancy Act had been satisfied. No earlier cases were relied on.",
+      "rule": {
+        "if": "special_leave_appeal and limitation_issue_first_raised_on_appeal and mixed_question_requires_fact_inquiry and record_lacks_required_facts",
+        "then": "limitation_challenge_not_entertained"
+      },
+      "predicates": {
+        "special_leave_appeal": "The proceeding is an appeal brought by special leave.",
+        "limitation_issue_first_raised_on_appeal": "The appellant raised the limitation issue for the first time in the appeal.",
+        "mixed_question_requires_fact_inquiry": "Resolving the limitation issue requires investigation of factual matters as well as application of law.",
+        "record_lacks_required_facts": "The record does not establish facts necessary to resolve the limitation issue."
+      },
+      "definition": "A limitation challenge is not entertained when it is first raised in a special-leave appeal, requires factual investigation, and the record lacks the necessary facts."
+    }
+  ],
+  "seconds": 11.6
+}

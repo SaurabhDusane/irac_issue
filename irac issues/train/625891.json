@@ -1,0 +1,95 @@
+{
+  "doc_id": "625891",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19139,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2547,
+    "prompt_tokens": 5552,
+    "total_tokens": 8099,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The principal of the original loan for limiting recoverable arrears of interest is the cash originally advanced, excluding interest later added to the debt and incorporated into a mortgage.",
+      "material_facts": [
+        "The claims arose from two mortgage deeds whose stated consideration included amounts accrued from earlier transactions.",
+        "The High Court examined the earlier transactions and found the actual original cash advances, which were less than the consideration stated in the mortgage deeds.",
+        "The Supreme Court upheld using those original cash advances to determine the limit on recoverable arrears of interest."
+      ],
+      "conclusion": "The court must look behind a mortgage transaction to identify the actual cash originally advanced as principal and exclude interest later added to make up the mortgage consideration.",
+      "legal_principle": "Section 17 of the Mysore Money Lenders Act, 1939 limits arrears of interest by reference to the principal of the original loan. The words “original loan” require identifying the original cash advance rather than treating a later mortgage amount, which includes capitalized interest, as principal. No earlier cases were relied on.",
+      "rule": {
+        "if": "money_lending_mortgage_claim and later_mortgage_consideration_includes_added_interest",
+        "then": "original_cash_advance_used_as_interest_cap_principal"
+      },
+      "predicates": {
+        "money_lending_mortgage_claim": "A creditor brings a claim to recover a money loan secured by a mortgage.",
+        "later_mortgage_consideration_includes_added_interest": "Interest accrued after an earlier cash advance is added to the amount stated as consideration in a later mortgage."
+      },
+      "definition": "When a money-lending mortgage claim concerns a later mortgage amount that includes added interest, the original cash advance, rather than that later amount, is used as the principal for the interest cap."
+    },
+    {
+      "legal_issue": "The statutory limit on arrears of interest applies to interest accrued up to the date of the trial court’s decree, and an appellate decree takes effect from that decree’s date.",
+      "material_facts": [
+        "The trial court entered a decree, and the High Court later fixed a date for payment of the redemption money.",
+        "The High Court treated the capped arrears of interest as extending to the later redemption-payment date.",
+        "The Supreme Court held that the arrears were to be calculated only up to the trial court’s decree and that the appellate decree took effect from the date of the trial court’s decree."
+      ],
+      "conclusion": "Arrears subject to the statutory limit are calculated up to the date of the trial court’s decree, not the date of suit, the later redemption date, or the date the appellate court issues its decree.",
+      "legal_principle": "Section 17 of the Mysore Money Lenders Act, 1939 directs the court not to decree arrears of interest above the principal of the original loan. Because the court gives effect to that direction when passing its decree, the limit applies to interest payable up to that date. An appellate decree takes effect from the date of the original court’s decree. No earlier cases were relied on.",
+      "rule": {
+        "if": "money_lending_suit_involves_capped_interest_arrears and appellate_court_changes_decree",
+        "then": "capped_arrears_calculated_through_trial_decree_date"
+      },
+      "predicates": {
+        "money_lending_suit_involves_capped_interest_arrears": "A court is deciding a money-lending claim that seeks arrears of interest subject to a statutory ceiling.",
+        "appellate_court_changes_decree": "An appellate court later varies or replaces the trial court’s decree."
+      },
+      "definition": "In a money-lending suit with capped arrears, an appellate change to the decree does not move the endpoint for calculating those arrears beyond the trial court’s decree date."
+    },
+    {
+      "legal_issue": "The statutory ceiling on arrears of interest does not govern interest accruing after the decree, which is determined under the applicable procedure for mortgage decrees.",
+      "material_facts": [
+        "The claim was a suit to enforce mortgages, and the Code of Civil Procedure applied to it.",
+        "The dispute concerned interest after the decree, including interest until the date fixed for payment and thereafter until realization.",
+        "The High Court considered post-decree interest under the mortgage procedure to conflict with the statutory ceiling on arrears, but the Supreme Court rejected that view."
+      ],
+      "conclusion": "The statutory ceiling governs arrears only up to the decree; post-decree interest is awarded under the applicable mortgage-decree procedure, without conflict with that ceiling.",
+      "legal_principle": "Section 17 of the Mysore Money Lenders Act, 1939 limits arrears of interest up to the decree and does not regulate later interest. Order 34, rule 11 of the Code of Civil Procedure applies to post-decree interest in a mortgage suit where that Code governs the suit. No earlier cases were relied on.",
+      "rule": {
+        "if": "mortgage_enforcement_suit and civil_procedure_code_applies and post_decree_interest_is_claimed",
+        "then": "post_decree_interest_governed_by_mortgage_decree_procedure"
+      },
+      "predicates": {
+        "mortgage_enforcement_suit": "A creditor brings a proceeding to enforce a mortgage.",
+        "civil_procedure_code_applies": "The procedural code governing civil suits applies to the proceeding.",
+        "post_decree_interest_is_claimed": "A party seeks interest on the mortgage debt for a period after the decree."
+      },
+      "definition": "When a mortgage enforcement suit is governed by the civil procedure code and post-decree interest is claimed, that interest is determined under the mortgage-decree procedure rather than the ceiling for pre-decree arrears."
+    },
+    {
+      "legal_issue": "The rate of post-decree interest on a mortgage debt may be fixed at a fair rate under applicable lending protections rather than the contractual rate, with a reasonable rate applying to later interest.",
+      "material_facts": [
+        "The mortgage deeds provided for interest at one per cent per month.",
+        "The court determined that the applicable money-lending and usury protections made nine per cent per annum the fair rate for interest on the principal from the decree to the date fixed for payment.",
+        "The court directed six per cent per annum on the allowed costs, charges, and expenses and on the relevant sums from the date fixed for payment until realization."
+      ],
+      "conclusion": "Post-decree interest on the mortgage principal was to be calculated at the fair rate of nine per cent per annum, while the court directed six per cent per annum for the specified costs and for the period after the date fixed for payment until realization.",
+      "legal_principle": "Order 34, rule 11(a)(i) of the Code of Civil Procedure provides for interest on the mortgage principal from decree to the date fixed for payment at the rate payable on the principal or, if none is fixed, at a reasonable rate. The Mysore Money Lenders Act, 1939, read with the Mysore Usurious Loans Act, 1923, informed the court’s determination of the fair rate. Order 34, rule 11(a)(ii) provides for interest on costs, charges, and expenses, and rule 11(b) governs interest thereafter. No earlier cases were relied on.",
+      "rule": {
+        "if": "mortgage_enforcement_suit and contractual_interest_rate_is_found_unfair_under_lending_protections",
+        "then": "fair_interest_rate_applied_to_post_decree_mortgage_amounts"
+      },
+      "predicates": {
+        "mortgage_enforcement_suit": "A creditor brings a proceeding to enforce a mortgage.",
+        "contractual_interest_rate_is_found_unfair_under_lending_protections": "The court finds that the contractual interest rate is not a fair rate under the applicable protections for borrowers."
+      },
+      "definition": "In a mortgage enforcement suit, when the contractual rate is found unfair under applicable borrower protections, a fair rate is applied to post-decree mortgage amounts."
+    }
+  ],
+  "seconds": 15.8
+}

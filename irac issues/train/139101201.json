@@ -1,0 +1,83 @@
+{
+  "doc_id": "139101201",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42040,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3955,
+    "prompt_tokens": 10654,
+    "total_tokens": 14609,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Delay in earlier recovery proceedings and failure to complete a settlement do not waive notice protections for a later secured-asset sale without knowing and intentional relinquishment of those rights.",
+      "material_facts": [
+        "The borrower challenged an earlier auction, but the order obtained did not prevent the auction from proceeding; it only prevented confirmation of a sale.",
+        "After a later bid was below the reduced reserve price, the borrower proposed a one-time settlement, which the bank accepted, but the borrower did not pay within the agreed time and sought extensions that the bank refused.",
+        "When the bank issued the notice for the later sale with less than the required notice period, the borrower promptly challenged that notice and then pursued the available statutory remedy.",
+        "The borrower did not expressly consent to the later sale on shortened notice, and the record showed no conduct amounting to intentional abandonment of the notice right."
+      ],
+      "conclusion": "The borrower did not waive the mandatory notice requirement for the later sale; the earlier litigation and failed settlement did not relieve the bank of its obligation to follow the required sale procedure.",
+      "legal_principle": "Waiver is the knowing and intentional relinquishment of a known right; mere inaction or delay is insufficient unless the circumstances support intentional abandonment or acquiescence. Whether waiver occurred depends on the facts of the individual case. The Court applied the principles discussed in State of Punjab v. Davinder Pal Singh Bhullar, including Manak Lal, Power Control Appliances v. Sumeet Machines, P. John Chandy & Co. v. John P. Thomas, and the authorities on intentional abandonment cited there. It also distinguished General Manager, Sri Siddeshwara Cooperative Bank Ltd. v. Ikbal, which recognized that procedural protections under Rule 9 may be waived by the party for whose benefit they exist, while holding that no such waiver was shown here.",
+      "rule": {
+        "if": "secured_asset_sale_proceeding and borrower_delayed_earlier_recovery_steps and borrower_failed_to_complete_settlement and borrower_did_not_consent_to_current_sale and borrower_promptly_challenged_current_notice",
+        "then": "borrower_did_not_waive_notice_protection"
+      },
+      "predicates": {
+        "secured_asset_sale_proceeding": "A creditor sought to recover a debt by selling property given as security.",
+        "borrower_delayed_earlier_recovery_steps": "The borrower took steps that delayed earlier attempts to sell the secured property.",
+        "borrower_failed_to_complete_settlement": "The borrower proposed a settlement but did not pay as agreed and sought further time.",
+        "borrower_did_not_consent_to_current_sale": "The borrower did not expressly agree to the later sale proceeding on the shortened notice.",
+        "borrower_promptly_challenged_current_notice": "The borrower challenged the notice for the later sale soon after it was issued."
+      },
+      "definition": "When a secured-asset sale follows earlier delay and a failed settlement, the borrower does not waive notice protection if the borrower neither consents to the current sale on shortened notice nor fails to challenge that notice promptly."
+    },
+    {
+      "legal_issue": "A secured-asset sale conducted without the mandatory notice period, and without a waiver of that requirement, is invalid.",
+      "material_facts": [
+        "The secured property was offered for public auction after the bank published notice providing less than 30 days before the sale.",
+        "The bank did not obtain a fresh valuation before the sale, and the High Court also identified defects in the vernacular-language publication and missing payment records.",
+        "The borrower had not waived the mandatory notice requirement for the sale."
+      ],
+      "conclusion": "The sale was null and void, and the order setting it aside was upheld.",
+      "legal_principle": "Rules 8(5) and 8(6) and 9(1) of the Security Interest (Enforcement) Rules, 2002 require compliance with the prescribed sale procedure, including the applicable 30-day notice period. The Court applied Mathew Varghese v. M. Amritha Kumar and J. Rajiv Subramaniyan v. M/s Pandiyas, which held that the statutory sale procedure is mandatory and that a sale made without compliance is null and void. Section 13(1) of the SARFAESI Act permits enforcement without court or tribunal intervention only in conformity with the Act; the Court also referred to Section 13(8) and Article 300A in explaining the protection of the borrower’s interest in the secured asset. Ikbal recognizes waiver of protections that benefit the borrower, but no waiver was established here.",
+      "rule": {
+        "if": "secured_asset_public_auction and sale_notice_period_was_short and borrower_did_not_waive_notice_protection",
+        "then": "secured_asset_sale_is_null_and_void"
+      },
+      "predicates": {
+        "secured_asset_public_auction": "A creditor put property given as security up for public auction to recover a debt.",
+        "sale_notice_period_was_short": "The creditor gave less than the required notice period before the auction.",
+        "borrower_did_not_waive_notice_protection": "The borrower did not knowingly and intentionally relinquish the right to the required notice."
+      },
+      "definition": "A public auction of secured property is invalid when the creditor gives less than the required notice and the borrower has not waived that protection."
+    },
+    {
+      "legal_issue": "When a secured-asset sale is set aside after the purchaser has paid the purchase price and property-related liabilities, restoration of the property and repayment to the purchaser may be made conditional on reimbursement.",
+      "material_facts": [
+        "The purchaser paid the sale consideration and amounts relating to registration, stamp duty, and liabilities encumbering the property.",
+        "The purchaser also paid later municipal liabilities and had used the property in the meantime.",
+        "The Court set aside the sale and directed that the borrower could recover the property by paying the bank’s dues and reimbursing the purchaser’s specified expenses and the liabilities paid on the borrower’s behalf.",
+        "The Court directed that if the borrower did not make the required payments, the bank could proceed with a fresh sale under the law and the purchaser was to be refunded the amounts spent, without interest because the purchaser had used the property."
+      ],
+      "conclusion": "The property would revert to the borrower if the borrower made the directed payments within the specified time; otherwise the bank could sell it again in accordance with law, and the purchaser was entitled to a refund without interest.",
+      "legal_principle": "In setting aside the sale, the Court fashioned conditional restitution to account for the purchaser’s payments, the borrower’s liabilities discharged by the purchaser, and the purchaser’s use of the property. The Court directed reimbursement of the purchaser and denied interest in light of that use.",
+      "rule": {
+        "if": "secured_asset_sale_appeal and sale_set_aside and purchaser_paid_sale_and_property_costs and purchaser_used_property",
+        "then": "property_restoration_and_purchaser_refund_are_conditioned_on_reimbursement"
+      },
+      "predicates": {
+        "secured_asset_sale_appeal": "A court reviewed an appeal concerning a creditor’s sale of secured property.",
+        "sale_set_aside": "The court set aside the completed sale of the secured property.",
+        "purchaser_paid_sale_and_property_costs": "The purchaser paid the purchase price and expenses or liabilities relating to the property.",
+        "purchaser_used_property": "The purchaser used the property after the sale."
+      },
+      "definition": "When an appellate court sets aside a secured-property sale after the purchaser has paid sale and property costs and used the property, restoration and refund are made conditional on reimbursement."
+    }
+  ],
+  "seconds": 26.1
+}

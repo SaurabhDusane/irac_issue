@@ -1,0 +1,58 @@
+{
+  "doc_id": "648753",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20194,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1252,
+    "prompt_tokens": 5366,
+    "total_tokens": 6618,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A land acquisition proceeding for a housing scheme may be initiated only after the scheme requiring the land has been framed.",
+      "material_facts": [
+        "The land was proposed to be acquired for the construction of houses by a statutory housing board.",
+        "No scheme containing the proposed acquisition had been framed when the acquisition notification was issued.",
+        "The governing scheme process required publicity, consideration of objections, and an opportunity for appeal before the scheme became enforceable.",
+        "The landowners challenged the notification, and the challenge remained pending through the proceedings before the Court."
+      ],
+      "conclusion": "The acquisition notification was premature because it was issued before the scheme had been framed, and the High Court was right to quash it.",
+      "legal_principle": "Under sections 39, 49, 53, 55, 56, 70 and 147 of the Madras State Housing Board Act, 1961, acquisition is a matter included in the housing scheme, and the Board can inspect and survey land before acquiring it. The scheme process provides for publication, objections, possible modification or abandonment, and appeal before the scheme becomes enforceable. Read with sections 4 and 5A of the Land Acquisition Act, 1894, this process requires the scheme to be framed before acquisition begins so landowners can meaningfully object to the suitability and public purpose of the proposed acquisition. Babu Barkya Thakur v. State of Bombay was distinguished.",
+      "rule": {
+        "if": "housing_board_acquisition and scheme_not_framed and acquisition_initiated",
+        "then": "acquisition_notification_is_premature"
+      },
+      "predicates": {
+        "housing_board_acquisition": "A public authority initiated land acquisition to obtain land for a housing scheme administered by a statutory housing board.",
+        "scheme_not_framed": "The authority had not framed the scheme for which the land was sought when it initiated acquisition.",
+        "acquisition_initiated": "The authority issued a notification or took another step to begin acquiring the land."
+      },
+      "definition": "When a housing board initiates acquisition before framing the scheme for which it needs the land, the acquisition notification is premature."
+    },
+    {
+      "legal_issue": "The rule requiring a housing scheme to be framed before acquisition does not permit concluded acquisition proceedings to be reopened, and is available only in proceedings still under challenge and awaiting decision.",
+      "material_facts": [
+        "The State raised concern that landowners might seek to reopen acquisitions that had already been completed without a previously framed scheme.",
+        "The Court clarified that the land acquisition proceedings to which its ruling could apply were those under challenge and still pending decision."
+      ],
+      "conclusion": "Concluded acquisition proceedings cannot be treated as void or reopened on the basis of this ruling; the ground is available only in acquisition proceedings that remain under challenge and pending decision.",
+      "legal_principle": "The Court limited the prospective application of its ruling on the timing of acquisition: the ground based on that ruling is available only in proceedings under challenge and still pending decision. A concluded acquisition proceeding cannot be condemned as void or ignored on that basis.",
+      "rule": {
+        "if": "land_acquisition_case and based_on_scheme_timing_rule and proceeding_concluded",
+        "then": "concluded_acquisition_cannot_be_reopened_under_this_rule"
+      },
+      "predicates": {
+        "land_acquisition_case": "A public authority conducted a proceeding to acquire land.",
+        "based_on_scheme_timing_rule": "A landowner relies on the requirement that the housing scheme be framed before acquisition begins.",
+        "proceeding_concluded": "The acquisition proceeding had been completed rather than remaining under challenge and pending decision."
+      },
+      "definition": "If a concluded land acquisition proceeding is challenged on the basis of the scheme-timing rule, it cannot be reopened under that rule."
+    }
+  ],
+  "seconds": 10.1
+}

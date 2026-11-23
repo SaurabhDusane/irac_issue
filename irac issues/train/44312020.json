@@ -1,0 +1,105 @@
+{
+  "doc_id": "44312020",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32117,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3258,
+    "prompt_tokens": 8027,
+    "total_tokens": 11285,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Sale expenses incurred to dispose of a non-cash asset are not deducted when its value is determined by the price it would fetch in the open market.",
+      "material_facts": [
+        "The assessment concerned shares and stocks valued using stock-exchange and broker quotations.",
+        "The taxpayer sought to deduct brokerage that would be payable if the shares and stocks were sold.",
+        "No rule prescribing a different valuation criterion or permitting deduction of those sale expenses was brought to the court’s attention."
+      ],
+      "conclusion": "The brokerage commission could not be deducted from the value of the shares and stocks.",
+      "legal_principle": "Under section 7(1) of the Wealth Tax Act, 1957, a non-cash asset is valued at the price it would fetch if sold in the open market on the valuation date, not at the net amount the owner would receive after sale expenses. The court relied on the similar language of section 36(1) of the Estate Duty Act and the absence there of a deduction for ordinary sale expenses, contrasting the express allowance in section 48 of that Act. It also relied on the reasoning in Duke of Buccleuch v. Inland Revenue Commissioners and the principle that tax liability is not adjusted on equitable grounds.",
+      "rule": {
+        "if": "wealth_tax_asset_valuation and non_cash_asset and open_market_fetch_price_is_the_valuation_basis and sale_expenses_would_be_incurred and no_specific_sale_cost_allowance",
+        "then": "sale_expenses_not_deducted"
+      },
+      "predicates": {
+        "wealth_tax_asset_valuation": "The proceeding determines the value of an asset for a wealth-tax assessment.",
+        "non_cash_asset": "The asset being valued is not cash.",
+        "open_market_fetch_price_is_the_valuation_basis": "The applicable valuation standard is the price the asset would fetch in an open-market sale.",
+        "sale_expenses_would_be_incurred": "The owner would incur expenses, such as brokerage, in making a sale.",
+        "no_specific_sale_cost_allowance": "No applicable rule provides for an allowance for those sale expenses."
+      },
+      "definition": "When a non-cash asset is valued for wealth tax by its open-market sale price and sale expenses would be incurred without a specific allowance for them, those expenses are not deducted."
+    },
+    {
+      "legal_issue": "Jewellery intended for personal use is excluded from wealth-tax computation under the personal-use exemption applicable to the assessment.",
+      "material_facts": [
+        "The taxpayer claimed that the jewellery was intended for his personal use and should be excluded from his wealth.",
+        "The claim that the jewellery was intended for personal use was not rejected by the assessing authority and was not controverted in the appeals.",
+        "The assessment concerned a period before the later amendment excluding jewellery from the personal-use exemption took effect."
+      ],
+      "conclusion": "The value of the jewellery intended for personal use was to be excluded from the computation of net wealth.",
+      "legal_principle": "Under sections 5(1)(viii) and 5(1)(xv) of the Wealth Tax Act, 1957, the general provision concerning jewellery did not prevent jewellery intended for the taxpayer’s personal use from falling within the personal-use exemption in section 5(1)(viii). The court applied Commissioner of Wealth Tax, Gujarat v. Arundhati Bal-Krishna. The later amendment excluding jewellery from that exemption did not govern this earlier assessment.",
+      "rule": {
+        "if": "wealth_tax_assessment and jewellery_is_held and jewellery_is_intended_for_personal_use and personal_use_claim_is_uncontroverted and assessment_precedes_exclusion_of_jewellery",
+        "then": "personal_use_jewellery_excluded_from_wealth"
+      },
+      "predicates": {
+        "wealth_tax_assessment": "The proceeding determines a person’s wealth for a wealth-tax assessment.",
+        "jewellery_is_held": "The person holds jewellery whose value is under consideration.",
+        "jewellery_is_intended_for_personal_use": "The jewellery is intended for the person’s personal use.",
+        "personal_use_claim_is_uncontroverted": "The claim that the jewellery is intended for personal use has not been rejected or controverted in the proceedings.",
+        "assessment_precedes_exclusion_of_jewellery": "The assessment concerns a period before jewellery was excluded from the personal-use exemption."
+      },
+      "definition": "Jewellery held for personal use is excluded from wealth when the assessment falls under the personal-use exemption, the personal-use claim is uncontroverted, and the assessment predates the exclusion of jewellery from that exemption."
+    },
+    {
+      "legal_issue": "A statutory right to compensation for an estate transferred to the State is an asset for wealth-tax purposes even if payment is deferred or the compensation has not been quantified.",
+      "material_facts": [
+        "The taxpayer’s estate vested in the State under legislation that provided for compensation to the former proprietor.",
+        "The taxpayer had a right to receive compensation, although payment could be deferred and spread over time.",
+        "The compensation was payable under a statutory scheme, and the State’s liability to pay it was not denied."
+      ],
+      "conclusion": "The right to receive compensation was an asset to be included in the taxpayer’s wealth; deferred payment or incomplete quantification did not remove it from the definition of assets.",
+      "legal_principle": "Section 2(e) of the Wealth Tax Act, 1957 defines assets broadly to include property of every description. Under sections 3 and 4 of the Bihar Land Reforms Act, 1950, vesting of the estate divested the proprietor and triggered the right to compensation; sections 19, 23, 24, 28 and 32 provided for assessment and payment of that compensation. The right was property even if payment was deferred or the amount had not yet been calculated. The court relied on Ahemed G.H. Ariff v. Commissioner of Wealth Tax for the broad meaning of property, and approved the approach in Maharajkumar Kamal Singh v. Commissioner of Wealth Tax and other High Court decisions concerning compensation for abolished estates.",
+      "rule": {
+        "if": "wealth_tax_assessment and estate_vests_in_state and statute_confers_compensation_right_on_vesting and (compensation_payment_is_deferred or compensation_amount_is_unquantified)",
+        "then": "statutory_compensation_right_is_an_asset"
+      },
+      "predicates": {
+        "wealth_tax_assessment": "The proceeding determines a person’s wealth for a wealth-tax assessment.",
+        "estate_vests_in_state": "The person’s estate is transferred to and vests in the State.",
+        "statute_confers_compensation_right_on_vesting": "A statutory scheme gives the former holder a right to compensation when the estate vests in the State.",
+        "compensation_payment_is_deferred": "Payment of the compensation is postponed or spread over time.",
+        "compensation_amount_is_unquantified": "The amount of compensation has not yet been calculated or fixed."
+      },
+      "definition": "A statutory right to compensation is an asset when an estate vests in the State and the statute confers that right, even if payment is deferred or the amount remains unquantified."
+    },
+    {
+      "legal_issue": "An appellate court does not disturb a tribunal’s valuation of compensation when it applies a general valuation estimate and no cogent ground for changing that estimate is shown.",
+      "material_facts": [
+        "The tribunal noted that compensation payable under the land-reform scheme was generally valued for wealth-tax purposes at 65 per cent of the compensation determined.",
+        "The taxpayer argued that the compensation should instead be valued at 50 per cent.",
+        "The Supreme Court found no cogent ground to interfere with the tribunal’s valuation."
+      ],
+      "conclusion": "The tribunal’s valuation of the compensation at 65 per cent of the determined compensation was left undisturbed.",
+      "legal_principle": "The value of the compensation right was a matter of valuation, and the tribunal had generally estimated such rights at 65 per cent of the determined compensation. The Supreme Court found no cogent basis to substitute the taxpayer’s proposed estimate. No separate statutory valuation rule or earlier case was relied on for this conclusion.",
+      "rule": {
+        "if": "wealth_tax_appeal and tribunal_used_a_general_valuation_estimate and appellant_proposed_a_different_estimate and no_cogent_ground_supports_interference",
+        "then": "tribunal_valuation_left_undisturbed"
+      },
+      "predicates": {
+        "wealth_tax_appeal": "The proceeding is an appeal concerning valuation in a wealth-tax assessment.",
+        "tribunal_used_a_general_valuation_estimate": "The tribunal valued the asset by applying an estimate generally used for assets of that kind.",
+        "appellant_proposed_a_different_estimate": "The appellant sought a different valuation.",
+        "no_cogent_ground_supports_interference": "No cogent basis was shown for the appellate court to alter the tribunal’s estimate."
+      },
+      "definition": "In a wealth-tax appeal, a tribunal’s general valuation estimate is left undisturbed when a different estimate is proposed but no cogent ground for interference is shown."
+    }
+  ],
+  "seconds": 79.2
+}

@@ -1,0 +1,97 @@
+{
+  "doc_id": "193490912",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32584,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4048,
+    "prompt_tokens": 8162,
+    "total_tokens": 12210,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil suit instituted and pending before the Wakf Act commenced remains within the jurisdiction of the civil court even when its subject matter includes questions otherwise assigned to the Wakf Tribunal.",
+      "material_facts": [
+        "The suit was instituted in a civil court before the relevant Wakf Act commenced and was still pending when the Act commenced.",
+        "The suit concerned property claimed to be wakf property and sought relief including possession, accounts, and cancellation of a sale deed.",
+        "The trial had progressed to the stage of final hearing before the plaintiffs sought return of the plaint on the ground that the civil court lacked jurisdiction."
+      ],
+      "conclusion": "The pre-existing suit could continue in the civil court; the orders returning the plaint were set aside, and the civil court was directed to decide the suit.",
+      "legal_principle": "Under Sections 7(5) and 6(5) of the Rajasthan Wakf Act, 1995, proceedings already instituted in a civil court before the Act commenced are saved from transfer to the Tribunal. Section 85 bars civil-court jurisdiction only over matters that the Act requires the Tribunal to determine. Sardar Khan v. Syed Nazmul Hasan (Seth) held that proceedings instituted before the Act commenced remain within civil-court jurisdiction; Ramesh Gobindram v. Sugra Humayun Mirza Wakf confirms that the Tribunal’s jurisdiction is limited to matters assigned to it by the Act.",
+      "rule": {
+        "if": "wakf_related_civil_suit and suit_instituted_before_enactment and suit_pending_at_enactment",
+        "then": "civil_court_retains_jurisdiction"
+      },
+      "predicates": {
+        "wakf_related_civil_suit": "A civil-court suit concerns property or a dispute claimed to relate to a wakf.",
+        "suit_instituted_before_enactment": "The suit was instituted before the relevant enactment commenced.",
+        "suit_pending_at_enactment": "The suit remained pending when the relevant enactment commenced."
+      },
+      "definition": "When a wakf-related civil suit was instituted before the enactment and remained pending when it commenced, the civil court retains jurisdiction."
+    },
+    {
+      "legal_issue": "The Wakf Tribunal has exclusive jurisdiction over disputes about whether property specified in a published wakf list is wakf property and whether a listed wakf is Shia or Sunni, subject to the saving for earlier pending civil proceedings.",
+      "material_facts": [
+        "The suit raised questions about whether the disputed property was wakf property, although the respondents asserted that its wakf status was not disputed.",
+        "The Court considered the statutory scheme governing published lists of wakfs and the Tribunal’s authority to determine disputes about entries in those lists.",
+        "The suit had been instituted before the relevant Act commenced, so the statutory saving applied to this case."
+      ],
+      "conclusion": "For a proceeding not saved as an earlier pending civil suit, the Tribunal has exclusive jurisdiction to decide the specified list-related questions; the civil court cannot decide them.",
+      "legal_principle": "Sections 6(1), 6(5), 7(1), 7(5), and 85 of the Rajasthan Wakf Act, 1995 assign the specified questions about listed property and the sect of a listed wakf to the Tribunal and bar civil-court proceedings on those questions, while preserving certain proceedings already pending in civil court. Sardar Khan v. Syed Nazmul Hasan (Seth) and Ramesh Gobindram v. Sugra Humayun Mirza Wakf support this limited, question-specific allocation of jurisdiction.",
+      "rule": {
+        "if": "wakf_related_proceeding and listed_property_status_question and not preexisting_civil_suit",
+        "then": "tribunal_has_exclusive_jurisdiction"
+      },
+      "predicates": {
+        "wakf_related_proceeding": "A proceeding concerns a wakf or property claimed to be wakf property.",
+        "listed_property_status_question": "The dispute asks whether property specified in a published wakf list is wakf property or whether a listed wakf belongs to one of the two specified sects.",
+        "preexisting_civil_suit": "The proceeding is a civil-court suit instituted before the relevant enactment commenced and saved as an earlier pending suit."
+      },
+      "definition": "For a wakf-related proceeding that raises a listed-property status question, the Tribunal has exclusive jurisdiction unless the proceeding is a saved earlier civil suit."
+    },
+    {
+      "legal_issue": "A civil court retains jurisdiction over wakf-related civil claims that the Wakf Act does not require the Tribunal to determine, including claims for possession, rent, or cancellation of a sale deed.",
+      "material_facts": [
+        "The suit sought possession, rent, and cancellation of a sale deed concerning property claimed to be wakf property.",
+        "The Court observed that the Act did not assign cancellation of the sale deed to the Tribunal and that possession and the validity of the sale deed were inextricably linked.",
+        "The Court relied on the distinction between matters specifically assigned to the Tribunal and other civil disputes relating to wakf property."
+      ],
+      "conclusion": "Claims for possession, rent, and cancellation of the sale deed fall within the civil court’s jurisdiction rather than the Tribunal’s exclusive jurisdiction.",
+      "legal_principle": "Section 85 of the Rajasthan Wakf Act, 1995 excludes civil-court jurisdiction only for matters that the Act requires the Tribunal to determine; it does not exclude jurisdiction over every dispute relating to wakf property. Ramesh Gobindram v. Sugra Humayun Mirza Wakf held that eviction disputes not assigned to the Tribunal remain for civil courts. The Court also referred to the presumption in favour of civil-court jurisdiction and Rajasthan SRTC v. Bal Mukund Bairwa.",
+      "rule": {
+        "if": "wakf_related_civil_suit and ordinary_civil_relief_claim and not matter_assigned_to_tribunal",
+        "then": "civil_court_has_jurisdiction"
+      },
+      "predicates": {
+        "wakf_related_civil_suit": "A civil-court suit concerns a wakf or property claimed to be wakf property.",
+        "ordinary_civil_relief_claim": "The suit seeks an ordinary civil remedy such as possession, rent, or cancellation of a transaction affecting the property.",
+        "matter_assigned_to_tribunal": "The Act requires the Tribunal to determine the particular matter in dispute."
+      },
+      "definition": "A civil court has jurisdiction over a wakf-related suit seeking ordinary civil relief when the Act does not assign the disputed matter to the Tribunal."
+    },
+    {
+      "legal_issue": "Disputes seeking removal of wakf trustees or rendition of accounts fall within the Wakf Tribunal’s jurisdiction, subject to the saving for earlier pending civil suits.",
+      "material_facts": [
+        "The suit included claims for removal of trustees and rendition of accounts.",
+        "The Court stated that those claims would fall within the Tribunal’s domain, while separately holding that this suit remained in civil court because it had been instituted before the Act commenced."
+      ],
+      "conclusion": "Claims for removal of trustees and rendition of accounts are for the Tribunal when they arise in a proceeding not saved as an earlier pending civil suit.",
+      "legal_principle": "Sections 7 and 85 of the Rajasthan Wakf Act, 1995 govern the Tribunal’s jurisdiction over matters assigned to it by the Act and the corresponding exclusion of civil-court jurisdiction. Ramesh Gobindram v. Sugra Humayun Mirza Wakf explains that the Tribunal’s jurisdiction is confined to matters provided for under the Act; the saving for earlier pending suits under Section 7(5) preserves civil-court jurisdiction over such proceedings.",
+      "rule": {
+        "if": "wakf_related_proceeding and trustee_removal_or_accounts_claim and not preexisting_civil_suit",
+        "then": "tribunal_has_jurisdiction"
+      },
+      "predicates": {
+        "wakf_related_proceeding": "A proceeding concerns a wakf or property claimed to be wakf property.",
+        "trustee_removal_or_accounts_claim": "The claim seeks removal of a wakf trustee or rendition of accounts relating to the wakf.",
+        "preexisting_civil_suit": "The proceeding is a civil-court suit instituted before the relevant enactment commenced and saved as an earlier pending suit."
+      },
+      "definition": "In a wakf-related proceeding, the Tribunal has jurisdiction over trustee-removal or accounts claims unless the proceeding is a saved earlier civil suit."
+    }
+  ],
+  "seconds": 25.7
+}

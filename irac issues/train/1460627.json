@@ -1,0 +1,117 @@
+{
+  "doc_id": "1460627",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30674,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3016,
+    "prompt_tokens": 8187,
+    "total_tokens": 11203,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Interest may be allowed on a displaced debtor’s debt for the relevant pre-commencement period when the debtor’s paying capacity supports the award.",
+      "material_facts": [
+        "The debtor challenged the allowance of interest after the specified date.",
+        "The court found, relying on the debtor’s own statement and supporting evidence, that his paying capacity far exceeded the debts due from him.",
+        "The High Court had allowed interest at the applicable maximum simple rate for the period before the Act commenced in the relevant territory."
+      ],
+      "conclusion": "The court upheld the interest award because the debtor’s paying capacity made it just and proper to allow interest.",
+      "legal_principle": "Under section 29(1)(b) of the Displaced Persons (Debt Adjustment) Act, 1951, a Tribunal may allow simple interest for the specified period at a rate not exceeding four per cent per annum if it considers that just and proper after taking account of the debtor’s paying capacity, as defined in section 32. No earlier cases were relied on for this ruling.",
+      "rule": {
+        "if": "displaced_debt_adjustment_proceeding and debtor_paying_capacity_exceeds_debt",
+        "then": "interest_award_upheld"
+      },
+      "predicates": {
+        "displaced_debt_adjustment_proceeding": "A debtor sought adjustment of a debt under a proceeding for adjusting displaced persons’ debts.",
+        "debtor_paying_capacity_exceeds_debt": "The debtor’s assets and likely income showed a paying capacity far exceeding the debt due."
+      },
+      "definition": "When a displaced debtor seeks debt adjustment and the debtor’s paying capacity far exceeds the debt, the interest award is upheld."
+    },
+    {
+      "legal_issue": "A debt is not a renewal when an acknowledgement or confirmation of indebtedness includes a further advance rather than solely renewing an existing loan or interest liability.",
+      "material_facts": [
+        "The debtor disputed the High Court’s interpretation of renewal in the definition of debt.",
+        "The acknowledgements or confirmations at issue included the existing loan and interest and further advances.",
+        "The High Court had identified promissory notes representing the debts in the two accounts, and the Supreme Court upheld its determination of the debts."
+      ],
+      "conclusion": "The court held that an acknowledgement or confirmation including a further advance does not fall within the expression renewal, which applies only to liability solely by way of renewal; it upheld the High Court’s determination of the debts.",
+      "legal_principle": "Section 2(6) of the Displaced Persons (Debt Adjustment) Act, 1951 includes certain pre-commencement liabilities based solely on renewal of specified liabilities. Where a loan is renewed, the proviso treats the original loan, rather than the renewed amount, as the extent of the debt. An acknowledgement or confirmation that also includes a further advance is not solely by way of renewal. No earlier cases were relied on for this ruling.",
+      "rule": {
+        "if": "displaced_debt_adjustment_proceeding and acknowledgment_includes_further_advance",
+        "then": "acknowledgment_is_not_treated_as_renewal"
+      },
+      "predicates": {
+        "displaced_debt_adjustment_proceeding": "A debtor sought adjustment of a debt under a proceeding for adjusting displaced persons’ debts.",
+        "acknowledgment_includes_further_advance": "A creditor and debtor recorded an acknowledgement or confirmation of indebtedness that included a further advance as well as existing loan or interest liability."
+      },
+      "definition": "In a displaced-debt adjustment proceeding, an acknowledgement that includes a further advance is not treated as a renewal."
+    },
+    {
+      "legal_issue": "Apportionment of a debt between joint debtors is not required when the liability was undertaken solely by the debtor seeking adjustment.",
+      "material_facts": [
+        "The debtor argued that the liabilities on both accounts were joint and should be apportioned.",
+        "The High Court found from the evidence that the debtor alone undertook both liabilities.",
+        "The debtor’s own petition stated that he had opened the cash credit account and taken the loan against the mortgaged securities.",
+        "The Supreme Court found no reason to disturb the High Court’s finding and did not decide whether section 43 of the Indian Contract Act applied."
+      ],
+      "conclusion": "Because the liabilities were solely those of the debtor, apportionment under section 22 did not arise.",
+      "legal_principle": "Section 22 of the Displaced Persons (Debt Adjustment) Act, 1951 provides for apportionment where a debt is due from a displaced person jointly with another person. The court found it unnecessary to decide whether section 43 of the Indian Contract Act applied, assuming in the debtor’s favour that it did not; the debtor’s sole undertaking of the liabilities meant there was no joint debt to apportion. No earlier cases were relied on for this ruling.",
+      "rule": {
+        "if": "displaced_debt_adjustment_proceeding and debtor_undertook_liability_solely",
+        "then": "joint_debt_apportionment_not_required"
+      },
+      "predicates": {
+        "displaced_debt_adjustment_proceeding": "A debtor sought adjustment of a debt under a proceeding for adjusting displaced persons’ debts.",
+        "debtor_undertook_liability_solely": "The debtor’s own statements and the evidence showed that the debtor, rather than joint debtors, undertook the liability."
+      },
+      "definition": "When a debtor seeking debt adjustment alone undertook the liability, apportionment between joint debtors is not required."
+    },
+    {
+      "legal_issue": "Life insurance policies absolutely assigned to a creditor and held by it are movable property subject to the statutory rules for debts secured by pledged movable property.",
+      "material_facts": [
+        "The debtor had absolutely assigned the life insurance policies to the bank.",
+        "The policies remained in the bank’s possession.",
+        "The bank realised amounts under the policies, and the debtor sought a refund.",
+        "The court held that the policies were movable property and that the debtor was not entitled to a refund unless the realisation exceeded the debt due."
+      ],
+      "conclusion": "The court held that section 17 applied to the policies and that the debtor was not entitled to a refund unless the amount realised exceeded the debt due.",
+      "legal_principle": "Section 17 of the Displaced Persons (Debt Adjustment) Act, 1951 regulates debts secured by pledged movable property, including the creditor’s entitlement to realise the security and the debtor’s entitlement to any surplus. Under section 3(36) of the General Clauses Act, 1897, movable property includes property of every description except immovable property; section 3(26) defines immovable property. The court relied on the policies’ movable character, their absolute assignment, and the creditor’s possession. No earlier cases were relied on for this ruling.",
+      "rule": {
+        "if": "displaced_debt_adjustment_proceeding and life_policies_are_movable_property and policies_absolutely_assigned_to_creditor and creditor_possessed_policies",
+        "then": "refund_due_only_if_realization_exceeds_debt"
+      },
+      "predicates": {
+        "displaced_debt_adjustment_proceeding": "A debtor sought adjustment of a debt under a proceeding for adjusting displaced persons’ debts.",
+        "life_policies_are_movable_property": "The debtor’s life insurance policies were property other than immovable property.",
+        "policies_absolutely_assigned_to_creditor": "The debtor absolutely assigned the life insurance policies to the creditor.",
+        "creditor_possessed_policies": "The creditor held the assigned policies."
+      },
+      "definition": "When life policies held by a creditor are movable property and were absolutely assigned to it, a debtor seeking debt adjustment is entitled to a refund only if realisation exceeds the debt."
+    },
+    {
+      "legal_issue": "An amount received by a creditor from income of mortgaged property must be credited toward the debtor’s determined debt when the creditor agrees to the credit.",
+      "material_facts": [
+        "The debtor sought credit for an amount received by the bank from income of the mortgaged properties.",
+        "The bank, through counsel, did not object to the amount being credited toward the debt as determined by the High Court.",
+        "The court directed that the amount be credited."
+      ],
+      "conclusion": "The court directed that the amount received from the property income be credited toward the debt determined by the High Court.",
+      "legal_principle": "The court made the credit direction on the creditor’s stated lack of objection; it did not set out a separate statutory provision or earlier case as the basis for this direction.",
+      "rule": {
+        "if": "appeal_from_debt_adjustment_determination and creditor_concedes_credit_for_property_income",
+        "then": "property_income_amount_credited_to_debt"
+      },
+      "predicates": {
+        "appeal_from_debt_adjustment_determination": "A party appealed a determination of debt in a proceeding for adjusting a displaced debtor’s debts.",
+        "creditor_concedes_credit_for_property_income": "The creditor stated that it did not object to an amount received from income of mortgaged property being credited toward the debt."
+      },
+      "definition": "In an appeal from a debt-adjustment determination, an amount received from property income is credited toward the debt when the creditor agrees to that credit."
+    }
+  ],
+  "seconds": 79.6
+}

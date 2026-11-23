@@ -1,0 +1,80 @@
+{
+  "doc_id": "108728217",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24565,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2756,
+    "prompt_tokens": 6267,
+    "total_tokens": 9023,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A consent decree for eviction on the ground of rent default is enforceable when the tenant’s default establishes a statutory ground for eviction.",
+      "material_facts": [
+        "The tenant acknowledged in a signed compromise that rent arrears were due and agreed to pay them within six months.",
+        "The compromise decree provided that the landlord could recover possession if the tenant failed to comply with its conditions.",
+        "The tenant did not pay the arrears within the agreed six-month period; the landlord sought possession under the decree."
+      ],
+      "conclusion": "The eviction provision in the compromise decree was not void: the acknowledged rent default supplied a statutory ground for eviction. The landlord’s agreement barred recovery of possession during the six-month period, but did not prevent enforcement after the tenant failed to pay within that period.",
+      "legal_principle": "Under section 12(1)(a) of the Madhya Pradesh Accommodation Control Act, a landlord may seek eviction where the tenant has not paid or tendered legally recoverable arrears within two months after service of a demand notice. Under Smt. Nai Bahu v. Lala Ramnarayan (1978) 1 SCC 58, consent alone cannot support an eviction decree where eviction is restricted by statute; a statutory ground rendering the tenant liable to eviction must exist when the consent decree is passed. Here, the tenant’s acknowledgment of arrears established such a ground.",
+      "rule": {
+        "if": "eviction_suit_proceeding and consent_eviction_decree and tenant_rent_default_established and tenant_failed_to_meet_agreed_deadline",
+        "then": "consent_eviction_decree_enforceable"
+      },
+      "predicates": {
+        "eviction_suit_proceeding": "A landlord brought a proceeding seeking eviction of a tenant.",
+        "consent_eviction_decree": "The court entered a decree on terms agreed to by the landlord and tenant, providing for eviction if the tenant failed to comply.",
+        "tenant_rent_default_established": "The tenant’s failure to pay rent was established as a ground making the tenant liable to eviction.",
+        "tenant_failed_to_meet_agreed_deadline": "The tenant did not perform the agreed obligation within the time allowed by the compromise."
+      },
+      "definition": "When an eviction proceeding produces a consent decree, the decree is enforceable if a rent default making the tenant liable to eviction was established and the tenant failed to meet the agreed deadline."
+    },
+    {
+      "legal_issue": "A tenant’s payment of rent during execution of an eviction decree does not attract the statutory protection against eviction that applies during the suit or a tenant’s appeal or other proceeding against the eviction decree.",
+      "material_facts": [
+        "The suit sought eviction on the ground of rent arrears and resulted in a compromise decree providing for possession if the tenant failed to pay within six months.",
+        "The tenant did not pay within that period and had been adjudged in default under the decree.",
+        "The tenant deposited the amount during execution, after the agreed payment period had expired."
+      ],
+      "conclusion": "The tenant’s payment during execution did not protect the tenant from eviction or prevent enforcement of the decree.",
+      "legal_principle": "Sections 13(1) and 13(5) of the Madhya Pradesh Accommodation Control Act provide protection where the tenant deposits or pays rent during the suit, or in an appeal or other proceeding by the tenant against an eviction decree or order, as required by section 13. Section 13 does not apply to execution proceedings. Reading it to permit a tenant already adjudged in default to defeat an eviction decree by paying during execution would be inconsistent with section 12(1)(a).",
+      "rule": {
+        "if": "eviction_decree_execution and tenant_paid_after_decree_during_execution and tenant_already_adjudged_in_default",
+        "then": "execution_payment_does_not_prevent_eviction"
+      },
+      "predicates": {
+        "eviction_decree_execution": "A landlord is seeking to enforce a decree for eviction through execution proceedings.",
+        "tenant_paid_after_decree_during_execution": "The tenant paid or deposited the rent only after the decree, while it was being executed.",
+        "tenant_already_adjudged_in_default": "The tenant had already been found liable for rent default under the eviction decree."
+      },
+      "definition": "If a tenant already adjudged in default pays only during execution of an eviction decree, that payment does not prevent eviction."
+    },
+    {
+      "legal_issue": "An executing court cannot extend a deadline fixed by agreement in a compromise decree, and an unchallenged order doing so cannot modify the decree or bar its enforcement.",
+      "material_facts": [
+        "The compromise decree required payment within a period agreed by the parties, rather than a period fixed by the court for performing an act prescribed or allowed by the Code of Civil Procedure.",
+        "During execution, the executing court granted the tenant additional time to deposit the balance of the arrears.",
+        "The landlord did not challenge that extension order, and the High Court treated this as acquiescence."
+      ],
+      "conclusion": "The executing court’s extension of the agreed deadline was beyond its jurisdiction and a nullity. The landlord’s failure to challenge that order did not modify the decree or bar recovery of possession.",
+      "legal_principle": "Section 148 of the Code of Civil Procedure permits a court to enlarge a period fixed or granted by the court for doing an act prescribed or allowed by that Code; it does not authorize enlargement of a time limit agreed by the parties in a compromise decree. Hukumchand v. Bansilal, AIR 1968 SC 86, supports that limitation. An executing court cannot go behind or modify the decree and must execute it as it stands, as stated in Deepa Bhargava v. Mahesh Bhargava (2009) 2 SCC 294. A void order creates no legal rights or obligations.",
+      "rule": {
+        "if": "decree_execution and deadline_set_by_party_agreement and execution_court_extended_agreed_deadline and extension_order_not_challenged",
+        "then": "void_extension_does_not_modify_decree_or_bar_enforcement"
+      },
+      "predicates": {
+        "decree_execution": "A court is being asked to enforce a decree through execution proceedings.",
+        "deadline_set_by_party_agreement": "The deadline for performance in the decree was fixed by agreement between the parties, not by the court.",
+        "execution_court_extended_agreed_deadline": "The court conducting execution gave additional time to perform the agreed obligation.",
+        "extension_order_not_challenged": "The party seeking enforcement did not challenge the order granting additional time."
+      },
+      "definition": "An unchallenged extension of a deadline agreed by the parties, granted by a court during execution, does not change the decree or prevent its enforcement."
+    }
+  ],
+  "seconds": 18.9
+}

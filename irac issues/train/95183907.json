@@ -1,0 +1,85 @@
+{
+  "doc_id": "95183907",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 48181,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3108,
+    "prompt_tokens": 11554,
+    "total_tokens": 14662,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A pending challenge to related legislation or a notification does not require deferring an appeal when no order staying its operation has been made.",
+      "material_facts": [
+        "A challenge to the related legislation was pending in the High Court but had not been pursued.",
+        "No interim order staying the operation of the legislation or the notification had been placed on record.",
+        "The appellants sought to defer the appeals until the pending writ petitions were decided."
+      ],
+      "conclusion": "The request to defer the appeals was rejected, and the Court proceeded to hear them.",
+      "legal_principle": "The Court relied on the absence of any interim stay and on its earlier order declining to permit an amendment to the appeal while leaving the appellants free to challenge the notification in the High Court. A pending challenge, without a stay, did not prevent the Court from deciding the appeals.",
+      "rule": {
+        "if": "appellate_proceeding and related_challenge_pending and not operation_stayed",
+        "then": "appeal_heard_without_deferral"
+      },
+      "predicates": {
+        "appellate_proceeding": "The matter is an appeal seeking review of a lower court's decision.",
+        "related_challenge_pending": "A challenge to related legislation or a notification remains pending in another proceeding.",
+        "operation_stayed": "A court has ordered that the legislation or notification must not operate while the challenge is pending."
+      },
+      "definition": "When an appeal is before the court and a related challenge is pending without an order staying operation, the appeal is heard without waiting for that challenge to conclude."
+    },
+    {
+      "legal_issue": "Construction and non-cultivation use of land within a validly declared protected archaeological area require the prescribed government permission.",
+      "material_facts": [
+        "A final notification declared the area containing the appellants' lands to be a protected area, and the notification's schedule and map covered those lands.",
+        "The Court found sufficient material to establish the area's archaeological significance and held that protected areas need not be linked to the existence of a protected monument.",
+        "After the notification, the appellants built structures and used their lands for hotels, restaurants, and guest houses.",
+        "The appellants had not obtained permission from the State Government for that construction and non-cultivation use; local panchayat licences did not provide the required authority."
+      ],
+      "conclusion": "The construction and commercial use of the land violated the restrictions governing protected areas.",
+      "legal_principle": "Sections 2(3) and 2(9) of the Mysore Ancient and Historical Monuments and Archaeological Sites and Remains Act, 1961 define archaeological sites and remains and protected areas separately from ancient monuments. Under Sections 19(1), 19(3), and 19(4), a final notification declaring a protected area is conclusive evidence of that status unless withdrawn. Section 20(1) bars construction and use of protected land without government permission, except for the specified limited cultivation use. The Court found no earlier case necessary to its decision.",
+      "rule": {
+        "if": "appeal_from_writ_dismissal and protected_area_declaration_covers_land and non_cultivation_construction_or_use and not required_government_permission",
+        "then": "construction_and_use_unlawful"
+      },
+      "predicates": {
+        "appeal_from_writ_dismissal": "The proceeding is an appeal from the dismissal of a writ petition challenging action against the construction or use.",
+        "protected_area_declaration_covers_land": "An operative declaration of protected-area status includes the land in question.",
+        "non_cultivation_construction_or_use": "The landholder constructs buildings or uses the land for a purpose other than the permitted cultivation use.",
+        "required_government_permission": "The landholder has obtained the required permission from the government for the construction or non-cultivation use."
+      },
+      "definition": "If a landholder appeals the dismissal of a writ petition, the land is covered by an operative protected-area declaration, and construction or non-cultivation use occurs without the required government permission, the construction and use are unlawful."
+    },
+    {
+      "legal_issue": "A heritage-area authority may act against construction that remains illegal under an earlier protection regime when the later heritage regime continues the same conservation purpose and applicable development restrictions remain in force.",
+      "material_facts": [
+        "The constructions were illegal under the earlier protected-area regime before the later heritage statute came into force.",
+        "The later statute established an authority with functions directed at conserving the heritage area and preventing uncontrolled development.",
+        "The later statute's scheduled heritage-area boundaries incorporated the area covered by the earlier protected-area notification.",
+        "Published development controls under the later regime prohibited development in the relevant type of sensitive area.",
+        "The authority issued notices seeking removal of the illegal structures and directed local authorities not to renew the commercial licences."
+      ],
+      "conclusion": "The heritage-area authority had the authority to proceed with demolition of the illegal constructions; the absence of a separate notification under the later statute did not make the earlier restrictions unenforceable.",
+      "legal_principle": "The Court read the 1961 Act and the Hampi World Heritage Area Management Authority Act, 2002 as complementary parts of a continuing conservation scheme, not as isolated regimes. It relied on the later Act's preamble and Sections 3 and 11, the incorporation of the earlier protected area into the later Act's scheduled heritage area, and Sections 14(1) and 14(6). The Court held that Section 14(1) was an overarching power to specify development controls, not a condition that nullified an earlier notification serving the same purpose; in any event, the published Master Plan 2021 and its Zonal Regulations met the notification requirement in this case. No earlier case was relied on.",
+      "rule": {
+        "if": "appeal_from_writ_dismissal and construction_illegal_under_prior_protection_regime and later_authority_has_conservation_mandate and integrated_conservation_scheme and (prior_restriction_remains_in_force or later_development_controls_published)",
+        "then": "heritage_authority_may_proceed_with_removal"
+      },
+      "predicates": {
+        "appeal_from_writ_dismissal": "The proceeding is an appeal from the dismissal of a writ petition challenging action against construction or use.",
+        "construction_illegal_under_prior_protection_regime": "The construction violates an earlier, applicable regime protecting the area.",
+        "later_authority_has_conservation_mandate": "A body established under later legislation is charged with conserving the relevant heritage area and controlling development there.",
+        "integrated_conservation_scheme": "The earlier and later regimes cover related heritage interests and pursue a continuing common conservation purpose.",
+        "prior_restriction_remains_in_force": "An applicable restriction under the earlier regime has not been withdrawn or stayed.",
+        "later_development_controls_published": "Development controls under the later regime have been officially published and apply to the relevant land."
+      },
+      "definition": "When an appeal concerns construction illegal under an earlier protection regime, a later conservation authority acts within an integrated scheme, and either the earlier restriction remains in force or later development controls have been published, the authority may proceed with removal."
+    }
+  ],
+  "seconds": 18.5
+}

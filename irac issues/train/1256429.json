@@ -1,0 +1,100 @@
+{
+  "doc_id": "1256429",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26034,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2305,
+    "prompt_tokens": 6855,
+    "total_tokens": 9160,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A renewal application is not timely merely because it bears a date within the required filing period when its dispatch on that date is disputed and unsupported by evidence.",
+      "material_facts": [
+        "The lease was due to expire on March 22, 1962, and the renewal application was received on October 9, 1961, after the required six-month lead time.",
+        "The application bore the date September 20, 1961, and the company alleged that it had been sent on that date.",
+        "The government disputed the alleged dispatch date, and the company produced no dispatch record or other evidence establishing when the application was sent."
+      ],
+      "conclusion": "The company did not establish that the application was made within the prescribed time, so the application was time-barred.",
+      "legal_principle": "For the purpose of the filing deadline, the Court assumed that an application is made when it is sent to the government, rather than when it is received. A date written on an application does not establish that it was sent on that date where dispatch is disputed and the applicant provides no supporting evidence.",
+      "rule": {
+        "if": "renewal_application_proceeding and application_received_after_filing_deadline and claimed_timely_dispatch_disputed and dispatch_date_unsupported",
+        "then": "renewal_application_is_out_of_time"
+      },
+      "predicates": {
+        "renewal_application_proceeding": "The proceeding concerns an application to renew a lease.",
+        "application_received_after_filing_deadline": "The government received the application after the required filing period had expired.",
+        "claimed_timely_dispatch_disputed": "The applicant claimed it sent the application within the filing period, and the government disputed that claim.",
+        "dispatch_date_unsupported": "The applicant provided no dispatch record or other evidence establishing that it sent the application on the claimed date."
+      },
+      "definition": "When a renewal application is received after the filing deadline and a disputed claim of timely dispatch is unsupported, the application is out of time."
+    },
+    {
+      "legal_issue": "A deadline for applying to renew a mining lease is mandatory when it serves the orderly administration and timely development of mineral resources.",
+      "material_facts": [
+        "The applicable rule required a renewal application to be made at least six months before the lease expired.",
+        "The rules set time limits for applications, their acknowledgment and their disposal to prevent undue delay in mining development.",
+        "The advance filing period gave the government time to decide whether to renew the lease and, if not, to make the land available for a new lease through the prescribed process."
+      ],
+      "conclusion": "The filing deadline was mandatory, not directory.",
+      "legal_principle": "The Court determined whether the requirement was mandatory by considering the scheme and object of the Mines and Minerals (Regulation and Development) Act, 1957 and the rules, rather than treating the word “shall” as conclusive. The time limits supported regulated and timely mineral development and enabled the government to decide on renewal or arrange a fresh grant before the existing lease expired.",
+      "rule": {
+        "if": "renewal_application_proceeding and advance_filing_period_allows_decision_before_expiry and missing_deadline_impedes_orderly_mineral_development",
+        "then": "renewal_filing_deadline_is_mandatory"
+      },
+      "predicates": {
+        "renewal_application_proceeding": "The proceeding concerns an application to renew a mining lease.",
+        "advance_filing_period_allows_decision_before_expiry": "The required lead time gives the government an opportunity to decide whether to renew before the lease expires.",
+        "missing_deadline_impedes_orderly_mineral_development": "Failure to observe the lead time would impede timely decisions about continued or new mining operations."
+      },
+      "definition": "A renewal filing deadline is mandatory when the advance period enables a decision before expiry and missing it would impede orderly mineral development."
+    },
+    {
+      "legal_issue": "A rule prescribing when an application to renew a mining lease must be made is within the general authority to regulate the grant of mining leases even if the deadline is not among the matters specifically listed in the supplementary rule-making provision.",
+      "material_facts": [
+        "The rule prescribed a period within which a renewal application had to be made.",
+        "The Act gave the Central Government general authority to make rules regulating the grant of mining leases.",
+        "The Court treated renewal as a grant of a mining lease and the listed matters in the supplementary provision as illustrative rather than restrictive."
+      ],
+      "conclusion": "The rule was valid and was not ultra vires merely because the filing deadline did not fall within a matter specifically listed in the supplementary provision.",
+      "legal_principle": "The Court applied section 13(1) and section 13(2) of the Mines and Minerals (Regulation and Development) Act, 1957. It relied on King-Emperor v. Sibnath Banerjee, 72 I.A. 241, and State of Kerala v. Shri M. Appukutty, [1963] Supp. 1 S.C.R. 563, for the principle that a general rule-making power is not restricted by an illustrative list of matters in a supplementary provision. Because renewal is a grant of a mining lease, regulating the timing of a renewal application falls within the general power to regulate lease grants.",
+      "rule": {
+        "if": "mining_lease_renewal_proceeding and general_power_covers_regulation_of_lease_grants and renewal_is_a_lease_grant and listed_rulemaking_matters_are_illustrative",
+        "then": "renewal_deadline_is_within_rulemaking_power"
+      },
+      "predicates": {
+        "mining_lease_renewal_proceeding": "The proceeding concerns a rule governing applications to renew mining leases.",
+        "general_power_covers_regulation_of_lease_grants": "The law grants general authority to make rules regulating the grant of mining leases.",
+        "renewal_is_a_lease_grant": "The renewal governed by the rule is treated as a grant of a mining lease.",
+        "listed_rulemaking_matters_are_illustrative": "The matters listed in the supplementary rule-making provision illustrate rather than restrict the general rule-making power."
+      },
+      "definition": "A renewal deadline is within the rule-making power when general authority covers regulation of lease grants, renewal is a lease grant, and listed matters are illustrative."
+    },
+    {
+      "legal_issue": "The court should not grant special-leave relief to require reconsideration of an administrative order when the application was time-barred and reconsideration could only produce the same rejection.",
+      "material_facts": [
+        "The application was time-barred under a valid mandatory rule.",
+        "The company also challenged the revisional order as non-speaking, but the Court did not decide whether that order was invalid on that ground.",
+        "The Court concluded that a remand for a fresh order would serve no useful purpose because the application would again have to be rejected as time-barred."
+      ],
+      "conclusion": "The Court declined to interfere under Article 136 and dismissed the appeal.",
+      "legal_principle": "In exercising its jurisdiction under Article 136 of the Constitution, the Court declined to order a remand that would serve no useful purpose where the time-barred application could only be rejected again. The Court did not decide whether the revisional order was invalid for failing to give reasons.",
+      "rule": {
+        "if": "special_leave_appeal_proceeding and application_is_time_barred and remand_could_only_repeat_rejection",
+        "then": "special_leave_interference_is_unwarranted"
+      },
+      "predicates": {
+        "special_leave_appeal_proceeding": "The proceeding is an appeal for which the court is asked to exercise special-leave jurisdiction.",
+        "application_is_time_barred": "The application at issue is out of time under an applicable mandatory deadline.",
+        "remand_could_only_repeat_rejection": "Sending the matter back for reconsideration could only result in the same rejection."
+      },
+      "definition": "In a special-leave appeal, the court should not interfere when the application is time-barred and a remand could only repeat the rejection."
+    }
+  ],
+  "seconds": 15.0
+}

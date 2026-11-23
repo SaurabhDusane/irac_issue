@@ -1,0 +1,121 @@
+{
+  "doc_id": "848507",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11732,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3067,
+    "prompt_tokens": 3360,
+    "total_tokens": 6427,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Certified sale records need not determine compensation when they are unreliable for valuing the acquired land and comparable earlier awards provide a sounder basis.",
+      "material_facts": [
+        "The claimants relied on sale documents, some of which included the value of structures on the land.",
+        "The High Court had assessed compensation by reference to earlier awards for nearby acquisitions, and the Supreme Court had approved a rate fixed in an earlier proceeding.",
+        "The claimants asked the Supreme Court to average the sale prices, which they said exceeded the amount awarded."
+      ],
+      "conclusion": "The Court declined to reassess compensation using the sale instances and held that the High Court was justified in relying on the earlier judgments and awards.",
+      "legal_principle": "Section 51A of the Land Acquisition Act permits a certified copy of a registered document to be accepted as evidence of the transaction it records, but does not compel the court to treat the transaction as reliable evidence of market value. As explained in Land Acquisition Officer & Mandal Revenue Officer v. V. Narasaiah, the court must weigh the evidence. Where compensation has already been assessed in comparable earlier proceedings, including a rate approved by the Supreme Court, those judgments and awards may provide the better basis for valuation; sale prices that include structures may not reflect the value of the acquired land.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and prior_comparable_awards_exist and (sale_records_include_structure_values or prior_awards_were_approved_by_a_higher_court)",
+        "then": "compensation_may_be_assessed_by_reference_to_prior_awards"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "prior_comparable_awards_exist": "Earlier awards assess compensation for comparable nearby land acquired for a similar purpose.",
+        "sale_records_include_structure_values": "The sale records relied on include value attributable to structures rather than land alone.",
+        "prior_awards_were_approved_by_a_higher_court": "A higher court has approved a compensation rate fixed in an earlier comparable proceeding."
+      },
+      "definition": "When a compensation appeal concerns land with comparable prior awards, and the sale records include structure values or a higher court approved an earlier rate, compensation may be assessed by reference to those prior awards."
+    },
+    {
+      "legal_issue": "A highway-based belting system should not be applied to acquired land that does not abut a highway.",
+      "material_facts": [
+        "The earlier acquisition used different rates for land abutting a national highway and land farther away, with the rates decreasing by distance.",
+        "The acquired lands in the present proceedings did not abut a national or main state highway.",
+        "The High Court concluded that the earlier belting system could not be applied to the present acquisition, and the Supreme Court endorsed that conclusion."
+      ],
+      "conclusion": "The Court upheld the conclusion that a belting system based on highway frontage could not be applied to these lands.",
+      "legal_principle": "Compensation must reflect the location and characteristics of the land being valued. A location-based belting system tied to proximity to a highway is not applicable where the acquired land does not abut a highway.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and acquired_land_does_not_abut_a_highway and earlier_rate_tiers_depend_on_highway_frontage",
+        "then": "highway_based_belting_should_not_be_applied"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "acquired_land_does_not_abut_a_highway": "The acquired land does not border a highway.",
+        "earlier_rate_tiers_depend_on_highway_frontage": "Earlier valuation tiers distinguish land according to whether or how closely it borders a highway."
+      },
+      "definition": "If an acquired parcel does not border a highway and the earlier valuation tiers depend on highway frontage, a highway-based belting system should not be applied."
+    },
+    {
+      "legal_issue": "Claimants cannot demand the highest rate from earlier location-based tiers when the acquired land corresponds to a lower-valued tier and the adopted average is more favorable to them.",
+      "material_facts": [
+        "Earlier rates differed according to the location of the land, including whether it abutted a national highway.",
+        "The acquired lands abutted land that had received the lowest of the earlier rates.",
+        "The High Court averaged three earlier rates and selected a figure higher than the rate applicable to the adjoining lower-valued land.",
+        "The claimants argued that the highest earlier rate should instead have been used."
+      ],
+      "conclusion": "The Court rejected the claimants’ challenge, reasoning that the High Court’s averaging method was more favorable to them than applying the rate for the comparable adjoining land.",
+      "legal_principle": "Earlier compensation rates must be considered in light of the location and characteristics of the land to which they applied. A claimant cannot insist on the highest rate where that rate related to materially different, higher-valued land and the method actually adopted is more favorable than the rate applicable to comparable land.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and earlier_rates_vary_by_location and acquired_land_matches_a_lower_valued_tier and adopted_average_exceeds_the_comparable_tier_rate",
+        "then": "claimants_cannot_obtain_the_highest_prior_rate"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "earlier_rates_vary_by_location": "Earlier awards set different rates for land with different locational characteristics.",
+        "acquired_land_matches_a_lower_valued_tier": "The acquired land is comparable to land in a lower-valued earlier tier rather than the highest-valued tier.",
+        "adopted_average_exceeds_the_comparable_tier_rate": "The valuation method adopted produces a rate higher than the rate for the comparable lower-valued tier."
+      },
+      "definition": "When earlier rates vary by location, the acquired land corresponds to a lower-valued tier, and the adopted average exceeds that tier’s rate, claimants cannot obtain the highest prior rate."
+    },
+    {
+      "legal_issue": "A claim that no further deduction should be made because deductions were already included in earlier awards fails when the claimant does not produce the judgments or awards needed to establish that premise.",
+      "material_facts": [
+        "The claimants argued that no deduction should be made because deductions had already been applied in the earlier proceedings used to assess compensation.",
+        "The Court gave the claimants an opportunity to produce the relevant earlier judgments and awards.",
+        "They produced other decisions but did not produce the specific judgments relied on for the valuation.",
+        "The Court noted that the claimants appeared to have copies of the relevant judgments and inferred that deductions had not been made in them."
+      ],
+      "conclusion": "The Court rejected the claim that no deduction should be made and found no basis to interfere with the deduction applied by the High Court.",
+      "legal_principle": "A party asserting that a deduction has already been accounted for in earlier awards must substantiate that factual premise with the relevant judgments or awards. Where those materials are not produced despite an opportunity to do so, the court may draw an inference against the assertion.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and claimant_asserts_prior_deductions and relevant_prior_awards_not_produced_despite_opportunity",
+        "then": "claim_of_prior_deductions_does_not_justify_removing_the_current_deduction"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "claimant_asserts_prior_deductions": "The claimant says that deductions were already made in the earlier awards used to value the land.",
+        "relevant_prior_awards_not_produced_despite_opportunity": "The claimant does not produce the relevant earlier awards despite having an opportunity to do so."
+      },
+      "definition": "In a compensation appeal, a claimant’s assertion that earlier awards already included deductions does not justify removing the current deduction when the relevant awards are not produced despite an opportunity."
+    },
+    {
+      "legal_issue": "Prices fetched by fully developed plots are not an appropriate basis for fixing compensation for acquired agricultural land.",
+      "material_facts": [
+        "The claimants relied on prices obtained when plots were auctioned after development.",
+        "The land for which compensation was being assessed was agricultural land at the time relevant to the acquisition."
+      ],
+      "conclusion": "The Court rejected reliance on the developed-plot auction prices as a basis for fixing compensation for the agricultural land.",
+      "legal_principle": "The price of land after full development is not an appropriate measure of the market value of land acquired in its agricultural condition.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and acquired_land_was_agricultural and relied_on_prices_are_for_fully_developed_plots",
+        "then": "developed_plot_prices_are_not_a_basis_for_agricultural_land_compensation"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "acquired_land_was_agricultural": "The acquired land was agricultural land at the relevant time.",
+        "relied_on_prices_are_for_fully_developed_plots": "The prices relied on are prices obtained for plots after full development."
+      },
+      "definition": "When a compensation appeal concerns land that was agricultural and the relied-on prices are for fully developed plots, those prices are not a basis for fixing compensation."
+    }
+  ],
+  "seconds": 79.6
+}

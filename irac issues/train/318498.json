@@ -1,0 +1,99 @@
+{
+  "doc_id": "318498",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24684,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3161,
+    "prompt_tokens": 6494,
+    "total_tokens": 9655,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The validity of a detention order used as the basis for forfeiture proceedings cannot be challenged in those proceedings when it was not successfully challenged while in force.",
+      "material_facts": [
+        "The forfeiture proceedings were based on a detention order made against the property holder’s husband.",
+        "The property holder challenged the detention order’s validity while contesting the forfeiture proceedings."
+      ],
+      "conclusion": "The detention-order challenge could not be reopened in the forfeiture proceedings, and the grounds attacking the detention order had no merit.",
+      "legal_principle": "In Attorney General for India v. Amratlal Prajivandas (1994) 5 SCC 54, a nine-Judge Bench overruled Union of India v. Haji Mastan Mirza (1984) 2 SCC 427 and held that a person cannot attack the validity of a detention order when it is later used as the basis for applying the forfeiture law if that person did not challenge the order while it was in force or was unsuccessful in doing so.",
+      "rule": {
+        "if": "safema_forfeiture_challenge and detention_order_is_basis and detention_challenge_not_previously_successful",
+        "then": "detention_validity_cannot_be_reopened"
+      },
+      "predicates": {
+        "safema_forfeiture_challenge": "A person challenges property forfeiture proceedings under a law directed at property connected with smuggling or foreign-exchange violations.",
+        "detention_order_is_basis": "The forfeiture proceedings rely on a detention order made against the person whose property is said to be connected to the forfeiture.",
+        "detention_challenge_not_previously_successful": "The detained person did not obtain a successful challenge to the detention order before its validity was raised in the forfeiture proceedings."
+      },
+      "definition": "When forfeiture proceedings rely on a detention order and no earlier challenge to that order succeeded, the order’s validity cannot be reopened in the forfeiture challenge."
+    },
+    {
+      "legal_issue": "The authority need not establish or state a separate financial link between a detenu and property held by the detenu’s close relative when initiating forfeiture proceedings.",
+      "material_facts": [
+        "The property subject to the appeal was held by the wife of a person detained under the relevant preventive-detention law.",
+        "The authority’s notice recorded reasons for believing the property was illegally acquired.",
+        "The property holder did not establish that she had independent income from which to acquire the properties."
+      ],
+      "conclusion": "The authority was not required to mention or establish a nexus between the husband’s money and the property in its notice; the close relationship permitted that inference, while the burden of disproving illegal acquisition rested on the property holder.",
+      "legal_principle": "Sections 2(2)(c), 3(1)(c), 6(1), and 8 of the Smugglers and Foreign Exchange Manipulators (Forfeiture of Property) Act, 1976 place the burden on the affected person to prove that property specified in a notice is not illegally acquired. Attorney General for India v. Amratlal Prajivandas explains that the law reaches a detenu’s property held in a relative’s name but does not forfeit a relative’s independent property merely because of the relationship; a close relationship such as that of spouse differs from a remote relationship, and the affected person must disprove the connection. The court read the observations in Amratlal in context and held that they did not impose a general requirement on the authority to establish a link in the notice.",
+      "rule": {
+        "if": "forfeiture_proceeding and property_held_by_close_relative and authority_records_reasons_for_belief",
+        "then": "authority_need_not_state_or_establish_property_link"
+      },
+      "predicates": {
+        "forfeiture_proceeding": "An authority initiates proceedings to forfeit property as illegally acquired property.",
+        "property_held_by_close_relative": "The property is held by a close relative, such as the spouse, of the person whose conduct brings the matter within the forfeiture law.",
+        "authority_records_reasons_for_belief": "The authority records reasons for believing that the property is illegally acquired."
+      },
+      "definition": "When forfeiture proceedings concern property held by a close relative and the authority records reasons for its belief, the authority need not separately state or establish a link between the property and the detenu."
+    },
+    {
+      "legal_issue": "A forfeiture notice satisfies the statutory reason-giving requirement when it records the basis for believing that the property is illegally acquired and calls for the holder to explain its source.",
+      "material_facts": [
+        "The notice identified the property holder as the wife of a person detained under the preventive-detention law.",
+        "The notice stated that she had not been assessed to tax or filed an income return, described her account of the property’s acquisition and funding, and noted that she had no evidence supporting her claimed sources.",
+        "The notice stated that the source of investment remained unproved, identified the property as falling within the statutory definition of illegally acquired property, and called for an explanation of its source."
+      ],
+      "conclusion": "The notice clearly recorded the reasons for the authority’s belief and fully complied with the statutory requirement.",
+      "legal_principle": "Section 6(1) of the Smugglers and Foreign Exchange Manipulators (Forfeiture of Property) Act, 1976 requires the competent authority to have and record in writing reasons to believe that property is illegally acquired before issuing notice. The court distinguished Smt. Fatima Mohd. Amin (dead) through LRs v. Union of India, Civil Appeal Nos. 7400–7401 of 1996, decided 16 January 2003, where the notice failed because it disclosed no reasons.",
+      "rule": {
+        "if": "forfeiture_notice and notice_records_basis_for_belief and notice_calls_for_source_explanation",
+        "then": "notice_satisfies_reason_requirement"
+      },
+      "predicates": {
+        "forfeiture_notice": "An authority issues a notice to a person holding property that may be forfeited as illegally acquired.",
+        "notice_records_basis_for_belief": "The notice records the factual basis for the authority’s belief that the property is illegally acquired.",
+        "notice_calls_for_source_explanation": "The notice calls on the property holder to identify and support the sources used to acquire the property."
+      },
+      "definition": "A forfeiture notice meets the reason-giving requirement when it records the basis for the belief that property is illegally acquired and calls for an explanation of its source."
+    },
+    {
+      "legal_issue": "Forfeiture may be upheld where a close relative holding property fails to substantiate an asserted independent source of income for its acquisition.",
+      "material_facts": [
+        "The appellant was the wife of a person detained under the preventive-detention law and held the property in question.",
+        "She claimed that she had income from stitching work and had received money from her in-laws and proceeds from jewellery, but acknowledged that she had no evidence supporting those claims.",
+        "The competent and appellate authorities found no evidence that she carried on a business or had savings available to invest in the properties.",
+        "The Supreme Court found that the authorities had properly appraised the evidence."
+      ],
+      "conclusion": "The finding that the property holder had not shown independent income to acquire the property was upheld, and the forfeiture of the property at Bapu Nagar remained in force.",
+      "legal_principle": "Under Sections 6(1) and 8 of the Smugglers and Foreign Exchange Manipulators (Forfeiture of Property) Act, 1976, once the authority has recorded the required reasons and specified the property in the notice, the affected person bears the burden of proving that it is not illegally acquired. Attorney General for India v. Amratlal Prajivandas supports placing on a relative the burden of showing that the property was not acquired with money or assets supplied by the detenu. The Supreme Court also declined to disturb the authorities’ finding because it followed a proper appraisal of the evidence.",
+      "rule": {
+        "if": "forfeiture_proceeding and property_held_by_close_relative and holder_fails_to_substantiate_independent_acquisition_source and evidence_properly_appraised",
+        "then": "property_forfeiture_upheld"
+      },
+      "predicates": {
+        "forfeiture_proceeding": "An authority initiates proceedings to forfeit property as illegally acquired property.",
+        "property_held_by_close_relative": "The property is held by a close relative, such as the spouse, of the person whose conduct brings the matter within the forfeiture law.",
+        "holder_fails_to_substantiate_independent_acquisition_source": "The property holder asserts an independent source for acquiring the property but does not produce evidence substantiating that source.",
+        "evidence_properly_appraised": "The competent and appellate authorities assess the evidence and their finding is based on a proper appraisal of it."
+      },
+      "definition": "When a close relative holds property, fails to substantiate an independent acquisition source, and the evidence supporting that finding has been properly appraised, the forfeiture is upheld."
+    }
+  ],
+  "seconds": 20.7
+}

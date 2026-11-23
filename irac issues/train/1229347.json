@@ -1,0 +1,154 @@
+{
+  "doc_id": "1229347",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30843,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4013,
+    "prompt_tokens": 7934,
+    "total_tokens": 11947,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A counterclaim in a civil suit cannot be introduced after issues have been framed and evidence has been closed.",
+      "material_facts": [
+        "The proposed counterclaim was raised by an amendment after the issues had been framed, the evidence had been closed, and the trial had substantially concluded.",
+        "The amendment was sought by persons who had been impleaded after the original trial evidence and arguments had concluded."
+      ],
+      "conclusion": "The purported counterclaim was introduced too late and was not maintainable.",
+      "legal_principle": "Order VIII Rule 6A of the Code of Civil Procedure permits a counterclaim to be raised by a written statement, an amendment with leave, or a subsequent pleading, as described in Ramesh Chand Ardawatiya v. Anil Panjwani (2003) 7 SCC 350. That decision did not establish that a counterclaim may be raised after the trial is concluded. A counterclaim may be filed after the written statement, but not after issues are framed and the evidence is closed.",
+      "rule": {
+        "if": "counterclaim_in_civil_suit and issues_framed and evidence_closed",
+        "then": "late_counterclaim_not_maintainable"
+      },
+      "predicates": {
+        "counterclaim_in_civil_suit": "A party sought to assert a counterclaim within an ongoing civil suit.",
+        "issues_framed": "The court had framed issues for trial before the counterclaim was raised.",
+        "evidence_closed": "The evidence had been closed before the counterclaim was raised."
+      },
+      "definition": "When a counterclaim in a civil suit is raised after issues have been framed and evidence has been closed, it is not maintainable."
+    },
+    {
+      "legal_issue": "A counterclaim cannot be maintained when it is directed solely against co-defendants and seeks no relief against the plaintiff.",
+      "material_facts": [
+        "The intervening defendants denied the plaintiff’s claim but asserted their own rights against the State and other defendants.",
+        "They did not allege that the plaintiff was interfering with their claimed possession, and their claim was directed against co-defendants rather than the plaintiff."
+      ],
+      "conclusion": "The purported counterclaim, directed solely against co-defendants, should not have been entertained.",
+      "legal_principle": "Under Order VIII Rule 6A of the Code of Civil Procedure, a counterclaim must be directed against the plaintiff, although it may also seek relief against co-defendants. A counterclaim cannot be used to convert the litigation into an interpleader suit. Ramesh Chand Ardawatiya v. Anil Panjwani did not decide whether a counterclaim may be directed solely against a co-defendant.",
+      "rule": {
+        "if": "counterclaim_in_civil_suit and claim_directed_only_against_codefendants",
+        "then": "counterclaim_not_maintainable"
+      },
+      "predicates": {
+        "counterclaim_in_civil_suit": "A party sought to assert a counterclaim within an ongoing civil suit.",
+        "claim_directed_only_against_codefendants": "The asserted claim sought relief against co-defendants and no relief against the plaintiff."
+      },
+      "definition": "A counterclaim in a civil suit is not maintainable when the claim is directed only against co-defendants."
+    },
+    {
+      "legal_issue": "An amended written statement that does not make a specific counterclaim and is not procedurally treated as one cannot support a decree based on the opposing parties’ failure to answer it.",
+      "material_facts": [
+        "The intervening defendants amended their written statement to say they sought a declaration of title but did not add a specific prayer for that relief.",
+        "The court did not formally treat the amended written statement as a counterclaim or direct the opposing parties to answer it.",
+        "The trial court granted a decree on the theory that the opposing parties had failed to answer the purported counterclaim, despite finding no tangible evidence supporting the intervening defendants’ possession claim."
+      ],
+      "conclusion": "There was no valid counterclaim on which a decree could be granted for failure to answer; the decree on that basis was unsustainable.",
+      "legal_principle": "Order VIII Rules 6A and 6E of the Code of Civil Procedure govern counterclaims and the consequences of a failure to answer them. A mere plea seeking a declaration, without a specific prayer and without the court treating it as a counterclaim and providing an opportunity to answer, does not justify a default decree under Rule 6E.",
+      "rule": {
+        "if": "counterclaim_in_civil_suit and amended_defence_claims_declaration and no_specific_counterclaim_prayer and no_formal_counterclaim_treatment and no_opportunity_to_answer and default_decree_entered",
+        "then": "default_counterclaim_decree_unsustainable"
+      },
+      "predicates": {
+        "counterclaim_in_civil_suit": "A party sought to assert a counterclaim within an ongoing civil suit.",
+        "amended_defence_claims_declaration": "A party amended its defence to state that it sought a declaration of its rights.",
+        "no_specific_counterclaim_prayer": "The amended pleading did not specifically request the declaration or other relief as a counterclaim.",
+        "no_formal_counterclaim_treatment": "The court did not formally treat the amended pleading as a counterclaim.",
+        "no_opportunity_to_answer": "The court did not give the opposing parties an opportunity to file an answer to the purported counterclaim.",
+        "default_decree_entered": "The court granted relief on the ground that the opposing parties had not answered the purported counterclaim."
+      },
+      "definition": "When an amended defence in a civil suit lacks a specific counterclaim prayer, is not formally treated as a counterclaim, and is not put to the opposing parties for an answer, a decree based on their failure to answer is unsustainable."
+    },
+    {
+      "legal_issue": "A court cannot grant relief on a counterclaim that was not requested.",
+      "material_facts": [
+        "The intervening defendants’ amended pleading did not specifically seek a declaration of title or request recovery of possession or an injunction.",
+        "The trial court granted recovery of possession, and the first appellate court granted a permanent injunction, although those reliefs had not been requested."
+      ],
+      "conclusion": "The decrees granting relief that had not been sought could not be sustained.",
+      "legal_principle": "A court may not grant relief that was not prayed for. The Court also noted that the requisite court fees for the reliefs granted had not been paid.",
+      "rule": {
+        "if": "counterclaim_in_civil_suit and court_granted_unrequested_relief",
+        "then": "unrequested_relief_decree_unsustainable"
+      },
+      "predicates": {
+        "counterclaim_in_civil_suit": "A party sought to assert a counterclaim within an ongoing civil suit.",
+        "court_granted_unrequested_relief": "The court granted relief that the party had not requested in its pleading."
+      },
+      "definition": "When a court grants relief on a counterclaim that the party did not request, the decree granting that relief is unsustainable."
+    },
+    {
+      "legal_issue": "An official Gazette notification issued long before the suit should be presumed regularly published when it is produced in evidence and no circumstance supports an inference of irregularity.",
+      "material_facts": [
+        "A Gazette notification issued decades before the suit was produced and marked in evidence.",
+        "The lower appellate court found the notification unproved because issues of vernacular newspapers containing its translation had not been produced.",
+        "No circumstance was proved that justified an inference that the notification had not been published as required."
+      ],
+      "conclusion": "The lower appellate court’s finding that the notification had not been proved was unsustainable and had to be vacated.",
+      "legal_principle": "In relation to the publication required for a notification under Section 29 of the Indian Forest Act, 1927, the regularity of issuing an official Gazette notification should be presumed when it is produced in evidence and there is no circumstance supporting an inference that it was not published as required. The burden then lies on the party challenging regularity to rebut the presumption.",
+      "rule": {
+        "if": "notification_validity_dispute and official_gazette_notification_produced and no_circumstance_indicates_irregular_publication",
+        "then": "regular_publication_presumed"
+      },
+      "predicates": {
+        "notification_validity_dispute": "The parties disputed whether an official notification had been published as required.",
+        "official_gazette_notification_produced": "A party produced the official Gazette notification in evidence.",
+        "no_circumstance_indicates_irregular_publication": "No proved circumstance supported an inference that the notification had not been published as required."
+      },
+      "definition": "When an official Gazette notification is produced in a publication dispute and no circumstance indicates irregular publication, its regular publication is presumed."
+    },
+    {
+      "legal_issue": "An interlocutory order may be challenged in an appeal from the decree in the suit.",
+      "material_facts": [
+        "The lower appellate court rejected a request to revisit the order limiting certain defendants to watching and participating in the proceedings without filing a written statement.",
+        "Those defendants challenged the resulting decree in appeals from the decree."
+      ],
+      "conclusion": "The lower appellate court was wrong to treat the interlocutory order as unchallengeable in the appeals from the decree.",
+      "legal_principle": "Section 105(1) of the Code of Civil Procedure permits an interlocutory order to be challenged in an appeal from the decree, subject to the provision’s requirements.",
+      "rule": {
+        "if": "appeal_from_decree and interlocutory_order_challenged",
+        "then": "interlocutory_order_may_be_challenged"
+      },
+      "predicates": {
+        "appeal_from_decree": "A party appealed from the decree entered in a civil suit.",
+        "interlocutory_order_challenged": "The party challenged an interlocutory order in that appeal."
+      },
+      "definition": "In an appeal from a decree, a party may challenge an interlocutory order."
+    },
+    {
+      "legal_issue": "A remand is improper when the plaintiff’s dismissal has become final and the purported counterclaim is not entertainable.",
+      "material_facts": [
+        "The plaintiff’s suit had been dismissed, and the plaintiff did not appeal, so the dismissal became final.",
+        "The counterclaim had been found not maintainable and could not be tried as a counterclaim or treated as a fresh plaint.",
+        "The High Court nevertheless remanded the suit for a fresh decision."
+      ],
+      "conclusion": "The remand was set aside; the dismissal of the suit was confirmed, with no counterclaim entertained.",
+      "legal_principle": "When dismissal of the plaintiff’s suit has become final and a purported counterclaim is not entertainable, there is no basis to remand the suit for a fresh trial of that counterclaim or to treat it as a fresh plaint.",
+      "rule": {
+        "if": "suit_dismissal_unappealed_and_final and counterclaim_not_entertainable and remand_ordered",
+        "then": "remand_set_aside_and_suit_left_dismissed"
+      },
+      "predicates": {
+        "suit_dismissal_unappealed_and_final": "The plaintiff did not appeal the dismissal of the suit, and that dismissal became final.",
+        "counterclaim_not_entertainable": "The purported counterclaim could not be entertained in the suit.",
+        "remand_ordered": "An appellate court ordered the suit to be remanded for a fresh decision."
+      },
+      "definition": "When the suit’s dismissal is final and the purported counterclaim is not entertainable, a remand is set aside and the suit remains dismissed."
+    }
+  ],
+  "seconds": 22.9
+}

@@ -1,0 +1,97 @@
+{
+  "doc_id": "11911163",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 56774,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2940,
+    "prompt_tokens": 13299,
+    "total_tokens": 16239,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An acquisition using urgency powers still requires the Collector to determine compensation and make an award after possession is taken.",
+      "material_facts": [
+        "Possession was taken under the urgency procedure, but no award had been made despite the passage of many years.",
+        "A High Court had directed the State to make an award, and that direction had attained finality.",
+        "The State contended that invoking urgency made the award requirement unnecessary."
+      ],
+      "conclusion": "The urgency procedure defers, but does not dispense with, the requirement to determine compensation and make an award.",
+      "legal_principle": "Sections 9, 11, 17(1), 17(3A), 17(3B), and 17(4) show that the award-making process remains necessary even when possession is taken before an award. Section 17 does not contain a non obstante clause or otherwise exclude the award requirement. The Court distinguished the limited holdings of Satendra Prasad Jain v. State of U.P. and Lt. Governor of Himachal Pradesh v. Avinash Sharma, which did not extinguish landowners’ rights to compensation. The principle that a prescribed statutory procedure must be followed was supported by Taylor v. Taylor, Nazir Ahmad v. King Emperor, Rao Shiv Bahadur Singh v. State of Vindhya Pradesh, State of U.P. v. Singhara Singh, Babu Verghese v. Bar Council of Kerala, and Hussein Ghadially v. State of Gujarat.",
+      "rule": {
+        "if": "urgency_acquisition and possession_taken",
+        "then": "compensation_award_required"
+      },
+      "predicates": {
+        "urgency_acquisition": "The proceeding is an acquisition in which the State invokes an urgent procedure to take land for a public purpose.",
+        "possession_taken": "The State has taken possession of the land from its owner."
+      },
+      "definition": "When an urgent acquisition has resulted in the State taking possession, a compensation award is still required."
+    },
+    {
+      "legal_issue": "Payment or tender of the estimated compensation before taking possession is a mandatory precondition to taking possession under the urgency procedure.",
+      "material_facts": [
+        "The State took possession under the urgency procedure and maintained that the statutory requirements had been met.",
+        "The record indicated that only part of the compensation had been paid, while the balance remained unpaid.",
+        "The Court considered the statutory requirement to tender a portion of estimated compensation before taking possession."
+      ],
+      "conclusion": "The Collector must tender the statutorily required portion of the estimated compensation to the persons entitled before taking possession, unless a specified statutory impediment prevents payment.",
+      "legal_principle": "Section 17(3A), read with Section 17(3B), makes tender of the required portion of estimated compensation a mandatory precondition to taking possession, subject to the specified payment impediments in Section 31(2). The word “shall” and the phrase “Before taking possession” prescribe a required sequence. Under Taylor v. Taylor and the authorities applying it, including Nazir Ahmad v. King Emperor, Rao Shiv Bahadur Singh v. State of Vindhya Pradesh, State of U.P. v. Singhara Singh, Babu Verghese v. Bar Council of Kerala, and Hussein Ghadially v. State of Gujarat, a statutory procedure must be followed as prescribed.",
+      "rule": {
+        "if": "urgency_acquisition and possession_taken",
+        "then": "advance_estimated_compensation_tender_required"
+      },
+      "predicates": {
+        "urgency_acquisition": "The proceeding is an acquisition in which the State invokes an urgent procedure to take land for a public purpose.",
+        "possession_taken": "The State has taken possession of the land from its owner."
+      },
+      "definition": "When the State takes possession in an urgent acquisition, it must first tender the required estimated compensation, subject to the stated statutory impediments."
+    },
+    {
+      "legal_issue": "The time limit for making an award applies to acquisitions conducted under the urgency procedure, and failure to make an award within that limit requires the acquisition to be set aside.",
+      "material_facts": [
+        "The acquisition began decades before the appeal, but no award had been made.",
+        "A High Court had directed the State to make an award within four months, and the State had not complied.",
+        "The State relied on decisions concerning urgency acquisitions to argue that the statutory award time limit did not apply.",
+        "The Court found that setting aside the acquisition for failure to make an award did not require possession to be restored to the former owners."
+      ],
+      "conclusion": "The award time limit applies even when urgency powers have been invoked. The acquisition was set aside for non-compliance with that time limit, while the State was directed to issue a fresh preliminary notification and was not permitted to contend that the land was no longer required or should revert to the former owners.",
+      "legal_principle": "Section 11A applies to acquisitions under the urgency procedure; its purpose of preventing prolonged uncertainty and protecting owners from delayed compensation would be defeated if urgency acquisitions were exempt. The Court confined Satendra Prasad Jain v. State of U.P. and Avinash Sharma to their holdings on the effect of vesting and the State’s inability to undo an acquisition to avoid compensation, rather than treating them as displacing Section 11A. Raja Anand Brahma Shah v. State of U.P. supported distinguishing the setting aside of an acquisition from restoration of possession.",
+      "rule": {
+        "if": "urgency_acquisition and possession_taken and award_missing_beyond_limit",
+        "then": "acquisition_must_be_set_aside"
+      },
+      "predicates": {
+        "urgency_acquisition": "The proceeding is an acquisition in which the State invokes an urgent procedure to take land for a public purpose.",
+        "possession_taken": "The State has taken possession of the land from its owner.",
+        "award_missing_beyond_limit": "The authority has not made an award within the applicable statutory time limit."
+      },
+      "definition": "If possession has been taken in an urgent acquisition but no award is made within the applicable time limit, the acquisition must be set aside."
+    },
+    {
+      "legal_issue": "Setting aside an acquisition for failure to make a timely award does not undo the State’s vesting of possession or require the land to revert to its former owner.",
+      "material_facts": [
+        "The State had taken possession of the land under the urgency procedure.",
+        "No award had been made within the applicable time limit, so the acquisition was set aside.",
+        "The Court expressly refrained from disturbing the State’s possession and directed a fresh acquisition notification, while barring the State from arguing that the land was no longer required or should revert."
+      ],
+      "conclusion": "The acquisition could be set aside without restoring possession to the former owners; the State could retain possession and proceed with a fresh acquisition.",
+      "legal_principle": "Section 17 provides that land vests absolutely in the State when possession is taken in accordance with the urgency procedure, and Section 48(1) likewise makes taking possession significant to withdrawal from acquisition. Avinash Sharma and Satendra Prasad Jain establish that the State cannot withdraw from an acquisition after taking possession so as to avoid compensation. The Court distinguished the setting aside of an acquisition from the reversion of possession and relied on Raja Anand Brahma Shah v. State of U.P. in considering the availability of a remedy that does not restore possession.",
+      "rule": {
+        "if": "urgency_acquisition and possession_vested and acquisition_set_aside",
+        "then": "possession_does_not_revert_to_former_owner"
+      },
+      "predicates": {
+        "urgency_acquisition": "The proceeding is an acquisition in which the State invokes an urgent procedure to take land for a public purpose.",
+        "possession_vested": "The State has taken possession of the land in circumstances that vest possession in it.",
+        "acquisition_set_aside": "A court has set aside the acquisition proceedings."
+      },
+      "definition": "If possession has vested in the State under an urgent acquisition, setting aside the acquisition does not by itself return possession to the former owner."
+    }
+  ],
+  "seconds": 18.4
+}

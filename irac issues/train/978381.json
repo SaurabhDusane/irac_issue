@@ -1,0 +1,81 @@
+{
+  "doc_id": "978381",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19205,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2930,
+    "prompt_tokens": 5058,
+    "total_tokens": 7988,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A public body may have land recorded in its name without filing an objection when the land is found to vest in it, and a recording duty that takes effect while judicial review is pending must be applied at the final decision.",
+      "material_facts": [
+        "The claimants sought tenure rights over land on the basis of adverse possession, but the revisional authority found that the recorded holder had not been heard of for more than seven years and that no lawful heir was entitled to be recorded.",
+        "The public body had not filed an objection claiming the land.",
+        "The statutory duty to record land vested in a public body despite the absence of a claim took effect while the challenge to the revisional order was pending before the High Court."
+      ],
+      "conclusion": "The High Court was required to apply the recording duty when deciding the pending challenge, and the land could be recorded in the public body's name despite its failure to file an objection.",
+      "legal_principle": "Section 11-C of the U.P. Consolidation of Holdings Act, 1953, requires consolidation authorities to record land vested in the State, a Gaon Sabha, or another public body in that body's name even if it has filed no objection, appeal, or revision. A court deciding a pending challenge must give effect to that duty when it is in force at the time of its decision.",
+      "rule": {
+        "if": "consolidation_proceeding and no_public_body_objection and no_lawful_private_claimant and recording_duty_effective_before_final_review",
+        "then": "land_recorded_in_public_body_name_without_objection"
+      },
+      "predicates": {
+        "consolidation_proceeding": "The dispute was being determined in consolidation proceedings or in judicial review of a consolidation decision.",
+        "no_public_body_objection": "The public body did not file an objection or other claim seeking the land.",
+        "no_lawful_private_claimant": "The authorities found that no claimant was entitled to hold the land as the private tenure-holder.",
+        "recording_duty_effective_before_final_review": "A rule requiring officials to record land vested in a public body became effective before the pending judicial review was finally decided."
+      },
+      "definition": "When consolidation proceedings establish that no private claimant is entitled to land, and the public-body recording duty is effective before final review, the land may be recorded for the public body even though it filed no objection."
+    },
+    {
+      "legal_issue": "The duty to record land in a public body's name applies when privately held land devolves to that body by escheat, not only when the land belonged to the body from the outset.",
+      "material_facts": [
+        "The land had been recorded in the name of a private tenure-holder who was found not to have been heard of for more than seven years.",
+        "The authorities found that no lawful heir was entitled to be recorded in place of the tenure-holder and rejected the asserted relationship of a person claiming as his sister.",
+        "The public body had not claimed the land, and the tenure-holder later appeared and disputed the claim that he had died; the Court noted that his claim could be investigated by the consolidation authorities if he approached them."
+      ],
+      "conclusion": "The recording duty encompasses land found to vest in a public body by escheat, although a later claim by the recorded holder may be investigated by the consolidation authorities.",
+      "legal_principle": "Section 11-C of the U.P. Consolidation of Holdings Act, 1953, is not confined to land owned by a public body from the outset. Land with no entitled private claimant may vest by escheat. Article 296 of the Constitution addresses property accruing by escheat, lapse, or as bona vacantia; the Court also relied on A.G. of Ontario v. Mercer, St. Catherine's Co. v. The Queen, A.G. for Quebec v. A.G. for Canada, Rex v. Attorney-General of British Columbia, Bombay Dyeing & Manufacturing Co. Ltd. v. State of Bombay, and Superintendent & Legal Remembrancer, State of West Bengal v. Corporation of Calcutta.",
+      "rule": {
+        "if": "consolidation_proceeding and land_previously_held_privately and holder_treated_as_dead and no_heir_entitled_to_land",
+        "then": "heirless_land_vests_in_public_body_by_escheat"
+      },
+      "predicates": {
+        "consolidation_proceeding": "The land's competing claims were being determined in consolidation proceedings.",
+        "land_previously_held_privately": "The land had been recorded as belonging to a private tenure-holder.",
+        "holder_treated_as_dead": "The authorities treated the holder as dead after finding that the holder had not been heard of for a prolonged period.",
+        "no_heir_entitled_to_land": "The authorities found that no heir or other claimant was entitled to succeed to the holder's tenure."
+      },
+      "definition": "When land previously held privately is considered in consolidation proceedings and its holder is treated as dead with no entitled heir, the land vests in the public body by escheat."
+    },
+    {
+      "legal_issue": "A consolidation revisional authority may re-examine the connected case, including claims concerning land in more than the area specified in the revision, when the record contains perverse findings or forged, fictitious, or unlawfully made revenue entries.",
+      "material_facts": [
+        "The claimants filed a revision concerning land in one village, but the revisional authority examined their claims concerning land in three villages.",
+        "The authority found that several revenue entries were forged or fictitious and that other entries had been made without complying with mandatory requirements for recording them.",
+        "The authority considered oral and documentary evidence in determining the claims."
+      ],
+      "conclusion": "The revisional authority did not exceed its jurisdiction by examining the claims concerning all three villages and re-evaluating the evidence and revenue entries.",
+      "legal_principle": "Section 48 of the U.P. Consolidation of Holdings Act, 1953, gives the Director of Consolidation wide powers to examine the regularity, correctness, legality, and propriety of proceedings and orders. Although concurrent factual findings are not normally disturbed, the revisional authority may scrutinise the case where findings are perverse or entries are forged, fictitious, or contrary to statutory recording requirements, including requirements in the U.P. Land Records Manual.",
+      "rule": {
+        "if": "consolidation_revision and related_records_cover_multiple_areas and (perverse_findings or invalid_revenue_entries)",
+        "then": "revision_authority_may_reassess_related_claims_across_areas"
+      },
+      "predicates": {
+        "consolidation_revision": "A party brought a revision from a decision made in consolidation proceedings.",
+        "related_records_cover_multiple_areas": "The connected claims and records under review concerned land in more than one area.",
+        "perverse_findings": "The subordinate authorities' findings were unsupported by the evidence or against its weight.",
+        "invalid_revenue_entries": "The relevant revenue entries were forged, fictitious, or made without following mandatory recording requirements."
+      },
+      "definition": "In a consolidation revision involving connected records from multiple areas, perverse findings or invalid revenue entries permit the revisional authority to reassess the related claims across those areas."
+    }
+  ],
+  "seconds": 18.8
+}

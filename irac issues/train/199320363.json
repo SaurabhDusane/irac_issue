@@ -1,0 +1,100 @@
+{
+  "doc_id": "199320363",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 36750,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2709,
+    "prompt_tokens": 8812,
+    "total_tokens": 11521,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court deciding a compensation reference cannot award more than the original award without finding, on relevant material, that the award was inadequate.",
+      "material_facts": [
+        "The claimants sought increased compensation for acquired land through references after rejecting the acquisition officer’s award.",
+        "The officer had valued the land by reference to compensation agreed for similar land acquired under the same notification.",
+        "The claimants relied on a sale of a small plot and an expert report based on that sale, but the sale’s authenticity and circumstances were not established.",
+        "The lower courts increased compensation without adequately considering the material supporting the officer’s award."
+      ],
+      "conclusion": "A court cannot determine compensation exceeding the officer’s award unless it finds, on relevant material, that the award was inadequate; the claimants must first prove inadequacy.",
+      "legal_principle": "Under Sections 11, 12, 18 and 19 of the Land Acquisition Act, 1894, a claimant seeking a reference bears the initial burden of showing that the award was inadequate, by reference to the award itself or other evidence. The award has final and conclusive evidentiary effect unless that burden is discharged. If inadequacy is established, the burden shifts to the acquiring authority to support the award. Sections 15, 23 and 24 guide valuation. No earlier case is relied on for this point.",
+      "rule": {
+        "if": "compensation_reference and not claimant_proves_award_inadequate",
+        "then": "court_cannot_award_more_than_original_award"
+      },
+      "predicates": {
+        "compensation_reference": "A claimant seeks a court’s determination of compensation after declining the acquisition officer’s award.",
+        "claimant_proves_award_inadequate": "The claimant establishes, using relevant material, that the acquisition officer’s compensation award was inadequate."
+      },
+      "definition": "When a claimant seeks a court’s determination of compensation but does not establish that the original award was inadequate, the court cannot award more than that award."
+    },
+    {
+      "legal_issue": "A court determining compensation for land acquired under the same notification cannot altogether disregard an agreed-compensation award for other similar acquired land.",
+      "material_facts": [
+        "Owners of about four-fifths of the land acquired under the same notification agreed to compensation at a specified rate and received it.",
+        "The remaining acquired land was similar, but its owners sought compensation through court references.",
+        "The acquisition officer’s award referred to the agreed compensation, while the lower courts disregarded it when fixing compensation for the remaining land."
+      ],
+      "conclusion": "An agreed-compensation award for other land covered by the same notification cannot be ignored; its evidentiary value increases with the proportion of the acquired land it covers.",
+      "legal_principle": "Sections 11(2) and 11(3) of the Land Acquisition Act, 1894 distinguish an award based on agreement from an award made otherwise, but the agreed award remains relevant evidence of market value for other similar land acquired under the same notification. Section 23(1) requires consideration of market value. The Court relies on Bangaru Narasingha Rao Naidu v. R.D.O., Viziangaram, for the value of authenticated transactions as evidence of market value, and Krishna Yachandra Bahadurvaru v. Special Land Acquisition Officer, City Improvement Trust Board, Bangalore, for the estimation of market value by reference to relevant facts and circumstances.",
+      "rule": {
+        "if": "compensation_reference and same_notification and similar_acquired_land_has_agreed_compensation_award",
+        "then": "court_must_consider_agreed_compensation_award"
+      },
+      "predicates": {
+        "compensation_reference": "A claimant seeks a court’s determination of compensation after declining the acquisition officer’s award.",
+        "same_notification": "The land being valued and the other land were acquired under the same notification.",
+        "similar_acquired_land_has_agreed_compensation_award": "Owners of other similar land acquired under that notification agreed to compensation and received it under an award."
+      },
+      "definition": "When a compensation reference concerns land acquired under the same notification as similar land for which owners accepted agreed compensation, the court must consider that agreed-compensation award."
+    },
+    {
+      "legal_issue": "A court determining compensation for a large acquired area is not invariably required to use the price of a small plot as its valuation basis.",
+      "material_facts": [
+        "The claimants sought compensation for about 60 acres of acquired land.",
+        "They relied on a sale of a plot of about three guntas, and the lower courts used its price to value the larger area.",
+        "The acquisition officer’s award referred to sales of larger areas in the vicinity, but those transactions were not made available to the court."
+      ],
+      "conclusion": "A court is not always bound to value a large acquired area on the basis of the price of a small plot; such a sale may be used as a last resort when larger comparable transactions are unavailable, subject to relevant adjustments.",
+      "legal_principle": "Under Section 23(1) of the Land Acquisition Act, 1894, market value is the principal component of compensation. A small plot’s sale price may be used for a large agricultural acquisition when the plot is part of the acquired land or nearby, satisfactory evidence shows that larger comparable transactions are unavailable, and factors reducing the value of the larger area are taken into account. The Court relies on Collector of Lakhimpur v. Bhuban Chandra Dutta for the principle that a large area ordinarily does not fetch the rate obtained for smaller plots.",
+      "rule": {
+        "if": "compensation_valuation and small_plot_sale_used_for_large_acquired_area and comparable_larger_transactions_unavailable and plot_is_part_of_or_near_acquired_land",
+        "then": "small_plot_price_may_be_used_only_as_last_resort_with_adjustments"
+      },
+      "predicates": {
+        "compensation_valuation": "A court is determining the market value of land acquired for compensation.",
+        "small_plot_sale_used_for_large_acquired_area": "A party relies on the sale price of a small plot to value a substantially larger acquired area.",
+        "comparable_larger_transactions_unavailable": "Satisfactory evidence shows that comparable sales or agreements involving larger areas are unavailable.",
+        "plot_is_part_of_or_near_acquired_land": "The small plot is part of the acquired land or is in its close proximity."
+      },
+      "definition": "A small plot’s sale price may be used to value a large acquired area only as a last resort when the plot is part of or near the acquired land and comparable larger transactions are unavailable, with adjustments for factors affecting the larger area’s value."
+    },
+    {
+      "legal_issue": "A court may rely on an expert valuation report only when its underlying data is established as genuine and reliable and its valuation method is appropriate.",
+      "material_facts": [
+        "The claimants produced an expert report valuing the acquired land.",
+        "The report was based on the sale of a small plot whose authenticity and circumstances were not established.",
+        "The expert did not establish reliable underlying material or a sufficient basis for the report’s valuation."
+      ],
+      "conclusion": "A court may act on an expert valuation report only if the underlying data or material is produced and shown to be genuine and reliable, and the method used is correct.",
+      "legal_principle": "Section 23(1) of the Land Acquisition Act, 1894 requires determination of market value. Expert opinion may assist that determination, but the court must carefully examine its factual basis and method. The underlying material must be produced and proved genuine and reliable, and the method must accord with recognised valuation methods. The Court cites no earlier case for this point.",
+      "rule": {
+        "if": "compensation_valuation and expert_report_relied_on and underlying_data_produced_and_proved_reliable and recognised_valuation_method_used",
+        "then": "court_may_rely_on_expert_valuation_report"
+      },
+      "predicates": {
+        "compensation_valuation": "A court is determining the market value of land acquired for compensation.",
+        "expert_report_relied_on": "A party asks the court to rely on an expert’s report valuing the acquired land.",
+        "underlying_data_produced_and_proved_reliable": "The factual material underlying the report is produced in court and shown to be genuine and reliable.",
+        "recognised_valuation_method_used": "The expert uses a method recognised as appropriate for valuing comparable land."
+      },
+      "definition": "A court may rely on an expert report in a compensation valuation when the report’s underlying data is produced and proved reliable and the expert uses a recognised valuation method."
+    }
+  ],
+  "seconds": 17.6
+}

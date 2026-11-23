@@ -1,0 +1,56 @@
+{
+  "doc_id": "83684041",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12674,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1836,
+    "prompt_tokens": 4124,
+    "total_tokens": 5960,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Acquisition proceedings covered by an old award lapse when physical possession has not been taken by the required time.",
+      "material_facts": [
+        "The proceedings to acquire the lands were initiated under the earlier land acquisition law and resulted in awards.",
+        "Physical possession of the lands had not been taken within the five years or more before the later acquisition law commenced."
+      ],
+      "conclusion": "The acquisition proceedings had lapsed, and the appeals challenging that conclusion were dismissed.",
+      "legal_principle": "Section 24(2) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 provides that proceedings under the Land Acquisition Act, 1894 lapse where an award was made five years or more before commencement of the 2013 Act and possession has not been taken or compensation has not been paid. The appropriate Government may initiate fresh acquisition proceedings. No earlier cases are relied on.",
+      "rule": {
+        "if": "land_acquisition_proceeding and award_made_five_years_before_new_regime and physical_possession_not_taken",
+        "then": "acquisition_proceedings_lapsed"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "Proceedings to acquire land were initiated under an earlier land acquisition regime.",
+        "award_made_five_years_before_new_regime": "An award in the land acquisition proceeding was made at least five years before the new acquisition regime commenced.",
+        "physical_possession_not_taken": "The acquiring authority had not taken physical possession of the land by the relevant time."
+      },
+      "definition": "When an acquisition proceeding has an award made at least five years before the new regime and physical possession has not been taken, the proceeding is treated as lapsed."
+    },
+    {
+      "legal_issue": "Making an acquisition award alone does not vest the land in the Government.",
+      "material_facts": [
+        "An award had been made in each acquisition proceeding.",
+        "The Collector had not taken physical possession of the lands."
+      ],
+      "conclusion": "The award alone did not vest the lands in the Government; vesting depended on taking possession.",
+      "legal_principle": "Section 16 of the Land Acquisition Act, 1894 provides that after making an award under Section 11, the Collector may take possession, whereupon the land vests absolutely in the Government free from encumbrances. The Court held that making the award by itself does not cause vesting. No earlier cases are relied on.",
+      "rule": {
+        "if": "land_acquisition_proceeding and collector_award_made and physical_possession_not_taken",
+        "then": "land_not_vested_in_government"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "Proceedings to acquire land were initiated under an earlier land acquisition regime.",
+        "collector_award_made": "The Collector made an award in the land acquisition proceeding.",
+        "physical_possession_not_taken": "The Collector had not taken physical possession of the land."
+      },
+      "definition": "When the Collector has made an award in an acquisition proceeding but has not taken physical possession, the land has not vested in the Government."
+    }
+  ],
+  "seconds": 13.8
+}

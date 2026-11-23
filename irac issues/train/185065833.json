@@ -1,0 +1,80 @@
+{
+  "doc_id": "185065833",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20902,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3798,
+    "prompt_tokens": 5654,
+    "total_tokens": 9452,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Compensation is treated as paid for transitional land-acquisition purposes only when it is tendered to the interested person and, if a statutory impediment prevents payment, deposited in court for that person.",
+      "material_facts": [
+        "An award had been made under the former acquisition law, and the acquiring authority notified the landowners to collect compensation.",
+        "The landowners did not receive the compensation, and the authority deposited the amount in the government treasury rather than in court."
+      ],
+      "conclusion": "A treasury deposit is not equivalent to payment. Compensation is treated as paid when it has been offered to the interested person and, if a statutory contingency prevents actual payment, deposited in the court where a compensation reference may be made.",
+      "legal_principle": "Section 24(2) of the 2013 Act must be read with Section 31 of the 1894 Act: Section 31(1) requires tender and payment, while Section 31(2) requires a court deposit when a specified contingency prevents payment. Sections 32 and 33 support the requirement that money deposited be available for the interested persons. The Court relied on Nazir Ahmad v. King Emperor for the principle that a prescribed statutory procedure must be followed, and on Ivo Agnelo Santimano Fernandes and Prem Nath Kapur for the rule that a deposit in the State’s revenue account does not satisfy the payment obligation.",
+      "rule": {
+        "if": "old_acquisition_proceeding and compensation_tendered and (compensation_received or (payment_prevented_by_statutory_contingency and compensation_deposited_in_reference_court))",
+        "then": "compensation_treated_as_paid"
+      },
+      "predicates": {
+        "old_acquisition_proceeding": "The acquiring authority began the land-acquisition proceeding under the former acquisition law.",
+        "compensation_tendered": "The acquiring authority offered the awarded compensation to the interested person.",
+        "compensation_received": "The interested person received the offered compensation.",
+        "payment_prevented_by_statutory_contingency": "A circumstance specified by the former law prevented the acquiring authority from paying the compensation directly to the interested person.",
+        "compensation_deposited_in_reference_court": "The acquiring authority deposited the compensation with the court where a reference concerning it could be made."
+      },
+      "definition": "When an old-law acquisition proceeding involves a tender of compensation and either receipt or the specified impediment-and-court-deposit facts, the compensation is treated as paid."
+    },
+    {
+      "legal_issue": "An old-law land-acquisition proceeding lapses when an award was made at least five years before the new acquisition law commenced and either possession was not taken or compensation was not paid in the legally required manner.",
+      "material_facts": [
+        "The award was made more than five years before the 2013 Act commenced.",
+        "The landowners did not receive the compensation, and the unpaid amount was deposited in the government treasury rather than in court."
+      ],
+      "conclusion": "The acquisition proceedings were deemed to have lapsed because compensation had neither been paid to the interested persons nor deposited in court; the treasury deposit did not satisfy the payment requirement.",
+      "legal_principle": "Section 24(2) of the 2013 Act provides for deemed lapse where an award under the 1894 Act was made five years or more before commencement of the 2013 Act and either physical possession was not taken or compensation was not paid. The meaning of payment is determined by Section 31 of the 1894 Act, including its requirement of court deposit when a specified contingency prevents payment. Sections 32 and 33 address money deposited in court. The Court relied on Nazir Ahmad v. King Emperor, Ivo Agnelo Santimano Fernandes, and Prem Nath Kapur.",
+      "rule": {
+        "if": "old_acquisition_proceeding and award_at_least_five_years_old and (possession_not_taken or compensation_not_paid_or_deposited_in_court)",
+        "then": "acquisition_proceedings_lapsed"
+      },
+      "predicates": {
+        "old_acquisition_proceeding": "The acquiring authority began the land-acquisition proceeding under the former acquisition law.",
+        "award_at_least_five_years_old": "The authority made the award at least five years before the new acquisition law commenced.",
+        "possession_not_taken": "The acquiring authority had not taken physical possession of the land.",
+        "compensation_not_paid_or_deposited_in_court": "The acquiring authority had neither paid the compensation to the interested persons nor deposited unpaid compensation with the court for their benefit."
+      },
+      "definition": "An old-law acquisition proceeding lapses when the award is at least five years old and either possession was not taken or compensation was neither paid nor deposited in court."
+    },
+    {
+      "legal_issue": "The repeal-saving rule does not preserve an old-law acquisition proceeding that has lapsed under the new law’s transitional provision.",
+      "material_facts": [
+        "The acquisition proceeding had been initiated under the former acquisition law and its award was made more than five years before the 2013 Act commenced.",
+        "The compensation was not paid to the landowners or deposited in court, and the acquiring authority relied on the repeal-saving provision to argue that the proceeding remained effective."
+      ],
+      "conclusion": "The repeal-saving provision did not prevent the deemed lapse because its operation was subject to the 2013 Act, including the provision that deems qualifying proceedings to have lapsed.",
+      "legal_principle": "Sections 114(1) and 114(2) of the 2013 Act repeal the 1894 Act and apply Section 6 of the General Clauses Act, 1897 to the effect of repeal subject to the provisions of the 2013 Act. Section 24(2) creates a legal fiction of lapse when its stated conditions are met, and that specific provision governs over the saving effect of Section 6.",
+      "rule": {
+        "if": "old_acquisition_proceeding and award_at_least_five_years_old and (possession_not_taken or compensation_not_paid_or_deposited_in_court) and repeal_saving_relied_on",
+        "then": "repeal_saving_does_not_prevent_lapse"
+      },
+      "predicates": {
+        "old_acquisition_proceeding": "The acquiring authority began the land-acquisition proceeding under the former acquisition law.",
+        "award_at_least_five_years_old": "The authority made the award at least five years before the new acquisition law commenced.",
+        "possession_not_taken": "The acquiring authority had not taken physical possession of the land.",
+        "compensation_not_paid_or_deposited_in_court": "The acquiring authority had neither paid the compensation to the interested persons nor deposited unpaid compensation with the court for their benefit.",
+        "repeal_saving_relied_on": "A party relied on a general saving rule to argue that repeal preserved the old acquisition proceeding."
+      },
+      "definition": "When an old-law acquisition proceeding meets the stated age and lapse conditions, reliance on a repeal-saving rule does not prevent its lapse."
+    }
+  ],
+  "seconds": 22.6
+}

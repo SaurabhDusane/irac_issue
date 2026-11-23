@@ -1,0 +1,86 @@
+{
+  "doc_id": "1680975",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43930,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3245,
+    "prompt_tokens": 11223,
+    "total_tokens": 14468,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A government auction of public property conducted through collusion, material procedural irregularities, and disregard of the public authority’s duty to obtain a fair market price cannot stand.",
+      "material_facts": [
+        "The disputed plots belonged to a public industrial development corporation, but it was not notified of their attachment or sale.",
+        "A bank’s claim that it held a mortgage over one plot was disregarded.",
+        "The sale proclamations did not adequately describe the property rights being sold, and the auction was not widely advertised.",
+        "The reserve prices were omitted from the sale records, although reserve prices had been fixed; bids far below those prices were accepted.",
+        "A court’s stay of recovery proceedings concerning one plot was ignored when the sale was confirmed.",
+        "The auction records falsely stated that the required initial deposits had been made immediately after the auction; the deposits were made the following day, and the remaining purchase price for one plot was never paid.",
+        "The evidence supported the conclusion that the purported auctions were collusive and that the public land was being acquired through manipulation of the process."
+      ],
+      "conclusion": "The auction sales were illegal, fraudulent, collusive, and mala fide, and the appeal challenging their setting aside was dismissed.",
+      "legal_principle": "The disposal of public property is in the nature of a trust, requiring public authorities to make all reasonable efforts to obtain the best available market price through a fair and transparent process. A government authority may not dispose of public property below the reserve price. The Court relied on Ram and Shyam Co. v. State of Haryana, (1985) 3 SCC 267; V. Purushotham Rao v. Union of India, (2001) 10 SCC 305; Aggarwal and Modi Enterprises (P.) Ltd. v. New Delhi Municipal Council, (2007) 8 SCC 75; Meerut Development Authority v. Association of Management Studies, (2009) 6 SCC 171; and Anil Kumar Srivastava v. State of U.P., (2004) 8 SCC 671. The recovery and sale process was governed by sections 279, 284, 286 and 341 of the U.P. Zamindari Abolition and Land Reforms Act, 1950, and rules 273, 273-A, 282 and 285-A to 285-N of the 1952 Rules.",
+      "rule": {
+        "if": "appeal_challenging_public_property_auction and public_property_sold_for_recovery and owner_not_notified and (secured_claim_ignored or judicial_stay_ignored) and no_wide_auction_publicity and accepted_bid_below_reserve and (auction_record_misstated_deposit or purchase_balance_unpaid)",
+        "then": "public_property_auction_is_invalid"
+      },
+      "predicates": {
+        "appeal_challenging_public_property_auction": "A party appealed a decision setting aside an auction of public property.",
+        "public_property_sold_for_recovery": "A public asset was put up for auction to recover money owed to the government.",
+        "owner_not_notified": "The authority conducting the sale did not notify the public body that owned the property about the attachment or sale.",
+        "secured_claim_ignored": "The sale authority proceeded despite a creditor’s claim that it held security over the property.",
+        "judicial_stay_ignored": "The sale authority proceeded with or confirmed a sale despite being informed of a court order staying the recovery proceedings.",
+        "no_wide_auction_publicity": "The proposed auction was not publicized through means likely to give the public wide notice.",
+        "accepted_bid_below_reserve": "The sale authority accepted a bid below a reserve price fixed for the property.",
+        "auction_record_misstated_deposit": "The auction record stated that the required initial deposit was made immediately after the auction when it was actually made later.",
+        "purchase_balance_unpaid": "The purchaser did not pay the full purchase price for the property."
+      },
+      "definition": "When an appeal concerns a public-property recovery auction and the stated combination of failures and irregularities occurred, the auction is invalid."
+    },
+    {
+      "legal_issue": "A successful bidder at a recovery auction must make the required initial deposit immediately after the auction and pay the balance within the prescribed time.",
+      "material_facts": [
+        "The auction conditions required the highest bidder to deposit one fourth of the bid immediately after the auction and the remainder within fifteen days.",
+        "The auction records stated that the initial deposits had been made immediately after the auctions, but the government register showed that they were made the next day.",
+        "The register showed that the remaining three fourths of the bid for one plot was never deposited, although a sale certificate was issued."
+      ],
+      "conclusion": "The required initial deposits were not made immediately after the auctions, and the full purchase price for one plot was not paid; the auction payment requirements were therefore breached.",
+      "legal_principle": "Rule 285-D of the U.P. Zamindari Abolition and Land Reforms Rules, 1952 requires the declared purchaser to deposit twenty-five per cent of the bid immediately, failing which the land must be put up for sale again. Rule 285-E requires payment of the full purchase price by the fifteenth day after the sale and provides for forfeiture and resale in case of default.",
+      "rule": {
+        "if": "recovery_auction_payment_challenge and initial_deposit_made_later_than_immediately_required or recovery_auction_payment_challenge and purchase_balance_not_paid_within_required_time",
+        "then": "auction_payment_requirements_were_breached"
+      },
+      "predicates": {
+        "recovery_auction_payment_challenge": "The dispute concerns payment obligations in an auction conducted to recover public dues.",
+        "initial_deposit_made_later_than_immediately_required": "The successful bidder did not pay the required initial portion of the bid immediately after the auction.",
+        "purchase_balance_not_paid_within_required_time": "The purchaser did not pay the remaining purchase price within the required time."
+      },
+      "definition": "In a recovery-auction payment dispute, a delayed initial deposit or an unpaid balance means the auction payment requirements were breached."
+    },
+    {
+      "legal_issue": "Exemplary costs may be imposed on appellants whose litigation seeks to sustain a fraudulent attempt to acquire public land.",
+      "material_facts": [
+        "The appellants pursued an appeal concerning auction sales that the Court found fraudulent and collusive.",
+        "The Court found that the purported auctions were part of an attempt, involving the appellants and government officials, to grab public land."
+      ],
+      "conclusion": "The Court imposed exemplary costs on the appellants, payable to the Supreme Court Legal Aid Committee, with recovery as a fine under the Code of Criminal Procedure if proof of payment was not filed as directed.",
+      "legal_principle": "The Court treated the litigation as requiring exemplary costs because the auction involved manipulation and an attempt to grab public land, and stated that litigation should not operate like a lottery offering an illegitimate windfall at only the cost of litigation. If proof of payment was not filed within the directed time, the costs were recoverable as a fine under the provisions of the Code of Criminal Procedure.",
+      "rule": {
+        "if": "appeal_concerning_public_land_auction and court_found_attempt_to_grab_public_land_through_manipulation",
+        "then": "exemplary_costs_are_imposed_on_appellants"
+      },
+      "predicates": {
+        "appeal_concerning_public_land_auction": "The appellants pursued an appeal concerning an auction of public land.",
+        "court_found_attempt_to_grab_public_land_through_manipulation": "The Court found that the appellants and officials used manipulation in an attempt to acquire public land through the auction."
+      },
+      "definition": "When appellants pursue an appeal concerning a public-land auction that the Court finds was manipulated in an attempt to acquire public land, exemplary costs are imposed on them."
+    }
+  ],
+  "seconds": 23.5
+}

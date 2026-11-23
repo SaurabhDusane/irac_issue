@@ -1,0 +1,77 @@
+{
+  "doc_id": "590817",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 105000,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2763,
+    "prompt_tokens": 25107,
+    "total_tokens": 27870,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The cross-dominion proceedings scheme covers pending proceedings only when the territorial changes would have affected the trial court’s jurisdiction.",
+      "material_facts": [
+        "The underlying suit sought recovery of money paid under an agreement to sell property, and the material events giving rise to the suit occurred within the jurisdiction of the trial court.",
+        "The trial court’s jurisdiction to hear the suit was not affected by the territorial changes arising from partition.",
+        "A decree in the claimant’s favour was restored on appeal by a court in the other Dominion, and an application was made to execute it under the cross-dominion proceedings scheme."
+      ],
+      "conclusion": "The underlying suit did not fall within the scheme because the trial court’s jurisdiction was unaffected by the territorial changes. The decree was therefore not executable through that scheme, and the execution application was incompetent.",
+      "legal_principle": "Under section 9(1)(d) of the Indian Independence Act, 1947, the Governor-General could make provision to remove difficulties arising from the transition. Article 4(1) of the Indian Independence (Legal Proceedings) Order, 1947, read as a whole and in light of its purpose, preserves proceedings where the territorial changes would otherwise affect the trial court’s jurisdiction; it does not extend to every pending proceeding in the specified provinces. The court distinguished Protap Kumar Sen v. Nagendra Nath Mazumdar, Ahidhar Ghose v. Jagabandhu Roy, and Naresh Chandra Bose v. Sachindra Nath Deb, finding them inapplicable to the facts or issue before it. The court also noted that the suit was properly brought under section 20(c) of the Code of Civil Procedure, 1908, and that the trial court’s jurisdiction was unaffected.",
+      "rule": {
+        "if": "cross_border_decree_execution_application and case_pending_in_covered_trial_court_at_partition and not trial_court_jurisdiction_affected_by_territorial_changes",
+        "then": "execution_application_under_special_scheme_is_incompetent"
+      },
+      "predicates": {
+        "cross_border_decree_execution_application": "A party applies to execute in one territory a decree issued by a court in another territory.",
+        "case_pending_in_covered_trial_court_at_partition": "The underlying case was pending in a trial court of the kind covered by the proceedings scheme when the territorial changes took effect.",
+        "trial_court_jurisdiction_affected_by_territorial_changes": "The territorial changes would have affected the trial court’s jurisdiction to continue hearing the pending case.",
+        "execution_application_under_special_scheme_is_incompetent": "The application cannot proceed under the special cross-dominion execution scheme."
+      },
+      "definition": "When an execution application concerns a cross-border decree from a pending case in a covered trial court, but the territorial changes did not affect that court’s jurisdiction, the application is incompetent under the special scheme."
+    },
+    {
+      "legal_issue": "An appeal from proceedings covered by the cross-dominion proceedings scheme includes any appeal allowed by law, not only the first appeal.",
+      "material_facts": [
+        "The underlying suit was heard in a trial court in one Dominion, and the trial court’s jurisdiction was unaffected by the territorial changes.",
+        "The decree was appealed through the courts, including to the highest appellate court in the other Dominion."
+      ],
+      "conclusion": "For proceedings that fall within Article 4(1), Article 4(2) covers any appeal allowed by law, including a further appeal to the highest appellate court; the appeal is to lie in the court that would have appellate jurisdiction if the proceedings had been instituted after the appointed day.",
+      "legal_principle": "Article 4(2) of the Indian Independence (Legal Proceedings) Order, 1947, concerns appeals or revisions arising from proceedings covered by Article 4(1). Read in context, it permits those proceedings to take their full course through the appeals allowed by law; it is not restricted to a single, direct appeal. The court also referred to Government of India Order 3 of February 25, 1948, and the Federal Court (Jurisdiction Enlargement) Act, 1950, in addressing the Federal Court’s appellate role. This interpretation applies only where the underlying proceedings satisfy Article 4(1).",
+      "rule": {
+        "if": "appeal_from_qualifying_pending_proceeding and appeal_allowed_by_law",
+        "then": "appeal_lies_in_court_with_post_change_appellate_jurisdiction"
+      },
+      "predicates": {
+        "appeal_from_qualifying_pending_proceeding": "A party appeals from a proceeding that was pending in a covered trial court and whose jurisdiction was affected by territorial changes.",
+        "appeal_allowed_by_law": "The applicable law permits the appeal, including any further appeal in the appellate sequence.",
+        "appeal_lies_in_court_with_post_change_appellate_jurisdiction": "The appeal lies in the court that would have appellate jurisdiction over the proceeding if it had been instituted after the territorial changes."
+      },
+      "definition": "An appeal allowed by law from a qualifying pending proceeding lies in the court that would have appellate jurisdiction over a newly instituted proceeding after the territorial changes."
+    },
+    {
+      "legal_issue": "A final judgment or decree in proceedings covered by the cross-dominion scheme is executable in the other Dominion as if made by a competent court there.",
+      "material_facts": [
+        "The judgment or decree for which execution was sought had been made in one Dominion after proceedings in a trial court there and an appeal through the courts.",
+        "The court held that the scheme applies only where the territorial changes would have affected the trial court’s jurisdiction; the underlying suit in this case did not meet that condition."
+      ],
+      "conclusion": "For proceedings covered by Article 4(1), Article 4(3) requires the judgment or decree to be executed in either Dominion as if it had been passed by a competent court in the Dominion where execution is sought. The decree in this case was outside the scheme because the trial court’s jurisdiction was unaffected.",
+      "legal_principle": "Article 4(3) of the Indian Independence (Legal Proceedings) Order, 1947, is a deeming provision. Read with Articles 4(1) and 4(2), its direction that effect be given to a qualifying judgment or decree means that it is executable in either Dominion as if made by a competent court there, rather than merely recognizable as a foreign judgment. The court contrasted this special rule with ordinary private international law and the Code of Civil Procedure, including sections 13, 44, and 44A. Article 4(3) operates only for proceedings covered by Article 4(1).",
+      "rule": {
+        "if": "final_decree_from_qualifying_pending_proceeding and execution_sought_in_other_dominion",
+        "then": "decree_executable_as_decree_of_competent_local_court"
+      },
+      "predicates": {
+        "final_decree_from_qualifying_pending_proceeding": "A final decree was made in a proceeding pending in a covered trial court whose jurisdiction was affected by territorial changes.",
+        "execution_sought_in_other_dominion": "A party seeks to execute the decree in the other Dominion.",
+        "decree_executable_as_decree_of_competent_local_court": "The decree is executable in the territory where enforcement is sought as if it had been made by a competent court there."
+      },
+      "definition": "A final decree from a qualifying proceeding, when enforcement is sought in the other Dominion, is executable there as if it were a decree of a competent local court."
+    }
+  ],
+  "seconds": 17.9
+}

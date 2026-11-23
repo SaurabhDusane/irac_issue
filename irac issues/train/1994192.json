@@ -1,0 +1,61 @@
+{
+  "doc_id": "1994192",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25888,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2086,
+    "prompt_tokens": 6909,
+    "total_tokens": 8995,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A decision on the merits of an appeal while a challenge to the order condoning delay is pending does not prevent review of the condonation order.",
+      "material_facts": [
+        "The claimants appealed against the order condoning delay in the State’s land acquisition appeals.",
+        "While those challenges were pending, the High Court decided the State’s appeals on the merits."
+      ],
+      "conclusion": "The High Court’s decision on the merits did not bar the Court from considering whether the delay-condonation order was correct; if that order were set aside, the subsequent merits decision could be rendered nugatory.",
+      "legal_principle": "An order deciding an appeal on the merits may depend on the order excusing delay; setting aside the latter can undermine the former. Accordingly, deciding the merits appeal in the meantime does not by itself make a challenge to the delay-condonation order infructuous.",
+      "rule": {
+        "if": "appeal_challenges_delay_condonation and main_appeal_decided_on_merits",
+        "then": "condonation_order_remains_reviewable"
+      },
+      "predicates": {
+        "appeal_challenges_delay_condonation": "A party has appealed against an order excusing delay in filing another appeal.",
+        "main_appeal_decided_on_merits": "The court has decided the underlying appeal on its merits while the challenge to the delay order is pending."
+      },
+      "definition": "When a challenge to an order excusing delay is pending and the underlying appeal is decided on its merits, the order excusing delay remains reviewable."
+    },
+    {
+      "legal_issue": "Delay in a government appeal may be condoned where the circumstances, including serious failures by government law officers and the government’s reliance on them, support substantial justice and do not establish gross negligence, deliberate inaction, or bad faith by the government.",
+      "material_facts": [
+        "The State sought condonation of substantial delays in filing appeals against enhanced land acquisition compensation awards.",
+        "The High Court found that government law officers had failed to perform basic duties, mishandled certified-copy applications, and impeded the government’s ability to ascertain the state of the cases.",
+        "The government relied on its law officers and took time to discover that they had failed that trust.",
+        "The Court considered the government’s delay after it had notice of the awards unjustifiably prolonged and its conduct perilously close to inaction.",
+        "The High Court had condoned the delays, and the Court concluded that the awards should not become final without merits review in the circumstances."
+      ],
+      "conclusion": "The Court declined to interfere with the High Court’s exercise of discretion and dismissed the appeals challenging condonation of delay.",
+      "legal_principle": "Under Section 5 of the Limitation Act, 1963, “sufficient cause” is construed liberally to advance substantial justice, and delay is generally condoned where gross negligence, deliberate inaction, or lack of bona fides is not imputable to the applicant. There is no general rule excusing every mistake of counsel, and each case depends on its facts. Government remains responsible for its officers’ acts and omissions, but reasonable recognition may be given to governmental decision-making and procedural limitations, particularly where public interest is affected by officers’ fraud, bad faith, or conduct at cross-purposes with the government. The Court relied on Ramlal, Motilal and Chhotelal v. Rewa Coalfield Ltd.; Shakuntala Devi Jain v. Kuntal Kumari; Concord of India Insurance Co. Ltd. v. Nirmala Devi; Lala Mata Din v. A. Narayanan; Collector, Land Acquisition v. Katiji; Re: National Bank of Wales Ltd.; and Special Land Acquisition Officer v. B.M. Krishnamurthy.",
+      "rule": {
+        "if": "government_appeal_seeks_delay_condonation and law_officers_seriously_failed_duties and government_relied_on_law_officers and officer_conduct_delayed_discovery and public_interest_would_be_affected and not gross_negligence_or_bad_faith_attributable_to_government",
+        "then": "delay_condonation_upheld"
+      },
+      "predicates": {
+        "government_appeal_seeks_delay_condonation": "The government seeks to excuse delay in filing an appeal.",
+        "law_officers_seriously_failed_duties": "The government’s law officers failed to perform important duties involved in preparing or pursuing the appeal.",
+        "government_relied_on_law_officers": "The government entrusted the conduct of the matter to its law officers and relied on them.",
+        "officer_conduct_delayed_discovery": "The law officers’ conduct hindered the government from learning the true state of the matter promptly.",
+        "public_interest_would_be_affected": "The loss of the government’s appeal would affect public interest rather than only an individual litigant.",
+        "gross_negligence_or_bad_faith_attributable_to_government": "The government itself acted with gross negligence or deliberate inaction, or lacked bona fides, in seeking condonation."
+      },
+      "definition": "When the government seeks condonation, its law officers seriously fail their duties, the government relied on them and discovered the problem late, public interest would be affected, and gross negligence or bad faith is not attributable to the government, delay condonation is upheld."
+    }
+  ],
+  "seconds": 13.9
+}

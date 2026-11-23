@@ -1,0 +1,82 @@
+{
+  "doc_id": "106222",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15101,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2714,
+    "prompt_tokens": 4520,
+    "total_tokens": 7234,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent-control application seeking recall of an eviction warrant is barred when the applicant’s earlier suit concerning substantially the same subject matter was dismissed for default.",
+      "material_facts": [
+        "The transferee filed a suit seeking a declaration that he was the landlord’s tenant; that suit was dismissed for non-prosecution, the application to set aside the dismissal was rejected, and the appeal also failed.",
+        "The transferee later applied to recall the warrant issued under an eviction decree, concerning the same premises and substantially the same subject matter.",
+        "The transferee had taken possession before the eviction decree was passed."
+      ],
+      "conclusion": "The application to recall the warrant was barred by the principle in Order IX Rule 9 of the Code of Civil Procedure.",
+      "legal_principle": "Order IX Rule 9 of the Code of Civil Procedure bars a further proceeding on substantially the same subject matter after the earlier suit has been dismissed for default. The bar is not merely a personal estoppel that can be avoided by changing the form of the proceeding or claiming through another. The Court applied Suraj Ratan Thirani v. Azamabad Tea Co. (1964).",
+      "rule": {
+        "if": "rent_control_warrant_recall_application and prior_declaratory_suit_dismissed_for_default and (restoration_attempt_failed or prior_dismissal_unset) and same_substantive_subject_matter",
+        "then": "application_barred_by_prior_default_dismissal"
+      },
+      "predicates": {
+        "rent_control_warrant_recall_application": "The applicant sought in a rent-control proceeding to recall a warrant issued to enforce an eviction decree.",
+        "prior_declaratory_suit_dismissed_for_default": "The applicant’s earlier suit seeking a declaration of tenancy rights was dismissed because of non-prosecution.",
+        "restoration_attempt_failed": "The applicant’s attempt to have the earlier dismissal set aside, including any appeal from its rejection, was unsuccessful.",
+        "prior_dismissal_unset": "The earlier suit’s dismissal remained in force when the later application was made.",
+        "same_substantive_subject_matter": "The earlier suit and the later application concerned substantially the same premises and claimed tenancy rights."
+      },
+      "definition": "When a rent-control warrant-recall application follows an unrevived default dismissal of the applicant’s declaratory suit concerning substantially the same subject matter, the application is barred."
+    },
+    {
+      "legal_issue": "A transfer of tenancy rights and possession by an official liquidator acting for the original tenant falls within the prohibition on subletting, assignment, or otherwise parting with possession, whether the transfer is voluntary or involuntary.",
+      "material_facts": [
+        "The original tenant was ordered to be wound up and an official liquidator was appointed.",
+        "The official liquidator sold the tenancy rights to the transferee, the sale was confirmed by the court, and the transferee took possession.",
+        "The official liquidator acted on behalf of the original tenant, and the transfer was made without the landlord’s written consent."
+      ],
+      "conclusion": "The transfer fell within the mischief of section 14(1)(b) of the Delhi Rent Control Act; even if it was involuntary, it was an assignment covered by that provision.",
+      "legal_principle": "Section 14(1)(b) of the Delhi Rent Control Act broadly covers subletting, assignment, and any other mode of parting with possession without the landlord’s written consent. The Court held that the provision also covers an involuntary sale; it treated the liquidator as acting for the original tenant and overruled Krishna Das Nandy v. Bidhan Chandra Roy (AIR 1959 Cal. 181).",
+      "rule": {
+        "if": "landlord_tenant_eviction_dispute and tenancy_rights_and_possession_transferred and liquidator_acting_for_original_tenant and not landlord_written_consent and (voluntary_transfer or involuntary_transfer)",
+        "then": "transfer_is_prohibited_assignment_or_parting_with_possession"
+      },
+      "predicates": {
+        "landlord_tenant_eviction_dispute": "The dispute concerns a landlord’s claim to possession of premises let to a tenant.",
+        "tenancy_rights_and_possession_transferred": "A person received the tenant’s rights in the premises and possession of them.",
+        "liquidator_acting_for_original_tenant": "A liquidator transferred the rights and possession on behalf of the original tenant.",
+        "landlord_written_consent": "The landlord gave written consent to the transfer or parting with possession.",
+        "voluntary_transfer": "The transfer of the tenant’s rights and possession was voluntary.",
+        "involuntary_transfer": "The transfer of the tenant’s rights and possession was involuntary, including a transfer made under court authority."
+      },
+      "definition": "A transfer of tenancy rights and possession by a liquidator acting for the original tenant, without the landlord’s written consent, is a prohibited assignment or parting with possession whether voluntary or involuntary."
+    },
+    {
+      "legal_issue": "A person who is not a tenant within the meaning of the rent-control law cannot maintain an application to recall an eviction warrant under that law.",
+      "material_facts": [
+        "The transferee received the tenancy rights and possession through the official liquidator’s transfer.",
+        "The Court found no basis for treating the transferee as a tenant within the meaning of the rent-control law and described him instead as an unlawful sub-lessee.",
+        "The transferee applied under section 25 of the Delhi Rent Control Act to recall the eviction warrant."
+      ],
+      "conclusion": "The transferee was not entitled to maintain the section 25 application as a tenant.",
+      "legal_principle": "Section 25 of the Delhi Rent Control Act does not permit a person who is not a tenant within the meaning of the Act to maintain an application of this kind. The Court relied on its finding that the transferee was an unlawful sub-lessee rather than a tenant.",
+      "rule": {
+        "if": "rent_control_warrant_recall_application and applicant_not_tenant_under_rent_control_law",
+        "then": "applicant_cannot_maintain_tenant_application"
+      },
+      "predicates": {
+        "rent_control_warrant_recall_application": "The applicant sought to recall an eviction warrant in a rent-control proceeding.",
+        "applicant_not_tenant_under_rent_control_law": "The applicant was not a tenant within the meaning of the rent-control law and instead held possession as an unlawful sub-lessee."
+      },
+      "definition": "A person who applies to recall an eviction warrant but is not a tenant under the rent-control law cannot maintain the application as a tenant."
+    }
+  ],
+  "seconds": 19.8
+}

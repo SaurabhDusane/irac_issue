@@ -1,0 +1,77 @@
+{
+  "doc_id": "1753919",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41143,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3462,
+    "prompt_tokens": 10198,
+    "total_tokens": 13660,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The annual letting value of property governed by rent-control legislation cannot exceed the standard or fair rent permitted under that legislation.",
+      "material_facts": [
+        "The municipalities imposed property tax on the basis of annual letting value under rules that treated actual rent as the basis for valuation in some circumstances, including where actual rent exceeded standard rent.",
+        "The challenged rules applied to properties that could be governed by rent-control legislation.",
+        "The applicable rent-control legislation limited the rent recoverable for properties within its scope."
+      ],
+      "conclusion": "For property governed by rent-control legislation, annual letting value must be determined on the basis of the standard or fair rent determined or determinable under that legislation, and cannot be based on actual rent above that limit.",
+      "legal_principle": "Under Sections 2(1) and 99(1)(i) of the Gujarat Municipalities Act, 1963, annual letting value means the rent reasonably expected from the property, and property tax may be based on that value. The second proviso to Section 99(1), clause (e), permits a consolidated tax. The Court applied The Corporation of Calcutta v. Smt. Padma Debi, [1962] 3 SCR 49; Corporation of Calcutta v. Life Insurance Corporation of India, [1971] 1 SCR 248; Guntur Municipal Council v. Guntur Town Rate Payers Association, [1971] 2 SCR 423; and Dewan Daulat Rai Kapoor v. New Delhi Municipal Committee, [1980] 1 SCC 685, which establish that rent-control limits define the outer limit of reasonable rent for valuation. Municipal Corporation Indore v. Smt. Ratnaprabha, [1976] 4 SCC 622, was distinguished because the statute there contained a non-obstante clause; the Court left open whether such a clause would affect the result.",
+      "rule": {
+        "if": "municipal_property_tax_assessment and rent_control_applies and actual_rent_exceeds_controlled_rent_limit",
+        "then": "annual_value_capped_at_controlled_rent_limit"
+      },
+      "predicates": {
+        "municipal_property_tax_assessment": "A local authority assesses property tax by determining the annual letting value of land or buildings.",
+        "rent_control_applies": "The property is governed by legislation that restricts the rent recoverable for it.",
+        "actual_rent_exceeds_controlled_rent_limit": "The rent actually charged or received for the property exceeds the standard or fair rent permitted under the applicable rent restriction."
+      },
+      "definition": "When a property-tax assessment concerns rent-controlled property and actual rent exceeds the permitted rent limit, the annual value is capped at that limit."
+    },
+    {
+      "legal_issue": "A municipal rule permitting actual rent to be used to determine annual letting value is applicable to properties outside rent-control legislation, but not to properties governed by it.",
+      "material_facts": [
+        "The municipalities’ rules allowed actual rent to be used to calculate annual letting value, including in circumstances where standard rent had not been determined or actual rent exceeded standard rent.",
+        "The High Court had struck down Rule 5, while the municipalities argued that it could operate for properties not governed by rent-control legislation.",
+        "Rule 4 prescribed property-tax rates by reference to annual letting value."
+      ],
+      "conclusion": "Rule 5 is not invalid in its entirety: it is to be read as permitting actual rent as the basis for annual letting value only for properties not governed by rent-control legislation. For properties governed by that legislation, valuation must use standard or fair rent. Rule 4 is valid when annual letting value is understood consistently with that limit.",
+      "legal_principle": "Sections 2(1) and 99(1)(i) of the Gujarat Municipalities Act, 1963, require annual letting value to be determined consistently with the reasonable rent legally available from the property. Rules 4 and 5 must be construed accordingly: Rule 5 may operate for properties outside rent-control legislation, while rent-controlled property is valued by standard or fair rent. The Court relied on The Corporation of Calcutta v. Smt. Padma Debi, [1962] 3 SCR 49; Corporation of Calcutta v. Life Insurance Corporation of India, [1971] 1 SCR 248; Guntur Municipal Council v. Guntur Town Rate Payers Association, [1971] 2 SCR 423; and Dewan Daulat Rai Kapoor v. New Delhi Municipal Committee, [1980] 1 SCC 685.",
+      "rule": {
+        "if": "municipal_property_tax_valuation and rent_control_does_not_apply and actual_rent_used_as_valuation_basis",
+        "then": "actual_rent_basis_permitted"
+      },
+      "predicates": {
+        "municipal_property_tax_valuation": "A local authority determines annual letting value for a property-tax assessment.",
+        "rent_control_does_not_apply": "The property is not governed by legislation restricting the rent recoverable for it.",
+        "actual_rent_used_as_valuation_basis": "The local authority uses the rent actually received or charged to determine the property's annual letting value."
+      },
+      "definition": "For property-tax valuation outside rent-control legislation, using actual rent as the valuation basis is permitted."
+    },
+    {
+      "legal_issue": "The statutory date for a municipality to authenticate an assessment list is directory, and authentication after that date does not by itself invalidate the list.",
+      "material_facts": [
+        "The assessment list for the first year in which property tax was imposed was authenticated by the municipality after 31 July but before the end of that official year.",
+        "The State Government had extended the time for the municipality to authenticate the list rather than appointing another person to do so.",
+        "The High Court treated 31 July as a limitation date and held the assessment list invalid."
+      ],
+      "conclusion": "The date for authentication by the municipality is directory and enabling, not a limitation period; the assessment list was validly authenticated and was not invalid merely because authentication occurred after 31 July.",
+      "legal_principle": "Sections 105 to 111 of the Gujarat Municipalities Act, 1963, provide the procedure for preparing, publishing, objecting to, authenticating, and revising assessment lists. Section 112 provides for authentication by a specified date and authorizes the State Government to appoint a person to act if the municipality defaults. In context, Section 112 is directory and enabling: Section 99 is the charging provision and imposes no time limit on the tax, and Section 112 does not state that late authentication invalidates the list.",
+      "rule": {
+        "if": "municipal_assessment_list_proceeding and municipality_authenticates_after_target_date_before_end_of_official_year",
+        "then": "assessment_list_not_invalid_for_late_authentication_alone"
+      },
+      "predicates": {
+        "municipal_assessment_list_proceeding": "A local authority prepares and authenticates an assessment list for municipal property taxation.",
+        "municipality_authenticates_after_target_date_before_end_of_official_year": "The municipality authenticates the assessment list after its specified target date but before the end of the official year."
+      },
+      "definition": "In a municipal assessment-list proceeding, authentication after the target date but before the end of the official year does not alone invalidate the list."
+    }
+  ],
+  "seconds": 20.8
+}

@@ -1,0 +1,57 @@
+{
+  "doc_id": "1693163",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23702,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1701,
+    "prompt_tokens": 6495,
+    "total_tokens": 8196,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The possession-based limitation rule requiring prior possession by the plaintiff does not govern a possession claim brought solely by succession where the plaintiffs were never in possession under that title.",
+      "material_facts": [
+        "The plaintiffs claimed the property as heirs, but neither had possessed it in that capacity.",
+        "One plaintiff had possessed part of the property for a time under a transfer from the adopted son, not under the succession title asserted in the suit."
+      ],
+      "conclusion": "Article 142 did not apply to the suit.",
+      "legal_principle": "Article 142 of the Limitation Act, 1908, applies where the plaintiff was initially in possession and was dispossessed by the defendant or someone through whom the defendant claims, or where the plaintiff discontinued possession. Possession under a different title does not establish the possession required for a claim brought under succession.",
+      "rule": {
+        "if": "possession_suit and plaintiffs_never_possessed_under_claimed_title",
+        "then": "article_142_does_not_apply"
+      },
+      "predicates": {
+        "possession_suit": "The plaintiffs brought a suit to recover possession of property.",
+        "plaintiffs_never_possessed_under_claimed_title": "The plaintiffs had never possessed the property under the title on which they brought the suit."
+      },
+      "definition": "When plaintiffs seek possession but never possessed the property under their asserted title, the prior-possession limitation rule does not apply."
+    },
+    {
+      "legal_issue": "For a possession claim governed by the adverse-possession limitation rule, a defendant cannot add the possession of an independent trespasser to the possession of the defendant or those through whom the defendant claims.",
+      "material_facts": [
+        "The Raja took possession in 1938, and the transferee and then the appellants obtained possession through transfers or a decree connected to the Raja's title.",
+        "The adverse possession of the Raja and those claiming through him was less than the limitation period when the suit was filed.",
+        "The adopted son and the person who had received part of the property from him had possessed it before the Raja, but they were independent trespassers in relation to the Raja and those claiming through him."
+      ],
+      "conclusion": "Article 144 applied, but the suit was not barred by limitation because the defendants' chain of adverse possession was shorter than the limitation period and could not be extended by adding the independent trespassers' possession.",
+      "legal_principle": "Under Article 144 of the Limitation Act, 1908, limitation begins when the defendant's possession becomes adverse to the plaintiff, and the defendant bears the burden of establishing adverse possession for the required period. Under section 2(4), a defendant may rely on possession of a person from or through whom the defendant derives liability, but not on the possession of an independent trespasser, because no jural relationship connects independent trespassers. Ramayya v. Kotamma was explained as a case governed by Article 142 and therefore distinguishable; the court also relied on Agency Co. v. Short and referred to Rajagopala Naidu v. Ramasubramania Ayyar and Willis v. Earl Howe.",
+      "rule": {
+        "if": "possession_suit and defendants_claim_through_later_possessors and defendants_chain_below_limitation_period and earlier_possession_by_independent_trespasser",
+        "then": "suit_not_barred_by_adverse_possession"
+      },
+      "predicates": {
+        "possession_suit": "The plaintiff brought a suit to recover possession of property.",
+        "defendants_claim_through_later_possessors": "The defendants claimed through later possessors whose adverse possession was connected to the defendants' chain of title or claim.",
+        "defendants_chain_below_limitation_period": "The adverse possession of the defendants and persons through whom they claimed was shorter than the applicable limitation period.",
+        "earlier_possession_by_independent_trespasser": "An earlier possessor held the property as a trespasser independent of the defendants' chain of claim."
+      },
+      "definition": "When the defendants' connected period of adverse possession is shorter than the applicable limitation period, possession by an independent earlier trespasser cannot make the possession claim time-barred."
+    }
+  ],
+  "seconds": 11.6
+}

@@ -1,0 +1,148 @@
+{
+  "doc_id": "231673",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 112226,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4478,
+    "prompt_tokens": 26178,
+    "total_tokens": 30656,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An arbitrator acting under the Arbitration Act, 1940 cannot grant interim relief beyond the reference or the powers conferred by the arbitration agreement.",
+      "material_facts": [
+        "During the arbitration, the arbitrator permitted one party to resume and complete construction, although no specific agreement conferred interim-measure powers on the arbitrator.",
+        "The direction affected matters central to the parties’ disputes and was not made with the other party’s consent.",
+        "The arbitrator had declined the parties’ request for an interim award on title and had not yet received their claims and counterclaims."
+      ],
+      "conclusion": "The interim direction was without jurisdiction and was a nullity; it could not provide a basis for sustaining the later award.",
+      "legal_principle": "Under Sections 41(b) and the Second Schedule to the Arbitration Act, 1940, interim injunctions and related measures may be sought from a court in relation to arbitration proceedings; the proviso does not empower an arbitrator unless such power has been conferred. An arbitrator is a tribunal of limited jurisdiction, confined to the agreement and reference, and consent cannot confer jurisdiction that does not exist. The Court relied on The United Commercial Bank Ltd. v. Their Workmen, Hakam Singh v. M/s Gammon (India) Ltd., Morgan Stanley Mutual Fund v. Kartick Das, and the jurisdictional-nullity principles in Kiran Singh v. Chaman Paswan and the other cases cited. It contrasted Section 17 of the Arbitration and Conciliation Act, 1996, which expressly confers limited interim-measure powers.",
+      "rule": {
+        "if": "award_challenge_proceeding and arbitrator_issued_interim_direction and direction_exceeded_reference and no_agreement_authorized_interim_measures",
+        "then": "interim_direction_is_without_jurisdiction"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party challenged an arbitral award in a proceeding seeking judicial review of the award.",
+        "arbitrator_issued_interim_direction": "An arbitrator directed a party to take action while the arbitration was pending.",
+        "direction_exceeded_reference": "The direction went beyond the disputes referred to the arbitrator or the subject matter the arbitrator could decide under the agreement.",
+        "no_agreement_authorized_interim_measures": "The parties had not agreed to confer on the arbitrator the power used to make the interim direction."
+      },
+      "definition": "When an award challenge concerns an interim direction that exceeded the reference and was not authorized by agreement, the direction is without jurisdiction."
+    },
+    {
+      "legal_issue": "An arbitrator cannot award completion costs under a contractual risk-and-expense clause while disregarding the clause’s requirements and the contractually assigned role of the architect.",
+      "material_facts": [
+        "The contract contained provisions governing termination for failure to proceed with due diligence and completion of the remaining work at the contractor’s risk and expense.",
+        "The relevant completion-cost provision contemplated an architect’s certification or an estimate approved under the contract.",
+        "The arbitrators treated the architect’s certification requirement as inapplicable because construction had been permitted by an interim arbitral direction that was itself beyond jurisdiction.",
+        "The arbitrators did not properly consider the contractual conditions for termination and recovery of completion costs."
+      ],
+      "conclusion": "The arbitrators’ failure to consider and apply the relevant contractual provisions amounted to legal misconduct, and the award of completion costs could not stand.",
+      "legal_principle": "An arbitrator derives authority from the contract and must decide within its terms. Ignoring a relevant contractual condition or awarding an item contrary to the contract can be a jurisdictional error or legal misconduct. The Court relied on Steel Authority of India Ltd. v. J.C. Budharaja, Government and Mining Contractor; Bharat Coking Coal Ltd. v. M/s Annapurna Construction; Bharat Coking Coal Ltd. v. L.K. Ahuja & Co.; Associated Engineering v. Government of Andhra Pradesh; and the other contract-and-arbitration authorities cited. It also held that the architect’s role under the completion-cost clause could not be bypassed merely because an interim arbitral order had permitted construction to proceed.",
+      "rule": {
+        "if": "award_challenge_proceeding and risk_cost_claim_awarded and contract_sets_conditions_for_risk_cost_recovery and arbitrator_disregarded_contractual_conditions",
+        "then": "risk_cost_award_cannot_stand"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party challenged an arbitral award in a proceeding seeking judicial review of the award.",
+        "risk_cost_claim_awarded": "The arbitrator awarded a party the cost of completing unfinished contractual work at the other party’s risk and expense.",
+        "contract_sets_conditions_for_risk_cost_recovery": "The contract specifies conditions or procedures that must be followed before completion costs may be recovered from the contractor.",
+        "arbitrator_disregarded_contractual_conditions": "The arbitrator did not apply the relevant contractual conditions when deciding the completion-cost claim."
+      },
+      "definition": "When an award challenge concerns a risk-and-expense award made despite the arbitrator’s disregard of the contract’s recovery conditions, the award cannot stand."
+    },
+    {
+      "legal_issue": "A contractor cannot be held liable for failure to obtain building-plan approval without a contractual duty to obtain approval, and statutory approval requirements cannot be displaced by an unproven assumption about the contractor’s role.",
+      "material_facts": [
+        "The contract did not identify a specific obligation requiring the contractor to obtain municipal approval of the building plans.",
+        "The owner was the party that submitted the revised plan and dealt with the municipality, and the statutory scheme required an application for approval before construction.",
+        "The architect’s separate agreement allocating responsibility for obtaining approval was not an agreement to which the contractor was a party.",
+        "The arbitrators attributed some follow-up role to the contractor based on correspondence and treated that role as supporting liability, without identifying an express contractual obligation."
+      ],
+      "conclusion": "The finding that the contractor was liable for failure to obtain approval was unsupported by the contract and record and could not sustain the completion-cost award.",
+      "legal_principle": "Sections 204 and 205 of the West Bengal Municipal Act, 1993 required prior municipal sanction and an application by the person intending to erect or re-erect a building; Section 440 provided penal consequences for violation. The Court held that contractual liability must arise from an obligation agreed between the parties, not from a separate agreement to which the contractor was not a party or from an assumed role. It also relied on Section 23 of the Indian Contract Act, 1872 and the principle that a party cannot enforce an illegal bargain; Kuju Collieries Ltd. v. Jharkhand Mines Ltd. was cited on the inapplicability of Sections 65 and 70 to a contract hit by Section 23.",
+      "rule": {
+        "if": "award_challenge_proceeding and statutory_approval_required and no_express_builder_approval_duty and liability_based_only_on_assumed_follow_up_role",
+        "then": "approval_failure_liability_finding_cannot_stand"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party challenged an arbitral award in a proceeding seeking judicial review of the award.",
+        "statutory_approval_required": "The applicable building rules required approval by a public authority before the relevant construction could lawfully proceed.",
+        "no_express_builder_approval_duty": "The contract between the owner and contractor did not expressly require the contractor to obtain the public authority’s approval.",
+        "liability_based_only_on_assumed_follow_up_role": "The arbitrator relied on correspondence or an assumed assistance role, rather than an express contractual duty, to attribute approval-related liability to the contractor."
+      },
+      "definition": "When an award challenge concerns approval-related liability based only on an assumed follow-up role, despite a statutory approval requirement and no express contractual duty on the builder, that liability finding cannot stand."
+    },
+    {
+      "legal_issue": "A contractor’s compliance with a statutory stop-work direction cannot be treated as self-induced frustration without evidence that the contractor caused the impediment.",
+      "material_facts": [
+        "The municipality directed that construction stop because the required approvals had not been obtained.",
+        "The applicable municipal law prohibited construction without prior sanction and provided penal consequences for violation.",
+        "The contractor had warned the owner about the legal consequences of continuing work and complied with the stop-work direction.",
+        "There was no pleading or evidence that the contractor colluded with the municipal authorities or otherwise caused the direction."
+      ],
+      "conclusion": "The arbitrators could not reject frustration on the unsupported basis that it was self-induced; the statutory stop-work direction and the contractor’s compliance had to be considered in deciding the parties’ contractual liability.",
+      "legal_principle": "Section 56 of the Indian Contract Act, 1872 addresses contracts that become impossible or unlawful to perform. A statutory injunction may make performance impossible, and a party cannot be faulted for complying with a mandatory prohibition. The party alleging that frustration was self-induced bears the burden of proving it. The Court relied on Joseph Constantine Steamship Line Ltd. v. Imperial Smelting Corporation Ltd. and the principles described in the cited contract-law texts; it also noted that abandonment or deliberate repudiation may prevent a party from relying on frustration, but no such case was established on the record.",
+      "rule": {
+        "if": "award_challenge_proceeding and statutory_stop_work_direction and contractor_complied_with_direction and no_evidence_contractor_caused_impediment",
+        "then": "self_induced_frustration_finding_cannot_stand"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party challenged an arbitral award in a proceeding seeking judicial review of the award.",
+        "statutory_stop_work_direction": "A public authority directed that the relevant work stop under a statutory requirement.",
+        "contractor_complied_with_direction": "The contractor refrained from continuing the work after receiving the direction.",
+        "no_evidence_contractor_caused_impediment": "The party alleging self-induced frustration produced no pleading or evidence that the contractor caused the public authority’s direction or the impediment to performance."
+      },
+      "definition": "When an award challenge concerns compliance with a statutory stop-work direction and there is no evidence that the contractor caused the impediment, a finding of self-induced frustration cannot stand."
+    },
+    {
+      "legal_issue": "An award of contractual completion damages must rest on an established breach of the contract and cannot be based on irrelevant conduct occurring after the dispute arose.",
+      "material_facts": [
+        "The arbitrators used the contractor’s conduct after termination as a foundation for findings against it.",
+        "The disputes were required to be assessed as they stood when the contract was terminated.",
+        "The completion-cost claim depended on a breach that would permit recourse to the contract’s termination and risk-and-expense provisions."
+      ],
+      "conclusion": "The arbitrators’ reliance on subsequent conduct was an error apparent on the face of the award, and completion damages could be awarded only if a relevant contractual breach and a lawful basis for invoking the risk-and-expense provisions were established.",
+      "legal_principle": "Contractual damages require breach of the relevant contractual obligation. Under the contract, the risk-and-expense remedy could be invoked only if the contractual conditions for termination and recovery were met. The Court relied on the damages principles discussed in McGregor on Damages, including Mertens v. Home Freeholds Co. Ltd., and referred also to Clark v. Woor and East Ham Borough Corporation v. Bernard Sunley & Sons Ltd. It held that subsequent conduct was irrelevant to determining the dispute as at termination.",
+      "rule": {
+        "if": "award_challenge_proceeding and completion_damages_awarded and damages_based_on_post_dispute_conduct and no_relevant_contractual_breach_established",
+        "then": "completion_damages_award_cannot_stand"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party challenged an arbitral award in a proceeding seeking judicial review of the award.",
+        "completion_damages_awarded": "The arbitrator awarded damages measured by the cost of completing unfinished contractual work.",
+        "damages_based_on_post_dispute_conduct": "The arbitrator relied on conduct occurring after the relevant contractual dispute or termination to support the damages award.",
+        "no_relevant_contractual_breach_established": "The award did not establish a breach of a contractual obligation that authorized the damages remedy."
+      },
+      "definition": "When an award challenge concerns completion damages based on post-dispute conduct without an established contractual breach, the damages award cannot stand."
+    },
+    {
+      "legal_issue": "A finding that title passed under sale deeds should not be set aside where the requirements for sale were met and the challenge does not establish a legal error in the award.",
+      "material_facts": [
+        "The landowners executed sale deeds in favour of the purchaser, and consideration was paid to the landowners.",
+        "The statutory requirements for a sale under Section 54 of the Transfer of Property Act, 1882 were satisfied.",
+        "The contractor contended that the transfers were security for an advance, but the arbitrators found that title passed under the sale deeds.",
+        "The claim of unjust enrichment had not been made before the arbitrators."
+      ],
+      "conclusion": "The Court upheld the award’s finding that title to the land vested absolutely in the purchaser and found no basis to set that part of the award aside.",
+      "legal_principle": "Under Section 54 of the Transfer of Property Act, 1882, a sale transfers ownership in exchange for a price paid or promised, subject to the statutory requirements. In reviewing an award under Sections 30 and 33 of the Arbitration Act, 1940, the Court does not set aside a finding merely because a party disputes it where the arbitrator applied no wrong principle of law. A claim of unjust enrichment that was not made before the arbitrators could not be raised for the first time in the challenge.",
+      "rule": {
+        "if": "award_challenge_proceeding and sale_deeds_executed_for_property and sale_requirements_satisfied and no_legal_error_in_title_finding",
+        "then": "title_finding_in_award_is_upheld"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party challenged an arbitral award in a proceeding seeking judicial review of the award.",
+        "sale_deeds_executed_for_property": "The relevant owners executed deeds transferring the property to the party found to hold title.",
+        "sale_requirements_satisfied": "The requirements governing a transfer by sale were satisfied, including payment of consideration to the owners.",
+        "no_legal_error_in_title_finding": "The arbitrator’s title finding was based on the sale documents and did not apply a wrong principle of law."
+      },
+      "definition": "When an award challenge concerns a title finding supported by sale deeds satisfying the requirements for sale and no legal error is shown, the title finding is upheld."
+    }
+  ],
+  "seconds": 25.7
+}

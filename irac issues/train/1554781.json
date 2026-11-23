@@ -1,0 +1,97 @@
+{
+  "doc_id": "1554781",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19157,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2146,
+    "prompt_tokens": 5227,
+    "total_tokens": 7373,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A plaintiff seeking rescission of a contract cannot claim specific performance of that same contract in the alternative.",
+      "material_facts": [
+        "The plaintiff alleged that the agreement was void and inoperative because it resulted from undue influence and coercion.",
+        "In the same suit, the plaintiff alternatively sought specific performance of the agreement to sell plots."
+      ],
+      "conclusion": "The alternative prayer for specific performance was not maintainable.",
+      "legal_principle": "Although Order 7, rule 7 of the Code of Civil Procedure permits inconsistent reliefs, each pleaded relief must independently be maintainable. Section 37 of the Specific Relief Act, 1877 expressly permits a plaintiff suing for specific performance to seek rescission in the alternative, but neither that provision nor section 35 permits the converse. The omission is deliberate. Cawley v. Poole, 71 E.R. 23, supports the principle that a claim to set aside a transaction for fraud cannot be combined in the alternative with a claim to enforce it.",
+      "rule": {
+        "if": "suit_seeks_rescission and specific_performance_is_alternative and same_contract_at_issue",
+        "then": "alternative_specific_performance_unavailable"
+      },
+      "predicates": {
+        "suit_seeks_rescission": "The plaintiff brings a suit seeking to undo a contract.",
+        "specific_performance_is_alternative": "The plaintiff asks for enforcement of the contract only as an alternative to the requested rescission.",
+        "same_contract_at_issue": "The rescission claim and the alternative enforcement claim concern the same contract.",
+        "alternative_specific_performance_unavailable": "The plaintiff cannot maintain the alternative claim for specific performance."
+      },
+      "definition": "When a suit seeks rescission and alternatively seeks enforcement of the same contract, the alternative enforcement claim is unavailable."
+    },
+    {
+      "legal_issue": "A specific-performance claim lacks a cause of action when the plaintiff does not allege readiness and willingness to perform the plaintiff’s part of the contract.",
+      "material_facts": [
+        "The plaintiff sought specific performance of the agreement but did not allege in the plaint that he was ready and willing to perform his part.",
+        "The plaintiff alleged instead that the agreement was the product of fraud and undue influence and was not binding on him."
+      ],
+      "conclusion": "The plaintiff had no cause of action for specific performance.",
+      "legal_principle": "A plaintiff seeking specific performance must allege readiness and willingness to perform the plaintiff’s obligations under the contract. The Court relied on Ardeshir Mama v. Flora Sassoon, 55 I.A. 360, which recognized that requirement under Indian law as well as English law, and referred to Karsandas v. Chhotalal, 25 Bom. L.R. 1037. The Court also applied the principle that a party seeking enforcement treats the contract as subsisting and must establish continuous readiness and willingness to perform.",
+      "rule": {
+        "if": "suit_seeks_specific_performance and readiness_and_willingness_not_alleged",
+        "then": "specific_performance_cause_of_action_absent"
+      },
+      "predicates": {
+        "suit_seeks_specific_performance": "The plaintiff brings a suit seeking enforcement of a contract.",
+        "readiness_and_willingness_not_alleged": "The plaintiff does not allege readiness and willingness to perform the plaintiff’s contractual obligations.",
+        "specific_performance_cause_of_action_absent": "The plaintiff has no cause of action for specific performance."
+      },
+      "definition": "In a suit seeking specific performance, if the plaintiff does not allege readiness and willingness to perform, the plaintiff has no cause of action for that relief."
+    },
+    {
+      "legal_issue": "A plaintiff who has no cause of action for specific performance is not entitled to insist on an election between that relief and rescission.",
+      "material_facts": [
+        "The plaintiff sought rescission of the agreement and alternatively sought specific performance.",
+        "The plaintiff did not allege readiness and willingness to perform his part of the agreement, and therefore had no cause of action for specific performance."
+      ],
+      "conclusion": "The plaintiff was not entitled to be put to an election between the two reliefs.",
+      "legal_principle": "Election between alternative reliefs arises only if the plaintiff has established a cause of action for each relief at issue. A specific-performance claim requires an allegation of readiness and willingness to perform; without that allegation, the plaintiff has no cause of action for specific performance and cannot demand an election between it and rescission. The Court relied on the specific-performance requirement discussed in Ardeshir Mama v. Flora Sassoon, 55 I.A. 360.",
+      "rule": {
+        "if": "suit_claims_alternative_reliefs and specific_performance_cause_of_action_absent",
+        "then": "plaintiff_not_entitled_to_election"
+      },
+      "predicates": {
+        "suit_claims_alternative_reliefs": "The plaintiff seeks alternative remedies in the same suit.",
+        "specific_performance_cause_of_action_absent": "The plaintiff has no cause of action for specific performance.",
+        "plaintiff_not_entitled_to_election": "The plaintiff cannot insist on being allowed to choose between the claimed remedies."
+      },
+      "definition": "If a suit claims alternative remedies but the specific-performance claim has no cause of action, the plaintiff is not entitled to an election between the remedies."
+    },
+    {
+      "legal_issue": "A High Court may revise a trial court order where an erroneous legal ruling on the availability of relief constitutes material irregularity in the exercise of jurisdiction.",
+      "material_facts": [
+        "The trial court held that the plaintiff could seek specific performance in the alternative and rejected the preliminary objection.",
+        "The High Court concluded that the alternative specific-performance relief was unavailable and set aside the trial court’s ruling in revision.",
+        "The trial court’s ruling concerned a legal question on which its jurisdiction to grant that relief depended."
+      ],
+      "conclusion": "The High Court was competent to interfere in revision because the trial court’s legal error amounted to material irregularity or illegality in the exercise of its jurisdiction.",
+      "legal_principle": "Section 115(c) of the Code of Civil Procedure permits revisional interference where a court acts illegally or with material irregularity in exercising its jurisdiction. An erroneous legal determination concerning whether the court has jurisdiction to grant a particular relief cannot confer that jurisdiction on the court, and is revisable.",
+      "rule": {
+        "if": "revision_challenges_trial_court_order and trial_court_allowed_unavailable_relief and legal_error_materially_affected_jurisdiction",
+        "then": "high_court_revision_interference_competent"
+      },
+      "predicates": {
+        "revision_challenges_trial_court_order": "A party brings a revision challenging an order made by a trial court.",
+        "trial_court_allowed_unavailable_relief": "The trial court permits a claim for relief that is not legally available on the pleaded basis.",
+        "legal_error_materially_affected_jurisdiction": "The trial court’s legal error materially affects its jurisdiction to grant that relief.",
+        "high_court_revision_interference_competent": "The High Court is competent to interfere with the order in revision."
+      },
+      "definition": "When a revision challenges a trial court order allowing unavailable relief and the legal error materially affects jurisdiction, the High Court may interfere in revision."
+    }
+  ],
+  "seconds": 13.0
+}

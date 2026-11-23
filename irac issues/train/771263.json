@@ -1,0 +1,101 @@
+{
+  "doc_id": "771263",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 69156,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3090,
+    "prompt_tokens": 15900,
+    "total_tokens": 18990,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A special forum constituted to adjudicate alleged land grabbing has jurisdiction to decide an occupant’s claim that title was acquired by adverse possession.",
+      "material_facts": [
+        "The government sought recovery of public land through proceedings under the land-grabbing legislation.",
+        "The occupants defended the proceedings by claiming that long possession had given them title by adverse possession.",
+        "The Special Tribunal and Special Court considered and rejected that claim."
+      ],
+      "conclusion": "The Special Tribunal and Special Court had jurisdiction to decide the adverse-possession claim as part of the land-grabbing proceedings.",
+      "legal_principle": "Sections 7, 7-A, 8 and 9 of the Andhra Pradesh Land Grabbing (Prohibition) Act confer broad jurisdiction on the special forums to adjudicate alleged land grabbing and questions of title and lawful possession. The Act is a self-contained code intended to provide comprehensive adjudication. V. Laxminarasamma v. A. Yadaiah approved Konda Lakshmana Bapuji v. Govt. of A.P. on this point and disapproved N. Srinivasa Rao v. Special Court. Government of Andhra Pradesh v. Thummala Krishna Rao, concerning summary proceedings under the Land Encroachment Act, does not prevent a special forum with civil-court powers from deciding a title dispute.",
+      "rule": {
+        "if": "land_grabbing_proceeding and adverse_possession_claim",
+        "then": "special_forum_has_jurisdiction_to_decide_adverse_title"
+      },
+      "predicates": {
+        "land_grabbing_proceeding": "A public authority brought a proceeding before a special forum to determine an alleged act of land grabbing and rights to the land.",
+        "adverse_possession_claim": "The occupant claimed that possession of the land had given the occupant title by adverse possession.",
+        "special_forum_has_jurisdiction_to_decide_adverse_title": "The special forum may determine whether the occupant acquired title by adverse possession."
+      },
+      "definition": "When an occupant raises an adverse-possession claim in a proceeding before a special forum to adjudicate alleged land grabbing, the special forum may decide that claim."
+    },
+    {
+      "legal_issue": "A writ court exceeds its review limits by reappraising evidence and overturning concurrent, reasoned factual findings of special forums without a proper basis for intervention.",
+      "material_facts": [
+        "The Special Tribunal and Special Court both found that the land was government land, that it had been illegally occupied, and that the occupants had not proved adverse possession.",
+        "The High Court reconsidered the evidence and reached a different conclusion about possession and title.",
+        "The High Court did not displace the concurrent finding that the land belonged to the government."
+      ],
+      "conclusion": "The High Court exceeded its jurisdiction by interfering with the concurrent findings of the Special Tribunal and Special Court.",
+      "legal_principle": "Under Article 226 of the Constitution, certiorari review is not an opportunity to reappraise evidence merely because a different factual conclusion could be reached. The Court referred to Syed Yakoob v. K.S. Radhakrishnan and held that the High Court had exceeded the limits of its review by disregarding the special forums’ reasoned findings.",
+      "rule": {
+        "if": "writ_review_of_special_forum_decision and concurrent_reasoned_findings and high_court_reappraised_evidence",
+        "then": "writ_interference_exceeded_review_limits"
+      },
+      "predicates": {
+        "writ_review_of_special_forum_decision": "A party asked a writ court to review a decision of a special forum.",
+        "concurrent_reasoned_findings": "Two special forums reached the same factual findings and gave reasons for them.",
+        "high_court_reappraised_evidence": "The writ court reconsidered the evidence and reached a different factual conclusion.",
+        "writ_interference_exceeded_review_limits": "The writ court went beyond its permissible review role by disturbing the special forums’ findings."
+      },
+      "definition": "When a writ court reviewing a special-forum decision reappraises evidence and overturns concurrent, reasoned factual findings, its interference exceeds review limits."
+    },
+    {
+      "legal_issue": "Long possession does not establish title by adverse possession against public land unless the claimant proves actual possession that was open, continuous and hostile to the true owner, with the necessary hostile intent.",
+      "material_facts": [
+        "The occupants claimed that they and their predecessor had possessed and cultivated the public land for many decades.",
+        "They produced mainly disputed or illegible photocopies of notices and did not establish when possession began or provide credible proof of hostile possession for the required period.",
+        "They paid land revenue and sought assignment or regularisation of the land from the government.",
+        "The special forums rejected their adverse-possession claim, but the High Court accepted it."
+      ],
+      "conclusion": "The occupants failed to prove title by adverse possession, and the High Court was not justified in finding otherwise.",
+      "legal_principle": "Adverse possession requires possession that is adequate in continuity, publicity and extent, hostile to the true owner, and accompanied by animus possidendi; long possession alone is insufficient. Actual possession with the necessary hostile intent must be shown from the commencement of the adverse possession. The Court relied on P. Lakshmi Reddy v. L. Lakshmi Reddy, State of Rajasthan v. Harphool Singh, Annakili v. A. Vedanayagam and P.T. Munichikkanna Reddy v. Revamma. A claim against public property calls for particular seriousness and circumspection because it may destroy the State’s title.",
+      "rule": {
+        "if": "public_land_adverse_possession_claim and (no_credible_proof_of_hostile_possession or claimant_acknowledged_owner_control)",
+        "then": "adverse_possession_title_not_established"
+      },
+      "predicates": {
+        "public_land_adverse_possession_claim": "An occupant claimed title by adverse possession over land owned by the public.",
+        "no_credible_proof_of_hostile_possession": "The claimant did not provide credible evidence establishing when possession began and that it was open, continuous and hostile to the owner.",
+        "claimant_acknowledged_owner_control": "The claimant acted in a manner recognizing the public owner’s control, such as seeking assignment or regularisation or paying land revenue.",
+        "adverse_possession_title_not_established": "The claimant did not establish title by adverse possession."
+      },
+      "definition": "A claimant to public land does not establish adverse-possession title when credible proof of hostile possession is absent or the claimant’s conduct recognizes the public owner’s control."
+    },
+    {
+      "legal_issue": "The absence of a final eviction order in summary encroachment proceedings does not establish that the government recognized an occupant’s possession or that the possession was hostile to the government.",
+      "material_facts": [
+        "Notices had been issued to the predecessor under summary encroachment proceedings, but no final eviction order was shown.",
+        "The High Court treated the authorities’ failure to complete those proceedings and their prolonged inaction as supporting the occupants’ claim.",
+        "The Supreme Court held that the absence of a final order did not show that the government had consciously permitted or recognized the occupation, and that even a presumption that the proceedings had been dropped would not establish hostile possession."
+      ],
+      "conclusion": "The absence of a final eviction order did not support an inference that the government recognized the occupation or that the occupants had acquired title by adverse possession.",
+      "legal_principle": "The Court distinguished an actual recognition of a right to remain from the mere absence of a final order in summary proceedings. Inaction by public authorities cannot, by itself, establish the open and hostile possession required for adverse possession, particularly where the claim concerns public land.",
+      "rule": {
+        "if": "public_land_encroachment_proceeding and no_final_eviction_order",
+        "then": "no_inference_of_recognized_or_hostile_possession"
+      },
+      "predicates": {
+        "public_land_encroachment_proceeding": "A public authority began summary proceedings concerning an occupant’s unauthorized possession of public land.",
+        "no_final_eviction_order": "The summary proceedings ended without a final order evicting the occupant.",
+        "no_inference_of_recognized_or_hostile_possession": "The absence of a final eviction order does not by itself establish that the authority recognized the occupation or that the possession was hostile."
+      },
+      "definition": "When summary encroachment proceedings concerning public land end without a final eviction order, that absence alone does not establish recognized or hostile possession."
+    }
+  ],
+  "seconds": 19.0
+}

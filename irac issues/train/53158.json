@@ -1,0 +1,64 @@
+{
+  "doc_id": "53158",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18977,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2131,
+    "prompt_tokens": 5160,
+    "total_tokens": 7291,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A manager of a Hindu undivided family cannot be arrested or detained for the family’s tax default when the family, rather than the manager, was assessed and named in the recovery certificate.",
+      "material_facts": [
+        "The Hindu undivided family was assessed for income tax and defaulted in payment.",
+        "The recovery certificate was issued against the family, and the family’s properties were attached to recover the tax.",
+        "The Tax Recovery Officer ordered the family’s manager to be detained, relying on his alleged dealing with family property after notice of the recovery certificate.",
+        "The manager represented the family but was not himself assessed or named as the defaulter in the recovery certificate."
+      ],
+      "conclusion": "The detention order against the manager was unauthorized, and he could not be detained for the family’s tax default.",
+      "legal_principle": "Under sections 2(7), 2(31), 4, 220 and 222 of the Income-tax Act, 1961, and rules 1(b), 2, 16, 73 and 76 of its Second Schedule, recovery proceedings, including arrest and detention, may be taken against the assessee who is the defaulter named in the certificate. A Hindu undivided family is a taxable entity distinct from its members, and a manager’s authority to represent it does not make him personally the assessee. Sections 140(b) and 282(2), concerning signing returns and service of notices, do not alter that distinction. Sections 160 and 161 address representative assessees, while section 179 makes a specific provision for liability of directors of certain companies; there is no comparable provision making a family manager personally liable for the family’s tax or subject to detention for its default. The penal provisions in sections 276, 276A, 277 and 278 do not create such liability for the family’s tax default. No earlier cases were relied on.",
+      "rule": {
+        "if": "tax_recovery_detention_proceeding and taxable_entity_assessed_for_debt and recovery_certificate_names_entity and detention_target_is_entity_manager and manager_not_personally_assessed_or_certified and no_law_imposes_personal_liability_for_entity_debt",
+        "then": "detention_order_unauthorized"
+      },
+      "predicates": {
+        "tax_recovery_detention_proceeding": "The proceeding seeks arrest or detention to recover a tax debt.",
+        "taxable_entity_assessed_for_debt": "A distinct taxable entity, rather than an individual member, was assessed for the debt.",
+        "recovery_certificate_names_entity": "The recovery certificate identifies the entity as the debtor.",
+        "detention_target_is_entity_manager": "The person targeted for detention manages or represents the entity.",
+        "manager_not_personally_assessed_or_certified": "The manager was neither personally assessed for the debt nor named as the debtor in the recovery certificate.",
+        "no_law_imposes_personal_liability_for_entity_debt": "No applicable law makes the manager personally liable for the entity’s debt or authorizes detention of the manager for that debt."
+      },
+      "definition": "When a tax-recovery detention proceeding concerns a distinct entity’s assessed debt, the certificate names that entity, its manager was not personally assessed or certified, and no law imposes personal liability on the manager, the detention order is unauthorized."
+    },
+    {
+      "legal_issue": "A later challenge to detention is not barred as constructively res judicata merely because an earlier court refused to allow the detainee to raise the contention that he was not personally liable for the debt.",
+      "material_facts": [
+        "The manager’s first challenge to detention was dismissed on the basis that he had dealt with family property contrary to a restriction on dealings after notice of recovery.",
+        "In an appeal from that dismissal, the High Court refused to allow the manager to raise the contention that he was not the assessee named in the recovery certificate.",
+        "The manager then filed another petition challenging the proceedings on the ground that he was not a defaulter.",
+        "The High Court dismissed the later petition on the ground that its earlier judgment barred investigation of that contention."
+      ],
+      "conclusion": "The High Court took a technical and incorrect view in refusing to consider the contention and treating its earlier judgment as constructively barring the later challenge.",
+      "legal_principle": "A contention that was not allowed to be raised in an earlier proceeding cannot, on the facts here, be treated as barred by constructive res judicata in a later challenge. The Court stated no earlier case or specific provision as the basis for this conclusion.",
+      "rule": {
+        "if": "later_challenge_to_detention and earlier_challenge_did_not_adjudicate_personal_liability and court_refused_to_allow_personal_liability_contention and later_challenge_repeats_that_contention",
+        "then": "later_challenge_not_barred_by_constructive_res_judicata"
+      },
+      "predicates": {
+        "later_challenge_to_detention": "A person files a later proceeding challenging detention for an alleged debt.",
+        "earlier_challenge_did_not_adjudicate_personal_liability": "The earlier proceeding did not decide whether the person was personally liable for the debt.",
+        "court_refused_to_allow_personal_liability_contention": "The earlier court refused to permit the person to raise the contention that the debt was not personally theirs.",
+        "later_challenge_repeats_that_contention": "The later proceeding raises the same personal-liability contention."
+      },
+      "definition": "When a later detention challenge repeats a personal-liability contention that the earlier proceeding did not adjudicate because the court refused to hear it, the later challenge is not barred by constructive res judicata."
+    }
+  ],
+  "seconds": 74.9
+}

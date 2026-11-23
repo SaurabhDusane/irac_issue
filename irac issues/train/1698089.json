@@ -1,0 +1,96 @@
+{
+  "doc_id": "1698089",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19996,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2294,
+    "prompt_tokens": 5418,
+    "total_tokens": 7712,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An agency created to secure the agent’s interest in a particular fund is not revocable to the prejudice of that interest.",
+      "material_facts": [
+        "The debtor owed money to the bank and appointed it attorney to execute a decree in his favour.",
+        "The power directed that amounts realised under the decree be credited to the debtor’s account and described the appointment as irrevocable."
+      ],
+      "conclusion": "The power of attorney was coupled with the bank’s interest and could not be revoked to the prejudice of that interest.",
+      "legal_principle": "Section 202 of the Indian Contract Act, 1872 provides that, where an agent has an interest in the property forming the subject matter of the agency, the agency cannot, absent an express contract, be terminated to the prejudice of that interest. An agency created for valuable consideration and authorising the agent to effectuate a security or secure the agent’s interest is not revocable to that prejudice.",
+      "rule": {
+        "if": "debtor_owes_agent and (agent_has_interest_in_agency_property or authority_secures_agent_interest)",
+        "then": "agency_power_not_revocable_to_prejudice_of_agent_interest"
+      },
+      "predicates": {
+        "debtor_owes_agent": "The principal owed a debt to the agent.",
+        "agent_has_interest_in_agency_property": "The agent had an interest in the property that was the subject matter of the agency.",
+        "authority_secures_agent_interest": "The principal gave the agent authority to secure the agent’s interest."
+      },
+      "definition": "When a principal owes the agent and the agent has an interest in the agency property or the authority secures that interest, the agency power is not revocable to the prejudice of the agent’s interest."
+    },
+    {
+      "legal_issue": "An agreement directing that a particular fund be applied to a debt can create an equitable assignment of the fund to the extent of the debt, even without a legal transfer of the underlying right.",
+      "material_facts": [
+        "The debtor’s power of attorney authorised the bank to realise amounts payable under a decree and to credit the proceeds against the debt owed to it.",
+        "The decree proceeds were specifically earmarked as a fund for discharging the debt, although the document contained no words transferring the decree and left the debtor as its owner."
+      ],
+      "conclusion": "The arrangement constituted an equitable assignment to the bank of the amount due under the decree, to the extent necessary to discharge the debt owed to it.",
+      "legal_principle": "An engagement to pay a creditor out of a specified fund constitutes an equitable assignment of so much of that fund as is needed to discharge the debt. The Court applied Watson v. The Duke of Wellington, [1830] 39 E.R. 231, and Burn v. Carvalho, [1839] 41 E.R. 265, and approved Jagabhai Lallubhai v. Rustamji Nasarwanji, [1885] I.L.R. IX Bom. 311, and Prahlad Pd. Modi v. Tikaitni Faldani Kumari, A.I.R. 1956 Patna 233.",
+      "rule": {
+        "if": "debt_owed_to_creditor and particular_fund_identified and fund_committed_to_debt",
+        "then": "equitable_assignment_of_fund_to_extent_of_debt"
+      },
+      "predicates": {
+        "debt_owed_to_creditor": "The debtor owed a debt to the creditor.",
+        "particular_fund_identified": "The debtor identified a particular fund from which payment could be made.",
+        "fund_committed_to_debt": "The debtor directed that the identified fund be applied to the debt."
+      },
+      "definition": "If a debtor owes a creditor and commits an identified fund to payment of that debt, the fund is equitably assigned to the creditor to the extent of the debt."
+    },
+    {
+      "legal_issue": "An equitable assignee of a decree who cannot proceed under the ordinary decree-transfer procedure may execute the decree under the general provision allowing a person claiming under a decree-holder to apply for execution.",
+      "material_facts": [
+        "The bank had an equitable assignment of the decree proceeds to the extent needed to discharge the debtor’s debt.",
+        "The decree had not been legally transferred to the bank, so the bank could not rely on the ordinary procedure for execution by a transferee."
+      ],
+      "conclusion": "The bank could execute the decree in its own right under section 146 of the Code of Civil Procedure.",
+      "legal_principle": "Under Jugulkishore Saraf v. Raw Cotton Co. Ltd., [1955] 1 S.C.R. 1369, an equitable assignee of a decree who cannot obtain the benefit of Order XXI, rule 16 of the Code of Civil Procedure may nevertheless execute the decree under section 146 of the Code.",
+      "rule": {
+        "if": "decree_execution_proceeding and equitable_assignee_of_decree and ordinary_transferee_procedure_unavailable",
+        "then": "equitable_assignee_may_execute_decree_in_own_right"
+      },
+      "predicates": {
+        "decree_execution_proceeding": "A person sought to have a decree executed.",
+        "equitable_assignee_of_decree": "The person seeking execution held an equitable assignment of an interest in the decree.",
+        "ordinary_transferee_procedure_unavailable": "The person could not use the ordinary procedure for execution by a transferee of the decree."
+      },
+      "definition": "In a decree execution proceeding, an equitable assignee who cannot use the ordinary transferee procedure may execute the decree in their own right."
+    },
+    {
+      "legal_issue": "An execution application filed in the decree-holder’s name by an agent may continue when the agent is also entitled to execute the decree in its own right as an equitable assignee.",
+      "material_facts": [
+        "The bank initially filed the execution application in the decree-holder’s name, and its manager signed as the decree-holder’s attorney.",
+        "The dispute between the decree-holder and the bank arose while execution was pending.",
+        "The bank held an equitable assignment of decree proceeds and could execute the decree in its own right."
+      ],
+      "conclusion": "The application did not have to be closed because it was filed in the decree-holder’s name; the bank was entitled to carry it on in its own right.",
+      "legal_principle": "The Court looked to the substance rather than the form of the execution application. Applying the principle in Jugulkishore Saraf v. Raw Cotton Co. Ltd., [1955] 1 S.C.R. 1369, it held that the bank’s entitlement as equitable assignee to execute in its own right made it unnecessary to close an application initially presented in the decree-holder’s name.",
+      "rule": {
+        "if": "decree_execution_proceeding and application_filed_in_decree_holders_name_by_agent and agent_is_equitable_assignee and dispute_arises_during_pending_execution",
+        "then": "execution_application_may_continue_by_assignee"
+      },
+      "predicates": {
+        "decree_execution_proceeding": "A person sought to have a decree executed.",
+        "application_filed_in_decree_holders_name_by_agent": "An agent filed an execution application in the decree-holder’s name and acted under the decree-holder’s authority.",
+        "agent_is_equitable_assignee": "The agent held an equitable assignment of an interest in the decree.",
+        "dispute_arises_during_pending_execution": "A dispute between the decree-holder and the agent arose after the execution application was filed and while it remained pending."
+      },
+      "definition": "When an agent who filed an execution application in the decree-holder’s name is an equitable assignee and a dispute arises during the pending execution, the application may continue through the agent."
+    }
+  ],
+  "seconds": 16.2
+}

@@ -1,0 +1,100 @@
+{
+  "doc_id": "870347",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29587,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3024,
+    "prompt_tokens": 7661,
+    "total_tokens": 10685,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A co-owner who is acknowledged as a landlord may maintain an eviction proceeding without joining the other co-owners when they do not object to the eviction.",
+      "material_facts": [
+        "The claimant and another purchaser jointly acquired the property, and the claimant filed the eviction petition without joining the other co-owner or her heirs.",
+        "The tenant had paid rent to the claimant, and there was no evidence that the other co-owner or her heirs wanted the tenant to remain.",
+        "The rooms and courtyard in dispute fell to the claimant’s share; the other co-owner’s specific-performance suit concerned a different portion."
+      ],
+      "conclusion": "The claimant was entitled to maintain the eviction petition alone because the other co-owners did not object to eviction.",
+      "legal_principle": "A co-owner is an owner of the entire property along with the other co-owners, and need not establish sole ownership to seek eviction. A co-owner may maintain the proceeding where the others do not object; Kanta Goel v. B.P. Pathak and Sri Ram Pasricha v. Jagan Nath are relied on. The court distinguished the situation in which another co-owner opposes eviction, which Kanta Goel left open.",
+      "rule": {
+        "if": "eviction_proceeding and claimant_is_coowner and claimant_is_acknowledged_as_landlord and other_coowners_do_not_object and disputed_premises_fall_to_claimant_share",
+        "then": "coowner_can_maintain_eviction_alone"
+      },
+      "predicates": {
+        "eviction_proceeding": "The proceeding seeks eviction of a tenant from premises.",
+        "claimant_is_coowner": "The person seeking eviction owns the premises jointly with at least one other person.",
+        "claimant_is_acknowledged_as_landlord": "The tenant has recognized the claimant as a landlord, including by paying rent to the claimant.",
+        "other_coowners_do_not_object": "The other co-owners have not objected to the eviction claim or sought to keep the tenant in the premises.",
+        "disputed_premises_fall_to_claimant_share": "The premises sought to be recovered fall within the claimant’s share of the jointly owned property."
+      },
+      "definition": "When an acknowledged co-owner seeks eviction, the premises fall to that co-owner’s share, and the other co-owners do not object, that co-owner may maintain the eviction proceeding alone."
+    },
+    {
+      "legal_issue": "A tenant is estopped from denying the title of a landlord whose status as landlord the tenant has recognized through the tenancy and payment of rent.",
+      "material_facts": [
+        "The tenant had paid rent to the claimant, who collected it throughout the relevant period.",
+        "The dispute arose in an eviction proceeding between the tenant and the claimant as landlord."
+      ],
+      "conclusion": "The tenant could not rely on a denial of the landlord’s title to defeat the eviction proceeding.",
+      "legal_principle": "Section 116 of the Indian Evidence Act, 1872 embodies the equitable principle that a tenant is estopped from denying the landlord’s title at the commencement of the tenancy. The court relied on Tej Bhan Madan v. II Additional District Judge, which explains that the rule reflects the principle against approbating and reprobating.",
+      "rule": {
+        "if": "eviction_proceeding and landlord_tenant_relationship_is_recognized and tenant_paid_rent_to_claimant",
+        "then": "tenant_is_estopped_from_denial_of_landlord_title"
+      },
+      "predicates": {
+        "eviction_proceeding": "The proceeding seeks eviction of a tenant from premises.",
+        "landlord_tenant_relationship_is_recognized": "The tenant and claimant have treated their relationship as one of landlord and tenant.",
+        "tenant_paid_rent_to_claimant": "The tenant paid rent to the claimant, who received it as landlord."
+      },
+      "definition": "In an eviction proceeding, where the parties have recognized a landlord-tenant relationship and the tenant paid rent to the claimant, the tenant is estopped from denying the claimant’s title as landlord."
+    },
+    {
+      "legal_issue": "A factual contention that was neither pleaded nor raised in the first appeal cannot properly be introduced for the first time in a second appeal.",
+      "material_facts": [
+        "In the second appeal, the tenant contended that the landlord had rented out several ground-floor rooms shortly before filing the eviction petition.",
+        "That contention had not been specifically pleaded or raised in the first appeal."
+      ],
+      "conclusion": "The High Court rightly declined to entertain the contention in the second appeal.",
+      "legal_principle": "The court upheld the conclusion that it was not proper to introduce in a second appeal a factual contention that had not been specifically pleaded or raised in the first appeal.",
+      "rule": {
+        "if": "second_appeal and contention_not_specifically_pleaded and contention_not_raised_in_first_appeal",
+        "then": "new_factual_contention_not_entertained"
+      },
+      "predicates": {
+        "second_appeal": "The matter is before a court in a second appeal.",
+        "contention_not_specifically_pleaded": "The factual contention was not specifically included in the pleadings.",
+        "contention_not_raised_in_first_appeal": "The factual contention was not raised in the first appeal."
+      },
+      "definition": "In a second appeal, a factual contention that was neither specifically pleaded nor raised in the first appeal is not entertained."
+    },
+    {
+      "legal_issue": "A finding that a landlord has a bona fide need and no other suitable accommodation may be left undisturbed when the appellate finding is supported by the evidence and a local commission report.",
+      "material_facts": [
+        "The landlord sought eviction on the ground of bona fide requirement for himself and his family, which included three sons and five daughters.",
+        "The Rent Control Tribunal found the available accommodation insufficient and the requirement bona fide; it also found that the premises had been let for residential use.",
+        "During the second appeal, the High Court appointed a local commissioner to inspect rooms alleged to have become vacant.",
+        "The commissioner’s report corroborated the landlord’s position that the rooms were occupied by the legal heirs of tenants and were not suitable for residential use."
+      ],
+      "conclusion": "The landlord proved bona fide need and the absence of other suitable accommodation, and the High Court was justified in not interfering with the Tribunal’s findings.",
+      "legal_principle": "Section 14(1)(e) of the Delhi Rent Control Act, 1958 provides the ground of eviction for bona fide requirement and absence of reasonably suitable accommodation. The court relied on Vinod Kumar Arora v. Surjit Kumar in concluding that further interference with the appellate court’s factual findings was unwarranted, and cited V. Dhanpal Chettiar v. Yesodai Ammal in addressing the eviction proceeding.",
+      "rule": {
+        "if": "eviction_proceeding and landlord_has_family_requirement and appellate_court_finds_no_suitable_accommodation and local_commission_report_supports_landlord",
+        "then": "bona_fide_need_and_lack_of_suitable_accommodation_are_sustained"
+      },
+      "predicates": {
+        "eviction_proceeding": "The proceeding seeks eviction of a tenant from premises.",
+        "landlord_has_family_requirement": "The landlord seeks the premises for a requirement that includes the needs of the landlord’s family.",
+        "appellate_court_finds_no_suitable_accommodation": "The appellate court finds that the landlord has no other reasonably suitable accommodation.",
+        "local_commission_report_supports_landlord": "A court-appointed local commissioner reports facts that corroborate the landlord’s position about the availability or suitability of other rooms."
+      },
+      "definition": "In an eviction proceeding, a family requirement, an appellate finding that no suitable accommodation is available, and a supporting local commission report sustain the finding of bona fide need and lack of suitable accommodation."
+    }
+  ],
+  "seconds": 18.4
+}

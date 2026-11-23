@@ -1,0 +1,63 @@
+{
+  "doc_id": "1014677",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9066,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1224,
+    "prompt_tokens": 2809,
+    "total_tokens": 4033,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An offence that is not compoundable by law cannot be compounded merely because the parties have reached a settlement.",
+      "material_facts": [
+        "The appellants were convicted of an offence under Section 307 IPC.",
+        "During the appeal, the parties reached an amicable settlement and sought permission to compound the offence."
+      ],
+      "conclusion": "The request to compound the offence was rejected.",
+      "legal_principle": "Under Section 320 of the Code of Criminal Procedure, offences that are not compoundable cannot be compounded by the parties. A settlement does not permit compounding of such an offence. The Court relied on Ram Lal and Anr. v. State of J & K (1999) 2 SCC 213 and Ishwar Singh v. State of Madhya Pradesh (2008) 15 SCC 667.",
+      "rule": {
+        "if": "criminal_appeal and conviction_for_noncompoundable_offense and parties_settled",
+        "then": "compounding_request_refused"
+      },
+      "predicates": {
+        "criminal_appeal": "The proceeding is an appeal against a criminal conviction.",
+        "conviction_for_noncompoundable_offense": "The accused was convicted of an offence that the law does not permit the parties to compound.",
+        "parties_settled": "The parties reached a settlement and sought to compound the offence."
+      },
+      "definition": "When a criminal appeal concerns a conviction for an offence that cannot be compounded, a settlement between the parties does not prevent refusal of their compounding request."
+    },
+    {
+      "legal_issue": "A settlement that cannot support compounding may nevertheless be considered, together with the circumstances of the case, when determining sentence.",
+      "material_facts": [
+        "The parties had settled their dispute, and the Court considered that settlement a sensible step toward ending the controversy and normalising their relationship.",
+        "The incident had occurred many years before the appeal was decided, and the parties were related.",
+        "The convicted appellants had been in their twenties at the time of the incident and had served a substantial part of their sentences.",
+        "The incident had resulted in a cross-case in which members of the complainant party had also been convicted and sentenced.",
+        "The convictions were upheld by the lower courts."
+      ],
+      "conclusion": "The Court reduced the appellants' sentences to the periods they had already served, while upholding their convictions.",
+      "legal_principle": "A settlement cannot make a non-compoundable offence compoundable, but it may be considered when fixing the sentence. The Court relied on Ram Lal and Anr. v. State of J & K (1999) 2 SCC 213 and Ishwar Singh v. State of Madhya Pradesh (2008) 15 SCC 667, in which settlements were considered in relation to sentence despite refusal to permit compounding.",
+      "rule": {
+        "if": "criminal_appeal and conviction_upheld and parties_settled and incident_long_past and parties_related and substantial_sentence_served and cross_case_convictions",
+        "then": "sentence_reduced_to_time_already_served"
+      },
+      "predicates": {
+        "criminal_appeal": "The proceeding is an appeal against a criminal conviction and sentence.",
+        "conviction_upheld": "The conviction remains in place after the appeal is considered.",
+        "parties_settled": "The parties reached a settlement of their dispute.",
+        "incident_long_past": "A substantial period had elapsed between the incident and the sentencing decision.",
+        "parties_related": "The accused and the opposing party were related to one another.",
+        "substantial_sentence_served": "The convicted persons had already served a substantial part of their sentences.",
+        "cross_case_convictions": "The same incident led to a cross-case in which members of the opposing party were also convicted."
+      },
+      "definition": "When, in a criminal appeal, the conviction is upheld and the parties have settled, the elapsed time, relationship, sentence already served, and convictions arising from a cross-case can support reducing the sentence to the time already served."
+    }
+  ],
+  "seconds": 9.3
+}

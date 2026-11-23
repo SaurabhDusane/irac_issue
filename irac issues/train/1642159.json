@@ -1,0 +1,76 @@
+{
+  "doc_id": "1642159",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14547,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3169,
+    "prompt_tokens": 4130,
+    "total_tokens": 7299,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court should interfere with an acquittal only for compelling and substantial reasons, while resolving a genuine choice between two views in favour of the accused.",
+      "material_facts": [
+        "The trial court convicted the accused, but the High Court acquitted him after finding the defence version more probable and the prosecution evidence untrustworthy.",
+        "The Supreme Court found the High Court's assessment supported by the medical evidence and the record, and found no infirmity warranting interference."
+      ],
+      "conclusion": "The appeal against acquittal was dismissed, and the acquittal remained undisturbed.",
+      "legal_principle": "An appellate court may review the evidence underlying an acquittal, but the acquittal strengthens the presumption of innocence. Where two views are possible, the view favourable to the accused should be adopted. Interference is warranted only for compelling and substantial reasons, such as a clearly unreasonable judgment or the unjustified elimination of relevant and convincing material. The Court relied on Bhagwan Singh v. State of Madhya Pradesh, Shivaji Sahabrao Bobade v. State of Maharashtra, Ramesh Babulal Doshi v. State of Gujarat, Jaswant Singh v. State of Haryana, Raj Kishore Jha v. State of Bihar, State of Punjab v. Karnail Singh, and State of Punjab v. Pohla Singh.",
+      "rule": {
+        "if": "appeal_from_acquittal and acquitting_view_supported_by_record and not material_evidence_unjustifiably_eliminated",
+        "then": "acquittal_left_undisturbed"
+      },
+      "predicates": {
+        "appeal_from_acquittal": "A criminal appeal challenges a judgment acquitting the accused.",
+        "acquitting_view_supported_by_record": "The evidence in the record supports the view that favours the accused.",
+        "material_evidence_unjustifiably_eliminated": "The court acquitting the accused unjustifiably disregarded relevant and convincing evidence."
+      },
+      "definition": "When an appeal challenges an acquittal, the acquittal is left undisturbed if the record supports the acquitting view and relevant, convincing evidence was not unjustifiably eliminated."
+    },
+    {
+      "legal_issue": "A conviction cannot be based on a materially new prosecution case introduced to reconcile an original account with medical evidence.",
+      "material_facts": [
+        "The prosecution initially described the fatal shot as fired from the first-floor balcony, but later advanced a close-range account to reconcile its witnesses' evidence with medical findings of tattooing and scorching.",
+        "The trial court accepted a theory that the shot was fired from close range in the courtyard, although that theory had been raised at the argument stage.",
+        "The medical evidence was consistent with the defence account that the deceased was accidentally shot at close range during a scuffle."
+      ],
+      "conclusion": "The High Court was right to reject the trial court's approach; the prosecution could not succeed on the materially altered theory, and the acquittal warranted no interference.",
+      "legal_principle": "The prosecution must substantially prove the version it alleges and must stand on its own case rather than rely on weaknesses in the defence. A court cannot make out a new prosecution case and convict on that basis. A different reading of the evidence may be permissible only where the evidence supports the conclusion and the substratum of the case remains unchanged. The judgment cites no earlier case for this principle.",
+      "rule": {
+        "if": "prosecution_account_changed_to_reconcile_medical_evidence and materially_new_prosecution_case_constructed",
+        "then": "materially_new_prosecution_case_cannot_support_conviction"
+      },
+      "predicates": {
+        "prosecution_account_changed_to_reconcile_medical_evidence": "The prosecution changed its account of how an injury occurred in order to bring its witnesses' evidence into line with medical findings.",
+        "materially_new_prosecution_case_constructed": "The revised account materially changes the factual basis of the prosecution case, or the court supplies that new basis itself."
+      },
+      "definition": "A materially new prosecution case cannot support a conviction when the prosecution changes its account to reconcile its evidence with medical findings and the revised account changes the factual basis of the case."
+    },
+    {
+      "legal_issue": "A statement does not qualify as a dying declaration when another person supplies the answers and the injured person merely affirms them.",
+      "material_facts": [
+        "The injured person made a statement recorded by a doctor in the presence of her husband.",
+        "The recorder admitted that the husband answered the queries and that the injured person merely affirmed what he said.",
+        "The families had hostile and strained relations."
+      ],
+      "conclusion": "The statement was not accepted as a dying declaration or as reliable evidence against the accused.",
+      "legal_principle": "A statement attributed to an injured person who later dies cannot be treated as a dying declaration where the answers were supplied by another person and the injured person merely affirmed them; in those circumstances, the statement was not voluntary and was not truly the injured person's statement. The Court also considered the hostility and strained relations between the families. The judgment cites no provision or earlier case for this conclusion.",
+      "rule": {
+        "if": "statement_claimed_as_dying_declaration and another_person_supplied_answers and deceased_only_affirmed_those_answers",
+        "then": "statement_not_accepted_as_dying_declaration"
+      },
+      "predicates": {
+        "statement_claimed_as_dying_declaration": "A statement made by an injured person who later dies is relied on as a declaration identifying the person responsible.",
+        "another_person_supplied_answers": "A person other than the injured person answered the questions put by the recorder.",
+        "deceased_only_affirmed_those_answers": "The injured person merely affirmed the answers supplied by the other person."
+      },
+      "definition": "A claimed dying declaration is not accepted as such when another person supplied the answers and the injured person merely affirmed them."
+    }
+  ],
+  "seconds": 20.9
+}

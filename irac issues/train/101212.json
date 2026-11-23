@@ -1,0 +1,58 @@
+{
+  "doc_id": "101212",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12162,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1875,
+    "prompt_tokens": 3707,
+    "total_tokens": 5582,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A deposit for payment to the decree-holder is unnecessary on an application to set aside an execution sale when the decree has already been satisfied or adjusted.",
+      "material_facts": [
+        "A receiver applied to set aside an execution sale and did not deposit the amount specified for payment to the decree-holder.",
+        "The decree had not been satisfied or adjusted when the application was made; the Court stated that satisfaction or adjustment would remove the need for the deposit."
+      ],
+      "conclusion": "If the decree has been satisfied or adjusted by the time the application is made, a deposit for payment to the decree-holder is not required.",
+      "legal_principle": "Under Order XXI, rule 89(b) of the Code of Civil Procedure, the required deposit for payment to the decree-holder is unnecessary if the decree has already been satisfied or adjusted. An adjustment may be recorded under Order XXI, rule 2.",
+      "rule": {
+        "if": "sale_setting_application and (decree_satisfied or decree_adjusted)",
+        "then": "decree_holder_deposit_is_not_required"
+      },
+      "predicates": {
+        "sale_setting_application": "A judgment debtor or a representative applies to set aside an execution sale.",
+        "decree_satisfied": "The judgment debtor has discharged the decree before making the application.",
+        "decree_adjusted": "The parties have adjusted the decree before making the application."
+      },
+      "definition": "When an application to set aside an execution sale is made after the decree has been discharged or adjusted, no deposit for the decree-holder is required."
+    },
+    {
+      "legal_issue": "A decree-holder’s agreement to postpone collection while provision for future payment is pursued does not dispense with the required deposit when the decree remains unsatisfied and unadjusted.",
+      "material_facts": [
+        "A receiver applied to set aside a sale of trust property and deposited the amounts payable to the purchaser but not the amount specified for the decree-holder.",
+        "The decree-holder agreed to postpone realizing the decree while provision for payment was pursued in a separate suit, but the decree remained alive and had not been satisfied or adjusted.",
+        "The receiver asked the court to dispense with the deposit, and the lower court granted that request; the High Court set that order aside."
+      ],
+      "conclusion": "The agreement to postpone collection did not obviate the deposit requirement, so the deposit for the decree-holder remained necessary and the appeal was dismissed.",
+      "legal_principle": "Order XXI, rule 89(b) of the Code of Civil Procedure requires the deposit for payment to the decree-holder unless the decree has been satisfied or adjusted. A promise to take steps toward future payment, or an agreement merely to postpone realization, does not itself satisfy or adjust the decree; an adjustment capable of being recorded is contemplated by Order XXI, rule 2. The Court discussed Union of India v. Kishorilal Gupta and Bros. on discharge of a contract by mutual agreement, but held that the facts did not show an agreement by the decree-holder to forego rights under the decree.",
+      "rule": {
+        "if": "sale_setting_application and creditor_only_postponed_collection and future_payment_provision_pursued and decree_remains_unsatisfied_and_unadjusted",
+        "then": "decree_holder_deposit_is_required"
+      },
+      "predicates": {
+        "sale_setting_application": "A judgment debtor or a representative applies to set aside an execution sale.",
+        "creditor_only_postponed_collection": "The decree-holder agreed only to delay collection of the decree debt, rather than give up the rights under the decree.",
+        "future_payment_provision_pursued": "The parties pursued a provision for payment to be made in the future.",
+        "decree_remains_unsatisfied_and_unadjusted": "The decree remained undischarged and unadjusted when the application was made."
+      },
+      "definition": "When an application to set aside an execution sale is made, a mere postponement of collection while future payment provision is pursued does not remove the deposit requirement if the decree remains undischarged and unadjusted."
+    }
+  ],
+  "seconds": 14.2
+}

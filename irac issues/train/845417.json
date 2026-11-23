@@ -1,0 +1,94 @@
+{
+  "doc_id": "845417",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 47535,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2905,
+    "prompt_tokens": 11471,
+    "total_tokens": 14376,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant’s statutory protection against eviction does not constitute a vested right that survives withdrawal of that protection.",
+      "material_facts": [
+        "An eviction petition was pending under rent-control legislation when an amendment withdrew that legislation’s protection from tenancies above the prescribed rent threshold.",
+        "The tenant claimed that the protection available when the petition was filed was a vested right."
+      ],
+      "conclusion": "The tenant had no vested right to continue receiving the withdrawn statutory protection; ordinarily, the parties’ rights and remedies are thereafter governed by the general law, subject to proceedings saved by the General Clauses Act.",
+      "legal_principle": "The protection afforded to a tenant by rent-control legislation is not a vested right and continues only while the legislation applies. The Court relied on Mohinder Kumar v. State of Haryana, D.C. Bhatia v. Union of India, and Parripati Chandrasekharrao & Sons v. Alapati Jalaiah. It distinguished a tenant’s protective statutory shield from a right accrued under Section 6 of the General Clauses Act, 1897, which may preserve a pending proceeding.",
+      "rule": {
+        "if": "rent_protection_withdrawal_case and statutory_protection_withdrawn",
+        "then": "tenant_has_no_vested_right_to_withdrawn_protection"
+      },
+      "predicates": {
+        "rent_protection_withdrawal_case": "The case concerns a legislative change withdrawing rent-control protection from a class of tenants.",
+        "statutory_protection_withdrawn": "The legislation that protected the tenant against eviction ceased to apply to the tenancy."
+      },
+      "definition": "When a case concerns withdrawal of rent-control protection and that protection ceases to apply, the tenant does not have a vested right to retain it."
+    },
+    {
+      "legal_issue": "A statutory ground for eviction contained in an exception to a rent-control law’s protection of tenants does not, by itself, give the landlord a vested right to evict.",
+      "material_facts": [
+        "The landlord’s pending eviction petition alleged that the tenant had sublet the premises without the landlord’s written consent.",
+        "The alleged ground for eviction appeared among the exceptions to the legislation’s general protection of tenants against eviction."
+      ],
+      "conclusion": "The statutory ground based on illegal subletting was not a vested right of the landlord.",
+      "legal_principle": "The Court read Section 14 of the Delhi Rent Control Act, 1958, as a provision principally protecting tenants against eviction, with the grounds in its proviso operating as exceptions to that protection. The proviso could not enlarge the protective main provision into a vested right for landlords. The Court also relied on Parripati Chandrasekharrao & Sons v. Alapati Jalaiah and Isha Valimohamad v. Haji Gulam Mohamad to distinguish a vested right from a statutory privilege that may accrue when proceedings are initiated.",
+      "rule": {
+        "if": "rent_control_eviction_case and eviction_ground_is_exception_to_tenant_protection",
+        "then": "landlord_has_no_vested_right_in_that_eviction_ground"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The landlord brought an eviction proceeding under legislation that protects tenants against eviction.",
+        "eviction_ground_is_exception_to_tenant_protection": "The landlord relied on a ground listed as an exception to the legislation’s general protection of tenants."
+      },
+      "definition": "In a rent-control eviction case, relying on a ground that is an exception to tenant protection does not give the landlord a vested right in that ground."
+    },
+    {
+      "legal_issue": "A pending eviction proceeding and the landlord’s accrued statutory privilege to pursue it survive a legislative withdrawal of rent-control protection unless a different legislative intention appears.",
+      "material_facts": [
+        "The landlord filed an eviction petition under the rent-control legislation before the amendment took effect.",
+        "The amendment made the legislation inapplicable to the tenancy because its rent exceeded the new threshold.",
+        "The eviction petition remained pending when the amendment took effect, and the landlord had filed it to pursue a statutory ground for eviction."
+      ],
+      "conclusion": "The landlord’s accrued privilege and the pending proceeding were saved, and the proceeding could continue before the Rent Controller as though the repealing amendment had not taken effect.",
+      "legal_principle": "Section 6(c) and (e) of the General Clauses Act, 1897, preserve an accrued right or privilege and a legal proceeding in respect of it unless a different intention appears. A mere hope or expectation is not preserved, but a privilege accrued by filing the eviction petition is. The Court relied on Isha Valimohamad v. Haji Gulam Mohamad, M.S. Shivananda v. Karnataka State Road Transport Corporation, Bansidhar v. State of Rajasthan, Commissioner of Income-Tax v. Godavari Sagar Mills, and State of Punjab v. Mohar Singh. It distinguished cases where Section 6 does not apply and the inquiry is limited to whether a vested right exists.",
+      "rule": {
+        "if": "rent_control_eviction_case and eviction_petition_pending_when_protection_withdrawn and filing_created_statutory_eviction_privilege and no_different_legislative_intention",
+        "then": "pending_eviction_proceeding_may_continue_under_prior_law"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The case concerns an eviction proceeding brought under rent-control legislation.",
+        "eviction_petition_pending_when_protection_withdrawn": "The landlord’s eviction petition remained undecided when legislation withdrew its application to the tenancy.",
+        "filing_created_statutory_eviction_privilege": "The landlord had filed the petition to pursue an eviction remedy provided by the legislation.",
+        "no_different_legislative_intention": "The legislative change did not express an intention to displace the saving of accrued privileges and pending proceedings."
+      },
+      "definition": "If a rent-control eviction petition remains pending when protection is withdrawn, its filing has accrued a statutory eviction privilege, and the change expresses no contrary intention, the proceeding may continue under the prior law."
+    },
+    {
+      "legal_issue": "A landlord may not continue parallel civil-court and rent-controller proceedings for possession when the pending rent-controller proceeding remains maintainable.",
+      "material_facts": [
+        "The eviction petition remained maintainable before the Rent Controller after the amendment because it was saved as a pending proceeding.",
+        "The landlord had also filed a civil suit seeking possession of the same premises.",
+        "The landlord was pursuing both proceedings."
+      ],
+      "conclusion": "The landlord could not continue both proceedings and was directed to withdraw one of them.",
+      "legal_principle": "Because the saved proceeding remained within the Rent Controller’s jurisdiction, the landlord could not continue a parallel proceeding for possession under the general law. The Court ordered the landlord to withdraw one of the two proceedings.",
+      "rule": {
+        "if": "saved_rent_controller_eviction_case and parallel_civil_possession_case",
+        "then": "landlord_must_discontinue_one_parallel_possession_proceeding"
+      },
+      "predicates": {
+        "saved_rent_controller_eviction_case": "An eviction proceeding remained maintainable before the Rent Controller after a legislative change because it had been pending when the change took effect.",
+        "parallel_civil_possession_case": "The landlord also brought a civil-court proceeding seeking possession of the same premises."
+      },
+      "definition": "When a saved rent-controller eviction proceeding and a parallel civil possession proceeding both concern the same premises, the landlord must discontinue one of them."
+    }
+  ],
+  "seconds": 17.8
+}

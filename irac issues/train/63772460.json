@@ -1,0 +1,76 @@
+{
+  "doc_id": "63772460",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26908,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2733,
+    "prompt_tokens": 6964,
+    "total_tokens": 9697,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A statutory sale of secured assets is not complete merely upon confirmation of the auction when the full sale consideration has not been paid.",
+      "material_facts": [
+        "The secured assets were put to auction before the insolvency proceeding began, and the auction was confirmed after the purchasers paid 25% of the bid amount.",
+        "The purchasers paid the remaining 75% after the insolvency proceeding had commenced.",
+        "The sale was governed by the statutory sale procedure in Rules 8 and 9 of the Security Interest (Enforcement) Rules, 2002."
+      ],
+      "conclusion": "The sale was not complete upon confirmation or part payment; under the statutory sale procedure, it could be completed only upon payment of the entire consideration and issuance of the sale certificate.",
+      "legal_principle": "Rules 8 and 9 of the Security Interest (Enforcement) Rules, 2002 govern the statutory sale, which is complete only when the purchaser makes the entire payment and the authorised officer issues the sale certificate. The Court distinguished Vidhyadhar v. Manikrao, (1999) 3 SCC 573, B. Arvind Kumar v. Govt. of India, (2007) 5 SCC 745, and Kaliaperumal v. Rajagopal, (2009) 4 SCC 193, and relied on Shakeena v. Bank of India, 2019 SCC OnLine SC 1059, followed in S. Karthik v. N. Subhash Chand Jain, 2020 SCC OnLine SC 787, concerning completion of a sale under the SARFAESI statutory scheme.",
+      "rule": {
+        "if": "statutory_asset_sale and full_consideration_unpaid",
+        "then": "statutory_sale_not_completed"
+      },
+      "predicates": {
+        "statutory_asset_sale": "A creditor conducted a sale of secured assets under a statutory enforcement process.",
+        "full_consideration_unpaid": "The purchaser had not paid the entire sale consideration to the creditor."
+      },
+      "definition": "When a creditor conducts a statutory sale of secured assets and the purchaser has not paid the entire consideration, the sale is not complete."
+    },
+    {
+      "legal_issue": "A creditor may not continue enforcing security over a corporate debtor’s property after commencement of the corporate insolvency resolution process and the resulting moratorium.",
+      "material_facts": [
+        "The insolvency resolution process commenced and a moratorium was ordered while the purchasers still owed most of the auction price.",
+        "The creditor accepted the unpaid balance of the price after the moratorium began and informed the insolvency professional of the sale.",
+        "The sale concerned secured property of the corporate debtor, and the creditor’s enforcement action continued under the SARFAESI process."
+      ],
+      "conclusion": "The creditor could not continue the security-enforcement proceedings after the insolvency process commenced; the sale completed through the later payment was prohibited and the orders setting it aside were not disturbed.",
+      "legal_principle": "Section 14(1)(c) of the Insolvency and Bankruptcy Code, 2016 prohibits actions to foreclose, recover or enforce security interests created by a corporate debtor in respect of its property, including actions under the SARFAESI Act, once the corporate insolvency resolution process commences. Section 238 gives the Code overriding effect over inconsistent laws. The Court relied on Innoventive Industries Ltd. v. ICICI Bank, (2018) 1 SCC 407, Principal Commissioner of Income Tax v. Monnet Ispat and Energy Ltd., (2018) 18 SCC 786, and Ghanashyam Mishra and Sons Pvt. Ltd. v. Edelweiss Asset Reconstruction Co. Ltd., (2021) 9 SCC 657.",
+      "rule": {
+        "if": "corporate_insolvency_proceeding and moratorium_in_force and creditor_enforced_debtor_security",
+        "then": "post_commencement_security_enforcement_prohibited"
+      },
+      "predicates": {
+        "corporate_insolvency_proceeding": "A corporate debtor was undergoing a corporate insolvency resolution process.",
+        "moratorium_in_force": "A moratorium applied during that insolvency process.",
+        "creditor_enforced_debtor_security": "A creditor continued an action to recover or enforce security over property of the corporate debtor."
+      },
+      "definition": "When a corporate debtor is undergoing insolvency resolution under a moratorium and a creditor continues to enforce security over its property, that enforcement is prohibited."
+    },
+    {
+      "legal_issue": "The circumstances did not establish that the insolvency proceeding had been initiated maliciously to obstruct the creditor’s enforcement action.",
+      "material_facts": [
+        "The creditor alleged that the debtor initiated the insolvency proceeding solely to stall the auction.",
+        "The insolvency petition disclosed the creditor’s actions, including the declaration of default and initiation of the auction process.",
+        "A later liquidation order was under challenge before the appellate tribunal."
+      ],
+      "conclusion": "The Court found no merit in the allegation that the insolvency proceeding was initiated maliciously and made no observation on the liquidation order because it was under challenge.",
+      "legal_principle": "The Court rejected the allegation under Section 65 of the Insolvency and Bankruptcy Code, 2016 on the facts before it, noting that the insolvency petition disclosed the creditor’s enforcement actions. It did not decide the challenge concerning the liquidation order, which was pending before the appellate tribunal.",
+      "rule": {
+        "if": "insolvency_initiation_proceeding and enforcement_actions_disclosed_in_petition",
+        "then": "mala_fide_initiation_not_established"
+      },
+      "predicates": {
+        "insolvency_initiation_proceeding": "A corporate debtor initiated an insolvency proceeding while a creditor was taking enforcement action.",
+        "enforcement_actions_disclosed_in_petition": "The debtor’s insolvency petition disclosed the creditor’s enforcement actions."
+      },
+      "definition": "When a corporate debtor initiates an insolvency proceeding and its petition discloses the creditor’s enforcement actions, malicious initiation is not established on that basis alone."
+    }
+  ],
+  "seconds": 16.0
+}

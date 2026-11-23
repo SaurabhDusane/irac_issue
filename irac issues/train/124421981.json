@@ -1,0 +1,62 @@
+{
+  "doc_id": "124421981",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17663,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1847,
+    "prompt_tokens": 4667,
+    "total_tokens": 6514,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A suit seeking only a permanent injunction is not maintainable where the plaintiff’s title is genuinely disputed and resolving the title dispute requires a full adjudication.",
+      "material_facts": [
+        "The plaintiff sought a permanent injunction without seeking a declaration of title.",
+        "The plaintiff and a defendant claimed ownership under competing sale deeds and disputed each other’s title, possession, and account of how the property was acquired.",
+        "The defendant alleged that the plaintiff’s vendor lacked title and that documents concerning the plaintiff’s claim were fabricated.",
+        "The court found that the plaintiff’s title was not clear and that the dispute required evidence and adjudication of questions of fact and law."
+      ],
+      "conclusion": "The suit for a permanent injunction without a declaration of title was not maintainable on these facts, and the appeal challenging the setting aside of the injunction decree was dismissed.",
+      "legal_principle": "Under Anathula Sudhakar v. P. Buchi Reddy (2008) 4 SCC 594, a suit for injunction simpliciter may be decided on possession where title is not disputed or under a cloud. Where a genuine cloud over title exists and the dispute involves complicated questions of fact and law, the parties should be relegated to a comprehensive suit for declaration of title. Although a court may decide a simple and straightforward title issue in an injunction suit when there are necessary pleadings and an appropriate issue, that is an exception. Jharkhand State Housing Board v. Didar Singh (2019) 17 SCC 692 confirms that a declaration is necessary when the defendant raises a genuine title dispute and a cloud over the plaintiff’s title.",
+      "rule": {
+        "if": "bare_injunction_suit and genuine_title_dispute and title_requires_full_trial",
+        "then": "bare_injunction_suit_not_maintainable"
+      },
+      "predicates": {
+        "bare_injunction_suit": "The plaintiff brought a suit seeking an injunction without also seeking a declaration of title.",
+        "genuine_title_dispute": "A defendant asserted a competing claim of ownership that the court could not treat as merely vexatious or unfounded.",
+        "title_requires_full_trial": "Resolving the competing claims of title required evidence and adjudication of substantial questions of fact or law.",
+        "bare_injunction_suit_not_maintainable": "The plaintiff cannot maintain the injunction-only suit without seeking a determination of title."
+      },
+      "definition": "When an injunction-only suit involves a genuine ownership dispute that requires a full trial, the suit is not maintainable in that form."
+    },
+    {
+      "legal_issue": "A municipal property entry and a prior order setting aside its alteration while reserving title adjudication do not establish the plaintiff’s title to the property.",
+      "material_facts": [
+        "A municipal khata entry had been made in the plaintiff’s name.",
+        "A prior court order set aside an alteration to the entry on a limitation ground and reserved the parties’ ability to have title adjudicated by a civil court.",
+        "The prior order described the municipal entry as a fiscal entry relevant to tax payment and stated that it did not itself create or extinguish title.",
+        "The present title dispute remained unresolved and required adjudication on evidence."
+      ],
+      "conclusion": "The prior order and the khata entry did not establish the plaintiff’s title and did not assist the plaintiff in maintaining the injunction-only suit.",
+      "legal_principle": "The court relied on the prior order’s express reservation of title adjudication to the civil court and its statement that a municipal entry is a fiscal entry that does not create or extinguish title. It therefore distinguished an administrative entry from a judicial determination of ownership.",
+      "rule": {
+        "if": "bare_injunction_suit and municipal_entry_is_fiscal_only and prior_order_reserved_title_for_civil_court",
+        "then": "administrative_entry_and_prior_order_do_not_establish_title"
+      },
+      "predicates": {
+        "bare_injunction_suit": "The plaintiff brought a suit seeking an injunction without also seeking a declaration of title.",
+        "municipal_entry_is_fiscal_only": "The municipal property entry records information relevant to taxation and does not itself determine ownership.",
+        "prior_order_reserved_title_for_civil_court": "A prior court order set aside an alteration to the municipal entry while leaving the parties to obtain a civil court’s determination of title.",
+        "administrative_entry_and_prior_order_do_not_establish_title": "The municipal entry and the prior order do not establish the plaintiff’s ownership of the property."
+      },
+      "definition": "In an injunction-only suit, a fiscal property entry and a prior order reserving title for civil adjudication do not establish the plaintiff’s title."
+    }
+  ],
+  "seconds": 15.8
+}

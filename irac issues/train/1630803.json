@@ -1,0 +1,98 @@
+{
+  "doc_id": "1630803",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 44378,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2790,
+    "prompt_tokens": 10569,
+    "total_tokens": 13359,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A Supreme Court determination of the adequacy of compensation for land acquired under the same notification and in the same factual context binds later appeals raising the same issue.",
+      "material_facts": [
+        "The appeals concerned compensation for land acquired in the same villages and under the same notifications considered in an earlier Supreme Court decision.",
+        "The earlier decision examined the valuation evidence and held that the claimants had not established a basis for enhancement and that restoring the Land Acquisition Officer’s awards was justified.",
+        "The present appellants challenged the compensation and argued that the earlier decision should not control their appeals."
+      ],
+      "conclusion": "The earlier decision was binding on the same compensation issue, and the Court declined to take a different view. The appeals seeking enhanced compensation were dismissed.",
+      "legal_principle": "Under Article 141 of the Constitution, the legal principle forming the ratio of a Supreme Court judgment binds courts in later cases presenting the same question of law and materially the same factual issue; findings of fact alone do not bind unrelated cases. A decision of a co-equal Bench is binding, and a Bench that considers a different view necessary must refer the matter to a larger Bench. The Court relied on B.M. Lakhani v. Municipal Committee, Shenoy & Co. v. CTO, Director of Settlements, A.P. v. M.R. Apparao, Union of India v. Krishan Lal Arneja, and Union of India v. Raghubir Singh. It also applied the earlier determination that, without acceptable evidence supporting enhancement, the award restored by the High Court should stand.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and same_acquisition_context and prior_supreme_court_decided_same_compensation_issue",
+        "then": "enhancement_claim_rejected"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "same_acquisition_context": "The land in the later appeal was acquired in the same factual context as land considered in the earlier decision.",
+        "prior_supreme_court_decided_same_compensation_issue": "The Supreme Court had already decided the adequacy of compensation for that acquisition context."
+      },
+      "definition": "When a land-acquisition compensation appeal concerns the same acquisition context and the Supreme Court has already decided the same compensation issue, the claim for enhancement is rejected."
+    },
+    {
+      "legal_issue": "Res judicata does not apply to a later case when the earlier case was not a final determination of the issue between the same parties.",
+      "material_facts": [
+        "The earlier Supreme Court decision concerned the adequacy of compensation for land in the same acquisition context but involved different parties.",
+        "The Court considered whether that earlier decision barred the present appeals as res judicata, separately from whether its legal reasoning bound the Court as precedent."
+      ],
+      "conclusion": "The Court held that res judicata did not apply because the earlier matter was not a lis between the same parties that had attained finality on the issues in the present cases.",
+      "legal_principle": "Res judicata applies where the lis was between the same parties and the issues reached finality; it does not apply, among other circumstances identified by the Court, where those requirements are absent. The Court distinguished res judicata from the binding force of a Supreme Court precedent under Article 141.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and different_parties_in_the_prior_case and no_final_inter_party_determination",
+        "then": "res_judicata_does_not_apply"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "different_parties_in_the_prior_case": "The parties in the earlier case were different from the parties in the present case.",
+        "no_final_inter_party_determination": "The earlier case did not finally determine the issue in a proceeding between the same parties."
+      },
+      "definition": "Res judicata does not apply in a land-acquisition compensation appeal when the earlier case involved different parties and did not finally determine the issue between the same parties."
+    },
+    {
+      "legal_issue": "Allegations of non-listing, counsel’s absence, or pending substitution do not require remand when the record does not establish that counsel was unheard in every affected appeal and a binding precedent would govern the result on remand.",
+      "material_facts": [
+        "The appellants alleged that some High Court appeals had not been listed, that counsel had been absent in some appeals because of illness, and that substitution applications concerning deceased appellants remained pending.",
+        "The appeal records showed that counsel’s presence was recorded in some cases, and the Court relied on what the impugned orders recorded rather than accepting that counsel had been unheard in all the cases.",
+        "The Court considered that a remand to address pending substitution and hearing matters would be a formality because the High Court would be bound by the Supreme Court’s earlier decision on the same acquisition context."
+      ],
+      "conclusion": "The Court did not accept that counsel had been unheard in all the appeals and declined to remand the cases, including because the binding earlier decision would control their disposition.",
+      "legal_principle": "The Court speaks through its orders, which are to be read as correct; the Court relied on the recorded orders in assessing whether counsel had been heard. Although it considered that pending substitution matters could otherwise warrant an opportunity of hearing, remand was unnecessary where the High Court was bound to follow the controlling Supreme Court decision. Article 141 and the rule requiring a co-equal Bench to follow an earlier co-equal decision supported that conclusion.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and procedural_irregularity_alleged and binding_prior_decision_controls_merits",
+        "then": "remand_not_ordered"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "procedural_irregularity_alleged": "A party alleges that an appeal was not listed, counsel was absent, or substitution of a deceased party’s legal representatives was not completed.",
+        "binding_prior_decision_controls_merits": "A binding prior decision would govern the merits if the matter were remitted."
+      },
+      "definition": "A remand is not ordered in a land-acquisition compensation appeal where a procedural irregularity is alleged but a binding prior decision would control the merits on remand."
+    },
+    {
+      "legal_issue": "Compensation already paid and security furnished for its withdrawal may be protected from recovery or enforcement in the particular circumstances of an old land acquisition.",
+      "material_facts": [
+        "The appellants had received compensation pursuant to the Reference Court’s awards, and some had furnished security when withdrawing compensation.",
+        "The acquisition was about two decades old, and the Court considered it plausible that the landowners had used the compensation for various purposes.",
+        "The appeals were dismissed, but the appellants requested that the compensation not be recovered and the security not be enforced."
+      ],
+      "conclusion": "In the peculiar circumstances and in the interest of justice, the Court restrained the respondents from recovering compensation already paid or enforcing security furnished for its withdrawal.",
+      "legal_principle": "The Court exercised its judgment in the particular circumstances, taking account of the age of the acquisition and the plausible use of the compensation, to avoid imposing an additional repayment burden on the landowners. It made this protection a qualification to dismissal of the appeals.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and compensation_already_paid_or_withdrawn and acquisition_is_old and repayment_would_impose_additional_burden",
+        "then": "recovery_and_security_enforcement_restrained"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "compensation_already_paid_or_withdrawn": "Compensation has been paid to the landowners or withdrawn by them.",
+        "acquisition_is_old": "A substantial period has elapsed since the land acquisition.",
+        "repayment_would_impose_additional_burden": "Recovery would place an additional repayment burden on landowners who may have used the compensation."
+      },
+      "definition": "In an old land-acquisition compensation appeal, where compensation has been paid or withdrawn and recovery would impose an additional burden, recovery and enforcement of related security are restrained."
+    }
+  ],
+  "seconds": 19.6
+}

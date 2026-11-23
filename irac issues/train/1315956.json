@@ -1,0 +1,80 @@
+{
+  "doc_id": "1315956",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21121,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2717,
+    "prompt_tokens": 5871,
+    "total_tokens": 8588,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A High Court cannot use its inherent criminal jurisdiction to entertain a second revision application by the same party after that party’s revision has been rejected.",
+      "material_facts": [
+        "The respondent challenged the Magistrate’s order withdrawing attachment by filing a revision before the Sessions Court.",
+        "After the Sessions Court dismissed that revision, the respondent sought the same relief from the High Court under its inherent jurisdiction."
+      ],
+      "conclusion": "The High Court erred in entertaining the respondent’s second revision application, and its order was set aside.",
+      "legal_principle": "Section 397(3) of the Code of Criminal Procedure bars a second revision application by the same party. Section 482 cannot be used to exercise powers expressly barred by the Code. No earlier case is relied on in the judgment for this principle.",
+      "rule": {
+        "if": "criminal_revision_proceeding and same_applicant_previously_sought_revision and prior_revision_rejected and inherent_jurisdiction_invoked",
+        "then": "high_court_cannot_entertain_second_revision"
+      },
+      "predicates": {
+        "criminal_revision_proceeding": "The proceeding sought review of an order made in a criminal matter.",
+        "same_applicant_previously_sought_revision": "The person seeking inherent relief had already applied for revision of the challenged order.",
+        "prior_revision_rejected": "The earlier revision application was rejected by the revisional court.",
+        "inherent_jurisdiction_invoked": "The person then asked the High Court to use its inherent jurisdiction to obtain relief from the same order."
+      },
+      "definition": "When a person whose revision application has been rejected seeks the same relief through the High Court’s inherent jurisdiction, the High Court cannot entertain that second revision."
+    },
+    {
+      "legal_issue": "An interlocutory civil-court order controlling the disputed property can bring a criminal attachment to an end before the civil court finally determines the parties’ rights.",
+      "material_facts": [
+        "A Magistrate attached disputed property in a proceeding concerning a possible breach of the peace and directed that the attachment continue until a competent civil court determined the parties’ rights.",
+        "While the civil suit remained pending, the appellate civil court granted an interim injunction against the opposing parties.",
+        "The Magistrate later withdrew the attachment, and the High Court restored it on the view that attachment had to continue until a final civil determination."
+      ],
+      "conclusion": "The High Court was wrong: the civil court’s interim injunction was sufficient to end the attachment, and the Magistrate did not err in withdrawing it.",
+      "legal_principle": "Under Section 146(1) of the Code of Criminal Procedure, determination of the parties’ rights by a competent court need not be final; an interlocutory injunction or appointment of a receiver can suffice. The proviso to Section 146(1) permits withdrawal of attachment when the likelihood of a breach of the peace has ended. Section 146(2) provides for the Magistrate’s arrangements for the property and requires the Magistrate’s receiver to yield to a receiver appointed by the civil court. No earlier case is relied on in the judgment for this principle.",
+      "rule": {
+        "if": "criminal_attachment_proceeding and disputed_property_attached and civil_court_issued_interlocutory_order_controlling_property",
+        "then": "magistrate_may_withdraw_attachment_before_final_civil_determination"
+      },
+      "predicates": {
+        "criminal_attachment_proceeding": "A Magistrate attached disputed property in a criminal proceeding concerning possession and the prospect of a breach of the peace.",
+        "disputed_property_attached": "The Magistrate placed the property in dispute under attachment.",
+        "civil_court_issued_interlocutory_order_controlling_property": "Before finally deciding the parties’ rights, the civil court issued an interim order controlling possession or the management of the disputed property."
+      },
+      "definition": "If disputed property is attached in a criminal proceeding and the civil court issues an interim order controlling it, the Magistrate may withdraw the attachment before the civil case is finally decided."
+    },
+    {
+      "legal_issue": "A Magistrate cannot make a fresh attachment order when an earlier attachment remains in force because it revived after the revision challenging it was dismissed.",
+      "material_facts": [
+        "The Magistrate made an initial attachment order, and a revision challenging it was dismissed.",
+        "The initial attachment order consequently revived and was never finally vacated.",
+        "The Magistrate nevertheless made further attachment orders concerning the same property."
+      ],
+      "conclusion": "The Magistrate erred in making the subsequent attachment orders while the original attachment remained in force.",
+      "legal_principle": "The judgment treats the original attachment as having revived when the revision against it was dismissed and states that the later attachment orders were erroneous because the original order had not been finally vacated. The judgment does not rely on an earlier case for this point.",
+      "rule": {
+        "if": "criminal_attachment_proceeding and initial_attachment_order_made and revision_against_initial_order_dismissed and initial_attachment_not_finally_vacated and magistrate_made_fresh_attachment_order",
+        "then": "fresh_attachment_order_improper"
+      },
+      "predicates": {
+        "criminal_attachment_proceeding": "The matter was a criminal proceeding in which a Magistrate could attach disputed property.",
+        "initial_attachment_order_made": "The Magistrate made an original order attaching the disputed property.",
+        "revision_against_initial_order_dismissed": "A revision challenging the original attachment order was dismissed.",
+        "initial_attachment_not_finally_vacated": "The original attachment order had not been finally set aside or vacated.",
+        "magistrate_made_fresh_attachment_order": "The Magistrate made another attachment order concerning the same property."
+      },
+      "definition": "If an original attachment revives after the challenge to it is dismissed and remains unvacated, a Magistrate’s fresh attachment order for the same property is improper."
+    }
+  ],
+  "seconds": 77.3
+}

@@ -1,0 +1,119 @@
+{
+  "doc_id": "954858",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31565,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3941,
+    "prompt_tokens": 8244,
+    "total_tokens": 12185,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A partnership consisting of two partners is dissolved when one partner dies, despite a term purporting to continue the firm with the deceased partner’s heir or nominee.",
+      "material_facts": [
+        "The partnership was formed by two individuals, each acting as karta for a joint Hindu family.",
+        "The partnership deed provided that a partner’s death would not dissolve the partnership and that the deceased partner’s heir or nominee would take the deceased partner’s place.",
+        "One of the two partners died."
+      ],
+      "conclusion": "The two-person partnership came to an end on the partner’s death; the deed could not automatically make the heir or nominee a partner in its place.",
+      "legal_principle": "Under sections 4 and 5 of the Partnership Act, 1932, partnership arises from contract, not status. Section 42(c) can preserve a partnership with more than two partners when one dies, but a two-person partnership ends on the death of either partner, leaving no subsisting firm into which another person can be introduced under section 31. The Court followed Mt. Sughra v. Babu and Narayanan v. Umayal, and rejected the contrary view in Hansraj Manot v. Messrs. Gorak Nath Pandey.",
+      "rule": {
+        "if": "partnership_dissolution_dispute and partnership_had_two_partners and one_partner_died and agreement_named_successor",
+        "then": "two_person_partnership_ends_on_death"
+      },
+      "predicates": {
+        "partnership_dissolution_dispute": "The dispute concerns whether a partnership continued after a partner died.",
+        "partnership_had_two_partners": "The partnership had only two partners before the death.",
+        "one_partner_died": "One of the partners died.",
+        "agreement_named_successor": "The partners had agreed that an heir or nominee would take the place of a partner who died."
+      },
+      "definition": "When a dispute concerns the death of a partner in a two-person partnership, and the agreement names a successor, the rule treats the partnership as ending on that death."
+    },
+    {
+      "legal_issue": "A widow who is a member of a joint Hindu family but is not a coparcener cannot become the manager of that family.",
+      "material_facts": [
+        "The deceased partner’s branch of the family included widows and minor sons.",
+        "The possibility that a widow could represent that branch as its manager was raised in considering whether a partnership existed after the partner’s death."
+      ],
+      "conclusion": "A widow, though a member of a joint Hindu family, cannot become its manager.",
+      "legal_principle": "The Court held that coparcenership is a necessary qualification for managership of a joint Hindu family and that a widow is not a coparcener. It followed V.M.N. Radha Ammal v. Commissioner of Income-tax, Madras, and Budhi Jena v. Dhobai Naik, and overruled Commissioner of Income-tax, C.P. & Berar v. Seth Lakshmi Narayan Raghunathdas and Pandurang Dahke v. Pandurang Gorle.",
+      "rule": {
+        "if": "joint_family_management_dispute and woman_is_family_member and woman_is_not_coparcener",
+        "then": "woman_cannot_manage_joint_family"
+      },
+      "predicates": {
+        "joint_family_management_dispute": "The dispute concerns who may manage a joint Hindu family.",
+        "woman_is_family_member": "A woman is a member of the joint Hindu family whose management is in issue.",
+        "woman_is_not_coparcener": "The woman is not a coparcener of that family."
+      },
+      "definition": "When management of a joint Hindu family is in dispute and a woman member is not a coparcener, the rule means she cannot manage the family."
+    },
+    {
+      "legal_issue": "A joint Hindu family cannot itself be a partner, but its karta may enter into a partnership on its behalf.",
+      "material_facts": [
+        "The original partnership was entered into by the kartas of two joint Hindu families, each acting for the respective family.",
+        "The question of whether the families’ representatives could form a partnership after the death of one karta arose in the dispute."
+      ],
+      "conclusion": "A joint Hindu family as such cannot be a partner, but its karta may enter into a valid partnership with a stranger or with the karta of another family.",
+      "legal_principle": "Under sections 4 and 5 of the Partnership Act, 1932, partnership arises by contract and not by status. In Kshetra Mohan Sanyasi Charan Sadhukhan v. Commissioner of Excess Profits Tax, the Court held that when two family kartas form a partnership, the other family members do not themselves become partners, although the karta may be accountable to them.",
+      "rule": {
+        "if": "family_partnership_capacity_dispute and family_business_is_carried_on_through_karta and another_person_agrees_to_share_business_profits",
+        "then": "karta_can_form_partnership_for_family"
+      },
+      "predicates": {
+        "family_partnership_capacity_dispute": "The dispute concerns whether a joint Hindu family can participate in a partnership business.",
+        "family_business_is_carried_on_through_karta": "The family’s business interest is represented by its karta.",
+        "another_person_agrees_to_share_business_profits": "Another person contracts to share the profits of a business carried on by the partners."
+      },
+      "definition": "When a family’s business interest is represented by its karta and another person contracts to share business profits, the rule means the karta can form the partnership for the family, while the family itself is not the partner."
+    },
+    {
+      "legal_issue": "A partnership between family representatives after a partner’s death must be established by evidence of a new partnership and cannot be inferred merely from continuation of the business.",
+      "material_facts": [
+        "After the partner died, the surviving karta continued the sugar-mill business in the firm name.",
+        "The business accounts did not name the widow as a partner, and no document or conduct by the widow, the surviving karta, or business customers supported the claimed partnership with her.",
+        "The family’s court-appointed guardians were not shown to have entered into a partnership with the surviving karta; later partnership deeds did not establish an earlier partnership.",
+        "A son in the deceased partner’s branch later attained majority, and it was conceded that a partnership with him as representative of that branch began when he could represent it."
+      ],
+      "conclusion": "There was no evidence of a new partnership between the family representatives before the son attained majority; a partnership came into existence only when he could represent his branch and the surviving karta agreed to carry on the business with him.",
+      "legal_principle": "Partnership requires a contractual relationship under sections 4 and 5 of the Partnership Act, 1932. Although a partnership may be inferred from conduct, continuation of the business alone does not establish that the deceased partner’s family or its representatives became partners. The Court also applied its holding in Kshetra Mohan Sanyasi Charan Sadhukhan that a karta may contract for a family, while family members do not become partners merely by status.",
+      "rule": {
+        "if": "post_death_partnership_dispute and business_continued_after_partner_died and no_evidence_of_new_partnership_before_qualified_representative_joined and qualified_representative_joined_with_surviving_partner",
+        "then": "new_partnership_exists_only_from_qualified_representative_joining"
+      },
+      "predicates": {
+        "post_death_partnership_dispute": "The dispute concerns whether a new partnership arose after a partner died.",
+        "business_continued_after_partner_died": "The surviving person continued the business after the partner’s death.",
+        "no_evidence_of_new_partnership_before_qualified_representative_joined": "The records and conduct do not establish a new partnership before a person capable of representing the deceased partner’s family joined.",
+        "qualified_representative_joined_with_surviving_partner": "A person capable of representing the family entered into the business arrangement with the surviving partner."
+      },
+      "definition": "When the business continues after a partner dies but no new partnership is evidenced until a qualified family representative joins the surviving partner, the rule means the new partnership exists only from that person’s joining."
+    },
+    {
+      "legal_issue": "An assessee has the status of a firm for an income-tax assessment when a valid partnership existed during the period from which the assessed income arose.",
+      "material_facts": [
+        "The assessee sought firm status for an income-tax assessment after the original two-person partnership had ended on a partner’s death.",
+        "A family representative who had attained majority entered into a partnership with the surviving karta during the accounting period relevant to the assessment.",
+        "It was conceded that a partnership existed from the representative’s entry into the business arrangement.",
+        "The income-tax authorities treated the assessee as an association of persons, while the High Court held that it was a firm."
+      ],
+      "conclusion": "For the assessment year in issue, the assessee’s status was that of a firm within the meaning of section 16(1)(b) of the Income-tax Act, 1922.",
+      "legal_principle": "Section 16(1)(b) of the Income-tax Act, 1922, addresses the status of a firm for assessment. The status follows from whether a valid partnership existed in the period relevant to the assessment; under sections 4 and 5 of the Partnership Act, 1932, that partnership must arise from contract. The Court held that a partnership existed once the family representative was able to represent the branch and the partnership was conceded.",
+      "rule": {
+        "if": "income_tax_status_assessment_dispute and valid_partnership_existed_during_income_period",
+        "then": "assessee_has_firm_status_for_assessment"
+      },
+      "predicates": {
+        "income_tax_status_assessment_dispute": "The dispute concerns whether an assessee should be treated as a firm for an income-tax assessment.",
+        "valid_partnership_existed_during_income_period": "A valid partnership existed during the period from which the income being assessed arose."
+      },
+      "definition": "When an income-tax status dispute concerns a period in which a valid partnership existed, the rule means the assessee has firm status for that assessment."
+    }
+  ],
+  "seconds": 22.3
+}

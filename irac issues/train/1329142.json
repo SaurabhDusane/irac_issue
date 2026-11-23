@@ -1,0 +1,80 @@
+{
+  "doc_id": "1329142",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29325,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2256,
+    "prompt_tokens": 8305,
+    "total_tokens": 10561,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A garnishee order for an amount not specified in the notice, made without an opportunity to answer that amount, and a sale executed under that order are nullities.",
+      "material_facts": [
+        "The notice to the garnishee specified a sum of Rs. 2,86,450, but the garnishee order demanded Rs. 8,56,377.55.",
+        "No notice or opportunity to show cause was given in respect of the amount demanded in the garnishee order.",
+        "The property was sold in execution of that order and the sale was confirmed."
+      ],
+      "conclusion": "The garnishee order was null and void, and the sale held pursuant to it was also null and void notwithstanding confirmation of the sale.",
+      "legal_principle": "Under section 226(3)(vi) of the Income Tax Act, 1961, a garnishee may object on oath to the sum demanded; under section 226(3)(x), failure to pay makes the garnishee a deemed assessee in default only for the amount specified in the notice. An order demanding a different amount without an opportunity to answer it is a nullity, and steps taken in its execution are also nullities. The Court relied on Baijnath Sahai v. Ramgut Singh, Vol. 23 I.A. 45, for the principle that a sale cannot stand without a valid foundation for the execution proceeding.",
+      "rule": {
+        "if": "garnishee_execution_sale and notice_amount_differed_from_order_amount and no_opportunity_on_order_amount",
+        "then": "garnishee_order_and_resulting_sale_are_void"
+      },
+      "predicates": {
+        "garnishee_execution_sale": "A property was sold in execution of a garnishee order.",
+        "notice_amount_differed_from_order_amount": "The amount demanded in the garnishee order was not the amount specified in the notice sent to the garnishee.",
+        "no_opportunity_on_order_amount": "The person against whom the order was made had no opportunity to show cause against the amount demanded in the order."
+      },
+      "definition": "When a property is sold in execution of a garnishee order that demands an amount different from the noticed amount without an opportunity to answer the demand, the order and resulting sale are void."
+    },
+    {
+      "legal_issue": "A prior order setting aside a sale that was itself a nullity should not be recalled merely because the order was obtained after a misrepresentation about payment.",
+      "material_facts": [
+        "An earlier order of the Court set aside the sale after counsel stated that the firm's tax liability had already been paid.",
+        "The tax liability was paid the day after that order, rather than before it was made.",
+        "The sale had been held pursuant to a garnishee order that the Court found to be a nullity."
+      ],
+      "conclusion": "The Court refused to recall its earlier order setting aside the sale, despite the misrepresentation, because the sale was a nullity.",
+      "legal_principle": "The Court held that the sale had no valid foundation because it was conducted under a null garnishee order. In those circumstances, the misrepresentation did not justify recalling the order that set the sale aside.",
+      "rule": {
+        "if": "recall_proceeding_after_sale_setting_order and underlying_sale_was_void and payment_was_misrepresented",
+        "then": "recall_of_sale_setting_order_is_denied"
+      },
+      "predicates": {
+        "recall_proceeding_after_sale_setting_order": "A party sought recall of an order that had set aside a completed sale.",
+        "underlying_sale_was_void": "The sale had been conducted under an order that was a nullity.",
+        "payment_was_misrepresented": "A party represented that a liability had already been paid when payment was made only later."
+      },
+      "definition": "When recall is sought after an order setting aside a sale, and the sale was void although payment was misrepresented, recall is denied."
+    },
+    {
+      "legal_issue": "A public authority responsible for an invalid execution sale must compensate an innocent auction purchaser, and a debtor-side party may be required to share that compensation because of its conduct.",
+      "material_facts": [
+        "The auction purchaser was a stranger to the underlying litigation and had deposited the purchase price for the property.",
+        "The sale resulted from the Revenue's invalid garnishee order.",
+        "A partner of the debtor firm had misrepresented to the Court that the firm's tax liability had already been paid.",
+        "The Court directed repayment of the purchase price and compensation for the period the money had remained blocked, allocating most of the compensation to the Revenue and the balance to the firm or its partner."
+      ],
+      "conclusion": "The auction purchaser was entitled to withdraw the deposited purchase price and receive compensation; the Revenue was responsible for most of the compensation, and the firm or its partner was required to pay a share because of their conduct.",
+      "legal_principle": "The Court held the Revenue responsible for the loss caused to an auction purchaser who was a stranger to the litigation by a sale founded on a null order. It also held that the firm or its partner should share part of the compensation in light of their conduct. No statutory provision or earlier case was relied on for this allocation.",
+      "rule": {
+        "if": "compensation_claim_after_invalid_auction_sale and third_party_purchased_at_auction and public_authority_caused_invalid_sale and debtor_side_misrepresented_payment",
+        "then": "public_authority_and_debtor_side_share_purchaser_compensation"
+      },
+      "predicates": {
+        "compensation_claim_after_invalid_auction_sale": "A purchaser sought repayment or compensation after an auction sale was found invalid.",
+        "third_party_purchased_at_auction": "A purchaser who was not a party to the underlying dispute bought the property at auction and paid the purchase price.",
+        "public_authority_caused_invalid_sale": "A public authority's action led to the invalid sale.",
+        "debtor_side_misrepresented_payment": "A party on the debtor's side represented that a liability had been paid when payment occurred only later."
+      },
+      "definition": "When a third-party auction purchaser seeks compensation after a public authority caused an invalid sale and the debtor side misrepresented payment, the public authority and debtor side share compensation for the purchaser."
+    }
+  ],
+  "seconds": 13.6
+}

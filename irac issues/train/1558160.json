@@ -1,0 +1,100 @@
+{
+  "doc_id": "1558160",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 30802,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2733,
+    "prompt_tokens": 7627,
+    "total_tokens": 10360,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court may be reversed for acquitting an accused where its decision rests on irrelevant grounds, ignores crucial evidence, or reaches an unreasonable conclusion unsupported by the record.",
+      "material_facts": [
+        "The prosecution appealed under Article 136 against an acquittal entered by the High Court after setting aside convictions for robbery and murder.",
+        "The High Court rejected eyewitness and dying-declaration evidence and relied on theories of robbery and fabrication that the Supreme Court found unsupported by the evidence.",
+        "The Supreme Court found the prosecution evidence compelling and concluded that the High Court had ignored crucial evidence and caused a serious miscarriage of justice."
+      ],
+      "conclusion": "The Supreme Court allowed the appeal, set aside the acquittal, and restored the convictions and sentences.",
+      "legal_principle": "In an appeal against acquittal, the presumption of innocence reinforced by the acquittal calls for care and restraint, but does not prevent intervention where necessary to avert a miscarriage of justice, including where crucial evidence is ignored or the acquittal rests on irrelevant grounds or an unreasonable assessment. The Court relied on Article 136 of the Constitution and Arunachalam v. P.S.R. Sadhanantham. An alternative view must have some plausibility to be countenanced.",
+      "rule": {
+        "if": "appeal_against_acquittal and (acquittal_based_on_irrelevant_grounds or crucial_evidence_ignored or findings_based_on_unsupported_assumptions) and evidence_leaves_no_plausible_alternative",
+        "then": "acquittal_may_be_set_aside"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The prosecution appealed a judgment that had acquitted the accused.",
+        "acquittal_based_on_irrelevant_grounds": "The appellate court based its acquittal on grounds that did not have evidentiary support or were not relevant to the evidence.",
+        "crucial_evidence_ignored": "The appellate court failed to consider evidence material to deciding the accused's guilt.",
+        "findings_based_on_unsupported_assumptions": "The appellate court drew its conclusions from assumptions or surmises unsupported by the record.",
+        "evidence_leaves_no_plausible_alternative": "The evidence supporting the conviction was compelling and did not permit a plausible alternative view."
+      },
+      "definition": "When an appeal challenges an acquittal, the acquittal may be set aside if the evidence leaves no plausible alternative and the appellate court relied on irrelevant grounds, ignored crucial evidence, or made unsupported findings."
+    },
+    {
+      "legal_issue": "A dying declaration may be accepted as evidence of guilt when the declarant was conscious and capable of making the statement, and it does not require corroboration as a matter of law.",
+      "material_facts": [
+        "The injured person gave a detailed statement identifying the attackers and describing the assault before dying.",
+        "The officers who recorded or witnessed the statement said that the declarant was conscious.",
+        "Medical witnesses testified that the injuries did not prevent the declarant from remaining conscious and speaking, and the medical evidence was consistent with the described weapons and injuries.",
+        "A witness's statement that the declarant appeared unconscious at an earlier point did not establish that she could not later regain consciousness and speak."
+      ],
+      "conclusion": "The Supreme Court accepted the statement as a dying declaration and held that it was entitled to great weight without requiring corroboration.",
+      "legal_principle": "A dying declaration that is shown to have been made while the declarant was conscious and capable of speaking may be acted upon without corroboration. The Court relied on Khushal Rao v. State of Bombay and distinguished Padman Meher v. State of Orissa and Darshan Singh v. Punjab, where the medical circumstances differed.",
+      "rule": {
+        "if": "criminal_case_relies_on_dying_declaration and declarant_conscious_when_statement_made and medical_evidence_supports_capacity_to_speak",
+        "then": "dying_declaration_may_be_relied_on_without_corroboration"
+      },
+      "predicates": {
+        "criminal_case_relies_on_dying_declaration": "The prosecution relied on a statement made by an injured person who later died.",
+        "declarant_conscious_when_statement_made": "The person making the statement was conscious when it was made.",
+        "medical_evidence_supports_capacity_to_speak": "Medical evidence supports that the person's injuries did not prevent them from speaking coherently at the relevant time."
+      },
+      "definition": "In a criminal case relying on a dying declaration, if the declarant was conscious and medical evidence supports their capacity to speak, the declaration may be relied on without corroboration."
+    },
+    {
+      "legal_issue": "Evidence given by a witness declared hostile is not thereby excluded in its entirety and may be considered to the extent that it is reliable and relevant.",
+      "material_facts": [
+        "A witness was declared hostile because he did not say that he had seen the actual assault, although he testified that he saw the accused fleeing from the injured person's house.",
+        "The witness entered the house after another witness had opened the door, so he could not necessarily have seen the assault itself.",
+        "His account otherwise corroborated the presence of the accused, the weapons, and the burning lantern."
+      ],
+      "conclusion": "The Supreme Court held that the witness's evidence should not have been discarded in its entirety and that its reliable corroborative parts should have been considered.",
+      "legal_principle": "Declaring a witness hostile does not automatically exclude or render the whole of that witness's evidence unworthy of consideration; the court may consider the portions it finds reliable and relevant. No earlier case was cited for this principle.",
+      "rule": {
+        "if": "criminal_case_involves_hostile_witness and testimony_contains_reliable_relevant_parts",
+        "then": "reliable_relevant_parts_may_be_considered"
+      },
+      "predicates": {
+        "criminal_case_involves_hostile_witness": "A witness in a criminal case was declared hostile after giving evidence that did not fully support the prosecution.",
+        "testimony_contains_reliable_relevant_parts": "The witness gave evidence that was relevant and could be assessed as reliable despite the parts that did not support the prosecution."
+      },
+      "definition": "When a witness in a criminal case is declared hostile, reliable and relevant parts of the witness's testimony may still be considered."
+    },
+    {
+      "legal_issue": "A witness's interest in the case does not, by itself, make the witness's testimony unsafe to accept when the testimony is consistent and corroborated.",
+      "material_facts": [
+        "The principal eyewitness was cultivating the injured person's land as a tenant and was regarded by the High Court as having an interest in the outcome.",
+        "His account of seeing the assault was consistent and was corroborated by other witnesses and the injured person's statement.",
+        "His conduct in taking the injured person to the police station supported his stated concern for her."
+      ],
+      "conclusion": "The Supreme Court held that there was no adequate basis to reject the eyewitness's testimony merely because he was the injured person's tenant.",
+      "legal_principle": "A witness's interest in the outcome is a factor in assessing credibility, but it does not alone justify rejecting testimony that is consistent and corroborated. The Court applied this principle in assessing the evidence; no earlier case was cited for it.",
+      "rule": {
+        "if": "criminal_case_relies_on_interested_witness and testimony_is_consistent and testimony_is_corroborated",
+        "then": "testimony_not_rejected_solely_for_witness_interest"
+      },
+      "predicates": {
+        "criminal_case_relies_on_interested_witness": "The prosecution relied on testimony from a witness who had an interest in the outcome of the case.",
+        "testimony_is_consistent": "The witness's account remained consistent on material aspects.",
+        "testimony_is_corroborated": "Other evidence supported material parts of the witness's account."
+      },
+      "definition": "In a criminal case, consistent and corroborated testimony from an interested witness is not rejected solely because of the witness's interest."
+    }
+  ],
+  "seconds": 16.7
+}

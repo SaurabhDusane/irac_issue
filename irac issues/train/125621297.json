@@ -1,0 +1,98 @@
+{
+  "doc_id": "125621297",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 113584,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3032,
+    "prompt_tokens": 26681,
+    "total_tokens": 29713,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The secured-creditor enforcement regime prevails over the suspension of proceedings applicable to a sick industrial company, subject to the required agreement among multiple secured creditors.",
+      "material_facts": [
+        "The company had been declared sick, and its rehabilitation schemes had failed before the secured creditors began recovery measures.",
+        "A secured creditor issued a demand notice, took possession-related steps, and proceeded toward sale of secured assets.",
+        "The court found that secured creditors representing more than three-fourths of the outstanding amount had taken enforcement measures."
+      ],
+      "conclusion": "Secured creditors may enforce their security under the 2002 Act notwithstanding the suspension under the 1985 Act. Where there are multiple secured creditors or joint financing, the 1985 Act’s suspension does not bar enforcement if the required proportion of secured creditors agrees to exercise the enforcement right; otherwise the suspension continues to apply.",
+      "legal_principle": "Sections 13(1), 13(4), 13(9), 35 and 37 of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002, read with Sections 22 and 32 of the Sick Industrial Companies (Special Provisions) Act, 1985, establish that the 2002 Act prevails to the extent of inconsistency. The deliberate omission of the 1985 Act from Section 37, in contrast to its express inclusion in Section 34(2) of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993, supports that construction. KSL & Industries Ltd. v. Arihant Threads Ltd. concerned the different statutory scheme of the 1993 Act; the Court also relied on the approach to conflicting special statutes in Maharashtra Tubes Ltd. v. State Industrial and Investment, Solidaire India Ltd. v. Fairgrowth Financial Services Ltd., Jay Engineering Works Ltd. v. Industry Facilitation Council, Morgan Securities and Credit Pvt. Ltd. v. Modi Rubber Ltd., Tata Motors Ltd. v. Pharmaceutical Products of India Ltd., Raheja Universal Limited v. NRC Limited, and Pegasus Assets Reconstruction P. Ltd. v. Haryana Concast Limited.",
+      "rule": {
+        "if": "secured_debt_enforcement_case and secured_creditor and (sole_secured_creditor or required_lender_consent_obtained)",
+        "then": "secured_enforcement_not_barred_by_rehabilitation_suspension"
+      },
+      "predicates": {
+        "secured_debt_enforcement_case": "The proceeding concerns a secured creditor’s enforcement of a debt owed by a company undergoing a rehabilitation proceeding.",
+        "secured_creditor": "A creditor seeking recovery holds security for the debt owed by the company.",
+        "sole_secured_creditor": "Only one secured creditor is involved in the financing or enforcement decision.",
+        "required_lender_consent_obtained": "The requisite proportion of the secured creditors involved in the financing has agreed to enforce the security."
+      },
+      "definition": "When a secured creditor seeks to enforce a debt in a rehabilitation proceeding, and either acts alone or has the required creditor agreement, the enforcement is not barred by the rehabilitation suspension."
+    },
+    {
+      "legal_issue": "A pending rehabilitation reference includes every stage of the proceeding before the rehabilitation board, and it abates when the required supermajority of secured creditors takes enforcement measures.",
+      "material_facts": [
+        "The company’s reference had progressed beyond its initial filing: rehabilitation schemes had been considered and failed, and the board had recommended winding up.",
+        "Secured creditors representing more than three-fourths of the outstanding amount had taken measures to recover their secured debts.",
+        "The dispute concerned whether the statutory reference covered only the initial filing stage or continued through inquiry, scheme and winding-up stages."
+      ],
+      "conclusion": "The expression covering a pending reference applies through the inquiry, scheme and winding-up stages. A reference at any of those stages abates when the statutory supermajority of secured creditors takes the specified enforcement measures.",
+      "legal_principle": "The third proviso to Section 15(1) of the Sick Industrial Companies (Special Provisions) Act, 1985 must be read in context with Sections 16 and 18 of that Act and Section 13(4) of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002. A strictly literal reading limited to the initial filing would defeat the proviso’s purpose because an inquiry is deemed to commence upon receipt of a reference. The Court relied on Real Value Appliances Ltd. v. Canara Bank, rejected the narrower approach in Noble Aqua Pvt. Ltd. v. State Bank of India, and agreed with the broader approach reflected in M/s Salem Textiles Limited v. The Authorized Officer. It also referred to the meaning of “abate” in Ramanatha Aiyar’s Law Lexicon.",
+      "rule": {
+        "if": "rehabilitation_reference_case and reference_pending_at_any_board_stage and statutory_supermajority_of_secured_creditors_enforced",
+        "then": "rehabilitation_reference_abates"
+      },
+      "predicates": {
+        "rehabilitation_reference_case": "The proceeding concerns a company’s reference seeking rehabilitation before the body responsible for considering sick industrial companies.",
+        "reference_pending_at_any_board_stage": "The reference remains pending at the inquiry, rehabilitation-scheme, or winding-up-recommendation stage.",
+        "statutory_supermajority_of_secured_creditors_enforced": "The legally required supermajority of secured creditors has taken measures to recover its secured debt."
+      },
+      "definition": "A pending rehabilitation reference at any board stage abates when the required supermajority of secured creditors takes recovery measures."
+    },
+    {
+      "legal_issue": "An interim stay of an order terminating a rehabilitation proceeding does not revive the proceeding that the order had already terminated.",
+      "material_facts": [
+        "The rehabilitation board had concluded that the company should be wound up, and the appellate authority had dismissed the company’s challenge.",
+        "A court later stayed the operation of those orders while a challenge was pending.",
+        "The orders had not been quashed or set aside when the stay was granted."
+      ],
+      "conclusion": "The interim stay did not revive the terminated rehabilitation reference or make it pending again.",
+      "legal_principle": "Under Shree Chamundi Mopeds Ltd. v. Church of South India Trust Association, staying the operation of an order does not wipe it out or restore the position that existed before it; quashing an order may do so. Accordingly, the stay did not revive the proceeding already disposed of by the board and appellate authority.",
+      "rule": {
+        "if": "rehabilitation_proceeding_case and underlying_reference_already_terminated and interim_stay_only",
+        "then": "terminated_reference_remains_terminated"
+      },
+      "predicates": {
+        "rehabilitation_proceeding_case": "The proceeding concerns a company’s rehabilitation reference before the relevant board or appellate authority.",
+        "underlying_reference_already_terminated": "The relevant authority had already disposed of the reference before the later stay was granted.",
+        "interim_stay_only": "A court stayed the operation of the termination order without quashing it or remanding the proceeding."
+      },
+      "definition": "If a rehabilitation reference has already been terminated, a stay of the termination order alone leaves the reference terminated."
+    },
+    {
+      "legal_issue": "The suspension of proceedings continues to protect a sick industrial company against unsecured creditors seeking recovery of their debts.",
+      "material_facts": [
+        "The company had been declared sick and was the subject of proceedings under the rehabilitation statute.",
+        "The court distinguished secured-creditor enforcement under the later security-enforcement statute from debt recovery sought by unsecured creditors."
+      ],
+      "conclusion": "The suspension continues to apply to unsecured creditors seeking to recover debts from a sick industrial company.",
+      "legal_principle": "Section 22 of the Sick Industrial Companies (Special Provisions) Act, 1985 continues to govern recovery proceedings by unsecured creditors. The Court distinguished the 2002 security-enforcement regime from the Recovery of Debts Due to Banks and Financial Institutions Act, 1993, which yields to the 1985 Act under Section 34(2), as explained in KSL & Industries Ltd. v. Arihant Threads Ltd. The Court also referred to Gujarat Steel Tube Co. Ltd. v. Virchandbhai B. Shah and Kailash Nath Agarwal v. Pradeshiya Industrial & Investment Corpn. of U.P. Ltd. concerning the scope of the suspension.",
+      "rule": {
+        "if": "sick_company_recovery_case and creditor_is_unsecured and debt_recovery_proceeding",
+        "then": "rehabilitation_suspension_continues_to_apply"
+      },
+      "predicates": {
+        "sick_company_recovery_case": "The proceeding concerns recovery of a debt from a company undergoing a sick-company rehabilitation proceeding.",
+        "creditor_is_unsecured": "The creditor seeking recovery has no security over the company’s assets for the debt.",
+        "debt_recovery_proceeding": "The creditor is pursuing a proceeding to recover the debt from the company."
+      },
+      "definition": "When an unsecured creditor pursues debt recovery from a company in a rehabilitation proceeding, the suspension continues to apply."
+    }
+  ],
+  "seconds": 19.0
+}

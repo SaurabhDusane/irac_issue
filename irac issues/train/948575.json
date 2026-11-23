@@ -1,0 +1,117 @@
+{
+  "doc_id": "948575",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14272,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3048,
+    "prompt_tokens": 3746,
+    "total_tokens": 6794,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord claiming that a building is exempt from rent control as a new construction bears the burden of proving the facts establishing the exemption.",
+      "material_facts": [
+        "The landlady sought eviction on the ground that the building was a new construction exempt from the rent-control law.",
+        "The tenant disputed that the building was new, and the evidence did not establish when construction was completed."
+      ],
+      "conclusion": "The burden of proving that the building qualified for the exemption rested on the landlady, not the tenant.",
+      "legal_principle": "Under Section 2(2) of the U.P. Urban Buildings (Regulation of Letting, Rent and Eviction) Act, 1972, the Act applies to buildings unless the claimed exemption is established. The Court reasoned that the statutory scheme and the landlord’s greater access to information about construction place the burden on the landlord. No earlier cases are relied on.",
+      "rule": {
+        "if": "landlord_seeks_rent_control_exemption",
+        "then": "landlord_must_prove_exemption_facts"
+      },
+      "predicates": {
+        "landlord_seeks_rent_control_exemption": "The landlord seeks to avoid rent-control restrictions by claiming that the building qualifies for an exemption."
+      },
+      "definition": "When a landlord seeks an exemption from rent control, the landlord must prove the facts that establish it."
+    },
+    {
+      "legal_issue": "The completion date of a building for a new-construction exemption is determined from the specified municipal records and, if those records are absent, from its first actual occupation.",
+      "material_facts": [
+        "The municipal assessment record referred to an “increased assessment,” but its meaning was unclear.",
+        "The evidence did not establish whether the building had been newly constructed or whether an existing building had been remodelled, or when the relevant work was completed.",
+        "The Court considered municipal records and verification by municipal authorities the best evidence of completion and the nature of the construction."
+      ],
+      "conclusion": "The completion date must be determined under the statutory criteria, giving effect to the relevant municipal report, record, or assessment and using first actual occupation only when those records are absent.",
+      "legal_principle": "Explanation I(a) to Section 2(2) of the U.P. Act provides that completion is dated by the report or record of the local authority or, for an assessed building, the date the first assessment takes effect, using the earlier date when applicable. In the absence of a report, record, or assessment, completion is dated from first actual occupation, excluding occupation merely to supervise or guard construction. The Court stated that municipal records, rather than witness testimony, are the statutory guide. No earlier cases are relied on.",
+      "rule": {
+        "if": "rent_control_exemption_claim and completion_date_disputed and (municipal_completion_records_exist or (no_municipal_completion_records and building_first_actually_occupied))",
+        "then": "completion_date_fixed_by_municipal_records_or_first_actual_occupation"
+      },
+      "predicates": {
+        "rent_control_exemption_claim": "The landlord claims that a building is exempt from rent control because it is a new construction.",
+        "completion_date_disputed": "The parties dispute when construction of the building was completed.",
+        "municipal_completion_records_exist": "A local authority has a report, record, or assessment relevant to the building’s completion.",
+        "no_municipal_completion_records": "There is no relevant local-authority report, record, or assessment for the building.",
+        "building_first_actually_occupied": "The building was occupied for the first time for a purpose other than supervising or guarding construction."
+      },
+      "definition": "If completion is disputed in an exemption claim, the completion date is fixed by the relevant municipal records or, if they are absent, by the building’s first actual occupation."
+    },
+    {
+      "legal_issue": "An existing building may qualify as a new construction if it has been wholly or substantially demolished and replaced, or if a substantial addition leaves the existing building as only a minor part of the whole.",
+      "material_facts": [
+        "The property included a pre-existing building that had existed long before the claimed exemption period.",
+        "The plan showed proposed additions or partial reconstruction rather than total demolition.",
+        "The testimony described additions and remodelling, but the courts below did not determine whether the existing building had been substantially demolished or had become only a minor part of the completed building."
+      ],
+      "conclusion": "Whether the construction qualified as new depended on determining whether the existing building was wholly or substantially demolished or whether additions made it only a minor part of the whole.",
+      "legal_principle": "Explanation I(b) and I(c) to Section 2(2) of the U.P. Act treat as construction a new construction replacing a wholly or substantially demolished building, and treat an existing building together with a substantial addition as constructed on the date of the addition’s completion if the existing building becomes only a minor part. No earlier cases are relied on.",
+      "rule": {
+        "if": "rent_control_exemption_claim and (existing_building_wholly_or_substantially_demolished or substantial_addition_makes_existing_building_minor_part)",
+        "then": "resulting_building_qualifies_as_new_construction"
+      },
+      "predicates": {
+        "rent_control_exemption_claim": "The landlord claims that a building is exempt from rent control because it is a new construction.",
+        "existing_building_wholly_or_substantially_demolished": "An existing building was wholly or substantially demolished before the replacement construction was completed.",
+        "substantial_addition_makes_existing_building_minor_part": "A substantial addition left the pre-existing building as only a minor part of the resulting building."
+      },
+      "definition": "A building with a pre-existing structure qualifies as a new construction if that structure was wholly or substantially demolished or became only a minor part after a substantial addition."
+    },
+    {
+      "legal_issue": "An eviction decree based on a new-construction exemption cannot stand when the courts have not made findings on the completion date and the extent of rebuilding, and the matter must be remitted for fresh consideration.",
+      "material_facts": [
+        "The trial court and the High Court upheld eviction based on the claimed new-construction exemption.",
+        "The trial court had not specifically found when the building was completed or whether the work involved total or substantial demolition and reconstruction, or additions that made the old building a minor part.",
+        "The municipal assessment evidence was ambiguous, and the remaining oral evidence was inconclusive or based on second-hand testimony.",
+        "The courts below had not properly considered the statutory evidentiary guidance or the landlord’s burden."
+      ],
+      "conclusion": "The Court set aside the judgments below and remitted the case to the trial court to allow fresh evidence and decide the exemption claim in light of the statutory criteria.",
+      "legal_principle": "The Court applied Section 2(2) and Explanation I to the U.P. Act, including the landlord’s burden to establish the exemption and the statutory guidance on completion evidence. A speculative finding is not a finding where essential issues have not been determined. No earlier cases are relied on.",
+      "rule": {
+        "if": "appeal_from_eviction_decree_based_on_new_construction_exemption and essential_completion_or_rebuilding_findings_absent and findings_are_speculative",
+        "then": "eviction_decree_set_aside_and_case_remitted"
+      },
+      "predicates": {
+        "appeal_from_eviction_decree_based_on_new_construction_exemption": "The proceeding is an appeal from an eviction decree that rests on a claimed new-construction exemption.",
+        "essential_completion_or_rebuilding_findings_absent": "The lower courts have not determined the completion date or the extent and nature of rebuilding needed to assess the exemption.",
+        "findings_are_speculative": "The lower courts’ conclusions on the exemption rest on speculation rather than findings grounded in the relevant evidence."
+      },
+      "definition": "When an appeal concerns an eviction decree based on a new-construction exemption and essential findings are absent or speculative, the decree is set aside and the case is remitted."
+    },
+    {
+      "legal_issue": "On remand of an eviction proceeding, a landlord may be permitted, on application, to plead an alternative statutory ground for eviction.",
+      "material_facts": [
+        "The case was remitted for fresh disposal of the new-construction exemption claim.",
+        "It was submitted that the landlady’s son needed the premises for his personal requirement.",
+        "The Court permitted the trial court to allow the landlady, if she applied, to plead an alternative ground for eviction under the Act."
+      ],
+      "conclusion": "The trial court could allow the landlady, on application, to plead any specified statutory ground for eviction as an alternative basis.",
+      "legal_principle": "The Court noted that, even if the rent-control law applied, eviction could be sought on a ground specified by that law, and permitted alternative pleading on remand to avoid prolixity and delay. No specific provision or earlier case is cited for this permission.",
+      "rule": {
+        "if": "eviction_proceeding_remitted and landlord_applies_to_plead_alternative_statutory_ground",
+        "then": "alternative_eviction_pleading_may_be_permitted"
+      },
+      "predicates": {
+        "eviction_proceeding_remitted": "An eviction proceeding has been sent back to the trial court for fresh consideration.",
+        "landlord_applies_to_plead_alternative_statutory_ground": "The landlord asks to plead a statutory ground for eviction as an alternative basis."
+      },
+      "definition": "In a remitted eviction proceeding, the trial court may permit an alternative statutory eviction ground if the landlord applies."
+    }
+  ],
+  "seconds": 18.1
+}

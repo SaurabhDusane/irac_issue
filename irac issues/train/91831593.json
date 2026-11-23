@@ -1,0 +1,63 @@
+{
+  "doc_id": "91831593",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16707,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1624,
+    "prompt_tokens": 4948,
+    "total_tokens": 6572,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A delayed appeal should not receive condonation where the applicants had prior knowledge of the proceedings and judgment, gave an incorrect account of when they learned of the judgment, and were negligent in pursuing the case.",
+      "material_facts": [
+        "The applicants sought condonation of a 349-day delay in appealing an ex-parte decree, claiming they first learned of it from a constable shortly before filing their appeal.",
+        "Court records showed the applicants were present during the proceedings before the decree and had opportunities to participate but did not do so.",
+        "The applicants had also referred to the decree in another proceeding before the date on which they claimed to have first learned of it.",
+        "The underlying suit had previously been remanded at the applicants’ instance, but they did not file a written statement despite opportunities and did not diligently pursue the remanded proceedings.",
+        "The lower courts found the applicants’ account incorrect and their conduct negligent."
+      ],
+      "conclusion": "The refusal to condone the delay was correct, and the appeal challenging that refusal was dismissed.",
+      "legal_principle": "Under Section 5 of the Limitation Act, delay may be condoned when sufficient cause is shown. The applicants did not show sufficient cause where the record established prior knowledge, their explanation was incorrect, and they were negligent in pursuing the matter. The judgment relies on no earlier cases.",
+      "rule": {
+        "if": "delayed_appeal_condonation_request and applicants_had_prior_knowledge and (applicants_gave_incorrect_account or applicants_neglected_case)",
+        "then": "delay_condonation_refused"
+      },
+      "predicates": {
+        "delayed_appeal_condonation_request": "The applicants sought permission to pursue an appeal filed after the applicable time limit.",
+        "applicants_had_prior_knowledge": "The applicants knew of the relevant proceedings or judgment before the time they claimed to have first learned of it.",
+        "applicants_gave_incorrect_account": "The applicants gave an account of when or how they learned of the judgment that was contradicted by the record.",
+        "applicants_neglected_case": "The applicants failed to participate in or diligently pursue the case despite opportunities to do so.",
+        "delay_condonation_refused": "The court declines to excuse the delay in filing the appeal."
+      },
+      "definition": "When applicants seeking to proceed with a delayed appeal already knew of the relevant proceedings or judgment and gave an incorrect account or neglected the case, the delay is not excused."
+    },
+    {
+      "legal_issue": "An inaccurate factual observation in a lower court’s reasoning does not require reversal of its refusal to condone delay when the record independently supports that refusal.",
+      "material_facts": [
+        "The High Court stated that the applicant had been in another city during the period when he claimed to have received information about the decree.",
+        "That statement was not contained in the applicant’s condonation application.",
+        "The Supreme Court held that the discrepancy did not affect the correctness of the High Court’s order because other record material established the applicants’ prior knowledge and contradicted their account."
+      ],
+      "conclusion": "The inaccurate observation did not warrant interference with the refusal to condone delay.",
+      "legal_principle": "A factual error in a lower court’s reasoning does not require reversal when it does not affect the correctness of the result and the record independently supports that result. The judgment cites no provision or earlier case for this proposition.",
+      "rule": {
+        "if": "appeal_from_refusal_to_condone_delay and lower_court_made_unsupported_factual_observation and independent_record_supports_refusal",
+        "then": "refusal_order_upheld"
+      },
+      "predicates": {
+        "appeal_from_refusal_to_condone_delay": "A party challenged an order refusing to excuse delay in filing an appeal.",
+        "lower_court_made_unsupported_factual_observation": "The lower court relied on a factual observation that was not supported by the application or record.",
+        "independent_record_supports_refusal": "Other material in the record supports refusing to excuse the delay notwithstanding the unsupported observation.",
+        "refusal_order_upheld": "The court leaves the order refusing to excuse the delay undisturbed."
+      },
+      "definition": "When an appeal challenges a refusal to excuse delay, an unsupported factual observation does not change the outcome if other record material supports that refusal."
+    }
+  ],
+  "seconds": 22.5
+}

@@ -1,0 +1,96 @@
+{
+  "doc_id": "1783260",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25225,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3184,
+    "prompt_tokens": 6873,
+    "total_tokens": 10057,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A special rent court hearing a statutory eviction suit lacks jurisdiction to evict an occupant it finds to be a trespasser.",
+      "material_facts": [
+        "The landlords brought an eviction suit in the special rent court under the rent-control statute.",
+        "The appellate court treated the occupant as a trespasser because he had not proved an assignment and ordered his eviction."
+      ],
+      "conclusion": "The appellate court had no jurisdiction in the statutory eviction suit to order the eviction of a person it had found to be a trespasser; such relief could be sought in an ordinary civil suit.",
+      "legal_principle": "The statutory jurisdiction conferred by section 28 of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, permits eviction of a tenant when the requirements of section 12 or section 13 are satisfied; it does not extend to eviction of a trespasser. A special rent court’s appellate jurisdiction is no wider than the trial court’s jurisdiction, and eviction of a trespasser must be pursued in an ordinary civil court under the Code of Civil Procedure.",
+      "rule": {
+        "if": "statutory_rent_eviction_proceeding and occupant_found_to_be_trespasser",
+        "then": "special_rent_court_lacks_jurisdiction_to_evict_trespasser"
+      },
+      "predicates": {
+        "statutory_rent_eviction_proceeding": "A landlord brought an eviction proceeding in a court exercising special jurisdiction under rent-control law.",
+        "occupant_found_to_be_trespasser": "The court found that the occupant possessed the premises without being a tenant or having established a right derived from a tenant."
+      },
+      "definition": "When a landlord seeks eviction in a special rent-control proceeding and the occupant is found to be a trespasser, the special court lacks jurisdiction to evict that occupant."
+    },
+    {
+      "legal_issue": "A landlord cannot obtain an order evicting a sub-tenant alone in a statutory rent proceeding when the tenant-in-chief has not been ordered evicted.",
+      "material_facts": [
+        "The landlords sued the tenants-in-chief and the occupant, alleging that the occupant was their sub-tenant.",
+        "The appellate court ordered the occupant’s eviction but did not order the eviction of the tenants-in-chief.",
+        "The High Court treated the occupant as a sub-tenant, and the Supreme Court considered the effect of the absence of an eviction order against the tenants-in-chief."
+      ],
+      "conclusion": "Even assuming that the occupant was a sub-tenant, the appellate court had no jurisdiction to evict him alone when it had not ordered the eviction of the tenants-in-chief.",
+      "legal_principle": "Under section 28 of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, a landlord must sue the tenant; if the tenant is evicted, the sub-tenant ordinarily goes with the tenant unless protected by a provision of the Act. The landlord cannot sue a sub-tenant alone for eviction, and the special court cannot order the sub-tenant’s eviction without ordering the tenant-in-chief’s eviction.",
+      "rule": {
+        "if": "statutory_rent_eviction_proceeding and occupant_found_to_be_subtenant and head_tenant_not_ordered_evicted",
+        "then": "special_rent_court_lacks_jurisdiction_to_evict_subtenant_alone"
+      },
+      "predicates": {
+        "statutory_rent_eviction_proceeding": "A landlord brought an eviction proceeding in a court exercising special jurisdiction under rent-control law.",
+        "occupant_found_to_be_subtenant": "The occupant was found to occupy the premises under a tenant rather than as the direct tenant of the landlord.",
+        "head_tenant_not_ordered_evicted": "The court did not order the eviction of the tenant from whom the occupant derived possession."
+      },
+      "definition": "If an occupant is a sub-tenant in a statutory rent eviction proceeding and the tenant-in-chief is not ordered evicted, the special court cannot evict the sub-tenant alone."
+    },
+    {
+      "legal_issue": "A lawful pre-existing sub-tenant does not become the landlord’s tenant merely because notice has terminated the contractual tenancy while the tenant-in-chief retains the right to remain in possession.",
+      "material_facts": [
+        "The landlords gave notice terminating the tenants-in-chief’s tenancy, and the notice period expired before the eviction suit was filed.",
+        "The occupant was found to be a sub-tenant, and the landlords argued that he had become their tenant under section 14 after the notice took effect.",
+        "The appellate court had not ordered the tenants-in-chief evicted, and they had not given up the tenancy themselves."
+      ],
+      "conclusion": "The occupant did not become the landlords’ tenant under section 14 merely upon expiry of the termination notice; the tenants-in-chief’s interest had not come to an end completely.",
+      "legal_principle": "Section 14 of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, protects qualifying lawful sub-tenants when the tenant’s interest is determined, but that occurs only when the tenant’s interest has ended completely: the contractual tenancy has been determined and the tenant has also lost the right to remain in possession under section 12, ordinarily after an eviction order under section 28 on a ground in section 12 or section 13, or upon the tenant giving up the tenancy. The words “is determined for any reason” do not mean only determination by notice under section 111(h) of the Transfer of Property Act. Anand Nivas (Pvt.) Ltd. v. Anandji Kalyanji Pedhi was explained as addressing the kind of sub-tenancy protected, not as establishing that notice alone makes the sub-tenant a tenant of the landlord.",
+      "rule": {
+        "if": "rent_control_tenancy_dispute and lawful_subtenancy_preexisting_amendment and termination_notice_expired and head_tenant_not_evicted_or_surrendered",
+        "then": "subtenant_does_not_become_direct_tenant"
+      },
+      "predicates": {
+        "rent_control_tenancy_dispute": "The dispute concerns a tenancy and sub-tenancy governed by rent-control law.",
+        "lawful_subtenancy_preexisting_amendment": "The occupant was lawfully sub-let the premises before the relevant amendment took effect.",
+        "termination_notice_expired": "The landlord gave notice terminating the contractual tenancy and the notice period expired.",
+        "head_tenant_not_evicted_or_surrendered": "The tenant-in-chief had neither been ordered evicted nor given up the tenancy, and therefore retained the right to remain in possession."
+      },
+      "definition": "Where a qualifying lawful sub-tenancy exists and the termination notice has expired but the tenant-in-chief has not been evicted or surrendered the tenancy, the sub-tenant does not thereby become the landlord’s direct tenant."
+    },
+    {
+      "legal_issue": "A revisional court was not justified in disturbing concurrent factual findings that no rent arrears were due.",
+      "material_facts": [
+        "The trial court found that no rent arrears were due.",
+        "The appellate court also found that no rent arrears were due.",
+        "The High Court, in revision, held that rent was in arrears and relied on that conclusion in upholding eviction."
+      ],
+      "conclusion": "The High Court was not justified in interfering with the concurrent finding that no rent arrears were due.",
+      "legal_principle": "The Court treated the question of arrears as a factual matter on which the lower courts had made concurrent findings and held that the High Court should not have interfered with that finding in revision under section 115 of the Code of Civil Procedure. Although the parties relied on Vora Abbas Bhai Alimahomed v. Haji Gulamnabi, the Court found it unnecessary to decide the broader question of the High Court’s revisional jurisdiction in the circumstances.",
+      "rule": {
+        "if": "revision_from_rent_control_eviction_case and lower_courts_concurrently_found_no_arrears",
+        "then": "revisional_interference_with_concurrent_fact_finding_unjustified"
+      },
+      "predicates": {
+        "revision_from_rent_control_eviction_case": "A party sought revision of a decision in a rent-control eviction case.",
+        "lower_courts_concurrently_found_no_arrears": "Both the trial court and the appellate court found that the tenant owed no rent arrears."
+      },
+      "definition": "When both lower courts find no arrears in a rent-control eviction case, interference with that concurrent factual finding in revision is unjustified."
+    }
+  ],
+  "seconds": 21.0
+}

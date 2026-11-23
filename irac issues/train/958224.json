@@ -1,0 +1,95 @@
+{
+  "doc_id": "958224",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 35613,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2855,
+    "prompt_tokens": 8930,
+    "total_tokens": 11785,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Rent-control protections apply only where the letting creates a landlord–tenant relationship through the transfer of an interest in the premises, and payment described as rent does not by itself establish that relationship.",
+      "material_facts": [
+        "The municipal committee allotted shops and premises to the occupants after calling for tenders and placed them in possession in return for monthly payments.",
+        "The committee issued receipts describing the payments as rent, but the transactions did not create an interest in the premises through a valid transfer.",
+        "The occupants applied to have standard rent fixed under the rent-control legislation."
+      ],
+      "conclusion": "The occupants were not tenants within the meaning of the Act, so their applications to fix standard rent were not maintainable.",
+      "legal_principle": "Sections 2(c), 2(g), 2(j) and 8 of the Delhi and Ajmer Rent Control Act, 1952, read together, contemplate premises let so as to create an interest in the property and a landlord–tenant relationship. The Act does not extend to a mere licence to occupy, and the use of the word “rent” in receipts is not conclusive of that relationship. Crook v. Corporation of Seaford and Deo v. Taniere did not establish otherwise.",
+      "rule": {
+        "if": "standard_rent_application and not property_interest_created",
+        "then": "standard_rent_application_incompetent"
+      },
+      "predicates": {
+        "standard_rent_application": "An occupant applied for a determination of standard rent under rent-control legislation.",
+        "property_interest_created": "The arrangement transferred an interest in the premises to the occupant, rather than merely permitting occupation."
+      },
+      "definition": "When an occupant seeks standard rent but the arrangement created no interest in the premises, the application is incompetent."
+    },
+    {
+      "legal_issue": "A municipal body’s transfer of immovable property is not binding on it when the mandatory statutory execution requirements for that transfer are not followed.",
+      "material_facts": [
+        "The committee allotted the premises after inviting tenders and gave possession to the successful bidders.",
+        "No transfer instrument was executed in writing by the officeholders and members, with the required attestation by the secretary.",
+        "The occupants paid the agreed monthly amounts and the committee accepted them."
+      ],
+      "conclusion": "The transactions did not bind the committee as transfers of property and did not create a tenancy.",
+      "legal_principle": "Sections 18 and 47 of the Punjab Municipal Act, 1911, read together, empower the committee to contract and transfer property but make compliance with section 47’s execution requirements essential; section 47(3) makes a non-compliant contract or transfer not binding on the committee. The mandatory character of statutory formalities is supported by Young & Co. v. The Mayor and Corporation of Royal Leamington Spa. Crook v. Corporation of Seaford and Deo v. Taniere were distinguished because they did not concern the breach of comparable mandatory statutory requirements.",
+      "rule": {
+        "if": "municipal_body_property_transfer and mandatory_execution_requirements_unmet",
+        "then": "transfer_not_binding_on_municipal_body"
+      },
+      "predicates": {
+        "municipal_body_property_transfer": "A municipal body purported to transfer its immovable property to another person.",
+        "mandatory_execution_requirements_unmet": "The purported transfer was not executed and attested in the mandatory manner required for such a transfer."
+      },
+      "definition": "A purported transfer by a municipal body that fails the mandatory execution requirements is not binding on that body."
+    },
+    {
+      "legal_issue": "A rent-control law that does not prescribe how a landlord–tenant relationship is created does not impliedly displace separate mandatory requirements governing a municipal body’s contracts and property transfers.",
+      "material_facts": [
+        "The occupants relied on the rent-control legislation’s definitions and overriding clause to argue that the statutory formalities for the committee’s property transfers did not apply.",
+        "The rent-control legislation did not specify a method for creating the landlord–tenant relationship.",
+        "The municipal statute prescribed mandatory formalities for the committee’s transfer of immovable property."
+      ],
+      "conclusion": "The statutory execution requirements were not inconsistent with the rent-control legislation and were not displaced by its overriding clause.",
+      "legal_principle": "Section 38 of the Delhi and Ajmer Rent Control Act, 1952, overrides other law only to the extent of an inconsistency. The definitions in sections 2(c), 2(g) and 2(j) presuppose a landlord–tenant relationship but are silent on how that relationship is created; that silence does not conflict with section 47 of the Punjab Municipal Act, 1911.",
+      "rule": {
+        "if": "standard_rent_proceeding and rent_control_law_silent_on_creation_mode and separate_municipal_transfer_formality_applies",
+        "then": "municipal_transfer_formality_remains_applicable"
+      },
+      "predicates": {
+        "standard_rent_proceeding": "A party invoked rent-control legislation to seek a remedy available to a tenant.",
+        "rent_control_law_silent_on_creation_mode": "The rent-control law did not specify the method by which a landlord–tenant relationship had to be created.",
+        "separate_municipal_transfer_formality_applies": "A separate rule required a municipal body to follow a particular form when transferring its immovable property."
+      },
+      "definition": "In a rent-control proceeding, when the rent-control law is silent about how the tenancy is created and a separate municipal transfer formality applies, that formality remains applicable."
+    },
+    {
+      "legal_issue": "A statutory body cannot be estopped by its conduct from denying a transaction that it was legally required to make in a prescribed manner.",
+      "material_facts": [
+        "The committee accepted monthly payments from the occupants and issued receipts describing them as rent.",
+        "The required formalities for transferring the committee’s property were not followed.",
+        "The occupants argued that the committee’s conduct prevented it from denying that they were tenants."
+      ],
+      "conclusion": "The committee was not estopped from denying the landlord–tenant relationship because its conduct could not validate a transaction that failed mandatory statutory requirements.",
+      "legal_principle": "A statutory body cannot be bound by estoppel to create a legal state of affairs that it is legally disabled from creating. Mandatory statutory requirements must be strictly followed, and a body cannot be estopped from denying a transaction beyond its powers. The Court relied on the statement of principle in Halsbury’s Laws of England, paragraphs 427–428, and on the mandatory character of statutory requirements illustrated by Young & Co. v. The Mayor and Corporation of Royal Leamington Spa.",
+      "rule": {
+        "if": "statutory_body_transaction and mandatory_execution_requirements_unmet",
+        "then": "statutory_body_not_estopped_from_denial"
+      },
+      "predicates": {
+        "statutory_body_transaction": "A statutory body entered into or purported to enter into a transaction with another person.",
+        "mandatory_execution_requirements_unmet": "The transaction did not comply with mandatory statutory requirements for its execution."
+      },
+      "definition": "When a statutory body’s transaction fails mandatory execution requirements, its conduct does not estop it from denying the transaction’s legal effect."
+    }
+  ],
+  "seconds": 17.3
+}

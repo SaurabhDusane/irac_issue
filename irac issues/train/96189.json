@@ -1,0 +1,63 @@
+{
+  "doc_id": "96189",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12220,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1490,
+    "prompt_tokens": 3467,
+    "total_tokens": 4957,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A High Court hearing a second appeal may not decide it as a first appeal by reconsidering factual findings without identifying and formulating a substantial question of law.",
+      "material_facts": [
+        "The High Court reversed the first appellate court’s findings after reviewing oral and documentary evidence spanning many decades.",
+        "The High Court did not identify or formulate a substantial question of law before deciding the second appeal."
+      ],
+      "conclusion": "The High Court’s judgment was without jurisdiction and was set aside; the first appellate court’s judgment was restored.",
+      "legal_principle": "Under Section 100 of the Code of Civil Procedure, a second appeal may be entertained only when the High Court is satisfied that the case involves a substantial question of law. Section 100(4) requires the High Court to formulate that question, and Section 100(5) requires the appeal to be heard on the formulated question. The High Court cannot use a second appeal to reappreciate evidence and reverse factual findings as though hearing a first appeal. No earlier cases were cited.",
+      "rule": {
+        "if": "second_appeal_proceeding and (no_substantial_question_formulated or high_court_reweighed_facts)",
+        "then": "second_appeal_judgment_set_aside"
+      },
+      "predicates": {
+        "second_appeal_proceeding": "The matter is an appeal to a High Court from a first appellate court’s decision.",
+        "no_substantial_question_formulated": "The High Court did not identify and formulate a substantial question of law for decision.",
+        "high_court_reweighed_facts": "The High Court reconsidered the evidence and reversed the first appellate court’s factual findings.",
+        "second_appeal_judgment_set_aside": "The second-appeal judgment is set aside."
+      },
+      "definition": "When a High Court deciding a second appeal fails to formulate a substantial question of law or reweighs facts, its judgment is set aside."
+    },
+    {
+      "legal_issue": "Historical treatment of property as belonging to a religious institution, supported by possession and records, can sustain a finding that it is not private family property even without direct proof of the original endowment.",
+      "material_facts": [
+        "Documents from successive periods referred to the properties as belonging to the religious institution, and the family’s predecessors had not previously dealt with them as private property.",
+        "The father’s claim that one property was private had been rejected in prior administrative and judicial proceedings.",
+        "A property register maintained and signed by the father identified the properties as belonging to the institution.",
+        "The alleged partition documents arose during the proceedings in which the father asserted private ownership.",
+        "The first appellate court considered the oral and documentary evidence and found that the properties were not proved to be private family properties."
+      ],
+      "conclusion": "The first appellate court’s findings were justified, and the properties were not established as private family property available for the claimed partition and declaration.",
+      "legal_principle": "The Court accepted the first appellate court’s assessment of the oral and documentary evidence, including the properties’ historical treatment, possession and dealings, and the statutory property register. Where an alleged endowment dates back more than a century, direct evidence of the original gift or settlement may not be available; the character of the property may be assessed from such surrounding evidence. The relevant proceedings included an application under Section 63(a) of the Hindu Religious and Charitable Endowments Act and a property register maintained under Tamil Nadu Act 22 of 1959. No earlier cases were cited.",
+      "rule": {
+        "if": "family_property_claim_proceeding and (historical_records_identify_institutional_ownership and institutional_possession_or_dealings) and (family_records_acknowledge_institutional_ownership or alleged_partition_documents_arose_during_dispute)",
+        "then": "property_found_to_belong_to_institution"
+      },
+      "predicates": {
+        "family_property_claim_proceeding": "A claimant seeks a declaration or partition on the basis that disputed property is private family property.",
+        "historical_records_identify_institutional_ownership": "Records from earlier periods identify the disputed property as belonging to a religious institution.",
+        "institutional_possession_or_dealings": "The evidence shows possession of or dealings with the property as institutional property.",
+        "family_records_acknowledge_institutional_ownership": "A family member maintained or signed records identifying the property as belonging to the institution.",
+        "alleged_partition_documents_arose_during_dispute": "Documents said to record a partition arose during a dispute over whether the property was private or institutional.",
+        "property_found_to_belong_to_institution": "The property is found to belong to the religious institution rather than to the claimant’s family."
+      },
+      "definition": "Where a family-property claim is contradicted by historical institutional records and possession or dealings, together with family records acknowledging institutional ownership or partition documents arising during the dispute, the property is found to belong to the institution."
+    }
+  ],
+  "seconds": 9.9
+}

@@ -1,0 +1,100 @@
+{
+  "doc_id": "1847465",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42340,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2918,
+    "prompt_tokens": 10815,
+    "total_tokens": 13733,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A special rent-control regime excludes the ordinary civil court from ordering eviction where a leased building is covered by the regime, even though a minor part of it lies on municipal land.",
+      "material_facts": [
+        "The landlord leased the shop as a building to the tenant, and the building stood mainly on the landlord’s land, with a small part on municipal land leased to the landlord.",
+        "The landlord sought eviction for non-payment of rent.",
+        "The applicable rent-control regime provided for eviction through its designated Controller, and the municipal-land exemption did not exempt the building."
+      ],
+      "conclusion": "The building was governed by the rent-control regime, whose Controller had exclusive jurisdiction to order eviction; the civil court inherently lacked jurisdiction to entertain the eviction suit.",
+      "legal_principle": "Under Sections 2(a), 3 and 13 of the Haryana Urban (Control of Rent and Eviction) Act, 1973, the relevant question was whether the leased building was covered by the Act; an exemption relating to municipal land did not exempt the building on these facts. Where a special statute creates a right and provides the forum and remedy for its enforcement, the ordinary civil court has no jurisdiction to grant that remedy. The Court relied on Hari Parshad Gupta v. Jitender Kumar Kaushik, Barrachlough v. Brown, Doe v. Bridges, and the third proposition in Premier Automobiles v. K.S. Wadke.",
+      "rule": {
+        "if": "urban_tenancy_eviction_case and building_leased_as_a_building and building_mainly_on_land_owned_by_landlord and small_part_on_municipal_land",
+        "then": "rent_controller_has_exclusive_eviction_jurisdiction"
+      },
+      "predicates": {
+        "urban_tenancy_eviction_case": "The proceeding concerns eviction of a tenant from a building in an urban area.",
+        "building_leased_as_a_building": "The landlord leased the premises to the tenant as a building.",
+        "building_mainly_on_land_owned_by_landlord": "The building stood mainly on land belonging to the landlord.",
+        "small_part_on_municipal_land": "A small part of the building stood on municipal land leased to the landlord."
+      },
+      "definition": "When an urban tenant’s leased building stands mainly on the landlord’s land and only a small part on municipal land, the Controller has exclusive jurisdiction to order eviction."
+    },
+    {
+      "legal_issue": "An eviction decree passed by a court inherently lacking subject-matter jurisdiction is void and may be challenged when execution is sought.",
+      "material_facts": [
+        "The landlord obtained an ex parte eviction decree from a civil court.",
+        "The tenant objected to execution on the ground that the rent-control regime gave the Controller exclusive jurisdiction over eviction.",
+        "The civil court had no inherent jurisdiction to entertain the eviction suit."
+      ],
+      "conclusion": "The decree was a nullity and the tenant could challenge it at the execution stage.",
+      "legal_principle": "A decree passed without inherent jurisdiction over the subject matter is coram non judice and non est; its invalidity may be raised whenever it is enforced or relied upon, including in execution or collateral proceedings. The Court relied on Kiran Singh v. Chaman Paswan, Ferozi Lal Jain v. Man Mal, Bahadur Singh v. Muni Subrat Dass, Smt. Kaushalya Devi v. K.L. Bansal, Chandrika Misir v. Bhaiya Lal, and Choudari Rama v. Qureshi Bee. It distinguished defects in the exercise of jurisdiction, such as certain territorial or pecuniary defects, from a defect going to the court’s inherent authority.",
+      "rule": {
+        "if": "execution_proceeding and eviction_decree_passed_by_civil_court and civil_court_lacked_inherent_subject_matter_jurisdiction",
+        "then": "decree_is_nullity_challengeable_in_execution"
+      },
+      "predicates": {
+        "execution_proceeding": "The proceeding is one in which enforcement of a decree is sought.",
+        "eviction_decree_passed_by_civil_court": "A civil court passed a decree ordering eviction.",
+        "civil_court_lacked_inherent_subject_matter_jurisdiction": "The civil court lacked authority over the subject matter of the eviction suit, rather than merely making an error while exercising jurisdiction."
+      },
+      "definition": "When enforcement is sought of a civil court’s eviction decree and that court lacked inherent authority over the subject matter, the decree is void and may be challenged in the enforcement proceeding."
+    },
+    {
+      "legal_issue": "An earlier ruling on a court’s jurisdiction does not operate as res judicata when the court inherently lacked jurisdiction and the ruling concerned a pure question of law.",
+      "material_facts": [
+        "The civil court considered and rejected the jurisdiction objection during the ex parte trial.",
+        "The civil court nevertheless lacked inherent jurisdiction because eviction was within the exclusive jurisdiction of the statutory Controller.",
+        "The tenant raised the jurisdiction objection again when execution of the decree was sought."
+      ],
+      "conclusion": "The earlier ruling on jurisdiction did not operate as res judicata and did not prevent the tenant from raising the objection in execution.",
+      "legal_principle": "Section 11 of the Code of Civil Procedure does not make an erroneous decision on a question of jurisdiction, or on a pure question of law unrelated to the facts founding a right, res judicata. A decree of nullity is not binding, and consent or waiver cannot confer inherent jurisdiction. The Court relied on Mathura Prasad Bajoo Jaiswal v. Dossibai N.B. Jeejeebhey and Tarini Charan Bhattacherjee’s case.",
+      "rule": {
+        "if": "execution_proceeding and prior_jurisdiction_ruling and prior_decree_passed_without_inherent_jurisdiction and jurisdiction_issue_is_pure_question_of_law",
+        "then": "jurisdiction_issue_not_barred_by_res_judicata"
+      },
+      "predicates": {
+        "execution_proceeding": "The proceeding is one in which enforcement of a decree is sought.",
+        "prior_jurisdiction_ruling": "A court previously ruled on whether it had jurisdiction to hear the dispute.",
+        "prior_decree_passed_without_inherent_jurisdiction": "The earlier decree was passed by a court that lacked inherent authority over the subject matter.",
+        "jurisdiction_issue_is_pure_question_of_law": "The jurisdiction issue concerns interpretation of the law and is not a factual issue or a mixed issue founded on disputed facts."
+      },
+      "definition": "When execution is sought of a decree passed without inherent jurisdiction, an earlier ruling on a pure question of jurisdiction does not bar renewed consideration of that issue."
+    },
+    {
+      "legal_issue": "Execution of a decree while a special-leave appeal is pending does not prevent the Supreme Court from setting aside orders founded on a decree that is a nullity.",
+      "material_facts": [
+        "The eviction decree was executed while the special-leave appeal was pending.",
+        "The decree was a nullity because the civil court lacked inherent jurisdiction.",
+        "The Court found that refusing relief would leave the tenant subject to orders founded on that null decree."
+      ],
+      "conclusion": "The Court allowed the appeal and set aside the orders that treated the decree as binding, notwithstanding that it had been executed; restitution remained available under Section 144 of the Code of Civil Procedure.",
+      "legal_principle": "The Supreme Court may exercise its power under Article 136 to relieve a party from grave miscarriage of justice, including where a decree that is a nullity has already been executed. Section 144 of the Code of Civil Procedure may provide a means of restitution.",
+      "rule": {
+        "if": "special_leave_appeal and decree_executed_while_appeal_pending and decree_is_nullity",
+        "then": "execution_does_not_bar_appellate_relief"
+      },
+      "predicates": {
+        "special_leave_appeal": "The proceeding is an appeal brought by special leave to the Supreme Court.",
+        "decree_executed_while_appeal_pending": "The decree was carried out while the appeal was pending.",
+        "decree_is_nullity": "The decree was void because the court that passed it lacked inherent jurisdiction."
+      },
+      "definition": "When a null decree is executed while a special-leave appeal is pending, the execution does not prevent the Supreme Court from granting appellate relief."
+    }
+  ],
+  "seconds": 17.6
+}

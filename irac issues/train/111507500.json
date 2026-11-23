@@ -1,0 +1,78 @@
+{
+  "doc_id": "111507500",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23990,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2879,
+    "prompt_tokens": 6097,
+    "total_tokens": 8976,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An alleged insult or intimidation does not constitute the caste-atrocity offence when it is not committed in public view or is not motivated by the victim’s caste.",
+      "material_facts": [
+        "The alleged abuse occurred inside a building, and the complaint and charge-sheet did not state that members of the public were present there.",
+        "The dispute concerned possession and use of land, and the allegations did not establish that the dispute or alleged abuse arose because of the complainant’s caste.",
+        "The complainant’s membership in a Scheduled Caste and the accused’s awareness of it were not, by themselves, enough to establish the offence."
+      ],
+      "conclusion": "The allegations did not make out the offence under Section 3(1)(r) of the Act, so the charge-sheet was quashed to that extent.",
+      "legal_principle": "Section 3(1)(r), which replaced Section 3(1)(x), requires intentional insult or intimidation with intent to humiliate a Scheduled Caste or Scheduled Tribe member because of that membership, and that it occur in a place within public view. Under Swaran Singh v. State, a private place may be within public view, but an insult inside a building is not in public view merely because relatives or friends are present; members of the public must be present or able to view the place as the circumstances require. Khuman Singh v. State explains that the offence must be committed on the ground that the victim belongs to a Scheduled Caste or Scheduled Tribe. Gerige Pentaiah v. State and the principles discussed in Union of India v. State of Maharashtra and Prathvi Raj Chauhan v. Union of India support quashing where the allegations do not establish the offence; the existence of a property dispute does not itself establish caste-based intent.",
+      "rule": {
+        "if": "caste_atrocity_charge and (alleged_insult_not_in_public_view or caste_based_motive_absent)",
+        "then": "caste_atrocity_offence_not_made_out"
+      },
+      "predicates": {
+        "caste_atrocity_charge": "The proceeding includes a charge alleging an atrocity against a member of a Scheduled Caste or Scheduled Tribe.",
+        "alleged_insult_not_in_public_view": "The alleged insult or intimidation occurred in a place where members of the public were not present or able to view it.",
+        "caste_based_motive_absent": "The alleged conduct arose from a dispute or other circumstances, rather than from the victim’s membership in a Scheduled Caste or Scheduled Tribe."
+      },
+      "definition": "If a proceeding alleges a caste atrocity and either the alleged insult was not in public view or caste-based motive was absent, the caste-atrocity offence is not made out."
+    },
+    {
+      "legal_issue": "A charge-sheet may be quashed only as to an unsupported offence while prosecution for other offences continues.",
+      "material_facts": [
+        "The charge-sheet included an offence under the Act as well as other alleged offences.",
+        "The allegations did not make out the offence under the Act, but the other offences remained for determination by the competent court.",
+        "The challenge sought relief against the charge-sheet and cognizance order through the court’s inherent jurisdiction."
+      ],
+      "conclusion": "The charge-sheet was quashed only insofar as it related to the offence under the Act; the other offences remained for trial in accordance with law.",
+      "legal_principle": "Section 482 of the Code of Criminal Procedure permits intervention to prevent abuse of process or secure the ends of justice. Ishwar Pratap Singh v. State of Uttar Pradesh holds that there is no bar to quashing a charge-sheet in part where the legal defect concerns only particular charges. Union of India v. State of Maharashtra and Prathvi Raj Chauhan v. Union of India recognize that proceedings may be quashed in exceptional cases on settled parameters.",
+      "rule": {
+        "if": "inherent_jurisdiction_proceeding and multiple_offences_charged and defect_confined_to_one_charge",
+        "then": "affected_charge_quashed_and_other_charges_continue"
+      },
+      "predicates": {
+        "inherent_jurisdiction_proceeding": "A person challenges criminal proceedings by invoking a court’s inherent jurisdiction.",
+        "multiple_offences_charged": "The criminal proceedings include charges for more than one alleged offence.",
+        "defect_confined_to_one_charge": "The legal defect that warrants intervention affects only one or some charges, rather than all charges."
+      },
+      "definition": "If a challenge invoking inherent jurisdiction concerns multiple offences and the defect affects only some charges, those charges may be quashed while the others continue."
+    },
+    {
+      "legal_issue": "Separate criminal proceedings concerning the same property dispute may be tried together when the remaining offences relate to that dispute.",
+      "material_facts": [
+        "Two criminal proceedings had been initiated separately by the opposing sides in connection with the same property dispute.",
+        "The allegations in the proceedings concerned the same subject matter, although they described incidents on different dates.",
+        "After the charge under the Act was quashed, allegations of other offences remained for trial."
+      ],
+      "conclusion": "The remaining offences were to be tried by the competent court in accordance with law along with the separately initiated criminal case concerning the same property dispute.",
+      "legal_principle": "The Court directed that the proceedings concerning the other offences be tried by the competent court in accordance with law along with the related criminal case, because both concerned the same subject matter of the property dispute.",
+      "rule": {
+        "if": "related_criminal_proceedings and same_property_dispute and other_offences_remain_for_trial",
+        "then": "related_proceedings_tried_together_by_competent_court"
+      },
+      "predicates": {
+        "related_criminal_proceedings": "More than one criminal proceeding has been initiated concerning related events between the same sides.",
+        "same_property_dispute": "The proceedings concern the same underlying dispute over property.",
+        "other_offences_remain_for_trial": "After any charge is quashed, allegations of other offences remain to be tried."
+      },
+      "definition": "If separate related criminal proceedings concern the same property dispute and other offences remain for trial, the competent court is to try the related proceedings together."
+    }
+  ],
+  "seconds": 19.8
+}

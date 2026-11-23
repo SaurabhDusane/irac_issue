@@ -1,0 +1,79 @@
+{
+  "doc_id": "549621",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 92611,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2372,
+    "prompt_tokens": 22222,
+    "total_tokens": 24594,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The proper court in a presidency town to hear a special recovery application depends on the monetary value of the liability claimed and the City Civil Court’s pecuniary jurisdiction.",
+      "material_facts": [
+        "The corporation sought to enforce a surety liability exceeding the City Civil Court’s monetary limit.",
+        "The application was filed in the High Court in a presidency town where the City Civil Court and High Court had co-terminous territorial jurisdiction."
+      ],
+      "conclusion": "The High Court had jurisdiction because the claimed liability exceeded the City Civil Court’s pecuniary limit.",
+      "legal_principle": "Under sections 31(2) and 32(11) of the State Financial Corporations Act, 1951, read with sections 3 and 12 of the Bombay City Civil Court Act, 1948, the extent of liability stated in the application determines which court has jurisdiction: a claim within the City Civil Court’s pecuniary limit lies there, and a larger claim lies in the High Court. This construction gives effect to the words “having jurisdiction” in section 32(11). The Court approved West Bengal Financial Corporation v. Gluco Series Pvt. Ltd. and distinguished Gujarat State Financial Corporation v. Natson Manufacturing Co. Pvt. Ltd., Everest Industrial Corporation v. Gujarat State Financial Corporation, Maganlal v. Jaiswal Industries, and Parkash Playing Cards Manufacturing Co. v. Delhi Financial Corporation.",
+      "rule": {
+        "if": "presidency_town_recovery_proceeding and (claimed_liability_exceeds_city_court_limit or not claimed_liability_exceeds_city_court_limit)",
+        "then": "court_for_application_is_determined_by_claim_value_and_pecuniary_limit"
+      },
+      "predicates": {
+        "presidency_town_recovery_proceeding": "A financial corporation brings a special recovery application in a presidency town.",
+        "claimed_liability_exceeds_city_court_limit": "The liability claimed in the application exceeds the monetary limit of the City Civil Court.",
+        "not_claimed_liability_exceeds_city_court_limit": "The liability claimed in the application does not exceed the monetary limit of the City Civil Court."
+      },
+      "definition": "For a special recovery application in a presidency town, the court that hears it is determined by comparing the claimed liability with the City Civil Court’s monetary limit."
+    },
+    {
+      "legal_issue": "The special recovery procedure may be used to enforce the liability of a surety who gave only a personal guarantee.",
+      "material_facts": [
+        "A company defaulted in repaying a loan advanced by a financial corporation.",
+        "The directors had guaranteed repayment personally but had provided no property as security.",
+        "The corporation sought to enforce the sureties’ liability through a special recovery application.",
+        "The application arose under the statutory framework as amended to provide for enforcement of a surety’s liability."
+      ],
+      "conclusion": "The amended procedure applies to a surety who gave only a personal guarantee; after determining the surety’s liability, the court may order its enforcement, and the matter was remitted for that determination.",
+      "legal_principle": "Clause (aa) of section 31(1) and sections 32(1A), 32(4A), and 32(7)(da) of the State Financial Corporations Act, 1951, as amended by Act 43 of 1985, use language encompassing any surety, including one who gave only a personal guarantee. The procedure dispenses with a separate suit through the stage of obtaining an enforceable order: if no cause is shown, an enforcement order may be made; if cause is shown, the claim is investigated and the surety’s liability determined. The liability is co-extensive with that of the principal debtor unless the guarantee provides otherwise, consistently with section 128 of the Indian Contract Act, 1872. The Court distinguished Gujarat State Financial Corporation v. Natson Manufacturing Co. Pvt. Ltd., Everest Industrial Corporation v. Gujarat State Financial Corporation, and Maganlal v. Jaiswal Industries because those cases did not concern the amended surety-enforcement provisions; it also considered Munnalal Gupta v. Uttar Pradesh Financial Corporation in explaining the legislative amendment.",
+      "rule": {
+        "if": "special_recovery_proceeding and borrower_defaulted and surety_gave_personal_guarantee and statutory_route_covers_sureties",
+        "then": "personal_guarantee_liability_may_be_enforced_through_special_procedure"
+      },
+      "predicates": {
+        "special_recovery_proceeding": "A financial corporation brings a special recovery application to enforce a loan-related liability.",
+        "borrower_defaulted": "The borrower failed to repay the loan or otherwise failed to meet the relevant repayment obligation.",
+        "surety_gave_personal_guarantee": "A surety guaranteed repayment personally without providing property as security.",
+        "statutory_route_covers_sureties": "The recovery framework governing the application provides a procedure for enforcing a surety’s liability."
+      },
+      "definition": "When a borrower defaults and a surety gave a personal guarantee, the special procedure may enforce that guarantee if the governing recovery framework covers sureties."
+    },
+    {
+      "legal_issue": "An enforcement order against a surety is executable using the ordinary civil procedure where the special recovery framework does not prescribe a different execution method for that order.",
+      "material_facts": [
+        "The corporation sought enforcement against sureties who had given personal guarantees without providing property as security.",
+        "The special recovery procedure provided for an order enforcing the surety’s liability but did not prescribe a separate execution method for that order.",
+        "The proceeding was before a court exercising ordinary civil jurisdiction."
+      ],
+      "conclusion": "The order enforcing the surety’s liability may be executed as a decree under the Code of Civil Procedure, 1908; the High Court must determine the liability and then proceed to enforce it.",
+      "legal_principle": "Section 46B of the State Financial Corporations Act, 1951, makes other applicable law available unless inconsistent with the Act. Section 32(8) limits the Code’s execution method for orders attaching or selling property to what is practicable, but there is no equivalent limitation for enforcement orders against sureties. The Code therefore applies to execution of such an order. The Court also held that a district judge exercising jurisdiction under sections 31 and 32 is a court of ordinary civil jurisdiction, not a persona designata, relying on National Sewing Thread Co. Ltd. v. James Chadwick & Bros. Ltd. and The Central Talkies Ltd., Kanpur v. Dwarka Prasad.",
+      "rule": {
+        "if": "special_surety_enforcement_proceeding and court_is_ordinary_civil_court and no_special_execution_method_for_surety_order",
+        "then": "ordinary_civil_execution_procedure_applies"
+      },
+      "predicates": {
+        "special_surety_enforcement_proceeding": "A financial corporation obtains or seeks an order enforcing a surety’s liability through a special recovery proceeding.",
+        "court_is_ordinary_civil_court": "The proceeding is heard by a court exercising ordinary civil jurisdiction rather than by a person acting only in a designated capacity.",
+        "no_special_execution_method_for_surety_order": "The governing framework does not prescribe a distinct method for executing the order against the surety."
+      },
+      "definition": "When a special proceeding produces a surety-enforcement order in an ordinary civil court and no distinct execution method is prescribed, ordinary civil execution procedure applies."
+    }
+  ],
+  "seconds": 15.2
+}

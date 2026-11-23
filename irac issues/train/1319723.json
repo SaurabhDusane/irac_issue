@@ -1,0 +1,76 @@
+{
+  "doc_id": "1319723",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32680,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2158,
+    "prompt_tokens": 8254,
+    "total_tokens": 10412,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A final order disposing of an eviction application subject to the special summary procedure is reviewable only by revision, whether it grants or refuses possession.",
+      "material_facts": [
+        "The landlord sought eviction on a ground covered by the special summary procedure for bona fide residential need.",
+        "The Controller finally refused possession, and the landlord challenged that order in the High Court by revision.",
+        "The tenant argued that an appeal, rather than revision, was the available remedy."
+      ],
+      "conclusion": "The landlord’s remedy against the Controller’s order was revision to the High Court and revision only, even though the order refused recovery of possession.",
+      "legal_principle": "Sections 25A and 25B(1), (8), and (10) of the Delhi Rent Control Act make the special procedure prevail over inconsistent procedures elsewhere in the Act. Section 25B(8) replaces appeals and second appeals with revision and applies to a final order deciding the application, including an order refusing possession. Construing it to cover both outcomes avoids two different review routes and the resulting discriminatory treatment. The Court approved Devi Singh v. Chaman Lal, R. K. Parikh v. Uma Verma, Bhagwati Pershad v. Om Perkash, and Mahavir Singh v. Kamal Narain.",
+      "rule": {
+        "if": "expedited_eviction_case and controller_final_disposition",
+        "then": "high_court_revision_is_exclusive_remedy"
+      },
+      "predicates": {
+        "expedited_eviction_case": "A landlord sought possession on a ground governed by a special expedited eviction procedure.",
+        "controller_final_disposition": "The Controller finally disposed of the landlord’s possession application, whether by granting or refusing possession."
+      },
+      "definition": "When a landlord’s case is subject to the special expedited procedure and the Controller finally disposes of it, revision to the High Court is the exclusive remedy."
+    },
+    {
+      "legal_issue": "An eviction order based on a landlord’s bona fide residential need need not expressly state that execution is postponed by law.",
+      "material_facts": [
+        "The High Court directed eviction on the ground that the landlord bona fide required the premises as a residence.",
+        "The tenant argued that the eviction order was illegal because it did not expressly bar recovery of possession for the statutory waiting period."
+      ],
+      "conclusion": "The eviction order was not required to recite the restriction; the law itself prevented the landlord from executing it before the statutory period expired.",
+      "legal_principle": "Section 14(7) of the Delhi Rent Control Act itself makes an order for recovery of possession on the bona fide residential-need ground non-executable for the prescribed period. The statutory restriction operates even if it is not written into the order.",
+      "rule": {
+        "if": "residential_need_eviction_proceeding and possession_recovery_order",
+        "then": "execution_is_delayed_automatically_by_law"
+      },
+      "predicates": {
+        "residential_need_eviction_proceeding": "A landlord sought eviction on the ground that the premises were bona fide required as a residence.",
+        "possession_recovery_order": "The court made an order granting recovery of possession on that ground."
+      },
+      "definition": "When a residential-need eviction proceeding results in an order for possession, execution is automatically delayed by law."
+    },
+    {
+      "legal_issue": "An appellate court need not disturb a High Court’s resolution of a factual challenge to eviction from only part of the premises when no reason to revisit that finding is shown.",
+      "material_facts": [
+        "The tenant argued that eviction could not be granted because the landlord had sought possession of only part of the premises.",
+        "The High Court had decided that factual issue against the tenant.",
+        "The Supreme Court found no reason to reconsider the High Court’s decision on that issue."
+      ],
+      "conclusion": "The tenant’s challenge concerning the part of the premises was rejected, and the High Court’s decision was left undisturbed.",
+      "legal_principle": "The Court treated the challenge as a factual question already decided by the High Court and found no reason to reconsider that determination; it stated no separate statutory rule or earlier case as the basis for this conclusion.",
+      "rule": {
+        "if": "civil_appeal_after_high_court_review and partial_premises_challenge and adverse_high_court_finding and no_reason_to_revisit",
+        "then": "appellate_interference_is_denied"
+      },
+      "predicates": {
+        "civil_appeal_after_high_court_review": "A party brought a civil appeal after the High Court had reviewed the eviction dispute.",
+        "partial_premises_challenge": "The tenant argued that eviction was impermissible because the landlord sought possession of only part of the premises.",
+        "adverse_high_court_finding": "The High Court had resolved that factual challenge against the tenant.",
+        "no_reason_to_revisit": "The appellate court found no basis to reconsider the High Court’s factual determination."
+      },
+      "definition": "When a tenant raises a partial-premises challenge in a civil appeal, the High Court has decided it against the tenant, and no reason to revisit that finding appears, appellate interference is denied."
+    }
+  ],
+  "seconds": 16.7
+}

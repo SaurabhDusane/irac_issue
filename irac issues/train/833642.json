@@ -1,0 +1,128 @@
+{
+  "doc_id": "833642",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33348,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3296,
+    "prompt_tokens": 9603,
+    "total_tokens": 12899,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A delay in reporting an occurrence does not undermine the prosecution when the delay is satisfactorily explained and the informant’s presence at the scene is supported by the evidence.",
+      "material_facts": [
+        "The occurrence took place in the morning, and the informant reported it to a village officer several hours later.",
+        "The informant said he first arranged for the injured people to be moved and then waited for the officer, who was away in the fields.",
+        "The officer confirmed that the informant was waiting when he returned, and police records and testimony supported that the informant had been released from police custody the previous evening.",
+        "The informant lived a short distance from the place where he had been questioned and could have returned there before the occurrence."
+      ],
+      "conclusion": "The delay was sufficiently explained and did not make the informant’s presence at the occurrence improbable or undermine the prosecution case.",
+      "legal_principle": "The timing of a report must be assessed in light of the circumstances explaining the delay and the evidence bearing on the informant’s presence; an explained delay is not, by itself, a reason to reject the prosecution case.",
+      "rule": {
+        "if": "criminal_appeal_from_acquittal and report_delay_explained and informant_presence_supported",
+        "then": "delayed_reporting_not_fatal"
+      },
+      "predicates": {
+        "criminal_appeal_from_acquittal": "The proceeding is a criminal appeal challenging an acquittal.",
+        "report_delay_explained": "The informant delayed reporting while attending to the injured, travelling to the reporting officer, or waiting for that officer, and the circumstances support that account.",
+        "informant_presence_supported": "Independent or otherwise reliable evidence supports the informant’s presence at the scene at the relevant time."
+      },
+      "definition": "When an appeal from an acquittal involves an explained reporting delay and supported informant presence, the delay does not by itself defeat the prosecution case."
+    },
+    {
+      "legal_issue": "An alibi is not established by evidence that is inconsistent, introduced as an apparent afterthought, or otherwise too weak to show that the accused could not have been at the scene.",
+      "material_facts": [
+        "Two accused claimed they were at a hospital at the time of the occurrence.",
+        "The witness supporting that account gave shifting versions, had not mentioned the asserted observation in earlier statements or reports, and was found to be supporting the defence.",
+        "A defence witness’s account of learning about the occurrence from another person was hearsay, and the account was not reflected in the accused persons’ own statements.",
+        "The hospital was close enough to the village that a person could travel between them within the time available."
+      ],
+      "conclusion": "The accused who pleaded alibi failed to substantiate it.",
+      "legal_principle": "An alibi must be supported by credible evidence showing that the accused was elsewhere at the relevant time; unreliable or belated testimony and evidence of presence at a nearby location do not establish that the accused could not have participated.",
+      "rule": {
+        "if": "criminal_trial and alibi_evidence_inconsistent_or_belated and claimed_location_reachable_in_available_time",
+        "then": "alibi_not_established"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which an accused claims to have been elsewhere during the offence.",
+        "alibi_evidence_inconsistent_or_belated": "The evidence offered for the alibi is inconsistent, was not disclosed when it would naturally have been mentioned, or otherwise lacks reliability.",
+        "claimed_location_reachable_in_available_time": "The distance and available time do not rule out the accused travelling from the claimed location to the scene."
+      },
+      "definition": "In a criminal trial, an alibi is not established when its supporting evidence is unreliable or belated and the claimed location could be reached from the scene within the available time."
+    },
+    {
+      "legal_issue": "A claim of private defence is not made out when the account that the complainant side attacked first is improbable and is inconsistent with the injuries and other circumstances.",
+      "material_facts": [
+        "The defence claimed that several people from the complainant side, armed with weapons, attacked the accused at their house.",
+        "No injuries were found on the accused side.",
+        "The deceased and two people who went to his aid were injured, while the other alleged members of the attacking group were not injured.",
+        "The prosecution witnesses’ presence at the scene was admitted in part by the defence."
+      ],
+      "conclusion": "The defence account that the complainant side was the aggressor was rejected, and private defence was not established.",
+      "legal_principle": "A plea of private defence must be assessed against the surrounding circumstances, including whether the claimed attack is plausible and whether the presence or absence of injuries supports that account.",
+      "rule": {
+        "if": "criminal_trial and defense_attack_account_improbable and accused_side_uninjured and complainant_side_injured",
+        "then": "private_defence_not_established"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which the accused claim to have acted in private defence.",
+        "defense_attack_account_improbable": "The account that the complainant side initiated the attack is inconsistent with the circumstances or is otherwise improbable.",
+        "accused_side_uninjured": "The accused side has no injuries despite the alleged attack upon it.",
+        "complainant_side_injured": "The complainant side includes people injured in the occurrence."
+      },
+      "definition": "A private-defence claim is not established when the alleged initial attack is improbable and the injury evidence shows injuries on the complainant side but none on the accused side."
+    },
+    {
+      "legal_issue": "Relationship or partisanship does not by itself make an eyewitness unreliable, but materially improved accounts and inadequate independent assurance can leave an individual accused’s participation unproved.",
+      "material_facts": [
+        "The eyewitnesses were related to or aligned with the deceased, and some had prior hostility toward the accused.",
+        "The witnesses’ trial accounts were nearly identical in the sequence of blows, weapons, and acts attributed to each accused.",
+        "For three accused, the first report did not specify individual acts against the deceased, while testimony at trial added or changed weapons and attributed specific blows to them.",
+        "The medical evidence did not resolve which of those three accused caused the relevant injuries or reliably confirm their individual participation.",
+        "The accounts concerning the other three accused remained consistent, and medical evidence supported the weapons and injuries attributed to them."
+      ],
+      "conclusion": "The eyewitness evidence was sufficient to prove the participation of three accused, but the charges against the other three were not established beyond reasonable doubt.",
+      "legal_principle": "Related or partisan witnesses are not unreliable merely because of their relationship or alignment, but their evidence requires careful scrutiny. Where material improvements create a risk of implicating additional persons, the court should seek assurance from an independent source, which in this case included the medical evidence.",
+      "rule": {
+        "if": "criminal_appeal_from_reversal_of_acquittal and interested_witnesses and material_role_improvements and medical_evidence_does_not_assure_individual_participation",
+        "then": "individual_guilt_not_proved_beyond_reasonable_doubt"
+      },
+      "predicates": {
+        "criminal_appeal_from_reversal_of_acquittal": "The proceeding is a criminal appeal after a higher court has reversed an acquittal.",
+        "interested_witnesses": "The principal eyewitnesses are related to or aligned with the victim, or have hostility toward the accused.",
+        "material_role_improvements": "The witnesses materially add to or change their earlier accounts of the individual acts or weapons attributed to an accused.",
+        "medical_evidence_does_not_assure_individual_participation": "The medical evidence does not provide assurance that the particular accused caused the injuries attributed to that person."
+      },
+      "definition": "After a reversal of acquittal, material improvements by interested eyewitnesses, without medical assurance of an accused’s individual participation, leave that person’s guilt unproved beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "The acquittal of accused whose participation was consistently described and medically supported could be reversed, while an acquittal had to stand for accused whose individual participation remained in reasonable doubt.",
+      "material_facts": [
+        "The trial court acquitted all accused after accepting alibis and private defence, disbelieving the informant’s presence, and rejecting the eyewitnesses as partisan.",
+        "The appellate court found those findings unsustainable.",
+        "The informant’s presence was probable, the alibi evidence was unreliable, and the private-defence account was improbable.",
+        "The accounts assigning acts to three accused remained consistent, and medical evidence supported the weapons and injuries attributed to them.",
+        "The accounts concerning three other accused materially changed at trial, and the medical evidence did not resolve their individual participation."
+      ],
+      "conclusion": "The acquittals of three accused were unsustainable and their convictions were maintained, with their convictions altered to liability for acting in furtherance of common intention; the other three accused were acquitted because their guilt was not proved beyond reasonable doubt.",
+      "legal_principle": "The Court applied sections 302, 326 and 324 read with section 34 of the Penal Code in place of section 149 for the three accused whose common intention and participation were proved. It found the evidence insufficient to sustain the charges against the other three. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "criminal_appeal_from_acquittal and consistent_individual_accounts and medical_support_for_participation and common_intention_shown",
+        "then": "conviction_for_joint_action_under_common_intention"
+      },
+      "predicates": {
+        "criminal_appeal_from_acquittal": "The proceeding is a criminal appeal challenging an acquittal.",
+        "consistent_individual_accounts": "The evidence consistently attributes the accused’s acts to that person without material later changes.",
+        "medical_support_for_participation": "The medical evidence supports the weapons or injuries attributed to the accused.",
+        "common_intention_shown": "The evidence establishes that the accused acted together in furtherance of a common intention."
+      },
+      "definition": "When an appeal from an acquittal concerns accused whose acts are consistently described and medically supported, and whose shared intention is established, the proved joint criminal conduct may be treated as liability for acting in furtherance of common intention."
+    }
+  ],
+  "seconds": 23.8
+}

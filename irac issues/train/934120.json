@@ -1,0 +1,62 @@
+{
+  "doc_id": "934120",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16906,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2009,
+    "prompt_tokens": 4586,
+    "total_tokens": 6595,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A High Court deciding a second appeal cannot reverse the first appellate court on a basis that was not pleaded and tried, without giving the parties notice of the substantial question of law on which it relies.",
+      "material_facts": [
+        "The first appellate court, after reviewing the evidence, dismissed the title and possession suit.",
+        "In the second appeal, the High Court held that the plaintiff could recover possession as a person acting as mutawalli, although that alternative case had not been pleaded or tried.",
+        "The parties were not given notice of the substantial question of law on which the High Court relied for that conclusion.",
+        "The High Court reversed the first appellate court’s findings and granted possession."
+      ],
+      "conclusion": "The High Court’s reversal could not be sustained because the parties had not been notified of the substantial question of law and the alternative factual case had not been pleaded or tried.",
+      "legal_principle": "Section 100 of the Code of Civil Procedure requires a substantial question of law to be formulated and the parties to be given an opportunity to address it before the High Court decides the second appeal on that basis. A court cannot grant relief on material facts that were not pleaded and put in issue.",
+      "rule": {
+        "if": "second_appeal and (parties_not_notified_of_question or alternative_case_not_pleaded_or_tried)",
+        "then": "high_court_reversal_unsustainable"
+      },
+      "predicates": {
+        "second_appeal": "The matter before the court is a second appeal from a first appellate decision.",
+        "parties_not_notified_of_question": "The parties were not informed of the substantial question of law on which the court relied to decide the appeal.",
+        "alternative_case_not_pleaded_or_tried": "The court relied on an alternative factual basis for relief that had not been pleaded and tried."
+      },
+      "definition": "When a second appeal is decided on a substantial question of law that the parties were not notified about, or on an alternative factual case that was not pleaded and tried, the resulting reversal is unsustainable."
+    },
+    {
+      "legal_issue": "A plaintiff seeking declaration of title and recovery of possession must establish the pleaded basis for entitlement and cannot obtain relief on an unpleaded, unproved claim to be acting as a mutawalli or on the weakness of the defendant’s title.",
+      "material_facts": [
+        "The plaintiff sought declaration of title and possession on the basis of an agreement said to transfer mutawalliship to it.",
+        "The courts found that the agreement did not validly transfer mutawalliship to the plaintiff.",
+        "The plaintiff had not pleaded that it was independently entitled to relief because it was acting as a mutawalli, and no issue on that basis was tried.",
+        "The evidence was not sufficient to establish that the plaintiff was in fact acting as a mutawalli; the Wakf Board’s statements about the plaintiff’s accounts and contributions did not bind the defendant or substitute for proof.",
+        "The defendant’s own claim of title was rejected by the first appellate court."
+      ],
+      "conclusion": "Because the plaintiff could not establish its title on the pleaded basis and could not rely on the unpleaded and unproved mutawalli basis, the suit had to be dismissed notwithstanding the failure of the defendant’s title claim.",
+      "legal_principle": "In a suit for declaration of title and recovery of possession, the plaintiff must succeed on the strength of its own case, not the weakness of the defendant’s case. Necessary facts must be pleaded and proved so the opposing party can meet them. Section 3(f) of the Wakf Act, 1954 includes a person acting as a mutawalli, but the principle discussed in Moideen Bibi Ammal v. Rathnavelu Mudali, AIR 1927 Madras 69, could not assist without the necessary pleading and proof. The court also referred to Syed Mustafa Peeran Sahib v. State Wakf Board, AIR 1969 Madras 66.",
+      "rule": {
+        "if": "title_and_possession_suit and transfer_basis_invalid and alternative_mutawalli_basis_unpleaded and alternative_mutawalli_basis_unproved",
+        "then": "suit_dismissed"
+      },
+      "predicates": {
+        "title_and_possession_suit": "A plaintiff brings a suit seeking declaration of title and recovery of possession.",
+        "transfer_basis_invalid": "The plaintiff’s pleaded claim depends on a transfer that is found not to have validly conveyed the asserted right.",
+        "alternative_mutawalli_basis_unpleaded": "The plaintiff did not plead that its entitlement arose independently from acting as a mutawalli.",
+        "alternative_mutawalli_basis_unproved": "The plaintiff did not establish with sufficient evidence that it was in fact acting as a mutawalli."
+      },
+      "definition": "A title and possession suit is dismissed when the plaintiff’s pleaded transfer basis is invalid and its alternative claim as an acting mutawalli was neither pleaded nor proved."
+    }
+  ],
+  "seconds": 14.8
+}

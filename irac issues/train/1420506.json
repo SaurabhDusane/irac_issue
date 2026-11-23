@@ -1,0 +1,122 @@
+{
+  "doc_id": "1420506",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 52501,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2974,
+    "prompt_tokens": 13063,
+    "total_tokens": 16037,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court order confirming a liquidator’s sale is judicial rather than merely administrative when it involves objective discretion and adjudicates competing interests in property.",
+      "material_facts": [
+        "The liquidators sought confirmation of a sale of company assets conducted during winding up.",
+        "The highest bidder claimed the sale should be confirmed, with the liquidators supporting that position.",
+        "A creditor opposed confirmation, arguing that the resumed auction excluded bidders and produced an inadequate price; the interests of unsecured creditors were also at stake.",
+        "The court had to assess whether the sale complied with its conditions and was fair to those sharing in the proceeds."
+      ],
+      "conclusion": "The order confirming the sale was judicial, not administrative, and was not inherently incapable of appeal.",
+      "legal_principle": "Under sections 179(c), 183(3) and 184 of the Indian Companies Act, 1913, the liquidator’s sale and the court’s supervision of winding-up assets must be distinguished from the court’s decision on confirmation. An order involving discretion exercised on objective considerations, deciding competing interests and affecting rights to property is judicial. The presence of a lis supports that characterization, but its absence would not by itself make an order administrative.",
+      "rule": {
+        "if": "winding_up_sale_confirmation and (objective_discretion or competing_property_claims)",
+        "then": "the_confirmation_order_is_judicial"
+      },
+      "predicates": {
+        "winding_up_sale_confirmation": "A court is asked to confirm a sale of assets made in a company winding-up proceeding.",
+        "objective_discretion": "The court must assess objective matters such as compliance with sale conditions, fairness, or the value obtained.",
+        "competing_property_claims": "Different parties or creditor interests advance opposing claims about whether the sale should be confirmed."
+      },
+      "definition": "When a court deciding a sale confirmation in winding up exercises objective discretion or resolves competing claims to property, its confirmation order is judicial."
+    },
+    {
+      "legal_issue": "The statutory right of appeal from an order or decision in a winding up does not depend on the order also qualifying as a judgment appealable under the Letters Patent.",
+      "material_facts": [
+        "The challenged order was made by a single judge in a company winding-up proceeding and confirmed a sale of company property.",
+        "The opposing party appealed to a Division Bench, and the appellants argued that an appeal was available only if the order met the Letters Patent test for a judgment.",
+        "The order affected the parties’ rights concerning the property and was not merely procedural."
+      ],
+      "conclusion": "A Letters Patent appeal was competent under section 202 of the Indian Companies Act, 1913; the second part of that section regulates appeal procedure and does not restrict the substantive right of appeal.",
+      "legal_principle": "Section 202 of the Indian Companies Act, 1913 confers a substantive right of appeal from an order or decision in a winding up. Its reference to the manner and conditions for appeals regulates presentation, hearing, limitation and forum, rather than imposing the Letters Patent requirement that a single-judge order be a judgment. The appealable expressions ‘order or decision’ exclude merely procedural orders and those that do not affect parties’ rights or liabilities. The Court approved Bachharaj Factories Ltd. v. The Hiraji Mills Ltd. and Western India Theatres Ltd. v. Ishwarbhai Somabhai Patel, and rejected Madan Gopal Daga v. Sachindra Nath Sen. It referred to Asrumati Debi v. Kumar Rupendra Deb Raikot and State of Uttar Pradesh v. Dr. Vijay Anand Maharaj but did not decide the general meaning of ‘judgment’ under the Letters Patent.",
+      "rule": {
+        "if": "winding_up_appeal and rights_affecting_order",
+        "then": "a_statutory_appeal_is_available_without_a_letters_patent_judgment"
+      },
+      "predicates": {
+        "winding_up_appeal": "A party appeals from an order or decision made in a company winding-up proceeding.",
+        "rights_affecting_order": "The order affects the rights or liabilities of parties and is not merely procedural."
+      },
+      "definition": "A statutory appeal is available when a party appeals in a winding-up proceeding from a non-procedural order affecting parties’ rights or liabilities, without requiring the order to satisfy a separate Letters Patent judgment test."
+    },
+    {
+      "legal_issue": "An appellate court may set aside confirmation of a winding-up sale where the confirming judge failed to consider that bidders left after the liquidators delayed the resumed auction, and the remaining bidding produced a substantially lower price.",
+      "material_facts": [
+        "At the first auction, a bidder offered the highest price but did not immediately make the required deposit.",
+        "The liquidators allowed that bidder time to return with the deposit, and several other bidders left before the auction resumed.",
+        "At the resumed auction, the successful bidder offered substantially less than the earlier highest bid.",
+        "The company judge confirmed the resumed-auction sale without considering that bidders had left; the Division Bench set the confirmation aside and ordered a resale."
+      ],
+      "conclusion": "The Division Bench was justified in setting aside confirmation of the sale and directing a resale.",
+      "legal_principle": "A court considering confirmation of a liquidator’s sale must consider material circumstances bearing on whether the sale was fair and whether the interests of those sharing in the proceeds were protected. An appellate court was justified in interfering where the confirming judge overlooked that the delayed resumption caused bidders to leave and the resulting sale price was substantially lower. The Court applied the court-approved sale conditions and the supervision of winding-up sales under section 179(c) of the Indian Companies Act, 1913; it relied on no earlier case for this conclusion.",
+      "rule": {
+        "if": "appeal_from_sale_confirmation and bidders_left_before_resumed_auction and resumed_sale_price_substantially_lower and confirming_judge_ignored_departed_bidders",
+        "then": "the_sale_confirmation_may_be_set_aside_and_resale_ordered"
+      },
+      "predicates": {
+        "appeal_from_sale_confirmation": "A party appeals from a court order confirming a liquidator’s sale in a winding-up proceeding.",
+        "bidders_left_before_resumed_auction": "Bidders left after the liquidators delayed resuming the auction while an accepted bidder was given time to pay.",
+        "resumed_sale_price_substantially_lower": "The resumed auction produced a sale price substantially below the earlier highest bid.",
+        "confirming_judge_ignored_departed_bidders": "The judge confirming the sale did not consider that bidders had left before the resumed auction."
+      },
+      "definition": "When an appeal challenges sale confirmation and bidders left during a delayed resumption, the resumed price was substantially lower, and the confirming judge overlooked the departures, the confirmation may be set aside and a resale ordered."
+    },
+    {
+      "legal_issue": "Liquidators cannot rely on a sale condition allowing them to put property up for sale again after a failed deposit when their delay in resuming the auction has led bidders to leave under the impression that no further auction will occur.",
+      "material_facts": [
+        "The sale condition required the accepted bidder to make the specified deposit immediately and allowed the liquidators to put the property up for sale again in default.",
+        "After the highest bidder failed to pay immediately, the liquidators gave him time to return with the money.",
+        "Several bidders left while the liquidators waited, believing the accepted sale would proceed.",
+        "The liquidators then resumed the auction without a fresh advertisement."
+      ],
+      "conclusion": "On these facts, the liquidators were not entitled to continue the sale without a fresh advertisement after the interval they allowed for payment.",
+      "legal_principle": "The court-approved condition required immediate payment and permitted the property to be put up for sale again in default. Read in context, that authority did not permit the liquidators to grant an appreciable interval that caused bidders to leave and then resume the auction without fresh advertisement. The Court applied condition 5 of the sale conditions and section 179(c) of the Indian Companies Act, 1913; it relied on no earlier case for this conclusion.",
+      "rule": {
+        "if": "liquidator_sale and accepted_bidder_fails_immediate_deposit and liquidator_allows_payment_interval and bidders_leave_in_reliance_on_expected_sale",
+        "then": "the_liquidator_cannot_resume_the_sale_without_fresh_advertisement"
+      },
+      "predicates": {
+        "liquidator_sale": "A liquidator conducts a sale of company property in a winding-up proceeding.",
+        "accepted_bidder_fails_immediate_deposit": "The accepted bidder does not make the required deposit immediately.",
+        "liquidator_allows_payment_interval": "The liquidator gives the accepted bidder an appreciable interval to return and pay.",
+        "bidders_leave_in_reliance_on_expected_sale": "Other bidders leave because they believe the accepted sale will proceed and there will be no further auction."
+      },
+      "definition": "If a liquidator allows an appreciable payment interval after an accepted bidder fails to deposit immediately, and other bidders leave believing the sale will proceed, the liquidator cannot resume the sale without fresh advertisement."
+    },
+    {
+      "legal_issue": "An undertaking given as a condition for interim relief does not give the person giving it a legal right to require the property to be sold to them.",
+      "material_facts": [
+        "During the appeal, the appellants gave an undertaking to purchase the property at the price of their earlier bid if the appeal succeeded, as a condition associated with interim relief.",
+        "The appellants had earlier declined the liquidators’ offer to treat their first-auction bid as the highest bid.",
+        "They sought to require the appellate court to confirm the sale to them at that earlier bid price after the appeal was allowed."
+      ],
+      "conclusion": "The undertaking did not give the appellants a legal right to purchase the property, and the appellate court was not required to confirm the sale to them at the earlier bid price.",
+      "legal_principle": "An undertaking given as a condition for the indulgence of interim relief does not, without an independent legal basis, create an entitlement to purchase property or oblige the court to direct a sale to the person giving the undertaking. The Court relied on no cited provision or earlier case for this conclusion.",
+      "rule": {
+        "if": "appeal_involving_sale_of_property and undertaking_given_as_condition_for_interim_relief and party_claims_purchase_entitlement_from_undertaking",
+        "then": "the_undertaking_does_not_create_a_right_to_purchase"
+      },
+      "predicates": {
+        "appeal_involving_sale_of_property": "An appeal concerns the sale of property by a liquidator in a winding-up proceeding.",
+        "undertaking_given_as_condition_for_interim_relief": "A party gives an undertaking to purchase the property as a condition for obtaining interim relief.",
+        "party_claims_purchase_entitlement_from_undertaking": "The party asserts that the undertaking requires the court to sell the property to them."
+      },
+      "definition": "In an appeal concerning a liquidator’s property sale, an undertaking given for interim relief does not create a purchase right when the party relies on that undertaking as the source of the right."
+    }
+  ],
+  "seconds": 19.0
+}

@@ -1,0 +1,63 @@
+{
+  "doc_id": "152281550",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27523,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2103,
+    "prompt_tokens": 7082,
+    "total_tokens": 9185,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Territorial jurisdiction over a dishonoured-cheque complaint may lie in any area where a constituent act of the offence occurred.",
+      "material_facts": [
+        "The appellant filed a complaint concerning a dishonoured cheque.",
+        "The High Court’s factual account treated the cheque as having been presented for encashment in Delhi, but held that Delhi courts lacked jurisdiction and directed the complaint to be returned for filing elsewhere.",
+        "The Supreme Court decided the appeal on the factual position stated by the High Court."
+      ],
+      "conclusion": "On the factual position recorded by the High Court, the courts in the area where the cheque was presented had territorial jurisdiction, and the High Court’s contrary order was set aside.",
+      "legal_principle": "Under Section 138 of the Negotiable Instruments Act, the offence is completed by the combination of drawing the cheque, presenting it to a bank, its return unpaid, giving written demand notice, and failure to pay within the prescribed time. Under Sections 177 and 178(d) of the Code of Criminal Procedure, where an offence consists of acts in different local areas, a court in any area where one of those acts occurred may try it. K. Bhaskaran v. Sankaran Vaidhyan Balan permits the complainant to choose any such court. Harman Electronics Private Limited v. National Panasonic India Private Limited does not displace that principle; sending a notice from a place alone does not confer jurisdiction, whereas the court where the cheque was presented may have jurisdiction. Ishar Alloy Steels Ltd. v. Jayaswal Neco Ltd. does not displace the jurisdiction recognized by K. Bhaskaran. The Court also relied on Nishant Aggarwal v. Kailash Kumar Sharma and FIL Industries Limited v. Imtiyaz Ahmed Bhat.",
+      "rule": {
+        "if": "dishonoured_cheque_complaint and (cheque_drawn_in_area or cheque_presented_in_area or cheque_returned_unpaid_in_area or demand_notice_given_in_area or drawer_failed_to_pay_in_area)",
+        "then": "court_in_area_has_territorial_jurisdiction"
+      },
+      "predicates": {
+        "dishonoured_cheque_complaint": "A complainant files a complaint concerning a cheque that was returned unpaid.",
+        "cheque_drawn_in_area": "The drawer draws the cheque in the area.",
+        "cheque_presented_in_area": "The complainant presents the cheque to a bank in the area.",
+        "cheque_returned_unpaid_in_area": "The bank returns the cheque unpaid in the area.",
+        "demand_notice_given_in_area": "The complainant gives the drawer a written demand notice in the area.",
+        "drawer_failed_to_pay_in_area": "The drawer fails to pay the demanded amount in the area after receiving the notice.",
+        "court_in_area_has_territorial_jurisdiction": "A court with territorial jurisdiction over the area may try the complaint."
+      },
+      "definition": "For a dishonoured-cheque complaint, a court may try the case if the cheque was drawn, presented, or returned unpaid in its area, or the demand notice was given or the drawer’s failure to pay occurred there."
+    },
+    {
+      "legal_issue": "A disputed factual question about where a cheque was presented may be left for determination by the court handling the complaint when the Supreme Court decides the appeal on the facts recorded by the High Court.",
+      "material_facts": [
+        "The High Court’s account treated the cheque as presented in Delhi, while the respondent argued in the Supreme Court that it had been presented in Faridabad.",
+        "The Supreme Court stated that it could not entertain and adjudicate the disputed question of fact and decided the appeal on the factual position recorded by the High Court.",
+        "The Court left it open to the respondent to raise a jurisdictional objection based on the asserted factual position, to be dealt with in accordance with law."
+      ],
+      "conclusion": "The Court did not determine where the cheque was actually presented and allowed the respondent to raise the jurisdictional objection before the appropriate court for determination in accordance with law.",
+      "legal_principle": "The Court declined to adjudicate a disputed question of fact about the place of presentation and confined its ruling to the factual position taken into account by the High Court. The respondent remained entitled to raise the objection for determination in accordance with law.",
+      "rule": {
+        "if": "appeal_concerns_territorial_jurisdiction and parties_dispute_cheque_presentation_location and supreme_court_does_not_resolve_disputed_fact",
+        "then": "territorial_jurisdiction_objection_left_for_lower_court"
+      },
+      "predicates": {
+        "appeal_concerns_territorial_jurisdiction": "A party appeals a decision concerning the territorial jurisdiction of the court hearing a complaint.",
+        "parties_dispute_cheque_presentation_location": "The parties give conflicting accounts of where the cheque was presented.",
+        "supreme_court_does_not_resolve_disputed_fact": "The Supreme Court decides the appeal using the factual account recorded below rather than resolving the conflicting accounts.",
+        "territorial_jurisdiction_objection_left_for_lower_court": "The jurisdictional objection may be raised before the court handling the complaint for determination in accordance with law."
+      },
+      "definition": "When an appeal about territorial jurisdiction involves conflicting accounts of where the cheque was presented and the Supreme Court does not resolve that factual conflict, the jurisdictional objection is left for the lower court to determine."
+    }
+  ],
+  "seconds": 13.8
+}

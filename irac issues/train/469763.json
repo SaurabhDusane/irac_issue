@@ -1,0 +1,105 @@
+{
+  "doc_id": "469763",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26143,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2391,
+    "prompt_tokens": 6799,
+    "total_tokens": 9190,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court should not disturb an acquittal where the prosecution evidence, considered as a whole, does not reliably establish guilt.",
+      "material_facts": [
+        "The prosecution relied on two alleged eyewitnesses whose conduct and account were found unreliable.",
+        "The hospital register contained an interpolation bearing on the claimed presence of the eyewitnesses.",
+        "The report of the incident was not promptly conveyed to the magistrate, and the explanations for the delay were disbelieved.",
+        "The alleged extra-judicial confession and weapon recoveries were found fabricated or untrustworthy.",
+        "The Court considered the total evidence and concluded that the acquittal was not erroneous."
+      ],
+      "conclusion": "The Court found no ground to interfere with the acquittal and dismissed both appeals.",
+      "legal_principle": "The Court assessed the total evidence and concluded that, notwithstanding that some of the appellate court’s reasoning might not be sound, the acquittal could stand because the prosecution evidence did not reliably establish guilt. No earlier case or specific provision was relied on for this conclusion.",
+      "rule": {
+        "if": "appeal_against_acquittal and (eyewitness_evidence_unreliable or prosecution_evidence_materially_compromised) and guilt_not_reliably_established",
+        "then": "acquittal_left_undisturbed"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The proceeding is an appeal seeking to overturn an acquittal.",
+        "eyewitness_evidence_unreliable": "The court finds that the testimony of the alleged eyewitnesses does not reliably establish what happened.",
+        "prosecution_evidence_materially_compromised": "The court finds material problems such as fabricated supporting evidence, tampered records, or unexplained reporting delay.",
+        "guilt_not_reliably_established": "The evidence considered as a whole does not reliably establish the accused’s guilt."
+      },
+      "definition": "When an appeal challenges an acquittal and the evidence does not reliably establish guilt, the acquittal remains undisturbed."
+    },
+    {
+      "legal_issue": "An accused’s statement in examination cannot, by itself, sustain a conviction when the prosecution evidence is unreliable and the exculpatory account has not been disproved.",
+      "material_facts": [
+        "The accused admitted being present when the deceased was attacked but denied attacking him and said that others had inflicted the injuries while coming to his aid.",
+        "The prosecution evidence, including the eyewitness testimony, alleged confession, and weapon recoveries, was found untrustworthy.",
+        "The accused’s exculpatory account could not be rejected as false on the evidence led by the prosecution.",
+        "The admission of presence was the inculpatory part of the accused’s statement."
+      ],
+      "conclusion": "The admission of presence in the accused’s statement could not be the sole basis for conviction.",
+      "legal_principle": "A statement under Section 313 of the Code of Criminal Procedure is not substantive evidence and is not a substitute for prosecution evidence. It may be considered in whole or in part, and an inculpatory part may lend assurance to reliable prosecution evidence if the exculpatory part is shown to be false. It cannot alone sustain conviction where the prosecution evidence does not inspire confidence. The Court relied on Nishi Kant Jha v. State of Bihar, AIR 1969 SC 422.",
+      "rule": {
+        "if": "criminal_proceeding and accused_statement_contains_inculpatory_admission and prosecution_evidence_unreliable and exculpatory_account_not_disproved",
+        "then": "conviction_not_sustained_from_statement_alone"
+      },
+      "predicates": {
+        "criminal_proceeding": "The proceeding concerns whether an accused is criminally liable for an alleged offence.",
+        "accused_statement_contains_inculpatory_admission": "The accused makes an admission in an examination statement that tends to connect the accused with the incident.",
+        "prosecution_evidence_unreliable": "The evidence led by the prosecution is not sufficiently trustworthy to establish guilt.",
+        "exculpatory_account_not_disproved": "The prosecution evidence does not establish that the accused’s account explaining or denying the accused’s role is false."
+      },
+      "definition": "In a criminal proceeding, an inculpatory admission in the accused’s statement cannot alone sustain conviction when the prosecution evidence is unreliable and the exculpatory account remains undisproved."
+    },
+    {
+      "legal_issue": "A conviction for exceeding a right of private defence cannot rest solely on an accused’s statement when the prosecution evidence is unreliable and the accused’s account has not been disproved.",
+      "material_facts": [
+        "The accused said that the deceased and another person attacked him and that villagers injured the deceased while coming to his aid.",
+        "The prosecution evidence was found untrustworthy, and the accused’s account could not be rejected as false.",
+        "The complainant sought conviction for culpable homicide on the basis that the accused had exceeded a right of private defence."
+      ],
+      "conclusion": "The Court rejected the request to convict the accused for exceeding a right of private defence.",
+      "legal_principle": "The accused’s statement under Section 313 of the Code of Criminal Procedure is not a substitute for prosecution evidence. Because the exculpatory account could not be rejected and the prosecution evidence was unreliable, the statement did not provide a basis for conviction under Section 304 of the Indian Penal Code on the theory that the accused exceeded a right of private defence.",
+      "rule": {
+        "if": "criminal_appeal_seeking_conviction and accused_claims_defensive_response and prosecution_evidence_unreliable and defensive_account_not_disproved",
+        "then": "conviction_for_exceeding_private_defence_not_supported"
+      },
+      "predicates": {
+        "criminal_appeal_seeking_conviction": "The proceeding is an appeal asking the court to convict an accused who was acquitted.",
+        "accused_claims_defensive_response": "The accused’s account is that the accused responded to an attack or acted to defend against it.",
+        "prosecution_evidence_unreliable": "The evidence led by the prosecution is not sufficiently trustworthy to establish guilt.",
+        "defensive_account_not_disproved": "The evidence does not establish that the accused’s account of a defensive response is false."
+      },
+      "definition": "A request to convict for exceeding a defensive response is not supported where the prosecution evidence is unreliable and the accused’s defensive account has not been disproved."
+    },
+    {
+      "legal_issue": "A person cannot be convicted for acting with common intention where the alleged joint assault is not proved and there is no other reliable evidence of common intention.",
+      "material_facts": [
+        "The prosecution alleged that two accused jointly assaulted the deceased.",
+        "The evidence of the alleged joint assault was not relied on as trustworthy.",
+        "The prosecution evidence did not establish that the second accused shared an intention with the first accused to commit murder.",
+        "The second accused was alleged to have caused only one simple injury, and the Court found no other evidence supporting the alleged common intention."
+      ],
+      "conclusion": "The second accused could not be convicted for murder with the aid of the common-intention provision, and the acquittal was left undisturbed.",
+      "legal_principle": "Section 34 of the Indian Penal Code cannot support a conviction where the evidence of joint participation is not reliable and no other evidence establishes the accused’s common intention with the co-accused.",
+      "rule": {
+        "if": "criminal_proceeding_alleging_joint_offence and joint_assault_evidence_unreliable and no_reliable_evidence_of_common_intention",
+        "then": "conviction_for_common_intention_offence_not_supported"
+      },
+      "predicates": {
+        "criminal_proceeding_alleging_joint_offence": "The proceeding alleges that an accused participated with another person in committing an offence.",
+        "joint_assault_evidence_unreliable": "The evidence that the accused joined in the alleged assault is not reliable.",
+        "no_reliable_evidence_of_common_intention": "There is no other reliable evidence that the accused shared the intention required for the alleged offence."
+      },
+      "definition": "Where a joint offence is alleged, an accused cannot be convicted on common intention when the evidence of joint participation is unreliable and no other reliable evidence establishes shared intention."
+    }
+  ],
+  "seconds": 14.5
+}

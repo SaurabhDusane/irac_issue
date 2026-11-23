@@ -1,0 +1,57 @@
+{
+  "doc_id": "46973950",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 61230,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1956,
+    "prompt_tokens": 14710,
+    "total_tokens": 16666,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The moratorium bars an owner from recovering property that the corporate debtor physically occupies or uses, even when the debtor occupies it under a development licence and has no established legal possession or property interest.",
+      "material_facts": [
+        "A development agreement licensed the corporate debtor to enter the land, demolish existing structures, construct new buildings and carry out the development project.",
+        "The corporate debtor had entered upon and was using the land for the project.",
+        "After the insolvency moratorium began, the land-owning authority issued a notice terminating the development agreement and sought to take possession of the land and structures."
+      ],
+      "conclusion": "The land was occupied by the corporate debtor, so the proposed recovery fell within the moratorium. The appeal was allowed and the appellate tribunal’s order was set aside.",
+      "legal_principle": "Section 14(1)(d) of the Insolvency and Bankruptcy Code bars recovery of property occupied by the corporate debtor. “Occupied by” refers to actual physical possession or use, unlike “in the possession of,” which can include legal or constructive possession. Section 14(1)(d) concerns recovery of property, not the debtor’s assets or legal or beneficial interests in assets; therefore, sections 18 and 36 do not determine its scope. The Court applied the distributive reading reflected in reddendo singula singulis, relying on The Member, Board of Revenue v. Arthur Paul Benthall, Koteswar Vittal Kamath v. K. Rangappa Baliga & Co., and Kailash Nath Agarwal v. Pradeshiya Industrial & Investment Corporation of U.P. Ltd. It relied on Industrial Supplies Pvt. Ltd. v. Union of India, Dunlop India Ltd. v. A.A. Rahna, and Ude Bhan v. Kapoor Chand for the meaning of occupation.",
+      "rule": {
+        "if": "corporate_insolvency_moratorium and owner_seeks_recovery and debtor_physically_occupies_property",
+        "then": "recovery_is_barred_during_moratorium"
+      },
+      "predicates": {
+        "corporate_insolvency_moratorium": "A corporate insolvency proceeding is underway and a moratorium protecting the corporate debtor is in force.",
+        "owner_seeks_recovery": "The owner seeks to recover property from the corporate debtor.",
+        "debtor_physically_occupies_property": "The corporate debtor has physically entered or is actually using the property, including under a licence to carry out work there."
+      },
+      "definition": "When an owner seeks recovery during a corporate insolvency moratorium, actual physical occupation or use by the corporate debtor makes that recovery barred for the moratorium’s duration."
+    },
+    {
+      "legal_issue": "During the temporary insolvency moratorium, the Insolvency and Bankruptcy Code prevails over inconsistent requirements of state housing law.",
+      "material_facts": [
+        "The land-owning housing authority relied on its statutory functions and powers under state housing law in connection with a development scheme.",
+        "The authority sought to terminate the development arrangement and take possession after the insolvency moratorium had begun.",
+        "The proposed recovery would obstruct the moratorium’s protection of the corporate debtor while the insolvency resolution process proceeded."
+      ],
+      "conclusion": "If state housing law conflicts with the moratorium in these circumstances, the Insolvency and Bankruptcy Code prevails during the moratorium.",
+      "legal_principle": "Section 238 of the Insolvency and Bankruptcy Code gives the Code priority in the event of conflict with another law. The moratorium under section 14 creates a temporary statutory status quo to allow the insolvency resolution process to proceed, ending when a resolution plan is approved or liquidation is ordered under section 31(3). Municipal Corporation of Greater Mumbai v. Abhilash Lal was distinguishable because the relevant notice preceded admission of the insolvency proceeding and the dispute concerned municipal assets and a resolution plan, rather than recovery of property occupied by the debtor during the moratorium.",
+      "rule": {
+        "if": "corporate_insolvency_moratorium and state_law_conflicts_with_moratorium",
+        "then": "insolvency_moratorium_controls_during_its_term"
+      },
+      "predicates": {
+        "corporate_insolvency_moratorium": "A corporate insolvency proceeding is underway and a moratorium protecting the corporate debtor is in force.",
+        "state_law_conflicts_with_moratorium": "A requirement or power under state law would permit action inconsistent with the moratorium’s protection of the corporate debtor."
+      },
+      "definition": "When state law would permit action inconsistent with a moratorium in a corporate insolvency proceeding, the moratorium controls while it remains in force."
+    }
+  ],
+  "seconds": 11.9
+}

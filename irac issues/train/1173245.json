@@ -1,0 +1,82 @@
+{
+  "doc_id": "1173245",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10293,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2051,
+    "prompt_tokens": 3108,
+    "total_tokens": 5159,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord’s need to evict a tenant must be reasonable and bona fide, and must be assessed objectively rather than from the parties’ assertions or denials alone.",
+      "material_facts": [
+        "The landlord sought eviction on the ground that the premises were required bona fide.",
+        "The tenant contended that the landlord already had sufficient accommodation and was seeking higher rent.",
+        "The first appellate court assessed the evidence and found that the claimed need was not reasonable or bona fide."
+      ],
+      "conclusion": "A landlord’s need must be reasonable and bona fide, and whether it meets that standard must be determined objectively, not merely by the parties’ assertions or denials.",
+      "legal_principle": "Under Section 12(1)(e) of the M.P. Accommodation Control Act, 1961, the landlord’s need for eviction must be reasonable and bona fide. The court must assess that need objectively rather than accept or reject the parties’ assertions alone.",
+      "rule": {
+        "if": "landlord_need_eviction_case and landlord_claims_personal_requirement",
+        "then": "need_must_be_assessed_objectively_for_reasonableness_and_bona_fides"
+      },
+      "predicates": {
+        "landlord_need_eviction_case": "The proceeding seeks eviction of a tenant on the ground that the landlord needs the premises.",
+        "landlord_claims_personal_requirement": "The landlord asserts that the premises are required for the landlord’s needs.",
+        "need_must_be_assessed_objectively_for_reasonableness_and_bona_fides": "The need is assessed objectively for whether it is reasonable and bona fide."
+      },
+      "definition": "When an eviction proceeding rests on the landlord’s claimed need, that need must be assessed objectively for reasonableness and bona fides."
+    },
+    {
+      "legal_issue": "A High Court’s power to interfere in a second appeal with a first appellate court’s factual finding on a landlord’s bona fide need is limited.",
+      "material_facts": [
+        "The first appellate court considered the evidence and found that the landlord’s claimed need was not bona fide.",
+        "The High Court reversed that finding in a second appeal, reasoning that the first appellate court had drawn wrong inferences and had not properly considered the facts.",
+        "The Supreme Court cited Mattulal v. Radhe Lal for the rule governing interference with factual findings in a second appeal."
+      ],
+      "conclusion": "The High Court’s scope of interference in a second appeal is limited; a factual finding, including one drawn from other basic facts, cannot be disturbed unless it rests on a mistake of law, no evidence, or a conclusion no reasonable person could reach.",
+      "legal_principle": "Under the principle stated in Mattulal v. Radhe Lal, [1975] 1 S.C.R. 127, findings on whether a landlord requires premises bona fide are findings of fact even when they are inferences from other basic facts. In a second appeal, the High Court may not interfere with such findings unless a mistake of law was committed, the finding was based on no evidence, or no reasonable person could have reached it.",
+      "rule": {
+        "if": "second_appeal_in_eviction_case and first_appellate_finding_is_factual and not (finding_involves_law_error or finding_has_no_evidence or finding_is_unreasonable)",
+        "then": "high_court_must_not_interfere_with_factual_finding"
+      },
+      "predicates": {
+        "second_appeal_in_eviction_case": "The proceeding is a second appeal in an eviction case.",
+        "first_appellate_finding_is_factual": "The first appellate court made a factual finding, including an inference from basic facts, about the landlord’s claimed need.",
+        "finding_involves_law_error": "The first appellate court committed a mistake of law in reaching its finding.",
+        "finding_has_no_evidence": "The first appellate court’s finding is based on no evidence.",
+        "finding_is_unreasonable": "The first appellate court reached a conclusion that no reasonable person could reach.",
+        "high_court_must_not_interfere_with_factual_finding": "The High Court does not interfere with the first appellate court’s factual finding."
+      },
+      "definition": "In a second appeal in an eviction case, a factual finding by the first appellate court is not disturbed unless it involves a legal error, lacks evidence, or is unreasonable."
+    },
+    {
+      "legal_issue": "A subsequent change that removes the landlord’s bona fide need may require an eviction order to be set aside.",
+      "material_facts": [
+        "After the High Court ordered eviction, the landlord’s first wife died.",
+        "Three rooms that had been in her occupation thereby became vacant.",
+        "The Supreme Court took these subsequent events into consideration and concluded that the landlord no longer had a bona fide need to evict the tenant."
+      ],
+      "conclusion": "Because the subsequent events meant there was no longer a bona fide need to evict the tenant, the eviction order was set aside.",
+      "legal_principle": "The court may take subsequent events into cautious consideration when deciding whether the landlord continues to have a bona fide need for eviction. Here, the death of the person occupying three rooms made that accommodation vacant and removed the landlord’s continuing need to evict the tenant.",
+      "rule": {
+        "if": "appeal_from_eviction_order_based_on_landlord_need and relevant_accommodation_becomes_vacant_after_order and vacancy_removes_landlord_need",
+        "then": "eviction_order_must_be_set_aside"
+      },
+      "predicates": {
+        "appeal_from_eviction_order_based_on_landlord_need": "The proceeding is an appeal from an eviction order based on the landlord’s claimed need.",
+        "relevant_accommodation_becomes_vacant_after_order": "After the eviction order, accommodation relevant to the landlord’s claimed need becomes vacant.",
+        "vacancy_removes_landlord_need": "The newly vacant accommodation means the landlord no longer has a bona fide need to evict the tenant.",
+        "eviction_order_must_be_set_aside": "The eviction order is set aside."
+      },
+      "definition": "When relevant accommodation becomes vacant after an eviction order and that vacancy removes the landlord’s need, the order is set aside."
+    }
+  ],
+  "seconds": 12.9
+}

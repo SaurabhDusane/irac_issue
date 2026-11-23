@@ -1,0 +1,60 @@
+{
+  "doc_id": "731129",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25025,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2939,
+    "prompt_tokens": 6946,
+    "total_tokens": 9885,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil court may order eviction under a rent-control scheme only when the statutory condition for civil-court jurisdiction has been satisfied.",
+      "material_facts": [
+        "The landlord sued in a civil court to recover possession, alleging rent default; the occupant denied being a tenant and claimed an interest as a co-owner or associate.",
+        "The rent-control scheme applied to the building after the provision excluding higher-rent premises was declared invalid.",
+        "The Controller had not decided that the occupant’s denial or claim was bona fide and recorded a finding to that effect."
+      ],
+      "conclusion": "The civil court’s jurisdiction over tenant eviction was barred except where the statutory procedure was followed: the tenant denied the landlord’s title or claimed permanent tenancy, and the Controller decided that the denial or claim was bona fide and recorded that finding. Without that procedure, the civil suit was incompetent and its eviction decree was null and void.",
+      "legal_principle": "Section 10(1), including its second proviso, read with sections 14 to 16 of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, creates a self-contained scheme that impliedly excludes civil-court jurisdiction over eviction except to the specified extent. The Controller determines only the bona fides of the tenant’s denial or claim, not its correctness or validity; the civil court decides the title issue if the statutory condition is met. The Court applied the jurisdiction-exclusion principles in Dhulabhai v. State of Madhya Pradesh, Secretary of State v. Mask & Co., Raleigh Investment Co. v. Governor General in Council and Barraclough v. Brown; it relied on Magiti Sasamal v. Pandab Bissoi concerning the Controller’s limited inquiry and Kiran Singh v. Chaman Paswan concerning the nullity of a decree made without jurisdiction. It distinguished B.V. Patankar v. C.G. Sastry because the enactment there expressly preserved civil suits for eviction.",
+      "rule": {
+        "if": "tenant_eviction_proceeding and building_covered_by_rent_control_scheme and not (tenant_denied_landlord_title_or_claimed_permanent_tenancy and controller_recorded_bona_fide_finding)",
+        "then": "civil_court_eviction_decree_is_nullity"
+      },
+      "predicates": {
+        "tenant_eviction_proceeding": "A landlord brought a proceeding in civil court seeking eviction of a tenant.",
+        "building_covered_by_rent_control_scheme": "The building was within the scope of the special rent-control scheme when the court dealt with the eviction proceeding.",
+        "tenant_denied_landlord_title_or_claimed_permanent_tenancy": "The tenant denied the landlord’s title or claimed a right of permanent tenancy.",
+        "controller_recorded_bona_fide_finding": "The Controller decided that the tenant’s denial or claim was bona fide and recorded that finding."
+      },
+      "definition": "If a civil-court tenant-eviction proceeding concerns a building within the rent-control scheme and the required tenant challenge and recorded finding are absent, the civil court’s eviction decree is a nullity."
+    },
+    {
+      "legal_issue": "A civil eviction decree is a nullity when a premises exemption is declared unconstitutional during an appeal, bringing the premises within the rent-control scheme despite the civil court not having followed the scheme’s jurisdictional procedure.",
+      "material_facts": [
+        "When the landlord filed the suit, the building was excluded from the rent-control scheme because its rent exceeded the statutory threshold.",
+        "After leave to appeal was granted, the Supreme Court declared the exclusion unconstitutional, extending the scheme to the building.",
+        "The civil suit had not followed the statutory procedure that could authorize a civil court to decide an eviction claim involving a covered building."
+      ],
+      "conclusion": "Whether the declaration made the exclusion void or merely inoperative, the civil court had acted without jurisdiction once the building came within the rent-control scheme; its proceedings and decree were a nullity, and the decrees below were set aside.",
+      "legal_principle": "Article 14 was the basis for the invalidation of the exclusion in Rattan Arya v. State of Tamil Nadu. The Court considered the alternative consequences of constitutional invalidity by reference to Behram Khurshed Pesikaka v. State of Bombay, Saghir Ahmad v. State of Uttar Pradesh, Bhikaji Narain Dhakras v. State of Madhya Pradesh and M.P.V. Sundararamier & Co. v. State of Andhra Pradesh, but held that either consequence left the civil court without jurisdiction during the period of invalidity. Under Kiran Singh v. Chaman Paswan, a decree made by a court lacking jurisdiction is a nullity.",
+      "rule": {
+        "if": "civil_eviction_decree_under_appeal and premises_excluded_only_by_exemption_declared_unconstitutional and rent_control_scheme_applies and statutory_civil_court_precondition_not_met",
+        "then": "civil_eviction_decree_is_nullity"
+      },
+      "predicates": {
+        "civil_eviction_decree_under_appeal": "A party appealed a civil court’s decree ordering eviction.",
+        "premises_excluded_only_by_exemption_declared_unconstitutional": "The premises had been kept outside the rent-control scheme solely by an exclusion that a court later declared unconstitutional.",
+        "rent_control_scheme_applies": "The rent-control scheme applied to the premises when the appeal was considered.",
+        "statutory_civil_court_precondition_not_met": "The Controller had not made and recorded the finding required before a civil court could hear the eviction claim."
+      },
+      "definition": "When an eviction decree is under appeal, an unconstitutional exemption had been the only basis for excluding the premises from rent control, the scheme applies, and its civil-court precondition was unmet, the decree is a nullity."
+    }
+  ],
+  "seconds": 19.5
+}

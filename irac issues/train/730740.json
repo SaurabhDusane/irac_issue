@@ -1,0 +1,97 @@
+{
+  "doc_id": "730740",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21580,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2884,
+    "prompt_tokens": 5489,
+    "total_tokens": 8373,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent-control tribunal’s jurisdiction to hear an eviction proceeding is not ousted merely because the occupant denies being a tenant; the tribunal may determine whether the landlord–tenant relationship exists.",
+      "material_facts": [
+        "The landlords sought eviction through the rent-control authorities, alleging default in rent and a bona fide need for the premises.",
+        "The occupant denied being their tenant, asserted that another organization was the tenant, and claimed to be only its licensee."
+      ],
+      "conclusion": "The denial of the tenancy did not oust the tribunal’s jurisdiction. The tribunal could decide whether a landlord–tenant relationship existed; if it found none, the proceeding would end, and if it found one, the eviction proceeding could continue.",
+      "legal_principle": "The Delhi Rent Control Act, 1958 proceeds on the existence of a landlord–tenant relationship, but a denial of that relationship cannot by itself defeat the jurisdiction of the statutory tribunal. The tribunal may decide that threshold issue as necessary to exercise its jurisdiction under the Act. No earlier cases are relied on.",
+      "rule": {
+        "if": "rent_control_eviction_case and occupant_denied_tenancy",
+        "then": "tribunal_may_determine_tenancy_relationship"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "A landlord sought eviction of an occupant through a statutory rent-control tribunal.",
+        "occupant_denied_tenancy": "The occupant denied being the landlord’s tenant."
+      },
+      "definition": "When an occupant denies tenancy in a rent-control eviction case, the tribunal may determine whether the tenancy relationship exists."
+    },
+    {
+      "legal_issue": "A person who invokes statutory rent-protection proceedings and obtains a rent-deposit order cannot deny the tribunal’s authority to treat that person as a tenant for those proceedings.",
+      "material_facts": [
+        "The occupant denied being the landlords’ tenant but actively sought the protection available to a tenant under the Act.",
+        "The Rent Controller ordered the occupant to deposit rent arrears and future rent, and later struck out the occupant’s defence after non-compliance.",
+        "The Supreme Court treated the deposit order as a determination that the occupant was a tenant for the purposes of the proceedings."
+      ],
+      "conclusion": "The Rent Controller had authority to determine the tenancy relationship for the purposes of applying the rent-deposit provisions, and the occupant could not complain that the tenant-default consequence had been applied after invoking the Act’s protection.",
+      "legal_principle": "Section 15, read with the Act’s definition of “landlord,” authorizes the Controller to address entitlement to rent and to make rent-deposit orders for a tenant’s protection. Sections 15(1) and 15(7) were applied: the deposit order proceeded on the basis that the occupant was a tenant, and non-compliance could result in the defence being struck out. The Court also noted the provisions concerning disputes about the person entitled to rent in Sections 15(4) and 15(5). No earlier cases are relied on.",
+      "rule": {
+        "if": "rent_control_eviction_case and occupant_sought_rent_protection and tribunal_ordered_rent_deposit",
+        "then": "tenant_status_deemed_determined_for_proceeding"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "A landlord sought eviction of an occupant through a statutory rent-control tribunal.",
+        "occupant_sought_rent_protection": "The occupant took steps to obtain the statutory protections available to a tenant.",
+        "tribunal_ordered_rent_deposit": "The tribunal directed the occupant to deposit rent."
+      },
+      "definition": "If an occupant seeks tenant protections and the tribunal orders a rent deposit in an eviction case, the occupant’s tenant status is treated as determined for that proceeding."
+    },
+    {
+      "legal_issue": "A tenant-status challenge cannot be reopened in a later appeal when the order striking out the defence, which had determined the issue for the proceeding, became final because no further appeal was filed against it.",
+      "material_facts": [
+        "The Rent Controller struck out the occupant’s defence for failure to comply with the rent-deposit order.",
+        "The Rent Control Tribunal dismissed the appeal against that order on the merits as well as on limitation.",
+        "The occupant did not appeal that decision further, but later challenged the tribunal’s jurisdiction in an appeal against the eviction order."
+      ],
+      "conclusion": "The order concerning the striking out of the defence had become final between the parties, so the occupant could no longer challenge the tribunal’s jurisdiction on the basis that no tenancy existed.",
+      "legal_principle": "An appellate order that is not further appealed becomes final between the parties and cannot be reopened through a later challenge to a related order. No earlier cases are relied on.",
+      "rule": {
+        "if": "rent_control_eviction_appeal and defence_striking_order_upheld and further_appeal_not_filed and jurisdiction_challenge_repeated",
+        "then": "jurisdiction_challenge_is_finally_barred"
+      },
+      "predicates": {
+        "rent_control_eviction_appeal": "The occupant appealed an eviction order made in a rent-control proceeding.",
+        "defence_striking_order_upheld": "An appellate tribunal upheld the order striking out the occupant’s defence.",
+        "further_appeal_not_filed": "The occupant did not file a further appeal against the order upholding the striking out of the defence.",
+        "jurisdiction_challenge_repeated": "The occupant later challenged the tribunal’s jurisdiction in a further appeal concerning eviction."
+      },
+      "definition": "When an occupant repeats a jurisdictional challenge in an eviction appeal after leaving the order upholding the striking out of the defence unappealed, that challenge is barred as final between the parties."
+    },
+    {
+      "legal_issue": "The question whether to condone delay in an appeal is for the appellate authority to decide, and a challenge to that question is academic when the authority also decides the appeal on its merits.",
+      "material_facts": [
+        "The occupant’s appeal against the order striking out the defence was one day late.",
+        "The Rent Control Tribunal dismissed that appeal both as time-barred and on its merits.",
+        "The occupant challenged the refusal to condone delay, but the Supreme Court noted that the merits had also been decided."
+      ],
+      "conclusion": "Whether the delay should have been condoned was within the appellate authority’s discretion, and the issue was of no importance because the Tribunal had also rejected the appeal on its merits.",
+      "legal_principle": "The appellate authority determines whether the explanation establishes sufficient ground to condone delay. The Supreme Court stated that the matter was academic where the appeal had also been considered and dismissed on its merits. No statutory provision or earlier case is relied on for this ruling.",
+      "rule": {
+        "if": "rent_control_appeal_against_defence_order and appeal_filed_late and appellate_authority_decided_merits",
+        "then": "delay_condonation_issue_is_academic"
+      },
+      "predicates": {
+        "rent_control_appeal_against_defence_order": "The occupant appealed an order striking out a defence in a rent-control proceeding.",
+        "appeal_filed_late": "The occupant filed that appeal after the applicable filing period.",
+        "appellate_authority_decided_merits": "The appellate authority considered and decided the appeal on its merits as well as addressing delay."
+      },
+      "definition": "If a late appeal against a defence-striking order is also decided on its merits, the question of condoning delay is academic."
+    }
+  ],
+  "seconds": 18.5
+}

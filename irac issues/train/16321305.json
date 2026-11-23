@@ -1,0 +1,85 @@
+{
+  "doc_id": "16321305",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29943,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2661,
+    "prompt_tokens": 7960,
+    "total_tokens": 10621,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A purchase in one person’s name may be found to have been made benami for another person when the evidence shows who supplied the purchase money and who enjoyed the property’s benefits.",
+      "material_facts": [
+        "The property was purchased in the son’s name when he was 18 years old and had no established independent funds.",
+        "The son did not reliably establish the source of the purchase money; his accounts of the payment and its sources were inconsistent and unexplained.",
+        "The father’s proved statements and account records showed that he paid for the property from his own funds and treated the property’s income as his own.",
+        "The son did not prove that he enjoyed the benefits of the property."
+      ],
+      "conclusion": "The father was the real owner and the son was only the ostensible owner or benamidar.",
+      "legal_principle": "The source of the consideration and the enjoyment of the benefits are the principal tests for determining whether a transaction is benami (Gangadara Ayyar v. Subramania Sastrigal; Meenakshi Mills v. Commissioner of Income-Tax). The party alleging a benami transaction bears the initial burden, but the burden may shift as evidence is led. Where the evidence does not conclusively establish or rebut the allegation, the court assesses reasonable probabilities and legal inferences from proved or admitted facts; once evidence is before the court, the issue is decided on that evidence rather than abstract considerations of onus (Kalwa Devadattam v. Union of India).",
+      "rule": {
+        "if": "civil_property_ownership_dispute and purchase_in_another_persons_name and (alleged_real_owner_funded_purchase or named_purchaser_failed_to_establish_funding) and alleged_real_owner_enjoyed_property_benefits",
+        "then": "purchase_is_benami_for_alleged_real_owner"
+      },
+      "predicates": {
+        "civil_property_ownership_dispute": "The proceeding concerns who owns property that was purchased in one person’s name.",
+        "purchase_in_another_persons_name": "The property was acquired in the name of someone other than the person alleged to be its real owner.",
+        "alleged_real_owner_funded_purchase": "The person alleged to be the real owner supplied the purchase consideration.",
+        "named_purchaser_failed_to_establish_funding": "The person named as purchaser failed to establish a credible source for the purchase consideration.",
+        "alleged_real_owner_enjoyed_property_benefits": "The person alleged to be the real owner received or treated the benefits of the property as their own."
+      },
+      "definition": "When a property-ownership dispute concerns a purchase in another person’s name, and the alleged real owner funded the purchase or the named purchaser failed to establish the funding, the rule identifies the purchase as benami if the alleged real owner also enjoyed the property’s benefits."
+    },
+    {
+      "legal_issue": "A party’s proved prior statements are admissible against that party as admissions even if the party did not testify, was not confronted with the statements, or the statements were not against that party’s interest when made.",
+      "material_facts": [
+        "The alleged real owner had made statements identifying himself as the person who bought the property using his own funds, and records showed that he had charged the property’s expenditure and income to himself.",
+        "The statements and records were proved in evidence.",
+        "The maker had been served and had an opportunity to contest the suit but did not appear; efforts to secure his attendance as a witness were unsuccessful."
+      ],
+      "conclusion": "The statements were admissible against their maker and provided evidence that he owned the property; they were not relied on as evidence against the other defendant.",
+      "legal_principle": "Under the law of admissions in the Evidence Act, a proved admission is substantive evidence against its maker (Bharat Singh v. Bhagirath; Ajodhya Prasad Bhargava v. Bhawani Shanker Bhargava). Its admissibility does not depend on the maker testifying, being confronted with it, or having made a statement adverse to his interest at the time. Section 33 of the Evidence Act concerns statements of persons who cannot be called as witnesses and does not restrict or override the rules governing admissions.",
+      "rule": {
+        "if": "civil_case and prior_statement_proved and statement_made_by_party_against_whom_offered",
+        "then": "prior_statement_is_admissible_against_maker"
+      },
+      "predicates": {
+        "civil_case": "The proceeding is a civil case.",
+        "prior_statement_proved": "A prior statement by a party has been established in evidence.",
+        "statement_made_by_party_against_whom_offered": "The party against whom the statement is offered made the statement."
+      },
+      "definition": "In a civil case, a proved prior statement made by a party is admissible against that party."
+    },
+    {
+      "legal_issue": "A conveyance made through a sham transaction to put a debtor’s property beyond creditors’ reach is ineffective against those creditors.",
+      "material_facts": [
+        "The debtor’s property had been attached for unpaid tax liabilities, and an objection seeking its release had been rejected without a successful challenge.",
+        "After further tax assessments and a recovery certificate, the property was transferred to a company formed shortly before the transfer.",
+        "The company was dominated by the debtor’s close relations, did not pay the stated price in cash, and failed to show that it conducted substantial business.",
+        "The timing and circumstances of the transfer showed an effort to prevent the property from being sold to satisfy the debtor’s tax arrears."
+      ],
+      "conclusion": "The transfer was sham and ineffective against the debtor’s creditors; the property remained available for attachment and sale to satisfy the arrears.",
+      "legal_principle": "The court upheld the finding that the transfer was a sham designed to defeat or delay creditors. The circumstances supporting that finding included the debtor’s unpaid liabilities, the attachment and unsuccessful release objection, the timing of the transfer, the transferee company’s control by the debtor’s relatives, the absence of cash payment, and the company’s failure to establish substantial business activity.",
+      "rule": {
+        "if": "creditor_challenges_property_transfer and property_was_subject_to_debt_recovery and transfer_followed_unsuccessful_effort_to_release_property and transferee_was_family_controlled_entity and (stated_price_not_paid_in_cash or transferee_lacked_substantial_business)",
+        "then": "transfer_is_ineffective_against_creditors"
+      },
+      "predicates": {
+        "creditor_challenges_property_transfer": "A creditor challenges a transfer of a debtor’s property as an attempt to place it beyond creditors’ reach.",
+        "property_was_subject_to_debt_recovery": "The property was subject to steps to recover an unpaid debt from its owner.",
+        "transfer_followed_unsuccessful_effort_to_release_property": "The transfer took place after an effort to secure the property’s release from recovery measures had failed.",
+        "transferee_was_family_controlled_entity": "The transferee was an entity controlled by the debtor’s close relations.",
+        "stated_price_not_paid_in_cash": "The stated price for the transfer was not paid in cash.",
+        "transferee_lacked_substantial_business": "The transferee failed to show that it conducted substantial business."
+      },
+      "definition": "When a creditor challenges a transfer of property already subject to debt recovery, the transfer is ineffective against creditors if it follows a failed effort to release the property, the transferee is controlled by the debtor’s family, and the stated price was not paid in cash or the transferee lacked substantial business."
+    }
+  ],
+  "seconds": 16.7
+}

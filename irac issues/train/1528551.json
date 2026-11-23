@@ -1,0 +1,81 @@
+{
+  "doc_id": "1528551",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31376,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2454,
+    "prompt_tokens": 7927,
+    "total_tokens": 10381,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent controller may condone a tenant’s late deposit of future rent and extend the deadline when the delay resulted from circumstances beyond the tenant’s control.",
+      "material_facts": [
+        "In an eviction proceeding based on rent default, the tenant was ordered to deposit rent monthly by a specified day.",
+        "The tenant deposited the rent for four consecutive months late.",
+        "The Rent Controller had declined to strike out the tenant’s defence but had treated the late deposits as a basis for eviction.",
+        "The Supreme Court remitted the matter for the Rent Controller to consider whether to condone the delay."
+      ],
+      "conclusion": "The Rent Controller has an implied discretion to condone a delay in depositing future rent and extend the time for deposit where the failure resulted from circumstances beyond the tenant’s control; the matter was remitted for that discretion to be considered.",
+      "legal_principle": "Sections 14(2) and 15(1), (6) and (7) of the Delhi Rent Control Act must be read together to give effect to the protection against eviction and the Controller’s discretion over striking out a defence. The discretionary, penal character of Section 15(7) recognized in Santosh Mehta v. Om Prakash supports an implied power to condone a default in appropriate circumstances. The Court applied the reasoning in Shyamcharan Sharma v. Dharamdas concerning analogous provisions, and held that Hem Chand v. Delhi Cloth & General Mills Co. Ltd., which denied a power to extend time, could not stand with that larger-bench decision on this point.",
+      "rule": {
+        "if": "rent_default_eviction_proceeding and future_rent_deposit_missed and delay_beyond_tenant_control",
+        "then": "controller_may_extend_future_rent_deadline"
+      },
+      "predicates": {
+        "rent_default_eviction_proceeding": "A landlord seeks a tenant’s eviction on the ground that rent was not paid or tendered.",
+        "future_rent_deposit_missed": "The tenant fails to deposit rent that falls due during the eviction proceeding by the required deadline.",
+        "delay_beyond_tenant_control": "The tenant’s failure to meet the deposit deadline resulted from circumstances beyond the tenant’s control.",
+        "controller_may_extend_future_rent_deadline": "The Rent Controller may condone the late deposit and extend the deadline for payment or deposit."
+      },
+      "definition": "When a tenant in a rent-default eviction proceeding misses a deadline for depositing future rent because of circumstances beyond the tenant’s control, the Controller may extend that deadline."
+    },
+    {
+      "legal_issue": "A tenant whose defence against eviction is not struck out retains the opportunity to claim statutory protection, and failure to comply with a rent-deposit order does not by itself require eviction.",
+      "material_facts": [
+        "The tenant had deposited most rent on time but had deposited rent for four consecutive months late.",
+        "The Rent Controller refused the landlord’s application to strike out the tenant’s defence, while also ordering eviction for non-compliance with the deposit order.",
+        "The Supreme Court held that the tenant’s defence remaining available meant the tenant could still claim protection against eviction, and remitted the matter for reconsideration."
+      ],
+      "conclusion": "If the tenant’s defence is not struck out, the tenant retains the defences available under the Act, including the right to claim protection against eviction; non-compliance with the deposit order does not automatically entitle the landlord to eviction.",
+      "legal_principle": "Sections 14(2), 15(6) and 15(7) of the Delhi Rent Control Act must be construed together. Section 15(7) makes striking out the defence discretionary, while Sections 14(2) and 15(6) make the protection against eviction turn on compliance with the deposit requirements. The phrase “as required” must be construed reasonably, with substantial compliance assessed in light of the Controller’s discretion. Hem Chand v. Delhi Cloth & General Mills Co. Ltd. also rejected the proposition that failure to comply automatically gives the landlord an indefeasible right to eviction.",
+      "rule": {
+        "if": "rent_default_eviction_proceeding and tenant_failed_deposit and defence_not_struck_out",
+        "then": "tenant_retains_right_to_claim_eviction_protection"
+      },
+      "predicates": {
+        "rent_default_eviction_proceeding": "A landlord seeks a tenant’s eviction on the ground that rent was not paid or tendered.",
+        "tenant_failed_deposit": "The tenant failed to pay or deposit rent as required during the eviction proceeding.",
+        "defence_not_struck_out": "The Rent Controller did not strike out the tenant’s defence against eviction.",
+        "tenant_retains_right_to_claim_eviction_protection": "The tenant may still rely on the statutory protection against eviction and the defences available in the proceeding."
+      },
+      "definition": "In a rent-default eviction proceeding, if the tenant failed to make a required deposit but the defence was not struck out, the tenant retains the right to claim eviction protection."
+    },
+    {
+      "legal_issue": "The bar on repeat protection against eviction applies only when a tenant who previously received that protection in an earlier eviction proceeding later defaults for three consecutive months.",
+      "material_facts": [
+        "The landlord argued that the tenant’s consecutive late deposits in the proceeding at issue triggered the statutory bar on receiving protection against eviction again.",
+        "The Court construed the bar as requiring the tenant to have obtained protection in a previously instituted eviction proceeding before making a later three-month consecutive default."
+      ],
+      "conclusion": "Consecutive defaults in the current proceeding do not trigger the bar; it applies only if the tenant previously obtained the protection in an earlier eviction proceeding and subsequently defaulted for three consecutive months.",
+      "legal_principle": "The proviso to Section 14(2) of the Delhi Rent Control Act, on its plain construction, denies the benefit of that subsection only to a tenant who has obtained the benefit once in respect of the premises and thereafter defaults in rent for three consecutive months. The earlier benefit must have been obtained in a previously instituted eviction proceeding.",
+      "rule": {
+        "if": "rent_default_eviction_proceeding and earlier_eviction_protection_granted and later_three_consecutive_month_default",
+        "then": "tenant_barred_from_repeat_eviction_protection"
+      },
+      "predicates": {
+        "rent_default_eviction_proceeding": "A landlord seeks a tenant’s eviction on the ground that rent was not paid or tendered.",
+        "earlier_eviction_protection_granted": "The tenant previously received protection against eviction in an earlier eviction proceeding concerning the premises.",
+        "later_three_consecutive_month_default": "After receiving that protection, the tenant defaults in paying rent for three consecutive months.",
+        "tenant_barred_from_repeat_eviction_protection": "The tenant is not entitled to receive the statutory protection against eviction again."
+      },
+      "definition": "A tenant in a rent-default eviction proceeding is barred from receiving eviction protection again only if the tenant previously received that protection and later defaulted for three consecutive months."
+    }
+  ],
+  "seconds": 16.0
+}

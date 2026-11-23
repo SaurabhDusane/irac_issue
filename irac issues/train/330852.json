@@ -1,0 +1,63 @@
+{
+  "doc_id": "330852",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 47793,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2400,
+    "prompt_tokens": 12429,
+    "total_tokens": 14829,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A decree from a suit completed before the statutory coverage cutoff is not within the money-lending relief regime when no execution proceeding was pending at the cutoff, even though an attachment continued under a separate order.",
+      "material_facts": [
+        "The decree-holder’s execution application was formally dismissed for non-prosecution, while the court expressly continued the attachment under a special order.",
+        "The attachment remained in force until a later filing reported that the decree had been adjusted and sought withdrawal of the attachment; the court recorded the adjustment and cancelled the attachment.",
+        "The later filing did not seek recovery or enforcement of the debt, but reported satisfaction of the decree.",
+        "The borrowers later brought a suit seeking relief under the money-lending legislation."
+      ],
+      "conclusion": "The majority held that the execution proceeding had ended when the application was dismissed; continuation of the attachment under a special order did not keep an execution proceeding pending. The later filing was only a certification of satisfaction. The decree therefore was not from a suit to which the Act applied and could not be reopened under section 36.",
+      "legal_principle": "Under section 2(22), a decree from an earlier suit comes within the definition only if a qualifying execution proceeding was instituted or pending at the relevant cutoff. The second proviso to section 36(1)(ii) prevents the court from affecting a decree outside that definition. Under Order XXI, rule 57, as amended by the Calcutta High Court, an execution application may be dismissed while an attachment is separately continued; the separate attachment does not itself keep execution pending. The court relied on Bank of Commerce Ltd. v. Amulya Krishna, Ram Kumar De v. Abhoya Pada Bhattacharjee, Aparna Kumari v. Girish Chandra, Shibnath Singh Ray v. Sheikh Saberuddin Ahmad, and Raja Shri Prakash Singh v. The Allahabad Bank Ltd.",
+      "rule": {
+        "if": "moneylending_reopening_suit and underlying_suit_ended_before_coverage_cutoff and execution_application_formally_dismissed and attachment_survived_under_separate_order and later_filing_only_reported_satisfaction",
+        "then": "decree_outside_reopening_scope"
+      },
+      "predicates": {
+        "moneylending_reopening_suit": "The borrower brought a suit seeking relief concerning a debt under money-lending legislation.",
+        "underlying_suit_ended_before_coverage_cutoff": "The suit in which the decree was made had ended before the statutory cutoff for covered suits and proceedings.",
+        "execution_application_formally_dismissed": "The executing court formally dismissed the decree-holder’s execution application rather than adjourning it.",
+        "attachment_survived_under_separate_order": "The court expressly continued an attachment separately from the dismissed execution application.",
+        "later_filing_only_reported_satisfaction": "The decree-holder later informed the court that the debt had been adjusted and sought cancellation of the attachment, without seeking further execution."
+      },
+      "definition": "When a borrower seeks money-lending relief concerning a decree from an earlier-ended suit, and execution was formally dismissed while an attachment continued separately and a later filing only reported satisfaction, the decree falls outside reopening scope."
+    },
+    {
+      "legal_issue": "A bona fide sub-mortgagee is an assignee protected from statutory relief against the debt when the sub-mortgage assigns the mortgage debt and gives the sub-mortgagee the right to sue the original debtor.",
+      "material_facts": [
+        "The sub-mortgage was bona fide and transferred the debt due under the original mortgage and the mortgagee’s interest in it.",
+        "By virtue of the sub-mortgage, the decree-holder’s predecessor obtained the right to sue the original mortgagor for the mortgage debt.",
+        "The sub-mortgage predated the legislation, so the assignee had not received the specified statutory notice.",
+        "The respondent claimed protection for the decree debt in the borrowers’ suit for money-lending relief."
+      ],
+      "conclusion": "Justice Sastri held that the respondent’s claim to recover the decree debt was protected under section 36(5), although the majority had already dismissed the appeal on the separate ground that the decree was outside the Act’s scope and expressed no opinion on this issue.",
+      "legal_principle": "Section 36(5) protects the rights of an assignee or holder for value where the assignment was bona fide and the assignee had not received the notice referred to in section 28(1)(a). A sub-mortgagee who receives the mortgage debt and the right to sue the original debtor is an assignee for this purpose. Justice Sastri relied on Renula Bose v. Manmatha Nath Bose and the Privy Council decision in Promode Kumar Roy v. Nikhil Bhusan Mukhopadhya, which held that an assignment of the mortgage debt and the right to recover it brings the assignee within the protection.",
+      "rule": {
+        "if": "moneylending_relief_claim and bona_fide_assignment and assignment_transferred_right_to_sue_debtor and assignee_lacked_required_notice",
+        "then": "assignee_claim_is_protected_from_relief"
+      },
+      "predicates": {
+        "moneylending_relief_claim": "A borrower sought statutory relief affecting a debt owed to a creditor or the creditor’s successor.",
+        "bona_fide_assignment": "The creditor’s interest was transferred to the assignee in a bona fide transaction.",
+        "assignment_transferred_right_to_sue_debtor": "The transfer gave the assignee the right to sue the original debtor to recover the debt.",
+        "assignee_lacked_required_notice": "The assignee had not received the notice relevant to the statutory protection."
+      },
+      "definition": "When a borrower seeks money-lending relief and a bona fide assignment transfers the right to sue the debtor to an assignee who lacked the required notice, the assignee’s claim is protected from that relief."
+    }
+  ],
+  "seconds": 15.7
+}

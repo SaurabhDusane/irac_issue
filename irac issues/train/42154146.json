@@ -1,0 +1,81 @@
+{
+  "doc_id": "42154146",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29492,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2721,
+    "prompt_tokens": 7494,
+    "total_tokens": 10215,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Execution proceedings commenced under a repealed statutory regime and pending before an authority at repeal continue under that regime.",
+      "material_facts": [
+        "Recovery and execution proceedings were initiated under the earlier cooperative-society law, and execution proceedings were pending before the relevant authority when the replacement law came into force.",
+        "The execution included proceedings to attach and sell property to satisfy the recovery award."
+      ],
+      "conclusion": "The pending execution proceedings continued under the earlier law despite its repeal, and the High Court was wrong to set aside the sale on the ground that execution had to proceed under the later arbitration law.",
+      "legal_principle": "Section 126(6) of the Multi-State Co-operative Societies Act, 2002 preserves legal proceedings pending before a court, the Central Registrar, or another authority at commencement, as if the new Act had not been passed. The expression “legal proceeding” is not limited to proceedings in courts: Governor-General in Council v. Shiromani Sugar Mills Ltd., AIR 1946 FC 16, held that it includes proceedings to recover tax dues through administrative authorities, and Binod Mills Co. Ltd. Ujjain v. Suresh Chandra Mahaveer Prasad Mantri, (1987) 3 SCC 99, applied that understanding to execution petitions. Under Section 85(c) of the 1984 Act, an order could be executed by attachment and sale; the later Act’s arbitration scheme and its Section 94 execution provision did not displace proceedings saved by Section 126(6).",
+      "rule": {
+        "if": "execution_proceeding and initiated_under_prior_recovery_regime and pending_before_authority_at_repeal",
+        "then": "execution_continues_under_prior_regime"
+      },
+      "predicates": {
+        "execution_proceeding": "The matter is an execution proceeding to enforce a recovery decision or order.",
+        "initiated_under_prior_recovery_regime": "The execution proceeding was initiated under the legal regime that was later repealed.",
+        "pending_before_authority_at_repeal": "The execution proceeding remained pending before an authority when the replacement regime came into force."
+      },
+      "definition": "When an execution proceeding was initiated under the prior regime and remained pending before an authority when that regime was replaced, it continues under the prior regime."
+    },
+    {
+      "legal_issue": "A party challenging an executed property sale cannot obtain remand to bypass the prescribed sale-challenge procedure without establishing the required grounds for setting the sale aside.",
+      "material_facts": [
+        "The property had been offered for sale through several public notices without attracting bidders before a sealed-tender sale took place.",
+        "The challenger had not used the statutory procedure to seek the sale’s setting aside.",
+        "The challenger did not claim that the property had been sold at a gross undervalue and did not establish substantial injury from the alleged irregularity.",
+        "The allegation of mala fides was vague and lacked particulars; the sale notices had been publicly advertised.",
+        "The Court also noted that the borrowers had not repaid the loan and declined to remit the remaining writ grounds after the earlier unsuccessful sale attempts."
+      ],
+      "conclusion": "The Court refused to remit the remaining writ grounds to the High Court because the sale objections could not be used to circumvent the prescribed statutory procedure, the required substantial injury was not shown, and the allegation of mala fides was insufficiently particularized.",
+      "legal_principle": "Rules 37(13) and 37(14) of the Multi-State Co-operative Societies Rules, 2002 provide procedures for seeking to set aside a sale, including a deposit-based procedure and an application to the recovery officer within the prescribed period for an alleged material irregularity. A challenge based on irregularity requires substantial injury by reason of the irregularity. A charge of mala fides must be pleaded with clarity and particularity; writ proceedings cannot be used to bypass the statutory sale-challenge procedures.",
+      "rule": {
+        "if": "property_sale_challenge and remand_requested and not statutory_sale_remedy_invoked and not substantial_injury_shown and not undervalue_claimed and malice_allegation_vague",
+        "then": "remand_denied"
+      },
+      "predicates": {
+        "property_sale_challenge": "A party challenges a sale of property conducted in execution of a recovery decision.",
+        "remand_requested": "A party asks an appellate court to send unresolved objections to the sale back for further consideration.",
+        "statutory_sale_remedy_invoked": "The challenger applied through the prescribed procedure to seek the sale’s setting aside.",
+        "substantial_injury_shown": "The challenger established substantial injury caused by the alleged irregularity in the sale.",
+        "undervalue_claimed": "The challenger claimed that the property was sold at a gross undervalue.",
+        "malice_allegation_vague": "The challenger alleged mala fides without setting out clear and particular supporting facts."
+      },
+      "definition": "When a party challenges an executed property sale and seeks remand without using the prescribed sale remedy, showing substantial injury, or particularizing an allegation of mala fides, remand is denied."
+    },
+    {
+      "legal_issue": "A recovery creditor must pay the purchaser the admitted balance of auction proceeds remaining after the recovered debt is satisfied.",
+      "material_facts": [
+        "The purchaser paid the full auction price.",
+        "The bank stated that the amount recovered was sufficient to discharge the loan dues and admitted that a balance remained payable to the purchaser."
+      ],
+      "conclusion": "The Court directed the bank to pay the admitted surplus to the purchaser with interest.",
+      "legal_principle": "To do complete justice between the parties, the Court ordered payment of the surplus that the bank admitted was due to the purchaser, together with interest. No earlier case or specific statutory provision was relied upon for this direction.",
+      "rule": {
+        "if": "auction_recovery_appeal and auction_proceeds_exceeded_recovered_debt and creditor_admitted_surplus_due",
+        "then": "creditor_ordered_to_pay_surplus_with_interest"
+      },
+      "predicates": {
+        "auction_recovery_appeal": "The matter is an appeal concerning a property sale conducted to recover a debt.",
+        "auction_proceeds_exceeded_recovered_debt": "The auction proceeds exceeded the amount recovered to satisfy the debt.",
+        "creditor_admitted_surplus_due": "The creditor admitted that the remaining auction proceeds were payable to the purchaser."
+      },
+      "definition": "In an appeal concerning a recovery sale, when the proceeds exceed the recovered debt and the creditor admits a surplus is due, the creditor is ordered to pay the surplus with interest."
+    }
+  ],
+  "seconds": 15.9
+}

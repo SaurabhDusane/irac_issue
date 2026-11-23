@@ -1,0 +1,153 @@
+{
+  "doc_id": "274311",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43229,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3436,
+    "prompt_tokens": 10720,
+    "total_tokens": 14156,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The requirement to record reasons before using an emergency procedure that bypasses notice and inquiry is mandatory.",
+      "material_facts": [
+        "The ordinary procedure required notice to affected persons and an inquiry into the need, nature, and cost of repairs before liability could be imposed.",
+        "The Collector used the emergency procedure to begin repairs without following that ordinary procedure.",
+        "The Collector recited the statutory conclusion but did not record reasons explaining why the delay involved in the ordinary procedure would adversely affect dependent lands.",
+        "Reports from other officials did not supply reasons recorded by the Collector in the order."
+      ],
+      "conclusion": "Recording reasons was a mandatory condition for exercising the emergency power; because the Collector did not do so, the emergency orders were null and void.",
+      "legal_principle": "Under sections 3 to 5 and 5A of the Bihar Private Irrigation Works Act, 1922, the ordinary procedure provides affected persons an opportunity to object, while section 5A permits that procedure to be bypassed in an emergency. In that statutory context, the requirement in section 5A that the Collector record reasons protects affected persons from the loss of that opportunity and is mandatory. A recital of the statutory conclusion is not a record of the reasons for reaching it, and other officials’ reports cannot substitute for the Collector’s recorded reasons. The Court considered State of Uttar Pradesh v. Manbodhan Lal Srivastava and explained that whether a requirement is mandatory depends on its purpose and statutory context, not merely on the use or absence of imperative wording.",
+      "rule": {
+        "if": "emergency_repair_proceeding and ordinary_notice_inquiry_bypassed and not collector_recorded_emergency_reasons",
+        "then": "emergency_order_is_void"
+      },
+      "predicates": {
+        "emergency_repair_proceeding": "The authority acted to arrange urgent repairs to an existing irrigation work.",
+        "ordinary_notice_inquiry_bypassed": "The authority bypassed the ordinary procedure that gives affected persons notice and an inquiry before repairs are ordered.",
+        "collector_recorded_emergency_reasons": "The Collector recorded reasons explaining why delay from the ordinary procedure would adversely affect lands dependent on the work."
+      },
+      "definition": "When an emergency repair proceeding bypasses the ordinary notice-and-inquiry procedure and the Collector does not record reasons for doing so, the emergency order is void."
+    },
+    {
+      "legal_issue": "A contribution demand cannot be founded on an emergency repair order that was made without satisfying a mandatory statutory condition.",
+      "material_facts": [
+        "After the repairs were completed, the cost was apportioned and contribution demands were made against the landlords.",
+        "The demands rested on emergency orders in which the Collector had not recorded the required reasons.",
+        "The orders were therefore made without satisfying a statutory condition precedent to the emergency power."
+      ],
+      "conclusion": "The void emergency orders could not support an apportioned liability or the resulting demands for payment.",
+      "legal_principle": "Under sections 7 and 8 of the Bihar Private Irrigation Works Act, 1922, costs are recovered and apportioned, and the later demand and recovery provisions depend on a valid basis for liability. Because the emergency orders were void for failure to satisfy section 5A’s mandatory condition, they could not serve as the foundation for liability or a demand under the Act.",
+      "rule": {
+        "if": "assessed_contribution_demand and foundation_order_is_void",
+        "then": "contribution_demand_is_invalid"
+      },
+      "predicates": {
+        "assessed_contribution_demand": "An authority assessed a person for a share of the cost of completed repair work and demanded payment.",
+        "foundation_order_is_void": "The order on which the assessment and demand depend is void because a required condition for making it was not met."
+      },
+      "definition": "A contribution demand is invalid when it depends on a void order."
+    },
+    {
+      "legal_issue": "A claim for compensation for loss caused by repair work is distinct from liability to pay an apportioned share of repair costs.",
+      "material_facts": [
+        "The State argued that a statutory compensation remedy was available to the respondents.",
+        "The respondents were being asked to pay an apportioned share of the repair costs, rather than seeking compensation for loss directly caused by the work."
+      ],
+      "conclusion": "The compensation provision applied to loss sustained by third parties from the work, not to liability for an apportioned share of its cost.",
+      "legal_principle": "Section 5B of the Bihar Private Irrigation Works Act, 1922, provides compensation for loss directly arising from the work, such as loss sustained by third parties. It does not apply to a payment liability under sections 11 and 12, which arises from the apportionment of repair costs.",
+      "rule": {
+        "if": "irrigation_work_cost_dispute and claimant_seeks_only_apportioned_repair_cost",
+        "then": "work_loss_compensation_provision_does_not_apply"
+      },
+      "predicates": {
+        "irrigation_work_cost_dispute": "The dispute concerns the costs or effects of repairs to an irrigation work carried out through a statutory process.",
+        "claimant_seeks_only_apportioned_repair_cost": "The person’s disputed liability is only a share of the repair costs apportioned to them, rather than compensation for a loss directly caused by the work."
+      },
+      "definition": "The compensation provision does not apply when an irrigation-work cost dispute concerns only an apportioned share of repair costs."
+    },
+    {
+      "legal_issue": "A writ court may quash a recovery demand founded on a void order even if that order was administrative in nature.",
+      "material_facts": [
+        "The respondents challenged demands for payment under the Act through applications under Article 226.",
+        "The demands were based on emergency orders that were void because a statutory condition precedent had not been satisfied.",
+        "The relief sought was against the demands, not an order setting aside the underlying emergency orders."
+      ],
+      "conclusion": "The High Court had jurisdiction to direct that the demands be quashed and not enforced; a void order did not need to be separately set aside to prevent it from supporting liability.",
+      "legal_principle": "Article 226 of the Constitution permits relief against an unlawful demand. Even assuming the underlying order was administrative, an order made without jurisdiction because a statutory condition precedent was not met is void and cannot support liability or recovery under the Act. The Court referred to the statutory process for apportionment and demands under sections 7, 8, 10, 11 and 12.",
+      "rule": {
+        "if": "constitutional_writ_challenges_recovery_demand and demand_rests_on_jurisdictionally_void_order",
+        "then": "writ_court_may_quash_demand"
+      },
+      "predicates": {
+        "constitutional_writ_challenges_recovery_demand": "A person brings a constitutional writ proceeding challenging a statutory demand for payment.",
+        "demand_rests_on_jurisdictionally_void_order": "The demand depends on an order made without jurisdiction because a required statutory condition was not satisfied."
+      },
+      "definition": "A writ court may quash a statutory recovery demand when the demand depends on an order made without jurisdiction."
+    },
+    {
+      "legal_issue": "A post-constitutional demand may be challenged under Article 226 even when the void order on which it rests predates the Constitution.",
+      "material_facts": [
+        "Some underlying emergency orders were made before the Constitution came into force.",
+        "The demands challenged by the respondents were made after the Constitution came into force.",
+        "The respondents challenged the demands as unlawful consequences of orders that were void for want of jurisdiction."
+      ],
+      "conclusion": "The fact that some underlying orders predated the Constitution did not prevent the High Court from granting relief against the later demands.",
+      "legal_principle": "Article 226 relief was directed at demands made after the Constitution came into force, not at setting aside the earlier orders. Since the earlier orders were void and could not support the later demands, the non-retrospective character of the constitutional remedy did not defeat the challenge to those demands.",
+      "rule": {
+        "if": "constitutional_writ_challenges_later_demand and demand_follows_preconstitutional_void_order",
+        "then": "constitutional_writ_may_address_later_demand"
+      },
+      "predicates": {
+        "constitutional_writ_challenges_later_demand": "A person brings a constitutional writ proceeding against a demand issued after the constitutional remedy became available.",
+        "demand_follows_preconstitutional_void_order": "The later demand depends on an order made before that remedy became available, and the order is void."
+      },
+      "definition": "A constitutional writ may address a later demand that depends on a void order made before the writ remedy became available."
+    },
+    {
+      "legal_issue": "A person cannot be treated as having acquiesced in an emergency repair order merely by failing to object before completion of the work when the statute provides no pre-work notice or opportunity to object.",
+      "material_facts": [
+        "The emergency procedure did not provide for notice to the affected landlord before the work began.",
+        "The public notice required by the procedure stated that the work had already begun.",
+        "The State argued that the landlords had acquiesced by not objecting and by obtaining the benefit of the repairs."
+      ],
+      "conclusion": "The landlords’ failure to object did not estop them from challenging the demands, because the emergency procedure gave them no opportunity to object before the work was completed.",
+      "legal_principle": "Section 5A of the Bihar Private Irrigation Works Act, 1922, does not require notice to the affected person before the work begins; its public notice announces that work has already begun. In those circumstances, failure to object cannot establish acquiescence or estop a person from challenging a resulting demand.",
+      "rule": {
+        "if": "emergency_repair_proceeding and affected_person_had_no_prework_opportunity_to_object and not affected_person_objected_before_completion",
+        "then": "failure_to_object_does_not_estop_challenge"
+      },
+      "predicates": {
+        "emergency_repair_proceeding": "The authority used an emergency process to start repair work without the ordinary notice-and-inquiry procedure.",
+        "affected_person_had_no_prework_opportunity_to_object": "The affected person had no statutory opportunity to object before the repair work began.",
+        "affected_person_objected_before_completion": "The affected person objected before the repair work was completed."
+      },
+      "definition": "When an emergency repair process gives an affected person no opportunity to object before work begins, failure to object before completion does not estop a challenge."
+    },
+    {
+      "legal_issue": "The existence of an alternative statutory remedy does not invariably prevent a High Court from granting relief under Article 226.",
+      "material_facts": [
+        "The State relied on the Board of Revenue’s supervisory powers under the Act and argued that the respondents’ failure to use them barred relief.",
+        "The issue had not been pressed before the High Court at the hearing.",
+        "The High Court had discretion to grant relief under Article 226 even if another statutory remedy existed."
+      ],
+      "conclusion": "The Court declined to entertain the objection at that stage, observing that the existence of an alternative statutory remedy did not eliminate the High Court’s discretion to grant Article 226 relief.",
+      "legal_principle": "Article 226 relief is discretionary, and the existence of an alternative statutory remedy does not by itself remove the High Court’s discretion to grant relief. The Court relied on that discretion and declined to consider the State’s objection at that stage because it had not been pressed before the High Court.",
+      "rule": {
+        "if": "constitutional_writ_proceeding and alternative_statutory_remedy_exists",
+        "then": "alternative_remedy_does_not_automatically_bar_writ_relief"
+      },
+      "predicates": {
+        "constitutional_writ_proceeding": "A person seeks relief from a High Court through a constitutional writ proceeding.",
+        "alternative_statutory_remedy_exists": "A statute provides another procedure through which the person could seek review or relief."
+      },
+      "definition": "In a constitutional writ proceeding, an alternative statutory remedy does not automatically bar the High Court from granting relief."
+    }
+  ],
+  "seconds": 20.5
+}

@@ -1,0 +1,78 @@
+{
+  "doc_id": "147273",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18462,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2004,
+    "prompt_tokens": 5088,
+    "total_tokens": 7092,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appellate court may interfere with a conviction when vital prosecution evidence is afflicted with an obvious infirmity, notwithstanding its usual reluctance to reappraise evidence.",
+      "material_facts": [
+        "The conviction rested primarily on two witnesses and alleged recoveries of a weapon and ornaments.",
+        "The witnesses’ accounts were undermined by the unexplained delay in reporting the crime, and the recovery evidence was weakened by contradictions, an unexamined witness, and circumstances the Court found implausible."
+      ],
+      "conclusion": "The Court set aside the conviction and acquitted the accused because the vital prosecution evidence was too infirm to sustain it.",
+      "legal_principle": "In an appeal under Article 136 of the Constitution, the Court does not normally reappraise evidence, but may interfere with a conviction if consideration of vital prosecution evidence reveals an ex facie infirmity.",
+      "rule": {
+        "if": "constitutional_special_leave_criminal_appeal and vital_prosecution_evidence_ex_facie_infirm",
+        "then": "conviction_set_aside"
+      },
+      "predicates": {
+        "constitutional_special_leave_criminal_appeal": "The case is a criminal appeal brought by special leave to the constitutional court.",
+        "vital_prosecution_evidence_ex_facie_infirm": "The evidence central to the prosecution case has an obvious infirmity."
+      },
+      "definition": "When a criminal appeal brought by special leave presents an obvious infirmity in vital prosecution evidence, the conviction is set aside."
+    },
+    {
+      "legal_issue": "An unexplained delay in lodging the first information report may undermine the credibility of prosecution witnesses and make it unsafe to sustain a conviction on their evidence.",
+      "material_facts": [
+        "The prosecution alleged that one witness saw the assault and another arrived soon afterward.",
+        "The witnesses and other people said to have been informed about the occurrence made no report for more than twenty hours, although the police station was nearby.",
+        "The explanation that the village official was unavailable did not explain why no one else reported the crime directly to the police."
+      ],
+      "conclusion": "The unexplained delay raised considerable doubt about the witnesses’ veracity and rendered it unsafe to base the conviction on their evidence.",
+      "legal_principle": "A first information report is valuable for corroborating trial testimony and for promptly recording the circumstances of the offence, the alleged offenders, their roles, and the eyewitnesses. Delay may permit embellishment, afterthought, or a coloured or concocted account and therefore requires satisfactory explanation.",
+      "rule": {
+        "if": "criminal_trial and report_delayed_without_satisfactory_explanation and witnesses_or_informed_people_made_no_prompt_report and police_were_reasonably_accessible",
+        "then": "witness_evidence_unsafe_to_sustain_conviction"
+      },
+      "predicates": {
+        "criminal_trial": "The matter is a criminal trial in which the prosecution relies on witness testimony to establish guilt.",
+        "report_delayed_without_satisfactory_explanation": "The first report of the offence was not made promptly and the prosecution did not satisfactorily explain the delay.",
+        "witnesses_or_informed_people_made_no_prompt_report": "People said to have witnessed the offence or to have been promptly informed about it did not promptly report it to the police.",
+        "police_were_reasonably_accessible": "The police could reasonably have been reached by those who knew of the offence."
+      },
+      "definition": "In a criminal trial, when the report is unexplainedly delayed despite reasonably accessible police and witnesses or informed people do not report promptly, the witness evidence is unsafe to sustain a conviction."
+    },
+    {
+      "legal_issue": "Alleged recovery evidence is weakened when prosecution accounts conflict, an identified custodian is not examined, and the circumstances of the recovery are implausible.",
+      "material_facts": [
+        "Witnesses gave conflicting accounts of the person to whom the accused had entrusted the ornaments.",
+        "The person identified by one witness as the custodian was not examined, although the Court considered her testimony essential.",
+        "The alleged weapon was found without bloodstains, and the Court considered it unlikely that the accused would have brought it to the place where it was found after washing it."
+      ],
+      "conclusion": "The recovery evidence was doubtful and could not support maintaining the conviction when considered with the other infirmities in the prosecution case.",
+      "legal_principle": "A material contradiction in the account of a recovery, together with the prosecution’s failure to examine an essential witness, may warrant an inference against the prosecution; the recovery account must also be assessed against the surrounding circumstances.",
+      "rule": {
+        "if": "criminal_conviction_case and recovery_accounts_conflict and essential_custodian_not_examined and recovery_circumstances_are_implausible",
+        "then": "recovery_evidence_cannot_sustain_conviction"
+      },
+      "predicates": {
+        "criminal_conviction_case": "The prosecution relies on alleged recoveries as evidence supporting a criminal conviction.",
+        "recovery_accounts_conflict": "Prosecution witnesses give conflicting accounts about how or from whom the recovered property was obtained.",
+        "essential_custodian_not_examined": "The prosecution does not examine a person whose testimony is essential to resolving the recovery account.",
+        "recovery_circumstances_are_implausible": "The circumstances surrounding the alleged recovery are inconsistent with the prosecution’s account or appear unlikely."
+      },
+      "definition": "When recovery accounts conflict, an essential custodian is not examined, and the recovery circumstances are implausible, the recovery evidence cannot sustain a conviction."
+    }
+  ],
+  "seconds": 13.3
+}

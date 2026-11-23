@@ -1,0 +1,97 @@
+{
+  "doc_id": "448269",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15762,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2853,
+    "prompt_tokens": 4434,
+    "total_tokens": 7287,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A decree for possession obtained in a title-based suit against a lessee does not bind a recipient of the lessee's interest by gift as though the recipient were a sub-lessee.",
+      "material_facts": [
+        "A religious endowment's successor sued the heirs of a former lessee to recover property, alleging that the permanent lease was not binding on the endowment.",
+        "The earlier suit sought recovery on the basis of title and the heirs' alleged lack of title, rather than eviction for termination of a tenancy.",
+        "The lessee's successor had gifted the property to the recipient for a school, subject to a condition that it revert if the school ceased to exist or moved.",
+        "The recipient was dismissed from the earlier suit because it had been misdescribed."
+      ],
+      "conclusion": "The earlier decree did not bind the recipient, because the earlier suit was not a landlord's suit to evict a tenant and the recipient held under a gift, not a sublease.",
+      "legal_principle": "A sub-lessee may be bound by a decree for possession obtained by a lessor against a lessee where the ground for eviction also determines the sublease; the Court referred to Sailendra v. Bijan, 49 C.W.N. 133, and Yusuff v. Jyotish Chandra, I.L.R. 59 Cal. 739. That rule did not apply to a title-based recovery suit or to a recipient holding by gift rather than sublease.",
+      "rule": {
+        "if": "claim_relies_on_prior_ejectment_decree and prior_case_was_title_based_recovery and recipient_received_property_by_gift_not_sublease",
+        "then": "prior_decree_does_not_bind_recipient"
+      },
+      "predicates": {
+        "claim_relies_on_prior_ejectment_decree": "The claimant seeks to treat a recipient as bound by an earlier decree for possession against another holder.",
+        "prior_case_was_title_based_recovery": "The earlier case sought recovery based on the claimant's title and the opposing holder's alleged lack of title, rather than eviction for termination of a tenancy.",
+        "recipient_received_property_by_gift_not_sublease": "The recipient obtained the property by gift rather than by a sublease from the opposing holder."
+      },
+      "definition": "When a claimant relies on an earlier possession decree from a title-based recovery suit against a different holder and the recipient holds by gift rather than sublease, the earlier decree does not bind the recipient."
+    },
+    {
+      "legal_issue": "A suit to recover endowment property is not exempt from limitation where the relevant interest was transferred for valuable consideration.",
+      "material_facts": [
+        "The suit sought possession of property alleged to have been improperly alienated from a religious endowment.",
+        "The original permanent lease required rent, and the courts below found that the consideration was not illusory in light of conditions when the lease was made.",
+        "The claimant argued that the limitation bar was avoided because the property was trust property."
+      ],
+      "conclusion": "Section 10 of the Limitation Act did not assist the claimant: the transaction was for valuable consideration, so the recipient was not precluded from relying on the applicable limitation period.",
+      "legal_principle": "Section 10 of the Indian Limitation Act, 1908, applies to suits against a person in whom property has become vested in trust for a specific purpose, or that person's legal representatives or assigns, but excludes assigns for valuable consideration. The Court treated the word “assign” as wide enough to cover a lessee and held that the valuable-consideration exception applied here.",
+      "rule": {
+        "if": "trust_property_recovery_suit and relevant_transfer_was_for_valuable_consideration",
+        "then": "limitation_defense_is_available"
+      },
+      "predicates": {
+        "trust_property_recovery_suit": "The claimant brings a suit to recover property alleged to belong to a trust or religious endowment.",
+        "relevant_transfer_was_for_valuable_consideration": "The relevant transfer or lease was supported by consideration that was not illusory."
+      },
+      "definition": "In a suit to recover trust property, a transfer supported by valuable consideration leaves the limitation defense available."
+    },
+    {
+      "legal_issue": "Valuable consideration does not require consideration that is adequate in amount.",
+      "material_facts": [
+        "The permanent lease reserved rent that was low in comparison with the land's asserted potential value.",
+        "The courts below found that the rent was not illusory when assessed in light of the circumstances at the time of the transaction.",
+        "The claimant argued that the rent was too small to amount to valuable consideration."
+      ],
+      "conclusion": "The rent could constitute valuable consideration despite being alleged to be inadequate, because valuable consideration is not synonymous with adequate consideration.",
+      "legal_principle": "The expression “valuable consideration” has a settled legal meaning and is not synonymous with “adequate consideration.” The Court relied on the concurrent factual finding that the consideration was not illusory in the circumstances when the transaction took place.",
+      "rule": {
+        "if": "trust_property_limitation_suit and consideration_was_nonillusory and consideration_is_challenged_as_inadequate",
+        "then": "consideration_is_valuable"
+      },
+      "predicates": {
+        "trust_property_limitation_suit": "The proceeding concerns whether a limitation defense applies to a suit seeking recovery of trust or endowment property.",
+        "consideration_was_nonillusory": "The consideration had real value in light of the circumstances when the transaction took place.",
+        "consideration_is_challenged_as_inadequate": "A party argues that consideration is not valuable because its amount is too small relative to the property's asserted value."
+      },
+      "definition": "In a trust-property limitation suit, non-illusory consideration remains valuable even when its adequacy is challenged."
+    },
+    {
+      "legal_issue": "A suit governed by the applicable limitation period is barred when it is brought after that period has elapsed from the predecessor's death.",
+      "material_facts": [
+        "The claim sought possession of endowment property under a permanent lease alleged not to bind the endowment.",
+        "The courts below held that Article 134-B of the Limitation Act governed the suit and that its limitation period ran from the death of the relevant predecessor.",
+        "The suit was brought more than the applicable limitation period after that death."
+      ],
+      "conclusion": "The suit was barred by limitation, and the appeal was dismissed.",
+      "legal_principle": "Article 134-B of the Indian Limitation Act, 1908, governed the suit and prescribed a limitation period running from the death of the relevant predecessor. The Court upheld the concurrent conclusion that the suit was brought after that period had expired.",
+      "rule": {
+        "if": "endowment_property_possession_suit and suit_filed_after_limitation_period_from_predecessor_death",
+        "then": "suit_is_time_barred"
+      },
+      "predicates": {
+        "endowment_property_possession_suit": "The proceeding is a suit to recover possession of property alleged to belong to a religious endowment.",
+        "suit_filed_after_limitation_period_from_predecessor_death": "The suit was filed after the applicable limitation period had elapsed from the relevant predecessor's death."
+      },
+      "definition": "A suit to recover endowment property is time-barred when it is filed after the applicable limitation period has elapsed from the predecessor's death."
+    }
+  ],
+  "seconds": 18.4
+}

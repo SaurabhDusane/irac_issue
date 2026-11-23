@@ -1,0 +1,98 @@
+{
+  "doc_id": "1168625",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 60692,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3652,
+    "prompt_tokens": 15814,
+    "total_tokens": 19466,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A cultivating tenant with a qualifying eviction application pending on the statutory purchase date does not become the purchaser on that date.",
+      "material_facts": [
+        "The tenants were not permanent tenants and personally cultivated the leased lands.",
+        "Before the statutory purchase date, the landlord had filed an eviction application based on a claim that the land was required for personal cultivation; that application was still pending on the purchase date."
+      ],
+      "conclusion": "The tenants did not become purchasers on the initial statutory purchase date because the landlord’s pre-existing application was pending.",
+      "legal_principle": "Under section 32(1)(b)(i), (ii) and (iii) of the Bombay Tenancy and Agricultural Lands Act, 1948, read with its proviso, the listed conditions are not alternatives. For a non-permanent tenant who personally cultivates the land, the word “or” between clauses (ii) and (iii), read with the succeeding negatives, means “nor.” A pending application of either qualifying kind prevents purchase on the initial date; if it is later rejected, the proviso may defer purchase to the date of final rejection.",
+      "rule": {
+        "if": "statutory_tenant_purchase_proceeding and nonpermanent_tenant and tenant_personally_cultivates_land and qualifying_eviction_application_pending_on_purchase_date",
+        "then": "tenant_not_purchaser_on_initial_purchase_date"
+      },
+      "predicates": {
+        "statutory_tenant_purchase_proceeding": "A proceeding concerns whether a tenant cultivating leased agricultural land acquired ownership under a statutory purchase scheme.",
+        "nonpermanent_tenant": "The tenant held the land without being a permanent tenant.",
+        "tenant_personally_cultivates_land": "The tenant personally cultivated the leased land.",
+        "qualifying_eviction_application_pending_on_purchase_date": "The landlord had filed a qualifying application to recover possession, and it remained pending on the statutory purchase date."
+      },
+      "definition": "When a non-permanent tenant personally cultivates leased land in a statutory tenant-purchase proceeding and a qualifying eviction application is pending on the purchase date, the tenant does not become the purchaser on that initial date."
+    },
+    {
+      "legal_issue": "An eviction application filed after the statutory purchase date is not maintainable, even if the tenant has not yet acquired ownership because an earlier qualifying eviction application is pending.",
+      "material_facts": [
+        "The landlord filed an application based on non-payment of rent after the statutory purchase date.",
+        "A different application based on the landlord’s claim to personal cultivation had been filed before that date and remained pending.",
+        "The later application was pending when the statutory amendment took effect."
+      ],
+      "conclusion": "The later eviction application was not maintainable; the statutory amendment saved applications pending on the purchase date and, by necessary implication, barred applications filed after that date.",
+      "legal_principle": "Section 32, as amended by Bombay Act 38 of 1957 and given retrospective effect by section 34 of that Act, preserves applications pending on the statutory purchase date and bars applications filed on or after that date. The Court adopted the reasoning of the Full Bench in Ramchandra Anant v. Janardan, which concluded that later applications could not affect the tenant’s statutory purchase rights.",
+      "rule": {
+        "if": "statutory_tenant_purchase_proceeding and eviction_application_filed_after_purchase_date",
+        "then": "later_eviction_application_not_maintainable"
+      },
+      "predicates": {
+        "statutory_tenant_purchase_proceeding": "A proceeding concerns whether a tenant cultivating leased agricultural land acquired ownership under a statutory purchase scheme.",
+        "eviction_application_filed_after_purchase_date": "The landlord filed an application to recover possession after the date on which the statutory scheme made the tenant’s purchase rights effective."
+      },
+      "definition": "In a statutory tenant-purchase proceeding, an eviction application filed after the purchase date is not maintainable."
+    },
+    {
+      "legal_issue": "A tenant who has ceased to be a tenant under a final operative eviction order cannot obtain a postponed statutory purchase by relying on the later rejection of a separate eviction application.",
+      "material_facts": [
+        "The Mamlatdar allowed the landlord’s later-filed eviction application and ordered possession delivered to the landlord.",
+        "The tenants did not appeal that order, and the Collector’s later attempt to reverse it was without jurisdiction.",
+        "The landlord subsequently withdrew the earlier eviction application that had been pending on the statutory purchase date; the withdrawal amounted in law to rejection of that application."
+      ],
+      "conclusion": "The tenants could not claim to have purchased the lands on the postponed date because the operative eviction order had caused them to cease to be tenants before the earlier application was withdrawn.",
+      "legal_principle": "Under the proviso to section 32 and the definition of “tenant” in section 2(18) of the Act, a tenant may acquire the land on the postponed date when the qualifying application is finally rejected. But a person who has already ceased to be a tenant under a final, operative order cannot claim that benefit. The Court treated the Mamlatdar’s order as an order of a competent tribunal despite its error in allowing the later-filed application.",
+      "rule": {
+        "if": "statutory_tenant_purchase_proceeding and eviction_order_remained_final_and_operative and tenant_ceased_to_be_tenant_before_earlier_application_was_rejected",
+        "then": "tenant_cannot_claim_postponed_purchase"
+      },
+      "predicates": {
+        "statutory_tenant_purchase_proceeding": "A proceeding concerns whether a tenant cultivating leased agricultural land acquired ownership under a statutory purchase scheme.",
+        "eviction_order_remained_final_and_operative": "A competent authority’s order for eviction remained in force and was not set aside through a valid appeal or revision.",
+        "tenant_ceased_to_be_tenant_before_earlier_application_was_rejected": "The eviction order caused the person to cease to be a tenant before a separate pending eviction application was later rejected or withdrawn."
+      },
+      "definition": "When an operative eviction order has caused a person to cease to be a tenant before a separate pending application is rejected, that person cannot claim a postponed purchase in a statutory tenant-purchase proceeding."
+    },
+    {
+      "legal_issue": "A Collector cannot reopen a final revisional decision when the statute confers no power of review.",
+      "material_facts": [
+        "The tenants sought revision of the Mamlatdar’s eviction order after the appeal period had expired.",
+        "The Collector called for the record, then rejected the revision applications before the record arrived, deciding that there was no ground to interfere.",
+        "After receiving the record and hearing the parties, the Collector later reversed the Mamlatdar’s order."
+      ],
+      "conclusion": "The Collector’s earlier refusals were final quasi-judicial orders, and the later reversal was illegal, ultra vires and without jurisdiction because the Act did not authorize review.",
+      "legal_principle": "Section 76A of the Act permits the Collector to exercise revisional jurisdiction where no appeal has been filed. The Collector may refuse to interfere on the materials before him without first receiving the record, even if he has called for it; such a refusal is a final quasi-judicial order. Because the Act gives no power to review that order, the Collector cannot later reopen it and reverse the decision.",
+      "rule": {
+        "if": "statutory_revisional_proceeding and collector_made_final_refusal_to_interfere and collector_later_reopened_same_decision and no_review_power_conferred",
+        "then": "later_revisional_order_without_jurisdiction"
+      },
+      "predicates": {
+        "statutory_revisional_proceeding": "A proceeding asks an administrative authority to revise a lower tribunal’s order after the ordinary appeal period has expired.",
+        "collector_made_final_refusal_to_interfere": "The Collector decided that the lower tribunal’s order did not warrant revision and refused to alter it.",
+        "collector_later_reopened_same_decision": "The Collector later reconsidered the same matter and made a different revisional decision.",
+        "no_review_power_conferred": "The governing law did not authorize the Collector to review a final revisional decision."
+      },
+      "definition": "When the Collector has finally refused to interfere in a revisional proceeding, later reopening that decision is without jurisdiction if no review power was conferred."
+    }
+  ],
+  "seconds": 23.5
+}

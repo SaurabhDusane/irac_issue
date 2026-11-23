@@ -1,0 +1,79 @@
+{
+  "doc_id": "1411224",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 6915,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2504,
+    "prompt_tokens": 2149,
+    "total_tokens": 4653,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court hearing a statutory reference may not decide legal questions that were not referred to it by the tribunal.",
+      "material_facts": [
+        "The tribunal referred a question about whether income from property transferred to the assessee’s wife for consideration could be assessed as the assessee’s income.",
+        "The referred question proceeded on the basis that the transfer was valid.",
+        "The High Court reframed the matter to address whether an oral transfer in satisfaction of dower debt was legally possible, as well as whether the income was assessable.",
+        "The High Court did not call for a fresh statement of the case from the tribunal."
+      ],
+      "conclusion": "The High Court exceeded its jurisdiction by raising and deciding questions that did not flow from the question referred. If the referred question did not identify the real issue, the High Court could have called for a fresh statement of the case.",
+      "legal_principle": "Under Section 66(1) of the Indian Income-tax Act, 1922, the High Court’s role in a reference is limited to giving its opinion on questions of law referred by the tribunal. If the question referred does not bring out the real issue, the High Court may call for a fresh statement of the case rather than decide unreferenced questions.",
+      "rule": {
+        "if": "statutory_reference_proceeding and (court_decides_unreferred_question or court_reframes_question_beyond_referred_issue)",
+        "then": "reference_court_cannot_decide_unreferred_question"
+      },
+      "predicates": {
+        "statutory_reference_proceeding": "A tribunal has referred a question of law to a court for an opinion under a statutory reference procedure.",
+        "court_decides_unreferred_question": "The court decides a legal question that the tribunal did not refer.",
+        "court_reframes_question_beyond_referred_issue": "The court reframes the referred question to address an issue that does not flow from it."
+      },
+      "definition": "When a court is deciding a statutory reference and decides a question outside the referred issue, it cannot decide that question."
+    },
+    {
+      "legal_issue": "An appellate court reviewing a decision made in a statutory reference has no wider authority to consider issues than the reference court.",
+      "material_facts": [
+        "The department argued before the Supreme Court that the transfer was invalid and that the account of the transaction was unbelievable.",
+        "The validity and evidentiary support of the transfer were not questions referred to the High Court.",
+        "The appeal arose from the High Court’s decision in a statutory reference."
+      ],
+      "conclusion": "The Supreme Court could not consider the department’s arguments about the transfer’s invalidity or credibility because its jurisdiction was subject to the same limits as the High Court’s jurisdiction in the reference.",
+      "legal_principle": "In an appeal from a High Court’s decision on a reference under Section 66(1) of the Indian Income-tax Act, 1922, the Supreme Court’s advisory jurisdiction is no more extensive than the High Court’s; it cannot consider questions outside the reference.",
+      "rule": {
+        "if": "appeal_from_statutory_reference and disputed_issue_outside_referred_question",
+        "then": "appellate_court_cannot_consider_unreferred_issue"
+      },
+      "predicates": {
+        "appeal_from_statutory_reference": "An appeal arises from a court’s decision on a question referred under a statutory reference procedure.",
+        "disputed_issue_outside_referred_question": "A party asks the appellate court to decide an issue that was not included in the question referred."
+      },
+      "definition": "In an appeal from a statutory reference, an appellate court cannot consider a disputed issue that was not part of the referred question."
+    },
+    {
+      "legal_issue": "Income from property transferred to a spouse for consideration in discharge of a dower debt does not fall within the statutory rule attributing to the transferor income from property transferred to a spouse without adequate consideration, if the transfer is valid and the findings supporting it are correct.",
+      "material_facts": [
+        "The tribunal found that the assessee had validly transferred the property to his wife in consideration of an increased dower debt.",
+        "The tribunal found that the wife had been in possession of the property since the transfer.",
+        "The referred question proceeded on the basis that the transfer was valid and made for consideration."
+      ],
+      "conclusion": "On the premise that the tribunal’s factual and legal findings were correct, the income from the transferred property could not be included in the assessee’s income under Section 16(3)(a)(iii) of the Indian Income-tax Act, 1922.",
+      "legal_principle": "Section 16(3)(a)(iii) of the Indian Income-tax Act, 1922, does not apply to attribute to a transferor income from property validly transferred to a spouse for consideration; the Court’s observation was conditional on the tribunal’s findings being correct.",
+      "rule": {
+        "if": "income_tax_attribution_proceeding and valid_property_transfer_to_spouse and transfer_discharged_dower_debt and income_arose_from_transferred_property",
+        "then": "income_not_attributable_to_transferor"
+      },
+      "predicates": {
+        "income_tax_attribution_proceeding": "A proceeding concerns whether income from property should be attributed to the person who transferred it.",
+        "valid_property_transfer_to_spouse": "A person validly transferred property to their spouse.",
+        "transfer_discharged_dower_debt": "The property transfer was made in satisfaction of a dower debt owed to the spouse.",
+        "income_arose_from_transferred_property": "The income at issue arose from the property transferred to the spouse."
+      },
+      "definition": "If income arose from property validly transferred to a spouse in satisfaction of a dower debt, the income is not attributed to the transferor in an income-tax attribution proceeding."
+    }
+  ],
+  "seconds": 15.3
+}

@@ -1,0 +1,120 @@
+{
+  "doc_id": "857943",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9912,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2658,
+    "prompt_tokens": 2902,
+    "total_tokens": 5560,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A plaintiff who cannot recover possession by proving an unregistered oral mortgage may recover on title when the defendant claims only permissive possession as a tenant and does not claim ownership by adverse possession, unless the defendant has become a tenant under applicable land-reform law.",
+      "material_facts": [
+        "The plaintiffs pleaded title to the land and expressly sought possession on that basis as an alternative to their claim under an oral mortgage.",
+        "The defendant denied being a mortgagee and claimed permissive possession as a tenant, but did not claim ownership by adverse possession.",
+        "The lower appellate court found that the defendant and his predecessor had not been inducted as tenants.",
+        "Whether the defendant had become a tenant under the land-reform measure remained to be determined."
+      ],
+      "conclusion": "The plaintiffs may obtain possession on the strength of their title if the defendant is found not to have become a tenant under the applicable land-reform measure; that question was remitted to the High Court.",
+      "legal_principle": "A plaintiff unable to prove an oral mortgage for want of registration may recover possession on the strength of title. The Court relied on Ma Kyl v. Maung Thon, AIR 1935 Rang 230 (FB), and Hansia v. Bakhtawarmal. A defendant who asserts only permissive possession under the plaintiff and does not claim adverse ownership does not defeat the plaintiff's title-based claim unless the defendant has tenancy rights under applicable land-reform law.",
+      "rule": {
+        "if": "title_based_possession_claim and defendant_claims_permissive_possession and not defendant_claims_adverse_ownership and lower_court_found_no_induction_as_tenant and land_reform_tenancy_status_unresolved",
+        "then": "possession_on_title_if_no_land_reform_tenancy"
+      },
+      "predicates": {
+        "title_based_possession_claim": "The plaintiff pleaded title to the property and sought possession on that basis.",
+        "defendant_claims_permissive_possession": "The defendant claimed possession derived from the plaintiff rather than ownership independent of the plaintiff.",
+        "defendant_claims_adverse_ownership": "The defendant asserted ownership acquired by adverse possession.",
+        "lower_court_found_no_induction_as_tenant": "The lower court found that the defendant was not originally inducted into the property as a tenant.",
+        "land_reform_tenancy_status_unresolved": "Whether the defendant later acquired tenancy rights under a land-reform measure remained undecided."
+      },
+      "definition": "When a plaintiff relies on title, the defendant claims only permissive possession, no original tenancy was found, and any later statutory tenancy remains unresolved, possession on title follows if that later tenancy is not established."
+    },
+    {
+      "legal_issue": "A High Court hearing a second appeal may not displace a lower appellate court's factual finding on tenancy without a cogent basis showing that the finding is perverse or affected by a material infirmity.",
+      "material_facts": [
+        "The lower appellate court considered oral and documentary evidence and found that the defendant had failed to prove possession as a lessee.",
+        "The defendant and his predecessor had made statements describing possession under a mortgage.",
+        "The High Court displaced the lower appellate court's finding, relying in part on an inference drawn from the plaintiffs' pleading and documents from proceedings to which the plaintiffs were not parties.",
+        "The Supreme Court found no perversity or other infirmity in the lower appellate court's finding."
+      ],
+      "conclusion": "The High Court should not have interfered with the lower appellate court's finding that the defendant and his predecessor were not inducted as tenants.",
+      "legal_principle": "A factual finding of the lower appellate court in a second appeal is not to be disturbed absent perversity or a material infirmity warranting intervention. On the facts here, the High Court had no cogent basis to replace the finding reached after appraisal of the evidence.",
+      "rule": {
+        "if": "second_appeal_proceeding and lower_appellate_factual_finding and finding_based_on_evidence and not finding_perverse_or_materially_infirm",
+        "then": "high_court_must_leave_factual_finding_undisturbed"
+      },
+      "predicates": {
+        "second_appeal_proceeding": "The matter before the High Court was a second appeal.",
+        "lower_appellate_factual_finding": "The lower appellate court made a finding of fact on whether the defendant was a tenant.",
+        "finding_based_on_evidence": "The lower appellate court reached its finding after considering oral and documentary evidence.",
+        "finding_perverse_or_materially_infirm": "The lower appellate court's finding was perverse or affected by a material infirmity."
+      },
+      "definition": "In a second appeal, an evidence-based factual finding that is not perverse or materially infirm must be left undisturbed by the High Court."
+    },
+    {
+      "legal_issue": "A party's admission describing possession under a mortgage may be admitted to show that the party was not claiming possession as a tenant, although it cannot be used to prove the terms of an oral mortgage.",
+      "material_facts": [
+        "A document recorded an admission by the defendant's predecessor that he possessed the land under a usufructuary mortgage.",
+        "Another document recorded the defendant's own admission that he possessed the land under a mortgage.",
+        "The plaintiffs relied on these admissions to show that neither the defendant nor his predecessor claimed possession as a tenant."
+      ],
+      "conclusion": "The admissions were admissible to show that the defendant and his predecessor were not claiming possession as tenants, but were not admissible to prove the terms of the oral mortgage.",
+      "legal_principle": "An admission concerning the character of possession may be used to show that possession was not claimed as a tenancy, even where the document cannot prove the terms of an oral mortgage.",
+      "rule": {
+        "if": "possession_status_admission and offered_to_show_no_tenant_claim",
+        "then": "admission_admissible_for_possession_status_only"
+      },
+      "predicates": {
+        "possession_status_admission": "A party or predecessor made an admission describing the character of possession over the property.",
+        "offered_to_show_no_tenant_claim": "The admission was offered to show that the possessor was not claiming possession as a tenant."
+      },
+      "definition": "An admission about the character of possession may establish that no tenancy was claimed, but it does not establish the terms of an oral mortgage."
+    },
+    {
+      "legal_issue": "Documents from a sale and execution proceeding cannot be used against persons who were not parties to that proceeding.",
+      "material_facts": [
+        "The High Court relied on a sale certificate and a document recording delivery of possession pursuant to that certificate.",
+        "The plaintiffs were not parties to the suit or execution proceedings against the defendant's predecessor."
+      ],
+      "conclusion": "The sale certificate and delivery document could not be used against the plaintiffs.",
+      "legal_principle": "A document arising from a suit or execution proceeding cannot be used against persons who were not parties to those proceedings.",
+      "rule": {
+        "if": "document_from_prior_proceeding and person_was_not_party_to_prior_proceeding",
+        "then": "document_cannot_be_used_against_nonparty"
+      },
+      "predicates": {
+        "document_from_prior_proceeding": "The document was issued or created in connection with an earlier suit or execution proceeding.",
+        "person_was_not_party_to_prior_proceeding": "The person against whom the document is used was not a party to that earlier proceeding."
+      },
+      "definition": "A document from an earlier proceeding cannot be used against a person who was not a party to that proceeding."
+    },
+    {
+      "legal_issue": "A tenancy claim based on a land-reform measure that was not raised before the High Court should be decided by the High Court in the first instance on remand.",
+      "material_facts": [
+        "The defendant argued before the Supreme Court that he had become a tenant under the land-reform measure.",
+        "The defendant had not raised that point before the High Court.",
+        "The question could affect whether the plaintiffs were entitled to possession on the strength of their title."
+      ],
+      "conclusion": "The case was remitted to the High Court to decide whether the defendant had become a tenant under the land-reform measure and to dispose of the second appeal accordingly.",
+      "legal_principle": "Where a potentially decisive statutory-tenancy question was not raised before the High Court, the question should be determined there in the first instance on remand.",
+      "rule": {
+        "if": "second_appeal_proceeding and land_reform_tenancy_issue_first_raised_in_supreme_court and issue_affects_entitlement_to_possession",
+        "then": "remand_for_high_court_to_decide_tenancy_issue"
+      },
+      "predicates": {
+        "second_appeal_proceeding": "The case reached the Supreme Court from a High Court decision in a second appeal.",
+        "land_reform_tenancy_issue_first_raised_in_supreme_court": "The claimed tenancy under a land-reform measure was raised for the first time before the Supreme Court.",
+        "issue_affects_entitlement_to_possession": "The tenancy question could determine whether the plaintiff was entitled to possession."
+      },
+      "definition": "When a potentially decisive land-reform tenancy issue is first raised before the Supreme Court in a case from a second appeal, the matter is remitted for the High Court to decide that issue."
+    }
+  ],
+  "seconds": 15.1
+}

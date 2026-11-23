@@ -1,0 +1,102 @@
+{
+  "doc_id": "1424394",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20186,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2879,
+    "prompt_tokens": 5633,
+    "total_tokens": 8512,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant relying on a court deposit of rent must establish in the eviction proceeding that a statutory ground for depositing the rent existed; permission to deposit alone does not protect the tenant from eviction for default.",
+      "material_facts": [
+        "The tenant had arrears of rent and relied on a court order permitting him to deposit rent.",
+        "The tenant asserted that the landlord had refused rent tendered by hand and by money order.",
+        "The trial court did not accept the tenant’s testimony about the refusals, and the evidence relied on by the first appellate court did not establish that the landlord had refused lawful tender.",
+        "The eviction court therefore found that the requirements for a valid deposit had not been established."
+      ],
+      "conclusion": "The tenant was required to prove in the eviction suit that the landlord had refused rent lawfully tendered, or that a bona fide doubt or dispute existed about who was entitled to receive it. Permission to deposit rent did not by itself absolve the tenant from liability for eviction; because the statutory grounds were not established, the tenant remained liable to eviction.",
+      "legal_principle": "Section 7C of the United Provinces (Temporary) Control of Rent and Eviction Act, 1947 permits a tenant to deposit rent when the landlord refuses rent lawfully tendered or when a bona fide doubt or dispute arises about the person entitled to receive it. A deposit satisfying those requirements amounts to payment to the landlord, but permission to deposit does not establish that the requirements were actually met. The tenant must establish the relevant facts in the eviction suit. No earlier cases are relied on.",
+      "rule": {
+        "if": "eviction_suit and court_deposit_permission and not proved_lawful_tender_refusal and not bona_fide_recipient_dispute",
+        "then": "tenant_not_protected_from_eviction"
+      },
+      "predicates": {
+        "eviction_suit": "The proceeding is a suit seeking eviction for non-payment of rent.",
+        "court_deposit_permission": "A court permitted the tenant to deposit rent.",
+        "proved_lawful_tender_refusal": "The tenant established in the eviction proceeding that the landlord refused rent lawfully tendered to the landlord.",
+        "bona_fide_recipient_dispute": "A genuine doubt or dispute existed about who was entitled to receive the rent.",
+        "tenant_not_protected_from_eviction": "The tenant is not protected from eviction on the basis of the rent deposit."
+      },
+      "definition": "If an eviction suit involves a court-authorized rent deposit but the tenant proves neither refusal of lawful tender nor a genuine dispute about the rent recipient, the tenant is not protected from eviction by the deposit."
+    },
+    {
+      "legal_issue": "An order permitting rent to be deposited does not prevent the court hearing an eviction suit from examining whether the deposit met the statutory requirements.",
+      "material_facts": [
+        "The tenant obtained permission from a court to deposit rent after an application alleging a statutory basis for the deposit.",
+        "The permission order did not determine whether the landlord had in fact refused lawful tender.",
+        "The landlord’s lack of objection in the deposit proceeding did not establish that the statutory requirements had been satisfied."
+      ],
+      "conclusion": "The order permitting the deposit was not conclusive in the eviction suit. The court hearing that suit could examine the validity of the deposit and whether the statutory requirements had been met.",
+      "legal_principle": "Section 7C of the United Provinces (Temporary) Control of Rent and Eviction Act, 1947 does not require the court receiving a deposit application to determine whether the pleaded allegations are true before permitting the deposit. The court hearing a later eviction suit is not precluded from examining the deposit’s validity. No earlier cases are relied on.",
+      "rule": {
+        "if": "eviction_suit and deposit_permission_granted_without_factual_inquiry",
+        "then": "eviction_court_may_review_deposit_validity"
+      },
+      "predicates": {
+        "eviction_suit": "The proceeding is a suit seeking eviction for non-payment of rent.",
+        "deposit_permission_granted_without_factual_inquiry": "A court permitted the rent deposit without determining whether the allegations supporting it were true.",
+        "eviction_court_may_review_deposit_validity": "The court hearing the eviction suit may examine whether the rent deposit was valid."
+      },
+      "definition": "When an eviction suit follows permission to deposit rent granted without a determination of the underlying facts, the eviction court may examine the validity of the deposit."
+    },
+    {
+      "legal_issue": "The court must notify the landlord of a rent deposit after the deposit is made, and the statutory procedure does not require notice before permission to deposit is granted.",
+      "material_facts": [
+        "The deposit court’s order recited that the landlord had been served with notice before permission was granted.",
+        "The governing provision directed the court to cause notice of the deposit to be served on the landlord once a deposit had been made.",
+        "The provision contained no requirement for notice to the landlord before permission to deposit."
+      ],
+      "conclusion": "The contemplated notice is notice of the deposit served after the deposit is made; the provision does not require advance notice before permission is granted.",
+      "legal_principle": "Section 7C(4) of the United Provinces (Temporary) Control of Rent and Eviction Act, 1947 requires the court to cause notice of a deposit to be served on the landlord after the deposit is made. It does not provide for notice before permission to deposit. No earlier cases are relied on.",
+      "rule": {
+        "if": "rent_deposited_in_court",
+        "then": "court_serves_landlord_notice_after_deposit"
+      },
+      "predicates": {
+        "rent_deposited_in_court": "The tenant made a rent deposit in court.",
+        "court_serves_landlord_notice_after_deposit": "The court serves the landlord with notice of the deposit after it is made."
+      },
+      "definition": "When rent is deposited in court, the court serves the landlord with notice after the deposit."
+    },
+    {
+      "legal_issue": "A finding of fact in a first appeal may be reversed in second appeal when it rests on speculation rather than evidence in the record.",
+      "material_facts": [
+        "The first appellate court inferred that the landlord had refused rent based on the deposit permission and circumstances said to suggest the landlord might have been annoyed.",
+        "The tenant’s testimony was not accepted by the trial court, and the first appellate court did not categorically state that it believed that testimony.",
+        "The tenant did not produce the postal receipts or the landlord’s son, who was said to have witnessed the tender.",
+        "The High Court concluded that the first appellate finding rested on surmises and conjectures rather than the record."
+      ],
+      "conclusion": "The High Court was justified in reversing the first appellate court’s finding because it was legally vitiated by reliance on surmises and conjectures rather than supporting evidence.",
+      "legal_principle": "A factual finding based on surmises and conjectures rather than evidence on the record is vitiated in law and may be reversed in second appeal. No statutory provision or earlier case is relied on for this ruling.",
+      "rule": {
+        "if": "second_appeal and first_appellate_finding_based_on_speculation and record_lacks_supporting_evidence",
+        "then": "high_court_may_reverse_finding"
+      },
+      "predicates": {
+        "second_appeal": "The proceeding is a second appeal.",
+        "first_appellate_finding_based_on_speculation": "The first appellate court based its factual finding on inference or conjecture rather than a supported assessment of evidence.",
+        "record_lacks_supporting_evidence": "The record contains no adequate evidence supporting the factual finding.",
+        "high_court_may_reverse_finding": "The High Court may reverse the unsupported factual finding."
+      },
+      "definition": "In a second appeal, a speculative factual finding unsupported by the record may be reversed by the High Court."
+    }
+  ],
+  "seconds": 17.8
+}

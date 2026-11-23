@@ -1,0 +1,96 @@
+{
+  "doc_id": "1624730",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16978,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2531,
+    "prompt_tokens": 4778,
+    "total_tokens": 7309,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person opposing a grant of probate must substantiate an interest in the estate that may be affected by the will.",
+      "material_facts": [
+        "The petitioner opposed letters of administration on the ground that the proposed will was fictitious and would exclude the deceased’s daughter from the estate.",
+        "The petitioner claimed an interest through a will and a gift deed said to have been made by the daughter, but neither the original nor a copy of either document was filed.",
+        "Evidence showed that the trust relied on by the petitioner had ended and was no longer in existence, leaving her with no existing benefit from it."
+      ],
+      "conclusion": "The petitioner did not establish a caveatable interest, and the courts below were right to strike off her caveat.",
+      "legal_principle": "Under sections 283–285 of the Indian Succession Act, 1925, interested persons may be cited and may lodge a caveat against a grant. A real interest that may be adversely affected by a will is sufficient; even a slight interest or a bare possibility may suffice. The Court referred to Nabin Chandra Guha v. Nibaran Chandra Biswas, Gourishankar Chattoraj v. Satyabati Debi, Shanti Devi Aggarwalla v. Kusum Kumari Sarkar, and Narayan Sah v. Smt. Devaki. The asserted interest must nevertheless be supported by material establishing it.",
+      "rule": {
+        "if": "probate_grant_opposition and claimed_interest_depends_on_unfiled_documents and trust_benefit_has_ended",
+        "then": "caveatable_interest_not_established"
+      },
+      "predicates": {
+        "probate_grant_opposition": "A person opposed an application for a grant of probate or letters of administration.",
+        "claimed_interest_depends_on_unfiled_documents": "The opponent relied on documents said to confer an interest in the estate, but did not file the documents or copies of them.",
+        "trust_benefit_has_ended": "The trust relied on by the opponent had ended, and the opponent had no existing benefit from it."
+      },
+      "definition": "When an opponent in a probate-grant proceeding relies on unfiled documents to establish an interest and has no existing benefit from a trust also relied on, the claimed caveatable interest is not established."
+    },
+    {
+      "legal_issue": "A later grant of probate relied on to establish an opponent’s interest need not be acknowledged to reopen a pending challenge to the caveat ruling where interested persons’ citations are uncertain and the other party had no notice.",
+      "material_facts": [
+        "While the special leave petition was pending, a court granted probate of the daughter’s will, which the petitioner relied on to establish an interest in the estate.",
+        "The Court did not know whether citations had been issued to all interested persons.",
+        "The respondent had no notice of the later probate proceedings."
+      ],
+      "conclusion": "The Court declined to acknowledge the later probate proceeding or reopen the matter on that basis.",
+      "legal_principle": "Section 227 of the Indian Succession Act, 1925 provides for the effect of probate, including that probate establishes the will from the testator’s death and validates intermediate acts of the executor. The Court declined to give the later grant that effect in this pending proceeding, given the uncertainty about citations and the absence of notice to the respondent.",
+      "rule": {
+        "if": "probate_caveat_challenge_pending and later_probate_relied_on_to_establish_interest and (interested_persons_citations_uncertain or opposing_party_had_no_notice)",
+        "then": "later_probate_not_used_to_reopen_caveat_challenge"
+      },
+      "predicates": {
+        "probate_caveat_challenge_pending": "A challenge to a ruling about a caveat in a probate-grant proceeding remained pending.",
+        "later_probate_relied_on_to_establish_interest": "A party relied on a probate granted later to establish an interest in the estate relevant to the pending challenge.",
+        "interested_persons_citations_uncertain": "It was unknown whether all interested persons had been notified of the later probate proceedings.",
+        "opposing_party_had_no_notice": "The opposing party had not received notice of the later probate proceedings."
+      },
+      "definition": "If a later probate is relied on to establish an interest in a pending caveat challenge, but interested-person citations are uncertain or the opposing party had no notice, the later probate is not used to reopen that challenge."
+    },
+    {
+      "legal_issue": "Granting probate does not decide title to the estate, and findings about caveatable interest in the grant proceeding do not foreclose an application to revoke the grant for just cause.",
+      "material_facts": [
+        "The petitioner argued that findings rejecting her caveatable interest would impede her from seeking revocation of the letters of administration.",
+        "The Court stated that probate does not decide disputes about title and that a grant may be revoked for just cause.",
+        "The Court stated that the findings on caveatable interest had a limited effect and were relevant only to the grant proceeding."
+      ],
+      "conclusion": "The findings on caveatable interest did not deprive the petitioner of the right to invoke the statutory jurisdiction to seek revocation, if she had grounds to do so.",
+      "legal_principle": "Under section 263 of the Indian Succession Act, 1925, a probate grant may be revoked for just cause. Granting probate does not adjudicate disputes over title, and findings on caveatable interest in the grant proceeding are limited to that proceeding.",
+      "rule": {
+        "if": "probate_grant_or_probate_grant_proceeding and title_dispute_or_caveatable_interest_finding",
+        "then": "probate_does_not_determine_title_or_bar_revocation_application"
+      },
+      "predicates": {
+        "probate_grant_or_probate_grant_proceeding": "A court has granted probate or is considering an issue arising from a probate-grant proceeding.",
+        "title_dispute_or_caveatable_interest_finding": "A party asserts a dispute over title to the estate or relies on findings about caveatable interest in the grant proceeding."
+      },
+      "definition": "A probate grant or a finding about caveatable interest in the grant proceeding does not determine title or bar an application to revoke the grant."
+    },
+    {
+      "legal_issue": "A subordinate court empowered to act as a District Delegate may exercise the jurisdiction conferred on that delegate in a probate proceeding.",
+      "material_facts": [
+        "The petitioner challenged the Subordinate Court’s jurisdiction.",
+        "A necessary High Court notification conferring the relevant powers on the Subordinate Court had been issued, and its existence was not disputed."
+      ],
+      "conclusion": "The Court rejected the jurisdictional challenge because the necessary notification conferred powers on the Subordinate Court.",
+      "legal_principle": "Sections 286 and 288 of the Indian Succession Act, 1925 describe the District Delegate’s powers and duties where there is contention or probate or letters of administration ought not to be granted. The Subordinate Court had been conferred the necessary powers by a High Court notification.",
+      "rule": {
+        "if": "probate_proceeding and subordinate_court_has_delegated_authority",
+        "then": "subordinate_court_has_jurisdiction"
+      },
+      "predicates": {
+        "probate_proceeding": "A matter concerning a grant of probate or letters of administration is before a subordinate court.",
+        "subordinate_court_has_delegated_authority": "The subordinate court has been given the relevant authority to act in the matter by a competent court."
+      },
+      "definition": "In a probate proceeding, a subordinate court that has been given the relevant authority has jurisdiction to act."
+    }
+  ],
+  "seconds": 16.1
+}

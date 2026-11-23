@@ -1,0 +1,81 @@
+{
+  "doc_id": "145937302",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 51151,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3101,
+    "prompt_tokens": 12371,
+    "total_tokens": 15472,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant in an eviction and rent-recovery suit remains obliged to deposit rent or compensation for use and occupation even when denying the plaintiff’s title or the landlord-tenant relationship, unless the tenant establishes lawful and bona fide payment.",
+      "material_facts": [
+        "The defendant did not deny being a tenant of the shop, but denied that the plaintiff was his landlord and disputed her ownership and the identity of the property she had purchased.",
+        "The defendant did not deposit rent on the first hearing or regularly deposit the amounts accruing during the suit, and the courts found no evidence of payment to the plaintiff."
+      ],
+      "conclusion": "Denial of title or of the landlord-tenant relationship did not, by itself, relieve the defendant of the obligation to deposit rent; he had to establish lawful and bona fide payment to avoid that obligation.",
+      "legal_principle": "Order XV Rule 5(1) CPC, as applicable in Uttar Pradesh, requires a defendant in a lessor’s suit for eviction and recovery of rent or compensation to deposit admitted arrears by the first hearing and regularly deposit monthly amounts during the suit whether or not the defendant admits an amount is due. A tenant’s simple denial of title or of the landlord-tenant relationship does not excuse those deposits. The Court distinguished the situation in Kunwar Baldevji v. XI Additional District Judge, Bulandshahar, and referred to Hisamul Islam Siddiqui v. Mohd. Javed Barki in considering a tenant who had not denied tenant status.",
+      "rule": {
+        "if": "eviction_and_rent_recovery_suit and defendant_is_tenant and tenant_denies_landlord_relationship and no_lawful_bona_fide_rent_payment",
+        "then": "tenant_must_deposit_rent_during_suit"
+      },
+      "predicates": {
+        "eviction_and_rent_recovery_suit": "The lessor sought eviction and recovery of rent or compensation for use and occupation from the defendant.",
+        "defendant_is_tenant": "The defendant did not deny being a tenant of the premises.",
+        "tenant_denies_landlord_relationship": "The defendant disputed that the plaintiff was his landlord or owned the premises.",
+        "no_lawful_bona_fide_rent_payment": "The defendant did not establish that rent had been paid lawfully and in good faith."
+      },
+      "definition": "When a tenant in an eviction and rent-recovery suit denies the landlord’s relationship but has not established lawful and bona fide payment, the tenant must deposit rent during the suit."
+    },
+    {
+      "legal_issue": "The power to strike off a tenant’s defence for failure to deposit rent is discretionary, but deliberate default without a good and adequate reason warrants striking off the defence.",
+      "material_facts": [
+        "The defendant made no deposit on the first hearing and did not regularly deposit rent during the suit.",
+        "The trial and revisional courts found no evidence of payment to the plaintiff; the Supreme Court found the defendant’s conduct showed volitional non-performance and no good reason for relaxation.",
+        "The High Court set aside the strike-off order while finding no bona fide character in the defendant’s pleas, and the Supreme Court held that its grant of indulgence was unsupported by reasons."
+      ],
+      "conclusion": "The High Court’s order was set aside and the trial court’s order striking off the defence was restored.",
+      "legal_principle": "Under Order XV Rule 5(1) and (2) CPC, the word “may” gives the court discretion; striking off a defence is not mandatory on every default. Under Bimal Chand Jain v. Sri Gopal Agarwal, the court must consider a timely representation and may also rely on good reason apparent from the record. The discretion must be exercised with circumspection, not mechanically, but a deliberate or wilful default, defiance, or gross neglect without a good and adequate reason may warrant the penalty. The Court also referred to Miss Santosh Mehta v. Om Prakash and Smt. Kamla Devi v. Vasdev on the discretionary character of such a penalty.",
+      "rule": {
+        "if": "eviction_and_rent_recovery_suit and tenant_is_tenant and (first_hearing_deposit_missed or regular_rent_deposits_missed) and deliberate_rent_default and no_good_reason_for_default and appeal_challenges_reversal_of_strikeoff",
+        "then": "strikeoff_order_restored_on_appeal"
+      },
+      "predicates": {
+        "eviction_and_rent_recovery_suit": "The lessor sought eviction and recovery of rent or compensation for use and occupation from the defendant.",
+        "tenant_is_tenant": "The defendant did not deny being a tenant of the premises.",
+        "first_hearing_deposit_missed": "The defendant did not deposit the amount due by the first hearing.",
+        "regular_rent_deposits_missed": "The defendant did not regularly deposit amounts accruing during the suit.",
+        "deliberate_rent_default": "The defendant’s conduct showed deliberate or volitional failure to pay or deposit rent.",
+        "no_good_reason_for_default": "The record disclosed no good and adequate reason for excusing the defendant’s default.",
+        "appeal_challenges_reversal_of_strikeoff": "An appeal challenged a court order that had reversed an order striking off the defendant’s defence."
+      },
+      "definition": "When a tenant in an eviction and rent-recovery suit deliberately misses required deposits without good reason, and an appeal challenges reversal of a strike-off order, the strike-off order is restored."
+    },
+    {
+      "legal_issue": "Rent deposited only under an order that is later set aside does not erase a default that had already occurred.",
+      "material_facts": [
+        "After the High Court set aside the trial court’s strike-off order, the defendant deposited rent pursuant to the High Court’s directions.",
+        "The Supreme Court set aside the High Court’s order and restored the trial court’s strike-off order."
+      ],
+      "conclusion": "The deposits made pursuant to the High Court’s unsustainable order did not cure the defendant’s earlier default or benefit him.",
+      "legal_principle": "The Court held that deposits made only pursuant to an order that is set aside cannot wipe out a default already committed; setting aside that order leaves the original strike-off order in force.",
+      "rule": {
+        "if": "appeal_sets_aside_order_allowing_late_rent_deposits and late_deposits_made_only_under_that_order and rent_default_preceded_late_deposits",
+        "then": "prior_rent_default_remains_uncured"
+      },
+      "predicates": {
+        "appeal_sets_aside_order_allowing_late_rent_deposits": "An appeal results in the setting aside of an order that had allowed or directed later rent deposits.",
+        "late_deposits_made_only_under_that_order": "The tenant made the later deposits only because the order being set aside directed them.",
+        "rent_default_preceded_late_deposits": "The tenant had already defaulted on required rent deposits before making the later deposits."
+      },
+      "definition": "When later rent deposits were made only under an order that is set aside and the default came first, the prior default remains uncured."
+    }
+  ],
+  "seconds": 19.2
+}

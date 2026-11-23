@@ -1,0 +1,119 @@
+{
+  "doc_id": "1261076",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12420,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3903,
+    "prompt_tokens": 3359,
+    "total_tokens": 7262,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A plaint may be rejected as barred by law when the bar is apparent from its own statements, even if the proper ground is not failure to disclose a cause of action.",
+      "material_facts": [
+        "The plaint alleged that the registered conveyance was only security for a loan and that the loan was repaid, with a promise to reconvey, on 25 March 1987.",
+        "The suit was filed on 26 August 1996, seeking a declaration of ownership and an injunction.",
+        "The High Court upheld rejection on the ground that the plaint disclosed no cause of action, while the Supreme Court found that the plaint itself showed the suit was barred by law."
+      ],
+      "conclusion": "The High Court was wrong to reject the plaint for failure to disclose a cause of action, but rejection was justified because the plaint's own allegations showed that the suit was barred by law.",
+      "legal_principle": "Under Order VII Rule 11(d) of the Code of Civil Procedure, a plaint may be rejected when the suit appears from its statements to be clearly barred by law. The plaint is read meaningfully as a whole, and the court may act on a bar apparent from the pleaded facts. The Court relied on T. Arivandandam v. T.V. Satyapal, (1977) 4 SCC 467, concerning meaningful reading and screening of meritless pleadings.",
+      "rule": {
+        "if": "civil_plaint_rejection_case and (plaint_allegations_disclose_cause_of_action or not plaint_allegations_disclose_cause_of_action) and pleaded_facts_show_clear_legal_bar",
+        "then": "plaint_rejected_as_barred_by_law"
+      },
+      "predicates": {
+        "civil_plaint_rejection_case": "A court is deciding whether to reject a civil plaint.",
+        "plaint_allegations_disclose_cause_of_action": "The plaint states facts that, if accepted, identify a basis for seeking relief.",
+        "not_plaint_allegations_disclose_cause_of_action": "The plaint does not state facts that, if accepted, identify a basis for seeking relief.",
+        "pleaded_facts_show_clear_legal_bar": "The facts stated in the plaint themselves show that the suit cannot proceed under an applicable legal rule."
+      },
+      "definition": "When a court considering rejection of a civil plaint finds that its pleaded facts clearly bar the suit, it rejects the plaint on that basis whether or not the plaint discloses a cause of action."
+    },
+    {
+      "legal_issue": "A suit seeking ownership based on an alleged loan-security transaction and promise to reconvey is barred when it omits the relief needed to challenge the conveyance and enforce the promise, and is brought after the pleaded cause of action has become time-barred.",
+      "material_facts": [
+        "The plaintiffs alleged that a registered sale deed was executed only to secure a loan, and that repayment in 1987 was followed by an oral promise to execute a registered reconveyance.",
+        "The suit sought a declaration of absolute ownership and an injunction, but did not seek a declaration that the registered deed was not a real sale or specific performance of the alleged reconveyance agreement.",
+        "The suit was filed in 1996, more than nine years after the alleged repayment and promise to reconvey."
+      ],
+      "conclusion": "The suit, as framed, was prima facie barred by limitation and the provisions of the Specific Relief Act; the required reliefs should have been claimed, and the pleaded cause of action had become time-barred before suit was filed.",
+      "legal_principle": "The relief sought must be assessed against the foundation pleaded in the plaint. Where ownership is claimed on the basis that a registered conveyance was only a loan transaction, the plaintiff must seek appropriate relief concerning that conveyance and, where relied on, specific performance of the alleged agreement to reconvey. The limitation period is reckoned from the cause of action identified by the plaintiff's own pleadings. The Court referred generally to the Specific Relief Act and the law of limitation, without identifying a particular section or limitation article.",
+      "rule": {
+        "if": "civil_suit_on_alleged_security_transaction and pleaded_repayment_and_reconveyance_promise and ownership_claim_without_challenge_to_conveyance_or_enforcement_of_reconveyance and pleaded_cause_predates_filing_beyond_applicable_period",
+        "then": "suit_barred_by_relief_requirements_and_limitation"
+      },
+      "predicates": {
+        "civil_suit_on_alleged_security_transaction": "A civil suit seeks rights in property on the basis that a formal conveyance was actually given as security for a loan.",
+        "pleaded_repayment_and_reconveyance_promise": "The plaintiff alleges repayment of the loan and a promise to reconvey the property.",
+        "ownership_claim_without_challenge_to_conveyance_or_enforcement_of_reconveyance": "The plaintiff seeks ownership without seeking relief to establish that the conveyance was not a real sale or to enforce the alleged promise to reconvey.",
+        "pleaded_cause_predates_filing_beyond_applicable_period": "The cause of action identified by the plaintiff's pleadings arose earlier than the filing by more than the applicable time allowed."
+      },
+      "definition": "A suit based on an alleged security transaction is barred when the plaintiff alleges repayment and a promise to reconvey, seeks ownership without the relief needed to address the conveyance or enforce that promise, and files after the pleaded cause of action has passed the applicable time limit."
+    },
+    {
+      "legal_issue": "A later suit for relief arising from the same cause of action is barred when that relief could and should have been claimed in an earlier suit.",
+      "material_facts": [
+        "An earlier suit seeking an injunction concerning the same land was pending when the present suit was filed.",
+        "The present suit sought declaration and injunction relief based on the same alleged transaction underlying the earlier suit.",
+        "The Court found that the relief now claimed could and ought to have been claimed in the earlier suit."
+      ],
+      "conclusion": "The later suit was apparently barred by Order II Rule 2 of the Code of Civil Procedure.",
+      "legal_principle": "Order II Rule 2 of the Code of Civil Procedure bars a subsequent suit for a portion of a claim or relief arising from the same cause of action where that claim or relief could and should have been included in the earlier suit.",
+      "rule": {
+        "if": "later_civil_suit and earlier_suit_on_same_cause_pending_when_later_suit_filed and omitted_relief_could_and_should_have_been_claimed_earlier",
+        "then": "later_suit_barred_for_omitted_relief"
+      },
+      "predicates": {
+        "later_civil_suit": "A civil suit is brought after an earlier suit concerning the underlying claim.",
+        "earlier_suit_on_same_cause_pending_when_later_suit_filed": "An earlier suit based on the same cause of action remains pending when the later suit is filed.",
+        "omitted_relief_could_and_should_have_been_claimed_earlier": "The relief sought later was available and ought to have been included in the earlier suit."
+      },
+      "definition": "A later civil suit is barred for omitted relief when an earlier suit based on the same cause of action was pending and the later relief could and should have been claimed in it."
+    },
+    {
+      "legal_issue": "Revenue mutation proceedings based on an existing conveyance do not create a fresh cause of action to challenge that conveyance or extend the time to seek relief against it.",
+      "material_facts": [
+        "The plaint relied on revenue mutation orders made in favour of the defendants as a stated cause of action.",
+        "The mutation dispute arose from the registered conveyance that the plaintiffs alleged was only a loan transaction.",
+        "The suit's foundation was the alleged loan transaction and promise to reconvey, not an independent wrong arising from the revenue orders."
+      ],
+      "conclusion": "The mutation orders did not furnish a fresh or independent cause of action to seek a declaration that the conveyance was only a loan transaction; the related pleadings were a camouflage to avoid the limitation bar.",
+      "legal_principle": "An administrative or revenue decision does not create an independent cause of action for relief concerning an underlying transaction when that decision merely reflects a dispute founded on that transaction. The Court applied this reasoning in assessing whether the suit was barred under Order VII Rule 11(d) of the Code of Civil Procedure.",
+      "rule": {
+        "if": "civil_suit_seeks_relief_against_underlying_property_transaction and mutation_orders_rest_on_that_transaction and no_independent_wrong_is_pleaded_in_mutation_process",
+        "then": "mutation_orders_do_not_create_fresh_cause_of_action"
+      },
+      "predicates": {
+        "civil_suit_seeks_relief_against_underlying_property_transaction": "A civil suit seeks relief concerning rights said to arise from an underlying property transaction.",
+        "mutation_orders_rest_on_that_transaction": "Revenue entries or orders reflect a dispute that rests on the same underlying transaction.",
+        "no_independent_wrong_is_pleaded_in_mutation_process": "The plaint does not plead a separate wrong in the mutation process that independently supports the relief sought."
+      },
+      "definition": "Mutation orders do not create a fresh cause of action when a suit seeks relief against the underlying property transaction, the orders rest on that transaction, and no independent wrong in the mutation process is pleaded."
+    },
+    {
+      "legal_issue": "Exemplary costs may be imposed when clever drafting disguises a hopelessly barred suit and prolongs meritless litigation.",
+      "material_facts": [
+        "The Court found that the plaint had been cleverly drafted to get around limitation and court-fee requirements while omitting relief central to the pleaded transaction.",
+        "The suit was found to be hopelessly barred, and the appellants pursued the litigation through the Supreme Court."
+      ],
+      "conclusion": "The appeal was dismissed with costs throughout, and additional exemplary costs were imposed for prosecuting and prolonging the hopelessly barred suit.",
+      "legal_principle": "T. Arivandandam v. T.V. Satyapal, (1977) 4 SCC 467, states that courts should meaningfully examine a plaint and stop meritless litigation created by clever drafting at an early stage. Relying on that principle, the Court imposed additional costs in this case.",
+      "rule": {
+        "if": "appeal_from_rejection_of_civil_plaint and plaint_cleverly_disguises_hopelessly_barred_claim and litigation_prolonged_despite_clear_bar",
+        "then": "exemplary_costs_imposed"
+      },
+      "predicates": {
+        "appeal_from_rejection_of_civil_plaint": "An appeal challenges an order rejecting a civil plaint.",
+        "plaint_cleverly_disguises_hopelessly_barred_claim": "The plaint's drafting disguises a claim that is plainly barred on its pleaded facts.",
+        "litigation_prolonged_despite_clear_bar": "The party continues the litigation through further proceedings despite the clear bar."
+      },
+      "definition": "Exemplary costs may be imposed when an appeal concerns rejection of a civil plaint whose clever drafting disguises a plainly barred claim and the litigation is continued despite that bar."
+    }
+  ],
+  "seconds": 23.0
+}

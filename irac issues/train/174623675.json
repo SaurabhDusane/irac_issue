@@ -1,0 +1,81 @@
+{
+  "doc_id": "174623675",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42622,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2439,
+    "prompt_tokens": 10277,
+    "total_tokens": 12716,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A direction requiring a state authority to recommend a mining-lease application is complied with when the recommendation is sent, even if the lease is not ultimately granted.",
+      "material_facts": [
+        "The earlier judgment directed the State Government to recommend the applicant’s case for mining leases to the Central Government.",
+        "A subsequent contempt order reiterated that the State Government had to send the recommendation, while leaving the Central Government to consider it on its merits and in accordance with law.",
+        "The State Government sent the requisite recommendation to the Central Government."
+      ],
+      "conclusion": "The State Government complied with the earlier direction by sending the recommendation; the direction did not require it to secure or execute a mining lease.",
+      "legal_principle": "The scope of a contempt proceeding is to determine whether the direction actually given was complied with. The judgments in the civil appeal and the earlier contempt petition required the State Government to recommend the application, but left the Central Government to decide the recommendation on its merits and in accordance with law.",
+      "rule": {
+        "if": "contempt_petition and court_direction_limited_to_recommendation and recommendation_sent",
+        "then": "recommendation_direction_complied"
+      },
+      "predicates": {
+        "contempt_petition": "The proceeding before the court is a petition alleging disobedience of an earlier court direction.",
+        "court_direction_limited_to_recommendation": "The earlier court direction required a state authority to send a recommendation to another authority, rather than to grant the underlying benefit.",
+        "recommendation_sent": "The state authority sent the recommendation required by the earlier direction."
+      },
+      "definition": "When a contempt petition concerns a direction limited to sending a recommendation and the recommendation was sent, the recommendation direction is treated as complied with."
+    },
+    {
+      "legal_issue": "A state authority’s request to another authority for approval of a mining lease is not a letter of intent where the state authority could not commit to the lease without that approval.",
+      "material_facts": [
+        "The applicant’s mining-lease applications had been made before the 2015 amendments to the mining legislation.",
+        "Under the procedure then in force, the State Government could recommend an application, but prior approval of the Central Government was necessary before the State Government could enter into a mining-lease agreement.",
+        "The State Government’s letter requested the Central Government’s approval and was recommendatory; the Central Government had not given prior approval before the letter was sent.",
+        "The applicant relied on that letter as a letter of intent under the transitional provision preserving certain applications."
+      ],
+      "conclusion": "The State Government’s letter was not a letter of intent, so the application did not fall within the protected category and was ineligible under the amended scheme.",
+      "legal_principle": "Section 10A(1) of the Mines and Minerals (Development and Regulation) Act, 1957, as amended, rendered pre-amendment applications ineligible, subject to the exceptions in Section 10A(2). Section 10A(2)(c) preserved an application where previous approval had been communicated or the State Government had issued a letter of intent to grant a lease. The words “by whatever name called” make the substance, not the title, of a communication decisive, but a recommendation seeking an approval that the state authority needs before it can commit to a lease is not a letter of intent. Applying Rishi Kiran Logistics Private Limited v. Board of Trustees of Kandla Port Trust and Others, which relied on Dresser Rand S.A. v. Bindal Agro Chem Ltd., and Rajasthan Cooperative Dairy Federation Ltd. v. Maha Laxmi Mingrate Marketing Service Pvt. Ltd., a letter of intent must be assessed by its terms and whether it indicates an intention to enter into a contract; an expression of future intention is distinct from a commitment where necessary prior approval is absent.",
+      "rule": {
+        "if": "legacy_mining_lease_application and state_communication_sought_external_approval and required_approval_not_received",
+        "then": "application_not_saved_as_letter_of_intent"
+      },
+      "predicates": {
+        "legacy_mining_lease_application": "An applicant had made a mining-lease application before a later change in the governing allocation scheme.",
+        "state_communication_sought_external_approval": "A state authority sent a communication asking another authority to approve the proposed mining lease.",
+        "required_approval_not_received": "The approval required before the state authority could commit to the lease had not been received when it sent the communication."
+      },
+      "definition": "If a pre-change mining-lease application is accompanied only by a state communication seeking approval that has not been received, the application is not saved as one supported by a letter of intent."
+    },
+    {
+      "legal_issue": "A decision by an authority that was not directed by the court to grant a mining lease cannot be treated as contempt merely because the decision does not grant the lease.",
+      "material_facts": [
+        "The earlier judgments directed the State Government to send a recommendation but gave no direction to the Central Government to approve or grant a mining lease.",
+        "The earlier contempt order expressly left the Central Government to consider the recommendation on its merits and in accordance with law.",
+        "After the State Government sent the recommendation, the Central Government considered the effect of the amended legislation and communicated that the proposal was ineligible.",
+        "The petitioner sought to treat the Central Government’s communications and the State Government’s later communication as contempt of the earlier judgments."
+      ],
+      "conclusion": "The Central Government’s decision was not contempt of the earlier orders because no direction to it had been made; a challenge to its decision could raise a separate cause of action for judicial review, but was not determined in this contempt petition.",
+      "legal_principle": "Contempt is confined to breach of the court’s directions. The earlier judgments imposed an obligation on the State Government to recommend the application, but did not direct the Central Government to approve or grant the lease; the earlier contempt order left the recommendation for the Central Government to consider on its own merits and in accordance with law. The validity of a separate decision by the Central Government may be challenged through judicial review on legally available grounds, but that question is not resolved in a contempt proceeding absent a breached direction.",
+      "rule": {
+        "if": "contempt_petition and prior_order_did_not_direct_decision_maker_to_grant_benefit and recommendation_direction_complied and decision_maker_considered_recommendation",
+        "then": "decision_not_contempt_of_prior_order"
+      },
+      "predicates": {
+        "contempt_petition": "The proceeding before the court is a petition alleging disobedience of an earlier court direction.",
+        "prior_order_did_not_direct_decision_maker_to_grant_benefit": "The earlier order did not require the authority deciding the recommendation to grant the requested benefit.",
+        "recommendation_direction_complied": "The state authority sent the recommendation required by the earlier court direction.",
+        "decision_maker_considered_recommendation": "The authority responsible for deciding the recommendation considered it and communicated its position."
+      },
+      "definition": "In a contempt petition, where the earlier order did not direct the deciding authority to grant the benefit, the recommendation direction was fulfilled, and the authority considered the recommendation, that authority’s decision is not contempt of the earlier order."
+    }
+  ],
+  "seconds": 76.3
+}

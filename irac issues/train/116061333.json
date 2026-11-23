@@ -1,0 +1,99 @@
+{
+  "doc_id": "116061333",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 49456,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2859,
+    "prompt_tokens": 12862,
+    "total_tokens": 15721,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appeal does not lie against confirmation of an execution sale when the statutory appeal provision does not cover that order.",
+      "material_facts": [
+        "The recovery authority confirmed the auction sale under the special procedure governing execution sales of immovable property.",
+        "The debtor appealed the confirmation order to a deputy registrar, but the appeal provision did not provide an appeal against an order confirming a sale under that procedure."
+      ],
+      "conclusion": "The deputy registrar had no jurisdiction to entertain the debtor’s appeal, and the order setting aside the sale was invalid.",
+      "legal_principle": "Section 106 of the Karnataka Co-operative Societies Act, 1959 provides appeals against specified orders, but not an order confirming a sale under Section 89A read with Rule 38 of the Karnataka Co-operative Societies Rules. Those provisions provide a special procedure for execution sales; an appeal cannot be inferred where the statute does not provide one.",
+      "rule": {
+        "if": "cooperative_recovery_auction_proceeding and sale_confirmation_order_appealed and appeal_provision_excludes_confirmation_orders",
+        "then": "appeal_is_without_jurisdiction"
+      },
+      "predicates": {
+        "cooperative_recovery_auction_proceeding": "A creditor pursued recovery through an execution auction of immovable property under a special recovery procedure.",
+        "sale_confirmation_order_appealed": "A person appealed an order confirming the execution sale.",
+        "appeal_provision_excludes_confirmation_orders": "The applicable appeal provision did not authorize an appeal against an order confirming that sale."
+      },
+      "definition": "When a person appeals an execution-sale confirmation in a recovery proceeding and the applicable appeal provision excludes that order, the appeal is without jurisdiction."
+    },
+    {
+      "legal_issue": "An authority cannot set aside an execution sale under its pre-confirmation power after the sale has been confirmed.",
+      "material_facts": [
+        "The recovery authority confirmed the auction sale, issued a sale certificate, and executed a sale deed in favour of the purchaser.",
+        "The deputy registrar later set aside the confirmed sale, relying on alleged undervaluation of the property.",
+        "The purchaser challenged that decision, and the Supreme Court found that the sale had become final upon confirmation."
+      ],
+      "conclusion": "The confirmed sale could not be set aside under the authority’s power to set aside a sale before confirmation; the orders setting it aside were quashed.",
+      "legal_principle": "Rule 38(6)(a) permits the Recovery Officer, for recorded reasons, to set aside a sale in the circumstances specified there, but that power must be exercised before an order confirming the sale. Rule 38(7) makes the sale certificate conclusive evidence of the sale. The court distinguished J. Rajiv Subramaniyan v. Pandiyas, concerning a different statutory scheme, and Vasu P. Shetty v. Hotel Vandana Palace; neither assisted a debtor who failed to pursue the remedy provided by Rule 38.",
+      "rule": {
+        "if": "execution_auction_proceeding and sale_confirmed and authority_attempts_to_set_aside_sale_after_confirmation",
+        "then": "authority_cannot_set_aside_confirmed_sale_under_preconfirmation_power"
+      },
+      "predicates": {
+        "execution_auction_proceeding": "A creditor pursued recovery by auctioning immovable property through an execution process.",
+        "sale_confirmed": "The competent recovery authority confirmed the sale and issued the sale documents to the purchaser.",
+        "authority_attempts_to_set_aside_sale_after_confirmation": "An authority later tried to undo the sale by exercising a power that applies before confirmation."
+      },
+      "definition": "In an execution auction, once the competent authority confirms the sale, a later attempt to set it aside under a pre-confirmation power cannot undo it."
+    },
+    {
+      "legal_issue": "A debtor who fails to pursue the prescribed sale-setting-aside remedy and satisfy its payment conditions cannot rely on partial or late payments to reopen a confirmed execution sale.",
+      "material_facts": [
+        "The debtor did not make the deposit required to apply under the prescribed procedure for setting aside the sale.",
+        "The debtor’s application to set aside the sale was rejected, and the sale was subsequently confirmed.",
+        "The debtor later obtained a conditional order setting aside the sale if he paid the required sum with interest, but did not pay the full amount within the specified time.",
+        "The debtor made only partial payments and also relied on an undervaluation claim, although he had not pursued the prescribed remedy in time."
+      ],
+      "conclusion": "The debtor’s partial and late payments did not satisfy the conditions for setting aside the sale, and he could not obtain relief against the confirmed sale on that basis.",
+      "legal_principle": "Rule 38(4)(a) requires the prescribed deposit, including the amount due to the decree-holder, for an application to set aside a sale; the application and deposit must comply with Rule 38(4)(b). A challenge based on irregularity or fraud is addressed by Rule 38(5), including its requirement of substantial injury. The debtor did not pursue the prescribed remedy and did not comply with the later conditional payment direction. Annapurna v. Mallikarjun concerned Order 21 Rule 89 of the Code of Civil Procedure and Article 127 of the Limitation Act, 1963, and did not govern this case.",
+      "rule": {
+        "if": "execution_auction_proceeding and sale_confirmed and debtor_failed_to_make_required_full_deposit and debtor_made_only_partial_or_late_payments",
+        "then": "debtor_cannot_reopen_confirmed_sale"
+      },
+      "predicates": {
+        "execution_auction_proceeding": "A creditor pursued recovery by auctioning immovable property through an execution process.",
+        "sale_confirmed": "The competent recovery authority confirmed the sale in favour of the purchaser.",
+        "debtor_failed_to_make_required_full_deposit": "The debtor did not deposit the full amount required by the applicable sale-setting-aside procedure or a conditional order.",
+        "debtor_made_only_partial_or_late_payments": "The debtor made payments that were incomplete or outside the required time."
+      },
+      "definition": "When a debtor fails to make the full required deposit in an execution-auction proceeding and makes only partial or late payments, confirmation of the sale cannot be undone on that basis."
+    },
+    {
+      "legal_issue": "An appellate court that has disposed of an appeal cannot use a later clarification application to make a substantive order that changes the relief granted.",
+      "material_facts": [
+        "The appellate court had disposed of the appeals brought by the purchaser and the bank against the order setting aside the sale.",
+        "The debtor later applied for clarification in those disposed appeals.",
+        "The appellate court issued further directions about disbursing the funds and paying additional interest, and those directions operated to the debtor’s benefit despite his failure to challenge the relevant order."
+      ],
+      "conclusion": "The appellate court could not make those substantive orders in the guise of clarification after disposing of the appeals; the clarification orders were set aside.",
+      "legal_principle": "Once an appeal has been finally disposed of, the appellate court is functus officio and cannot use a clarification application to pass a new substantive order. The court applied that principle to the orders made after disposal of the appeals; no earlier case was relied on for this point.",
+      "rule": {
+        "if": "appellate_proceeding_disposed and later_clarification_application and clarification_order_changes_substantive_relief",
+        "then": "substantive_clarification_order_is_beyond_jurisdiction"
+      },
+      "predicates": {
+        "appellate_proceeding_disposed": "An appellate court had finally disposed of the appeal.",
+        "later_clarification_application": "A party applied for clarification after the appeal had been disposed of.",
+        "clarification_order_changes_substantive_relief": "The court’s later order introduced or changed substantive relief rather than clarifying the existing decision."
+      },
+      "definition": "After an appeal is finally disposed of, a later clarification application cannot support an order that changes the substantive relief."
+    }
+  ],
+  "seconds": 17.5
+}

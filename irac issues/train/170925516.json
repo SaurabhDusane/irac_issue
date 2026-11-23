@@ -1,0 +1,59 @@
+{
+  "doc_id": "170925516",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21395,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1743,
+    "prompt_tokens": 5645,
+    "total_tokens": 7388,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Quashing an acquisition declaration does not restart or extend the statutory period for issuing a fresh declaration.",
+      "material_facts": [
+        "A notification identifying land for acquisition was published, and an initial declaration was issued within the applicable statutory period.",
+        "The initial declaration was quashed by a court.",
+        "A subsequent declaration was issued after the applicable period measured from publication of the original notification, and the State contended that time should run afresh from the court's order."
+      ],
+      "conclusion": "A fresh declaration must be made within the period applicable to the original notification, allowing only the exclusion expressly provided for periods when relevant action or proceedings are stayed by a court. A declaration issued after that period is invalid; the subsequent declarations in the appeals were quashed.",
+      "legal_principle": "Section 6(1) of the Land Acquisition Act, 1894, including its first proviso, imposes a peremptory time limit measured from publication of the notification under Section 4(1); Explanation 1 excludes only a period during which relevant action or proceedings are stayed by a court. The provision is plain and unambiguous, and a court cannot supply a casus omissus or read in a new period after a declaration is quashed. Sections 11 and 23 reinforce the importance of the original notification date because valuation and compensation are tied to that date. A.S. Naidu and Oxford English School were affirmed; N. Narasimhaiah and D.C. Nanjudaiah were overruled. Pooranmal was distinguishable because it concerned a different statutory scheme and waiver. The Court also relied on the principles of statutory construction discussed in Union of India v. Filip Tiago De Gama, Dr. R. Venkatchalam, and Rishabh Agro Industries.",
+      "rule": {
+        "if": "land_acquisition_declaration_proceeding and earlier_declaration_quashed and fresh_declaration_after_original_limit",
+        "then": "fresh_declaration_is_invalid"
+      },
+      "predicates": {
+        "land_acquisition_declaration_proceeding": "The proceeding concerns a declaration that land is required for acquisition for a public purpose or a company.",
+        "earlier_declaration_quashed": "A court quashed an earlier declaration concerning land covered by the same acquisition notification.",
+        "fresh_declaration_after_original_limit": "A later declaration was made after the applicable period measured from publication of the original acquisition notification, accounting for any period that must be excluded because relevant action or proceedings were stayed by a court.",
+        "fresh_declaration_is_invalid": "The later declaration is invalid because it was made after the applicable period for the original acquisition notification."
+      },
+      "definition": "When an acquisition declaration is challenged after an earlier declaration concerning the same notification was quashed, a later declaration made after the original applicable period is invalid."
+    },
+    {
+      "legal_issue": "The new rule on the time limit for acquisition declarations does not reopen completed matters in which awards were made and compensation was paid.",
+      "material_facts": [
+        "The Court adopted a rule rejecting a fresh limitation period after an acquisition declaration is quashed.",
+        "The State argued that applying the rule could unsettle completed acquisitions.",
+        "The Court directed that matters in which awards had been made and compensation paid would not be reopened under its ruling."
+      ],
+      "conclusion": "The judgment operates prospectively to the extent that matters in which awards have been made and compensation has been paid are not reopened by applying its rule.",
+      "legal_principle": "The Court limited the prospective operation of its ruling to preserve completed matters where an award had been made and compensation paid. It did not identify a statutory provision or earlier case as the basis for this limitation.",
+      "rule": {
+        "if": "land_acquisition_proceeding and award_made and compensation_paid",
+        "then": "completed_acquisition_not_reopened_under_new_rule"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The proceeding concerns the acquisition of land.",
+        "award_made": "An award determining compensation for the acquisition was made.",
+        "compensation_paid": "Compensation under the award was paid."
+      },
+      "definition": "A completed acquisition in which an award was made and compensation was paid is not reopened by applying the new rule."
+    }
+  ],
+  "seconds": 71.5
+}

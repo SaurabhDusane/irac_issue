@@ -1,0 +1,83 @@
+{
+  "doc_id": "163591852",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41124,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3333,
+    "prompt_tokens": 10470,
+    "total_tokens": 13803,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Surplus land is treated as utilised for tenant resettlement when allotment is followed by official delivery of possession, even if a copy of a required document is missing from the file, where the record supports completion of the required steps.",
+      "material_facts": [
+        "The surplus land was allotted to a tenant in 1964, and the authorities found that a revenue officer delivered possession to him that year.",
+        "The tenant and, later, his successor remained in possession, with revenue records showing possession from 1965 onward.",
+        "The record of delivery of possession and the index to the relevant file referred to the allotment certificate, although the certificate itself was not available on the file.",
+        "The landowner’s heirs did not allege in their writ petition that the tenant had failed to execute a Kabuliyat or Patta in favour of the landowner.",
+        "The landowner’s heirs challenged the finding of utilisation in proceedings seeking release of the land from the surplus pool."
+      ],
+      "conclusion": "The land was utilised before the landowner’s death. The missing certificate copy did not establish that the certificate had never been issued, and official delivery of possession supported a presumption that the antecedent formalities, including execution of the Kabuliyat or Patta, had been completed.",
+      "legal_principle": "Sections 10-A(a) and 10-A(b) of the Punjab Security of Land Tenures Act, 1953, read with Rules 20-A to 20-D, require more than an allotment order for surplus land to be utilised: the prescribed resettlement process includes the allotment certificate, delivery of possession, and execution of a Kabuliyat or Patta before possession. Under Financial Commissioner, Haryana State v. Kela Devi, utilisation is complete when possession has been taken and the other formalities have been completed; Ujjagar Singh v. Collector, Bhatinda approved that approach. The required steps are mandatory, but where possession was delivered by the revenue officer as an official act, the court may presume that the antecedent formalities were complied with. A missing copy of the certificate or Kabuliyat on the file does not, by itself, prove that it was never issued or executed.",
+      "rule": {
+        "if": "surplus_land_resettlement_dispute and land_allotted_to_tenant and revenue_officer_delivered_possession and tenant_remained_in_possession and official_records_refer_to_required_certificate and not owner_alleged_kabuliyat_was_not_executed",
+        "then": "surplus_land_treated_as_utilized"
+      },
+      "predicates": {
+        "surplus_land_resettlement_dispute": "The proceeding concerns whether surplus land was utilised through resettlement of a tenant.",
+        "land_allotted_to_tenant": "The authorities allotted the surplus land to a tenant for resettlement.",
+        "revenue_officer_delivered_possession": "A revenue officer delivered possession of the allotted land to the tenant.",
+        "tenant_remained_in_possession": "The tenant or the tenant’s successor continued in possession after delivery.",
+        "official_records_refer_to_required_certificate": "Official records concerning the allotment or delivery of possession referred to the required certificate.",
+        "owner_alleged_kabuliyat_was_not_executed": "The landowner or the landowner’s heirs alleged that the tenant did not execute a Kabuliyat or Patta."
+      },
+      "definition": "When a surplus-land resettlement dispute involves an allotment followed by official delivery and continued possession, and the official records refer to the required certificate without an allegation that the Kabuliyat was not executed, the land is treated as utilised."
+    },
+    {
+      "legal_issue": "The inheritance protection for surplus land does not apply when the land was already utilised for tenant resettlement before succession opened.",
+      "material_facts": [
+        "The landowner died after the authorities found that the surplus land had been allotted to a tenant and possession delivered to him.",
+        "The landowner’s heirs inherited the property and sought exemption of their holdings from the surplus pool on the basis of inheritance.",
+        "The authorities rejected the heirs’ claim because the land had already been utilised before the landowner’s death."
+      ],
+      "conclusion": "The heirs could not rely on the inheritance protection to remove the already utilised land from the surplus pool, and the allotment was not liable to be cancelled on that basis.",
+      "legal_principle": "Section 10-A(b) of the Punjab Security of Land Tenures Act, 1953, saves land that passes to an heir by inheritance before it has been utilised. Section 10-B provides that this saving does not apply where succession opens after the surplus area, or part of it, has been utilised under Section 10-A(a). Accordingly, the heirs’ claim depends on whether utilisation preceded succession.",
+      "rule": {
+        "if": "surplus_land_inheritance_dispute and heirs_inherited_surplus_land and land_utilized_before_succession",
+        "then": "inheritance_exemption_unavailable_for_utilized_land"
+      },
+      "predicates": {
+        "surplus_land_inheritance_dispute": "The proceeding concerns heirs claiming an inheritance-based exemption for land in a surplus pool.",
+        "heirs_inherited_surplus_land": "The owner’s heirs inherited land that had been declared surplus.",
+        "land_utilized_before_succession": "The surplus land was utilised for tenant resettlement before succession to the owner opened."
+      },
+      "definition": "If heirs inherit surplus land after it has already been utilised for tenant resettlement, the inheritance exemption is unavailable for that utilised land."
+    },
+    {
+      "legal_issue": "A conditional statement in an application that possession should be restored if it is found to be with an allottee is not, by itself, a strict admission that the allottee had possession.",
+      "material_facts": [
+        "In an application seeking cancellation of the allotment, the heirs asked that possession be restored to them if it was found to have been delivered to the tenant.",
+        "The authorities also relied on the allotment and delivery records and on evidence of the tenant’s continuing possession.",
+        "The Supreme Court concluded that the possession finding remained supportable even if the conditional statement was excluded from consideration."
+      ],
+      "conclusion": "The conditional statement was not an admission in the strict sense, but the finding that possession had been delivered was sustainable on the other evidence.",
+      "legal_principle": "The court assessed the wording of the application as conditional rather than treating it as a definitive admission. It held that the possession finding could stand independently on the other evidence in the record.",
+      "rule": {
+        "if": "surplus_land_resettlement_dispute and pleading_requests_restoration_if_possession_is_found and independent_evidence_supports_delivery",
+        "then": "possession_finding_sustained_without_treating_conditional_pleading_as_admission"
+      },
+      "predicates": {
+        "surplus_land_resettlement_dispute": "The proceeding concerns whether possession of surplus land was delivered to a tenant for resettlement.",
+        "pleading_requests_restoration_if_possession_is_found": "A pleading requests restoration of possession on the condition that it is found to have been delivered to the tenant.",
+        "independent_evidence_supports_delivery": "Evidence other than the conditional pleading supports the finding that possession was delivered."
+      },
+      "definition": "When a conditional request for restoration is accompanied by independent evidence supporting delivery, the possession finding may stand without treating the conditional wording as an admission."
+    }
+  ],
+  "seconds": 81.5
+}

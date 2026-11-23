@@ -1,0 +1,57 @@
+{
+  "doc_id": "1202682",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18896,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2266,
+    "prompt_tokens": 5380,
+    "total_tokens": 7646,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A mortgage ends when the mortgage money is paid, even if the mortgagee has not performed the acts required to return the documents and property.",
+      "material_facts": [
+        "The mortgagors paid the mortgage money in full before the estate vested.",
+        "The mortgagees had not returned the mortgage documents or possession of the property, and the mortgagors relied on their continuing right to demand those acts."
+      ],
+      "conclusion": "The mortgage ended upon payment. The mortgagors’ subsequent right to enforce the return of the documents and property through court was distinct from a right of redemption.",
+      "legal_principle": "Under sections 58 and 60 of the Transfer of Property Act, 1882, a mortgage secures payment of money, and the right of redemption permits a mortgagor to require specified acts upon payment or tender. For a usufructuary mortgage, section 58(d) authorises possession only until the mortgage money is paid. Once the mortgagee accepts payment in full, no secured debt remains and the mortgage cannot continue merely because the mortgagee fails to perform the acts required after payment. A later suit to enforce those acts is not a suit to redeem a subsisting mortgage; this distinction is reflected in Order XXXIV, rules 7 and 9 of the Code of Civil Procedure, 1908, and section 62 of the Transfer of Property Act. Thota China Subba Rao v. Mattapalli Raju was explained as holding that redemption continues only while the mortgage is alive. Samar Ali v. Karim-ul-lah, Muhammad Mahmud Ali v. Kalyan Das, Balkrishna v. Rangnath, and Ram Prasad v. Bishambhar Singh were approved.",
+      "rule": {
+        "if": "usufructuary_mortgage_case and mortgage_money_paid_in_full",
+        "then": "mortgage_ends_on_payment"
+      },
+      "predicates": {
+        "usufructuary_mortgage_case": "The dispute concerns a mortgage under which the mortgagee was authorised to possess the property and receive its rents or profits toward the mortgage debt.",
+        "mortgage_money_paid_in_full": "The mortgagor paid the entire mortgage money to the mortgagee."
+      },
+      "definition": "When a usufructuary mortgage is involved and the mortgagor pays the entire mortgage money, the mortgage ends on payment."
+    },
+    {
+      "legal_issue": "Land claimed under a statutory exception for mortgaged property is not protected from vesting when the mortgage money was paid before vesting.",
+      "material_facts": [
+        "The estate vested in the State under the land reform legislation.",
+        "The mortgage money had been paid before vesting, although the mortgagees had not returned possession.",
+        "The claim to recover possession relied on the statutory provision for land forming the subject matter of a subsisting mortgage."
+      ],
+      "conclusion": "No mortgage subsisted on the date of vesting, so the claimants could not rely on the statutory exception for land forming the subject matter of a subsisting mortgage.",
+      "legal_principle": "Sections 3 and 4 of the Bihar Land Reforms Act, 1950 provided for vesting of the estate. Section 6(1)(c), as amended by the Bihar Land Reforms (Amendment) Act, 1959, applied to land forming the subject matter of a subsisting mortgage on redemption of which the intermediary was entitled to recover khas possession. Because payment had ended the mortgage before vesting, that statutory condition was not met.",
+      "rule": {
+        "if": "land_reform_vesting_case and estate_vested_before_possession_was_recovered and mortgage_money_paid_before_vesting and claim_made_under_mortgage_retention_exception",
+        "then": "mortgage_retention_exception_unavailable"
+      },
+      "predicates": {
+        "land_reform_vesting_case": "The proceeding concerns the vesting of an estate under land reform legislation.",
+        "estate_vested_before_possession_was_recovered": "The estate vested before the claimant recovered possession of the disputed land.",
+        "mortgage_money_paid_before_vesting": "The mortgagor paid the mortgage money in full before the estate vested.",
+        "claim_made_under_mortgage_retention_exception": "The claimant sought to retain or recover the land under an exception concerning land subject to a mortgage."
+      },
+      "definition": "In a land reform vesting proceeding, when the estate vests before possession is recovered and the mortgage money was paid before vesting, a claim under the mortgage-retention exception is unavailable."
+    }
+  ],
+  "seconds": 14.8
+}

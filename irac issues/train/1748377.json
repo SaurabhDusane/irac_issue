@@ -1,0 +1,161 @@
+{
+  "doc_id": "1748377",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 11706,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4479,
+    "prompt_tokens": 3431,
+    "total_tokens": 7910,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A complainant's personal grievance against an accused does not, by itself, justify rejecting the complainant's testimony.",
+      "material_facts": [
+        "The complainant sought regularisation of land occupancy and alleged that the public servant demanded a bribe to assist with that process.",
+        "The complainant had a grievance because eviction proceedings concerning the occupancy were imminent.",
+        "Before paying the money, the complainant approached anti-corruption officials, who arranged a trap."
+      ],
+      "conclusion": "The complainant's grievance required careful scrutiny of the testimony but did not justify rejecting it outright; the grievance did not establish that the complaint was made only because of the eviction proceedings.",
+      "legal_principle": "A complainant's adverse interest may call for closer scrutiny, but the testimony cannot be rejected at the threshold merely because the complainant is aggrieved by the accused. A contrary approach would risk insulating corrupt public servants from legal consequences.",
+      "rule": {
+        "if": "graft_complaint_case and complainant_personally_aggrieved and complaint_made_before_trap_payment",
+        "then": "complainant_testimony_requires_careful_scrutiny_not_automatic_rejection"
+      },
+      "predicates": {
+        "graft_complaint_case": "A person alleges that a public servant sought a benefit in connection with official action.",
+        "complainant_personally_aggrieved": "The complainant has a grievance arising from the public servant's conduct or the matter connected with the alleged demand.",
+        "complaint_made_before_trap_payment": "The complainant reports the alleged demand to enforcement officials before making the arranged payment."
+      },
+      "definition": "When a graft complainant is personally aggrieved and reports the allegation before the arranged payment, the testimony calls for careful scrutiny rather than automatic rejection."
+    },
+    {
+      "legal_issue": "A witness does not lose independent status merely by having prior contact with police or by assisting police, if the witness is not dependent on police or officials.",
+      "material_facts": [
+        "One trap witness had previously complained about a doctor who allegedly demanded a bribe and had been a witness in other cases.",
+        "Another trap witness drove the vehicle used by the anti-corruption officials.",
+        "Neither witness was shown to depend on police or officials for livelihood, liberty, or another matter."
+      ],
+      "conclusion": "The witnesses' prior contact with police and assistance to the anti-corruption officials did not, by themselves, deprive them of independent status.",
+      "legal_principle": "The need for independent witnesses in police raids or searches must be assessed realistically: acquaintance with police or assistance to them does not destroy independence unless the witness is dependent on police or officials. The Court relied on Hazari Lal v. Delhi Administration, 1980 (2) SCR 1053.",
+      "rule": {
+        "if": "police_trap_or_search_case and (witness_acquainted_with_police or witness_assisted_police) and not witness_dependent_on_police_or_officials",
+        "then": "witness_independence_not_lost_merely_by_acquaintance_or_assistance"
+      },
+      "predicates": {
+        "police_trap_or_search_case": "The case concerns evidence gathered during a police-arranged trap or search.",
+        "witness_acquainted_with_police": "The witness has previously interacted with police or appeared in another matter involving police.",
+        "witness_assisted_police": "The witness helped police or officials carry out their official action.",
+        "witness_dependent_on_police_or_officials": "The witness relies on police or officials for livelihood, liberty, or another matter."
+      },
+      "definition": "In a police trap or search case, a witness's acquaintance with police or assistance to them does not alone negate independence where the witness is not dependent on police or officials."
+    },
+    {
+      "legal_issue": "A trap officer's testimony may support a conviction without corroboration when the officer has no personal interest against the accused.",
+      "material_facts": [
+        "An anti-corruption officer arranged the trap and testified about its execution.",
+        "The officer had no demonstrated personal interest or animosity against the public servant.",
+        "The officer arranged for the currency to be treated so that receipt of the money could be tested."
+      ],
+      "conclusion": "The trap officer's testimony could be acted on without corroboration.",
+      "legal_principle": "The testimony of a trap officer who has no personal interest against the accused can be relied on without corroboration. The Court relied on Prakash Chand v. State (Delhi Administration), 1979 (2) SCR 330, and Hazari Lal v. Delhi Administration, 1980 (2) SCR 1053.",
+      "rule": {
+        "if": "bribery_trap_case and trap_officer_testified_about_trap and trap_officer_has_no_personal_interest_against_accused",
+        "then": "trap_officer_testimony_can_be_relied_on_without_corroboration"
+      },
+      "predicates": {
+        "bribery_trap_case": "The prosecution alleges that a public servant accepted a bribe in a planned trap.",
+        "trap_officer_testified_about_trap": "The officer who arranged or conducted the trap gave evidence about it.",
+        "trap_officer_has_no_personal_interest_against_accused": "The evidence does not show that the trap officer had a personal interest or animosity against the accused."
+      },
+      "definition": "In a bribery trap case, testimony from the officer who testified about the trap may be relied on without corroboration when the officer has no personal interest against the accused."
+    },
+    {
+      "legal_issue": "Failure to send the solution used in a phenolphthalein test for chemical examination does not, by itself, impair the proof of a trap.",
+      "material_facts": [
+        "The public servant was intercepted with the marked currency after the alleged payment.",
+        "A phenolphthalein test produced a positive result.",
+        "The solution collected after washing the public servant's fingers was not sent to a chemical examiner."
+      ],
+      "conclusion": "The failure to send the solution for chemical examination did not impair the reliability of the trap evidence.",
+      "legal_principle": "The Court stated that phenolphthalein solution is used to satisfy the investigating officer that the public servant handled the bribe money, and that no statutory direction requiring the collected solution to be sent to a chemical examiner was identified.",
+      "rule": {
+        "if": "bribery_trap_case and positive_handling_test and marked_currency_recovered_from_accused and test_solution_not_chemically_examined",
+        "then": "failure_to_chemically_examine_test_solution_does_not_by_itself_impair_trap_evidence"
+      },
+      "predicates": {
+        "bribery_trap_case": "The prosecution alleges that a public servant accepted a bribe in a planned trap.",
+        "positive_handling_test": "A test used to detect contact with treated currency produces a positive result.",
+        "marked_currency_recovered_from_accused": "The marked currency used in the trap is recovered from the accused.",
+        "test_solution_not_chemically_examined": "The solution collected during the handling test is not sent for chemical examination."
+      },
+      "definition": "Where a trap case includes a positive handling test and recovery of the marked currency, failure to chemically examine the collected solution does not by itself impair the trap evidence."
+    },
+    {
+      "legal_issue": "Minor discrepancies and uncorroborated circumstances that do not materially undermine otherwise supported trap evidence do not justify rejecting that evidence.",
+      "material_facts": [
+        "The complainant's account was supported by the trap officer and other witnesses present when the public servant was intercepted.",
+        "The High Court relied on a minor discrepancy about preparation of the recovery memorandum.",
+        "No one other than the complainant was said to have overheard the alleged demand.",
+        "The marked currency was recovered from the public servant's left pocket, and there was no evidence that he was left-handed."
+      ],
+      "conclusion": "The identified discrepancy and circumstances were untenable grounds for rejecting the prosecution evidence.",
+      "legal_principle": "A minor discrepancy that is not material, and circumstances that do not undermine the evidence as a whole, should not be treated as grounds for rejecting otherwise supported testimony. The Court treated the absence of an overheard demand and the pocket in which the money was found as flippant grounds in the circumstances of this case.",
+      "rule": {
+        "if": "trap_case and prosecution_testimony_supported_by_other_evidence and (minor_recovery_record_discrepancy or demand_not_overheard or money_found_in_unusual_pocket)",
+        "then": "these_circumstances_do_not_justify_rejecting_otherwise_supported_trap_evidence"
+      },
+      "predicates": {
+        "trap_case": "The prosecution relies on evidence gathered during a planned trap.",
+        "prosecution_testimony_supported_by_other_evidence": "The complainant's account is supported by other evidence about the trap or interception.",
+        "minor_recovery_record_discrepancy": "The evidence contains a discrepancy about preparation of a recovery record that does not materially affect the prosecution account.",
+        "demand_not_overheard": "No witness other than the complainant is said to have heard the alleged demand.",
+        "money_found_in_unusual_pocket": "The recovered money is found in a pocket whose location is relied on as an implausible feature of the account."
+      },
+      "definition": "In a trap case, a minor record discrepancy or the absence of an overheard demand or an expected pocket location does not justify rejecting testimony supported by other evidence."
+    },
+    {
+      "legal_issue": "An acquittal may be set aside when it rests on untenable assessments of evidence that otherwise establishes the prosecution case.",
+      "material_facts": [
+        "The trial court convicted the public servant of graft offences after finding the prosecution witnesses reliable.",
+        "The High Court acquitted the public servant based on the complainant's grievance, the asserted lack of independent corroboration, the identified evidentiary objections, and the alleged improbability of the recovery.",
+        "The Supreme Court found those reasons patently wrong or tenuous and considered the prosecution case established."
+      ],
+      "conclusion": "The appeal against acquittal was allowed, the acquittal was set aside, and the trial court's conviction was restored.",
+      "legal_principle": "The Court held that an acquittal founded on patently wrong and tenuous considerations that misdirect the assessment of reliable prosecution evidence is unmerited and may be set aside. It restored convictions under Section 161 of the Indian Penal Code and Section 5(2) of the Prevention of Corruption Act, 1947.",
+      "rule": {
+        "if": "appeal_against_acquittal and prosecution_evidence_establishes_guilt and acquittal_rests_on_pატently_untenable_evidentiary_reasons",
+        "then": "acquittal_set_aside_and_conviction_restored"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The prosecution appeals from a judgment acquitting a person who was convicted at trial.",
+        "prosecution_evidence_establishes_guilt": "The evidence accepted at trial establishes the accused's guilt.",
+        "acquittal_rests_on_pатently_untenable_evidentiary_reasons": "The acquittal rests on reasons that materially misdirect the assessment of the prosecution evidence and are untenable."
+      },
+      "definition": "When an appeal challenges an acquittal, the prosecution evidence establishes guilt, and the acquittal rests on patently untenable evidentiary reasons, the acquittal is set aside and the conviction restored."
+    },
+    {
+      "legal_issue": "A substantial lapse of time since the offence may justify limiting the custodial sentence while maintaining the conviction.",
+      "material_facts": [
+        "The Supreme Court restored the conviction after a substantial period had elapsed since the offence.",
+        "The Court declined to impose a longer term of rigorous imprisonment and imposed concurrent custodial terms and fines."
+      ],
+      "conclusion": "The Court limited the substantive imprisonment to one year on each count, made the terms concurrent, and imposed fines.",
+      "legal_principle": "The Court took the distance in time between the offence and its decision into account when determining the sentence, while leaving the conviction intact.",
+      "rule": {
+        "if": "conviction_restored_on_appeal and substantial_time_elapsed_since_offence",
+        "then": "custodial_sentence_limited_in_view_of_elapsed_time"
+      },
+      "predicates": {
+        "conviction_restored_on_appeal": "An appellate court restores a conviction after setting aside an acquittal.",
+        "substantial_time_elapsed_since_offence": "A substantial period has passed between the offence and the sentencing decision."
+      },
+      "definition": "When a conviction is restored on appeal after a substantial period has elapsed since the offence, the custodial sentence may be limited in view of that elapsed time."
+    }
+  ],
+  "seconds": 24.4
+}

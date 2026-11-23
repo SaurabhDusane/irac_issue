@@ -1,0 +1,141 @@
+{
+  "doc_id": "1561728",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26839,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3623,
+    "prompt_tokens": 7222,
+    "total_tokens": 10845,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A transferee who fails to discharge an agreed debt within the stipulated period cannot avoid the contractual consequence of default by attributing the failure to the transferor's lack of cooperation when the evidence does not show that the transferor prevented payment.",
+      "material_facts": [
+        "An arbitral award required the transferees either to pay the debt owed to a public board within the stipulated period or to arrange for the transferors to be fully discharged from liability.",
+        "The transferees paid only part of the debt and offered verified claims that the board did not accept.",
+        "The court found no evidence that the transferors' non-cooperation caused the default and found that the transferees were not in a position to pay the balance."
+      ],
+      "conclusion": "The transferees' failure was a default under the award, and the consequence prescribed for that default followed.",
+      "legal_principle": "Under clause 7 of the award, the transferees had to pay the board within the stipulated period or arrange effectively to terminate the transferors' liability. The board was not legally obliged to accept the verified claims, and the transferors' cooperation was not necessary to make payment.",
+      "rule": {
+        "if": "award_decree_execution_dispute and payment_deadline_expired and not full_payment_made and not transferor_prevented_payment",
+        "then": "default_consequence_applies"
+      },
+      "predicates": {
+        "award_decree_execution_dispute": "The dispute concerns execution of a court decree made in terms of an arbitral award.",
+        "payment_deadline_expired": "The period allowed for the transferee to meet the payment obligation has expired.",
+        "not_full_payment_made": "The transferee has not paid the full debt or otherwise secured the creditor's discharge of the original debtor.",
+        "not_transferor_prevented_payment": "The transferor did not prevent the transferee from making the required payment."
+      },
+      "definition": "When an award-decree execution dispute involves an expired payment deadline, incomplete payment, and no prevention by the transferor, the consequence prescribed for default applies."
+    },
+    {
+      "legal_issue": "Part payment accepted by a creditor does not substitute a transferee for the original debtor or discharge the original debtor without the creditor's recognition of the substitution.",
+      "material_facts": [
+        "The transferors transferred their entire interest in the property to the transferees.",
+        "The transferees made partial payments to the board, which credited them to the transferors' account.",
+        "The board did not formally recognize the transferees as debtors in place of the transferors and stated that it would not recognize the transfer until the debt was fully paid."
+      ],
+      "conclusion": "The board had not substituted the transferees as debtors, and the transferors remained liable for the unpaid balance.",
+      "legal_principle": "A transfer of the debtor's interest in property may provide a foundation for privity with the creditor, but it does not itself release the original debtor. The creditor's express or implied recognition of the transferee is necessary for substitution to discharge the original debtor. The court considered Kandarpa Nag v. Banwari Lal Nag, AIR 1921 Cal. 356; Mitha v. Remal Dass, AIR 1937 Lah. 828; Sheikh Mohidin Tharagan v. Vadivalagianambia Pillai, 22 I.C. 37; Nochulliyil Euzhuvan Theethi's son Thethalan v. The Eralpad Rajah; Saradindu Mukherjee v. Sm. Kunja Kamini Roy, AIR 1942 Cal. 514; and Krishna Bhatta v. Narayana Achary, AIR 1949 Mad. 618, distinguishing the latter authorities because the creditor had not recognized the transferees here.",
+      "rule": {
+        "if": "third_party_debt_assumption_dispute and property_interest_transferred and partial_payments_accepted and not creditor_recognized_substitution",
+        "then": "original_debtor_remains_liable"
+      },
+      "predicates": {
+        "third_party_debt_assumption_dispute": "The dispute concerns whether a creditor substituted a transferee for the debtor who originally owed the debt.",
+        "property_interest_transferred": "The original debtor transferred the relevant property interest to the transferee.",
+        "partial_payments_accepted": "The creditor accepted some payments from the transferee toward the debt.",
+        "not_creditor_recognized_substitution": "The creditor did not recognize the transferee as replacing the original debtor."
+      },
+      "definition": "In a dispute over substitution of a debtor, transferring the property interest and making accepted partial payments do not release the original debtor if the creditor did not recognize the substitution."
+    },
+    {
+      "legal_issue": "An award clause requiring a defaulting transferee to return property transfers both possession and title when the award's scheme restricts the transferee's dealings and treats possession as held in trust pending performance.",
+      "material_facts": [
+        "The award provided that on default the transferors could take back possession of the property.",
+        "The award also restricted the transferees from transferring or removing the property while the debt remained unpaid and described their interim possession as being in trust.",
+        "The award contained no mechanism for the transferees to perform the obligation later while the transferors held only possession."
+      ],
+      "conclusion": "On default, both possession and title to the property passed back to the transferors.",
+      "legal_principle": "The clause must be construed in light of the entire scheme of the award, not in isolation. Restrictions on dealing with the property and the description of interim possession as being in trust showed that the award contemplated the return of title as well as possession.",
+      "rule": {
+        "if": "award_construction_dispute and transferee_defaulted and award_restricted_property_dealings and interim_possession_was_in_trust",
+        "then": "title_and_possession_revert_to_transferors"
+      },
+      "predicates": {
+        "award_construction_dispute": "The dispute concerns the meaning of a property-return term in an arbitral award made a court decree.",
+        "transferee_defaulted": "The transferee failed to perform the obligation that triggered the property-return term.",
+        "award_restricted_property_dealings": "The award restricted the transferee's ability to deal with the property before performing the obligation.",
+        "interim_possession_was_in_trust": "The award described the transferee's possession pending performance as being held in trust."
+      },
+      "definition": "When a defaulting transferee held restricted, trust-like interim possession under the award, the property-return term restored both possession and title to the transferors."
+    },
+    {
+      "legal_issue": "An award-decree obligation to pay property-related dues operates only while title to the property is vested in the person bound to pay.",
+      "material_facts": [
+        "The award imposed on the transferees an obligation to pay the board's dues in connection with the property.",
+        "The award's default provision returned title to the transferors when the transferees failed to perform.",
+        "The court treated the liability to pay the dues as an incident of ownership."
+      ],
+      "conclusion": "The transferees' payment obligation operated only while title was vested in them, and the liability passed with title.",
+      "legal_principle": "The court held that liability to pay the property dues was an incident of ownership and therefore followed title. The payment obligation under the award operated only if title was vested in the transferees.",
+      "rule": {
+        "if": "ownership_contingent_payment_dispute and property_dues_are_incident_to_ownership and title_vests_in_a_different_owner",
+        "then": "property_dues_follow_title"
+      },
+      "predicates": {
+        "ownership_contingent_payment_dispute": "The dispute concerns an obligation to pay dues attached to ownership of property.",
+        "property_dues_are_incident_to_ownership": "The dues are treated as a liability arising from ownership of the property.",
+        "title_vests_in_a_different_owner": "Title to the property is vested in someone other than the person whose payment obligation is in dispute."
+      },
+      "definition": "When property dues arise from ownership and title is vested in a different owner, the dues follow title rather than remaining with the former owner."
+    },
+    {
+      "legal_issue": "A decree made in terms of an arbitral award is executable when the award intends the entitled party to obtain the specified relief upon default, even if it does not expressly direct the filing of execution proceedings.",
+      "material_facts": [
+        "The arbitrator's award was made a rule of court.",
+        "The award provided that after default the transferors were entitled to take back the property.",
+        "The award's overall tenor showed an intention that the transferors could apply for and obtain possession after default."
+      ],
+      "conclusion": "The award was not merely declaratory and could be enforced through execution.",
+      "legal_principle": "Executability does not require a decree expressly to state that the entitled party must apply for execution. The question is whether the award, read as a whole, intends the specified relief to be obtained upon the relevant default.",
+      "rule": {
+        "if": "execution_of_award_decree_dispute and award_intends_relief_after_default",
+        "then": "award_decree_is_executable"
+      },
+      "predicates": {
+        "execution_of_award_decree_dispute": "The proceeding concerns an application to execute a court decree made in terms of an arbitral award.",
+        "award_intends_relief_after_default": "The award, read as a whole, intends the entitled party to obtain specified relief when the other party defaults."
+      },
+      "definition": "A court decree made in terms of an award is executable when the award intends the stated relief to be obtained upon default."
+    },
+    {
+      "legal_issue": "A default term in a decree made in terms of an arbitral award is not relieved against as a penalty merely because it provides for return of property, and the award-decree is not treated as a consent decree.",
+      "material_facts": [
+        "The award provided for the transferors to obtain the property upon the transferees' default.",
+        "The award was valid independently of the parties' decision not to object to it and was made a rule of court.",
+        "The court found the property-return term was not in the nature of a penalty."
+      ],
+      "conclusion": "The term was enforceable as part of the decree, was not subject to relief as a penalty, and the award-decree was not a consent decree.",
+      "legal_principle": "The court held that relief could not be granted against the terms of a decree and that an award-decree does not become a consent decree merely because the parties did not object to the award. Under section 30 of the Arbitration Act, 1940, an award could be set aside only on specified grounds. The court distinguished Kandarpa Nag v. Banwari Lal Nag, AIR 1921 Cal. 356; Mitha v. Remal Dass, AIR 1937 Lah. 828; and Sheikh Mohidin Tharagan v. Vadivalagianambia Pillai, 22 I.C. 37, which concerned penal terms in compromise decrees. It also distinguished Chanbasappa Gurushantappa Hiremath v. Basalingayya Gokurnaya Hiremath, 51 I.L.R. Bom. 908, concerning a decree under Order XXIII, Rule 3 of the Code of Civil Procedure in a different arbitration setting.",
+      "rule": {
+        "if": "award_decree_penalty_objection and default_term_is_part_of_decree and term_is_not_penal and award_valid_independently_of_party_consent",
+        "then": "decree_term_is_enforceable_without_penalty_relief"
+      },
+      "predicates": {
+        "award_decree_penalty_objection": "The proceeding concerns an objection that a term in a decree made in terms of an arbitral award is penal.",
+        "default_term_is_part_of_decree": "The challenged default term forms part of the court decree.",
+        "term_is_not_penal": "The default term is not in the nature of a penalty.",
+        "award_valid_independently_of_party_consent": "The award derives its validity independently of the parties' consent to the decree."
+      },
+      "definition": "When a non-penal default term forms part of an award-decree that is valid independently of party consent, the term is enforceable without relief against it as a penalty."
+    }
+  ],
+  "seconds": 21.8
+}

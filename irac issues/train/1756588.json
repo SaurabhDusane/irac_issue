@@ -1,0 +1,61 @@
+{
+  "doc_id": "1756588",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23560,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2159,
+    "prompt_tokens": 6316,
+    "total_tokens": 8475,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Taking over the management of an undertaking does not automatically suspend every obligation or proceeding involving it; suspension applies only to matters covered by a notification, subject to the notification’s exclusions.",
+      "material_facts": [
+        "The creditor brought a recovery suit on a debt secured by the undertaking’s goods and mortgaged property.",
+        "A notification suspended specified obligations but excluded secured liabilities to banks and financial institutions.",
+        "The undertaking’s management had been taken over."
+      ],
+      "conclusion": "The secured liability was excluded from the notification, so the suit against the undertaking was not stayed and could proceed.",
+      "legal_principle": "Under sections 7(1)(b) and 7(4) of the Sugar Undertakings (Taking over of Management) Act, 1978, suspension follows only where a notification specifies the relevant contracts, rights, obligations or liabilities; takeover alone does not suspend all of them. The notification in this case excluded secured liabilities to banks and financial institutions.",
+      "rule": {
+        "if": "recovery_suit and undertaking_management_taken_over and notification_specifies_suspended_matters and secured_bank_debt_excluded",
+        "then": "secured_debt_suit_may_proceed"
+      },
+      "predicates": {
+        "recovery_suit": "A creditor brought a suit to recover a debt.",
+        "undertaking_management_taken_over": "The management of an undertaking connected with the debt was taken over.",
+        "notification_specifies_suspended_matters": "A notification identified the matters whose operation or enforcement would be suspended.",
+        "secured_bank_debt_excluded": "The notification excluded secured debt owed to a bank or financial institution."
+      },
+      "definition": "When a recovery suit concerns secured bank debt excluded from a notification, the suit may proceed even though management of the undertaking has been taken over."
+    },
+    {
+      "legal_issue": "A suspension affecting a principal debtor does not by itself suspend remedies against guarantors, whose liability is ordinarily co-extensive with the principal debtor’s liability and immediately enforceable.",
+      "material_facts": [
+        "Persons had guaranteed repayment of the debt owed by the undertaking.",
+        "The principal debtor had defaulted.",
+        "The creditor sought recovery from the guarantors as well as the principal debtor.",
+        "The governing suspension scheme did not state that remedies against guarantors were suspended."
+      ],
+      "conclusion": "The guarantors’ liability was immediate, and proceedings against them were not stayed pending exhaustion of remedies against the principal debtor.",
+      "legal_principle": "Section 128 of the Indian Contract Act, 1872 provides that, unless the contract provides otherwise, a surety’s liability is co-extensive with that of the principal debtor. A creditor need not first exhaust remedies against the principal debtor. The Court relied on Bank of Bihar Ltd. v. Damodar Prasad & Anr., [1969] 1 S.C.R. 620, and held that the Sugar Undertakings (Taking over of Management) Act, 1978 does not provide for suspension of remedies against guarantors.",
+      "rule": {
+        "if": "guarantor_recovery_proceeding and guarantee_covers_debt and principal_debtor_defaulted and notification_does_not_suspend_guarantor_remedies",
+        "then": "guarantors_remain_immediately_liable"
+      },
+      "predicates": {
+        "guarantor_recovery_proceeding": "A creditor brought a recovery proceeding against persons who guaranteed a debtor’s obligation.",
+        "guarantee_covers_debt": "The guarantee covers the debt at issue.",
+        "principal_debtor_defaulted": "The principal debtor failed to repay the debt.",
+        "notification_does_not_suspend_guarantor_remedies": "The applicable notification did not suspend remedies against guarantors."
+      },
+      "definition": "When a creditor seeks recovery from guarantors for a covered debt after the principal debtor defaults, and the notification does not suspend guarantor remedies, the guarantors remain immediately liable."
+    }
+  ],
+  "seconds": 14.3
+}

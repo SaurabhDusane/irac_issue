@@ -1,0 +1,84 @@
+{
+  "doc_id": "31903",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19450,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2211,
+    "prompt_tokens": 5329,
+    "total_tokens": 7540,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An accused who raises a plea of private defence bears the burden of making that defence probable, but need not prove it beyond reasonable doubt.",
+      "material_facts": [
+        "The accused relied on a plea of private defence of person and property at trial.",
+        "The Court considered the burden and standard applicable to that plea."
+      ],
+      "conclusion": "The accused bears the burden of establishing the plea as probable, but is not required to establish it beyond reasonable doubt.",
+      "legal_principle": "The burden to probabilise a plea of private defence lies on the accused. The plea may be assessed from salient facts and circumstances appearing in the prosecution case or from defence evidence. The judgment cites no statutory provision or earlier case for this principle.",
+      "rule": {
+        "if": "criminal_case and accused_raises_private_defence",
+        "then": "accused_must_make_private_defence_probable_not_prove_it_beyond_reasonable_doubt"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal case in which an accused's liability is being determined.",
+        "accused_raises_private_defence": "The accused relies on private defence as a basis for resisting criminal liability."
+      },
+      "definition": "When an accused raises private defence in a criminal case, the accused must make that defence probable but need not prove it beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "Any right of private defence ends when the accused has escaped the danger and reached a safe distance, so later force is not justified by the earlier threat.",
+      "material_facts": [
+        "On the accused's version, he jumped off the tractor carrying his gun and moved away from the persons he claimed were attacking him.",
+        "The Court found that no further injury was allegedly caused to him after he left the tractor.",
+        "The accused then fired, injuring two people, and reloaded and fired again, killing another person.",
+        "The Court found that the fatal shot was fired from close range."
+      ],
+      "conclusion": "Even assuming a right of private defence had arisen, it ended when the accused reached a safe distance; the subsequent shootings were not justified by that right.",
+      "legal_principle": "The Court held that any right of private defence, if it existed, ended once the accused had successfully left the tractor and reached a safe distance from the alleged attackers. The judgment cites no statutory provision or earlier case for this application.",
+      "rule": {
+        "if": "criminal_case and accused_claims_private_defence and escaped_to_safe_distance and no_further_attack and used_force_after_escape",
+        "then": "private_defence_right_had_ended_before_later_force"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal case in which an accused's liability is being determined.",
+        "accused_claims_private_defence": "The accused says that force was used to defend a person or property from an attack.",
+        "escaped_to_safe_distance": "The accused got away from the alleged attackers and reached a position of safety.",
+        "no_further_attack": "No further attack on the accused occurred after the accused reached safety.",
+        "used_force_after_escape": "The accused used force against others after reaching safety."
+      },
+      "definition": "If an accused claims private defence in a criminal case, escapes to safety, faces no further attack, and then uses force, the right of private defence has already ended."
+    },
+    {
+      "legal_issue": "A plea of private defence is not established where the accused's account is not probable in light of the circumstances and the prosecution evidence.",
+      "material_facts": [
+        "The accused said that members of the victim's party attacked him and damaged his tractor, but the Court found the account improbable.",
+        "The accused's injuries were simple and superficial, and the medical evidence did not establish that they were inflicted during the occurrence.",
+        "No lathi or spear was found at the scene, and the Court found no reason for the alleged attackers to have carried those weapons to the field.",
+        "The Court found that the accused had gone home to obtain a gun after a protest about damage to a newly sown crop, and then fired twice, the second time after reloading.",
+        "The courts below had rejected the defence account and accepted the prosecution case; the Supreme Court found no reason to differ."
+      ],
+      "conclusion": "The accused failed to make the plea of private defence probable. The prosecution case stood proved, and the appeal was dismissed.",
+      "legal_principle": "An accused must make a private-defence plea probable by reference to the circumstances and evidence; a plea that does not preponderate against the prosecution case does not discharge that burden. The Court relied on the concurrent findings of the courts below and the evidence in the record. The judgment cites no statutory provision or earlier case for this application.",
+      "rule": {
+        "if": "criminal_appeal and accused_raises_private_defence and injuries_do_not_support_attack_account and alleged_weapons_not_found and prosecution_evidence_supports_deliberate_shooting",
+        "then": "private_defence_not_established_and_conviction_stands"
+      },
+      "predicates": {
+        "criminal_appeal": "The proceeding is an appeal in a criminal case against the appellant's conviction.",
+        "accused_raises_private_defence": "The accused relies on private defence as a basis for resisting criminal liability.",
+        "injuries_do_not_support_attack_account": "The accused's injuries do not reliably establish that the alleged attack occurred as described.",
+        "alleged_weapons_not_found": "Weapons said to have been used in the alleged attack were not found at the scene.",
+        "prosecution_evidence_supports_deliberate_shooting": "The prosecution evidence supports a finding that the accused deliberately fired at the victims.",
+        "private_defence_not_established_and_conviction_stands": "The plea of private defence is not established and the conviction remains in force."
+      },
+      "definition": "In a criminal appeal, if the accused raises private defence, the injuries do not support the alleged attack, the alleged weapons are not found, and the prosecution evidence supports deliberate shooting, the plea fails and the conviction stands."
+    }
+  ],
+  "seconds": 17.9
+}

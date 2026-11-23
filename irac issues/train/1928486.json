@@ -1,0 +1,83 @@
+{
+  "doc_id": "1928486",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16080,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2258,
+    "prompt_tokens": 4479,
+    "total_tokens": 6737,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A cultivating tenant’s statutory protection against eviction can continue after the death of a life-estate holder who was entitled to create the tenancy.",
+      "material_facts": [
+        "The life-estate holder was entitled to create a tenancy and leased the land to a cultivating tenant.",
+        "The tenant’s tenancy had not been terminated under the lease or a statutory provision.",
+        "After the life-estate holder died, the remainder owners sought to evict the tenant on the ground that the tenancy could not continue beyond her life.",
+        "The court found that none of the statutory grounds for eviction had been established."
+      ],
+      "conclusion": "The tenant’s statutory protection was not defeated by the death of the life-estate holder, and the eviction could not be sustained on that basis.",
+      "legal_principle": "Under sections 2(aa), 3(1), 3(2) and 3(4) of the Madras Cultivating Tenants Protection Act, 1955, a person who meets the statutory definition of cultivating tenant is protected from eviction except in the specified circumstances and through the prescribed procedure. The protection applies where the person who leased the land was entitled to create the tenancy. The court considered no earlier case controlling this issue; it distinguished cases concerning section 76(a) of the Transfer of Property Act because the alleged lessees in those cases were not tenants when inducted.",
+      "rule": {
+        "if": "cultivating_tenant_eviction_case and tenant_is_cultivating_tenant and lessor_entitled_to_create_tenancy and tenancy_not_terminated and no_statutory_eviction_ground",
+        "then": "tenant_protection_continues_after_lessor_death"
+      },
+      "predicates": {
+        "cultivating_tenant_eviction_case": "A proceeding seeks to evict a person claiming protection as a cultivating tenant.",
+        "tenant_is_cultivating_tenant": "The person occupying the land meets the statutory definition of a cultivating tenant.",
+        "lessor_entitled_to_create_tenancy": "The person who leased the land was entitled to create a tenancy over it.",
+        "tenancy_not_terminated": "The tenancy has not been terminated under its terms or by a statutory provision.",
+        "no_statutory_eviction_ground": "No applicable statutory ground permitting eviction has been established."
+      },
+      "definition": "When an eviction proceeding concerns a cultivating tenant whose authorized tenancy remains unterminated and no statutory ground for eviction is established, the tenant’s protection continues after the lessor’s death."
+    },
+    {
+      "legal_issue": "A person who succeeds to an interest in land may be a landlord under the statutory definition if that person is entitled to evict the cultivating tenant.",
+      "material_facts": [
+        "The remainder owners brought the eviction suit after the life-estate holder died.",
+        "They claimed that they were entitled to evict the tenant.",
+        "The court found that the statutory definition of landlord includes successive holders who are entitled to evict a tenant."
+      ],
+      "conclusion": "The remainder owners fell within the statutory definition of landlord, which is not confined to the person who created the lease.",
+      "legal_principle": "Section 2(e) of the Madras Cultivating Tenants Protection Act, 1955 defines a landlord in relation to a holding as the person entitled to evict the cultivating tenant. The definition includes a successive holder who has that entitlement when the suit is filed, rather than only the original lessor. No earlier case was relied upon for this holding.",
+      "rule": {
+        "if": "cultivating_tenant_eviction_case and claimant_is_successor_holder and claimant_entitled_to_evict_at_filing",
+        "then": "successor_holder_is_landlord"
+      },
+      "predicates": {
+        "cultivating_tenant_eviction_case": "A proceeding seeks to evict a person claiming protection as a cultivating tenant.",
+        "claimant_is_successor_holder": "The person seeking eviction holds the land through succession or a later transfer rather than having created the tenancy.",
+        "claimant_entitled_to_evict_at_filing": "The person seeking eviction is entitled to evict the tenant when the proceeding is filed."
+      },
+      "definition": "In a cultivating-tenant eviction proceeding, a successor holder who is then entitled to evict the tenant is a landlord."
+    },
+    {
+      "legal_issue": "Statutory protection for cultivating tenants applies to qualifying tenancies created after the statute came into force and is not limited to tenants in possession when it commenced.",
+      "material_facts": [
+        "The lease was created in 1961, after the Act came into force in 1955.",
+        "The tenant claimed the Act’s protection against eviction.",
+        "The court found no basis in the Act for limiting its operation to people who were cultivating tenants in 1955.",
+        "The court noted that section 4(1) itself contemplated protection for a person who had been a cultivating tenant before commencement but was not in possession when the Act commenced."
+      ],
+      "conclusion": "The Act’s protection was not confined to cultivating tenants in possession when it came into force and could apply to the tenant whose tenancy began later.",
+      "legal_principle": "The Act is prospective except for section 4(1), and its provisions became enforceable when it became operative. Sections 2(aa) and 3(1) extend protection to persons who qualify as cultivating tenants; the Act contains no indication that protection is limited to those who held that status in 1955 or that its operation later ceased. Section 4(1) supports that reading by addressing a qualifying tenant who was not in possession at commencement. No earlier case was relied upon for this holding.",
+      "rule": {
+        "if": "cultivating_tenant_eviction_case and act_in_force and tenancy_began_after_commencement and tenant_is_cultivating_tenant",
+        "then": "protection_applies_to_post_commencement_tenancy"
+      },
+      "predicates": {
+        "cultivating_tenant_eviction_case": "A proceeding seeks to evict a person claiming protection as a cultivating tenant.",
+        "act_in_force": "The statutory protection is in force when the tenant’s rights are considered.",
+        "tenancy_began_after_commencement": "The tenant’s qualifying tenancy began after the statutory protection came into force.",
+        "tenant_is_cultivating_tenant": "The person occupying the land meets the statutory definition of a cultivating tenant."
+      },
+      "definition": "When a qualifying tenancy begins after the statutory protection comes into force, a cultivating tenant may receive that protection in an eviction proceeding."
+    }
+  ],
+  "seconds": 13.5
+}

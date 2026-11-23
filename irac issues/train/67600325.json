@@ -1,0 +1,63 @@
+{
+  "doc_id": "67600325",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13279,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1629,
+    "prompt_tokens": 3590,
+    "total_tokens": 5219,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An approver’s testimony may support a conviction when the testimony is reliable and receives sufficient corroboration in material particulars.",
+      "material_facts": [
+        "The approver gave an account of the poisoning plot that the High Court found reliable and convincing.",
+        "Other prosecution witnesses corroborated material parts of the account, including the purchase of the sweets and the approver’s journey to deliver them.",
+        "The High Court found those corroborating witnesses reliable.",
+        "Some details, including the mixing of poison and delivery of the sweets, had no independent corroboration; the court considered those acts naturally unlikely to have been witnessed by others."
+      ],
+      "conclusion": "The approver’s evidence satisfied the applicable tests, and the conviction based on it was properly upheld.",
+      "legal_principle": "Under Sarwan Singh v. State of Punjab, [1957] S.C.R. 953, an approver’s evidence must first be reliable, as evidence from any witness, and must also receive sufficient corroboration, a distinct requirement for an approver. Corroboration is required in material particulars, not necessarily for every detail; the absence of witnesses to acts naturally carried out in private does not by itself defeat the evidence.",
+      "rule": {
+        "if": "conviction_appeal and approver_testimony_used and approver_account_reliable and material_particulars_corroborated",
+        "then": "conviction_sustainable"
+      },
+      "predicates": {
+        "conviction_appeal": "The matter is an appeal challenging a criminal conviction.",
+        "approver_testimony_used": "The prosecution relied on testimony from a participant in the offence who gave evidence for the prosecution.",
+        "approver_account_reliable": "The court found that the approver’s account was not inherently improbable and was reliable.",
+        "material_particulars_corroborated": "Reliable evidence from other sources supported material particulars of the approver’s account."
+      },
+      "definition": "When a conviction appeal depends on an approver’s testimony, a reliable account corroborated in material particulars makes the conviction sustainable."
+    },
+    {
+      "legal_issue": "Rejecting an uncorroborated and unconvincing part of an approver’s account does not, without more, make the approver unreliable as a witness overall.",
+      "material_facts": [
+        "The High Court declined to rely on the approver’s account of an earlier attempted shooting because it lacked corroboration and was not convincing.",
+        "The High Court did not find that this account was false.",
+        "It found the approver’s account of the later poisoning plot reliable and corroborated in material particulars."
+      ],
+      "conclusion": "The High Court’s rejection of the earlier episode did not make it wrong to rely on the approver’s evidence about the poisoning plot.",
+      "legal_principle": "Sarwan Singh v. State of Punjab, [1957] S.C.R. 953, requires the court to assess whether an approver is a reliable witness and, separately, whether the approver’s evidence is sufficiently corroborated. Declining to act on one portion for want of corroboration or because it is unconvincing is not equivalent to finding the witness false or unreliable overall.",
+      "rule": {
+        "if": "conviction_appeal and approver_testimony_used and one_account_segment_rejected and no_finding_segment_false and remaining_account_reliable and remaining_account_materially_corroborated",
+        "then": "rejected_segment_does_not_discredit_approver"
+      },
+      "predicates": {
+        "conviction_appeal": "The matter is an appeal challenging a criminal conviction.",
+        "approver_testimony_used": "The prosecution relied on testimony from a participant in the offence who gave evidence for the prosecution.",
+        "one_account_segment_rejected": "The court declined to rely on one part of the approver’s account because it was uncorroborated or unconvincing.",
+        "no_finding_segment_false": "The court did not find that the rejected part of the account was false.",
+        "remaining_account_reliable": "The court found the remaining material account reliable.",
+        "remaining_account_materially_corroborated": "Reliable evidence from other sources supported material particulars of the remaining account."
+      },
+      "definition": "In a conviction appeal, rejection of one segment does not discredit the approver when the court made no finding that it was false and found the remaining account reliable and materially corroborated."
+    }
+  ],
+  "seconds": 10.1
+}

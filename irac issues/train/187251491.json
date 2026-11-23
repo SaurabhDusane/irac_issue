@@ -1,0 +1,115 @@
+{
+  "doc_id": "187251491",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27881,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3834,
+    "prompt_tokens": 7260,
+    "total_tokens": 11094,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A single judge of a High Court cannot grant a certificate for an appeal to the Supreme Court from a civil judgment.",
+      "material_facts": [
+        "The appeal was brought on a certificate granted by the single judge who had decided the civil appeal.",
+        "The certificate was granted on an oral request immediately after judgment, without a determination that the requirements for a certificate were met."
+      ],
+      "conclusion": "The certificate was revoked because Article 133(3) barred an appeal to the Supreme Court from the judgment of a single judge; the matter was treated as a special leave petition under Article 136, and leave was granted.",
+      "legal_principle": "Under Articles 133(1) and 133(3) of the Constitution, a certificate for a civil appeal must satisfy the requirements for such an appeal, and no appeal lies from a judgment of one High Court judge unless Parliament provides otherwise. Article 134-A is ancillary and does not independently authorize a certificate. State Bank of India v. S.B.I. Employees’ Union & Anr. (1987) 4 SCC 370 applies; Article 136 permits the matter to be treated as a special leave petition.",
+      "rule": {
+        "if": "civil_proceeding and certificate_granted_by_single_high_court_judge",
+        "then": "certificate_for_supreme_court_appeal_invalid"
+      },
+      "predicates": {
+        "civil_proceeding": "The matter before the High Court was a civil proceeding.",
+        "certificate_granted_by_single_high_court_judge": "A single High Court judge granted a certificate for an appeal to the Supreme Court."
+      },
+      "definition": "When a civil proceeding results in a certificate granted by a single High Court judge, the certificate for an appeal to the Supreme Court is invalid."
+    },
+    {
+      "legal_issue": "A transfer prohibited by the agricultural ceiling regime does not convey title, and a final determination that the holding exceeds the ceiling leaves the land subject to the regime’s consequences for the State.",
+      "material_facts": [
+        "The landholder transferred the land after the ceiling regime had come into force.",
+        "The ceiling tribunal determined that the landholder held land in excess of the prescribed ceiling and held the transfer void.",
+        "That tribunal determination had attained finality."
+      ],
+      "conclusion": "The transfer was null and void and conveyed no right, title, or interest to the purchasers; the land was subject to the statutory surrender process and the State’s rights under the ceiling regime.",
+      "legal_principle": "Sections 7(2) and 17 of the Andhra Pradesh Land Reforms (Ceiling on Agricultural Holdings) Act, 1973 prohibited the relevant transfer after the Act came into force. Sections 10 and 11 and related provisions governed surrendered or deemed-surrendered land. A transferor cannot convey rights that the transferor does not have.",
+      "rule": {
+        "if": "property_transfer_after_ceiling_restriction_began and ceiling_tribunal_finally_determined_excess_holding",
+        "then": "transfer_conveys_no_title_and_land_remains_subject_to_state_ceiling_process"
+      },
+      "predicates": {
+        "property_transfer_after_ceiling_restriction_began": "A holder transferred property after a restriction on transfers under an agricultural ceiling regime had begun to apply.",
+        "ceiling_tribunal_finally_determined_excess_holding": "A ceiling tribunal finally determined that the holder’s land exceeded the prescribed ceiling."
+      },
+      "definition": "When a transfer follows the start of a ceiling-based transfer restriction and a tribunal has finally determined an excess holding, the transfer conveys no title and the land remains subject to the State’s ceiling process."
+    },
+    {
+      "legal_issue": "Revenue-record proceedings under an inconsistent land-record law cannot determine possession or provide a basis for relief where the agricultural ceiling law overrides that law.",
+      "material_facts": [
+        "The parties had litigated under a land-records law over whose name should be entered in the pass book for the land.",
+        "That litigation ended in the claimant’s favour, but the land was already subject to the ceiling regime and a final tribunal determination.",
+        "The claimant relied on the land-record proceedings in the later injunction dispute."
+      ],
+      "conclusion": "The land-record proceedings and resulting orders were of no avail to either party and could not be used as a basis for determining possession or granting an injunction.",
+      "legal_principle": "Section 28 of the Andhra Pradesh Land Reforms (Ceiling on Agricultural Holdings) Act, 1973 gives the Act overriding effect over inconsistent laws. Proceedings under the Andhra Pradesh Rights in Land and Pattadar Pass Books Act, 1971 could not displace the ceiling regime or provide a basis for deciding possession of land subject to it.",
+      "rule": {
+        "if": "land_subject_to_overriding_ceiling_regime and possession_claim_relies_on_land_record_order_under_inconsistent_law",
+        "then": "land_record_order_cannot_establish_possession_for_injunction"
+      },
+      "predicates": {
+        "land_subject_to_overriding_ceiling_regime": "The property was subject to a ceiling regime that overrides inconsistent legal rules.",
+        "possession_claim_relies_on_land_record_order_under_inconsistent_law": "A party relied on an order made under an inconsistent land-record law to establish possession."
+      },
+      "definition": "When property is subject to an overriding ceiling regime and a party relies on an inconsistent land-record order to establish possession, that order cannot establish possession for an injunction."
+    },
+    {
+      "legal_issue": "A plaintiff seeking a permanent injunction must establish lawful possession, and a private injunction suit concerning land subject to State ceiling rights cannot proceed in a manner that prejudices those rights without the State as a party.",
+      "material_facts": [
+        "The suit sought a permanent injunction between private parties over land subject to the ceiling regime.",
+        "The tribunal had determined that the claimant’s holding exceeded the ceiling, and the claimant had no lawful possession capable of supporting an injunction.",
+        "The suit was filed without joining the State, although an order could affect rights that had accrued to the State under the ceiling regime."
+      ],
+      "conclusion": "The claimant was not entitled to a permanent injunction, and the suit was properly dismissed.",
+      "legal_principle": "A plaintiff seeking prohibitory injunction must prima facie establish lawful possession, in addition to the other requirements for injunctive relief, including irreparable loss and injury. A civil court should not adjudicate a private suit in a way that adversely affects rights accrued to the State under a ceiling law when the State is not a party. The Court also applied Section 28 of the Andhra Pradesh Land Reforms (Ceiling on Agricultural Holdings) Act, 1973.",
+      "rule": {
+        "if": "private_permanent_injunction_suit and claimant_lacks_lawful_possession and land_rights_accrued_to_state_under_ceiling_process and state_not_joined",
+        "then": "permanent_injunction_claim_denied"
+      },
+      "predicates": {
+        "private_permanent_injunction_suit": "A claimant brought a suit against a private party seeking a permanent injunction over land.",
+        "claimant_lacks_lawful_possession": "The claimant did not have lawful possession of the land when seeking the injunction.",
+        "land_rights_accrued_to_state_under_ceiling_process": "A ceiling process had caused rights in the land to accrue to the State.",
+        "state_not_joined": "The claimant did not join the State as a party to the suit."
+      },
+      "definition": "When a private permanent-injunction suit concerns land over which ceiling proceedings have given rights to the State, the claimant lacks lawful possession, and the State is not joined, the injunction claim is denied."
+    },
+    {
+      "legal_issue": "A higher appellate court need not reappraise evidence on possession when no permissible basis for disturbing the factual finding is shown and reappraisal is unnecessary to decide the case.",
+      "material_facts": [
+        "The claimant asked the Supreme Court to reconsider documentary and oral evidence concerning possession.",
+        "The Court found no basis requiring it to reappraise that evidence and considered reappraisal unnecessary in light of its other conclusions."
+      ],
+      "conclusion": "The Court declined to reappraise the evidence on possession.",
+      "legal_principle": "Possession is essentially a question of fact decided on the evidence. A factual finding may be open to higher-court interference if it is contrary to the pleadings, evidence, or law, or is so perverse or arbitrary that no reasonable judicial person could have made it. The Court relied on this general appellate standard.",
+      "rule": {
+        "if": "supreme_court_appellate_review and reappraisal_of_possession_evidence_requested and no_permissible_basis_to_disturb_factual_finding_shown and reappraisal_unnecessary_to_decide_case",
+        "then": "possession_evidence_not_reappraised"
+      },
+      "predicates": {
+        "supreme_court_appellate_review": "The matter was before the Supreme Court in appellate review.",
+        "reappraisal_of_possession_evidence_requested": "A party asked the Court to reassess evidence about possession.",
+        "no_permissible_basis_to_disturb_factual_finding_shown": "The party did not show that the factual finding was contrary to the pleadings, evidence, or law, or was perverse or arbitrary.",
+        "reappraisal_unnecessary_to_decide_case": "The Court could decide the case without reassessing the possession evidence."
+      },
+      "definition": "When appellate review involves a request to reassess possession evidence, no permissible basis to disturb the factual finding is shown, and reassessment is unnecessary, the evidence is not reappraised."
+    }
+  ],
+  "seconds": 26.3
+}

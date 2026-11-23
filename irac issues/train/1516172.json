@@ -1,0 +1,80 @@
+{
+  "doc_id": "1516172",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41771,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3061,
+    "prompt_tokens": 10335,
+    "total_tokens": 13396,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A warrant placing a landlord in possession after a properly authorized fixed-term residential tenancy expires may issue without prior notice to the tenant.",
+      "material_facts": [
+        "The parties obtained permission to create a fixed-term tenancy for residential use, and the tenant’s representative confirmed the agreed term and the obligation to vacate at its end.",
+        "After the term expired and the tenant did not vacate, the landlord applied for recovery of possession and the Rent Controller issued a warrant without first notifying the tenant.",
+        "The tenant challenged the warrant after it had been executed, arguing that notice was required and that the original permission had been obtained by fraud."
+      ],
+      "conclusion": "Neither the governing statute, its rules, nor the requirement of a reasonable opportunity to be heard required prior notice before the warrant issued. The warrant and the steps taken to put the landlord in possession were valid, subject to adjudication of any properly raised challenge to the original permission.",
+      "legal_principle": "Section 21 of the Delhi Rent Control Act, 1958 contemplates permission for a qualifying fixed-term residential tenancy and, after the term expires, a process to place the landlord in possession; it does not require a fresh eviction order or prior notice. Rule 5 of the Delhi Rent Control Rules, 1959 addresses the time for the landlord’s application but does not require notice. Section 37(1) protects a person from an order prejudicially affecting a right without a hearing; after expiry of a properly created limited tenancy, the tenant has no right to remain in possession under section 21. The special procedure’s purpose, as explained in S.B. Noronah v. Prem Kumari Khanna, [1980] 1 SCR 281, is to assure the landlord of possession at the end of the fixed term; requiring notice and an elaborate inquiry in every case would frustrate that purpose.",
+      "rule": {
+        "if": "limited_term_residential_tenancy_case and controller_approved_fixed_term_lease and fixed_term_expired and landlord_applied_for_possession",
+        "then": "possession_warrant_may_issue_without_prior_tenant_notice"
+      },
+      "predicates": {
+        "limited_term_residential_tenancy_case": "The proceeding concerns a residential tenancy authorized for a limited fixed term.",
+        "controller_approved_fixed_term_lease": "The controller granted permission for the fixed-term tenancy after considering the proposed arrangement.",
+        "fixed_term_expired": "The agreed and authorized tenancy term ended without the tenant vacating.",
+        "landlord_applied_for_possession": "The landlord applied to the controller to recover possession after the term ended."
+      },
+      "definition": "When an approved fixed-term residential tenancy has ended and the landlord applies for possession, a warrant may issue without prior notice to the tenant."
+    },
+    {
+      "legal_issue": "A tenant who discovers facts suggesting that the original permission for a limited-term tenancy was vitiated should seek adjudication promptly during the tenancy, although a plea raised at the possession stage may be considered.",
+      "material_facts": [
+        "The tenant alleged that the landlord had suppressed an earlier unsuccessful application for permission and that the later permission was therefore procured by fraud.",
+        "The tenant did not approach the Rent Controller during the three-year tenancy to have the alleged fraud adjudicated, despite the asserted facts relating to the grant of permission.",
+        "The tenant raised the fraud plea after the landlord applied for possession and the warrant had been executed; the High Court remanded the matter for the Rent Controller to consider the tenant’s objections, and the Supreme Court did not disturb that remand."
+      ],
+      "conclusion": "A tenant should approach the Rent Controller during the limited tenancy as soon as facts tending to vitiate the original permission are discovered. If the tenant independently raises a plea of fraud or collusion when possession is sought, the Controller may inquire into it, but the tenant risks having a delayed plea rejected as an afterthought.",
+      "legal_principle": "Section 21’s special procedure requires prompt recourse where facts suggest that permission was obtained through fraud or collusion, or granted mechanically. S.B. Noronah v. Prem Kumari Khanna recognizes that such pleas may be considered when raised at the possession stage and that the initial permission is presumed regular; it does not require the Controller to issue notice inviting such pleas in every case. The tenant should seek adjudication when the relevant facts are discovered, rather than wait until the landlord applies for possession after the fixed term.",
+      "rule": {
+        "if": "limited_term_tenancy_proceeding and tenant_discovers_facts_tending_to_invalidate_permission",
+        "then": "tenant_should_promptly_seek_controller_review"
+      },
+      "predicates": {
+        "limited_term_tenancy_proceeding": "The proceeding concerns a tenancy authorized for a limited fixed term.",
+        "tenant_discovers_facts_tending_to_invalidate_permission": "During the tenancy, the tenant learns facts that may show that permission for the tenancy was obtained or granted improperly."
+      },
+      "definition": "If a tenant in a limited-term tenancy discovers facts that may invalidate the permission, the tenant should promptly seek the Controller’s review."
+    },
+    {
+      "legal_issue": "Possession obtained under an otherwise valid warrant should not be restored pending adjudication of a delayed challenge where the tenant had advance notice of the impending recovery application and first raised the challenge after execution.",
+      "material_facts": [
+        "Before the tenancy expired, the landlord sent two registered letters asking the tenant to deliver vacant possession when the term ended.",
+        "The tenant did not respond or seek adjudication of its fraud allegation during the tenancy or after receiving those letters.",
+        "The landlord obtained and executed the possession warrant, and the tenant challenged the warrant only afterward.",
+        "The High Court ordered restoration of possession while the tenant’s objections were to be considered."
+      ],
+      "conclusion": "The direction restoring possession was quashed. The landlord’s possession obtained under the warrant was to remain undisturbed until the tenant’s objections were finally decided.",
+      "legal_principle": "The special procedure under section 21 is intended to put the landlord in possession at the expiry of the fixed term. Although a tenant’s plea that the original permission was vitiated may be adjudicated, delay in raising it may cause the plea to be treated as an afterthought. On these facts, restoring possession pending that adjudication would not serve the statutory procedure; the Supreme Court therefore set aside the restoration direction while allowing the remanded objections to be decided.",
+      "rule": {
+        "if": "limited_term_tenancy_proceeding and possession_warrant_executed and landlord_gave_advance_vacate_notices and tenant_first_challenged_permission_after_execution",
+        "then": "landlord_possession_remains_undisturbed_pending_objection_decision"
+      },
+      "predicates": {
+        "limited_term_tenancy_proceeding": "The proceeding concerns recovery of possession after a tenancy authorized for a limited fixed term.",
+        "possession_warrant_executed": "The landlord obtained possession through execution of a warrant issued by the Controller.",
+        "landlord_gave_advance_vacate_notices": "Before the tenancy ended, the landlord notified the tenant that vacant possession was expected when the term expired.",
+        "tenant_first_challenged_permission_after_execution": "The tenant first challenged the original permission after the warrant had been executed."
+      },
+      "definition": "When a warrant has been executed, the landlord gave advance notice to vacate, and the tenant first challenged the permission afterward, the landlord’s possession remains undisturbed until the objection is decided."
+    }
+  ],
+  "seconds": 19.2
+}

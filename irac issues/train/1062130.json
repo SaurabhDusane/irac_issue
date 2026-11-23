@@ -1,0 +1,105 @@
+{
+  "doc_id": "1062130",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 90933,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2800,
+    "prompt_tokens": 23814,
+    "total_tokens": 26614,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court-ordered stay affecting proceedings under a composite land-acquisition notification suspends the limitation period for declarations concerning the lands covered by that notification, even for owners who did not obtain a separate stay.",
+      "material_facts": [
+        "The lands were covered by composite notifications issued for a single planned development scheme.",
+        "Courts had stayed the authorities from issuing declarations under those notifications in proceedings brought by other landowners.",
+        "The declarations concerning the appellants’ lands were issued after the stays ceased to operate.",
+        "The notifications fell within the period for which the statutory scheme allowed the stay period to be excluded when computing the time limit."
+      ],
+      "conclusion": "The period during which the stays operated had to be excluded in computing the time limit, so the declarations were not invalid as time-barred merely because the appellants had no separate stay order.",
+      "legal_principle": "Under the first proviso to Section 6 of the Land Acquisition Act, 1894, read with Explanation 1, the period during which a court stays action or proceedings pursuant to a Section 4 notification is excluded from the applicable time limit. The Court applied the broad construction of “any” in Explanation 1 adopted by the Delhi High Court Full Bench in B.R. Gupta-I, and relied on Abhey Ram (Dead by LRs) v. Union of India, which treated a stay concerning a composite notification as inhibiting further action concerning other lands covered by it. The rationale is that a stay affecting an integrated acquisition scheme can prevent the authorities from proceeding with declarations for the scheme as a whole.",
+      "rule": {
+        "if": "is_land_acquisition_challenge and composite_acquisition_notification and related_landowner_stay_order and declaration_issued_after_stay_lifted",
+        "then": "declaration_not_time_barred"
+      },
+      "predicates": {
+        "is_land_acquisition_challenge": "The proceeding challenges an acquisition of land under a statutory acquisition process.",
+        "composite_acquisition_notification": "The government issued a notification covering multiple parcels as part of an integrated acquisition scheme.",
+        "related_landowner_stay_order": "A court stayed the authorities from taking further action under the notification in a proceeding brought by another landowner whose land was covered by it.",
+        "declaration_issued_after_stay_lifted": "The authorities issued the declaration after the relevant court-ordered restraint had ceased to operate."
+      },
+      "definition": "When a land-acquisition challenge concerns a composite notification and a related landowner obtained a stay that prevented further action under it, a declaration issued after the stay ended is not time-barred on that account."
+    },
+    {
+      "legal_issue": "The benefit of a final order quashing an acquisition declaration does not extend to landowners who were not parties to the successful proceedings when the order was confined to the petitioners and the declaration was not quashed in its entirety.",
+      "material_facts": [
+        "The appellants had not obtained the orders that quashed declarations in proceedings brought by other landowners.",
+        "The earlier court orders granted relief to the petitioners before those courts rather than quashing the declarations in their entirety.",
+        "The appellants’ lands remained covered by declarations that had not been quashed in their cases.",
+        "The Supreme Court had previously held that the benefit of the earlier limited quashing did not enure to landowners who were not parties to those proceedings."
+      ],
+      "conclusion": "The appellants could not obtain the benefit of the final quashing orders made in other landowners’ cases.",
+      "legal_principle": "In Abhey Ram (Dead by LRs) v. Union of India, a three-judge Bench held that where the operative order quashes a declaration only with respect to the writ petitioners, its benefit does not extend to other landowners; unless the composite declaration is quashed in toto, it remains effective for lands not covered by the quashing order. The Court distinguished the interim effect of a stay, which may inhibit action under a composite notification, from the final relief granted in a particular case. This conclusion also accords with the principle applied in Delhi Administration v. Gurdip Singh Uban that the final benefit is confined to those in whose favour the order was made.",
+      "rule": {
+        "if": "is_land_acquisition_challenge and applicant_not_party_to_successful_case and final_quashing_limited_to_petitioners and declaration_not_quashed_in_entirety",
+        "then": "final_quashing_benefit_not_extended"
+      },
+      "predicates": {
+        "is_land_acquisition_challenge": "The proceeding challenges an acquisition of land under a statutory acquisition process.",
+        "applicant_not_party_to_successful_case": "The landowner seeking relief was not a petitioner in the proceeding that resulted in the successful final order.",
+        "final_quashing_limited_to_petitioners": "The final order granting relief confined its effect to the petitioners before the court.",
+        "declaration_not_quashed_in_entirety": "The declaration covering the acquisition was not set aside in its entirety."
+      },
+      "definition": "A landowner who was not a party to a successful acquisition challenge does not receive the benefit of a final quashing order limited to that case’s petitioners when the declaration was not quashed in its entirety."
+    },
+    {
+      "legal_issue": "A substantially delayed challenge to land-acquisition proceedings may be rejected for laches when the delay is not adequately explained.",
+      "material_facts": [
+        "Some appellants filed their writ petitions many years after the acquisition declarations had been issued.",
+        "The acquisition proceedings had begun long before those petitions were filed.",
+        "The appellants relied on confusion and an asserted period of inactivity to explain their delay, but the High Court found the explanation insufficient.",
+        "The Supreme Court found the High Court justified in declining to entertain the delayed petitions."
+      ],
+      "conclusion": "The High Court was justified in dismissing the affected petitions on the ground of delay and laches, and the delay was not condoned.",
+      "legal_principle": "A person challenging administrative action under Articles 226 and 227 must approach the court within a reasonable time and satisfactorily explain the delay. The Court held that the asserted period of uncertainty did not justify the substantial delay in these cases, particularly given the long passage of time since the acquisition proceedings began.",
+      "rule": {
+        "if": "is_writ_challenge_to_land_acquisition and substantial_delay_in_filing and delay_not_satisfactorily_explained",
+        "then": "writ_challenge_barred_by_laches"
+      },
+      "predicates": {
+        "is_writ_challenge_to_land_acquisition": "The proceeding is a writ challenge to land-acquisition action.",
+        "substantial_delay_in_filing": "The landowner filed the challenge substantially after the relevant acquisition action gave rise to the claim.",
+        "delay_not_satisfactorily_explained": "The landowner’s account of the delay did not adequately justify waiting to bring the challenge."
+      },
+      "definition": "A substantially delayed writ challenge to land acquisition may be barred by laches when the landowner does not satisfactorily explain the delay."
+    },
+    {
+      "legal_issue": "The acquisition process satisfied the statutory requirements concerning consideration of landowners’ objections where the objections were heard, reports were forwarded, and the appropriate government considered them before approving acquisition.",
+      "material_facts": [
+        "The Land Acquisition Collector heard objections submitted by landowners.",
+        "The Collector forwarded the objections and reports to the appropriate government.",
+        "The appropriate government examined the objections and accompanying reports before approving the acquisition.",
+        "The Supreme Court reviewed the record and found no infirmity in the procedure followed."
+      ],
+      "conclusion": "The procedure followed in considering the objections complied fully with the statutory requirements, and the asserted procedural infirmity was not established.",
+      "legal_principle": "Section 5A of the Land Acquisition Act, 1894 requires consideration of landowners’ objections through the prescribed process. On the record before it, the Court found that the objections had been heard and placed before the appropriate government with the Collector’s reports, and that the government had applied its mind. The Court expressly left the broader question of the scope and interpretation of Section 5A for other appeals.",
+      "rule": {
+        "if": "is_land_acquisition_challenge and objections_heard_by_collector and reports_forwarded_to_government and government_considered_objections_and_reports",
+        "then": "objection_consideration_procedure_valid"
+      },
+      "predicates": {
+        "is_land_acquisition_challenge": "The proceeding challenges an acquisition of land under a statutory acquisition process.",
+        "objections_heard_by_collector": "The official responsible for considering landowners’ objections heard those objections.",
+        "reports_forwarded_to_government": "The official forwarded the objections and the related report to the government responsible for deciding whether to proceed.",
+        "government_considered_objections_and_reports": "The responsible government examined the objections and reports before approving the acquisition."
+      },
+      "definition": "The objection-consideration procedure is valid where, in a land-acquisition challenge, the objections are heard, the related reports are forwarded, and the responsible government considers them before approving acquisition."
+    }
+  ],
+  "seconds": 17.8
+}

@@ -1,0 +1,95 @@
+{
+  "doc_id": "265321",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17039,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1961,
+    "prompt_tokens": 4981,
+    "total_tokens": 6942,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An ejectment order made under the statutory procedure is invalid if it does not make payment of compensation a condition precedent to ejectment.",
+      "material_facts": [
+        "An authority ordered the occupants’ dispossession and transfer of possession to a village body while purporting to act under the statutory ejectment provision.",
+        "The order did not direct payment of compensation to the occupants."
+      ],
+      "conclusion": "The order was not a valid order under the statutory ejectment provision, and the provision governing suits after a valid ejectment order was not attracted.",
+      "legal_principle": "The language of section 212A(6) of the Uttar Pradesh Zamindari Abolition and Land Reforms Act, 1950 requires an order for ejectment on payment of prescribed compensation; payment must be a condition precedent to ejectment. Section 212A(7) applies only where a valid order has been passed under section 212A(6).",
+      "rule": {
+        "if": "statutory_ejectment_order and not compensation_condition",
+        "then": "order_invalid_under_ejectment_procedure"
+      },
+      "predicates": {
+        "statutory_ejectment_order": "An authority purported to order a person's ejectment under a statutory procedure that permits ejectment on payment of compensation.",
+        "compensation_condition": "The order makes payment of compensation a condition that must be met before ejectment."
+      },
+      "definition": "When an authority purports to order ejectment under a procedure requiring compensation first but the order does not make compensation a precondition, the order is invalid under that procedure."
+    },
+    {
+      "legal_issue": "A possession suit following dispossession under an invalid statutory ejectment order is not governed by the shorter limitation period for challenging a valid ejectment order and may be brought within the ordinary six-year period.",
+      "material_facts": [
+        "The occupants brought a suit under section 209 seeking possession after dispossession under an order that did not require payment of compensation and was therefore invalid under section 212A(6).",
+        "The suit was brought within six years of the dispossession."
+      ],
+      "conclusion": "The suit was not time-barred; the shorter period for a suit under section 212A(7) did not apply, and the suit could be brought within six years from the unlawful dispossession.",
+      "legal_principle": "Sections 209, 212A(7), and 189 of the Uttar Pradesh Zamindari Abolition and Land Reforms Act, 1950, read with Rule 338 and the relevant entries in Appendix III to the Rules, distinguish a suit following a valid ejectment order from a suit following unlawful dispossession. The shorter period and resulting extinguishment of an interest apply only when dispossession follows a valid order; a possession suit after unlawful dispossession may be brought within six years.",
+      "rule": {
+        "if": "land_possession_suit and dispossession_under_invalid_order and filed_within_ordinary_limitation",
+        "then": "suit_not_time_barred_by_short_ejectment_period"
+      },
+      "predicates": {
+        "land_possession_suit": "The proceeding is a suit seeking possession of land after the plaintiff was dispossessed.",
+        "dispossession_under_invalid_order": "The plaintiff's dispossession occurred under an order that was invalid because it did not satisfy the required compensation condition.",
+        "filed_within_ordinary_limitation": "The suit was filed within the ordinary limitation period applicable to recovery of possession after unlawful dispossession."
+      },
+      "definition": "A possession suit filed within the ordinary limitation period after dispossession under an invalid order is not barred by the shorter period for challenging a valid ejectment order."
+    },
+    {
+      "legal_issue": "A claim to possession fails where the trial court found that the claimant never acquired the tenure rights asserted in the land, regardless of the invalidity of the dispossession order.",
+      "material_facts": [
+        "The occupants claimed Sirdari rights in one plot.",
+        "The trial court found that they had never acquired tenancy or Sirdari rights in that plot, and the first appellate court upheld that finding.",
+        "The High Court set aside dismissal of the suit based on its conclusion that the dispossession order was invalid."
+      ],
+      "conclusion": "The dismissal of the possession claim concerning that plot was upheld because the finding that the occupants had never acquired the asserted rights was unaffected by the invalidity of the dispossession order.",
+      "legal_principle": "The invalidity of an order of dispossession does not disturb an independent finding of fact that the claimant never acquired the rights on which the claim to possession depends. No earlier case was relied on for this ruling.",
+      "rule": {
+        "if": "land_possession_claim and asserted_tenure_never_acquired and finding_is_unaffected_by_order_invalidity",
+        "then": "possession_claim_fails"
+      },
+      "predicates": {
+        "land_possession_claim": "A claimant seeks possession of land on the basis of asserted tenure rights.",
+        "asserted_tenure_never_acquired": "The fact-finder determined that the claimant never acquired the tenure rights asserted for the land.",
+        "finding_is_unaffected_by_order_invalidity": "The determination that the claimant never acquired those rights does not depend on the validity of the order that caused dispossession."
+      },
+      "definition": "A possession claim based on tenure rights fails when the claimant never acquired those rights, even if the order causing dispossession was invalid."
+    },
+    {
+      "legal_issue": "A claim to possession of land must be remanded for trial when the decision below rested on extinguishment of rights under an invalid ejectment order and other material issues remain undecided.",
+      "material_facts": [
+        "The occupants claimed Bhumidari rights in four plots.",
+        "The civil court did not decide whether those rights had ever been acquired and instead found them extinguished because the occupants had not filed a suit within the shorter period applicable to a valid ejectment order.",
+        "Other issues concerning the plots also remained undecided."
+      ],
+      "conclusion": "The suit concerning the four plots was remanded for a fresh decision, including determination of whether the occupants had acquired Bhumidari rights and of the other undecided issues.",
+      "legal_principle": "Because the shorter limitation period and extinguishment rule apply only following a valid statutory ejectment order, a finding of extinguishment based on failure to sue within that period cannot resolve the case where the order was invalid. Unresolved issues necessary to determine the claim must be decided on remand. The Court relied on sections 212A(6), 212A(7), and 189 of the Uttar Pradesh Zamindari Abolition and Land Reforms Act, 1950.",
+      "rule": {
+        "if": "appeal_from_disposition_of_land_claim and decision_below_based_on_extinguishment_after_invalid_order and material_issues_undecided",
+        "then": "claim_remanded_for_further_trial"
+      },
+      "predicates": {
+        "appeal_from_disposition_of_land_claim": "The proceeding is an appeal concerning the disposition of a claim to land.",
+        "decision_below_based_on_extinguishment_after_invalid_order": "The decision below treated the claimant's rights as extinguished for failing to challenge dispossession under an invalid order within a shorter period.",
+        "material_issues_undecided": "Whether the claimant acquired the asserted rights or other material issues in the claim remain undecided."
+      },
+      "definition": "When a land claim was rejected on an inapplicable extinguishment ground and material issues remain undecided, the claim is sent back for further trial."
+    }
+  ],
+  "seconds": 12.0
+}

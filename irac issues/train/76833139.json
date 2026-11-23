@@ -1,0 +1,59 @@
+{
+  "doc_id": "76833139",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 7887,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3049,
+    "prompt_tokens": 2460,
+    "total_tokens": 5509,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An acquisition proceeding initiated under the earlier acquisition regime does not lapse merely because no award has been made by the commencement of the later regime, and compensation must be determined under the later regime.",
+      "material_facts": [
+        "The acquisition was initiated under the earlier land acquisition law.",
+        "No award had been made under either the earlier or the later law.",
+        "The owner disputed whether possession had been taken and compensation had been paid, but the absence of an award was admitted."
+      ],
+      "conclusion": "The acquisition proceedings had not lapsed and could continue, but the award had to be made and compensation determined under the 2013 Act. The authorities were directed to make the award within six months and deposit or disburse the compensation within one month thereafter.",
+      "legal_principle": "Section 24(1)(a) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 provides that when proceedings were initiated under the Land Acquisition Act, 1894 but no award under Section 11 had been made, the proceedings may continue and compensation is determined under the 2013 Act. Section 24(2) addresses proceedings in which an award had been made at least five years before the 2013 Act commenced and possession had not been taken or compensation had not been paid; its lapse conditions did not apply where no award had been made. No earlier cases were relied on.",
+      "rule": {
+        "if": "legacy_acquisition_proceeding and no_award_at_transition",
+        "then": "proceedings_continue_with_compensation_under_current_regime"
+      },
+      "predicates": {
+        "legacy_acquisition_proceeding": "The proceeding concerns a land acquisition initiated under an earlier acquisition regime.",
+        "no_award_at_transition": "No award had been made when the later acquisition regime commenced.",
+        "proceedings_continue_with_compensation_under_current_regime": "The acquisition proceeds without lapsing, and compensation is determined under the later regime."
+      },
+      "definition": "When an acquisition proceeding was initiated under an earlier regime and no award existed when the later regime commenced, the proceeding continues and compensation is determined under the later regime."
+    },
+    {
+      "legal_issue": "Depositing compensation with an acquisition official does not discharge the duty to provide compensation to the landowner or require the owner to collect it.",
+      "material_facts": [
+        "The authority said that it had deposited 80% of the compensation with the land acquisition officials.",
+        "No award had been made and the landowner had not received the value of the land.",
+        "The authority contended that it was for the landowner to collect the deposited money."
+      ],
+      "conclusion": "The deposit with the land acquisition officials did not justify requiring the landowner to collect the compensation. The authorities were required to calculate compensation under the 2013 Act and deposit it or disburse it to the owner.",
+      "legal_principle": "In compulsory land acquisition, the required approach is to go and give compensation, not to require the owner to come and collect it. A deposit between the requisitioning authority and the acquisitioning authority does not establish that compensation has been paid to the owner. The Court relied on no earlier cases for this principle.",
+      "rule": {
+        "if": "compulsory_acquisition_case and compensation_unpaid_to_owner and funds_only_deposited_with_official_collector",
+        "then": "authority_must_proactively_provide_compensation"
+      },
+      "predicates": {
+        "compulsory_acquisition_case": "The proceeding concerns the compulsory acquisition of a person's land.",
+        "compensation_unpaid_to_owner": "The landowner has not received the compensation due for the land.",
+        "funds_only_deposited_with_official_collector": "The acquiring authority has deposited funds with an acquisition official but has not provided them to the landowner.",
+        "authority_must_proactively_provide_compensation": "The acquiring authority must take steps to provide the compensation to the landowner rather than require the owner to collect it."
+      },
+      "definition": "When land is compulsorily acquired, the owner remains unpaid, and funds have only been deposited with an official, the authority must take steps to provide compensation to the owner."
+    }
+  ],
+  "seconds": 19.8
+}

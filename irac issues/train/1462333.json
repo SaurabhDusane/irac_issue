@@ -1,0 +1,134 @@
+{
+  "doc_id": "1462333",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31106,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3565,
+    "prompt_tokens": 7819,
+    "total_tokens": 11384,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A conviction cannot safely rest on the uncorroborated testimony of a very young child witness when the circumstances materially undermine the reliability of that testimony.",
+      "material_facts": [
+        "The prosecution relied principally on the testimony of a child who was about six years old at the time of the incident and said he had witnessed the assault.",
+        "The child’s testimony was recorded long after the incident, leaving an opportunity for tutoring; the trial judge observed that he vacillated and sometimes failed to understand questions.",
+        "The prosecution did not call the child’s maternal uncle, the first person said to have met him after the incident, and there was no clear evidence that the child had disclosed the assailants’ names to his father.",
+        "The child said that after seeing his mother assaulted he went back to sleep, and the prosecution’s account of his presence and conduct was not independently confirmed in a way that established he had witnessed and recognized the assailants."
+      ],
+      "conclusion": "The child’s testimony was too unreliable, without adequate corroboration, to support the conviction.",
+      "legal_principle": "A child is competent to testify, but the court must evaluate a child’s evidence carefully because the child may be susceptible to tutoring. Where the testimony is doubtful or there is a possibility of tutoring, adequate corroboration should be sought before relying on it for conviction. The Court relied on Panchhi v. State of U.P. (1998) 7 SCC 177 and State of Assam v. Mafizuddin Ahmed (1983) 2 SCC 14.",
+      "rule": {
+        "if": "criminal_case and child_is_sole_material_eyewitness and child_is_very_young and (opportunity_for_tutoring_exists or testimony_has_material_reliability_concerns) and not adequate_corroboration_exists",
+        "then": "conviction_cannot_safely_rest_on_child_testimony"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal prosecution in which the reliability of a witness’s testimony bears on guilt.",
+        "child_is_sole_material_eyewitness": "The prosecution relies on a child as its only material eyewitness to the alleged crime.",
+        "child_is_very_young": "The eyewitness was of an age at which limited maturity of understanding may affect the reliability of the account.",
+        "opportunity_for_tutoring_exists": "A substantial interval or other circumstances allowed the child to be coached before giving evidence.",
+        "testimony_has_material_reliability_concerns": "The child’s account or the surrounding evidence contains material omissions, unexplained conduct, or signs of uncertainty that cast doubt on reliability.",
+        "adequate_corroboration_exists": "Independent evidence materially supports the child’s account of the crime and the identity of the perpetrator."
+      },
+      "definition": "When a very young child is the sole material eyewitness, circumstances permit tutoring or otherwise undermine reliability, and adequate corroboration is absent, the testimony cannot safely support conviction."
+    },
+    {
+      "legal_issue": "Dock identification by a young witness is unreliable where no identification parade was held and the witness’s prior familiarity with the accused is not established.",
+      "material_facts": [
+        "The child had named the accused in a statement to the police, but no identification parade was held.",
+        "The child identified the accused in court after they appeared in the dock.",
+        "The child lived with his parents away from the village where the crime occurred and visited that village only occasionally with his mother.",
+        "The evidence did not establish that the child knew all the accused before the incident; residence in the same village did not establish that he was acquainted with them."
+      ],
+      "conclusion": "The court could not safely rely on the child’s dock identification of the accused.",
+      "legal_principle": "Where identity is disputed, dock identification may be unreliable when the witness had no established prior familiarity with the accused and no identification parade was held. The Court relied on Japal Singh v. State of Punjab, 1996(4) Crimes 74 (SC), and held that the circumstances did not justify dispensing with an identification parade.",
+      "rule": {
+        "if": "criminal_case and identification_is_material and witness_is_a_young_child and no_identification_parade_was_held and not prior_familiarity_with_accused_is_established and identification_occurred_only_in_court",
+        "then": "dock_identification_is_not_reliable"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal prosecution in which the identity of the alleged perpetrator is in issue.",
+        "identification_is_material": "The prosecution relies on the witness’s identification to connect the accused with the crime.",
+        "witness_is_a_young_child": "The identifying witness was a young child whose age and understanding bear on the reliability of identification.",
+        "no_identification_parade_was_held": "The authorities did not arrange a procedure for the witness to identify the suspect before trial.",
+        "prior_familiarity_with_accused_is_established": "Evidence establishes that the witness knew the accused before the incident well enough to recognize them reliably.",
+        "identification_occurred_only_in_court": "The witness identified the accused for the first time, or only reliably, when the accused appeared in court."
+      },
+      "definition": "When identification is material, a young child identifies the accused only in court, no identification parade was held, and prior familiarity is not established, the dock identification is not reliable."
+    },
+    {
+      "legal_issue": "A retracted confession made while the accused is in police custody is unreliable where the magistrate fails to take essential precautions to establish that it is voluntary.",
+      "material_facts": [
+        "The co-accused was produced before the magistrate handcuffed and in police custody when the confession was recorded.",
+        "The record did not show that the magistrate specifically asked whether the police had subjected him to physical or mental pressure, why he wished to confess, or whether he feared consequences for refusing.",
+        "The confession was not recorded in question-and-answer form, and the accused later retracted it, alleging police torture and threats and an assurance that he would become an approver.",
+        "After recording the confession, the magistrate returned the accused to police custody."
+      ],
+      "conclusion": "The confession was not shown to be voluntary and could not safely be relied on, including as corroboration against the other accused.",
+      "legal_principle": "Section 164 of the Code of Criminal Procedure requires safeguards to ensure that a confession is voluntary, and those requirements must be followed in substance as well as form. The magistrate should inquire into the accused’s custody and treatment, allow time for reflection, ask why the accused wishes to confess, and assure protection from pressure. The Court relied on State of U.P. v. Singhara Singh, AIR 1964 SC 358; Shivappa v. State of Karnataka, (1995) 2 SCC 76; and Shankaria v. State of Rajasthan, (1978) 3 SCC 435, including its holding that a retracted confession found involuntary is not safe to rely on or treat as corroboration.",
+      "rule": {
+        "if": "criminal_case and confession_recorded_by_magistrate and confessor_was_in_police_custody_when_produced and essential_voluntariness_inquiries_were_omitted and confession_was_retracted",
+        "then": "confession_is_unreliable_and_cannot_corroborate_guilt"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal prosecution in which a confession is offered as evidence of guilt.",
+        "confession_recorded_by_magistrate": "A magistrate recorded a statement in which the accused admitted involvement in the crime.",
+        "confessor_was_in_police_custody_when_produced": "The accused was produced before the magistrate while under police control or in police custody.",
+        "essential_voluntariness_inquiries_were_omitted": "The magistrate did not make adequate inquiries and take precautions to determine whether the accused was confessing freely and without pressure.",
+        "confession_was_retracted": "The accused later withdrew the confession or asserted that it had been obtained through pressure, threats, or inducement."
+      },
+      "definition": "A confession recorded by a magistrate is unreliable and cannot corroborate guilt when the accused was in police custody, essential voluntariness safeguards were omitted, and the confession was later retracted."
+    },
+    {
+      "legal_issue": "Weak recoveries, rejected conspiracy evidence, and an insufficient motive do not establish guilt when they do not reliably connect the accused to the crime.",
+      "material_facts": [
+        "The trial court rejected the alleged evidence that witnesses had overheard the accused discussing a plan before and after the crime, and the higher court also did not rely on that evidence.",
+        "The alleged recoveries included ordinary, low-value household or religious articles, which the trial court considered unlikely to have been taken by the perpetrators.",
+        "The prosecution relied on a civil dispute concerning access to a shared area as a motive, but the Court considered it insufficient to explain the alleged crime and capable at most of raising suspicion.",
+        "The crime occurred in an area affected by dacoity, and the possibility that unknown criminals committed it was not excluded."
+      ],
+      "conclusion": "The recoveries and motive were too weak to sustain conviction, particularly in the absence of reliable evidence connecting the accused to the crime.",
+      "legal_principle": "Suspicion or motive alone does not establish guilt, and weak recovery evidence cannot sustain conviction when it does not reliably connect the accused with the crime. The Court assessed these matters alongside the rejected conspiracy evidence and the possibility of unknown offenders; it cited no separate statutory provision or earlier case for this determination.",
+      "rule": {
+        "if": "criminal_case and alleged_recoveries_are_weak and motive_is_insufficient_to_establish_guilt and conspiracy_evidence_is_not_accepted and possibility_of_other_perpetrators_remains and not reliable_linking_evidence_exists",
+        "then": "circumstantial_evidence_is_insufficient_to_prove_guilt"
+      },
+      "predicates": {
+        "criminal_case": "The proceeding is a criminal prosecution in which circumstantial evidence is offered to prove guilt.",
+        "alleged_recoveries_are_weak": "The recovered items are ordinary or of little value and do not persuasively connect the accused to the crime.",
+        "motive_is_insufficient_to_establish_guilt": "The alleged motive may create suspicion but does not itself reliably establish that the accused committed the crime.",
+        "conspiracy_evidence_is_not_accepted": "The evidence offered to show that the accused planned or discussed the crime is rejected as unreliable.",
+        "possibility_of_other_perpetrators_remains": "The evidence does not exclude a reasonable possibility that persons other than the accused committed the crime.",
+        "reliable_linking_evidence_exists": "Reliable evidence connects the accused to the crime beyond the weak or rejected circumstances described."
+      },
+      "definition": "When recoveries are weak, motive is insufficient, alleged conspiracy evidence is rejected, another-perpetrator possibility remains, and no reliable linking evidence exists, the circumstantial evidence does not prove guilt."
+    },
+    {
+      "legal_issue": "An appellate court should not reverse an acquittal by substituting its own view where the trial court properly assessed the evidence and reached a reasonable conclusion.",
+      "material_facts": [
+        "The trial court acquitted the accused after rejecting the principal eyewitness, confession, conspiracy, and recovery evidence.",
+        "The higher court reversed the acquittal and convicted the accused, relying principally on the child witness, the retracted confession, and recoveries.",
+        "The Supreme Court found the trial court’s assessment proper and its conclusions reasonable, and found the higher court’s reasons for rejecting that assessment unconvincing."
+      ],
+      "conclusion": "The higher court was not justified in reversing the acquittal; the convictions and sentences were set aside and the acquittal was restored.",
+      "legal_principle": "An appellate court hearing an appeal against acquittal may reappreciate the evidence to determine whether the trial court misappreciated it, but it is not justified in substituting its own view where the trial court’s assessment is proper and its conclusions are reasonable. The judgment cites no earlier case for this principle.",
+      "rule": {
+        "if": "appeal_against_acquittal and appellate_court_reverses_acquittal and trial_court_assessed_evidence_properly and trial_court_conclusion_is_reasonable",
+        "then": "reversal_of_acquittal_is_unjustified"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The proceeding is an appeal seeking to overturn a trial court’s acquittal.",
+        "appellate_court_reverses_acquittal": "The appellate court replaces the acquittal with a finding of guilt.",
+        "trial_court_assessed_evidence_properly": "The trial court fairly considered the material evidence and did not materially misappreciate it.",
+        "trial_court_conclusion_is_reasonable": "The trial court’s conclusion is one that the evidence reasonably permits."
+      },
+      "definition": "When an appellate court reverses an acquittal despite the trial court having properly assessed the evidence and reached a reasonable conclusion, the reversal is unjustified."
+    }
+  ],
+  "seconds": 22.0
+}

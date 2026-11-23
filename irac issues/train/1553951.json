@@ -1,0 +1,82 @@
+{
+  "doc_id": "1553951",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29755,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2659,
+    "prompt_tokens": 7913,
+    "total_tokens": 10572,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A decree-holder may execute an unrestricted composite personal and mortgage decree without first enforcing the mortgage against the secured property.",
+      "material_facts": [
+        "The decree awarded a money judgment against all judgment-debtors, including the guarantor, and separately permitted sale of property mortgaged by one judgment-debtor.",
+        "The decree did not make execution of the personal money judgment conditional on first enforcing the mortgage decree.",
+        "The decree had become final, and the decree-holder sought to execute it against the guarantor without first selling the mortgaged property."
+      ],
+      "conclusion": "The decree-holder could choose to execute the personal money decree without first proceeding against the mortgaged property; the lower courts erred in requiring prior enforcement of the mortgage decree.",
+      "legal_principle": "An unrestricted composite decree comprising a personal money decree and a mortgage decree does not require the decree-holder to exhaust the mortgage remedy first. A different sequence may follow where the decree itself so provides, as in the prescribed simple mortgage decree form in Form No. 5 of Appendix D to the Code of Civil Procedure. The Court relied on Bank of Bihar Ltd. v. Damodar Prasad, [1969] 1 SCR 620, approved the approach in The Hukumchand Insurance Co. Ltd. v. The Bank of Baroda, AIR 1977 Karnataka 204, and Muthuvelappa Goundan v. Palaniapa Chettiar, 1937 Madras Weekly Reports 373, and held that Union Bank of India v. Manku Narayana, AIR 1987 SC 1078, was not correctly decided.",
+      "rule": {
+        "if": "execution_of_composite_decree and decree_has_personal_money_component and decree_has_mortgage_component and decree_sets_no_execution_priority",
+        "then": "decree_holder_may_choose_execution_route"
+      },
+      "predicates": {
+        "execution_of_composite_decree": "The proceeding is to execute a decree that contains both personal and mortgage relief.",
+        "decree_has_personal_money_component": "The decree imposes a personal obligation to pay money on one or more judgment-debtors.",
+        "decree_has_mortgage_component": "The decree also provides for enforcement against property mortgaged by a judgment-debtor.",
+        "decree_sets_no_execution_priority": "The decree does not require the mortgage remedy to be enforced before the personal money remedy."
+      },
+      "definition": "When execution concerns a decree with both personal money relief and mortgage relief, and the decree sets no priority between them, the decree-holder may choose the route of execution."
+    },
+    {
+      "legal_issue": "A creditor may proceed against a guarantor without first suing or exhausting remedies against the principal debtor or secured property when the decree imposes personal liability on the guarantor without making it conditional.",
+      "material_facts": [
+        "A guarantor had given a guarantee for a loan to a firm, and another judgment-debtor had mortgaged property as security.",
+        "The final decree imposed personal money liability on the guarantor and did not require prior recourse against the principal debtor or the mortgaged property.",
+        "The decree-holder sought to execute against the guarantor before selling the mortgaged property."
+      ],
+      "conclusion": "The decree-holder was entitled to proceed against the guarantor without first exhausting remedies against the principal debtor or the mortgaged property.",
+      "legal_principle": "Under Section 128 of the Contract Act, a surety’s liability is co-extensive with that of the principal debtor unless the contract provides otherwise. The creditor need not first sue or exhaust remedies against the principal debtor; the surety may be proceeded against, and the guarantee would be undermined if the creditor were required to postpone that remedy. On payment, the surety is subrogated to the creditor’s rights under Section 140. The Court relied on Bank of Bihar Ltd. v. Damodar Prasad, [1969] 1 SCR 620, and the principles stated in Jagannath Ganeshram Agarwala v. Shivnarayan Bhagirath, AIR 1940 Bombay 247, and The Hukumchand Insurance Co. Ltd. v. The Bank of Baroda, AIR 1977 Karnataka 204; it rejected the contrary sequencing rule in Union Bank of India v. Manku Narayana, AIR 1987 SC 1078.",
+      "rule": {
+        "if": "execution_of_final_decree and creditor_has_guarantee and decree_imposes_personal_liability_on_guarantor and decree_makes_liability_unconditional and creditor_has_not_first_exhausted_other_remedies",
+        "then": "creditor_may_execute_against_guarantor"
+      },
+      "predicates": {
+        "execution_of_final_decree": "The proceeding is to execute a decree that has become final.",
+        "creditor_has_guarantee": "The creditor holds a guarantee given for the principal debtor’s obligation.",
+        "decree_imposes_personal_liability_on_guarantor": "The decree makes the guarantor personally liable for payment.",
+        "decree_makes_liability_unconditional": "The decree does not condition the guarantor’s liability on prior enforcement against the principal debtor or secured property.",
+        "creditor_has_not_first_exhausted_other_remedies": "The creditor has not first completed enforcement against the principal debtor or the secured property."
+      },
+      "definition": "If a final decree imposes unconditional personal liability on a guarantor, the creditor may execute against the guarantor even though other remedies have not first been exhausted."
+    },
+    {
+      "legal_issue": "An executing court cannot qualify or alter a final decree based on a guarantor’s contention that liability was contingent when that contention was not raised and determined at trial.",
+      "material_facts": [
+        "The guarantor did not appeal the decree, which became final and imposed personal liability on the judgment-debtors.",
+        "The guarantor had not raised at trial a plea that liability would arise only if remedies against the principal debtors failed to satisfy the debt.",
+        "During execution, the guarantor objected that the decree-holder had to sell the mortgaged property first."
+      ],
+      "conclusion": "The executing court had to enforce the final decree according to its terms and could not construe it as making the guarantor’s liability contingent; the contention should have been raised during the trial.",
+      "legal_principle": "An executing court cannot go beyond a final decree or construe it otherwise than its tenor. A party’s contention concerning the scope or conditional nature of liability must be raised and determined in the suit, not introduced for the first time during execution. The Court applied this principle to the final decree and held that the guarantor’s unraised plea could not alter its execution.",
+      "rule": {
+        "if": "execution_of_final_decree and decree_personally_imposes_liability_on_guarantor and guarantor_did_not_raise_contingency_plea_at_trial and execution_objection_seeks_to_add_a_condition",
+        "then": "executing_court_must_follow_decree_terms"
+      },
+      "predicates": {
+        "execution_of_final_decree": "The proceeding is to execute a decree that has become final.",
+        "decree_personally_imposes_liability_on_guarantor": "The decree makes the guarantor personally liable for payment.",
+        "guarantor_did_not_raise_contingency_plea_at_trial": "The guarantor did not ask at trial for liability to be conditional on first pursuing other debtors or security.",
+        "execution_objection_seeks_to_add_a_condition": "The objection during execution asks the court to impose a condition on liability that is not stated in the decree."
+      },
+      "definition": "When a final decree imposes personal liability and a guarantor first seeks during execution to make that liability conditional, the executing court must apply the decree’s terms without adding the condition."
+    }
+  ],
+  "seconds": 16.4
+}

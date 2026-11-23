@@ -1,0 +1,75 @@
+{
+  "doc_id": "766732",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27558,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1787,
+    "prompt_tokens": 7421,
+    "total_tokens": 9208,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An acquisition notice must identify the locality and land proposed for acquisition with sufficient clarity, and later particulars cannot cure a material deficiency in the initial notice.",
+      "material_facts": [
+        "The initial notice identified the land only by the name of a large city and gave no khasra numbers or precise locality.",
+        "A later declaration included khasra numbers and stated that a plan could be inspected at the Collector’s office."
+      ],
+      "conclusion": "The initial notice’s description of the land was insufficient, and the later declaration could not cure the defect; the acquisition proceedings were invalid.",
+      "legal_principle": "Under Sections 4(1) and 4(2) of the Land Acquisition Act, 1894, a notice must sufficiently identify the locality and land so affected persons can know whether their land is proposed for acquisition and take steps under the Act. A defect in the Section 4 notice is not cured by fuller particulars in a later declaration. The Court relied on Narendrajit Singh v. State of U.P. and Anr.",
+      "rule": {
+        "if": "acquisition_challenge and (locality_not_precisely_identified or land_not_identifiable_from_initial_notice)",
+        "then": "acquisition_proceedings_are_invalid"
+      },
+      "predicates": {
+        "acquisition_challenge": "The proceeding challenges the validity of an acquisition of land.",
+        "locality_not_precisely_identified": "The initial acquisition notice identifies only a broad area and does not specify the locality with sufficient precision.",
+        "land_not_identifiable_from_initial_notice": "A person affected by the proposed acquisition cannot determine from the initial notice whether their land is included."
+      },
+      "definition": "When an acquisition challenge concerns a notice that does not let affected people identify the locality or land proposed for acquisition, the acquisition proceedings are invalid."
+    },
+    {
+      "legal_issue": "An acquisition notice must describe the public purpose with enough specificity to show what the land is proposed to be used for.",
+      "material_facts": [
+        "The initial notice stated the purpose only as “residential,” without identifying the type of accommodation, its intended beneficiaries, or further details.",
+        "The declaration described the purpose as a housing scheme, but the notice did not explain the proposed use in a way that enabled affected people to understand or assess it."
+      ],
+      "conclusion": "The stated public purpose was too vague to convey the purpose of the acquisition, rendering the notice and acquisition proceedings invalid.",
+      "legal_principle": "Sections 4(1) and 4(2) require the public purpose to be sufficiently particularised, including so that affected people can understand the proposal and consider objections to the land’s suitability. The State cannot acquire land to provide a residence for another unless the acquisition serves the public or an identifiable section of the public. The Court relied on Munshi Singh and Others v. Union of India and Others.",
+      "rule": {
+        "if": "acquisition_challenge and public_purpose_description_is_vague",
+        "then": "acquisition_proceedings_are_invalid"
+      },
+      "predicates": {
+        "acquisition_challenge": "The proceeding challenges the validity of an acquisition of land.",
+        "public_purpose_description_is_vague": "The acquisition notice describes the intended public use so generally that affected people cannot understand what use is proposed or for whose benefit."
+      },
+      "definition": "When an acquisition challenge concerns a notice that does not explain the proposed public use with sufficient clarity, the acquisition proceedings are invalid."
+    },
+    {
+      "legal_issue": "Materially inconsistent statements of the proposed public purpose, unsupported by other material, demonstrate non-application of mind in initiating an acquisition.",
+      "material_facts": [
+        "The Housing Board’s request described the proposed use as construction of buildings and shops under a self-financing scheme.",
+        "The initial notice instead described the purpose as residential, and the later declaration described it as a housing scheme.",
+        "The State had no material other than the Board’s request to support the different descriptions, and no explanation was given for the inconsistency."
+      ],
+      "conclusion": "The inconsistent descriptions showed non-application of mind by the authorities and contributed to invalidating the acquisition proceedings.",
+      "legal_principle": "The acquiring authorities must apply their minds to the proposed public purpose and cannot proceed through materially inconsistent statements of that purpose without an adequate basis. Such non-application of mind in dealing with a citizen’s property vitiates the acquisition proceedings.",
+      "rule": {
+        "if": "acquisition_challenge and stated_purposes_materially_conflict and no_supporting_material_for_difference",
+        "then": "acquisition_proceedings_are_invalid"
+      },
+      "predicates": {
+        "acquisition_challenge": "The proceeding challenges the validity of an acquisition of land.",
+        "stated_purposes_materially_conflict": "The acquiring authority and the acquisition notices describe materially different intended uses for the land.",
+        "no_supporting_material_for_difference": "The record contains no material supporting the differing descriptions of the proposed use."
+      },
+      "definition": "When an acquisition challenge concerns materially conflicting statements of purpose unsupported by material explaining the difference, the acquisition proceedings are invalid."
+    }
+  ],
+  "seconds": 11.7
+}

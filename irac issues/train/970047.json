@@ -1,0 +1,122 @@
+{
+  "doc_id": "970047",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41416,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3103,
+    "prompt_tokens": 9855,
+    "total_tokens": 12958,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A purchaser who acquires an interest in land after its acquisition notification and vesting obtains no title enforceable against the acquiring authority.",
+      "material_facts": [
+        "The land had been notified for acquisition before the former owner sold interests in it to the respondents.",
+        "Possession had been taken and the land had vested in the acquiring authority before the respondents claimed through those sales.",
+        "The respondents relied on sale deeds or agreements with the former owner, who no longer had an interest in the acquired land."
+      ],
+      "conclusion": "The respondents acquired no title or right to possession under the sales or agreements; at most, a person entitled under the acquisition law could claim compensation.",
+      "legal_principle": "Under Sections 4(1) and 6 of the Rajasthan Land Acquisition Act, 1953, publication of the acquisition notification prevents the owner from creating an interest binding on the acquiring authority; under Section 16, vesting following possession is free from encumbrances. A subsequent purchaser acquires no title against the State. The Court relied on Gain Chand v. Gopala, Yadu Nandan Garg v. State of Rajasthan and related decisions, and held that a sale opposed to public policy is void under Section 23 of the Contract Act.",
+      "rule": {
+        "if": "acquisition_case and (purchase_after_acquisition_notification or purchase_after_vesting)",
+        "then": "purchaser_gets_no_enforceable_title"
+      },
+      "predicates": {
+        "acquisition_case": "The proceeding concerns a claim to land that was acquired for a public purpose.",
+        "purchase_after_acquisition_notification": "The claimant acquired an interest from the former owner after the acquisition notification was published.",
+        "purchase_after_vesting": "The claimant acquired an interest from the former owner after the land had vested in the acquiring authority."
+      },
+      "definition": "When a claim concerns acquired land and the claimant acquired through the former owner after notification or vesting, the claimant gets no enforceable title."
+    },
+    {
+      "legal_issue": "The acquisition authority cannot award acquired land as compensation to ordinary owners or their purchasers, sub-awardees, or nominees under the limited power to provide land in lieu of compensation.",
+      "material_facts": [
+        "The land acquisition officer included allotments of plots in the award to former owners, sub-awardees, or nominees in addition to compensation.",
+        "The respondents claimed plots as purchasers or nominees of a former owner, rather than as holders of a limited interest in land.",
+        "The respondents argued that statutory provisions and acquisition rules authorized the allotments and made the earlier decision in Radhey Shyam inapplicable."
+      ],
+      "conclusion": "The land acquisition officer had no authority to make those allotments. The limited power to provide land in lieu of money compensation applies to persons with limited interests in the acquired land, and the cited rules did not make the earlier decision per incuriam.",
+      "legal_principle": "Section 31(3) of the Rajasthan Land Acquisition Act, 1953 permits, with appropriate government sanction, the allotment of other land or remission of revenue in lieu of money compensation to a person with a limited interest in acquired land. Rule 31 guides that limited power and does not permit forcing an ordinary owner to take land instead of cash. Rule 36 concerns excess land acquired for a company. Neither rule authorizes allotment of the acquired land to ordinary owners or their purchasers, sub-awardees, or nominees. The Court applied Jaipur Development Authority v. Radhey Shyam and held that omission to discuss these rules did not undermine its reasoning.",
+      "rule": {
+        "if": "acquisition_case and (ordinary_owner_claims_land_instead_of_compensation or claimant_is_owner_purchaser_sub_awardee_or_nominee)",
+        "then": "acquisition_authority_cannot_make_such_allotment"
+      },
+      "predicates": {
+        "acquisition_case": "The proceeding concerns land acquired for a public purpose and compensation for that acquisition.",
+        "ordinary_owner_claims_land_instead_of_compensation": "An ordinary owner seeks acquired land in place of money compensation rather than relying on a limited interest in the land.",
+        "claimant_is_owner_purchaser_sub_awardee_or_nominee": "The person seeking the allotment is an owner, purchaser, sub-awardee, or nominee, rather than a holder of a limited interest in the acquired land."
+      },
+      "definition": "In an acquisition compensation proceeding, the authority cannot allot acquired land in place of compensation to an ordinary owner or a person claiming through that owner."
+    },
+    {
+      "legal_issue": "An allotment made under an asserted government policy is invalid when it uses public power to confer private benefits contrary to the governing law and declared public purpose.",
+      "material_facts": [
+        "The asserted policy relied on an acquisition award that had purported to allot land to former owners and their sub-awardees or nominees.",
+        "A minister acting as chair of the development authority directed allotments to that selected group, and officials acted on those directions.",
+        "The allotments were not made under the established rules for disposal of urban land, and no evidence showed that the general public could apply for them.",
+        "The land had been acquired for a declared public development scheme."
+      ],
+      "conclusion": "The asserted policy was not a genuine public policy; the allotments were ultra vires, contrary to the statute and rules, and could not confer a right on the respondents.",
+      "legal_principle": "Public power must be exercised to advance the declared public purpose and within the limits of law and applicable rules. An asserted policy cannot camouflage the diversion of public property for private benefit. The Court relied on the principle in Radhey Shyam that the land acquisition officer lacked power to make the original allotments, and considered the applicable statutory and urban-land-disposal rules. It also explained that public officials are accountable for the exercise of public office and that public action must serve public welfare rather than private gain.",
+      "rule": {
+        "if": "public_land_allotment_case and (allotment_relies_on_void_award or allotment_favours_selected_private_group) and allotment_conflicts_with_public_purpose_or_governing_rules",
+        "then": "allotment_is_invalid"
+      },
+      "predicates": {
+        "public_land_allotment_case": "The proceeding concerns an allotment of publicly owned or acquired land by a public authority.",
+        "allotment_relies_on_void_award": "The allotment rests on an award or prior decision that was made without legal authority.",
+        "allotment_favours_selected_private_group": "The allotment benefits a selected private group without a generally available eligibility process.",
+        "allotment_conflicts_with_public_purpose_or_governing_rules": "The allotment diverts land from its declared public purpose or is inconsistent with the rules governing its disposal."
+      },
+      "definition": "An allotment in a public-land case is invalid when it relies on an unauthorised award or favours a selected private group and conflicts with the land’s public purpose or governing rules."
+    },
+    {
+      "legal_issue": "The equality guarantee does not entitle a person to repeat or retain an unlawful allotment granted to someone else.",
+      "material_facts": [
+        "The respondents sought possession partly because other persons had obtained possession under allotments founded on the same invalid award and asserted policy.",
+        "The authority had cancelled some allotments, withheld possession in other cases, and consistently resisted enforcement of the unlawful allotments.",
+        "The High Court nevertheless directed allotment to the respondents on the ground that denying them the same benefit would be discriminatory."
+      ],
+      "conclusion": "The respondents could not rely on equality to obtain an unlawful allotment, and the High Court erred in directing allotment on that basis.",
+      "legal_principle": "The equality guarantee protects legal rights and similarly situated persons who have a valid legal claim; it does not require repetition or perpetuation of an illegal or ultra vires act. The Court relied on Yadu Nandan Garg v. State of Rajasthan, Coromandel Fertilizers Ltd. v. Union of India and Chandigarh Administration v. Jagjit Singh, which hold that a wrong benefit granted to one person does not entitle another to the same benefit.",
+      "rule": {
+        "if": "equality_claim_case and claimant_seeks_same_benefit_as_another_person and comparator_benefit_is_unlawful",
+        "then": "equality_does_not_entitle_claimant_to_unlawful_benefit"
+      },
+      "predicates": {
+        "equality_claim_case": "The proceeding includes a claim that unequal treatment violates the constitutional guarantee of equality.",
+        "claimant_seeks_same_benefit_as_another_person": "The claimant seeks a benefit because another person received a similar benefit.",
+        "comparator_benefit_is_unlawful": "The benefit received by the other person was contrary to law or unsupported by legal authority."
+      },
+      "definition": "A claimant cannot obtain a benefit through equality when the similar benefit received by another person was unlawful."
+    },
+    {
+      "legal_issue": "Exceptional hardship may justify preserving and modifying relief despite the illegality of the underlying allotment, without establishing a precedent for similar claims.",
+      "material_facts": [
+        "The respondents had paid for the plots and had been unable to seek allotment elsewhere after relying on the impugned allotments for many years.",
+        "The Court considered that land prices had risen substantially and that obtaining residential plots elsewhere would cause great hardship.",
+        "The Court did not find that these respondents had obtained their allotments through illegal means.",
+        "The Court considered it necessary to correct the unlawful direction but chose, as a very special case, not to undo all relief."
+      ],
+      "conclusion": "The Court declined to set aside the High Court’s direction in these cases, but modified it to require allotment in another scheme, on a uniform basis, at the rate prevailing when the original allotments were made; it expressly stated that the direction was not to be used as a precedent.",
+      "legal_principle": "The Court stated that it had a duty to correct an ultra vires exercise of power, but considered the particular hardship and the absence of any finding that the respondents had used illegal means. In its discretion under Article 136, it preserved the relief as a very special case while modifying it, and expressly denied the disposition precedential force.",
+      "rule": {
+        "if": "appeal_against_high_court_allotment_order and allotment_is_unlawful and (claimants_did_not_obtain_benefit_through_illegal_means and reliance_has_created_severe_hardship)",
+        "then": "court_may_preserve_and_modify_relief_as_exceptional_nonprecedential_case"
+      },
+      "predicates": {
+        "appeal_against_high_court_allotment_order": "The proceeding is an appeal from a High Court order granting relief based on a land allotment.",
+        "allotment_is_unlawful": "The allotment underlying the High Court’s order was made without legal authority.",
+        "claimants_did_not_obtain_benefit_through_illegal_means": "The claimants did not obtain the allotment by using illegal means.",
+        "reliance_has_created_severe_hardship": "The claimants relied on the allotment for a substantial period and undoing it would cause severe practical hardship."
+      },
+      "definition": "In an appeal involving an unlawful allotment, the Court may, when the claimants did not obtain it illegally and reliance has caused severe hardship, preserve and modify relief as an exceptional nonprecedential disposition."
+    }
+  ],
+  "seconds": 18.4
+}

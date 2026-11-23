@@ -1,0 +1,61 @@
+{
+  "doc_id": "75482",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12389,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2253,
+    "prompt_tokens": 3700,
+    "total_tokens": 5953,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The disability-based limitation rule applies to execution of a decree imposing a non-monetary liability.",
+      "material_facts": [
+        "The decree in a partition suit awarded a house to the joint entitlement of a father and his minor sons.",
+        "The sons later applied to execute the decree by seeking possession of the house."
+      ],
+      "conclusion": "The limitation rule in Section 7 of the Limitation Act is not confined to monetary claims and applies to the liability under the partition decree.",
+      "legal_principle": "Section 7 of the Limitation Act applies where one of several persons capable of giving a discharge may give it without the others' concurrence; the word “discharge” means freeing a person from liability, which may concern possession or other non-monetary obligations as well as money. Section 8, which excludes suits to enforce pre-emption rights from Sections 6 and 7, further supports that Section 7 is not confined to monetary claims. The Code of Civil Procedure's definition of a judgment-debtor also recognizes that a decree may impose an enforceable liability beyond a debt for money.",
+      "rule": {
+        "if": "execution_proceeding and non_monetary_decree and decree_imposes_enforceable_liability",
+        "then": "disability_limitation_rule_applies_to_non_monetary_liability"
+      },
+      "predicates": {
+        "execution_proceeding": "A person applied to enforce a court decree.",
+        "non_monetary_decree": "The decree concerned relief other than payment of money.",
+        "decree_imposes_enforceable_liability": "The decree required a person to do something or refrain from doing something."
+      },
+      "definition": "When an enforcement proceeding concerns a non-monetary decree imposing an enforceable liability, the disability-based limitation rule applies to that liability."
+    },
+    {
+      "legal_issue": "A managing member of a joint family may discharge a decree for possession on behalf of minor family members by accepting possession in accordance with the decree, so limitation runs against those members from that time.",
+      "material_facts": [
+        "A decree awarded a house jointly to a family manager and his four minor sons.",
+        "The manager did not execute the decree, and the sons' first execution application was filed more than eleven years after the decree.",
+        "The relief sought was possession of the house in accordance with the decree, not receipt of money or movable property or entry into an agreement or compromise."
+      ],
+      "conclusion": "The family manager could accept possession on behalf of his minor sons without their consent, thereby discharging the liability under the decree; limitation ran against the sons from the date of the decree, and their execution application was barred.",
+      "legal_principle": "Under Hindu law, the karta of a joint family represents its members and has the power and duty to act in managing family property, including taking possession for the family. Order 32, Rules 6 and 7 of the Code of Civil Procedure do not prevent that action where accepting possession merely implements the decree and involves neither receipt of money or movable property nor an agreement or compromise. Ganesha Row v. Tuljaram Row explains the court's control over a guardian's agreement or compromise for a minor; Parmeshwari Singh v. Ranjit Singh and Letchmana Chetty v. Subbiah Chetty concern discharge involving money or movable property and do not govern acceptance of possession under a decree. Under Section 7 of the Limitation Act, a discharge that one jointly entitled person could give without the others' concurrence causes limitation to run against them as well.",
+      "rule": {
+        "if": "execution_proceeding and joint_family_manager_manages_family_property and minors_share_possession_decree and possession_acceptance_implements_decree and not money_or_movable_property_receipt and not agreement_or_compromise and application_after_limitation_period",
+        "then": "execution_application_is_time_barred"
+      },
+      "predicates": {
+        "execution_proceeding": "A person applied to enforce a court decree.",
+        "joint_family_manager_manages_family_property": "A managing member acted in the management of property belonging to a joint family.",
+        "minors_share_possession_decree": "Minor family members were jointly entitled under a decree to possession of property.",
+        "possession_acceptance_implements_decree": "The possession to be accepted was the possession awarded by the decree.",
+        "money_or_movable_property_receipt": "The act involved receiving money or movable property.",
+        "agreement_or_compromise": "The act involved entering into an agreement or compromise on behalf of a minor.",
+        "application_after_limitation_period": "The execution application was made after the applicable limitation period had elapsed."
+      },
+      "definition": "When a joint-family manager manages family property and can implement a shared possession decree without receiving money or movable property or entering an agreement or compromise, a later execution application filed after the applicable limitation period is barred."
+    }
+  ],
+  "seconds": 14.8
+}

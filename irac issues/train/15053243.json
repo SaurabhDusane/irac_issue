@@ -1,0 +1,99 @@
+{
+  "doc_id": "15053243",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32722,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2900,
+    "prompt_tokens": 8670,
+    "total_tokens": 11570,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A co-owner may maintain an eviction proceeding without joining every other co-owner where the other co-owners do not object, and omission does not defeat the proceeding where the omitted co-owner is later joined.",
+      "material_facts": [
+        "The eviction proceeding was brought by heirs who had become co-owners of the premises.",
+        "Another heir was initially not a party, but was later added to the eviction proceedings.",
+        "The tenant had not raised the non-joinder objection before the lower courts."
+      ],
+      "conclusion": "The omission of the other co-owner did not make the eviction petition unmaintainable; the High Court’s contrary ruling was reversed.",
+      "legal_principle": "Under Dhannalal v. Kalawathibai (2002) 6 SCC 16, applying Sri Ram Pasricha v. Jagannath (1976) 4 SCC 184, Kanta Goel v. B.P. Pathak (1977) 2 SCC 814, and Pal Singh v. Sunder Singh (1989) 1 SCC 444, one co-owner may sue for eviction in their own right without joining the others if they do not object. The later joinder of the omitted co-owner also removed the objection in this case.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and petitioner_is_coowner and (other_coowners_do_not_object or omitted_coowner_later_joined)",
+        "then": "eviction_petition_maintainable_without_all_coowners"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The proceeding was brought to evict a tenant under rent-control law.",
+        "petitioner_is_coowner": "The person bringing the eviction proceeding held a co-ownership interest in the premises.",
+        "other_coowners_do_not_object": "The other co-owners did not object to the petitioner bringing the eviction proceeding alone.",
+        "omitted_coowner_later_joined": "A co-owner who was initially omitted was later added to the proceedings."
+      },
+      "definition": "When a co-owner brings a rent-control eviction proceeding, the proceeding may continue without every co-owner being a party if the other co-owners do not object or the omitted co-owner is later joined."
+    },
+    {
+      "legal_issue": "A landlord’s ownership for purposes of a rent-control eviction proceeding is assessed by whether the landlord is entitled in their own legal right to evict the tenant and retain, control, and use the premises, rather than by the standard applied in a title suit.",
+      "material_facts": [
+        "The premises had been allotted to the original owner, who constructed a house on the site.",
+        "The original owner’s heirs inherited the premises after his death.",
+        "The tenant’s tenancy was found to have been created by the original owner and to have continued with the heirs by operation of law."
+      ],
+      "conclusion": "The heirs were entitled to be treated as the landlords and owners for the eviction proceeding; the case did not require determination of ownership by the standard applicable in a title suit.",
+      "legal_principle": "Sheela v. Firm Prahlad Rai Prem Prakash (2002) 3 SCC 375 holds that ownership in landlord-tenant litigation under rent-control laws is a relative concept distinct from ownership in a title suit. A landlord may be treated as owner when entitled in their own legal right, rather than on behalf of another, to evict the tenant and retain, control, and use the premises.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and claimant_has_legal_right_to_evict_and_control_premises",
+        "then": "claimant_treated_as_owner_for_rent_proceeding"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The proceeding sought eviction of a tenant under rent-control law.",
+        "claimant_has_legal_right_to_evict_and_control_premises": "The claimant was entitled in their own legal right to seek eviction and retain, control, and use the premises."
+      },
+      "definition": "A claimant in a rent-control eviction proceeding is treated as an owner for that proceeding when the claimant has the legal right to evict the tenant and control the premises."
+    },
+    {
+      "legal_issue": "A tenancy created by an agent acting under a power of attorney on behalf of the owner is between the owner and the tenant, and the agent does not acquire a personal interest in the tenancy.",
+      "material_facts": [
+        "The owner had appointed an agent under a power of attorney to administer and manage the premises.",
+        "The agent executed the tenant’s lease on behalf of the owner, not in the agent’s personal capacity.",
+        "The owner’s heirs succeeded to the premises after the owner died.",
+        "The tenant had pleaded and testified that he was a tenant."
+      ],
+      "conclusion": "The tenancy was between the original owner and the tenant and, after the owner’s death, continued between the heirs and the tenant; the heirs could maintain the eviction petition.",
+      "legal_principle": "The Court applied the Powers of Attorney Act, 1882, including Sections 1-A and 2, and the agency principles in Chapter X of the Contract Act. An agent generally acts in the principal’s name, and an act done within the authority granted is treated as the principal’s act; the agent does not thereby acquire a personal right in the subject matter. The Court relied on Suraj Lamp and Industries Private Limited (2) v. State of Haryana (2012) 1 SCC 656, State of Rajasthan v. Basant Nahata (2005) 12 SCC 77, and Church of Christ Charitable Trust and Educational Charitable Society v. Ponniamman Educational Trust (2012) 8 SCC 706.",
+      "rule": {
+        "if": "tenancy_dispute and agent_authorized_to_act_for_owner and agent_executed_lease_for_owner",
+        "then": "tenancy_is_between_owner_and_tenant"
+      },
+      "predicates": {
+        "tenancy_dispute": "The case concerns the identity of the landlord under a tenancy.",
+        "agent_authorized_to_act_for_owner": "The owner had authorized an agent to act for the owner in relation to the premises.",
+        "agent_executed_lease_for_owner": "The agent executed the lease on behalf of the owner rather than in a personal capacity."
+      },
+      "definition": "In a tenancy dispute, where an authorized agent executes a lease for the owner, the tenancy is between the owner and the tenant, not the agent and the tenant."
+    },
+    {
+      "legal_issue": "A High Court exercising rent-control revisional jurisdiction may not reappraise evidence simply to reach a different factual conclusion from the lower courts and may disturb their findings only where the findings are not according to law, including where they are perverse or affected by a material legal or procedural error.",
+      "material_facts": [
+        "The Rent Controller found that the tenant had defaulted in paying rent and that the landlords had a bona fide need for the premises.",
+        "The first appellate court affirmed those factual findings.",
+        "The High Court set aside the eviction order on other grounds, but the Supreme Court found the concurrent findings were based on proper appreciation of the evidence and were not perverse."
+      ],
+      "conclusion": "The concurrent findings on rent default and bona fide need were binding in revision and did not warrant interference.",
+      "legal_principle": "Under Hindustan Petroleum Corporation Limited v. Dilbahar Singh (2014) 9 SCC 78, revisional jurisdiction under rent-control legislation is not appellate jurisdiction: the High Court may examine whether findings are according to law and correct findings affected by perversity, lack of evidence, misreading of evidence, or legal or procedural error, but may not reassess evidence merely to substitute its own factual view.",
+      "rule": {
+        "if": "rent_control_revision and lower_courts_made_concurrent_factual_findings and findings_are_not_perverse_or_legally_flawed",
+        "then": "concurrent_findings_left_undisturbed"
+      },
+      "predicates": {
+        "rent_control_revision": "The proceeding before the High Court was a revision arising from a rent-control matter.",
+        "lower_courts_made_concurrent_factual_findings": "The trial-level authority and the first appellate court reached the same factual conclusions.",
+        "findings_are_not_perverse_or_legally_flawed": "The concurrent findings were supported by the evidence and did not suffer from a material error of law or procedure."
+      },
+      "definition": "In a rent-control revision, concurrent factual findings supported by the evidence and free of material legal or procedural error are left undisturbed."
+    }
+  ],
+  "seconds": 18.8
+}

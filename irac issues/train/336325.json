@@ -1,0 +1,61 @@
+{
+  "doc_id": "336325",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18405,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1981,
+    "prompt_tokens": 4729,
+    "total_tokens": 6710,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A pre-acquisition notice must disclose the actual, factory-specific grounds that support the proposed acquisition, and a notice that does not do so cannot sustain the acquisition order.",
+      "material_facts": [
+        "The notice referred generally to 36 factories and said they were closed, were unlikely to reopen soon, and that this situation would lead to large-scale unemployment.",
+        "The notice did not state that large-scale unemployment had already occurred, identify when each factory had closed, or give factory-specific details supporting the proposed acquisition.",
+        "The owners and occupiers objected to the notice, and the government then issued an order transferring the factories."
+      ],
+      "conclusion": "The notices did not comply with the mandatory requirement to disclose the grounds for the proposed action. The notices were declared void and the resulting acquisition order was quashed. The government remained free to act again on relevant material concerning an individual factory, after following the prescribed procedure.",
+      "legal_principle": "Section 3(1)(c) of the Kerala Cashew Factories (Acquisition) Act, 1974 permits acquisition on satisfaction that large-scale unemployment, other than by way of lay-off or retrenchment, has occurred. The proviso to Section 3(1) requires notice of the intended action and its grounds, and consideration of objections. The grounds must disclose the statutory condition said to exist and provide sufficient particulars for the owner or occupier to answer the case. A prediction that closure may cause future unemployment does not state that the statutory condition of existing large-scale unemployment has occurred. No earlier cases are cited.",
+      "rule": {
+        "if": "factory_acquisition_challenged and pre_action_notice_required and notice_describes_only_possible_future_unemployment and not notice_gives_factory_specific_supporting_particulars",
+        "then": "acquisition_order_invalid"
+      },
+      "predicates": {
+        "factory_acquisition_challenged": "An owner or occupier challenges an order transferring a factory to the government.",
+        "pre_action_notice_required": "The governing procedure requires notice of the proposed action and its supporting grounds before the transfer order is made.",
+        "notice_describes_only_possible_future_unemployment": "The notice states that the factory's closure may cause unemployment, rather than stating that the required unemployment has already occurred.",
+        "notice_gives_factory_specific_supporting_particulars": "The notice gives particulars about the individual factory that support the stated ground for the proposed action.",
+        "acquisition_order_invalid": "The transfer order cannot stand because the notice did not meet the required procedural standard."
+      },
+      "definition": "When a factory transfer is challenged, the required pre-action notice gives only a prediction of future unemployment and lacks factory-specific supporting particulars, the transfer order is invalid."
+    },
+    {
+      "legal_issue": "A government determination that statutory conditions for acquiring a factory exist is subject to judicial review of whether those conditions were supported by relevant circumstances.",
+      "material_facts": [
+        "The petitioners disputed that the statutory ground for acquisition existed.",
+        "The notice relied on the factories being closed and the possibility that this would lead to large-scale unemployment, without asserting that large-scale unemployment had occurred.",
+        "The Court examined whether the circumstances stated in the notice supported the statutory basis for the acquisition."
+      ],
+      "conclusion": "The existence of the circumstances required for the government’s statutory satisfaction is open to judicial review; a person affected may challenge a purported satisfaction that is wholly based on irrelevant grounds.",
+      "legal_principle": "Where a statute authorizes action only if an authority is satisfied that specified conditions exist, that satisfaction must rest on relevant material supporting those conditions. If the existence of the conditions is challenged, a court may examine whether they existed when the order was made. A satisfaction wholly based on irrelevant grounds amounts to no legally sufficient satisfaction. The Court relied on Section 3(1) of the Kerala Cashew Factories (Acquisition) Act, 1974. No earlier cases are cited.",
+      "rule": {
+        "if": "factory_acquisition_challenged and statutory_satisfaction_disputed and satisfaction_lacks_relevant_support",
+        "then": "statutory_satisfaction_subject_to_judicial_review"
+      },
+      "predicates": {
+        "factory_acquisition_challenged": "An owner or occupier challenges a government order transferring a factory.",
+        "statutory_satisfaction_disputed": "The affected person disputes that the circumstances required for the government's action existed.",
+        "satisfaction_lacks_relevant_support": "The circumstances relied on do not support the statutory condition said to justify the action.",
+        "statutory_satisfaction_subject_to_judicial_review": "A court may examine whether the circumstances required for the government's action existed and whether the asserted satisfaction rested on relevant material."
+      },
+      "definition": "When a factory transfer is challenged, the required statutory satisfaction is disputed, and relevant support for that satisfaction is lacking, a court may review it."
+    }
+  ],
+  "seconds": 13.5
+}

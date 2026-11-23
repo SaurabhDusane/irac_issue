@@ -1,0 +1,78 @@
+{
+  "doc_id": "1199934",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16030,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2626,
+    "prompt_tokens": 4340,
+    "total_tokens": 6966,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An approver’s evidence may support a conviction when it is reliable and receives sufficient corroboration on material particulars.",
+      "material_facts": [
+        "The conviction rested mainly on the approver’s account of a poisoning plot.",
+        "The High Court found the account of the poisoning plot reliable and corroborated on material particulars by credible prosecution evidence, including evidence concerning the purchase of arsenic and the sweets and the approver’s journey.",
+        "The Supreme Court found no error in the High Court’s decision to uphold the conviction."
+      ],
+      "conclusion": "The approver’s evidence met both required tests, so the conviction was properly upheld and the appeal was dismissed.",
+      "legal_principle": "Under sections 133 and 114 illustration (b) of the Indian Evidence Act, 1872, as explained and applied in Sarwan Singh v. State of Punjab, [1957] SCR 953, the court must first find the approver reliable, meaning the evidence is not inherently improbable and the approver has not been found to have given false evidence. The court must then find sufficient corroboration, a requirement particular to approver evidence and satisfied by corroboration on material particulars.",
+      "rule": {
+        "if": "criminal_appeal_challenging_approver_based_conviction and approver_testimony_reliable and material_particulars_corroborated",
+        "then": "conviction_sustainable"
+      },
+      "predicates": {
+        "criminal_appeal_challenging_approver_based_conviction": "The proceeding is a criminal appeal challenging a conviction based on an approver’s testimony.",
+        "approver_testimony_reliable": "The court finds the approver’s testimony not inherently improbable and has not found that the approver gave false evidence.",
+        "material_particulars_corroborated": "Credible evidence corroborates the approver’s account on material particulars."
+      },
+      "definition": "When a criminal appeal challenges a conviction based on an approver’s testimony, and that testimony is reliable and corroborated on material particulars, the conviction is sustainable."
+    },
+    {
+      "legal_issue": "A court’s refusal to rely on an uncorroborated part of an approver’s account does not by itself make the approver unreliable or untruthful.",
+      "material_facts": [
+        "The High Court declined to rely on the approver’s account of an earlier attempted shooting because it was not sufficiently corroborated and was not convincing.",
+        "The High Court did not find that the earlier-incident account was false.",
+        "The High Court accepted the approver’s account of the poisoning plot as reliable and corroborated."
+      ],
+      "conclusion": "Rejecting the earlier-incident account did not establish that the approver was unreliable or untruthful.",
+      "legal_principle": "The test of reliability concerns whether the approver’s evidence is inherently improbable or has been found false. Applying the caution required when assessing approver evidence under section 114 illustration (b) of the Indian Evidence Act, 1872, and the approach in Sarwan Singh v. State of Punjab, [1957] SCR 953, a court may decline to act on a particular uncorroborated part without treating the witness as generally unreliable.",
+      "rule": {
+        "if": "criminal_case_relying_on_approver and approver_segment_excluded_for_lack_of_corroboration and no_finding_segment_false",
+        "then": "rejection_of_segment_does_not_establish_approver_unreliability"
+      },
+      "predicates": {
+        "criminal_case_relying_on_approver": "The proceeding is a criminal case in which the prosecution relies on an approver’s testimony.",
+        "approver_segment_excluded_for_lack_of_corroboration": "The court declines to rely on a part of the approver’s account because it lacks corroboration or is unconvincing.",
+        "no_finding_segment_false": "The court does not find that the excluded part of the approver’s account is false."
+      },
+      "definition": "When a criminal case relies on an approver, excluding a segment for lack of corroboration without finding it false does not establish that the approver is unreliable."
+    },
+    {
+      "legal_issue": "Sufficient corroboration of an approver’s account on material particulars is not defeated merely because there is no independent evidence of every step in the offence.",
+      "material_facts": [
+        "There was no independent corroboration that the appellant mixed arsenic into the sweets or that the approver delivered the sweets to the intended recipient’s wife.",
+        "The court considered those acts naturally to have occurred without other witnesses present.",
+        "Other material parts of the approver’s account were corroborated by prosecution evidence found reliable by the High Court."
+      ],
+      "conclusion": "The absence of corroboration for those particular acts did not make the corroboration insufficient or prevent the conviction from being upheld.",
+      "legal_principle": "The second test for approver evidence, stated in Sarwan Singh v. State of Punjab, [1957] SCR 953 and applied under the approach reflected in section 114 illustration (b) of the Indian Evidence Act, 1872, requires sufficient corroboration, not independent corroboration of every detail. Corroboration on material particulars may suffice even where acts carried out in private have no independent witness.",
+      "rule": {
+        "if": "criminal_case_relying_on_approver and material_parts_corroborated and key_steps_unwitnessed",
+        "then": "corroboration_sufficient_without_independent_proof_of_every_detail"
+      },
+      "predicates": {
+        "criminal_case_relying_on_approver": "The proceeding is a criminal case in which the prosecution relies on an approver’s testimony.",
+        "material_parts_corroborated": "Credible evidence corroborates material parts of the approver’s account.",
+        "key_steps_unwitnessed": "One or more important steps described by the approver occurred without independent witnesses, so those steps lack direct corroboration."
+      },
+      "definition": "When a criminal case relies on an approver, corroboration of material parts can be sufficient even if important unwitnessed steps lack independent proof."
+    }
+  ],
+  "seconds": 16.0
+}

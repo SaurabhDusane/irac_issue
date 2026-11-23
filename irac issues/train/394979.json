@@ -1,0 +1,60 @@
+{
+  "doc_id": "394979",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20415,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2131,
+    "prompt_tokens": 5508,
+    "total_tokens": 7639,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant who uses leased premises for a business expressly excluded by the lease uses the premises for a purpose other than that for which they were leased.",
+      "material_facts": [
+        "The lease permitted the shop to be used only for the tenant’s specified businesses and expressly prohibited carrying on any other business.",
+        "The tenant used the shop to conduct a grocery and provisions business, which was not among the businesses permitted by the lease.",
+        "The landlord sought eviction on the ground of use contrary to the lease, and the lower courts found that the tenant had carried on the different business."
+      ],
+      "conclusion": "The tenant’s different business breached the specific restriction in the lease and constituted a ground for eviction.",
+      "legal_principle": "Section 10(2)(ii)(b) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960 applies where a tenant uses a building for a purpose other than that for which it was leased. A specific, valid contractual restriction on the permitted use must be given effect unless a statute provides otherwise. Section 108(o) of the Transfer of Property Act operates in the absence of a contract or local usage to the contrary and does not prevent such a contractual restriction. Gurdial Batra v. Raj Kumar Jain and Mohan Lal v. Jai Bhagwan were distinguishable because the leases there did not contain words restricting the tenant to a specified business. Ram Gopal v. Jai Narain concerned a change from business to manufacture and did not assist the tenant here.",
+      "rule": {
+        "if": "rent_control_eviction_case and lease_contains_exclusive_trade_limit and tenant_operated_unlisted_trade",
+        "then": "tenant_is_liable_for_eviction"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "A landlord seeks eviction of a tenant in a rent-control proceeding on the ground that the premises were used contrary to the purpose for which they were leased.",
+        "lease_contains_exclusive_trade_limit": "The lease expressly limits the tenant to specified businesses and excludes carrying on other businesses.",
+        "tenant_operated_unlisted_trade": "The tenant carried on a business in the premises that was not permitted by the lease.",
+        "tenant_is_liable_for_eviction": "The tenant is liable for eviction because the premises were used for a purpose contrary to the lease."
+      },
+      "definition": "When a landlord seeks eviction in a rent-control proceeding, the lease expressly confines the tenant to specified businesses, and the tenant carries on an unlisted business, the tenant is liable for eviction."
+    },
+    {
+      "legal_issue": "A change to a purpose not permitted by the lease need not affect the entire or a substantial part of the building to constitute a change of user.",
+      "material_facts": [
+        "The tenant conducted the unpermitted provisions business in part of the shop alongside the permitted radio business.",
+        "The original lessee stated that the radio business occupied an area of 9 feet by 9½ feet and the provisions business occupied an area of 7 feet by 9½ feet.",
+        "The lower authority found that a substantial portion of the shop was used for the different business, and the Supreme Court declined to disturb that finding."
+      ],
+      "conclusion": "A change of user need not involve the entire or a substantial part of the building; use of part of the building for a different purpose can constitute the ground for eviction.",
+      "legal_principle": "In Bishamber Dass Kohli v. Satya Bhalla, the Court held that the relevant eviction ground turns on change in user and does not require a change affecting the entire or a substantial part of the building. The Court applied that principle to the ground under Section 10(2)(ii)(b) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960. Although the case had earlier been remanded following reliance on M.K.P. Chettiar v. A.P. Pillay, the Court rejected the contention that substantial use was a necessary legal requirement.",
+      "rule": {
+        "if": "rent_control_eviction_case and lease_specifies_permitted_purpose and tenant_used_part_for_different_purpose",
+        "then": "substantial_area_is_not_required_for_change_of_user"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "A landlord seeks eviction of a tenant in a rent-control proceeding based on the tenant's use of the premises.",
+        "lease_specifies_permitted_purpose": "The lease identifies the purpose for which the premises may be used.",
+        "tenant_used_part_for_different_purpose": "The tenant used some part of the premises for a purpose different from the one specified in the lease.",
+        "substantial_area_is_not_required_for_change_of_user": "A different use of part of the premises can constitute a change of user without proof that the area used was substantial."
+      },
+      "definition": "In a rent-control eviction proceeding, when the lease specifies a permitted purpose and the tenant uses part of the premises for another purpose, the different use can qualify as a change of user without occupying a substantial area."
+    }
+  ],
+  "seconds": 14.2
+}

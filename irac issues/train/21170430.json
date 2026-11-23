@@ -1,0 +1,108 @@
+{
+  "doc_id": "21170430",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 44210,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3494,
+    "prompt_tokens": 10479,
+    "total_tokens": 13973,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant’s denial of a landlord’s title supports eviction only when the denial is not bona fide and the issue has been properly pleaded and fairly tried.",
+      "material_facts": [
+        "The eviction applications were initially based on non-payment of rent and did not plead denial of title as a ground for eviction.",
+        "During the proceedings, the tenants stated that the municipal owner’s lease arrangements had changed and that the owner had demanded payment directly from them, threatening auction of the premises if payment was not made.",
+        "The tenants said they were willing to pay the municipal owner to protect their possession; they did not deny the landlords’ title at the start of the tenancy or claim title for themselves.",
+        "The landlords did not amend their eviction applications to plead that the tenants’ later statements amounted to a non-bona-fide denial of title.",
+        "The title-denial ground was not tried before the Controller with the tenants having an opportunity to explain and contest it as a ground for eviction."
+      ],
+      "conclusion": "The tenants could not be evicted for a non-bona-fide denial of the landlords’ title in these proceedings. Their statements did not establish such a denial and, in any event, the ground had not been properly pleaded and tried.",
+      "legal_principle": "Under Sections 10(2)(vii) and 10(1), second proviso, of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, the landlord must allege and prove a denial of title or claim of permanent tenancy that is not bona fide. Whether a denial is bona fide depends on the surrounding circumstances. Section 116 of the Evidence Act generally estops a tenant from denying the landlord’s title at the commencement of the tenancy, but does not exhaust the inquiry into bona fides. A subsequent denial may be relied on in the existing proceeding only consistently with procedural fairness: the tenant must have notice and a fair opportunity to meet the ground, ordinarily through proper pleading and trial. The Court relied on Majati Subbarao v. P.V.K. Krishna Rao, Om Prakash Gupta v. Ranbir B. Goyal, Firm Sriniwas Ram Kumar v. Mahabir Prasad, Hasmat Rai v. Raghunath Prasad, Om Prakash v. Ram Kumar, and Nagubai Ammal v. B. Shama Rao, including their principles on subsequent events, pleading, and fair trial.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and (tenant_denial_was_bona_fide or (denial_arose_after_eviction_filing and not landlord_amended_eviction_pleading and not title_ground_fairly_tried))",
+        "then": "eviction_not_ordered_on_title_denial"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The landlord sought eviction of a tenant through a rent-control proceeding.",
+        "tenant_denial_was_bona_fide": "The tenant’s statements about the title or entitlement to rent were made honestly in response to the circumstances and not to repudiate the landlord’s title in bad faith.",
+        "denial_arose_after_eviction_filing": "The tenant made the statements relied on as a denial of title after the eviction proceeding had begun.",
+        "landlord_amended_eviction_pleading": "The landlord amended the eviction pleading to allege the later statements as a ground for eviction.",
+        "title_ground_fairly_tried": "The tenant had notice and a fair opportunity in the proceeding to explain and contest the alleged denial of title as a ground for eviction."
+      },
+      "definition": "In a rent-control eviction proceeding, eviction on the basis of a title denial is not ordered if the denial was bona fide or if a later-arising denial was neither properly pleaded nor fairly tried."
+    },
+    {
+      "legal_issue": "A brief non-payment of rent is not wilful default when the circumstances do not show an intentional and conscious failure to pay without lawful cause.",
+      "material_facts": [
+        "The alleged non-payment concerned one month’s rent for one premises and two months’ rent for the other.",
+        "The landlord acknowledged that rent was commonly collected from the tenants once every two months.",
+        "There was no established demand notice from the landlords, or service of such a notice was doubtful.",
+        "The tenants faced competing pressure about the payment and apportionment of rent, including a demand and threat of eviction from the municipal owner if arrears were not paid directly to it.",
+        "The tenants disputed the rate and amount claimed and said they were prepared to pay rent at the rate previously paid."
+      ],
+      "conclusion": "The short periods of non-payment did not amount to wilful default, so eviction on that ground was not justified.",
+      "legal_principle": "Section 10(2)(i) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960 requires wilful default for eviction on the ground of non-payment; its proviso permits time to pay when the default is not wilful. In S. Sundaram Pillai v. V.R. Pattabiraman, the Court explained that wilful default is intentional, deliberate, calculated, and conscious, with knowledge of the legal consequences. The parties’ established course of collecting rent and the surrounding circumstances are relevant. The Court relied on Premchand Ranka v. A. Vasanthraj Khatod and D.C. Oswal v. V.K. Subbiah for the relevance of a practice of accepting rent in lumpsums or at intervals.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and short_rent_nonpayment and (landlord_customarily_collected_rent_at_intervals or rent_demand_or_notice_was_uncertain or tenant_faced_competing_payment_demands)",
+        "then": "eviction_not_ordered_for_wilful_default"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The landlord sought eviction of a tenant through a rent-control proceeding.",
+        "short_rent_nonpayment": "The tenant failed to pay rent for only a short period.",
+        "landlord_customarily_collected_rent_at_intervals": "The landlord had accepted rent through a regular practice of collecting it at intervals rather than monthly.",
+        "rent_demand_or_notice_was_uncertain": "There was no clear proof that the landlord demanded the rent or that a demand notice reached the tenant.",
+        "tenant_faced_competing_payment_demands": "The tenant faced competing claims or threats concerning to whom rent should be paid."
+      },
+      "definition": "A short rent arrear does not result in eviction for wilful default when the circumstances, including any established collection practice or uncertainty about demands and payment, do not show a deliberate failure to pay."
+    },
+    {
+      "legal_issue": "A person claiming an interest in the property, or an underlying owner, need not be joined in a landlord-tenant eviction appeal when their presence is unnecessary to decide the dispute between the parties.",
+      "material_facts": [
+        "A person claiming a share in the property and the municipal owner separately sought to be joined in the appeals.",
+        "The share and title claims were the subject of other proceedings or matters outside the landlord-tenant dispute before the Court.",
+        "The relationship and mutual rights between the municipal owner and the landlords were not necessary to determine the eviction issues.",
+        "Neither applicant’s presence was necessary for an effective and complete decision of the issues in the appeals."
+      ],
+      "conclusion": "The applications to join the claimants and the municipal owner were dismissed; they remained free to pursue their claims in independent proceedings.",
+      "legal_principle": "A person is not a necessary or proper party to a landlord-tenant proceeding merely because that person claims an interest in the property. Joinder is unwarranted when the person’s presence is unnecessary to decide the questions in the proceeding and would introduce controversies beyond its scope. The Court stated that any independent title claims could be pursued before a competent forum.",
+      "rule": {
+        "if": "landlord_tenant_eviction_appeal and proposed_party_claims_separate_property_interest and proposed_party_presence_unnecessary_to_decide_eviction_dispute",
+        "then": "impleadment_denied"
+      },
+      "predicates": {
+        "landlord_tenant_eviction_appeal": "The proceeding is an appeal concerning eviction in a landlord-tenant dispute.",
+        "proposed_party_claims_separate_property_interest": "A proposed party asserts an ownership, share, or other property interest that is separate from the eviction dispute.",
+        "proposed_party_presence_unnecessary_to_decide_eviction_dispute": "The court can decide the eviction issues completely and effectively without the proposed party."
+      },
+      "definition": "A separate property claimant is not joined in a landlord-tenant eviction appeal when the claimant’s presence is unnecessary to decide the eviction dispute."
+    },
+    {
+      "legal_issue": "After rejecting eviction claims, the Court may make continued possession conditional on clearing rent arrears and paying rent regularly while the fair-rent determination remains pending.",
+      "material_facts": [
+        "The eviction claims were rejected, but the parties had ongoing disputes about the applicable rent and several related proceedings remained pending.",
+        "The fair-rent determination had not become final.",
+        "An interim order already governed rent payments during the period covered by the pending fair-rent proceedings.",
+        "The Court directed the tenants to clear the arrears calculated under its directions and to continue paying or tendering rent; it provided that the tenancy would continue if the arrears were cleared and that later default could support a fresh eviction application."
+      ],
+      "conclusion": "The tenants could continue in possession subject to clearing the specified arrears and paying rent regularly under the Court’s directions until the fair-rent determination became final; a later default could make them liable to eviction on a fresh application.",
+      "legal_principle": "To resolve the rent dispute and do substantial justice in light of the prolonged litigation, the Court directed payment of arrears and regular payment pending final determination of fair rent. Continued tenancy was conditional on compliance, and a subsequent default could be raised by the landlords in an application before the Controller.",
+      "rule": {
+        "if": "eviction_claim_rejected and fair_rent_determination_pending and rent_arrears_or_future_rent_remain_payable",
+        "then": "continued_possession_conditioned_on_rent_compliance"
+      },
+      "predicates": {
+        "eviction_claim_rejected": "The court rejected the eviction claim in the proceeding before it.",
+        "fair_rent_determination_pending": "The proceeding to determine the fair rent had not reached a final outcome.",
+        "rent_arrears_or_future_rent_remain_payable": "The tenant still had arrears to clear or continuing rent to pay."
+      },
+      "definition": "When eviction is rejected but rent remains due and fair rent is unresolved, continued possession is conditional on clearing arrears and paying rent as directed."
+    }
+  ],
+  "seconds": 22.5
+}

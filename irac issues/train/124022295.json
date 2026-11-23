@@ -1,0 +1,104 @@
+{
+  "doc_id": "124022295",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28390,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2640,
+    "prompt_tokens": 7406,
+    "total_tokens": 10046,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The civil-court bar applies to claims against the Crown relating to land held as a Saranjam, including claims challenging governmental action concerning that land.",
+      "material_facts": [
+        "The suit sought declarations that the government could not alter an earlier order concerning the Saranjam estate and that the plaintiff was entitled to the rights of its sole holder.",
+        "The challenged government orders concerned the resumption, regrant, possession, and recording of the Saranjam villages.",
+        "The plaintiff retained the government as a defendant and sought relief that would affect rights in the Saranjam estate."
+      ],
+      "conclusion": "The suit was a claim against the Crown relating to land held as a Saranjam and was barred by section 4(a) of the Bombay Revenue Jurisdiction Act, 1876.",
+      "legal_principle": "Section 4(a) of the Bombay Revenue Jurisdiction Act, 1876 bars civil-court jurisdiction over claims against the Crown relating to lands held as a Saranjam. Its language covers such claims even where the government action is alleged to be ultra vires. The court distinguished Province of Bombay v. Hormusji Manekji, 74 I.A. 103, which concerned section 4(b): its reference to an assessment being “authorised” required the court to consider whether the assessment was duly authorised before applying that bar.",
+      "rule": {
+        "if": "civil_suit and claim_against_government and concerns_saranjam_land",
+        "then": "civil_court_lacks_jurisdiction"
+      },
+      "predicates": {
+        "civil_suit": "A person brought a claim for determination in a civil court.",
+        "claim_against_government": "The claimant sought relief that would operate against the government.",
+        "concerns_saranjam_land": "The claim concerned land held as part of a Saranjam estate.",
+        "civil_court_lacks_jurisdiction": "The civil court cannot exercise jurisdiction over the claim."
+      },
+      "definition": "When a civil suit asserts a claim against the government concerning Saranjam land, the civil court lacks jurisdiction over it."
+    },
+    {
+      "legal_issue": "Relief sought against private defendants cannot be severed from a barred claim against the Crown when the relief depends on the government’s orders concerning the land.",
+      "material_facts": [
+        "The plaintiff sought relief against family members on the basis that the government lacked authority to alter the earlier order recognizing the plaintiff as sole Saranjamdar.",
+        "The family members held their respective portions under government orders, and the plaintiff wanted the government bound by the decree sought against them.",
+        "The plaintiff refused to remove the government or the claims against it from the suit."
+      ],
+      "conclusion": "The claims against the private defendants could not be separated from the claim against the government, so the suit could not proceed by granting relief against the private defendants alone.",
+      "legal_principle": "A claim against private defendants is not severable from a barred claim against the Crown where the claims are interdependent and the requested decree is intended to bind the Crown. The court relied on Basalingappagouda v. The Secretary of State for India, 28 Bom. L.R. 651, and Basangauda v. The Secretary of State, 32 Bom. L.R. 1370.",
+      "rule": {
+        "if": "civil_suit and private_relief_depends_on_government_orders and government_retained_for_binding_effect",
+        "then": "private_relief_cannot_be_severed_from_barred_claim"
+      },
+      "predicates": {
+        "civil_suit": "A person brought a claim for determination in a civil court.",
+        "private_relief_depends_on_government_orders": "The claimant sought relief against private persons on the basis that government orders concerning the subject matter were invalid or ineffective.",
+        "government_retained_for_binding_effect": "The claimant kept the government in the suit so that the requested decree would bind it.",
+        "private_relief_cannot_be_severed_from_barred_claim": "The relief against the private persons cannot be considered or granted independently of the barred claim against the government."
+      },
+      "definition": "When relief against private persons depends on government orders and the government is kept in the suit so the decree will bind it, the private relief cannot be severed from the barred claim."
+    },
+    {
+      "legal_issue": "A suit seeking only declaratory relief against the Crown may still constitute a claim against the Crown relating to land.",
+      "material_facts": [
+        "The plaintiff sought a declaration that the government had no right to change its earlier resolution concerning the Saranjam estate.",
+        "The plaintiff retained the government as a defendant so that it would be bound by the decision.",
+        "The declaration concerned the government’s authority over an estate consisting of villages and Saranjam land."
+      ],
+      "conclusion": "The declaratory claim against the government was a claim against the Crown within section 4(a).",
+      "legal_principle": "Section 4(a) applies to a claim against the Crown relating to Saranjam land even where the relief sought against the Crown is declaratory. The court rejected the view that a declaration alone is not a claim against the government and approved the contrary view in Daulatrao v. Government of Bombay, 47 Bom. L.R. 214.",
+      "rule": {
+        "if": "civil_suit and declaration_sought_against_government and government_retained_for_binding_effect and concerns_saranjam_land",
+        "then": "declaratory_relief_is_a_claim_against_government"
+      },
+      "predicates": {
+        "civil_suit": "A person brought a claim for determination in a civil court.",
+        "declaration_sought_against_government": "The claimant asked the court to declare that the government lacked a right or power concerning the subject matter.",
+        "government_retained_for_binding_effect": "The claimant kept the government in the suit so that the requested declaration would bind it.",
+        "concerns_saranjam_land": "The claim concerned land held as part of a Saranjam estate.",
+        "declaratory_relief_is_a_claim_against_government": "A request for a declaration constitutes a claim against the government."
+      },
+      "definition": "A declaration sought against the government about Saranjam land, with the government retained so the declaration will bind it, is a claim against the government."
+    },
+    {
+      "legal_issue": "An allegation that governmental action was ultra vires does not avoid the civil-court bar for claims against the Crown relating to Saranjam land.",
+      "material_facts": [
+        "The plaintiff challenged the government’s authority to alter the resolution governing the Saranjam estate.",
+        "The challenged resolution dealt with the estate and the villages comprising it.",
+        "The suit sought relief against the government concerning that land."
+      ],
+      "conclusion": "The allegation that the government acted beyond its powers did not remove the suit from the bar in section 4(a).",
+      "legal_principle": "Section 4(a) generally bars claims against the Crown relating to land held as a Saranjam, including claims that challenge the validity of governmental action. Province of Bombay v. Hormusji Manekji, 74 I.A. 103, did not govern because it concerned section 4(b), which bars objections to assessments “authorised” by the government; that wording required the court to determine whether the assessment was duly authorised. Section 4(a) contains no equivalent qualification.",
+      "rule": {
+        "if": "civil_suit and claim_against_government and concerns_saranjam_land and government_action_alleged_ultra_vires",
+        "then": "civil_court_bar_applies_despite_ultra_vires_allegation"
+      },
+      "predicates": {
+        "civil_suit": "A person brought a claim for determination in a civil court.",
+        "claim_against_government": "The claimant sought relief that would operate against the government.",
+        "concerns_saranjam_land": "The claim concerned land held as part of a Saranjam estate.",
+        "government_action_alleged_ultra_vires": "The claimant alleged that the government acted beyond its lawful authority.",
+        "civil_court_bar_applies_despite_ultra_vires_allegation": "The allegation that the government acted beyond its authority does not prevent the jurisdictional bar from applying."
+      },
+      "definition": "If a civil suit claims against the government concerning Saranjam land and alleges that the government acted beyond its authority, the civil-court bar still applies."
+    }
+  ],
+  "seconds": 15.7
+}

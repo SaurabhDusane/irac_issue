@@ -1,0 +1,104 @@
+{
+  "doc_id": "148755915",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 53201,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3019,
+    "prompt_tokens": 13128,
+    "total_tokens": 16147,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A creditor’s defence that a transfer was fraudulent under the law governing transfers to defeat or delay creditors is sufficiently raised when the pleading alleges that the transfer was sham and, alternatively, that even if genuine it was made to defraud creditors.",
+      "material_facts": [
+        "The creditor’s written statement alleged that the sale was sham and nominal, and also alleged that even if it was genuine it was made to defraud creditors.",
+        "The parties presented evidence and contested whether the sale was fraudulent under the provision governing transfers intended to defeat or delay creditors."
+      ],
+      "conclusion": "The alternative allegation sufficiently raised the fraudulent-transfer defence, despite the imprecise drafting of the written statement.",
+      "legal_principle": "The court distinguishes a sham transfer, not intended to pass title, from a genuine transfer that is voidable as a fraud on creditors under section 53(1) of the Transfer of Property Act, 1882. A pleading that raises both grounds in the alternative permits the court to grant relief if the fraudulent-transfer ground is proved.",
+      "rule": {
+        "if": "claim_order_challenge_suit and pleading_alleges_sham_transfer and pleading_alternatively_alleges_creditor_fraud",
+        "then": "fraudulent_transfer_defense_is_sufficiently_raised"
+      },
+      "predicates": {
+        "claim_order_challenge_suit": "A purchaser brings a suit to challenge an order rejecting a claim to property attached for a debt.",
+        "pleading_alleges_sham_transfer": "The creditor alleges that the purported transfer was nominal and was not intended to pass title.",
+        "pleading_alternatively_alleges_creditor_fraud": "The creditor alleges that, even if the transfer was genuine, it was made to defraud creditors."
+      },
+      "definition": "When a purchaser challenges an order rejecting a claim to attached property and the creditor pleads both that the transfer was sham and, alternatively, that it was intended to defraud creditors, the fraudulent-transfer defence is sufficiently raised."
+    },
+    {
+      "legal_issue": "A transfer made with intent to defeat or delay creditors is voidable even if it covers less than all of the debtor’s property, unless adequate and readily available property remains to make the transfer immaterial to creditors.",
+      "material_facts": [
+        "The partnership was operating at a loss and had substantial debts when the property was transferred.",
+        "Creditors had pursued claims against the partnership, and a creditor had obtained an attachment order concerning the property.",
+        "The sale converted immovable property into cash, and no evidence showed that the proceeds were applied to pay particular debts.",
+        "There was no definite evidence of other property available to creditors after the sale; the purchaser did not call the vendor as a witness or produce the partnership accounts.",
+        "The sale and its registration took place in circumstances from which the court inferred an intention to keep the property beyond creditors’ reach."
+      ],
+      "conclusion": "The sale was made with intent to put the property beyond the reach of creditors and was voidable at the instance of the creditor; the fact that other property might have existed did not defeat that conclusion without proof that it was sufficient in value and readily available.",
+      "legal_principle": "Section 53(1) of the Transfer of Property Act, 1882 applies where a transfer is intended to defeat or delay creditors; delay alone is sufficient. The transfer of less than all the debtor’s property does not by itself take the transaction outside the section. The principle in Ramaswami Chettiar v. Mallappa Reddiar, (1920) I.L.R. 43 Mad. 760, was approved: adequate property readily available to creditors must be proved to render the transfer immaterial.",
+      "rule": {
+        "if": "creditor_fraud_transfer_dispute and debtor_financially_distressed and transfer_puts_property_beyond_creditors and not proven_adequate_readily_available_assets",
+        "then": "transfer_is_voidable_for_creditor_fraud"
+      },
+      "predicates": {
+        "creditor_fraud_transfer_dispute": "The dispute concerns whether a transfer is voidable because it was intended to defeat or delay creditors.",
+        "debtor_financially_distressed": "The debtor was losing money or substantially indebted when the transfer was made.",
+        "transfer_puts_property_beyond_creditors": "The transfer converted or placed property beyond the practical reach of creditors, without evidence that its proceeds were applied to discharge particular debts.",
+        "proven_adequate_readily_available_assets": "Evidence establishes that other property remained which was sufficient in value and readily available to creditors."
+      },
+      "definition": "In a dispute over a transfer made while the debtor is financially distressed, a transfer that puts property beyond creditors’ reach is voidable if adequate, readily available remaining assets have not been proved."
+    },
+    {
+      "legal_issue": "A transferee who invokes the protection for a transfer made in good faith and for consideration must prove good faith once the transferor’s intent to defeat or delay creditors is established.",
+      "material_facts": [
+        "The sale was genuine and supported by consideration, but the purchaser belonged to the vendor’s close-knit business community and was acquainted with the vendor.",
+        "The purchaser had a copy of the dissolution deed disclosing substantial partnership losses and debts.",
+        "The sale document was registered in a manner the court found intended to keep the transaction secret from creditors.",
+        "The purchaser did not make enquiries into why the property was being sold and did not require the sale proceeds to be used to pay creditors.",
+        "The court found that the purchaser knew of and shared the transferor’s design to put the property beyond creditors’ reach."
+      ],
+      "conclusion": "The purchaser did not establish that he was a transferee in good faith and was not protected by the good-faith exception.",
+      "legal_principle": "Under the second paragraph of section 53(1) of the Transfer of Property Act, 1882, the transferee bears the burden of proving the exception once the transferor’s fraudulent intent is established. The transferee must establish that he was not party to the transferor’s design and honestly believed the transfer was in the ordinary course of business.",
+      "rule": {
+        "if": "creditor_fraud_transfer_dispute and transferor_fraudulent_intent_established and transferee_claims_good_faith_protection and transferee_knew_of_distress and transferee_shared_or_assisted_in_secrecy",
+        "then": "transferee_is_not_protected_as_a_good_faith_purchaser"
+      },
+      "predicates": {
+        "creditor_fraud_transfer_dispute": "The dispute concerns whether a transfer was intended to defeat or delay creditors.",
+        "transferor_fraudulent_intent_established": "The transferor intended the transfer to put property beyond creditors’ reach or otherwise delay them.",
+        "transferee_claims_good_faith_protection": "The transferee relies on protection available to a transferee acting in good faith and for consideration.",
+        "transferee_knew_of_distress": "The transferee knew facts showing that the debtor was financially distressed or substantially indebted.",
+        "transferee_shared_or_assisted_in_secrecy": "The transferee participated in keeping the transfer from creditors or otherwise helped carry out the transferor’s design."
+      },
+      "definition": "When the transferor intended to defeat or delay creditors, a transferee who claims good-faith protection but knew of the debtor’s distress and shared or assisted in concealing the transfer is not protected."
+    },
+    {
+      "legal_issue": "An attaching creditor may raise the voidability of a transfer as a defence in a purchaser’s suit to set aside an order rejecting a claim to attached property, even though a creditor’s suit to avoid the transfer must be brought representatively.",
+      "material_facts": [
+        "The purchaser brought a suit under Order 21, rule 63 of the Code of Civil Procedure, 1908, to set aside the order rejecting his claim to attached property.",
+        "The attaching creditor defended that suit by alleging that the transfer was intended to defeat or delay creditors.",
+        "The purchaser argued that the creditor could avoid the transfer only by bringing a representative suit on behalf of creditors."
+      ],
+      "conclusion": "The creditor could raise the fraudulent-transfer defence in the suit without bringing a representative action; the representative-suit requirement applies to a creditor who institutes a suit to avoid the transfer, not to a creditor defending the purchaser’s suit.",
+      "legal_principle": "Section 53(1) of the Transfer of Property Act, 1882 does not prescribe a particular method for avoiding a transfer and does not prevent a defence based on the section in a suit under Order 21, rule 63 of the Code of Civil Procedure, 1908. The representative-action requirement in section 53(1), added by the 1929 amendment, governs suits instituted by creditors; it does not bar an individual creditor from raising the defence. The court agreed with Ramaswami Chettiar v. Mallappa Reddiar, (1920) I.L.R. 43 Mad. 760, on the availability of the defence.",
+      "rule": {
+        "if": "suit_to_set_aside_claim_order and attaching_creditor_is_defendant and creditor_alleges_voidable_transfer",
+        "then": "creditor_may_raise_individual_fraudulent_transfer_defense"
+      },
+      "predicates": {
+        "suit_to_set_aside_claim_order": "A purchaser sues to set aside an order rejecting a claim to property attached for a debt.",
+        "attaching_creditor_is_defendant": "The creditor who attached the property is defending the purchaser’s suit.",
+        "creditor_alleges_voidable_transfer": "The creditor alleges that the transfer is voidable because it was intended to defeat or delay creditors."
+      },
+      "definition": "When a purchaser sues to set aside an order rejecting a claim to attached property, the defending attaching creditor may individually raise the allegation that the transfer was intended to defeat or delay creditors."
+    }
+  ],
+  "seconds": 80.0
+}

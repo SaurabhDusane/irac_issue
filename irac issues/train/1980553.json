@@ -1,0 +1,58 @@
+{
+  "doc_id": "1980553",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 28133,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2492,
+    "prompt_tokens": 7780,
+    "total_tokens": 10272,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The High Court’s power to determine whether a District Court’s appellate order was made according to law does not include a general power to reappreciate evidence or retry factual findings.",
+      "material_facts": [
+        "The District Court reversed the Insolvency Court after finding that the challenged mortgages were genuine and supported by consideration.",
+        "The High Court, exercising its supervisory power over the District Court’s appellate decision, reassessed the evidence and restored the Insolvency Court’s order."
+      ],
+      "conclusion": "The High Court was not entitled to interfere merely because it would have assessed the evidence differently; it was generally bound by the District Court’s findings of fact. Its supervisory power is wider than the power under section 100(1) of the Code of Civil Procedure and permits intervention where the decision was not according to law, but not a de novo examination of facts.",
+      "legal_principle": "Under the first proviso to section 75(1) of the Provincial Insolvency Act, the High Court may satisfy itself that the District Court’s appellate order was according to law, but has neither appellate power nor general jurisdiction to reappreciate evidence. A wrong factual decision by a competent court is still a decision according to law. The expression “according to law” is wider than “contrary to law” in section 100(1)(a) of the Code of Civil Procedure, and the power resembles that under section 25 of the Provincial Small Causes Courts Act. The Court relied on Bell & Co. Ltd. v. Waman Hemraj and Hari Shankar v. Rao Girdhari Lal Chowdhury, and explained Official Receiver, Kanpur v. Abdul Shakur as confirming that factual findings, including findings about rebuttal of a statutory presumption, cannot be disturbed in that jurisdiction. Intervention may be warranted for matters such as lack of jurisdiction, reliance on inadmissible evidence, denial of a proper hearing, or placing the burden of proof on the wrong party.",
+      "rule": {
+        "if": "insolvency_appellate_revision and district_court_found_facts",
+        "then": "high_court_cannot_reappreciate_evidence"
+      },
+      "predicates": {
+        "insolvency_appellate_revision": "The proceeding involved supervisory review of a District Court’s appellate decision in an insolvency matter.",
+        "district_court_found_facts": "The District Court decided the appeal on findings of fact."
+      },
+      "definition": "When supervisory review concerns an appellate decision in an insolvency matter that rests on factual findings, the High Court cannot reappreciate the evidence."
+    },
+    {
+      "legal_issue": "A mortgage challenged as unsupported by consideration is valid only to the extent that the mortgagee proves the consideration, and an unsupported claimed component cannot be treated as established merely because other components are proved.",
+      "material_facts": [
+        "The insolvency court annulled two mortgages, but the District Court found that both were genuine and supported by consideration.",
+        "The mortgagees’ account of advances made before execution of the mortgages was corroborated by entries in the insolvents’ account books, which recorded their receipt of the relevant sums.",
+        "For one mortgage, the District Court treated a further payment as proved, but no corresponding account-book entry was established; the mortgagee’s testimony was interested, and the registrar had not endorsed the payment despite being required to do so.",
+        "The evidence established the consideration for the other mortgage, while the further payment claimed under the first mortgage was not satisfactorily proved."
+      ],
+      "conclusion": "The mortgage supported by the proved consideration was restored as valid. The other mortgage was valid only to the extent of the consideration proved; the additional claimed payment was not established.",
+      "legal_principle": "Under section 53 of the Provincial Insolvency Act, the party challenging a document ordinarily bears the burden of proving that it is unsupported by consideration, because the party relying on it may use the insolvent’s admission in the document. But where the mortgagees do not rely on the recitals about how consideration was paid, they must prove that consideration. Account-book entries recording the insolvents’ receipt of sums could corroborate the mortgagees’ evidence. The Court also held that the District Court’s factual findings were generally not open to review by the High Court under the first proviso to section 75(1), while concluding that the particular additional payment had not been satisfactorily proved.",
+      "rule": {
+        "if": "insolvency_mortgage_validity_challenge and mortgagees_must_prove_payment and some_consideration_supported_by_records and claimed_component_not_satisfactorily_proved",
+        "then": "mortgage_valid_only_to_extent_of_proven_consideration"
+      },
+      "predicates": {
+        "insolvency_mortgage_validity_challenge": "A mortgage was challenged in an insolvency proceeding as unsupported by consideration.",
+        "mortgagees_must_prove_payment": "The mortgagees did not rely on the mortgage recitals as proof of the manner in which the consideration was paid and therefore had to prove the payment.",
+        "some_consideration_supported_by_records": "Account-book entries recording the insolvents’ receipt of some claimed consideration corroborated the mortgagees’ evidence.",
+        "claimed_component_not_satisfactorily_proved": "A further claimed payment lacked a corresponding account-book entry and was not satisfactorily established by the remaining evidence."
+      },
+      "definition": "When mortgagees must prove payment, records corroborate some consideration, and a claimed component remains unproved, the mortgage is valid only to the extent of the proven consideration."
+    }
+  ],
+  "seconds": 16.0
+}

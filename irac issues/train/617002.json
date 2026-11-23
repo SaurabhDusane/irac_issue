@@ -1,0 +1,82 @@
+{
+  "doc_id": "617002",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21405,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2613,
+    "prompt_tokens": 5499,
+    "total_tokens": 8112,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The testimony of a child eyewitness and witnesses hostile to the accused may sustain a conviction despite the acquittal of co-accused when the testimony against the convicted accused is reliable.",
+      "material_facts": [
+        "A thirteen-year-old eyewitness was living with the deceased and was present at the scene; she gave a detailed account identifying the appellant as the person who shot both victims.",
+        "The child witness withstood lengthy cross-examination, and the courts found her evidence straightforward and convincing.",
+        "Other eyewitnesses were inimically disposed towards the accused, but their evidence also implicated the appellant.",
+        "The other accused were acquitted because of doubt about the part attributed to them; the record did not establish that they had been falsely implicated."
+      ],
+      "conclusion": "The child witness's evidence was reliable, the acquittal of the other accused did not establish that she had falsely implicated the appellant, and the appellant's murder conviction was upheld.",
+      "legal_principle": "Evidence must be assessed on its reliability in relation to the accused concerned. A witness's hostility towards an accused is not, by itself, a ground for rejecting the witness's evidence. Acquitting co-accused because their involvement is doubtful is distinct from finding that they were falsely implicated, and does not automatically discredit the witness's testimony against another accused. The Court relied on Section 302 of the Indian Penal Code to confirm the murder conviction; it cited no earlier cases.",
+      "rule": {
+        "if": "murder_conviction_appeal and child_witness_natural_presence and child_witness_testimony_survives_cross_examination and (other_witnesses_inimical or co_accused_acquitted_on_doubt)",
+        "then": "murder_conviction_sustained"
+      },
+      "predicates": {
+        "murder_conviction_appeal": "The proceeding is an appeal against a conviction for murder.",
+        "child_witness_natural_presence": "A child witness who was naturally present at the scene gave evidence about the crime.",
+        "child_witness_testimony_survives_cross_examination": "The child witness's account remained reliable after cross-examination.",
+        "other_witnesses_inimical": "Other witnesses who supported the account were hostile to the accused.",
+        "co_accused_acquitted_on_doubt": "Co-accused were acquitted because their involvement was doubtful."
+      },
+      "definition": "When a murder conviction appeal includes reliable testimony from a naturally present child witness, hostility of other witnesses or acquittal of co-accused on doubt does not prevent the conviction from being sustained."
+    },
+    {
+      "legal_issue": "A prompt first information report supported by contemporaneous police records and consistent with the medical evidence may be accepted as genuine and as supporting the reported time of the occurrence.",
+      "material_facts": [
+        "The reported occurrence was at about 7:30 a.m., and the report naming the assailants was received at a police station about four miles away at 10:05 a.m.",
+        "The report's receipt and the police departure for the village were recorded in the station's general diary in chronological order.",
+        "The defence did not effectively challenge the relevant diary entry in cross-examination.",
+        "The medical evidence that the deceased had partly digested food was consistent with evidence that one deceased had eaten breakfast earlier that morning."
+      ],
+      "conclusion": "The Court accepted the reported morning time and the report's stated receipt time, and rejected the suggestions that the occurrence happened at night or that the report was fabricated after consultation.",
+      "legal_principle": "The Court assessed the medical evidence alongside the eyewitness account rather than treating the food-digestion estimate as conclusive. A prompt report, supported by contemporaneous chronological police records and not materially undermined in cross-examination, weighed against fabrication and post-occurrence confabulation. No earlier cases or specific statutory provisions were relied on for this conclusion.",
+      "rule": {
+        "if": "criminal_appeal and report_names_assailants_promptly and contemporaneous_police_entry_supports_report_time and medical_evidence_consistent_with_reported_timing",
+        "then": "reported_occurrence_and_report_timing_accepted"
+      },
+      "predicates": {
+        "criminal_appeal": "The proceeding is a criminal appeal in which the reliability of the prosecution account is disputed.",
+        "report_names_assailants_promptly": "A report identifying the alleged assailants was made soon after the occurrence.",
+        "contemporaneous_police_entry_supports_report_time": "A contemporaneous police record supports the stated time the report was received.",
+        "medical_evidence_consistent_with_reported_timing": "The medical evidence is consistent with the reported time of the occurrence."
+      },
+      "definition": "When a criminal appeal concerns the reliability of the prosecution account, a prompt identifying report supported by contemporaneous police records and consistent medical evidence supports accepting the reported timing."
+    },
+    {
+      "legal_issue": "A death sentence may be replaced with a life sentence in light of prolonged exposure to the death sentence and evidence suggesting the offender may have been instigated.",
+      "material_facts": [
+        "The appellant's death sentence had remained in place for more than three years and seven months while the appeal was pending.",
+        "The evidence indicated that the appellant was probably instigated, directly or indirectly, by his father."
+      ],
+      "conclusion": "The Court confirmed the conviction but substituted imprisonment for life for the death sentence.",
+      "legal_principle": "The Court considered the prolonged period during which the appellant remained under the death sentence and the indication that he was probably instigated, and held that imprisonment for life was appropriate in the circumstances. No specific statutory provision or earlier case was cited for this sentencing decision.",
+      "rule": {
+        "if": "appeal_against_death_sentence and prolonged_exposure_to_death_sentence and evidence_of_probable_instigation",
+        "then": "death_sentence_replaced_with_life_sentence"
+      },
+      "predicates": {
+        "appeal_against_death_sentence": "The proceeding is an appeal against a death sentence.",
+        "prolonged_exposure_to_death_sentence": "The appellant remained under a death sentence for a prolonged period while the appeal was pending.",
+        "evidence_of_probable_instigation": "The evidence indicates that another person probably instigated the offender."
+      },
+      "definition": "In an appeal against a death sentence, prolonged exposure to that sentence together with evidence of probable instigation may result in its replacement with a life sentence."
+    }
+  ],
+  "seconds": 16.7
+}

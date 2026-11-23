@@ -1,0 +1,99 @@
+{
+  "doc_id": "877279",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26294,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2438,
+    "prompt_tokens": 6982,
+    "total_tokens": 9420,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Acceptance of rent paid before a lease expires does not create a tenancy by holding over when the payment and its acceptance do not signify assent to continued possession.",
+      "material_facts": [
+        "The lease was for a fixed term and required annual rent in advance.",
+        "Rent covering a period that extended beyond the lease’s expiry was paid and accepted nearly a year before expiry.",
+        "The parties’ correspondence showed that they treated the lease as expiring on its stated date, and the lessor did not assent to continued possession."
+      ],
+      "conclusion": "No new tenancy was created under section 116 of the Transfer of Property Act. The early payment and acceptance of rent did not amount to assent to possession after expiry.",
+      "legal_principle": "Under section 116 of the Transfer of Property Act, holding over requires both the lessee’s continued possession after determination of the lease and the lessor’s acceptance of rent or other assent to that continued possession. Acceptance of rent must occur in circumstances and at a time that signify assent. K.B. Capadia v. Bai Jerbai Warden was distinguished because rent there was accepted after the tenancy had expired.",
+      "rule": {
+        "if": "lease_termination_dispute and fixed_term_lease and rent_paid_before_expiry and payment_not_treated_as_assent",
+        "then": "no_new_tenancy_by_holding_over"
+      },
+      "predicates": {
+        "lease_termination_dispute": "The dispute concerns whether a lease ended or continued after its stated term.",
+        "fixed_term_lease": "The parties made a lease for a specified term.",
+        "rent_paid_before_expiry": "The lessee paid rent for a period extending beyond the lease term before that term expired.",
+        "payment_not_treated_as_assent": "The parties’ conduct did not treat the rent payment and its acceptance as assent to possession after the lease expired."
+      },
+      "definition": "When a fixed-term lease dispute involves rent paid before expiry in circumstances that do not signify assent to continued possession, the rule yields no new tenancy by holding over."
+    },
+    {
+      "legal_issue": "A lease extended by implied consent only to a fixed end date expires on that date without requiring notice to quit.",
+      "material_facts": [
+        "The parties’ conduct could at most support an implied extension of the lease to the end of the rent period.",
+        "The lessor did not assent to possession beyond that fixed end date."
+      ],
+      "conclusion": "Even if the lease was impliedly extended to the end of that period, it expired then and no notice under section 106 of the Transfer of Property Act was necessary.",
+      "legal_principle": "The Court applied section 106 of the Transfer of Property Act in the context of a lease that, at most, had been extended by implied consent to a fixed date. Because the lease ended on that date, notice to terminate a continuing tenancy was unnecessary.",
+      "rule": {
+        "if": "lease_termination_dispute and implied_extension_to_fixed_end_date",
+        "then": "notice_to_quit_not_required"
+      },
+      "predicates": {
+        "lease_termination_dispute": "The dispute concerns whether a lease ended or continued after its stated term.",
+        "implied_extension_to_fixed_end_date": "The parties’ conduct supports, at most, an implied extension of the lease to a specific end date."
+      },
+      "definition": "When a lease dispute involves an implied extension to a fixed end date, the rule yields that notice to quit is not required to end the lease on that date."
+    },
+    {
+      "legal_issue": "A lease clause providing for temporary retention of manufactured items after expiry transfers only leftover building materials to the lessor, not machinery or plant.",
+      "material_facts": [
+        "The lease allowed the lessee to keep manufactured items on the premises temporarily after expiry and provided that items left contrary to that condition became the lessor’s property.",
+        "Read as a whole, the lease distinguished building materials manufactured on the premises from machinery, tools, and plant.",
+        "Building materials remained on the premises after the permitted period; machinery and plant also remained there."
+      ],
+      "conclusion": "Only building materials such as bricks, tiles, and similar articles became the lessor’s property. The lessee was given time to remove the boilers, engines, trucks, kilns, railway and tram lines, and other plant.",
+      "legal_principle": "The Court construed the lease as a whole, distinguishing its clause governing expiry in the ordinary course from the clause governing early termination for breach. In the ordinary-expiry clause, “other materials” referred to manufactured building materials, not machinery, tools, or plant.",
+      "rule": {
+        "if": "lease_expiry_dispute and lease_allows_temporary_retention and lease_distinguishes_building_materials_from_plant and building_materials_left_after_deadline",
+        "then": "only_left_building_materials_vest_in_lessor"
+      },
+      "predicates": {
+        "lease_expiry_dispute": "The dispute concerns the consequences of a lease expiring in the ordinary course.",
+        "lease_allows_temporary_retention": "The lease permits the lessee to retain items on the premises for a limited time after expiry.",
+        "lease_distinguishes_building_materials_from_plant": "The lease, read as a whole, treats manufactured building materials separately from machinery, tools, or plant.",
+        "building_materials_left_after_deadline": "The lessee leaves manufactured building materials on the premises after the permitted retention period."
+      },
+      "definition": "When an ordinary lease expiry involves a limited retention right, a contractual distinction between building materials and plant, and building materials left beyond the deadline, the rule yields that only those building materials vest in the lessor."
+    },
+    {
+      "legal_issue": "An owner may obtain an injunction preventing removal of property even when the owner is not in possession of it.",
+      "material_facts": [
+        "The lease terms made the remaining building materials the lessor’s property.",
+        "The former lessee could remove or dispose of those materials, and the lessor sought an injunction to prevent that conduct.",
+        "The lessor was not in possession of the materials."
+      ],
+      "conclusion": "The lessor was entitled to an injunction restraining removal or disposal of the materials that had become its property, despite not being in possession.",
+      "legal_principle": "The Court held that, once ownership of the materials had been established, there was no legal objection to an injunction restraining their removal. It distinguished Rathnasabhapathi Pillai v. Ramaswami Aiyer, Bhramar Lal Banduri v. Nanda Lal Chowdhuri, and Valia Thamburatti v. Parvati as inapplicable.",
+      "rule": {
+        "if": "injunction_dispute and claimant_owns_property and another_party_may_remove_property and claimant_not_in_possession",
+        "then": "owner_may_obtain_injunction_to_prevent_removal"
+      },
+      "predicates": {
+        "injunction_dispute": "The proceeding includes a request to prevent another party from removing or disposing of property.",
+        "claimant_owns_property": "The claimant has established ownership of the property at issue.",
+        "another_party_may_remove_property": "The other party may remove or dispose of the property.",
+        "claimant_not_in_possession": "The claimant is not in possession of the property."
+      },
+      "definition": "When an injunction dispute concerns property owned by a claimant who is out of possession and another party may remove it, the rule yields that the owner may obtain an injunction preventing removal."
+    }
+  ],
+  "seconds": 15.2
+}

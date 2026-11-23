@@ -1,0 +1,138 @@
+{
+  "doc_id": "1238854",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23236,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3124,
+    "prompt_tokens": 5884,
+    "total_tokens": 9008,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Failure to comply with an eviction-related court order constitutes civil contempt when the court’s time extension was based on the parties’ agreement and no undertaking was given.",
+      "material_facts": [
+        "The court extended the tenant’s time to vacate, recording terms agreed to by both parties; the tenant did not file the undertaking mentioned in the order.",
+        "The tenant did not vacate by the extended deadline, but the court found that the extension was based on the parties’ agreement rather than on a representation by the tenant that he would vacate."
+      ],
+      "conclusion": "The tenant was not liable for civil contempt for the alleged breach of the order.",
+      "legal_principle": "A clear and deliberate breach of an undertaking to the court to vacate premises may constitute civil contempt. Even without an undertaking, a litigant may be liable if the court was induced to act on the litigant’s representation and that representation was false or made without an intention to act on it. Here, however, the extension was granted on the parties’ agreement, not on the tenant’s representation.",
+      "rule": {
+        "if": "civil_contempt_proceeding and eviction_time_extension_recorded_by_court and no_undertaking_given and extension_based_on_parties_agreement",
+        "then": "not_liable_for_civil_contempt_for_breach"
+      },
+      "predicates": {
+        "civil_contempt_proceeding": "A party seeks to establish civil contempt based on an alleged breach of a court order.",
+        "eviction_time_extension_recorded_by_court": "The court records an extension of time for a tenant to vacate premises subject to an eviction order.",
+        "no_undertaking_given": "The tenant does not give the undertaking contemplated by the court’s order.",
+        "extension_based_on_parties_agreement": "The court grants the extension on terms agreed by the parties, rather than in reliance on a representation by the tenant."
+      },
+      "definition": "When a civil contempt proceeding concerns failure to comply with an eviction-related time extension that was agreed by the parties and no undertaking was given, the tenant is not liable for contempt for breach of that extension."
+    },
+    {
+      "legal_issue": "An allegation that a tenant trespassed into other portions of a property does not establish contempt in a proceeding confined to compliance with the court’s eviction-related order when the alleged occupation is factually disputed and cannot be resolved on affidavits.",
+      "material_facts": [
+        "The landlord alleged that the tenant had taken forcible possession of parts of the property beyond the room and garage covered by the eviction order.",
+        "The tenant claimed that he had occupied those other portions for a long time.",
+        "The court considered the alleged occupation disputed and outside the limited scope of the contempt inquiry, which concerned the eviction-related order."
+      ],
+      "conclusion": "The court rejected the allegation of contempt based on the tenant’s alleged occupation of other portions of the property.",
+      "legal_principle": "A disputed factual issue that cannot be decided solely on affidavits, and that falls outside the limited scope of the contempt proceeding, cannot support a finding of contempt in that proceeding.",
+      "rule": {
+        "if": "contempt_proceeding_about_compliance_with_eviction_order and alleged_occupation_of_other_property_portions and occupation_history_disputed and issue_outside_proceeding_scope",
+        "then": "other_portion_occupation_not_basis_for_contempt"
+      },
+      "predicates": {
+        "contempt_proceeding_about_compliance_with_eviction_order": "The contempt proceeding concerns compliance with an order about vacating specified premises.",
+        "alleged_occupation_of_other_property_portions": "One party alleges that the tenant occupied portions of the property beyond those covered by the eviction order.",
+        "occupation_history_disputed": "The tenant claims longstanding occupation of the other portions, and the parties dispute that claim.",
+        "issue_outside_proceeding_scope": "The question of occupation of the other portions is outside the limited issue being examined in the contempt proceeding."
+      },
+      "definition": "When alleged occupation of other property portions is disputed and outside a proceeding about compliance with an eviction order, that occupation is not a basis for contempt in that proceeding."
+    },
+    {
+      "legal_issue": "Deliberately filing false affidavits that obstruct the administration of justice constitutes criminal contempt.",
+      "material_facts": [
+        "The tenant filed affidavits asserting that he had delivered vacant possession of the premises on an earlier date.",
+        "The Rent Controller’s report showed that possession was not delivered until later, after a further court direction.",
+        "The court found that the false affidavits impeded the administration of justice and delayed delivery of possession."
+      ],
+      "conclusion": "The tenant was guilty of criminal contempt.",
+      "legal_principle": "Section 2(c) of the Contempt of Courts Act, 1971 defines criminal contempt to include conduct that interferes or tends to interfere with, or obstructs or tends to obstruct, the administration of justice. In Dhananjay Sharma v. State of Haryana, the Court held that filing false affidavits in judicial proceedings can obstruct the due course of proceedings and the administration of justice, and can amount to criminal contempt.",
+      "rule": {
+        "if": "criminal_contempt_proceeding and false_affidavits_filed_in_court and false_claim_of_delivery and false_affidavits_obstructed_justice",
+        "then": "guilty_of_criminal_contempt"
+      },
+      "predicates": {
+        "criminal_contempt_proceeding": "The court is deciding whether conduct in judicial proceedings amounts to criminal contempt.",
+        "false_affidavits_filed_in_court": "A litigant files affidavits in court containing statements the court finds to be false.",
+        "false_claim_of_delivery": "The affidavits falsely state that possession was delivered before it was actually delivered.",
+        "false_affidavits_obstructed_justice": "The false affidavits impede the administration of justice or delay the progress of the proceedings."
+      },
+      "definition": "A litigant who files false affidavits about delivery of possession that obstruct justice is guilty of criminal contempt."
+    },
+    {
+      "legal_issue": "An apology does not warrant discharge from criminal contempt when it is not genuine, while the court may impose a fine instead of further substantive imprisonment in light of custody already served and subsequent delivery of possession.",
+      "material_facts": [
+        "The tenant offered an unconditional apology but had earlier made a similar apology while continuing to falsely claim that possession had been delivered.",
+        "The tenant had been in custody for some days following his arrest and was later released on bail.",
+        "Vacant possession was ultimately delivered to the landlord’s representative."
+      ],
+      "conclusion": "The court found the apology not genuine and imposed a fine, with simple imprisonment in default of payment, rather than sending the tenant back to prison; the fine, if realised, was payable to the petitioner as compensation.",
+      "legal_principle": "The court may reject an apology that is not genuine and bona fide. In deciding the punishment, the court considered the tenant’s custody already served and the fact that possession had since been delivered, while imposing a fine also to deter others from filing false affidavits.",
+      "rule": {
+        "if": "criminal_contempt_found and apology_not_genuine and contemnor_already_spent_time_in_custody and possession_later_delivered",
+        "then": "fine_imposed_with_default_imprisonment_instead_of_further_substantive_imprisonment"
+      },
+      "predicates": {
+        "criminal_contempt_found": "The court has found the litigant guilty of criminal contempt.",
+        "apology_not_genuine": "The litigant’s apology is contradicted by continued false statements or other conduct showing it is not bona fide.",
+        "contemnor_already_spent_time_in_custody": "The contemnor has already spent some time in custody in connection with the proceedings.",
+        "possession_later_delivered": "Vacant possession is eventually delivered after the contemptuous conduct."
+      },
+      "definition": "When criminal contempt is established, an apology is not genuine, the contemnor has already spent time in custody, and possession is later delivered, the court may impose a fine with default imprisonment instead of further substantive imprisonment."
+    },
+    {
+      "legal_issue": "A satisfactory explanation for a contemnor’s failure to appear on a scheduled date permits the court to discontinue proceedings to forfeit the appearance bonds.",
+      "material_facts": [
+        "The tenant failed to appear personally on a scheduled date and notices were issued concerning forfeiture of bonds furnished for his appearance.",
+        "The tenant later gave an explanation for his absence, which the court found satisfactory."
+      ],
+      "conclusion": "The court did not pursue forfeiture of the bonds.",
+      "legal_principle": "The court may discontinue bond-forfeiture proceedings when it finds a satisfactory explanation for the failure to appear.",
+      "rule": {
+        "if": "bond_forfeiture_proceeding and contemnor_failed_to_appear and satisfactory_explanation_for_absence",
+        "then": "bond_forfeiture_not_pursued"
+      },
+      "predicates": {
+        "bond_forfeiture_proceeding": "The court is considering whether to forfeit bonds furnished to secure a person’s appearance.",
+        "contemnor_failed_to_appear": "The person whose appearance was secured by bonds failed to attend on a scheduled date.",
+        "satisfactory_explanation_for_absence": "The person gives an explanation for the absence that the court finds satisfactory."
+      },
+      "definition": "When a person fails to appear but gives a satisfactory explanation, the court does not pursue forfeiture of the appearance bonds."
+    },
+    {
+      "legal_issue": "A separate perjury proceeding may be dropped when punishment has already been imposed for the same false affidavits as criminal contempt.",
+      "material_facts": [
+        "A rule had been issued asking why proceedings should not be initiated against the tenant for perjury based on his false statements.",
+        "The court imposed punishment on the tenant for criminal contempt arising from the false affidavits."
+      ],
+      "conclusion": "The court dropped the proposed perjury proceeding in view of the punishment imposed in the contempt case.",
+      "legal_principle": "The court may drop a proposed perjury proceeding in view of punishment already imposed for contempt arising from the false affidavits.",
+      "rule": {
+        "if": "perjury_proceeding_considered_for_false_affidavits and punishment_imposed_for_contempt_based_on_same_affidavits",
+        "then": "perjury_proceeding_dropped"
+      },
+      "predicates": {
+        "perjury_proceeding_considered_for_false_affidavits": "The court considers a separate perjury proceeding based on affidavits filed in the case.",
+        "punishment_imposed_for_contempt_based_on_same_affidavits": "The court imposes punishment for contempt arising from those affidavits."
+      },
+      "definition": "When punishment for contempt has been imposed based on the affidavits underlying a proposed perjury proceeding, the court may drop that proceeding."
+    }
+  ],
+  "seconds": 18.5
+}

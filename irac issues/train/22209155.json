@@ -1,0 +1,77 @@
+{
+  "doc_id": "22209155",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16159,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2398,
+    "prompt_tokens": 4391,
+    "total_tokens": 6789,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A land acquisition collector must defer redetermination of compensation when the judicial award relied upon is under appeal.",
+      "material_facts": [
+        "An application for redetermination was filed on the basis of a reference court award.",
+        "The reference court award was under appeal when the collector decided the application.",
+        "The appellate court later altered the compensation fixed by the reference court."
+      ],
+      "conclusion": "The collector should have kept the application pending until the appeals were decided and then redetermined compensation on the basis of the final appellate judgment.",
+      "legal_principle": "Under Section 28A of the Land Acquisition Act, 1894, the final determination is that of the appellate forum: the reference court decree merges in the appellate decree, which is the executable decree. In Babua Ram v. State of U.P., the Court held that the collector must keep a timely Section 28A application pending while an appeal is unresolved and redetermine compensation on the final appellate judgment. U.P. State Industrial Development Corporation v. State of U.P. reiterated that course. Union of India v. Munshi Ram held that Section 28A applicants are entitled to the compensation finally payable to reference claimants, including where superior courts reduce compensation. Kendriya Karamchari Sehkari Grah Nirman Samiti Ltd. v. State of U.P. confirmed that withholding a decision pending appeal accords with this principle.",
+      "rule": {
+        "if": "land_acquisition_compensation_redetermination_proceeding and relied_on_award_is_under_appeal",
+        "then": "collector_must_defer_redetermination_until_appeal_is_final"
+      },
+      "predicates": {
+        "land_acquisition_compensation_redetermination_proceeding": "A person sought redetermination of land acquisition compensation by relying on a court's award.",
+        "relied_on_award_is_under_appeal": "The award relied upon for redetermination was being challenged in an unresolved appeal."
+      },
+      "definition": "When a compensation redetermination proceeding relies on an award under unresolved appeal, the collector must defer redetermination until the appeal is final."
+    },
+    {
+      "legal_issue": "A person may make only one application for redetermination based on a court award, rather than successive applications based on later enhancements.",
+      "material_facts": [
+        "An initial application sought redetermination based on a reference court award.",
+        "After the appellate court increased the compensation, a further application sought redetermination based on that appellate judgment."
+      ],
+      "conclusion": "The further application was not maintainable as a successive application, although the original application was directed to be reconsidered because it had been decided prematurely while the appeal was pending.",
+      "legal_principle": "Section 28A permits only one application for redetermination by an applicant. Union of India v. Pradeep Kumari set out the conditions for a Section 28A application and expressly included that only one application may be moved. The Court reaffirmed that successive applications are not permissible, while distinguishing the remedy required here because the collector had decided the first application before the relied-on award's appeal was resolved.",
+      "rule": {
+        "if": "land_acquisition_compensation_redetermination_proceeding and applicant_already_filed_redetermination_application",
+        "then": "a_later_redetermination_application_is_not_maintainable"
+      },
+      "predicates": {
+        "land_acquisition_compensation_redetermination_proceeding": "A person sought redetermination of land acquisition compensation by relying on a court's award.",
+        "applicant_already_filed_redetermination_application": "The applicant had already filed an application seeking redetermination of the compensation."
+      },
+      "definition": "If an applicant in a land compensation redetermination proceeding has already filed an application, a later redetermination application is not maintainable."
+    },
+    {
+      "legal_issue": "When the collector prematurely decides a timely redetermination application while the relied-on award is under appeal, the original application must be reconsidered using the final appellate judgment.",
+      "material_facts": [
+        "A timely initial application sought redetermination based on a reference court award.",
+        "The collector decided that application while appeals from the reference court award were pending.",
+        "After the appeals were resolved, the applicant filed a further application based on the appellate judgment.",
+        "The collector's premature decision meant the applicant's original application had not been determined on the basis of the final appellate outcome."
+      ],
+      "conclusion": "The further application remained not maintainable, but the original application was to be considered afresh in light of the appellate judgment; the collector's earlier award was set aside, with amounts already paid to be adjusted.",
+      "legal_principle": "The one-application rule in Section 28A, as stated in Union of India v. Pradeep Kumari, does not make a claimant bear the consequences of the collector's failure to keep the original application pending during an appeal. Under Babua Ram v. State of U.P. and the related authorities, the collector should defer decision until the appeal is resolved. Given the collector's premature decision and the beneficial nature of Section 28A, the Court directed reconsideration of the original application on the final appellate judgment rather than permitting a successive application.",
+      "rule": {
+        "if": "land_acquisition_compensation_redetermination_proceeding and timely_initial_application and initial_application_decided_while_award_appeal_pending and later_application_based_on_appellate_judgment",
+        "then": "original_application_must_be_reconsidered_under_final_appellate_judgment"
+      },
+      "predicates": {
+        "land_acquisition_compensation_redetermination_proceeding": "A person sought redetermination of land acquisition compensation by relying on a court's award.",
+        "timely_initial_application": "The applicant filed the original redetermination application within the applicable filing period.",
+        "initial_application_decided_while_award_appeal_pending": "The collector decided the original application while an appeal from the relied-on award remained unresolved.",
+        "later_application_based_on_appellate_judgment": "After the appeal concluded, the applicant filed a further application seeking compensation based on the appellate judgment."
+      },
+      "definition": "When a timely original application was decided before the appeal from the relied-on award concluded and a later application was based on the appellate judgment, the original application must be reconsidered under that final judgment."
+    }
+  ],
+  "seconds": 15.0
+}

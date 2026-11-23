@@ -1,0 +1,101 @@
+{
+  "doc_id": "1458254",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 8201,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2481,
+    "prompt_tokens": 2449,
+    "total_tokens": 4930,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An agreement is not invalidated for undue influence or coercion without evidence supporting that allegation.",
+      "material_facts": [
+        "The purchasers challenged the sale agreement as unconscionable and as having been obtained through undue pressure.",
+        "The courts below found no evidence that the agreement had been obtained by fraud, coercion, or undue influence."
+      ],
+      "conclusion": "The agreement was not shown to have been obtained through undue influence or coercion, and the courts below correctly rejected that challenge.",
+      "legal_principle": "The Court applied the evidentiary requirement that an allegation of undue influence or coercion must be supported by evidence. No statutory provision or earlier case was relied on for this issue.",
+      "rule": {
+        "if": "appeal_from_possession_decree and no_evidence_of_undue_influence_or_coercion",
+        "then": "agreement_not_invalidated_for_undue_influence_or_coercion"
+      },
+      "predicates": {
+        "appeal_from_possession_decree": "The matter is an appeal from a decree awarding possession.",
+        "no_evidence_of_undue_influence_or_coercion": "The party challenging the agreement produced no evidence that it was obtained through undue influence or coercion."
+      },
+      "definition": "When an appeal from a possession decree presents no evidence of undue influence or coercion, the agreement is not invalidated on that basis."
+    },
+    {
+      "legal_issue": "A default clause requiring notice only to avoid forfeiture does not require notice to cancel an agreement when no instalments have been paid.",
+      "material_facts": [
+        "The agreement provided for payment by annual instalments and stated that, upon default, it would stand cancelled; it required notice in connection with paying the defaulted instalment to avoid forfeiture of payments already made.",
+        "The purchasers paid none of the instalments and did not complete the proposed treasury deposit.",
+        "The vendor sought possession after the purchasers' default."
+      ],
+      "conclusion": "The agreement stood automatically cancelled upon default, and no notice was required because no payment had been made that could be forfeited.",
+      "legal_principle": "The Court interpreted the notice condition according to the agreement's terms: notice was required only where the vendor sought to forfeit instalments already paid. Because no instalment had been paid, forfeiture and its notice condition did not arise. No statute or earlier case was relied on for this interpretation.",
+      "rule": {
+        "if": "appeal_from_possession_decree and instalment_sale_agreement and payment_default and no_instalments_paid and notice_condition_applies_only_to_forfeiture",
+        "then": "agreement_cancelled_without_notice_and_forfeiture_notice_not_required"
+      },
+      "predicates": {
+        "appeal_from_possession_decree": "The matter is an appeal from a decree awarding possession.",
+        "instalment_sale_agreement": "The parties made an agreement for a sale to be paid for in instalments.",
+        "payment_default": "The purchasers failed to pay an instalment when due.",
+        "no_instalments_paid": "The purchasers had paid no instalments under the agreement.",
+        "notice_condition_applies_only_to_forfeiture": "The agreement makes notice relevant only to the opportunity to avoid forfeiture of payments already made."
+      },
+      "definition": "When an instalment-sale agreement is in default, nothing has been paid, and its notice condition concerns only forfeiture, the agreement is cancelled without notice and forfeiture notice is not required."
+    },
+    {
+      "legal_issue": "Cancellation of an agreement that replaced the tenancy does not restore the former tenancy or require fresh notice under the Transfer of Property Act before seeking possession.",
+      "material_facts": [
+        "The parties entered into a sale agreement that ended their former landlord-and-tenant relationship; it contained no provision for payment of rent while the purchase price was being paid.",
+        "The agreement was cancelled after the purchasers failed to pay any instalment.",
+        "Before an earlier eviction suit was filed, the landlord had given notice terminating the tenancy and requiring possession; that suit was withdrawn after the sale agreement was made."
+      ],
+      "conclusion": "The parties' rights after cancellation were governed by the agreement, the former tenancy was not restored, and no fresh notice was required before the possession suit. Alternatively, the earlier notice terminating the tenancy continued to apply.",
+      "legal_principle": "The Court held that the parties' rights and liabilities were to be worked out under their agreement because the former landlord-and-tenant relationship had ended and the agreement made no provision for rent. It rejected the contention that the Transfer of Property Act required a new notice after cancellation. It also held that the earlier notice terminating the tenancy continued to hold the field. No specific section or earlier case was cited.",
+      "rule": {
+        "if": "appeal_from_possession_decree and agreement_ended_tenancy and (agreement_provided_no_rent or prior_termination_notice_given)",
+        "then": "fresh_tenancy_notice_not_required_for_possession"
+      },
+      "predicates": {
+        "appeal_from_possession_decree": "The matter is an appeal from a decree awarding possession.",
+        "agreement_ended_tenancy": "The parties made an agreement that ended their former landlord-and-tenant relationship.",
+        "agreement_provided_no_rent": "The agreement made no provision for rent during the period in which the purchase price was to be paid.",
+        "prior_termination_notice_given": "Before an earlier possession suit, the landlord had given notice terminating the tenancy and requiring the occupants to give up possession."
+      },
+      "definition": "If an agreement ended the tenancy, then the absence of a rent provision or the existence of an earlier termination notice means that fresh tenancy notice is not required for possession."
+    },
+    {
+      "legal_issue": "An appellate court may refuse to entertain a tenancy-law protection argument that was not raised below and lacks supporting findings or identification of the applicable law.",
+      "material_facts": [
+        "The purchasers argued on appeal that tenancy law protected them from eviction because permanent structures had been put up with the owner's consent, knowledge, and acquiescence.",
+        "The courts below had made no finding that permanent structures were put up with that consent, knowledge, or acquiescence.",
+        "The purchasers did not identify the tenancy law on which they relied and did not claim that it gave them rights over the land.",
+        "The argument did not appear to have been advanced before the trial court or the High Court."
+      ],
+      "conclusion": "The Court refused to allow the tenancy-law argument to be raised on appeal.",
+      "legal_principle": "The Court declined to entertain a new appellate contention that lacked supporting findings, did not identify the applicable tenancy law, and had not been advanced below. No statutory provision or earlier case was relied on for this decision.",
+      "rule": {
+        "if": "appeal_from_possession_decree and tenancy_defense_not_raised_below and no_finding_supporting_defense and applicable_tenancy_law_not_identified",
+        "then": "new_tenancy_protection_argument_not_considered"
+      },
+      "predicates": {
+        "appeal_from_possession_decree": "The matter is an appeal from a decree awarding possession.",
+        "tenancy_defense_not_raised_below": "The party did not advance the tenancy-law defense before the lower courts.",
+        "no_finding_supporting_defense": "The lower courts made no finding supporting the factual basis asserted for the tenancy defense.",
+        "applicable_tenancy_law_not_identified": "The party did not identify the tenancy law said to provide protection."
+      },
+      "definition": "When a tenancy-law defense is raised for the first time in an appeal, lacks supporting findings, and does not identify the applicable law, the argument is not considered."
+    }
+  ],
+  "seconds": 16.7
+}

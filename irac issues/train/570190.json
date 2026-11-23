@@ -1,0 +1,116 @@
+{
+  "doc_id": "570190",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 7673,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2723,
+    "prompt_tokens": 2442,
+    "total_tokens": 5165,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An auction bid accepted internally but not communicated to the bidder does not complete the sale or create an enforceable right to the property.",
+      "material_facts": [
+        "The competent authority recorded acceptance of the bid on its file after an interim court order had stayed the auction.",
+        "The authority did not communicate its acceptance to the bidders, although they later learned that it had been recorded.",
+        "The bidders had paid only 25 per cent of the bid amount."
+      ],
+      "conclusion": "The acceptance was incomplete, and the bidders acquired no enforceable right to the plot through the auction.",
+      "legal_principle": "Acceptance of a bid at a public auction must be communicated to be complete; recording acceptance on an authority’s file and receiving a partial deposit do not themselves transfer property. The Court relied on no earlier case for this conclusion.",
+      "rule": {
+        "if": "public_land_auction_dispute and bid_acceptance_uncommunicated and acceptance_recorded_after_stay",
+        "then": "auction_acceptance_incomplete"
+      },
+      "predicates": {
+        "public_land_auction_dispute": "The proceeding concerns a claimed right arising from a public authority’s land auction.",
+        "bid_acceptance_uncommunicated": "The public authority did not communicate its recorded acceptance of the bid to the bidder.",
+        "acceptance_recorded_after_stay": "The authority recorded its acceptance after a court had stayed the auction."
+      },
+      "definition": "When a public land auction dispute involves uncommunicated acceptance recorded after a stay, the acceptance is incomplete."
+    },
+    {
+      "legal_issue": "A public authority cannot be compelled to allot a substitute plot to remedy an auction of land that could not lawfully be auctioned for the proposed use.",
+      "material_facts": [
+        "The plot was situated in a green-belt when it was auctioned and could not then be put to auction.",
+        "The High Court had stayed the auction in proceedings challenging the auction on land-use grounds.",
+        "The High Court nevertheless directed the authority to allot an equivalent plot in the adjoining area at the same price."
+      ],
+      "conclusion": "The direction to allot a substitute plot was set aside because the original plot could not lawfully have been auctioned.",
+      "legal_principle": "There is no estoppel against statute, particularly where public interest is involved; a court cannot require a public authority to give effect to an unlawful disposition. The Court relied on no earlier case for this conclusion.",
+      "rule": {
+        "if": "appeal_against_substitute_allotment and auction_land_use_prohibited and public_interest_involved",
+        "then": "substitute_allotment_unavailable"
+      },
+      "predicates": {
+        "appeal_against_substitute_allotment": "The proceeding is an appeal challenging a direction to allot a substitute property after an auction.",
+        "auction_land_use_prohibited": "The land-use status of the auctioned property prohibited its being put to auction for the proposed use.",
+        "public_interest_involved": "The legality of the auction implicates public-interest considerations."
+      },
+      "definition": "If an appeal challenges substitute allotment following an auction prohibited by land-use restrictions and public interest is involved, substitute allotment is unavailable."
+    },
+    {
+      "legal_issue": "The doctrine of feeding the grant by estoppel does not apply where the public authority made no transfer or grant of the property.",
+      "material_facts": [
+        "The authority recorded acceptance of the bid but did not communicate it to the bidders.",
+        "The bidders paid 25 per cent of the bid amount, but no transfer or grant of the property was made.",
+        "The land-use restriction was altered later, after the auction."
+      ],
+      "conclusion": "The doctrine of feeding the grant by estoppel did not assist the bidders because no transfer or grant had been made in their favour.",
+      "legal_principle": "Section 43 of the Transfer of Property Act was inapplicable because acceptance of a public auction bid and payment of part of the bid amount do not constitute a transfer or grant. The Court relied on no earlier case for this conclusion.",
+      "rule": {
+        "if": "property_transfer_claim and no_transfer_or_grant",
+        "then": "feeding_grant_doctrine_inapplicable"
+      },
+      "predicates": {
+        "property_transfer_claim": "A claimant seeks property by relying on the doctrine that a later-acquired interest may feed an earlier grant.",
+        "no_transfer_or_grant": "The alleged grantor made no transfer or grant of the property to the claimant."
+      },
+      "definition": "When a property claim based on a later-acquired interest rests on no transfer or grant to the claimant, the feeding-grant doctrine is inapplicable."
+    },
+    {
+      "legal_issue": "Equity does not justify compelling a public authority to provide a substitute plot on the terms of an auction after a prolonged delay.",
+      "material_facts": [
+        "The bidders sought an equivalent plot in the same area at the original bid price.",
+        "The authority had not completed the sale, and the auction had taken place about fourteen years before the Supreme Court’s decision.",
+        "The authority was a public authority, and the original plot could not lawfully have been auctioned at the time."
+      ],
+      "conclusion": "Equitable considerations did not justify directing the authority to allot a substitute plot in the same locality at the same price after the prolonged delay.",
+      "legal_principle": "Equitable considerations do not warrant compelling a public authority to provide a substitute plot on the terms sought after a prolonged lapse of time, particularly where the original disposition was unlawful. The Court relied on no earlier case for this conclusion.",
+      "rule": {
+        "if": "equitable_substitute_plot_claim and public_authority_involved and prolonged_delay_since_auction",
+        "then": "equitable_substitute_allotment_unwarranted"
+      },
+      "predicates": {
+        "equitable_substitute_plot_claim": "A claimant seeks a substitute plot on equitable grounds following an incomplete auction.",
+        "public_authority_involved": "The requested allotment would be made by a public authority.",
+        "prolonged_delay_since_auction": "A substantial period has passed since the auction before the substitute plot is sought."
+      },
+      "definition": "When an equitable claim seeks a substitute plot from a public authority after a prolonged delay, equitable substitute allotment is unwarranted."
+    },
+    {
+      "legal_issue": "A deposit retained by a public authority after the auction claim fails must be returned with interest.",
+      "material_facts": [
+        "The bidders had paid 25 per cent of the bid amount.",
+        "The authority said it had sent the deposit back by cheque, but the bidders did not accept it.",
+        "The deposit remained with the authority for about fourteen years, and the Court dismissed the bidders’ writ petition."
+      ],
+      "conclusion": "The authority was directed to return the retained deposit with interest at 9 per cent per annum from the date of the auction until its return.",
+      "legal_principle": "Having rejected the claim to the property and found that the deposit remained with the authority, the Court ordered its return with interest. The judgment cites no earlier case or specific provision for that order.",
+      "rule": {
+        "if": "auction_claim_failed and deposit_remained_unreturned",
+        "then": "retained_deposit_returnable_with_interest"
+      },
+      "predicates": {
+        "auction_claim_failed": "The claimant’s demand for the auctioned property or a substitute property was rejected.",
+        "deposit_remained_unreturned": "The deposit paid by the claimant remained with the public authority and had not been returned."
+      },
+      "definition": "If an auction claim fails and the claimant’s deposit remains unreturned, the retained deposit is returnable with interest."
+    }
+  ],
+  "seconds": 17.4
+}

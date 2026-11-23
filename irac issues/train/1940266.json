@@ -1,0 +1,116 @@
+{
+  "doc_id": "1940266",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 60067,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3359,
+    "prompt_tokens": 13901,
+    "total_tokens": 17260,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Dismissal of a petition for special leave to appeal without granting leave does not merge the challenged order into the Supreme Court’s order or, by itself, extinguish an otherwise available right to seek review.",
+      "material_facts": [
+        "The High Court dismissed the State’s appeal from the Forest Tribunal’s decision.",
+        "The State sought special leave to appeal, and the Supreme Court dismissed the petition in a non-speaking order without granting leave.",
+        "The State later sought review of the High Court’s decision, relying on a statutory review provision."
+      ],
+      "conclusion": "The High Court’s order did not merge into the Supreme Court’s order dismissing the special leave petition and remained open to review if grounds for review were otherwise made out.",
+      "legal_principle": "Article 136 involves two distinct stages: discretionary consideration of whether to grant special leave, followed, if leave is granted, by appellate jurisdiction. Dismissal at the first stage is not dismissal of an appeal and does not attract merger or, without more, res judicata. An available review remedy is not lost merely because special leave was refused. The Court relied on Workmen of Cochin Port Trust, Indian Oil Corporation, Rup Diamonds, V.M. Salgaocar, and the review principles in Order 47 Rule 1 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "special_leave_petition_proceeding and leave_not_granted and dismissal_without_reasons and review_basis_available",
+        "then": "challenged_order_remains_reviewable"
+      },
+      "predicates": {
+        "special_leave_petition_proceeding": "A party asked the Supreme Court for permission to appeal against an order of a lower court or tribunal.",
+        "leave_not_granted": "The Supreme Court refused permission to appeal and did not take up the matter as an appeal.",
+        "dismissal_without_reasons": "The Supreme Court dismissed the permission-to-appeal petition without stating reasons.",
+        "review_basis_available": "The party seeking review had a ground for review available under the applicable review law."
+      },
+      "definition": "When a permission-to-appeal petition is dismissed without reasons and permission is not granted, an otherwise available review of the challenged order remains possible."
+    },
+    {
+      "legal_issue": "A reasoned refusal of special leave does not merge the challenged order into the Supreme Court’s order, but any law declared and findings made in that order have binding effects.",
+      "material_facts": [
+        "The Court considered the legal consequences of a reasoned order refusing special leave, although the special leave petition in the case before it was dismissed without reasons."
+      ],
+      "conclusion": "A reasoned refusal of special leave does not cause merger; any law declared in the reasons binds under Article 141, and other findings bind the parties and the lower forum by judicial discipline.",
+      "legal_principle": "At the special-leave stage, the Supreme Court exercises discretionary jurisdiction rather than appellate jurisdiction, so merger does not apply whether the refusal is reasoned or unreasoned. A statement of law in a reasoned order is binding under Article 141, and the order’s other findings bind the parties and the court or tribunal whose order was challenged by judicial discipline. The Court relied on Article 141, Workmen of Cochin Port Trust, Indian Oil Corporation, Supreme Court Employees Welfare Association, and Abbai Maligai Partnership Firm.",
+      "rule": {
+        "if": "special_leave_petition_proceeding and leave_not_granted and dismissal_with_reasons and reasons_declare_law",
+        "then": "declared_law_binds_under_article_141"
+      },
+      "predicates": {
+        "special_leave_petition_proceeding": "A party asked the Supreme Court for permission to appeal against an order of a lower court or tribunal.",
+        "leave_not_granted": "The Supreme Court refused permission to appeal and did not take up the matter as an appeal.",
+        "dismissal_with_reasons": "The Supreme Court refused permission to appeal in an order stating reasons.",
+        "reasons_declare_law": "The reasons state a legal principle as law."
+      },
+      "definition": "When the Supreme Court gives reasons declaring law while refusing permission to appeal, that declared law binds."
+    },
+    {
+      "legal_issue": "Once special leave is granted and the Supreme Court disposes of the resulting appeal, the challenged order merges into the appellate order.",
+      "material_facts": [
+        "The Court distinguished refusal of special leave from the later exercise of appellate jurisdiction after leave has been granted.",
+        "It considered appellate orders that reverse, modify, or affirm the order under challenge."
+      ],
+      "conclusion": "An order passed by the Supreme Court in an appeal after leave is granted attracts the doctrine of merger, whether it reverses, modifies, or affirms the challenged order and whether it gives reasons or not.",
+      "legal_principle": "Merger depends on the nature and scope of the superior forum’s jurisdiction. Article 136 confers appellate jurisdiction only after special leave is granted; an order then made in the appeal replaces the challenged order. The Court relied on Article 136 and the merger principles in Commissioner of Income-tax v. Amritlal Bhogilal & Co., State of Madras v. Madurai Mills Co., Gojer Brothers v. Ratanlal, and Shankar Ramchandra Abhyankar v. Krishnaji Dattatraya Bapat.",
+      "rule": {
+        "if": "appeal_from_lower_order and special_leave_granted and supreme_court_appeal_disposed",
+        "then": "challenged_order_merges_into_appellate_order"
+      },
+      "predicates": {
+        "appeal_from_lower_order": "A party brought a lower court’s or tribunal’s order before the Supreme Court for appellate review.",
+        "special_leave_granted": "The Supreme Court granted permission to appeal, bringing its appellate jurisdiction into operation.",
+        "supreme_court_appeal_disposed": "The Supreme Court issued an order disposing of the appeal."
+      },
+      "definition": "When the Supreme Court grants permission to appeal and disposes of the appeal, the order under review merges into the Supreme Court’s appellate order."
+    },
+    {
+      "legal_issue": "A High Court may entertain a review application filed before special leave is granted, but ordinarily loses jurisdiction to entertain a new review application after leave is granted.",
+      "material_facts": [
+        "The Court considered the effect of the timing of a High Court review application in relation to an application for special leave and the grant of leave.",
+        "It applied the rule governing review of an order from which an appeal is allowed but no appeal has been preferred."
+      ],
+      "conclusion": "A review application may be filed and decided before special leave is granted; after leave is granted, the High Court cannot entertain a newly filed review application, although a review application filed before leave may remain for decision.",
+      "legal_principle": "Order 47 Rule 1(1)(a) of the Code of Civil Procedure permits review where an appeal is allowed but has not been preferred. A petition seeking special leave is not an appeal unless and until leave is granted. Once leave is granted, appellate jurisdiction vests in the Supreme Court and the High Court’s jurisdiction to entertain a later review is lost. The Court relied on Thungabhadra Industries Ltd. v. Government of Andhra Pradesh and Order 47 Rule 1 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "special_leave_appeal_proceeding and special_leave_granted and not review_filed_before_leave",
+        "then": "high_court_cannot_entertain_new_review"
+      },
+      "predicates": {
+        "special_leave_appeal_proceeding": "A party asked the Supreme Court for permission to appeal against a High Court order.",
+        "special_leave_granted": "The Supreme Court granted permission to appeal, bringing its appellate jurisdiction into operation.",
+        "review_filed_before_leave": "The party filed the High Court review application before the Supreme Court granted permission to appeal."
+      },
+      "definition": "After permission to appeal is granted, a party who had not already filed a review application cannot start one in the High Court."
+    },
+    {
+      "legal_issue": "A statutory provision authorizing review of High Court orders, including orders for which special leave was not granted, permits the High Court to consider review of an order that did not merge into a Supreme Court appellate order.",
+      "material_facts": [
+        "The special leave petition challenging the High Court’s earlier order was dismissed without reasons and without leave being granted.",
+        "A later amendment to the governing state statute expressly authorized review of specified High Court orders, including an order against which an appeal to the Supreme Court had not been admitted.",
+        "The High Court overruled the preliminary objection to the maintainability of the review application and directed that it be heard on its merits."
+      ],
+      "conclusion": "The High Court could entertain the review application: the earlier order had not merged into the Supreme Court’s non-speaking refusal of special leave, and the statutory provision authorized review of an order for which the Supreme Court had not granted leave.",
+      "legal_principle": "A refusal of special leave does not amount to admission of an appeal or cause merger. The applicable statutory review provision expressly covered specified High Court orders, including those for which an appeal to the Supreme Court had not been admitted; an appeal is admitted when leave is granted. The Court applied Section 8C(2) of the Kerala Private Forests (Vesting and Assignment) Act and its conclusions on Article 136, merger, and Order 47 Rule 1 of the Code of Civil Procedure.",
+      "rule": {
+        "if": "statutory_review_proceeding and statute_authorizes_review_of_unadmitted_appeals and supreme_court_leave_not_granted",
+        "then": "high_court_review_is_maintainable"
+      },
+      "predicates": {
+        "statutory_review_proceeding": "A party asked a court to review an earlier order under a statutory review power.",
+        "statute_authorizes_review_of_unadmitted_appeals": "The applicable law permits review of the relevant kind of order even when an appeal to the Supreme Court has not been admitted.",
+        "supreme_court_leave_not_granted": "The Supreme Court refused permission to appeal and did not take up the matter as an appeal."
+      },
+      "definition": "A statutory review application is maintainable when the law covers the challenged order and the Supreme Court has not granted permission to appeal."
+    }
+  ],
+  "seconds": 20.6
+}

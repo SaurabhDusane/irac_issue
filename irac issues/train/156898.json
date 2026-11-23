@@ -1,0 +1,62 @@
+{
+  "doc_id": "156898",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12971,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2482,
+    "prompt_tokens": 3744,
+    "total_tokens": 6226,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A demand notice served before the amendment remains sufficient for an eviction suit instituted after the amendment when it satisfies the notice requirements that remained unchanged.",
+      "material_facts": [
+        "The landlords served a written demand notice before the amendment took effect.",
+        "The notice demanded rent arrears, and the tenant did not pay the demanded arrears within one month after service.",
+        "The landlords instituted the eviction suit after the amendment took effect."
+      ],
+      "conclusion": "The landlords were not required to serve a fresh notice after the amendment; the earlier notice satisfied the statutory notice requirement.",
+      "legal_principle": "Section 12(2) was not amended when section 12(3) was amended. Section 12(3)(a) refers to a notice served as required by section 12(2), which did not require the landlord to warn the tenant of the consequences of non-payment. Accordingly, a pre-amendment notice meeting section 12(2) sufficed. The earlier decisions in Dayaram Kashiram Shimpi v. Bansilal Raghunath Marwari and Laxminarayan Nandkishore Shravagi v. Keshardev Baijnath Narsaria concerned the meaning of “at the hearing of the suit” under the earlier law, not a requirement for a new notice after amendment.",
+      "rule": {
+        "if": "rent_control_eviction_suit and demand_notice_before_change and notice_met_existing_requirements",
+        "then": "earlier_notice_satisfies_demand_notice_requirement"
+      },
+      "predicates": {
+        "rent_control_eviction_suit": "A landlord brought a suit seeking eviction of a tenant for non-payment of rent.",
+        "demand_notice_before_change": "The landlord served a written demand notice before the relevant change in the law took effect.",
+        "notice_met_existing_requirements": "The notice made a written demand for rent, and the tenant did not pay the demanded rent within one month after service."
+      },
+      "definition": "When a rent-control eviction suit follows a pre-change written demand that meets the existing notice requirements, that earlier notice satisfies the demand-notice requirement."
+    },
+    {
+      "legal_issue": "The amended rule governs an eviction suit instituted after the amendment and requires eviction when the tenant has substantial undisputed rent arrears and fails to pay them within the notice period, even if the tenant pays before the decree.",
+      "material_facts": [
+        "The eviction suit was instituted after the amendment took effect.",
+        "The tenant was in arrears for more than six months, and there was no dispute about the amount of standard rent or permitted increases.",
+        "The tenant did not pay the arrears within one month after receiving the written demand notice.",
+        "The tenant paid the arrears by instalments before the decree, so no arrears remained due when the decree was passed."
+      ],
+      "conclusion": "The amended section applied to the suit, and the court was bound to decree eviction because the tenant had not paid within the prescribed time after notice; later payment before the decree did not prevent eviction. The tenant had no vested right to avoid that result by paying at the hearing.",
+      "legal_principle": "Sections 12(1), 12(2), and amended 12(3)(a) of the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, governed the dispute. Under section 12(3)(a), where rent arrears of six months or more are undisputed and remain unpaid for one month after the required notice, the court must pass a decree for possession. The suit was instituted after the amendment, so the amended provision governed it; the earlier ability to pay at the hearing under the former section 12(3) did not confer a vested right that altered the amended provision’s effect. The court approved the mandatory reading of “may” in Kurban Hussen Sajuddin v. Ratikant Nilkant and distinguished the earlier decisions in Dayaram Kashiram Shimpi v. Bansilal Raghunath Marwari and Laxminarayan Nandkishore Shravagi v. Keshardev Baijnath Narsaria, which addressed the former law.",
+      "rule": {
+        "if": "rent_control_eviction_suit and suit_filed_after_change and arrears_at_least_six_months and rent_amount_undisputed and demand_notice_served and unpaid_through_notice_period",
+        "then": "eviction_decree_required"
+      },
+      "predicates": {
+        "rent_control_eviction_suit": "A landlord brought a suit seeking eviction of a tenant for non-payment of rent.",
+        "suit_filed_after_change": "The landlord instituted the suit after the relevant change in the law took effect.",
+        "arrears_at_least_six_months": "The tenant owed rent arrears covering six months or more.",
+        "rent_amount_undisputed": "The landlord and tenant did not dispute the amount of standard rent or permitted increases due.",
+        "demand_notice_served": "The landlord served the tenant with a written demand for the rent arrears before bringing the suit.",
+        "unpaid_through_notice_period": "The tenant did not pay the demanded arrears within one month after receiving the notice."
+      },
+      "definition": "When a post-change rent-control eviction suit concerns at least six months of undisputed arrears left unpaid through the notice period, eviction is required."
+    }
+  ],
+  "seconds": 16.2
+}

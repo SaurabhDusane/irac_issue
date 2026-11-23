@@ -1,0 +1,115 @@
+{
+  "doc_id": "347988",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20830,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2500,
+    "prompt_tokens": 5709,
+    "total_tokens": 8209,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Failure to follow administrative instructions fully does not by itself invalidate a suspension order.",
+      "material_facts": [
+        "The suspension order was made under the applicable service rules.",
+        "The administrative instructions in government letters and circulars did not appear to have been followed strictly.",
+        "The court found that, on the facts of the case, the failure to follow those instructions fully did not invalidate the suspension order."
+      ],
+      "conclusion": "The suspension order was not invalid merely because the administrative instructions had not been followed fully.",
+      "legal_principle": "Failure to comply fully with executive instructions does not, by itself, invalidate an order made under the applicable service rule. The court relied on Rule 7(3) of the All India Services (Discipline and Appeal) Rules, 1955; it cited no earlier cases for this issue.",
+      "rule": {
+        "if": "service_suspension_case and administrative_instructions_not_fully_followed",
+        "then": "suspension_order_not_invalid_on_that_basis"
+      },
+      "predicates": {
+        "service_suspension_case": "The matter concerns the validity of an order suspending a member of a public service.",
+        "administrative_instructions_not_fully_followed": "The government did not follow all applicable administrative instructions fully when making the suspension order."
+      },
+      "definition": "When a public-service suspension case involves incomplete compliance with administrative instructions, the order is not invalid on that basis alone."
+    },
+    {
+      "legal_issue": "A criminal investigation is pending for purposes of suspension once a criminal case has been initiated and investigative steps have begun.",
+      "material_facts": [
+        "A First Information Report alleging corruption and misuse of official position was lodged before the suspension order was made.",
+        "A search warrant was sought and issued before the suspension order, and the official's house was searched.",
+        "The alleged criminal charges related to the official's position as a government servant."
+      ],
+      "conclusion": "The investigation was pending when the suspension order was made, and the order was within the government's power under Rule 7(3).",
+      "legal_principle": "Under Rule 7(3) of the All India Services (Discipline and Appeal) Rules, 1955, a member of the service may, at the government's discretion, be suspended while an investigation, inquiry, or trial relating to a criminal charge is pending, if the charge is connected with the member's government position, is likely to embarrass the discharge of duties, or involves moral turpitude. The terms investigation, inquiry, and trial have their established meanings in criminal procedure under the Code of Criminal Procedure. The filing of the First Information Report and steps to obtain a search warrant meant that investigation was pending; the truth of the allegations was not relevant to the validity of the suspension. The court cited no earlier cases for this issue.",
+      "rule": {
+        "if": "criminal_charge_suspension_case and investigation_started_before_suspension and charge_connected_to_official_position",
+        "then": "suspension_order_valid"
+      },
+      "predicates": {
+        "criminal_charge_suspension_case": "The matter concerns suspension from public service in connection with a criminal charge.",
+        "investigation_started_before_suspension": "A criminal report was lodged or investigative steps were taken before the suspension order was made.",
+        "charge_connected_to_official_position": "The alleged criminal conduct was related to the person's position as a government servant."
+      },
+      "definition": "In a criminal-charge suspension case, when an investigation has begun before suspension and the charge relates to the person's official position, the suspension order is valid."
+    },
+    {
+      "legal_issue": "Completion of investigative work does not end suspension while proceedings relating to the criminal charge remain pending.",
+      "material_facts": [
+        "The government stated that the investigation had been factually completed before a charge-sheet was submitted.",
+        "A charge-sheet was later submitted, and criminal proceedings continued after the investigation's factual completion.",
+        "The criminal trial had concluded, but judgment had not been delivered."
+      ],
+      "conclusion": "The suspension did not end merely upon the factual completion of the investigation; it could continue until all proceedings relating to the charge terminated, subject to the official's later compulsory retirement.",
+      "legal_principle": "Rule 7(3) of the All India Services (Discipline and Appeal) Rules, 1955 permits suspension until termination of all proceedings relating to the criminal charge, including investigation, inquiry, or trial. Factual completion of investigative work does not terminate all such proceedings; the court stated that, strictly speaking, investigation could not be said to be complete until submission of the charge-sheet. The court cited no earlier cases for this issue.",
+      "rule": {
+        "if": "criminal_charge_suspension_case and investigation_factually_completed and proceedings_on_charge_still_pending",
+        "then": "suspension_continues_while_proceedings_remain_pending"
+      },
+      "predicates": {
+        "criminal_charge_suspension_case": "The matter concerns suspension from public service in connection with a criminal charge.",
+        "investigation_factually_completed": "The investigative work has been carried out, even if the resulting proceedings have not been concluded.",
+        "proceedings_on_charge_still_pending": "An inquiry, trial, or other proceeding relating to the criminal charge remains unresolved."
+      },
+      "definition": "When investigative work is complete but proceedings on the charge remain pending, suspension continues while those proceedings remain pending."
+    },
+    {
+      "legal_issue": "Compulsory retirement ends a suspension from public service.",
+      "material_facts": [
+        "The official was compulsorily retired while the suspension order was in force.",
+        "The criminal proceedings had not been finally resolved when the compulsory retirement occurred."
+      ],
+      "conclusion": "The suspension ended upon compulsory retirement because the retired official could no longer be treated as being under suspension.",
+      "legal_principle": "Rule 7(3) of the All India Services (Discipline and Appeal) Rules, 1955 governs suspension pending proceedings, but after retirement from service the person can no longer be deemed to be under suspension. The court cited no earlier cases for this issue.",
+      "rule": {
+        "if": "service_suspension_case and compulsory_retirement_occurred",
+        "then": "suspension_ends"
+      },
+      "predicates": {
+        "service_suspension_case": "The matter concerns a suspension from public service.",
+        "compulsory_retirement_occurred": "The government compulsorily retired the suspended public servant from service."
+      },
+      "definition": "When a suspended public servant is compulsorily retired, the suspension ends."
+    },
+    {
+      "legal_issue": "A challenge alleging mala fides should be decided after the related criminal trial judgment when the matters are interwoven.",
+      "material_facts": [
+        "The official alleged that the criminal charges and suspension were mala fide.",
+        "The criminal trial had concluded, but its judgment had not yet been delivered because of a stay order.",
+        "The court considered the alleged mala fides and the criminal case to be interwoven and interconnected."
+      ],
+      "conclusion": "The court did not decide the mala fides issue and left it for the High Court to consider after the criminal trial judgment was delivered.",
+      "legal_principle": "Where a mala fides challenge is closely interconnected with criminal proceedings and the criminal judgment is not yet available, the court may leave the issue for decision after that judgment. The court cited no earlier cases for this issue.",
+      "rule": {
+        "if": "mala_fide_suspension_challenge and criminal_judgment_not_yet_delivered and issues_interwoven",
+        "then": "mala_fide_issue_reserved_for_later_decision"
+      },
+      "predicates": {
+        "mala_fide_suspension_challenge": "A person challenges a suspension or related action on the ground that it was taken in bad faith.",
+        "criminal_judgment_not_yet_delivered": "The related criminal trial has concluded but its judgment has not yet been delivered.",
+        "issues_interwoven": "The alleged bad faith and the criminal proceedings are closely connected."
+      },
+      "definition": "When a bad-faith challenge is closely connected to a criminal case whose judgment is not yet delivered, the bad-faith issue is reserved for later decision."
+    }
+  ],
+  "seconds": 14.7
+}

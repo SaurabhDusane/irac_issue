@@ -1,0 +1,79 @@
+{
+  "doc_id": "1576216",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20233,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2608,
+    "prompt_tokens": 5711,
+    "total_tokens": 8319,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory sale procedure for partition is unavailable unless a qualifying request for public sale and distribution has been made by shareholders holding at least half the shares.",
+      "material_facts": [
+        "The partition plaint said the property was too small to divide conveniently and offered to buy the other co-owner’s share at a price fixed by the court; alternatively, it sought sale to the plaintiffs.",
+        "The defendant offered to buy the plaintiffs’ shares at a valuation fixed by the court.",
+        "Neither side requested a public sale followed by distribution of the proceeds, and no qualifying request was made by shareholders holding at least half the shares."
+      ],
+      "conclusion": "Sections 2 and 3 of the Partition Act did not apply because no qualifying request for public sale had been made.",
+      "legal_principle": "Under Sections 2 and 3 of the Partition Act, the court’s power to order sale and distribution requires a request by shareholders holding individually or collectively at least one moiety for a public sale, as well as the court’s opinion that division cannot reasonably or conveniently be made and sale would be more beneficial to all shareholders. Even when those conditions are met, the word “may” leaves the court discretion whether to order sale. A qualifying request is a condition precedent to applying Section 3; an offer to buy another co-owner’s share or a request for sale to a particular co-owner is not such a request.",
+      "rule": {
+        "if": "partition_suit and no_qualifying_public_sale_request",
+        "then": "statutory_sale_procedure_unavailable"
+      },
+      "predicates": {
+        "partition_suit": "The co-owners brought a proceeding seeking division of jointly owned property.",
+        "no_qualifying_public_sale_request": "No co-owner or group of co-owners holding at least half the shares asked the court for a public sale and distribution of the proceeds."
+      },
+      "definition": "When co-owners seek partition but no qualifying public-sale request was made, the statutory sale procedure is unavailable."
+    },
+    {
+      "legal_issue": "A court may use an equitable method, including owelty, to partition property that cannot reasonably be divided in kind, even when the statutory sale procedure does not apply.",
+      "material_facts": [
+        "The property was very small and the courts found that division by metes and bounds was not reasonably or conveniently possible without destroying its intrinsic worth.",
+        "No qualifying request for public sale had been made, so the statutory sale provisions did not apply."
+      ],
+      "conclusion": "The court retained power to devise a just and equitable method of partition outside the Partition Act; because the property could not be divided in kind, it could be allotted to one co-owner on payment of just compensation to the other.",
+      "legal_principle": "The Partition Act does not displace the court’s power to partition property by an equitable method in cases outside Sections 2 and 3. Where division in kind is not feasible, owelty may be used: one co-owner retains the whole property and pays the other compensation equivalent to that co-owner’s share. The Court approved Ram Prasada Rao v. Subramanian, A.I.R. 1958 A.P. 647.",
+      "rule": {
+        "if": "partition_suit and property_not_reasonably_divisible and statutory_sale_procedure_unavailable",
+        "then": "court_may_partition_by_equitable_method"
+      },
+      "predicates": {
+        "partition_suit": "The co-owners brought a proceeding seeking division of jointly owned property.",
+        "property_not_reasonably_divisible": "The property cannot be divided reasonably or conveniently in kind without destroying its intrinsic worth.",
+        "statutory_sale_procedure_unavailable": "The statutory procedure for sale and distribution cannot be used in the circumstances of the partition proceeding."
+      },
+      "definition": "When a partition proceeding concerns property that cannot reasonably be divided in kind and the statutory sale procedure is unavailable, the court may partition it by an equitable method."
+    },
+    {
+      "legal_issue": "When indivisible property is allotted to one co-owner, an occupying co-owner with the smaller share may receive the first opportunity to retain it by paying fair compensation, with the other co-owners receiving it if that opportunity is not exercised.",
+      "material_facts": [
+        "The defendant held the smaller share and used the property as a shop and residence.",
+        "The plaintiffs held the larger share, had greater resources, and could outbid the defendant if the property were auctioned between the parties.",
+        "The High Court valued the plaintiffs’ share using the original purchase price, although a later auction had produced a substantially higher bid and local property values had risen.",
+        "The Supreme Court considered that compensation should reflect the property’s value, including a reasonable increase for the rise in local prices, and remitted the matter for further evidence and determination."
+      ],
+      "conclusion": "The smaller-share co-owner who occupied the property was to have the first option to retain the whole property by paying the larger-share co-owners fair compensation based on an updated valuation. If that option was not exercised, the larger-share co-owners were to receive the property on payment of fair compensation for the smaller share.",
+      "legal_principle": "In applying equitable partition by owelty, the court should seek a just equivalent for the share paid out and may account for the circumstances of occupation and the parties’ relative ability to bid. A stale purchase price was not fair where subsequent auction evidence and rising local values showed substantial appreciation. The Court directed further evidence on the increase in value and approved giving the occupying smaller co-owner the first option, with the property going to the other co-owners if that option was not exercised.",
+      "rule": {
+        "if": "partition_suit and property_not_reasonably_divisible and smaller_share_coowner_occupies_property and larger_share_coowners_can_outbid_occupant and property_value_has_increased",
+        "then": "occupying_smaller_share_coowner_has_first_option_on_fair_compensation_with_reversion_to_other_coowners_if_unexercised"
+      },
+      "predicates": {
+        "partition_suit": "The co-owners brought a proceeding seeking division of jointly owned property.",
+        "property_not_reasonably_divisible": "The property cannot be divided reasonably or conveniently in kind without destroying its intrinsic worth.",
+        "smaller_share_coowner_occupies_property": "The co-owner holding the smaller share uses the property as a residence, a place of business, or both.",
+        "larger_share_coowners_can_outbid_occupant": "The co-owners holding the larger share have greater resources and could outbid the occupying co-owner in an auction between the parties.",
+        "property_value_has_increased": "Evidence, including a later auction and changes in local property values, indicates that the property is worth more than its earlier purchase-price valuation."
+      },
+      "definition": "If indivisible property is occupied by its smaller-share co-owner, the larger-share co-owners can outbid that co-owner, and the property has appreciated, the occupant receives the first opportunity to retain it for fair compensation, and the other co-owners receive it if that opportunity is not exercised."
+    }
+  ],
+  "seconds": 17.2
+}

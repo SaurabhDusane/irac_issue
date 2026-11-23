@@ -1,0 +1,161 @@
+{
+  "doc_id": "103193047",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23993,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3776,
+    "prompt_tokens": 6227,
+    "total_tokens": 10003,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A supervisory petition should not be entertained when the challenged orders can be appealed and the litigant has not first pursued that appellate remedy.",
+      "material_facts": [
+        "The tenant challenged four orders of the trial and executing courts under the High Court’s supervisory jurisdiction.",
+        "The orders were amenable to challenge before the appellate authority, but the tenant had not first pursued that remedy."
+      ],
+      "conclusion": "The High Court should have declined to entertain the supervisory petition because an appellate remedy was available.",
+      "legal_principle": "The Court applied the restraint governing the exercise of supervisory jurisdiction under Article 227 of the Constitution where an adequate alternative appellate remedy is available. It relied on no earlier cases.",
+      "rule": {
+        "if": "supervisory_writ_challenge and appeal_remedy_available and appeal_not_first_pursued",
+        "then": "supervisory_petition_not_entertained"
+      },
+      "predicates": {
+        "supervisory_writ_challenge": "A litigant challenged lower-court orders by invoking a higher court’s supervisory jurisdiction.",
+        "appeal_remedy_available": "The challenged orders could be appealed to an appellate authority.",
+        "appeal_not_first_pursued": "The litigant invoked supervisory jurisdiction without first pursuing the available appeal."
+      },
+      "definition": "When a litigant uses supervisory jurisdiction to challenge appealable orders without first pursuing the appeal, the supervisory petition is not entertained."
+    },
+    {
+      "legal_issue": "A supervisory court should not decide matters as an original court when the executing court is already seized of the litigant’s pending applications.",
+      "material_facts": [
+        "The tenant had filed applications before the executing court, and those applications remained pending when the tenant approached the High Court.",
+        "The High Court entertained the petition and decided issues concerning those applications instead of leaving them for the executing court to determine."
+      ],
+      "conclusion": "The High Court should have left the pending applications for the executing court to decide on their merits, with any later challenge to be brought through the available appellate process.",
+      "legal_principle": "Under Article 227 of the Constitution, supervisory jurisdiction did not justify deciding pending matters as though the High Court were the original court. The High Court could have requested the executing court to decide the applications and left the parties to pursue an appeal from the resulting orders. No earlier cases were relied upon.",
+      "rule": {
+        "if": "supervisory_writ_challenge and execution_applications_pending and higher_court_decided_applications_as_original_court",
+        "then": "pending_applications_left_for_executing_court"
+      },
+      "predicates": {
+        "supervisory_writ_challenge": "A litigant challenged lower-court orders by invoking a higher court’s supervisory jurisdiction.",
+        "execution_applications_pending": "A party had applications pending for decision before the executing court.",
+        "higher_court_decided_applications_as_original_court": "The higher court determined matters raised in the pending applications instead of leaving them for the executing court."
+      },
+      "definition": "When a supervisory challenge is brought while execution applications are pending and the higher court decides those matters itself, the applications should instead be left for the executing court."
+    },
+    {
+      "legal_issue": "Once an eviction decree has been executed and possession delivered, supervisory review should not proceed in the absence of a prima facie challenge to the court’s jurisdiction to make the decree.",
+      "material_facts": [
+        "The eviction decree had been executed and possession of the shops, including the tenant’s shop, had been delivered to the landlord.",
+        "The execution court had recorded satisfaction and closed the execution case.",
+        "The tenant did not establish a prima facie jurisdictional defect in the making of the eviction decree."
+      ],
+      "conclusion": "The High Court should have declined to examine the challenged orders because execution was complete and no prima facie jurisdictional issue was shown.",
+      "legal_principle": "The Court relied on Order 21 Rule 35 of the Code of Civil Procedure as governing delivery of possession in execution. It held that, after lawful delivery of possession and recording satisfaction, no lis remained for supervisory examination absent a prima facie issue affecting the court’s jurisdiction to pass the decree. It relied on no earlier cases.",
+      "rule": {
+        "if": "supervisory_writ_challenge and eviction_decree_fully_executed and possession_delivered and not prima_facie_jurisdictional_defect",
+        "then": "supervisory_review_declined"
+      },
+      "predicates": {
+        "supervisory_writ_challenge": "A litigant challenged lower-court orders by invoking a higher court’s supervisory jurisdiction.",
+        "eviction_decree_fully_executed": "An eviction decree had been carried out through execution.",
+        "possession_delivered": "The person entitled under the decree had received possession of the premises.",
+        "prima_facie_jurisdictional_defect": "The challenger showed an apparent defect affecting the court’s jurisdiction to make the decree."
+      },
+      "definition": "When an eviction decree has been executed and possession delivered, supervisory review is declined if no apparent jurisdictional defect is shown."
+    },
+    {
+      "legal_issue": "An eviction order on the merits is not undermined merely because a tenant who knew of the proceedings and had an opportunity to participate failed to appear after remand.",
+      "material_facts": [
+        "The tenant knew of the eviction proceedings and had contested them at earlier stages.",
+        "The tenant knew the date fixed for appearance after remand but did not appear on that date or on later dates, despite further service of notice.",
+        "The trial court heard the landlord’s case and made an eviction order on the merits."
+      ],
+      "conclusion": "The trial court was justified in making the eviction order, and the tenant’s remedy was to appeal or apply to set it aside under Order 9 Rule 13 of the Code of Civil Procedure, rather than obtain supervisory interference on the claim that the tenant had not been given an opportunity to be heard.",
+      "legal_principle": "The Court applied Order 9 Rule 13 of the Code of Civil Procedure, alongside the availability of an appeal from the final order, as remedies for a party against whom an order was made in their absence. It held that supervisory interference was not justified where the party knew of the proceedings and had an opportunity to participate. It relied on no earlier cases.",
+      "rule": {
+        "if": "eviction_proceeding and tenant_knew_of_proceedings and tenant_failed_to_attend_despite_opportunity and eviction_order_on_merits",
+        "then": "eviction_order_not_set_aside_for_lack_of_opportunity"
+      },
+      "predicates": {
+        "eviction_proceeding": "The matter was a proceeding seeking eviction of a tenant.",
+        "tenant_knew_of_proceedings": "The tenant knew that the eviction proceeding was pending.",
+        "tenant_failed_to_attend_despite_opportunity": "The tenant did not attend after remand despite knowing when to appear and having a further opportunity to participate.",
+        "eviction_order_on_merits": "The court considered the eviction claim on its merits before making the eviction order."
+      },
+      "definition": "In an eviction proceeding, where a tenant knew of the case, failed to attend despite an opportunity, and an order was made on the merits, the order is not set aside for lack of an opportunity to participate."
+    },
+    {
+      "legal_issue": "A supervisory court should not direct a lower court to allow a particular application, thereby curtailing the lower court’s judicial discretion.",
+      "material_facts": [
+        "The High Court directed the trial court to allow two applications seeking to set aside the eviction order and condone delay.",
+        "The applications had not yet been decided by the trial court."
+      ],
+      "conclusion": "The High Court exceeded its supervisory jurisdiction by directing the trial court to allow the applications; it could only leave the trial court to decide them in the exercise of its judicial discretion.",
+      "legal_principle": "Article 227 of the Constitution did not authorize the High Court to dictate a particular outcome on applications that remained for judicial determination by the trial court. No earlier cases were relied upon.",
+      "rule": {
+        "if": "supervisory_writ_challenge and lower_court_applications_undecided and higher_court_ordered_specific_outcome",
+        "then": "specific_outcome_direction_unlawful"
+      },
+      "predicates": {
+        "supervisory_writ_challenge": "A litigant challenged lower-court orders by invoking a higher court’s supervisory jurisdiction.",
+        "lower_court_applications_undecided": "Applications remained undecided before the lower court.",
+        "higher_court_ordered_specific_outcome": "The higher court directed the lower court to grant or dismiss an application rather than decide it independently."
+      },
+      "definition": "When applications remain undecided below, a supervisory court acts unlawfully if it dictates the outcome instead of leaving the lower court to decide them."
+    },
+    {
+      "legal_issue": "Repeated applications to undo an eviction and completed execution may be dismissed as abuse of the court’s process when the applicant knew of the proceedings and failed to participate despite an opportunity.",
+      "material_facts": [
+        "The tenant, who knew of the eviction proceedings, did not appear after remand despite knowing the date and receiving further notice.",
+        "After the eviction order was executed and possession delivered, the tenant filed applications seeking to set aside the eviction and execution orders, condone delay, and obtain redelivery.",
+        "The applications were pending when the tenant sought supervisory intervention."
+      ],
+      "conclusion": "The applications seeking to set aside the orders, condone delay, and obtain redelivery were misconceived, without merit, and abusive of the court’s process, and were dismissed.",
+      "legal_principle": "The Court assessed the applications in light of the tenant’s knowledge of the proceedings, failure to appear despite an opportunity, and the completed execution. It held that the applications were an abuse of process and relied on no specific statutory provision or earlier case for that conclusion.",
+      "rule": {
+        "if": "eviction_proceeding and applicant_knew_of_proceedings and applicant_failed_to_participate_despite_opportunity and execution_completed and post_execution_challenges_filed",
+        "then": "post_execution_applications_dismissed_as_abuse"
+      },
+      "predicates": {
+        "eviction_proceeding": "The matter was a proceeding seeking eviction of a tenant.",
+        "applicant_knew_of_proceedings": "The applicant knew that the eviction proceeding was pending.",
+        "applicant_failed_to_participate_despite_opportunity": "The applicant did not participate despite knowing when to appear and having an opportunity to do so.",
+        "execution_completed": "The eviction decree had been executed and possession had been delivered.",
+        "post_execution_challenges_filed": "After execution, the applicant sought orders setting aside the eviction or execution and restoring possession."
+      },
+      "definition": "When an applicant who knew of an eviction proceeding failed to participate despite an opportunity and then challenged the completed execution, the post-execution applications are dismissed as an abuse of process."
+    },
+    {
+      "legal_issue": "A factual inquiry into payment of costs is unwarranted when sworn statements support payment and the opposing party offers no substantive rebuttal.",
+      "material_facts": [
+        "The landlord stated in a counter-affidavit that the costs ordered on remand had been paid.",
+        "The landlord’s advocate also provided an affidavit supporting the account of payment.",
+        "The tenant denied payment but supplied no substantive rebuttal to those sworn statements.",
+        "The High Court directed the trial court to inquire into whether payment had been made."
+      ],
+      "conclusion": "The High Court had no basis to doubt the sworn evidence of payment or to direct an inquiry, and its direction was illegal and unwarranted.",
+      "legal_principle": "The Court treated the unrebutted sworn statements as sufficient in the circumstances and held that an inquiry into payment was unjustified. It relied on no statutory provision or earlier case for this conclusion.",
+      "rule": {
+        "if": "supervisory_writ_challenge and sworn_evidence_supports_payment and no_substantive_rebuttal and higher_court_ordered_payment_inquiry",
+        "then": "payment_inquiry_unwarranted"
+      },
+      "predicates": {
+        "supervisory_writ_challenge": "A litigant challenged lower-court orders by invoking a higher court’s supervisory jurisdiction.",
+        "sworn_evidence_supports_payment": "A party and a supporting witness gave sworn evidence that an ordered payment had been made.",
+        "no_substantive_rebuttal": "The opposing party offered no substantive evidence countering the sworn account.",
+        "higher_court_ordered_payment_inquiry": "The higher court directed a further factual inquiry into whether the payment had been made."
+      },
+      "definition": "When sworn evidence supports payment, there is no substantive rebuttal, and a higher court nevertheless orders an inquiry, that inquiry is unwarranted."
+    }
+  ],
+  "seconds": 83.9
+}

@@ -1,0 +1,120 @@
+{
+  "doc_id": "804743",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 45940,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4102,
+    "prompt_tokens": 12029,
+    "total_tokens": 16131,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Whether an agreement creates a lease or a licence depends on the parties’ operative intent and the rights actually granted, rather than the agreement’s label or stated purpose.",
+      "material_facts": [
+        "The agreement was made in connection with collecting market dues, but it gave the contractor possession and use of shops and sheds as enjoyed by the owner.",
+        "The agreement authorized the contractor to let the shops to subtenants for rent and stated that the contractor would remain in possession of the identified areas.",
+        "The agreement and its map also included designated open strips and market areas, without distinguishing them from the shops and sheds as to possession."
+      ],
+      "conclusion": "The agreement created leases, not merely a licence, over the shops and sheds and the designated open areas.",
+      "legal_principle": "Under section 105 of the Transfer of Property Act, 1882, and section 52 of the Easements Act, 1882, the distinction turns on the operative intent of the parties: a transfer of an interest in immovable property is a lease, while permission to use land without an interest or right to exclusive possession is a licence. The court followed Associated Hotels of India Ltd. v. R.N. Kapoor, [1959] SCR 265, and treated the agreement’s substance and the rights it granted as controlling.",
+      "rule": {
+        "if": "contract_characterization_case and (interest_in_property_transferred or possession_rights_granted_by_contract)",
+        "then": "transaction_is_a_lease"
+      },
+      "predicates": {
+        "contract_characterization_case": "The dispute concerns whether an agreement concerning the use of property created a lease or a licence.",
+        "interest_in_property_transferred": "The agreement gave the recipient a property interest that entitled the recipient to enjoy the property.",
+        "possession_rights_granted_by_contract": "The agreement granted possession or comparable rights over the property beyond permission merely to use it."
+      },
+      "definition": "When a dispute concerns an agreement’s legal character, a transfer of an interest in property or grant of possession rights means the transaction is a lease."
+    },
+    {
+      "legal_issue": "Open areas included in a lease are outside the protected accommodation when they are distinct, separately demised spaces rather than appurtenances to the leased buildings.",
+      "material_facts": [
+        "The agreement covered shops and sheds as well as paths, walks, pavements, and other open market areas.",
+        "The court found that some paths and walks were separate from the buildings and were not attached to them in fact or law, while certain green pavements were appurtenant to the leased shops or sheds.",
+        "The distinct open areas could be treated as a separate demise, and the agreement was not so integrated that the leases of the buildings and open areas could not be separated.",
+        "The statutory definition of accommodation included grounds and other spaces only when appurtenant to a building."
+      ],
+      "conclusion": "The distinct open areas that were not appurtenant to the buildings fell outside the protected accommodation, and eviction was proper in respect of the unprotected lease, subject to the exception for the green-coloured pavements.",
+      "legal_principle": "The applicable rent-control definition included grounds and similar spaces only if appurtenant to a building. Appurtenance requires principal and subsidiary items integrated by use; a mere connection is insufficient. The court also referred to section 3(26) of the General Clauses Act, 1897, and Ram Jiwan v. Hanoman Pershad, I.L.R. 16 Lucknow 191, concerning benefits arising out of land. A distinct, unprotected demise may be severed from protected accommodation for purposes of eviction.",
+      "rule": {
+        "if": "possession_proceeding and separately_identifiable_lease_parts and open_space_not_appurtenant and open_space_outside_rent_protection",
+        "then": "eviction_is_permitted_for_the_unprotected_open_space"
+      },
+      "predicates": {
+        "possession_proceeding": "A party seeks recovery of possession of property under a lease.",
+        "separately_identifiable_lease_parts": "The agreement covers building space and open space that can be treated as distinct lease components.",
+        "open_space_not_appurtenant": "The open space is not attached to or integrated by use with the leased building as a subsidiary part of it.",
+        "open_space_outside_rent_protection": "The open space does not fall within the statutory category of protected accommodation."
+      },
+      "definition": "In a possession proceeding, a separately identifiable open-space lease may be subject to eviction when the space is neither appurtenant to the leased building nor within rent protection."
+    },
+    {
+      "legal_issue": "Repeal of a temporary rent-control enactment does not preserve a tenant’s protection beyond the enactment’s life when the replacement law and its savings provisions do not preserve that protection for the pending proceeding.",
+      "material_facts": [
+        "The tenant relied on protection under a temporary rent-control enactment that restricted eviction to specified grounds.",
+        "A later enactment repealed the temporary enactment and excluded buildings belonging to local authorities from its protection.",
+        "The pending suit proceeded on the basis that the occupant was a licensee, not as a proceeding under the earlier rent-control enactment.",
+        "The replacement enactment contained savings provisions for specified pending proceedings, but the court held that they did not preserve the protection claimed in this suit."
+      ],
+      "conclusion": "The earlier statutory protection did not survive the repeal for this suit, and the owner could pursue possession under the law then governing.",
+      "legal_principle": "The general effect of repeal is that the repealed enactment is treated as if it had not existed, subject to express or implied savings. Section 6 of the Uttar Pradesh General Clauses Act, 1904, generally preserves accrued rights and pending proceedings, but a special savings provision in the replacement enactment may indicate a different intention. The court relied on section 43(2)(h) of the replacement enactment, section 1(4) of the earlier enactment, and section 6 of the General Clauses Act. It referred to HariPada Pal Ghosh v. Tofajaddi Ijardar, 60 I.L.R. [1933] Cal. 1438; Boddington v. Wisson, [1951] 1 All E.R. 166; Indira Sohanlal v. Custodian of Evacuee Property, A.I.R. 1956 S.C. 77; State of Orissa v. Bhupendra Kumar, A.I.R. 1962 S.C. 945; and S. Krishnan v. State of Madras, 1951 SCR 621. A protection derived from a temporary enactment cannot be extended beyond that enactment’s duration absent an applicable saving.",
+      "rule": {
+        "if": "pending_possession_proceeding and temporary_rent_protection and temporary_enactment_repealed and proceeding_outside_replacement_savings",
+        "then": "temporary_rent_protection_does_not_continue_after_repeal"
+      },
+      "predicates": {
+        "pending_possession_proceeding": "A proceeding seeking recovery of possession was pending when the later enactment took effect.",
+        "temporary_rent_protection": "A temporary enactment restricted the owner's ability to evict an occupant except on specified grounds.",
+        "temporary_enactment_repealed": "A later enactment repealed the temporary enactment before the proceeding was finally decided.",
+        "proceeding_outside_replacement_savings": "The pending proceeding did not fall within the replacement enactment’s provisions preserving or governing specified earlier proceedings."
+      },
+      "definition": "When a possession proceeding is pending, repeal of the temporary enactment ends its protection if the proceeding is outside the replacement enactment’s savings."
+    },
+    {
+      "legal_issue": "An appellate court may take account of changes in law occurring during an appeal and adjust the relief to reflect those changes.",
+      "material_facts": [
+        "The appeal remained pending when the earlier rent-control enactment was repealed and a replacement enactment came into force.",
+        "The intervening change affected whether statutory protection continued to prevent recovery of possession.",
+        "The court could resolve the parties’ dispute in the appeal by considering the law in force when it decided the case."
+      ],
+      "conclusion": "The appellate court could consider the intervening legislative change and mould the relief accordingly.",
+      "legal_principle": "An appeal is in the nature of a rehearing, and the appellate court may consider subsequent changes in fact or law when determining the relief justice requires. The court relied on Lachmeshwar Prasad Shukul v. Keshwar Lal Chaudhuri, A.I.R. 1941 Federal Court 28, including the observations of Gwyer C.J. and Varadachariar J.",
+      "rule": {
+        "if": "appeal_pending and intervening_change_affects_entitlement",
+        "then": "appellate_court_may_adjust_relief_under_current_law"
+      },
+      "predicates": {
+        "appeal_pending": "An appeal concerning the parties’ entitlement to relief remains before the court.",
+        "intervening_change_affects_entitlement": "A change in fact or law occurs during the appeal and affects the relief to which a party may be entitled."
+      },
+      "definition": "When an appeal is pending and a later change affects entitlement to relief, the appellate court may adjust its decision to reflect that change."
+    },
+    {
+      "legal_issue": "A statute providing for summary eviction of unauthorized occupants does not prevent a suit seeking eviction of a tenant.",
+      "material_facts": [
+        "A party argued that a statute providing for summary eviction of unauthorized occupants barred the pending suit for eviction.",
+        "The suit sought eviction of an occupant whose claim to remain was based on tenancy."
+      ],
+      "conclusion": "The summary-eviction statute did not obstruct the suit for eviction of a tenant.",
+      "legal_principle": "The court held that the U.P. Public Premises (Eviction of Unauthorised Occupants) Act, 1972, which provides for summary eviction of unauthorized occupants, did not bar a suit for eviction of a tenant.",
+      "rule": {
+        "if": "civil_eviction_suit and occupant_claimed_as_tenant and summary_eviction_law_targets_unauthorized_occupants",
+        "then": "summary_eviction_law_does_not_bar_the_tenant_eviction_suit"
+      },
+      "predicates": {
+        "civil_eviction_suit": "An owner has brought a civil suit seeking eviction from property.",
+        "occupant_claimed_as_tenant": "The occupant claims a right to remain in possession as a tenant.",
+        "summary_eviction_law_targets_unauthorized_occupants": "A separate law provides a summary process for evicting unauthorized occupants."
+      },
+      "definition": "A civil eviction suit against an occupant claiming tenancy is not barred merely because a separate summary process applies to unauthorized occupants."
+    }
+  ],
+  "seconds": 27.7
+}

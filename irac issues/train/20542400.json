@@ -1,0 +1,139 @@
+{
+  "doc_id": "20542400",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19489,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3276,
+    "prompt_tokens": 5714,
+    "total_tokens": 8990,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Interest on a refund for delayed delivery of a housing unit runs on each deposit from the date it was made until the refund.",
+      "material_facts": [
+        "The purchasers had deposited amounts for apartments in a housing project that had not made substantial progress after the promised delivery period.",
+        "Some purchasers sought refunds, and the parties agreed that refund cases would carry interest at 9% on deposits from their respective deposit dates until refund."
+      ],
+      "conclusion": "In refund cases, interest at 9% is payable on each deposit from the date of deposit until the date of refund.",
+      "legal_principle": "The Court adopted the parties’ agreed framework, applying the approach in Himanshu Arora, where the Court confirmed interest at 9% while modifying the period to conform to the State Commission’s order. No statutory provision was identified as the basis for this agreed calculation.",
+      "rule": {
+        "if": "is_consumer_housing_refund_case and (purchaser_sought_refund and deposits_were_made) and parties_agreed_to_refund_interest_framework",
+        "then": "refund_interest_runs_from_each_deposit_until_refund"
+      },
+      "predicates": {
+        "is_consumer_housing_refund_case": "A purchaser pursued a consumer proceeding seeking a refund for a housing unit.",
+        "purchaser_sought_refund": "The purchaser asked to recover money paid for the housing unit rather than take possession.",
+        "deposits_were_made": "The purchaser made one or more payments toward the housing unit.",
+        "parties_agreed_to_refund_interest_framework": "The parties accepted an interest-based framework for calculating the refund award."
+      },
+      "definition": "When a purchaser in a consumer housing refund case made deposits and the parties agreed to an interest framework, interest runs on each deposit from its deposit date until refund."
+    },
+    {
+      "legal_issue": "When a transferee seeks a refund after succeeding to the original allottee’s position, interest on the original allottee’s deposits runs from the transfer, while interest on the transferee’s own deposits runs from their deposit dates.",
+      "material_facts": [
+        "One refund claim involved a subsequent purchaser who had stepped into the original allottee’s position.",
+        "The parties agreed that interest on amounts deposited by the original allottee would be reckoned from the transfer date and that interest on later deposits by the transferee would be reckoned from their respective deposit dates."
+      ],
+      "conclusion": "For a transferee’s refund claim, interest on the original allottee’s deposits is reckoned from the transfer date, and interest on the transferee’s deposits is reckoned from each deposit date.",
+      "legal_principle": "The Court applied the parties’ agreed framework for transferred allotments; it did not identify a separate statutory provision or earlier case as the basis for this specific calculation.",
+      "rule": {
+        "if": "is_consumer_housing_refund_case and purchaser_sought_refund and transferee_succeeded_to_original_allottee and parties_agreed_to_transfer_refund_framework",
+        "then": "refund_interest_uses_transfer_date_for_original_deposits_and_deposit_dates_for_transferee_payments"
+      },
+      "predicates": {
+        "is_consumer_housing_refund_case": "A purchaser pursued a consumer proceeding seeking a refund for a housing unit.",
+        "purchaser_sought_refund": "The purchaser asked to recover money paid for the housing unit rather than take possession.",
+        "transferee_succeeded_to_original_allottee": "A subsequent purchaser took the original allottee’s position in relation to the housing unit.",
+        "parties_agreed_to_transfer_refund_framework": "The parties accepted a framework that distinguishes original-allottee payments from the transferee’s later payments."
+      },
+      "definition": "Where a transferee who succeeded to an original allottee seeks a consumer housing refund under the agreed framework, interest uses the transfer date for original payments and the deposit dates for the transferee’s own payments."
+    },
+    {
+      "legal_issue": "Compensation for delayed possession is reckoned only after the developer’s contractual period for making possession available has expired.",
+      "material_facts": [
+        "Some purchasers sought possession rather than a refund and sought compensation for delayed delivery.",
+        "The agreement allowed the developer two years to deliver possession, with an option to extend that period by one year.",
+        "The parties agreed that the three-year contractual period would not count when calculating delay compensation and that compensation would run at 9% thereafter."
+      ],
+      "conclusion": "For possession claims, compensation at 9% is calculated only for the period after expiry of the three-year contractual period.",
+      "legal_principle": "The Court adopted the parties’ agreed calculation framework. Its earlier decision in Himanshu Arora confirmed a 9% interest direction and adjusted the period to conform to the State Commission’s order; no statutory provision was identified as the basis for the agreed contractual-period calculation.",
+      "rule": {
+        "if": "is_consumer_housing_possession_case and purchaser_sought_possession and contractual_possession_period_expired and parties_agreed_to_possession_compensation_framework",
+        "then": "delayed_possession_compensation_applies_only_after_contractual_possession_period"
+      },
+      "predicates": {
+        "is_consumer_housing_possession_case": "A purchaser pursued a consumer proceeding concerning delayed possession of a housing unit.",
+        "purchaser_sought_possession": "The purchaser asked to receive the housing unit rather than recover the purchase payments as a refund.",
+        "contractual_possession_period_expired": "The period allowed by the agreement for delivering possession had elapsed.",
+        "parties_agreed_to_possession_compensation_framework": "The parties accepted a framework that excludes the agreed possession period from the compensation calculation."
+      },
+      "definition": "When a purchaser seeks possession in a consumer housing case and the agreed contractual period has expired, the accepted framework awards delay compensation only for the time after that period."
+    },
+    {
+      "legal_issue": "For a transferee seeking possession, delayed-possession compensation begins on the later of the transfer date and expiry of the contractual possession period.",
+      "material_facts": [
+        "The agreed framework addressed possession claims in which a transferee had stepped into the original allottee’s position.",
+        "The parties agreed that compensation would begin after the contractual possession period expired or on the transfer date, whichever occurred later."
+      ],
+      "conclusion": "In a possession case involving a transferee, compensation is reckoned from the later of the transfer date and expiry of the contractual possession period.",
+      "legal_principle": "The Court adopted the parties’ agreed framework for transferred allotments. No separate statutory provision or earlier case was identified as the basis for this specific rule.",
+      "rule": {
+        "if": "is_consumer_housing_possession_case and purchaser_sought_possession and transferee_succeeded_to_original_allottee and parties_agreed_to_transfer_possession_framework",
+        "then": "delayed_possession_compensation_starts_at_later_of_transfer_or_contractual_period_expiry"
+      },
+      "predicates": {
+        "is_consumer_housing_possession_case": "A purchaser pursued a consumer proceeding concerning delayed possession of a housing unit.",
+        "purchaser_sought_possession": "The purchaser asked to receive the housing unit rather than recover the purchase payments as a refund.",
+        "transferee_succeeded_to_original_allottee": "A subsequent purchaser took the original allottee’s position in relation to the housing unit.",
+        "parties_agreed_to_transfer_possession_framework": "The parties accepted a framework that sets the starting point for a transferee’s possession compensation by reference to both transfer and contractual expiry."
+      },
+      "definition": "When a transferee who succeeded to an original allottee seeks possession under the agreed framework, compensation begins at the later of transfer or expiry of the contractual possession period."
+    },
+    {
+      "legal_issue": "A refund owed after an allottee’s death may be distributed provisionally according to the expected shares of the apparent intestate successors, subject to a competent court’s determination and indemnity undertakings.",
+      "material_facts": [
+        "A deceased allottee had left a widow, two children, and a mother, and both the widow and the mother claimed the refund.",
+        "The Court considered that entitlement could not be finally determined in the proceeding and left the claimants to pursue that question before a competent court.",
+        "The Court directed provisional distribution in accordance with the shares indicated by ordinary Hindu intestate succession and required indemnity bonds undertaking repayment if a competent court later ruled against the recipients."
+      ],
+      "conclusion": "The refund was to be distributed provisionally between the widow, on behalf of herself and the children, and the mother according to the expected intestate shares, subject to indemnity bonds and any later determination by a competent court.",
+      "legal_principle": "The Court referred to the normal law of intestate succession for Hindus as indicating the expected shares, but left final entitlement to a competent court and conditioned the provisional distribution on indemnity undertakings. No specific statutory provision or earlier case was cited.",
+      "rule": {
+        "if": "is_consumer_refund_proceeding and allottee_died_before_refund and competing_successors_claimed_refund and final_entitlement_requires_competent_court_determination",
+        "then": "refund_may_be_distributed_provisionally_by_expected_intestate_shares_subject_to_indemnity"
+      },
+      "predicates": {
+        "is_consumer_refund_proceeding": "A consumer proceeding resulted in a refund being payable in respect of an allottee’s housing payments.",
+        "allottee_died_before_refund": "The allottee died before the refund was distributed.",
+        "competing_successors_claimed_refund": "More than one apparent successor claimed entitlement to the refund.",
+        "final_entitlement_requires_competent_court_determination": "The competing claims could not be finally resolved in the proceeding and required determination by a competent court."
+      },
+      "definition": "If an allottee dies before a refund is paid, apparent successors make competing claims, and final entitlement requires a competent court, the refund may be distributed provisionally by expected intestate shares subject to indemnity."
+    },
+    {
+      "legal_issue": "A consensual disposal under the agreed interest framework does not warrant additional compensation beyond the compensation addressed by that framework.",
+      "material_facts": [
+        "The parties agreed to dispose of the appeals under the stated framework, including compensation in the form of interest at 9%.",
+        "The Court noted that no compensation order had been made in the earlier Himanshu Arora matter and concluded that no compensation beyond what it had addressed was required."
+      ],
+      "conclusion": "No compensation other than that dealt with under the agreed framework was payable.",
+      "legal_principle": "The Court relied on the parties’ agreed disposal and its observation that no compensation order had been made in Himanshu Arora; it identified no statutory provision for this conclusion.",
+      "rule": {
+        "if": "is_consumer_housing_appeal and parties_agreed_to_disposal_framework and no_separate_compensation_basis_was_established",
+        "then": "no_compensation_is_awarded_beyond_the_agreed_framework"
+      },
+      "predicates": {
+        "is_consumer_housing_appeal": "An appeal arose from a consumer dispute about a housing unit.",
+        "parties_agreed_to_disposal_framework": "The parties accepted disposal of the dispute under a specified compensation framework.",
+        "no_separate_compensation_basis_was_established": "No independent basis for compensation beyond the agreed framework was established."
+      },
+      "definition": "In a consumer housing appeal disposed of under an agreed framework, compensation does not extend beyond that framework when no separate basis for additional compensation is established."
+    }
+  ],
+  "seconds": 80.6
+}

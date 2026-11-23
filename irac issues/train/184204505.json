@@ -1,0 +1,74 @@
+{
+  "doc_id": "184204505",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 2233,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1870,
+    "prompt_tokens": 1057,
+    "total_tokens": 2927,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An appeal on an issue already decided adversely to the appellant by the Supreme Court is to be dismissed.",
+      "material_facts": [
+        "The Court stated that the issue was covered against the appellant by two earlier Supreme Court judgments.",
+        "The earlier appeals filed by the requisitioning authority had been dismissed."
+      ],
+      "conclusion": "The appeal was dismissed.",
+      "legal_principle": "The Court applied its earlier decisions, which had decided the issue against the appellant and dismissed appeals by the requisitioning authority. The judgment does not state the underlying substantive principle from those decisions.",
+      "rule": {
+        "if": "land_acquisition_appeal and same_issue_decided_adversely_in_prior_supreme_court_decisions",
+        "then": "appeal_dismissed"
+      },
+      "predicates": {
+        "land_acquisition_appeal": "An authority pursued an appeal concerning a land acquisition matter.",
+        "same_issue_decided_adversely_in_prior_supreme_court_decisions": "The Supreme Court had previously decided the same legal issue adversely to the appellant."
+      },
+      "definition": "When an authority appeals in a land acquisition matter and the Supreme Court has already decided the same issue adversely to it, the appeal is dismissed."
+    },
+    {
+      "legal_issue": "An authority may be allowed time to exercise its liberty to initiate fresh acquisition proceedings in the circumstances of the case.",
+      "material_facts": [
+        "The Court described the cases as having peculiar facts and circumstances.",
+        "The appellant had liberty under Section 24(2) of the applicable land acquisition legislation to initiate acquisition proceedings afresh."
+      ],
+      "conclusion": "The appellant was given one year to exercise its liberty to initiate fresh acquisition proceedings.",
+      "legal_principle": "Under Section 24(2) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013, the appellant had liberty to initiate acquisition proceedings afresh. In the peculiar facts and circumstances, the Court allowed one year for exercising that liberty.",
+      "rule": {
+        "if": "land_acquisition_proceeding and authority_has_liberty_to_initiate_acquisition_afresh and case_has_peculiar_circumstances",
+        "then": "authority_permitted_to_initiate_acquisition_afresh"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The matter concerns proceedings to acquire land.",
+        "authority_has_liberty_to_initiate_acquisition_afresh": "The authority has liberty to begin acquisition proceedings afresh.",
+        "case_has_peculiar_circumstances": "The Court finds that the case has peculiar facts and circumstances."
+      },
+      "definition": "If a land acquisition matter involves an authority with liberty to begin acquisition afresh and the Court finds peculiar circumstances, the authority is permitted to initiate acquisition afresh."
+    },
+    {
+      "legal_issue": "An authority holding land must return physical possession to the original owner if it does not initiate fresh acquisition proceedings within the time allowed.",
+      "material_facts": [
+        "The Court directed that a notification commencing fresh acquisition proceedings be issued within the one-year period allowed.",
+        "The Court directed that, if no such notification was issued within that period, the appellant must return the land if it was in possession."
+      ],
+      "conclusion": "If fresh acquisition proceedings were not initiated within one year by issuing a notification under Section 11, the appellant, if in possession, had to return physical possession to the original land owner.",
+      "legal_principle": "The Court made return of possession conditional on failure to initiate fresh acquisition proceedings within the time allowed by issuing a notification under Section 11 of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013, and on the authority being in possession.",
+      "rule": {
+        "if": "land_acquisition_proceeding and fresh_acquisition_notice_not_issued_within_allowed_time and authority_holds_physical_possession",
+        "then": "physical_possession_must_be_returned_to_original_owner"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The matter concerns proceedings to acquire land.",
+        "fresh_acquisition_notice_not_issued_within_allowed_time": "The authority does not issue a notice commencing fresh acquisition proceedings within the time allowed by the Court.",
+        "authority_holds_physical_possession": "The authority holds physical possession of the land."
+      },
+      "definition": "If an authority in a land acquisition matter fails to issue a notice commencing fresh acquisition within the time allowed and holds physical possession, it must return possession to the original owner."
+    }
+  ],
+  "seconds": 72.2
+}

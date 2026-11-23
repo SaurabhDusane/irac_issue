@@ -1,0 +1,66 @@
+{
+  "doc_id": "8232576",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 25020,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2167,
+    "prompt_tokens": 6719,
+    "total_tokens": 8886,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A grant of regular bail must be set aside when the order gives only general reasons and fails to record a case-specific assessment of grave allegations and the circumstances bearing on release.",
+      "material_facts": [
+        "The challenged bail orders relied on general references to the facts, the allegations, the parties’ submissions and the accused persons’ time in custody, without analyzing the case-specific grounds for release.",
+        "The allegations included indiscriminate firearm use in a group clash in which a person died from a firearm wound, and the charges included grave offences.",
+        "A second complaint concerned the same incident, and investigation into that complaint remained incomplete; the roles of the members of either group were not yet clear."
+      ],
+      "conclusion": "The orders granting regular bail were set aside, and the accused who had been released on bail were to be taken into custody.",
+      "legal_principle": "Under Section 439 CrPC, bail is a judicial discretion to be exercised judiciously, not as a matter of course. A detailed examination of the evidence is not required at the bail stage, but an order, particularly in a serious-offence case, must state reasons showing the court’s prima facie satisfaction; an order without such reasons reflects non-application of mind. The Court applied Mahipal v. Rajesh Kumar (2020) 2 SCC 118, which relied on Kalyan Chandra Sarkar v. Rajesh Ranjan (2004) 7 SCC 528, and emphasized the duty to give reasoned decisions as part of open justice.",
+      "rule": {
+        "if": "appeal_against_regular_bail_grant and serious_offence_alleged and bail_order_lacks_case_specific_reasons and (fatal_firearm_injury or unresolved_cross_case_investigation)",
+        "then": "regular_bail_grant_set_aside"
+      },
+      "predicates": {
+        "appeal_against_regular_bail_grant": "A party appealed an order granting an accused regular bail.",
+        "serious_offence_alleged": "The prosecution alleged grave criminal conduct against the accused.",
+        "bail_order_lacks_case_specific_reasons": "The court granting bail gave general reasons without explaining its case-specific assessment of why the accused qualified for release.",
+        "fatal_firearm_injury": "The incident allegedly involved a firearm injury that caused a person’s death.",
+        "unresolved_cross_case_investigation": "A competing complaint about the same incident remained under investigation, with the participants’ roles not yet clear.",
+        "regular_bail_grant_set_aside": "The grant of regular bail is set aside."
+      },
+      "definition": "If an appealed regular-bail grant rests on a non-specific assessment of serious allegations, with a fatal firearm injury or an unresolved investigation into a competing account of the incident, the grant is set aside."
+    },
+    {
+      "legal_issue": "Anticipatory bail may be refused where serious allegations arising from the same incident require further investigation and the available material does not establish which group was the aggressor.",
+      "material_facts": [
+        "The applicants sought anticipatory bail in an appeal challenging its refusal, based on a complaint alleging that they and others arrived armed and fired at the complainant’s group with intent to kill.",
+        "The competing complaint described firearm use during the same incident and stated that a member of the applicants’ group had a licensed pistol, so the applicants’ group was also alleged to have been armed.",
+        "The applicants argued that the complaint was delayed and retaliatory and relied on a medical certificate describing an injury as simple; the Court found the delay immaterial because the complaint concerned the same incident and noted the State’s submission that an injured person remained under treatment.",
+        "The investigation was incomplete, and further investigation, including recovery of weapons, was required; it was too early to determine which group was the aggressor or how the firing began."
+      ],
+      "conclusion": "The appeals seeking anticipatory bail were dismissed, without preventing the applicants from surrendering and seeking regular bail on its own merits.",
+      "legal_principle": "The Court assessed the request for anticipatory bail under Section 438 CrPC in light of the serious allegations, the competing accounts of one incident, and the need for further investigation and weapon recovery. It did not treat the alleged delay or the characterization of an injury as simple as sufficient to resolve disputed questions of responsibility at that stage. No earlier case is relied on for this determination.",
+      "rule": {
+        "if": "appeal_seeking_anticipatory_bail and serious_counter_allegations and counter_complaint_concerns_same_incident and applicants_alleged_to_be_armed and investigation_incomplete and aggressor_unresolved",
+        "then": "anticipatory_bail_denied"
+      },
+      "predicates": {
+        "appeal_seeking_anticipatory_bail": "An accused appealed the refusal of a request for protection from arrest before surrendering.",
+        "serious_counter_allegations": "A competing complaint alleged grave violence by the applicants’ group.",
+        "counter_complaint_concerns_same_incident": "The competing complaint concerned the same incident as the other complaint, rather than a later event.",
+        "applicants_alleged_to_be_armed": "The available account indicated that the applicants’ group was armed during the incident.",
+        "investigation_incomplete": "The investigation into the competing complaint had not been completed.",
+        "aggressor_unresolved": "The available material did not yet establish which group initiated the violence or how the firing began.",
+        "anticipatory_bail_denied": "The request for anticipatory bail is refused."
+      },
+      "definition": "When an appeal seeks anticipatory bail amid serious competing allegations about one incident, the applicants are alleged to have been armed, and investigation remains incomplete while responsibility is unresolved, anticipatory bail is refused."
+    }
+  ],
+  "seconds": 75.1
+}

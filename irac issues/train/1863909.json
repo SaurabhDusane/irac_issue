@@ -1,0 +1,81 @@
+{
+  "doc_id": "1863909",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38414,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2361,
+    "prompt_tokens": 9620,
+    "total_tokens": 11981,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The six-month limitation for applications against orders does not apply to a revision challenging the preparation or confirmation of a consolidation scheme or a repartition made under it.",
+      "material_facts": [
+        "The Panchayat’s application sought to challenge the confirmed consolidation scheme and the resulting repartition.",
+        "The application was filed more than six months after the scheme was confirmed.",
+        "The Director set aside the scheme and remanded the matter for reconsideration."
+      ],
+      "conclusion": "Rule 18’s six-month limitation applies to applications against an order, not to a revision challenging the preparation or confirmation of a scheme or a repartition made under it.",
+      "legal_principle": "Section 42 distinguishes an order from a scheme prepared or confirmed and a repartition made, while Rule 18 prescribes limitation only for an application against an order. Sections 19 and 20 do not envisage the passing of an order when a scheme is prepared or confirmed, whereas section 21 provides for orders on objections to repartition. The court approved the Full Bench view in Jagtar Singh v. Additional Director, Consolidation of Holdings, and relied on Haqiqat Singh v. Addl. Director, Consolidation of Holdings, and Joginder Singh v. The Director, Consolidation of Holdings. It also applied expressio unius est exclusio alterius: mentioning orders in Rule 18 excludes schemes and repartitions.",
+      "rule": {
+        "if": "section42_revision and scheme_or_repartition_challenged and not standalone_officer_order_challenged",
+        "then": "six_month_limit_does_not_apply"
+      },
+      "predicates": {
+        "section42_revision": "A person asks the revisional authority to examine a consolidation action.",
+        "scheme_or_repartition_challenged": "The challenged action is the preparation or confirmation of a consolidation scheme, or a repartition made under it.",
+        "standalone_officer_order_challenged": "The challenge is to an officer’s order rather than to the preparation or confirmation of a scheme or a resulting repartition."
+      },
+      "definition": "When a revision challenges a scheme or resulting repartition rather than an officer’s order, the six-month limitation does not apply."
+    },
+    {
+      "legal_issue": "A revision challenging a consolidation scheme or repartition for which no limitation period is prescribed must be made within a reasonable time, assessed on the circumstances of the case rather than by a fixed period.",
+      "material_facts": [
+        "The Panchayat applied more than three years after the scheme was confirmed.",
+        "The former Sarpanch had benefited from the allotment and had not challenged the scheme.",
+        "The new Sarpanch took charge only a few months before the application and said the Panchayat had learned of the relevant matters about a month earlier.",
+        "The Panchayat alleged that its land had been allotted to persons without entitlement, leaving it unable to carry out agricultural schemes.",
+        "The Director accepted the application and set aside the scheme; the Supreme Court found sufficient grounds for the delay in the circumstances."
+      ],
+      "conclusion": "No fixed limitation period applies to such a revision, but it must be brought within a reasonable time in light of the particular facts; the application in this case was not unreasonably delayed.",
+      "legal_principle": "Section 42 permits revision of a scheme or repartition, but neither section 42 nor Rule 18 fixes a limitation period for such a challenge. A reasonable time is a question of fact depending on the circumstances; no precise period may be imposed by judicial decision. Relevant circumstances may include when the affected person learned of the action, whether the person acted promptly thereafter, and whether the person knowingly acquiesced. The court approved Jagtar Singh v. Additional Director, Consolidation of Holdings, and referred to Haqiqat Singh v. Addl. Director, Consolidation of Holdings, and Joginder Singh v. The Director, Consolidation of Holdings.",
+      "rule": {
+        "if": "section42_revision and scheme_or_repartition_challenged and (filed_promptly_after_knowledge or delay_satisfactorily_explained) and not deliberate_acquiescence_after_knowledge",
+        "then": "revision_is_not_barred_by_a_fixed_period_and_may_be_considered_within_a_reasonable_time"
+      },
+      "predicates": {
+        "section42_revision": "A person asks the revisional authority to examine a consolidation action.",
+        "scheme_or_repartition_challenged": "The challenged action is the preparation or confirmation of a consolidation scheme, or a repartition made under it.",
+        "filed_promptly_after_knowledge": "The applicant filed the revision soon after learning of the challenged action.",
+        "delay_satisfactorily_explained": "The applicant gave an explanation for not filing earlier that the revisional authority accepted as sufficient in the circumstances.",
+        "deliberate_acquiescence_after_knowledge": "The applicant knew of the challenged action and deliberately refrained from taking steps against it."
+      },
+      "definition": "A revision against a scheme or repartition is assessed by whether it was brought within a reasonable time on the facts, including the applicant’s knowledge, conduct, and explanation for delay, rather than by a fixed period."
+    },
+    {
+      "legal_issue": "An order on a revision is not established to be an unauthorized review of an earlier decision when no prior application on the same subject matter or earlier order is shown.",
+      "material_facts": [
+        "The respondents argued that the Director had previously dismissed applications under section 42, including an application by the Panchayat, and lacked power to review those decisions.",
+        "The Panchayat denied that the Director’s order was a review.",
+        "The record did not establish that the Panchayat had earlier applied on the same subject matter or that the Director’s order reviewed an earlier order."
+      ],
+      "conclusion": "There was no material to hold that the Director’s order was a review of an earlier order, so the review objection did not invalidate it.",
+      "legal_principle": "Harbhajan Singh v. Karam Singh holds that the Act confers no express power to review an order made under section 42, and that a purported review in the absence of such power would be without jurisdiction. But the party alleging review must establish that the later order was in fact a review of an earlier order; the record here did not do so.",
+      "rule": {
+        "if": "section42_revision and not prior_same_subject_order_established",
+        "then": "current_order_is_not_shown_to_be_an_unauthorized_review"
+      },
+      "predicates": {
+        "section42_revision": "A person asks the revisional authority to examine a consolidation action.",
+        "prior_same_subject_order_established": "The record establishes an earlier decision on an application concerning the same subject matter."
+      },
+      "definition": "When a revision is before the authority and the record does not establish an earlier decision on the same subject matter, the current order is not shown to be an unauthorized review."
+    }
+  ],
+  "seconds": 15.0
+}

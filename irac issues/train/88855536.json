@@ -1,0 +1,82 @@
+{
+  "doc_id": "88855536",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 66586,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2520,
+    "prompt_tokens": 17096,
+    "total_tokens": 19616,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Acquisition proceedings do not lapse when possession has been taken, even if compensation has not been paid or was only deposited.",
+      "material_facts": [
+        "The acquisition authority’s records and the purchaser’s own submissions showed that possession had been taken of the acquired land; the purchaser also sought a mandamus requiring delivery of possession.",
+        "Compensation had been paid for part of the land and deposited with the Land Acquisition Collector for the remainder.",
+        "The purchaser relied on a later deposit of money made under the High Court’s order, which was based on an earlier order requiring landowners to return compensation."
+      ],
+      "conclusion": "The acquisition did not lapse because possession had been taken. The later deposit did not alter that result.",
+      "legal_principle": "Under Section 24(2) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013, as interpreted in Indore Development Authority v. Manoharlal, lapse requires both that possession has not been taken and that compensation has not been paid. The word “or” is read as “nor” or “and”; once possession is taken, non-payment or non-deposit does not cause lapse. Possession under the Land Acquisition Act, 1894 is taken by drawing an inquest report or memorandum, and subsequent re-entry or continued occupation by the former owner does not undo vesting. Indore Development Authority also holds that Section 24(2) does not revive stale or concluded claims, and that a deposit made under an invalid order cannot reopen the acquisition.",
+      "rule": {
+        "if": "lapse_claim_proceeding and (possession_taken or compensation_paid)",
+        "then": "acquisition_does_not_lapse"
+      },
+      "predicates": {
+        "lapse_claim_proceeding": "A claimant seeks a declaration that a land acquisition has lapsed under a statutory lapse provision.",
+        "possession_taken": "The acquiring authority took possession of the acquired land, including by preparing a possession memorandum or inquest record.",
+        "compensation_paid": "The acquiring authority paid or tendered the compensation determined for the acquired land.",
+        "acquisition_does_not_lapse": "The acquisition proceedings remain in force and do not lapse."
+      },
+      "definition": "When a claimant seeks lapse and either possession has been taken or compensation has been paid, the acquisition does not lapse."
+    },
+    {
+      "legal_issue": "A subsequent purchaser who acquired land after it had vested in the State cannot claim that the acquisition has lapsed.",
+      "material_facts": [
+        "The purchaser acquired the land after the acquisition proceedings and the taking of possession.",
+        "The purchaser sought a declaration of lapse under the 2013 Act and relied on Government (NCT of Delhi) v. Manav Dharam Trust.",
+        "The Court found that the purchaser’s claim was barred by the principles stated in the larger-bench decision in Shiv Kumar v. Union of India."
+      ],
+      "conclusion": "The purchaser had no right to claim lapse of the acquisition proceedings.",
+      "legal_principle": "Section 11 of the 2013 Act, including Section 11(4), restricts transfers of acquired land in the circumstances addressed by the Court. Section 24(2) does not confer on a later purchaser a new right to challenge completed acquisition proceedings or to recover land that has vested in the State. Shiv Kumar v. Union of India held that Manav Dharam Trust was not good law because it failed to follow binding larger- and coordinate-bench decisions, including M. Venkatesh v. Bangalore Development Authority; a later purchaser cannot use Section 24(2) to challenge possession-taking or obtain the land through a void or prohibited transaction.",
+      "rule": {
+        "if": "lapse_claim_proceeding and subsequent_purchaser and purchase_after_vesting",
+        "then": "subsequent_purchaser_cannot_claim_lapse"
+      },
+      "predicates": {
+        "lapse_claim_proceeding": "A claimant seeks a declaration that a land acquisition has lapsed under a statutory lapse provision.",
+        "subsequent_purchaser": "The claimant acquired the land from a person whose interest derived from the original landowner.",
+        "purchase_after_vesting": "The claimant acquired the land after possession had been taken and the land had vested in the State.",
+        "subsequent_purchaser_cannot_claim_lapse": "A later purchaser cannot obtain a declaration that the acquisition has lapsed."
+      },
+      "definition": "A subsequent purchaser who claims lapse after acquiring land following its vesting cannot obtain that declaration."
+    },
+    {
+      "legal_issue": "Quashing acquisition proceedings for landowners whose objections were not properly considered does not extend to nonparties who filed no objections, and a later purchaser cannot rely on that quashing to revive a lost challenge.",
+      "material_facts": [
+        "The original landowners filed no objections under Section 5A of the Land Acquisition Act, 1894; their writ petition was dismissed, and their special leave petition was later withdrawn.",
+        "The earlier High Court decision quashed proceedings because objections filed by the landowners who brought those petitions had not been properly heard.",
+        "The purchaser acquired the land with knowledge of the acquisition dispute and relied on a later High Court order that treated the acquisition as quashed and required repayment of compensation.",
+        "The purchaser’s later deposit under that order was the basis on which the High Court declared the acquisition lapsed."
+      ],
+      "conclusion": "The earlier quashing and the order requiring repayment of compensation gave the purchaser no right to claim lapse; the later deposit was inconsequential.",
+      "legal_principle": "A judgment granting relief for an individualized failure to hear objections is in personam unless the acquisition is explicitly quashed in its entirety. Under Abhey Ram v. Union of India and Delhi Administration v. Gurdip Singh Uban (both decisions), landowners who filed no Section 5A objections cannot rely on another landowner’s successful challenge to invalidate the acquisition. Gurdip Singh Uban further confined the effect of the earlier High Court orders to the petitioners and land covered by those petitions. Shyam Nandan Prasad v. State of Bihar, Chairman and Managing Director, Tamil Nadu Housing Board v. S. Saraswathy, and State of Haryana v. Devander Sagar likewise support individualized relief and require an explicit order to quash acquisition proceedings in their entirety. The later decisions in Abhey Ram and Gurdip Singh Uban did not approve the reasoning underlying the order in Balbir Singh; a deposit made under that order cannot revive a challenge already lost.",
+      "rule": {
+        "if": "acquisition_challenge_proceeding and prior_quashing_for_other_landowners and no_objections_filed_by_predecessor",
+        "then": "prior_quashing_does_not_invalidate_acquisition_for_claimant"
+      },
+      "predicates": {
+        "acquisition_challenge_proceeding": "A claimant seeks to invalidate acquisition proceedings by relying on a court order in another landowner’s challenge.",
+        "prior_quashing_for_other_landowners": "A court quashed acquisition steps because the objections of landowners who brought that case were not properly heard.",
+        "no_objections_filed_by_predecessor": "The claimant’s predecessor in interest filed no objections to the proposed acquisition.",
+        "prior_quashing_does_not_invalidate_acquisition_for_claimant": "The earlier quashing does not invalidate the acquisition for the claimant."
+      },
+      "definition": "When another landowner obtained individualized relief and the claimant’s predecessor filed no objections, that relief does not invalidate the acquisition for the claimant."
+    }
+  ],
+  "seconds": 17.7
+}

@@ -1,0 +1,81 @@
+{
+  "doc_id": "1139276",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23840,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2241,
+    "prompt_tokens": 6592,
+    "total_tokens": 8833,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A civil court is the proper forum for proceedings concerning eviction of tenants and extension of a lease under the applicable rent-control framework.",
+      "material_facts": [
+        "The dispute concerned eviction after the expiry of a fixed-term lease and the possible extension of that lease.",
+        "The applicable framework assigned other matters, including fair-rent determinations, to a Controller, but assigned eviction and lease-extension matters to a civil court."
+      ],
+      "conclusion": "The civil court is the proper forum for dealing with eviction under Section 11 and extension of a lease under Section 12.",
+      "legal_principle": "Under Sections 11 and 12 of the Bihar Buildings (Lease, Rent and Eviction) Control Act, 1947, eviction and extension of a lease are matters for the civil court. Sections 2(b) and 2(bb) distinguish the Controller from the court of general jurisdiction under the Code of Civil Procedure; the Act assigns other specified matters to the Controller.",
+      "rule": {
+        "if": "rent_control_proceeding and (eviction_issue or lease_extension_issue) and governing_framework_assigns_issue_to_civil_court",
+        "then": "civil_court_is_proper_forum"
+      },
+      "predicates": {
+        "rent_control_proceeding": "The proceeding concerns rights and remedies governed by a rent-control framework.",
+        "eviction_issue": "A party seeks a decision about removing a tenant from the premises.",
+        "lease_extension_issue": "A party seeks a decision about extending the period of a lease.",
+        "governing_framework_assigns_issue_to_civil_court": "The applicable framework assigns the type of issue raised to a civil court."
+      },
+      "definition": "When a rent-control proceeding raises an issue assigned to a civil court, the civil court is the proper forum."
+    },
+    {
+      "legal_issue": "A proceeding filed under the wrong procedural label may be treated according to its substance as a suit when the competent court and the parties have conducted it as a suit.",
+      "material_facts": [
+        "The landlords filed a petition labelled as an application for lease extension, but the same civil court was competent to hear an eviction suit.",
+        "Both parties presented full oral and documentary evidence, and the matter was tried and decided in the manner of an eviction suit.",
+        "The petition contained the necessary verification, and the appeal and revision were argued and decided in the manner of further appeals.",
+        "The first appellate court agreed on the merits that the lease subsisted and that no new month-to-month tenancy had been created."
+      ],
+      "conclusion": "The petition and resulting proceedings should be treated as a suit, and the trial court's decision as a decree; the petition's form did not prevent that treatment.",
+      "legal_principle": "A court determines an application's true nature by examining its substance rather than its heading: Lachhoo v. Munnilal Babu Lal, AIR 1935 All. 183. The Court also relied on Madho Bibi v. Hazari Mal Marwari, AIR 1929 Patna 141, and Hazari Lal v. Ramjiwan Ramchandra, AIR 1929 Patna 472, concerning treatment of proceedings according to their substance. A power is referable to a jurisdiction that validates its exercise rather than one that renders it nugatory; R.P. Singh v. The Chief Commissioner (Admn.) Manipur, [1977] 1 SCR 1022, was cited for that principle.",
+      "rule": {
+        "if": "eviction_proceeding and same_court_has_suit_jurisdiction and parties_tried_case_as_suit and petition_substantially_supports_suit_proceeding",
+        "then": "proceeding_is_treated_as_suit_and_decision_as_decree"
+      },
+      "predicates": {
+        "eviction_proceeding": "A party seeks to evict a tenant from premises.",
+        "same_court_has_suit_jurisdiction": "The court receiving the petition is also competent to hear an eviction suit concerning the dispute.",
+        "parties_tried_case_as_suit": "The parties presented their evidence and arguments, and the court decided the dispute, in the manner of a suit.",
+        "petition_substantially_supports_suit_proceeding": "The petition contains the substance and procedural features needed to proceed as a suit, even though it bears a different label."
+      },
+      "definition": "When an eviction dispute is brought before a court competent to hear a suit and is substantially conducted as one, the proceeding and its decision are treated as a suit and decree."
+    },
+    {
+      "legal_issue": "The Supreme Court may restore a trial court's decree to do complete justice when the substantive dispute has been resolved and only a procedural obstacle remains.",
+      "material_facts": [
+        "The trial court ordered the tenants to vacate, and the first appellate court affirmed the findings on the merits but declined to pass a formal eviction decree, directing the landlords to make another application.",
+        "The Supreme Court treated the original proceeding as a suit and assumed in the tenants' favour that the lease-extension procedure did not apply.",
+        "The landlords had not appealed the first appellate court's direction, but the Court found that the unresolved matter was procedural and that the substantive dispute had already been decided in their favour."
+      ],
+      "conclusion": "Under Article 142, the Supreme Court set aside the High Court's judgment, restored the trial court's decree, and directed the tenants to restore possession; no further application was required under the lease-extension procedure.",
+      "legal_principle": "Article 142 of the Constitution empowers the Supreme Court to pass a decree or make an order necessary for complete justice in a matter before it. An application for ejectment following the lease-extension procedure arises only when the matter is covered by that procedure; on the assumption that it was not applicable, no further application was needed.",
+      "rule": {
+        "if": "supreme_court_matter_pending and substantive_dispute_resolved_in_favour_of_decree_holder and only_procedural_obstacle_remains and lease_extension_procedure_inapplicable",
+        "then": "trial_court_decree_is_restored_to_do_complete_justice"
+      },
+      "predicates": {
+        "supreme_court_matter_pending": "The dispute is pending before the Supreme Court.",
+        "substantive_dispute_resolved_in_favour_of_decree_holder": "The lower courts have resolved the merits of the dispute in favour of the party seeking enforcement of the decree.",
+        "only_procedural_obstacle_remains": "The remaining impediment concerns procedure rather than the parties' substantive rights.",
+        "lease_extension_procedure_inapplicable": "The proceeding does not fall within the circumstances that call for a further application under the lease-extension procedure."
+      },
+      "definition": "When the Supreme Court has a pending matter in which the merits favour a decree holder, only a procedural obstacle remains, and the lease-extension procedure does not apply, it restores the trial court's decree to do complete justice."
+    }
+  ],
+  "seconds": 15.4
+}

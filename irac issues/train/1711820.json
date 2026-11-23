@@ -1,0 +1,99 @@
+{
+  "doc_id": "1711820",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 64935,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3275,
+    "prompt_tokens": 16106,
+    "total_tokens": 19381,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A respondent who has obtained a favorable judgment may support it on a ground decided against that respondent without filing a separate appeal.",
+      "material_facts": [
+        "The election petition was dismissed, and the returned candidate sought to support that favorable judgment on factual findings the High Court had made against him.",
+        "The matter reached the Supreme Court in an appeal under the election law, and the respondent had not filed a separate appeal."
+      ],
+      "conclusion": "The respondent could support the High Court’s judgment on grounds decided against him without preferring an appeal.",
+      "legal_principle": "Section 116C of the Representation of the People Act, 1951 makes the Code of Civil Procedure applicable, as far as possible, to an appeal under section 116A. In the absence of relevant Supreme Court rules, Order 41 Rule 22 CPC allows a respondent to support the judgment on a ground decided against that respondent. The Court relied on Ramanbhai Ashabhai Patel v. Dabhi Ajitkumar Fulsinji and T. N. Angami v. Smt. Ravalu alias Renu M. Shaiza.",
+      "rule": {
+        "if": "election_appeal and respondent_succeeded_below and adverse_finding_was_made_against_respondent",
+        "then": "respondent_may_support_judgment_on_adverse_ground"
+      },
+      "predicates": {
+        "election_appeal": "The proceeding is an appeal arising from an election petition.",
+        "respondent_succeeded_below": "The respondent obtained a judgment in that respondent’s favor in the court below.",
+        "adverse_finding_was_made_against_respondent": "The court below made a finding against the respondent on a ground that could support the favorable judgment."
+      },
+      "definition": "When an election appeal follows a favorable judgment for a respondent that includes an adverse finding against that respondent, the respondent may support the judgment on that ground."
+    },
+    {
+      "legal_issue": "An appellate court may correct a factual finding when the court below overlooked important evidence bearing on that finding.",
+      "material_facts": [
+        "The appeal concerned an election petition and raised questions of fact as well as law.",
+        "The Supreme Court considered documentary and oral evidence that it concluded the High Court had overlooked, and found that the evidence contradicted findings made against the respondent."
+      ],
+      "conclusion": "The Supreme Court was justified in reversing the findings against the respondent after considering the overlooked evidence, despite the respondent’s not having appealed.",
+      "legal_principle": "Section 116A of the Representation of the People Act, 1951 permits an appeal on a question of law or fact. Section 116C provides for the applicable appellate procedure. The Court held that where important documentary or oral evidence was overlooked, it could consider that evidence and record the factual findings supported by the full record.",
+      "rule": {
+        "if": "election_appeal and lower_court_overlooked_crucial_evidence and finding_conflicts_with_full_record",
+        "then": "appellate_court_may_correct_factual_finding"
+      },
+      "predicates": {
+        "election_appeal": "The proceeding is an appeal arising from an election petition.",
+        "lower_court_overlooked_crucial_evidence": "The court below did not consider important documentary or oral evidence relevant to its finding.",
+        "finding_conflicts_with_full_record": "The challenged finding is inconsistent with the evidence considered as a whole."
+      },
+      "definition": "In an election appeal, when the court below overlooked crucial evidence and its finding conflicts with the full record, the appellate court may correct that finding."
+    },
+    {
+      "legal_issue": "A ministerial candidate’s ordinary efforts to remedy long-standing public grievances do not amount to bribery unless the evidence shows misuse of public power or resources to benefit a group for the purpose of obtaining its votes.",
+      "material_facts": [
+        "The candidate was a minister and the challenged acts concerned public works and services, including land-patta arrangements, road work, a covered drain, and public water taps.",
+        "The grievances concerning the land, road, and drain had existed for a considerable time, and government departments had considered or acted on their redress before the election period.",
+        "The records showed ongoing administrative processes and, for the drain work, formal sanction after the candidate had left office.",
+        "The evidence did not establish an election bargain, a sudden diversion of public money to secure votes, or specially favored treatment of a group for that purpose."
+      ],
+      "conclusion": "The public works and measures to redress the grievances did not establish bribery or another corrupt practice under section 123(1).",
+      "legal_principle": "Section 123(1) of the Representation of the People Act, 1951 defines bribery to include a gift, offer, or promise of gratification made with the direct or indirect object of inducing an elector to vote. The Court distinguished ordinary, bona fide ministerial action to address public grievances from abuse of ministerial power and public revenues to confer a benefit on a particular group to obtain votes. It relied on Ghasi Ram v. Dal Singh and Om Prabha Jain v. Abhash Chand, which cautioned against treating bona fide ministerial acts as corrupt practices while recognizing that election-time use of public resources may cross the line where evidence supports that inference.",
+      "rule": {
+        "if": "election_corrupt_practice_proceeding and ministerial_candidate and long_standing_public_grievances and ordinary_governmental_process and not evidence_of_targeted_benefit_for_votes",
+        "then": "public_amelioration_does_not_establish_bribery"
+      },
+      "predicates": {
+        "election_corrupt_practice_proceeding": "The proceeding challenges an election on the ground that a candidate committed a corrupt practice.",
+        "ministerial_candidate": "The candidate whose conduct is challenged held ministerial office at the relevant time.",
+        "long_standing_public_grievances": "The challenged public works or services addressed grievances that existed before the election period.",
+        "ordinary_governmental_process": "The evidence shows that the measures arose through ongoing government or administrative processes rather than an election-specific diversion of public resources.",
+        "evidence_of_targeted_benefit_for_votes": "The evidence shows that the candidate used public power or resources to confer a benefit on a particular group for the purpose of obtaining its votes."
+      },
+      "definition": "When a ministerial candidate addresses long-standing grievances through ordinary governmental processes and there is no evidence of a targeted benefit for votes, those public measures do not establish bribery."
+    },
+    {
+      "legal_issue": "A false statement about an opponent’s personal character or conduct is not established as a candidate’s corrupt practice when the evidence does not show that the candidate or the candidate’s agent published it, consented to its publication, or knew of its distribution.",
+      "material_facts": [
+        "A leaflet contained an allegedly false statement about the petitioner’s conduct concerning government land, and oral evidence alleged that the candidate made a similar statement at meetings.",
+        "The Supreme Court accepted the finding that the evidence did not show that the candidate or the election agent printed or consented to the leaflet, or knew of its distribution.",
+        "The Court found no reason to reject the High Court’s decision not to accept the oral evidence about the alleged statements at the meetings."
+      ],
+      "conclusion": "The leaflet and alleged oral statements did not establish a corrupt practice attributable to the candidate under section 123(4).",
+      "legal_principle": "The Court considered the allegation under sections 123(4) and 100(1)(b) of the Representation of the People Act, 1951. It upheld the finding that the evidence did not connect the candidate or the election agent to the leaflet’s printing, consent, or distribution, and rejected the evidentiary basis for attributing the alleged oral statements to the candidate.",
+      "rule": {
+        "if": "election_corrupt_practice_proceeding and alleged_false_personal_statement and not proof_of_candidate_or_agent_publication_or_consent_or_knowledge",
+        "then": "statement_is_not_established_as_candidate_corrupt_practice"
+      },
+      "predicates": {
+        "election_corrupt_practice_proceeding": "The proceeding challenges an election on the ground that a candidate committed a corrupt practice.",
+        "alleged_false_personal_statement": "The allegation concerns a false statement about an opponent’s personal character or conduct.",
+        "proof_of_candidate_or_agent_publication_or_consent_or_knowledge": "The evidence establishes that the candidate or the candidate’s agent published or consented to publication of the statement, or knew of its distribution."
+      },
+      "definition": "When an election challenge alleges a false personal statement but does not prove the candidate’s or agent’s publication, consent, or knowledge, the statement is not established as the candidate’s corrupt practice."
+    }
+  ],
+  "seconds": 22.7
+}

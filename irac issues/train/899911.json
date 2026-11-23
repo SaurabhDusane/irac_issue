@@ -1,0 +1,57 @@
+{
+  "doc_id": "899911",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 61131,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2293,
+    "prompt_tokens": 14791,
+    "total_tokens": 17084,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An arbitrator exceeds the authority conferred by a reference when the reference requires compliance with specified valuation methods and the arbitrator uses a method outside those limits.",
+      "material_facts": [
+        "The reference required the final accounts to be prepared, as far as possible, according to the partnership agreement, incorporating its valuation terms.",
+        "The agreement prescribed the net profits of the preceding five years as the value of goodwill, debts at a specified percentage of book value, stock at book value, and immovable property at book value or purchase price.",
+        "The arbitrator stated that the goodwill valuation included depreciation and appreciation of property, dead stock, and recoverable dues."
+      ],
+      "conclusion": "The arbitrator exceeded the authority conferred by the reference, making the award invalid to the extent of that excess.",
+      "legal_principle": "Under section 30 of the Indian Arbitration Act, 1940, an award may be set aside on the recognized grounds, including where the arbitrator acts beyond the authority conferred by the reference. Where the reference incorporates contractual limits, the court determines those limits and may find excess of jurisdiction when the arbitrator acts outside them. A mere error in reaching a conclusion is not enough: under Champsey Bhara and Company v. Jivraj Balloo Spinning and Weaving Company Ltd. (L.R. 50 I.A. 324), an error apparent on the face of the award must disclose an erroneous legal proposition forming its basis. Cruikshank v. Sutherland ((1923) 92 L.J. Ch. 136) was distinguishable because the agreement there did not prescribe the valuation method.",
+      "rule": {
+        "if": "award_challenge_proceeding and reference_requires_specific_valuation_method and arbitrator_uses_unpermitted_asset_adjustments",
+        "then": "award_invalid_for_excess_of_authority"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party asks a court to set aside an arbitration award.",
+        "reference_requires_specific_valuation_method": "The parties’ reference requires the arbitrator to follow a specified method for valuing assets or accounts.",
+        "arbitrator_uses_unpermitted_asset_adjustments": "The arbitrator includes asset adjustments that the specified valuation method does not permit."
+      },
+      "definition": "When an award is challenged and the reference prescribes a valuation method that the arbitrator departs from through unpermitted asset adjustments, the award is invalid for excess of authority."
+    },
+    {
+      "legal_issue": "An award containing an invalid component must be set aside in its entirety when that component cannot be separated from the rest of the award.",
+      "material_facts": [
+        "The arbitrator included unauthorized depreciation and appreciation in a lump-sum valuation.",
+        "The award did not permit the value of those unauthorized adjustments to be separated from the valuation as a whole."
+      ],
+      "conclusion": "Because the unauthorized component could not be severed, the award failed in its entirety.",
+      "legal_principle": "Section 30 of the Indian Arbitration Act, 1940, permits an award to be set aside when it is otherwise invalid. An award invalid for an excess of jurisdiction may fail only to the extent of the excess if that part can be separated; where the unauthorized amount cannot be severed from the valuation, the entire award must be set aside.",
+      "rule": {
+        "if": "award_challenge_proceeding and award_contains_invalid_component and invalid_component_cannot_be_severed",
+        "then": "entire_award_set_aside"
+      },
+      "predicates": {
+        "award_challenge_proceeding": "A party asks a court to set aside an arbitration award.",
+        "award_contains_invalid_component": "The award includes a component that is invalid because the arbitrator exceeded the authority conferred by the reference.",
+        "invalid_component_cannot_be_severed": "The invalid component cannot be separated from the rest of the award."
+      },
+      "definition": "When a challenged award contains an invalid component that cannot be separated from the rest, the entire award is set aside."
+    }
+  ],
+  "seconds": 16.7
+}

@@ -1,0 +1,95 @@
+{
+  "doc_id": "1893459",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21263,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2652,
+    "prompt_tokens": 5842,
+    "total_tokens": 8494,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The Supreme Court ordinarily does not interfere with findings of fact reached by a High Court unless intervention is needed to prevent a gross miscarriage of justice.",
+      "material_facts": [
+        "The High Court found that the business was ancestral, that the partition was not vitiated by fraud or misrepresentation, and that the allocation of shares in the business was unfair and prejudicial to the minor sons' interests.",
+        "The Supreme Court found no justifiable ground to go behind those findings."
+      ],
+      "conclusion": "The Court declined to disturb the High Court's findings of fact.",
+      "legal_principle": "The Court stated that it is not its practice to interfere with findings of fact reached by a High Court except to prevent a gross miscarriage of justice.",
+      "rule": {
+        "if": "supreme_court_appeal_from_high_court and high_court_found_facts and not gross_miscarriage_of_justice",
+        "then": "high_court_findings_of_fact_not_disturbed"
+      },
+      "predicates": {
+        "supreme_court_appeal_from_high_court": "A party brought an appeal to the Supreme Court from a High Court decision.",
+        "high_court_found_facts": "The High Court reached findings of fact in the case.",
+        "gross_miscarriage_of_justice": "Leaving the High Court's factual findings undisturbed would cause a gross miscarriage of justice."
+      },
+      "definition": "When a party appeals from a High Court's factual findings and disturbing them is not needed to prevent a gross miscarriage of justice, those findings are left undisturbed."
+    },
+    {
+      "legal_issue": "A party may challenge an interlocutory determination in an appeal from the final judgment in the same litigation even if the earlier determination was not appealed when made.",
+      "material_facts": [
+        "During the suit, the High Court affirmed an order setting aside an arbitrators' award and made a finding about whether the partition could be reopened.",
+        "The plaintiff did not appeal that decision at the time, but the parties later challenged the earlier finding in the Supreme Court appeal from the final judgment."
+      ],
+      "conclusion": "The Court held that the earlier finding could be challenged in the appeal from the final judgment.",
+      "legal_principle": "An interlocutory decision does not invariably prevent a higher court from considering the matter at a later stage of the same litigation. The Court relied on Satyadhan Ghosal v. Smt. Deorajan Devi, Jasraj Indu Singh v. Hem Raj Multan Chand, Margaret Lalita v. Indo Commercial Bank Ltd., and Arjun Singh v. Mohindra Kumar.",
+      "rule": {
+        "if": "appeal_from_final_judgment_in_same_litigation and earlier_interlocutory_determination and not earlier_determination_appealed",
+        "then": "earlier_determination_reviewable_in_final_appeal"
+      },
+      "predicates": {
+        "appeal_from_final_judgment_in_same_litigation": "A party appealed from the final judgment in the same litigation in which the earlier determination was made.",
+        "earlier_interlocutory_determination": "A court made an interlocutory determination during the litigation.",
+        "earlier_determination_appealed": "A party appealed the earlier determination when it was made."
+      },
+      "definition": "An interlocutory determination that was not appealed when made may be reviewed in an appeal from the final judgment in the same litigation."
+    },
+    {
+      "legal_issue": "A minor coparcener may seek to reopen a partition that is unfair or prejudicial to the minor's interest even when the minor's branch was represented by a parent and the partition involved no fraud or misrepresentation.",
+      "material_facts": [
+        "The business was found to be ancestral, giving the sons of the two brothers an interest by birth.",
+        "The plaintiff was a minor when the partition was made, and his branch was represented in it by his father.",
+        "The High Court found no fraud or undue influence but found that the division of shares in the business was unfair and prejudicial to the interests of the minor sons in the plaintiff's branch."
+      ],
+      "conclusion": "The Court held that the partition could be reopened on the ground that it was unfair or prejudicial to the minor's interest, despite the absence of fraud or misrepresentation and the parent's representation of the minor's branch.",
+      "legal_principle": "Applying Ratnam Chettiar v. S. M. Kuppuswami Chettiar, the Court held that unfairness or prejudice to a minor coparcener's interest can justify reopening a partition even without fraud, misrepresentation, or undue influence, and even if the minor's branch was represented by the father.",
+      "rule": {
+        "if": "joint_family_partition and minor_coparcener_affected and minor_branch_represented_by_parent and partition_unfair_or_prejudicial",
+        "then": "partition_reopenable_for_minor_coparcener"
+      },
+      "predicates": {
+        "joint_family_partition": "Members of a joint family divided joint family property by partition.",
+        "minor_coparcener_affected": "A coparcener was a minor when the partition affected that coparcener's interest.",
+        "minor_branch_represented_by_parent": "The minor coparcener's branch was represented in the partition by a parent.",
+        "partition_unfair_or_prejudicial": "The partition allocated property or interests unfairly or prejudicially to the minor coparcener."
+      },
+      "definition": "If a joint-family partition unfairly or prejudicially affects a minor coparcener, the partition may be reopened even when a parent represented the minor's branch."
+    },
+    {
+      "legal_issue": "Reopening a partition may be confined to a distinct and separable part of the partition scheme that was unfair or prejudicial.",
+      "material_facts": [
+        "The unfairness found by the High Court concerned the division of shares in the business, a distinct part of the partition scheme.",
+        "The Court relied on the principle that the whole partition need not be reopened when the unfair part is distinct and separable."
+      ],
+      "conclusion": "The Court held that reopening may be suitably confined to the distinct and separable part of the partition that was unfair or prejudicial.",
+      "legal_principle": "Under Ratnam Chettiar v. S. M. Kuppuswami Chettiar, the entire partition need not be reopened when unfairness relates to a distinct and separable part of the partition scheme; the reopening may be circumscribed accordingly.",
+      "rule": {
+        "if": "partition_reopening_warranted and unfair_part_distinct_and_separable",
+        "then": "partition_reopening_confined_to_unfair_part"
+      },
+      "predicates": {
+        "partition_reopening_warranted": "The facts provide a basis for reopening a partition.",
+        "unfair_part_distinct_and_separable": "The unfair or prejudicial part of the partition scheme is distinct and separable from the rest."
+      },
+      "definition": "When reopening is warranted and the unfair part is distinct and separable, reopening is confined to that part."
+    }
+  ],
+  "seconds": 17.1
+}

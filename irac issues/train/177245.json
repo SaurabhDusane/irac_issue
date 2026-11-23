@@ -1,0 +1,96 @@
+{
+  "doc_id": "177245",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29335,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2916,
+    "prompt_tokens": 8021,
+    "total_tokens": 10937,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory processes for recovering money due under other enactments as arrears of land revenue do not require the Collector to exhaust recovery from movables or by arrest before proceeding against immovable property.",
+      "material_facts": [
+        "The company’s liabilities included income-tax, sugarcane cess, and cane-price dues that were recoverable as arrears of land revenue under the enactments creating those liabilities.",
+        "The liabilities were not due in respect of a specific holding, and the Collector sold the company’s immovable property without first exhausting other recovery processes."
+      ],
+      "conclusion": "The Collector was not required to exhaust the other processes before proceeding against immovable property; the applicable limits on recovery of dues under other enactments arise from the enactments creating those liabilities, not merely from the land-revenue recovery provisions.",
+      "legal_principle": "Sections 279 and 286(1) of the U.P. Zamindari Abolition and Land Reforms Act govern recovery of land revenue and restrict recourse to other immovable property in the circumstances specified there. Section 286(2) permits sums recoverable as arrears of land revenue, but not due in respect of specific land, to be recovered from any immovable property of the defaulter. The processes in that Act do not impose a sequence on recovery of liabilities created by other enactments. Section 46(2) of the Indian Income-tax Act, 1922 gave the Collector powers including those of a civil court; section 51 and Order XXI, rule 30 of the Code of Civil Procedure do not require sale of movables or arrest before resort to immovable property. No earlier cases were relied on.",
+      "rule": {
+        "if": "recovery_proceeding and non_land_revenue_dues and dues_recoverable_as_land_revenue and dues_not_tied_to_specific_holding",
+        "then": "collector_may_use_an_authorized_recovery_process_without_exhausting_other_processes"
+      },
+      "predicates": {
+        "recovery_proceeding": "A proceeding is brought to recover a monetary liability from a defaulter.",
+        "non_land_revenue_dues": "The liability arises under an enactment other than the law governing recovery of land revenue.",
+        "dues_recoverable_as_land_revenue": "The enactment creating the liability makes it recoverable as arrears of land revenue.",
+        "dues_not_tied_to_specific_holding": "The liability is not due in respect of a specific landholding."
+      },
+      "definition": "When a recovery proceeding concerns non-land-revenue dues made recoverable as arrears of land revenue and not tied to a specific holding, the Collector may use an authorized recovery process without first exhausting other processes."
+    },
+    {
+      "legal_issue": "Ignoring a request to stay recovery of one component of a consolidated debt does not invalidate a property sale when other recoverable debts independently support the sale.",
+      "material_facts": [
+        "The Income-tax Officer asked the Collector to stay sale proceedings for recovery of income-tax dues.",
+        "The Collector ignored that request and included the income-tax dues in the sale proclamation.",
+        "Substantial sugarcane-cess and cane-price dues were also recoverable, and the property could have been sold to recover those dues."
+      ],
+      "conclusion": "The sale was not illegal or irregular merely because the Collector ignored the request to stay recovery of the income-tax dues.",
+      "legal_principle": "Under rule 285-I of the rules made under the U.P. Zamindari Abolition and Land Reforms Act, a sale may be set aside for material irregularity or mistake in publishing or conducting it where substantial injury is established. The Court held that ignoring the request did not invalidate the sale because other substantial dues independently supported putting the property up for sale. No earlier cases were relied on.",
+      "rule": {
+        "if": "sale_validity_challenge and stay_request_ignored and independent_dues_supported_sale",
+        "then": "sale_not_invalidated_by_ignored_stay_request"
+      },
+      "predicates": {
+        "sale_validity_challenge": "A party challenges the validity of a sale conducted to recover debts.",
+        "stay_request_ignored": "An official responsible for recovering one component of the debt proceeds despite a request to stay that recovery.",
+        "independent_dues_supported_sale": "Other recoverable debts independently provided a basis for putting the property up for sale."
+      },
+      "definition": "If a sale is challenged, a stay request is ignored, and other recoverable debts independently support the sale, the ignored request does not invalidate the sale."
+    },
+    {
+      "legal_issue": "A claimed inability to make the required deposit does not justify setting aside a sale when no deposit was attempted and the available movable assets were insufficient to raise the required amount.",
+      "material_facts": [
+        "The company said it could not raise the deposit required to set aside the sale because the purchaser had been appointed as controller and had possession of the company’s properties.",
+        "The company made no attempt to deposit the required amounts.",
+        "Even assuming the movable property had the value claimed for it, it was insufficient to raise the amount required for the deposit."
+      ],
+      "conclusion": "The company’s claimed inability to make the deposit did not provide a basis for setting aside the sale.",
+      "legal_principle": "Rule 285-H of the rules made under the U.P. Zamindari Abolition and Land Reforms Act provided for setting aside a sale upon the prescribed deposits. The Court found that no deposit was attempted and that the movable property would not have sufficed to raise the required amount, even on the company’s assumed valuation. No earlier cases were relied on.",
+      "rule": {
+        "if": "sale_setting_aside_challenge and deposit_not_attempted and movable_assets_insufficient_for_required_deposit",
+        "then": "sale_not_set_aside_for_claimed_inability_to_deposit"
+      },
+      "predicates": {
+        "sale_setting_aside_challenge": "A party seeks to have a sale set aside by making a required deposit.",
+        "deposit_not_attempted": "The party seeking to set aside the sale makes no attempt to pay the required deposit.",
+        "movable_assets_insufficient_for_required_deposit": "The party’s movable assets are insufficient to raise the required deposit."
+      },
+      "definition": "When a party seeks to set aside a sale but makes no deposit and its movable assets are insufficient to raise the required amount, the sale is not set aside for the claimed inability to deposit."
+    },
+    {
+      "legal_issue": "An appellate court will not investigate a factual contention about the conduct of a sale when that contention was not raised before the lower authorities or argued before the lower court.",
+      "material_facts": [
+        "The company argued that the Collector should not have sold its movable property after the immovable property had fetched more than the amount of the debts.",
+        "The company had not raised that contention before the Commissioner or in its petition to the High Court, and it had not been argued before the High Court."
+      ],
+      "conclusion": "The Court declined to investigate why the movable property had been sold after the immovable property had realized more than the debts.",
+      "legal_principle": "The Court declined to investigate the factual contention because it had not been raised before the Commissioner or the High Court. No statutory provision or earlier case was relied on for this conclusion.",
+      "rule": {
+        "if": "appeal_from_sale_challenge and factual_sale_conduct_contention_not_raised_below",
+        "then": "appellate_court_declines_to_investigate_unpreserved_factual_contention"
+      },
+      "predicates": {
+        "appeal_from_sale_challenge": "An appeal challenges a sale conducted to recover debts.",
+        "factual_sale_conduct_contention_not_raised_below": "A party raises a factual contention about how the sale was conducted for the first time on appeal, without raising it before the lower authorities or arguing it before the lower court."
+      },
+      "definition": "In an appeal challenging a sale, when a factual contention about its conduct was not raised below, the appellate court declines to investigate that contention."
+    }
+  ],
+  "seconds": 18.2
+}

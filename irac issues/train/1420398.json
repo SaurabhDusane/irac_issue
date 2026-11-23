@@ -1,0 +1,65 @@
+{
+  "doc_id": "1420398",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 53144,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2648,
+    "prompt_tokens": 13660,
+    "total_tokens": 16308,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An inaccurate valuation statement in an application for special leave does not require cancellation of leave when the inaccuracy resulted from an error in the lower court’s judgment, was not deliberately misleading, and was immaterial to the legal issues.",
+      "material_facts": [
+        "The special leave application repeated a valuation stated in the certified copy of the High Court judgment.",
+        "The valuation in that judgment was later corrected, with both sides agreeing that the original figure was an error.",
+        "The appellant should have been more careful, but the Court found no deliberate attempt to mislead it.",
+        "The issues in the appeal concerned the legal applicability of the tenancy legislation, so the valuation was not of much consequence."
+      ],
+      "conclusion": "The Court declined to cancel the special leave granted.",
+      "legal_principle": "An applicant for special leave must take care not to make inaccurate, untrue, or misleading statements on material matters. Special leave may be cancelled where a deliberate false statement on a material matter or valuation misleads the Court. The Court referred to Hari Narain v. Badri Das, Sita Bai v. Sonu Vanji Wani, and S. R. Shetty v. Phirozeshah Nusserwanji Golabawalla, but held that the circumstances here did not warrant cancellation.",
+      "rule": {
+        "if": "special_leave_application and valuation_error_in_lower_court_judgment and not deliberate_misrepresentation and valuation_immaterial_to_legal_issues",
+        "then": "special_leave_not_cancelled"
+      },
+      "predicates": {
+        "special_leave_application": "A party sought special leave to appeal to the Supreme Court.",
+        "valuation_error_in_lower_court_judgment": "The valuation stated in the application came from an erroneous figure in the lower court’s judgment.",
+        "deliberate_misrepresentation": "The applicant deliberately made a false statement to mislead the Court.",
+        "valuation_immaterial_to_legal_issues": "The valuation did not materially affect the legal issues the Court had to decide."
+      },
+      "definition": "When a special leave application repeats an erroneous lower-court valuation without deliberate misrepresentation, and the valuation is immaterial to the legal issues, the leave is not cancelled."
+    },
+    {
+      "legal_issue": "The successor tenancy law’s longer personal-cultivation requirement applies when possession was obtained under the prior tenancy law but its shorter cultivation period had not expired when the successor law came into force.",
+      "material_facts": [
+        "The tenant was a protected lessee whose tenancy was terminated so that the landholder could cultivate the land personally.",
+        "The landholder obtained possession under the prior tenancy law before the successor tenancy law came into force.",
+        "The prior law required personal cultivation for two years, and that period had not expired when the successor law came into force.",
+        "The landholder later transferred the land before the longer period for personal cultivation had expired and thereby ceased to cultivate it personally.",
+        "The tenant applied for restoration of possession."
+      ],
+      "conclusion": "The successor law applied, and the tenant was entitled to seek restoration because the landholder ceased personal cultivation within the longer required period.",
+      "legal_principle": "Under section 9(6) of the Berar Regulation of Agricultural Leases Act, 1951, read with rule 9, a landholder who obtained possession for personal cultivation was required to cultivate personally for two years, after which a tenant could seek restoration if that requirement was not met. Section 52 of the Bombay Tenancy and Agricultural Lands (Vidarbha Region and Kutch Area) Act, 1958 extended the relevant cultivation obligation to twelve years for cases within its scope. Section 132(2)(i) preserves rights and obligations already accrued under the prior law: a tenant’s restoration right is preserved if the shorter period had already been breached before the successor law commenced, and a landholder’s completed right to remain undisturbed is preserved if the shorter period had already been fulfilled. The longer requirement applies where the shorter period remained incomplete at commencement. The Court held that Ramchandra v. Tukaram did not decide otherwise and that Saraswatibai Babji Tukaram Umarkar v. Bhikamchand Premsukhdas had stated the possession-date test too broadly.",
+      "rule": {
+        "if": "tenant_restoration_proceeding and possession_for_personal_cultivation and ((possession_under_prior_regime and shorter_period_incomplete_at_transition) or possession_under_prior_order_after_transition) and cultivation_ceased_before_extended_period_expired",
+        "then": "tenant_may_seek_restoration"
+      },
+      "predicates": {
+        "tenant_restoration_proceeding": "A tenant sought restoration of land after the landholder had obtained possession for personal cultivation.",
+        "possession_for_personal_cultivation": "The landholder obtained possession on the basis that the land was required for personal cultivation.",
+        "possession_under_prior_regime": "The landholder obtained possession under the prior tenancy regime.",
+        "shorter_period_incomplete_at_transition": "The prior regime’s shorter personal-cultivation period had not expired when the successor regime came into force.",
+        "possession_under_prior_order_after_transition": "The landholder obtained possession after the successor regime came into force under an order made under the prior regime.",
+        "cultivation_ceased_before_extended_period_expired": "The landholder ceased personally cultivating the land before the successor regime’s longer cultivation period expired."
+      },
+      "definition": "When a tenant seeks restoration after possession was obtained for personal cultivation, the successor regime applies if the prior shorter period remained incomplete at transition or possession was later obtained under a prior-regime order, and the landholder ceased cultivation before the longer period expired."
+    }
+  ],
+  "seconds": 16.6
+}

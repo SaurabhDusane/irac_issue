@@ -1,0 +1,97 @@
+{
+  "doc_id": "796787",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16627,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2637,
+    "prompt_tokens": 4583,
+    "total_tokens": 7220,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A building excluded from rent control falls within the jurisdiction of the civil court rather than the rent control authority.",
+      "material_facts": [
+        "The building was constructed in 1958, after the statutory cutoff for the rent control legislation.",
+        "The landlord brought a civil suit seeking possession after the rent authority proceedings."
+      ],
+      "conclusion": "The building was outside the protection of the rent control legislation, so the civil court, not the rent authority, had jurisdiction over it.",
+      "legal_principle": "The Andhra Pradesh Buildings (Lease, Rent and Eviction Control) Act, 1960 did not apply to buildings constructed after August 1957. The building’s status under the rent control legislation determined which forum had jurisdiction.",
+      "rule": {
+        "if": "civil_eviction_suit and building_constructed_after_statutory_cutoff",
+        "then": "civil_court_has_jurisdiction_over_the_eviction_claim"
+      },
+      "predicates": {
+        "civil_eviction_suit": "A landlord brought a civil-court suit seeking eviction of a tenant.",
+        "building_constructed_after_statutory_cutoff": "The building was constructed after the cutoff beyond which the rent control regime did not apply."
+      },
+      "definition": "When a landlord brings a civil eviction suit for a building constructed after the applicable cutoff, the civil court has jurisdiction over the eviction claim."
+    },
+    {
+      "legal_issue": "A decision by a rent control authority lacking jurisdiction over the building does not bar a later civil suit by res judicata.",
+      "material_facts": [
+        "The building was constructed after the date that brought it outside the rent control legislation.",
+        "The landlord had applied to the rent authority for eviction, and that application was dismissed.",
+        "The building’s date of construction was not in issue before the rent authority.",
+        "The landlord later brought a civil suit for eviction."
+      ],
+      "conclusion": "The rent authority’s decision was not res judicata because that authority lacked jurisdiction over the building and the later suit.",
+      "legal_principle": "A decision made without jurisdiction is coram non judice and has no conclusive effect; want of jurisdiction is distinct from an erroneous or irregular exercise of jurisdiction. The Court relied on Gokul Mandar v. Pudmanund and referred to section 44 of the Evidence Act as supporting proof that the earlier decision was delivered by a court not competent to deliver it.",
+      "rule": {
+        "if": "civil_eviction_suit_after_rent_authority_proceeding and building_outside_rent_control_scope and rent_authority_lacked_jurisdiction",
+        "then": "earlier_rent_authority_decision_is_not_res_judicata"
+      },
+      "predicates": {
+        "civil_eviction_suit_after_rent_authority_proceeding": "A landlord brought a civil eviction suit after seeking eviction through a rent control authority.",
+        "building_outside_rent_control_scope": "The building fell outside the scope of the rent control regime.",
+        "rent_authority_lacked_jurisdiction": "The rent authority had no jurisdiction to decide an eviction claim concerning the building."
+      },
+      "definition": "When a civil eviction suit follows a rent authority proceeding concerning a building outside rent control, the earlier decision is not res judicata if the authority lacked jurisdiction."
+    },
+    {
+      "legal_issue": "A mistaken resort to a rent control authority does not amount to waiver of a right to seek relief in the court that has jurisdiction.",
+      "material_facts": [
+        "The landlord mistakenly applied to the rent authority for eviction on the ground of non-payment of rent.",
+        "The building was outside the rent control legislation, and the landlord later asserted that it had been constructed after the statutory cutoff.",
+        "The landlord subsequently brought a civil suit, the forum with jurisdiction over the building."
+      ],
+      "conclusion": "The landlord was not barred by waiver from seeking relief in the civil suit.",
+      "legal_principle": "Waiver requires a voluntary and intentional relinquishment of a known right, an opportunity to choose between relinquishment and enforcement, and mutual intention. There can be no waiver of a non-existent right, and a mistake about an underlying fact may negate consent. Jurisdiction cannot be conferred or waived by agreement. Lachoo Mal v. Radhey Shyam was distinguished because it concerned relinquishment of a statutory benefit, not waiver of a court’s jurisdiction.",
+      "rule": {
+        "if": "civil_eviction_suit_after_rent_authority_proceeding and prior_rent_application_based_on_mistake and rent_authority_lacked_jurisdiction",
+        "then": "mistaken_prior_filing_does_not_waive_civil_court_relief"
+      },
+      "predicates": {
+        "civil_eviction_suit_after_rent_authority_proceeding": "A landlord brought a civil eviction suit after first seeking eviction through a rent control authority.",
+        "prior_rent_application_based_on_mistake": "The landlord’s earlier application to the rent authority was made under a mistake about a material fact concerning the building.",
+        "rent_authority_lacked_jurisdiction": "The rent authority had no jurisdiction to decide an eviction claim concerning the building."
+      },
+      "definition": "If a landlord brings a civil eviction suit after a mistaken application to a rent authority that lacked jurisdiction, the earlier application does not waive relief in the civil court."
+    },
+    {
+      "legal_issue": "Estoppel cannot bring a building within rent control or confer jurisdiction that the rent control legislation withholds.",
+      "material_facts": [
+        "The building was outside the rent control legislation because it had been constructed after the statutory cutoff.",
+        "The landlord had previously sought eviction through the rent authority, but the building’s construction date was not in issue there.",
+        "The landlord’s earlier resort to that authority resulted from a mistake about the building’s status."
+      ],
+      "conclusion": "The landlord was not estopped from relying on the building’s exclusion from rent control in the civil suit.",
+      "legal_principle": "Estoppel rests on a representation of existing facts, not a mere intention or promise. Rent control legislation operates in rem and gives premises a legal status; neither estoppel nor res judicata can give a court jurisdiction that the legislation denies. The Court referred to Dawson’s Bank Ltd. v. Nippon M. K. Kaisha.",
+      "rule": {
+        "if": "civil_eviction_suit_after_rent_authority_proceeding and building_outside_rent_control_scope and building_status_not_determined_in_prior_proceeding",
+        "then": "estoppel_cannot_bar_reliance_on_building_exclusion"
+      },
+      "predicates": {
+        "civil_eviction_suit_after_rent_authority_proceeding": "A landlord brought a civil eviction suit after seeking eviction through a rent control authority.",
+        "building_outside_rent_control_scope": "The building fell outside the scope of the rent control regime.",
+        "building_status_not_determined_in_prior_proceeding": "The earlier rent authority proceeding did not determine the material fact establishing the building’s status under the rent control regime."
+      },
+      "definition": "When a civil eviction suit concerns a building outside rent control and the earlier rent authority proceeding did not determine that status, estoppel cannot bar reliance on the building’s exclusion."
+    }
+  ],
+  "seconds": 16.2
+}

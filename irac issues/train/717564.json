@@ -1,0 +1,58 @@
+{
+  "doc_id": "717564",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 8672,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1620,
+    "prompt_tokens": 2728,
+    "total_tokens": 4348,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A land-acquisition notification is invalid when public notice of its substance is not given in the locality within the required time after publication in the official gazette.",
+      "material_facts": [
+        "The acquisition notification was published in the official gazette on 18 October 1979.",
+        "The Revenue Divisional Officer directed that public notice be given in the locality on 19 November 1979.",
+        "The Village Officer submitted a compliance report on 18 December 1979, and the court upheld the finding that public notice was given on that date.",
+        "The notice was therefore given more than forty days after publication."
+      ],
+      "conclusion": "The notification was invalid, and the appeal was dismissed.",
+      "legal_principle": "Under section 4(1) of the Land Acquisition Act, 1894, as amended and retrospectively validated by the Land Acquisition (Andhra Pradesh Amendment and Validation) Act, 1983 with effect from 12 September 1975, public notice of the substance of a notification issued on or after that date must be given in the locality within forty days of its publication in the official gazette; otherwise the notification is invalid. The Court applied its decision delivered the same day in Civil Appeals Nos. 5839–42 of 1983.",
+      "rule": {
+        "if": "land_acquisition_notification and locality_notice_not_given_within_required_time",
+        "then": "notification_invalid"
+      },
+      "predicates": {
+        "land_acquisition_notification": "The government issued a notification proposing to acquire land.",
+        "locality_notice_not_given_within_required_time": "Public notice of the substance of the acquisition notification was not given in the locality within the required time after its official publication."
+      },
+      "definition": "When an acquisition notification is issued and public notice of its substance is not given in the locality within the required time after official publication, the notification is invalid."
+    },
+    {
+      "legal_issue": "When no material establishes a different date for public notice, the date of the compliance report may be treated as the date the notice was given.",
+      "material_facts": [
+        "The Village Officer submitted a compliance report on 18 December 1979.",
+        "The appellant produced no material showing when public notice had actually been given or establishing a different date.",
+        "The High Court inferred that notice had been given on the date the report was submitted, and the Supreme Court found no error in that inference."
+      ],
+      "conclusion": "The High Court was justified in finding that public notice was given on the date the compliance report was submitted.",
+      "legal_principle": "Where no material is produced establishing the actual date of public notice, the court may infer from a compliance report that the notice was given on the date the report was submitted, particularly where the report may be understood to have followed the notice immediately.",
+      "rule": {
+        "if": "acquisition_notice_appeal and compliance_report_submitted and no_evidence_of_different_notice_date",
+        "then": "notice_given_on_report_date"
+      },
+      "predicates": {
+        "acquisition_notice_appeal": "The proceeding is an appeal concerning public notice of the substance of a land-acquisition notification.",
+        "compliance_report_submitted": "An officer responsible for reporting compliance submitted a report concerning the direction to give public notice.",
+        "no_evidence_of_different_notice_date": "The party disputing the notice date produced no material establishing that notice was given on a different date."
+      },
+      "definition": "In an appeal concerning notice of an acquisition notification, if a compliance report was submitted and there is no evidence of a different notice date, the notice may be treated as having been given on the report date."
+    }
+  ],
+  "seconds": 11.7
+}

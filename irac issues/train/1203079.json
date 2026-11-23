@@ -1,0 +1,61 @@
+{
+  "doc_id": "1203079",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27930,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2278,
+    "prompt_tokens": 7253,
+    "total_tokens": 9531,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Omitting to bring a conflicting decision to the lower court’s attention does not by itself justify revoking special leave when the challenge relies on a truthful legal contention and contains no false statement of material fact.",
+      "material_facts": [
+        "The applicants sought special leave to appeal and asserted that another High Court had taken a conflicting view on the interpretation of the same statutory provision.",
+        "The respondent alleged that the applicants’ petition misleadingly suggested that the conflicting decision had been brought to the lower court’s attention, although it had not been.",
+        "The Court treated the asserted conflict as a legal contention and found no false or untrue averment on a material fact."
+      ],
+      "conclusion": "The application to revoke special leave was rejected.",
+      "legal_principle": "A party seeking discretionary relief under Article 136 must come with clean hands; leave may be revoked where the party makes a false or misleading statement about a material fact or withholds important information bearing on the exercise of discretion. Hari Narain v. Badri Das, Rajabhai Abdul Rehman Munshi v. Vasudev Dhanjibhai Mody, S. R. Shetty v. Phirozeshah Nusserwanji Golabawalla, Sita Bai v. Sonu Vanji Warti, and Shankar Madhoji Nemade v. Chisuji Janaji Bhadke apply that principle. A legal contention that another High Court took a contrary view is distinct from an averment about material facts; failure to cite that decision to the lower court does not prevent a party from relying on the conflict in challenging the resulting judgment.",
+      "rule": {
+        "if": "special_leave_revocation_application and legal_conflict_ground and omitted_conflicting_authority_below and no_false_material_factual_averment",
+        "then": "special_leave_not_revoked"
+      },
+      "predicates": {
+        "special_leave_revocation_application": "A party asked the court to revoke special leave that had been granted for an appeal.",
+        "legal_conflict_ground": "The applicant asserted that another High Court had taken a contrary legal view on the same point.",
+        "omitted_conflicting_authority_below": "The applicant had not brought the conflicting decision to the lower court’s attention.",
+        "no_false_material_factual_averment": "The applicant’s statements about material facts were not false or untrue."
+      },
+      "definition": "When a party seeks revocation of special leave on the basis of a legal conflict, omission of the conflicting authority below does not lead to revocation if the applicant made no false statement about a material fact."
+    },
+    {
+      "legal_issue": "Interim protection from dispossession pending an appeal may be granted subject to conditions securing payment of arrears and ongoing rent and an undertaking to give up possession if the appeal fails.",
+      "material_facts": [
+        "The tenants sought protection from dispossession while their appeal was pending.",
+        "The Court required the tenants to deposit the arrears and to make timely deposits of rent during the appeal.",
+        "The tenants’ counsel undertook that they would deliver possession if the appeal was dismissed.",
+        "The Court allowed the landlord to withdraw deposited rent without prejudice to the appeal, and provided that the stay would end if the tenants failed to deposit the arrears or made two consecutive defaults in monthly rent deposits."
+      ],
+      "conclusion": "A stay of dispossession was granted pending disposal of the appeal, subject to the stated deposit conditions and undertaking.",
+      "legal_principle": "The Court exercised its discretion to grant interim protection from dispossession subject to conditions requiring payment of arrears and ongoing rent and an undertaking to deliver possession if the appeal failed; no earlier case or statutory provision was relied on for this interim order.",
+      "rule": {
+        "if": "appeal_pending and tenants_seek_stay_of_dispossession and tenants_required_to_pay_arrears_and_ongoing_rent and tenants_undertake_to_surrender_possession_if_appeal_fails",
+        "then": "conditional_stay_of_dispossession_granted"
+      },
+      "predicates": {
+        "appeal_pending": "An appeal concerning the tenants’ eviction remained pending before the court.",
+        "tenants_seek_stay_of_dispossession": "The tenants asked the court to protect them from being dispossessed while the appeal was pending.",
+        "tenants_required_to_pay_arrears_and_ongoing_rent": "The court required the tenants to deposit arrears and make ongoing rent payments as conditions of interim protection.",
+        "tenants_undertake_to_surrender_possession_if_appeal_fails": "The tenants’ counsel undertook that the tenants would give up possession if the appeal was dismissed."
+      },
+      "definition": "If an appeal is pending, tenants seek protection from dispossession, and the court imposes payment conditions and obtains an undertaking to surrender possession if the appeal fails, the tenants receive conditional protection from dispossession."
+    }
+  ],
+  "seconds": 15.1
+}

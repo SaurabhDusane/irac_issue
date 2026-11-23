@@ -1,0 +1,160 @@
+{
+  "doc_id": "194959",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 65581,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3673,
+    "prompt_tokens": 15807,
+    "total_tokens": 19480,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An accused who bears the burden of establishing a defence or an exception need only establish it on a preponderance of probabilities, while the prosecution retains the burden of proving guilt beyond reasonable doubt.",
+      "material_facts": [
+        "The prosecution alleged that entrusted public money had been dishonestly retained.",
+        "The accused gave an explanation for the money’s custody, supported by prosecution testimony and documents.",
+        "The lower courts required the accused to prove his explanation with excessive strictness and treated its alleged falsity as sufficient to establish guilt."
+      ],
+      "conclusion": "The accused was not required to prove his explanation beyond reasonable doubt; a version that was probable enough to raise doubt in the prosecution case was sufficient, and the prosecution’s burden never shifted.",
+      "legal_principle": "The prosecution must prove its case beyond reasonable doubt and cannot rely on weakness or falsity in the defence to establish guilt; the accused is presumed innocent and the prosecution’s onus never shifts. Although Evidence Act section 105 places the burden of proving an exception on the accused, it does not prescribe a standard equivalent to the prosecution’s. Preponderance of probabilities is sufficient under Evidence Act section 5. Applied Harbhajan Singh v. State of Punjab, [1965] 3 SCR 235, and State of U.P. v. Ram Swarup, [1975] 1 SCR 409.",
+      "rule": {
+        "if": "criminal_trial and accused_relies_on_defence_or_exception and defence_version_is_probable",
+        "then": "accused_satisfies_defence_burden_without_proving_it_beyond_reasonable_doubt"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which the prosecution alleges guilt.",
+        "accused_relies_on_defence_or_exception": "The accused relies on a defence or an exception for which the law places a burden on the accused.",
+        "defence_version_is_probable": "The facts supporting the accused’s version make it at least as probable as the competing account."
+      },
+      "definition": "When an accused relies on a defence or exception in a criminal trial, a sufficiently probable version satisfies the accused’s burden without proof beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "An accused has no obligation to produce defence evidence, and the prosecution cannot establish its case by inviting an adverse inference from the accused’s failure to do so.",
+      "material_facts": [
+        "The courts below drew an adverse inference because the accused did not produce evidence supporting his explanation.",
+        "The accused could rely on admissions by prosecution witnesses and documents produced by the prosecution to support that explanation."
+      ],
+      "conclusion": "The courts below were not justified in drawing an adverse inference against the accused for failing to produce defence evidence.",
+      "legal_principle": "The prosecution must stand on its own legs and prove guilt beyond reasonable doubt; an accused may establish a defence by relying on prosecution evidence and is not obliged to call evidence. The prosecution cannot derive support from weakness in the defence. These conclusions follow from the presumption of innocence and the rule that the prosecution’s onus never shifts.",
+      "rule": {
+        "if": "criminal_trial and accused_does_not_call_defence_evidence and prosecution_case_depends_on_defence_weakness",
+        "then": "no_adverse_inference_against_accused"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which the prosecution alleges guilt.",
+        "accused_does_not_call_defence_evidence": "The accused does not produce witnesses or other evidence in support of the defence.",
+        "prosecution_case_depends_on_defence_weakness": "The prosecution seeks to rely on the absence or weakness of defence evidence rather than proving its own case."
+      },
+      "definition": "In a criminal trial, an accused’s failure to call defence evidence does not permit an adverse inference when the prosecution relies on that failure to support its case."
+    },
+    {
+      "legal_issue": "A court may permit a party to cross-examine its own witness only when circumstances provide a proper basis for treating the witness as adverse, and the discretion must be exercised judiciously.",
+      "material_facts": [
+        "The prosecution sought permission to cross-examine three of its witnesses after they gave evidence supporting parts of the defence.",
+        "The witnesses were treated as hostile largely because of omissions in their earlier statements, including omissions that did not contradict their material testimony.",
+        "The trial court permitted cross-examination without adequately examining whether the witnesses had shown hostility, resiled from a material statement, or were unwilling to tell the truth."
+      ],
+      "conclusion": "The trial court wrongly exercised its discretion in permitting the prosecution to cross-examine its own witnesses on the facts of the case.",
+      "legal_principle": "Evidence Act section 154 gives the court judicial discretion to permit a party to put to its own witness questions that could be put in cross-examination. The discretion must be exercised judiciously and ordinarily requires material indicating hostility, departure from a material earlier statement, or unwillingness to tell the truth; a minor omission or testimony unfavourable to the calling party is not enough. Applied Dahyabhai Chhaganbhai Thakker v. State of Gujarat, [1964] 7 SCR 361.",
+      "rule": {
+        "if": "criminal_trial and party_seeks_to_cross_examine_own_witness and (witness_shows_hostility or witness_resiles_from_material_statement or witness_unwilling_to_tell_truth)",
+        "then": "court_may_permit_cross_examination_of_own_witness"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which a party has called a witness.",
+        "party_seeks_to_cross_examine_own_witness": "A party asks the court to allow it to question its own witness as the opposing party could in cross-examination.",
+        "witness_shows_hostility": "The witness displays hostility toward the party who called the witness.",
+        "witness_resiles_from_material_statement": "The witness departs from a material statement previously made to an authority.",
+        "witness_unwilling_to_tell_truth": "The circumstances indicate that the witness is unwilling to tell the truth."
+      },
+      "definition": "A party may cross-examine its own witness in a criminal trial when the witness’s conduct or material inconsistency provides a proper basis for treating the witness as adverse."
+    },
+    {
+      "legal_issue": "Declaring a witness hostile does not by itself make the witness’s evidence unreliable or exclude it from consideration.",
+      "material_facts": [
+        "Several prosecution witnesses were declared hostile after giving testimony favourable to the defence.",
+        "Their testimony included evidence about directions to pursue compensation payments and efforts to persuade affected landowners to accept compensation."
+      ],
+      "conclusion": "The evidence of a hostile witness remains admissible and may be considered; the witnesses’ evidence in this case should not have been rejected merely because they were declared hostile.",
+      "legal_principle": "A hostile declaration does not efface a witness’s evidence or create a legal bar to relying on it; its weight must be assessed, and it may support a finding if it is corroborated by other reliable evidence. Applied Bhagwan Singh v. State of Haryana, [1976] 1 SCC 389.",
+      "rule": {
+        "if": "criminal_trial and witness_is_declared_hostile",
+        "then": "hostile_witness_evidence_is_not_automatically_excluded"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which a witness gives evidence.",
+        "witness_is_declared_hostile": "The court permits the party who called a witness to cross-examine that witness."
+      },
+      "definition": "In a criminal trial, a hostile declaration alone does not exclude the witness’s evidence from consideration."
+    },
+    {
+      "legal_issue": "Failure to examine a material prosecution witness may support an adverse inference against the prosecution when that witness could clarify a contested part of the prosecution’s own case.",
+      "material_facts": [
+        "The prosecution’s case depended on what was decided at a meeting about whether the accused should visit the affected landowners and pursue payment of compensation.",
+        "The official who convened or participated in that meeting was not examined, although he could have clarified what directions were given.",
+        "An accountant who could have addressed the whereabouts of the money was also not examined."
+      ],
+      "conclusion": "The court was entitled to draw an adverse inference against the prosecution from its failure to examine the material accountant, and the non-examination of the official who could clarify the meeting left the prosecution’s account unsupported.",
+      "legal_principle": "The prosecution must establish its own case and should examine material witnesses capable of clarifying its narrative; it cannot shift that task to the accused. The judgment applies the general criminal-trial burden of proof and the rule that the prosecution’s onus does not shift.",
+      "rule": {
+        "if": "criminal_trial and material_prosecution_witness_not_examined and witness_could_clarify_prosecution_case",
+        "then": "court_may_draw_adverse_inference_against_prosecution"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding is a criminal trial in which the prosecution must prove its case.",
+        "material_prosecution_witness_not_examined": "The prosecution does not call a witness material to its case.",
+        "witness_could_clarify_prosecution_case": "The uncalled witness could provide material evidence about a contested part of the prosecution’s account."
+      },
+      "definition": "A court may draw an adverse inference against the prosecution when it fails to call a material witness capable of clarifying its case."
+    },
+    {
+      "legal_issue": "Entrustment of public money does not establish dishonest misappropriation when the accused gives a probable account of its use and return that the prosecution fails to disprove.",
+      "material_facts": [
+        "The accused admitted receiving public money for distribution to landowners whose land had been acquired.",
+        "Prosecution witnesses and documents supported that the accused had been directed to pursue payment, visited the landowners, and attempted to persuade them to accept compensation.",
+        "The evidence supported the accused’s account that the landowners refused the payment and that he returned the money to a subordinate custodian for safekeeping.",
+        "The prosecution did not examine material witnesses who could clarify the meeting or the money’s whereabouts, and the court found the principal witness against the accused unreliable."
+      ],
+      "conclusion": "The prosecution failed to prove dishonest misappropriation; the convictions and sentences were set aside and the accused was acquitted.",
+      "legal_principle": "For criminal breach of trust, entrustment and failure to account may, with other circumstances, support an inference of dishonest misappropriation, but an untrue explanation is not the only possible basis for conviction. Jaikrishnadas Manohardas Desai v. State of Bombay, [1960] 3 SCR 319, was followed. The prosecution retains the burden of proof, and a probable defence explanation must be assessed by the preponderance-of-probabilities standard stated in Evidence Act section 5 and explained in Harbhajan Singh v. State of Punjab and State of U.P. v. Ram Swarup. The charged offences were under Prevention of Corruption Act, 1947 sections 5(1)(c) and 5(1)(d), read with section 5(2).",
+      "rule": {
+        "if": "criminal_corruption_conviction_appeal and public_funds_entrusted and accused_explanation_is_probable and prosecution_does_not_disprove_return_or_authorized_custody",
+        "then": "dishonest_misappropriation_not_proved"
+      },
+      "predicates": {
+        "criminal_corruption_conviction_appeal": "The proceeding is an appeal against a criminal conviction for alleged dishonest handling of public funds.",
+        "public_funds_entrusted": "The accused received public funds for a specified purpose.",
+        "accused_explanation_is_probable": "The accused gives an account of the funds that is supported by evidence and is at least as probable as the prosecution’s account.",
+        "prosecution_does_not_disprove_return_or_authorized_custody": "The prosecution fails to establish that the funds were not returned or placed with an authorized custodian as the accused claims."
+      },
+      "definition": "On an appeal against a criminal conviction for handling public funds, a probable account of their return or authorized custody prevents a finding of dishonest misappropriation if the prosecution does not disprove it."
+    },
+    {
+      "legal_issue": "A conviction cannot safely rest on the uncorroborated testimony of an unreliable witness when material prosecution evidence supporting the defence is disregarded.",
+      "material_facts": [
+        "The lower courts relied on the sole testimony of the custodian who denied receiving the money back.",
+        "The custodian’s handling of substantial public cash was irregular, and other circumstances raised concerns about his reliability.",
+        "Other prosecution witnesses and documents supported the defence account, but the lower courts did not give proper consideration to that evidence."
+      ],
+      "conclusion": "The lower courts erred in relying on the custodian’s sole testimony while ignoring important prosecution evidence favourable to the accused; the conviction could not stand.",
+      "legal_principle": "A hostile witness’s evidence is not automatically excluded, but evidence must be assessed for reliability. A conviction cannot be sustained by placing implicit reliance on a sole witness whose reliability is undermined by the circumstances while disregarding material admissions and documents. The judgment also applies the presumption of innocence and the prosecution’s continuing burden to prove guilt beyond reasonable doubt.",
+      "rule": {
+        "if": "criminal_conviction_appeal and conviction_rests_on_sole_witness and sole_witness_is_unreliable and material_prosecution_evidence_supports_defence",
+        "then": "conviction_cannot_safely_stand"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The proceeding is an appeal against a criminal conviction.",
+        "conviction_rests_on_sole_witness": "The conviction depends on the testimony of a single witness.",
+        "sole_witness_is_unreliable": "The circumstances materially undermine the reliability of that witness.",
+        "material_prosecution_evidence_supports_defence": "Other prosecution testimony or documents materially support the accused’s account."
+      },
+      "definition": "On a criminal conviction appeal, a conviction cannot safely stand on an unreliable sole witness when material prosecution evidence supports the defence."
+    }
+  ],
+  "seconds": 21.4
+}

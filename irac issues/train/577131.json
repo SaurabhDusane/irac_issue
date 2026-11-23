@@ -1,0 +1,78 @@
+{
+  "doc_id": "577131",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 42003,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2919,
+    "prompt_tokens": 10675,
+    "total_tokens": 13594,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An arbitration award must be registered when its terms create, declare, assign, limit, or extinguish a right in immovable property above the statutory value threshold.",
+      "material_facts": [
+        "The award stated that an ownership share previously held by one party would thereafter be owned by the other party.",
+        "The property was immovable and exceeded the value threshold for compulsory registration.",
+        "The award therefore did more than record a pre-existing right; it created a new property right."
+      ],
+      "conclusion": "The award required registration.",
+      "legal_principle": "Under section 17(1)(e) of the Registration Act, an award that purports or operates to create, declare, assign, limit, or extinguish a right, title, or interest above the statutory value threshold in immovable property must be registered. The document is assessed by what it expresses on its face, not by what it may have intended to convey; Ramaswamy Ayyar & Anr. v. Thirupathi Naik was affirmed on this point. Section 17 is a disabling provision and must be construed strictly. Satish Kumar & Ors. v. Surinder Kumar & Ors. and Ratan Lal Sharma v. Purshottam Harit were also relied upon concerning the registration of awards affecting immovable property.",
+      "rule": {
+        "if": "arbitration_award and award_text_assigns_or_declares_immovable_property_right and property_value_above_registration_threshold",
+        "then": "award_requires_registration"
+      },
+      "predicates": {
+        "arbitration_award": "The parties submitted their dispute to an arbitrator, who issued a written award.",
+        "award_text_assigns_or_declares_immovable_property_right": "The award states that a right in immovable property is created, declared, assigned, limited, or extinguished.",
+        "property_value_above_registration_threshold": "The immovable property affected by the award exceeds the value threshold for compulsory registration."
+      },
+      "definition": "When an arbitration award states that it affects a qualifying right in immovable property above the registration threshold, the award requires registration."
+    },
+    {
+      "legal_issue": "A court cannot pronounce judgment on or make an award the rule of the court when the award requires registration but remains unregistered, and the registration objection may be raised in the proceeding seeking enforcement of the award.",
+      "material_facts": [
+        "The award was unregistered when the court was asked to pronounce judgment upon it and make it the rule of the court.",
+        "The objection that the award was unregistered had not been raised before the trial court.",
+        "The award affected an ownership right in immovable property above the statutory value threshold."
+      ],
+      "conclusion": "The court could not look into the unregistered award or pronounce judgment upon it in the proceeding to make it the rule of the court; the registration objection could be raised in that proceeding despite not having been raised earlier.",
+      "legal_principle": "Section 14 of the Arbitration Act, 1940 requires the court to pronounce judgment upon a filed award and make it a rule of the court, but the court must be legally able to look into the award to do so. Under section 49 of the Registration Act, a document requiring registration cannot be received as evidence of a transaction affecting immovable property unless registered. Sections 30 and 33 of the Arbitration Act concern challenges to an award, whereas the objection in a section 14 proceeding may be raised when the court is asked to enforce the award. Satish Kumar & Ors. v. Surinder Kumar & Ors. and Ratan Lal Sharma v. Purshottam Harit were relied upon.",
+      "rule": {
+        "if": "arbitration_award_enforcement_proceeding and award_requires_registration and award_unregistered_when_court_considers_it",
+        "then": "court_cannot_make_award_rule"
+      },
+      "predicates": {
+        "arbitration_award_enforcement_proceeding": "A party asks a court to pronounce judgment upon an arbitration award and make it enforceable as the rule of the court.",
+        "award_requires_registration": "The award affects a right in immovable property in circumstances requiring registration.",
+        "award_unregistered_when_court_considers_it": "The award has not been registered when the court is asked to act upon it."
+      },
+      "definition": "If a court is asked to enforce an award that requires registration while it remains unregistered, the court cannot make it the rule of the court."
+    },
+    {
+      "legal_issue": "Registration obtained after the relevant court was asked to act on an unregistered award does not change whether that court could then pronounce judgment upon the award.",
+      "material_facts": [
+        "The award was unregistered when the court was asked to make it the rule of the court.",
+        "The award was submitted for registration and registered later, while the appeal was pending.",
+        "The later registration occurred after the court decision whose correctness was under review."
+      ],
+      "conclusion": "The later registration was irrelevant to whether the award could be looked into when the court was asked to pronounce judgment upon it; the Court did not decide whether the later registration itself was valid.",
+      "legal_principle": "Sections 23 and 25 of the Registration Act govern the time for presentation and delayed presentation for registration, while section 49 addresses the effect of non-registration. The question before the Court was whether the award was registered when the court was asked to act upon it; subsequent registration, whether compliant with or in breach of sections 23 and 25, did not affect that question. The Court distinguished Raj Kumar Dey and Others v. Tarapada Dey and Others as involving different facts and circumstances.",
+      "rule": {
+        "if": "arbitration_award_enforcement_review and award_unregistered_when_court_considers_it and award_registered_later",
+        "then": "later_registration_does_not_cure_prior_inadmissibility"
+      },
+      "predicates": {
+        "arbitration_award_enforcement_review": "A court reviews a decision on whether an arbitration award could be enforced as the rule of the court.",
+        "award_unregistered_when_court_considers_it": "The award had not been registered when the court was asked to act upon it.",
+        "award_registered_later": "The award was registered after the court was asked to act upon it."
+      },
+      "definition": "If an award was unregistered when considered in an enforcement proceeding and was registered later, the later registration does not cure its prior inadmissibility."
+    }
+  ],
+  "seconds": 19.2
+}

@@ -1,0 +1,78 @@
+{
+  "doc_id": "320920",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24936,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2509,
+    "prompt_tokens": 6615,
+    "total_tokens": 9124,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A return filed under the late-return procedure cannot be revised under the provision permitting revision of returns filed within the ordinary period or in response to notice.",
+      "material_facts": [
+        "For both assessment years, the taxpayer filed the original return after the time allowed under the ordinary filing provisions and without having received a notice to file.",
+        "The taxpayer later filed documents described as revised returns before the assessments were made."
+      ],
+      "conclusion": "A taxpayer who filed the original return under the late-return provision could not file a revised return under the revision provision; the purported revised returns were invalid.",
+      "legal_principle": "Section 139(5) permits a revised return only to a person who furnished a return under Section 139(1) or Section 139(2). That wording excludes a return furnished under Section 139(4). The Court relied on O. P. Malhotra v. Commissioner of Income Tax, Dr. S. B. Bhargava v. Commissioner of Income Tax, Vimal Chand v. Commissioner of Income Tax, and Eapen Joseph v. Commissioner of Income Tax, and declined to follow the contrary view of the Calcutta High Court.",
+      "rule": {
+        "if": "tax_return_revision_dispute and original_return_filed_under_late_return_procedure and purported_revised_return_filed",
+        "then": "purported_revised_return_invalid"
+      },
+      "predicates": {
+        "tax_return_revision_dispute": "The proceeding concerns whether a taxpayer may revise an income tax return.",
+        "original_return_filed_under_late_return_procedure": "The taxpayer filed the original return under a procedure available for a return filed after the ordinary filing period or notice deadline.",
+        "purported_revised_return_filed": "The taxpayer later submitted a return as a revision of the original return."
+      },
+      "definition": "When a return-revision dispute concerns an original return filed under the late-return procedure and the taxpayer later submits a purported revision, the purported revision is invalid."
+    },
+    {
+      "legal_issue": "A purported revised return that cannot lawfully be filed does not trigger the alternative assessment deadline measured from the filing of a revised return.",
+      "material_facts": [
+        "The taxpayer filed each original return under the late-return procedure.",
+        "The taxpayer later filed purported revised returns, but those returns were not valid revisions.",
+        "The assessments were made more than four years after the relevant assessment years ended but within one year of the purported revised returns."
+      ],
+      "conclusion": "The purported revised returns did not attract the alternative limitation period, so the assessments were not saved by that period.",
+      "legal_principle": "Section 153(1)(c) provided an alternative period for making an assessment measured from the filing of a return or revised return under Section 139(4) or Section 139(5). The Court construed those references as covering a return under Section 139(4) and a revised return validly filed under Section 139(5); the provision does not indirectly authorize a revision that Section 139(5) does not permit.",
+      "rule": {
+        "if": "assessment_limitation_dispute and original_return_filed_under_late_return_procedure and purported_revised_return_filed",
+        "then": "alternative_deadline_not_triggered_by_purported_revision"
+      },
+      "predicates": {
+        "assessment_limitation_dispute": "The proceeding concerns whether an income tax assessment was made within the applicable limitation period.",
+        "original_return_filed_under_late_return_procedure": "The taxpayer filed the original return under a procedure available for a return filed after the ordinary filing period or notice deadline.",
+        "purported_revised_return_filed": "The taxpayer later submitted a return as a revision of the original return."
+      },
+      "definition": "In an assessment-limitation dispute, a later purported revision of an original return filed under the late-return procedure does not trigger an alternative deadline measured from that purported revision."
+    },
+    {
+      "legal_issue": "The extended assessment period for a concealment-related case is unavailable when the tax officer neither initiates penalty proceedings nor records within the ordinary assessment period that the case involves concealment or inaccurate particulars.",
+      "material_facts": [
+        "The assessments were made after the ordinary four-year period but within the longer period asserted for concealment-related cases.",
+        "The tax officer had not initiated penalty proceedings within the ordinary period.",
+        "The tax officer had not made an order or recorded a note within that period indicating that the cases involved concealment or inaccurate particulars."
+      ],
+      "conclusion": "The assessments were barred by time and were not saved by the extended period for concealment-related cases.",
+      "legal_principle": "Section 153(1)(b), read with Section 271(1)(c), provides the extended assessment period for a case involving concealment or inaccurate particulars. Following Commissioner of Income Tax v. Suraj Pal Singh, the Court held that the tax officer must initiate penalty proceedings or record within the ordinary limitation period that the case falls within Section 271(1)(c). If such a record is made, it must be communicated; under State of Punjab v. Khemi Ram, it is sufficient for it to be put into transmission before the period expires.",
+      "rule": {
+        "if": "assessment_limitation_dispute and ordinary_assessment_period_expired and not timely_penalty_proceedings_initiated and not timely_concealment_case_recorded",
+        "then": "assessment_time_barred"
+      },
+      "predicates": {
+        "assessment_limitation_dispute": "The proceeding concerns whether an income tax assessment was made within the applicable limitation period.",
+        "ordinary_assessment_period_expired": "The ordinary period for making the assessment had expired before the assessment was made.",
+        "timely_penalty_proceedings_initiated": "The tax officer initiated penalty proceedings within the ordinary assessment period.",
+        "timely_concealment_case_recorded": "The tax officer recorded within the ordinary assessment period that the case involved concealment or inaccurate particulars."
+      },
+      "definition": "When the ordinary assessment period has expired and, in an assessment-limitation dispute, the tax officer neither initiated penalty proceedings nor recorded that the case involved concealment or inaccurate particulars within that period, the assessment is time-barred."
+    }
+  ],
+  "seconds": 15.7
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "310733",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15840,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1972,
+    "prompt_tokens": 4373,
+    "total_tokens": 6345,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A second appeal abates when the appellant dies during its pendency and the appellant’s legal representatives are not brought on record within the prescribed time, leaving the decree under appeal final.",
+      "material_facts": [
+        "The defendant filed a second appeal against a first appellate decree granting specific performance.",
+        "The defendant died while the second appeal was pending.",
+        "The defendant’s legal representatives were not brought on record or otherwise took steps to continue the appeal."
+      ],
+      "conclusion": "The second appeal abated, and the first appellate decree acquired finality.",
+      "legal_principle": "Order 22 Rules 3 and 11 of the Code of Civil Procedure apply the procedure for substitution of a deceased plaintiff to an appellant in an appeal; under Order 22 Rule 3(2), failure to apply within the time limited by law results in abatement. Order 22 Rule 9 governs the consequences of abatement. In Rahmani Khatoon v. Harkoo Gope, the Court held that when an appeal abates, the judgment or decree challenged in it becomes final. Rajendra Prasad v. Khirodhar Mahto likewise supports the consequence that abatement of an appeal leaves the decree under challenge final.",
+      "rule": {
+        "if": "second_appeal and appellant_died_during_appeal and legal_representatives_not_brought_on_record",
+        "then": "underlying_decree_becomes_final"
+      },
+      "predicates": {
+        "second_appeal": "The proceeding was a second appeal against a decree of a lower court.",
+        "appellant_died_during_appeal": "The appellant died while the second appeal was pending.",
+        "legal_representatives_not_brought_on_record": "The deceased appellant’s legal representatives were not brought on record to continue the appeal."
+      },
+      "definition": "When a second-appeal appellant dies during the appeal and the legal representatives are not brought on record, the decree under challenge becomes final."
+    },
+    {
+      "legal_issue": "A judgment disposing of an appeal against a person who had died before the judgment was delivered is a nullity.",
+      "material_facts": [
+        "The appellant died while the second appeal was pending, before the court disposed of it.",
+        "The death was not brought to the court’s attention, and the court dismissed the appeal without the appellant’s legal representatives having been brought on record."
+      ],
+      "conclusion": "The judgment dismissing the second appeal was a nullity because it was passed against a deceased person.",
+      "legal_principle": "Order 22 Rules 3 and 11 of the Code of Civil Procedure provide for bringing a deceased appellant’s legal representatives on record. The Court relied on Rajendra Prasad v. Khirodhar Mahto for the principle that a decree against a dead person is a nullity.",
+      "rule": {
+        "if": "appeal_proceeding and party_died_before_decision and deceased_party_not_substituted",
+        "then": "decision_against_deceased_party_is_nullity"
+      },
+      "predicates": {
+        "appeal_proceeding": "The proceeding was an appeal before a court.",
+        "party_died_before_decision": "A party to the appeal died before the court delivered its decision.",
+        "deceased_party_not_substituted": "The deceased party’s legal representatives were not substituted in the appeal before the decision."
+      },
+      "definition": "A decision in an appeal is a nullity when a party dies before it is delivered and that party’s legal representatives have not been substituted."
+    },
+    {
+      "legal_issue": "An appeal that has abated does not merge the decree under appeal into a later judgment in that appeal, and the decree under appeal remains executable.",
+      "material_facts": [
+        "The first appellate court had decreed the suit for specific performance.",
+        "The defendant’s second appeal abated after the defendant died and the legal representatives were not brought on record.",
+        "The second appellate court nevertheless dismissed the appeal after the defendant’s death.",
+        "The decree-holder’s legal representatives sought execution, which the judgment under appeal had treated as unavailable because of merger."
+      ],
+      "conclusion": "The doctrine of merger did not apply; the first appellate decree remained operative and executable, and the executing court could proceed with execution.",
+      "legal_principle": "The doctrine of merger is not rigid or universal; under State of Madras v. Madurai Mills Co. Ltd., its application depends on the nature of the superior court’s order and the scope of its jurisdiction. Kunhayammed v. State of Kerala is also cited on the limits of merger. Rahmani Khatoon v. Harkoo Gope establishes that an appeal’s abatement leaves the judgment or decree challenged in it final. Because the second appeal had abated, there was no effective appellate determination capable of superseding the first appellate decree; Order 22 Rule 9 also prevents the legal representatives’ failure to continue the appeal from adversely affecting the decree-holder in the manner asserted.",
+      "rule": {
+        "if": "second_appeal and underlying_decree and appellant_died_during_appeal and legal_representatives_not_brought_on_record",
+        "then": "underlying_decree_remains_executable"
+      },
+      "predicates": {
+        "second_appeal": "The proceeding was a second appeal against a lower court’s decree.",
+        "underlying_decree": "A lower court had entered a decree that remained the subject of the appeal.",
+        "appellant_died_during_appeal": "The appellant died while the second appeal was pending.",
+        "legal_representatives_not_brought_on_record": "The deceased appellant’s legal representatives were not brought on record to continue the appeal."
+      },
+      "definition": "When an appellant dies during a second appeal and the legal representatives are not brought on record, the lower-court decree remains executable."
+    }
+  ],
+  "seconds": 12.7
+}

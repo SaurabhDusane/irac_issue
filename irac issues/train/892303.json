@@ -1,0 +1,97 @@
+{
+  "doc_id": "892303",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19647,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2010,
+    "prompt_tokens": 5432,
+    "total_tokens": 7442,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rule requiring the land-requiring department to be notified of objections and given an opportunity to answer is consistent with the statutory objection-inquiry procedure.",
+      "material_facts": [
+        "The land was sought for an engineering college at the instance of the Education Department.",
+        "The applicable rule required the Collector to notify the land-requiring department of objections and allowed it to file an answer and send a representative to the inquiry.",
+        "The State argued that the rule conflicted with the Collector’s statutory discretion to make further inquiry."
+      ],
+      "conclusion": "The notice-and-answer requirement was not ultra vires; it could guide the Collector in conducting the objection inquiry and assist the Government in deciding whether to acquire the land.",
+      "legal_principle": "The statutory provision requiring the Collector to hear objections and make further inquiry as thought necessary does not prevent a rule from enabling the department requiring the land to present its views. The Collector’s proceedings are quasi-judicial, and information from that department can assist both the Collector and the Government. The Court held the applicable rule consistent with section 5A(2) of the Land Acquisition Act.",
+      "rule": {
+        "if": "land_acquisition_objection_inquiry and department_view_rule_applies",
+        "then": "department_view_rule_is_valid"
+      },
+      "predicates": {
+        "land_acquisition_objection_inquiry": "An authority is conducting an inquiry into objections to a proposed land acquisition.",
+        "department_view_rule_applies": "A rule applicable to the inquiry provides for the land-requiring department to be notified of objections and to have an opportunity to present its views."
+      },
+      "definition": "When an objection inquiry is subject to a rule providing for the land-requiring department to present its views, the rule is valid."
+    },
+    {
+      "legal_issue": "The requirement to notify the land-requiring department of objections and provide it an opportunity to answer is mandatory, and failure to comply invalidates the ensuing objection-inquiry decision but does not invalidate the preliminary acquisition notification.",
+      "material_facts": [
+        "The applicable rule required notice of the objection hearing to the objector and the land-requiring department, and provided for the department to answer the objections.",
+        "The department requiring the land was not given the required notice.",
+        "The Collector conducted the inquiry and reported to the Government, which rejected the objections and issued a later acquisition notification."
+      ],
+      "conclusion": "The rule was mandatory. The Collector’s inquiry proceedings and the Government’s decision based on the resulting report were quashed, and the later acquisition notification was quashed. The preliminary notification was not quashed; the Collector was directed to conduct a fresh inquiry on the objections already filed after notifying the department and allowing it to answer.",
+      "legal_principle": "Whether a provision is mandatory depends on legislative intent, assessed from its language, subject matter, importance, design, relation to the provision’s purpose, and the consequences of competing interpretations. The rule was intended to ensure that the Collector had relevant material for the report and that the Government could make a proper decision. The Court relied on section 5A of the Land Acquisition Act and the approach in Lonappan v. Sub-Collector of Palghat, AIR 1959 Kerala 343, and K. V. Krishna Iyer v. State of Madras, (1967) 2 Madras Law Journal 422. It upheld the preliminary notification while quashing the inquiry proceedings and subsequent decision.",
+      "rule": {
+        "if": "land_acquisition_objection_inquiry and department_notice_required and department_not_notified",
+        "then": "later_acquisition_declaration_invalid"
+      },
+      "predicates": {
+        "land_acquisition_objection_inquiry": "An authority is conducting an inquiry into objections to a proposed land acquisition.",
+        "department_notice_required": "The applicable rule requires the land-requiring department to receive notice of the objections and an opportunity to answer them.",
+        "department_not_notified": "The authority conducted the inquiry without giving the land-requiring department the required notice."
+      },
+      "definition": "If an acquisition-objection inquiry is subject to a requirement to notify the land-requiring department and that department is not notified, the later acquisition declaration is invalid."
+    },
+    {
+      "legal_issue": "A challenge to a preliminary acquisition notification based on an alleged public-notice defect cannot be brought after an unreasonable lapse of time when the challenger knew of the notification and acted on it.",
+      "material_facts": [
+        "The challenger knew of the preliminary acquisition notification and filed objections to the proposed acquisition.",
+        "The challenger later filed a writ petition challenging the notification, after the subsequent acquisition notification had been published and after an unreasonable lapse of time.",
+        "The challenger contended that the required public notice had not been given."
+      ],
+      "conclusion": "The challenger was not entitled to challenge the preliminary notification after an unreasonable lapse of time; a defect in the required public notice should have been challenged within a reasonable time of publication.",
+      "legal_principle": "A person who knows of a preliminary acquisition notification and files objections must challenge its validity within a reasonable time. The Court found no basis to disturb the notification on the asserted public-notice ground because the challenge was unreasonably delayed.",
+      "rule": {
+        "if": "land_acquisition_notification_challenge and challenger_knew_of_notification and challenger_filed_objections and challenge_unreasonably_delayed",
+        "then": "preliminary_notification_challenge_barred_by_delay"
+      },
+      "predicates": {
+        "land_acquisition_notification_challenge": "A person brings a legal challenge to a preliminary notification for a proposed land acquisition.",
+        "challenger_knew_of_notification": "The challenger knew that the preliminary acquisition notification had been issued.",
+        "challenger_filed_objections": "The challenger filed objections to the proposed acquisition after learning of the notification.",
+        "challenge_unreasonably_delayed": "The challenger waited an unreasonable time after publication before challenging the notification."
+      },
+      "definition": "When a challenger knew of a preliminary acquisition notification, filed objections, and nevertheless waited an unreasonable time to challenge it, the challenge to that notification is barred by delay."
+    },
+    {
+      "legal_issue": "An objection that the inquiry report was not submitted within the prescribed period does not warrant setting aside the proceedings when a fresh inquiry and report are in any event required.",
+      "material_facts": [
+        "The challenger argued that the Collector’s report had not been sent to the Government within the prescribed period.",
+        "The Court had already directed the Collector to conduct a fresh inquiry into the objections, after notifying the land-requiring department and allowing it to answer."
+      ],
+      "conclusion": "The timing argument had no substance; because a fresh inquiry was directed, the Collector would in any event have to send a fresh report to the Government.",
+      "legal_principle": "Where the court has ordered a fresh objection inquiry, the Collector must submit a fresh report as part of that process, so an argument about the timing of the earlier report does not provide a reason to remit the case or alter the disposition.",
+      "rule": {
+        "if": "land_acquisition_objection_inquiry and fresh_inquiry_ordered and earlier_report_timing_challenged",
+        "then": "earlier_report_timing_challenge_rejected"
+      },
+      "predicates": {
+        "land_acquisition_objection_inquiry": "An authority is conducting an inquiry into objections to a proposed land acquisition.",
+        "fresh_inquiry_ordered": "A court has directed the authority to conduct a new inquiry into the objections.",
+        "earlier_report_timing_challenged": "A party argues that the report from the earlier inquiry was not submitted within the required time."
+      },
+      "definition": "When a fresh objection inquiry has been ordered, a challenge to the timing of the earlier report is rejected because the new inquiry requires a new report."
+    }
+  ],
+  "seconds": 12.5
+}

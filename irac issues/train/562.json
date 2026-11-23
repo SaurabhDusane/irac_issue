@@ -1,0 +1,124 @@
+{
+  "doc_id": "562",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 50820,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3623,
+    "prompt_tokens": 12026,
+    "total_tokens": 15649,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A housing scheme of a cooperative society may be treated as a public purpose for land acquisition only after prior approval of the appropriate government, and the public-purpose route cannot be combined with the acquisition procedure for a company.",
+      "material_facts": [
+        "The society was a cooperative society whose paid-up share capital did not meet the threshold for treatment as a state-controlled corporation.",
+        "The society sought acquisition of land for a housing scheme for its members.",
+        "The society relied on a government order and an agreement made under the company-acquisition procedure, but no separate prior approval of the housing scheme under the public-purpose provision was produced.",
+        "The acquisition was ultimately pursued by the government as an acquisition for public purpose."
+      ],
+      "conclusion": "Prior approval of the scheme was a condition precedent to acquisition for a cooperative society’s housing scheme as a public purpose; the earlier consent under the company-acquisition procedure did not satisfy that requirement, and the two routes could not be mixed.",
+      "legal_principle": "Under Sections 3(e)(iii) and 3(f)(vi) of the Land Acquisition Act, a cooperative society not covered by Section 3(cc) is a company for the purposes of Part VII, while land for its housing scheme may separately be acquired as a public purpose only with the appropriate government’s prior approval. That approval is substantive, not a formality. If acquisition proceeds under Part VII, Sections 39 and 40 require previous government consent after the prescribed satisfaction or inquiry, and Section 44-A restricts transfer of the acquired land. The routes are distinct; no earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "housing_cooperative_acquisition and acquisition_challenged and public_purpose_treatment and (no_prior_scheme_approval or hybrid_acquisition_route)",
+        "then": "acquisition_notifications_invalid"
+      },
+      "predicates": {
+        "housing_cooperative_acquisition": "A cooperative society sought acquisition of land for a housing scheme.",
+        "acquisition_challenged": "The acquisition notifications or proceedings were challenged in court.",
+        "public_purpose_treatment": "The government treated the acquisition as one for a public purpose.",
+        "no_prior_scheme_approval": "The appropriate government had not given prior approval to the housing scheme before acquisition steps began.",
+        "hybrid_acquisition_route": "The acquisition combined the public-purpose route with the procedure for acquiring land for a company."
+      },
+      "definition": "When a challenged acquisition for a cooperative housing scheme is treated as a public-purpose acquisition, absence of prior scheme approval or use of a hybrid route makes the acquisition notifications invalid."
+    },
+    {
+      "legal_issue": "Land acquisition notifications are invalid when statutory acquisition power is exercised at the instance of a private intermediary rather than on the government’s independent assessment of public purpose.",
+      "material_facts": [
+        "The society agreed to pay a private intermediary to secure land and to arrange for government acquisition of specified land.",
+        "The intermediary’s agreement promised to procure acquisition notifications, and the society paid it substantial sums.",
+        "A statutory inquiry reported irregular admission of members, including persons who were not eligible, and substantial advances to agents without commensurate work or security.",
+        "The government produced no order showing that it had independently approved the scheme under the public-purpose provision, and the evidence supported the finding that the intermediary had influenced the acquisition decision."
+      ],
+      "conclusion": "The acquisition power had been exercised for extraneous considerations and at the instance of the intermediary, not on the government’s independent satisfaction that the land was required for a public purpose; the acquisition was invalid.",
+      "legal_principle": "A statutory power to acquire land for public purpose must be exercised by the appropriate government on its own assessment of the relevant public-interest considerations. Acquisition brought about by a private intermediary’s influence, especially in the context of a scheme involving ineligible members and commercial dealing, is an extraneous and colourable exercise of that power. The court relied on Sections 4(1) and 6(1) of the Land Acquisition Act and the requirement of prior approval under Section 3(f)(vi); it cited no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_challenge and intermediary_promised_to_procure_acquisition and intermediary_influenced_government_decision and government_lacked_independent_public_purpose_assessment",
+        "then": "acquisition_notifications_invalid"
+      },
+      "predicates": {
+        "land_acquisition_challenge": "A party challenged government notifications or proceedings for acquiring land.",
+        "intermediary_promised_to_procure_acquisition": "A private intermediary undertook to arrange for the government to acquire the land.",
+        "intermediary_influenced_government_decision": "The intermediary’s role brought about or materially influenced the government’s acquisition decision.",
+        "government_lacked_independent_public_purpose_assessment": "The government did not independently determine, on relevant material, that the acquisition served a public purpose."
+      },
+      "definition": "If a challenged acquisition was procured through an intermediary’s influence without the government’s independent public-purpose assessment, the acquisition notifications are invalid."
+    },
+    {
+      "legal_issue": "Quashing land acquisition proceedings requires restoration of possession to the affected landowners and repayment of compensation, including for owners who did not challenge the acquisition.",
+      "material_facts": [
+        "The acquisition proceedings and notifications were quashed.",
+        "Some affected landowners had not themselves challenged the acquisition of their land.",
+        "The landowners had received compensation or other amounts in respect of their land."
+      ],
+      "conclusion": "Possession was to be restored to all respective landowners, whether or not they had challenged the acquisition, and the landowners were to refund amounts received as compensation or otherwise in respect of their land.",
+      "legal_principle": "As a consequential direction upon quashing the acquisition proceedings, possession must be restored to the respective landowners irrespective of whether each owner challenged the acquisition, with amounts received as compensation or otherwise refunded upon restoration. The judgment relies on its remedial authority in the acquisition proceedings and cites no earlier cases for this direction.",
+      "rule": {
+        "if": "acquisition_proceedings_quashed and land_taken_from_owners and compensation_or_other_amounts_received",
+        "then": "restore_possession_and_refund_amounts"
+      },
+      "predicates": {
+        "acquisition_proceedings_quashed": "A court quashed the land acquisition proceedings or notifications.",
+        "land_taken_from_owners": "The land was taken from its respective owners under those proceedings.",
+        "compensation_or_other_amounts_received": "The owners received compensation or other amounts in respect of the land."
+      },
+      "definition": "When acquisition proceedings are quashed after land has been taken and payments have been received, possession is restored to the owners and the payments are refunded."
+    },
+    {
+      "legal_issue": "A government approval issued before the relevant public-purpose provision came into force cannot constitute prior approval of a cooperative society’s housing scheme under that provision.",
+      "material_facts": [
+        "A cooperative society relied on a government order dated before the statutory amendment introducing the relevant public-purpose provision took effect.",
+        "The society claimed that the order was prior approval for acquiring land for its housing scheme.",
+        "The acquisition was challenged, and the society could not rely on that earlier order as an approval under the later provision."
+      ],
+      "conclusion": "The pre-amendment order was not an approval under the public-purpose provision and could not satisfy its prior-approval requirement.",
+      "legal_principle": "The relevant definitions and public-purpose provision introduced by the Land Acquisition (Amendment) Act, 1984 took effect on 24 September 1984. An order issued before that date could not have been made under Section 3(f)(vi); it could only be considered, if applicable, under the then-existing company-acquisition framework. The court relied on Sections 3(e), 3(f)(vi), 39 and 40 of the Land Acquisition Act and cited no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_challenge and asserted_scheme_approval_predates_governing_requirement",
+        "then": "earlier_order_does_not_satisfy_prior_approval"
+      },
+      "predicates": {
+        "land_acquisition_challenge": "A party challenged an acquisition of land for a cooperative housing scheme.",
+        "asserted_scheme_approval_predates_governing_requirement": "The government order relied on as scheme approval was issued before the legal requirement for that approval took effect."
+      },
+      "definition": "In a challenged acquisition, an order issued before the governing approval requirement took effect does not satisfy that requirement."
+    },
+    {
+      "legal_issue": "A finding that acquisition notifications must be quashed cannot be extended to a cooperative society on materially different facts where no intermediary arrangement was shown and the absence of prior approval was not asserted.",
+      "material_facts": [
+        "The society’s appeals challenged the High Court’s decision to quash acquisition notifications.",
+        "The society had not entered into an agreement with an agent or contractor to procure acquisition of the land.",
+        "The opposing parties did not challenge the society’s account of that distinction, and it was not stated that the appropriate government had failed to give prior approval.",
+        "The court found the facts materially different from those in the other society appeals before it."
+      ],
+      "conclusion": "The appeals were allowed and the High Court’s judgment was set aside insofar as it related to that society.",
+      "legal_principle": "The invalidity findings in the other appeals depended on their evidentiary circumstances, including intermediary involvement and the absence of a demonstrated prior approval. Where those circumstances were not established and the society’s distinguishing account was unchallenged, the court did not extend the same result. No separate statutory interpretation or earlier case was relied on for this factual distinction.",
+      "rule": {
+        "if": "appeal_from_quashing_of_acquisition and no_intermediary_procurement_agreement and absence_of_prior_approval_not_asserted and distinguishing_facts_unchallenged",
+        "then": "quashing_order_set_aside_for_society"
+      },
+      "predicates": {
+        "appeal_from_quashing_of_acquisition": "A society appealed a judgment that had quashed land acquisition notifications for its benefit.",
+        "no_intermediary_procurement_agreement": "The society had not made an agreement with an agent or contractor to procure the acquisition.",
+        "absence_of_prior_approval_not_asserted": "The parties did not assert that the government had failed to give prior approval to the scheme.",
+        "distinguishing_facts_unchallenged": "The society’s account of facts distinguishing its case was not challenged by the opposing parties."
+      },
+      "definition": "When a society appeals the quashing of its acquisition and the stated distinguishing facts are unchallenged, with no intermediary procurement agreement and no asserted absence of prior approval, the quashing order is set aside for that society."
+    }
+  ],
+  "seconds": 46.8
+}

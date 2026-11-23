@@ -1,0 +1,102 @@
+{
+  "doc_id": "863576",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 6500,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2303,
+    "prompt_tokens": 2045,
+    "total_tokens": 4348,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Concurrent findings of fact are not ordinarily reappraised on appeal when they are supported by the trial and appellate courts’ findings.",
+      "material_facts": [
+        "The trial court found that the land had been settled in favour of the respondents, that they had remained in possession from the settlement, and that the appellant forcibly dispossessed them.",
+        "The High Court affirmed those findings.",
+        "The appellant challenged the decree in an appeal to the Supreme Court."
+      ],
+      "conclusion": "The Court declined to reappraise the evidence or interfere with the concurrent findings of fact.",
+      "legal_principle": "The Supreme Court normally does not interfere with concurrent findings on questions of fact or undertake a fresh appraisal of the evidence.",
+      "rule": {
+        "if": "appeal_from_concurrent_factual_findings and (findings_supported_by_evidence)",
+        "then": "supreme_court_does_not_reappraise_evidence"
+      },
+      "predicates": {
+        "appeal_from_concurrent_factual_findings": "A party appeals after the trial court and an appellate court have made the same findings on factual matters.",
+        "findings_supported_by_evidence": "The lower courts’ factual findings rest on their appreciation of the evidence."
+      },
+      "definition": "When an appeal challenges factual findings shared by the lower courts and those findings rest on the evidence, the Supreme Court does not reappraise that evidence."
+    },
+    {
+      "legal_issue": "A settlement by a joint-family manager may be upheld as beneficial to the estate when the circumstances show it was an act of prudent management.",
+      "material_facts": [
+        "The Raja settled land from the joint family estate with the respondents.",
+        "The respondents were family-connected and had assisted the zamindar in earlier litigation; promises had been made to reward their services.",
+        "The respondents performed a family ceremony, and the estate supported families loyal to it while charging nominal rent for such settlements.",
+        "The High Court found that the settlement benefited the estate through prudent management, and the Supreme Court agreed."
+      ],
+      "conclusion": "The Court saw no reason to disagree with the finding that the settlement was made for the benefit of the estate.",
+      "legal_principle": "The Court applied the principle that a joint-family manager’s settlement may be an act of prudent management for the estate’s benefit, assessed in light of the surrounding circumstances.",
+      "rule": {
+        "if": "joint_family_manager_made_settlement and (recipient_rendered_services or recipient_supported_family_interests) and settlement_terms_were_nominal",
+        "then": "settlement_was_for_estate_benefit"
+      },
+      "predicates": {
+        "joint_family_manager_made_settlement": "A manager of a joint family made a settlement of property belonging to the family estate.",
+        "recipient_rendered_services": "The recipient had rendered services to the family or its estate.",
+        "recipient_supported_family_interests": "The recipient had supported the family’s interests or performed a role valued by the family.",
+        "settlement_terms_were_nominal": "The settlement imposed nominal charges or otherwise reflected the estate’s practice of supporting loyal families."
+      },
+      "definition": "A family manager’s settlement is treated as beneficial to the estate when the manager made it and the recipient’s services or support, together with the settlement’s terms, show it was prudent for the estate."
+    },
+    {
+      "legal_issue": "An alienation by a joint-family manager without legal necessity is voidable rather than void, and a prior possessor forcibly dispossessed may recover possession unless the opposing claimant establishes entitlement in a partition action.",
+      "material_facts": [
+        "The respondents had been in possession of the land since the settlement.",
+        "The appellant forcibly dispossessed them.",
+        "The appellant did not establish in a partition action that the land belonged to his share.",
+        "The respondents sought possession of the land."
+      ],
+      "conclusion": "The respondents were entitled to restoration of possession because the alienation was not void and the appellant had not established a claim to the land in partition.",
+      "legal_principle": "Even an alienation by a joint-family manager made without legal necessity is voidable, not void. A person previously in possession and forcibly dispossessed is entitled to restoration unless the opposing claimant establishes entitlement to the property in a partition action.",
+      "rule": {
+        "if": "possession_recovery_proceeding and manager_made_family_property_alienation and prior_possession and forcible_dispossession and not opposing_claimant_established_partition_entitlement",
+        "then": "prior_possessor_entitled_to_restoration"
+      },
+      "predicates": {
+        "possession_recovery_proceeding": "The proceeding seeks recovery of possession of property.",
+        "manager_made_family_property_alienation": "A joint-family manager alienated property belonging to the family.",
+        "prior_possession": "The person seeking recovery had possession of the property before being dispossessed.",
+        "forcible_dispossession": "The opposing party forcibly deprived that person of possession.",
+        "opposing_claimant_established_partition_entitlement": "The opposing party established in a partition action that the property was allotted to that party’s share."
+      },
+      "definition": "A prior possessor who seeks recovery after forcible dispossession is entitled to restoration when a family manager’s alienation is not void and the opposing party has not established entitlement to the property in partition."
+    },
+    {
+      "legal_issue": "A certificate supporting an appeal to the Supreme Court is defective when it does not establish the applicable jurisdictional grounds and the statutory conditions for an appeal are not met.",
+      "material_facts": [
+        "The High Court issued a certificate for an appeal under the constitutional provisions concerning appeals to the Supreme Court and referred to the value and nature of the case without setting out supporting grounds.",
+        "The subject matter’s value in the court of first instance was Rs. 5,250, the High Court judgment affirmed the trial court’s decision, and the case raised no substantial question of law.",
+        "The appeal was brought under the constitutional provision invoking jurisdiction associated with the former Federal Court."
+      ],
+      "conclusion": "The Court held that the certificate was plainly defective and that the High Court had seriously erred in granting it.",
+      "legal_principle": "The Court stated that a certificate must set out the grounds supporting its grant. The constitutional provision invoked applies only where the relevant jurisdiction and powers were exercisable by the Federal Court before the Constitution commenced. The conditions under Sections 109 and 110 of the Code of Civil Procedure were not met where the value threshold was not satisfied, the judgment was one of affirmance, and no substantial question of law arose.",
+      "rule": {
+        "if": "appeal_under_special_jurisdiction_certificate and certificate_omits_supporting_grounds and (statutory_appeal_conditions_not_met)",
+        "then": "certificate_is_defective"
+      },
+      "predicates": {
+        "appeal_under_special_jurisdiction_certificate": "The proceeding is an appeal to the Supreme Court brought on the basis of a certificate invoking special constitutional jurisdiction.",
+        "certificate_omits_supporting_grounds": "The certificate does not state the grounds that support granting it.",
+        "statutory_appeal_conditions_not_met": "The required conditions for an appeal, including the applicable value and legal-question requirements, are not satisfied."
+      },
+      "definition": "A certificate-based appeal has a defective certificate when it invokes special jurisdiction, omits supporting grounds, and the applicable appeal conditions are not satisfied."
+    }
+  ],
+  "seconds": 14.6
+}

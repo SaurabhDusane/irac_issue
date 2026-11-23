@@ -1,0 +1,60 @@
+{
+  "doc_id": "1169518",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 7694,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1597,
+    "prompt_tokens": 2657,
+    "total_tokens": 4254,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Market value for acquired land must be assessed with reference to its value at the time of the acquisition notification, rather than later price increases.",
+      "material_facts": [
+        "The land was notified for acquisition around 1978 and 1979.",
+        "The High Court found that prices in the area began rising and development began after 1980.",
+        "The High Court assessed the land by reference to its value at the time of the notifications, and the Supreme Court found no basis to disturb that assessment."
+      ],
+      "conclusion": "The High Court correctly did not use post-1980 valuation as a guideline, and its market-value finding was not disturbed.",
+      "legal_principle": "Under Section 4(1) of the Land Acquisition Act, 1894, market value is assessed as at the date of the acquisition notification. Later price increases are not the guideline for that assessment. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and (prices_increased_after_valuation_time or development_began_after_valuation_time) and high_court_assessed_value_at_valuation_time",
+        "then": "later_prices_not_used_as_valuation_guideline"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "prices_increased_after_valuation_time": "Prices in the area rose after the time at which the acquired land's value had to be assessed.",
+        "development_began_after_valuation_time": "Development in the area began after the time at which the acquired land's value had to be assessed.",
+        "high_court_assessed_value_at_valuation_time": "The High Court assessed the land's value by reference to its value at the relevant time."
+      },
+      "definition": "When a compensation appeal concerns land whose prices rose or whose area developed after the relevant valuation time, and the High Court assessed value at that time, later prices are not used as the valuation guideline."
+    },
+    {
+      "legal_issue": "A development-cost deduction does not by itself determine compensation when the court assesses market value at the relevant time and uses the deduction to calculate the resulting land value.",
+      "material_facts": [
+        "The Land Acquisition Officer applied a five per cent development-cost deduction, while the reference court applied a 20 per cent deduction to its higher valuation.",
+        "The High Court assessed market value at three lakh rupees per acre and retained a 20 per cent deduction, producing a value of fifty rupees per square yard.",
+        "The High Court considered evidence that the land abutted a highway and had roads on three sides.",
+        "The Supreme Court considered that the High Court had focused on the market value at the notification time rather than treating the deduction percentage as the basis of its valuation."
+      ],
+      "conclusion": "The Supreme Court did not disturb the High Court's compensation determination, including its application of the 20 per cent deduction.",
+      "legal_principle": "In determining compensation under the Land Acquisition Act, 1894, the relevant consideration is the market value at the time of the Section 4(1) notification. A deduction percentage is not, by itself, the measure of market value; the Court considered how the High Court used the deduction in reaching its valuation. The Court relied on no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and high_court_assessed_notification_time_value and deduction_applied_to_assessed_market_value",
+        "then": "high_court_compensation_finding_left_undisturbed"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "high_court_assessed_notification_time_value": "The High Court assessed market value by reference to the value at the relevant notification time.",
+        "deduction_applied_to_assessed_market_value": "The High Court applied a development-cost deduction to its assessed market value to calculate the resulting value of the land."
+      },
+      "definition": "When a compensation appeal concerns a High Court assessment at the relevant valuation time and a development-cost deduction applied to that assessment, the High Court's compensation finding is left undisturbed."
+    }
+  ],
+  "seconds": 10.8
+}

@@ -1,0 +1,56 @@
+{
+  "doc_id": "713290",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24157,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2004,
+    "prompt_tokens": 6478,
+    "total_tokens": 8482,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A claim that a Hindu undivided family has been partitioned during assessment requires an inquiry and a finding on partition after notice to the family members.",
+      "material_facts": [
+        "The family had previously been assessed as a Hindu undivided family.",
+        "During the assessments at issue, a member claimed that the family had been partitioned by agreement and a civil court decree."
+      ],
+      "conclusion": "On a claim of total or partial partition made during assessment, the assessing officer must inquire into the claim after giving notice to all family members and record a finding on whether partition took place.",
+      "legal_principle": "Section 171 of the Income Tax Act, 1961 requires the assessing officer, when a partition is claimed at the time of assessment, to inquire after notice to all members and record a finding. If partition is found, the members’ individual liabilities are computed according to the portions of joint family property allotted to them.",
+      "rule": {
+        "if": "hindu_family_tax_assessment and partition_claimed_during_assessment",
+        "then": "officer_must_inquire_after_notice_and_record_partition_finding"
+      },
+      "predicates": {
+        "hindu_family_tax_assessment": "An assessing officer is determining the tax liability of a family previously assessed as a Hindu undivided family.",
+        "partition_claimed_during_assessment": "A family member claims during the assessment that all or part of the family property has been partitioned."
+      },
+      "definition": "When a partition is claimed during an assessment of a family previously assessed as a Hindu undivided family, the officer must inquire after notice to the members and record a finding on partition."
+    },
+    {
+      "legal_issue": "For income-tax assessment, a Hindu undivided family is not treated as partitioned merely because of an agreement, a court decree, or a severance of status; the required division of property must be proved.",
+      "material_facts": [
+        "The family had previously been assessed as a Hindu undivided family.",
+        "A member relied on a partition agreement and a civil court decree, but the decree was preliminary and no physical division of the properties by metes and bounds had occurred.",
+        "The member first raised the partition claim in the assessments at issue."
+      ],
+      "conclusion": "Because no physical division of the properties had taken place, the family’s status was not disrupted for tax assessment purposes, and income from the properties retained its Hindu undivided family character.",
+      "legal_principle": "Section 171 and its Explanation give “partition” a special meaning for income-tax purposes, distinct from the general principles of Hindu law: where property admits of physical division, physical division is required; where it does not, the property must be divided to the extent possible. A mere division of income or severance of status is insufficient. The assessee claiming partition bears the burden of proving the required division. The Court followed Kaloomal Tapeshwar Prasad v. C.I.T., Kanpur, 133 I.T.R. 690; it distinguished Parameswaran Nambudiripad v. Inspecting Assistant Commissioner of Agricultural Income Tax, 72 I.T.R. 644, and Inspecting Assistant Commissioner of Agricultural Income Tax and Sales Tax (Special), Kozhikode v. Poomulli Manekkal Parameswaran Namboodiripad, 83 I.T.R. 108, because those cases concerned a different statutory scheme. It also referred to Sunder Singh Majithia v. Commissioner of Income Tax, 10 I.T.R. 457, and Shankar Narayanan v. Income Tax Officer, 153 I.T.R. 562.",
+      "rule": {
+        "if": "hindu_family_tax_assessment and partition_claimed and not qualifying_property_division_proved",
+        "then": "family_status_continues_for_tax_assessment"
+      },
+      "predicates": {
+        "hindu_family_tax_assessment": "A family previously assessed as a Hindu undivided family is being assessed for tax.",
+        "partition_claimed": "A family member claims that the family property has been partitioned.",
+        "qualifying_property_division_proved": "The claimant proves physical division of property that can be physically divided, or division to the extent possible of property that cannot be physically divided."
+      },
+      "definition": "If a partition is claimed in an assessment of a family previously assessed as a Hindu undivided family, but the required division of property is not proved, the family continues to be treated as undivided for tax assessment."
+    }
+  ],
+  "seconds": 74.4
+}

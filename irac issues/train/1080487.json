@@ -1,0 +1,61 @@
+{
+  "doc_id": "1080487",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13990,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1719,
+    "prompt_tokens": 3949,
+    "total_tokens": 5668,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory ground for eviction based on unauthorized transfer or subletting applies to non-residential premises.",
+      "material_facts": [
+        "The landlord brought an ejectment suit concerning premises used for non-residential purposes.",
+        "The suit sought eviction on the ground that the tenant had transferred or sublet the premises without the landlord’s written consent."
+      ],
+      "conclusion": "The eviction ground applies to premises covered by the tenancy legislation whether they are residential or non-residential.",
+      "legal_principle": "Section 13(1)(a) of the West Bengal Premises Tenancy Act, 1956 applies to any premises defined by that Act and does not distinguish between residential and non-residential premises. The Court relied on the wording of that provision and its relationship to clauses (b) to (e) and Section 14 of the Act.",
+      "rule": {
+        "if": "tenancy_eviction_proceeding and premises_governed_by_tenancy_law and nonresidential_premises and eviction_sought_for_unauthorized_transfer_or_subletting",
+        "then": "unauthorized_transfer_or_subletting_eviction_ground_applies"
+      },
+      "predicates": {
+        "tenancy_eviction_proceeding": "A landlord brought a proceeding seeking to recover possession from a tenant.",
+        "premises_governed_by_tenancy_law": "The premises are governed by the applicable tenancy law.",
+        "nonresidential_premises": "The premises are used for a non-residential purpose.",
+        "eviction_sought_for_unauthorized_transfer_or_subletting": "The landlord sought eviction on the basis that the tenant transferred, assigned, or sublet the premises without the required consent."
+      },
+      "definition": "When a landlord seeks possession from a tenant under tenancy law for unauthorized transfer or subletting of governed non-residential premises, the eviction ground applies."
+    },
+    {
+      "legal_issue": "Subletting requires a transfer of the right to enjoy the premises for consideration, and exclusive occupation alone does not establish it when the tenant retains legal control and no consideration is paid.",
+      "material_facts": [
+        "The tenant permitted an employees’ trade union to occupy the premises exclusively for union activities.",
+        "The tenant received no monetary consideration from the union.",
+        "The tenant retained the right to require the union to vacate, maintained the premises at its own expense, and paid the electricity charges for the union’s use.",
+        "The union undertook to vacate when required, and its membership was confined to the tenant’s employees.",
+        "The landlord relied on the union’s exclusive occupation to establish subletting."
+      ],
+      "conclusion": "Subletting was not established because the tenant retained legal control and the union did not receive a transfer of the right to enjoy the premises for consideration. The appeal was allowed and the eviction decree on that ground was set aside.",
+      "legal_principle": "Under Section 13(1)(a) of the West Bengal Premises Tenancy Act, 1956, read with Sections 14 and 13(3), and the definition of a lease in Section 105 of the Transfer of Property Act, 1882, subletting entails a transfer of the right to enjoy the premises for consideration. Rajbir Kaur v. S. Chokesiri and Co. explains that consideration may be inferred from exclusive possession and the circumstances, but that inference may be rebutted. Dipak Banerjee v. Lilabati Chakraborty and Jagan Nath v. Chander Bhan recognize exclusive possession and consideration as essential ingredients. Gopal Saran v. Satyanarayana and Delhi Stationers and Printers v. Rajendra Kumar establish that occupation alone is insufficient and that parting with legal possession involves a right to include and exclude others. Bhairab Chandra Nandan v. Ranadhir Chandra Dutta was also considered.",
+      "rule": {
+        "if": "tenancy_eviction_proceeding and third_party_has_exclusive_occupation and tenant_retains_legal_control and no_consideration_for_occupation",
+        "then": "subletting_not_established"
+      },
+      "predicates": {
+        "tenancy_eviction_proceeding": "A landlord sought to recover possession from a tenant on the basis of alleged subletting.",
+        "third_party_has_exclusive_occupation": "A person other than the tenant occupies the premises exclusively.",
+        "tenant_retains_legal_control": "The tenant retains control over the occupation, including the ability to require the occupant to leave.",
+        "no_consideration_for_occupation": "The occupant gives the tenant no money or other consideration for occupying the premises."
+      },
+      "definition": "If a third party occupies premises exclusively during a tenancy proceeding but the tenant retains legal control and receives no consideration for the occupation, subletting is not established."
+    }
+  ],
+  "seconds": 12.0
+}

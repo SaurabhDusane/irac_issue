@@ -1,0 +1,100 @@
+{
+  "doc_id": "1964047",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12904,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2413,
+    "prompt_tokens": 3682,
+    "total_tokens": 6095,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Recommendation for appointment under a priority-employment rehabilitation scheme does not, by itself, create an enforceable right to appointment.",
+      "material_facts": [
+        "The candidate's name was among those recommended for priority appointment under a rehabilitation scheme for families whose land had been acquired.",
+        "The scheme was framed as a concession to assist eligible displaced families, and the candidate had received compensation for the acquired land.",
+        "The post sought by the candidate did not exist when the original scheme was introduced."
+      ],
+      "conclusion": "The recommendation did not give the candidate a vested or enforceable right to appointment.",
+      "legal_principle": "Under Shankarsan Dash v. Union of India, a candidate's inclusion in a select list does not ordinarily confer an indefeasible right to appointment unless the relevant recruitment rules provide otherwise; the State is not required to fill vacancies but must act bona fide and respect comparative merit if it does fill them. This position was reiterated in All India SC & ST Employees' Assn. v. A. Arthur Jeen and State of Orissa v. Bhikari Charan Khuntia. The court treated the rehabilitation scheme as a concession, not a right to appointment.",
+      "rule": {
+        "if": "priority_scheme_appointment_claim and recommendation_only and scheme_is_concession",
+        "then": "no_enforceable_appointment_right"
+      },
+      "predicates": {
+        "priority_scheme_appointment_claim": "A candidate seeks appointment under a priority-employment scheme intended to assist people displaced by land acquisition.",
+        "recommendation_only": "The candidate's name was recommended for appointment, without an appointment having been made.",
+        "scheme_is_concession": "The employment scheme offers assistance as a concession to eligible candidates rather than guaranteeing an appointment."
+      },
+      "definition": "When a candidate seeks appointment under a concessionary priority scheme and has only been recommended, the recommendation does not itself create an enforceable right to appointment."
+    },
+    {
+      "legal_issue": "A candidate cannot claim appointment to a post created after the original employment policy was introduced as a right under that original policy.",
+      "material_facts": [
+        "The original priority-employment policy predated the creation of the post sought by the candidate.",
+        "The post was created after the policy had been revised.",
+        "The candidate had no vested right to appointment to the post before it was created."
+      ],
+      "conclusion": "The candidate could not claim the later-created post under the original policy, and applying the revised policy to the appointment consideration did not retrospectively take away a vested right.",
+      "legal_principle": "The court held that there was no retrospective application where the candidate had no vested right to the later-created post when the revised policy was in effect. A recommendation under the earlier scheme did not create such a right.",
+      "rule": {
+        "if": "priority_scheme_appointment_claim and post_created_after_original_policy and no_vested_right_before_post_creation",
+        "then": "original_policy_does_not_entitle_candidate_to_later_post"
+      },
+      "predicates": {
+        "priority_scheme_appointment_claim": "A candidate seeks appointment under a priority-employment scheme intended to assist people displaced by land acquisition.",
+        "post_created_after_original_policy": "The post sought by the candidate was created after the original employment policy was introduced.",
+        "no_vested_right_before_post_creation": "The candidate had no vested entitlement to appointment before the post was created."
+      },
+      "definition": "If a candidate seeks a post created after the original policy and had no vested entitlement before its creation, the original policy does not entitle the candidate to that post."
+    },
+    {
+      "legal_issue": "A candidate who fails the revised scheme's eligibility requirements cannot claim priority appointment under that scheme.",
+      "material_facts": [
+        "The revised policy limited priority consideration to landowners whose acquired land met a specified minimum acreage.",
+        "The candidate's acquired land was below that threshold.",
+        "The candidate was over the applicable age limit, and the revised policy did not permit relaxation of the age requirement."
+      ],
+      "conclusion": "The candidate was ineligible for priority appointment under the revised policy.",
+      "legal_principle": "The revised policy required the prescribed minimum extent of acquired land and provided that age and qualification requirements would not be relaxed. A candidate who did not meet those requirements could not claim appointment under the scheme.",
+      "rule": {
+        "if": "priority_scheme_appointment_claim and acquired_land_below_scheme_threshold and candidate_over_age and policy_bars_relaxation",
+        "then": "candidate_ineligible_for_priority_appointment"
+      },
+      "predicates": {
+        "priority_scheme_appointment_claim": "A candidate seeks appointment under a priority-employment scheme intended to assist people displaced by land acquisition.",
+        "acquired_land_below_scheme_threshold": "The amount of land acquired from the candidate was less than the minimum required for eligibility under the scheme.",
+        "candidate_over_age": "The candidate exceeded the applicable age limit when considered for appointment.",
+        "policy_bars_relaxation": "The scheme did not permit relaxation of the age requirement."
+      },
+      "definition": "A candidate seeking priority appointment is ineligible when the acquired land falls below the scheme's minimum and the candidate exceeds an age limit that the scheme does not permit authorities to relax."
+    },
+    {
+      "legal_issue": "Refusal of priority appointment under the scheme's eligibility requirements is not discriminatory without a factual basis showing mala fides or targeted denial.",
+      "material_facts": [
+        "The candidate did not meet the revised policy's land and age requirements.",
+        "No mala fides by the employer or its officers were alleged.",
+        "There was no evidence that anyone had acted with the purpose of denying appointment to the candidate."
+      ],
+      "conclusion": "The finding that refusal of appointment was discriminatory was unsupported by the facts.",
+      "legal_principle": "The court rejected the discrimination finding because it lacked a proper factual foundation: no mala fides were alleged and nothing showed that anyone was bent upon denying the candidate an appointment.",
+      "rule": {
+        "if": "priority_scheme_appointment_claim and appointment_denied_under_eligibility_policy and no_mala_fides_alleged and no_evidence_of_targeted_denial",
+        "then": "discrimination_not_established"
+      },
+      "predicates": {
+        "priority_scheme_appointment_claim": "A candidate seeks appointment under a priority-employment scheme intended to assist people displaced by land acquisition.",
+        "appointment_denied_under_eligibility_policy": "The employer refused appointment because the candidate did not satisfy the scheme's eligibility requirements.",
+        "no_mala_fides_alleged": "The candidate did not allege that the employer or its officers acted with improper motive.",
+        "no_evidence_of_targeted_denial": "The evidence did not show that anyone deliberately acted to deny the candidate an appointment."
+      },
+      "definition": "A refusal based on scheme eligibility requirements does not establish discrimination when no improper motive is alleged and there is no evidence of targeted denial."
+    }
+  ],
+  "seconds": 75.7
+}

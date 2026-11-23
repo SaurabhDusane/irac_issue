@@ -1,0 +1,101 @@
+{
+  "doc_id": "894330",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23797,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2413,
+    "prompt_tokens": 6220,
+    "total_tokens": 8633,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A writ petition seeking substantially the same relief should not be entertained when an adequate statutory appeal is available and the petitioner has already invoked that remedy, which remains pending.",
+      "material_facts": [
+        "The company appealed the authority’s fresh refusal of permission to the statutory appellate authority.",
+        "That appeal was pending when the company filed a writ petition seeking substantially the same relief."
+      ],
+      "conclusion": "The writ petition should not have been entertained while the company’s statutory appeal was pending.",
+      "legal_principle": "Where an adequate alternative statutory remedy exists and the petitioner has already availed of it, the writ court should not entertain a petition seeking substantially the same relief while that remedy is pending. The Court cited no earlier case for this proposition.",
+      "rule": {
+        "if": "writ_petition and adequate_statutory_appeal and appeal_already_invoked and appeal_pending and substantially_same_relief",
+        "then": "writ_petition_not_entertained"
+      },
+      "predicates": {
+        "writ_petition": "A person brought a petition seeking relief through the court’s writ jurisdiction.",
+        "adequate_statutory_appeal": "The law provided the person with an adequate appeal to a statutory decision-maker.",
+        "appeal_already_invoked": "The person had filed the statutory appeal before seeking writ relief.",
+        "appeal_pending": "The statutory appeal had not been decided when the writ petition was brought.",
+        "substantially_same_relief": "The writ petition sought relief substantially the same as the relief sought in the pending appeal."
+      },
+      "definition": "When a person seeks substantially the same relief by writ petition after invoking an adequate statutory appeal that remains pending, the writ petition is not entertained."
+    },
+    {
+      "legal_issue": "Deemed permission does not arise when the authority refuses an application within the prescribed period, even if that refusal is later quashed and reconsideration is ordered.",
+      "material_facts": [
+        "The authority received an application for development permission and refused it within the prescribed 60-day period.",
+        "The refusal was later set aside, and the authority was directed to reconsider the application.",
+        "The company argued that the later refusal was beyond the prescribed period and that permission therefore had been deemed granted."
+      ],
+      "conclusion": "The timely initial refusal prevented deemed permission from arising; setting that refusal aside did not make it a failure to decide the application within the prescribed period.",
+      "legal_principle": "Under Section 13(3) of the Bombay Metropolitan Region Development Act, 1974, deemed permission arises only if the authority fails to refuse permission within 60 days after receiving the application. Quashing an order is distinct from staying its operation: as explained in Shree Chamundi Mopeds Ltd. v. Church of South India Trust Association, quashing restores the position as it stood when the order was made, but it does not erase the fact that an order was made. Director of Inspection of Income-Tax (Investigation), New Delhi v. Pooran Mall and Sons supports the distinction between the time limit for an initial order and a later order made pursuant to a direction. The Court distinguished Superintendent of Taxes, Dhubri v. Onkarmal Nathmal Trust, where inactivity was material.",
+      "rule": {
+        "if": "development_permission_application and timely_initial_refusal and initial_refusal_quashed and reconsideration_ordered",
+        "then": "deemed_permission_does_not_arise"
+      },
+      "predicates": {
+        "development_permission_application": "A person applied to a public authority for permission to carry out development.",
+        "timely_initial_refusal": "The authority refused the application within the period allowed for its initial decision.",
+        "initial_refusal_quashed": "A reviewing court or appellate decision-maker set aside the authority’s initial refusal.",
+        "reconsideration_ordered": "The reviewing court or appellate decision-maker directed the authority to decide the application again."
+      },
+      "definition": "When a development application was refused within the initial decision period and that refusal was later set aside with reconsideration ordered, deemed permission does not arise merely because the refusal was quashed."
+    },
+    {
+      "legal_issue": "A fresh order made after an initial order is set aside and reconsideration is directed is not subject to the statutory time limit for the initial order; absent a time limit set by the reviewing court, the fresh order must be made within a reasonable time.",
+      "material_facts": [
+        "The authority had refused the application within the statutory period for an initial decision.",
+        "A court later set aside the refusal and directed reconsideration without fixing a deadline for the fresh decision.",
+        "The authority made a fresh decision after the original statutory period had elapsed."
+      ],
+      "conclusion": "The fresh order was not required to be made within the statutory period measured from receipt of the original application; because the court fixed no deadline, it had to be made within a reasonable time.",
+      "legal_principle": "The statutory period for making an initial order is satisfied when that order is made within the period. If the order is later set aside and a fresh order is directed, the fresh order need not be made within the original statutory period. Director of Inspection of Income-Tax (Investigation), New Delhi v. Pooran Mall and Sons supports this rule, including the need to give effect to directions made by a court or statutory authority. Where the reviewing court sets no deadline, the fresh order must be made within a reasonable time.",
+      "rule": {
+        "if": "development_permission_proceeding and timely_initial_order and initial_order_set_aside and fresh_decision_directed and no_deadline_fixed",
+        "then": "fresh_order_due_within_reasonable_time"
+      },
+      "predicates": {
+        "development_permission_proceeding": "A person sought permission from a public authority to carry out development.",
+        "timely_initial_order": "The authority made its initial decision within the period allowed for that decision.",
+        "initial_order_set_aside": "A reviewing court or appellate decision-maker set aside the authority’s initial decision.",
+        "fresh_decision_directed": "The reviewing court or appellate decision-maker directed the authority to decide the application again.",
+        "no_deadline_fixed": "The reviewing court or appellate decision-maker did not specify a deadline for the fresh decision."
+      },
+      "definition": "When an initial decision on a development application was timely but later set aside for reconsideration without a fixed deadline, the fresh decision is due within a reasonable time rather than within the original decision period."
+    },
+    {
+      "legal_issue": "A fresh order made on reconsideration after an earlier order is set aside is appealable under the statutory appeal route, with the appeal period running from the fresh order.",
+      "material_facts": [
+        "The court had set aside the authority’s earlier decision and directed reconsideration of the application.",
+        "The authority made a fresh refusal, and the company appealed that refusal under the statutory appeal procedure."
+      ],
+      "conclusion": "The fresh consequential order must be treated as an order under Section 13(3) for purposes of appeal, and the appeal period runs from the date of the fresh order.",
+      "legal_principle": "Section 13(4) provides an appeal against a decision made under Section 13(3). The Court held that a consequential order made after reconsideration must be treated as an order under Section 13(3) for appeal purposes, with the limitation period counted from the fresh order. The Court relied on the distinction, discussed in Director of Inspection of Income-Tax (Investigation), New Delhi v. Pooran Mall and Sons, between the original decision period and a fresh order made pursuant to a direction.",
+      "rule": {
+        "if": "fresh_consequential_order and statutory_appeal_available and statutory_appeal_proceeding",
+        "then": "fresh_order_appealable_with_period_running_from_fresh_order"
+      },
+      "predicates": {
+        "fresh_consequential_order": "A public authority made a fresh decision after an earlier decision was set aside and reconsideration was directed.",
+        "statutory_appeal_available": "The law provided an appeal against the kind of decision made by the authority.",
+        "statutory_appeal_proceeding": "A person sought to challenge the fresh decision through the statutory appeal procedure."
+      },
+      "definition": "When an authority makes a fresh consequential decision of a kind subject to statutory appeal, the fresh decision is appealable and the appeal period runs from that decision."
+    }
+  ],
+  "seconds": 16.8
+}

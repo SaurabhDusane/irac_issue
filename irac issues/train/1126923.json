@@ -1,0 +1,116 @@
+{
+  "doc_id": "1126923",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 27175,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3374,
+    "prompt_tokens": 7220,
+    "total_tokens": 10594,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person resides in a district for maintenance proceedings when the person chooses to make it a permanent or temporary abode, rather than making only a casual or flying visit.",
+      "material_facts": [
+        "The respondent lived with his wife in a house in the district for about five months.",
+        "He came with the definite purpose of living with his wife in his native place, rather than as a casual visitor."
+      ],
+      "conclusion": "The respondent's stay with his wife amounted to residence, despite being temporary, and the district was where he last resided with her.",
+      "legal_principle": "Section 488(8) of the Code of Criminal Procedure, 1898, is to be construed liberally in light of the social purpose of providing summary and urgent relief to wives and children. “Resides” means choosing a place as one's abode permanently or temporarily; it requires more than a casual visit, but does not require technical domicile. The Court referred to Sampoornam v. N. Sundaram (1952) 2 M.L.J. 573; Khairunnissa v. Bashir Ahmad (1929) I.L.R. 53 Bom. 781; Flowers v. Flowers (1910) I.L.R. 32 All. 203; Balakrishna v. Sakuntala Bai, A.I.R. 1942 Mad. 666; and Charan Das v. Surasti Bai, A.I.R. 1940 Lah. 449.",
+      "rule": {
+        "if": "maintenance_proceeding and (permanent_abode_chosen or temporary_abode_chosen) and not casual_visit",
+        "then": "respondent_resides_in_district"
+      },
+      "predicates": {
+        "maintenance_proceeding": "A claimant initiated a summary proceeding seeking maintenance from a spouse or parent.",
+        "permanent_abode_chosen": "The respondent chose the district as a place to live permanently.",
+        "temporary_abode_chosen": "The respondent chose the district as a temporary abode, with an intention to stay there for a period.",
+        "casual_visit": "The respondent's presence in the district was only a brief or casual visit, without an intention to make it an abode."
+      },
+      "definition": "When a maintenance proceeding concerns a respondent who chose a district as a permanent or temporary abode and was not merely visiting, the respondent resides there."
+    },
+    {
+      "legal_issue": "The district where a respondent last resided with a spouse for maintenance proceedings must be within the territory in which the governing law operates.",
+      "material_facts": [
+        "The respondent lived with his wife for about five months in a district in India.",
+        "The respondent's later visit to India was described as a flying visit to take his wife to Africa."
+      ],
+      "conclusion": "The place where the respondent had temporarily lived with his wife in India was a place where he last resided with her for purposes of the proceeding.",
+      "legal_principle": "Sections 2(1) and 488(8) of the Code of Criminal Procedure, 1898, limit the Code's operation to its legislated territory; the phrase “where he last resided with his wife” does not confer jurisdiction by reference to a residence abroad. The Court relied on the presumption against extra-territorial operation of legislation and referred to In re Drucker (No. 2), Basden, Ex Parte, [1902] 2 K.B. 210.",
+      "rule": {
+        "if": "maintenance_proceeding and last_shared_residence_in_legislated_territory",
+        "then": "last_shared_residence_is_available_forum"
+      },
+      "predicates": {
+        "maintenance_proceeding": "A claimant initiated a summary proceeding seeking maintenance from a spouse or parent.",
+        "last_shared_residence_in_legislated_territory": "The respondent and spouse last lived together in a place within the territory where the governing law operates."
+      },
+      "definition": "In a maintenance proceeding, a last shared residence within the territory where the governing law operates is an available forum."
+    },
+    {
+      "legal_issue": "A maintenance proceeding may be brought in a district where the respondent is physically present when the proceeding is initiated, even if the presence is temporary.",
+      "material_facts": [
+        "The respondent was in the district when the maintenance application was filed.",
+        "Notice was served on him there, he filed a counter-affidavit and obtained exemption from appearing at the hearing, and he later left for Africa."
+      ],
+      "conclusion": "The respondent's presence in the district when the application was filed gave the Magistrate territorial jurisdiction.",
+      "legal_principle": "Section 488(8) of the Code of Criminal Procedure, 1898, provided alternative forums. In that provision, “is” refers to physical presence in the district when proceedings are initiated; it is not limited by the respondent's intention to remain or by the duration or nature of the stay. This construction serves the provision's social purpose of enabling a deserted wife or helpless child to obtain urgent relief.",
+      "rule": {
+        "if": "maintenance_proceeding and respondent_physically_present_when_filed",
+        "then": "district_has_territorial_jurisdiction"
+      },
+      "predicates": {
+        "maintenance_proceeding": "A claimant initiated a summary proceeding seeking maintenance from a spouse or parent.",
+        "respondent_physically_present_when_filed": "The respondent was physically present in the district when the claimant initiated the proceeding."
+      },
+      "definition": "A district has territorial jurisdiction over a maintenance proceeding when the respondent was physically present there at its initiation."
+    },
+    {
+      "legal_issue": "A plea that a party submitted to a court's jurisdiction cannot ordinarily be raised for the first time before the Supreme Court when it was not raised earlier and depends on a mixed question of fact and law.",
+      "material_facts": [
+        "The appellants argued before the Supreme Court that the respondent had submitted to the Magistrate's jurisdiction.",
+        "They had not raised that plea in their pleadings or in any of the courts below.",
+        "The Court found no exceptional circumstances warranting consideration of the belated plea."
+      ],
+      "conclusion": "The appellants were not permitted to raise the submission-to-jurisdiction plea for the first time before the Supreme Court.",
+      "legal_principle": "The Court ordinarily does not permit a mixed question of fact and law to be raised for the first time before it, absent exceptional circumstances. The judgment cited no earlier case or statutory provision for this procedural rule.",
+      "rule": {
+        "if": "supreme_court_appeal and jurisdiction_submission_not_raised_below and plea_is_mixed_fact_and_law and no_exceptional_circumstances",
+        "then": "belated_jurisdiction_submission_plea_not_permitted"
+      },
+      "predicates": {
+        "supreme_court_appeal": "A party brought an appeal before the Supreme Court.",
+        "jurisdiction_submission_not_raised_below": "The party did not raise the submission-to-jurisdiction plea in its pleadings or in the courts below.",
+        "plea_is_mixed_fact_and_law": "The plea depends on both factual matters and legal questions.",
+        "no_exceptional_circumstances": "No exceptional circumstances warranted allowing the plea to be raised for the first time."
+      },
+      "definition": "In a Supreme Court appeal, a mixed fact-and-law plea about submission to jurisdiction that was not raised below is not permitted when no exceptional circumstances exist."
+    },
+    {
+      "legal_issue": "A maintenance award based on concurrent factual findings and supported by the evidence should not be disturbed when no sufficient basis to challenge those findings is established.",
+      "material_facts": [
+        "The Magistrate assessed the respondent's salary and property and awarded maintenance to the wife and minor child.",
+        "The Additional Sessions Judge reconsidered the evidence and affirmed the Magistrate's findings and award.",
+        "The findings were concurrent, and the jurisdiction question was the only question argued before the High Court."
+      ],
+      "conclusion": "The Court restored the Magistrate's maintenance award along with the order, after holding that the Magistrate had jurisdiction.",
+      "legal_principle": "The Court treated the Magistrate's findings on maintenance as concurrent findings of fact, which ordinarily cannot be questioned in revision, and noted that the Additional Sessions Judge had accepted them after reconsidering the evidence. No separate statutory provision or earlier case was relied on for this point.",
+      "rule": {
+        "if": "maintenance_proceeding and concurrent_maintenance_findings and award_based_on_evidence and no_sufficient_challenge_to_findings",
+        "then": "maintenance_award_left_undisturbed"
+      },
+      "predicates": {
+        "maintenance_proceeding": "A claimant initiated a summary proceeding seeking maintenance from a spouse or parent.",
+        "concurrent_maintenance_findings": "Two lower courts reached the same factual findings on entitlement to maintenance and its amount.",
+        "award_based_on_evidence": "The maintenance award was made after considering evidence relevant to the respondent's means and the claimants' needs.",
+        "no_sufficient_challenge_to_findings": "No sufficient basis was established to disturb the concurrent factual findings."
+      },
+      "definition": "A maintenance award is left undisturbed when it rests on evidence, the lower courts made concurrent findings, and no sufficient challenge to those findings is established."
+    }
+  ],
+  "seconds": 20.4
+}

@@ -1,0 +1,79 @@
+{
+  "doc_id": "580610",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 9989,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2633,
+    "prompt_tokens": 2964,
+    "total_tokens": 5597,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant claiming a right of pre-emption must retain the qualifying status of tenant until the pre-emption decree, and an eviction order passed before that decree ends the tenancy even if physical dispossession has not occurred.",
+      "material_facts": [
+        "The claimants were tenants of the land when its owner sold it to the purchasers.",
+        "An eviction order was passed against the claimants after the sale but before the trial court decreed the pre-emption suit.",
+        "The claimants had obtained an injunction against dispossession, but it did not prevent an eviction order from being obtained."
+      ],
+      "conclusion": "The claimants were no longer tenants when the pre-emption decree was passed and could not obtain a decree for pre-emption.",
+      "legal_principle": "Under Section 15(1)(a), Fourthly, of the Punjab Pre-emption Act, 1913, a tenant claiming pre-emption must hold the land as a tenant. The general rule of pre-emption requires the claimant to retain the right until the date of the decree. Applying Bhagwan Dass (dead) by L.Rs. v. Chet Ram, the Court held that an eviction order determines the tenancy; actual dispossession is not necessary. The Court declined to distinguish that decision or refer the matter to a larger bench.",
+      "rule": {
+        "if": "tenant_based_preemption_case and claimant_was_tenant_at_sale and valid_ejectment_order_before_preemption_decree",
+        "then": "preemption_decree_denied"
+      },
+      "predicates": {
+        "tenant_based_preemption_case": "The proceeding is a claim for pre-emption based on the claimant's status as a tenant of the property sold.",
+        "claimant_was_tenant_at_sale": "The claimant held the property as a tenant when it was sold.",
+        "valid_ejectment_order_before_preemption_decree": "A competent authority entered an effective order for the claimant's eviction after the sale and before the pre-emption decree."
+      },
+      "definition": "When a tenant-based pre-emption claimant was a tenant at the sale but an effective eviction order was entered before the pre-emption decree, the claim does not result in a pre-emption decree."
+    },
+    {
+      "legal_issue": "A pre-emption decree is not set aside for reliance on an eviction order that was not formally admitted as additional evidence when the existence of that order was undisputed.",
+      "material_facts": [
+        "The purchasers applied to have the eviction order admitted as additional evidence in the first appeal, but that application was rejected.",
+        "The High Court relied on the eviction order without formally admitting it as additional evidence.",
+        "The existence of the eviction order was not disputed before the High Court."
+      ],
+      "conclusion": "Although the High Court should have admitted the order as additional evidence if it considered that legally appropriate, the evidentiary complaint did not warrant rejecting the order's existence or disturbing the result in the circumstances.",
+      "legal_principle": "Under Order 41 Rule 27 of the Code of Civil Procedure, the proper course for the High Court was to admit the eviction order as additional evidence if it considered that appropriate in law. Because the existence of the order was undisputed, the procedural error did not justify accepting the appellant's challenge.",
+      "rule": {
+        "if": "civil_appeal_with_additional_evidence_dispute and material_order_not_formally_admitted and existence_of_order_undisputed",
+        "then": "evidentiary_error_does_not_warrant_reversal"
+      },
+      "predicates": {
+        "civil_appeal_with_additional_evidence_dispute": "The proceeding is an appeal in which a party challenges reliance on material that was not admitted as additional evidence.",
+        "material_order_not_formally_admitted": "The court relied on an order that had not been formally admitted into evidence.",
+        "existence_of_order_undisputed": "The parties did not dispute that the order existed."
+      },
+      "definition": "When an appeal concerns reliance on an unadmitted order but the order's existence is undisputed, the evidentiary error does not require reversal."
+    },
+    {
+      "legal_issue": "An eviction order covering the whole property ends the tenant's qualifying status over the whole property even if physical eviction from part of it is deferred.",
+      "material_facts": [
+        "The eviction order allowed eviction from the entire land sold to the purchasers.",
+        "The claimants were directed to be ejected forthwith from part of the land, while their actual eviction from the rest was deferred until other land was allotted.",
+        "The eviction order preceded the pre-emption decree."
+      ],
+      "conclusion": "The claimants did not remain tenants of any portion of the land when the pre-emption decree was passed, so no decree for pre-emption could be granted for any portion.",
+      "legal_principle": "Under Section 15(1)(a), Fourthly, of the Punjab Pre-emption Act, 1913, the claimant must hold the land as a tenant. As explained in Bhagwan Dass (dead) by L.Rs. v. Chet Ram, the tenancy ends when the eviction order is passed; physical dispossession is not required.",
+      "rule": {
+        "if": "tenant_based_preemption_case and eviction_order_before_preemption_decree and eviction_order_covers_entire_property and physical_ejection_deferred_for_part",
+        "then": "preemption_decree_denied_for_entire_property"
+      },
+      "predicates": {
+        "tenant_based_preemption_case": "The proceeding is a claim for pre-emption based on the claimant's status as a tenant of the property sold.",
+        "eviction_order_before_preemption_decree": "An effective eviction order was entered before the court decided the pre-emption claim.",
+        "eviction_order_covers_entire_property": "The eviction order authorizes eviction from the whole property at issue.",
+        "physical_ejection_deferred_for_part": "Actual removal of the claimant from some part of the property was postponed."
+      },
+      "definition": "When an eviction order entered before the pre-emption decree covers the whole property, postponing physical ejection from part of it does not preserve a pre-emption claim for any part."
+    }
+  ],
+  "seconds": 16.1
+}

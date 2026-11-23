@@ -1,0 +1,62 @@
+{
+  "doc_id": "67460548",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38411,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2318,
+    "prompt_tokens": 10111,
+    "total_tokens": 12429,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Failure to appeal immediately from an interlocutory provisional-rent order does not bar a tenant from challenging that order in an appeal against the resulting eviction order.",
+      "material_facts": [
+        "The Rent Controller fixed provisional arrears without considering the tenant’s affidavit setting out rent payments and directing the tenant to pay the assessed amount.",
+        "The tenant did not immediately appeal the provisional-rent order and did not comply with it, so the Rent Controller ordered eviction.",
+        "The tenant appealed the eviction order and also challenged the provisional-rent order in that appeal.",
+        "The appellate authority set aside both orders and remanded the matter, but the High Court held that the provisional-rent order could not be reviewed because no immediate appeal had been filed."
+      ],
+      "conclusion": "The appellate authority may examine the legality and validity of the provisional-rent order when the tenant appeals the eviction order and challenges the provisional-rent order in that appeal, notwithstanding the absence of an immediate appeal.",
+      "legal_principle": "Section 15(1)(b) of the East Punjab Urban Rent Restriction Act, 1949 permits an appeal from an order of the Rent Controller but does not provide that failure to appeal an interlocutory order forfeits the right to challenge it in an appeal from the final order. Unlike Sections 97 and 105(2) of the Code of Civil Procedure, it contains no such bar. An order fixing provisional rent is interlocutory because it does not finally determine the principal matter, even though non-compliance may lead to eviction. The principle against requiring appeals from every interlocutory order is supported by Maharajah Moheshur Sing v. The Bengal Government and the discussion of the competing approaches in Nanibala Dasi v. Ichhamoyee Dasi and Syed Ishak Syed Farid v. Kunjbihari Singh. Rakesh Wadhawan v. Jagdamba Industrial Corporation, affirmed in Vinod Kumar v. Prem Lata, explains the provisional assessment and the consequence of non-compliance; it does not bar review of that assessment in an appeal from eviction.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and provisional_rent_order and no_immediate_appeal and eviction_order_appealed and provisional_order_challenged_in_eviction_appeal",
+        "then": "appellate_authority_may_review_provisional_assessment"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "The proceeding seeks eviction of a tenant under a rent-control process.",
+        "provisional_rent_order": "The Controller issued an interim order assessing rent arrears and related amounts for the tenant to pay or tender.",
+        "no_immediate_appeal": "The tenant did not appeal the provisional assessment when it was first issued.",
+        "eviction_order_appealed": "The tenant appealed the resulting eviction order.",
+        "provisional_order_challenged_in_eviction_appeal": "In the appeal against eviction, the tenant also challenged the correctness of the provisional assessment."
+      },
+      "definition": "When a tenant in a rent-control eviction proceeding does not immediately appeal a provisional assessment but later appeals eviction and challenges that assessment, the appellate authority may review it."
+    },
+    {
+      "legal_issue": "A provisional-rent assessment must be reconsidered when the Controller failed to consider the tenant’s evidence of payments before fixing the amount.",
+      "material_facts": [
+        "Before the provisional assessment, the tenant filed an affidavit detailing payments made towards rent and the landlord received a copy before the assessment was considered.",
+        "The Controller relied on the landlord’s ledger without addressing the tenant’s payment statement.",
+        "The appellate authority compared the parties’ payment records, found that payments were not fully reflected in the landlord’s account, and set aside the provisional assessment and eviction orders for a fresh assessment."
+      ],
+      "conclusion": "The appellate authority was correct to set aside the orders and direct the Controller to redetermine the arrears, interest and costs after considering the parties’ material.",
+      "legal_principle": "The proviso to Section 13(2)(i) of the East Punjab Urban Rent Restriction Act, 1949 requires the Controller to assess the arrears of rent, interest and application costs provisionally. Rakesh Wadhawan v. Jagdamba Industrial Corporation, affirmed in Vinod Kumar v. Prem Lata, establishes that the Controller must make that assessment and that non-compliance with a valid assessment leads to eviction. Where relevant evidence of payments was before the Controller but was not considered, the assessment cannot properly support eviction and must be made afresh.",
+      "rule": {
+        "if": "rent_control_eviction_appeal and provisional_rent_assessment and tenant_payment_evidence_submitted_before_assessment and controller_failed_to_consider_payment_evidence",
+        "then": "provisional_assessment_must_be_set_aside_and_redetermined"
+      },
+      "predicates": {
+        "rent_control_eviction_appeal": "The matter is an appeal concerning an eviction order in a rent-control proceeding.",
+        "provisional_rent_assessment": "The Controller made an interim assessment of rent arrears and related amounts.",
+        "tenant_payment_evidence_submitted_before_assessment": "The tenant presented evidence of payments towards rent before the Controller made the assessment.",
+        "controller_failed_to_consider_payment_evidence": "The Controller did not address the tenant’s payment evidence when fixing the provisional amount."
+      },
+      "definition": "When a rent-control eviction appeal concerns a provisional assessment made without considering the tenant’s timely payment evidence, the assessment must be set aside and redetermined."
+    }
+  ],
+  "seconds": 13.9
+}

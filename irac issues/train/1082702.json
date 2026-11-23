@@ -1,0 +1,102 @@
+{
+  "doc_id": "1082702",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 41988,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3212,
+    "prompt_tokens": 10254,
+    "total_tokens": 13466,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A terminal tax is not leviable on goods that pass through a local area as part of a continuous journey to a destination elsewhere when any halt in the area is incidental to the journey and lasts only a reasonable time.",
+      "material_facts": [
+        "Goods were brought from other States, unloaded at intermediate godowns, sorted, and reloaded into trucks for destinations beyond the local area.",
+        "The trucks then passed through the local area on their way to those destinations.",
+        "The tax authority ordered a collection post at the godown entrance on the basis that the goods entered the local area."
+      ],
+      "conclusion": "The entry, unloading, sorting, and reloading of the goods did not by themselves make them liable to terminal tax where their destination was elsewhere and the stop was incidental to their continuing journey.",
+      "legal_principle": "Section 178 of the Delhi Municipal Corporation Act, 1957 charges terminal tax on goods carried into the local territory; it does not authorize tax on goods merely passing through it to another destination. Taxing statutes are strictly construed, with doubt resolved in favour of the taxpayer. Drawing on Punjab Flour & General Mills v. Lahore Corporation, The Central India Spinning & Weaving & Manufacturing Co. Ltd. v. Municipal Committee, Wardha, Bangalore Woollen, Cotton & Silk Mills Co. Ltd. v. Corporation of the City of Bangalore, Diamond Sugar Mills Ltd. v. State of Uttar Pradesh, Burmah Shell Oil Storage & Distributing Co. India Ltd. v. Belgaum Borough Municipality, Khyerbari Tea Co. Ltd. v. State of Assam, and Champlain Realty Co. v. Town of Brattleboro, the Court treated destination and the continuity of the journey as material, and distinguished terminal tax from octroi, which is based on use or consumption in the local area.",
+      "rule": {
+        "if": "terminal_tax_dispute and goods_enter_local_area and final_destination_elsewhere and continuous_journey and stop_for_transshipment and goods_leave_within_reasonable_time",
+        "then": "terminal_tax_not_imposable_on_transit_goods"
+      },
+      "predicates": {
+        "terminal_tax_dispute": "A taxing authority seeks terminal tax on goods entering a local area.",
+        "goods_enter_local_area": "Goods are brought into the local area from outside it.",
+        "final_destination_elsewhere": "The goods are intended to reach a destination outside the local area.",
+        "continuous_journey": "The movement of the goods to their outside destination is one continuing journey rather than a new transaction begun in the local area.",
+        "stop_for_transshipment": "The goods halt in the local area for handling such as unloading, sorting, or reloading to continue their journey.",
+        "goods_leave_within_reasonable_time": "The goods leave the local area within a period reasonable in the circumstances."
+      },
+      "definition": "When a terminal-tax dispute concerns goods passing through an area on a continuing journey to an outside destination, with only an incidental and reasonably brief halt, the output is that terminal tax cannot be imposed on those transit goods."
+    },
+    {
+      "legal_issue": "Terminal tax is leviable when goods are initially destined for a local area, even if the recipient later rebooks them to another destination.",
+      "material_facts": [
+        "The goods in the appeals were destined for places beyond the local area, so this was not the factual situation before the Court.",
+        "The Court distinguished the appeals by explaining that goods first sent to and received in a local area, then rebooked by the recipient for another place, involve a separate subsequent transaction."
+      ],
+      "conclusion": "Where goods reach their intended destination in the local area and are later rebooked for another place, terminal tax is leviable on their entry into that area.",
+      "legal_principle": "Under section 178 of the Delhi Municipal Corporation Act, 1957, entry into the area that is the goods’ destination attracts terminal tax; a later rebooking does not undo that destination or convert the original movement into mere transit. The Court distinguished Amrit Banaspati Co. Ltd. v. Union of India on its facts, noting that the goods there were brought into the area for sale there.",
+      "rule": {
+        "if": "terminal_tax_dispute and goods_initially_destined_for_area and goods_received_at_destination and recipient_rebooks_goods_for_elsewhere",
+        "then": "terminal_tax_imposable_on_initial_destination_entry"
+      },
+      "predicates": {
+        "terminal_tax_dispute": "A taxing authority seeks terminal tax on goods entering a local area.",
+        "goods_initially_destined_for_area": "The goods are originally consigned to a destination in the local area.",
+        "goods_received_at_destination": "The goods arrive at and are received in the local area as their intended destination.",
+        "recipient_rebooks_goods_for_elsewhere": "After receiving the goods, the recipient arranges their onward carriage to another place."
+      },
+      "definition": "When goods are initially destined for and received in a local area before the recipient rebooks them elsewhere, the output is that terminal tax is leviable on their entry into the initial destination."
+    },
+    {
+      "legal_issue": "The requirement that goods be exported immediately under the terminal-tax rules means within a reasonable time, and an unexplained, unreasonable, indefinite halt may make the goods taxable.",
+      "material_facts": [
+        "The goods were unloaded, sorted, and reloaded at intermediate godowns for onward transport to destinations beyond the local area.",
+        "The tax authority relied on the rule concerning immediate export, while the Court found that the word could not require export within a very short time regardless of circumstances.",
+        "The Court stated that the reasonableness of the halt depends on the circumstances, including the nature of the goods, handling time, obstacles, and circumstances beyond the parties’ control."
+      ],
+      "conclusion": "The word “immediately” in Rule 26 must be read as allowing a reasonable period; terminal tax may be imposed only if the goods remained for an indefinite, unexplained period that was unreasonable in the circumstances.",
+      "legal_principle": "Rule 26 of the Terminal Tax Rules must be interpreted consistently with section 178 of the Delhi Municipal Corporation Act, 1957, the charging provision. “Immediately” allows a reasonable period, and a delay may be justified by a reasonable explanation, including circumstances beyond the consignor’s or consignee’s control. The relevant period depends on the circumstances of each case.",
+      "rule": {
+        "if": "terminal_tax_dispute and goods_held_in_local_area and halt_indefinite and delay_unexplained and halt_unreasonable_in_circumstances",
+        "then": "terminal_tax_may_be_imposed_on_unreasonably_indefinite_unexplained_halt"
+      },
+      "predicates": {
+        "terminal_tax_dispute": "A taxing authority seeks terminal tax on goods held in a local area during onward transport.",
+        "goods_held_in_local_area": "The goods remain in the local area before continuing toward their destination.",
+        "halt_indefinite": "The halt has no defined or reasonably ascertainable duration.",
+        "delay_unexplained": "No reasonable explanation is given for the delay.",
+        "halt_unreasonable_in_circumstances": "The duration of the halt is unreasonable after considering the circumstances, including handling needs and obstacles beyond the parties’ control."
+      },
+      "definition": "If goods are held in a local area for an indefinite and unexplained period that is unreasonable in context, the output is that terminal tax may be imposed on that halt."
+    },
+    {
+      "legal_issue": "A direction requiring the tax officer to set a reasonable time for unloading, sorting, and reloading goods is valid when the time accounts for the relevant operational circumstances.",
+      "material_facts": [
+        "The High Court directed the tax officer to fix a reasonable time for unloading, sorting, reloading, and transshipment, taking account of the quantity of goods and the time needed for those operations.",
+        "The Supreme Court held that the direction was correct, subject to the circumstances and factors it had identified when interpreting the charging provision and the rules."
+      ],
+      "conclusion": "The direction to fix a reasonable time for handling and transshipping the goods was upheld, to be applied in light of the relevant circumstances.",
+      "legal_principle": "Under section 178 of the Delhi Municipal Corporation Act, 1957 and Rule 26 of the Terminal Tax Rules, a reasonable period must be assessed in context, including the quantity and nature of goods, the time needed for handling and transshipment, and obstacles or difficulties faced by transporters.",
+      "rule": {
+        "if": "terminal_tax_appeal and authority_must_assess_handling_halt and reasonable_time_direction_accounts_for_operational_circumstances",
+        "then": "reasonable_time_direction_is_valid"
+      },
+      "predicates": {
+        "terminal_tax_appeal": "An appeal concerns the legality of a direction governing the handling of goods subject to a terminal-tax dispute.",
+        "authority_must_assess_handling_halt": "The relevant authority must determine how long goods may reasonably remain in the local area during handling and onward transport.",
+        "reasonable_time_direction_accounts_for_operational_circumstances": "The direction requires a reasonable time to be set in light of the quantity of goods and the practical time and difficulties involved in handling and transshipment."
+      },
+      "definition": "When an appeal concerns a time limit for handling goods in transit and the direction requires the authority to account for relevant operational circumstances, the output is that the reasonable-time direction is valid."
+    }
+  ],
+  "seconds": 21.1
+}

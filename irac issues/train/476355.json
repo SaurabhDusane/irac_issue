@@ -1,0 +1,99 @@
+{
+  "doc_id": "476355",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 37249,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2882,
+    "prompt_tokens": 9818,
+    "total_tokens": 12700,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An equal pre-emptor cannot obtain a share of the property after another pre-emptor has been substituted for the vendee and the claimant has no superior right.",
+      "material_facts": [
+        "A group of pre-emptors obtained a conditional decree recognizing their pre-emption claim.",
+        "Before that group deposited the required balance, another group of equal degree filed a pre-emption suit.",
+        "The first group deposited the balance as required and took possession under the decree.",
+        "The later claimants had no superior pre-emption right over the first group."
+      ],
+      "conclusion": "The later claimants could not succeed because, after the first group fulfilled the decree and was substituted for the vendees, the later claimants had no superior right.",
+      "legal_principle": "A pre-emptor's secondary right is a right of substitution in place of the vendee, not a right to share the property as a matter of general pre-emption law. The claimant must have a superior right to the vendee or a person substituted for the vendee, and that right must subsist when exercised. Sections 4, 13 and 17 of the Punjab Pre-emption Act define and regulate the right but do not create a right to share against a person who has already been substituted; section 17 distributes property among equally entitled claimants only while the right remains to be exercised. Mool Chand v. Ganga Jal and Lokha Singh v. Sermukh Singh were relied on.",
+      "rule": {
+        "if": "preemption_proceeding and first_claimant_substituted_for_vendee and rival_claimant_not_superior",
+        "then": "rival_preemption_claim_fails"
+      },
+      "predicates": {
+        "preemption_proceeding": "The case is a proceeding to enforce a right of pre-emption.",
+        "first_claimant_substituted_for_vendee": "A prior claimant completed the required steps and took the vendee's place in the sale.",
+        "rival_claimant_not_superior": "The rival claimant did not have a right superior to that of the substituted claimant."
+      },
+      "definition": "When a pre-emption proceeding involves a rival claimant who is not superior to a claimant already substituted for the vendee, the rival claim fails."
+    },
+    {
+      "legal_issue": "Failure to join all suits arising from the same sale does not, by itself, bar a separate pre-emption suit or require that an earlier decree be set aside.",
+      "material_facts": [
+        "The first group obtained a decree in its pre-emption suit before the later claimants filed their suit.",
+        "The suits arising from the sale were not joined together.",
+        "The later claimants asserted a statutory entitlement to share the property."
+      ],
+      "conclusion": "Section 28 did not preclude a decree in a separately filed pre-emption suit, and the later claimants' suit was not barred merely because the first suit had been separately decreed.",
+      "legal_principle": "Section 28 of the Punjab Pre-emption Act provides a procedure for joining suits arising from the same sale so that the court can avoid conflicting decisions and regulate claimants' priority. It does not alter substantive rights or make joinder a prerequisite to a separate decree.",
+      "rule": {
+        "if": "preemption_proceeding and suits_not_joined",
+        "then": "nonjoinder_does_not_bar_separate_suit"
+      },
+      "predicates": {
+        "preemption_proceeding": "The case is a proceeding to enforce a right of pre-emption.",
+        "suits_not_joined": "Multiple suits arising from the same sale were not joined together."
+      },
+      "definition": "In a pre-emption proceeding, failure to join multiple suits arising from the same sale does not by itself bar a separate suit."
+    },
+    {
+      "legal_issue": "The doctrine of lis pendens does not affect a transfer made in recognition of a pre-existing and subsisting right of pre-emption.",
+      "material_facts": [
+        "The rival claimants filed their pre-emption suit before the first group deposited the balance required by its decree.",
+        "When the first group completed payment and obtained possession, its pre-emption suit had already been filed and decreed, and the decree's enforcement process remained available.",
+        "The first group's acquisition was in recognition of its existing, enforceable pre-emption right."
+      ],
+      "conclusion": "The first group's acquisition was not affected by lis pendens, and it acquired an indefeasible right to the land when it took possession after complying with the decree.",
+      "legal_principle": "Lis pendens applies to transfers made during litigation but does not affect a pre-existing right. A transfer recognizing a subsisting and enforceable pre-emption right does not create a new right during litigation; a purported recognition of a right that has become unenforceable by limitation or otherwise is instead treated as creating a new right pendente lite. The Court followed Bellami v. Sabine, Mool Chand v. Ganga Jal, Mt. Sant Kaur v. Teja Singh, Mohammad Sadiq v. Ghasi Ram and Wazir Ali Khan v. Zahir Ahmad Khan, and rejected the contrary approach in Kundan Lal v. Amar Singh.",
+      "rule": {
+        "if": "preemption_proceeding and transfer_during_litigation and transferee_right_subsisting and transfer_recognizes_preexisting_right",
+        "then": "transfer_unaffected_by_lis_pendens"
+      },
+      "predicates": {
+        "preemption_proceeding": "The case is a proceeding to enforce a right of pre-emption.",
+        "transfer_during_litigation": "The property was transferred while litigation concerning it was pending.",
+        "transferee_right_subsisting": "The transferee had an existing and enforceable right of pre-emption when the transfer occurred.",
+        "transfer_recognizes_preexisting_right": "The transfer recognized the transferee's pre-existing right rather than creating a new right during the litigation."
+      },
+      "definition": "A transfer during a pre-emption proceeding is unaffected by lis pendens when it recognizes the transferee's existing, enforceable pre-emption right."
+    },
+    {
+      "legal_issue": "A conditional decree does not substitute a pre-emptor for the vendee until the decree's conditions are fulfilled and the pre-emptor takes possession under it.",
+      "material_facts": [
+        "The decree required the pre-emptors to pay the balance of the purchase amount by a specified date and provided for dismissal if they did not do so.",
+        "The decree provided for possession after payment.",
+        "The first group deposited the required balance and later took possession under the decree."
+      ],
+      "conclusion": "The decree alone did not effect substitution; substitution took effect when the decree-holders fulfilled its conditions and took possession.",
+      "legal_principle": "A pre-emption right is effectively exercised when the pre-emptor is substituted for the vendee. Until the conditions of a decree requiring payment are fulfilled, the decree-holder is not substituted. The Court followed Deonandan Prashad Singh v. Ramdhari Chowdhri.",
+      "rule": {
+        "if": "preemption_proceeding and conditional_decree and condition_unfulfilled",
+        "then": "substitution_not_yet_effective"
+      },
+      "predicates": {
+        "preemption_proceeding": "The case is a proceeding to enforce a right of pre-emption.",
+        "conditional_decree": "The decree makes substitution or possession conditional on the decree-holder's performance.",
+        "condition_unfulfilled": "The decree-holder has not yet performed the condition required by the decree."
+      },
+      "definition": "In a pre-emption proceeding, a conditional decree does not yet substitute the claimant for the vendee while the required condition remains unfulfilled."
+    }
+  ],
+  "seconds": 17.9
+}

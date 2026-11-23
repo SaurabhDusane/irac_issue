@@ -1,0 +1,94 @@
+{
+  "doc_id": "100876905",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16822,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2469,
+    "prompt_tokens": 4587,
+    "total_tokens": 7056,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may initiate a complaint procedure for alleged false evidence in a judicial proceeding only when the material supports a prima facie case and the court separately finds an inquiry expedient in the interests of justice.",
+      "material_facts": [
+        "In a civil proceeding, a litigant submitted signed written statements and an affidavit supporting one side, then sought to disown those documents and submitted a contradictory version supporting the other side.",
+        "The High Court treated the contradictory documents and declarations as grounds to direct a complaint, but did not adequately follow the required process for forming an opinion on expediency and deciding whether to make a complaint.",
+        "The parties later amicably settled some of their disputes."
+      ],
+      "conclusion": "The direction to initiate proceedings was set aside because the required process for forming an opinion on expediency and deciding whether to make a complaint had not been followed; in light of the subject matter and subsequent developments, the matter was laid to rest.",
+      "legal_principle": "Under Sections 340(1) and 195(1)(b)(i) of the Code of Criminal Procedure, the court must have material making out a prima facie case of an offence within the provision and must form the further opinion that an inquiry is expedient in the interests of justice. A contradictory statement alone is not always enough: intentional falsity or fabricated evidence for use in judicial proceedings must be shown. The court must then decide separately whether to make a complaint. The Court relied on K.T.M.S. Mohd. v. Union of India, Pritish v. State of Maharashtra, and Iqbal Singh Marwah v. Meenakshi Marwah.",
+      "rule": {
+        "if": "section_340_proceeding and (no_prima_facie_basis or no_separate_expediency_assessment) and complaint_directed",
+        "then": "complaint_direction_is_set_aside"
+      },
+      "predicates": {
+        "section_340_proceeding": "A court is considering a complaint procedure for an offence allegedly committed in or in relation to a judicial proceeding.",
+        "no_prima_facie_basis": "The material before the court does not establish a prima facie basis for an inquiry into an offence covered by the complaint procedure.",
+        "no_separate_expediency_assessment": "The court has not separately assessed whether an inquiry is expedient in the interests of justice.",
+        "complaint_directed": "The court has directed that a complaint be made."
+      },
+      "definition": "If a complaint is directed in a proceeding of this kind without a prima facie basis or a separate assessment of expediency, the direction is set aside."
+    },
+    {
+      "legal_issue": "A preliminary inquiry is not a mandatory precondition to forming the opinion required for a complaint procedure concerning alleged offences in judicial proceedings.",
+      "material_facts": [
+        "The High Court directed a complaint based on documents and declarations in the judicial record.",
+        "The Supreme Court considered whether the required opinion could be formed without a preliminary inquiry and stated that such an inquiry is optional if the court can otherwise form the opinion."
+      ],
+      "conclusion": "A court may dispense with a preliminary inquiry when the material otherwise enables it to form the required opinion.",
+      "legal_principle": "Section 340(1) of the Code of Criminal Procedure permits a court to conduct a preliminary inquiry if it thinks one necessary; it does not make that inquiry mandatory. The Court relied on Pritish v. State of Maharashtra.",
+      "rule": {
+        "if": "section_340_proceeding and material_enables_opinion",
+        "then": "preliminary_inquiry_is_not_mandatory"
+      },
+      "predicates": {
+        "section_340_proceeding": "A court is considering whether to inquire into an offence allegedly connected with a judicial proceeding.",
+        "material_enables_opinion": "The material available to the court is sufficient for it to form the opinion required for the complaint procedure without conducting a preliminary inquiry."
+      },
+      "definition": "When the available material enables the court to form the required opinion in this kind of proceeding, a preliminary inquiry is not mandatory."
+    },
+    {
+      "legal_issue": "Forming an opinion that an offence appears to have been committed does not by itself require the court to make a complaint.",
+      "material_facts": [
+        "The High Court directed the Registrar to make a complaint after recording findings about allegedly false documents and declarations.",
+        "The Supreme Court stated that, even after forming an opinion about an offence, the court must decide whether making a complaint is required in the circumstances."
+      ],
+      "conclusion": "A complaint is not automatic after the court forms the required opinion; the court must make a further decision, and make a written complaint only if that decision is affirmative.",
+      "legal_principle": "Under Section 340(1) of the Code of Criminal Procedure, the court has discretion to make a complaint and must decide whether doing so is required in the facts and circumstances. The Court relied on Iqbal Singh Marwah v. Meenakshi Marwah and Pritish v. State of Maharashtra. If a complaint is made, it is sent to a Magistrate of competent jurisdiction; Section 343 provides for the Magistrate to deal with it as if instituted on a police report.",
+      "rule": {
+        "if": "section_340_proceeding and court_has_formed_offence_opinion",
+        "then": "complaint_is_not_automatic"
+      },
+      "predicates": {
+        "section_340_proceeding": "A court is considering whether to make a complaint concerning an offence allegedly connected with a judicial proceeding.",
+        "court_has_formed_offence_opinion": "The court has formed an opinion that an offence appears to have been committed."
+      },
+      "definition": "Even when the court has formed an opinion that an offence appears to have been committed in this kind of proceeding, a complaint does not follow automatically."
+    },
+    {
+      "legal_issue": "Whether a complaint is expedient in the interests of justice depends on the offence's impact on the administration of justice, not merely on the magnitude of harm to an affected person.",
+      "material_facts": [
+        "The alleged false documents and declarations were submitted in judicial proceedings and were said to be capable of being read as evidence.",
+        "The High Court relied on the alleged conduct and its broader concerns about misuse of legal process when directing a complaint.",
+        "The Supreme Court referred to the need to assess the overall factual matrix and probable consequences of prosecution."
+      ],
+      "conclusion": "The expediency assessment must focus on the effect or impact of the alleged offence on the administration of justice, rather than simply the magnitude of injury suffered by an affected person.",
+      "legal_principle": "In applying the expediency requirement in Section 340(1) of the Code of Criminal Procedure, the court weighs the offence's effect on the administration of justice rather than the magnitude of injury to an individual. The Court relied on Iqbal Singh Marwah v. Meenakshi Marwah and K.T.M.S. Mohd. v. Union of India.",
+      "rule": {
+        "if": "section_340_expediency_assessment and alleged_offence_affects_judicial_proceeding",
+        "then": "expediency_is_judged_by_impact_on_administration_of_justice"
+      },
+      "predicates": {
+        "section_340_expediency_assessment": "A court is assessing whether an inquiry or complaint concerning an alleged offence is expedient in the interests of justice.",
+        "alleged_offence_affects_judicial_proceeding": "The alleged offence occurred in or in relation to a judicial proceeding, or concerned evidence for use in one."
+      },
+      "definition": "In an expediency assessment of this kind, the court judges the alleged offence by its impact on the administration of justice."
+    }
+  ],
+  "seconds": 14.9
+}

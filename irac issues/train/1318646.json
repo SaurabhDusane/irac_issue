@@ -1,0 +1,100 @@
+{
+  "doc_id": "1318646",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 59742,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3636,
+    "prompt_tokens": 14655,
+    "total_tokens": 18291,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The burden of proving that a transfer was not made in good faith and for valuable consideration rests on the receiver challenging it.",
+      "material_facts": [
+        "The receiver applied to annul a mortgage transfer under the insolvency law.",
+        "The issue framed in the proceeding placed the burden of proving good faith and valuable consideration on the transferee."
+      ],
+      "conclusion": "The courts below erred by placing the burden on the transferee; the receiver bore the burden of proving that the challenged transaction was not supported by good faith and valuable consideration.",
+      "legal_principle": "The court applied the settled rule in insolvency proceedings that the party seeking to set aside a transfer bears the burden of proving that it was not made in good faith and for valuable consideration. It relied on Official Assignee v. Khoo Saw Cheow (1931) A.C. 67, Official Receiver v. P.L.K.M.R.M. Chettyar Firm (1930) L.R. 58 I.A. 115, and Pope v. Official Assignee, Rangoon (1933) L.R. 60 I.A. 362, construing provisions corresponding to s. 35 of the Travancore Insolvency Regulation.",
+      "rule": {
+        "if": "insolvency_transfer_annulment and receiver_challenges_transfer",
+        "then": "receiver_bears_burden"
+      },
+      "predicates": {
+        "insolvency_transfer_annulment": "A receiver seeks annulment of a debtor's transfer in an insolvency proceeding.",
+        "receiver_challenges_transfer": "The receiver contests the transfer as lacking good faith or valuable consideration."
+      },
+      "definition": "When a receiver challenges a transfer in an insolvency annulment proceeding, the receiver must prove the grounds for setting it aside."
+    },
+    {
+      "legal_issue": "A finding that a debtor committed an act of insolvency by making a transfer does not bar a later challenge to the transfer when the transferee's good faith and the consideration were not directly determined and the transferee was not found privy to the act.",
+      "material_facts": [
+        "The insolvency adjudication found that the debtors had committed acts of insolvency by making the transfer with intent to defeat or delay creditors.",
+        "The adjudication did not find that the transferee was privy to an act of insolvency.",
+        "The adjudication did not determine whether the transfer was bona fide as to the transferee or whether it lacked valuable consideration."
+      ],
+      "conclusion": "The receiver's application was not barred by res judicata because the matters directly in issue in the annulment proceeding had not been determined in the insolvency adjudication.",
+      "legal_principle": "The court considered Mahomed Siddique Yousuf v. Official Assignee of Calcutta (1943) L.R. 70 I.A. 93, which applied the rule discussed in Ex parte Learoyd, In re Foulds (1878) 10 Ch. D. 3. It held that, even assuming that rule applied to the governing insolvency law, it did not bar this dispute: the adjudication had not decided the transferee's good faith or the presence of consideration, nor found the transferee privy to the debtor's act of insolvency.",
+      "rule": {
+        "if": "insolvency_transfer_annulment and prior_adjudication_found_debtor_act and not prior_adjudication_decided_transferee_good_faith and not prior_adjudication_decided_consideration and not transferee_found_privy",
+        "then": "annulment_issue_not_barred"
+      },
+      "predicates": {
+        "insolvency_transfer_annulment": "A receiver seeks to annul a transfer in an insolvency proceeding.",
+        "prior_adjudication_found_debtor_act": "An earlier insolvency adjudication found that the debtor committed an act of insolvency through the transfer.",
+        "prior_adjudication_decided_transferee_good_faith": "The earlier adjudication determined whether the transferee acted in good faith in making the transaction.",
+        "prior_adjudication_decided_consideration": "The earlier adjudication determined whether the transaction was supported by valuable consideration.",
+        "transferee_found_privy": "The earlier adjudication found that the transferee was privy to the debtor's act of insolvency."
+      },
+      "definition": "An earlier finding against the debtor does not bar a later annulment dispute when the transferee's good faith and consideration were not decided and the transferee was not found privy to the debtor's act."
+    },
+    {
+      "legal_issue": "For deciding a transferee's good faith in an insolvency transfer challenge, honesty is the applicable test rather than due care and attention.",
+      "material_facts": [
+        "The High Court upheld annulment on the basis that the transferee had not shown due care and attention under the applicable General Clauses Act definition.",
+        "The insolvency provision protected a transfer made in good faith and for valuable consideration.",
+        "The court considered the insolvency law's purpose of protecting honest transferees as well as creditors, and the statutory direction that General Clauses Act definitions apply unless repugnant to the subject or context."
+      ],
+      "conclusion": "The correct test of good faith was whether the transferee acted honestly, not whether the transferee exercised due care and attention.",
+      "legal_principle": "Section 35(iii) of the Travancore Insolvency Regulation required a transfer to be in good faith and for valuable consideration to fall within the relevant exception. Although s. 2(6) of the Travancore and Cochin General Clauses Act defined good faith by reference to due care and attention, the court held that this test was repugnant to the context and purpose of insolvency law. The more appropriate test was the honesty definition in s. 2(22) of the Indian General Clauses Act, 1897: an act is done in good faith when it is in fact done honestly, whether negligently or not. The court also noted that the insolvency law followed the approach of the Provincial Insolvency Act.",
+      "rule": {
+        "if": "insolvency_transfer_annulment and transferee_good_faith_is_in_issue",
+        "then": "honesty_is_the_good_faith_test"
+      },
+      "predicates": {
+        "insolvency_transfer_annulment": "A receiver seeks to annul a transfer in an insolvency proceeding.",
+        "transferee_good_faith_is_in_issue": "The dispute requires a decision about whether the transferee acted in good faith in the transaction."
+      },
+      "definition": "In an insolvency transfer challenge, the transferee's good faith is judged by whether the transferee acted honestly, not by whether the transferee exercised due care."
+    },
+    {
+      "legal_issue": "A transfer supported by valuable consideration and made honestly by a transferee who was not shown to share the debtor's intent to defeat or delay creditors cannot be annulled on the evidence in this case.",
+      "material_facts": [
+        "The lender's evidence, receipts, account entries, and evidence from third parties established that the full consideration was paid.",
+        "Before lending, the lender's sons made inquiries about the borrowers' standing, business reputation, and property, and reported their findings to the lender.",
+        "The lender was a stranger to the borrowers and there was no evidence that he knew their true financial position or shared an intent to screen assets from creditors.",
+        "The receiver did not adequately investigate the debtors' accounts or establish that the transaction lacked consideration or that the lender acted dishonestly.",
+        "The lower courts assessed good faith using the due-care test and had placed the burden of proof on the transferee."
+      ],
+      "conclusion": "The receiver had not proved that the transfer was unsupported by consideration or made in bad faith. The judgments annulling the mortgage were set aside, and the mortgage and the connected leaseback were held binding on the insolvent estate.",
+      "legal_principle": "Under s. 35 of the Travancore Insolvency Regulation, the receiver could establish grounds for annulment by proving lack of consideration, consideration so inadequate as to support an inference of bad faith, or that the transferee honestly participated in a transaction intended to shield the debtor's assets from creditors. The burden remained on the receiver. Applying the honesty test of s. 2(22) of the Indian General Clauses Act, 1897, the court found that the evidence established consideration and did not establish dishonesty by the transferee.",
+      "rule": {
+        "if": "insolvency_transfer_annulment and valuable_consideration_paid and transferee_acted_honestly and receiver_did_not_prove_transferee_shared_debtor_intent",
+        "then": "transfer_remains_binding_on_estate"
+      },
+      "predicates": {
+        "insolvency_transfer_annulment": "A receiver seeks to annul a debtor's transfer in an insolvency proceeding.",
+        "valuable_consideration_paid": "The transferee paid valuable consideration for the transfer.",
+        "transferee_acted_honestly": "The transferee acted honestly in entering into the transaction.",
+        "receiver_did_not_prove_transferee_shared_debtor_intent": "The receiver did not prove that the transferee shared the debtor's intent to shield assets from creditors."
+      },
+      "definition": "A transfer supported by valuable consideration remains binding on the estate when the transferee acted honestly and the receiver did not prove that the transferee shared the debtor's intent to defeat or delay creditors."
+    }
+  ],
+  "seconds": 84.6
+}

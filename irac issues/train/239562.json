@@ -1,0 +1,96 @@
+{
+  "doc_id": "239562",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 51602,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2862,
+    "prompt_tokens": 14230,
+    "total_tokens": 17092,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Under matrilineal Aliyasantana law, a male without a female line is not himself a kavaru, while a kavaru with a female member below the specified age is a santhathi kavaru.",
+      "material_facts": [
+        "The family was governed by Aliyasantana law and consisted of two kavarus, one associated with the deceased male and the other with his sister and her descendants.",
+        "The deceased had no female progeny, while his sister was a female member below fifty years of age."
+      ],
+      "conclusion": "The deceased could not himself be a kavaru, and the sister’s branch was a santhathi kavaru.",
+      "legal_principle": "Under sections 3(b)(i) and 3(b)(ii) of the Madras Aliyasantana Act, a female’s kavaru consists of her and her descendants in the female line, while a male’s kavaru is his mother’s kavaru. Sections 3(f) and 3(h) distinguish a nissanthathi kavaru from a santhathi kavaru; the presence of a female member below fifty years makes the kavaru santhathi. The Act preserves the matrilineal basis of inheritance.",
+      "rule": {
+        "if": "aliyasantana_family_case and male_member_has_no_female_line and (female_branch_member_below_age_threshold)",
+        "then": "male_member_is_not_a_kavaru_and_female_branch_is_santhathi"
+      },
+      "predicates": {
+        "aliyasantana_family_case": "The dispute concerns a family governed by matrilineal Aliyasantana law.",
+        "male_member_has_no_female_line": "The male member has no female descendants in his line.",
+        "female_branch_member_below_age_threshold": "The relevant female branch has a female member below the age threshold for a santhathi kavaru."
+      },
+      "definition": "When a matrilineal Aliyasantana family has a male member without a female line and a female branch member below the relevant age, the male is not himself a kavaru and the female branch is santhathi."
+    },
+    {
+      "legal_issue": "An unequivocal claim for partition under Aliyasantana law severs joint status, and the relevant shares are determined as of the date of the claim even if physical division occurs later.",
+      "material_facts": [
+        "The sister’s branch gave notice unequivocally demanding partition of the family properties before the deceased died.",
+        "The deceased replied that he did not object to the partition claim, and division by metes and bounds had not yet occurred when he died."
+      ],
+      "conclusion": "The partition claim severed joint status, and the shares were to be determined as of the date the claim was made; the family could not thereafter be treated as undivided for the relevant succession question.",
+      "legal_principle": "Section 36(2)(h) and its Explanation of the Madras Aliyasantana Act fix the date for determining a kavaru’s share as the date of the partition claim. The principle that an unequivocal and communicated intention to separate effects severance of status, even without physical partition, is supported by Girja Bai v. Sadashiv Dhundiraj, Appovier v. Ramasubbier, Karthiyayini Kunchi v. Minakshi Ammal, and Mahalinga Shetty v. Jalaia Shedthi. Padmaraja v. Dhanavanthi supports the consequence that, once jointness is disrupted, there is no longer a kutumba in existence for a claim to partition.",
+      "rule": {
+        "if": "aliyasantana_partition_case and unequivocal_partition_claim_communicated and physical_division_not_yet_completed",
+        "then": "joint_status_is_severed_on_claim_and_shares_are_fixed_as_of_claim"
+      },
+      "predicates": {
+        "aliyasantana_partition_case": "The proceeding concerns a partition claim in a family governed by Aliyasantana law.",
+        "unequivocal_partition_claim_communicated": "A member or branch clearly communicates to the other members an intention to partition.",
+        "physical_division_not_yet_completed": "The properties have not yet been divided by metes and bounds when the claim is made."
+      },
+      "definition": "In an Aliyasantana partition proceeding, a communicated unequivocal claim severs joint status and fixes shares on the claim date, even before physical division."
+    },
+    {
+      "legal_issue": "A nissanthathi kavaru taking a share at partition has only a life interest when another qualifying female member or santhathi kavaru remains.",
+      "material_facts": [
+        "At the time the sister’s branch claimed partition, it was a santhathi kavaru and the deceased’s branch had no female progeny.",
+        "The deceased’s branch was therefore nissanthathi, while the family included the sister’s santhathi branch."
+      ],
+      "conclusion": "The deceased’s nissanthathi branch was entitled only to a life interest in the property allotted to it at partition.",
+      "legal_principle": "Sections 35 and 36(3) of the Madras Aliyasantana Act permit a qualifying kavaru to claim its share and provide that a nissanthathi kavaru has only a life interest where the separating kutumba has a qualifying female member or, on its breakup into kavarus, at least one is a santhathi kavaru. Sections 36(4) and 36(5) address when that life interest becomes absolute and where the property devolves on the death of the last member. Gupte’s Hindu Law of Succession is cited in explaining these provisions.",
+      "rule": {
+        "if": "aliyasantana_partition_case and nissanthathi_branch_takes_partition_share and another_qualifying_female_member_or_santhathi_branch_remains",
+        "then": "nissanthathi_branch_receives_only_a_life_interest"
+      },
+      "predicates": {
+        "aliyasantana_partition_case": "The proceeding concerns partition of property in a family governed by Aliyasantana law.",
+        "nissanthathi_branch_takes_partition_share": "A branch without the required female progeny takes a share at partition.",
+        "another_qualifying_female_member_or_santhathi_branch_remains": "The separating family retains a qualifying female member or includes another santhathi kavaru."
+      },
+      "definition": "A nissanthathi branch that takes a partition share receives only a life interest when a qualifying female member or santhathi branch remains."
+    },
+    {
+      "legal_issue": "The Hindu Succession Act does not enlarge a male’s life interest arising on severance of an Aliyasantana family into an absolute interest or make that limited interest transferable by will.",
+      "material_facts": [
+        "The partition claim had severed joint status before the deceased’s death, so he did not die with an undivided interest in a kutumba or kavaru.",
+        "The deceased’s branch was nissanthathi and, because the sister’s branch was santhathi, his interest was limited to his lifetime.",
+        "The deceased had executed a will purporting to benefit his wife and children."
+      ],
+      "conclusion": "The deceased’s life interest was not enlarged into an absolute interest and could not be bequeathed; it ended with his lifetime, so the will did not give his heirs the claimed share.",
+      "legal_principle": "Sections 7(2) and its Explanation of the Hindu Succession Act apply to an undivided interest in a kutumba or kavaru; they do not convert an interest held after severance into an absolute estate. Section 30 permits testamentary disposition of an interest in kutumba or kavaru property but does not make a post-severance life interest disposable. Section 14 enlarges certain limited interests of female Hindus, but the Act contains no corresponding provision enlarging the male life interest at issue. Section 4(1) displaces prior law only to the extent provided for or inconsistent with the Act, and section 17 concerns specified intestate succession provisions. Dundara Adapa v. Girija, Padmaraja v. Dhanavanthi, and the reasoning quoted from that decision are relied on.",
+      "rule": {
+        "if": "aliyasantana_succession_or_will_case and joint_status_severed_before_death and male_interest_is_life_limited and no_statutory_enlargement_applies",
+        "then": "life_interest_ends_at_death_and_is_not_bequeathable"
+      },
+      "predicates": {
+        "aliyasantana_succession_or_will_case": "The proceeding concerns succession to, or a will disposing of, an interest arising in an Aliyasantana family.",
+        "joint_status_severed_before_death": "The family’s joint status was severed before the male member died.",
+        "male_interest_is_life_limited": "The male member held only a life interest after severance.",
+        "no_statutory_enlargement_applies": "No applicable statutory provision enlarges that male life interest into an absolute interest."
+      },
+      "definition": "When joint status is severed before death and a male holds only a life interest without an applicable statutory enlargement, that interest ends at death and cannot be bequeathed."
+    }
+  ],
+  "seconds": 17.1
+}

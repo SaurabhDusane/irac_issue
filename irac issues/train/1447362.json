@@ -1,0 +1,76 @@
+{
+  "doc_id": "1447362",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 19038,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2174,
+    "prompt_tokens": 5255,
+    "total_tokens": 7429,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A monetary obligation secured by a mortgage is a pecuniary liability and therefore a debt within the statutory definition.",
+      "material_facts": [
+        "The mortgagor executed two usufructuary mortgages securing sums owed to the creditors.",
+        "The creditors applied to recover the principal sums secured by the mortgages."
+      ],
+      "conclusion": "A mortgage debt creates a pecuniary liability upon the mortgagor and is included in the definition of debt.",
+      "legal_principle": "Section 2(6) of the Displaced Persons (Debts Adjustment) Act, 1951 defines debt as any pecuniary liability. The Court applied the definition of mortgage in section 58 of the Transfer of Property Act, 1882: although a mortgage transfers an interest in specific immovable property, it secures repayment of money or another obligation that may give rise to pecuniary liability. The mortgage’s transfer of an interest in property does not negate the monetary liability. Sections 2(6)(a) and (b) also support that a mortgage-secured liability can be a debt. No earlier cases were relied on.",
+      "rule": {
+        "if": "displaced_person_debt_application and mortgage_secures_monetary_obligation",
+        "then": "mortgage_obligation_is_pecuniary_debt"
+      },
+      "predicates": {
+        "displaced_person_debt_application": "A creditor who is a displaced person applies under a special debt-adjustment procedure to recover an obligation.",
+        "mortgage_secures_monetary_obligation": "A debtor has granted a mortgage to secure repayment of money or another obligation of monetary character."
+      },
+      "definition": "When a displaced-person debt application concerns a mortgage securing a monetary obligation, the mortgage obligation is treated as a pecuniary debt."
+    },
+    {
+      "legal_issue": "A displaced creditor may use the statutory debt-recovery procedure to recover a mortgage debt from a person ordinarily residing in the territories covered by the procedure, including where the mortgaged property is in those territories.",
+      "material_facts": [
+        "The creditors were displaced persons and sought recovery from the mortgagor, who ordinarily resided in the territories covered by the Act.",
+        "The debts were secured by mortgages over properties situated in India.",
+        "The creditors applied under section 13 of the Act."
+      ],
+      "conclusion": "Under section 2(6)(c), a displaced creditor may recover a mortgage debt under the Act from any other person ordinarily residing in the territories to which the Act extends.",
+      "legal_principle": "Section 2(6)(c) operates independently of clauses (a) and (b): it concerns a debt due to a displaced person from any other person ordinarily residing in the territories covered by the Act. The Court held that the broad words “any pecuniary liability” include mortgage debts and are not restricted by the special treatment in section 2(6)(b) and section 16 of debts secured on property in West Pakistan. Sections 13 and 14(2) provide for claims against a person who is not a displaced debtor and for a tribunal to pass an appropriate decree; section 28 provides for execution. Sections 16(5), 17 and 21 do not narrow section 2(6)(c). Section 3 gives the Act overriding effect, and section 25 applies the Code of Civil Procedure except as otherwise provided. The Court also referred to the earlier Displaced Persons (Institution of Suits) Act, 1948 and Displaced Persons (Legal Proceedings) Act, 1949 as contextual support. No earlier cases were relied on.",
+      "rule": {
+        "if": "displaced_person_debt_application and creditor_is_displaced_person and debtor_ordinarily_resides_in_covered_territory and claim_is_mortgage_debt",
+        "then": "creditor_may_recover_mortgage_debt_under_procedure"
+      },
+      "predicates": {
+        "displaced_person_debt_application": "A creditor applies under a special debt-adjustment procedure to recover an obligation from another person.",
+        "creditor_is_displaced_person": "The person seeking recovery is a displaced person.",
+        "debtor_ordinarily_resides_in_covered_territory": "The person from whom recovery is sought ordinarily resides in the territories covered by the procedure.",
+        "claim_is_mortgage_debt": "The obligation sought to be recovered is secured by a mortgage."
+      },
+      "definition": "If a displaced person applies under the debt-adjustment procedure to recover a mortgage debt from a person ordinarily residing in the covered territories, the creditor may pursue that debt under the procedure."
+    },
+    {
+      "legal_issue": "A decree obtained under the statutory debt-recovery procedure does not affect the rights of prior or subsequent mortgagees who are not parties to the proceeding.",
+      "material_facts": [
+        "The creditors sought a decree for sale of the mortgaged properties through an application under section 13 of the Act.",
+        "The appellant argued that prior or subsequent mortgagees could be prejudiced because they might not be joined in the proceeding."
+      ],
+      "conclusion": "The interest of any prior or subsequent mortgagee is not affected by a decree passed on an application under section 13.",
+      "legal_principle": "Section 13 permits a displaced creditor to apply against a person who is not a displaced debtor, and section 25 generally applies the Code of Civil Procedure to proceedings under the Act. The Court relied on Order XXXIV, rule 1 and its Explanation: a prior mortgagee need not be joined in a puisne mortgagee’s suit for sale. It further held that a subsequent mortgagee not joined in a sale proceeding retains the ability to assert rights against the mortgagor and is not bound so as to lose those rights. Thus, the possibility that mortgagees are not joined does not justify narrowing section 2(6)(c). No earlier cases were relied on.",
+      "rule": {
+        "if": "section_13_debt_application and decree_sought_against_mortgagor and other_mortgagees_not_joined",
+        "then": "other_mortgagees_rights_are_unaffected"
+      },
+      "predicates": {
+        "section_13_debt_application": "A displaced creditor brings a debt-recovery application against a person who is not a displaced debtor.",
+        "decree_sought_against_mortgagor": "The creditor seeks a decree concerning property mortgaged by the person from whom recovery is sought.",
+        "other_mortgagees_not_joined": "A prior or subsequent mortgagee with an interest in the property is not made a party to the proceeding."
+      },
+      "definition": "When a displaced creditor seeks a decree concerning mortgaged property without joining other mortgagees, those mortgagees’ rights remain unaffected."
+    }
+  ],
+  "seconds": 15.5
+}

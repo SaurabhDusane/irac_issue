@@ -1,0 +1,60 @@
+{
+  "doc_id": "942900",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17394,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1579,
+    "prompt_tokens": 4982,
+    "total_tokens": 6561,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A deed creates a charge on specified property only when it shows an intention to make that property liable for payment of the debt.",
+      "material_facts": [
+        "The father had given a personal guarantee for the overdraft debt of a bank managed by his son.",
+        "A deed distributing the father’s properties among family members stated that the son would pay any amount due under the guarantee and that the son and the property allotted to him would be answerable if the father had to pay.",
+        "The deed was intended to arrange responsibility for the debt among family members; it did not show an intention to secure the bank’s debt against the property.",
+        "The father retained rights to income from some of the properties, and his wife was permitted to occupy certain houses and use their income."
+      ],
+      "conclusion": "The deed did not create a charge in favour of the creditor bank over the property allotted to the son.",
+      "legal_principle": "A charge requires an intention, disclosed by the deed, to make specified property or a fund liable for the debt; no particular form of words is necessary. A direction allocating responsibility for a debt among family members may create an indemnity arrangement without creating a charge for the creditor. The Court relied on Akalla Suryanarayana Rao v. Dwarapudi Basivireddi, which treated a similar covenant as an indemnity rather than a charge.",
+      "rule": {
+        "if": "charge_claim_in_civil_proceeding and (deed_allocates_debt_responsibility_within_family and not deed_shows_intent_to_secure_creditor_against_property)",
+        "then": "no_charge_created"
+      },
+      "predicates": {
+        "charge_claim_in_civil_proceeding": "A creditor in a civil proceeding seeks to enforce an alleged charge against property under a deed.",
+        "deed_allocates_debt_responsibility_within_family": "The deed allocates responsibility for a debt among family members and identifies property from which one family member is to satisfy that responsibility.",
+        "deed_shows_intent_to_secure_creditor_against_property": "The deed shows an intention to make specified property liable to the creditor for payment of the debt."
+      },
+      "definition": "When a creditor seeks to enforce a charge under a deed that allocates debt responsibility within a family but does not show an intention to secure the creditor against the property, no charge is created."
+    },
+    {
+      "legal_issue": "A person who is not a party to a contract cannot enforce its covenants unless the person falls within a recognised exception.",
+      "material_facts": [
+        "The creditor bank was not a party to the deed distributing the father’s properties among family members.",
+        "The deed’s covenants formed part of an arrangement among the family members about who would satisfy any liability under the father’s guarantee.",
+        "The bank was not claimed to be a beneficiary under a trust created by the deed and was not a beneficiary under its terms."
+      ],
+      "conclusion": "The creditor bank could not enforce the deed’s covenants, even assuming the deed was intended to create a charge.",
+      "legal_principle": "A person who is not a party to a contract ordinarily cannot enforce its terms, subject to recognised exceptions including a beneficiary under a trust created by the contract and a beneficiary under a family arrangement. The Court relied on section 2(d) of the Contract Act and Krishna Lal Sadhu v. Pramila Bala Dasi, and referred to Dunlop Pneumatic Tyre Co. v. Selfridge & Co., Khwaja Muhammad Khan v. Husaini Begam, and Jaman Das v. Ram Autar in discussing the rule and its exceptions.",
+      "rule": {
+        "if": "third_party_contract_enforcement_claim and claimant_is_not_contracting_party and not claimant_is_trust_beneficiary and not claimant_is_family_arrangement_beneficiary",
+        "then": "claimant_cannot_enforce_contract_covenants"
+      },
+      "predicates": {
+        "third_party_contract_enforcement_claim": "A person seeks in a proceeding to enforce covenants in a contract made by others.",
+        "claimant_is_not_contracting_party": "The person seeking enforcement did not enter into the contract as a party.",
+        "claimant_is_trust_beneficiary": "The person seeking enforcement is a beneficiary under a trust created by the contract.",
+        "claimant_is_family_arrangement_beneficiary": "The person seeking enforcement is entitled to enforce the covenant as a beneficiary under a family arrangement."
+      },
+      "definition": "A person seeking to enforce another’s contract cannot do so when the person is not a contracting party and is neither a trust beneficiary nor a beneficiary entitled to enforce a family arrangement."
+    }
+  ],
+  "seconds": 10.7
+}

@@ -1,0 +1,57 @@
+{
+  "doc_id": "403270",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22159,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2453,
+    "prompt_tokens": 6237,
+    "total_tokens": 8690,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An alleged breach of a court order in contempt proceedings must be established to the criminal standard of proof.",
+      "material_facts": [
+        "The proceeding alleged that government revenue officers had disobeyed interim orders concerning possession of land and implementation of vesting orders.",
+        "The officers disputed that they had knowingly disobeyed the orders and said they understood the orders to cover only members who had been before the High Court in the underlying writ petition.",
+        "The orders’ application to the applicants was disputed, and the Court found that doubt remained about their scope."
+      ],
+      "conclusion": "Contempt proceedings are quasi-criminal, so the alleged breach must be proved beyond reasonable doubt; where doubt remains, the person charged receives its benefit.",
+      "legal_principle": "The Contempt of Courts Act, 1971 confers a special jurisdiction that must be exercised cautiously and sparingly. The Court relied on Murray & Co. v. Ashok Kumar Newatia, (2000) 2 SCC 367, on the purpose and cautious exercise of contempt jurisdiction; Re Bramblevale, (1969) 3 All ER 1062, on proof beyond reasonable doubt and the effect of competing consistent possibilities; Archana Guha v. Ranjit Guha Neogi, (1989) II CHN 252; The Aligarh Municipal Board v. Ekka Tonga Mazdoor Union, (1970) 3 SCC 98, on proving knowledge of an order beyond reasonable doubt and giving the benefit of doubt to the person charged; and V.G. Nigam v. Kedar Nath Gupta, (1992) 4 SCC 697, on not imposing punishment on mere probabilities.",
+      "rule": {
+        "if": "contempt_proceeding and alleged_order_breach",
+        "then": "alleged_breach_must_be_proved_beyond_reasonable_doubt"
+      },
+      "predicates": {
+        "contempt_proceeding": "A party initiated a proceeding alleging that someone disobeyed a court order.",
+        "alleged_order_breach": "The alleged contemner was accused of breaching a court order."
+      },
+      "definition": "When a proceeding alleges disobedience of a court order, the alleged breach must be proved beyond reasonable doubt."
+    },
+    {
+      "legal_issue": "A contempt finding cannot be made where the order’s scope admits competing reasonable interpretations and the alleged contemners adopted a reasonable interpretation that leaves doubt about disobedience.",
+      "material_facts": [
+        "The interim order directed maintenance of the status quo regarding possession for members of the association who were before the High Court in the underlying writ petition, and a later order barred implementation of vesting orders affecting those members.",
+        "The applicants had become association members after the underlying writ petition was filed; the applicants argued that the orders covered them, while the officers understood them to cover only members who had been before the High Court.",
+        "The officers proceeded with vesting and possession measures, but the Court found that the order’s wording left a persistent doubt about whether the applicants were covered and that the officers’ interpretation could not be treated as wholly unwarranted."
+      ],
+      "conclusion": "The alleged breach was not established beyond reasonable doubt, so the contempt petition failed and was dismissed.",
+      "legal_principle": "Because contempt is quasi-criminal, competing reasonable interpretations of an order may create doubt that must benefit the alleged contemner. The Court relied on Re Bramblevale, (1969) 3 All ER 1062; The Aligarh Municipal Board v. Ekka Tonga Mazdoor Union, (1970) 3 SCC 98; and V.G. Nigam v. Kedar Nath Gupta, (1992) 4 SCC 697. It also noted Murray & Co. v. Ashok Kumar Newatia, (2000) 2 SCC 367, regarding cautious use of contempt jurisdiction.",
+      "rule": {
+        "if": "contempt_proceeding and order_scope_admits_competing_readings and alleged_contemners_adopted_reasonable_reading",
+        "then": "contempt_petition_dismissed"
+      },
+      "predicates": {
+        "contempt_proceeding": "A party initiated a proceeding alleging disobedience of a court order.",
+        "order_scope_admits_competing_readings": "The wording of the court order reasonably supports more than one interpretation of who or what it covers.",
+        "alleged_contemners_adopted_reasonable_reading": "The persons accused of disobedience acted on an interpretation of the order that was not wholly unwarranted."
+      },
+      "definition": "If a contempt proceeding concerns an order whose scope reasonably supports competing readings and the alleged contemners adopted a reasonable reading, the contempt petition is dismissed."
+    }
+  ],
+  "seconds": 15.8
+}

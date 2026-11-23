@@ -1,0 +1,84 @@
+{
+  "doc_id": "455042",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 39260,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2514,
+    "prompt_tokens": 10579,
+    "total_tokens": 13093,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A company for whose benefit land is acquired may appeal from a compensation award after contesting the landowners’ reference, despite being barred from seeking its own reference.",
+      "material_facts": [
+        "The company sought references to reduce the Collector’s compensation, but the reference court held those references barred.",
+        "The landowners had joined the company as a contesting party in their references, and the company actively contested them before the reference court.",
+        "The reference court awarded compensation above the Collector’s award, and the company appealed.",
+        "The landowners did not challenge the maintainability of the company’s appeals before the High Court and raised the objection for the first time in the Supreme Court."
+      ],
+      "conclusion": "The company’s appeals were maintainable. The bar on a company seeking a reference did not prevent it from appealing against the court’s award after contesting the landowners’ references; the late objection also could not be raised for the first time in the Supreme Court.",
+      "legal_principle": "The proviso to Section 50(2) of the Land Acquisition Act, 1894 bars a company from demanding a reference under Section 18, which prevents it from seeking a reduction below the Collector’s offer. It does not bar an appeal under Section 54 against the court’s award, including an award exceeding the Collector’s amount; Section 25 supports the rule that compensation cannot be reduced below the Collector’s award. The Supreme Court may also, in its discretion under Article 136 of the Constitution, permit a person to appeal. An objection to maintainability not raised in the courts below cannot be raised for the first time at that late stage.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and company_for_whose_benefit_land_was_acquired and company_contested_landowners_reference and court_award_exceeded_collectors_award and objection_first_raised_in_final_appeal",
+        "then": "company_appeal_is_maintainable"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "company_for_whose_benefit_land_was_acquired": "A company was the beneficiary of the land acquisition.",
+        "company_contested_landowners_reference": "The company was joined as a party and actively contested the landowners’ reference before the reference court.",
+        "court_award_exceeded_collectors_award": "The reference court awarded more compensation than the Collector had offered.",
+        "objection_first_raised_in_final_appeal": "The opposing party did not object to the company’s appeal in the courts below and first raised the objection in the final appeal."
+      },
+      "definition": "When a company benefiting from an acquisition contests the landowners’ reference and the court awards more than the Collector offered, its compensation appeal is maintainable, and an objection first raised in the final appeal does not alter that result."
+    },
+    {
+      "legal_issue": "A final appellate court should ordinarily refrain from disturbing a compensation award but may correct it when a wrong principle or an overlooked or misapplied material valuation point makes the award unsustainable.",
+      "material_facts": [
+        "The courts below maintained compensation at the same rate, but relied on different reasoning.",
+        "In fixing and maintaining that rate, the courts overlooked or misapplied material features affecting the comparison of the acquired land with the evidence of value.",
+        "The Supreme Court found those valuation errors required correction."
+      ],
+      "conclusion": "The Supreme Court intervened and modified the compensation award because important points affecting valuation had been overlooked or misapplied.",
+      "legal_principle": "Under The Dollar Company, Madras v. Collector of Madras, [1975] 2 SCC 730, an appellate court does not interfere merely because another conclusion is possible; interference is warranted when the judgment is shown to be wrong, including through a wrong application of principle or an overlooked or misapplied important valuation point. Periyar and Pareekanni Rubbers Ltd. v. State of Kerala, AIR 1990 SC 2192, also supports careful comparison of land with different advantages and of small plots with large tracts.",
+      "rule": {
+        "if": "final_appeal_from_land_compensation_award and material_valuation_point_overlooked_or_misapplied",
+        "then": "final_appellate_court_corrects_compensation_award"
+      },
+      "predicates": {
+        "final_appeal_from_land_compensation_award": "The proceeding is a final appeal from an award determining compensation for acquired land.",
+        "material_valuation_point_overlooked_or_misapplied": "The court below overlooked or misapplied a material point affecting the land’s valuation."
+      },
+      "definition": "In a final appeal from a land-compensation award, an overlooked or misapplied material valuation point permits the final appellate court to correct the award."
+    },
+    {
+      "legal_issue": "Compensation for acquired land must reflect its market value on the relevant notification date, assessed using comparable evidence while accounting for differences in size, access, location, and development potential.",
+      "material_facts": [
+        "The acquisition covered a tract of a little over fifty acres, used for agricultural purposes and lacking access to the main road.",
+        "The land had potential for urbanisation but was separated from the town’s expansion by a railway line and was in a less advantageous position than nearby land acquired for a grain market.",
+        "The sale instances relied on by the courts below concerned very small plots on the main road and occurred after the notification; the sale made about three and a half years after the notification was too distant in time to be used.",
+        "A nearby sale made about a year after the notification indicated a lower rate for a small, favourably situated plot, while an award for the grain-market land reflected land with better access and potential.",
+        "The Supreme Court reduced the compensation to a rate it considered just and fair in light of the acquired land’s disadvantages and the available valuation evidence."
+      ],
+      "conclusion": "The compensation was reduced to Rs. 80,000 per acre; the existing conditions for solatium and interest remained unchanged.",
+      "legal_principle": "Sections 15, 23 and 24 of the Land Acquisition Act, 1894 guide the determination of compensation, with market value assessed as of the date of publication of the notification under Section 4. Comparable sales may inform that value, but land with special frontage or access is not to be treated as equivalent to interior or undeveloped land, and small plots fetching higher prices should not be compared without adjustment to a large tract. Periyar and Pareekanni Rubbers Ltd. v. State of Kerala, AIR 1990 SC 2192, was relied on for those comparison principles. The compensation must be just both to the owner and to the public that pays it, and the Act is neither a means to deprive an owner of market value nor a source of fancifully inflated compensation.",
+      "rule": {
+        "if": "land_acquisition_compensation_determination and acquired_land_is_large_tract and (comparable_sales_are_small_advantaged_plots or nearby_award_land_has_better_access_or_potential) and acquired_land_has_less_access_or_potential",
+        "then": "market_compensation_is_adjusted_for_comparative_disadvantages"
+      },
+      "predicates": {
+        "land_acquisition_compensation_determination": "The proceeding requires determination of compensation for acquired land.",
+        "acquired_land_is_large_tract": "The acquired property is a large tract rather than a small individual plot.",
+        "comparable_sales_are_small_advantaged_plots": "The proposed sale comparisons concern small plots with better access or another locational advantage than the acquired land.",
+        "nearby_award_land_has_better_access_or_potential": "A nearby property used as a valuation reference had better access or development potential than the acquired land.",
+        "acquired_land_has_less_access_or_potential": "The acquired land has poorer access or development potential than the properties used as valuation references."
+      },
+      "definition": "When compensation is determined for a large tract and the valuation references have advantages the acquired land lacks, the market compensation is adjusted to reflect those comparative disadvantages."
+    }
+  ],
+  "seconds": 16.0
+}

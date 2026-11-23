@@ -1,0 +1,82 @@
+{
+  "doc_id": "1924456",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29106,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2286,
+    "prompt_tokens": 7960,
+    "total_tokens": 10246,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Reassessment may be initiated when an underassessment resulted from the assessee’s failure to disclose fully and truly material facts, even if the assessing officer had received vague information about the income during the original assessment.",
+      "material_facts": [
+        "During the original assessment, the assessing officer received information that the assessee had secretly received a payment, but had no supporting material and the assessee denied receiving it.",
+        "The assessing officer later made further inquiries, formed the belief that income had escaped assessment because material facts had not been disclosed, and issued a reassessment notice.",
+        "The Tribunal found that the receipt had been suppressed and that the underassessment resulted from non-disclosure."
+      ],
+      "conclusion": "The requirements for reassessment under section 34(1)(a) of the Income Tax Act, 1922 were satisfied; the fact that the officer had not acted on the initial information or made further inquiries during the original assessment did not bar reassessment.",
+      "legal_principle": "Under section 34(1)(a) of the Income Tax Act, 1922, reassessment requires the assessing officer to have reason to believe both that income was underassessed and that the underassessment resulted from the assessee’s failure to disclose fully and truly material facts. Calcutta Discount Co. Ltd. v. Income-tax Officer, Companies District I, Calcutta, [1961] 41 ITR 191, was relied on for those requirements. Vague information alone need not establish taxable income during the original assessment, and failure to inquire further at that stage does not prevent later reassessment when the statutory requirements are met.",
+      "rule": {
+        "if": "income_tax_reopening and underassessment_exists and underassessment_due_to_material_nondisclosure and officer_formed_reopening_belief",
+        "then": "reassessment_is_valid"
+      },
+      "predicates": {
+        "income_tax_reopening": "The proceeding concerns reopening an income-tax assessment.",
+        "underassessment_exists": "Income that should have been assessed was left out of the assessment.",
+        "underassessment_due_to_material_nondisclosure": "The underassessment resulted from the assessee failing to disclose material facts fully and truly.",
+        "officer_formed_reopening_belief": "The assessing officer formed the required belief that income was underassessed because of the nondisclosure."
+      },
+      "definition": "When an income-tax assessment is reopened and underassessment resulted from material nondisclosure, the officer’s required belief makes the reassessment valid."
+    },
+    {
+      "legal_issue": "An assessing officer need not issue a fresh reassessment notice when an earlier assessment is set aside only because the assessee was not given a proper opportunity to present the case and the earlier notice was not held invalid.",
+      "material_facts": [
+        "The assessing officer had issued a reassessment notice and made an assessment including the disputed receipt.",
+        "The appellate authority set aside that assessment because the assessee had not been given a proper opportunity to present the case, including an opportunity to cross-examine witnesses.",
+        "The appellate authority did not hold the original reassessment notice invalid, and the assessing officer then provided the opportunity and made a fresh assessment."
+      ],
+      "conclusion": "The assessing officer was not required to issue a fresh reassessment notice; it was sufficient to give the assessee the opportunity directed by the appellate authority.",
+      "legal_principle": "Where an assessment is set aside solely to cure a denial of proper opportunity, and the appellate authority has not invalidated the reassessment notice, the assessing officer may proceed under the existing notice after providing that opportunity.",
+      "rule": {
+        "if": "reassessment_on_remand and remand_for_opportunity_only and original_notice_not_invalidated",
+        "then": "fresh_notice_not_required"
+      },
+      "predicates": {
+        "reassessment_on_remand": "The proceeding is a reassessment carried out after an earlier assessment was set aside.",
+        "remand_for_opportunity_only": "The earlier assessment was set aside because the assessee had not received a proper opportunity to present the case.",
+        "original_notice_not_invalidated": "The authority setting aside the assessment did not hold the original reassessment notice invalid."
+      },
+      "definition": "When a reassessment is remanded only to provide an opportunity and the original notice remains valid, a fresh notice is not required."
+    },
+    {
+      "legal_issue": "A secretly received payment that is omitted from the assessee’s accounts may be treated as taxable interest when the circumstances show that it was concealed to evade tax, and the assessee’s accounting system does not determine its appropriation when the receipt was never entered in the accounts.",
+      "material_facts": [
+        "The creditor received a substantial payment secretly from the debtor while a debt comprising principal and interest remained due.",
+        "The creditor did not enter the receipt in the account books, and the Court found that it was omitted to facilitate evasion of tax.",
+        "The assessee relied on the Chetty system of accounts, under which receipts were appropriated first to litigation costs, then principal, and then interest.",
+        "The payment was not specifically appropriated in the accounts, and the Court found that the circumstances indicated appropriation towards interest.",
+        "The High Court had relied on Commissioner of Income-Tax, Bihar and Orissa v. Kameshwar Singh, [1933] 2 ITR 94, but the Court held that the case did not establish a universal presumption that an unallocated payment must be treated as principal."
+      ],
+      "conclusion": "The payment was taxable as income for the year of account. The Chetty accounting system was irrelevant because the receipt had not been entered in the accounts, and the circumstances showed that it had been concealed as interest income.",
+      "legal_principle": "The treatment of an unallocated payment depends on the circumstances; Kameshwar Singh, [1933] 2 ITR 94, did not establish an absolute rule that an unallocated receipt is appropriated to principal. Where a creditor secretly receives a payment and omits it from the books to evade tax, the circumstances may show that it was appropriated to interest and is taxable. An accounting method is irrelevant where the receipt was not entered in the accounts.",
+      "rule": {
+        "if": "tax_assessment_of_debt_receipt and secret_payment_received_by_creditor and interest_remained_due and receipt_omitted_from_accounts_to_evade_tax",
+        "then": "receipt_is_taxable_as_interest_income"
+      },
+      "predicates": {
+        "tax_assessment_of_debt_receipt": "The proceeding concerns whether a payment received on a debt is taxable income.",
+        "secret_payment_received_by_creditor": "A creditor secretly received a payment from a debtor.",
+        "interest_remained_due": "Interest remained due on the debt when the payment was received.",
+        "receipt_omitted_from_accounts_to_evade_tax": "The creditor omitted the receipt from the accounts in order to evade tax."
+      },
+      "definition": "When a creditor secretly receives a payment while interest remains due and omits it from the accounts to evade tax, the payment is treated as taxable interest income."
+    }
+  ],
+  "seconds": 14.3
+}

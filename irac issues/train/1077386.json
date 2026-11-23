@@ -1,0 +1,80 @@
+{
+  "doc_id": "1077386",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 47008,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3052,
+    "prompt_tokens": 11929,
+    "total_tokens": 14981,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person qualifies as a holder in due course only if the instrument was acquired for value, before it became payable, and without sufficient cause to believe that the transferor’s title was defective; gross negligence may show such cause.",
+      "material_facts": [
+        "The dispute concerned whether a bank that acquired cheques from their payee could enforce them against the drawer.",
+        "The drawer argued that the bank had failed to make inquiries about the underlying goods transaction and had acted negligently."
+      ],
+      "conclusion": "Indian law requires more than honesty: the holder must act with reasonable caution. Mere failure to prove good faith or absence of negligence does not defeat holder-in-due-course status, but gross and extraordinary negligence indicating sufficient cause to believe the transferor’s title was defective can do so. The court held that the contrary ruling in Raghavji Vizpal was incorrect and modified the approach in Durga Shah accordingly.",
+      "legal_principle": "Section 9 of the Negotiable Instruments Act, 1881 requires acquisition for consideration before the amount becomes payable and without sufficient cause to believe that a defect existed in the transferor’s title. Section 118(g) presumes that a holder is a holder in due course, subject to the stated exceptions. The court applied the caution-based approach associated with Gill v. Cubitt and the discussion in Chalmers, modified the view in Durga Shah Mohan Lal Bankers v. Governor General in Council, and overruled Raghavji Vizpal v. Narandas Parmanandas.",
+      "rule": {
+        "if": "claim_to_enforce_negotiable_instrument and dispute_over_holder_in_due_course_status",
+        "then": "holder_status_is_defeated_only_if_gross_negligence_indicates_sufficient_cause_to_believe_title_defective"
+      },
+      "predicates": {
+        "claim_to_enforce_negotiable_instrument": "A party seeks to enforce an instrument against a person liable on it.",
+        "dispute_over_holder_in_due_course_status": "A party disputes whether the person seeking enforcement acquired the instrument as a holder in due course."
+      },
+      "definition": "When enforcement of a negotiable instrument depends on holder-in-due-course status, the status is defeated by negligence only when it is so gross that it indicates sufficient cause to believe the transferor’s title was defective."
+    },
+    {
+      "legal_issue": "A bank’s advance crediting of a customer’s cheque before collection makes the bank a holder for value only when an express or implied contract permits the customer to draw against the credit before the proceeds are received.",
+      "material_facts": [
+        "The bank provided the payee firm with substantial credit facilities, secured by a promissory note and a mortgage.",
+        "The bank credited the cheque proceeds to the firm’s account before collection, and the firm withdrew the credited amounts.",
+        "The evidence established an implied arrangement to credit the proceeds before they were actually received."
+      ],
+      "conclusion": "Crediting the customer’s account before collection does not by itself make a bank a holder for value. An express or implied contract allowing the customer to draw against the cheque before collection can do so; the evidence established such an implied contract here.",
+      "legal_principle": "The court applied Section 9 of the Negotiable Instruments Act, 1881 and the requirement that a holder in due course acquire the instrument for consideration. It relied on the principles stated in A.L. Underwood Ltd. v. Bank of Liverpool and Martins and Baker v. Barclays Bank Ltd., and on the discussion in Halsbury’s Laws of England, that the existence of a contract permitting withdrawal before collection is a question of fact and may be inferred from the parties’ dealings.",
+      "rule": {
+        "if": "bank_claims_holder_for_value_on_customer_cheque and customer_can_draw_before_collection_under_express_or_implied_contract",
+        "then": "bank_is_holder_for_value"
+      },
+      "predicates": {
+        "bank_claims_holder_for_value_on_customer_cheque": "A bank asserts that it took a customer’s cheque for value rather than merely as an agent for collection.",
+        "customer_can_draw_before_collection_under_express_or_implied_contract": "An express or implied agreement allows the customer to draw against the cheque before the bank receives its proceeds."
+      },
+      "definition": "A bank that takes a customer’s cheque is a holder for value when an express or implied agreement allows the customer to use the credited amount before collection."
+    },
+    {
+      "legal_issue": "A bank that acquires endorsed cheques for value under a credit arrangement, without sufficient cause to doubt the payee’s title, may enforce them against the drawer.",
+      "material_facts": [
+        "The drawer issued two cheques payable to the payee firm on order, and the firm endorsed them to the bank before they became payable.",
+        "The bank acquired the cheques for consideration, credited their proceeds to the firm’s account under an implied credit arrangement, and the firm withdrew the amounts.",
+        "The cheques were returned unpaid, but they were not marked non-negotiable and there was no evidence that they had been obtained unlawfully or for unlawful consideration.",
+        "The drawer alleged that the payee firm had not supplied the goods for which the cheques were issued, but the evidence did not establish that the bank had sufficient cause to doubt the firm’s title or that it had disregarded a warning sign."
+      ],
+      "conclusion": "The bank was a holder in due course and could enforce the cheques against the drawer. The appeal was dismissed.",
+      "legal_principle": "Under Section 9 of the Negotiable Instruments Act, 1881, a holder in due course must acquire the instrument for consideration before it becomes payable and without sufficient cause to believe that the transferor’s title is defective. Section 118(g) presumes that a holder is a holder in due course unless the presumption is rebutted. Applying the rule on gross negligence and the requirement of an express or implied contract for credit before collection, the court held that the alleged failure to supply goods did not, on these facts, give the bank sufficient cause to doubt the payee’s title.",
+      "rule": {
+        "if": "appeal_from_drawer_liability_on_cheques and cheques_endorsed_to_bank_before_payable and bank_acquired_cheques_for_value and customer_could_draw_before_collection_under_credit_arrangement and cheques_not_marked_non_negotiable and no_evidence_of_unlawful_acquisition and no_sufficient_cause_to_doubt_transferor_title",
+        "then": "bank_is_holder_in_due_course_and_may_enforce_cheques_against_drawer"
+      },
+      "predicates": {
+        "appeal_from_drawer_liability_on_cheques": "A drawer appeals a decision holding the drawer liable on cheques.",
+        "cheques_endorsed_to_bank_before_payable": "The payee endorsed the cheques to the bank before the amounts became payable.",
+        "bank_acquired_cheques_for_value": "The bank acquired the cheques for consideration.",
+        "customer_could_draw_before_collection_under_credit_arrangement": "The payee could use the credited proceeds before the bank received them under an express or implied credit arrangement.",
+        "cheques_not_marked_non_negotiable": "The cheques did not bear a restriction making them non-negotiable.",
+        "no_evidence_of_unlawful_acquisition": "The evidence did not show that the cheques were obtained unlawfully or for unlawful consideration.",
+        "no_sufficient_cause_to_doubt_transferor_title": "The evidence did not show circumstances giving the bank sufficient cause to believe that the payee’s title was defective."
+      },
+      "definition": "When a drawer appeals liability on cheques endorsed to a bank before they become payable, the bank may enforce them if it acquired them for value under a usable credit arrangement and the evidence gives no sufficient cause to doubt the transferor’s title."
+    }
+  ],
+  "seconds": 18.5
+}

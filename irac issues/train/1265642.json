@@ -1,0 +1,76 @@
+{
+  "doc_id": "1265642",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10154,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2393,
+    "prompt_tokens": 3043,
+    "total_tokens": 5436,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A fresh declaration cannot be made after the statutory time limit has expired, even when an earlier timely declaration has been quashed and a court has directed renewed acquisition proceedings.",
+      "material_facts": [
+        "The land was covered by a notification published under Section 4(1) of the Land Acquisition Act, 1894, on 8 September 1982.",
+        "A declaration under Section 6 was made within three years, but it was later quashed because of non-compliance with the applicable mandatory procedure.",
+        "The three-year period had expired before the High Court directed a fresh enquiry and allowed a further declaration to be issued.",
+        "The High Court also directed that an award be passed after any fresh declaration."
+      ],
+      "conclusion": "The High Court could not authorize a fresh declaration after the three-year period had expired. Its directions for a fresh Section 5A enquiry, a further declaration, and a subsequent award were set aside.",
+      "legal_principle": "The proviso to Section 6(1) of the Land Acquisition Act, 1894, barred a declaration concerning land covered by the relevant Section 4(1) notification after three years from publication. Explanation 1 excluded from the computation only a period during which action or proceedings pursuant to that notification were stayed by a court. The judgment cites no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_appeal and earlier_declaration_quashed and declaration_window_expired_before_fresh_declaration",
+        "then": "fresh_declaration_not_permitted"
+      },
+      "predicates": {
+        "land_acquisition_appeal": "The matter is an appeal concerning proceedings to acquire land for a public purpose.",
+        "earlier_declaration_quashed": "A declaration concerning the land was made but was later set aside.",
+        "declaration_window_expired_before_fresh_declaration": "The applicable time window for making a declaration had expired before a fresh declaration could be made."
+      },
+      "definition": "When an acquisition appeal concerns a quashed declaration and the applicable declaration window expired before a fresh declaration, a fresh declaration is not permitted."
+    },
+    {
+      "legal_issue": "A stay ordered by an executive authority does not qualify for exclusion when computing the time limit for a land-acquisition declaration.",
+      "material_facts": [
+        "In calculating the time limit, the acquiring authority relied on a stay granted by a government minister on a petition concerning an adjoining landowner's property.",
+        "The stay was not made by a court."
+      ],
+      "conclusion": "The minister's stay could not be taken into account when computing the period for making a declaration.",
+      "legal_principle": "Explanation 1 to the proviso to Section 6(1) of the Land Acquisition Act, 1894, excludes a period of stay only when the stay is ordered by a court. The judgment cites no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_time_limit_computation and stay_order_made_by_nonjudicial_authority",
+        "then": "nonjudicial_stay_not_excluded"
+      },
+      "predicates": {
+        "land_acquisition_time_limit_computation": "The time available for making a declaration concerning land acquisition is being computed.",
+        "stay_order_made_by_nonjudicial_authority": "An authority other than a court ordered a stay of acquisition-related action or proceedings."
+      },
+      "definition": "When a nonjudicial authority orders a stay during computation of the time limit for an acquisition declaration, that stay is not excluded from the computation."
+    },
+    {
+      "legal_issue": "A court stay concerning an adjoining owner's land does not suspend the time limit applicable to a different parcel covered by the same notification.",
+      "material_facts": [
+        "An adjoining landowner obtained a court stay in proceedings concerning that owner's land.",
+        "The acquiring authority sought to rely on that stay when calculating the time limit for a declaration concerning the appellant's separate land.",
+        "The adjoining-land stay was granted after the applicable three-year period had expired."
+      ],
+      "conclusion": "The stay concerning the adjoining land could not be used to extend the time for making a declaration concerning the appellant's land.",
+      "legal_principle": "Explanation 1 to the proviso to Section 6(1) of the Land Acquisition Act, 1894, concerns a stay of action or proceedings relating to the land for which the declaration is required; a stay concerning an adjacent parcel cannot be used for another parcel. The judgment cites no earlier cases.",
+      "rule": {
+        "if": "land_acquisition_time_limit_computation and court_stay_concerns_adjacent_parcel",
+        "then": "adjacent_parcel_stay_not_applied"
+      },
+      "predicates": {
+        "land_acquisition_time_limit_computation": "The time available for making a declaration concerning a particular parcel is being computed.",
+        "court_stay_concerns_adjacent_parcel": "A court stayed acquisition-related action or proceedings concerning a parcel adjoining, but distinct from, the parcel at issue."
+      },
+      "definition": "When the time limit for a declaration concerning a parcel is computed, a court stay concerning a distinct adjoining parcel is not applied to that computation."
+    }
+  ],
+  "seconds": 16.5
+}

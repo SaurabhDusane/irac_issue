@@ -1,0 +1,97 @@
+{
+  "doc_id": "830852",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21670,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3317,
+    "prompt_tokens": 5952,
+    "total_tokens": 9269,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Landowners must be given an opportunity to be heard in the inquiry into a company's efforts to acquire land through negotiation.",
+      "material_facts": [
+        "The inquiry required a report on whether the company had made reasonable efforts to acquire the land by negotiating with its owners and whether those efforts had failed.",
+        "The owners were not given an opportunity to participate in the inquiry conducted for the earlier acquisition proceedings."
+      ],
+      "conclusion": "The owners were entitled to be heard in the inquiry, including to prove or disprove the company's claims about its negotiation efforts; the inquiry conducted without that opportunity was invalid.",
+      "legal_principle": "Rule 4 of the Land Acquisition (Companies) Rules, 1963 requires a Collector's inquiry into specified matters, including the company's efforts to obtain land by negotiation with interested persons. Because the owners are the persons with whom the company would have negotiated, they must be heard on that matter. The Court also noted that the objections contemplated by rules made under section 55 do not include whether the company made reasonable efforts to negotiate.",
+      "rule": {
+        "if": "company_land_acquisition_proceeding and inquiry_examines_failed_owner_negotiations",
+        "then": "landowners_entitled_to_be_heard_in_inquiry"
+      },
+      "predicates": {
+        "company_land_acquisition_proceeding": "The proceeding concerns acquiring land for a company.",
+        "inquiry_examines_failed_owner_negotiations": "The inquiry examines whether the company tried and failed to acquire the land through reasonable negotiations with its owners."
+      },
+      "definition": "When a company-land acquisition inquiry examines failed negotiations with owners, the owners must be heard in that inquiry."
+    },
+    {
+      "legal_issue": "A later objection inquiry does not replace the owners' opportunity to be heard on the company's negotiation efforts in the company-acquisition inquiry.",
+      "material_facts": [
+        "The owners objected in an inquiry held after the acquisition notification.",
+        "The matters open for objection in that inquiry did not include whether the company had made reasonable efforts to acquire the land by negotiation.",
+        "The law allowed the government to direct that the later objection inquiry not apply."
+      ],
+      "conclusion": "The later objection inquiry did not cure the failure to hear the owners in the company-acquisition inquiry.",
+      "legal_principle": "The Court relied on section 17 of the Land Acquisition Act, under which the government may direct that the section 5-A inquiry not apply, and on the rules governing section 5-A objections, which do not include the company's efforts to negotiate with landowners. Therefore, the later inquiry cannot substitute for the opportunity required in the Rule 4 inquiry.",
+      "rule": {
+        "if": "company_land_acquisition_proceeding and (later_objection_inquiry_may_be_omitted or later_objection_inquiry_excludes_negotiation_efforts)",
+        "then": "later_objection_inquiry_does_not_replace_owner_hearing"
+      },
+      "predicates": {
+        "company_land_acquisition_proceeding": "The proceeding concerns acquiring land for a company.",
+        "later_objection_inquiry_may_be_omitted": "The governing process permits the government to dispense with the later inquiry into objections.",
+        "later_objection_inquiry_excludes_negotiation_efforts": "The matters that may be raised in the later objection inquiry do not include the company's efforts to negotiate with the owners."
+      },
+      "definition": "If a company-land acquisition proceeding allows the later objection inquiry to be omitted or that inquiry excludes negotiation efforts, the later inquiry does not replace the owners' opportunity to be heard on those efforts."
+    },
+    {
+      "legal_issue": "The required government consent and company agreement must precede the acquisition steps, and an agreement made only after fresh acquisition steps begin does not satisfy that requirement.",
+      "material_facts": [
+        "An earlier acquisition notification was cancelled.",
+        "Fresh acquisition proceedings began with a new notification.",
+        "The agreement for the renewed proceedings was made and published after that new notification.",
+        "The earlier agreement related to the cancelled proceedings."
+      ],
+      "conclusion": "The renewed acquisition proceedings lacked the required prior agreement and did not comply with the requirement for prior government consent and an agreement before the relevant acquisition provisions were put into force.",
+      "legal_principle": "Sections 39 and 41 of the Land Acquisition Act, as amended in Gujarat, required previous government consent and execution of the prescribed agreement before the acquisition provisions were put into force for a company. The cancelled notification rendered the steps taken under it ineffective, and the agreement relating to those steps did not satisfy the requirement for the fresh proceedings.",
+      "rule": {
+        "if": "company_land_acquisition_proceeding and earlier_acquisition_steps_cancelled and fresh_acquisition_steps_preceded_the_applicable_agreement",
+        "then": "renewed_acquisition_steps_invalid_for_lack_of_prior_agreement"
+      },
+      "predicates": {
+        "company_land_acquisition_proceeding": "The proceeding concerns acquiring land for a company.",
+        "earlier_acquisition_steps_cancelled": "The government cancelled the earlier acquisition proceedings before beginning renewed proceedings.",
+        "fresh_acquisition_steps_preceded_the_applicable_agreement": "The government began fresh acquisition steps before the agreement applicable to those steps was executed."
+      },
+      "definition": "When earlier company-acquisition steps are cancelled and fresh steps begin before the applicable agreement is executed, the renewed steps are invalid for lack of a prior agreement."
+    },
+    {
+      "legal_issue": "Government consent to acquire land for a company must follow a qualifying inquiry in which the landowners have an opportunity to be heard, and a later objection inquiry is not such an inquiry.",
+      "material_facts": [
+        "The government relied on an inquiry under section 5-A as well as an inquiry said to have been held under section 40.",
+        "The owners were not given an opportunity to be heard in the relevant company-acquisition inquiry.",
+        "The Gujarat amendment had removed wording that had allowed a section 5-A report to serve as the basis for the inquiries contemplated by sections 40 and 41."
+      ],
+      "conclusion": "The section 5-A inquiry did not satisfy the inquiry requirement for government consent, and the owners were entitled to an opportunity to be heard in the section 40 inquiry; without that opportunity, the inquiry could not support the consent.",
+      "legal_principle": "Sections 39 and 40 of the Land Acquisition Act require previous government consent, which may be given only after the inquiry specified in section 40. The Gujarat amendment deleted from sections 40 and 41 wording that had referred to a section 5-A report, so a section 5-A inquiry is not an inquiry within section 40. The owners are entitled to be heard in the company-acquisition inquiry because it examines matters, including negotiation efforts, directly concerning them.",
+      "rule": {
+        "if": "company_land_acquisition_proceeding and government_consent_depends_on_company_acquisition_inquiry and inquiry_conducted_without_owner_hearing",
+        "then": "consent_not_supported_by_valid_company_acquisition_inquiry"
+      },
+      "predicates": {
+        "company_land_acquisition_proceeding": "The proceeding concerns acquiring land for a company.",
+        "government_consent_depends_on_company_acquisition_inquiry": "The government relies on an inquiry into the proposed company acquisition as the basis for its consent.",
+        "inquiry_conducted_without_owner_hearing": "The owners were not given an opportunity to be heard in that company-acquisition inquiry."
+      },
+      "definition": "If consent for a company-land acquisition depends on an inquiry conducted without hearing the owners, that inquiry does not validly support the consent."
+    }
+  ],
+  "seconds": 24.6
+}

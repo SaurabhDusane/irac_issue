@@ -1,0 +1,61 @@
+{
+  "doc_id": "527043",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 3830,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1665,
+    "prompt_tokens": 1670,
+    "total_tokens": 3335,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The availability of amended statutory solatium when the land acquisition award and the decision on the compensation reference preceded the amendment.",
+      "material_facts": [
+        "The acquisition notification was issued in 1971, and the Collector awarded compensation for the land.",
+        "The District Judge decided the compensation reference in 1978.",
+        "The High Court later increased the compensation and granted solatium on the increase.",
+        "The Supreme Court considered the solatium issue in an appeal in which notice was limited to solatium and interest."
+      ],
+      "conclusion": "The respondents were not entitled to solatium, and the High Court’s grant of it was set aside.",
+      "legal_principle": "Applying K.S. Paripoornan v. State of Kerala & Ors. (1994) 5 SCC 593, the Court held that the amended provision for solatium in Section 23(1-A) of the Land Acquisition Act did not entitle the respondents to solatium in these circumstances. The judgment does not state the broader transitional test from that precedent.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and award_pre_amendment and reference_decided_pre_amendment and amended_solatium_granted",
+        "then": "solatium_not_payable"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "award_pre_amendment": "The initial compensation award was made before the relevant change in the law.",
+        "reference_decided_pre_amendment": "The decision on the claimant’s compensation reference was made before the relevant change in the law.",
+        "amended_solatium_granted": "A court granted solatium under the changed law."
+      },
+      "definition": "When an acquisition-compensation appeal concerns an award and reference decision made before the relevant change and a court granted solatium under the changed law, solatium is not payable."
+    },
+    {
+      "legal_issue": "The applicable interest rate when both the initial land acquisition award and the decision on the compensation reference preceded the relevant change in the law.",
+      "material_facts": [
+        "The Collector made the compensation award before 1982, and the District Judge decided the reference before 1982.",
+        "The High Court awarded interest at 9% for one year from possession and 5% thereafter until payment.",
+        "The Supreme Court considered the interest issue in an appeal in which notice was limited to solatium and interest."
+      ],
+      "conclusion": "The interest rate was confined to 6% per annum, and the High Court’s higher interest award was modified.",
+      "legal_principle": "Applying K.S. Paripoornan (II) v. State of Kerala & Ors. (1995) 1 SCC 367, the Court held that the higher interest rates were not admissible where the Collector’s award and the decision on the Section 18 reference preceded 1982. The Court confined interest to 6% per annum. The judgment does not identify the statutory provision governing those interest rates.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and award_pre_interest_change and reference_decided_pre_interest_change and interest_above_earlier_rate_awarded",
+        "then": "interest_confined_to_earlier_rate"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "award_pre_interest_change": "The initial compensation award was made before the relevant change in the law governing interest.",
+        "reference_decided_pre_interest_change": "The decision on the claimant’s compensation reference was made before the relevant change in the law governing interest.",
+        "interest_above_earlier_rate_awarded": "A court awarded interest at a rate higher than the rate applicable before the relevant change."
+      },
+      "definition": "When an acquisition-compensation appeal concerns an award and reference decision made before the relevant change and a court awarded interest above the earlier rate, interest is confined to that earlier rate."
+    }
+  ],
+  "seconds": 10.8
+}

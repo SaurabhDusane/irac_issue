@@ -1,0 +1,114 @@
+{
+  "doc_id": "34963020",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 21143,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3791,
+    "prompt_tokens": 6018,
+    "total_tokens": 9809,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A widow who acquires an interest in joint family property under the Hindu Women's Rights to Property Act, 1937 has an unquantified share until partition, at which time she is entitled to the share her husband would have received.",
+      "material_facts": [
+        "The common ancestor died while the Hindu Women's Rights to Property Act, 1937 was in force, leaving a widow and joint family property.",
+        "The widow's share had not been determined by a partition."
+      ],
+      "conclusion": "The widow acquired an interest in the joint family property on her husband's death, but her share remained undetermined until partition; she was entitled to the share her husband would have received had he lived until the date partition was claimed.",
+      "legal_principle": "Section 3(2) of the Hindu Women's Rights to Property Act, 1937 gave the widow the same interest in the joint family property as her husband had. In Potti Lakshmi Perumallu v. Potti Krishna Venamma, this Court held that the share is to be determined by reference to the share the husband would have received had he lived until the date partition was claimed.",
+      "rule": {
+        "if": "partition_proceeding and ancestor_died_with_joint_property and widow_survived_ancestor",
+        "then": "widow_share_remains_unquantified_until_partition"
+      },
+      "predicates": {
+        "partition_proceeding": "A proceeding seeks partition of property held by a joint family.",
+        "ancestor_died_with_joint_property": "An ancestor died while the family held joint family property.",
+        "widow_survived_ancestor": "The ancestor's widow survived him."
+      },
+      "definition": "When a partition proceeding concerns joint family property left by an ancestor who was survived by his widow, her share remains unquantified until partition."
+    },
+    {
+      "legal_issue": "Joint family property does not cease to belong to the family merely because, after a member's death, the family is represented by a sole coparcener.",
+      "material_facts": [
+        "After the common ancestor died, his son was the sole coparcener.",
+        "The property continued to be treated as joint family property, and the ancestor's widow remained in the family."
+      ],
+      "conclusion": "The joint family continued after the ancestor's death, with his son as the sole coparcener, and the property continued to belong to the family.",
+      "legal_principle": "In Gowli Buddanna v. Commissioner of Income Tax, Mysore, Bangalore, this Court held that joint family property does not cease to belong to the family merely because a sole coparcener represents it; the family may include a widow and other females born into it.",
+      "rule": {
+        "if": "joint_family_property and sole_coparcener_remained",
+        "then": "joint_family_continues"
+      },
+      "predicates": {
+        "joint_family_property": "Property belonged to a joint family before a member died.",
+        "sole_coparcener_remained": "After that death, one coparcener alone represented the family."
+      },
+      "definition": "If property belonged to a joint family and one coparcener alone remained to represent it, the joint family continued."
+    },
+    {
+      "legal_issue": "When a Mitakshara coparcener dies after the commencement of the Hindu Succession Act, 1956 and leaves a qualifying female relative, his interest is determined by a notional partition immediately before his death.",
+      "material_facts": [
+        "The coparcener died after the Hindu Succession Act, 1956 had commenced.",
+        "His wife and other qualifying female relatives survived him.",
+        "The courts had to determine the shares in the joint family property."
+      ],
+      "conclusion": "A notional partition immediately before the coparcener's death had to be presumed to determine his interest; the wife was entitled to a share equal to that of a son in the hypothetical partition.",
+      "legal_principle": "Section 6 of the Hindu Succession Act, 1956, including Explanation 1 and its proviso, requires the deceased coparcener's interest to be calculated as the share he would have received on a partition immediately before his death and, where the proviso applies, to devolve by succession rather than survivorship. Gurupad Khandappa Magdum v. Hirabai Khandappa Magdum explains that the hypothetical partition must give the wife a share equal to a son.",
+      "rule": {
+        "if": "partition_proceeding and coparcener_died_after_succession_law_commenced and qualifying_female_relative_survived",
+        "then": "deceased_coparcener_interest_computed_by_notional_partition"
+      },
+      "predicates": {
+        "partition_proceeding": "A proceeding seeks partition of property held by a joint family.",
+        "coparcener_died_after_succession_law_commenced": "A coparcener died after the applicable succession law had commenced.",
+        "qualifying_female_relative_survived": "A qualifying female relative survived the coparcener."
+      },
+      "definition": "In a partition proceeding, when a coparcener died after the succession law commenced and a qualifying female relative survived, his interest is computed by a notional partition immediately before death."
+    },
+    {
+      "legal_issue": "The shares in joint family property must reflect successive intestate devolution of the interests of a deceased coparcener and of a widow who later dies intestate.",
+      "material_facts": [
+        "The deceased coparcener's interest devolved by intestate succession on his surviving heirs, including his widow, mother, children, and descendants of a predeceased child.",
+        "The mother had an interest in the property and later died, leaving a daughter and the children of her predeceased son.",
+        "The lower courts had awarded the appellants a 37.5% share, but the Supreme Court's calculation of the successive devolution resulted in a 38.1% share for the appellants."
+      ],
+      "conclusion": "The appellants' share in the joint family property was 38.1%, rather than 37.5%, and the decree was modified accordingly.",
+      "legal_principle": "Under the proviso to Section 6 of the Hindu Succession Act, 1956, the deceased coparcener's interest devolved by intestate succession because qualifying female relatives survived him. The Court then applied intestate succession to the mother's interest on her death, allocating one-half to her daughter and the other half to the branch of her predeceased son. The calculation also applied the principles in Gurupad Khandappa Magdum v. Hirabai Khandappa Magdum concerning the notional partition.",
+      "rule": {
+        "if": "partition_proceeding and coparcener_interest_devolved_by_intestate_succession and widow_later_died_leaving_daughter_and_predeceased_son_descendants",
+        "then": "partition_shares_recalculated_by_successive_intestate_devolution"
+      },
+      "predicates": {
+        "partition_proceeding": "A proceeding seeks partition of property held by a joint family.",
+        "coparcener_interest_devolved_by_intestate_succession": "A deceased coparcener's interest passed by intestate succession to surviving heirs.",
+        "widow_later_died_leaving_daughter_and_predeceased_son_descendants": "A widow who held an interest later died, leaving a daughter and descendants of her predeceased son."
+      },
+      "definition": "When those circumstances arise in a partition proceeding, the shares are recalculated to account for successive intestate devolution."
+    },
+    {
+      "legal_issue": "An appeal confined to allocation of shares does not permit reopening concurrent findings on the existence of the joint family and its joint ownership of property.",
+      "material_facts": [
+        "The appeal notice confined scrutiny to allocation of shares in properties found to be joint family properties.",
+        "The lower courts had concurrently found that a joint family existed and that the relevant properties were jointly held."
+      ],
+      "conclusion": "The concurrent findings on the existence of the joint family and the joint holding of property could not be reopened in the appeal.",
+      "legal_principle": "The Court treated the terms limiting the appeal's scope as confining review to allocation of shares and excluding reconsideration of the concurrent findings on joint family status and joint ownership.",
+      "rule": {
+        "if": "appeal_against_partition_decree and appeal_scope_limited_to_share_allocation and concurrent_findings_establish_joint_family_and_joint_ownership",
+        "then": "concurrent_joint_family_findings_not_reopened"
+      },
+      "predicates": {
+        "appeal_against_partition_decree": "An appeal challenges a decree in a partition proceeding.",
+        "appeal_scope_limited_to_share_allocation": "The appeal is confined to determining the allocation of shares.",
+        "concurrent_findings_establish_joint_family_and_joint_ownership": "The lower courts made concurrent findings that a joint family existed and that the property was jointly held."
+      },
+      "definition": "When an appeal from a partition decree is confined to share allocation, concurrent findings establishing the joint family and joint ownership are not reopened."
+    }
+  ],
+  "seconds": 21.6
+}

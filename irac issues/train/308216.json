@@ -1,0 +1,97 @@
+{
+  "doc_id": "308216",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17934,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2840,
+    "prompt_tokens": 5016,
+    "total_tokens": 7856,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant does not part with possession merely because another person uses the premises when the tenant retains the legal right to possess them.",
+      "material_facts": [
+        "The landlord sought eviction on the ground that the tenant had parted with possession to his sons, who ran a partnership business from the premises.",
+        "The tenant had earlier run a business there and later sold that business to his sons, who continued the business from the same premises.",
+        "Although the tenant had retired from the business, the Court found that he had not been shown to have divested himself of the legal right to possess the premises and could displace his sons from possession.",
+        "The premises were used by the father and sons in the context of their joint family business; there was no evidence of subletting or assignment, and the landlord had not given written consent."
+      ],
+      "conclusion": "The tenant had not parted with possession within the meaning of the eviction ground, so the eviction order on that ground could not stand.",
+      "legal_principle": "Parting with possession requires the tenant to vest possession in another person by divesting himself of both physical possession and the right to possession. Another person's use of the premises is insufficient while the tenant retains the legal right to possession. The Court applied section 14(1)(b) of the Delhi Rent Control Act, 1958, and relied on Smt. Krishnawati v. Shri Hans Raj, [1974] 1 SCC 289, concerning the need for evidence before inferring that use by another amounts to letting.",
+      "rule": {
+        "if": "rent_control_eviction_case and eviction_sought_for_parting_with_possession and tenant_retained_legal_right_to_possession",
+        "then": "eviction_not_available_on_parting_with_possession_ground"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The dispute was an eviction proceeding governed by rent-control law.",
+        "eviction_sought_for_parting_with_possession": "The landlord sought eviction on the basis that the tenant had transferred possession to another person.",
+        "tenant_retained_legal_right_to_possession": "The tenant retained the legal right to possess the premises, including the ability to displace the other occupant."
+      },
+      "definition": "When an eviction proceeding rests on alleged parting with possession, a tenant's retention of the legal right to possess means that eviction is not available on that ground."
+    },
+    {
+      "legal_issue": "A belated amendment that seeks to withdraw an admission and introduce an entirely new case may be refused.",
+      "material_facts": [
+        "During the appeal, the tenant sought to amend the written statement to assert that the business entity, rather than the tenant, had taken the premises on rent.",
+        "The tenant had previously admitted in the written statement that he was the tenant.",
+        "The Tribunal considered the proposed amendment belated and found that it would replace the admission with an entirely new case and prejudice the landlord's position."
+      ],
+      "conclusion": "The Tribunal was right to refuse the amendment.",
+      "legal_principle": "Under Order 6 Rule 17 of the Code of Civil Procedure, an amendment seeking to displace an admission and introduce an entirely new case may be refused. The Court relied on Subashini Majumdar v. Krishna Prasad Mahatoo, AIR 1956 Assam 79, and M/s Modi Spinning and Weaving Mills Co. Ltd. v. M/s Ladha Ram and Co., [1977] 1 SCR 728.",
+      "rule": {
+        "if": "rent_control_eviction_appeal and amendment_sought_after_admission and amendment_would_introduce_entirely_new_case",
+        "then": "amendment_refused"
+      },
+      "predicates": {
+        "rent_control_eviction_appeal": "The matter was an appeal in a rent-control eviction proceeding.",
+        "amendment_sought_after_admission": "The tenant sought an amendment after having admitted a material fact in the existing pleading.",
+        "amendment_would_introduce_entirely_new_case": "The proposed amendment would replace the admission with a substantially different case."
+      },
+      "definition": "In a rent-control eviction appeal, an amendment sought after a material admission may be refused when it would introduce an entirely new case."
+    },
+    {
+      "legal_issue": "A tenant's evasive or inconsistent conduct does not by itself disentitle the tenant to rely on the law where the evidence establishes that possession was not parted with.",
+      "material_facts": [
+        "The tenant's statements and conduct in the proceedings were not always fair or frank, and the landlord argued that this should count against the tenant.",
+        "The Court found that the evidence established that the tenant had not parted with possession because he retained the legal right to possess the premises."
+      ],
+      "conclusion": "The tenant's conduct did not disentitle him to the benefit of the law once the evidence established that he had not parted with possession.",
+      "legal_principle": "The Court held that a tenant's conduct is not, by itself, a basis to deny the benefit of the applicable law when the facts establish that the alleged ground for eviction has not been proved.",
+      "rule": {
+        "if": "rent_control_eviction_case and eviction_sought_for_parting_with_possession and tenant_conduct_was_evasive and evidence_showed_no_parting_with_possession",
+        "then": "tenant_not_disentitled_by_conduct"
+      },
+      "predicates": {
+        "rent_control_eviction_case": "The dispute was an eviction proceeding governed by rent-control law.",
+        "eviction_sought_for_parting_with_possession": "The landlord sought eviction on the basis that the tenant had transferred possession to another person.",
+        "tenant_conduct_was_evasive": "The tenant acted evasively or inconsistently in the proceedings.",
+        "evidence_showed_no_parting_with_possession": "The evidence established that the tenant had not divested himself of the right to possess the premises."
+      },
+      "definition": "In a rent-control eviction proceeding based on alleged parting with possession, evasive conduct does not disentitle a tenant when the evidence shows no parting with possession."
+    },
+    {
+      "legal_issue": "An appellate court exercising special-leave jurisdiction may enhance rent when the circumstances show a substantial increase in prevailing rents.",
+      "material_facts": [
+        "While allowing the appeal and setting aside the eviction order, the Court noted that rents in the area had increased enormously.",
+        "The Court exercised its jurisdiction under Article 136 of the Constitution and directed an increase in the rent or mesne profit payable."
+      ],
+      "conclusion": "The Court enhanced the rent or mesne profit payable in the circumstances of the case.",
+      "legal_principle": "In exercising its jurisdiction under Article 136 of the Constitution, the Court may adjust the rent or mesne profit payable in light of the substantial increase in rents. The judgment cites no earlier case for this direction.",
+      "rule": {
+        "if": "special_leave_appeal and court_found_prevailing_rents_had_increased_substantially",
+        "then": "rent_or_mesne_profit_enhanced"
+      },
+      "predicates": {
+        "special_leave_appeal": "The Court was deciding an appeal brought by special leave.",
+        "court_found_prevailing_rents_had_increased_substantially": "The Court found that prevailing rents had increased substantially."
+      },
+      "definition": "In a special-leave appeal, a finding of substantially increased prevailing rents may result in enhanced rent or mesne profit."
+    }
+  ],
+  "seconds": 17.1
+}

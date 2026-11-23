@@ -1,0 +1,58 @@
+{
+  "doc_id": "1480964",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13253,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2286,
+    "prompt_tokens": 3757,
+    "total_tokens": 6043,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Refusal to condone delay, followed by dismissal of an appeal as time-barred without a merits adjudication, does not amount to a decree or supersede the decree under appeal.",
+      "material_facts": [
+        "A second appeal was filed after the limitation period, and the application to condone the delay was refused because the delay was not sufficiently explained.",
+        "The second appeal was dismissed as time-barred as a consequence of that refusal and was not considered on its merits."
+      ],
+      "conclusion": "The dismissal of the second appeal as time-barred was not a decree and did not affect the decree passed by the first appellate court.",
+      "legal_principle": "Under Section 2(2) of the Code of Civil Procedure, a decree requires a conclusive adjudication of rights in a suit; rejection of an application under Section 5 of the Limitation Act and the consequent dismissal of an appeal as time-barred do not meet that definition. The Court approved the reasoning in Mamuda Khateen v. Beniyan Bibi, which treated rejection of the delay application and consequential rejection of the appeal as incidental rather than as a decree, and rejected contrary High Court decisions. The Court distinguished Shyama Pada Choudhury v. Saha Choudhury & Co., where the appellate court had made a decree on the merits, and noted that Nagendra Nath Dey v. Suresh Chandra Dey concerned the materially different Article 182 of the Limitation Act, 1908.",
+      "rule": {
+        "if": "delayed_appeal_proceeding and delay_condonation_refused and appeal_not_heard_on_merits",
+        "then": "appeal_dismissal_is_not_a_decree"
+      },
+      "predicates": {
+        "delayed_appeal_proceeding": "A party filed an appeal after the applicable filing period had expired.",
+        "delay_condonation_refused": "The court refused the appellant’s request to excuse the late filing.",
+        "appeal_not_heard_on_merits": "The court did not decide the appeal on its merits."
+      },
+      "definition": "When an appeal is filed late, the request to excuse the delay is refused, and the appeal is not heard on its merits, its dismissal is not a decree."
+    },
+    {
+      "legal_issue": "For execution limitation, an appellate decree that supersedes the lower-court decree is enforceable from its own date, and a later appeal dismissed as time-barred without a decree on the merits does not restart or alter that period.",
+      "material_facts": [
+        "A trial court granted a decree for possession, and the first appellate court dismissed the appeal against it, thereby passing the appellate decree.",
+        "A second appeal was dismissed as time-barred after the request to condone delay was refused; no decree was passed in that appeal.",
+        "The decree-holder filed the execution application more than twelve years after the first appellate decree became enforceable."
+      ],
+      "conclusion": "The first appellate decree remained enforceable, and the execution application filed more than twelve years after it became enforceable was barred by limitation.",
+      "legal_principle": "Article 136 of the Limitation Act, 1963 provides a twelve-year period running from when a decree becomes enforceable. Unlike former Article 182 of the Limitation Act, 1908, Article 136 does not make the filing or dismissal of an appeal a separate starting point. An appeal does not affect enforceability unless its operation is stayed; when an appeal results in a decree, that decree supersedes the lower-court decree and becomes the enforceable decree. When an appeal is dismissed as time-barred without a decree, the lower-court decree remains unaffected. The Court considered the change from former Article 182, the former Section 48 of the Code of Civil Procedure, and the explanatory objects and reasons for Article 136. It noted Anandilal v. Ram Narain on broad construction of limitation provisions, while emphasizing that hardship is not a basis to disregard limitation, and found Nagendra Nath Dey inapplicable because it concerned former Article 182.",
+      "rule": {
+        "if": "execution_proceeding and appellate_decree_superseded_lower_decree and later_appeal_rejected_without_merits and execution_started_after_limitation_period",
+        "then": "execution_is_barred"
+      },
+      "predicates": {
+        "execution_proceeding": "A decree-holder sought to enforce a civil court decree through execution proceedings.",
+        "appellate_decree_superseded_lower_decree": "An appellate court decided an appeal by a decree that replaced the lower-court decree as the enforceable decree.",
+        "later_appeal_rejected_without_merits": "A later appeal was rejected as late without a decree being made on its merits.",
+        "execution_started_after_limitation_period": "The decree-holder filed for execution after the applicable limitation period had run from when the enforceable decree became enforceable."
+      },
+      "definition": "Execution is barred when an appellate decree supersedes the lower-court decree, a later appeal is rejected without a merits decree, and execution is sought only after the applicable period has run from enforceability."
+    }
+  ],
+  "seconds": 15.5
+}

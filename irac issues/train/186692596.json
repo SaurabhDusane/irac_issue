@@ -1,0 +1,82 @@
+{
+  "doc_id": "186692596",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29643,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2949,
+    "prompt_tokens": 7401,
+    "total_tokens": 10350,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A stipulated completion period is not necessarily fundamental where the contract’s other terms provide for extensions or compensation for delay.",
+      "material_facts": [
+        "The construction contract expressly described time as essential and set a completion period.",
+        "The contract also allowed the engineer to extend the completion period on reasonable grounds and provided for compensation while work remained unfinished after the stipulated date.",
+        "The contractor was permitted to continue working after the stipulated completion period."
+      ],
+      "conclusion": "The completion period was not intended to be of the essence of the contract; alternatively, the stipulated time had been waived.",
+      "legal_principle": "Whether time is of the essence depends on the parties’ intention ascertained by construing the contract as a whole. An express time-essential term may be displaced by other provisions, including provisions for extensions or delay compensation. The Court relied on Halsbury’s Laws of England and the principles reflected in Lamprell v. Billericay Union, Webb v. Hughes, and Charles Rickards Ltd. v. Oppenheim; it applied Clauses 2 and 6 of the contract.",
+      "rule": {
+        "if": "construction_contract_dispute and express_time_essential_term and (contract_allows_extension or contract_provides_delay_compensation)",
+        "then": "completion_time_is_not_of_the_essence"
+      },
+      "predicates": {
+        "construction_contract_dispute": "The dispute concerns a contract for construction work.",
+        "express_time_essential_term": "The contract states that time is essential for the contractor’s performance.",
+        "contract_allows_extension": "The contract permits an extension of the completion period on specified or reasonable grounds.",
+        "contract_provides_delay_compensation": "The contract provides for compensation while the work remains unfinished after the stated completion period."
+      },
+      "definition": "When a construction contract states that time is essential but also allows extensions or compensation for delay, the completion time is not treated as fundamental."
+    },
+    {
+      "legal_issue": "An employer cannot rescind a contract for delay without first fixing a reasonable further period for completion when the original deadline is not fundamental or has ceased to apply.",
+      "material_facts": [
+        "The contractor sought extensions before the stipulated completion period expired, and departmental officers recommended extensions.",
+        "The employer allowed some work to continue after the stipulated period.",
+        "The employer rescinded the contract without setting a further period for completion and making time essential for that period."
+      ],
+      "conclusion": "The rescission was wrongful and illegal because the employer did not fix a reasonable further period for completion and make time essential before rescinding.",
+      "legal_principle": "Where time has not been made of the essence, or the fixed time has ceased to apply by waiver, the employer must give notice fixing a reasonable time for completion and may rescind for non-completion within that time. The Court relied on the rule stated in Halsbury’s Laws of England and applied the contract’s extension and delay provisions.",
+      "rule": {
+        "if": "construction_contract_dispute and (contract_allows_extension or employer_allowed_post_deadline_work) and contractor_sought_extension and employer_rescinded_without_fixing_further_time",
+        "then": "rescission_for_delay_is_wrongful"
+      },
+      "predicates": {
+        "construction_contract_dispute": "The dispute concerns a contract for construction work.",
+        "contract_allows_extension": "The contract permits an extension of the completion period on specified or reasonable grounds.",
+        "employer_allowed_post_deadline_work": "The employer permitted the contractor to continue work after the original completion period expired.",
+        "contractor_sought_extension": "The contractor asked the employer for additional time to complete the work.",
+        "employer_rescinded_without_fixing_further_time": "The employer rescinded the contract without first setting a reasonable further completion period and making time essential for that period."
+      },
+      "definition": "When an employer allows a contractor to seek an extension or continue working beyond the original deadline, rescission for delay without a further completion period is wrongful."
+    },
+    {
+      "legal_issue": "An employer that wrongfully rescinds a construction contract cannot forfeit the contractor’s security, and the contractor may recover the established unpaid amount for completed work and damages.",
+      "material_facts": [
+        "The contractor had provided a security deposit, which the employer forfeited when it rescinded the contract.",
+        "The contractor had performed work for which part of the bill remained unpaid.",
+        "The trial court found that the contractor was entitled to nominal damages, and the Supreme Court restored that decree after finding the rescission wrongful."
+      ],
+      "conclusion": "The employer was not entitled to forfeit the security deposit; the contractor was entitled to its return, the established balance due for work performed, and nominal damages.",
+      "legal_principle": "Because the employer’s rescission was wrongful, the employer could not forfeit the security deposit on the basis of the contractor’s alleged breach. The Court restored the trial court’s award for return of the deposit, the unpaid balance for work performed, and nominal damages.",
+      "rule": {
+        "if": "construction_contract_dispute and employer_wrongfully_rescinded and security_deposit_forfeited and contractor_performed_unpaid_work",
+        "then": "contractor_may_recover_security_deposit_unpaid_work_and_established_damages"
+      },
+      "predicates": {
+        "construction_contract_dispute": "The dispute concerns a contract for construction work.",
+        "employer_wrongfully_rescinded": "The employer rescinded the construction contract without a lawful basis to do so.",
+        "security_deposit_forfeited": "The employer retained or applied the contractor’s security deposit following the rescission.",
+        "contractor_performed_unpaid_work": "The contractor performed work for which an established amount remained unpaid."
+      },
+      "definition": "If an employer wrongfully rescinds a construction contract and retains security while payment for completed work remains due, the contractor may recover the security, unpaid work amount, and established damages."
+    }
+  ],
+  "seconds": 17.8
+}

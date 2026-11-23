@@ -1,0 +1,80 @@
+{
+  "doc_id": "1429052",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 24892,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2821,
+    "prompt_tokens": 6305,
+    "total_tokens": 9126,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court exercising inherent criminal jurisdiction cannot quash a prosecution by assessing disputed or untested evidence, particularly when the allegations disclose offences and investigation remains incomplete.",
+      "material_facts": [
+        "The prosecutions alleged, among other things, fraud and the use of false or forged documents in obtaining approvals and contractor licences.",
+        "In some matters, investigation was still in progress; in another, a charge sheet had been filed.",
+        "The High Court examined investigative statements and other materials and concluded that the alleged offences were not made out, although relevant materials had not been tested as evidence."
+      ],
+      "conclusion": "The High Court was not justified in quashing the investigation or proceedings. The Supreme Court set aside the impugned orders and directed that the incomplete investigations proceed, while leaving the trial court to deal with any discharge application in accordance with law.",
+      "legal_principle": "Section 482 of the Code of Criminal Procedure preserves a wide but sparingly exercised inherent power to prevent abuse of process or secure the ends of justice; it is not a substitute for trial, appeal, or revision. Under R. P. Kapur v. State of Punjab and State of Haryana v. Bhajan Lal, quashing may be appropriate in specified categories, including where allegations accepted in full do not disclose an offence or a legal bar applies. But a court ordinarily cannot assess the reliability or sufficiency of evidence, or decide whether conviction is likely. Jehan Singh v. Delhi Administration holds that intervention during an ongoing police investigation is premature in the circumstances described there. Janata Dal v. H. S. Chowdhary, Raghubir Saran v. State of Bihar, and Chand Dhawan v. Jawahar Lal likewise caution against deciding disputed matters or relying on unproved materials in a quashing petition.",
+      "rule": {
+        "if": "criminal_proceeding_quashing_challenge and allegations_disclose_offence_on_face_value and (investigation_incomplete or evidence_requires_trial_assessment)",
+        "then": "quashing_is_improper"
+      },
+      "predicates": {
+        "criminal_proceeding_quashing_challenge": "A person seeks to have a criminal investigation or prosecution terminated by a court exercising its inherent criminal jurisdiction.",
+        "allegations_disclose_offence_on_face_value": "The alleged facts, accepted in full without resolving disputed evidence, describe conduct that amounts to an offence.",
+        "investigation_incomplete": "The police have not completed their investigation into the alleged offence.",
+        "evidence_requires_trial_assessment": "The materials relied on require proof or assessment of reliability that belongs to the trial process.",
+        "quashing_is_improper": "The criminal investigation or prosecution should not be terminated on the basis of an assessment of disputed or untested evidence."
+      },
+      "definition": "When a criminal proceeding is challenged for quashing, allegations that disclose an offence on their face, together with an incomplete investigation or evidence requiring trial assessment, mean that the proceeding should not be quashed."
+    },
+    {
+      "legal_issue": "Alleged mala fides of an informant do not by themselves justify quashing a criminal proceeding when the allegations and investigative materials otherwise call for adjudication.",
+      "material_facts": [
+        "The respondents argued that the prosecution was politically motivated and intended to harass them and another person.",
+        "The allegations concerned serious offences, and the investigating agency had collected documentary and oral materials while investigation was ongoing."
+      ],
+      "conclusion": "The allegations of mala fides could not, by themselves, justify quashing the proceedings; the High Court’s quashing orders were set aside.",
+      "legal_principle": "Under Section 482 of the Code of Criminal Procedure, alleged mala fides of the informant are of secondary importance and cannot alone provide a basis for quashing proceedings. The Court relied on Dhanalakshmi v. R. Prasanna Kumar, State of Bihar v. P. P. Sharma, Rupan Deol Bajaj v. Kanwar Pal Singh Gill, State of Kerala v. O. C. Kuttan, State of U.P. v. O. P. Sharma, Rashmi Kumar v. Mahesh Kumar Bhada, Satvinder Kaur v. State, Rajesh Bajaj v. State, State of Karnataka v. M. Devendrappa, and State of M.P. v. Awadh Kishore Gupta. The separate category in State of Haryana v. Bhajan Lal for proceedings manifestly attended with mala fides does not make an allegation of bad motive, standing alone, sufficient.",
+      "rule": {
+        "if": "criminal_proceeding_quashing_challenge and mala_fides_alleged and allegations_or_materials_support_further_adjudication",
+        "then": "mala_fides_alone_do_not_justify_quashing"
+      },
+      "predicates": {
+        "criminal_proceeding_quashing_challenge": "A person seeks to have a criminal investigation or prosecution terminated by a court exercising its inherent criminal jurisdiction.",
+        "mala_fides_alleged": "The accused claims that the informant or prosecuting agency acted from an improper or vindictive motive.",
+        "allegations_or_materials_support_further_adjudication": "The allegations or materials collected provide a basis for the criminal matter to proceed for investigation or adjudication.",
+        "mala_fides_alone_do_not_justify_quashing": "The proceeding should not be quashed solely because an improper motive is alleged."
+      },
+      "definition": "When mala fides are alleged in a quashing challenge but the allegations or materials support further adjudication, the allegation of improper motive alone does not justify quashing."
+    },
+    {
+      "legal_issue": "A court exercising inherent criminal jurisdiction cannot grant substantive relief to a person who is not a party or direct renewal of an administrative licence as part of a criminal-proceeding quashing order.",
+      "material_facts": [
+        "In a proceeding challenging criminal proceedings, the High Court granted relief to a person who was not a party to the petition.",
+        "The High Court also directed renewal of a contractor’s licence and made factual conclusions about qualifications, experience, and the licence-renewal process."
+      ],
+      "conclusion": "The High Court’s grant of relief to the non-party and its direction to renew the licence were indefensible; the impugned orders were set aside.",
+      "legal_principle": "Section 482 of the Code of Criminal Procedure preserves inherent powers to prevent abuse of process and secure the ends of justice, but does not authorize the High Court to act as a court of appeal or revision or to determine disputed factual matters as if at trial. The Court held that the power did not justify granting relief to a person who was not a party or directing renewal of a contractor’s licence in the criminal quashing proceeding.",
+      "rule": {
+        "if": "criminal_proceeding_quashing_challenge and (relief_granted_to_nonparty or administrative_licence_renewal_directed)",
+        "then": "nonparty_relief_or_licence_direction_is_improper"
+      },
+      "predicates": {
+        "criminal_proceeding_quashing_challenge": "A person seeks to have a criminal investigation or prosecution terminated by a court exercising its inherent criminal jurisdiction.",
+        "relief_granted_to_nonparty": "The court grants substantive relief in the proceeding to a person who was not a party to it.",
+        "administrative_licence_renewal_directed": "The court directs an administrative authority to renew a licence as part of its order in the criminal proceeding.",
+        "nonparty_relief_or_licence_direction_is_improper": "The court should not grant substantive relief to a non-party or direct administrative licence renewal in the criminal quashing proceeding."
+      },
+      "definition": "In a criminal-proceeding quashing challenge, granting relief to a non-party or directing administrative licence renewal makes that relief or direction improper."
+    }
+  ],
+  "seconds": 18.0
+}

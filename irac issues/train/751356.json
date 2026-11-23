@@ -1,0 +1,98 @@
+{
+  "doc_id": "751356",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33468,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3170,
+    "prompt_tokens": 8909,
+    "total_tokens": 12079,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A valuation by a third person is an admission under section 20 only where a party clearly refers the matter to that person for information or an opinion.",
+      "material_facts": [
+        "The State appointed an assessor to value land after the claimant agreed to the assessor's appointment, but the evidence did not establish that the State agreed to be bound by the valuation.",
+        "The assessor's report used valuation rates the courts found inapplicable to the land.",
+        "The claim relied on the report as an admission of the land's value and as a basis for damages."
+      ],
+      "conclusion": "The assessor's valuation was not an admission under section 20 on which the damages claim could be decreed.",
+      "legal_principle": "Under section 20 of the Indian Evidence Act, 1872, statements by a third person to whom a party has expressly referred for information on a matter in dispute are receivable as admissions against that party. Section 20 is an exception to the general rule in section 18 and concerns vicarious admissions. A reference may be made by words or conduct, but there must be a clear intention to refer; the referring party adopts the third person's statement. “Information” includes a statement about the truth of a disputed matter even if the parties did not seek knowledge of something previously unknown. Admissions may operate as estoppel where the parties agreed to abide by them. Applying those principles, the report was not an admission because there was no clear mutual agreement to appoint the assessor to make a valuation binding on the State.",
+      "rule": {
+        "if": "civil_compensation_claim and third_party_assessment_offered_as_admission and (no_clear_intention_to_refer_for_opinion or no_agreement_to_abide_by_assessment)",
+        "then": "assessment_is_not_an_admission_under_section_twenty"
+      },
+      "predicates": {
+        "civil_compensation_claim": "A claimant brings a civil claim seeking compensation for property or its value.",
+        "third_party_assessment_offered_as_admission": "A party relies on a third person's assessment of a disputed matter as an admission against another party.",
+        "no_clear_intention_to_refer_for_opinion": "The evidence does not show that the party clearly referred the disputed matter to the third person for an opinion or information.",
+        "no_agreement_to_abide_by_assessment": "The evidence does not show that the parties agreed to be bound by the third person's assessment."
+      },
+      "definition": "When a civil compensation claim relies on a third-party assessment, the assessment is not an admission if there was no clear referral for an opinion or no agreement to abide by it."
+    },
+    {
+      "legal_issue": "A court may not exclude a relevant government letter merely because its author was not examined, though the letter may be insufficient to prove an agreement to be bound by an assessment.",
+      "material_facts": [
+        "A government letter described the government's wish to settle the claim and said the claimant had agreed to the appointment of an assessor.",
+        "The High Court excluded the letter from consideration because its author had not been examined as a witness.",
+        "The letter did not itself establish that the parties had mutually agreed to be bound by the assessor's valuation."
+      ],
+      "conclusion": "The High Court was wrong to exclude the letter for want of proof, but the letter did not establish the claimant's asserted mutual agreement to appoint a binding appraiser.",
+      "legal_principle": "The Court held that the letter should not have been excluded from consideration on the stated ground that its author was not examined. It also held that the document, by itself, did not substantiate the claim that the parties mutually consented to have the assessor ascertain the plot's value as a binding appraiser or valuer.",
+      "rule": {
+        "if": "civil_appeal and relevant_government_letter_excluded_for_author_not_testifying",
+        "then": "letter_must_be_considered_but_does_not_alone_establish_mutual_agreement"
+      },
+      "predicates": {
+        "civil_appeal": "A party brings a civil appeal challenging a lower court's treatment of evidence.",
+        "relevant_government_letter_excluded_for_author_not_testifying": "A lower court excludes a government letter from consideration because its author was not examined as a witness."
+      },
+      "definition": "In a civil appeal, a relevant government letter excluded only because its author did not testify must be considered, but the letter alone does not establish mutual agreement."
+    },
+    {
+      "legal_issue": "A court may award equitable compensation for property taken when the promised exchange is not delivered, assessing the property's value in light of the circumstances.",
+      "material_facts": [
+        "Under an exchange arrangement, the claimant gave possession of a plot to the State in return for another plot.",
+        "The State did not deliver possession of the exchange plot, and the claimant was deprived of the property to which the arrangement entitled him.",
+        "The stated rate for comparable scheme plots provided a valuation basis, while scarcity and the rise in land values affected the appropriate compensation."
+      ],
+      "conclusion": "The Court awarded compensation for the value of the exchanged plot, assessing the amount as just and proper in light of all the circumstances.",
+      "legal_principle": "The Court held that it and the lower courts had ample power to restitute the claimant by granting compensation for the value of property of which he had been deprived. It considered the terms governing the allotment, the applicable rates for similar plots, and the surrounding circumstances, including scarcity and the rise in land values.",
+      "rule": {
+        "if": "civil_compensation_claim and property_given_up_under_exchange and promised_exchange_property_not_delivered",
+        "then": "court_may_award_equitable_compensation_for_property_value"
+      },
+      "predicates": {
+        "civil_compensation_claim": "A claimant brings a civil claim seeking compensation for property or its value.",
+        "property_given_up_under_exchange": "A claimant gives up possession of property under an arrangement in return for other property.",
+        "promised_exchange_property_not_delivered": "The other party does not deliver possession of the property promised in exchange."
+      },
+      "definition": "When a claimant gives up property in an exchange and the promised property is not delivered, a court may award equitable compensation for the value of the property."
+    },
+    {
+      "legal_issue": "A person deprived of immovable property is entitled to reasonable interest on the compensation due, which may be awarded on equitable grounds.",
+      "material_facts": [
+        "The claimant was deprived of possession of property under the failed exchange arrangement.",
+        "The State did not deliver the exchange property or pay compensation when the claimant was deprived of the property.",
+        "The Court considered interest necessary to compensate for the deprivation and the rise in the property's value."
+      ],
+      "conclusion": "The claimant was entitled to reasonable interest on the compensation, with interest awarded on equitable grounds.",
+      "legal_principle": "Under the proviso to section 1 of the Interest Act, 1839, a court may award interest on equitable grounds. Relying on Satinder Singh v. Amrao Singh, which referred to Swift & Co. v. Board of Trade and Birch v. Joy, the Court applied the principle that taking possession of immovable property generally implies an agreement to pay interest on its value.",
+      "rule": {
+        "if": "civil_compensation_claim and claimant_deprived_of_immovable_property and compensation_remains_unpaid",
+        "then": "claimant_is_entitled_to_reasonable_interest_on_compensation"
+      },
+      "predicates": {
+        "civil_compensation_claim": "A claimant brings a civil claim seeking compensation for property or its value.",
+        "claimant_deprived_of_immovable_property": "A claimant is deprived of possession of immovable property by another party.",
+        "compensation_remains_unpaid": "The party responsible has not paid compensation for the property taken."
+      },
+      "definition": "When a civil claimant is deprived of immovable property and compensation remains unpaid, the claimant is entitled to reasonable interest on that compensation."
+    }
+  ],
+  "seconds": 20.5
+}

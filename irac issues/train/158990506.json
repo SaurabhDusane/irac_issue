@@ -1,0 +1,59 @@
+{
+  "doc_id": "158990506",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23207,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1704,
+    "prompt_tokens": 6112,
+    "total_tokens": 7816,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Land-acquisition proceedings under the former regime lapse when an award was made at least five years before the new regime commenced and either physical possession was not taken or compensation was not paid.",
+      "material_facts": [
+        "An award had been made more than five years before the new regime commenced.",
+        "The acquiring authorities had not taken physical possession of the land.",
+        "Compensation had not been paid to the landowner."
+      ],
+      "conclusion": "The acquisition proceedings were deemed to have lapsed, and the acquisition notification was quashed insofar as it covered the land.",
+      "legal_principle": "Section 24(2) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 applies where an award under the former Land Acquisition Act was made five years or more before commencement of the 2013 Act and either possession has not been taken or compensation has not been paid. The word “or” makes either failure sufficient. Under Pune Municipal Corporation v. Harakchand Misirimal Solanki, the legal fiction of lapse operates when those conditions are met; Section 114(2) and Section 6 of the General Clauses Act, 1897 do not preserve proceedings that have lapsed under Section 24(2). The Court also relied on Bharat Kumar v. State of Haryana, Bimla Devi v. State of Haryana, and Union of India v. Shiv Raj.",
+      "rule": {
+        "if": "legacy_land_acquisition and award_at_least_five_years_old and (physical_possession_not_taken or compensation_not_paid)",
+        "then": "acquisition_proceedings_lapse"
+      },
+      "predicates": {
+        "legacy_land_acquisition": "The government initiated land-acquisition proceedings under the former land-acquisition regime.",
+        "award_at_least_five_years_old": "The acquiring authority made an award at least five years before the new regime commenced.",
+        "physical_possession_not_taken": "The acquiring authorities had not taken physical possession of the land.",
+        "compensation_not_paid": "The acquiring authorities had not paid compensation to the landowner."
+      },
+      "definition": "When the proceeding is a legacy land acquisition, the award is at least five years old, and either possession was not taken or compensation was not paid, the acquisition proceedings lapse."
+    },
+    {
+      "legal_issue": "A court-ordered stay or status quo order does not suspend or extend the five-year period relevant to lapse of land-acquisition proceedings.",
+      "material_facts": [
+        "Interim status quo orders protected the landowner's possession during the proceedings.",
+        "The acquiring authorities did not take possession while those orders were in force.",
+        "The award was more than five years old when the new regime commenced."
+      ],
+      "conclusion": "The period during which the court orders operated was not excluded from the five-year period, and the orders did not prevent the acquisition proceedings from lapsing.",
+      "legal_principle": "Section 24(2) of the 2013 Act does not exclude periods during which acquisition proceedings were stayed or affected by an injunction. The Court applied Sree Balaji Nagar Residential Association v. State of Tamil Nadu and relied on the provision's unambiguous wording and the literal-interpretation principle discussed in C.I.T., Mysore v. The Indo Mercantile Bank Ltd. and Madras & Southern Mahratta Railway Co. v. Bezwada Municipality.",
+      "rule": {
+        "if": "legacy_land_acquisition and court_order_prevented_possession and award_at_least_five_years_old",
+        "then": "court_stay_period_is_not_excluded"
+      },
+      "predicates": {
+        "legacy_land_acquisition": "The government initiated land-acquisition proceedings under the former land-acquisition regime.",
+        "court_order_prevented_possession": "A court order kept the acquiring authorities from taking possession while the proceedings were pending.",
+        "award_at_least_five_years_old": "The acquiring authority made an award at least five years before the new regime commenced."
+      },
+      "definition": "When a court order prevents possession in a legacy land acquisition and the award is at least five years old, the time covered by that order is not excluded from the relevant period."
+    }
+  ],
+  "seconds": 71.3
+}

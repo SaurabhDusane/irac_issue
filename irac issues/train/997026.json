@@ -1,0 +1,80 @@
+{
+  "doc_id": "997026",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 26552,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2163,
+    "prompt_tokens": 7126,
+    "total_tokens": 9289,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landlord whose tenant’s tenancy has been terminated by statute after rent defaults for three years is entitled to possession when the statutory relief from termination is unavailable, and the decision-maker cannot deny possession on equitable grounds.",
+      "material_facts": [
+        "The tenants had failed to pay rent within the prescribed period for three years, and the landlords had served the required notices terminating the tenancies.",
+        "The landlords applied to the statutory authority for possession.",
+        "The tenants had paid or offered to pay the arrears, or the authorities considered giving them time to pay, and the authorities refused possession on equitable grounds.",
+        "The tenants were not eligible for the relief from termination provided by the Act for tenants with fewer years of default."
+      ],
+      "conclusion": "The landlords had statutory rights to possession, and the authorities could not refuse possession on equitable grounds or use their general power to make orders to defeat those rights.",
+      "legal_principle": "Under sections 5, 14 and 25 of the Bombay Tenancy and Agricultural Lands Act, 1948, termination for the specified rent default gives the landlord a statutory right to possession, subject to the relief provided by section 25(1), which section 25(2) makes unavailable after defaults in any three years. Section 29(3) authorizes orders that give effect to rights under the Act; it does not authorize an order based on considerations outside the Act. Equity may relieve against a contractual forfeiture, but cannot annul a statutory right. The Court relied on R. v. Boteler (1864) 33 L.J.M.C. 101 and disapproved Raghuvir Vyasaraya Acharya v. Govind Mogre Bandekar (1955) I.L.R. Bom. 1069.",
+      "rule": {
+        "if": "landlord_possession_proceeding and tenancy_terminated_by_statute and tenant_defaulted_in_three_years and statutory_relief_unavailable",
+        "then": "landlord_entitled_to_possession_order"
+      },
+      "predicates": {
+        "landlord_possession_proceeding": "A landlord applied to the competent authority to recover possession from a tenant.",
+        "tenancy_terminated_by_statute": "The tenancy was terminated under a statutory ground after the required notice was given.",
+        "tenant_defaulted_in_three_years": "The tenant failed to pay rent within the required period in three years.",
+        "statutory_relief_unavailable": "The tenant did not qualify for the relief from termination provided by the governing law."
+      },
+      "definition": "When a landlord seeks possession after statutory termination, the tenant has defaulted in three years, and statutory relief is unavailable, the landlord is entitled to a possession order."
+    },
+    {
+      "legal_issue": "Relief against termination under the Transfer of Property Act is unavailable when it is inconsistent with the governing tenancy statute’s limits on relief.",
+      "material_facts": [
+        "The tenancies were agricultural tenancies governed by the Bombay Tenancy and Agricultural Lands Act, 1948.",
+        "The tenants sought relief against termination under section 114 of the Transfer of Property Act.",
+        "The tenancy statute provided relief against termination for non-payment only in the circumstances specified in section 25(1), and the tenants’ three-year defaults placed them outside those circumstances."
+      ],
+      "conclusion": "The tenants could not obtain relief under section 114 of the Transfer of Property Act because it was inconsistent with the provisions of the governing tenancy Act.",
+      "legal_principle": "Section 3 of the Bombay Tenancy and Agricultural Lands Act, 1948, applies Chapter V of the Transfer of Property Act only insofar as it is not inconsistent with the Bombay Act. Section 114 of the Transfer of Property Act permits relief in circumstances beyond those in which section 25(1) of the Bombay Act permits relief; it is therefore inconsistent and inapplicable. The Court found it unnecessary to decide whether section 117 of the Transfer of Property Act independently excluded its application to agricultural leases.",
+      "rule": {
+        "if": "statutory_agricultural_tenancy and tenant_seeks_transfer_act_forfeiture_relief and governing_law_limits_termination_relief",
+        "then": "transfer_act_forfeiture_relief_unavailable"
+      },
+      "predicates": {
+        "statutory_agricultural_tenancy": "The tenancy is an agricultural tenancy governed by a statute that controls its termination and related relief.",
+        "tenant_seeks_transfer_act_forfeiture_relief": "The tenant seeks relief from termination under a general property law provision.",
+        "governing_law_limits_termination_relief": "The governing tenancy law specifies the circumstances in which relief from termination is available."
+      },
+      "definition": "If an agricultural tenancy is governed by a law that specifies the available termination relief and the tenant seeks additional relief under general property law, that additional relief is unavailable when it conflicts with the governing law."
+    },
+    {
+      "legal_issue": "A default year remains countable toward the three-year threshold even when the tenant previously received relief from the consequences of that default.",
+      "material_facts": [
+        "The tenant had defaulted in paying rent within the prescribed period in three years.",
+        "For one year’s default, the tenant had received relief under section 25(1), preventing termination of the tenancy for that default.",
+        "The landlord later sought possession on the basis of the defaults in three years."
+      ],
+      "conclusion": "The default for the year in which relief had been granted could be counted toward the three years of default.",
+      "legal_principle": "Section 25(2) of the Bombay Tenancy and Agricultural Lands Act, 1948, refers to a tenant who has failed to pay rent within the period specified in section 14 for any three years; it does not require successive years of default. Relief under section 25(1) prevents the termination of the tenancy for that default but does not erase the default itself.",
+      "rule": {
+        "if": "landlord_possession_proceeding and tenant_defaulted_in_three_years and relief_previously_granted_for_one_default",
+        "then": "relieved_default_year_counted"
+      },
+      "predicates": {
+        "landlord_possession_proceeding": "A landlord applied to the competent authority to recover possession from a tenant.",
+        "tenant_defaulted_in_three_years": "The tenant failed to pay rent within the required period in three years.",
+        "relief_previously_granted_for_one_default": "The tenant previously received relief that prevented termination of the tenancy for one year’s rent default."
+      },
+      "definition": "When a landlord seeks possession, the tenant has defaulted in three years, and relief was previously granted for one default, that relieved default year is counted."
+    }
+  ],
+  "seconds": 13.9
+}

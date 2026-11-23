@@ -1,0 +1,83 @@
+{
+  "doc_id": "146571650",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33364,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2855,
+    "prompt_tokens": 8509,
+    "total_tokens": 11364,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A valid tenancy affecting a secured asset may restrict a secured creditor from taking possession, depending on when the tenancy arose, whether it complies with the applicable requirements for creating a lease, and whether it has been determined.",
+      "material_facts": [
+        "The property was mortgaged to secure a credit facility, and the bank later sought possession through proceedings to enforce its security.",
+        "The appellant claimed an oral tenancy but gave inconsistent accounts of when it began, and the court found that its existence and date were not established.",
+        "The court considered the effect of a valid tenancy predating the mortgage and of a tenancy arising after the mortgage but before the recovery notice."
+      ],
+      "conclusion": "A valid tenancy existing before creation of the mortgage cannot be displaced by the secured creditor until it is determined in accordance with law. A tenancy created after the mortgage but before the recovery notice must satisfy the applicable requirements for leasing mortgaged property. A claim to possession for more than one year must be supported by a registered instrument.",
+      "legal_principle": "Under Sections 107 and 111 of the Transfer of Property Act, a lease for a term exceeding one year must be created by a registered instrument, and leases are determined in the manner provided by Section 111. Section 65-A governs a mortgagor’s power to lease. Sections 13(13) and 35 of the SARFAESI Act restrict post-notice dealings and give the Act overriding effect over inconsistent laws. The court applied Harshad Govardhan Sondagar v. International Assets Reconstruction Co. Ltd. and reconciled it with Vishal N. Kalsaria v. Bank of India.",
+      "rule": {
+        "if": "secured_asset_enforcement_proceeding and valid_tenancy_affects_property and (tenancy_predates_mortgage or tenancy_created_before_recovery_notice_under_lease_requirements)",
+        "then": "secured_creditor_possession_requires_tenancy_determination"
+      },
+      "predicates": {
+        "secured_asset_enforcement_proceeding": "A secured creditor sought possession of property through proceedings to enforce security over it.",
+        "valid_tenancy_affects_property": "A tenant had a legally valid tenancy in the property that affected the right to take possession.",
+        "tenancy_predates_mortgage": "The legally valid tenancy was created before the property was mortgaged.",
+        "tenancy_created_before_recovery_notice_under_lease_requirements": "The tenancy was created after the mortgage but before the recovery notice and satisfied the applicable requirements for leasing the property.",
+        "secured_creditor_possession_requires_tenancy_determination": "The secured creditor cannot take possession until the valid tenancy has been determined in accordance with law."
+      },
+      "definition": "When enforcement concerns property affected by a valid tenancy created before the mortgage or validly created before the recovery notice, possession by the secured creditor requires determination of that tenancy."
+    },
+    {
+      "legal_issue": "A person claiming tenancy protection in secured-asset enforcement must establish a bona fide, legally valid tenancy with adequate evidence.",
+      "material_facts": [
+        "The appellant relied on photocopies of rent receipts and produced no registered lease instrument or other corroborating records such as tax or utility receipts.",
+        "The appellant gave different accounts of when the tenancy began.",
+        "The interim finding by the Small Causes Court was ex parte and rested on the photocopied rent receipts.",
+        "The bank produced records indicating that the property was treated as self-occupied and that no tenancy had been disclosed or recorded; the alleged tenancy was raised after possession proceedings had begun."
+      ],
+      "conclusion": "The appellant did not establish a bona fide tenancy or a right to protection. The Magistrate’s rejection of the application to stay possession was not erroneous.",
+      "legal_principle": "Harshad Govardhan Sondagar recognises that an unregistered instrument or oral agreement accompanied by delivery of possession does not establish a right to possession for more than one year. Vishal N. Kalsaria recognises that tenancy rights may be proved through relevant evidence even without a written lease deed. Applying those principles, the court considered the evidence as a whole and found the photocopied rent receipts, the inconsistent dates, and the absence of corroboration insufficient to prove the claimed tenancy.",
+      "rule": {
+        "if": "secured_asset_enforcement_proceeding and tenant_claims_protection and tenancy_claim_not_established_by_reliable_evidence",
+        "then": "tenant_protection_denied"
+      },
+      "predicates": {
+        "secured_asset_enforcement_proceeding": "A secured creditor sought possession of property through proceedings to enforce security over it.",
+        "tenant_claims_protection": "A person in occupation claimed tenancy rights as a basis to resist or delay delivery of the property.",
+        "tenancy_claim_not_established_by_reliable_evidence": "The person’s evidence, considered with the opposing evidence, did not reliably establish a bona fide tenancy.",
+        "tenant_protection_denied": "The person is not entitled to tenancy protection against the secured creditor’s possession proceedings."
+      },
+      "definition": "In secured-asset enforcement, a person who claims tenancy protection but fails to establish the tenancy through reliable evidence is denied that protection."
+    },
+    {
+      "legal_issue": "A tenant whose oral or unregistered tenancy has expired and who remains in possession only as a tenant in sufferance cannot use rent-control protection to prevent possession under secured-creditor enforcement.",
+      "material_facts": [
+        "The appellant’s alternative account was that the tenancy arose from an oral agreement.",
+        "The recovery notice had been issued, and the court found that the alleged oral tenancy carried no implied covenant for renewal.",
+        "The appellant had not established a valid continuing lease, and the tenancy relied on had expired by the time of the decision."
+      ],
+      "conclusion": "The appellant, at most, remained as a tenant in sufferance, akin to a trespasser, and could not rely on rent-control protection to prevent delivery of possession to the bank.",
+      "legal_principle": "Sections 13(2) and 13(13) of the SARFAESI Act prevent a borrower from creating further encumbrances after the recovery notice, and Section 35 gives the Act overriding effect over inconsistent laws. Section 65-A of the Transfer of Property Act governs the mortgagor’s power to lease; Section 107 addresses the formalities for leases. The court relied on R.V. Bhupal Prasad v. State of A.P., which describes a tenant in sufferance as one who remains in possession after lawful title expires and notes the little difference between that person and a trespasser. It also referred to Smt. Shanti Devi v. Amal Kumar Banerjee, Murlidhar Jalan v. State of Meghalaya, and D.H. Maniar v. Waman Laxman Kudav. The court applied the overriding effect of the secured-creditor enforcement scheme while recognising that valid tenancy rights under rent legislation must be respected in appropriate cases.",
+      "rule": {
+        "if": "secured_asset_enforcement_proceeding and tenancy_expired and tenant_remains_only_in_sufferance",
+        "then": "rent_control_protection_does_not_bar_secured_possession"
+      },
+      "predicates": {
+        "secured_asset_enforcement_proceeding": "A secured creditor sought possession of property through proceedings to enforce security over it.",
+        "tenancy_expired": "The tenant’s valid term of possession had ended and no valid continuing tenancy was established.",
+        "tenant_remains_only_in_sufferance": "The former tenant continued in possession after the lawful tenancy ended without a continuing right to occupy.",
+        "rent_control_protection_does_not_bar_secured_possession": "Rent-control protection does not prevent the secured creditor from obtaining possession."
+      },
+      "definition": "When secured-asset enforcement concerns an expired tenancy and the occupant remains only in sufferance, rent-control protection does not bar the secured creditor from obtaining possession."
+    }
+  ],
+  "seconds": 18.0
+}

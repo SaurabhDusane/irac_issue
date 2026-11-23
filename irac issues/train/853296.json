@@ -1,0 +1,145 @@
+{
+  "doc_id": "853296",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 12805,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3017,
+    "prompt_tokens": 3529,
+    "total_tokens": 6546,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A substantial delay in filing an appeal should be condoned when the government acted promptly to initiate the appeal but delayed because it relied on an adverse legal opinion before later reconsidering the matter.",
+      "material_facts": [
+        "The government received the single judge’s decision and instructed its government pleader to file an appeal within a short time.",
+        "The government pleader later advised against filing the appeal, and the government took no further action in reliance on that advice.",
+        "After the matter was re-examined in light of numerous similar pending cases, a new government pleader advised that an appeal should be filed, and the government filed it."
+      ],
+      "conclusion": "The delay in filing the appeal was condoned, and the appellate court had been wrong to refuse condonation.",
+      "legal_principle": "The Court assessed whether the delay was explained by the sequence of steps taken and the circumstances leading to the late filing. It relied on no cited statutory provision or earlier case for this ruling.",
+      "rule": {
+        "if": "government_appeal_from_writ_decision and prompt_instruction_to_appeal and delay_caused_by_reliance_on_legal_opinion and later_reconsideration_of_appeal",
+        "then": "appeal_delay_condoned"
+      },
+      "predicates": {
+        "government_appeal_from_writ_decision": "The government appealed a decision made in writ proceedings.",
+        "prompt_instruction_to_appeal": "The government promptly instructed its representative to file an appeal after receiving the decision.",
+        "delay_caused_by_reliance_on_legal_opinion": "The appeal was delayed because the government relied on its representative’s advice not to appeal.",
+        "later_reconsideration_of_appeal": "The government later reconsidered the matter and decided that an appeal should be filed.",
+        "appeal_delay_condoned": "The delay in filing the appeal is excused."
+      },
+      "definition": "When the government promptly initiates an appeal but delays in reliance on legal advice before later reconsidering, the delay is excused."
+    },
+    {
+      "legal_issue": "An appellate court may decide an appeal on its merits rather than remit it when remittal would cause further delay in a matter affecting numerous similar pending cases.",
+      "material_facts": [
+        "More than 200 similar cases were pending in the High Court.",
+        "The parties filed written submissions and addressed the Supreme Court on the merits."
+      ],
+      "conclusion": "The Supreme Court decided the matter on its merits instead of remitting it to the High Court.",
+      "legal_principle": "The Court considered it expedient to avoid further delay where numerous similar cases awaited decision. No statutory provision or earlier case was cited for this procedural determination.",
+      "rule": {
+        "if": "appeal_from_writ_decision and many_similar_cases_pending and parties_heard_on_merits and remittal_would_cause_further_delay",
+        "then": "appeal_decided_on_merits_without_remittal"
+      },
+      "predicates": {
+        "appeal_from_writ_decision": "The proceeding is an appeal from a decision in writ proceedings.",
+        "many_similar_cases_pending": "Numerous similar cases are awaiting decision.",
+        "parties_heard_on_merits": "The parties have presented arguments on the merits of the dispute.",
+        "remittal_would_cause_further_delay": "Sending the matter back for another decision would cause further delay.",
+        "appeal_decided_on_merits_without_remittal": "The appellate court decides the merits without sending the matter back to the lower court."
+      },
+      "definition": "When numerous similar cases are pending, the parties have argued the merits, and remittal would cause further delay, the appellate court may decide the appeal itself."
+    },
+    {
+      "legal_issue": "The urgency power may be used to dispense with an objection inquiry when the acquisition serves an urgent public purpose and conducting the inquiry would delay that purpose.",
+      "material_facts": [
+        "The acquisition was for planned development and to move a timber business from a congested urban area to depots outside it.",
+        "The Court found that moving the business was urgent to relieve traffic congestion.",
+        "Conducting an inquiry into objections would delay the relocation and the establishment of the depots.",
+        "The government’s affidavit stated that the timber-depot purpose continued to be part of the revised development plan."
+      ],
+      "conclusion": "Dispensing with the objection inquiry was justified, and the acquisition remained valid despite the revised development plan.",
+      "legal_principle": "Under Sections 5A and 17(4) of the Land Acquisition Act, 1894, the inquiry concerns whether the land is needed or likely to be needed for the notified public purpose and whether suitable alternative land is available. The Court held that urgency for a planned development purpose can justify dispensing with the inquiry where delay would defeat the purpose. It considered Narayan Govind Gavate v. State of Maharashtra, Dora Phalavli v. State of Punjab, Gurdial Singh v. State of Punjab, and Jai Narain v. Union of India, explaining that the matter depends on its facts and distinguishing the first decision in light of the Court’s later decisions.",
+      "rule": {
+        "if": "land_acquisition_proceeding and acquisition_for_planned_public_development and urgent_public_purpose and inquiry_would_delay_public_purpose and public_purpose_continues_under_plan",
+        "then": "objection_inquiry_dispensed_with_and_acquisition_valid"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The proceeding concerns the acquisition of land for a public purpose.",
+        "acquisition_for_planned_public_development": "The land is being acquired as part of planned public development.",
+        "urgent_public_purpose": "The public purpose requires prompt action, such as to address an existing public problem.",
+        "inquiry_would_delay_public_purpose": "Holding an inquiry into objections would delay achieving the public purpose.",
+        "public_purpose_continues_under_plan": "The public purpose for which the land is acquired continues to be included in the applicable development plan.",
+        "objection_inquiry_dispensed_with_and_acquisition_valid": "The objection inquiry may be dispensed with and the acquisition is valid."
+      },
+      "definition": "If land is acquired for planned development, prompt action is needed for the public purpose, an inquiry would delay that purpose, and the purpose remains in the development plan, the inquiry may be dispensed with and the acquisition is valid."
+    },
+    {
+      "legal_issue": "A decision to dispense with an objection inquiry on grounds of urgency is an administrative decision based on the government’s subjective satisfaction and does not require a reasoned order.",
+      "material_facts": [
+        "The government exercised the urgency power to dispense with an inquiry into objections.",
+        "The respondents argued that the government had to provide reasons for its urgency decision."
+      ],
+      "conclusion": "The government was not required to pass a reasoned order to dispense with the inquiry.",
+      "legal_principle": "The Court held that the urgency decision is an administrative decision resting on the appropriate government’s subjective satisfaction based on the material available. It applied Section 17(4) of the Land Acquisition Act, 1894, and cited no earlier case specifically for the proposition that a reasoned order was unnecessary.",
+      "rule": {
+        "if": "land_acquisition_proceeding and government_dispenses_with_objection_inquiry_on_urgency_grounds",
+        "then": "reasoned_urgency_order_not_required"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The proceeding concerns the acquisition of land for a public purpose.",
+        "government_dispenses_with_objection_inquiry_on_urgency_grounds": "The government dispenses with an inquiry into objections on the basis of urgency.",
+        "reasoned_urgency_order_not_required": "The government is not required to issue a reasoned order explaining its urgency decision."
+      },
+      "definition": "When the government dispenses with an objection inquiry on urgency grounds in a land-acquisition proceeding, it need not issue a reasoned order."
+    },
+    {
+      "legal_issue": "Wording that land is likely to be needed for a public purpose does not, by itself, prevent the government from exercising the urgency power.",
+      "material_facts": [
+        "The notification described the land as likely to be needed for the public purpose.",
+        "The Court considered the circumstances and material showing urgency in moving the timber business to relieve congestion."
+      ],
+      "conclusion": "The notification’s use of the words “likely to be needed” did not take away the government’s power to exercise the urgency power.",
+      "legal_principle": "The notification’s language is not conclusive; the Court must consider the material bearing on urgency. The Court relied on Jai Narain v. Union of India and on Section 17(4) of the Land Acquisition Act, 1894.",
+      "rule": {
+        "if": "land_acquisition_proceeding and notification_says_land_likely_needed and material_shows_urgency",
+        "then": "likely_needed_wording_does_not_bar_urgency_power"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The proceeding concerns the acquisition of land for a public purpose.",
+        "notification_says_land_likely_needed": "The acquisition notification states that the land is likely to be needed for the public purpose.",
+        "material_shows_urgency": "The available material supports the existence of urgency.",
+        "likely_needed_wording_does_not_bar_urgency_power": "The notification’s use of likely-needed wording does not prevent exercise of the urgency power."
+      },
+      "definition": "If an acquisition notification says land is likely to be needed but the material shows urgency, that wording does not bar exercise of the urgency power."
+    },
+    {
+      "legal_issue": "A delay in publishing the acquisition declaration does not invalidate the acquisition when the delay is explained by consideration of representations and objections.",
+      "material_facts": [
+        "There was a delay between publication of the acquisition notification and the declaration.",
+        "The government’s records showed that representations had been made and that objections to the notification were considered after an inquiry was directed.",
+        "The declaration was published after that process."
+      ],
+      "conclusion": "The delay did not invalidate the acquisition.",
+      "legal_principle": "The Court accepted the explanation that the declaration followed consideration of the objections and representations. No specific statutory provision or earlier case was cited for this conclusion.",
+      "rule": {
+        "if": "land_acquisition_proceeding and delay_in_declaration_publication and delay_used_to_consider_representations_or_objections",
+        "then": "declaration_delay_does_not_invalidate_acquisition"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The proceeding concerns the acquisition of land for a public purpose.",
+        "delay_in_declaration_publication": "There was a delay between the initial acquisition notification and publication of the declaration.",
+        "delay_used_to_consider_representations_or_objections": "The intervening time was used to consider representations or objections concerning the acquisition.",
+        "declaration_delay_does_not_invalidate_acquisition": "The delay in publishing the declaration does not invalidate the acquisition."
+      },
+      "definition": "When declaration publication is delayed to consider representations or objections, the delay does not invalidate the acquisition."
+    }
+  ],
+  "seconds": 17.6
+}

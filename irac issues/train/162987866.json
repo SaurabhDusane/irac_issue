@@ -1,0 +1,95 @@
+{
+  "doc_id": "162987866",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 67555,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3029,
+    "prompt_tokens": 15510,
+    "total_tokens": 18539,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Omitting material information about a candidate’s spouse’s assets or the candidate’s interest in partnership assets is not substantial compliance with the required disclosure of assets.",
+      "material_facts": [
+        "The candidate did not identify a bungalow and a vehicle owned by the candidate’s spouse in the required asset disclosures; the candidate’s stated property values were entered under the candidate’s own details.",
+        "The candidate did not disclose an interest in properties held by a partnership of which the candidate remained a partner when filing the nomination, although the candidate claimed to have retired earlier."
+      ],
+      "conclusion": "The omissions of the spouse’s bungalow and vehicle and the candidate’s partnership interest were substantial lapses. The affidavit did not substantially comply with the disclosure requirements, and the nomination was improperly accepted.",
+      "legal_principle": "A voter’s right to know about candidates is part of Article 19(1)(a) of the Constitution. Under Sections 33 and 36 of the Representation of the People Act, 1951, read with the Election Commission’s directions, a candidate must give complete and truthful asset information in the prescribed affidavit. Association for Democratic Reforms, People’s Union for Civil Liberties, Resurgence India and Shaligram Shrivastava support those requirements. G.M. Siddheshwar concerned an election petitioner’s affidavit and does not excuse omission of required information from a candidate’s affidavit; disclosure of the required particulars may amount to substantial compliance, but an amount entered against the wrong person or without the required asset details does not do so.",
+      "rule": {
+        "if": "election_petition_challenging_returned_candidate and (spouse_asset_particulars_omitted or candidate_partnership_interest_omitted)",
+        "then": "material_asset_omission_makes_nomination_improperly_accepted"
+      },
+      "predicates": {
+        "election_petition_challenging_returned_candidate": "A voter challenged the election of a returned candidate by an election petition.",
+        "spouse_asset_particulars_omitted": "The candidate failed to identify an asset owned by the candidate’s spouse in the required disclosure.",
+        "candidate_partnership_interest_omitted": "The candidate failed to disclose an interest in assets held by a partnership of which the candidate remained a partner."
+      },
+      "definition": "When an election petition challenges a returned candidate and the candidate omitted spouse-asset particulars or a partnership interest, the omission makes the nomination improperly accepted."
+    },
+    {
+      "legal_issue": "Non-disclosure of government dues is not necessarily a material lapse when the circumstances reasonably support the candidate’s belief that the dues were disputed, were primarily payable by tenants, or awaited genuine reassessment.",
+      "material_facts": [
+        "The candidate did not disclose electricity charges for one meter because the candidate maintained that the charges were disputed and had been advised not to pay while the dispute was being considered.",
+        "Charges for another meter related to premises rented to tenants, whom the candidate reasonably expected to pay them.",
+        "Some municipal taxes related to a property were unpaid while a genuine reassessment of the property was pending."
+      ],
+      "conclusion": "In the circumstances of this case, the non-disclosure of these dues was not treated as a material lapse. The Court clarified that whether an omission is material depends on the facts of each case.",
+      "legal_principle": "The required disclosure of liabilities serves voters’ right to know, recognized in Article 19(1)(a) and Association for Democratic Reforms, People’s Union for Civil Liberties and Resurgence India. Whether failure to disclose particular dues is a material lapse depends on the circumstances; the Court expressly limited its assessment of the disputed dues, tenant-payment circumstances and pending reassessment to the facts before it.",
+      "rule": {
+        "if": "election_petition_challenging_returned_candidate and (genuine_dues_dispute or tenants_expected_to_pay_dues or genuine_tax_reassessment_pending)",
+        "then": "contextually_justified_dues_omission_is_not_a_material_lapse"
+      },
+      "predicates": {
+        "election_petition_challenging_returned_candidate": "A voter challenged the election of a returned candidate by an election petition.",
+        "genuine_dues_dispute": "The candidate maintained that claimed dues were genuinely disputed when the disclosure was made.",
+        "tenants_expected_to_pay_dues": "The unpaid charges related to rented premises, and the candidate expected the tenants to pay them.",
+        "genuine_tax_reassessment_pending": "A genuine reassessment of the relevant property or taxes had not yet been completed."
+      },
+      "definition": "In an election petition, an omission of dues is not a material lapse when the circumstances include a genuine dispute, an expectation that tenants would pay, or a genuine pending tax reassessment."
+    },
+    {
+      "legal_issue": "A court hearing an election petition may find that a nomination was improperly accepted after evidence establishes material suppression, even when the returning officer could not resolve the disputed facts during scrutiny.",
+      "material_facts": [
+        "The returned candidate’s affidavit omitted material asset information, and resolving whether the information had been suppressed required examination of evidence and disputed facts.",
+        "The returning officer accepted the nomination, but the election petition later established the relevant omissions through evidence."
+      ],
+      "conclusion": "The nomination could be found improperly accepted in the election petition once the material suppression was proved, even though the returning officer could not conduct a detailed inquiry at scrutiny.",
+      "legal_principle": "Section 36(2) of the Representation of the People Act, 1951 permits scrutiny and summary inquiry on the grounds specified there, but a detailed inquiry into contested disclosure allegations may have to await an election petition. Under Section 100(1)(d)(i) and (iv), proven material suppression can establish improper acceptance and non-compliance. Resurgence India addresses rejection where affidavit particulars are left blank; People’s Union for Civil Liberties explains the limits on the returning officer’s inquiry.",
+      "rule": {
+        "if": "election_petition_challenging_returned_candidate and material_suppression_proved_by_evidence and detailed_inquiry_required",
+        "then": "nomination_may_be_found_improperly_accepted_after_election"
+      },
+      "predicates": {
+        "election_petition_challenging_returned_candidate": "A voter challenged the election of a returned candidate by an election petition.",
+        "material_suppression_proved_by_evidence": "Evidence in the election petition established that the candidate’s affidavit suppressed material information.",
+        "detailed_inquiry_required": "Resolving the disclosure allegation required examination beyond the returning officer’s summary scrutiny."
+      },
+      "definition": "When an election petition challenges a returned candidate, evidence proves material suppression, and a detailed inquiry was required, the nomination may be found improperly accepted after the election."
+    },
+    {
+      "legal_issue": "When an election is challenged on the ground that a returned candidate’s materially defective disclosure affidavit led to improper acceptance of the nomination, separate proof that the election result was materially affected is not required.",
+      "material_facts": [
+        "The election petition challenged the returned candidate’s nomination based on material omissions in the affidavit filed with it.",
+        "The affidavit was an integral part of the nomination, and the Court upheld the finding that material asset information had been suppressed."
+      ],
+      "conclusion": "The petitioner did not need separately to plead or prove that the result was materially affected once the nomination was found improperly accepted because of the materially defective affidavit.",
+      "legal_principle": "Section 100(1)(d)(i) and (iv) of the Representation of the People Act, 1951 provide grounds for declaring an election void. The Court accepted the conclusion that, where improper acceptance concerns a materially defective or absent affidavit integral to the nomination, separate proof of material effect on the result is unnecessary. The governing disclosure principles derive from Association for Democratic Reforms, People’s Union for Civil Liberties and Resurgence India.",
+      "rule": {
+        "if": "election_petition_challenging_returned_candidate and material_affidavit_defect_proved",
+        "then": "election_void_without_separate_proof_of_electoral_impact"
+      },
+      "predicates": {
+        "election_petition_challenging_returned_candidate": "A voter challenged the election of a returned candidate by an election petition.",
+        "material_affidavit_defect_proved": "The election petition established a material defect in the candidate’s disclosure affidavit that formed part of the nomination."
+      },
+      "definition": "When an election petition challenges a returned candidate and proves a material defect in the nomination affidavit, the election is void without separate proof of electoral impact."
+    }
+  ],
+  "seconds": 18.5
+}

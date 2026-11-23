@@ -1,0 +1,83 @@
+{
+  "doc_id": "1729819",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16961,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2351,
+    "prompt_tokens": 4876,
+    "total_tokens": 7227,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A party to an arbitration reference cannot challenge the validity of the award in execution after a decree has been passed on it.",
+      "material_facts": [
+        "The tenants were parties to an arbitration reference and the award was filed in court.",
+        "After notice and in the tenants’ presence, the court passed a decree according to the award; the tenants stated that they had no objection to it.",
+        "In execution, the tenants objected that the award exceeded the arbitrators’ authority and was invalid."
+      ],
+      "conclusion": "The tenants could not raise the award’s validity in the execution proceedings or have the decree treated as a nullity on that basis.",
+      "legal_principle": "Under sections 14 to 17 and 31 to 33 of the Arbitration Act, questions concerning an award’s validity are for the court in which the award is filed; an invalid award may be set aside under section 30. Once a decree is passed on the award, its validity cannot be challenged in execution by parties to the reference. The court relied on Rabindra Deb Manna v. Jogendra Deb Manna and Shib Kristo Daw v. Satish Chandra Dutt.",
+      "rule": {
+        "if": "award_decree_execution and award_filed_in_court and decree_passed_after_notice and objector_was_party_to_reference",
+        "then": "award_validity_objection_barred_in_execution"
+      },
+      "predicates": {
+        "award_decree_execution": "The proceeding is execution of a decree passed on an arbitration award.",
+        "award_filed_in_court": "A party filed the arbitration award in court for judgment and a decree.",
+        "decree_passed_after_notice": "The court gave notice of the award to the objector before passing the decree.",
+        "objector_was_party_to_reference": "The person challenging the award in execution was a party to the arbitration reference."
+      },
+      "definition": "When execution concerns a decree passed on an award filed in court after notice to an objector who was a party to the reference, the award’s validity cannot be challenged in execution."
+    },
+    {
+      "legal_issue": "A decree for recovery of a tenant’s premises is unenforceable when it is made outside the required landlord-initiated proceeding and without a finding of a permitted ground for eviction.",
+      "material_facts": [
+        "The decree directed the tenants to deliver possession of the premises to the landlord.",
+        "The decree was passed according to an arbitration award in a proceeding to which the landlord was not a party.",
+        "The court had not determined that a permitted ground for eviction existed.",
+        "The landlord and the landlord’s son sought to execute the possession direction."
+      ],
+      "conclusion": "The possession direction was a nullity and could not be executed by either the landlord or the landlord’s son.",
+      "legal_principle": "Section 13(1) of the Delhi and Ajmer Rent Control Act, 1952 prohibited a court from decreeing recovery of premises in favour of a landlord against a tenant except in a proceeding instituted by the landlord against the tenant and where the court was satisfied that a prescribed ground for eviction existed. The court relied on Peachey Property Corpn. v. Robinson in treating a judgment made contrary to such a restriction as a nullity. The award-based decree had been made under section 17 of the Arbitration Act, 1940, but the landlord was not a party to that proceeding and the required finding had not been made.",
+      "rule": {
+        "if": "possession_decree_execution and protected_tenancy and recovery_decree_for_landlord and not landlord_initiated_proceeding and not qualifying_eviction_ground_found",
+        "then": "possession_decree_void_and_unenforceable"
+      },
+      "predicates": {
+        "possession_decree_execution": "The proceeding is execution of a decree directing recovery of premises.",
+        "protected_tenancy": "The premises and tenancy are subject to a legal restriction on recovery of possession.",
+        "recovery_decree_for_landlord": "The decree directs a tenant to deliver possession of premises to a landlord.",
+        "landlord_initiated_proceeding": "The proceeding in which the possession decree was made was instituted by the landlord against the tenant.",
+        "qualifying_eviction_ground_found": "The court found that a legally permitted ground for eviction existed."
+      },
+      "definition": "When execution concerns a possession decree for a protected tenancy in favour of a landlord, but the decree was not made in a landlord-initiated proceeding and no qualifying eviction ground was found, the decree is void and unenforceable."
+    },
+    {
+      "legal_issue": "A separable decree directing removal of machinery may be enforced even when the decree’s separate possession direction is unenforceable.",
+      "material_facts": [
+        "The award-based decree directed the tenants to remove machinery from the premises.",
+        "The machinery-removal direction was distinct and separable from the direction to deliver possession to the landlord.",
+        "The landlord’s son, who was a party to the arbitration reference, sought to enforce the machinery-removal direction."
+      ],
+      "conclusion": "The machinery-removal direction was valid and could be executed by the landlord’s son.",
+      "legal_principle": "The court held that the machinery-removal direction was valid and separable from the possession direction, which was a nullity under section 13(1) of the Delhi and Ajmer Rent Control Act, 1952. It could therefore be executed by the landlord’s son. The court cited no earlier case specifically for this conclusion.",
+      "rule": {
+        "if": "award_decree_execution and machinery_removal_direction and machinery_direction_separable and applicant_was_party_to_reference",
+        "then": "machinery_direction_executable_by_applicant"
+      },
+      "predicates": {
+        "award_decree_execution": "The proceeding is execution of a decree passed on an arbitration award.",
+        "machinery_removal_direction": "The decree directs the removal of machinery from premises occupied by a tenant.",
+        "machinery_direction_separable": "The machinery-removal direction is distinct from and separable from another direction in the decree that cannot be enforced.",
+        "applicant_was_party_to_reference": "The person seeking to execute the machinery-removal direction was a party to the arbitration reference."
+      },
+      "definition": "When execution concerns an award-based decree containing a machinery-removal direction that is separable from an unenforceable direction, a party to the reference may execute the machinery-removal direction."
+    }
+  ],
+  "seconds": 17.0
+}

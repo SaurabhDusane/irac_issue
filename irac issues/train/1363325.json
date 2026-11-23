@@ -1,0 +1,102 @@
+{
+  "doc_id": "1363325",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 78216,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3221,
+    "prompt_tokens": 19928,
+    "total_tokens": 23149,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Circumstantial evidence that does not establish the victims’ deaths by murder or connect the accused to the killings is insufficient to prove murder.",
+      "material_facts": [
+        "There was no direct evidence of either killing, and neither body was found.",
+        "The victims were last seen alive in the family home and were not seen thereafter.",
+        "Blood was found at several locations in the home and on a shirt, but the blood was not proved to be human or to belong to either victim.",
+        "Gunshots were heard, but the evidence did not connect them to the accused or to the alleged killings.",
+        "The evidence about motive and the accused’s presence did not establish that he committed the killings."
+      ],
+      "conclusion": "The circumstances proved were insufficient to establish that the accused committed murder, so the murder conviction could not stand.",
+      "legal_principle": "A murder charge may be proved by circumstantial evidence, but the circumstances must establish the accused’s guilt; the evidence in this case did not do so. The majority relied on section 302 of the Indian Penal Code and cited no earlier case in reaching this conclusion.",
+      "rule": {
+        "if": "circumstantial_murder_prosecution and (victims_not_found or no_direct_evidence) and evidence_does_not_connect_accused_to_killings",
+        "then": "murder_not_proved"
+      },
+      "predicates": {
+        "circumstantial_murder_prosecution": "The prosecution seeks to prove a murder charge through circumstantial evidence.",
+        "victims_not_found": "The alleged victims’ bodies were not found.",
+        "no_direct_evidence": "No witness directly testified to the killings or the accused’s commission of them.",
+        "evidence_does_not_connect_accused_to_killings": "The proved circumstances do not adequately connect the accused to the killings."
+      },
+      "definition": "When a murder prosecution depends on circumstantial evidence and the victims are not found or there is no direct evidence, a failure to connect the accused to the killings means murder is not proved."
+    },
+    {
+      "legal_issue": "Absconding alone and the non-recovery of a vehicle, without evidence that it would contain incriminating traces, do not establish guilt.",
+      "material_facts": [
+        "The accused did not promptly appear before the authorities, but the majority held that absconding by itself was hardly evidence of guilt.",
+        "The police could not find the accused’s jeep.",
+        "There was no evidence that the jeep, if found, would have contained human blood or shown that it was used to remove bodies."
+      ],
+      "conclusion": "Absconding could add weight to other evidence establishing guilt, but by itself it was hardly evidence of guilt; the jeep’s non-recovery had no evidentiary value on the facts proved.",
+      "legal_principle": "In assessing circumstantial evidence, absconding may lend weight to other evidence but cannot by itself establish guilt. The inability to recover a vehicle does not prove that it would have supplied incriminating evidence. The majority cited no earlier case for these propositions.",
+      "rule": {
+        "if": "circumstantial_guilt_assessment and accused_absconded and vehicle_not_recovered and no_evidence_vehicle_would_contain_incriminating_traces",
+        "then": "absconding_alone_and_vehicle_nonrecovery_do_not_establish_guilt"
+      },
+      "predicates": {
+        "circumstantial_guilt_assessment": "The court is assessing guilt from circumstantial evidence.",
+        "accused_absconded": "The accused avoided or delayed appearing before the authorities.",
+        "vehicle_not_recovered": "A vehicle associated with the accused was not found by investigators.",
+        "no_evidence_vehicle_would_contain_incriminating_traces": "There is no evidence that the missing vehicle would contain traces connecting it to the alleged offence."
+      },
+      "definition": "In a circumstantial assessment, absconding and an unrecovered vehicle do not establish guilt when the vehicle’s incriminating character is unsupported by evidence."
+    },
+    {
+      "legal_issue": "A person’s presence in a place and possible knowledge that evidence was removed do not prove the assistance or other conduct required for an offence of causing evidence to disappear.",
+      "material_facts": [
+        "There was no direct evidence that the accused assisted in removing the bodies or causing evidence to disappear.",
+        "The accused were in the house and might have known about the alleged removal, but the majority found no evidence establishing what part, if any, they played.",
+        "The evidence did not establish that the accused gave false information about the offence."
+      ],
+      "conclusion": "The convictions for causing evidence to disappear were not established on the evidence, and the accused convicted of that offence were acquitted.",
+      "legal_principle": "Section 201 of the Indian Penal Code requires causing evidence of an offence to disappear or giving information about the offence that the person knows or believes to be false. Presence, possible knowledge, suspicion, or absconding without evidence of the required conduct is insufficient. The majority cited no earlier case for this application.",
+      "rule": {
+        "if": "prosecution_for_causing_evidence_to_disappear and accused_was_present_or_might_have_known and no_evidence_of_assistance_or_false_information",
+        "then": "offence_of_causing_evidence_to_disappear_not_proved"
+      },
+      "predicates": {
+        "prosecution_for_causing_evidence_to_disappear": "The proceeding alleges that the accused caused evidence of an offence to disappear or supplied false information about it.",
+        "accused_was_present_or_might_have_known": "The accused was at the relevant place or might have known that evidence was removed.",
+        "no_evidence_of_assistance_or_false_information": "There is no evidence that the accused caused or assisted the disappearance of evidence or supplied information known or believed to be false."
+      },
+      "definition": "In a prosecution for causing evidence to disappear, presence or possible knowledge without evidence of assistance or false information means the offence is not proved."
+    },
+    {
+      "legal_issue": "A failure-to-report offence is not established unless the underlying offence was committed and the person subject to the reporting duty knew of it.",
+      "material_facts": [
+        "The accused was a member of the village panchayat and was alleged to have failed to report a murder.",
+        "The majority found no proof that the alleged victims had been murdered.",
+        "The majority therefore found no proof that the accused knew of a murder that he was required to report."
+      ],
+      "conclusion": "The failure-to-report conviction was not justified and was set aside.",
+      "legal_principle": "Under section 176 of the Indian Penal Code, the relevant reporting duty in this case depended on the commission of a murder and the accused’s knowledge of it. The majority cited no earlier case for this conclusion.",
+      "rule": {
+        "if": "prosecution_for_failure_to_report and (underlying_offence_not_proved or accused_knowledge_not_proved)",
+        "then": "failure_to_report_offence_not_proved"
+      },
+      "predicates": {
+        "prosecution_for_failure_to_report": "The proceeding alleges that a person failed to give information about an offence despite a duty to report it.",
+        "underlying_offence_not_proved": "The evidence does not prove that the offence requiring a report was committed.",
+        "accused_knowledge_not_proved": "The evidence does not prove that the person subject to the reporting duty knew of the offence."
+      },
+      "definition": "In a failure-to-report prosecution, if the underlying offence or the accused’s knowledge of it is not proved, the failure-to-report offence is not proved."
+    }
+  ],
+  "seconds": 20.5
+}

@@ -1,0 +1,118 @@
+{
+  "doc_id": "84270",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 40229,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3980,
+    "prompt_tokens": 10748,
+    "total_tokens": 14728,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A new factual plea that was not argued before the courts below cannot be raised for the first time in the final appellate court.",
+      "material_facts": [
+        "The appellant argued that the mortgagors had remained members of an undivided family, or alternatively that the branches held the properties as co-owners, so that the redeeming co-mortgagor’s possession should also be treated as possession on behalf of the non-redeeming branch.",
+        "Neither plea had been argued before the High Court, and the record was too meagre to provide an adequate factual foundation for them."
+      ],
+      "conclusion": "The appellant could not raise either plea for the first time in the Supreme Court.",
+      "legal_principle": "The Court will not permit an appellant to take up a plea that was not agitated before the courts below; the lack of an adequate factual foundation further supported refusing the request to reopen the matter.",
+      "rule": {
+        "if": "supreme_court_appeal and new_factual_plea and not plea_agitated_below",
+        "then": "new_plea_not_permitted"
+      },
+      "predicates": {
+        "supreme_court_appeal": "The matter is an appeal before the Supreme Court.",
+        "new_factual_plea": "An appellant advances a factual plea that was not the basis on which the matter was argued below.",
+        "plea_agitated_below": "The appellant argued the plea before a court below."
+      },
+      "definition": "When an appellant advances a new factual plea in a Supreme Court appeal without having argued it below, the plea is not permitted."
+    },
+    {
+      "legal_issue": "A writing acknowledging only a discharged past liability does not constitute an acknowledgement capable of giving a fresh start to limitation.",
+      "material_facts": [
+        "The release deeds recited, in effect, that the mortgage debts had been paid in full and the mortgages extinguished.",
+        "The deeds did not admit that a liability under the mortgages remained subsisting when they were executed.",
+        "The deeds were relied on as acknowledgements to obtain a fresh start of limitation for the claim."
+      ],
+      "conclusion": "The release deeds were not acknowledgements of a subsisting liability and did not give a fresh start of limitation.",
+      "legal_principle": "Section 18 of the Limitation Act, 1908 requires an acknowledgement in writing to admit a subsisting liability. A recital of a past liability together with a statement that it has been discharged is insufficient. The Court rejected the contrary interpretations in Raman Pillai v. Arthan Pillai, Muthiah Nadar v. Ramaswamy Nadar, and Parameshwaran v. Narayanan.",
+      "rule": {
+        "if": "limitation_claim and writing_offered_as_acknowledgement and writing_recites_discharge and not writing_admits_subsisting_liability",
+        "then": "no_fresh_limitation_start"
+      },
+      "predicates": {
+        "limitation_claim": "A claimant relies on a writing to affect limitation for a claim.",
+        "writing_offered_as_acknowledgement": "A party offers a writing as an acknowledgement to obtain a fresh start of limitation.",
+        "writing_recites_discharge": "The writing states that the earlier debt or liability has been discharged.",
+        "writing_admits_subsisting_liability": "The writing admits that a liability remains subsisting when it is made."
+      },
+      "definition": "A writing that recites discharge but does not admit a subsisting liability does not give a fresh start of limitation for the claim."
+    },
+    {
+      "legal_issue": "Decisions of a former state’s High Court do not become binding precedents in another High Court merely because the territory and its law later fall within that High Court’s jurisdiction.",
+      "material_facts": [
+        "The dispute concerned property formerly within Travancore, and the appellant relied on decisions of the former Travancore High Court interpreting its limitation law.",
+        "After reorganisation, the Madras High Court considered the dispute and declined to follow those decisions as binding authority.",
+        "No provision of the States Reorganisation Act, 1956, or other law elevated the former High Court’s decisions to binding law."
+      ],
+      "conclusion": "The former Travancore High Court decisions had persuasive effect but were not binding on the Madras High Court, and stare decisis did not make their reasoning binding.",
+      "legal_principle": "The States Reorganisation Act, 1956 did not give the former Travancore High Court’s ratios the status of binding law. The Court rejected reliance on stare decisis to perpetuate those decisions, including Raman Pillai v. Arthan Pillai, Muthiah Nadar v. Ramaswamy Nadar, and Parameshwaran v. Narayanan.",
+      "rule": {
+        "if": "later_high_court_considers_pre_reorganisation_state_decisions and no_law_makes_them_binding",
+        "then": "former_state_decisions_are_persuasive_not_binding"
+      },
+      "predicates": {
+        "later_high_court_considers_pre_reorganisation_state_decisions": "A High Court considers decisions issued by a former state’s High Court before reorganisation.",
+        "no_law_makes_them_binding": "No law gives those former state decisions binding force in the later High Court."
+      },
+      "definition": "When a later High Court considers pre-reorganisation decisions of a former state’s High Court and no law makes them binding, those decisions are persuasive rather than binding."
+    },
+    {
+      "legal_issue": "A co-mortgagor who pays the entire common mortgage debt may be subrogated to the mortgagee’s rights to the extent needed for reimbursement, while the non-redeeming co-mortgagor has a corresponding equitable right to recover their share by paying the proportionate liability.",
+      "material_facts": [
+        "Two persons jointly mortgaged property by a mortgage with possession, and one co-mortgagor later paid the entire common mortgage debt and obtained possession.",
+        "The Transfer of Property Act was not in force when the mortgages were made or redeemed.",
+        "The other co-mortgagor sought to recover their share by paying their proportionate part of the debt."
+      ],
+      "conclusion": "In equity, the redeeming co-mortgagor was entitled to subrogation and contribution for the excess paid, and the non-redeeming co-mortgagor had a corresponding right to redeem their share and obtain possession by paying their share of the liability while the right to contribution subsisted.",
+      "legal_principle": "Applying justice, equity and good conscience, the Court held that the redeeming co-mortgagor is a principal debtor for their own share and a surety for the other co-mortgagor’s share. Subrogation and contribution extend only as needed to protect reimbursement of the excess payment. The Court followed Ganeshi Lal v. Joti Parshad, [1953] SCR 243.",
+      "rule": {
+        "if": "mortgage_with_possession and joint_mortgage_debt and one_comortgagor_pays_entire_debt",
+        "then": "nonredeeming_comortgagor_may_redeem_share_on_proportionate_payment"
+      },
+      "predicates": {
+        "mortgage_with_possession": "Two or more persons mortgaged property by a mortgage with possession.",
+        "joint_mortgage_debt": "The mortgagors were jointly liable for the common mortgage debt.",
+        "one_comortgagor_pays_entire_debt": "One co-mortgagor paid the entire common mortgage debt."
+      },
+      "definition": "When co-mortgagors create a mortgage with possession and one pays the entire joint debt, the other may recover their share by paying their proportionate liability."
+    },
+    {
+      "legal_issue": "A non-redeeming co-mortgagor’s claim to recover their share of mortgaged property after paying their proportionate debt is time-barred when brought after the applicable redemption period has expired and long after the co-mortgagor redeemed the entire mortgage.",
+      "material_facts": [
+        "The original mortgages were made between 1881 and 1884 and were subject to a 50-year limitation period for redemption.",
+        "The redeeming co-mortgagor paid the entire common debt and obtained possession between 1913 and 1918.",
+        "The successor of the non-redeeming co-mortgagor sued in 1946 to recover a half share by paying a proportionate share of the mortgage debt.",
+        "The suit was brought more than 12 years after the expiry of the 50-year period for redemption of the original mortgages and more than 28 years after the last mortgage was redeemed."
+      ],
+      "conclusion": "The claims concerning items 31 to 40, 42 and 44 were time-barred, regardless of which limitation provision governed; the Court did not need to decide which provision applied.",
+      "legal_principle": "A claim by a non-redeeming co-mortgagor to recover a share on payment of a proportionate debt may fall within the period for redemption of the original mortgage or the period for contribution. The Court held that, on the chronology in this case, the claim was barred from every point of view, without deciding which limitation article governed. The relevant provisions discussed were Article 136 of the Travancore Limitation Regulation, corresponding to Article 148 of the Limitation Act, 1908, and the provisions corresponding to Articles 132 or 144 of that Act.",
+      "rule": {
+        "if": "nonredeeming_comortgagor_possession_claim and original_redemption_period_expired_before_suit and suit_filed_long_after_full_redemption",
+        "then": "claim_time_barred"
+      },
+      "predicates": {
+        "nonredeeming_comortgagor_possession_claim": "A non-redeeming co-mortgagor or successor seeks possession of a share by paying a proportionate part of the mortgage debt.",
+        "original_redemption_period_expired_before_suit": "The limitation period for redeeming the original mortgage had expired before the claim was filed.",
+        "suit_filed_long_after_full_redemption": "The claim was filed long after another co-mortgagor had paid the full debt and obtained possession."
+      },
+      "definition": "A non-redeeming co-mortgagor’s possession claim is time-barred when the original redemption period expired before suit and the suit was filed long after full redemption."
+    }
+  ],
+  "seconds": 23.8
+}

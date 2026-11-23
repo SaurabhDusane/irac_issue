@@ -1,0 +1,62 @@
+{
+  "doc_id": "1777946",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 29691,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2609,
+    "prompt_tokens": 7801,
+    "total_tokens": 10410,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A landowner who qualified as a small landowner when the land-tenure legislation commenced retained that status despite later improvements in land value or re-allotment through compulsory consolidation, unless the landowner subsequently acquired more land that made the holding exceed the permissible area.",
+      "material_facts": [
+        "Before the legislation commenced, the displaced landowner had been allotted land equivalent to 42 standard acres and 11 units, which constituted his permissible area and made him a small landowner.",
+        "Compulsory consolidation later resulted in the landowner receiving an equivalent re-allotment of land; he did not acquire additional land after commencement of the legislation.",
+        "By the time he sought the tenant's ejectment, improvements had increased the land's yield and its calculated standard-acre value exceeded 50 standard acres.",
+        "The landowner applied to eject a tenant on the ground that he was a small landowner, and the lower revenue authorities accepted that status while the High Court assessed it by reference to the application date."
+      ],
+      "conclusion": "The landowner remained a small landowner because he had qualified as one at commencement and had acquired no additional land afterward. The High Court erred in reassessing his status on the date of the ejectment application; its order was set aside and the revenue authorities' orders were restored.",
+      "legal_principle": "On a combined reading of sections 2, 3, 4, 5, 5-A to 5-C, 10-A, 19-A and 19-D of the Punjab Security of Land Tenures Act, 1953, status and any surplus area are determined by evaluating the land held at commencement as of that date. A small landowner retains that status unless later acquisition of land, valued as of the acquisition date, makes the holding exceed the permissible area. Section 19-F(b), made retrospective, confirms that land held immediately before commencement is evaluated as of commencement and land acquired afterward is evaluated as of acquisition; improvements and compulsory consolidation do not themselves change the status. The judgment discusses the High Court's decision in Surja v. Financial Commissioner as the decision the amendment was intended to neutralise, and notes that the Financial Commissioner had followed Pat Ram v. Milawa Ram and Har Chand Singh v. The Punjab State.",
+      "rule": {
+        "if": "small_landowner_status_proceeding and small_landowner_at_commencement and no_land_acquired_after_commencement and (later_land_value_increase or compulsory_consolidation_reallotment)",
+        "then": "small_landowner_status_continues"
+      },
+      "predicates": {
+        "small_landowner_status_proceeding": "A landowner seeks a legal consequence that depends on whether the landowner qualifies as a small landowner.",
+        "small_landowner_at_commencement": "The landowner's holding qualified as permissible area when the governing land-tenure legislation commenced.",
+        "no_land_acquired_after_commencement": "The landowner acquired no additional land after the legislation commenced.",
+        "later_land_value_increase": "The land's value or yield increased after commencement without the landowner acquiring additional land.",
+        "compulsory_consolidation_reallotment": "Compulsory consolidation replaced or re-allotted the land without the landowner acquiring additional land."
+      },
+      "definition": "When a landowner qualified as a small landowner at commencement, acquired no land afterward, and experienced only later increases in land value or consolidation re-allotment, the landowner's small-landowner status continues."
+    },
+    {
+      "legal_issue": "A revenue authority cannot freshly evaluate a landlord's land in a tenant-ejectment proceeding merely because improvements or other causes have increased its yield or standard-acre value, where the landlord holds only permissible area and no specified post-commencement acquisition permits fresh evaluation.",
+      "material_facts": [
+        "The landlord held land equal to his permissible area and no surplus area was in issue.",
+        "In the tenant-ejectment proceeding, the Assistant Collector treated improvements and increased income as raising the land's standard-acre value above the relevant threshold and rejected the application on that basis.",
+        "The landlord had not acquired land after commencement by inheritance, bequest or gift, and the increase in calculated value arose from improvements and compulsory consolidation."
+      ],
+      "conclusion": "The revenue authority was not entitled to evaluate the land afresh on those grounds. Fresh evaluation under section 19-F(b) was available only in the special circumstances specified there, which were absent; the High Court's order was therefore set aside.",
+      "legal_principle": "Section 19-F(a) concerns determination of surplus area held at commencement and did not apply where the landlord held only permissible area. Section 19-F(b) permits evaluation at any time only in the specified circumstances involving post-commencement acquisition by inheritance, bequest or gift from a person to whom the landowner is an heir; land acquired in another manner is evaluated as of its acquisition. Sections 19-A and 19-B address restrictions on later acquisitions and specified augmentations of holdings. Because the Act made no provision for recalculating standard acreage due merely to improvements or increased yield, those changes cannot support fresh evaluation in a tenant-ejectment proceeding.",
+      "rule": {
+        "if": "tenant_ejectment_proceeding and land_within_permissible_area and reevaluation_based_only_on_improvements_or_consolidation and no_qualifying_inherited_acquisition",
+        "then": "fresh_land_evaluation_not_permitted"
+      },
+      "predicates": {
+        "tenant_ejectment_proceeding": "A landlord applies to a revenue authority to eject a tenant from agricultural land.",
+        "land_within_permissible_area": "The landlord holds no land in excess of the area permitted for that landlord.",
+        "reevaluation_based_only_on_improvements_or_consolidation": "The proposed reassessment rests only on improved yield, increased land value, or re-allotment through compulsory consolidation.",
+        "no_qualifying_inherited_acquisition": "The landlord did not acquire land after commencement by inheritance, bequest or gift from a person to whom the landlord is an heir."
+      },
+      "definition": "When an ejectment proceeding concerns land within the landlord's permissible area, the proposed reassessment rests only on improvements or consolidation, and no specified inherited acquisition occurred, fresh evaluation is not permitted."
+    }
+  ],
+  "seconds": 18.3
+}

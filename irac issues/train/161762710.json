@@ -1,0 +1,99 @@
+{
+  "doc_id": "161762710",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 16312,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3238,
+    "prompt_tokens": 4429,
+    "total_tokens": 7667,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An acquisition initiated under urgency provisions cannot remain valid when no award is made within the applicable statutory period after the award deadline becomes applicable.",
+      "material_facts": [
+        "The land was acquired in 1981 under urgency provisions, and possession was taken that year.",
+        "The statutory award-making deadline became applicable to the pending acquisition in 1984, but no award was made within the following two years or for many years thereafter.",
+        "An award was eventually published in 2006, after the landowner had suffered prolonged dispossession."
+      ],
+      "conclusion": "The 1981 acquisition was set aside for non-compliance with the award-making requirement. The acquisition proceedings were declared to have lapsed, and the State was directed to initiate fresh acquisition proceedings or take another lawful course of action.",
+      "legal_principle": "Section 11A of the Land Acquisition Act, 1894 applied to the pending acquisition after it came into force, requiring an award within the prescribed period. The initial absence of a deadline when the acquisition began did not excuse the State from complying once Section 11A became applicable. Satendra Prasad Jain v. State of Uttar Pradesh, as explained in Laxmi Devi v. State of Bihar, does not exempt an acquisition under Section 17 from the requirement to make an award; it prevents the State from relying on its own default to have the acquisition set aside and from returning land after taking possession.",
+      "rule": {
+        "if": "urgent_land_acquisition and award_deadline_became_applicable and award_not_made_within_applicable_period",
+        "then": "acquisition_set_aside_for_noncompliance"
+      },
+      "predicates": {
+        "urgent_land_acquisition": "The government initiated a land acquisition proceeding using urgency powers.",
+        "award_deadline_became_applicable": "A statutory deadline for making an award became applicable to the pending acquisition.",
+        "award_not_made_within_applicable_period": "The government did not make an award within the period that applied to the acquisition."
+      },
+      "definition": "When an urgent land acquisition is pending, an award deadline applies, and the government misses that deadline, the acquisition is set aside for non-compliance."
+    },
+    {
+      "legal_issue": "A later acquisition proceeding that indicates the State's intention to abandon an earlier proceeding supersedes the earlier proceeding and prevents its revival.",
+      "material_facts": [
+        "The State initiated a fresh acquisition proceeding concerning the same land through later notifications.",
+        "In earlier litigation, the State had stated that the original acquisition had lapsed.",
+        "The State later purported to publish an award in continuity with the original acquisition."
+      ],
+      "conclusion": "The later acquisition proceedings superseded the original acquisition, which could not be revived.",
+      "legal_principle": "Later acquisition notifications supersede and obliterate earlier notifications when they manifest the State's intention to abandon the earlier proceeding. The Court relied on Land Acquisition Officer-cum-RDO v. A. Ramachandra Reddy and Bhimandas Ambwani v. Delhi Power Company Limited.",
+      "rule": {
+        "if": "land_acquisition_proceeding and later_acquisition_notifications and later_proceeding_indicates_abandonment",
+        "then": "earlier_acquisition_superseded"
+      },
+      "predicates": {
+        "land_acquisition_proceeding": "The government conducted a proceeding to acquire land.",
+        "later_acquisition_notifications": "The government issued new notifications to acquire the same land after an earlier acquisition proceeding had begun.",
+        "later_proceeding_indicates_abandonment": "The later proceeding, considered with the government's statements or conduct, indicated that it intended to abandon the earlier proceeding."
+      },
+      "definition": "When a land acquisition proceeding is followed by new notifications for the same land that indicate abandonment of the earlier proceeding, the earlier proceeding is superseded."
+    },
+    {
+      "legal_issue": "Setting aside an urgent acquisition for the State's failure to make an award does not require the State to return land whose possession it already took under the urgency power.",
+      "material_facts": [
+        "The State took possession of the land under the urgency acquisition.",
+        "The acquisition was set aside because the State failed to make an award within the applicable period.",
+        "The landowner sought relief that would have interfered with the State's possession."
+      ],
+      "conclusion": "The Court did not make any order interfering with the State's possession of the land.",
+      "legal_principle": "Under Section 17 of the Land Acquisition Act, 1894, possession taken under the urgency power vests the land in the State. Satendra Prasad Jain v. State of Uttar Pradesh establishes that, after taking possession under that provision, the State cannot relinquish the acquisition and return the land to the dispossessed owner. The Court also referred to Lt. Governor of Himachal Pradesh v. Avinash Sharma for the principle that land statutorily vested in the government does not revert merely through cancellation of a notification.",
+      "rule": {
+        "if": "urgent_land_acquisition and possession_taken_under_urgency_power and acquisition_set_aside_for_noncompliance",
+        "then": "state_possession_not_disturbed"
+      },
+      "predicates": {
+        "urgent_land_acquisition": "The government initiated a land acquisition proceeding using urgency powers.",
+        "possession_taken_under_urgency_power": "The government took physical possession of the land by exercising its urgency power.",
+        "acquisition_set_aside_for_noncompliance": "The acquisition was set aside because the government failed to comply with an applicable requirement."
+      },
+      "definition": "When the government has taken possession under urgency powers, setting aside the acquisition for non-compliance does not disturb the government's possession."
+    },
+    {
+      "legal_issue": "A landowner's failure to directly challenge an acquisition does not prevent consideration of a claim that the acquisition lapsed when the claim was based on that lapse and the State had also treated the acquisition as lapsed.",
+      "material_facts": [
+        "The landowner sought a direction for return of the land on the basis that the original acquisition had lapsed, rather than directly challenging the acquisition proceedings.",
+        "The State had stated in earlier litigation that it considered the original acquisition to have lapsed.",
+        "The State later sought to rely on the original acquisition and a delayed award."
+      ],
+      "conclusion": "The Court did not treat the absence of a direct challenge as a bar to considering the landowner's claim that the acquisition had lapsed.",
+      "legal_principle": "The Court considered it patently unfair to penalize the landowner for proceeding on the lapse of the acquisition when the State had itself adhered to that position until it attempted to revive the acquisition. The Court therefore considered the challenge as raised indirectly.",
+      "rule": {
+        "if": "land_acquisition_challenge and claim_based_on_acquisition_lapse and direct_challenge_omitted and state_previously_treated_acquisition_as_lapsed",
+        "then": "absence_of_direct_challenge_not_a_bar"
+      },
+      "predicates": {
+        "land_acquisition_challenge": "A landowner sought judicial relief concerning a government proceeding to acquire the landowner's property.",
+        "claim_based_on_acquisition_lapse": "The landowner's claim for relief relied on the assertion that the acquisition had lapsed.",
+        "direct_challenge_omitted": "The landowner sought relief without directly asking the court to set aside the acquisition proceedings.",
+        "state_previously_treated_acquisition_as_lapsed": "The State had earlier represented or acted on the position that the acquisition had lapsed."
+      },
+      "definition": "When a landowner relies on lapse in seeking relief, omits a direct challenge, and the State previously treated the acquisition as lapsed, the omission does not bar consideration of the claim."
+    }
+  ],
+  "seconds": 21.2
+}

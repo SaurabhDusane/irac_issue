@@ -1,0 +1,64 @@
+{
+  "doc_id": "581836",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17188,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1683,
+    "prompt_tokens": 4811,
+    "total_tokens": 6494,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A rent default becomes wilful only if it continues for two months after the landlord gives notice claiming the rent.",
+      "material_facts": [
+        "The landlord issued a notice claiming arrears of rent.",
+        "The landlord filed the eviction proceeding before two months had elapsed after issuing the notice."
+      ],
+      "conclusion": "The default could not be treated as wilful when the eviction proceeding was filed before the two-month period expired.",
+      "legal_principle": "Under Section 10(2)(i), Explanation I, of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, a default is construed as wilful if it continues after the landlord has given two months’ notice claiming the rent. The tenant must therefore have an opportunity to pay within that period before the default can mature into a wilful default.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and landlord_gave_notice_claiming_rent and proceeding_filed_before_notice_period_expired",
+        "then": "default_not_wilful"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord brought a proceeding seeking eviction on the ground of unpaid rent under a rent-control regime.",
+        "landlord_gave_notice_claiming_rent": "The landlord gave the tenant notice claiming unpaid rent.",
+        "proceeding_filed_before_notice_period_expired": "The landlord filed the eviction proceeding before the period allowed after the notice had elapsed.",
+        "default_not_wilful": "The rent default is not treated as wilful."
+      },
+      "definition": "When a rent-control eviction proceeding is brought after notice claiming rent but before the notice period has elapsed, the default is not treated as wilful."
+    },
+    {
+      "legal_issue": "A tenant’s failure to pay rent is not a wilful default when the circumstances do not show an intentional and conscious decision not to pay.",
+      "material_facts": [
+        "The tenant had regularly paid rent over a long period before the disputed arrears arose.",
+        "The landlord’s agent had previously collected rent, but did not come to collect the rent for the earlier part of the disputed period.",
+        "The amount claimed for a later part of the period was subject to a genuine dispute about the rent rate.",
+        "The tenant deposited the rent fixed during the proceeding as interim rent as soon as it was adjudicated and continued paying rent thereafter.",
+        "The eviction proceeding was filed before two months had elapsed after the notice claiming arrears."
+      ],
+      "conclusion": "Considering the circumstances cumulatively, the tenant was not a wilful defaulter, and the orders finding wilful default were set aside.",
+      "legal_principle": "Section 10(2)(i) of the Tamil Nadu Buildings (Lease and Rent Control) Act, 1960, read with Explanation I, governs wilful default. In S. Sundaram Pillai v. V.R. Pattabiraman, (1985) 1 SCC 591, the Court explained that wilful default means an intentional, deliberate, calculated and conscious default, with knowledge of its legal consequences. The tenant’s history of regular payment, the landlord’s agent’s failure to collect rent, the genuine dispute over the rent claimed, payment after interim rent was determined, and the premature filing of the proceeding cumulatively showed no wilful default.",
+      "rule": {
+        "if": "rent_control_eviction_proceeding and prior_regular_rent_payment and landlord_agent_failed_to_collect_rent and genuine_dispute_over_rent_claimed and tenant_paid_after_interim_rent_determination and proceeding_filed_before_notice_period_expired",
+        "then": "default_not_wilful"
+      },
+      "predicates": {
+        "rent_control_eviction_proceeding": "A landlord brought a proceeding seeking eviction on the ground of unpaid rent under a rent-control regime.",
+        "prior_regular_rent_payment": "The tenant had regularly paid rent before the period of disputed arrears.",
+        "landlord_agent_failed_to_collect_rent": "An agent who had previously collected rent did not come to collect it during part of the period in which arrears accrued.",
+        "genuine_dispute_over_rent_claimed": "The tenant and landlord had a genuine dispute about the rent rate used to calculate part of the claimed arrears.",
+        "tenant_paid_after_interim_rent_determination": "The tenant paid the rent after it was determined during the proceeding.",
+        "proceeding_filed_before_notice_period_expired": "The landlord filed the eviction proceeding before the period allowed after the notice had elapsed.",
+        "default_not_wilful": "The rent default is not treated as wilful."
+      },
+      "definition": "When a rent-control eviction proceeding involves a tenant with a history of regular payment, an agent’s failure to collect rent, a genuine dispute over the rent claimed, payment after interim rent determination, and filing before the notice period has elapsed, the default is not treated as wilful."
+    }
+  ],
+  "seconds": 10.7
+}

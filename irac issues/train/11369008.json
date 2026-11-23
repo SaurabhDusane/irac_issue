@@ -1,0 +1,60 @@
+{
+  "doc_id": "11369008",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17061,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1651,
+    "prompt_tokens": 4382,
+    "total_tokens": 6033,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may set aside a sale conducted by an insolvency receiver only on judicial grounds, and a claim that the sale price was inadequate must be supported by a proper valuation and an assessment of the property’s encumbrances.",
+      "material_facts": [
+        "The receiver sold two mortgaged properties at auction after creditors had opportunities to offer more, but no higher offer was made before the sale was concluded.",
+        "The application to set aside the sale rested only on the claim that the price was low; the courts found no fraud or collusion, and no sale irregularity was established.",
+        "The lower court inferred value from the amount of an earlier mortgage and from sums deposited to retain possession, without using a recognised valuation method or determining the total encumbrance.",
+        "The District Judge concluded that the record did not establish that the price was inadequate or unreasonable."
+      ],
+      "conclusion": "The District Judge was right to reverse the order setting aside the sale because inadequacy of price was not established by proper valuation and consideration of the encumbrances, and no other judicial ground for interference was shown.",
+      "legal_principle": "Under sections 59(a) and 68 of the Provincial Insolvency Act, 1920, the receiver’s sale is subject to judicial control, but that control must be exercised on recognised judicial grounds and not arbitrarily. Grounds may include fraud or collusion, irregularities that might have affected the price, or a price so low as to justify intervention. To establish inadequacy, the court should use a recognised method to determine the property’s value and determine the total encumbrance. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "insolvency_receiver_sale_review and not fraud_or_collusion_found and not price_affecting_irregularity_found and not price_inadequacy_proven",
+        "then": "receiver_sale_not_set_aside"
+      },
+      "predicates": {
+        "insolvency_receiver_sale_review": "A court is reviewing a sale made by a receiver in insolvency proceedings.",
+        "fraud_or_collusion_found": "The court found fraud or collusion involving the receiver, the insolvent, or the intended purchaser.",
+        "price_affecting_irregularity_found": "The court found an irregularity in conducting the sale that might have affected the price obtained.",
+        "price_inadequacy_proven": "The evidence established that the sale price was so low as to justify intervention, including through a proper assessment of value and encumbrances."
+      },
+      "definition": "When an insolvency receiver’s sale is under review, the sale is not set aside on these facts if fraud or collusion, a price-affecting irregularity, and sufficiently proven price inadequacy are all absent."
+    },
+    {
+      "legal_issue": "A High Court exercising revision over a District Judge’s appellate order in an insolvency matter may interfere only after concluding that the District Judge’s order is not according to law.",
+      "material_facts": [
+        "The District Judge reversed the order setting aside the receiver’s sale, finding no sale irregularity and no adequate basis for concluding that the price was low.",
+        "In revision, the High Court accepted a later offer to bid more at a fresh auction, while observing that the original price was not unconscionably low.",
+        "The High Court did not determine whether the District Judge’s order was contrary to law.",
+        "The Supreme Court found that the record did not establish that the original sale price was inadequate."
+      ],
+      "conclusion": "The High Court had no basis to interfere in revision without concluding that the District Judge’s order was not according to law; its order was set aside and the District Judge’s order restored.",
+      "legal_principle": "The proviso to section 75 of the Provincial Insolvency Act, 1920 permits the High Court to call for a case and make an order to satisfy itself that the District Court’s appellate order was according to law. The High Court’s power to interfere therefore arises only if it concludes that the District Judge’s order was not according to law; only after that conclusion may it make such order as it thinks fit. No earlier cases are relied on in the judgment.",
+      "rule": {
+        "if": "insolvency_appellate_revision and not district_order_found_unlawful",
+        "then": "high_court_revision_interference_unjustified"
+      },
+      "predicates": {
+        "insolvency_appellate_revision": "The High Court is exercising revision over a District Judge’s appellate order in an insolvency matter.",
+        "district_order_found_unlawful": "The High Court concluded that the District Judge’s order was not according to law."
+      },
+      "definition": "In revision of an appellate insolvency order, if the High Court has not concluded that the District Judge’s order was unlawful, its interference is unjustified."
+    }
+  ],
+  "seconds": 11.2
+}

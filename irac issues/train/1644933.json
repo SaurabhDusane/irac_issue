@@ -1,0 +1,113 @@
+{
+  "doc_id": "1644933",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 34367,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3317,
+    "prompt_tokens": 9516,
+    "total_tokens": 12833,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A trial judgment appealed to and decided by a higher court merges into the appellate judgment, whose determination defines the scope of the earlier suit.",
+      "material_facts": [
+        "A trial court decided an earlier suit concerning the mill as movable property.",
+        "An appeal was taken, and the appellate court held that the earlier suit concerned the mill, not the land and building in which it stood."
+      ],
+      "conclusion": "The trial court's judgment merged into the appellate judgment, and the earlier suit was confined to the mill as movable property.",
+      "legal_principle": "Under the doctrine of merger, once a trial judgment is appealed and the appellate court gives judgment, the appellate judgment is operative. The scope of the earlier litigation is determined from that appellate judgment.",
+      "rule": {
+        "if": "appeal_from_trial_judgment and appellate_judgment_given",
+        "then": "trial_judgment_merges_into_appellate_judgment"
+      },
+      "predicates": {
+        "appeal_from_trial_judgment": "A party appealed a trial court's judgment.",
+        "appellate_judgment_given": "The appellate court gave judgment on the appeal."
+      },
+      "definition": "When a trial judgment is appealed and the appellate court gives judgment, the trial judgment merges into the appellate judgment."
+    },
+    {
+      "legal_issue": "A party may raise a claim concerning property in a later suit when the earlier suit, as defined by the appellate judgment, did not concern that property.",
+      "material_facts": [
+        "The earlier suit concerned the mill as movable property and did not concern the land and building.",
+        "The later suit sought possession of the land and building.",
+        "The appellant argued in the later suit that the plaintiffs had no subsisting leasehold interest and that he possessed the property as a tenant of its owner."
+      ],
+      "conclusion": "The appellant was entitled to raise the plea concerning the plaintiffs' leasehold interest in the later suit; the earlier suit and the plea raised in it did not bar that plea.",
+      "legal_principle": "The appellate judgment in the earlier suit controls the scope of that litigation. A plea concerning property not involved in that suit may be raised in a later suit about that property.",
+      "rule": {
+        "if": "later_property_possession_suit and earlier_appellate_judgment_confined_suit_to_other_property",
+        "then": "party_may_raise_claim_concerning_later_suit_property"
+      },
+      "predicates": {
+        "later_property_possession_suit": "A party brought a later suit seeking possession of property.",
+        "earlier_appellate_judgment_confined_suit_to_other_property": "The appellate judgment shows that the earlier suit concerned property distinct from the property at issue in the later suit."
+      },
+      "definition": "A party may raise a claim concerning property in a later possession suit when the appellate judgment shows that the earlier suit concerned different property."
+    },
+    {
+      "legal_issue": "A lease may be determined by implied surrender when the tenant's conduct shows assent to a replacement tenancy or delivers control of the tenancy to another person in a manner accepted by the landlord.",
+      "material_facts": [
+        "The dispute concerned whether existing leasehold rights in the premises had been surrendered.",
+        "The agreements authorized a third person to take over management, pay rent for the building, and conduct the business.",
+        "The landlord thereafter granted that third person a fresh tenancy."
+      ],
+      "conclusion": "The original lessees impliedly surrendered their leasehold interest in favour of the third person.",
+      "legal_principle": "Section 111(f) of the Transfer of Property Act, 1882 recognizes implied surrender as a mode of determining a lease. Its illustration is not exhaustive: implied surrender may also arise where a lessor grants a new lease to a third person with the existing lessee's assent and delivery of possession, or where a lessee directs an occupier to pay rent directly to the lessor. The Court relied on Konijeti Venkayya v. Thammana Peda Venkata Subbarao, AIR 1957 AP 619, and Noratmal v. Mohanlal, AIR 1966 Raj 89, and referred to Halsbury's Laws of England, 4th ed., vol. 27, paragraphs 444–446 and 450.",
+      "rule": {
+        "if": "lease_determination_dispute and tenant_authorized_third_party_to_take_over_and_pay_rent and landlord_granted_third_party_new_lease",
+        "then": "original_lease_ended_by_implied_surrender"
+      },
+      "predicates": {
+        "lease_determination_dispute": "The dispute concerns whether an existing lease has ended.",
+        "tenant_authorized_third_party_to_take_over_and_pay_rent": "The tenant authorized a third person to take over the premises or business and to pay rent for the premises.",
+        "landlord_granted_third_party_new_lease": "The landlord granted the third person a fresh tenancy of the premises."
+      },
+      "definition": "An existing lease ends by implied surrender when, in a dispute about its determination, the tenant authorizes a third person to take over and pay rent and the landlord grants that person a fresh lease."
+    },
+    {
+      "legal_issue": "A lessee may impliedly surrender leasehold rights by assigning the business and authorizing the assignee to arrange tenancy directly with the landlord and pay rent directly.",
+      "material_facts": [
+        "The third person assigned the mills to the appellant and authorized him to enter into rental agreements with the landlord by paying rent directly.",
+        "The assignment stated that the assignor would have no further right or liability.",
+        "The appellant's case was that he paid rent directly to the landlord after the assignment, and the plaintiffs did not claim to have paid rent after the earlier agreement."
+      ],
+      "conclusion": "The third person impliedly surrendered his leasehold rights by agreeing that the appellant could enter into rental agreements with the landlord and pay rent directly.",
+      "legal_principle": "Under section 111(f) of the Transfer of Property Act, 1882, implied surrender is a mode of determining a lease. A tenant's conduct in directing or authorizing another person to deal directly with the landlord as tenant, including paying rent directly, may establish implied surrender. The Court relied on Konijeti Venkayya v. Thammana Peda Venkata Subbarao, AIR 1957 AP 619, and Noratmal v. Mohanlal, AIR 1966 Raj 89, and referred to Halsbury's Laws of England, 4th ed., vol. 27, paragraphs 444–446 and 450.",
+      "rule": {
+        "if": "lease_determination_dispute and assignor_authorized_assignee_to_make_direct_rental_arrangements and assignor_relinquished_further_rights",
+        "then": "assignor_lease_ended_by_implied_surrender"
+      },
+      "predicates": {
+        "lease_determination_dispute": "The dispute concerns whether an existing lease has ended.",
+        "assignor_authorized_assignee_to_make_direct_rental_arrangements": "A lessee assigning an interest authorized the assignee to make rental arrangements directly with the landlord and pay rent directly.",
+        "assignor_relinquished_further_rights": "The assigning lessee stated that he would have no further rights in the property."
+      },
+      "definition": "An assignor's lease ends by implied surrender when, in a dispute about its determination, the assignor authorizes the assignee to arrange tenancy directly with the landlord and relinquishes further rights."
+    },
+    {
+      "legal_issue": "A suit for possession based on a claimant's status as lessee is not maintainable when the claimant has no subsisting leasehold interest.",
+      "material_facts": [
+        "The plaintiffs sought recovery of possession on the basis that they were lessees of the premises.",
+        "They had impliedly surrendered their leasehold rights, and the Court found that they had no subsisting leasehold interest when they filed the suit."
+      ],
+      "conclusion": "The suit for recovery of possession on the basis that the plaintiffs were lessees was not maintainable and was dismissed.",
+      "legal_principle": "A claimant seeking possession on the basis of an existing lease must have a subsisting leasehold interest. Because implied surrender determines a lease under section 111(f) of the Transfer of Property Act, 1882, a claimant whose lease has been surrendered cannot maintain a possession suit on the basis of that lease.",
+      "rule": {
+        "if": "lease_based_possession_suit and claimant_has_no_subsisting_leasehold_interest",
+        "then": "lease_based_possession_suit_is_not_maintainable"
+      },
+      "predicates": {
+        "lease_based_possession_suit": "A claimant brought a suit seeking possession on the basis that the claimant is a lessee.",
+        "claimant_has_no_subsisting_leasehold_interest": "The claimant had no subsisting leasehold interest when the suit was brought."
+      },
+      "definition": "A lease-based possession suit is not maintainable when the claimant had no subsisting leasehold interest when the suit was brought."
+    }
+  ],
+  "seconds": 23.5
+}

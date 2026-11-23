@@ -1,0 +1,60 @@
+{
+  "doc_id": "606511",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 14861,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1547,
+    "prompt_tokens": 4364,
+    "total_tokens": 5911,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant is not in default for claimed rent arrears when the landlord holds an excess advance that is immediately payable to the tenant and exceeds the arrears.",
+      "material_facts": [
+        "The lease required a large advance, part of which was to be adjusted against rent and the balance repaid at the end of the lease.",
+        "The landlord continued to hold the balance of the advance when seeking eviction for alleged unpaid rent.",
+        "The amount held by the landlord exceeded the rent arrears claimed."
+      ],
+      "conclusion": "The excess advance was payable to the tenant immediately because the stipulation postponing its repayment was null and void. The tenant could not be treated as a defaulter for the claimed smaller amount, so eviction on that ground could not be sustained.",
+      "legal_principle": "Under section 7(2)(a) of the Andhra Pradesh Buildings (Lease, Rent and Eviction) Control Act, 1960, a landlord may not receive or stipulate for an advance exceeding one month's rent; section 7(2)(b) requires an excess sum to be refunded or, at the tenant's option, adjusted; and section 7(3) makes a contrary stipulation null and void. The excess held by the landlord therefore became payable to the tenant immediately. The Court applied the reasoning in Mohd. Salimuddin v. Misri Lal & Anr., [1986] 1 SCR 622, and M/s. Sarwan Kumar Onkar Nath v. Subhas Kumar Agarwalla, [1987] 4 SCC 546, that a tenant is not in default where a prohibited advance held by the landlord is available to meet the claimed rent arrears.",
+      "rule": {
+        "if": "eviction_sought_for_rent_default and advance_exceeded_permitted_limit and landlord_held_excess_for_tenant and held_amount_exceeded_claimed_arrears",
+        "then": "tenant_not_in_default_for_claimed_arrears"
+      },
+      "predicates": {
+        "eviction_sought_for_rent_default": "The landlord sought eviction on the ground that the tenant had not paid rent.",
+        "advance_exceeded_permitted_limit": "The tenant paid an advance exceeding the amount the applicable law permits the landlord to receive as an advance.",
+        "landlord_held_excess_for_tenant": "The landlord continued to hold the excess advance for the tenant when eviction was sought.",
+        "held_amount_exceeded_claimed_arrears": "The amount the landlord held for the tenant exceeded the rent arrears claimed."
+      },
+      "definition": "When eviction is sought for rent default and the landlord holds for the tenant a prohibited excess advance greater than the claimed arrears, the tenant is not in default for those arrears."
+    },
+    {
+      "legal_issue": "Eviction cannot be ordered against a tenant under an unexpired fixed-term contractual lease when the lease contains no forfeiture clause terminating the tenancy.",
+      "material_facts": [
+        "The lease granted a fixed term of thirty years that had not expired when eviction was sought.",
+        "The lease contained no forfeiture clause.",
+        "The lease had not been terminated, and the tenant remained in contractual possession."
+      ],
+      "conclusion": "The contractual tenancy was subsisting under the Transfer of Property Act, and eviction could not be ordered from that tenancy.",
+      "legal_principle": "Under the Transfer of Property Act, a fixed-term contractual tenancy continues while its term remains unexpired unless it is terminated in a legally effective manner. In the absence of a forfeiture clause leading to termination by forfeiture under section 111(g), eviction could not be ordered from the subsisting tenancy.",
+      "rule": {
+        "if": "eviction_sought_during_fixed_term_lease and lease_term_unexpired and no_forfeiture_clause and lease_not_terminated",
+        "then": "eviction_unavailable_against_subsisting_tenancy"
+      },
+      "predicates": {
+        "eviction_sought_during_fixed_term_lease": "A landlord sought eviction while the tenant occupied the premises under a fixed-term lease.",
+        "lease_term_unexpired": "The lease term had not ended when eviction was sought.",
+        "no_forfeiture_clause": "The lease contained no clause providing for termination by forfeiture.",
+        "lease_not_terminated": "The lease had not otherwise been terminated before eviction was sought."
+      },
+      "definition": "If eviction is sought during an unexpired fixed-term lease that contains no forfeiture clause and has not otherwise been terminated, eviction is unavailable against the subsisting tenancy."
+    }
+  ],
+  "seconds": 10.8
+}

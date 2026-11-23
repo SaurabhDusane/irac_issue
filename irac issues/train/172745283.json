@@ -1,0 +1,127 @@
+{
+  "doc_id": "172745283",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 59935,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3156,
+    "prompt_tokens": 15085,
+    "total_tokens": 18241,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A non-speaking dismissal of a petition for special leave does not merge the challenged judgment into the dismissal order.",
+      "material_facts": [
+        "A party challenged an earlier High Court order by filing a petition for special leave.",
+        "The Supreme Court dismissed that petition without giving reasons."
+      ],
+      "conclusion": "The High Court judgment did not merge into the Supreme Court's non-speaking dismissal order.",
+      "legal_principle": "Under Article 136 of the Constitution, dismissal of a petition for special leave without reasons does not attract the doctrine of merger or declare law under Article 141. The Court relied on Kunhayammed v. State of Kerala, Indian Oil Corporation Ltd. v. State of Bihar, and Gangadhara Palo v. Revenue Divisional Officer.",
+      "rule": {
+        "if": "special_leave_proceeding and special_leave_dismissed_without_reasons",
+        "then": "challenged_judgment_does_not_merge"
+      },
+      "predicates": {
+        "special_leave_proceeding": "A party seeks permission to appeal from a judgment by filing a petition for special leave.",
+        "special_leave_dismissed_without_reasons": "The court dismisses the petition for special leave without stating reasons."
+      },
+      "definition": "When a petition for special leave is dismissed without reasons, the judgment challenged in that petition does not merge into the dismissal."
+    },
+    {
+      "legal_issue": "A prior direction to deliver possession cannot be enforced through writ relief after later events have displaced its practical basis and the claimant has accepted the process for resolving the intervening dispute.",
+      "material_facts": [
+        "A High Court had directed a corporation to deliver possession of land to a developer.",
+        "The landowner authority later cancelled the corporation's lease, and the corporation challenged that cancellation.",
+        "The High Court referred the inter-governmental dispute for resolution by a senior government official.",
+        "The developer made a representation in that process and later challenged only some of the resulting directions, not the directions setting aside the cancellation or releasing the land from attachment.",
+        "The land was delivered to the landowner authority."
+      ],
+      "conclusion": "The Court would not direct enforcement of the earlier possession order after the land had been returned to the landowner authority; the earlier order could not be implemented in the circumstances.",
+      "legal_principle": "The non-speaking dismissal of the earlier special leave petition did not merge the High Court order, but the subsequent cancellation, referral, decision, and transfer of possession meant the earlier mandamus could not be enforced. A party that submitted to the referred decision-making process and challenged only selected parts of its outcome could not later challenge the process's competence in this appeal.",
+      "rule": {
+        "if": "civil_appeal_from_writ_disposition and prior_possession_direction and later_lease_cancellation and claimant_accepted_dispute_resolution_process and land_transferred_to_owner",
+        "then": "prior_possession_direction_not_enforceable"
+      },
+      "predicates": {
+        "civil_appeal_from_writ_disposition": "A party brings a civil appeal challenging a High Court's disposition of a writ proceeding.",
+        "prior_possession_direction": "A court previously directed a contracting entity to deliver possession of land to a claimant.",
+        "later_lease_cancellation": "The landowner later cancelled the lease under which the contracting entity held the land.",
+        "claimant_accepted_dispute_resolution_process": "The claimant participated in the later process established to resolve the dispute and did not challenge the authority of that process in the relevant writ proceeding.",
+        "land_transferred_to_owner": "The land was subsequently delivered to the landowner."
+      },
+      "definition": "If a prior possession direction is followed by lease cancellation, participation in a process to resolve the resulting dispute, and transfer of the land to its owner, the prior direction is not enforceable in the later writ appeal."
+    },
+    {
+      "legal_issue": "A writ court ordinarily does not grant specific performance of a contract where the dispute requires adjudication of contractual rights or disputed facts and an appropriate civil remedy is available.",
+      "material_facts": [
+        "The claimant's grievance arose from a development agreement with a state transport corporation.",
+        "The claimant sought possession and continuation of a construction project despite the landowner authority's separate lease relationship with the corporation.",
+        "The claimant had no contract with the landowner authority.",
+        "The dispute involved disputed questions about the agreements, lease rights, breach, and the effect of subsequent events.",
+        "The High Court left the claimant free to pursue specific performance or damages in a civil court."
+      ],
+      "conclusion": "The Court declined to grant specific performance or other writ relief on the contractual claim and left the claimant to pursue an appropriate civil remedy.",
+      "legal_principle": "Judicial review of contractual action by the State or its instrumentalities is limited to legality, including excess of power, error of law, breach of natural justice, irrationality, or abuse of power; it is not a determination of the merits of contractual performance. A writ court would not normally enforce specific performance where damages or a civil proceeding can provide an appropriate remedy, particularly where disputed facts require trial. The Court relied on Article 226 of the Constitution, Tata Cellular v. Union of India, Ramchandra Murarilal Bhattad v. State of Maharashtra, Noble Resources Ltd. v. State of Orissa, and Rajasthan Housing Board v. G.S. Investments.",
+      "rule": {
+        "if": "civil_appeal_from_writ_disposition and state_contract_dispute and specific_performance_or_factfinding_required",
+        "then": "contractual_claim_left_for_civil_remedy"
+      },
+      "predicates": {
+        "civil_appeal_from_writ_disposition": "A party brings a civil appeal challenging a High Court's disposition of a writ proceeding.",
+        "state_contract_dispute": "The claim concerns performance of a contract involving the State or one of its instrumentalities.",
+        "specific_performance_or_factfinding_required": "The requested relief requires enforcement of contractual performance or resolution of disputed facts."
+      },
+      "definition": "When a writ appeal concerns a state-related contract and the requested relief requires specific performance or factfinding, the contractual claim is left for an appropriate civil remedy."
+    },
+    {
+      "legal_issue": "A lease that has run for its stated maximum term does not renew automatically when renewal requires the landowner's consent.",
+      "material_facts": [
+        "The landowner leased land to a transport corporation for a stated term beginning when possession was delivered.",
+        "The lease provided for renewal subject to the landowner authority's consent.",
+        "The transport corporation did not obtain the required consent or make an application for renewal.",
+        "The stated maximum lease term had elapsed by the time the appeals were decided."
+      ],
+      "conclusion": "The lease had expired by efflux of time and the corporation had no automatic entitlement to renewal; the Court rejected the contention that the term began only when the later formal lease deed was executed.",
+      "legal_principle": "The term was calculated from delivery of possession under the applicable lease terms, and renewal required the landowner authority's consent, which was not a mere formality. Payment of rent did not create an automatic right to renewal.",
+      "rule": {
+        "if": "civil_appeal_from_writ_disposition and lease_term_tied_to_possession and stated_lease_term_elapsed and renewal_requires_owner_consent and consent_not_obtained",
+        "then": "lease_expired_without_automatic_renewal"
+      },
+      "predicates": {
+        "civil_appeal_from_writ_disposition": "A party brings a civil appeal challenging a High Court's disposition of a writ proceeding.",
+        "lease_term_tied_to_possession": "The lease terms make delivery of possession the event from which the lease term runs.",
+        "stated_lease_term_elapsed": "The maximum term stated in the lease has passed.",
+        "renewal_requires_owner_consent": "The lease makes renewal conditional on the landowner's consent.",
+        "consent_not_obtained": "The landowner did not give the consent required for renewal."
+      },
+      "definition": "Where the lease term runs from possession, the stated term has elapsed, and required owner consent for renewal was not obtained, the lease has expired without automatic renewal."
+    },
+    {
+      "legal_issue": "The doctrine of frustration does not establish a right to performance where the underlying lease has expired and the asserted impediments arise amid lease breach and the contracting entity's financial and operational difficulties.",
+      "material_facts": [
+        "The claimant argued that the agreement had not been frustrated because the frustration was self-induced.",
+        "The underlying lease had expired by efflux of time.",
+        "The transport corporation was heavily indebted, had sought permission to wind up, and its property was under attachment.",
+        "The land had also been treated as having been used contrary to lease conditions."
+      ],
+      "conclusion": "The Court rejected the argument that self-induced frustration prevented application of the doctrine, found that the cited rule did not assist the claimant in these circumstances, and left the disputed contractual issues for civil adjudication.",
+      "legal_principle": "Section 56 of the Indian Contract Act lays down a positive rule governing discharge for supervening impossibility or illegality. Under Boothalinga Agencies v. V.T.C. Poriaswami Nadar, frustration cannot apply where the alleged frustrating event results from a party's own act or election. The Court distinguished the claimant's reliance on that rule because the lease had expired and the case also involved indebtedness and breach; it also referred to Maritime National Fish Ltd. v. Ocean Trawlers Ltd.",
+      "rule": {
+        "if": "civil_appeal_from_writ_disposition and contract_performance_depends_on_underlying_lease and underlying_lease_expired and alleged_frustration_claimed_as_self_induced",
+        "then": "self_induced_frustration_argument_does_not_establish_entitlement_to_performance"
+      },
+      "predicates": {
+        "civil_appeal_from_writ_disposition": "A party brings a civil appeal challenging a High Court's disposition of a writ proceeding.",
+        "contract_performance_depends_on_underlying_lease": "The promised contractual performance depends on the contracting entity continuing to hold an underlying lease of the land.",
+        "underlying_lease_expired": "The underlying lease has ended by expiry of its term.",
+        "alleged_frustration_claimed_as_self_induced": "A claimant argues that a party cannot rely on frustration because that party brought about the alleged frustrating circumstances."
+      },
+      "definition": "Where contractual performance depends on an underlying lease that has expired, the claim that frustration was self-induced does not itself establish entitlement to performance."
+    }
+  ],
+  "seconds": 80.0
+}

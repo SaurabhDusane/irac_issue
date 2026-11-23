@@ -1,0 +1,59 @@
+{
+  "doc_id": "1409667",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23158,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2227,
+    "prompt_tokens": 5999,
+    "total_tokens": 8226,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A statutory creditor pursuing the same debt through multiple recovery procedures must account for amounts recovered or recoverable from property already seized before selling other property.",
+      "material_facts": [
+        "The bank had advanced a loan for the purchase of a tractor, and the tractor was hypothecated to the bank.",
+        "The tractor was attached and taken into the Tehsildar’s custody in recovery proceedings; the recorded estimated value exceeded the amount then due.",
+        "Proceedings were also initiated to recover the same debt by selling mortgaged land, but the record did not disclose what happened to the tractor or how much had been recovered from it."
+      ],
+      "conclusion": "The creditor could use separate or simultaneous statutory recovery procedures, but could not proceed to sell other property for the same debt without first ascertaining the amount recovered or deemed recovered from the tractor. Sale of the mortgaged land was permitted only if the debt remained unpaid after that accounting, and then only to recover the outstanding balance.",
+      "legal_principle": "Sections 10-B, 11 and 11-A of the U.P. Agricultural Credit Act, 1973 provide distinct recovery procedures for movable property, mortgaged immovable property and recovery as arrears of land revenue; Section 279(1) of the U.P. Zamindari Abolition and Land Reforms Act provides modes of recovering land-revenue arrears. The discretion recognized in Section 51 and Order 21, Rule 21 of the Code of Civil Procedure, and discussed in The Padrauma Raj Krishna Sugar Works Ltd. v. The Land Reforms Commissioner, U.P., Anadilal v. Ram Sarup, Mono Mohan v. Upendra Mohan, A.K. Subramania Chettiar v. A. Ponnuswami Chettiar and Uma Kama Banerjee v. Renwick and Co. Ltd., supports judicial control over simultaneous execution. In statutory recovery proceedings by a public authority, the creditor’s choice of modes is recognized, but it does not permit sale of different properties for the same debt without ascertaining whether the debt has already been recovered through an earlier proceeding.",
+      "rule": {
+        "if": "statutory_credit_recovery and same_debt_pursued and movable_property_previously_seized and recovery_amount_unascertained",
+        "then": "sale_of_other_property_requires_accounting_and_is_limited_to_the_unpaid_balance"
+      },
+      "predicates": {
+        "statutory_credit_recovery": "A creditor uses a statutory procedure to recover a debt.",
+        "same_debt_pursued": "The creditor seeks recovery of the same debt through more than one procedure.",
+        "movable_property_previously_seized": "Property of the debtor has already been seized in a recovery proceeding for that debt.",
+        "recovery_amount_unascertained": "The amount recovered or recoverable from the seized property has not yet been established."
+      },
+      "definition": "When a creditor pursues the same debt through multiple statutory procedures after property has been seized and the recovery from it is unknown, another property may be sold only after accounting for that recovery and only for any balance still unpaid."
+    },
+    {
+      "legal_issue": "Seizure of property in a statutory recovery proceeding does not by itself discharge the debtor’s liability for the debt.",
+      "material_facts": [
+        "The tractor was attached and removed from the debtor’s custody in statutory recovery proceedings.",
+        "The record did not establish whether the tractor had been sold or whether any proceeds had been transferred to the bank.",
+        "The debtor argued that seizure alone absolved him of liability for the amount due."
+      ],
+      "conclusion": "The seizure and removal of the tractor did not, by themselves, establish that the debt had been discharged. The amount recovered or deemed recovered from the tractor had to be determined and credited against the debt.",
+      "legal_principle": "Section 10-B(4) of the U.P. Agricultural Credit Act, 1973 provides for sums recovered through distraint and sale to be transferred to the bank after specified deductions. The court did not apply the analogy of a receiver’s misappropriation automatically absolving a judgment-debtor: the Oudh Full Bench decision in Jai Inder Bahadur Singh v. Brij Indar Kuar was reversed by the Privy Council in Mr. Brij Indar Kuar v. Thakur Jai Indar Bahadur Singh, which held that a decree-created charge could still be enforced. The court distinguished ordinary execution analogies and held that, in statutory recovery by a public authority, the actual recovery from the seized property must be ascertained.",
+      "rule": {
+        "if": "statutory_credit_recovery and property_seized_for_debt and seizure_asserted_as_discharge",
+        "then": "seizure_alone_does_not_discharge_the_debt"
+      },
+      "predicates": {
+        "statutory_credit_recovery": "A creditor uses a statutory procedure to recover a debt.",
+        "property_seized_for_debt": "The debtor’s property is seized in a recovery proceeding for the debt.",
+        "seizure_asserted_as_discharge": "The debtor relies on the seizure itself as having ended liability for the debt."
+      },
+      "definition": "If property is seized to recover a debt and the debtor relies on seizure alone as ending liability, the seizure does not by itself discharge the debt."
+    }
+  ],
+  "seconds": 13.8
+}

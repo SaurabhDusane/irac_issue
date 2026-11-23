@@ -1,0 +1,60 @@
+{
+  "doc_id": "120765903",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 43189,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2322,
+    "prompt_tokens": 10995,
+    "total_tokens": 13317,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Acquisition proceedings under the earlier land acquisition regime lapse when an award was made sufficiently long before the replacement regime commenced and either possession was not taken or compensation was not paid.",
+      "material_facts": [
+        "An award had been made in 1987–1988, more than five years before the replacement land acquisition legislation commenced.",
+        "Physical possession of the land had not been taken.",
+        "Compensation had been deposited with the Revenue Department, but not paid to the landholders; such a deposit was not treated as payment."
+      ],
+      "conclusion": "The acquisition proceedings were deemed to have lapsed, and the appeals were dismissed.",
+      "legal_principle": "Section 24(2) of the Right to Fair Compensation and Transparency in Land Acquisition, Rehabilitation and Resettlement Act, 2013 provides for deemed lapse where an award was made five years or more before that Act commenced and either possession has not been taken or compensation has not been paid. Under Pune Municipal Corporation v. Harakchand Misirimal Solanki, a deposit in the government treasury is not payment to the landholders. The Court also relied on Bharat Kumar v. State of Haryana and Bimla Devi v. State of Haryana.",
+      "rule": {
+        "if": "earlier_land_acquisition_case and award_old_enough and (physical_possession_not_taken or compensation_unpaid)",
+        "then": "acquisition_proceedings_deemed_lapsed"
+      },
+      "predicates": {
+        "earlier_land_acquisition_case": "The proceeding concerns an acquisition initiated under an earlier land acquisition regime.",
+        "award_old_enough": "The award was made at least five years before the replacement regime commenced.",
+        "physical_possession_not_taken": "The acquiring authority had not taken physical possession of the land.",
+        "compensation_unpaid": "Compensation had not been paid to the landholders; depositing it with a government department did not count as payment."
+      },
+      "definition": "When an earlier land acquisition case has an award old enough and either possession remains untaken or compensation remains unpaid, the acquisition proceedings are deemed to have lapsed."
+    },
+    {
+      "legal_issue": "An acquisition objection inquiry is invalid when one officer hears the objector and a successor submits the report without giving a fresh hearing.",
+      "material_facts": [
+        "The landholders filed objections to the proposed acquisition and were heard by one Land Acquisition Collector.",
+        "After that Collector was transferred, a successor Collector submitted the report without hearing the objectors afresh.",
+        "The original record showed that the objections had been handled in violation of the required procedure.",
+        "The acquisition proceedings were challenged on grounds including the handling of the objections; the High Court had examined the original record."
+      ],
+      "conclusion": "The procedure violated natural justice and vitiated the subsequent acquisition proceedings; the appeals were dismissed on the merits as well.",
+      "legal_principle": "Section 5-A of the Land Acquisition Act, 1894 embodies the right to a meaningful hearing, and the Collector must objectively consider the objections and submit a reasoned report. The officer who hears the objector must also submit the report or decide the objection; a successor cannot do so without a fresh hearing. The Court relied on Gullapalli Nageswara Rao v. Andhra Pradesh State Road Transport Corporation, Rasid Javed v. State of U.P., and Automotive Tyre Manufacturers Association v. Designated Authority. Because the procedure is prescribed by statute, the Court held that the prejudice requirement applicable to uncodified procedures did not apply in the circumstances.",
+      "rule": {
+        "if": "land_acquisition_objection_case and hearing_officer_differs_from_report_author and successor_gave_no_fresh_hearing",
+        "then": "acquisition_proceedings_vitiated"
+      },
+      "predicates": {
+        "land_acquisition_objection_case": "The proceeding concerns objections to a proposed compulsory land acquisition.",
+        "hearing_officer_differs_from_report_author": "One officer heard the objector, while a different officer submitted the report on the objection.",
+        "successor_gave_no_fresh_hearing": "The successor submitted the report without giving the objector a fresh hearing."
+      },
+      "definition": "In a land acquisition objection case, when one officer hears the objector and a successor submits the report without a fresh hearing, the acquisition proceedings are vitiated."
+    }
+  ],
+  "seconds": 75.7
+}

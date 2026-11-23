@@ -1,0 +1,101 @@
+{
+  "doc_id": "1457401",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38319,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2930,
+    "prompt_tokens": 9852,
+    "total_tokens": 12782,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant cannot avoid the filing deadline for standard-rent determination by raising the claim for the first time as a defence to an eviction proceeding for rent arrears.",
+      "material_facts": [
+        "The tenant’s written statement in the rent-arrears eviction proceeding sought determination of standard rent.",
+        "The tenant raised that claim after the statutory period for an application to determine standard rent had expired.",
+        "No order determining the standard rent had previously been made."
+      ],
+      "conclusion": "The Rent Controller was not required to determine standard rent on the time-barred claim; raising it as a defence did not avoid the filing deadline.",
+      "legal_principle": "Under sections 9 and 12 of the Delhi Rent Control Act, 1958, the Controller’s power to determine standard rent is exercised on an application subject to the limitation prescribed by section 12. Sections 4 and 5 restrict recovery above standard rent only after it is determined by the Controller; until then, the contractual rent determines the tenant’s liability. Section 15(3) concerns a dispute about contractual rent and interim rent pending determination in an appropriate proceeding; it does not authorize determination of standard rent free of section 12’s limitation. The Court disapproved Suraj Balram Sawhney & Sons v. Dr. D. Kiri, S.K. Chatterjee v. J.N. Ghoshal, and Chander Bhan v. Nand Lal on this point, and approved the view taken in the judgment under appeal.",
+      "rule": {
+        "if": "rent_arrears_eviction_proceeding and standard_rent_claim_raised_as_defence and standard_rent_application_period_expired",
+        "then": "time_barred_standard_rent_claim_rejected"
+      },
+      "predicates": {
+        "rent_arrears_eviction_proceeding": "The proceeding seeks eviction of a tenant for default in payment of rent.",
+        "standard_rent_claim_raised_as_defence": "The tenant seeks determination of standard rent only as a defence in the eviction proceeding.",
+        "standard_rent_application_period_expired": "The period for filing an application to determine standard rent has expired."
+      },
+      "definition": "When a tenant in a rent-arrears eviction proceeding raises a standard-rent claim only as a defence after the application period has expired, the claim is rejected as time-barred."
+    },
+    {
+      "legal_issue": "A tenant who has already obtained protection from eviction for a premises and then defaults again for three consecutive months cannot obtain that protection a second time.",
+      "material_facts": [
+        "In an earlier eviction proceeding concerning the premises, the tenant deposited the arrears as directed and the proceeding was disposed of.",
+        "The tenant thereby obtained the benefit of protection from eviction in that proceeding.",
+        "The tenant later defaulted in payment of rent for three consecutive months and made no payment required in the new proceeding."
+      ],
+      "conclusion": "The tenant was not entitled to the benefit of protection from eviction again.",
+      "legal_principle": "Section 14(2) of the Delhi Rent Control Act, 1958, prevents an eviction order on the rent-default ground when the tenant makes the payment or deposit required by section 15, but its proviso states that a tenant who has obtained the benefit once for the premises and then defaults again for three consecutive months is not entitled to that benefit again. The Court held that the proviso was not directory; in any event, the tenant had made no payment required in the current proceeding and the refusal of repeat relief was justified.",
+      "rule": {
+        "if": "rent_arrears_eviction_proceeding and prior_eviction_protection_obtained_for_premises and subsequent_consecutive_rent_default and required_current_payment_not_made",
+        "then": "repeat_eviction_protection_denied"
+      },
+      "predicates": {
+        "rent_arrears_eviction_proceeding": "The proceeding seeks eviction of a tenant for default in payment of rent.",
+        "prior_eviction_protection_obtained_for_premises": "The tenant previously obtained protection from eviction in a proceeding concerning the same premises.",
+        "subsequent_consecutive_rent_default": "After obtaining that protection, the tenant again defaulted in rent for three consecutive months.",
+        "required_current_payment_not_made": "The tenant did not make the payment or deposit required in the current proceeding."
+      },
+      "definition": "A tenant in a rent-arrears eviction proceeding is denied repeat protection when the tenant previously obtained it for the same premises, later defaulted consecutively, and did not make the required current payment."
+    },
+    {
+      "legal_issue": "A tenant who fails to prove that a money order was properly addressed and tendered to the landlord cannot establish payment merely by producing a receipt showing dispatch.",
+      "material_facts": [
+        "The tenant relied on a postal receipt for a money order, but the receipt did not show the landlord’s residential address.",
+        "The landlord denied that the money order had been tendered to him or that he had refused it.",
+        "The courts found that the tenant had not proved that the money order was properly addressed or tendered."
+      ],
+      "conclusion": "The tenant failed to establish payment by money order, and the contention that the landlord refused payment was rejected.",
+      "legal_principle": "The Court relied on the evidence in the record and the concurrent factual findings that dispatch alone did not prove that the money order was properly addressed and tendered to the landlord or refused by him.",
+      "rule": {
+        "if": "rent_arrears_eviction_proceeding and money_order_payment_claimed and dispatch_receipt_lacks_recipient_address and landlord_denies_tender and tender_or_refusal_not_proved",
+        "then": "money_order_payment_not_established"
+      },
+      "predicates": {
+        "rent_arrears_eviction_proceeding": "The proceeding concerns alleged rent arrears in an eviction claim.",
+        "money_order_payment_claimed": "The tenant asserts that rent was paid by money order.",
+        "dispatch_receipt_lacks_recipient_address": "The receipt proves dispatch but does not show the recipient’s address.",
+        "landlord_denies_tender": "The landlord denies that the money order was tendered to him.",
+        "tender_or_refusal_not_proved": "The tenant does not prove that the money order was tendered or refused."
+      },
+      "definition": "In a rent-arrears eviction proceeding, a dispatch receipt lacking the recipient’s address does not establish money-order payment when the landlord denies tender and tender or refusal is unproved."
+    },
+    {
+      "legal_issue": "An appellate court may decline to entertain a payment defence first raised on appeal when its determination depends on facts that were not proved in the earlier proceedings.",
+      "material_facts": [
+        "The tenant sought to rely on a rent deposit for three months for the first time before the High Court.",
+        "The tenant had not raised that plea before the Rent Controller or the Rent Control Tribunal.",
+        "Determining the plea depended on facts that had not been proved."
+      ],
+      "conclusion": "The new payment plea was not entertained on appeal.",
+      "legal_principle": "The Court declined to consider a fact-dependent plea raised for the first time on appeal where the supporting facts had not been proved in the proceedings below.",
+      "rule": {
+        "if": "appeal_from_eviction_decision and payment_defence_first_raised_on_appeal and defence_depends_on_unproved_facts",
+        "then": "new_payment_defence_not_entertained"
+      },
+      "predicates": {
+        "appeal_from_eviction_decision": "The case is an appeal from an eviction decision.",
+        "payment_defence_first_raised_on_appeal": "The tenant raises a payment defence for the first time on appeal.",
+        "defence_depends_on_unproved_facts": "Determining the defence depends on facts that were not proved in the earlier proceedings."
+      },
+      "definition": "On an appeal from an eviction decision, a payment defence first raised on appeal is not entertained when it depends on facts that were not proved earlier."
+    }
+  ],
+  "seconds": 20.9
+}

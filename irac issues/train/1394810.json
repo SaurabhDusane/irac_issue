@@ -1,0 +1,121 @@
+{
+  "doc_id": "1394810",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 10947,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4360,
+    "prompt_tokens": 3147,
+    "total_tokens": 7507,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Market value must be assessed from evidence that reliably reflects the value of the acquired land and its relevant characteristics.",
+      "material_facts": [
+        "The acquired land covered a large area and was mostly agricultural, although it had potential for building use.",
+        "A sale deed concerned only a small parcel and was not considered a suitable basis for valuing the much larger acquired area.",
+        "Other relied-on sales concerned developed areas or land far from the acquired land.",
+        "Government values used for stamp duty and registration and the Commissioner's valuation assessment were also relied on, but no evidence showed that the circular values reflected the prevailing market value of comparable land."
+      ],
+      "conclusion": "The small-parcel sale, sales of dissimilar or distant land, stamp-duty circulars, and the Commissioner's assessment could not, on their own, form the basis for determining the acquired land's market value.",
+      "legal_principle": "Under Section 23(1) of the Land Acquisition Act, 1894, market value is assessed by reference to the land's relevant characteristics at the date of the Section 4(1) notification. Government circulars under Section 47A of the Stamp Act do not establish market value without evidence of prevailing local prices for land with similar advantages. A Commissioner's valuation based on best judgment is not a sufficient basis by itself. The judgment identifies no named precedent for these evidentiary propositions.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and (comparable_is_small_or_dissimilar or stamp_value_lacks_comparable_market_evidence or commissioner_value_is_best_judgment)",
+        "then": "unsupported_valuation_source_not_accepted_as_market_value_basis"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired by the state.",
+        "comparable_is_small_or_dissimilar": "A party relies on a sale of a small parcel or land whose development or location makes it materially unlike the acquired land.",
+        "stamp_value_lacks_comparable_market_evidence": "A party relies on government stamp-duty values without evidence that they reflect local prices for similarly advantageous land.",
+        "commissioner_value_is_best_judgment": "A party relies on a Commissioner's valuation that is an assessment based on the Commissioner's best judgment."
+      },
+      "definition": "When a compensation case relies on a small or dissimilar sale, unsupported stamp values, or a best-judgment assessment, that source is not accepted as the basis for market value."
+    },
+    {
+      "legal_issue": "Development deductions depend on the work and land needed to make potential building land usable, not on the purpose for which the state acquires it.",
+      "material_facts": [
+        "The land had potential for building use but had not been developed by the date relevant to valuation.",
+        "The owners had not developed the land into plotted sites or provided amenities.",
+        "Building development required land to be left for roads, open space, and other public amenities, as well as expenditure on roads, water supply, and electricity.",
+        "The High Court deducted 53% for land required for amenities and made a further deduction for development costs.",
+        "The acquisition was for a bus stand, but the court held that this purpose did not determine the market value or eliminate development deductions."
+      ],
+      "conclusion": "The deductions made for land required for amenities and for development costs were not illegal; the extent of deductions depends on the development needed in each case.",
+      "legal_principle": "Under Section 23(1) of the Land Acquisition Act, 1894, valuation is made as of the date of the Section 4(1) notification and takes account of the land's situation and development at that time. The general rule stated by the Court allows a deduction for roads and amenities, while the amount depends on the development already completed and still required. The test is whether an owner selling the land as building sites could use the whole area and what expenditure would be necessary. The Court rejected the contrary approach in Revenue Divisional Officer v. Dasari Ganga Raju & Ors., (1992) Supp. ALA Cases 403.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and land_has_building_potential and development_is_incomplete and development_requires_public_area_or_infrastructure",
+        "then": "necessary_development_deductions_are_permitted_and_case_specific"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired by the state.",
+        "land_has_building_potential": "The land could potentially be used for building purposes.",
+        "development_is_incomplete": "The land has not been developed to the stage at which it can be used as building plots.",
+        "development_requires_public_area_or_infrastructure": "Making the land usable for building requires land for amenities or expenditure on infrastructure."
+      },
+      "definition": "When potential building land remains undeveloped and requires land or expenditure for amenities and infrastructure, necessary development deductions may be made, with their extent depending on the work still required."
+    },
+    {
+      "legal_issue": "The just market value must reflect the land's potential, its undeveloped condition, and the limitations of the available comparable evidence.",
+      "material_facts": [
+        "The land was in a developing industrial area and had potential for building use, although most of it remained agricultural.",
+        "A small part had been converted to non-agricultural use, but the owners had not developed it into plotted land or provided amenities.",
+        "The comparable sales relied on by the claimants were not a reliable basis for valuing the large acquired area.",
+        "The High Court had fixed compensation at Rs. 18 per square yard, and the Supreme Court concluded that Rs. 20 per square yard was just compensation."
+      ],
+      "conclusion": "The Court fixed compensation at Rs. 20 per square yard and allowed the appeals to that extent.",
+      "legal_principle": "Section 23(1) of the Land Acquisition Act, 1894 requires assessment of market value at the date of the Section 4(1) notification. The land's location, potential use, existing use, state of development, and the reliability of comparable evidence inform that assessment. No named earlier case is relied on for the Court's final valuation on these facts.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and land_has_building_potential and development_is_incomplete and available_comparables_do_not_reliably_value_the_acquired_extent",
+        "then": "compensation_is_fixed_at_just_market_value_on_the_record"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "A claimant appeals a court's determination of compensation for acquired land.",
+        "land_has_building_potential": "The land could potentially be used for building purposes.",
+        "development_is_incomplete": "The land has not been developed to the stage at which it can be used as building plots.",
+        "available_comparables_do_not_reliably_value_the_acquired_extent": "The available sale evidence does not reliably establish the value of the size and kind of land acquired."
+      },
+      "definition": "When potential building land remains undeveloped and available comparable sales do not reliably value the acquired extent, compensation is fixed at a just market value based on the record."
+    },
+    {
+      "legal_issue": "Enhanced compensation carries the solatium and interest awarded by the Court.",
+      "material_facts": [
+        "The Court enhanced the compensation payable for the acquired land.",
+        "The claimants sought the statutory benefits associated with the enhanced compensation."
+      ],
+      "conclusion": "The claimants were awarded 30% solatium on the enhanced compensation and interest at 9% for one year from possession and 15% thereafter until deposit.",
+      "legal_principle": "The Court awarded solatium on the enhanced compensation and interest on the compensation, specifying the applicable rates and periods. The judgment does not identify the statutory provisions supporting this part of the order.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and enhanced_compensation_awarded",
+        "then": "claimants_receive_sol_atium_and_interest_on_enhanced_compensation"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "A claimant appeals a court's determination of compensation for acquired land.",
+        "enhanced_compensation_awarded": "The court increases the compensation payable for the acquired land."
+      },
+      "definition": "When an appeal results in enhanced compensation, the claimants receive solatium and interest on that enhanced compensation."
+    },
+    {
+      "legal_issue": "The additional amount under Section 23(1-A) is unavailable when the Collector's award falls outside the applicable eligibility period.",
+      "material_facts": [
+        "The Collector made the award on May 17, 1979.",
+        "The Court held that the claimants were not entitled to the additional amount under Section 23(1-A)."
+      ],
+      "conclusion": "The claimants were not entitled to the additional amount under Section 23(1-A) of the Land Acquisition Act, 1894.",
+      "legal_principle": "The Court applied Section 23(1-A) and treated the date of the Collector's award as excluding entitlement to the additional amount. The judgment does not state the applicable eligibility period or cite an earlier case for this ruling.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and collector_award_outside_additional_amount_eligibility_period",
+        "then": "additional_acquisition_amount_unavailable"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "A court is determining compensation for land acquired by the state.",
+        "collector_award_outside_additional_amount_eligibility_period": "The Collector's award was made outside the period in which the additional acquisition amount is available."
+      },
+      "definition": "When a compensation case concerns an award outside the eligibility period, the additional acquisition amount is unavailable."
+    }
+  ],
+  "seconds": 25.3
+}

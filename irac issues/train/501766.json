@@ -1,0 +1,79 @@
+{
+  "doc_id": "501766",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17239,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2173,
+    "prompt_tokens": 4799,
+    "total_tokens": 6972,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A writ proceeding is not an appropriate remedy when granting relief requires resolving serious factual disputes or determining disputed title to property.",
+      "material_facts": [
+        "The claimant entered the house after government officials moved his family and belongings there, but no letter of allotment was issued to him.",
+        "The government later refused to allot the house, asserting that the claimant was ineligible because he had previously been allotted agricultural land.",
+        "The house was subsequently allotted to another applicant, who received possession under an allotment letter.",
+        "Determining the parties’ rights required deciding what rights the claimant had acquired and whether the later possessor had a legal right to hold the house against him."
+      ],
+      "conclusion": "The High Court should not have used writ proceedings to declare the claimant’s title and order restoration of possession; those matters required determination in a civil suit.",
+      "legal_principle": "Under Article 226 of the Constitution, relief by mandamus or an order in the nature of mandamus is appropriate where the material facts are undisputed and the claimant’s title is clear. Where relief would require resolving disputed facts or declaring title and ordering recovery of possession, the proper remedy is a civil suit.",
+      "rule": {
+        "if": "constitutional_writ_proceeding and (serious_factual_dispute or serious_title_dispute)",
+        "then": "writ_relief_inappropriate"
+      },
+      "predicates": {
+        "constitutional_writ_proceeding": "A claimant sought relief in a constitutional writ proceeding.",
+        "serious_factual_dispute": "The parties disputed facts that had to be determined before their respective rights could be resolved.",
+        "serious_title_dispute": "The claimant’s title or right to possess the property was not clear and had to be determined before possession could be restored."
+      },
+      "definition": "When a claimant seeks relief in a constitutional writ proceeding and serious factual disputes or a serious title dispute must be resolved, writ relief is inappropriate."
+    },
+    {
+      "legal_issue": "Mandamus may require a public authority to restore property when it illegally evicted a person and still retains possession of the property.",
+      "material_facts": [
+        "The claimant was evicted without the notice required by the applicable law, making the eviction illegal.",
+        "By the time of the proceedings, the public authority no longer possessed the house; it had given possession to another applicant."
+      ],
+      "conclusion": "A writ could have been issued against the public authority to restore possession if the property had remained in its possession, but that condition was not met.",
+      "legal_principle": "The Court held that an eviction contrary to the notice requirement in section 3 of the Public Premises (Eviction) Act, 1950 was illegal. If the property remained with the Union of India, mandamus or an order in the nature of mandamus could require it to restore possession to the person illegally evicted.",
+      "rule": {
+        "if": "constitutional_writ_proceeding and illegal_eviction_without_required_notice and government_retains_possession",
+        "then": "mandamus_may_require_government_to_restore_possession"
+      },
+      "predicates": {
+        "constitutional_writ_proceeding": "A claimant sought restoration of property through a constitutional writ proceeding.",
+        "illegal_eviction_without_required_notice": "A public authority evicted a person without giving the notice required by law.",
+        "government_retains_possession": "The public authority continued to possess the property when restoration was sought."
+      },
+      "definition": "If a person seeks restoration through a constitutional writ proceeding after a public authority evicted that person without required notice, and the authority still possesses the property, mandamus may require the authority to restore possession."
+    },
+    {
+      "legal_issue": "Mandamus ordinarily does not issue against a private person in bona fide possession of property without knowledge of an illegal eviction, absent collusion with the public authority.",
+      "material_facts": [
+        "The private possessor received the house after the public authority allotted it to him and gave him possession.",
+        "There was no evidence or finding that the private possessor knew the claimant had been illegally evicted.",
+        "There was no evidence or finding that the private possessor and the public authority colluded in a colourable transaction intended to deprive the claimant of rights."
+      ],
+      "conclusion": "The High Court could not order the private possessor to restore the house to the claimant on the record before it.",
+      "legal_principle": "Mandamus ordinarily directs a person to perform a duty appertaining to that person’s office and does not issue against a private individual. The Court applied R. v. Chester Corporation, (1855) 25 L.J.Q.B. 61, by analogy: where a private person has apparently entered bona fide possession without knowledge of an illegal eviction, mandamus does not lie; jurisdiction might exist if the public authority and private person colluded in a merely colourable transaction to deprive the claimant of rights.",
+      "rule": {
+        "if": "constitutional_writ_proceeding and respondent_is_private_possessor and bona_fide_possession_without_knowledge and not collusive_transaction",
+        "then": "mandamus_not_issued_against_private_possessor"
+      },
+      "predicates": {
+        "constitutional_writ_proceeding": "A claimant sought an order in the nature of mandamus in a constitutional writ proceeding.",
+        "respondent_is_private_possessor": "The person against whom restoration was sought was a private individual in possession of the property.",
+        "bona_fide_possession_without_knowledge": "The private individual apparently entered possession in good faith without knowing that another person had been illegally evicted.",
+        "collusive_transaction": "The public authority and private individual entered a collusive, colourable transaction intended to deprive the claimant of rights."
+      },
+      "definition": "When a claimant seeks mandamus against a private possessor who apparently took possession in good faith without knowledge of an illegal eviction, and the transaction was not collusive, mandamus is not issued against that possessor."
+    }
+  ],
+  "seconds": 13.9
+}

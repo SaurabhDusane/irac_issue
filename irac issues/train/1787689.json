@@ -1,0 +1,80 @@
+{
+  "doc_id": "1787689",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31612,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2380,
+    "prompt_tokens": 7902,
+    "total_tokens": 10282,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A victim’s membership in a Scheduled Caste, without other evidence establishing the charged offence, does not support a conviction under the atrocity legislation.",
+      "material_facts": [
+        "The victim belonged to the Pardhi community.",
+        "The record contained no evidence beyond her caste membership to establish the offence charged under the atrocity legislation."
+      ],
+      "conclusion": "The conviction under Section 3(2)(v) of the Scheduled Caste and Scheduled Tribes (Prevention of Atrocities) Act, 1989 was set aside.",
+      "legal_principle": "Section 3(2)(v) cannot be applied merely because the victim belongs to a Scheduled Caste; there must be evidence to prove the charged offence under that provision.",
+      "rule": {
+        "if": "atrocity_offence_conviction_appeal and victim_caste_membership_is_only_supporting_evidence",
+        "then": "atrocity_offence_conviction_set_aside"
+      },
+      "predicates": {
+        "atrocity_offence_conviction_appeal": "The accused appealed a conviction for an offence under atrocity legislation.",
+        "victim_caste_membership_is_only_supporting_evidence": "The victim belonged to a Scheduled Caste, but the prosecution presented no other evidence establishing the charged offence."
+      },
+      "definition": "When an appeal concerns an atrocity-offence conviction and the victim’s caste membership is the only supporting evidence, the conviction is set aside."
+    },
+    {
+      "legal_issue": "Delay in reporting an offence must be assessed in the context of all the circumstances and is neither automatically fatal to the prosecution nor immaterial.",
+      "material_facts": [
+        "The report was lodged eight days after the alleged occurrence.",
+        "The account given in court did not explain the gap between an earlier report to police and the later report on which the prosecution proceeded.",
+        "An earlier report concerning a non-cognizable offence had been recorded but was not produced at trial, and the witness did not mention it in her testimony.",
+        "The account of the reporting sequence differed between the report and the testimony."
+      ],
+      "conclusion": "The delay was not reasonably explained and, considered with the other evidence, contributed to doubt about the prosecution case.",
+      "legal_principle": "A delayed report is a relevant circumstance to be assessed against the totality of the evidence and the circumstances of the individual case. Delay alone is not necessarily fatal, and no fixed formula applies. The Court relied on Pandurang and others v. State of Hyderabad, AIR 1956 SC 216, for the principle that the facts of one case cannot be used as a precedent to determine the conclusion in another case merely because the circumstances are similar.",
+      "rule": {
+        "if": "criminal_prosecution_appeal and report_lodged_after_material_delay and delay_lacks_reasonable_explanation",
+        "then": "delay_weighs_against_prosecution_case"
+      },
+      "predicates": {
+        "criminal_prosecution_appeal": "The accused appealed a criminal conviction.",
+        "report_lodged_after_material_delay": "The complainant made the report a significant time after the alleged offence.",
+        "delay_lacks_reasonable_explanation": "The prosecution evidence did not reasonably account for the time taken to make the report."
+      },
+      "definition": "In a criminal appeal, a materially delayed report without a reasonable explanation weighs against the prosecution case."
+    },
+    {
+      "legal_issue": "A conviction for rape may rest solely on the prosecutrix’s testimony only when the court finds it truthful and no circumstances cast doubt on its reliability; unreliable testimony and other circumstances that leave reasonable doubt require the accused to receive the benefit of that doubt.",
+      "material_facts": [
+        "The prosecutrix’s testimony differed from the account in her report and omitted her earlier report to police, which a police witness confirmed had been recorded.",
+        "The prosecution did not produce the earlier report, and the prosecutrix’s evidence did not satisfactorily explain the delay in making the later report.",
+        "The supporting uncle’s account conflicted with the prosecutrix’s account and included claims she did not make; the Court rejected his evidence as wholly unreliable.",
+        "The medical examination found no evidence of rape.",
+        "The Court found that the prosecutrix was not a witness of sufficient reliability to sustain a conviction on her testimony alone and was not satisfied that the prosecution had proved its case beyond reasonable doubt."
+      ],
+      "conclusion": "The accused were entitled to the benefit of doubt; the appeals were allowed and the rape convictions and sentences were set aside.",
+      "legal_principle": "A conviction under Section 376 read with Section 34 IPC may be based solely on the prosecutrix’s testimony if the court is convinced of her truthfulness and no circumstances cast a shadow of doubt on her veracity. The prosecution must prove its case beyond reasonable doubt; where the evidence does not do so, the accused receives the benefit of doubt.",
+      "rule": {
+        "if": "rape_conviction_appeal and prosecutrix_testimony_lacks_reliability and material_reporting_delay_unexplained and supporting_witness_discredited",
+        "then": "rape_conviction_set_aside_for_benefit_of_doubt"
+      },
+      "predicates": {
+        "rape_conviction_appeal": "The accused appealed a conviction for rape committed by multiple persons acting together.",
+        "prosecutrix_testimony_lacks_reliability": "The prosecutrix’s testimony materially differed from her earlier account and omitted a prior report relevant to the case.",
+        "material_reporting_delay_unexplained": "The prosecution did not reasonably explain the significant delay in making the later report.",
+        "supporting_witness_discredited": "A witness offered to support the prosecution gave an account inconsistent with the prosecutrix’s evidence and was found unreliable."
+      },
+      "definition": "When an appeal against a rape conviction involves unreliable prosecutrix testimony, an unexplained material reporting delay, and a discredited supporting witness, the conviction is set aside for the benefit of doubt."
+    }
+  ],
+  "seconds": 16.9
+}

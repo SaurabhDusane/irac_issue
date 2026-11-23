@@ -1,0 +1,82 @@
+{
+  "doc_id": "1820934",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 226895,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3102,
+    "prompt_tokens": 55276,
+    "total_tokens": 58378,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The provisions governing appeals from specified interlocutory orders apply to proceedings on a High Court’s original civil side and do not conflict with the Letters Patent appeal jurisdiction.",
+      "material_facts": [
+        "A civil suit was pending on the original side of the High Court.",
+        "The single judge refused an application for appointment of a receiver and an interim injunction.",
+        "The appeal from that order was dismissed as not maintainable."
+      ],
+      "conclusion": "The procedural provisions allowing appeals from specified orders apply to the original side of the High Court and provide an additional appeal route without curtailing the Letters Patent jurisdiction.",
+      "legal_principle": "Sections 4, 104, 105, 106 and 117 of the Code of Civil Procedure, 1908, read with Order 43 Rule 1 and Order 49 Rule 3, support the application of the appeal provisions to original-side proceedings; the relevant orders are not excluded for Chartered High Courts. Section 104 preserves appeal rights under other laws while providing an additional remedy. The Court relied on Hurrish Chunder Chowdry v. Kali Sundari Debia, Mt. Sabitri Thakurain v. Savi, Union of India v. Mohindra Supply Co., Mathura Sundari Dassi v. Haran Chandra Shaha and Lea Badin v. Upendra Mohan Roy Chaudhary. It rejected contrary reasoning in cases including Vaman Raoji Kulkarni v. Nagesh Vishnu Joshi and overruled Ram Sarup v. Kaniz Ummehani.",
+      "rule": {
+        "if": "appeal_from_original_side_trial_order and order_is_in_a_procedurally_appealable_category",
+        "then": "appeal_lies_to_a_larger_bench"
+      },
+      "predicates": {
+        "appeal_from_original_side_trial_order": "A litigant appealed an order made by a single judge while dealing with a civil case on the High Court’s original side.",
+        "order_is_in_a_procedurally_appealable_category": "The order made by the single judge concerned a type of order for which the procedural rules provide an appeal."
+      },
+      "definition": "When an appeal challenges an original-side trial order that belongs to a procedurally appealable category, the order may be appealed to a larger bench."
+    },
+    {
+      "legal_issue": "An order by a single judge is a judgment for purposes of an internal Letters Patent appeal when it has a sufficient quality of finality, including by conclusively deciding an important issue or directly and seriously affecting a valuable right.",
+      "material_facts": [
+        "The suit remained pending after the single judge refused interim relief.",
+        "The refusal concerned the appointment of a receiver and an interim injunction in an ancillary proceeding intended to protect the subject matter of the suit.",
+        "The refusal directly affected the applicant’s asserted rights in that ancillary proceeding."
+      ],
+      "conclusion": "The term judgment in the Letters Patent is broader than the Code’s definition and includes some interlocutory orders that decide matters of moment or directly affect valuable rights with traits of finality; it does not include every interlocutory or routine procedural order.",
+      "legal_principle": "Clause 15 of the Letters Patent does not define judgment, and its meaning is not confined by the definitions in sections 2(2) and 2(9) of the Code of Civil Procedure. The Court adopted the general approach in T. V. Tuljaram Row v. M.K.R.V. Alagappa Chettiar, while limiting its breadth, and approved the synthesis in Manohar Damodar Bhoot v. Baliram Ganpat Bhoot. It relied on Asrumati Debi v. Kumar Rupendra Deb Raikot, State of Uttar Pradesh v. Dr. Vijay Anand Maharaj, Radhey Shyam v. Shyam Behari Singh and Shanti Kumar R. Canji v. The Home Insurance Co. of New York. The Court rejected the overly narrow approaches in The Justice of the Peace for Calcutta v. The Oriental Gas Company and In Re Dayabhai Jiwandas.",
+      "rule": {
+        "if": "internal_appeal_from_single_judge and (order_ends_case_or_part or (order_decides_important_issue and direct_serious_effect_on_valuable_right and order_has_finality_traits))",
+        "then": "order_is_a_judgment_appealable_to_a_larger_bench"
+      },
+      "predicates": {
+        "internal_appeal_from_single_judge": "A party sought an internal appeal from an order made by a single judge exercising original jurisdiction.",
+        "order_ends_case_or_part": "The order brought the case or a distinct part of it to an end before that judge.",
+        "order_decides_important_issue": "The order conclusively decided an important controversy in the case or an ancillary proceeding.",
+        "direct_serious_effect_on_valuable_right": "The order directly and seriously affected a party’s valuable right rather than causing only remote or minor prejudice.",
+        "order_has_finality_traits": "The order had characteristics of finality in its effect on the case or the relevant proceeding."
+      },
+      "definition": "An order in an internal appeal is a judgment when it ends the case or a part of it, or when it conclusively decides an important issue and has finality traits that directly and seriously affect a valuable right."
+    },
+    {
+      "legal_issue": "A single judge’s refusal to appoint a receiver or grant an interim injunction in a civil suit is appealable to a larger bench.",
+      "material_facts": [
+        "A plaintiff filed a civil suit seeking specific performance and applied for a receiver over the suit property and an interim injunction against dealings with that property.",
+        "The single judge dismissed the application for both forms of interim relief.",
+        "The larger bench dismissed the plaintiff’s appeal without deciding it on its merits, holding that the order was not a judgment."
+      ],
+      "conclusion": "The appeal was maintainable because the order fell within the categories of orders appealable under the procedural rules and independently had the quality of finality required to be a judgment under the Letters Patent. The larger bench erred in dismissing it without deciding the merits, and the matter was remanded for that decision.",
+      "legal_principle": "Section 104 of the Code of Civil Procedure, 1908, read with Order 43 Rule 1, provides for appeals from specified orders, including orders concerning receivers and injunctions, and applies to proceedings on the original side of the High Court. Independently, an order in an ancillary proceeding may be a Letters Patent judgment if it directly affects a valuable right and has traits of finality. The Court relied on Radhey Shyam v. Shyam Behari Singh for the significance of orders affecting valuable rights and on the principles stated in T. V. Tuljaram Row v. M.K.R.V. Alagappa Chettiar and Manohar Damodar Bhoot v. Baliram Ganpat Bhoot.",
+      "rule": {
+        "if": "civil_suit_on_original_side and internal_appeal_from_single_judge and receiver_or_interim_injunction_application_refused and (order_is_in_a_procedurally_appealable_category or (direct_serious_effect_on_valuable_right and order_has_finality_traits))",
+        "then": "appeal_is_maintainable_and_must_be_decided_on_its_merits"
+      },
+      "predicates": {
+        "civil_suit_on_original_side": "A civil suit was being heard on the original side of a High Court.",
+        "internal_appeal_from_single_judge": "A party appealed to a larger bench from an order made by a single judge in the suit.",
+        "receiver_or_interim_injunction_application_refused": "The single judge refused an application for appointment of a receiver or for an interim injunction.",
+        "order_is_in_a_procedurally_appealable_category": "The order concerned a kind of interim relief for which procedural rules provide an appeal.",
+        "direct_serious_effect_on_valuable_right": "The refusal directly and seriously affected a party’s valuable right in the ancillary proceeding.",
+        "order_has_finality_traits": "The refusal had traits of finality in its effect on the ancillary proceeding."
+      },
+      "definition": "If a single judge in an original-side civil suit refuses a receiver or interim injunction application and the order is procedurally appealable or has finality traits with a direct and serious effect on a valuable right, the appeal is maintainable and must be decided on its merits."
+    }
+  ],
+  "seconds": 19.5
+}

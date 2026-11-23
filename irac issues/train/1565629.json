@@ -1,0 +1,81 @@
+{
+  "doc_id": "1565629",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20704,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2388,
+    "prompt_tokens": 5772,
+    "total_tokens": 8160,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Acceptance of payments after a termination notice does not waive the notice when there is no reliable proof of rent being accepted after the notice and the payments were treated as compensation for occupation.",
+      "material_facts": [
+        "The lessors gave notice terminating the lease and treated the lessee as a trespasser from the date of the notice.",
+        "There was no reliable evidence establishing that rent was accepted after the notice and before the date by which the lessee was asked to vacate.",
+        "The lessors' evidence characterized any payments received as compensation for wrongful use and occupation."
+      ],
+      "conclusion": "The lessors did not waive the termination notice.",
+      "legal_principle": "Waiver was not established on the evidence: the record did not show that rent was accepted after the termination notice, and the lessors treated the lessee as a trespasser while characterizing payments as compensation for occupation.",
+      "rule": {
+        "if": "lease_termination_dispute and no_reliable_proof_of_post_notice_rent and (lessee_treated_as_trespasser or payments_treated_as_occupation_compensation)",
+        "then": "termination_notice_not_waived"
+      },
+      "predicates": {
+        "lease_termination_dispute": "A dispute arose over whether a notice terminating a lease remained effective.",
+        "no_reliable_proof_of_post_notice_rent": "The lessor's evidence did not reliably establish that rent was accepted after the termination notice.",
+        "lessee_treated_as_trespasser": "The lessor treated the lessee as a trespasser from the time the termination notice was given.",
+        "payments_treated_as_occupation_compensation": "The lessor characterized payments received from the lessee as compensation for use and occupation rather than rent."
+      },
+      "definition": "When a lease-termination dispute lacks reliable proof of post-notice rent acceptance and the lessee was treated as a trespasser or payments were treated as occupation compensation, the termination notice is not waived."
+    },
+    {
+      "legal_issue": "Failure to give a lessee an opportunity to remedy a breach does not defeat the lessor's claim to structures where no ejectment suit is required because the leased land is compulsorily acquired for the lessee's use.",
+      "material_facts": [
+        "The lessors' termination notice did not call upon the lessee to remedy the alleged breach within a specified reasonable period.",
+        "The land was compulsorily acquired for the lessee's use, so the lessors did not need to bring an ejectment suit.",
+        "The lessee itself had obtained an injunction restraining the lessors from ejecting it before the acquisition proceedings."
+      ],
+      "conclusion": "The omission of a requirement to remedy the breach did not affect the lessors' claim in the acquisition proceedings.",
+      "legal_principle": "Section 114A of the Transfer of Property Act requires a notice specifying the breach and an opportunity to remedy it before a suit for ejectment may be brought. That restriction concerns an ejectment suit and does not affect the claim where no such suit is required in the circumstances of a compulsory acquisition; the lessee had itself obtained an injunction against ejectment.",
+      "rule": {
+        "if": "compulsory_acquisition_compensation_proceeding and acquisition_for_lessee_use and no_ejectment_suit_required",
+        "then": "failure_to_offer_breach_cure_does_not_defeat_lessor_claim"
+      },
+      "predicates": {
+        "compulsory_acquisition_compensation_proceeding": "The dispute arose in proceedings to determine compensation for compulsorily acquired leased property.",
+        "acquisition_for_lessee_use": "The leased property was acquired for the use of the lessee.",
+        "no_ejectment_suit_required": "The circumstances did not require the lessor to bring an ejectment suit, including because the lessee had obtained an injunction restraining ejectment."
+      },
+      "definition": "In a compulsory-acquisition compensation proceeding, when the property is acquired for the lessee's use and no ejectment suit is required, failure to offer an opportunity to remedy the breach does not defeat the lessor's claim."
+    },
+    {
+      "legal_issue": "An express lease term providing that structures become the lessor's property if the lessee does not remove them within the contractual period displaces the default right to remove attached things and entitles the lessor to compensation for those structures upon acquisition.",
+      "material_facts": [
+        "The lease allowed the lessee a specified period after termination to remove stocks, machinery, and other materials.",
+        "The lease also provided that specified buildings and structures would become the lessors' property upon expiry of the lease, without compensation to the lessee.",
+        "The lessee did not remove the structures within the contractual period, and the structures remained on the land when the Government acquired it.",
+        "The lower courts had not assessed compensation for the structures as they stood at the time of acquisition."
+      ],
+      "conclusion": "The structures became the lessors' property under the express lease term, and the lessors were entitled to compensation for them; the matter was remanded for assessment of that compensation and related amounts.",
+      "legal_principle": "Section 108(h) of the Transfer of Property Act permits a lessee to remove things attached to the earth while still in possession, but the opening words of section 108 make its default rules subject to a contract to the contrary. The express lease term governed and transferred title to the specified structures to the lessors when the lessee failed to remove them within the agreed period. No earlier cases are relied on.",
+      "rule": {
+        "if": "compulsory_acquisition_compensation_proceeding and lease_contains_structure_vesting_term and lessee_failed_to_remove_structures_within_contractual_period and structures_remained_on_acquired_land",
+        "then": "lessor_entitled_to_compensation_for_structures"
+      },
+      "predicates": {
+        "compulsory_acquisition_compensation_proceeding": "The dispute concerned compensation for property compulsorily acquired by the Government.",
+        "lease_contains_structure_vesting_term": "The lease provided that specified structures would become the lessor's property if the lessee did not remove them within the agreed period.",
+        "lessee_failed_to_remove_structures_within_contractual_period": "The lessee did not remove the structures within the period allowed by the lease.",
+        "structures_remained_on_acquired_land": "The structures remained on the leased land when it was acquired."
+      },
+      "definition": "When acquired land still bears structures that the lessee failed to remove within the contractual period, and the lease provides for those structures to vest in the lessor, the lessor is entitled to compensation for them."
+    }
+  ],
+  "seconds": 15.0
+}

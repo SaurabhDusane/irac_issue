@@ -1,0 +1,80 @@
+{
+  "doc_id": "1066523",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31412,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2574,
+    "prompt_tokens": 9113,
+    "total_tokens": 11687,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A general reference to a tenure-holder’s personal law applies the law in force when succession opens, including later amendments to that law.",
+      "material_facts": [
+        "The dispute concerned succession to land held by a tenure-holder after his widow died.",
+        "The governing revenue provision stated that a tenure-holder’s interest passed on death subject to the holder’s personal law.",
+        "The widow died after the Hindu Succession Act had come into force."
+      ],
+      "conclusion": "The reference to personal law included the Hindu Succession Act as in force when the widow died and succession opened; the Court did not decide whether the revenue provision was otherwise saved as a law governing devolution of tenancy rights.",
+      "legal_principle": "Section 151 of the Madhya Pradesh Land Revenue Code, 1954 referred generally to the holder’s personal law. A general reference to the law governing a subject incorporates that law as it stands when it is applied, including subsequent amendments; this differs from specific incorporation of another statute as it stood at adoption. The Court relied on this principle in approving Smt. Indubai v. Vyankati Vithoba Sawadha, Kumari Ramlali v. Mst. Bhagunti Bai, and Tare C.J.’s view in Nahar Hirasingh v. Mst. Dukalhin. The Court found it unnecessary to decide whether Section 151 fell within the exception in Section 4(2) of the Hindu Succession Act because Section 151 itself made personal law applicable.",
+      "rule": {
+        "if": "tenure_holder_inheritance_dispute and personal_law_reference and general_reference_to_subject_law and amended_law_in_force_when_succession_opens",
+        "then": "personal_law_in_force_when_succession_opens_governs"
+      },
+      "predicates": {
+        "tenure_holder_inheritance_dispute": "The proceeding concerns inheritance to an interest held by a tenure-holder.",
+        "personal_law_reference": "The governing rule makes devolution of the tenure-holder’s interest subject to that holder’s personal law.",
+        "general_reference_to_subject_law": "The governing rule refers generally to the law on a subject rather than specifically incorporating a particular statute as it stood at adoption.",
+        "amended_law_in_force_when_succession_opens": "The later or amended personal law was in force when the succession opened."
+      },
+      "definition": "When a tenure-holder inheritance dispute involves a general reference to personal law and amended law in force at the opening of succession, that personal law governs in its then-current form."
+    },
+    {
+      "legal_issue": "When a female Hindu dies intestate and without descendants, property inherited from her husband devolves on his heirs, determined as though he died immediately after her.",
+      "material_facts": [
+        "The widow inherited the land from her husband.",
+        "She died intestate and without children or descendants.",
+        "The dispute concerned who inherited the land after her death."
+      ],
+      "conclusion": "The property devolved on the husband’s heirs, with those heirs determined as if the husband had died intestate immediately after the widow’s death.",
+      "legal_principle": "Section 15(2)(b) of the Hindu Succession Act provides that property inherited by a female Hindu from her husband devolves, in the absence of a son or daughter or their descendants, on the husband’s heirs. Section 16, Rule 3 requires the order of devolution to be determined as if the husband had died intestate immediately after the female intestate.",
+      "rule": {
+        "if": "female_intestate_inheritance_dispute and property_inherited_from_husband and no_descendants",
+        "then": "husbands_heirs_are_determined_as_if_he_died_after_her"
+      },
+      "predicates": {
+        "female_intestate_inheritance_dispute": "The proceeding concerns inheritance to a female Hindu’s estate after she died intestate.",
+        "property_inherited_from_husband": "The property at issue was inherited by the female intestate from her husband.",
+        "no_descendants": "The female intestate left no son or daughter and no descendants of any predeceased son or daughter."
+      },
+      "definition": "If an intestate female’s property came from her husband and she left no descendants, the husband’s heirs are determined on the assumption that he died immediately after her."
+    },
+    {
+      "legal_issue": "A sister’s daughter who qualifies as a Class II heir takes preference over agnates when no Class I heir exists.",
+      "material_facts": [
+        "The claimant was the daughter of the deceased husband’s sister.",
+        "The competing claimants were remote agnates of the husband.",
+        "Neither side was a Class I heir."
+      ],
+      "conclusion": "The sister’s daughter was a preferential heir under Class II and excluded the competing agnates.",
+      "legal_principle": "Under Section 8 of the Hindu Succession Act, Class I heirs succeed first, then Class II heirs, then agnates, and finally cognates. A sister’s daughter is listed in Class II, Entry IV, item 4 of the Schedule; agnates do not appear in Class II. In this case, the order was applied to identify the husband’s heirs under Section 15(2)(b) and Section 16, Rule 3.",
+      "rule": {
+        "if": "husbands_estate_heir_dispute and no_class_i_heir and claimant_is_sisters_daughter and competing_claimants_are_agnates",
+        "then": "class_ii_sisters_daughter_precedes_agnates"
+      },
+      "predicates": {
+        "husbands_estate_heir_dispute": "The proceeding concerns competing claims to inherit a husband’s estate, including when identifying the heirs entitled to property inherited by his widow.",
+        "no_class_i_heir": "No Class I heir of the deceased husband exists.",
+        "claimant_is_sisters_daughter": "The claimant is the deceased husband’s sister’s daughter.",
+        "competing_claimants_are_agnates": "The competing claimants are agnatic relatives of the deceased husband."
+      },
+      "definition": "When no Class I heir exists, a sister’s daughter claiming as a Class II heir takes preference over competing agnatic relatives."
+    }
+  ],
+  "seconds": 18.4
+}

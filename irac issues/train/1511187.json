@@ -1,0 +1,78 @@
+{
+  "doc_id": "1511187",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 123592,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2783,
+    "prompt_tokens": 29684,
+    "total_tokens": 32467,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A pending debt-recovery application does not bar a creditor from also enforcing its security through a non-adjudicatory process, and withdrawing the pending application is not a precondition to doing so.",
+      "material_facts": [
+        "A bank had filed a debt-recovery application that remained pending before the tribunal, and an application concerning sale of the secured properties was also pending.",
+        "The bank issued a written demand to the borrower after default and classification of the account as non-performing, and later took possession of the secured properties and put them up for auction.",
+        "The borrower argued that the bank had to obtain the tribunal's permission to withdraw the pending application before taking enforcement action."
+      ],
+      "conclusion": "The creditor need not withdraw the pending debt-recovery application before enforcing the security. The written demand is an action under the secured-enforcement statute, and the remedies under the two statutes are complementary; the doctrine of election does not apply.",
+      "legal_principle": "Under Sections 17 and 19 of the Recovery of Debts Due to Banks and Financial Institutions Act, 1993, the tribunal adjudicates debt claims and provides recovery methods. The first proviso to Section 19(1), inserted by the 2004 amendment, enables withdrawal with the tribunal's permission; it does not make withdrawal a condition precedent to action under the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002. Sections 13(2), 13(3-A), 13(10), and 13(13) of the 2002 Act show that the demand notice is an action based on an existing liability and classified non-performing account, and that the two statutory remedies are complementary. Sections 35 and 37 of the 2002 Act support its overriding effect over inconsistent laws and its operation in addition to the debt-recovery statute. Mardia Chemicals Ltd. v. Union of India supports the character of the notice and the borrower's later remedy; National Insurance Co. Ltd. v. Mastan and A.P. State Financial Corporation v. Gar Re-Rolling Mills were distinguished because they involved statutory election or a different statutory scheme.",
+      "rule": {
+        "if": "debt_recovery_proceeding_pending and secured_creditor_seeks_non_adjudicatory_security_enforcement and borrower_defaulted and account_classified_as_nonperforming and written_demand_issued",
+        "then": "parallel_recovery_remedies_may_be_pursued_without_withdrawal"
+      },
+      "predicates": {
+        "debt_recovery_proceeding_pending": "A creditor has already brought a debt-recovery proceeding that remains pending.",
+        "secured_creditor_seeks_non_adjudicatory_security_enforcement": "A creditor holding security seeks to enforce that security without first obtaining an adjudication of the debt.",
+        "borrower_defaulted": "The borrower failed to repay an amount owed to the creditor.",
+        "account_classified_as_nonperforming": "The creditor classified the borrower's account as non-performing after the default.",
+        "written_demand_issued": "The creditor sent the borrower a written demand to discharge the liability before taking further enforcement measures."
+      },
+      "definition": "When a debt-recovery proceeding is pending and the creditor has security, a default, a non-performing account, and a written demand, the creditor may pursue the security-enforcement route without first withdrawing the pending proceeding."
+    },
+    {
+      "legal_issue": "The power to take possession of secured immovable property includes taking actual physical possession before the sale is confirmed.",
+      "material_facts": [
+        "After the borrower failed to discharge the liability following a demand, the secured creditor issued a possession notice and took possession of the immovable properties.",
+        "The borrower argued that the creditor could take only symbolic possession until the sale was confirmed, to preserve the borrower's opportunity to challenge the enforcement measures."
+      ],
+      "conclusion": "Taking possession under the secured-enforcement statute includes actual physical possession, which may be taken before confirmation of sale. If possession is taken contrary to the statute, the tribunal may restore possession to the borrower.",
+      "legal_principle": "Section 13(4) of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 authorizes taking possession of secured assets; Sections 13(8), 14, and 17(3) address redemption, assistance in obtaining possession, and restoration of possession if enforcement measures are unlawful. Rules 8(1) and 8(4) of the Security Interest (Enforcement) Rules, 2002 concern possession and protection of the asset before sale, while Rules 9(6) and 9(9) concern confirmation of sale, issuance of the sale certificate, and delivery to the purchaser. The statute and rules do not establish a dichotomy between symbolic and physical possession. The court compared the authorised officer's protective role before sale to that of a receiver under Order XL Rule 1 of the Code of Civil Procedure, while recognizing the secured creditor's interest in protecting the asset.",
+      "rule": {
+        "if": "secured_asset_enforcement_proceeding and creditor_holds_security_interest and borrower_failed_to_pay_after_demand",
+        "then": "actual_physical_possession_may_be_taken_before_sale_confirmation"
+      },
+      "predicates": {
+        "secured_asset_enforcement_proceeding": "A creditor is taking measures to enforce a security interest in an asset.",
+        "creditor_holds_security_interest": "The creditor holds an interest in the property created as security for the borrower's liability.",
+        "borrower_failed_to_pay_after_demand": "The borrower did not discharge the liability after receiving a demand."
+      },
+      "definition": "In a proceeding to enforce a creditor's security interest, where the borrower has not paid after demand, the creditor may take actual physical possession before the sale is confirmed."
+    },
+    {
+      "legal_issue": "A borrower challenging a creditor's security-enforcement measures remains liable for the applicable filing fee under an existing fee order when no rules prescribing fees under the governing statute have been made.",
+      "material_facts": [
+        "Borrowers challenging enforcement measures argued that no fee could be charged because no rules prescribing fees had been made under the statute after its amendment.",
+        "A government order already provided that the fee for an application challenging enforcement measures would correspond, with necessary changes, to the fee for an ordinary debt-recovery application."
+      ],
+      "conclusion": "The existing government order continued to operate after the amendment and supplied the applicable fee until rules prescribing fees were made.",
+      "legal_principle": "Section 17(1) of the Securitisation and Reconstruction of Financial Assets and Enforcement of Security Interest Act, 2002 permits an aggrieved borrower to apply to the tribunal and provides for fees as prescribed; Section 2(s) defines 'prescribed' by reference to rules made under that Act. The Removal of Difficulties Order, 2004, made under Section 40, adopted the fee under Rule 7 of the Debts Recovery Tribunal (Procedure) Rules, 1993 for such applications. The order supplied a deficiency without altering the statute's scheme and remained operative after the 2004 amendment until rules were made. Madeva Upendra Sinai v. Union of India explains the limited power to remove difficulties and permits supplying a deficiency without changing the statute's essential provisions. Mardia Chemicals Ltd. v. Union of India characterized the tribunal's role as original jurisdiction, but that characterization does not determine the applicable fee.",
+      "rule": {
+        "if": "borrower_challenges_security_enforcement_measure and no_fee_rules_made and existing_order_adopts_ordinary_tribunal_filing_fee",
+        "then": "filing_fee_remains_payable_under_existing_order"
+      },
+      "predicates": {
+        "borrower_challenges_security_enforcement_measure": "A borrower applies to a tribunal to challenge a creditor's measures to enforce security.",
+        "no_fee_rules_made": "No rules prescribing the fee for that application have been made.",
+        "existing_order_adopts_ordinary_tribunal_filing_fee": "An existing government order sets the fee by reference to the ordinary fee for filing an application before the tribunal."
+      },
+      "definition": "When a borrower challenges a security-enforcement measure, no fee rules have been made, and an existing order adopts the ordinary tribunal filing fee, that fee remains payable under the order."
+    }
+  ],
+  "seconds": 17.7
+}

@@ -1,0 +1,85 @@
+{
+  "doc_id": "1296921",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22451,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2401,
+    "prompt_tokens": 6003,
+    "total_tokens": 8404,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A certified copy of a sale deed does not, by itself, prove the sale transaction for determining market value in a land acquisition proceeding.",
+      "material_facts": [
+        "The High Court relied on a certified copy of a sale deed concerning a small plot with a thatched house.",
+        "The sale transaction was not established through examination of the vendor or vendee, or another witness capable of proving it.",
+        "The Supreme Court rejected reliance on that sale deed in assessing compensation."
+      ],
+      "conclusion": "The certified copy could not be treated as proof of the sale transaction merely because it was marked in evidence; the transaction required proof.",
+      "legal_principle": "Section 51-A of the Land Acquisition Act dispenses with production of the original sale deed and permits receipt of a certified copy, but does not make the copy admissible as proof of the transaction without due proof. Ordinarily, the vendor or vendee should be examined; if they are unavailable, the scribe may be examined.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and certified_copy_of_comparable_sale_relied_on and sale_transaction_not_proved_by_a_knowledgeable_witness",
+        "then": "sale_transaction_not_accepted_as_proven"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "A court is determining compensation in a proceeding concerning compulsorily acquired land.",
+        "certified_copy_of_comparable_sale_relied_on": "A party relies on a certified copy of a sale deed as evidence of the value of comparable land.",
+        "sale_transaction_not_proved_by_a_knowledgeable_witness": "No vendor, vendee, or other witness capable of proving the transaction is examined.",
+        "sale_transaction_not_accepted_as_proven": "The sale transaction is not accepted as proved for determining compensation."
+      },
+      "definition": "When a party relies on a certified copy of a comparable sale in a land acquisition compensation proceeding but no knowledgeable witness proves the transaction, the transaction is not accepted as proved."
+    },
+    {
+      "legal_issue": "Market value in a land acquisition proceeding must be determined objectively from reliable evidence of the land’s condition, use, potential, and comparable transactions, rather than from speculative potential or an unsuitable small-plot sale.",
+      "material_facts": [
+        "The acquired lands were predominantly agricultural wet paddy fields, were relatively inaccessible, and required substantial levelling to become suitable for construction.",
+        "The Land Acquisition Officer’s material described the lands’ physical characteristics and levelling requirements.",
+        "The High Court rejected the claimants’ other evidence but relied on a sale of a small plot with a house, applied a deduction, and treated the acquired lands as fit for building purposes.",
+        "The Supreme Court found that the lands’ building-site potential was not established and that the small-plot sale was not a sound basis for valuing the large agricultural tract.",
+        "No other evidence was available to support the claimants’ requested higher valuation."
+      ],
+      "conclusion": "The High Court’s valuation was set aside, and the Supreme Court reassessed compensation on the record at a lower rate than the reference court had awarded.",
+      "legal_principle": "The claimants bear the burden of proving that the Collector’s offer is inadequate. Under Sections 4(1), 11, 18, and 23(1) of the Land Acquisition Act, market value is assessed as of the notification date by objectively considering the land’s location, nature, use, income, potential, and comparable transactions. The court must assess what a prudent willing purchaser would pay in the open market, avoid speculative assumptions, and account for differences between the acquired land and a small plot or other comparator. The Court relied on Periyar and Pareekanni Rubbers Ltd. v. State of Kerala, Basant Kumar v. Union of India, Special Land Acquisition Officer, Dharwad v. Tajar Hanifabi, and Agricultural Produce Market Committee v. Land Acquisition Officer.",
+      "rule": {
+        "if": "land_acquisition_compensation_proceeding and claimants_bear_burden_to_prove_higher_value and land_is_predominantly_agricultural_and_requires_development and relied_on_small_plot_sale_is_not_comparable and no_reliable_evidence_establishes_higher_market_value",
+        "then": "market_value_redetermined_on_objective_record_evidence"
+      },
+      "predicates": {
+        "land_acquisition_compensation_proceeding": "A court is determining compensation for land acquired compulsorily.",
+        "claimants_bear_burden_to_prove_higher_value": "The claimants seek more than the Collector offered and therefore must establish that the offer is inadequate.",
+        "land_is_predominantly_agricultural_and_requires_development": "The acquired land is predominantly agricultural and requires substantial work before it can be used for the claimed developed purpose.",
+        "relied_on_small_plot_sale_is_not_comparable": "The principal relied-on sale concerns a small plot or otherwise differs materially from the acquired land.",
+        "no_reliable_evidence_establishes_higher_market_value": "The evidence does not reliably establish that the acquired land would fetch a higher price in the open market.",
+        "market_value_redetermined_on_objective_record_evidence": "Compensation is reassessed using an objective evaluation of the reliable evidence and relevant land characteristics."
+      },
+      "definition": "Where claimants seeking increased compensation rely on an unsuitable small-plot sale and do not reliably establish higher value for predominantly agricultural land requiring development, market value is reassessed objectively from the record."
+    },
+    {
+      "legal_issue": "The transitional provisions governing the additional amount apply to an acquisition proceeding pending when the amendment bill was introduced if the Collector had not yet made an award, even when possession was taken earlier.",
+      "material_facts": [
+        "The acquisition proceeding was pending when the amendment bill was introduced, and the Collector had not made an award by then.",
+        "Possession had been taken before the bill was introduced.",
+        "The Collector made the award after the bill was introduced but before the amendment came into force."
+      ],
+      "conclusion": "The claimants were entitled to the additional amount under Section 23(1-A), calculated from the notification until possession had been taken.",
+      "legal_principle": "Section 23(1-A) provides a substantive right to an additional amount. Under the transitional provision in Section 30(1)(a) of the Land Acquisition (Amendment) Act, 1984, Section 23(1-A) applies to a proceeding pending on the date the bill was introduced if the Collector had made no award before that date. Where possession had already been taken, the additional amount runs from the Section 4(1) notification until possession. The Court relied on K.S. Paripoornan v. State of Kerala, Special Tahsildar (LA), P.W.D. Schemes, Vijayawada v. M.A. Jabbar, and Khanna Improvement Trust v. Land Acquisition Tribunal.",
+      "rule": {
+        "if": "land_acquisition_proceeding_pending_at_amendment_cutoff and collector_award_not_made_by_cutoff and possession_taken_before_award",
+        "then": "claimants_entitled_to_transitional_additional_amount"
+      },
+      "predicates": {
+        "land_acquisition_proceeding_pending_at_amendment_cutoff": "The acquisition proceeding remained pending when the relevant amendment bill was introduced.",
+        "collector_award_not_made_by_cutoff": "The Collector had not made an award by the time the bill was introduced.",
+        "possession_taken_before_award": "Possession of the acquired land was taken before the Collector made the award.",
+        "claimants_entitled_to_transitional_additional_amount": "The claimants receive the additional amount available under the transitional rule."
+      },
+      "definition": "If an acquisition proceeding remained pending without a Collector’s award when the amendment bill was introduced, and possession was taken before the award, the claimants receive the transitional additional amount."
+    }
+  ],
+  "seconds": 14.9
+}

@@ -1,0 +1,124 @@
+{
+  "doc_id": "1966631",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 33955,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3144,
+    "prompt_tokens": 8924,
+    "total_tokens": 12068,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A judgment-debtor who remains the landholder of an excluded estate while an appeal challenging the execution sale is pending is not entitled to agricultural debt relief.",
+      "material_facts": [
+        "A village estate belonging to the judgment-debtor was sold in execution of a mortgage decree.",
+        "The judgment-debtor applied to set aside the sale, and after that application was dismissed, appealed the dismissal.",
+        "The judgment-debtors applied for relief under the agricultural debt-relief legislation while the appeal concerning the sale remained pending.",
+        "The estate met the applicable rent condition for exclusion from the definition of an agriculturist."
+      ],
+      "conclusion": "The judgment-debtors remained landholders while the sale challenge was pending and were excluded from relief under the Act; the High Court erred in treating them as having ceased to be owners for that purpose.",
+      "legal_principle": "Under sections 3(D), 8 and 19 of the Madras Agriculturists' Relief Act, a qualifying landholder was not an agriculturist entitled to the relevant debt relief. Under Order XXI, rule 92, of the Code of Civil Procedure, a sale becomes absolute upon confirmation, but an appeal from the refusal to set aside the sale prevents finality until the appellate decision. Chandramani Shaha v. Anarjan Bibi supports treating the sale as not final while that appeal is pending.",
+      "rule": {
+        "if": "agricultural_debt_relief_claim and execution_sale_challenge_appeal_pending and debtor_is_landholder_of_estate and estate_rent_exceeds_exclusion_threshold",
+        "then": "debtor_is_excluded_from_agricultural_debt_relief"
+      },
+      "predicates": {
+        "agricultural_debt_relief_claim": "A judgment-debtor seeks relief from a debt under an agricultural debt-relief scheme.",
+        "execution_sale_challenge_appeal_pending": "A judgment-debtor has appealed the refusal to set aside an execution sale, and that appeal has not been decided.",
+        "debtor_is_landholder_of_estate": "The judgment-debtor holds an estate as its landholder while the sale challenge remains unresolved.",
+        "estate_rent_exceeds_exclusion_threshold": "The estate meets the rent condition that excludes its landholder from the relevant class of debt-relief beneficiaries.",
+        "debtor_is_excluded_from_agricultural_debt_relief": "The judgment-debtor is not eligible for the claimed agricultural debt relief."
+      },
+      "definition": "When a debt-relief claimant remains a qualifying estate landholder and an appeal challenging the execution sale is pending, the claimant is excluded from that relief."
+    },
+    {
+      "legal_issue": "Appointment of a receiver over an estate does not by itself end its owner's status as landholder.",
+      "material_facts": [
+        "The village estate was placed in a receiver's possession before the judgment-debtors sought relief under the Act.",
+        "The judgment-debtors remained the owners of the estate notwithstanding the receiver's appointment."
+      ],
+      "conclusion": "The appointment of a receiver did not cause the owners to cease being landholders for purposes of the Act.",
+      "legal_principle": "For the purposes of section 3(D) of the Madras Agriculturists' Relief Act, a receiver represents the real owner; placing property in a receiver's hands does not itself divest the owner of landholder status.",
+      "rule": {
+        "if": "agricultural_debt_relief_claim and owner_is_landholder and property_is_placed_with_receiver",
+        "then": "owner_remains_landholder"
+      },
+      "predicates": {
+        "agricultural_debt_relief_claim": "An owner claims relief under an agricultural debt-relief scheme.",
+        "owner_is_landholder": "The person claiming relief owns the estate as its landholder.",
+        "property_is_placed_with_receiver": "A court places the estate in the possession or management of a receiver.",
+        "owner_remains_landholder": "The appointment of the receiver does not end the owner's status as landholder."
+      },
+      "definition": "If an owner who is a landholder claims agricultural debt relief while a receiver holds or manages the estate, the owner remains a landholder."
+    },
+    {
+      "legal_issue": "An execution sale and the recording of satisfaction of the decree cannot be treated as final while an appeal challenging the sale remains undecided.",
+      "material_facts": [
+        "The execution sale was confirmed and satisfaction of the decree was recorded after the application to set aside the sale was dismissed.",
+        "An appeal against that dismissal remained pending when the High Court considered the related debt-relief application and sale appeal.",
+        "The High Court treated the judgment-debtors as having ceased to own the estate from the sale date while also permitting debt relief on the basis that the decree remained relevant."
+      ],
+      "conclusion": "The High Court's treatment was inconsistent: while the challenge to the sale remained pending, neither the sale nor the recorded satisfaction could be treated as final for deciding the related appeals.",
+      "legal_principle": "Order XXI, rule 92, and section 65 of the Code of Civil Procedure govern confirmation and vesting following an execution sale. Where an appeal challenges refusal to set aside the sale, finality awaits the appellate decision; Chandramani Shaha v. Anarjan Bibi supports this approach. The sale and satisfaction of the decree must be treated consistently, and Bhawani Kunwar v. Mathura Prasad Singh concerns the effect of a sale once it has become effective.",
+      "rule": {
+        "if": "execution_sale_challenge_appeal_pending and sale_confirmation_recorded and decree_satisfaction_recorded",
+        "then": "sale_and_decree_satisfaction_remain_nonfinal"
+      },
+      "predicates": {
+        "execution_sale_challenge_appeal_pending": "A judgment-debtor has appealed the refusal to set aside an execution sale, and that appeal has not been decided.",
+        "sale_confirmation_recorded": "The court has recorded an order confirming the execution sale.",
+        "decree_satisfaction_recorded": "The court has recorded satisfaction of the decree based on the execution sale.",
+        "sale_and_decree_satisfaction_remain_nonfinal": "The sale and the recorded satisfaction are not final while the challenge to the sale remains pending."
+      },
+      "definition": "When a challenge to an execution sale is pending, recorded confirmation and satisfaction do not make the sale or decree satisfaction final."
+    },
+    {
+      "legal_issue": "A party's election to retain property purchased at an execution sale does not, without consent to be bound, waive the right to appeal an order requiring payment of the purchase price.",
+      "material_facts": [
+        "The High Court gave the decree-holder the choice of depositing the purchase money or having the sale set aside.",
+        "The decree-holder elected to retain the purchased property and pay the purchase money.",
+        "The record did not show that the decree-holder consented to be bound by the High Court's order or waived the right to appeal."
+      ],
+      "conclusion": "The election did not bar the decree-holder from appealing the High Court's order.",
+      "legal_principle": "An election made in response to a court's direction does not establish waiver of an appellate right unless the record shows consent to be bound by the order or waiver of that right.",
+      "rule": {
+        "if": "appeal_against_order_requiring_purchase_money and purchaser_elected_to_retain_property and no_consent_to_waive_appeal",
+        "then": "purchaser_is_not_barred_from_appealing"
+      },
+      "predicates": {
+        "appeal_against_order_requiring_purchase_money": "A purchaser appeals an order requiring payment of the purchase money for property bought at an execution sale.",
+        "purchaser_elected_to_retain_property": "The purchaser chose to retain the property rather than have the sale set aside.",
+        "no_consent_to_waive_appeal": "The record does not show that the purchaser consented to be bound by the order or waived the right to appeal.",
+        "purchaser_is_not_barred_from_appealing": "The purchaser's election does not prevent an appeal against the order."
+      },
+      "definition": "A purchaser who elects to retain execution-sale property is not barred from appealing an order concerning the purchase money when no consent to waive the appeal is shown."
+    },
+    {
+      "legal_issue": "A respondent who did not appeal an order upholding an execution sale cannot seek to have the sale set aside in the opposing party's appeal.",
+      "material_facts": [
+        "The courts below upheld the execution sale.",
+        "The judgment-debtors did not appeal the order upholding the sale.",
+        "In the decree-holder's appeals, the judgment-debtors argued that an alleged irregularity should invalidate the sale."
+      ],
+      "conclusion": "The judgment-debtors could not raise that challenge to the sale in those appeals, and the asserted circumstances did not establish a material irregularity that would vitiate it.",
+      "legal_principle": "A respondent who has not appealed an order upholding an execution sale cannot use the opposing party's appeal to obtain reversal of that order; the alleged bidding-permission irregularity was also not shown to be material enough to invalidate the sale.",
+      "rule": {
+        "if": "execution_sale_upheld_below and respondent_did_not_appeal_sale_order and respondent_seeks_to_set_aside_sale_in_opponent_appeal",
+        "then": "respondent_cannot_obtain_reversal_of_sale_order"
+      },
+      "predicates": {
+        "execution_sale_upheld_below": "The lower court has made an order allowing the execution sale to stand.",
+        "respondent_did_not_appeal_sale_order": "The respondent did not appeal the order allowing the sale to stand.",
+        "respondent_seeks_to_set_aside_sale_in_opponent_appeal": "The respondent seeks to invalidate the sale while defending against an appeal brought by the opposing party.",
+        "respondent_cannot_obtain_reversal_of_sale_order": "The respondent cannot obtain reversal of the order upholding the sale in the opposing party's appeal."
+      },
+      "definition": "A respondent who did not appeal an order upholding an execution sale cannot obtain its reversal by seeking to set aside the sale in the opposing party's appeal."
+    }
+  ],
+  "seconds": 19.2
+}

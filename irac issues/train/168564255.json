@@ -1,0 +1,79 @@
+{
+  "doc_id": "168564255",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 178082,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2525,
+    "prompt_tokens": 41551,
+    "total_tokens": 44076,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person in a probate proceeding may challenge whether a will is genuine even without filing a written statement or formal objection, and the probate court must independently determine whether the will has been proved.",
+      "material_facts": [
+        "One of the deceased’s daughters did not initially file objections and her later application to file a written statement was rejected.",
+        "She nevertheless gave evidence and sought to point out circumstances casting doubt on the will.",
+        "The proceeding sought probate, which would result in a judgment in rem."
+      ],
+      "conclusion": "The daughter was entitled to assist the court in examining the will, and the absence of her written statement or objections did not relieve the propounder of proving the will or the court of its duty to assess it.",
+      "legal_principle": "A probate proceeding is a solemn proceeding leading to a judgment in rem, not merely an inter-partes dispute. The propounder must satisfy the court’s conscience and remove any suspicious circumstances whether or not anyone contests the will. The court rejected reliance on Order VIII Rule 10, Order XIV Rule 1(6), and Order XV Rule 2 of the Code of Civil Procedure, and distinguished ordinary pleading rules; it referred to H. Venkatachala Iyengar v. B.N. Thimmajamma, Rani Purnima Debi v. Kumar Khagendra Narayan Deb, and Balraj Taneja v. Sunil Madan.",
+      "rule": {
+        "if": "probate_proceeding",
+        "then": "probate_court_must_assess_will_independently"
+      },
+      "predicates": {
+        "probate_proceeding": "A party seeks a grant of probate of a deceased person's will."
+      },
+      "definition": "When a proceeding seeks probate, the court must assess the will independently rather than treating the absence of an objection as sufficient proof."
+    },
+    {
+      "legal_issue": "A will surrounded by multiple material and unexplained suspicious circumstances cannot be accepted as the testator’s duly executed last will merely upon proof of the testator’s signature and attestation.",
+      "material_facts": [
+        "The beneficiary who sought probate was the major beneficiary and played an active role in arranging the will’s execution, while attempting to minimize or deny that role.",
+        "The other children were excluded from the execution process and the will gave no persuasive explanation for the unequal distribution; the provision for one daughter depended on uncertain construction work by the beneficiary.",
+        "The will’s central bequeathing terms were printed, while handwritten passages were copied from an unexplained note and used technical or legal language; there was no clear evidence that the testatrix understood the contents.",
+        "The beneficiary’s account conflicted with the attesting witnesses’ accounts on material aspects of the execution, and the beneficiary took inconsistent positions about an alleged additional page and claimed to have acted on its directions.",
+        "The trial court and High Court concurrently found that the suspicious circumstances had not been removed; the Supreme Court found no perversity warranting interference."
+      ],
+      "conclusion": "The propounder failed to establish that the testatrix executed the document as her will after understanding its meaning and effect. Probate was rightly refused, and the appeal was dismissed.",
+      "legal_principle": "Under Sections 59, 61, and 63 of the Indian Succession Act, 1925, the testator must have testamentary capacity and execute an unprivileged will with the prescribed signature and attestation; Section 68 of the Indian Evidence Act, 1872 requires examination of an attesting witness where available. The propounder must prove due execution and, when legitimate suspicious circumstances arise, remove them by cogent and satisfactory evidence. The assessment is holistic: no single factor, including unequal distribution or a beneficiary’s participation, necessarily invalidates a will by itself, but their cumulative effect may prevent the court from being satisfied. The Court relied on H. Venkatachala Iyengar v. B.N. Thimmajamma, Rani Purnima Debi v. Kumar Khagendra Narayan Deb, Indu Bala Bose v. Manindra Chandra Bose, Smt. Jaswant Kaur v. Smt. Amrit Kaur, Uma Devi Nambiar v. T.C. Sidhan, Leela Rajagopal v. Kamala Menon Cocharan, and Shivakumar v. Sharanabasappa.",
+      "rule": {
+        "if": "probate_proceeding and multiple_material_suspicious_circumstances and propounder_failed_to_explain_suspicions",
+        "then": "probate_must_be_refused"
+      },
+      "predicates": {
+        "probate_proceeding": "A party seeks a grant of probate of a deceased person's will.",
+        "multiple_material_suspicious_circumstances": "The evidence shows several material circumstances that cast doubt on whether the testator freely executed the document with knowledge of its contents.",
+        "propounder_failed_to_explain_suspicions": "The person seeking probate does not provide cogent and satisfactory evidence that removes the material doubts about execution and the testator's understanding."
+      },
+      "definition": "If probate is sought and several material doubts about the will remain unexplained, probate must be refused."
+    },
+    {
+      "legal_issue": "A testamentary disposition that depends on uncertain and unenforceable directions for construction on another person’s property and transfer of property that the testator did not own is void for uncertainty.",
+      "material_facts": [
+        "The will gave the beneficiary property while directing her to choose between constructing accommodation for another child or demolishing and rebuilding the building.",
+        "The will specified no deadline, nature, quality, or extent for the construction and did not state the consequence if the beneficiary did not build.",
+        "The construction would be carried out on property belonging to the beneficiary, and one option purported to require demolition of a ground floor that the testatrix did not own.",
+        "The will did not explain how the other child could enforce transfer of title to a construction that would belong to the beneficiary."
+      ],
+      "conclusion": "The purported provision for the other child was illusory and unenforceable, and the principal bequeathing stipulation was void for uncertainty.",
+      "legal_principle": "Section 81 of the Indian Succession Act, 1925 bars extrinsic evidence of testamentary intention where a will has a patent ambiguity or deficiency, and Section 89 makes a will or bequest that expresses no definite intention void for uncertainty. The testator cannot convey property the testator does not own, consistent with the principle nemo dat quod non habet; the Court also referred to Narinder Singh Rao v. Air Vice-Marshal Mahinder Singh Rao.",
+      "rule": {
+        "if": "probate_proceeding and bequest_depends_on_construction_on_another_persons_property and construction_terms_are_uncertain_or_unenforceable",
+        "then": "bequest_is_void_for_uncertainty"
+      },
+      "predicates": {
+        "probate_proceeding": "A party seeks a grant of probate of a deceased person's will.",
+        "bequest_depends_on_construction_on_another_persons_property": "The will makes a beneficiary's entitlement depend on that beneficiary building on property that the testator did not own.",
+        "construction_terms_are_uncertain_or_unenforceable": "The will leaves essential construction or transfer terms unspecified or requires acts or transfers that cannot be enforced through the testator's estate."
+      },
+      "definition": "A construction-based disposition is void for uncertainty when it depends on building on someone else’s property and its essential terms or enforcement are unclear."
+    }
+  ],
+  "seconds": 15.4
+}

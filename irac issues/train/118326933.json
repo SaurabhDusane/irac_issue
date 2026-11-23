@@ -1,0 +1,84 @@
+{
+  "doc_id": "118326933",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38144,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2124,
+    "prompt_tokens": 9320,
+    "total_tokens": 11444,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The allegations did not prima facie establish the essential ingredients of the charged offences.",
+      "material_facts": [
+        "The parties had entered into development agreements and a later memorandum permitting the developer company to sell some of the landowner’s share to facilitate repayment of the landowner’s loan.",
+        "The landowner alleged that the developer company sold four flats beyond its authorized share; the developer company maintained that additional sales were agreed as an adjustment for payments made toward the loan.",
+        "The developer company initiated arbitration after the landowner revoked the power of attorney, and the landowner later filed the criminal complaint while the contractual dispute was ongoing.",
+        "The parties disputed the authority to sell the flats, and the landowner withdrew the claim concerning the four allegedly excess flats from arbitration to pursue it in civil proceedings."
+      ],
+      "conclusion": "The allegations and circumstances did not make out a cogent prima facie case of criminal breach of trust or cheating, and the charged offences were not shown to have the necessary criminal intent.",
+      "legal_principle": "Sections 405 and 406 IPC require dishonest misappropriation, conversion, use, or disposal of entrusted property; cheating under Section 415, punishable under Section 420, requires dishonest or fraudulent intention. Section 419 concerns cheating by personation. Applying these requirements, the Court held that dishonest or fraudulent intention was not prima facie established. It relied on Hridaya Ranjan Prasad Verma v. State of Bihar, which holds that dishonest or fraudulent intention must exist when the promise or inducement is made for a breach of contract to amount to cheating; it also considered the principles in Priti Saraf v. State of NCT of Delhi and Sri Krishna Agencies v. State of Andhra Pradesh that civil or arbitral proceedings alone do not bar criminal proceedings.",
+      "rule": {
+        "if": "criminal_charge_proceeding and (contractual_property_dispute and disputed_authority_to_sell) and no_dishonest_intent_at_inception",
+        "then": "charged_offences_not_prima_facie_made_out"
+      },
+      "predicates": {
+        "criminal_charge_proceeding": "A person is facing criminal proceedings alleging offences arising from the disputed transaction.",
+        "contractual_property_dispute": "The parties’ disagreement concerns rights and obligations under an agreement dealing with property.",
+        "disputed_authority_to_sell": "The parties dispute whether one side had authority to sell the property in question.",
+        "no_dishonest_intent_at_inception": "The circumstances do not show that the accused had dishonest or fraudulent intent when the relevant promise or transaction began."
+      },
+      "definition": "When criminal charges arise from a contractual property dispute involving disputed authority to sell, and the circumstances do not show dishonest intent at the outset, the charged offences are not prima facie made out."
+    },
+    {
+      "legal_issue": "Alleged sales beyond the agreed share amount to cheating only if fraudulent or dishonest intention existed when the relevant promise or transaction began.",
+      "material_facts": [
+        "The landowner alleged that the developer company, which was entitled to sell nine flats, sold thirteen, including four allegedly excess flats.",
+        "The developer company relied on a later memorandum concerning sales and payment of the landowner’s loan, and asserted that additional sales were agreed as an adjustment for those payments.",
+        "The alleged adjustment was said to have been agreed verbally, and the contemplated ratification deed was never executed.",
+        "The dispute over the excess flats remained contested, and the landowner withdrew that claim from arbitration to pursue it in civil proceedings."
+      ],
+      "conclusion": "On the facts presented, the alleged excess sales could at most constitute a breach of contract; they did not establish cheating because dishonest or fraudulent intent at the beginning of the transaction was not shown.",
+      "legal_principle": "Under Section 415 IPC, cheating requires dishonest or fraudulent intention, and Section 420 applies where cheating dishonestly induces delivery of property or the specified acts concerning valuable security. Hridaya Ranjan Prasad Verma v. State of Bihar distinguishes breach of contract from cheating: subsequent conduct may be considered, but the essential dishonest or fraudulent intention must exist at the time of the inducement or promise. A mere breach of contract does not by itself give rise to criminal prosecution for cheating.",
+      "rule": {
+        "if": "contractual_property_transaction and alleged_sale_beyond_agreed_share and disputed_subsequent_authorization and no_dishonest_intent_at_inception",
+        "then": "alleged_excess_sale_is_at_most_contractual_breach"
+      },
+      "predicates": {
+        "contractual_property_transaction": "The parties entered into an agreement governing development or sale of property and their respective rights.",
+        "alleged_sale_beyond_agreed_share": "One party alleges that the other sold more property than its agreed share permitted.",
+        "disputed_subsequent_authorization": "The parties dispute whether a later agreement or arrangement authorized the additional sale.",
+        "no_dishonest_intent_at_inception": "The circumstances do not show that the accused had dishonest or fraudulent intent when the relevant promise or transaction began."
+      },
+      "definition": "An alleged sale beyond an agreed share in a contractual property transaction, where later authorization is disputed but dishonest intent at the outset is not shown, amounts at most to a contractual breach."
+    },
+    {
+      "legal_issue": "Criminal proceedings may be quashed where a contractual dispute has been given a criminal character but the allegations and supporting material do not disclose the essential ingredients of an offence.",
+      "material_facts": [
+        "The parties’ dispute arose from development agreements, a power of attorney, and a later memorandum concerning sale of property and payment of a loan.",
+        "The landowner alleged unauthorized sales of four flats, while the developer company asserted that additional sales were agreed as an adjustment for payments made toward the loan.",
+        "The developer company sought arbitration after the power of attorney was revoked; the landowner filed a criminal complaint during the dispute and withdrew the excess-flat claim from arbitration to pursue it in civil proceedings.",
+        "The Court found no dishonest or fraudulent intention and concluded that the dispute was essentially contractual and civil in nature."
+      ],
+      "conclusion": "The Court set aside the High Court’s order and quashed the FIR and the criminal proceedings arising from the charge sheet.",
+      "legal_principle": "Section 482 CrPC permits the High Court to prevent abuse of process and secure the ends of justice. Under State of Haryana v. Bhajan Lal, quashing may be warranted where allegations, taken at face value, do not prima facie constitute an offence, uncontroverted allegations and supporting material disclose no offence, or the allegations are inherently improbable. G. Sagar Suri v. State of U.P. and Indian Oil Corporation v. NEPC India Ltd. caution against giving a civil dispute a criminal cloak. The existence of a civil remedy or arbitration does not alone bar a criminal case; Priti Saraf v. State of NCT of Delhi and Trisuns Chemical Industry v. Rajesh Agarwal recognize that civil and criminal proceedings may coexist where an offence is disclosed. Here, the lack of essential criminal ingredients justified quashing.",
+      "rule": {
+        "if": "criminal_quashing_proceeding and contractual_civil_dispute and no_dishonest_intent_at_inception and allegations_do_not_disclose_offence",
+        "then": "criminal_proceedings_quashed"
+      },
+      "predicates": {
+        "criminal_quashing_proceeding": "An accused seeks quashing of an FIR or criminal proceedings through an inherent-power proceeding.",
+        "contractual_civil_dispute": "The underlying disagreement concerns contractual or property rights that are also pursued through civil or arbitral processes.",
+        "no_dishonest_intent_at_inception": "The circumstances do not show that the accused had dishonest or fraudulent intent when the relevant promise or transaction began.",
+        "allegations_do_not_disclose_offence": "Even accepting the allegations and supporting material as presented, they do not disclose the essential ingredients of a criminal offence."
+      },
+      "definition": "In a proceeding seeking quashing, criminal proceedings are quashed when the dispute is contractual and civil, dishonest intent at the outset is not shown, and the allegations do not disclose an offence."
+    }
+  ],
+  "seconds": 13.0
+}

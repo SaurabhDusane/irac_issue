@@ -1,0 +1,76 @@
+{
+  "doc_id": "1135350",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 15719,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2389,
+    "prompt_tokens": 4384,
+    "total_tokens": 6773,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The statutory presumption concerning gratification cannot be raised unless the prosecution first proves the relevant demand.",
+      "material_facts": [
+        "The alleged original demand was made by a revenue officer, while the appellant was said only to have intervened and reduced the amount; the prosecution did not substantiate that account.",
+        "The appellant was not alleged to have demanded any sum for himself.",
+        "The trial judge found the complainant and another prosecution witness wholly unreliable, and the evidence did not establish the alleged demand."
+      ],
+      "conclusion": "Because the demand was not proved, the presumption under Section 20 of the Prevention of Corruption Act, 1988 could not be raised against the appellant.",
+      "legal_principle": "Section 20 provides for a presumption in specified corruption trials when the requisite acceptance, obtaining, agreement, or attempt concerning gratification is proved; the Court held that the demand must also be proved before the presumption can arise. The prosecution bears the higher burden of proof, while the accused’s burden in rebutting a presumption is not equally heavy and may be compared to that of a defendant in civil proceedings (M.S. Narayana Menon @ Mani v. State of Kerala; Union of India through Inspector, CBI v. Purnandu Biswas).",
+      "rule": {
+        "if": "corruption_offense_trial and not demand_proved",
+        "then": "gratification_presumption_unavailable"
+      },
+      "predicates": {
+        "corruption_offense_trial": "The accused was tried for a corruption offense involving an alleged gratification.",
+        "demand_proved": "The prosecution established that the accused or the alleged beneficiary demanded the gratification."
+      },
+      "definition": "In a corruption trial, if the prosecution does not establish a demand for gratification, the gratification presumption is unavailable."
+    },
+    {
+      "legal_issue": "A public servant’s prosecution is vitiated when the sanctioning authority is not provided vital material needed to consider the case.",
+      "material_facts": [
+        "The sanctioning authority was not given vital documents showing the alleged involvement of the revenue officer who was said to have made the demand.",
+        "The Court found that the authority therefore had no opportunity to apply its mind to the entire material on record."
+      ],
+      "conclusion": "The sanction was vitiated in law because the sanctioning authority had not received the vital documents concerning the alleged involvement of the revenue officer.",
+      "legal_principle": "A sanctioning authority must be able to apply its mind to the relevant material before granting sanction. The Court relied on the omission of vital documents from the material submitted to the authority and held the resulting sanction legally vitiated.",
+      "rule": {
+        "if": "public_servant_corruption_prosecution and sanction_required and vital_material_withheld_from_authority",
+        "then": "sanction_invalid"
+      },
+      "predicates": {
+        "public_servant_corruption_prosecution": "A public servant was prosecuted for an alleged corruption offense.",
+        "sanction_required": "The prosecution required approval from an authority empowered to grant sanction.",
+        "vital_material_withheld_from_authority": "Investigators did not provide the sanctioning authority with vital documents concerning the alleged offense."
+      },
+      "definition": "When a public servant’s corruption prosecution requires sanction and investigators withhold vital material from the sanctioning authority, the sanction is invalid."
+    },
+    {
+      "legal_issue": "An appellate court should not reverse an acquittal where the trial court’s view of the evidence is reasonably possible and the appellate court has not established that no other view is possible.",
+      "material_facts": [
+        "The trial court acquitted the appellant after identifying unreliable testimony, inconsistencies, irregularities in the trap proceedings, and an interpolation in a post-trap record.",
+        "The complainant delayed reporting the alleged demand, the alleged beneficiary removed the trees without further hindrance, and the prosecution did not establish the appellant’s alleged role reliably.",
+        "The High Court reversed the acquittal principally by relying on the statutory presumption and did not adequately address the trial court’s detailed findings."
+      ],
+      "conclusion": "The High Court should not have reversed the acquittal in the manner it did; the Supreme Court set aside its judgment and allowed the appeal.",
+      "legal_principle": "In an appeal against acquittal, if two views are possible, the acquittal should ordinarily stand; reversal requires the appellate court to conclude that no two views are possible. The Court relied on State through Inspector of Police, A.P. v. K. Narasimhachary, Kalyan Singh v. State of Maharashtra, Samghaji Hariba Patil v. State of Karnataka, and Umrao v. State of Haryana.",
+      "rule": {
+        "if": "appeal_against_acquittal and trial_view_reasonably_possible and not appellate_court_excludes_other_view",
+        "then": "acquittal_should_not_be_reversed"
+      },
+      "predicates": {
+        "appeal_against_acquittal": "The proceeding is an appeal seeking reversal of an acquittal.",
+        "trial_view_reasonably_possible": "The trial court’s assessment of the evidence is reasonably supported by the record, including material credibility concerns or evidentiary irregularities.",
+        "appellate_court_excludes_other_view": "The appellate court determines that no reasonable view other than guilt is possible."
+      },
+      "definition": "In an appeal against acquittal, if the trial court’s view remains reasonably possible and the appellate court has not excluded every other reasonable view, the acquittal should not be reversed."
+    }
+  ],
+  "seconds": 15.4
+}

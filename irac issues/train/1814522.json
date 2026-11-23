@@ -1,0 +1,58 @@
+{
+  "doc_id": "1814522",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18010,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1830,
+    "prompt_tokens": 5023,
+    "total_tokens": 6853,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A lease-like transfer of mineral rights by a lessee falls within the statutory meaning of a mining lease even when it is described as a sublease.",
+      "material_facts": [
+        "The company held a mining lease and transferred rights over part of the leased area to another person for a term and consideration.",
+        "The transfer was for mining purposes and created a right to enjoy immovable property."
+      ],
+      "conclusion": "A mining sublease is included in the definition of a mining lease and is subject to the Act and the Rules.",
+      "legal_principle": "Section 3(d) of the Mines and Minerals (Regulation and Development) Act, 1948, broadly defines a mining lease by its purpose and does not require the lessor to be the proprietor. Under section 105 of the Transfer of Property Act, 1882, a lease is a transfer of a right to enjoy immovable property; the transferor’s own title does not alter the nature of the transaction. Section 108(j) of the Transfer of Property Act recognizes a lessee’s ability to transfer an interest by sublease. The Court also relied on the regulatory purposes reflected in sections 5 and 6 of the 1948 Act and referred to Camberwell and South London Building Society v. Holloway (1879) 13 Ch. D. 754, 759, for the principle that a lease remains a lease when granted by someone who is themselves a leaseholder.",
+      "rule": {
+        "if": "sublease_transaction and mineral_extraction_purpose and lease_like_transfer",
+        "then": "sublease_counts_as_mining_lease"
+      },
+      "predicates": {
+        "sublease_transaction": "A person holding a lease transfers an interest in the leased property to another person, with the transferor being a lessee rather than the owner.",
+        "mineral_extraction_purpose": "The transferred interest is granted for searching for, extracting, working, or otherwise dealing with minerals.",
+        "lease_like_transfer": "The transfer grants a right to enjoy immovable property for a term or in perpetuity in return for consideration."
+      },
+      "definition": "When a lessee makes a lease-like transfer of property for mineral purposes, that transfer counts as a mining lease."
+    },
+    {
+      "legal_issue": "Rules governing mining leases apply to a mining sublease made after those rules take effect, even if the lessee’s own lease predates them.",
+      "material_facts": [
+        "The company’s original mining lease was granted before the Act and the Rules came into force in the relevant area.",
+        "The company granted the sublease after the Act and the Rules had come into force there.",
+        "The sublease was a mining lease within the statutory definition, and the challenged prosecution concerned the later grant rather than a change to the terms of the original lease."
+      ],
+      "conclusion": "Rules made under sections 5 and 6 apply to a mining sublease granted after the Act and the Rules come into force, notwithstanding that the underlying lease predates them.",
+      "legal_principle": "Sections 5 and 6 of the Mines and Minerals (Regulation and Development) Act, 1948, authorize rules governing mining leases. Section 7 concerns modifying or altering the terms of mining leases granted before the Act commenced; it does not prevent rules under sections 5 and 6 from applying to a distinct mining sublease made after the Act and Rules have come into force. Because a sublease is itself a mining lease under section 3(d), applying the rules to the later sublease does not modify the earlier lease.",
+      "rule": {
+        "if": "mining_sublease_transaction and underlying_lease_preexisting and mining_rules_were_in_force and sublease_made_after_rules_took_effect",
+        "then": "later_sublease_governed_by_mining_rules"
+      },
+      "predicates": {
+        "mining_sublease_transaction": "A lessee transfers an interest in leased property to another person for mineral-related purposes.",
+        "underlying_lease_preexisting": "The transferor’s own lease was granted before the relevant mining rules took effect.",
+        "mining_rules_were_in_force": "Rules regulating mining leases had taken effect in the area covered by the transferred interest.",
+        "sublease_made_after_rules_took_effect": "The lessee granted the sublease after those rules had taken effect in that area."
+      },
+      "definition": "A mining sublease made after the mining rules take effect is governed by those rules even when the underlying lease was granted earlier."
+    }
+  ],
+  "seconds": 11.9
+}

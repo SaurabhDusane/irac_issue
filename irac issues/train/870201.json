@@ -1,0 +1,99 @@
+{
+  "doc_id": "870201",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 7271,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3385,
+    "prompt_tokens": 2290,
+    "total_tokens": 5675,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Prosecution eyewitness testimony is unsafe to rely on when the witnesses lacked a reasonable opportunity to observe the occurrence or the principal witness was coached and materially inconsistent.",
+      "material_facts": [
+        "Witnesses who said they saw the occurrence had been ploughing in a low-lying area from which the occurrence could not be seen or heard; several had made statements to the police consistent with that location.",
+        "The principal eyewitness admitted that two people instructed her what to report to the police, and her testimony contained contradictions with her earlier statement."
+      ],
+      "conclusion": "The testimony of the witnesses who could not have observed the occurrence could not be relied on, and the principal eyewitness's evidence was unsafe to support a murder conviction.",
+      "legal_principle": "The reliability of eyewitness testimony must be assessed against the witnesses' opportunity to observe and the circumstances affecting their credibility. The Court cited no statutory provision or earlier case for this assessment.",
+      "rule": {
+        "if": "criminal_conviction_appeal and (witnesses_lacked_opportunity_to_observe or principal_witness_was_coached) and principal_witness_was_inconsistent",
+        "then": "eyewitness_evidence_is_unsafe"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The proceeding is an appeal challenging a criminal conviction.",
+        "witnesses_lacked_opportunity_to_observe": "The alleged eyewitnesses were at a location from which they could not see or hear the occurrence.",
+        "principal_witness_was_coached": "The principal eyewitness was instructed by another person what to report about the occurrence.",
+        "principal_witness_was_inconsistent": "The principal eyewitness gave materially inconsistent accounts of the occurrence."
+      },
+      "definition": "When a criminal conviction appeal involves witnesses who lacked an opportunity to observe, or a coached principal witness, together with inconsistencies in that witness's account, the eyewitness evidence is unsafe."
+    },
+    {
+      "legal_issue": "A judicial confession cannot be relied on unless it is shown to be voluntary and true.",
+      "material_facts": [
+        "The accused was arrested and later produced before a Magistrate to make a confession.",
+        "The Magistrate did not ascertain how long the accused had been in police custody and did not allow time for reflection before the confession was recorded.",
+        "The High Court found the confession involuntary, and the Supreme Court was unable to rely on it."
+      ],
+      "conclusion": "The judicial confession could not be relied on because its voluntariness was not established.",
+      "legal_principle": "A judicial confession cannot be acted upon unless it is proved to be voluntary and true. The Court relied on no statutory provision or earlier case in stating this principle.",
+      "rule": {
+        "if": "criminal_conviction_appeal and confession_custody_duration_unascertained and no_time_for_reflection",
+        "then": "judicial_confession_not_relied_on"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The proceeding is an appeal challenging a criminal conviction.",
+        "confession_custody_duration_unascertained": "The person recording the confession did not ascertain how long the accused had been in police custody.",
+        "no_time_for_reflection": "The accused was not given time to reflect before making the confession."
+      },
+      "definition": "When a criminal conviction appeal concerns a confession recorded without ascertaining the duration of police custody and without time for reflection, the confession is not relied on."
+    },
+    {
+      "legal_issue": "Production of a weapon is insufficient to establish guilt when no statement connecting the accused to its discovery is shown and the weapon was not proved to have been concealed at a place known only to the accused.",
+      "material_facts": [
+        "The accused took an axe from beneath his cot and produced it to the police.",
+        "There was no evidence that the accused had made a statement relating to the recovery, and no evidence that he had concealed the axe at a place known only to him."
+      ],
+      "conclusion": "The recovery could not be admitted under Section 27 of the Evidence Act in the absence of a statement relating to it, and mere production of the axe was insufficient to convict the accused in the circumstances.",
+      "legal_principle": "Section 27 of the Evidence Act requires a statement by the accused relating to a discovery before the discovery fact can be admitted under that provision. The Court also held that mere production of an object is insufficient to convict where it is not shown to have been concealed at a place known only to the accused. Although the High Court had referred to Section 8 of the Evidence Act, the Supreme Court found the recovery insufficient on the facts before it.",
+      "rule": {
+        "if": "criminal_conviction_appeal and no_statement_linking_accused_to_discovery and weapon_taken_from_nonexclusive_location and exclusive_knowledge_not_shown",
+        "then": "weapon_production_insufficient_to_prove_guilt"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The proceeding is an appeal challenging a criminal conviction.",
+        "no_statement_linking_accused_to_discovery": "The accused made no statement connecting the accused to the discovery of the weapon.",
+        "weapon_taken_from_nonexclusive_location": "The weapon was produced from a location not shown to be concealed or inaccessible to others.",
+        "exclusive_knowledge_not_shown": "There was no evidence that only the accused knew where the weapon was located."
+      },
+      "definition": "When an accused produces a weapon without a statement connecting the accused to its discovery, and the weapon's location is not shown to have been known only to the accused, the production is insufficient to prove guilt."
+    },
+    {
+      "legal_issue": "A conviction cannot stand when the remaining prosecution evidence does not establish guilt beyond reasonable doubt.",
+      "material_facts": [
+        "The eyewitness evidence was either inconsistent with the witnesses' opportunity to observe or was affected by coaching and contradictions.",
+        "The judicial confession was not shown to be voluntary.",
+        "The accused's production of the axe was unsupported by a statement relating to its discovery and did not establish exclusive knowledge of its location."
+      ],
+      "conclusion": "The prosecution had not proved the case beyond reasonable doubt; the conviction and sentence were set aside and the accused was acquitted.",
+      "legal_principle": "In a criminal prosecution, guilt must be proved beyond reasonable doubt. The Court applied that standard after assessing the eyewitness evidence, confession, and weapon production; it cited no statutory provision or earlier case for the standard in this judgment.",
+      "rule": {
+        "if": "criminal_conviction_appeal and eyewitnesses_could_not_reliably_observe and confession_voluntariness_not_established and weapon_location_not_exclusively_known",
+        "then": "conviction_set_aside_and_acquittal_ordered"
+      },
+      "predicates": {
+        "criminal_conviction_appeal": "The proceeding is an appeal challenging a criminal conviction.",
+        "eyewitnesses_could_not_reliably_observe": "The principal eyewitnesses were unable to observe the occurrence reliably because of their location or circumstances affecting their accounts.",
+        "confession_voluntariness_not_established": "The circumstances in which the confession was recorded did not establish that it was voluntary.",
+        "weapon_location_not_exclusively_known": "The evidence did not show that the weapon was concealed at a place known only to the accused."
+      },
+      "definition": "When a criminal conviction appeal involves unreliable eyewitness observation, an unestablished voluntary confession, and a weapon location not shown to be exclusively known to the accused, the conviction is set aside and an acquittal is ordered."
+    }
+  ],
+  "seconds": 21.2
+}

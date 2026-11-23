@@ -1,0 +1,76 @@
+{
+  "doc_id": "1795100",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 86311,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3370,
+    "prompt_tokens": 21433,
+    "total_tokens": 24803,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A further intra-court appeal is unavailable when a single judge decides an appeal brought under the procedural code against an order made appealable by that code.",
+      "material_facts": [
+        "A court auction sale was challenged in an execution proceeding, and the application to set it aside was dismissed.",
+        "An appeal from that dismissal was dismissed by a single judge of the High Court.",
+        "A further appeal to a division bench was brought under the High Court’s Letters Patent."
+      ],
+      "conclusion": "The further appeal was barred because the single judge had decided an appeal under the procedural code, and the bar on a further appeal applied.",
+      "legal_principle": "Sections 104(1) and 104(2) of the Code of Civil Procedure, read with Order XLIII Rule 1, form an integrated scheme: an appeal from an order listed as appealable is available under the Code, but no further appeal lies from the order made in that appeal. Section 4 does not preserve a further appeal contrary to this specific bar, and Clause 15 of the Letters Patent cannot avoid it. The Court approved Resham Singh Pyara Singh v Abdul Sattar and New Kenilworth Hotel (P) Ltd. v Orissa State Finance Corporation; it also relied on Shah Babulal Khimji v Jayaben D. Kania and the principles in Union of India v Mohindra Supply Company and South Asia Industries Private Ltd. v S.B. Sarup Singh. Gulab Bai v Puniya concerned a different statutory appeal and did not decide this issue.",
+      "rule": {
+        "if": "intra_court_appeal_proceeding and single_judge_decided_initial_appeal and initial_appeal_was_under_procedural_code and initial_order_was_made_appealable_by_procedural_code",
+        "then": "no_further_intra_court_appeal_lies"
+      },
+      "predicates": {
+        "intra_court_appeal_proceeding": "A party pursued an appeal within the same high court from a single judge to a larger bench.",
+        "single_judge_decided_initial_appeal": "A single judge decided an appeal from a lower court’s order.",
+        "initial_appeal_was_under_procedural_code": "The appeal decided by the single judge was brought under the general procedural code.",
+        "initial_order_was_made_appealable_by_procedural_code": "The lower court’s order was among the orders the procedural code makes appealable."
+      },
+      "definition": "When a party seeks a further appeal within the same high court after a single judge has decided a code-based appeal from an appealable lower-court order, no further intra-court appeal lies."
+    },
+    {
+      "legal_issue": "A right of appeal under a High Court’s Letters Patent cannot override a contrary bar enacted by Parliament.",
+      "material_facts": [
+        "The further appeal was sought under the High Court’s Letters Patent after a single judge had decided an appeal governed by the Code of Civil Procedure.",
+        "The Letters Patent themselves made their provisions subject to legislative powers, and the applicable code barred a further appeal from the order made in the initial appeal."
+      ],
+      "conclusion": "The Letters Patent could not provide a further appeal contrary to the bar in the Code of Civil Procedure.",
+      "legal_principle": "The Letters Patent are subordinate legislation with the force of law, but they are subject to legislation enacted by a competent legislature. Clause 44 of the Letters Patent preserves that legislative authority. The Court referred to the history of the Letters Patent, Articles 225 and 372 of the Constitution, and Her Majesty the Queen v Burah and Chunial Basu v The Hon’ble Chief Justice of the High Court at Calcutta. It held that Clause 15 could not override the bar in Section 104(2) of the Code.",
+      "rule": {
+        "if": "intra_court_appeal_proceeding and appeal_claimed_under_high_court_charter and parliamentary_law_bars_further_appeal",
+        "then": "parliamentary_bar_prevails_over_charter_appeal"
+      },
+      "predicates": {
+        "intra_court_appeal_proceeding": "A party pursued an appeal within the same high court from a single judge to a larger bench.",
+        "appeal_claimed_under_high_court_charter": "The party claimed a right to appeal under the instrument governing the high court’s internal appellate jurisdiction.",
+        "parliamentary_law_bars_further_appeal": "An enactment of Parliament bars a further appeal in the circumstances."
+      },
+      "definition": "When a party claims an intra-court appeal under the high court’s governing instrument but an enactment of Parliament bars that appeal, the parliamentary bar prevails."
+    },
+    {
+      "legal_issue": "The Code of Civil Procedure does not itself bar an appeal that a special statute independently provides for.",
+      "material_facts": [
+        "The appeals before the Court arose from an order made appealable under the Code of Civil Procedure, rather than from an appeal right independently conferred by a special statute.",
+        "The Court considered the distinction between an appeal created by the Code and an appeal created by another statute."
+      ],
+      "conclusion": "An appeal provided for by a special statute is governed by that statute; Section 104 of the Code recognizes such an appeal but does not create it or, by itself, bar a further appeal provided by law.",
+      "legal_principle": "Sections 4 and 104(1) of the Code preserve an appeal expressly provided by another law, subject to any applicable statutory limitation. Whether a further appeal is available depends on the terms and scheme of the statute that creates the appeal. The Court relied on Gulab Bai v Puniya, South Asia Industries Private Ltd. v S.B. Sarup Singh, and the principles in National Sewing Thread Co. Ltd. v James Chadwick and Bros Ltd., Maharashtra State Financial Corporation v Jaycee Drugs and Pharmaceuticals (P) Ltd., Union of India v Aradhana Trading Co., Sharda Devi v State of Bihar, Subal Paul v Malina Paul, and Liverpool & London S.P. & I Association Ltd. v M.V. Sea Success I.",
+      "rule": {
+        "if": "special_statute_appeal_proceeding and special_statute_expressly_creates_appeal",
+        "then": "appeal_right_is_governed_by_special_statute"
+      },
+      "predicates": {
+        "special_statute_appeal_proceeding": "The proceeding concerns an appeal claimed under a law other than the general procedural code.",
+        "special_statute_expressly_creates_appeal": "The other law expressly provides the appeal right being claimed."
+      },
+      "definition": "When a proceeding concerns an appeal expressly created by a special law, the appeal right is governed by that law."
+    }
+  ],
+  "seconds": 23.5
+}

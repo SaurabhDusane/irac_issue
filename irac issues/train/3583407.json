@@ -1,0 +1,82 @@
+{
+  "doc_id": "3583407",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 38157,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3091,
+    "prompt_tokens": 9598,
+    "total_tokens": 12689,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A court may summon, recall, or re-examine a witness in a criminal proceeding only through a judicial exercise of its power directed to obtaining evidence essential to a just decision.",
+      "material_facts": [
+        "During a criminal trial, an application was made to re-examine a witness who had already testified.",
+        "The application engaged both the power to recall a witness and the prescribed order and purpose of re-examination."
+      ],
+      "conclusion": "The power to recall or re-examine a witness is wide, but must be exercised judicially, with care and caution, when the evidence appears essential to a just decision. Re-examination must accord with the rules governing examination of witnesses, and the opposing party must have an opportunity to rebut new matter.",
+      "legal_principle": "Section 311 Cr.P.C. permits a court at any stage of an inquiry, trial, or other proceeding to summon, examine, recall, or re-examine a witness; its mandatory limb applies when the evidence appears essential to a just decision. Section 138 of the Evidence Act directs re-examination to explain matters referred to in cross-examination and permits further cross-examination on new matter introduced with the court’s permission. The Court relied on Jamatraj Kewalji Govani v. State of Maharashtra, Mohanlal Shamji Soni v. Union of India, Raj Deo Sharma (II) v. State of Bihar, U.T. of Dadra and Nagar Haveli v. Fatehsinh Mohansinh Chauhan, Iddar v. Aabida, P. Sanjeeva Rao v. State of A.P., Sheikh Jumman v. State of Maharashtra, and Natasha Singh v. CBI. It held that the power serves the search for truth and a just decision, must not be exercised arbitrarily, to fill a lacuna or cause serious prejudice, or as a disguise for retrial or changing the nature of the case; the proposed evidence must be germane and the other party must have an opportunity to respond.",
+      "rule": {
+        "if": "criminal_proceeding and evidence_essential_to_just_decision",
+        "then": "court_must_summon_or_recall_witness"
+      },
+      "predicates": {
+        "criminal_proceeding": "The matter is an inquiry, trial, or other proceeding in which a court is deciding a case.",
+        "evidence_essential_to_just_decision": "The court finds that the proposed witness evidence is essential to determine the truth and reach a just decision."
+      },
+      "definition": "When a court in a criminal proceeding finds proposed witness evidence essential to a just decision, it must summon or recall the witness."
+    },
+    {
+      "legal_issue": "A request to re-examine a witness should be refused when the circumstances do not establish a genuine need to explain the testimony or obtain evidence essential to a just decision.",
+      "material_facts": [
+        "The informant testified that no assault or shooting had occurred and attributed his injury to an accidental fall into a latrine pit.",
+        "He said that the other witnesses alleged to have been present were not at the scene.",
+        "Months after testifying, he sought re-examination, claiming that he had testified under threats and coercion.",
+        "He had not promptly complained to the trial court, police, or another officer about the alleged threats, and the trial court found no supporting complaint or affidavit.",
+        "The application followed a later dispute between the families and the registration of a complaint concerning that subsequent incident.",
+        "The trial court found that cross-examination had raised no matter requiring explanation in re-examination and had the opportunity to observe the witness’s demeanour."
+      ],
+      "conclusion": "The trial court properly rejected the re-examination applications. The claim of coercion was not bona fide on the material before the court, and re-examination was not shown to be essential to a just decision.",
+      "legal_principle": "Under Section 311 Cr.P.C., read with Section 138 of the Evidence Act, recall or re-examination must be essential to a just decision and must be exercised judicially. Re-examination is directed to explaining matters arising in cross-examination; it cannot be used merely to undo a witness’s earlier testimony. The principles in Jamatraj Kewalji Govani, Mohanlal Shamji Soni, U.T. of Dadra and Nagar Haveli v. Fatehsinh Mohansinh Chauhan, Iddar v. Aabida, and Natasha Singh v. CBI require attention to the relevance and necessity of the proposed evidence, prejudice to the accused, and the circumstances in which the application was made. The trial court’s assessment of the witness’s demeanour was also material.",
+      "rule": {
+        "if": "criminal_trial and witness_categorical_testimony_supports_defence and coercion_claim_is_delayed_and_unsupported and cross_examination_requires_no_explanation and request_follows_later_dispute",
+        "then": "reexamination_request_should_be_denied"
+      },
+      "predicates": {
+        "criminal_trial": "The matter is a criminal trial in which a party seeks to have an already examined witness testify again.",
+        "witness_categorical_testimony_supports_defence": "The witness gave categorical testimony denying the alleged offence and giving an account that supported the accused’s position.",
+        "coercion_claim_is_delayed_and_unsupported": "The witness alleged coercion only after a delay and had not promptly reported it to the court or an authority or supported it with independent material.",
+        "cross_examination_requires_no_explanation": "The trial court found that cross-examination raised no matter requiring explanation through re-examination.",
+        "request_follows_later_dispute": "The request for re-examination followed a separate, later dispute involving the witness and the accused’s side."
+      },
+      "definition": "When a witness in a criminal trial gave categorical testimony supporting the accused, a delayed and unsupported coercion claim follows a later dispute, and cross-examination requires no explanation, the request for re-examination should be denied."
+    },
+    {
+      "legal_issue": "A direction allowing a witness to be re-examined is unsustainable when the affected accused was not made a party to the proceeding and the reviewing court gives no reasoned consideration to the trial court’s decision.",
+      "material_facts": [
+        "The trial court heard the parties and gave reasons for rejecting the applications to re-examine the witness.",
+        "The accused facing trial was not impleaded in the proceeding before the High Court.",
+        "The High Court made its direction on the first hearing date, and its order did not address the trial court’s reasons or the relevant issues."
+      ],
+      "conclusion": "The High Court’s direction was set aside, and the trial court’s order rejecting re-examination was restored.",
+      "legal_principle": "The Court held that the High Court had ignored the objectives governing the exercise of the power to recall a witness, had proceeded without the accused who would be affected by its order, and had not considered the trial court’s findings. In the circumstances, the trial court’s reasoned order did not call for interference behind the accused’s back.",
+      "rule": {
+        "if": "criminal_proceeding and affected_accused_not_joined and reviewing_order_lacks_reasoned_consideration and trial_court_heard_parties_and_gave_reasons",
+        "then": "reviewing_order_should_be_set_aside"
+      },
+      "predicates": {
+        "criminal_proceeding": "The proceeding concerns a witness’s evidence in a criminal case.",
+        "affected_accused_not_joined": "The accused whose trial may be affected was not made a party to the proceeding in which the reviewing court acted.",
+        "reviewing_order_lacks_reasoned_consideration": "The reviewing court’s order does not address the relevant issues or the reasons given by the trial court.",
+        "trial_court_heard_parties_and_gave_reasons": "The trial court heard the affected parties and gave reasons for its decision."
+      },
+      "definition": "When a reviewing court acts in a criminal proceeding without joining the affected accused and without reasoned consideration of a trial court decision made after hearing the parties, its order should be set aside."
+    }
+  ],
+  "seconds": 20.4
+}

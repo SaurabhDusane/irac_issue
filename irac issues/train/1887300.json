@@ -1,0 +1,103 @@
+{
+  "doc_id": "1887300",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 37632,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2893,
+    "prompt_tokens": 9284,
+    "total_tokens": 12177,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "The rules governing statutory charges apply to property purchased at an execution sale because such a purchase is a transfer by operation of law.",
+      "material_facts": [
+        "The purchaser acquired the property at a court auction held to enforce a mortgage decree.",
+        "The municipal corporation claimed that a statutory charge for unpaid taxes continued to bind the property after the auction sale."
+      ],
+      "conclusion": "The Transfer of Property Act provisions governing charges apply to transfers by operation of law, including court auction sales.",
+      "legal_principle": "Sections 2(d), 5 and 100 of the Transfer of Property Act apply the relevant transfer provisions to transfers by operation of law. Laxmi Devi v. Mukand Kunwar establishes that section 100 applies to such transfers.",
+      "rule": {
+        "if": "court_auction_purchase and property_transferred_by_operation_of_law",
+        "then": "charge_rules_apply_to_auction_purchase"
+      },
+      "predicates": {
+        "court_auction_purchase": "A buyer acquired property at a court-conducted auction.",
+        "property_transferred_by_operation_of_law": "The property passed to the buyer through a transfer made by operation of law."
+      },
+      "definition": "When a buyer acquires property at a court auction through a transfer by operation of law, the rules governing charges apply to that purchase."
+    },
+    {
+      "legal_issue": "A law that creates a charge does not, without expressly providing for enforcement against a buyer for value without notice, make that charge enforceable against the property in that buyer’s hands.",
+      "material_facts": [
+        "The municipal corporation relied on a law that made property taxes a first charge on the property.",
+        "The purchaser acquired the property for consideration and had no actual notice of the arrears.",
+        "The law created the charge but did not expressly state that it could be enforced against the property in the hands of a transferee for consideration without notice."
+      ],
+      "conclusion": "The statutory charge was not enforceable against the property in the hands of a transferee for consideration without notice.",
+      "legal_principle": "Section 100 of the Transfer of Property Act provides that a charge is not enforceable against property in the hands of a transferee for consideration without notice, except where another law expressly provides otherwise. The court held that section 141(1) of the Bombay Provincial Municipal Corporations Act created a charge but did not expressly provide for its enforcement against such a transferee.",
+      "rule": {
+        "if": "claim_to_enforce_charge_against_transferee and transferee_paid_consideration and transferee_had_no_notice and (law_merely_creates_charge or not law_expressly_binds_property_in_transferees_hands)",
+        "then": "charge_not_enforceable_against_transferee"
+      },
+      "predicates": {
+        "claim_to_enforce_charge_against_transferee": "A claimant sought to enforce a charge against property held by a transferee.",
+        "transferee_paid_consideration": "The transferee gave consideration for the property.",
+        "transferee_had_no_notice": "The transferee had no notice of the charge when acquiring the property.",
+        "law_merely_creates_charge": "The relevant law created a charge without stating that it remained enforceable against the property in a transferee’s hands.",
+        "law_expressly_binds_property_in_transferees_hands": "The relevant law expressly made the charge enforceable against the property in a transferee’s hands despite the transferee’s lack of notice."
+      },
+      "definition": "If a claimant seeks to enforce a charge against property held by a transferee who paid consideration and lacked notice, the charge is not enforceable against that transferee when the law merely creates the charge or does not expressly make it binding in the transferee’s hands."
+    },
+    {
+      "legal_issue": "Constructive notice of municipal tax arrears is determined from the circumstances of the particular case and is not automatically imputed to every purchaser of property in a municipality.",
+      "material_facts": [
+        "The purchaser bought the property at a court auction after it had vested in insolvency receivers.",
+        "Before purchasing, he asked the receivers whether there were dues against the property, but they did not disclose the tax arrears.",
+        "The property was occupied by tenants, and the receivers collected the rent.",
+        "The taxes were a charge on the property and debts due to the local authority had priority in the insolvency proceedings, making it reasonable to assume that the receivers had paid them from the rental income.",
+        "The municipal corporation had not pursued payment despite the receivers having obtained court authority to pay the taxes, and the corporation had allowed the arrears to accumulate.",
+        "The purchaser had no actual notice of the arrears."
+      ],
+      "conclusion": "The purchaser was not fixed with constructive notice of the arrears, and no general rule imputes such notice to all purchasers of property in municipal areas.",
+      "legal_principle": "Section 3 of the Transfer of Property Act treats a person as having notice where, but for wilful abstention from an inquiry or search that ought to have been made, or gross negligence, the person would have known the fact. Whether those conditions are met is generally a question of fact or a mixed question of fact and law. The court approved the reasoning in Municipal Board, Cawnpore v. Roop Chand Jain, and overruled Nawal Kishore v. Municipal Board, Agra, Municipal Board, Lucknow v. Ramjilal, Chandu Ram v. Municipal Commissioner of Kurseong Municipality, and Municipal Board, Lucknow v. Lala Ramji Lal insofar as they supported a general rule imputing notice.",
+      "rule": {
+        "if": "court_auction_purchase and tax_arrears_existed and purchaser_made_inquiry_of_receiver and receiver_did_not_disclose_arrears and receiver_collected_rent_from_tenants and purchaser_reasonably_expected_taxes_paid and authority_failed_to_pursue_payment",
+        "then": "purchaser_not_fixed_with_constructive_notice"
+      },
+      "predicates": {
+        "court_auction_purchase": "The purchaser acquired the property at a court-conducted auction.",
+        "tax_arrears_existed": "Taxes charged on the property were unpaid when the purchaser acquired it.",
+        "purchaser_made_inquiry_of_receiver": "The purchaser asked the receiver responsible for the property whether any dues were outstanding.",
+        "receiver_did_not_disclose_arrears": "The receiver did not tell the purchaser about the unpaid taxes.",
+        "receiver_collected_rent_from_tenants": "The receiver collected rent from tenants occupying the property.",
+        "purchaser_reasonably_expected_taxes_paid": "The circumstances gave the purchaser a reasonable basis to believe the taxes had been paid from the property’s income.",
+        "authority_failed_to_pursue_payment": "The public authority did not pursue payment despite having an opportunity to do so."
+      },
+      "definition": "Where an auction purchaser inquires of the receiver, receives no disclosure of arrears, and reasonably expects taxes to have been paid from rental income while the authority failed to pursue payment, the purchaser is not fixed with constructive notice of the arrears."
+    },
+    {
+      "legal_issue": "A purchaser at an auction sale generally takes the property subject to defects of title, but that rule does not cover a case in which the judgment debtor had no saleable interest in the property.",
+      "material_facts": [
+        "The purchaser acquired the property at a court auction to enforce a mortgage decree.",
+        "The dispute concerned whether the property remained subject to a charge for unpaid municipal taxes, not whether the judgment debtor had any saleable interest in it."
+      ],
+      "conclusion": "There is no warranty of title in an auction sale, and the purchaser takes the property subject to defects of title; the separate case in which the judgment debtor had no saleable interest is not covered by that rule.",
+      "legal_principle": "The court applied the caveat emptor principle to auction purchasers and distinguished the case contemplated by Order 21, Rule 91 of the Code of Civil Procedure, where the judgment debtor had no saleable interest in the property.",
+      "rule": {
+        "if": "court_auction_purchase and not judgment_debtor_lacked_saleable_interest",
+        "then": "auction_purchaser_takes_property_subject_to_title_defects"
+      },
+      "predicates": {
+        "court_auction_purchase": "The purchaser acquired the property at a court-conducted auction.",
+        "judgment_debtor_lacked_saleable_interest": "The judgment debtor had no saleable interest in the property sold."
+      },
+      "definition": "A purchaser at a court auction takes the property subject to defects of title unless the judgment debtor had no saleable interest in it."
+    }
+  ],
+  "seconds": 17.4
+}

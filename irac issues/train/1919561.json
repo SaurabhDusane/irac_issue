@@ -1,0 +1,82 @@
+{
+  "doc_id": "1919561",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 31121,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 1742,
+    "prompt_tokens": 8392,
+    "total_tokens": 10134,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An arbitrator must consider a respondent’s counterclaim together with the claimant’s claims before making an award, and failure to do so amounts to misconduct in the proceedings.",
+      "material_facts": [
+        "A contractor brought an arbitration claim for increased rates and other relief after the contract was terminated.",
+        "The respondent filed a counterclaim for a substantial sum.",
+        "The arbitrator awarded relief on the contractor’s claim but expressly left the counterclaim for later consideration and made no decision on it in that award.",
+        "The trial court remitted the reference for fresh consideration of both sides’ claims, but later reviewed that order and made the award a rule of court."
+      ],
+      "conclusion": "The first award was unsustainable because the arbitrator failed to consider the counterclaim; the High Court was right to set it aside and direct the arbitrator to consider both the claim and counterclaim.",
+      "legal_principle": "Under Sections 30 and 33 of the Arbitration Act, an award may be set aside for misconduct by the arbitrator or in the proceedings. The arbitrator must decide the claims and counterclaims referred to them together before making the award.",
+      "rule": {
+        "if": "arbitration_reference and counterclaim_filed and arbitrator_omitted_counterclaim",
+        "then": "award_is_invalid_for_misconduct"
+      },
+      "predicates": {
+        "arbitration_reference": "The parties submitted a dispute for decision in an arbitration proceeding.",
+        "counterclaim_filed": "The respondent in the arbitration submitted a counterclaim for decision.",
+        "arbitrator_omitted_counterclaim": "The arbitrator made an award without deciding the respondent’s counterclaim."
+      },
+      "definition": "When a counterclaim is filed in an arbitration reference and the arbitrator makes an award without deciding it, the award is invalid for misconduct."
+    },
+    {
+      "legal_issue": "A court may not review an order remitting an arbitration reference when there is no apparent error in that order and no sufficient reason for review.",
+      "material_facts": [
+        "The trial court remitted the arbitration reference because the arbitrator had not considered the respondent’s counterclaim.",
+        "The claimant later applied to have that remittal order reviewed.",
+        "The Supreme Court found no mistake or error apparent on the face of the remittal order and no sufficient reason to review it."
+      ],
+      "conclusion": "The trial court’s order allowing review was unsustainable, and the order remitting the reference remained valid.",
+      "legal_principle": "Section 114 and Order 47 Rule 1 of the Code of Civil Procedure permit review on the specified grounds, including an error apparent on the face of the record or another sufficient reason. Neither ground was established here.",
+      "rule": {
+        "if": "judicial_review_application and no_apparent_error and no_sufficient_review_reason",
+        "then": "review_order_is_unwarranted"
+      },
+      "predicates": {
+        "judicial_review_application": "A party applied to a court to review an earlier order concerning an arbitration proceeding.",
+        "no_apparent_error": "The earlier order contained no mistake or error apparent on the face of the record.",
+        "no_sufficient_review_reason": "The applicant established no other sufficient reason for reviewing the earlier order."
+      },
+      "definition": "A review order is unwarranted when an application to review an order concerning arbitration establishes neither an apparent error nor another sufficient reason for review."
+    },
+    {
+      "legal_issue": "A party cannot pursue a second arbitration claim for disputes that arose from the same termination and could have been raised in the first claim but were omitted.",
+      "material_facts": [
+        "The contract was terminated before the contractor filed the first arbitration claim.",
+        "The contractor raised only some disputes in that first claim and later brought a second arbitration claim raising remaining disputes arising from the termination.",
+        "The remaining disputes could have been raised in the first claim petition.",
+        "The second award granted relief on the later claims, and the respondent objected that they were precluded."
+      ],
+      "conclusion": "The second claim was barred by constructive res judicata, and the award in the second arbitration proceeding could not stand.",
+      "legal_principle": "Section 41 of the Arbitration Act makes the Code of Civil Procedure applicable to arbitration proceedings. The principles of res judicata and constructive res judicata, grounded in finality and prevention of multiplicity of proceedings, apply to arbitration. The Court relied on Section 11 of the Code and referred to Daryao v. State of U.P., [1962] 1 SCR 574, Satish Kumar v. Surinder Kumar, AIR 1970 SC 833, and Muhammad Hafiz v. Mirza Muhammad Zakaria, AIR 1922 PC 23; it also discussed the principle in Order 2 Rule 2 of the Code.",
+      "rule": {
+        "if": "arbitration_proceeding and first_claim_filed and later_claim_filed and later_disputes_arose_from_same_termination and later_disputes_could_have_been_raised_first",
+        "then": "later_claim_is_barred"
+      },
+      "predicates": {
+        "arbitration_proceeding": "The dispute is being pursued in an arbitration proceeding.",
+        "first_claim_filed": "A party filed an earlier claim in the arbitration proceeding.",
+        "later_claim_filed": "The party later pursued a further arbitration claim for additional disputes.",
+        "later_disputes_arose_from_same_termination": "The disputes in the later claim arose from the same termination that underlay the earlier claim.",
+        "later_disputes_could_have_been_raised_first": "The party could have raised the later disputes in the earlier claim but did not do so."
+      },
+      "definition": "A later arbitration claim is barred when it concerns disputes arising from the same termination as an earlier claim and those disputes could have been raised in that earlier claim."
+    }
+  ],
+  "seconds": 10.5
+}

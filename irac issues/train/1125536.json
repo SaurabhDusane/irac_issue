@@ -1,0 +1,61 @@
+{
+  "doc_id": "1125536",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13728,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2336,
+    "prompt_tokens": 3769,
+    "total_tokens": 6105,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Eligibility for compassionate appointment depends on the financial-need criteria in the governing scheme, which may require consideration of family pension and other sources of income.",
+      "material_facts": [
+        "The applicable scheme excluded appointment where the family’s monthly income exceeded Rs. 500.",
+        "The applicant received a family pension of Rs. 1,100 per month and also had income from immovable property; the property income was not disputed.",
+        "The High Court found that the applicant did not satisfy the scheme’s income criterion."
+      ],
+      "conclusion": "The applicant did not meet the financial eligibility criterion for compassionate appointment. Family pension is not invariably a bar by itself, but financial resources must be assessed under the applicable scheme.",
+      "legal_principle": "Compassionate appointment is governed by the scheme in force and exists to help a dependent family overcome the sudden financial crisis caused by an employee’s death; it is not a source of recruitment. Where the scheme assesses the family’s financial condition, family pension and other income may be considered. The Court relied on Umesh Kumar Nagpal v. State of Haryana, (1994) 4 SCC 138; National Institute of Technology v. Niraj Kumar Singh, 2007 (2) SCALE 525; I.G. (Karmik) v. Prahalad Mani Tripathi, (2007) 6 SCC 162; General Manager (D&PB) v. Kunti Tiwary, (2004) 7 SCC 271; Punjab National Bank v. Ashwini Kumar Taneja, (2004) 7 SCC 265; and State of J&K v. Sajad Ahmed Mir, (2006) 5 SCC 766. It observed that Govind Prakash Varma v. LIC, (2005) 10 SCC 289, did not appear to have noticed the earlier binding precedent.",
+      "rule": {
+        "if": "compassionate_appointment_claim and scheme_uses_income_threshold and family_income_exceeds_threshold",
+        "then": "claim_fails_financial_eligibility"
+      },
+      "predicates": {
+        "compassionate_appointment_claim": "A dependent seeks appointment because an employee died while in service.",
+        "scheme_uses_income_threshold": "The applicable appointment scheme makes eligibility depend on whether the family’s income is within a specified threshold.",
+        "family_income_exceeds_threshold": "The family’s income, including sources the scheme requires to be considered, exceeds the applicable threshold."
+      },
+      "definition": "When a compassionate-appointment claim is assessed under a scheme with an income threshold and the family exceeds it, the claim fails the scheme’s financial eligibility criterion."
+    },
+    {
+      "legal_issue": "A compassionate appointment claim does not warrant discretionary appellate relief where the claim is pursued after the family has endured the crisis, the vacancy has been filled, and no suitable sanctioned post remains available.",
+      "material_facts": [
+        "The employee died in 1996, and the vacancy was filled by another person in 1997.",
+        "About twelve years had passed by the time the appeal was considered, and the applicant’s children had become adults.",
+        "The institution was a charitable institution run with government aid and could not afford to appoint someone to an unsanctioned post.",
+        "The applicant was about 38 years old, and the Court considered that she could not be given an appointment at that age."
+      ],
+      "conclusion": "The Court found no basis to exercise its discretionary appellate jurisdiction; it dismissed the appeal and declined to direct an appointment.",
+      "legal_principle": "Public employment is ordinarily open to eligible candidates through fair competition, consistently with Article 14 of the Constitution. Compassionate appointment is a limited exception justified by compelling circumstances, such as a family’s likely hardship after the death of its sole breadwinner; where the family has survived and a substantial period has passed, the ordinary rule should not be displaced. An aided institution cannot be required to appoint someone to an unsanctioned post. The Court relied on State of J&K v. Sajad Ahmed Mir, (2006) 5 SCC 766, and considered its discretionary jurisdiction under Article 136.",
+      "rule": {
+        "if": "discretionary_appeal_seeking_compassionate_appointment and long_delay_after_employee_death and family_survived_the_crisis and vacancy_already_filled and no_sanctioned_post_available",
+        "then": "discretionary_appointment_relief_denied"
+      },
+      "predicates": {
+        "discretionary_appeal_seeking_compassionate_appointment": "A person seeking compassionate appointment asks an appellate court to grant discretionary relief.",
+        "long_delay_after_employee_death": "A substantial period has passed between the employee’s death and consideration of the appointment claim.",
+        "family_survived_the_crisis": "The family has continued to live after the employee’s death, so the immediate crisis the appointment scheme addresses has passed.",
+        "vacancy_already_filled": "The position left by the deceased employee has been filled by another person.",
+        "no_sanctioned_post_available": "The institution has no available sanctioned position to which the claimant can be appointed."
+      },
+      "definition": "When a discretionary appeal for compassionate appointment follows a substantial delay during which the family survived, and the vacancy has been filled with no sanctioned post available, discretionary appointment relief is denied."
+    }
+  ],
+  "seconds": 15.2
+}

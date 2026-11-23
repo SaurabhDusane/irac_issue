@@ -1,0 +1,121 @@
+{
+  "doc_id": "15862952",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 80840,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 4026,
+    "prompt_tokens": 19393,
+    "total_tokens": 23419,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A protected tenant’s tenancy rights cannot be surrendered orally or transferred without compliance with the statutory surrender procedure, and a later administrative approval does not validate a defective surrender.",
+      "material_facts": [
+        "The purchaser relied on an alleged oral surrender of the protected tenancy in 1954 and a 1957 document purporting to transfer the tenancy rights.",
+        "The surrender was not recorded as a bona fide surrender by the competent authority before it was purportedly made.",
+        "A later application seeking approval of the surrender was dealt with in 1989, after the alleged surrender and transfer."
+      ],
+      "conclusion": "The alleged surrender and transfer were ineffective, and the protected tenant’s rights were not extinguished by the later administrative proceedings.",
+      "legal_principle": "Section 38-E(5) of the Telangana Tenancy and Agricultural Lands Act, 1950 requires an inquiry into the genuineness of a protected tenant’s surrender, read with Section 19(1)(a), which requires a written surrender admitted by the tenant and found to be in good faith by the competent authority. The inquiry must precede the surrender; later approval cannot cure non-compliance. The former Section 47 also restricted transfers of agricultural land. The Court applied Sada v. Tahsildar, Kotaiah v. Property Association of the Baptist Churches, Edukanti Kistamma v. S. Venkatareddy, and B. Bal Reddy v. Teegala Narayana Reddy on the protection of protected tenants and the need for lawful termination of their rights.",
+      "rule": {
+        "if": "protected_tenancy_dispute and (oral_surrender_claimed or tenancy_rights_transferred_without_required_process) and no_prior_good_faith_authority_approval",
+        "then": "purported_surrender_has_no_legal_effect"
+      },
+      "predicates": {
+        "protected_tenancy_dispute": "The proceeding concerns whether a person holding protected-tenant status retained rights in agricultural land.",
+        "oral_surrender_claimed": "A landholder or purchaser relies on an alleged oral surrender of the protected tenant’s rights.",
+        "tenancy_rights_transferred_without_required_process": "A protected tenant’s rights were purportedly transferred without following the legally required procedure.",
+        "no_prior_good_faith_authority_approval": "The competent authority did not, before the purported surrender, determine that it was made in writing and in good faith."
+      },
+      "definition": "When a protected-tenancy dispute involves an alleged oral surrender or a transfer made without the required process and prior good-faith approval, the purported surrender has no legal effect."
+    },
+    {
+      "legal_issue": "An ownership certificate issued to a protected tenant under the tenancy legislation prevails over a later claim to occupancy rights under the inam legislation for the same land.",
+      "material_facts": [
+        "The protected tenant received an ownership certificate covering the land in dispute.",
+        "The purchaser later received an occupancy-rights certificate under the inam legislation for land that overlapped with the protected tenant’s ownership certificate.",
+        "The purchaser’s claim to occupancy rights rested on possession following the alleged surrender, which the Court found ineffective.",
+        "The protected tenant’s ownership certificate had not been successfully challenged."
+      ],
+      "conclusion": "The ownership certificate vested ownership of the covered land in the protected tenant, and the later occupancy-rights certificate was null and inoperative to the extent that it covered the same land.",
+      "legal_principle": "Sections 38-E(1) and 38-E(2) of the Telangana Tenancy and Agricultural Lands Act, 1950 provide for transfer of ownership to protected tenants and make the ownership certificate conclusive evidence of that ownership. Section 38-E(1), as substituted, has overriding effect over other laws. Section 33 of the Andhra Pradesh (Telangana Area) Abolition of Inams Act, 1955 preserves the application of the tenancy legislation except where inconsistent with express provisions of the inam legislation; Section 7 of the inam legislation does not displace the overriding ownership transfer under Section 38-E. The Court relied on Kotaiah, Edukanti Kistamma, and B. Bal Reddy.",
+      "rule": {
+        "if": "protected_tenancy_ownership_dispute and ownership_certificate_issued_and_unchallenged and later_inam_occupancy_claim_covers_same_land",
+        "then": "protected_tenant_owns_the_covered_land"
+      },
+      "predicates": {
+        "protected_tenancy_ownership_dispute": "The proceeding concerns competing claims to agricultural land between a protected tenant and a person claiming through an inam-related occupancy process.",
+        "ownership_certificate_issued_and_unchallenged": "An ownership certificate was issued to the protected tenant for the land and was not successfully challenged.",
+        "later_inam_occupancy_claim_covers_same_land": "A later claim to occupancy rights under an inam-related process includes land covered by the protected tenant’s ownership certificate."
+      },
+      "definition": "If an unchallenged ownership certificate for protected-tenant land conflicts with a later inam-related occupancy claim to that land, ownership remains with the protected tenant."
+    },
+    {
+      "legal_issue": "A disputed withdrawal of an appeal against a later occupancy-rights certificate does not defeat ownership already vested in a protected tenant under an ownership certificate.",
+      "material_facts": [
+        "The protected tenant’s ownership certificate preceded the purchaser’s occupancy-rights certificate.",
+        "The purchaser relied on an appeal against the occupancy-rights certificate that was said to have been withdrawn, as well as on delay in challenging that certificate.",
+        "The alleged appeal and its withdrawal were not raised at the earliest opportunity, and the Court found the documents’ reliability doubtful.",
+        "The protected tenant’s ownership certificate remained unchallenged."
+      ],
+      "conclusion": "The alleged withdrawal and delay did not defeat the protected tenant’s ownership; the later occupancy-rights proceedings were inconsequential to that vested title.",
+      "legal_principle": "Section 38-E(2) of the Telangana Tenancy and Agricultural Lands Act, 1950 makes the ownership certificate conclusive evidence of ownership against persons having an interest in the land. A later proceeding concerning occupancy rights cannot displace ownership already vested under that provision. The Court relied on the statutory effect of Section 38-E and the principles in Edukanti Kistamma v. S. Venkatareddy and Kotaiah v. Property Association of the Baptist Churches.",
+      "rule": {
+        "if": "protected_tenancy_ownership_dispute and ownership_certificate_precedes_competing_occupancy_proceeding and alleged_appeal_withdrawal_or_late_challenge_relied_on",
+        "then": "later_occupancy_proceeding_does_not_defeat_vested_ownership"
+      },
+      "predicates": {
+        "protected_tenancy_ownership_dispute": "The proceeding concerns competing claims to land between a protected tenant and a person claiming occupancy rights.",
+        "ownership_certificate_precedes_competing_occupancy_proceeding": "The protected tenant received an ownership certificate before the competing occupancy-rights proceeding or certificate.",
+        "alleged_appeal_withdrawal_or_late_challenge_relied_on": "A party relies on the asserted withdrawal of an appeal or on delay in challenging the competing occupancy-rights claim."
+      },
+      "definition": "Where a protected tenant’s ownership certificate predates a competing occupancy proceeding, reliance on an alleged appeal withdrawal or delayed challenge does not defeat that vested ownership."
+    },
+    {
+      "legal_issue": "A protected tenant who has been dispossessed without lawful termination of the tenancy is entitled to restoration of possession through the statutory procedure.",
+      "material_facts": [
+        "The protected tenant had an ownership certificate for the land but was not in possession.",
+        "The purchaser or persons claiming through the purchaser possessed the land on the basis of the alleged surrender and later occupancy-rights certificate.",
+        "The Court found that the surrender was ineffective and that the protected tenant’s rights had not been lawfully terminated."
+      ],
+      "conclusion": "The protected tenant was entitled to restoration of possession, and the revenue authority was directed to ensure delivery of possession.",
+      "legal_principle": "The explanation to Section 38-E(1) of the Telangana Tenancy and Agricultural Lands Act, 1950 treats a protected tenant unlawfully dispossessed otherwise than by the prescribed procedure as holding the land on the notified date and authorizes a summary inquiry and restoration. Section 38-E(2) also permits restoration where the land is occupied by someone other than the protected tenant or certificate holder. The Court relied on Kotaiah and Edukanti Kistamma on restoration of possession to protected tenants.",
+      "rule": {
+        "if": "protected_tenancy_possession_dispute and ownership_certificate_issued and protected_tenant_dispossessed_without_lawful_termination",
+        "then": "protected_tenant_entitled_to_restoration"
+      },
+      "predicates": {
+        "protected_tenancy_possession_dispute": "The proceeding concerns possession of agricultural land claimed by a protected tenant.",
+        "ownership_certificate_issued": "An ownership certificate was issued to the protected tenant for the land.",
+        "protected_tenant_dispossessed_without_lawful_termination": "The protected tenant lost possession without a lawful termination of the protected tenancy."
+      },
+      "definition": "If a protected tenant holding an ownership certificate was dispossessed without lawful termination, the tenant is entitled to restoration of possession."
+    },
+    {
+      "legal_issue": "An occupancy-rights certificate remains effective for land outside the area covered by the protected tenant’s ownership claim.",
+      "material_facts": [
+        "The protected tenant’s ownership certificate covered land in four survey numbers.",
+        "The purchaser’s occupancy-rights certificate also covered land in two additional survey numbers that were not part of the protected tenant’s tenancy claim.",
+        "The Court found that the protected tenant’s claim did not extend to those additional parcels."
+      ],
+      "conclusion": "The purchaser’s occupancy-rights certificate remained valid for the additional parcels outside the protected tenant’s claim, while it was null and inoperative for the overlapping land.",
+      "legal_principle": "The competing statutory rights apply to the land actually covered by each claim. The Court applied Sections 38-E of the Telangana Tenancy and Agricultural Lands Act, 1950 and 7 and 33 of the Andhra Pradesh (Telangana Area) Abolition of Inams Act, 1955, holding that the protected tenant’s ownership certificate prevailed only for the land it covered.",
+      "rule": {
+        "if": "competing_land_rights_proceeding and protected_tenant_certificate_excludes_separate_parcel and purchaser_occupancy_certificate_covers_separate_parcel",
+        "then": "purchaser_occupancy_certificate_remains_valid_for_separate_parcel"
+      },
+      "predicates": {
+        "competing_land_rights_proceeding": "The proceeding concerns competing statutory claims to agricultural land.",
+        "protected_tenant_certificate_excludes_separate_parcel": "The protected tenant’s ownership certificate and tenancy claim do not include a particular parcel.",
+        "purchaser_occupancy_certificate_covers_separate_parcel": "The purchaser’s occupancy-rights certificate includes that parcel."
+      },
+      "definition": "When the protected tenant’s certificate excludes a parcel but the purchaser’s occupancy-rights certificate covers it, the purchaser’s certificate remains effective for that parcel."
+    }
+  ],
+  "seconds": 23.9
+}

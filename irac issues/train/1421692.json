@@ -1,0 +1,78 @@
+{
+  "doc_id": "1421692",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 32195,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2410,
+    "prompt_tokens": 8292,
+    "total_tokens": 10702,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An occupant must appear at the hearing and claim statutory tenancy protection for the special preliminary-issue procedure to apply.",
+      "material_facts": [
+        "In a possession proceeding, the occupant had previously appeared through counsel and filed a defence describing himself as a lawful tenant.",
+        "Neither the occupant nor his counsel attended when the matter was called for hearing, and the court proceeded ex parte.",
+        "The occupant’s defence did not specifically claim tenancy and protection under the rent-control statute."
+      ],
+      "conclusion": "For section 42A, appearing means appearing at the date of hearing; an earlier appearance or filed defence does not suffice. The occupant must then claim the statutory tenancy and its protection, and the applicant must dispute that claim.",
+      "legal_principle": "Section 42A of the Presidency Small Cause Courts Act, 1882, as amended in Maharashtra, makes the preliminary-issue procedure conditional on the occupant appearing at the appointed time, claiming tenancy and protection under the Bombay Rents, Hotel and Lodging House Rates Control Act, 1947, and having that claim disputed by the applicant. Sections 41 and 43 support the distinction between appearing at the hearing and filing a defence. No earlier cases are relied on.",
+      "rule": {
+        "if": "small_cause_possession_proceeding and occupant_filed_defence and occupant_absent_at_hearing",
+        "then": "prior_appearance_or_filing_does_not_satisfy_hearing_appearance"
+      },
+      "predicates": {
+        "small_cause_possession_proceeding": "The applicant brought a proceeding in a Small Cause Court to recover possession from an occupant.",
+        "occupant_filed_defence": "The occupant filed a defence before the hearing.",
+        "occupant_absent_at_hearing": "The occupant and any representative were absent when the proceeding was called for hearing."
+      },
+      "definition": "If an occupant files a defence but is absent at the hearing in a Small Cause Court possession proceeding, that earlier filing or appearance does not satisfy the requirement to appear at the hearing."
+    },
+    {
+      "legal_issue": "The court is not required to decide a preliminary tenancy issue when the occupant does not appear and claim statutory protection at the hearing.",
+      "material_facts": [
+        "The possession proceeding was called for hearing, but neither the occupant nor his counsel attended.",
+        "The trial court heard the matter ex parte and made an order for possession without deciding a preliminary tenancy issue.",
+        "The occupant later argued that the trial court had to decide that issue even though he had not attended the hearing."
+      ],
+      "conclusion": "The trial court was not obliged to frame and decide a preliminary issue irrespective of the occupant’s appearance; the High Court erred in requiring it to do so in these circumstances.",
+      "legal_principle": "Section 42A of the Presidency Small Cause Courts Act, 1882, as amended in Maharashtra, provides a special procedure for a tenancy claim contested at the hearing; it does not require a preliminary issue where the occupant fails to appear and make that claim. The bar on a separate suit under section 49 does not extend the section 42A procedure to a case where the occupant does not take up that opportunity. Sections 41 and 43 provide context for the hearing and the consequences of nonappearance. No earlier cases are relied on.",
+      "rule": {
+        "if": "small_cause_possession_proceeding and occupant_absent_at_hearing",
+        "then": "court_not_obliged_to_decide_preliminary_tenancy_issue"
+      },
+      "predicates": {
+        "small_cause_possession_proceeding": "The applicant brought a proceeding in a Small Cause Court to recover possession from an occupant.",
+        "occupant_absent_at_hearing": "The occupant and any representative were absent when the proceeding was called for hearing."
+      },
+      "definition": "When an occupant is absent at the hearing of a Small Cause Court possession proceeding, the court is not obliged to decide a preliminary tenancy issue."
+    },
+    {
+      "legal_issue": "A court should not rely on disputed subsequent events to resolve an appeal when related litigation remains pending and the parties’ rights have not been finally determined.",
+      "material_facts": [
+        "The parties advanced conflicting accounts of later events concerning possession and the asserted creation of a new tenancy.",
+        "Related proceedings concerning possession and the parties’ competing rights remained pending.",
+        "The court could not determine from the disputed accounts that the parties’ rights had been finally resolved."
+      ],
+      "conclusion": "The court declined to take account of the disputed subsequent events because doing so was neither desirable nor practicable while the related proceedings and rival claims remained unresolved.",
+      "legal_principle": "A court may take notice of subsequent events where changed circumstances make the original relief inappropriate, make the judgment impossible to carry out, remove the controversy, or permit litigation to be shortened while preserving the parties’ rights and serving justice. Those considerations did not support relying on the disputed events here because related suits were pending and the rival rights had not been finally determined. No earlier cases are relied on.",
+      "rule": {
+        "if": "appellate_proceeding and subsequent_events_disputed and related_litigation_pending and rights_not_finally_determined",
+        "then": "court_declines_to_rely_on_disputed_subsequent_events"
+      },
+      "predicates": {
+        "appellate_proceeding": "A court is reviewing a decision in an appellate proceeding.",
+        "subsequent_events_disputed": "The parties give conflicting accounts of events that occurred after the original proceeding began.",
+        "related_litigation_pending": "Other proceedings concerning the same property or competing rights remain pending.",
+        "rights_not_finally_determined": "No final determination has resolved the parties’ competing rights."
+      },
+      "definition": "In an appeal, when subsequent events are disputed, related litigation remains pending, and the parties’ rights are unresolved, the court declines to rely on those events."
+    }
+  ],
+  "seconds": 15.4
+}

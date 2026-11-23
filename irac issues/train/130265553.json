@@ -1,0 +1,103 @@
+{
+  "doc_id": "130265553",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 23231,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3451,
+    "prompt_tokens": 6220,
+    "total_tokens": 9671,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Section 34 of the IPC does not create a distinct offence, and the distinction between common intention and abetment did not sustain the charge-based objection in this case.",
+      "material_facts": [
+        "The accused was charged with abetment under Sections 302/109 of the IPC, and argued that a person charged under Section 109 could not be convicted by applying Section 34.",
+        "The court distinguished the authority relied on by the accused because the accused in that case had been charged under Section 34, whereas the charge here was abetment."
+      ],
+      "conclusion": "The court rejected the objection as inapplicable to the facts and held that the point was covered by the settled principle that Section 34 does not create a distinct offence.",
+      "legal_principle": "Section 34 of the IPC is a principle of constructive liability, not a distinct offence. Its application requires proof of actual participation by more than one person in a criminal act done in furtherance of their common intention. The court relied on State of Orissa v. Arjun Das Agarwal, AIR 1999 SC 3229, and distinguished Babu v. State of Tamil Nadu, (2013) 8 SCC 60, because of the different charge in that case.",
+      "rule": {
+        "if": "abetment_charge_framed and objection_based_on_joint_liability_distinction",
+        "then": "charge_distinction_objection_rejected_as_inapplicable"
+      },
+      "predicates": {
+        "abetment_charge_framed": "The accused was charged with abetment of the principal offence.",
+        "objection_based_on_joint_liability_distinction": "The accused argued that the distinction between abetment and common-intention liability prevented the prosecution from relying on the latter."
+      },
+      "definition": "When an accused charged with abetment relies on the distinction between abetment and common-intention liability to challenge the case, the objection is rejected as inapplicable where that distinction does not address the charge framed."
+    },
+    {
+      "legal_issue": "An accused must be given a fair opportunity to explain each material incriminating circumstance, and an omitted circumstance ordinarily cannot be used against the accused when the omission causes prejudice.",
+      "material_facts": [
+        "The prosecution relied on testimony that the accused had directed others to kill the deceased, but the court did not put one witness’s account of that allegation to the accused under Section 313 of the Cr.P.C.",
+        "The examination of the accused under Section 313 was perfunctory.",
+        "Other inconsistencies in the testimony also raised doubt about the accused’s role, so the court did not remit the case for a new trial."
+      ],
+      "conclusion": "The court held that the unput material could not properly be used against the accused. It declined to order a retrial because the other evidentiary inconsistencies already created doubt, and the accused was acquitted.",
+      "legal_principle": "Section 313 of the Cr.P.C. requires the court to put material circumstances appearing in the evidence to the accused specifically, distinctly and separately so the accused can explain them, consistent with audi alteram partem. A failure may vitiate the trial if it causes prejudice; material not put to the accused must ordinarily be eschewed. The court relied on Sharad Birdichand Sarda v. State of Maharashtra, (1984) 4 SCC 116; Hate Singh Bhagat Singh v. State of Madhya Bharat, AIR 1953 SC 468; Sujit Biswas v. State of Assam, (2013) 12 SCC 406; Asraf Ali v. State of Assam, (2008) 16 SCC 328; S. Harnam Singh v. The State, AIR 1976 SC 2140; and Shivaji Sahabrao Bobade v. State of Maharashtra, (1973) 2 SCC 793.",
+      "rule": {
+        "if": "criminal_trial and material_incriminating_circumstance_not_put_to_accused and omission_caused_prejudice",
+        "then": "omitted_circumstance_excluded_from_consideration"
+      },
+      "predicates": {
+        "criminal_trial": "The proceeding was a criminal trial in which the accused was examined about the prosecution evidence.",
+        "material_incriminating_circumstance_not_put_to_accused": "A material circumstance in the prosecution evidence was not specifically put to the accused for an explanation.",
+        "omission_caused_prejudice": "The failure to put the circumstance impaired the accused’s opportunity to defend against the prosecution case."
+      },
+      "definition": "In a criminal trial, a material incriminating circumstance that was not put to the accused and whose omission caused prejudice is excluded from consideration against the accused."
+    },
+    {
+      "legal_issue": "An appellate court should not reverse an acquittal where the trial court’s view is a plausible view of the evidence and is not perverse or unsustainable.",
+      "material_facts": [
+        "The trial court acquitted the accused of abetting the killing, finding that the alleged abetment had not been proved beyond reasonable doubt.",
+        "The appellate court reversed that acquittal and convicted the accused.",
+        "The only independent eyewitness did not see or implicate the accused, and another witness who was at the scene did not place the accused there.",
+        "The accounts of the related witnesses varied, including between the initial complaint and the testimony at trial."
+      ],
+      "conclusion": "The appellate court should not have reversed the acquittal; the prosecution had not established the accused’s involvement beyond reasonable doubt, and the acquittal was restored.",
+      "legal_principle": "An appellate court must give due weight to an acquittal. Where two views of the evidence are possible, the acquittal should not be set aside merely because the appellate court prefers another view; reversal is warranted only where the trial court’s view is perverse or otherwise unsustainable. The court relied on Sunil Kumar Sambhudayal Gupta (Dr.) v. State of Maharashtra, (2010) 13 SCC 657, and applied the principles concerning unput material in Section 313 proceedings set out in Asraf Ali v. State of Assam, (2008) 16 SCC 328, and Shivaji Sahabrao Bobade v. State of Maharashtra, (1973) 2 SCC 793.",
+      "rule": {
+        "if": "appeal_from_acquittal and trial_view_plausible and (independent_witness_did_not_implicate_accused or prosecution_accounts_inconsistent)",
+        "then": "acquittal_must_not_be_reversed"
+      },
+      "predicates": {
+        "appeal_from_acquittal": "The proceeding was an appeal seeking reversal of an acquittal.",
+        "trial_view_plausible": "The trial court’s assessment of the evidence was a plausible view rather than a perverse or unsustainable one.",
+        "independent_witness_did_not_implicate_accused": "An independent witness who was at the scene did not identify or assign a role to the accused.",
+        "prosecution_accounts_inconsistent": "Material differences existed among prosecution accounts of the accused’s alleged role."
+      },
+      "definition": "In an appeal from an acquittal, a plausible trial court view supported by the evidence, particularly where an independent witness does not implicate the accused or prosecution accounts conflict, means the acquittal must not be reversed."
+    },
+    {
+      "legal_issue": "The prosecution must prove beyond reasonable doubt that an accused alleged to have fired a weapon participated in the killing when the medical and other evidence materially conflicts with that alleged role.",
+      "material_facts": [
+        "Two accused were alleged to have fired guns at the deceased.",
+        "The doctor found sharp-force injuries but no gunshot injury.",
+        "No weapon was seized, and no bullet or bullet mark was found at the scene.",
+        "One witness said he heard gunshots but did not see a shot hit the deceased; the witnesses differed about the accused’s roles, including the role attributed to one accused in the complaint and at trial.",
+        "The trial court had acquitted the accused, and the appellate court reversed that acquittal."
+      ],
+      "conclusion": "The prosecution had not proved the case beyond reasonable doubt. The accused were entitled to the benefit of doubt and were acquitted; the appellate reversal of the trial court’s acquittal could not stand.",
+      "legal_principle": "The prosecution bears the burden of proving guilt beyond reasonable doubt. In an appeal against acquittal, the appellate court must not displace a plausible trial court view merely because another view is possible. The court applied that standard to the conflict between the alleged use of firearms, the medical findings, the absence of recovered weapons or ballistic evidence, and the inconsistencies in the testimony.",
+      "rule": {
+        "if": "appeal_from_acquittal and alleged_firearm_role and medical_evidence_shows_no_gunshot_injury and no_weapon_recovered and no_bullet_evidence and witness_roles_inconsistent",
+        "then": "accused_entitled_to_benefit_of_doubt_and_acquittal"
+      },
+      "predicates": {
+        "appeal_from_acquittal": "The proceeding was an appeal seeking reversal of an acquittal.",
+        "alleged_firearm_role": "The prosecution alleged that the accused used a firearm in the killing.",
+        "medical_evidence_shows_no_gunshot_injury": "The medical evidence recorded no gunshot injury on the deceased.",
+        "no_weapon_recovered": "The alleged weapon was not recovered by the investigation.",
+        "no_bullet_evidence": "No bullet or bullet mark was found at the scene.",
+        "witness_roles_inconsistent": "The witnesses gave materially inconsistent accounts of the accused’s roles."
+      },
+      "definition": "When an appeal from an acquittal concerns an alleged firearm role but medical evidence shows no gunshot injury, no weapon or bullet evidence is found, and witness accounts conflict about the accused’s roles, the accused is entitled to the benefit of doubt and acquittal."
+    }
+  ],
+  "seconds": 20.6
+}

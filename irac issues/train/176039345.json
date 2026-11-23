@@ -1,0 +1,78 @@
+{
+  "doc_id": "176039345",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 57521,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2455,
+    "prompt_tokens": 14005,
+    "total_tokens": 16460,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A tenant protected by rent-control law cannot be evicted from mortgaged premises through secured-creditor enforcement without the eviction process required by that law.",
+      "material_facts": [
+        "The landlords borrowed from banks using properties occupied by tenants as security and defaulted on the loans.",
+        "The banks sought possession of the properties through the secured-asset enforcement process, and the tenants claimed protection under rent-control law.",
+        "The rent-control law regulated landlord-tenant relations and restricted recovery of possession from protected tenants; the secured-asset law addressed recovery of debt and security interests."
+      ],
+      "conclusion": "The secured-asset law does not override rent-control protections so as to permit a bank to evict a protected tenant arbitrarily; eviction must follow the applicable rent-control law and due process.",
+      "legal_principle": "Sections 13(2), 13(4), 14 and 35 of the SARFAESI Act must be read with the tenant protections, including Section 15, of the Maharashtra Rent Control Act. The statutes operate in different fields, and the non obstante clause in Section 35 overrides another law only where there is an inconsistency; it does not displace protections in a law governing landlord-tenant relations. The Court relied on Central Bank of India v. State of Kerala, which limits the effect of the non obstante clauses in the debt-recovery statutes, and distinguished the scope of Harshad Govardhan Sondagar v. International Assets Reconstruction Co. Ltd. It also noted the protective purpose of rent-control legislation reflected in Miss Santosh Mehta v. Om Prakash.",
+      "rule": {
+        "if": "secured_asset_enforcement_proceeding and protected_tenant_in_possession and tenancy_not_lawfully_terminated",
+        "then": "bank_must_follow_rent_law_eviction_process"
+      },
+      "predicates": {
+        "secured_asset_enforcement_proceeding": "A secured creditor sought possession of property through a statutory process for enforcing security and recovering debt.",
+        "protected_tenant_in_possession": "A tenant occupied the property under a tenancy protected by applicable rent-control law.",
+        "tenancy_not_lawfully_terminated": "The tenancy had not been determined through the legally required process."
+      },
+      "definition": "When a secured creditor seeks possession while a protected tenant remains in possession under an unterminated tenancy, the creditor must use the eviction process required by the applicable rent law."
+    },
+    {
+      "legal_issue": "A tenancy is not invalid solely because it was created orally or is evidenced by an unregistered instrument, and the tenant may establish the tenancy through evidence of the landlord-tenant relationship and occupation.",
+      "material_facts": [
+        "The tenants relied on tenancy claims that were rejected on the ground that they had not produced registered lease instruments.",
+        "The Court considered that a tenancy may arise through an oral agreement accompanied by delivery of possession and that payment and acceptance of rent may evidence a landlord-tenant relationship.",
+        "The Court stated that a tenant without a written lease deed must prove occupation as a tenant with evidence in the possession proceedings."
+      ],
+      "conclusion": "The absence of a registered lease deed alone does not make a tenancy nugatory; a claimed tenancy may be established by other evidence, including evidence of possession and the parties’ conduct.",
+      "legal_principle": "Sections 105 and 107 of the Transfer of Property Act, 1882 recognize a lease as a transfer of the right to enjoy property and permit leases outside the specified classes to be created by oral agreement accompanied by delivery of possession. Section 106 concerns periodic tenancies, while Section 55(2) of the Maharashtra Rent Control Act places responsibility for registration of the lease deed on the landlord. The Court relied on Anthony v. K.C. Ittoop & Sons, which holds that an unregistered instrument does not prevent a court from determining whether a lease arose otherwise than through that instrument.",
+      "rule": {
+        "if": "secured_asset_possession_proceeding and tenancy_claimed and tenant_in_possession and rent_paid_and_accepted",
+        "then": "tenancy_may_be_recognized_without_registered_lease"
+      },
+      "predicates": {
+        "secured_asset_possession_proceeding": "A proceeding sought possession of property as part of enforcement of a security interest.",
+        "tenancy_claimed": "An occupant asserted that the occupant held the property as a tenant.",
+        "tenant_in_possession": "The occupant was in possession of the property as a tenant claimed to be under the landlord.",
+        "rent_paid_and_accepted": "The occupant paid rent and the landlord accepted it as part of their landlord-tenant dealings."
+      },
+      "definition": "Where an occupant claims tenancy, is in possession, and rent has been paid and accepted in a secured-property possession proceeding, the tenancy may be recognized even without a registered lease."
+    },
+    {
+      "legal_issue": "A tenancy created over property after it has been mortgaged to a secured creditor requires the creditor’s consent.",
+      "material_facts": [
+        "Some disputed tenancies were claimed to have been created after the property had already been mortgaged to a bank.",
+        "The Court addressed the effect of creating tenancy rights after creation of the mortgage and referred to its earlier ruling on that point."
+      ],
+      "conclusion": "A tenancy created after the property is mortgaged requires the secured creditor’s consent.",
+      "legal_principle": "The Court applied its ruling in Harshad Govardhan Sondagar v. International Assets Reconstruction Co. Ltd. concerning tenancy created after a mortgage. It distinguished that requirement from any supposed rule that such a tenancy must necessarily be registered under the Registration Act or the Stamp Act.",
+      "rule": {
+        "if": "secured_asset_enforcement_dispute and mortgage_created_before_tenancy and creditor_consent_absent",
+        "then": "post_mortgage_tenancy_lacks_required_creditor_consent"
+      },
+      "predicates": {
+        "secured_asset_enforcement_dispute": "A dispute concerned a creditor’s enforcement of a security interest over property.",
+        "mortgage_created_before_tenancy": "The property was mortgaged to the creditor before the claimed tenancy was created.",
+        "creditor_consent_absent": "The secured creditor did not consent to creation of the tenancy."
+      },
+      "definition": "If a tenancy is created after property has been mortgaged and the secured creditor did not consent, the tenancy lacks the consent required for a post-mortgage tenancy."
+    }
+  ],
+  "seconds": 15.6
+}

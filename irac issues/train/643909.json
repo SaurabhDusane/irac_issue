@@ -1,0 +1,103 @@
+{
+  "doc_id": "643909",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 52517,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3256,
+    "prompt_tokens": 12602,
+    "total_tokens": 15858,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Before a winding-up order is passed for a sick industrial company, the Company Court cannot authorize the sale of the company’s assets where the governing special statute reserves that power to the specialist body.",
+      "material_facts": [
+        "A specialist body found that the sick industrial company could not be revived and referred it for winding up.",
+        "The proposed sale of company assets was sought before a winding-up order had been passed.",
+        "The specialist body had not itself authorized the proposed sale; it had said that the company could approach the High Court if a need arose."
+      ],
+      "conclusion": "The specialist body retained control over the company’s assets until a winding-up order was passed. The Company Court therefore lacked jurisdiction to direct the company to execute a sale deed before that order.",
+      "legal_principle": "Sections 20(2) and 20(4) of the Sick Industrial Companies (Special Provisions) Act, 1985, read with Sections 22-A and 32, give the specialist body control over the assets of a sick industrial company, including the power to cause their sale, until a winding-up order is passed. Those provisions prevail over inconsistent powers under the Companies Act, 1956, including Section 536(2); that section does not by itself confer jurisdiction to direct a sale. The Court accepted the Division Bench view in BPL Limited v. Intermodal Transport Technology Systems (Karnataka) Limited and rejected the contrary single-judge view in Karnataka State Industrial Investment and Development Corporation Ltd. v. Intermodel Transport Technology Systems.",
+      "rule": {
+        "if": "sick_company_winding_up_referral and asset_sale_sought_before_winding_up_order",
+        "then": "company_court_lacks_power_to_authorize_asset_sale"
+      },
+      "predicates": {
+        "sick_company_winding_up_referral": "A specialist body has found that an industrial company is not viable and has referred it for winding up.",
+        "asset_sale_sought_before_winding_up_order": "A party seeks authorization to sell the company’s assets before a winding-up order has been passed.",
+        "company_court_lacks_power_to_authorize_asset_sale": "The Company Court does not have power to authorize the asset sale."
+      },
+      "definition": "When a sick industrial company has been referred for winding up and a sale is sought before a winding-up order, the Company Court lacks power to authorize that sale."
+    },
+    {
+      "legal_issue": "A specialist body’s observation that a company may approach the Company Court does not delegate the specialist body’s asset-sale power or confer jurisdiction on the court.",
+      "material_facts": [
+        "The specialist body stated that the company could approach the High Court if it needed directions to dispose of surplus property.",
+        "The specialist body did not expressly authorize the High Court to exercise its asset-sale power.",
+        "The company did not make the application for a sale direction; a proposed purchaser did, and the company opposed it."
+      ],
+      "conclusion": "The observation did not delegate the specialist body’s power or confer jurisdiction on the Company Court. The proposed purchaser could not rely on it to obtain a sale order.",
+      "legal_principle": "A statutory authority cannot sub-delegate its power unless authorized to do so; the principle is expressed by the maxim delegatus non potest delegare. A court may act only within the jurisdiction conferred by law, and a specialist body’s observation cannot create jurisdiction that the governing statute withholds. Sections 20(4) and 32 of the Sick Industrial Companies (Special Provisions) Act, 1985, preserve the specialist body’s control over the assets.",
+      "rule": {
+        "if": "sick_company_winding_up_referral and referral_order_only_invited_company_to_apply and third_party_sought_sale_order",
+        "then": "referral_does_not_confer_sale_jurisdiction_on_court"
+      },
+      "predicates": {
+        "sick_company_winding_up_referral": "A specialist body has referred a sick industrial company for winding up.",
+        "referral_order_only_invited_company_to_apply": "The specialist body’s order says that the company may approach the court for directions but does not authorize the court to exercise the specialist body’s asset-sale power.",
+        "third_party_sought_sale_order": "A person other than the company applies to the court for an order directing the sale.",
+        "referral_does_not_confer_sale_jurisdiction_on_court": "The referral or observation does not give the court jurisdiction to authorize the sale."
+      },
+      "definition": "When a referral merely invites the company to apply and a third party seeks the sale order, the referral does not confer sale jurisdiction on the court."
+    },
+    {
+      "legal_issue": "A bid made under a state-issued tender that reserves the state’s right to accept or reject offers does not become a concluded sale contract without the state’s approval.",
+      "material_facts": [
+        "The state issued the advertisement inviting bids and reserved the right to accept or reject any offer.",
+        "The proposed purchaser submitted its bid in response to that advertisement.",
+        "The company’s board resolution stated that the decision would be sent to the state for its formal approval.",
+        "The state’s order concerning the company’s closure and sale proceeds did not grant approval for this particular sale."
+      ],
+      "conclusion": "The state’s approval was necessary, and the record did not establish that it had been granted. There was therefore no concluded contract on which the proposed purchaser could obtain an order directing execution of a sale deed.",
+      "legal_principle": "The terms of the tender reserved acceptance to the state, so the company’s board decision alone did not complete the transaction. The resolution’s stated intention to seek formal approval and the absence of an approval for the particular sale meant that the necessary acceptance had not occurred.",
+      "rule": {
+        "if": "sale_offer_followed_state_tender and tendering_authority_reserved_acceptance_right and approval_not_granted",
+        "then": "no_concluded_sale_contract"
+      },
+      "predicates": {
+        "sale_offer_followed_state_tender": "A proposed purchaser made its offer in response to a tender issued by a state authority.",
+        "tendering_authority_reserved_acceptance_right": "The tender terms reserve to the issuing authority the right to accept or reject the offer.",
+        "approval_not_granted": "The issuing authority has not approved the particular proposed sale.",
+        "no_concluded_sale_contract": "The offer and board decision do not amount to a concluded sale contract."
+      },
+      "definition": "When a bid is made under a state tender that reserves acceptance to the state, the sale contract is not concluded unless the state approves the particular sale."
+    },
+    {
+      "legal_issue": "When a Company Court considers a private disposition of company assets in winding-up proceedings, it must scrutinize the interests of creditors and the adequacy of the price before approving the transaction.",
+      "material_facts": [
+        "The proposed transaction was a private sale of company land, rather than an auction conducted by an Official Liquidator.",
+        "The company opposed the proposed purchaser’s application and was not itself the applicant.",
+        "Secured creditors had substantial claims, and the sale proceeds were not shown to be sufficient to meet the company’s liabilities.",
+        "The Company Court directed execution of the sale deed without adequately considering creditor interests or the adequacy of the price."
+      ],
+      "conclusion": "Even assuming the Company Court had jurisdiction, its order could not stand because it had not fairly and carefully considered the creditors’ interests and whether the price was reasonable.",
+      "legal_principle": "A Company Court exercising discretion over a private sale must act with circumspection, consider the company’s and creditors’ interests, and satisfy itself that the price is reasonable in light of market value and applicable creditor priorities, including Section 529-A of the Companies Act, 1956. Section 536(2) is not intended to benefit a purchaser at the expense of creditors. The Court relied on M/s Kayjay Industries (P) Ltd. v. M/s Asnew Drums (P) Ltd., State of Punjab v. Yoginder Sharma Onkar Rai & Co., Allahabad Bank v. Bengal Paper Mills Co. Ltd., Andhra Bank v. Official Liquidator, and the principles discussed in Pankaj Mehra v. State of Maharashtra.",
+      "rule": {
+        "if": "company_court_considers_private_asset_sale and creditor_claims_are_at_stake and sale_price_not_scrutinized",
+        "then": "sale_approval_is_improper_without_creditor_and_price_review"
+      },
+      "predicates": {
+        "company_court_considers_private_asset_sale": "The Company Court is asked to approve a private disposition of a company’s assets in winding-up proceedings.",
+        "creditor_claims_are_at_stake": "Creditors have claims against the company that may be affected by the disposition.",
+        "sale_price_not_scrutinized": "The court has not assessed whether the proposed price is reasonable and whether the transaction protects creditor interests.",
+        "sale_approval_is_improper_without_creditor_and_price_review": "The sale should not be approved without adequate review of creditor interests and price."
+      },
+      "definition": "When a private asset sale in winding-up proceedings affects creditors, approval is improper unless the court reviews creditor interests and the reasonableness of the price."
+    }
+  ],
+  "seconds": 20.0
+}

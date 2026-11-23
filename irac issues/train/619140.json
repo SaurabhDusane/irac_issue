@@ -1,0 +1,58 @@
+{
+  "doc_id": "619140",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 18337,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2174,
+    "prompt_tokens": 4954,
+    "total_tokens": 7128,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "An amendment allowing reassessment on the basis of a court order cannot revive an assessment that had already become time-barred before the amendment took effect.",
+      "material_facts": [
+        "The tax authority sought to reassess income arising from interest on compensation, relying on a court award made in land-acquisition proceedings.",
+        "The limitation period for the relevant assessment years had expired before the amendment adding court orders under other laws as a basis for reassessment took effect.",
+        "The amendment did not expressly provide that it would apply retrospectively."
+      ],
+      "conclusion": "The amended provision operated prospectively and did not authorize reopening assessments that had become final because of limitation before the amendment took effect.",
+      "legal_principle": "Sections 149 and 150(1) of the Income Tax Act, 1961, read with section 150(2), do not permit a limitation period that had already expired to be revived by an amendment that is not expressly retrospective. Limitation provisions require strict construction and protect finality. The Court relied on S.S. Gadgil v. Lal and Co. (1964) 53 ITR 231, which held that an amendment cannot authorize proceedings that were already time-barred before it came into force absent express provision or clear implication.",
+      "rule": {
+        "if": "tax_reassessment_proceeding and amended_court_order_basis_invoked and assessment_time_barred_before_amendment",
+        "then": "final_assessment_cannot_be_reopened"
+      },
+      "predicates": {
+        "tax_reassessment_proceeding": "The revenue authority sought to reopen a tax assessment.",
+        "amended_court_order_basis_invoked": "The revenue authority relied on a court order as a basis for reopening the assessment under an amended reassessment provision.",
+        "assessment_time_barred_before_amendment": "The time allowed to reassess the relevant income had expired before the amendment took effect."
+      },
+      "definition": "When a tax reassessment proceeding relies on an amended basis for reopening and the assessment was already time-barred before the amendment, the final assessment cannot be reopened."
+    },
+    {
+      "legal_issue": "The limitation safeguard for reassessments based on orders applies to court orders made in proceedings under other laws as well as to orders made in proceedings under tax law.",
+      "material_facts": [
+        "The tax authority sought reassessment on the basis of a court award made in proceedings under land-acquisition law.",
+        "The relevant assessments could not have been made within the limitation period when the relevant court order was made.",
+        "The lower court treated the limitation safeguard as inapplicable to orders made under laws other than tax law."
+      ],
+      "conclusion": "The limitation safeguard applies to reassessments based on orders under any law, including court orders under other laws, and barred the proposed reassessments.",
+      "legal_principle": "Section 150(2) of the Income Tax Act, 1961, restricts the whole of section 150(1), including its provision for reopening on the basis of a court order in proceedings under another law. Reading the safeguard otherwise would create an unjustified distinction between reassessments based on tax-law orders and those based on orders under other laws. Sections 149 and 150 must be read together to protect assessments that have become final through expiry of limitation.",
+      "rule": {
+        "if": "tax_reassessment_proceeding and reassessment_based_on_order_under_another_law and assessment_could_not_be_made_when_order_was_made_due_to_limitation",
+        "then": "final_assessment_cannot_be_reopened"
+      },
+      "predicates": {
+        "tax_reassessment_proceeding": "The revenue authority sought to reopen a tax assessment.",
+        "reassessment_based_on_order_under_another_law": "The revenue authority based the proposed reassessment on an order made in proceedings under a law other than tax law.",
+        "assessment_could_not_be_made_when_order_was_made_due_to_limitation": "The applicable limitation period had expired so that the assessment could not then be made."
+      },
+      "definition": "When a tax reassessment proceeding relies on an order under another law and limitation already prevented the assessment when that order was made, the final assessment cannot be reopened."
+    }
+  ],
+  "seconds": 12.7
+}

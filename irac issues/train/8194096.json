@@ -1,0 +1,97 @@
+{
+  "doc_id": "8194096",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 13572,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2405,
+    "prompt_tokens": 3830,
+    "total_tokens": 6235,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "In a motor accident compensation claim, the deceased’s annual income should be determined from available income tax returns rather than unsupported estimates or other inconsistent material.",
+      "material_facts": [
+        "The claimants sought compensation for the death of a self-employed businessman who had income from several sources, including agricultural land and businesses.",
+        "The income tax return for one assessment year recorded the deceased’s house-property, business, and agricultural income.",
+        "The Tribunal estimated agricultural income using figures drawn from other judgments, despite the return recording agricultural income.",
+        "The claimants relied on other documents to contend that the deceased’s income was higher."
+      ],
+      "conclusion": "The income determination had to proceed on the basis of the available income tax return; the Tribunal’s method of estimating additional agricultural income was unsustainable.",
+      "legal_principle": "Section 166 of the Motor Vehicles Act, 1988 provides the basis for the compensation claim. An income tax return is a statutory document on which a court may rely to determine annual income. In New India Assurance Company v Yogesh Devi, (2012) 3 SCC 613, the Court addressed a case without evidence of income from the properties and held that evidence was needed to quantify depletion in income; that decision did not assist the claimants where a tax return was available and no evidence of depletion was adduced.",
+      "rule": {
+        "if": "motor_accident_compensation_claim and income_tax_return_available",
+        "then": "annual_income_based_on_available_income_tax_return"
+      },
+      "predicates": {
+        "motor_accident_compensation_claim": "The proceeding seeks compensation for a person’s death or injury caused by a motor accident.",
+        "income_tax_return_available": "The deceased’s income tax return is available as evidence of annual income."
+      },
+      "definition": "When a motor accident compensation claim is supported by an available income tax return, the annual income is based on that return."
+    },
+    {
+      "legal_issue": "Depreciation deductions on assets cannot be added back as tangible annual income when calculating compensation.",
+      "material_facts": [
+        "The claimants sought to add depreciation amounts shown in the deceased’s income tax return to his annual income.",
+        "The amounts related to the decline in value of tangible or intangible assets over their useful lives."
+      ],
+      "conclusion": "The depreciation amounts could not be added to the deceased’s annual income for calculating compensation.",
+      "legal_principle": "Depreciation is a deduction reflecting the decline in the real value of assets over their useful lives. Because its value varies over time, it does not constitute tangible income for calculating annual income in a claim before a Motor Accident Claims Tribunal under Section 166 of the Motor Vehicles Act, 1988.",
+      "rule": {
+        "if": "motor_accident_compensation_claim and depreciation_claimed_as_income",
+        "then": "depreciation_excluded_from_annual_income"
+      },
+      "predicates": {
+        "motor_accident_compensation_claim": "The proceeding seeks compensation for a person’s death or injury caused by a motor accident.",
+        "depreciation_claimed_as_income": "A claimant seeks to add depreciation on the deceased’s assets to the income used to calculate compensation."
+      },
+      "definition": "In a motor accident compensation claim, depreciation claimed as income is excluded from annual income."
+    },
+    {
+      "legal_issue": "A prepaid licence fee paid upfront for a future period may be added to the deceased’s annual income in the circumstances of the case.",
+      "material_facts": [
+        "The balance sheet of the deceased’s business recorded a payment for a licence fee to the government.",
+        "The fee had been paid upfront for a future period."
+      ],
+      "conclusion": "The prepaid licence fee was added to the deceased’s annual income because it had been paid upfront for a future period.",
+      "legal_principle": "The Court treated the prepaid licence fee as an addition to annual income in the peculiar circumstances of the case, where the amount had been paid upfront for a future period.",
+      "rule": {
+        "if": "motor_accident_compensation_claim and licence_fee_paid_upfront_for_future_period",
+        "then": "prepaid_licence_fee_included_in_annual_income"
+      },
+      "predicates": {
+        "motor_accident_compensation_claim": "The proceeding seeks compensation for a person’s death or injury caused by a motor accident.",
+        "licence_fee_paid_upfront_for_future_period": "The deceased’s business paid a licence fee upfront for a period extending into the future."
+      },
+      "definition": "In a motor accident compensation claim, a licence fee paid upfront for a future period is included in annual income."
+    },
+    {
+      "legal_issue": "Loss of dependency and related compensation must be calculated by applying the principles governing future prospects, personal-expense deductions, age-based multipliers, and conventional heads.",
+      "material_facts": [
+        "The deceased was self-employed and was 49 years old.",
+        "He was married and was survived by his wife and four daughters.",
+        "The Court determined the deceased’s annual income after adding the prepaid licence fee.",
+        "The High Court had made no deduction for personal expenses, and the Supreme Court recalculated the dependency award and conventional heads."
+      ],
+      "conclusion": "The Court added future prospects to the established annual income, deducted one-fifth for personal expenses, applied the multiplier applicable to the deceased’s age, and calculated the conventional heads in accordance with the cited authorities.",
+      "legal_principle": "National Insurance Company Limited v Pranay Sethi, (2017) 16 SCC 680, governs future prospects for a self-employed deceased and the specified conventional heads. Sarla Verma v Delhi Transport Corporation, (2009) 6 SCC 121, paragraphs 30 and the age-based multiplier guidance, governs personal-expense deductions and the multiplier. For a married deceased with four to six dependants, Sarla Verma specifies a one-fifth personal-expense deduction, and for a deceased aged 46 to 50 it specifies a multiplier of 13; Pranay Sethi specifies the future-prospects addition applicable to a self-employed deceased in this age range.",
+      "rule": {
+        "if": "motor_accident_compensation_claim and deceased_self_employed and deceased_age_46_to_50 and deceased_married and dependants_four_to_six",
+        "then": "dependency_and_conventional_compensation_calculated_under_applicable_guidelines"
+      },
+      "predicates": {
+        "motor_accident_compensation_claim": "The proceeding seeks compensation for a person’s death or injury caused by a motor accident.",
+        "deceased_self_employed": "The deceased earned income through self-employment.",
+        "deceased_age_46_to_50": "The deceased was between 46 and 50 years old at the time of death.",
+        "deceased_married": "The deceased was married.",
+        "dependants_four_to_six": "The deceased left between four and six dependants."
+      },
+      "definition": "When the deceased in a motor accident compensation claim was self-employed, aged 46 to 50, married, and had four to six dependants, dependency and conventional compensation are calculated under the applicable guidelines for future prospects, deductions, multipliers, and conventional heads."
+    }
+  ],
+  "seconds": 15.2
+}

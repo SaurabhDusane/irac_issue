@@ -1,0 +1,101 @@
+{
+  "doc_id": "179459",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 17802,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2879,
+    "prompt_tokens": 4839,
+    "total_tokens": 7718,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "Land capable of residential or industrial use because of its surroundings may be treated as non-agricultural for determining compensation despite its agricultural classification in official records.",
+      "material_facts": [
+        "The land remained classified as agricultural in the records, and no conversion charges had been paid.",
+        "The land was beside a residential locality and within a highly developed industrial locality.",
+        "The lower courts concurrently found that the land was capable of residential or industrial use and that agricultural activity could not practically be carried on there."
+      ],
+      "conclusion": "The land was to be considered non-agricultural for determining compensation.",
+      "legal_principle": "The land’s actual potential use and its situation in relation to developed areas and infrastructure may inform its classification for compensation, notwithstanding its recorded agricultural status. The Court relied on Anjani Molu Dessai v. State of Goa and Anr. (2010) 13 SCC 710, which treated land near a developed semi-urban village with infrastructure as urbanisable land. The Court also noted that the lower courts’ concurrent finding was supported by evidence and had not been challenged before the Reference Court.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and (beside_residential_locality or within_developed_industrial_locality) and capable_of_nonagricultural_use",
+        "then": "assess_land_as_nonagricultural"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired by a public authority.",
+        "beside_residential_locality": "The acquired land is beside a residential locality.",
+        "within_developed_industrial_locality": "The acquired land is within a developed industrial locality.",
+        "capable_of_nonagricultural_use": "The acquired land is capable of residential, industrial, or other non-agricultural use."
+      },
+      "definition": "When a compensation proceeding concerns land beside a residential locality or within a developed industrial locality, and the land is capable of non-agricultural use, the land is assessed as non-agricultural."
+    },
+    {
+      "legal_issue": "A party may not challenge on appeal a finding of the Reference Court that it did not challenge before that court.",
+      "material_facts": [
+        "The Reference Court found that the land could not be treated as agricultural land for practical purposes.",
+        "The acquiring authority did not appeal that finding before the High Court but challenged the High Court’s corresponding finding in the Supreme Court."
+      ],
+      "conclusion": "The acquiring authority could not question the High Court’s finding on the land’s non-agricultural character because it had not challenged the Reference Court’s finding on that issue.",
+      "legal_principle": "A party that did not challenge a finding of the Reference Court before the appellate court cannot raise a challenge to that finding at a later appellate stage. The Court applied this principle in the context of an appeal concerning compensation for acquired land; it cited no earlier case or statutory provision for this point.",
+      "rule": {
+        "if": "land_acquisition_compensation_appeal and party_did_not_challenge_reference_finding and party_challenges_same_finding_later",
+        "then": "bar_later_challenge_to_finding"
+      },
+      "predicates": {
+        "land_acquisition_compensation_appeal": "The proceeding is an appeal concerning compensation for acquired land.",
+        "party_did_not_challenge_reference_finding": "A party did not challenge the relevant Reference Court finding in its appeal from that court’s decision.",
+        "party_challenges_same_finding_later": "That party later challenges the same finding in a further appeal."
+      },
+      "definition": "In an appeal concerning acquired-land compensation, a party that did not challenge a Reference Court finding in its appeal from that decision is barred from challenging the same finding later."
+    },
+    {
+      "legal_issue": "A sale of a small plot may be used as a comparable basis for valuing a larger acquired tract when the sale is genuine and reliable and concerns comparable land, subject to an appropriate adjustment.",
+      "material_facts": [
+        "The acquisition concerned 34 guntas of land that the Court treated as non-agricultural.",
+        "The relied-upon sale deed concerned a small non-agricultural site about two kilometres from the acquired land and was executed a little over a year before the acquisition notification.",
+        "The Reference Court had relied instead on compensation for neighbouring land acquired about five years earlier.",
+        "Other sale deeds were rejected for reasons including their post-notification timing, their relation to corner sites sold at public auction, or their inclusion of a building."
+      ],
+      "conclusion": "The High Court was right to rely on the sale deed for the small non-agricultural site as a basis for determining compensation for the larger acquired tract, subject to an appropriate deduction.",
+      "legal_principle": "There is no absolute rule that a sale of a small plot cannot be considered when valuing a larger acquired tract. Where the small-plot sale is genuine, reliable, and concerns comparable land, it may be used with appropriate deductions or adjustments. The Court relied on Land Acquisition Officer, Kammarapally Village v. Nookala Rajamallu (2003) 12 SCC 334; Bhagwathula Samanna v. Special Tahsildar and Land Acquisition Officer (1991) 4 SCC 506; Land Acquisition Officer, Revenue Divisional Officer, Chittoor v. L. Kamalamma, AIR 1998 SC 781; and Basavva v. Special Land Acquisition Officer, AIR 1996 SC 3168. Those cases address factors including development requirements, the time needed for development and sale, and whether the lands are comparable. The Court considered the sale deed in the context of a compensation determination following acquisition under the Land Acquisition Act, 1894, including the timing of the section 4(1) notification.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and acquired_tract_is_larger_than_comparable_sale_plot and sale_is_genuine_and_reliable and sale_land_is_comparable and sale_is_reasonably_close_in_location_and_time",
+        "then": "use_small_plot_sale_as_valuation_comparable_with_adjustment"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired by a public authority.",
+        "acquired_tract_is_larger_than_comparable_sale_plot": "The acquired tract is larger than the plot covered by the sale relied on for comparison.",
+        "sale_is_genuine_and_reliable": "The sale relied on is genuine and supported as reliable evidence.",
+        "sale_land_is_comparable": "The land covered by the sale is comparable to the acquired land in relevant respects, including its use or potential use.",
+        "sale_is_reasonably_close_in_location_and_time": "The sale concerns land reasonably near the acquired land and occurred reasonably near the relevant acquisition notification."
+      },
+      "definition": "In an acquired-land compensation proceeding, a genuine and reliable sale of comparable land reasonably near in location and time may serve as a valuation comparable for a larger acquired tract, with an appropriate adjustment."
+    },
+    {
+      "legal_issue": "When compensation for a larger acquired tract is assessed using a sale of a smaller plot, the deduction must reasonably account for the difference in scale.",
+      "material_facts": [
+        "The acquired land was a larger tract than the small site covered by the relied-upon sale deed.",
+        "The High Court had made a deduction of 50% from the small-site value to account for the difference in size.",
+        "The Supreme Court considered a greater deduction fair, just, and reasonable in the circumstances."
+      ],
+      "conclusion": "The deduction from the small-site value was increased to account for the larger size of the acquired tract.",
+      "legal_principle": "When using a sale of a smaller plot to value a larger tract, an appropriate deduction or adjustment is required; its extent depends on the circumstances of the case. The Court relied on Nookala Rajamallu, Bhagwathula Samanna, L. Kamalamma, and Basavva, which recognize deductions for matters such as development, layout formation, waiting time, and differences between the lands. The Court also referred to the Land Acquisition Act, 1894, in the setting of compensation for acquired land.",
+      "rule": {
+        "if": "land_acquisition_compensation_case and valuation_uses_sale_of_smaller_plot and acquired_tract_is_larger_than_sale_plot",
+        "then": "apply_reasonable_size_adjustment"
+      },
+      "predicates": {
+        "land_acquisition_compensation_case": "The proceeding concerns compensation for land acquired by a public authority.",
+        "valuation_uses_sale_of_smaller_plot": "The value of the acquired land is assessed using a sale of a smaller plot.",
+        "acquired_tract_is_larger_than_sale_plot": "The acquired tract is larger than the plot covered by the sale."
+      },
+      "definition": "When compensation for a larger acquired tract is based on a sale of a smaller plot, a reasonable adjustment is applied for the difference in scale."
+    }
+  ],
+  "seconds": 17.5
+}

@@ -1,0 +1,105 @@
+{
+  "doc_id": "1301243",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 20275,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 2858,
+    "prompt_tokens": 5653,
+    "total_tokens": 8511,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A person alleging adoption to displace natural succession must prove the adoption with evidence sufficient to meet a grave and serious burden of proof.",
+      "material_facts": [
+        "The alleged adoption had occurred within about a decade before the suit, when witnesses to the giving and taking would normally have been available.",
+        "No witness who had seen the adoption ceremony was produced, and no explanation was given for that absence.",
+        "The evidence relied on included the alleged adoptive father's statement in his will and testimony from a person who attested the will."
+      ],
+      "conclusion": "The alleged adoption was not established.",
+      "legal_principle": "Evidence supporting adoption must satisfy the grave and serious burden resting on a person who seeks to displace natural succession by alleging adoption (Mulla's Hindu Law, 14th ed., Article 512). A testator's statement about an adoption is admissible evidence but is not conclusive; there is no rule of law or prudence requiring it to be treated as conclusive (Chandreshwar Prasad Narain Singh v. Bisheshwar Pratap Narain Singh). Greater allowance for missing evidence may be appropriate when a very long time has elapsed since the alleged adoption, but that circumstance was absent here.",
+      "rule": {
+        "if": "adoption_dispute_in_succession_case and adoption_claimed_to_displace_natural_succession and adoption_recent_enough_for_ceremony_witnesses and not ceremony_witnesses_produced and not absence_of_witnesses_explained",
+        "then": "alleged_adoption_not_established"
+      },
+      "predicates": {
+        "adoption_dispute_in_succession_case": "A party in a succession dispute asserted that an adoption determined who inherited the property.",
+        "adoption_claimed_to_displace_natural_succession": "The asserted adoption would displace the succession that otherwise followed from natural relationships.",
+        "adoption_recent_enough_for_ceremony_witnesses": "The alleged adoption occurred sufficiently recently that witnesses to its ceremony would normally have been available.",
+        "ceremony_witnesses_produced": "A witness who saw the giving and taking at the adoption ceremony was produced.",
+        "absence_of_witnesses_explained": "The party relying on the adoption explained why no witness to the ceremony was produced."
+      },
+      "definition": "When an adoption is asserted to displace natural succession, and the ceremony's witnesses would normally be available but are neither produced nor accounted for, the adoption is not established."
+    },
+    {
+      "legal_issue": "A devise to a person described in a will as an adopted child is not dependent on proof of adoption when that description identifies the devisee and the devise was motivated by affection and services.",
+      "material_facts": [
+        "The will described the beneficiary as the testator's adopted son and heir.",
+        "The will also recorded that the beneficiary lived with and rendered services to the testator and another family member.",
+        "The beneficiary had served them during illness and was affectionately attached to them.",
+        "The courts found that affection and the services rendered, rather than the legal relationship of adoption, motivated the devise."
+      ],
+      "conclusion": "The devise was not defeated by the failure to prove the adoption because the relationship was used as a description of the beneficiary, not as the reason for the devise.",
+      "legal_principle": "A will is construed in light of its language and surrounding circumstances. Where the reference to adoption describes the devisee as understood by the testator, but affection and services motivate the testamentary disposition, failure to establish the adoption does not defeat the devise. The court referred to Ranganathan Chattiar v. Periskaruppan in connection with treating the relationship description as distinct from the motive for the will.",
+      "rule": {
+        "if": "will_dispute and devisee_described_as_adopted_child and affection_or_services_motivated_devising and adoption_not_proved",
+        "then": "devise_not_dependent_on_adoption"
+      },
+      "predicates": {
+        "will_dispute": "The dispute concerns whether a testamentary disposition remains effective despite a challenge to the beneficiary's stated relationship to the testator.",
+        "devisee_described_as_adopted_child": "The will described the beneficiary as the testator's adopted child.",
+        "affection_or_services_motivated_devising": "The testator's affection for the beneficiary or the beneficiary's services motivated the devise.",
+        "adoption_not_proved": "The asserted adoption was not established by the evidence."
+      },
+      "definition": "If a will describes its beneficiary as an adopted child but affection or services motivated the devise, the devise remains effective even if the adoption is not proved."
+    },
+    {
+      "legal_issue": "A life tenant who receives property under a will may not defeat the testator's valid direction that the property pass to a named beneficiary after the life tenancy ends.",
+      "material_facts": [
+        "One will gave the property to a woman for her lifetime and directed that it pass to the beneficiary after her death.",
+        "The woman later made a will devising that property to the same beneficiary.",
+        "Her disposition was consistent with the prior testator's direction."
+      ],
+      "conclusion": "The beneficiary's right under the first will remained effective; the later will did no more than carry out that direction.",
+      "legal_principle": "A valid testamentary direction giving property to a life tenant and directing its subsequent devolution to a beneficiary remains effective independently of the life tenant's later will. The life tenant's later devise, to the extent consistent with that direction, merely carries out the original testator's behest.",
+      "rule": {
+        "if": "will_dispute and property_given_to_life_tenant and first_testator_directed_remainder_to_beneficiary and later_will_names_same_beneficiary",
+        "then": "original_remainder_direction_remains_effective"
+      },
+      "predicates": {
+        "will_dispute": "The dispute concerns the effect of successive wills on the same property.",
+        "property_given_to_life_tenant": "An earlier will gave the property to a person for that person's lifetime.",
+        "first_testator_directed_remainder_to_beneficiary": "The earlier will directed that the property pass to a beneficiary after the life tenancy ended.",
+        "later_will_names_same_beneficiary": "The life tenant's later will named the beneficiary designated by the earlier will."
+      },
+      "definition": "When an earlier will grants a life tenancy and directs the remainder to a beneficiary whom the life tenant's later will also names, the earlier remainder direction remains effective."
+    },
+    {
+      "legal_issue": "A widow holding her husband's property only as a life tenant without power to devise it cannot pass that property by will, and the reversioners succeed to it.",
+      "material_facts": [
+        "The widow had inherited the property from her husband on his death, subject to a life tenure.",
+        "She had no right to devise the husband's property, and no necessity supporting an alienation was established.",
+        "She attempted to devise the property by will.",
+        "The beneficiary's asserted adoption was not proved."
+      ],
+      "conclusion": "The widow's will was inoperative as to the husband's property, and the reversioners, rather than the devisee, succeeded to it.",
+      "legal_principle": "Under the applicable Hindu law, a widow who takes her husband's property only for life lacks power to devise it and may not alienate it except for necessity. The court noted that the result would have differed if the adoption had been proved, because the beneficiary would then have succeeded as the sole reversioner.",
+      "rule": {
+        "if": "will_dispute and property_inherited_from_husband_as_life_tenant and not power_to_devise_or_proven_necessity and adoption_not_proved",
+        "then": "husbands_estate_passes_to_reversioners"
+      },
+      "predicates": {
+        "will_dispute": "The dispute concerns a will purporting to dispose of property inherited from a deceased husband.",
+        "property_inherited_from_husband_as_life_tenant": "The woman received her husband's property only as a life tenant.",
+        "power_to_devise_or_proven_necessity": "The woman had power to devise the property or a necessity justifying its alienation was established.",
+        "adoption_not_proved": "The alleged adoption that could make the devisee the reversioner was not established."
+      },
+      "definition": "If a widow holds her husband's property only for life, lacks power to devise or a proven necessity for alienation, and the claimed adoption that would make the devisee a reversioner is not proved, the reversioners succeed to the property."
+    }
+  ],
+  "seconds": 18.4
+}

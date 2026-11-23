@@ -1,0 +1,138 @@
+{
+  "doc_id": "710942",
+  "model": "openai/gpt6_luna",
+  "effort": "medium",
+  "chars": 22132,
+  "truncated": false,
+  "status": "ok",
+  "usage": {
+    "completion_tokens": 3148,
+    "prompt_tokens": 5899,
+    "total_tokens": 9047,
+    "completion_tokens_details": null,
+    "prompt_tokens_details": null
+  },
+  "issues": [
+    {
+      "legal_issue": "A power of attorney executed abroad is ineffective for registration purposes when it is not authenticated in the manner required by law.",
+      "material_facts": [
+        "The first power of attorney was executed abroad and was relied on to authorize an agent to execute a sale deed and present it for registration.",
+        "It bore a witness’s signature, but nothing showed that the witness was a Notary Public, and there was no adequate authentication by a Notary Public."
+      ],
+      "conclusion": "The first power of attorney did not satisfy the authentication requirements and did not authorize the agent to execute or present the sale deed for registration.",
+      "legal_principle": "Section 33 of the Indian Registration Act requires a power of attorney executed abroad by a person residing outside India to be authenticated by a Notary Public. Section 85 of the Indian Evidence Act permits a presumption of due execution and authentication only for a document meeting its stated conditions.",
+      "rule": {
+        "if": "foreign_power_of_attorney_dispute and (only_witness_signature_shown or not_adequately_authenticated_by_notary)",
+        "then": "foreign_power_of_attorney_is_ineffective"
+      },
+      "predicates": {
+        "foreign_power_of_attorney_dispute": "The case concerns whether a power of attorney executed abroad authorizes an agent to execute or present a document for registration.",
+        "only_witness_signature_shown": "The document bears a witness’s signature without showing that the witness acted as a Notary Public.",
+        "not_adequately_authenticated_by_notary": "The document lacks adequate authentication by a Notary Public."
+      },
+      "definition": "When a dispute concerns a power of attorney executed abroad and it has only a witness’s signature or lacks adequate notarization, the power of attorney is ineffective."
+    },
+    {
+      "legal_issue": "A foreign-executed power of attorney is validly authenticated when a proper Notary Public certifies that it was subscribed and sworn before the notary, notwithstanding the absence of an express statement that the signer’s identity was verified.",
+      "material_facts": [
+        "A later power of attorney was subscribed and sworn before a proper Notary Public in the place where it was executed.",
+        "The Notary Public authenticated it in accordance with local law, and the document was duly authenticated under Indian law.",
+        "The notarial endorsement did not expressly state that the signer had been identified to the Notary Public’s satisfaction."
+      ],
+      "conclusion": "The later power of attorney was valid and effective under sections 85 of the Indian Evidence Act and 33 of the Indian Registration Act.",
+      "legal_principle": "Sections 85 of the Indian Evidence Act and 33 of the Indian Registration Act apply to a properly authenticated foreign power of attorney. The Court applied the presumption of regularity of official acts: an endorsement that the document was subscribed and sworn before the Notary Public supported the inference that the notary performed the required duties, including satisfying himself as to the signer’s identity.",
+      "rule": {
+        "if": "foreign_power_of_attorney_dispute and proper_notary_used and document_subscribed_and_sworn_before_notary and authenticated_under_local_law and authenticated_under_applicable_domestic_law",
+        "then": "power_of_attorney_is_validly_authenticated"
+      },
+      "predicates": {
+        "foreign_power_of_attorney_dispute": "The case concerns the authentication of a power of attorney executed abroad.",
+        "proper_notary_used": "The document was executed before a person acting as a proper Notary Public.",
+        "document_subscribed_and_sworn_before_notary": "The Notary Public endorsed that the document was subscribed and sworn before the notary.",
+        "authenticated_under_local_law": "The document was authenticated in accordance with the law applicable where it was executed.",
+        "authenticated_under_applicable_domestic_law": "The document was also authenticated in accordance with the applicable domestic law."
+      },
+      "definition": "A foreign power of attorney is validly authenticated when it is subscribed and sworn before a proper notary and authenticated under both applicable legal systems."
+    },
+    {
+      "legal_issue": "A principal’s subsequent ratification of an agent’s unauthorized act relates back to the act and can cure a defect in presenting a document for registration.",
+      "material_facts": [
+        "The agent executed and presented a sale deed for registration under the first power of attorney, which was inadequately authenticated.",
+        "The later power of attorney stated that the first authority was defective and was being ratified, and that the agent’s acts, including execution and presentation for registration, would be the principal’s acts.",
+        "The later power of attorney was validly authenticated and the principal was disclosed in the transaction."
+      ],
+      "conclusion": "The later ratification related back to the earlier acts and cured the illegality in the presentation for registration.",
+      "legal_principle": "Ratification relates back to the original act where there is a disclosed principal. The Court relied on Keighley, Maxsted & Co. v. Durant and Wilson v. Tumman, and held Kottie Keran & Ors. v. Lachmi Prasad Sinha & Ors. inapplicable because it did not address subsequent ratification.",
+      "rule": {
+        "if": "registration_challenge and agent_acted_for_disclosed_principal and later_valid_ratification and ratification_covers_execution_and_presentation",
+        "then": "later_ratification_relates_back_and_cures_registration_defect"
+      },
+      "predicates": {
+        "registration_challenge": "The case challenges the effectiveness of registration because the agent’s authority to present the document is disputed.",
+        "agent_acted_for_disclosed_principal": "The agent acted openly on behalf of a principal whose identity was disclosed.",
+        "later_valid_ratification": "The principal later made a valid ratification of the agent’s earlier acts.",
+        "ratification_covers_execution_and_presentation": "The ratification covered both execution of the document and its presentation for registration."
+      },
+      "definition": "When an agent acts for a disclosed principal and the principal later validly ratifies both execution and presentation, the ratification relates back and cures the registration defect."
+    },
+    {
+      "legal_issue": "A plaintiff seeking a declaration cannot obtain it under section 42 of the Specific Relief Act while omitting further relief that the plaintiff is entitled to seek.",
+      "material_facts": [
+        "The plaintiffs sought a declaration that the transferees were not owners and had no right to redeem the mortgage under the Collector’s order.",
+        "They did not seek cancellation or setting aside of the Collector’s order, or an injunction, although the Court considered such relief available to them."
+      ],
+      "conclusion": "The plaintiffs were not entitled to the declaration because they had omitted further relief; the suit was barred by section 42 of the Specific Relief Act.",
+      "legal_principle": "Section 42 of the Specific Relief Act prevents a court from granting a declaration where the plaintiff is able to seek further relief but omits it. The Court stated that the plaintiffs could have sought the setting aside of the Collector’s order.",
+      "rule": {
+        "if": "declaration_suit_challenging_an_order and further_relief_is_available and further_relief_is_omitted",
+        "then": "declaration_is_denied"
+      },
+      "predicates": {
+        "declaration_suit_challenging_an_order": "The plaintiff brings a suit for a declaration challenging the effect of an order.",
+        "further_relief_is_available": "The plaintiff is entitled to seek additional relief addressing the order or its effects.",
+        "further_relief_is_omitted": "The plaintiff does not claim that additional relief."
+      },
+      "definition": "A plaintiff who seeks a declaration challenging an order but omits available further relief is denied the declaration."
+    },
+    {
+      "legal_issue": "A suit challenging transferees’ rights based on a transfer and an authority to act is improperly framed when the transferor and alleged principal is omitted, even if that person is not a necessary party.",
+      "material_facts": [
+        "The plaintiffs joined the transferees from the person who had authorized the agent but did not join that transferor and alleged principal.",
+        "The Court considered that the omitted person could have clarified whether authority had been given and could have ratified the agent’s act."
+      ],
+      "conclusion": "The suit was not properly framed; the omitted transferor was at least a proper party, even if not a necessary party.",
+      "legal_principle": "The Court held that the suit should be properly framed with the parties before the court and distinguished a proper party from a necessary party: a person may be a proper party when their participation can assist the court in resolving the dispute, even if the suit could proceed without them as a necessary party.",
+      "rule": {
+        "if": "suit_challenging_transferee_rights and transferor_or_principal_omitted and omitted_person_can_clarify_authority_or_ratification",
+        "then": "suit_is_improperly_framed"
+      },
+      "predicates": {
+        "suit_challenging_transferee_rights": "The suit challenges the rights of transferees based on a transfer and authority to act for the transferor.",
+        "transferor_or_principal_omitted": "The person who transferred the interest or allegedly authorized the agent is not joined as a party.",
+        "omitted_person_can_clarify_authority_or_ratification": "The omitted person could assist the court by addressing whether authority was given or by ratifying the agent’s act."
+      },
+      "definition": "A suit challenging transferees’ rights is improperly framed when it omits a transferor or principal whose participation could clarify authority or ratification."
+    },
+    {
+      "legal_issue": "Costs should ordinarily follow the event in a contested case decided against a party rather than being left to the parties to bear their own costs.",
+      "material_facts": [
+        "The case was a contested matter and was decided against one of the parties.",
+        "The High Court did not award costs.",
+        "The Supreme Court dismissed the appeal with costs and stated that costs should normally follow the event."
+      ],
+      "conclusion": "Costs should have been awarded to the successful party, and the appeal was dismissed with costs.",
+      "legal_principle": "The Court stated that costs should normally follow the event and that it is not the rule that parties should bear their own costs in a contested matter decided against one of them.",
+      "rule": {
+        "if": "contested_case and decision_against_a_party and costs_not_awarded_to_successful_party",
+        "then": "costs_should_be_awarded_to_successful_party"
+      },
+      "predicates": {
+        "contested_case": "The proceeding is a contested matter between opposing parties.",
+        "decision_against_a_party": "The court decides the matter against one of the parties.",
+        "costs_not_awarded_to_successful_party": "The court does not award costs to the party who succeeds."
+      },
+      "definition": "In a contested case decided against a party, costs should ordinarily be awarded to the successful party rather than left to each party to bear."
+    }
+  ],
+  "seconds": 18.9
+}
