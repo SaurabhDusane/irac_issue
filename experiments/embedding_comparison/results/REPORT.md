@@ -51,9 +51,9 @@ Chosen: **0.90** — the knee where band precision jumps from 45% to 78%.
 
 ## Step 4 — generalised rules
 
-- 418 rules generated for subcommunities with ≥3 issues (0 failed)
-- coherence: high 190, medium 214, low 14
-- mean share of shown members the rule covers: 88.1%; outliers flagged: 755
+- 619 rules generated for subcommunities with ≥3 issues (0 failed)
+- coherence: high 333, medium 271, low 15
+- mean share of shown members the rule covers: 91.1%; outliers flagged: 776
 - each rule carries a recurring-patterns summary (common facts, provisions, typical outcome, variations)
 
 ## Step 5 — evaluation on test issues (rule applicability)
@@ -66,7 +66,15 @@ _pending_
 
 ## Outcome accuracy — leave-one-out on train
 
-_pending_
+Hold out one member, build the rule from the rest, predict the held-out outcome from its material facts only, grade against the real conclusion. Baseline: same predictor given the single most similar other train decision.
+
+| method | outcome MATCH | MATCH or PARTIAL |
+|---|---|---|
+| generalised rule | 83.3% | 97.3% |
+| nearest precedent | 84.0% | 97.3% |
+
+n = 150. Only the rule is right: 7.3%; only the precedent: 8.0%; both: 76.0%.
+By rule coherence: high: 91.2% (n=80); low: 66.7% (n=3); medium: 74.6% (n=67)
 
 ## Rule conflicts
 
