@@ -9,7 +9,7 @@ one-sentence "definition"), so step 5 can apply it to test issues the same way.
 
 usage: python generalize.py <graph_dir> [min_size=3] [limit=0 (all)] [max_members=25]
 """
-import json, os, random, re, sys
+import json, os, random, re, sys, threading
 from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
@@ -160,12 +160,34 @@ def main(graph_dir, min_size=3, limit=0, max_members=25):
     clusters = [c for c in map(json.loads, open(f"{graph_dir}/subcommunities.jsonl")) if c["size"] >= min_size]
     if limit:
         clusters = random.Random(0).sample(clusters, min(limit, len(clusters)))
-    with ThreadPoolExecutor(6) as ex:
-        results = list(ex.map(lambda c: generalize(c, emb, idx_of, max_members), clusters))
     tag = f"_pilot{limit}" if limit else ""
-    with open(f"{graph_dir}/rules{tag}.jsonl", "w") as f:
-        for r in results:
+    path = f"{graph_dir}/rules{tag}.jsonl"
+    done = {}
+    if os.path.exists(path):                      # resume: keep successful results
+        for line in open(path):
+            r = json.loads(line)
+            if "error" not in r:
+                done[r["subcommunity"]] = r
+    todo = [c for c in clusters if c["subcommunity"] not in done]
+    print(f"{len(clusters)} clusters, {len(done)} already done, {len(todo)} to run", flush=True)
+    with open(path, "w") as f:
+        for r in done.values():
             f.write(json.dumps(r) + "\n")
+    lock = threading.Lock()
+
+    def work(c):
+        r = generalize(c, emb, idx_of, max_members)
+        with lock, open(path, "a") as f:
+            f.write(json.dumps(r) + "\n")
+            done[c["subcommunity"]] = r
+            if len(done) % 50 == 0:
+                print(f"progress {len(done)}/{len(clusters)}", flush=True)
+        return r
+
+    with ThreadPoolExecutor(6) as ex:
+        list(ex.map(work, todo))
+    order = {c["subcommunity"]: i for i, c in enumerate(clusters)}
+    results = sorted(done.values(), key=lambda r: order.get(r["subcommunity"], 1e9))
     review_md(results, f"{graph_dir}/rules{tag}_review.md")
     ok = [r for r in results if "error" not in r]
     print(json.dumps(dict(clusters=len(results), ok=len(ok),
