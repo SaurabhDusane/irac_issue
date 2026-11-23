@@ -80,4 +80,6 @@ By rule coherence: high: 91.2% (n=80); low: 66.7% (n=3); medium: 74.6% (n=67)
 
 ## Rule conflicts
 
-_pending_
+400 close rule pairs from different clusters checked. Relations: DIFFERENT 191, REFINEMENT 154, CONFLICT 32, SAME 23.
+Conflicts explained as: DISTINCTION 30, DOCTRINAL_SHIFT 2.
+Details: `eval/rule_conflicts.csv`.
