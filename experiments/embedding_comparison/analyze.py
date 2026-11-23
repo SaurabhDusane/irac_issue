@@ -125,7 +125,7 @@ def main(keys):
     # an act is "unnamed" in the issue if none of its distinctive words appear there
     df["unnamed"] = [bool(a) and not any(all(w in t for w in act.split()[:-1] or [act]) for act in a)
                      for a, t in zip(df.acts, issue_l)]
-    doc = df.doc_id.values
+    doc = pd.factorize(df.doc_id)[0]
     acts = df.acts.values
     print(f"issues with a statute label: {df.acts.astype(bool).mean():.1%}; "
           f"label not named in issue text: {df.unnamed.mean():.1%}")
