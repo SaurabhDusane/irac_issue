@@ -92,7 +92,7 @@ Answer-or-abstain at top-1 similarity τ (gold = top-1 rule judged APPLIES):
 
 ### Judge robustness
 
-_pending_
+Second judge gcp-deepmind/geminipro3_1 on 300 pairs: 3-class agreement 81.3% (κ = 0.64); APPLIES-vs-rest agreement 95.3% (κ = 0.85). APPLIES rate: 19.3% vs 18.0%. Human spot-check sheet: `eval/human_review_pack.csv`.
 
 ## Outcome accuracy — leave-one-out on train
 
