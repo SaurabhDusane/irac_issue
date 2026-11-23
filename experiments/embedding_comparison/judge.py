@@ -16,6 +16,7 @@ from load_data import load_train
 
 API = "https://api-main.aiml.asu.edu/v1/chat/completions"   # auth injected by proxy
 JUDGE = "aws/claude5_5_sonnet"
+# the judge reasons before answering; a small max_tokens returns empty content
 PROMPT = """You are helping evaluate legal-issue clustering for Indian Supreme Court judgments.
 
 TARGET issue:
@@ -34,7 +35,7 @@ Answer with exactly one word: 1, 2, BOTH or NEITHER."""
 def ask(t, c1, c2):
     for _ in range(4):
         try:
-            r = requests.post(API, json=dict(model=JUDGE, max_tokens=5, temperature=0,
+            r = requests.post(API, json=dict(model=JUDGE, max_tokens=1024, temperature=0,
                 messages=[{"role": "user", "content": PROMPT.format(t=t, c1=c1, c2=c2)}]), timeout=120)
             out = r.json()["choices"][0]["message"]["content"].strip().upper()
             m = re.match(r"(BOTH|NEITHER|1|2)", out)
