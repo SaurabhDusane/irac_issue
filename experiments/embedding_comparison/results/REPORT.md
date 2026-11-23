@@ -11,6 +11,7 @@ Weak-label metrics at a matched edge budget (34,063 edges each). `*` = embedding
 | bge-base | 0.342 | 0.248 | 0.617 | 0.853 | 49.3% |
 | bge-large | 0.335 | 0.245 | 0.597 | 0.889 | 43.8% |
 | qwen3-0.6b | 0.378 | 0.287 | 0.756 | 0.873 | 55.2% |
+| qwen3-0.6b+lp* | 0.540 | 0.423 | 0.824 | 0.921 | 52.3% |
 | gemini-001 | 0.371 | 0.276 | 0.677 | 0.872 | 48.9% |
 | gemini-001+lp* | 0.535 | 0.421 | 0.800 | 0.929 | 47.6% |
 
@@ -21,6 +22,7 @@ Blind LLM judge (Claude Sonnet): for issues where two models pick a different ne
 | gemini-001+lp vs gemini-001 | 58 | 51 | 26 | 65 | 0.566 |
 | gemini-001 vs bge-base | 91 | 28 | 16 | 65 | 5.8e-09 |
 | gemini-001 vs bge-large | 91 | 29 | 18 | 62 | 1.22e-08 |
+| qwen3-0.6b+lp vs gemini-001 | 55 | 62 | 25 | 58 | 0.579 |
 | qwen3-0.6b vs bge-base | 64 | 47 | 13 | 76 | 0.128 |
 | qwen3-0.6b vs gemini-001 | 40 | 90 | 16 | 54 | 1.37e-05 |
 
@@ -51,9 +53,9 @@ Chosen: **0.90** — the knee where band precision jumps from 45% to 78%.
 
 ## Step 4 — generalised rules
 
-- 619 rules generated for subcommunities with ≥3 issues (0 failed)
-- coherence: high 333, medium 271, low 15
-- mean share of shown members the rule covers: 91.1%; outliers flagged: 776
+- 760 rules generated for subcommunities with ≥3 issues (0 failed)
+- coherence: high 445, medium 300, low 15
+- mean share of shown members the rule covers: 92.4%; outliers flagged: 785
 - each rule carries a recurring-patterns summary (common facts, provisions, typical outcome, variations)
 
 ## Step 5 — evaluation on test issues (rule applicability)
