@@ -12,6 +12,7 @@ Weak-label metrics at a matched edge budget (34,063 edges each). `*` = embedding
 | bge-large | 0.335 | 0.245 | 0.597 | 0.889 | 43.8% |
 | qwen3-0.6b | 0.378 | 0.287 | 0.756 | 0.873 | 55.2% |
 | qwen3-0.6b+lp* | 0.540 | 0.423 | 0.824 | 0.921 | 52.3% |
+| qwen3-4b | 0.380 | 0.294 | 0.710 | 0.929 | 47.1% |
 | gemini-001 | 0.371 | 0.276 | 0.677 | 0.872 | 48.9% |
 | gemini-001+lp* | 0.535 | 0.421 | 0.800 | 0.929 | 47.6% |
 
@@ -25,6 +26,8 @@ Blind LLM judge (Claude Sonnet): for issues where two models pick a different ne
 | qwen3-0.6b+lp vs gemini-001 | 55 | 62 | 25 | 58 | 0.579 |
 | qwen3-0.6b vs bge-base | 64 | 47 | 13 | 76 | 0.128 |
 | qwen3-0.6b vs gemini-001 | 40 | 90 | 16 | 54 | 1.37e-05 |
+| qwen3-4b vs gemini-001 | 61 | 61 | 26 | 52 | 1 |
+| qwen3-4b vs qwen3-0.6b | 78 | 38 | 23 | 61 | 0.000258 |
 
 ## Step 2 — threshold (gemini-embedding-001)
 
