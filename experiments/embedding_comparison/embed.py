@@ -14,6 +14,7 @@ MODELS = {
                        prompt="Instruct: Given a legal issue decided by a court, retrieve other issues that raise the same legal question\nQuery: "),
     # served by the ASU AIML API (OpenAI-compatible /v1/embeddings); no prompt
     "gemini-001": dict(name="gcp-deepmind/gemini-embedding-001", prompt=None, api=True),
+    "gemini-2":   dict(name="gcp-deepmind/gemini-embedding-2", prompt=None, api=True),
     "qwen3-4b":   dict(name="Qwen/Qwen3-Embedding-4B",
                        prompt="Instruct: Given a legal issue decided by a court, retrieve other issues that raise the same legal question\nQuery: "),
 }
