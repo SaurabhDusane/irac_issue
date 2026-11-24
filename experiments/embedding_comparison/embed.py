@@ -1,6 +1,8 @@
 """Embed the legal_issue text of every train issue with one model.
-usage: python embed.py <model_key>[+lp] [train|test]
-A "+lp" suffix embeds "legal_issue\n\nlegal_principle" instead of the issue alone."""
+usage: python embed.py <model_key>[+variant] [train|test]
+variants: lp (issue + principle), facts (issue + material facts), irac (issue +
+facts + principle + rule, no conclusion), rule (if/then + predicates), def
+(rule definition). No suffix = issue only."""
 import os, sys, time
 import numpy as np
 from load_data import load_test, load_train
@@ -22,14 +24,24 @@ MODELS = {
                        prompt="Instruct: Given a legal issue decided by a court, retrieve other issues that raise the same legal question\nQuery: "),
 }
 
-key = sys.argv[1]; with_lp = key.endswith("+lp")
-cfg = MODELS[key.removesuffix("+lp")]
+key = sys.argv[1]
+base, _, variant = key.partition("+")
+cfg = MODELS[base]
 os.makedirs("out", exist_ok=True)
 split = sys.argv[2] if len(sys.argv) > 2 else "train"
 df = load_train() if split == "train" else load_test()
 suffix = "" if split == "train" else "_test"
 df[["node_id", "doc_id", "issue_no"]].to_csv(f"out/nodes{suffix}.csv", index=False)
-texts = (df.legal_issue + "\n\n" + df.legal_principle).tolist() if with_lp else df.legal_issue.tolist()
+# input variants (train only; test has legal_issue only)
+VARIANTS = {
+    "": lambda d: d.legal_issue,
+    "lp": lambda d: d.legal_issue + "\n\n" + d.legal_principle,
+    "facts": lambda d: d.legal_issue + "\n\nFacts: " + d.facts,
+    "irac": lambda d: d.legal_issue + "\n\nFacts: " + d.facts + "\n\nPrinciple: " + d.legal_principle + "\n\nRule: " + d.rule_text,
+    "rule": lambda d: d.rule_text,
+    "def": lambda d: d.definition,
+}
+texts = VARIANTS[variant](df).tolist()
 t = time.time()
 
 

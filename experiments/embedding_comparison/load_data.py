@@ -17,6 +17,10 @@ def load_train():
                 legal_principle=iss.get("legal_principle", ""),
                 conclusion=iss.get("conclusion", ""),
                 predicates=" ".join((iss.get("predicates") or {}).keys()),
+                facts=" ".join(iss.get("material_facts") or []),
+                rule_text=("IF " + iss["rule"].get("if", "") + " THEN " + iss["rule"].get("then", "") + "\n"
+                           + "\n".join(f"{k}: {v}" for k, v in (iss.get("predicates") or {}).items())),
+                definition=iss.get("definition") or "",
             ))
     return pd.DataFrame(rows)
 
