@@ -20,6 +20,22 @@ re-embedding is needed. The train_val split is `splits/train_val_cases.txt`
 (placeholder: 700 random cases; replace with the team's list via
 `python make_split.py --from <file>` and rebuild the graph).
 
+## Rehearse first (1 minute, no GPU)
+
+Runs every stage against a fake LLM so a bug can't waste GPU hours:
+
+```bash
+python sol/mock_llm.py 8099 &
+LLM_API_BASE=http://localhost:8099/v1 GEN_MODEL=mock JUDGE_MODEL=mock WORKERS=32 bash sol/run_fit_pipeline.sh
+rm -rf out/graph_gemini-001_0.9_fit/rules* out/graph_gemini-001_0.9v2_fit   # clear mock outputs before the real run
+kill %1
+```
+
+The mock numbers are meaningless; the point is that all five stages finish.
+Sol rebuilds the graph from the committed float16 embeddings, so cluster
+counts can differ by ~1% from the float32 build (e.g. 836 vs 847
+subcommunities with 3+ issues).
+
 ## Jobs
 
 | job | what | rough time |

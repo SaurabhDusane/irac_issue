@@ -84,11 +84,17 @@ def presplit(members, E, idx_of):
     return done
 
 
-def write_assignments(v2, clusters):
+def write_assignments(v2, clusters, src):
+    """src: the assignments.csv to inherit the train_fit / train_val split column from."""
     nodes = load_train()[["node_id", "doc_id"]]
     sub = {m["node_id"]: c["subcommunity"] for c in clusters for m in c["members"]}
     nodes["subcommunity"] = nodes.node_id.map(sub).fillna("-1")
-    nodes[["node_id", "doc_id", "subcommunity"]].to_csv(f"{v2}/assignments.csv", index=False)
+    cols = ["node_id", "doc_id", "subcommunity"]
+    old = pd.read_csv(src, dtype=str)
+    if "split" in old:
+        nodes["split"] = nodes.node_id.map(dict(zip(old.node_id, old.split)))
+        cols.insert(2, "split")
+    nodes[cols].to_csv(f"{v2}/assignments.csv", index=False)
 
 
 def split(v1, v2):
@@ -136,7 +142,7 @@ def split(v1, v2):
         for c in clusters:
             f.write(json.dumps(c) + "\n")
     json.dump(log, open(f"{v2}/split_log.json", "w"), indent=1)
-    write_assignments(v2, clusters)
+    write_assignments(v2, clusters, f"{v1}/assignments.csv")
     with open(f"{v2}/rules.jsonl", "w") as f:                       # reuse high-coherence v1 rules
         for s in keep:
             f.write(json.dumps(rules[s]) + "\n")
@@ -170,7 +176,7 @@ def merge(v2, min_sim=0.88, max_pairs=1000):
         for r in rules:
             if r["subcommunity"] not in merged_ids:
                 f.write(json.dumps(r) + "\n")
-    write_assignments(v2, out)
+    write_assignments(v2, out, f"{v2}/assignments.csv")
     json.dump(dict(same_pairs=len(same), merged_groups=len(groups), rules_merged=len(merged_ids),
                    merged_group_sizes=[len(g) for g in groups]), open(f"{v2}/merge_log.json", "w"), indent=1)
     print(f"merged {len(merged_ids)} rules into {len(groups)}", flush=True)
