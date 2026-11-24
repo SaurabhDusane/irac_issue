@@ -39,7 +39,7 @@ VARIANTS = {
     "facts": lambda d: d.legal_issue + "\n\nFacts: " + d.facts,
     "irac": lambda d: d.legal_issue + "\n\nFacts: " + d.facts + "\n\nPrinciple: " + d.legal_principle + "\n\nRule: " + d.rule_text,
     "rule": lambda d: d.rule_text,
-    "def": lambda d: d.definition,
+    "def": lambda d: d.definition.where(d.definition.str.strip() != "", d.legal_issue),  # 2 issues lack one
 }
 texts = VARIANTS[variant](df).tolist()
 t = time.time()
