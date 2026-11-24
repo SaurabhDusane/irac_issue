@@ -20,6 +20,8 @@ import pandas as pd
 from networkx.algorithms.community import louvain_communities
 
 from generalize import call, parse
+from llm import WORKERS
+from load_data import load_emb, load_train, node_ids
 
 PY = sys.executable
 MAX_SHOWN = 25
@@ -82,8 +84,8 @@ def presplit(members, E, idx_of):
     return done
 
 
-def write_assignments(v2, clusters, n_nodes_csv="out/nodes.csv"):
-    nodes = pd.read_csv(n_nodes_csv, dtype=str)
+def write_assignments(v2, clusters):
+    nodes = load_train()[["node_id", "doc_id"]]
     sub = {m["node_id"]: c["subcommunity"] for c in clusters for m in c["members"]}
     nodes["subcommunity"] = nodes.node_id.map(sub).fillna("-1")
     nodes[["node_id", "doc_id", "subcommunity"]].to_csv(f"{v2}/assignments.csv", index=False)
@@ -92,15 +94,15 @@ def write_assignments(v2, clusters, n_nodes_csv="out/nodes.csv"):
 def split(v1, v2):
     from concurrent.futures import ThreadPoolExecutor
     key = os.path.basename(v1.rstrip("/")).split("_")[1]
-    E = np.load(f"out/emb_{key}.npy")
-    idx_of = {n: i for i, n in enumerate(pd.read_csv("out/nodes.csv", dtype=str).node_id)}
+    E = load_emb(key)
+    idx_of = {n: i for i, n in enumerate(node_ids())}
     os.makedirs(v2, exist_ok=True)
     subs = {c["subcommunity"]: c for c in map(json.loads, open(f"{v1}/subcommunities.jsonl"))}
     rules = {r["subcommunity"]: r for r in map(json.loads, open(f"{v1}/rules.jsonl")) if "error" not in r}
 
     keep = [s for s, r in rules.items() if r["coherence"] == "high"]
     targets = [s for s, r in rules.items() if r["coherence"] != "high"]
-    pairs = [s for s, c in subs.items() if c["size"] == 2]
+    pairs = [s for s, c in subs.items() if c["size"] == 2 and s not in rules]
     print(f"keep {len(keep)} high-coherence rules; re-partition {len(targets)} clusters; add {len(pairs)} pairs", flush=True)
 
     def do(s):
@@ -111,7 +113,7 @@ def split(v1, v2):
             groups += llm_partition(chunk)
         return s, groups
 
-    with ThreadPoolExecutor(6) as ex:
+    with ThreadPoolExecutor(WORKERS) as ex:
         parts = list(ex.map(do, targets))
 
     clusters, log = [], []

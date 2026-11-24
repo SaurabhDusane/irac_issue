@@ -16,8 +16,8 @@ from networkx.algorithms.community import louvain_communities, modularity
 
 from load_data import load_train
 
-API = "https://api-main.aiml.asu.edu/v1/chat/completions"   # auth injected by proxy
-JUDGE = "aws/claude5_5_sonnet"
+from llm import JUDGE_MODEL as JUDGE, WORKERS, chat
+from load_data import load_emb
 PROMPT = """Two legal issues from Indian Supreme Court judgments:
 
 ISSUE A:
@@ -33,9 +33,7 @@ Answer with exactly one word: YES or NO."""
 def ask(a, b):
     for _ in range(4):
         try:
-            r = requests.post(API, json=dict(model=JUDGE, max_tokens=1024, temperature=0,
-                messages=[{"role": "user", "content": PROMPT.format(a=a, b=b)}]), timeout=120)
-            m = re.match(r"(YES|NO)", r.json()["choices"][0]["message"]["content"].strip().upper())
+            m = re.match(r"(YES|NO)", chat([{"role": "user", "content": PROMPT.format(a=a, b=b)}], model=JUDGE, max_tokens=2048, timeout=180).strip().upper())
             if m:
                 return m.group(1) == "YES"
         except Exception:
@@ -55,7 +53,7 @@ def all_pairs_above(E, floor, block=2048):
 
 def main(key, lo=0.86, hi=0.95, step=0.01, per_band=40):
     df = load_train()
-    E = np.load(f"out/emb_{key}.npy")
+    E = load_emb(key)
     I, J, S = all_pairs_above(E, lo)
     doc = df.doc_id.values
     cross = doc[I] != doc[J]
@@ -68,7 +66,7 @@ def main(key, lo=0.86, hi=0.95, step=0.01, per_band=40):
         comms = louvain_communities(G, weight="weight", seed=42)
         band = np.nonzero((S >= t) & (S < t + step) & cross)[0]
         sample = rng.sample(band.tolist(), min(per_band, len(band)))
-        with ThreadPoolExecutor(8) as ex:
+        with ThreadPoolExecutor(WORKERS) as ex:
             votes = [v for v in ex.map(lambda k: ask(df.legal_issue[I[k]], df.legal_issue[J[k]]), sample) if v is not None]
         r = dict(threshold=float(t), edges=int(keep.sum()), isolated=float(np.mean([d == 0 for _, d in G.degree()])),
                  communities_gt1=sum(len(c) > 1 for c in comms),

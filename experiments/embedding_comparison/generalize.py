@@ -14,10 +14,9 @@ from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
 import pandas as pd
-import requests
+from load_data import load_emb, node_ids
 
-API = "https://api-main.aiml.asu.edu/v1/chat/completions"   # auth injected by proxy
-MODEL = "aws/claude5_5_sonnet"
+from llm import GEN_MODEL as MODEL, WORKERS, chat, stop_if_budget_exhausted  # noqa: F401
 
 SYSTEM = """You are a legal analyst generalising holdings of the Supreme Court of India.
 
@@ -84,20 +83,8 @@ def validate(out, member_ids):
     return errs
 
 
-def stop_if_budget_exhausted(d):
-    """The ASU project has a monthly budget; when it is spent every call fails.
-    Stop the whole run (results so far are kept and the next run resumes)."""
-    msg = (d.get("error") or {}).get("message", "") if isinstance(d, dict) else ""
-    if "budget" in msg:
-        print(f"STOPPING: API budget exhausted: {msg[:160]}", flush=True)
-        os._exit(3)
-
-
 def call(messages):
-    r = requests.post(API, json=dict(model=MODEL, max_tokens=8000, temperature=0, messages=messages), timeout=600)
-    d = r.json()
-    stop_if_budget_exhausted(d)
-    return d["choices"][0]["message"]["content"]
+    return chat(messages)
 
 
 def parse(text):
@@ -165,9 +152,8 @@ def review_md(results, path):
 
 def main(graph_dir, min_size=3, limit=0, max_members=25):
     key = os.path.basename(graph_dir.rstrip("/")).split("_")[1]
-    emb = np.load(f"out/emb_{key}.npy")
-    nodes = pd.read_csv("out/nodes.csv", dtype=str)
-    idx_of = {n: i for i, n in enumerate(nodes.node_id)}
+    emb = load_emb(key)
+    idx_of = {n: i for i, n in enumerate(node_ids())}
     clusters = [c for c in map(json.loads, open(f"{graph_dir}/subcommunities.jsonl")) if c["size"] >= min_size]
     if limit:
         clusters = random.Random(0).sample(clusters, min(limit, len(clusters)))
@@ -195,7 +181,7 @@ def main(graph_dir, min_size=3, limit=0, max_members=25):
                 print(f"progress {len(done)}/{len(clusters)}", flush=True)
         return r
 
-    with ThreadPoolExecutor(6) as ex:
+    with ThreadPoolExecutor(WORKERS) as ex:
         list(ex.map(work, todo))
     order = {c["subcommunity"]: i for i, c in enumerate(clusters)}
     results = sorted(done.values(), key=lambda r: order.get(r["subcommunity"], 1e9))

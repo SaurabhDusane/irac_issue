@@ -22,6 +22,8 @@ MODELS = {
                          url="https://api.voyageai.com/v1/embeddings", batch=64),
     "qwen3-4b":   dict(name="Qwen/Qwen3-Embedding-4B",
                        prompt="Instruct: Given a legal issue decided by a court, retrieve other issues that raise the same legal question\nQuery: "),
+    "qwen3-8b":   dict(name="Qwen/Qwen3-Embedding-8B",          # GPU (Sol) recommended
+                       prompt="Instruct: Given a legal issue decided by a court, retrieve other issues that raise the same legal question\nQuery: "),
 }
 
 key = sys.argv[1]
@@ -45,36 +47,20 @@ texts = VARIANTS[variant](df).tolist()
 t = time.time()
 
 
-def api_embed(texts, model, batch=100, workers=4,
-              url="https://api-main.aiml.asu.edu/v1/embeddings"):   # ASU auth injected by proxy
-    import requests
-    from concurrent.futures import ThreadPoolExecutor
-    headers = {"Authorization": f"Bearer {os.environ['VOYAGE_API_KEY']}"} \
-        if "voyageai" in url and os.environ.get("VOYAGE_API_KEY") else {}
-
-    def call(chunk):
-        for attempt in range(6):
-            try:
-                r = requests.post(url, json=dict(model=model, input=chunk), headers=headers, timeout=300)
-                d = r.json()["data"]
-                return [x["embedding"] for x in sorted(d, key=lambda x: x["index"])]
-            except Exception:
-                time.sleep(2 ** attempt)
-        raise RuntimeError("embedding API failed")
-    chunks = [texts[i:i + batch] for i in range(0, len(texts), batch)]
-    with ThreadPoolExecutor(workers) as ex:
-        E = np.array([v for part in ex.map(call, chunks) for v in part], dtype=np.float32)
-    return E / np.linalg.norm(E, axis=1, keepdims=True)
-
-
 if cfg.get("api"):
-    E = api_embed(texts, cfg["name"], **{k: cfg[k] for k in ("url", "batch") if k in cfg})
+    from llm import embed
+    kw = {k: cfg[k] for k in ("url", "batch") if k in cfg}
+    if "voyageai" in cfg.get("url", ""):
+        kw["headers"] = {"Authorization": f"Bearer {os.environ['VOYAGE_API_KEY']}"} if os.environ.get("VOYAGE_API_KEY") else {}
+    E = embed(texts, cfg["name"], **kw)
 else:
     import torch
     from sentence_transformers import SentenceTransformer
+    gpu = torch.cuda.is_available()
     torch.set_num_threads(os.cpu_count())
-    m = SentenceTransformer(cfg["name"], device="cpu")
-    E = m.encode(texts, batch_size=32, prompt=cfg["prompt"],
+    m = SentenceTransformer(cfg["name"], device="cuda" if gpu else "cpu",
+                            model_kwargs={"torch_dtype": torch.bfloat16} if gpu else {})
+    E = m.encode(texts, batch_size=int(os.environ.get("EMB_BATCH", 64 if gpu else 32)), prompt=cfg["prompt"],
                  normalize_embeddings=True, show_progress_bar=False, convert_to_numpy=True)
 np.save(f"out/emb_{key}{suffix}.npy", E.astype(np.float32))
 print(f"{key}{suffix}: {E.shape} in {(time.time()-t)/60:.1f} min", flush=True)

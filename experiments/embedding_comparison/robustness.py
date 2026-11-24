@@ -19,7 +19,7 @@ from networkx.algorithms.community import louvain_communities, modularity
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 
 from analyze import acts_of, purity
-from load_data import load_train
+from load_data import load_emb, load_train
 from threshold_sweep import all_pairs_above
 
 SEEDS = [0, 1, 2, 3, 4]
@@ -55,7 +55,7 @@ def stability(labelings, mask):
 def main(key, thr=0.90):
     df = load_train()
     acts = df.legal_principle.map(acts_of).values
-    E = np.load(f"out/emb_{key}.npy")
+    E = load_emb(key)
     I, J, S = all_pairs_above(E, thr)
     n = len(df)
     core_nodes = sorted(set(I.tolist()) | set(J.tolist()))

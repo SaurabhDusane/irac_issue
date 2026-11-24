@@ -22,6 +22,8 @@ import numpy as np
 import pandas as pd
 
 from generalize import call, generalize, parse
+from llm import WORKERS
+from load_data import load_emb, load_train
 
 PREDICT = """You are predicting how the Supreme Court of India will decide a legal issue.
 
@@ -84,8 +86,8 @@ def grade(pred, actual):
 
 def main(graph_dir, n=150):
     key = os.path.basename(graph_dir.rstrip("/")).split("_")[1]
-    E = np.load(f"out/emb_{key}.npy")
-    nodes = pd.read_csv("out/nodes.csv", dtype=str)
+    E = load_emb(key)
+    nodes = load_train()[["node_id", "doc_id"]]
     idx_of = {x: i for i, x in enumerate(nodes.node_id)}
     doc = nodes.doc_id.values
     clusters = [c for c in map(json.loads, open(f"{graph_dir}/subcommunities.jsonl")) if 4 <= c["size"] <= 25]
@@ -128,7 +130,7 @@ def main(graph_dir, n=150):
         row["nn_grade"] = grade(row["nn_pred"], row["actual"]) if row.get("nn_pred") else None
         return row
 
-    with ThreadPoolExecutor(4) as ex:
+    with ThreadPoolExecutor(WORKERS) as ex:
         rows = list(ex.map(one, zip(clusters, held)))
     df = pd.DataFrame(rows)
     os.makedirs(f"{graph_dir}/eval", exist_ok=True)

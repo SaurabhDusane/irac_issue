@@ -24,11 +24,9 @@ import numpy as np
 import pandas as pd
 import requests
 
-from generalize import stop_if_budget_exhausted
-from load_data import DATA, load_test
+from llm import JUDGE_MODEL as JUDGE, WORKERS, chat
+from load_data import DATA, load_emb, load_test
 
-API = "https://api-main.aiml.asu.edu/v1/chat/completions"   # auth injected by proxy
-JUDGE = "aws/claude5_5_sonnet"
 PROMPT = """A legal issue from a new Supreme Court of India judgment:
 
 TEST ISSUE:
@@ -53,11 +51,7 @@ Answer with exactly one word: APPLIES, PARTIAL or NO."""
 def ask(prompt):
     for _ in range(4):
         try:
-            r = requests.post(API, json=dict(model=JUDGE, max_tokens=1024, temperature=0,
-                                             messages=[{"role": "user", "content": prompt}]), timeout=180)
-            d = r.json()
-            stop_if_budget_exhausted(d)
-            m = re.match(r"(APPLIES|PARTIAL|NO)", d["choices"][0]["message"]["content"].strip().upper())
+            m = re.match(r"(APPLIES|PARTIAL|NO)", chat([{"role": "user", "content": prompt}], model=JUDGE, max_tokens=2048, timeout=180).strip().upper())
             if m:
                 return m.group(1)
         except Exception:
@@ -95,7 +89,7 @@ def main(graph_dir, k=3, limit=0):
     key = os.path.basename(graph_dir.rstrip("/")).split("_")[1]
     rules = [r for r in map(json.loads, open(f"{graph_dir}/rules.jsonl")) if "error" not in r]
     asg = pd.read_csv(f"{graph_dir}/assignments.csv", dtype={"subcommunity": str})
-    E = np.load(f"out/emb_{key}.npy")
+    E = load_emb(key)
     C = []
     for r in rules:
         v = E[np.nonzero(asg.subcommunity.values == r["subcommunity"])[0]].mean(0)
@@ -103,7 +97,7 @@ def main(graph_dir, k=3, limit=0):
     C = np.array(C)
 
     test = load_test()
-    T = np.load(f"out/emb_{key}_test.npy")
+    T = load_emb(key + "_test")
     idx = pd.read_csv(os.path.join(DATA, "index.csv"), dtype={"doc_id": str})
     test["year"] = test.doc_id.map(dict(zip(idx.doc_id, idx.year)))
     sel = list(range(len(test)))
@@ -138,7 +132,7 @@ def main(graph_dir, k=3, limit=0):
                 if len(cache) % 200 == 0:
                     print(f"judged {len(cache)}", flush=True)
 
-    with ThreadPoolExecutor(8) as ex:
+    with ThreadPoolExecutor(WORKERS) as ex:
         list(ex.map(work, todo))
 
     df = pd.DataFrame([{k2: v for k2, v in j.items() if not k2.startswith("_")} for j in jobs])

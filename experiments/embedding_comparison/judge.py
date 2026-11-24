@@ -14,8 +14,7 @@ import requests
 
 from load_data import load_train
 
-API = "https://api-main.aiml.asu.edu/v1/chat/completions"   # auth injected by proxy
-JUDGE = "aws/claude5_5_sonnet"
+from llm import JUDGE_MODEL as JUDGE, WORKERS, chat
 # the judge reasons before answering; a small max_tokens returns empty content
 PROMPT = """You are helping evaluate legal-issue clustering for Indian Supreme Court judgments.
 
@@ -35,9 +34,7 @@ Answer with exactly one word: 1, 2, BOTH or NEITHER."""
 def ask(t, c1, c2):
     for _ in range(4):
         try:
-            r = requests.post(API, json=dict(model=JUDGE, max_tokens=1024, temperature=0,
-                messages=[{"role": "user", "content": PROMPT.format(t=t, c1=c1, c2=c2)}]), timeout=120)
-            out = r.json()["choices"][0]["message"]["content"].strip().upper()
+            out = chat([{"role": "user", "content": PROMPT.format(t=t, c1=c1, c2=c2)}], model=JUDGE, max_tokens=2048, timeout=180).strip().upper()
             m = re.match(r"(BOTH|NEITHER|1|2)", out)
             if m:
                 return m.group(1)
@@ -57,7 +54,7 @@ def main(a, b, n=200):
         flip = rng.random() < 0.5
         c = [na[i], nb[i]][::-1] if flip else [na[i], nb[i]]
         jobs.append((i, flip, c))
-    with ThreadPoolExecutor(8) as ex:
+    with ThreadPoolExecutor(WORKERS) as ex:
         answers = list(ex.map(lambda j: ask(df.legal_issue[j[0]], df.legal_issue[j[2][0]], df.legal_issue[j[2][1]]), jobs))
     rows, tally = [], {a: 0, b: 0, "both": 0, "neither": 0, "error": 0}
     for (i, flip, c), ans in zip(jobs, answers):

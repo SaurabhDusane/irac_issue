@@ -14,7 +14,8 @@ import numpy as np
 import pandas as pd
 
 from generalize import call, parse
-from load_data import DATA
+from llm import WORKERS
+from load_data import DATA, load_emb
 
 PROMPT = """Two generalised legal rules were learned from different groups of Supreme Court of India judgments.
 
@@ -48,7 +49,7 @@ def main(graph_dir, min_sim=0.88, max_pairs=400):
     asg = pd.read_csv(f"{graph_dir}/assignments.csv", dtype={"subcommunity": str, "doc_id": str})
     idx = pd.read_csv(os.path.join(DATA, "index.csv"), dtype={"doc_id": str})
     year = dict(zip(idx.doc_id, idx.year))
-    E = np.load(f"out/emb_{key}.npy")
+    E = load_emb(key)
     C, years = [], []
     for r in rules:
         m = np.nonzero(asg.subcommunity.values == r["subcommunity"])[0]
@@ -76,7 +77,7 @@ def main(graph_dir, min_sim=0.88, max_pairs=400):
                 pass
         return dict(a=a["subcommunity"], b=b["subcommunity"], sim=float(s), relation=None)
 
-    with ThreadPoolExecutor(6) as ex:
+    with ThreadPoolExecutor(WORKERS) as ex:
         rows = list(ex.map(one, cand))
     df = pd.DataFrame(rows)
     os.makedirs(f"{graph_dir}/eval", exist_ok=True)

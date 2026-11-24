@@ -21,7 +21,7 @@ import pandas as pd
 from networkx.algorithms.community import louvain_communities, modularity
 from sklearn.metrics import adjusted_rand_score, normalized_mutual_info_score
 
-from load_data import load_train
+from load_data import load_emb, load_train
 
 K = 10                  # neighbours kept per node for the agreement metrics
 EDGE_BUDGET = 34_063    # bge-large @ 0.78 in the team's graph
@@ -133,7 +133,7 @@ def main(keys):
     results, parts, nbrs = {}, {}, {}
     random.seed(SEED)
     for key in keys:
-        E = np.load(f"{OUT}/emb_{key}.npy")
+        E = load_emb(key)
         nbr, nsim, (ci, cj, cs) = topk_and_edges(E, doc)
         nbrs[key] = nbr
         np.save(f"{OUT}/nbr_{key}.npy", nbr); np.save(f"{OUT}/nsim_{key}.npy", nsim)

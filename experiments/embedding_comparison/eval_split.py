@@ -15,7 +15,7 @@ import numpy as np
 import pandas as pd
 
 from evaluate import prf
-from load_data import load_test
+from load_data import load_emb, load_test
 
 
 def main(graph_dir):
@@ -39,8 +39,8 @@ def main(graph_dir):
 
     # coverage
     test = load_test()
-    T = np.load(f"out/emb_{key}_test.npy")
-    E = np.load(f"out/emb_{key}.npy")
+    T = load_emb(key + "_test")
+    E = load_emb(key)
     asg = pd.read_csv(f"{graph_dir}/assignments.csv", dtype={"subcommunity": str})
     rules = [json.loads(l) for l in open(f"{graph_dir}/rules.jsonl")]
     rules = [r for r in rules if "error" not in r]

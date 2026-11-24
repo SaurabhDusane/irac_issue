@@ -13,15 +13,14 @@ import requests
 from sklearn.metrics import cohen_kappa_score
 
 import evaluate
+from llm import WORKERS
 from load_data import load_test
 
 
 def ask(model, prompt):
     for _ in range(4):
         try:
-            r = requests.post(evaluate.API, json=dict(model=model, max_tokens=2048, temperature=0,
-                                                      messages=[{"role": "user", "content": prompt}]), timeout=180)
-            m = re.search(r"(APPLIES|PARTIAL|NO)", r.json()["choices"][0]["message"]["content"].strip().upper())
+            m = re.search(r"(APPLIES|PARTIAL|NO)", evaluate.chat([{"role": "user", "content": prompt}], model=model, max_tokens=2048, timeout=180).strip().upper())
             if m:
                 return m.group(1)
         except Exception:
@@ -35,7 +34,7 @@ def main(graph_dir, n=300, judge2="gcp-deepmind/geminipro3_1"):
     test = load_test().set_index("node_id")
     sample = pairs.sample(min(n, len(pairs)), random_state=0).reset_index(drop=True)
     prompts = [evaluate.rule_prompt(test.legal_issue[t], rules[s]) for t, s in zip(sample.test_node, sample.subcommunity)]
-    with ThreadPoolExecutor(8) as ex:
+    with ThreadPoolExecutor(WORKERS) as ex:
         sample["label2"] = list(ex.map(lambda p: ask(judge2, p), prompts))
     s = sample.dropna(subset=["label2"])
     a, b = s.label, s.label2
