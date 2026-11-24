@@ -84,9 +84,20 @@ def validate(out, member_ids):
     return errs
 
 
+def stop_if_budget_exhausted(d):
+    """The ASU project has a monthly budget; when it is spent every call fails.
+    Stop the whole run (results so far are kept and the next run resumes)."""
+    msg = (d.get("error") or {}).get("message", "") if isinstance(d, dict) else ""
+    if "budget" in msg:
+        print(f"STOPPING: API budget exhausted: {msg[:160]}", flush=True)
+        os._exit(3)
+
+
 def call(messages):
     r = requests.post(API, json=dict(model=MODEL, max_tokens=8000, temperature=0, messages=messages), timeout=600)
-    return r.json()["choices"][0]["message"]["content"]
+    d = r.json()
+    stop_if_budget_exhausted(d)
+    return d["choices"][0]["message"]["content"]
 
 
 def parse(text):

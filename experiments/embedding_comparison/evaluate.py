@@ -24,6 +24,7 @@ import numpy as np
 import pandas as pd
 import requests
 
+from generalize import stop_if_budget_exhausted
 from load_data import DATA, load_test
 
 API = "https://api-main.aiml.asu.edu/v1/chat/completions"   # auth injected by proxy
@@ -54,7 +55,9 @@ def ask(prompt):
         try:
             r = requests.post(API, json=dict(model=JUDGE, max_tokens=1024, temperature=0,
                                              messages=[{"role": "user", "content": prompt}]), timeout=180)
-            m = re.match(r"(APPLIES|PARTIAL|NO)", r.json()["choices"][0]["message"]["content"].strip().upper())
+            d = r.json()
+            stop_if_budget_exhausted(d)
+            m = re.match(r"(APPLIES|PARTIAL|NO)", d["choices"][0]["message"]["content"].strip().upper())
             if m:
                 return m.group(1)
         except Exception:
